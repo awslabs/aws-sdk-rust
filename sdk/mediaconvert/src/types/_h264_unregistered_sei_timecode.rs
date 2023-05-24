@@ -38,13 +38,13 @@
 /// Inserts timecode for each frame as 4 bytes of an unregistered SEI message.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum H264UnregisteredSeiTimecode {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum H264UnregisteredSeiTimecode {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for H264UnregisteredSeiTimecode {
+impl ::std::convert::From<&str> for H264UnregisteredSeiTimecode {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => H264UnregisteredSeiTimecode::Disabled,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for H264UnregisteredSeiTimecode {
         }
     }
 }
-impl std::str::FromStr for H264UnregisteredSeiTimecode {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for H264UnregisteredSeiTimecode {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(H264UnregisteredSeiTimecode::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(H264UnregisteredSeiTimecode::from(s))
     }
 }
 impl H264UnregisteredSeiTimecode {
@@ -86,7 +86,7 @@ impl H264UnregisteredSeiTimecode {
         &["DISABLED", "ENABLED"]
     }
 }
-impl AsRef<str> for H264UnregisteredSeiTimecode {
+impl ::std::convert::AsRef<str> for H264UnregisteredSeiTimecode {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

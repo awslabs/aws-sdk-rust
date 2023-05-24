@@ -2,7 +2,7 @@
 
 /// <p>Details about when an on-call rotation shift begins or ends.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HandOffTime {
     /// <p>The hour when an on-call rotation shift begins or ends.</p>
     #[doc(hidden)]
@@ -30,29 +30,31 @@ impl HandOffTime {
 
 /// A builder for [`HandOffTime`](crate::types::HandOffTime).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct HandOffTimeBuilder {
-    pub(crate) hour_of_day: std::option::Option<i32>,
-    pub(crate) minute_of_hour: std::option::Option<i32>,
+    pub(crate) hour_of_day: ::std::option::Option<i32>,
+    pub(crate) minute_of_hour: ::std::option::Option<i32>,
 }
 impl HandOffTimeBuilder {
     /// <p>The hour when an on-call rotation shift begins or ends.</p>
     pub fn hour_of_day(mut self, input: i32) -> Self {
-        self.hour_of_day = Some(input);
+        self.hour_of_day = ::std::option::Option::Some(input);
         self
     }
     /// <p>The hour when an on-call rotation shift begins or ends.</p>
-    pub fn set_hour_of_day(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_hour_of_day(mut self, input: ::std::option::Option<i32>) -> Self {
         self.hour_of_day = input;
         self
     }
     /// <p>The minute when an on-call rotation shift begins or ends.</p>
     pub fn minute_of_hour(mut self, input: i32) -> Self {
-        self.minute_of_hour = Some(input);
+        self.minute_of_hour = ::std::option::Option::Some(input);
         self
     }
     /// <p>The minute when an on-call rotation shift begins or ends.</p>
-    pub fn set_minute_of_hour(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_minute_of_hour(mut self, input: ::std::option::Option<i32>) -> Self {
         self.minute_of_hour = input;
         self
     }

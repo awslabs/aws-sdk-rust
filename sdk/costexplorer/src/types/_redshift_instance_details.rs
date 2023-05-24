@@ -2,17 +2,17 @@
 
 /// <p>Details about the Amazon Redshift instances that Amazon Web Services recommends that you purchase.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RedshiftInstanceDetails {
     /// <p>The instance family of the recommended reservation.</p>
     #[doc(hidden)]
-    pub family: std::option::Option<std::string::String>,
+    pub family: ::std::option::Option<::std::string::String>,
     /// <p>The type of node that Amazon Web Services recommends.</p>
     #[doc(hidden)]
-    pub node_type: std::option::Option<std::string::String>,
+    pub node_type: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region of the recommended reservation.</p>
     #[doc(hidden)]
-    pub region: std::option::Option<std::string::String>,
+    pub region: ::std::option::Option<::std::string::String>,
     /// <p>Determines whether the recommendation is for a current-generation instance.</p>
     #[doc(hidden)]
     pub current_generation: bool,
@@ -22,15 +22,15 @@ pub struct RedshiftInstanceDetails {
 }
 impl RedshiftInstanceDetails {
     /// <p>The instance family of the recommended reservation.</p>
-    pub fn family(&self) -> std::option::Option<&str> {
+    pub fn family(&self) -> ::std::option::Option<&str> {
         self.family.as_deref()
     }
     /// <p>The type of node that Amazon Web Services recommends.</p>
-    pub fn node_type(&self) -> std::option::Option<&str> {
+    pub fn node_type(&self) -> ::std::option::Option<&str> {
         self.node_type.as_deref()
     }
     /// <p>The Amazon Web Services Region of the recommended reservation.</p>
-    pub fn region(&self) -> std::option::Option<&str> {
+    pub fn region(&self) -> ::std::option::Option<&str> {
         self.region.as_deref()
     }
     /// <p>Determines whether the recommendation is for a current-generation instance.</p>
@@ -51,62 +51,64 @@ impl RedshiftInstanceDetails {
 
 /// A builder for [`RedshiftInstanceDetails`](crate::types::RedshiftInstanceDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RedshiftInstanceDetailsBuilder {
-    pub(crate) family: std::option::Option<std::string::String>,
-    pub(crate) node_type: std::option::Option<std::string::String>,
-    pub(crate) region: std::option::Option<std::string::String>,
-    pub(crate) current_generation: std::option::Option<bool>,
-    pub(crate) size_flex_eligible: std::option::Option<bool>,
+    pub(crate) family: ::std::option::Option<::std::string::String>,
+    pub(crate) node_type: ::std::option::Option<::std::string::String>,
+    pub(crate) region: ::std::option::Option<::std::string::String>,
+    pub(crate) current_generation: ::std::option::Option<bool>,
+    pub(crate) size_flex_eligible: ::std::option::Option<bool>,
 }
 impl RedshiftInstanceDetailsBuilder {
     /// <p>The instance family of the recommended reservation.</p>
-    pub fn family(mut self, input: impl Into<std::string::String>) -> Self {
-        self.family = Some(input.into());
+    pub fn family(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.family = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The instance family of the recommended reservation.</p>
-    pub fn set_family(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_family(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.family = input;
         self
     }
     /// <p>The type of node that Amazon Web Services recommends.</p>
-    pub fn node_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.node_type = Some(input.into());
+    pub fn node_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.node_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The type of node that Amazon Web Services recommends.</p>
-    pub fn set_node_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_node_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.node_type = input;
         self
     }
     /// <p>The Amazon Web Services Region of the recommended reservation.</p>
-    pub fn region(mut self, input: impl Into<std::string::String>) -> Self {
-        self.region = Some(input.into());
+    pub fn region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services Region of the recommended reservation.</p>
-    pub fn set_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.region = input;
         self
     }
     /// <p>Determines whether the recommendation is for a current-generation instance.</p>
     pub fn current_generation(mut self, input: bool) -> Self {
-        self.current_generation = Some(input);
+        self.current_generation = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determines whether the recommendation is for a current-generation instance.</p>
-    pub fn set_current_generation(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_current_generation(mut self, input: ::std::option::Option<bool>) -> Self {
         self.current_generation = input;
         self
     }
     /// <p>Determines whether the recommended reservation is size flexible.</p>
     pub fn size_flex_eligible(mut self, input: bool) -> Self {
-        self.size_flex_eligible = Some(input);
+        self.size_flex_eligible = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determines whether the recommended reservation is size flexible.</p>
-    pub fn set_size_flex_eligible(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_size_flex_eligible(mut self, input: ::std::option::Option<bool>) -> Self {
         self.size_flex_eligible = input;
         self
     }

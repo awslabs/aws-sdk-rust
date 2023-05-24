@@ -2,7 +2,7 @@
 
 /// <p>The configuration of the studio component, based on component type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum StudioComponentConfiguration {
     /// <p>The configuration for a Directory Service for Microsoft Active Directory studio resource.</p>
     ActiveDirectoryConfiguration(crate::types::ActiveDirectoryConfiguration),
@@ -27,11 +27,11 @@ impl StudioComponentConfiguration {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_active_directory_configuration(
         &self,
-    ) -> std::result::Result<&crate::types::ActiveDirectoryConfiguration, &Self> {
+    ) -> ::std::result::Result<&crate::types::ActiveDirectoryConfiguration, &Self> {
         if let StudioComponentConfiguration::ActiveDirectoryConfiguration(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`ActiveDirectoryConfiguration`](crate::types::StudioComponentConfiguration::ActiveDirectoryConfiguration).
@@ -42,11 +42,11 @@ impl StudioComponentConfiguration {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_compute_farm_configuration(
         &self,
-    ) -> std::result::Result<&crate::types::ComputeFarmConfiguration, &Self> {
+    ) -> ::std::result::Result<&crate::types::ComputeFarmConfiguration, &Self> {
         if let StudioComponentConfiguration::ComputeFarmConfiguration(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`ComputeFarmConfiguration`](crate::types::StudioComponentConfiguration::ComputeFarmConfiguration).
@@ -57,11 +57,11 @@ impl StudioComponentConfiguration {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_license_service_configuration(
         &self,
-    ) -> std::result::Result<&crate::types::LicenseServiceConfiguration, &Self> {
+    ) -> ::std::result::Result<&crate::types::LicenseServiceConfiguration, &Self> {
         if let StudioComponentConfiguration::LicenseServiceConfiguration(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`LicenseServiceConfiguration`](crate::types::StudioComponentConfiguration::LicenseServiceConfiguration).
@@ -72,11 +72,11 @@ impl StudioComponentConfiguration {
     /// Returns `Err(&Self)` if it can't be converted.
     pub fn as_shared_file_system_configuration(
         &self,
-    ) -> std::result::Result<&crate::types::SharedFileSystemConfiguration, &Self> {
+    ) -> ::std::result::Result<&crate::types::SharedFileSystemConfiguration, &Self> {
         if let StudioComponentConfiguration::SharedFileSystemConfiguration(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`SharedFileSystemConfiguration`](crate::types::StudioComponentConfiguration::SharedFileSystemConfiguration).

@@ -3,8 +3,8 @@ impl super::Client {
     /// Constructs a fluent builder for the [`CancelSchemaExtension`](crate::operation::cancel_schema_extension::builders::CancelSchemaExtensionFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`directory_id(impl Into<String>)`](crate::operation::cancel_schema_extension::builders::CancelSchemaExtensionFluentBuilder::directory_id) / [`set_directory_id(Option<String>)`](crate::operation::cancel_schema_extension::builders::CancelSchemaExtensionFluentBuilder::set_directory_id): <p>The identifier of the directory whose schema extension will be canceled.</p>
-    ///   - [`schema_extension_id(impl Into<String>)`](crate::operation::cancel_schema_extension::builders::CancelSchemaExtensionFluentBuilder::schema_extension_id) / [`set_schema_extension_id(Option<String>)`](crate::operation::cancel_schema_extension::builders::CancelSchemaExtensionFluentBuilder::set_schema_extension_id): <p>The identifier of the schema extension that will be canceled.</p>
+    ///   - [`directory_id(impl ::std::convert::Into<String>)`](crate::operation::cancel_schema_extension::builders::CancelSchemaExtensionFluentBuilder::directory_id) / [`set_directory_id(Option<String>)`](crate::operation::cancel_schema_extension::builders::CancelSchemaExtensionFluentBuilder::set_directory_id): <p>The identifier of the directory whose schema extension will be canceled.</p>
+    ///   - [`schema_extension_id(impl ::std::convert::Into<String>)`](crate::operation::cancel_schema_extension::builders::CancelSchemaExtensionFluentBuilder::schema_extension_id) / [`set_schema_extension_id(Option<String>)`](crate::operation::cancel_schema_extension::builders::CancelSchemaExtensionFluentBuilder::set_schema_extension_id): <p>The identifier of the schema extension that will be canceled.</p>
     /// - On success, responds with [`CancelSchemaExtensionOutput`](crate::operation::cancel_schema_extension::CancelSchemaExtensionOutput)
     /// - On failure, responds with [`SdkError<CancelSchemaExtensionError>`](crate::operation::cancel_schema_extension::CancelSchemaExtensionError)
     pub fn cancel_schema_extension(

@@ -2,21 +2,21 @@
 
 /// <p>The <code>LoggingConfiguration</code> data type is used to set CloudWatch Logs options.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoggingConfiguration {
     /// <p>Defines which category of execution history events are logged.</p>
     #[doc(hidden)]
-    pub level: std::option::Option<crate::types::LogLevel>,
+    pub level: ::std::option::Option<crate::types::LogLevel>,
     /// <p>Determines whether execution data is included in your log. When set to <code>false</code>, data is excluded.</p>
     #[doc(hidden)]
     pub include_execution_data: bool,
     /// <p>An array of objects that describes where your execution history events will be logged. Limited to size 1. Required, if your log level is not set to <code>OFF</code>.</p>
     #[doc(hidden)]
-    pub destinations: std::option::Option<std::vec::Vec<crate::types::LogDestination>>,
+    pub destinations: ::std::option::Option<::std::vec::Vec<crate::types::LogDestination>>,
 }
 impl LoggingConfiguration {
     /// <p>Defines which category of execution history events are logged.</p>
-    pub fn level(&self) -> std::option::Option<&crate::types::LogLevel> {
+    pub fn level(&self) -> ::std::option::Option<&crate::types::LogLevel> {
         self.level.as_ref()
     }
     /// <p>Determines whether execution data is included in your log. When set to <code>false</code>, data is excluded.</p>
@@ -24,7 +24,7 @@ impl LoggingConfiguration {
         self.include_execution_data
     }
     /// <p>An array of objects that describes where your execution history events will be logged. Limited to size 1. Required, if your log level is not set to <code>OFF</code>.</p>
-    pub fn destinations(&self) -> std::option::Option<&[crate::types::LogDestination]> {
+    pub fn destinations(&self) -> ::std::option::Option<&[crate::types::LogDestination]> {
         self.destinations.as_deref()
     }
 }
@@ -37,30 +37,32 @@ impl LoggingConfiguration {
 
 /// A builder for [`LoggingConfiguration`](crate::types::LoggingConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LoggingConfigurationBuilder {
-    pub(crate) level: std::option::Option<crate::types::LogLevel>,
-    pub(crate) include_execution_data: std::option::Option<bool>,
-    pub(crate) destinations: std::option::Option<std::vec::Vec<crate::types::LogDestination>>,
+    pub(crate) level: ::std::option::Option<crate::types::LogLevel>,
+    pub(crate) include_execution_data: ::std::option::Option<bool>,
+    pub(crate) destinations: ::std::option::Option<::std::vec::Vec<crate::types::LogDestination>>,
 }
 impl LoggingConfigurationBuilder {
     /// <p>Defines which category of execution history events are logged.</p>
     pub fn level(mut self, input: crate::types::LogLevel) -> Self {
-        self.level = Some(input);
+        self.level = ::std::option::Option::Some(input);
         self
     }
     /// <p>Defines which category of execution history events are logged.</p>
-    pub fn set_level(mut self, input: std::option::Option<crate::types::LogLevel>) -> Self {
+    pub fn set_level(mut self, input: ::std::option::Option<crate::types::LogLevel>) -> Self {
         self.level = input;
         self
     }
     /// <p>Determines whether execution data is included in your log. When set to <code>false</code>, data is excluded.</p>
     pub fn include_execution_data(mut self, input: bool) -> Self {
-        self.include_execution_data = Some(input);
+        self.include_execution_data = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determines whether execution data is included in your log. When set to <code>false</code>, data is excluded.</p>
-    pub fn set_include_execution_data(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_include_execution_data(mut self, input: ::std::option::Option<bool>) -> Self {
         self.include_execution_data = input;
         self
     }
@@ -72,13 +74,13 @@ impl LoggingConfigurationBuilder {
     pub fn destinations(mut self, input: crate::types::LogDestination) -> Self {
         let mut v = self.destinations.unwrap_or_default();
         v.push(input);
-        self.destinations = Some(v);
+        self.destinations = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of objects that describes where your execution history events will be logged. Limited to size 1. Required, if your log level is not set to <code>OFF</code>.</p>
     pub fn set_destinations(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::LogDestination>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::LogDestination>>,
     ) -> Self {
         self.destinations = input;
         self

@@ -39,13 +39,13 @@
 /// Maximum bitrate in megabits per second
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ReservationMaximumBitrate {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum ReservationMaximumBitrate {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ReservationMaximumBitrate {
+impl ::std::convert::From<&str> for ReservationMaximumBitrate {
     fn from(s: &str) -> Self {
         match s {
             "MAX_10_MBPS" => ReservationMaximumBitrate::Max10Mbps,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for ReservationMaximumBitrate {
         }
     }
 }
-impl std::str::FromStr for ReservationMaximumBitrate {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ReservationMaximumBitrate {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ReservationMaximumBitrate::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ReservationMaximumBitrate::from(s))
     }
 }
 impl ReservationMaximumBitrate {
@@ -91,7 +91,7 @@ impl ReservationMaximumBitrate {
         &["MAX_10_MBPS", "MAX_20_MBPS", "MAX_50_MBPS"]
     }
 }
-impl AsRef<str> for ReservationMaximumBitrate {
+impl ::std::convert::AsRef<str> for ReservationMaximumBitrate {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

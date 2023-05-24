@@ -2,92 +2,92 @@
 
 /// <p>Describes the API operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Operation {
     /// <p>The ID of the operation.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The resource name.</p>
     #[doc(hidden)]
-    pub resource_name: std::option::Option<std::string::String>,
+    pub resource_name: ::std::option::Option<::std::string::String>,
     /// <p>The resource type. </p>
     #[doc(hidden)]
-    pub resource_type: std::option::Option<crate::types::ResourceType>,
+    pub resource_type: ::std::option::Option<crate::types::ResourceType>,
     /// <p>The timestamp when the operation was initialized (e.g., <code>1479816991.349</code>).</p>
     #[doc(hidden)]
-    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The Amazon Web Services Region and Availability Zone.</p>
     #[doc(hidden)]
-    pub location: std::option::Option<crate::types::ResourceLocation>,
+    pub location: ::std::option::Option<crate::types::ResourceLocation>,
     /// <p>A Boolean value indicating whether the operation is terminal.</p>
     #[doc(hidden)]
-    pub is_terminal: std::option::Option<bool>,
+    pub is_terminal: ::std::option::Option<bool>,
     /// <p>Details about the operation (e.g., <code>Debian-1GB-Ohio-1</code>).</p>
     #[doc(hidden)]
-    pub operation_details: std::option::Option<std::string::String>,
+    pub operation_details: ::std::option::Option<::std::string::String>,
     /// <p>The type of operation. </p>
     #[doc(hidden)]
-    pub operation_type: std::option::Option<crate::types::OperationType>,
+    pub operation_type: ::std::option::Option<crate::types::OperationType>,
     /// <p>The status of the operation. </p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::OperationStatus>,
+    pub status: ::std::option::Option<crate::types::OperationStatus>,
     /// <p>The timestamp when the status was changed (e.g., <code>1479816991.349</code>).</p>
     #[doc(hidden)]
-    pub status_changed_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub status_changed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The error code.</p>
     #[doc(hidden)]
-    pub error_code: std::option::Option<std::string::String>,
+    pub error_code: ::std::option::Option<::std::string::String>,
     /// <p>The error details.</p>
     #[doc(hidden)]
-    pub error_details: std::option::Option<std::string::String>,
+    pub error_details: ::std::option::Option<::std::string::String>,
 }
 impl Operation {
     /// <p>The ID of the operation.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The resource name.</p>
-    pub fn resource_name(&self) -> std::option::Option<&str> {
+    pub fn resource_name(&self) -> ::std::option::Option<&str> {
         self.resource_name.as_deref()
     }
     /// <p>The resource type. </p>
-    pub fn resource_type(&self) -> std::option::Option<&crate::types::ResourceType> {
+    pub fn resource_type(&self) -> ::std::option::Option<&crate::types::ResourceType> {
         self.resource_type.as_ref()
     }
     /// <p>The timestamp when the operation was initialized (e.g., <code>1479816991.349</code>).</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The Amazon Web Services Region and Availability Zone.</p>
-    pub fn location(&self) -> std::option::Option<&crate::types::ResourceLocation> {
+    pub fn location(&self) -> ::std::option::Option<&crate::types::ResourceLocation> {
         self.location.as_ref()
     }
     /// <p>A Boolean value indicating whether the operation is terminal.</p>
-    pub fn is_terminal(&self) -> std::option::Option<bool> {
+    pub fn is_terminal(&self) -> ::std::option::Option<bool> {
         self.is_terminal
     }
     /// <p>Details about the operation (e.g., <code>Debian-1GB-Ohio-1</code>).</p>
-    pub fn operation_details(&self) -> std::option::Option<&str> {
+    pub fn operation_details(&self) -> ::std::option::Option<&str> {
         self.operation_details.as_deref()
     }
     /// <p>The type of operation. </p>
-    pub fn operation_type(&self) -> std::option::Option<&crate::types::OperationType> {
+    pub fn operation_type(&self) -> ::std::option::Option<&crate::types::OperationType> {
         self.operation_type.as_ref()
     }
     /// <p>The status of the operation. </p>
-    pub fn status(&self) -> std::option::Option<&crate::types::OperationStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::OperationStatus> {
         self.status.as_ref()
     }
     /// <p>The timestamp when the status was changed (e.g., <code>1479816991.349</code>).</p>
-    pub fn status_changed_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn status_changed_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.status_changed_at.as_ref()
     }
     /// <p>The error code.</p>
-    pub fn error_code(&self) -> std::option::Option<&str> {
+    pub fn error_code(&self) -> ::std::option::Option<&str> {
         self.error_code.as_deref()
     }
     /// <p>The error details.</p>
-    pub fn error_details(&self) -> std::option::Option<&str> {
+    pub fn error_details(&self) -> ::std::option::Option<&str> {
         self.error_details.as_deref()
     }
 }
@@ -100,157 +100,177 @@ impl Operation {
 
 /// A builder for [`Operation`](crate::types::Operation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct OperationBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) resource_name: std::option::Option<std::string::String>,
-    pub(crate) resource_type: std::option::Option<crate::types::ResourceType>,
-    pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) location: std::option::Option<crate::types::ResourceLocation>,
-    pub(crate) is_terminal: std::option::Option<bool>,
-    pub(crate) operation_details: std::option::Option<std::string::String>,
-    pub(crate) operation_type: std::option::Option<crate::types::OperationType>,
-    pub(crate) status: std::option::Option<crate::types::OperationStatus>,
-    pub(crate) status_changed_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) error_code: std::option::Option<std::string::String>,
-    pub(crate) error_details: std::option::Option<std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_name: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_type: ::std::option::Option<crate::types::ResourceType>,
+    pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) location: ::std::option::Option<crate::types::ResourceLocation>,
+    pub(crate) is_terminal: ::std::option::Option<bool>,
+    pub(crate) operation_details: ::std::option::Option<::std::string::String>,
+    pub(crate) operation_type: ::std::option::Option<crate::types::OperationType>,
+    pub(crate) status: ::std::option::Option<crate::types::OperationStatus>,
+    pub(crate) status_changed_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) error_code: ::std::option::Option<::std::string::String>,
+    pub(crate) error_details: ::std::option::Option<::std::string::String>,
 }
 impl OperationBuilder {
     /// <p>The ID of the operation.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the operation.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The resource name.</p>
-    pub fn resource_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_name = Some(input.into());
+    pub fn resource_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.resource_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The resource name.</p>
-    pub fn set_resource_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.resource_name = input;
         self
     }
     /// <p>The resource type. </p>
     pub fn resource_type(mut self, input: crate::types::ResourceType) -> Self {
-        self.resource_type = Some(input);
+        self.resource_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The resource type. </p>
     pub fn set_resource_type(
         mut self,
-        input: std::option::Option<crate::types::ResourceType>,
+        input: ::std::option::Option<crate::types::ResourceType>,
     ) -> Self {
         self.resource_type = input;
         self
     }
     /// <p>The timestamp when the operation was initialized (e.g., <code>1479816991.349</code>).</p>
-    pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_at = Some(input);
+    pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timestamp when the operation was initialized (e.g., <code>1479816991.349</code>).</p>
     pub fn set_created_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_at = input;
         self
     }
     /// <p>The Amazon Web Services Region and Availability Zone.</p>
     pub fn location(mut self, input: crate::types::ResourceLocation) -> Self {
-        self.location = Some(input);
+        self.location = ::std::option::Option::Some(input);
         self
     }
     /// <p>The Amazon Web Services Region and Availability Zone.</p>
     pub fn set_location(
         mut self,
-        input: std::option::Option<crate::types::ResourceLocation>,
+        input: ::std::option::Option<crate::types::ResourceLocation>,
     ) -> Self {
         self.location = input;
         self
     }
     /// <p>A Boolean value indicating whether the operation is terminal.</p>
     pub fn is_terminal(mut self, input: bool) -> Self {
-        self.is_terminal = Some(input);
+        self.is_terminal = ::std::option::Option::Some(input);
         self
     }
     /// <p>A Boolean value indicating whether the operation is terminal.</p>
-    pub fn set_is_terminal(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_terminal(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_terminal = input;
         self
     }
     /// <p>Details about the operation (e.g., <code>Debian-1GB-Ohio-1</code>).</p>
-    pub fn operation_details(mut self, input: impl Into<std::string::String>) -> Self {
-        self.operation_details = Some(input.into());
+    pub fn operation_details(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.operation_details = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Details about the operation (e.g., <code>Debian-1GB-Ohio-1</code>).</p>
     pub fn set_operation_details(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.operation_details = input;
         self
     }
     /// <p>The type of operation. </p>
     pub fn operation_type(mut self, input: crate::types::OperationType) -> Self {
-        self.operation_type = Some(input);
+        self.operation_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of operation. </p>
     pub fn set_operation_type(
         mut self,
-        input: std::option::Option<crate::types::OperationType>,
+        input: ::std::option::Option<crate::types::OperationType>,
     ) -> Self {
         self.operation_type = input;
         self
     }
     /// <p>The status of the operation. </p>
     pub fn status(mut self, input: crate::types::OperationStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the operation. </p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::OperationStatus>) -> Self {
+    pub fn set_status(
+        mut self,
+        input: ::std::option::Option<crate::types::OperationStatus>,
+    ) -> Self {
         self.status = input;
         self
     }
     /// <p>The timestamp when the status was changed (e.g., <code>1479816991.349</code>).</p>
-    pub fn status_changed_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.status_changed_at = Some(input);
+    pub fn status_changed_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.status_changed_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timestamp when the status was changed (e.g., <code>1479816991.349</code>).</p>
     pub fn set_status_changed_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.status_changed_at = input;
         self
     }
     /// <p>The error code.</p>
-    pub fn error_code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error_code = Some(input.into());
+    pub fn error_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.error_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The error code.</p>
-    pub fn set_error_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.error_code = input;
         self
     }
     /// <p>The error details.</p>
-    pub fn error_details(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error_details = Some(input.into());
+    pub fn error_details(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.error_details = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The error details.</p>
-    pub fn set_error_details(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error_details(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.error_details = input;
         self
     }

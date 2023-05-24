@@ -2,15 +2,15 @@
 
 /// <p>The AWS Elastic Beanstalk quota information for a single resource type in an AWS account. It reflects the resource's limits for this account.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ResourceQuota {
     /// <p>The maximum number of instances of this Elastic Beanstalk resource type that an AWS account can use.</p>
     #[doc(hidden)]
-    pub maximum: std::option::Option<i32>,
+    pub maximum: ::std::option::Option<i32>,
 }
 impl ResourceQuota {
     /// <p>The maximum number of instances of this Elastic Beanstalk resource type that an AWS account can use.</p>
-    pub fn maximum(&self) -> std::option::Option<i32> {
+    pub fn maximum(&self) -> ::std::option::Option<i32> {
         self.maximum
     }
 }
@@ -23,18 +23,20 @@ impl ResourceQuota {
 
 /// A builder for [`ResourceQuota`](crate::types::ResourceQuota).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ResourceQuotaBuilder {
-    pub(crate) maximum: std::option::Option<i32>,
+    pub(crate) maximum: ::std::option::Option<i32>,
 }
 impl ResourceQuotaBuilder {
     /// <p>The maximum number of instances of this Elastic Beanstalk resource type that an AWS account can use.</p>
     pub fn maximum(mut self, input: i32) -> Self {
-        self.maximum = Some(input);
+        self.maximum = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum number of instances of this Elastic Beanstalk resource type that an AWS account can use.</p>
-    pub fn set_maximum(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_maximum(mut self, input: ::std::option::Option<i32>) -> Self {
         self.maximum = input;
         self
     }

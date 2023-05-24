@@ -2,22 +2,23 @@
 
 /// <p>Contains the output of PurchaseScheduledInstances.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PurchaseScheduledInstancesOutput {
     /// <p>Information about the Scheduled Instances.</p>
     #[doc(hidden)]
-    pub scheduled_instance_set: std::option::Option<std::vec::Vec<crate::types::ScheduledInstance>>,
+    pub scheduled_instance_set:
+        ::std::option::Option<::std::vec::Vec<crate::types::ScheduledInstance>>,
     _request_id: Option<String>,
 }
 impl PurchaseScheduledInstancesOutput {
     /// <p>Information about the Scheduled Instances.</p>
     pub fn scheduled_instance_set(
         &self,
-    ) -> std::option::Option<&[crate::types::ScheduledInstance]> {
+    ) -> ::std::option::Option<&[crate::types::ScheduledInstance]> {
         self.scheduled_instance_set.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for PurchaseScheduledInstancesOutput {
+impl ::aws_http::request_id::RequestId for PurchaseScheduledInstancesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -31,10 +32,12 @@ impl PurchaseScheduledInstancesOutput {
 
 /// A builder for [`PurchaseScheduledInstancesOutput`](crate::operation::purchase_scheduled_instances::PurchaseScheduledInstancesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PurchaseScheduledInstancesOutputBuilder {
     pub(crate) scheduled_instance_set:
-        std::option::Option<std::vec::Vec<crate::types::ScheduledInstance>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ScheduledInstance>>,
     _request_id: Option<String>,
 }
 impl PurchaseScheduledInstancesOutputBuilder {
@@ -46,13 +49,13 @@ impl PurchaseScheduledInstancesOutputBuilder {
     pub fn scheduled_instance_set(mut self, input: crate::types::ScheduledInstance) -> Self {
         let mut v = self.scheduled_instance_set.unwrap_or_default();
         v.push(input);
-        self.scheduled_instance_set = Some(v);
+        self.scheduled_instance_set = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about the Scheduled Instances.</p>
     pub fn set_scheduled_instance_set(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ScheduledInstance>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ScheduledInstance>>,
     ) -> Self {
         self.scheduled_instance_set = input;
         self

@@ -42,13 +42,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ZonalStatistics {
     /// MAX
@@ -66,7 +66,7 @@ pub enum ZonalStatistics {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ZonalStatistics {
+impl ::std::convert::From<&str> for ZonalStatistics {
     fn from(s: &str) -> Self {
         match s {
             "MAX" => ZonalStatistics::Max,
@@ -81,11 +81,11 @@ impl std::convert::From<&str> for ZonalStatistics {
         }
     }
 }
-impl std::str::FromStr for ZonalStatistics {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ZonalStatistics {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ZonalStatistics::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ZonalStatistics::from(s))
     }
 }
 impl ZonalStatistics {
@@ -106,7 +106,7 @@ impl ZonalStatistics {
         &["MAX", "MEAN", "MEDIAN", "MIN", "STANDARD_DEVIATION", "SUM"]
     }
 }
-impl AsRef<str> for ZonalStatistics {
+impl ::std::convert::AsRef<str> for ZonalStatistics {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

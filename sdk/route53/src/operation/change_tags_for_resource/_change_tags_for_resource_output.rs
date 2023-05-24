@@ -2,11 +2,11 @@
 
 /// <p>Empty response for the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChangeTagsForResourceOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for ChangeTagsForResourceOutput {
+impl ::aws_http::request_id::RequestId for ChangeTagsForResourceOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -22,7 +22,9 @@ impl ChangeTagsForResourceOutput {
 
 /// A builder for [`ChangeTagsForResourceOutput`](crate::operation::change_tags_for_resource::ChangeTagsForResourceOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ChangeTagsForResourceOutputBuilder {
     _request_id: Option<String>,
 }

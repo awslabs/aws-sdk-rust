@@ -2,18 +2,18 @@
 
 /// <p>The arc axis configuration of a <code>GaugeChartVisual</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ArcAxisConfiguration {
     /// <p>The arc axis range of a <code>GaugeChartVisual</code>.</p>
     #[doc(hidden)]
-    pub range: std::option::Option<crate::types::ArcAxisDisplayRange>,
+    pub range: ::std::option::Option<crate::types::ArcAxisDisplayRange>,
     /// <p>The reserved range of the arc axis.</p>
     #[doc(hidden)]
     pub reserve_range: i32,
 }
 impl ArcAxisConfiguration {
     /// <p>The arc axis range of a <code>GaugeChartVisual</code>.</p>
-    pub fn range(&self) -> std::option::Option<&crate::types::ArcAxisDisplayRange> {
+    pub fn range(&self) -> ::std::option::Option<&crate::types::ArcAxisDisplayRange> {
         self.range.as_ref()
     }
     /// <p>The reserved range of the arc axis.</p>
@@ -30,32 +30,34 @@ impl ArcAxisConfiguration {
 
 /// A builder for [`ArcAxisConfiguration`](crate::types::ArcAxisConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ArcAxisConfigurationBuilder {
-    pub(crate) range: std::option::Option<crate::types::ArcAxisDisplayRange>,
-    pub(crate) reserve_range: std::option::Option<i32>,
+    pub(crate) range: ::std::option::Option<crate::types::ArcAxisDisplayRange>,
+    pub(crate) reserve_range: ::std::option::Option<i32>,
 }
 impl ArcAxisConfigurationBuilder {
     /// <p>The arc axis range of a <code>GaugeChartVisual</code>.</p>
     pub fn range(mut self, input: crate::types::ArcAxisDisplayRange) -> Self {
-        self.range = Some(input);
+        self.range = ::std::option::Option::Some(input);
         self
     }
     /// <p>The arc axis range of a <code>GaugeChartVisual</code>.</p>
     pub fn set_range(
         mut self,
-        input: std::option::Option<crate::types::ArcAxisDisplayRange>,
+        input: ::std::option::Option<crate::types::ArcAxisDisplayRange>,
     ) -> Self {
         self.range = input;
         self
     }
     /// <p>The reserved range of the arc axis.</p>
     pub fn reserve_range(mut self, input: i32) -> Self {
-        self.reserve_range = Some(input);
+        self.reserve_range = ::std::option::Option::Some(input);
         self
     }
     /// <p>The reserved range of the arc axis.</p>
-    pub fn set_reserve_range(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_reserve_range(mut self, input: ::std::option::Option<i32>) -> Self {
         self.reserve_range = input;
         self
     }

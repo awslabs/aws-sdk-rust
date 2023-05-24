@@ -2,34 +2,34 @@
 
 /// <p>A complex type containing the response information for the request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListGeoLocationsOutput {
     /// <p>A complex type that contains one <code>GeoLocationDetails</code> element for each location that Amazon Route 53 supports for geolocation.</p>
     #[doc(hidden)]
     pub geo_location_details_list:
-        std::option::Option<std::vec::Vec<crate::types::GeoLocationDetails>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::GeoLocationDetails>>,
     /// <p>A value that indicates whether more locations remain to be listed after the last location in this response. If so, the value of <code>IsTruncated</code> is <code>true</code>. To get more values, submit another request and include the values of <code>NextContinentCode</code>, <code>NextCountryCode</code>, and <code>NextSubdivisionCode</code> in the <code>startcontinentcode</code>, <code>startcountrycode</code>, and <code>startsubdivisioncode</code>, as applicable.</p>
     #[doc(hidden)]
     pub is_truncated: bool,
     /// <p>If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations. Enter the value of <code>NextContinentCode</code> in the <code>startcontinentcode</code> parameter in another <code>ListGeoLocations</code> request.</p>
     #[doc(hidden)]
-    pub next_continent_code: std::option::Option<std::string::String>,
+    pub next_continent_code: ::std::option::Option<::std::string::String>,
     /// <p>If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations. Enter the value of <code>NextCountryCode</code> in the <code>startcountrycode</code> parameter in another <code>ListGeoLocations</code> request.</p>
     #[doc(hidden)]
-    pub next_country_code: std::option::Option<std::string::String>,
+    pub next_country_code: ::std::option::Option<::std::string::String>,
     /// <p>If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations. Enter the value of <code>NextSubdivisionCode</code> in the <code>startsubdivisioncode</code> parameter in another <code>ListGeoLocations</code> request.</p>
     #[doc(hidden)]
-    pub next_subdivision_code: std::option::Option<std::string::String>,
+    pub next_subdivision_code: ::std::option::Option<::std::string::String>,
     /// <p>The value that you specified for <code>MaxItems</code> in the request.</p>
     #[doc(hidden)]
-    pub max_items: std::option::Option<i32>,
+    pub max_items: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
 impl ListGeoLocationsOutput {
     /// <p>A complex type that contains one <code>GeoLocationDetails</code> element for each location that Amazon Route 53 supports for geolocation.</p>
     pub fn geo_location_details_list(
         &self,
-    ) -> std::option::Option<&[crate::types::GeoLocationDetails]> {
+    ) -> ::std::option::Option<&[crate::types::GeoLocationDetails]> {
         self.geo_location_details_list.as_deref()
     }
     /// <p>A value that indicates whether more locations remain to be listed after the last location in this response. If so, the value of <code>IsTruncated</code> is <code>true</code>. To get more values, submit another request and include the values of <code>NextContinentCode</code>, <code>NextCountryCode</code>, and <code>NextSubdivisionCode</code> in the <code>startcontinentcode</code>, <code>startcountrycode</code>, and <code>startsubdivisioncode</code>, as applicable.</p>
@@ -37,23 +37,23 @@ impl ListGeoLocationsOutput {
         self.is_truncated
     }
     /// <p>If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations. Enter the value of <code>NextContinentCode</code> in the <code>startcontinentcode</code> parameter in another <code>ListGeoLocations</code> request.</p>
-    pub fn next_continent_code(&self) -> std::option::Option<&str> {
+    pub fn next_continent_code(&self) -> ::std::option::Option<&str> {
         self.next_continent_code.as_deref()
     }
     /// <p>If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations. Enter the value of <code>NextCountryCode</code> in the <code>startcountrycode</code> parameter in another <code>ListGeoLocations</code> request.</p>
-    pub fn next_country_code(&self) -> std::option::Option<&str> {
+    pub fn next_country_code(&self) -> ::std::option::Option<&str> {
         self.next_country_code.as_deref()
     }
     /// <p>If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations. Enter the value of <code>NextSubdivisionCode</code> in the <code>startsubdivisioncode</code> parameter in another <code>ListGeoLocations</code> request.</p>
-    pub fn next_subdivision_code(&self) -> std::option::Option<&str> {
+    pub fn next_subdivision_code(&self) -> ::std::option::Option<&str> {
         self.next_subdivision_code.as_deref()
     }
     /// <p>The value that you specified for <code>MaxItems</code> in the request.</p>
-    pub fn max_items(&self) -> std::option::Option<i32> {
+    pub fn max_items(&self) -> ::std::option::Option<i32> {
         self.max_items
     }
 }
-impl aws_http::request_id::RequestId for ListGeoLocationsOutput {
+impl ::aws_http::request_id::RequestId for ListGeoLocationsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -68,15 +68,17 @@ impl ListGeoLocationsOutput {
 
 /// A builder for [`ListGeoLocationsOutput`](crate::operation::list_geo_locations::ListGeoLocationsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListGeoLocationsOutputBuilder {
     pub(crate) geo_location_details_list:
-        std::option::Option<std::vec::Vec<crate::types::GeoLocationDetails>>,
-    pub(crate) is_truncated: std::option::Option<bool>,
-    pub(crate) next_continent_code: std::option::Option<std::string::String>,
-    pub(crate) next_country_code: std::option::Option<std::string::String>,
-    pub(crate) next_subdivision_code: std::option::Option<std::string::String>,
-    pub(crate) max_items: std::option::Option<i32>,
+        ::std::option::Option<::std::vec::Vec<crate::types::GeoLocationDetails>>,
+    pub(crate) is_truncated: ::std::option::Option<bool>,
+    pub(crate) next_continent_code: ::std::option::Option<::std::string::String>,
+    pub(crate) next_country_code: ::std::option::Option<::std::string::String>,
+    pub(crate) next_subdivision_code: ::std::option::Option<::std::string::String>,
+    pub(crate) max_items: ::std::option::Option<i32>,
     _request_id: Option<String>,
 }
 impl ListGeoLocationsOutputBuilder {
@@ -88,73 +90,82 @@ impl ListGeoLocationsOutputBuilder {
     pub fn geo_location_details_list(mut self, input: crate::types::GeoLocationDetails) -> Self {
         let mut v = self.geo_location_details_list.unwrap_or_default();
         v.push(input);
-        self.geo_location_details_list = Some(v);
+        self.geo_location_details_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>A complex type that contains one <code>GeoLocationDetails</code> element for each location that Amazon Route 53 supports for geolocation.</p>
     pub fn set_geo_location_details_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::GeoLocationDetails>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::GeoLocationDetails>>,
     ) -> Self {
         self.geo_location_details_list = input;
         self
     }
     /// <p>A value that indicates whether more locations remain to be listed after the last location in this response. If so, the value of <code>IsTruncated</code> is <code>true</code>. To get more values, submit another request and include the values of <code>NextContinentCode</code>, <code>NextCountryCode</code>, and <code>NextSubdivisionCode</code> in the <code>startcontinentcode</code>, <code>startcountrycode</code>, and <code>startsubdivisioncode</code>, as applicable.</p>
     pub fn is_truncated(mut self, input: bool) -> Self {
-        self.is_truncated = Some(input);
+        self.is_truncated = ::std::option::Option::Some(input);
         self
     }
     /// <p>A value that indicates whether more locations remain to be listed after the last location in this response. If so, the value of <code>IsTruncated</code> is <code>true</code>. To get more values, submit another request and include the values of <code>NextContinentCode</code>, <code>NextCountryCode</code>, and <code>NextSubdivisionCode</code> in the <code>startcontinentcode</code>, <code>startcountrycode</code>, and <code>startsubdivisioncode</code>, as applicable.</p>
-    pub fn set_is_truncated(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_truncated(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_truncated = input;
         self
     }
     /// <p>If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations. Enter the value of <code>NextContinentCode</code> in the <code>startcontinentcode</code> parameter in another <code>ListGeoLocations</code> request.</p>
-    pub fn next_continent_code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_continent_code = Some(input.into());
+    pub fn next_continent_code(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.next_continent_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations. Enter the value of <code>NextContinentCode</code> in the <code>startcontinentcode</code> parameter in another <code>ListGeoLocations</code> request.</p>
     pub fn set_next_continent_code(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.next_continent_code = input;
         self
     }
     /// <p>If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations. Enter the value of <code>NextCountryCode</code> in the <code>startcountrycode</code> parameter in another <code>ListGeoLocations</code> request.</p>
-    pub fn next_country_code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_country_code = Some(input.into());
+    pub fn next_country_code(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.next_country_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations. Enter the value of <code>NextCountryCode</code> in the <code>startcountrycode</code> parameter in another <code>ListGeoLocations</code> request.</p>
     pub fn set_next_country_code(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.next_country_code = input;
         self
     }
     /// <p>If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations. Enter the value of <code>NextSubdivisionCode</code> in the <code>startsubdivisioncode</code> parameter in another <code>ListGeoLocations</code> request.</p>
-    pub fn next_subdivision_code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_subdivision_code = Some(input.into());
+    pub fn next_subdivision_code(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.next_subdivision_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>If <code>IsTruncated</code> is <code>true</code>, you can make a follow-up request to display more locations. Enter the value of <code>NextSubdivisionCode</code> in the <code>startsubdivisioncode</code> parameter in another <code>ListGeoLocations</code> request.</p>
     pub fn set_next_subdivision_code(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.next_subdivision_code = input;
         self
     }
     /// <p>The value that you specified for <code>MaxItems</code> in the request.</p>
     pub fn max_items(mut self, input: i32) -> Self {
-        self.max_items = Some(input);
+        self.max_items = ::std::option::Option::Some(input);
         self
     }
     /// <p>The value that you specified for <code>MaxItems</code> in the request.</p>
-    pub fn set_max_items(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_items(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_items = input;
         self
     }

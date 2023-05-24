@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`PutExternalEvaluation`](crate::operation::put_external_evaluation::builders::PutExternalEvaluationFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`config_rule_name(impl Into<String>)`](crate::operation::put_external_evaluation::builders::PutExternalEvaluationFluentBuilder::config_rule_name) / [`set_config_rule_name(Option<String>)`](crate::operation::put_external_evaluation::builders::PutExternalEvaluationFluentBuilder::set_config_rule_name): <p>The name of the Config rule.</p>
+    ///   - [`config_rule_name(impl ::std::convert::Into<String>)`](crate::operation::put_external_evaluation::builders::PutExternalEvaluationFluentBuilder::config_rule_name) / [`set_config_rule_name(Option<String>)`](crate::operation::put_external_evaluation::builders::PutExternalEvaluationFluentBuilder::set_config_rule_name): <p>The name of the Config rule.</p>
     ///   - [`external_evaluation(ExternalEvaluation)`](crate::operation::put_external_evaluation::builders::PutExternalEvaluationFluentBuilder::external_evaluation) / [`set_external_evaluation(Option<ExternalEvaluation>)`](crate::operation::put_external_evaluation::builders::PutExternalEvaluationFluentBuilder::set_external_evaluation): <p>An <code>ExternalEvaluation</code> object that provides details about compliance.</p>
     /// - On success, responds with [`PutExternalEvaluationOutput`](crate::operation::put_external_evaluation::PutExternalEvaluationOutput)
     /// - On failure, responds with [`SdkError<PutExternalEvaluationError>`](crate::operation::put_external_evaluation::PutExternalEvaluationError)

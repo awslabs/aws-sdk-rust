@@ -2,7 +2,7 @@
 
 /// <p>Contains information about the reputation settings for a configuration set.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReputationOptions {
     /// <p>Describes whether email sending is enabled or disabled for the configuration set. If the value is <code>true</code>, then Amazon SES will send emails that use the configuration set. If the value is <code>false</code>, Amazon SES will not send emails that use the configuration set. The default value is <code>true</code>. You can change this setting using <code>UpdateConfigurationSetSendingEnabled</code>.</p>
     #[doc(hidden)]
@@ -15,7 +15,7 @@ pub struct ReputationOptions {
     /// <p>When you disable email sending for a configuration set using <code>UpdateConfigurationSetSendingEnabled</code> and later re-enable it, the reputation metrics for the configuration set (but not for the entire Amazon SES account) are reset.</p>
     /// <p>If email sending for the configuration set has never been disabled and later re-enabled, the value of this attribute is <code>null</code>.</p>
     #[doc(hidden)]
-    pub last_fresh_start: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_fresh_start: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ReputationOptions {
     /// <p>Describes whether email sending is enabled or disabled for the configuration set. If the value is <code>true</code>, then Amazon SES will send emails that use the configuration set. If the value is <code>false</code>, Amazon SES will not send emails that use the configuration set. The default value is <code>true</code>. You can change this setting using <code>UpdateConfigurationSetSendingEnabled</code>.</p>
@@ -30,7 +30,7 @@ impl ReputationOptions {
     /// <p>The date and time at which the reputation metrics for the configuration set were last reset. Resetting these metrics is known as a <i>fresh start</i>.</p>
     /// <p>When you disable email sending for a configuration set using <code>UpdateConfigurationSetSendingEnabled</code> and later re-enable it, the reputation metrics for the configuration set (but not for the entire Amazon SES account) are reset.</p>
     /// <p>If email sending for the configuration set has never been disabled and later re-enabled, the value of this attribute is <code>null</code>.</p>
-    pub fn last_fresh_start(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_fresh_start(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_fresh_start.as_ref()
     }
 }
@@ -43,40 +43,42 @@ impl ReputationOptions {
 
 /// A builder for [`ReputationOptions`](crate::types::ReputationOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ReputationOptionsBuilder {
-    pub(crate) sending_enabled: std::option::Option<bool>,
-    pub(crate) reputation_metrics_enabled: std::option::Option<bool>,
-    pub(crate) last_fresh_start: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) sending_enabled: ::std::option::Option<bool>,
+    pub(crate) reputation_metrics_enabled: ::std::option::Option<bool>,
+    pub(crate) last_fresh_start: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ReputationOptionsBuilder {
     /// <p>Describes whether email sending is enabled or disabled for the configuration set. If the value is <code>true</code>, then Amazon SES will send emails that use the configuration set. If the value is <code>false</code>, Amazon SES will not send emails that use the configuration set. The default value is <code>true</code>. You can change this setting using <code>UpdateConfigurationSetSendingEnabled</code>.</p>
     pub fn sending_enabled(mut self, input: bool) -> Self {
-        self.sending_enabled = Some(input);
+        self.sending_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes whether email sending is enabled or disabled for the configuration set. If the value is <code>true</code>, then Amazon SES will send emails that use the configuration set. If the value is <code>false</code>, Amazon SES will not send emails that use the configuration set. The default value is <code>true</code>. You can change this setting using <code>UpdateConfigurationSetSendingEnabled</code>.</p>
-    pub fn set_sending_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_sending_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.sending_enabled = input;
         self
     }
     /// <p>Describes whether or not Amazon SES publishes reputation metrics for the configuration set, such as bounce and complaint rates, to Amazon CloudWatch.</p>
     /// <p>If the value is <code>true</code>, reputation metrics are published. If the value is <code>false</code>, reputation metrics are not published. The default value is <code>false</code>.</p>
     pub fn reputation_metrics_enabled(mut self, input: bool) -> Self {
-        self.reputation_metrics_enabled = Some(input);
+        self.reputation_metrics_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes whether or not Amazon SES publishes reputation metrics for the configuration set, such as bounce and complaint rates, to Amazon CloudWatch.</p>
     /// <p>If the value is <code>true</code>, reputation metrics are published. If the value is <code>false</code>, reputation metrics are not published. The default value is <code>false</code>.</p>
-    pub fn set_reputation_metrics_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_reputation_metrics_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.reputation_metrics_enabled = input;
         self
     }
     /// <p>The date and time at which the reputation metrics for the configuration set were last reset. Resetting these metrics is known as a <i>fresh start</i>.</p>
     /// <p>When you disable email sending for a configuration set using <code>UpdateConfigurationSetSendingEnabled</code> and later re-enable it, the reputation metrics for the configuration set (but not for the entire Amazon SES account) are reset.</p>
     /// <p>If email sending for the configuration set has never been disabled and later re-enabled, the value of this attribute is <code>null</code>.</p>
-    pub fn last_fresh_start(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_fresh_start = Some(input);
+    pub fn last_fresh_start(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_fresh_start = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date and time at which the reputation metrics for the configuration set were last reset. Resetting these metrics is known as a <i>fresh start</i>.</p>
@@ -84,7 +86,7 @@ impl ReputationOptionsBuilder {
     /// <p>If email sending for the configuration set has never been disabled and later re-enabled, the value of this attribute is <code>null</code>.</p>
     pub fn set_last_fresh_start(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_fresh_start = input;
         self

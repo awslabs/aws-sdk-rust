@@ -2,7 +2,7 @@
 
 /// <p> The minimum and maximum amount of memory, in MiB, for an Amazon EC2 instance. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsEc2LaunchTemplateDataInstanceRequirementsMemoryMiBDetails {
     /// <p> The maximum amount of memory, in MiB. </p>
     #[doc(hidden)]
@@ -32,29 +32,31 @@ impl AwsEc2LaunchTemplateDataInstanceRequirementsMemoryMiBDetails {
 
 /// A builder for [`AwsEc2LaunchTemplateDataInstanceRequirementsMemoryMiBDetails`](crate::types::AwsEc2LaunchTemplateDataInstanceRequirementsMemoryMiBDetails).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsEc2LaunchTemplateDataInstanceRequirementsMemoryMiBDetailsBuilder {
-    pub(crate) max: std::option::Option<i32>,
-    pub(crate) min: std::option::Option<i32>,
+    pub(crate) max: ::std::option::Option<i32>,
+    pub(crate) min: ::std::option::Option<i32>,
 }
 impl AwsEc2LaunchTemplateDataInstanceRequirementsMemoryMiBDetailsBuilder {
     /// <p> The maximum amount of memory, in MiB. </p>
     pub fn max(mut self, input: i32) -> Self {
-        self.max = Some(input);
+        self.max = ::std::option::Option::Some(input);
         self
     }
     /// <p> The maximum amount of memory, in MiB. </p>
-    pub fn set_max(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max = input;
         self
     }
     /// <p> The minimum amount of memory, in MiB. </p>
     pub fn min(mut self, input: i32) -> Self {
-        self.min = Some(input);
+        self.min = ::std::option::Option::Some(input);
         self
     }
     /// <p> The minimum amount of memory, in MiB. </p>
-    pub fn set_min(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_min(mut self, input: ::std::option::Option<i32>) -> Self {
         self.min = input;
         self
     }

@@ -7,22 +7,22 @@
 /// <li> <p> <code>FAILED</code> indicates that the previous <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ClaimedPhoneNumber.html">ClaimedPhoneNumber</a> or <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_UpdatePhoneNumber.html">UpdatePhoneNumber</a> operation has failed. It will include a message indicating the failure reason. A common reason for a failure may be that the <code>TargetArn</code> value you are claiming or updating a phone number to has reached its limit of total claimed numbers. If you received a <code>FAILED</code> status from a <code>ClaimPhoneNumber</code> API call, you have one day to retry claiming the phone number before the number is released back to the inventory for other customers to claim.</p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PhoneNumberStatus {
     /// <p>The status.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::PhoneNumberWorkflowStatus>,
+    pub status: ::std::option::Option<crate::types::PhoneNumberWorkflowStatus>,
     /// <p>The status message.</p>
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
 }
 impl PhoneNumberStatus {
     /// <p>The status.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::PhoneNumberWorkflowStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::PhoneNumberWorkflowStatus> {
         self.status.as_ref()
     }
     /// <p>The status message.</p>
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
@@ -35,32 +35,34 @@ impl PhoneNumberStatus {
 
 /// A builder for [`PhoneNumberStatus`](crate::types::PhoneNumberStatus).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PhoneNumberStatusBuilder {
-    pub(crate) status: std::option::Option<crate::types::PhoneNumberWorkflowStatus>,
-    pub(crate) message: std::option::Option<std::string::String>,
+    pub(crate) status: ::std::option::Option<crate::types::PhoneNumberWorkflowStatus>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
 }
 impl PhoneNumberStatusBuilder {
     /// <p>The status.</p>
     pub fn status(mut self, input: crate::types::PhoneNumberWorkflowStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status.</p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::PhoneNumberWorkflowStatus>,
+        input: ::std::option::Option<crate::types::PhoneNumberWorkflowStatus>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p>The status message.</p>
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status message.</p>
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }

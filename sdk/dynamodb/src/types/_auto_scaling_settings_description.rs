@@ -2,46 +2,46 @@
 
 /// <p>Represents the auto scaling settings for a global table or global secondary index.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoScalingSettingsDescription {
     /// <p>The minimum capacity units that a global table or global secondary index should be scaled down to.</p>
     #[doc(hidden)]
-    pub minimum_units: std::option::Option<i64>,
+    pub minimum_units: ::std::option::Option<i64>,
     /// <p>The maximum capacity units that a global table or global secondary index should be scaled up to.</p>
     #[doc(hidden)]
-    pub maximum_units: std::option::Option<i64>,
+    pub maximum_units: ::std::option::Option<i64>,
     /// <p>Disabled auto scaling for this global table or global secondary index.</p>
     #[doc(hidden)]
-    pub auto_scaling_disabled: std::option::Option<bool>,
+    pub auto_scaling_disabled: ::std::option::Option<bool>,
     /// <p>Role ARN used for configuring the auto scaling policy.</p>
     #[doc(hidden)]
-    pub auto_scaling_role_arn: std::option::Option<std::string::String>,
+    pub auto_scaling_role_arn: ::std::option::Option<::std::string::String>,
     /// <p>Information about the scaling policies.</p>
     #[doc(hidden)]
     pub scaling_policies:
-        std::option::Option<std::vec::Vec<crate::types::AutoScalingPolicyDescription>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::AutoScalingPolicyDescription>>,
 }
 impl AutoScalingSettingsDescription {
     /// <p>The minimum capacity units that a global table or global secondary index should be scaled down to.</p>
-    pub fn minimum_units(&self) -> std::option::Option<i64> {
+    pub fn minimum_units(&self) -> ::std::option::Option<i64> {
         self.minimum_units
     }
     /// <p>The maximum capacity units that a global table or global secondary index should be scaled up to.</p>
-    pub fn maximum_units(&self) -> std::option::Option<i64> {
+    pub fn maximum_units(&self) -> ::std::option::Option<i64> {
         self.maximum_units
     }
     /// <p>Disabled auto scaling for this global table or global secondary index.</p>
-    pub fn auto_scaling_disabled(&self) -> std::option::Option<bool> {
+    pub fn auto_scaling_disabled(&self) -> ::std::option::Option<bool> {
         self.auto_scaling_disabled
     }
     /// <p>Role ARN used for configuring the auto scaling policy.</p>
-    pub fn auto_scaling_role_arn(&self) -> std::option::Option<&str> {
+    pub fn auto_scaling_role_arn(&self) -> ::std::option::Option<&str> {
         self.auto_scaling_role_arn.as_deref()
     }
     /// <p>Information about the scaling policies.</p>
     pub fn scaling_policies(
         &self,
-    ) -> std::option::Option<&[crate::types::AutoScalingPolicyDescription]> {
+    ) -> ::std::option::Option<&[crate::types::AutoScalingPolicyDescription]> {
         self.scaling_policies.as_deref()
     }
 }
@@ -54,55 +54,60 @@ impl AutoScalingSettingsDescription {
 
 /// A builder for [`AutoScalingSettingsDescription`](crate::types::AutoScalingSettingsDescription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AutoScalingSettingsDescriptionBuilder {
-    pub(crate) minimum_units: std::option::Option<i64>,
-    pub(crate) maximum_units: std::option::Option<i64>,
-    pub(crate) auto_scaling_disabled: std::option::Option<bool>,
-    pub(crate) auto_scaling_role_arn: std::option::Option<std::string::String>,
+    pub(crate) minimum_units: ::std::option::Option<i64>,
+    pub(crate) maximum_units: ::std::option::Option<i64>,
+    pub(crate) auto_scaling_disabled: ::std::option::Option<bool>,
+    pub(crate) auto_scaling_role_arn: ::std::option::Option<::std::string::String>,
     pub(crate) scaling_policies:
-        std::option::Option<std::vec::Vec<crate::types::AutoScalingPolicyDescription>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::AutoScalingPolicyDescription>>,
 }
 impl AutoScalingSettingsDescriptionBuilder {
     /// <p>The minimum capacity units that a global table or global secondary index should be scaled down to.</p>
     pub fn minimum_units(mut self, input: i64) -> Self {
-        self.minimum_units = Some(input);
+        self.minimum_units = ::std::option::Option::Some(input);
         self
     }
     /// <p>The minimum capacity units that a global table or global secondary index should be scaled down to.</p>
-    pub fn set_minimum_units(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_minimum_units(mut self, input: ::std::option::Option<i64>) -> Self {
         self.minimum_units = input;
         self
     }
     /// <p>The maximum capacity units that a global table or global secondary index should be scaled up to.</p>
     pub fn maximum_units(mut self, input: i64) -> Self {
-        self.maximum_units = Some(input);
+        self.maximum_units = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum capacity units that a global table or global secondary index should be scaled up to.</p>
-    pub fn set_maximum_units(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_maximum_units(mut self, input: ::std::option::Option<i64>) -> Self {
         self.maximum_units = input;
         self
     }
     /// <p>Disabled auto scaling for this global table or global secondary index.</p>
     pub fn auto_scaling_disabled(mut self, input: bool) -> Self {
-        self.auto_scaling_disabled = Some(input);
+        self.auto_scaling_disabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Disabled auto scaling for this global table or global secondary index.</p>
-    pub fn set_auto_scaling_disabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_auto_scaling_disabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_scaling_disabled = input;
         self
     }
     /// <p>Role ARN used for configuring the auto scaling policy.</p>
-    pub fn auto_scaling_role_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.auto_scaling_role_arn = Some(input.into());
+    pub fn auto_scaling_role_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.auto_scaling_role_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Role ARN used for configuring the auto scaling policy.</p>
     pub fn set_auto_scaling_role_arn(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.auto_scaling_role_arn = input;
         self
@@ -115,13 +120,13 @@ impl AutoScalingSettingsDescriptionBuilder {
     pub fn scaling_policies(mut self, input: crate::types::AutoScalingPolicyDescription) -> Self {
         let mut v = self.scaling_policies.unwrap_or_default();
         v.push(input);
-        self.scaling_policies = Some(v);
+        self.scaling_policies = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about the scaling policies.</p>
     pub fn set_scaling_policies(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AutoScalingPolicyDescription>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AutoScalingPolicyDescription>>,
     ) -> Self {
         self.scaling_policies = input;
         self

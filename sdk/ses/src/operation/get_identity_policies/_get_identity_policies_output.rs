@@ -2,24 +2,26 @@
 
 /// <p>Represents the requested sending authorization policies.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetIdentityPoliciesOutput {
     /// <p>A map of policy names to policies.</p>
     #[doc(hidden)]
-    pub policies:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub policies: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     _request_id: Option<String>,
 }
 impl GetIdentityPoliciesOutput {
     /// <p>A map of policy names to policies.</p>
     pub fn policies(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.policies.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for GetIdentityPoliciesOutput {
+impl ::aws_http::request_id::RequestId for GetIdentityPoliciesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -35,10 +37,13 @@ impl GetIdentityPoliciesOutput {
 
 /// A builder for [`GetIdentityPoliciesOutput`](crate::operation::get_identity_policies::GetIdentityPoliciesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetIdentityPoliciesOutputBuilder {
-    pub(crate) policies:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub(crate) policies: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     _request_id: Option<String>,
 }
 impl GetIdentityPoliciesOutputBuilder {
@@ -49,19 +54,19 @@ impl GetIdentityPoliciesOutputBuilder {
     /// <p>A map of policy names to policies.</p>
     pub fn policies(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.policies.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.policies = Some(hash_map);
+        self.policies = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>A map of policy names to policies.</p>
     pub fn set_policies(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.policies = input;

@@ -37,13 +37,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum MetricNamespace {
     #[allow(missing_docs)] // documentation missing in model
@@ -51,7 +51,7 @@ pub enum MetricNamespace {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for MetricNamespace {
+impl ::std::convert::From<&str> for MetricNamespace {
     fn from(s: &str) -> Self {
         match s {
             "VDM" => MetricNamespace::Vdm,
@@ -61,11 +61,11 @@ impl std::convert::From<&str> for MetricNamespace {
         }
     }
 }
-impl std::str::FromStr for MetricNamespace {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for MetricNamespace {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MetricNamespace::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(MetricNamespace::from(s))
     }
 }
 impl MetricNamespace {
@@ -81,7 +81,7 @@ impl MetricNamespace {
         &["VDM"]
     }
 }
-impl AsRef<str> for MetricNamespace {
+impl ::std::convert::AsRef<str> for MetricNamespace {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

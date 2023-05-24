@@ -39,13 +39,13 @@
 /// When you set Noise reducer (noiseReducer) to Temporal (TEMPORAL), the bandwidth and sharpness of your output is reduced. You can optionally use Post temporal sharpening (postTemporalSharpening) to apply sharpening to the edges of your output. Note that Post temporal sharpening will also make the bandwidth reduction from the Noise reducer smaller. The default behavior, Auto (AUTO), allows the transcoder to determine whether to apply sharpening, depending on your input type and quality. When you set Post temporal sharpening to Enabled (ENABLED), specify how much sharpening is applied using Post temporal sharpening strength (postTemporalSharpeningStrength). Set Post temporal sharpening to Disabled (DISABLED) to not apply sharpening.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum NoiseFilterPostTemporalSharpening {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum NoiseFilterPostTemporalSharpening {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for NoiseFilterPostTemporalSharpening {
+impl ::std::convert::From<&str> for NoiseFilterPostTemporalSharpening {
     fn from(s: &str) -> Self {
         match s {
             "AUTO" => NoiseFilterPostTemporalSharpening::Auto,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for NoiseFilterPostTemporalSharpening {
         }
     }
 }
-impl std::str::FromStr for NoiseFilterPostTemporalSharpening {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for NoiseFilterPostTemporalSharpening {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(NoiseFilterPostTemporalSharpening::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(NoiseFilterPostTemporalSharpening::from(s))
     }
 }
 impl NoiseFilterPostTemporalSharpening {
@@ -91,7 +91,7 @@ impl NoiseFilterPostTemporalSharpening {
         &["AUTO", "DISABLED", "ENABLED"]
     }
 }
-impl AsRef<str> for NoiseFilterPostTemporalSharpening {
+impl ::std::convert::AsRef<str> for NoiseFilterPostTemporalSharpening {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

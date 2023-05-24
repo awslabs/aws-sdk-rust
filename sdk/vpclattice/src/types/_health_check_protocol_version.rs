@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum HealthCheckProtocolVersion {
     /// Indicates use of HTTP/1.1 to send requests to target
@@ -54,7 +54,7 @@ pub enum HealthCheckProtocolVersion {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for HealthCheckProtocolVersion {
+impl ::std::convert::From<&str> for HealthCheckProtocolVersion {
     fn from(s: &str) -> Self {
         match s {
             "HTTP1" => HealthCheckProtocolVersion::Http1,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for HealthCheckProtocolVersion {
         }
     }
 }
-impl std::str::FromStr for HealthCheckProtocolVersion {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for HealthCheckProtocolVersion {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(HealthCheckProtocolVersion::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(HealthCheckProtocolVersion::from(s))
     }
 }
 impl HealthCheckProtocolVersion {
@@ -86,7 +86,7 @@ impl HealthCheckProtocolVersion {
         &["HTTP1", "HTTP2"]
     }
 }
-impl AsRef<str> for HealthCheckProtocolVersion {
+impl ::std::convert::AsRef<str> for HealthCheckProtocolVersion {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

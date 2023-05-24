@@ -2,69 +2,69 @@
 
 /// <p>The request issuer does not have permission to access this resource or perform this operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccessDeniedException {
     #[allow(missing_docs)] // documentation missing in model
     #[doc(hidden)]
-    pub message: std::option::Option<std::string::String>,
+    pub message: ::std::option::Option<::std::string::String>,
     /// <p>The SDK default error code associated with the access denied exception.</p>
     #[doc(hidden)]
-    pub error_code: std::option::Option<crate::types::ErrorCode>,
+    pub error_code: ::std::option::Option<crate::types::ErrorCode>,
     /// <p>The SDK default explanation of why access was denied.</p>
     #[doc(hidden)]
-    pub error_code_reason: std::option::Option<std::string::String>,
+    pub error_code_reason: ::std::option::Option<::std::string::String>,
     /// <p>The error code associated with the access denied exception.</p>
     #[doc(hidden)]
-    pub sub_error_code: std::option::Option<crate::types::ErrorCode>,
+    pub sub_error_code: ::std::option::Option<crate::types::ErrorCode>,
     /// <p> An explanation of why access was denied.</p>
     #[doc(hidden)]
-    pub sub_error_code_reason: std::option::Option<std::string::String>,
-    pub(crate) meta: aws_smithy_types::error::ErrorMetadata,
+    pub sub_error_code_reason: ::std::option::Option<::std::string::String>,
+    pub(crate) meta: ::aws_smithy_types::error::ErrorMetadata,
 }
 impl AccessDeniedException {
     /// <p>The SDK default error code associated with the access denied exception.</p>
-    pub fn error_code(&self) -> std::option::Option<&crate::types::ErrorCode> {
+    pub fn error_code(&self) -> ::std::option::Option<&crate::types::ErrorCode> {
         self.error_code.as_ref()
     }
     /// <p>The SDK default explanation of why access was denied.</p>
-    pub fn error_code_reason(&self) -> std::option::Option<&str> {
+    pub fn error_code_reason(&self) -> ::std::option::Option<&str> {
         self.error_code_reason.as_deref()
     }
     /// <p>The error code associated with the access denied exception.</p>
-    pub fn sub_error_code(&self) -> std::option::Option<&crate::types::ErrorCode> {
+    pub fn sub_error_code(&self) -> ::std::option::Option<&crate::types::ErrorCode> {
         self.sub_error_code.as_ref()
     }
     /// <p> An explanation of why access was denied.</p>
-    pub fn sub_error_code_reason(&self) -> std::option::Option<&str> {
+    pub fn sub_error_code_reason(&self) -> ::std::option::Option<&str> {
         self.sub_error_code_reason.as_deref()
     }
 }
 impl AccessDeniedException {
     /// Returns the error message.
-    pub fn message(&self) -> std::option::Option<&str> {
+    pub fn message(&self) -> ::std::option::Option<&str> {
         self.message.as_deref()
     }
 }
-impl std::fmt::Display for AccessDeniedException {
+impl ::std::fmt::Display for AccessDeniedException {
     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
-        write!(f, "AccessDeniedException")?;
-        if let Some(inner_1) = &self.message {
+        ::std::write!(f, "AccessDeniedException")?;
+        if let ::std::option::Option::Some(inner_1) = &self.message {
             {
-                write!(f, ": {}", inner_1)?;
+                ::std::write!(f, ": {}", inner_1)?;
             }
         }
         Ok(())
     }
 }
-impl std::error::Error for AccessDeniedException {}
-impl aws_http::request_id::RequestId for crate::types::error::AccessDeniedException {
+impl ::std::error::Error for AccessDeniedException {}
+impl ::aws_http::request_id::RequestId for crate::types::error::AccessDeniedException {
     fn request_id(&self) -> Option<&str> {
-        use aws_smithy_types::error::metadata::ProvideErrorMetadata;
+        use ::aws_smithy_types::error::metadata::ProvideErrorMetadata;
         self.meta().request_id()
     }
 }
-impl aws_smithy_types::error::metadata::ProvideErrorMetadata for AccessDeniedException {
-    fn meta(&self) -> &aws_smithy_types::error::ErrorMetadata {
+impl ::aws_smithy_types::error::metadata::ProvideErrorMetadata for AccessDeniedException {
+    fn meta(&self) -> &::aws_smithy_types::error::ErrorMetadata {
         &self.meta
     }
 }
@@ -77,77 +77,85 @@ impl AccessDeniedException {
 
 /// A builder for [`AccessDeniedException`](crate::types::error::AccessDeniedException).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AccessDeniedExceptionBuilder {
-    pub(crate) message: std::option::Option<std::string::String>,
-    pub(crate) error_code: std::option::Option<crate::types::ErrorCode>,
-    pub(crate) error_code_reason: std::option::Option<std::string::String>,
-    pub(crate) sub_error_code: std::option::Option<crate::types::ErrorCode>,
-    pub(crate) sub_error_code_reason: std::option::Option<std::string::String>,
-    meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+    pub(crate) message: ::std::option::Option<::std::string::String>,
+    pub(crate) error_code: ::std::option::Option<crate::types::ErrorCode>,
+    pub(crate) error_code_reason: ::std::option::Option<::std::string::String>,
+    pub(crate) sub_error_code: ::std::option::Option<crate::types::ErrorCode>,
+    pub(crate) sub_error_code_reason: ::std::option::Option<::std::string::String>,
+    meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
 }
 impl AccessDeniedExceptionBuilder {
     #[allow(missing_docs)] // documentation missing in model
-    pub fn message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.message = Some(input.into());
+    pub fn message(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.message = ::std::option::Option::Some(input.into());
         self
     }
     #[allow(missing_docs)] // documentation missing in model
-    pub fn set_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_message(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.message = input;
         self
     }
     /// <p>The SDK default error code associated with the access denied exception.</p>
     pub fn error_code(mut self, input: crate::types::ErrorCode) -> Self {
-        self.error_code = Some(input);
+        self.error_code = ::std::option::Option::Some(input);
         self
     }
     /// <p>The SDK default error code associated with the access denied exception.</p>
-    pub fn set_error_code(mut self, input: std::option::Option<crate::types::ErrorCode>) -> Self {
+    pub fn set_error_code(mut self, input: ::std::option::Option<crate::types::ErrorCode>) -> Self {
         self.error_code = input;
         self
     }
     /// <p>The SDK default explanation of why access was denied.</p>
-    pub fn error_code_reason(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error_code_reason = Some(input.into());
+    pub fn error_code_reason(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.error_code_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The SDK default explanation of why access was denied.</p>
     pub fn set_error_code_reason(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.error_code_reason = input;
         self
     }
     /// <p>The error code associated with the access denied exception.</p>
     pub fn sub_error_code(mut self, input: crate::types::ErrorCode) -> Self {
-        self.sub_error_code = Some(input);
+        self.sub_error_code = ::std::option::Option::Some(input);
         self
     }
     /// <p>The error code associated with the access denied exception.</p>
     pub fn set_sub_error_code(
         mut self,
-        input: std::option::Option<crate::types::ErrorCode>,
+        input: ::std::option::Option<crate::types::ErrorCode>,
     ) -> Self {
         self.sub_error_code = input;
         self
     }
     /// <p> An explanation of why access was denied.</p>
-    pub fn sub_error_code_reason(mut self, input: impl Into<std::string::String>) -> Self {
-        self.sub_error_code_reason = Some(input.into());
+    pub fn sub_error_code_reason(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.sub_error_code_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> An explanation of why access was denied.</p>
     pub fn set_sub_error_code_reason(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.sub_error_code_reason = input;
         self
     }
     /// Sets error metadata
-    pub fn meta(mut self, meta: aws_smithy_types::error::ErrorMetadata) -> Self {
+    pub fn meta(mut self, meta: ::aws_smithy_types::error::ErrorMetadata) -> Self {
         self.meta = Some(meta);
         self
     }
@@ -155,7 +163,7 @@ impl AccessDeniedExceptionBuilder {
     /// Sets error metadata
     pub fn set_meta(
         &mut self,
-        meta: std::option::Option<aws_smithy_types::error::ErrorMetadata>,
+        meta: std::option::Option<::aws_smithy_types::error::ErrorMetadata>,
     ) -> &mut Self {
         self.meta = meta;
         self

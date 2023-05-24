@@ -48,13 +48,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum BridgeState {
     #[allow(missing_docs)] // documentation missing in model
@@ -84,7 +84,7 @@ pub enum BridgeState {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for BridgeState {
+impl ::std::convert::From<&str> for BridgeState {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => BridgeState::Active,
@@ -103,11 +103,11 @@ impl std::convert::From<&str> for BridgeState {
         }
     }
 }
-impl std::str::FromStr for BridgeState {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for BridgeState {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BridgeState::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(BridgeState::from(s))
     }
 }
 impl BridgeState {
@@ -147,7 +147,7 @@ impl BridgeState {
         ]
     }
 }
-impl AsRef<str> for BridgeState {
+impl ::std::convert::AsRef<str> for BridgeState {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

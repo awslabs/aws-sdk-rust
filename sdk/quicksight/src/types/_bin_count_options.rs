@@ -2,15 +2,15 @@
 
 /// <p>The options that determine the bin count of a histogram.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BinCountOptions {
     /// <p>The options that determine the bin count value.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<i32>,
+    pub value: ::std::option::Option<i32>,
 }
 impl BinCountOptions {
     /// <p>The options that determine the bin count value.</p>
-    pub fn value(&self) -> std::option::Option<i32> {
+    pub fn value(&self) -> ::std::option::Option<i32> {
         self.value
     }
 }
@@ -23,18 +23,20 @@ impl BinCountOptions {
 
 /// A builder for [`BinCountOptions`](crate::types::BinCountOptions).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BinCountOptionsBuilder {
-    pub(crate) value: std::option::Option<i32>,
+    pub(crate) value: ::std::option::Option<i32>,
 }
 impl BinCountOptionsBuilder {
     /// <p>The options that determine the bin count value.</p>
     pub fn value(mut self, input: i32) -> Self {
-        self.value = Some(input);
+        self.value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The options that determine the bin count value.</p>
-    pub fn set_value(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<i32>) -> Self {
         self.value = input;
         self
     }

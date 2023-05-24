@@ -2,7 +2,7 @@
 
 /// <p>A list of fields, comparators and value that you can use to filter the crawler runs for a specified crawler.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CrawlsFilter {
     /// <p>A key used to filter the crawler runs for a specified crawler. Valid values for each of the field names are:</p>
     /// <ul>
@@ -12,7 +12,7 @@ pub struct CrawlsFilter {
     /// <li> <p> <code>DPU_HOUR</code>: The number of data processing unit (DPU) hours used for the crawl.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub field_name: std::option::Option<crate::types::FieldName>,
+    pub field_name: ::std::option::Option<crate::types::FieldName>,
     /// <p>A defined comparator that operates on the value. The available operators are:</p>
     /// <ul>
     /// <li> <p> <code>GT</code>: Greater than.</p> </li>
@@ -23,10 +23,10 @@ pub struct CrawlsFilter {
     /// <li> <p> <code>NE</code>: Not equal to.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub filter_operator: std::option::Option<crate::types::FilterOperator>,
+    pub filter_operator: ::std::option::Option<crate::types::FilterOperator>,
     /// <p>The value provided for comparison on the crawl field. </p>
     #[doc(hidden)]
-    pub field_value: std::option::Option<std::string::String>,
+    pub field_value: ::std::option::Option<::std::string::String>,
 }
 impl CrawlsFilter {
     /// <p>A key used to filter the crawler runs for a specified crawler. Valid values for each of the field names are:</p>
@@ -36,7 +36,7 @@ impl CrawlsFilter {
     /// <li> <p> <code>START_TIME</code> and <code>END_TIME</code>: The epoch timestamp in milliseconds.</p> </li>
     /// <li> <p> <code>DPU_HOUR</code>: The number of data processing unit (DPU) hours used for the crawl.</p> </li>
     /// </ul>
-    pub fn field_name(&self) -> std::option::Option<&crate::types::FieldName> {
+    pub fn field_name(&self) -> ::std::option::Option<&crate::types::FieldName> {
         self.field_name.as_ref()
     }
     /// <p>A defined comparator that operates on the value. The available operators are:</p>
@@ -48,11 +48,11 @@ impl CrawlsFilter {
     /// <li> <p> <code>EQ</code>: Equal to.</p> </li>
     /// <li> <p> <code>NE</code>: Not equal to.</p> </li>
     /// </ul>
-    pub fn filter_operator(&self) -> std::option::Option<&crate::types::FilterOperator> {
+    pub fn filter_operator(&self) -> ::std::option::Option<&crate::types::FilterOperator> {
         self.filter_operator.as_ref()
     }
     /// <p>The value provided for comparison on the crawl field. </p>
-    pub fn field_value(&self) -> std::option::Option<&str> {
+    pub fn field_value(&self) -> ::std::option::Option<&str> {
         self.field_value.as_deref()
     }
 }
@@ -65,11 +65,13 @@ impl CrawlsFilter {
 
 /// A builder for [`CrawlsFilter`](crate::types::CrawlsFilter).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CrawlsFilterBuilder {
-    pub(crate) field_name: std::option::Option<crate::types::FieldName>,
-    pub(crate) filter_operator: std::option::Option<crate::types::FilterOperator>,
-    pub(crate) field_value: std::option::Option<std::string::String>,
+    pub(crate) field_name: ::std::option::Option<crate::types::FieldName>,
+    pub(crate) filter_operator: ::std::option::Option<crate::types::FilterOperator>,
+    pub(crate) field_value: ::std::option::Option<::std::string::String>,
 }
 impl CrawlsFilterBuilder {
     /// <p>A key used to filter the crawler runs for a specified crawler. Valid values for each of the field names are:</p>
@@ -80,7 +82,7 @@ impl CrawlsFilterBuilder {
     /// <li> <p> <code>DPU_HOUR</code>: The number of data processing unit (DPU) hours used for the crawl.</p> </li>
     /// </ul>
     pub fn field_name(mut self, input: crate::types::FieldName) -> Self {
-        self.field_name = Some(input);
+        self.field_name = ::std::option::Option::Some(input);
         self
     }
     /// <p>A key used to filter the crawler runs for a specified crawler. Valid values for each of the field names are:</p>
@@ -90,7 +92,7 @@ impl CrawlsFilterBuilder {
     /// <li> <p> <code>START_TIME</code> and <code>END_TIME</code>: The epoch timestamp in milliseconds.</p> </li>
     /// <li> <p> <code>DPU_HOUR</code>: The number of data processing unit (DPU) hours used for the crawl.</p> </li>
     /// </ul>
-    pub fn set_field_name(mut self, input: std::option::Option<crate::types::FieldName>) -> Self {
+    pub fn set_field_name(mut self, input: ::std::option::Option<crate::types::FieldName>) -> Self {
         self.field_name = input;
         self
     }
@@ -104,7 +106,7 @@ impl CrawlsFilterBuilder {
     /// <li> <p> <code>NE</code>: Not equal to.</p> </li>
     /// </ul>
     pub fn filter_operator(mut self, input: crate::types::FilterOperator) -> Self {
-        self.filter_operator = Some(input);
+        self.filter_operator = ::std::option::Option::Some(input);
         self
     }
     /// <p>A defined comparator that operates on the value. The available operators are:</p>
@@ -118,18 +120,18 @@ impl CrawlsFilterBuilder {
     /// </ul>
     pub fn set_filter_operator(
         mut self,
-        input: std::option::Option<crate::types::FilterOperator>,
+        input: ::std::option::Option<crate::types::FilterOperator>,
     ) -> Self {
         self.filter_operator = input;
         self
     }
     /// <p>The value provided for comparison on the crawl field. </p>
-    pub fn field_value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.field_value = Some(input.into());
+    pub fn field_value(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.field_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The value provided for comparison on the crawl field. </p>
-    pub fn set_field_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_field_value(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.field_value = input;
         self
     }

@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum Scope {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum Scope {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for Scope {
+impl ::std::convert::From<&str> for Scope {
     fn from(s: &str) -> Self {
         match s {
             "shared" => Scope::Shared,
@@ -63,11 +63,11 @@ impl std::convert::From<&str> for Scope {
         }
     }
 }
-impl std::str::FromStr for Scope {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for Scope {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(Scope::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(Scope::from(s))
     }
 }
 impl Scope {
@@ -84,7 +84,7 @@ impl Scope {
         &["shared", "task"]
     }
 }
-impl AsRef<str> for Scope {
+impl ::std::convert::AsRef<str> for Scope {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

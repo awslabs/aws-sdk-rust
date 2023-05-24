@@ -2,20 +2,20 @@
 
 /// <p>Defines a hyperparameter to be used by an algorithm.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct HyperParameterSpecification {
     /// <p>The name of this hyperparameter. The name must be unique.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>A brief description of the hyperparameter.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The type of this hyperparameter. The valid types are <code>Integer</code>, <code>Continuous</code>, <code>Categorical</code>, and <code>FreeText</code>.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::ParameterType>,
+    pub r#type: ::std::option::Option<crate::types::ParameterType>,
     /// <p>The allowed range for this hyperparameter.</p>
     #[doc(hidden)]
-    pub range: std::option::Option<crate::types::ParameterRange>,
+    pub range: ::std::option::Option<crate::types::ParameterRange>,
     /// <p>Indicates whether this hyperparameter is tunable in a hyperparameter tuning job.</p>
     #[doc(hidden)]
     pub is_tunable: bool,
@@ -24,23 +24,23 @@ pub struct HyperParameterSpecification {
     pub is_required: bool,
     /// <p>The default value for this hyperparameter. If a default value is specified, a hyperparameter cannot be required.</p>
     #[doc(hidden)]
-    pub default_value: std::option::Option<std::string::String>,
+    pub default_value: ::std::option::Option<::std::string::String>,
 }
 impl HyperParameterSpecification {
     /// <p>The name of this hyperparameter. The name must be unique.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A brief description of the hyperparameter.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The type of this hyperparameter. The valid types are <code>Integer</code>, <code>Continuous</code>, <code>Categorical</code>, and <code>FreeText</code>.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::ParameterType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::ParameterType> {
         self.r#type.as_ref()
     }
     /// <p>The allowed range for this hyperparameter.</p>
-    pub fn range(&self) -> std::option::Option<&crate::types::ParameterRange> {
+    pub fn range(&self) -> ::std::option::Option<&crate::types::ParameterRange> {
         self.range.as_ref()
     }
     /// <p>Indicates whether this hyperparameter is tunable in a hyperparameter tuning job.</p>
@@ -52,7 +52,7 @@ impl HyperParameterSpecification {
         self.is_required
     }
     /// <p>The default value for this hyperparameter. If a default value is specified, a hyperparameter cannot be required.</p>
-    pub fn default_value(&self) -> std::option::Option<&str> {
+    pub fn default_value(&self) -> ::std::option::Option<&str> {
         self.default_value.as_deref()
     }
 }
@@ -65,84 +65,92 @@ impl HyperParameterSpecification {
 
 /// A builder for [`HyperParameterSpecification`](crate::types::HyperParameterSpecification).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct HyperParameterSpecificationBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) r#type: std::option::Option<crate::types::ParameterType>,
-    pub(crate) range: std::option::Option<crate::types::ParameterRange>,
-    pub(crate) is_tunable: std::option::Option<bool>,
-    pub(crate) is_required: std::option::Option<bool>,
-    pub(crate) default_value: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) r#type: ::std::option::Option<crate::types::ParameterType>,
+    pub(crate) range: ::std::option::Option<crate::types::ParameterRange>,
+    pub(crate) is_tunable: ::std::option::Option<bool>,
+    pub(crate) is_required: ::std::option::Option<bool>,
+    pub(crate) default_value: ::std::option::Option<::std::string::String>,
 }
 impl HyperParameterSpecificationBuilder {
     /// <p>The name of this hyperparameter. The name must be unique.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of this hyperparameter. The name must be unique.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>A brief description of the hyperparameter.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A brief description of the hyperparameter.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The type of this hyperparameter. The valid types are <code>Integer</code>, <code>Continuous</code>, <code>Categorical</code>, and <code>FreeText</code>.</p>
     pub fn r#type(mut self, input: crate::types::ParameterType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of this hyperparameter. The valid types are <code>Integer</code>, <code>Continuous</code>, <code>Categorical</code>, and <code>FreeText</code>.</p>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::ParameterType>) -> Self {
+    pub fn set_type(mut self, input: ::std::option::Option<crate::types::ParameterType>) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The allowed range for this hyperparameter.</p>
     pub fn range(mut self, input: crate::types::ParameterRange) -> Self {
-        self.range = Some(input);
+        self.range = ::std::option::Option::Some(input);
         self
     }
     /// <p>The allowed range for this hyperparameter.</p>
-    pub fn set_range(mut self, input: std::option::Option<crate::types::ParameterRange>) -> Self {
+    pub fn set_range(mut self, input: ::std::option::Option<crate::types::ParameterRange>) -> Self {
         self.range = input;
         self
     }
     /// <p>Indicates whether this hyperparameter is tunable in a hyperparameter tuning job.</p>
     pub fn is_tunable(mut self, input: bool) -> Self {
-        self.is_tunable = Some(input);
+        self.is_tunable = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether this hyperparameter is tunable in a hyperparameter tuning job.</p>
-    pub fn set_is_tunable(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_tunable(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_tunable = input;
         self
     }
     /// <p>Indicates whether this hyperparameter is required.</p>
     pub fn is_required(mut self, input: bool) -> Self {
-        self.is_required = Some(input);
+        self.is_required = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether this hyperparameter is required.</p>
-    pub fn set_is_required(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_is_required(mut self, input: ::std::option::Option<bool>) -> Self {
         self.is_required = input;
         self
     }
     /// <p>The default value for this hyperparameter. If a default value is specified, a hyperparameter cannot be required.</p>
-    pub fn default_value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.default_value = Some(input.into());
+    pub fn default_value(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.default_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The default value for this hyperparameter. If a default value is specified, a hyperparameter cannot be required.</p>
-    pub fn set_default_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_default_value(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.default_value = input;
         self
     }

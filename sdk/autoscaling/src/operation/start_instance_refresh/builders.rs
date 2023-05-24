@@ -10,29 +10,29 @@ pub use crate::operation::start_instance_refresh::_start_instance_refresh_input:
 /// <p>If successful, the request's response contains a unique ID that you can use to track the progress of the instance refresh. To query its status, call the <code>DescribeInstanceRefreshes</code> API. To describe the instance refreshes that have already run, call the <code>DescribeInstanceRefreshes</code> API. To cancel an instance refresh that is in progress, use the <code>CancelInstanceRefresh</code> API. </p>
 /// <p>An instance refresh might fail for several reasons, such as EC2 launch failures, misconfigured health checks, or not ignoring or allowing the termination of instances that are in <code>Standby</code> state or protected from scale in. You can monitor for failed EC2 launches using the scaling activities. To find the scaling activities, call the <code>DescribeScalingActivities</code> API.</p>
 /// <p>If you enable auto rollback, your Auto Scaling group will be rolled back automatically when the instance refresh fails. You can enable this feature before starting an instance refresh by specifying the <code>AutoRollback</code> property in the instance refresh preferences. Otherwise, to roll back an instance refresh before it finishes, use the <code>RollbackInstanceRefresh</code> API. </p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct StartInstanceRefreshFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::start_instance_refresh::builders::StartInstanceRefreshInputBuilder,
 }
 impl StartInstanceRefreshFluentBuilder {
     /// Creates a new `StartInstanceRefresh`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::start_instance_refresh::StartInstanceRefresh,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::start_instance_refresh::StartInstanceRefreshError,
         >,
     > {
@@ -40,30 +40,33 @@ impl StartInstanceRefreshFluentBuilder {
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::start_instance_refresh::StartInstanceRefreshOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::start_instance_refresh::StartInstanceRefreshError,
         >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -76,23 +79,26 @@ impl StartInstanceRefreshFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::start_instance_refresh::StartInstanceRefreshOutput,
-        aws_smithy_http::result::SdkError<
+        ::aws_smithy_http::result::SdkError<
             crate::operation::start_instance_refresh::StartInstanceRefreshError,
         >,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the Auto Scaling group.</p>
-    pub fn auto_scaling_group_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn auto_scaling_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.auto_scaling_group_name(input.into());
         self
     }
     /// <p>The name of the Auto Scaling group.</p>
     pub fn set_auto_scaling_group_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_auto_scaling_group_name(input);
         self
@@ -105,7 +111,7 @@ impl StartInstanceRefreshFluentBuilder {
     /// <p>The strategy to use for the instance refresh. The only valid value is <code>Rolling</code>.</p>
     pub fn set_strategy(
         mut self,
-        input: std::option::Option<crate::types::RefreshStrategy>,
+        input: ::std::option::Option<crate::types::RefreshStrategy>,
     ) -> Self {
         self.inner = self.inner.set_strategy(input);
         self
@@ -124,7 +130,7 @@ impl StartInstanceRefreshFluentBuilder {
     /// </note>
     pub fn set_desired_configuration(
         mut self,
-        input: std::option::Option<crate::types::DesiredConfiguration>,
+        input: ::std::option::Option<crate::types::DesiredConfiguration>,
     ) -> Self {
         self.inner = self.inner.set_desired_configuration(input);
         self
@@ -147,7 +153,7 @@ impl StartInstanceRefreshFluentBuilder {
     /// </ul>
     pub fn set_preferences(
         mut self,
-        input: std::option::Option<crate::types::RefreshPreferences>,
+        input: ::std::option::Option<crate::types::RefreshPreferences>,
     ) -> Self {
         self.inner = self.inner.set_preferences(input);
         self

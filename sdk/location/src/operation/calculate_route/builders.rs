@@ -16,56 +16,59 @@ pub use crate::operation::calculate_route::_calculate_route_input::CalculateRout
 /// <p>If you specify <code>walking</code> for the travel mode and your data provider is Esri, the start and destination must be within 40km.</p>
 /// </note> </li>
 /// </ul>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CalculateRouteFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::calculate_route::builders::CalculateRouteInputBuilder,
 }
 impl CalculateRouteFluentBuilder {
     /// Creates a new `CalculateRoute`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::calculate_route::CalculateRoute,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::calculate_route::CalculateRouteError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::calculate_route::CalculateRouteError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::calculate_route::CalculateRouteOutput,
-        aws_smithy_http::result::SdkError<crate::operation::calculate_route::CalculateRouteError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::calculate_route::CalculateRouteError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -78,19 +81,25 @@ impl CalculateRouteFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::calculate_route::CalculateRouteOutput,
-        aws_smithy_http::result::SdkError<crate::operation::calculate_route::CalculateRouteError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::calculate_route::CalculateRouteError>,
     > {
         self.send_middleware().await
     }
     /// <p>The name of the route calculator resource that you want to use to calculate the route. </p>
-    pub fn calculator_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn calculator_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.calculator_name(input.into());
         self
     }
     /// <p>The name of the route calculator resource that you want to use to calculate the route. </p>
-    pub fn set_calculator_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_calculator_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_calculator_name(input);
         self
     }
@@ -118,7 +127,7 @@ impl CalculateRouteFluentBuilder {
     /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
     pub fn set_departure_position(
         mut self,
-        input: std::option::Option<std::vec::Vec<f64>>,
+        input: ::std::option::Option<::std::vec::Vec<f64>>,
     ) -> Self {
         self.inner = self.inner.set_departure_position(input);
         self
@@ -147,7 +156,7 @@ impl CalculateRouteFluentBuilder {
     /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
     pub fn set_destination_position(
         mut self,
-        input: std::option::Option<std::vec::Vec<f64>>,
+        input: ::std::option::Option<::std::vec::Vec<f64>>,
     ) -> Self {
         self.inner = self.inner.set_destination_position(input);
         self
@@ -165,7 +174,7 @@ impl CalculateRouteFluentBuilder {
     /// <p>If Esri is the provider for your route calculator, specifying a route that is longer than 400 km returns a <code>400 RoutesValidationException</code> error.</p>
     /// </note>
     /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
-    pub fn waypoint_positions(mut self, input: std::vec::Vec<f64>) -> Self {
+    pub fn waypoint_positions(mut self, input: ::std::vec::Vec<f64>) -> Self {
         self.inner = self.inner.waypoint_positions(input);
         self
     }
@@ -180,7 +189,7 @@ impl CalculateRouteFluentBuilder {
     /// <p>Valid Values: <code>[-180 to 180,-90 to 90]</code> </p>
     pub fn set_waypoint_positions(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::vec::Vec<f64>>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::vec::Vec<f64>>>,
     ) -> Self {
         self.inner = self.inner.set_waypoint_positions(input);
         self
@@ -211,7 +220,10 @@ impl CalculateRouteFluentBuilder {
     /// <li> <p>If traveling by <code>Truck</code> use the <code>TruckModeOptions</code> parameter.</p> </li>
     /// </ul>
     /// <p>Default Value: <code>Car</code> </p>
-    pub fn set_travel_mode(mut self, input: std::option::Option<crate::types::TravelMode>) -> Self {
+    pub fn set_travel_mode(
+        mut self,
+        input: ::std::option::Option<crate::types::TravelMode>,
+    ) -> Self {
         self.inner = self.inner.set_travel_mode(input);
         self
     }
@@ -221,7 +233,7 @@ impl CalculateRouteFluentBuilder {
     /// <ul>
     /// <li> <p>In <a href="https://www.iso.org/iso-8601-date-and-time-format.html">ISO 8601</a> format: <code>YYYY-MM-DDThh:mm:ss.sssZ</code>. For example, <code>2020–07-2T12:15:20.000Z+01:00</code> </p> </li>
     /// </ul>
-    pub fn departure_time(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn departure_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.departure_time(input);
         self
     }
@@ -233,7 +245,7 @@ impl CalculateRouteFluentBuilder {
     /// </ul>
     pub fn set_departure_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.inner = self.inner.set_departure_time(input);
         self
@@ -248,7 +260,7 @@ impl CalculateRouteFluentBuilder {
     /// <p>Sets the time of departure as the current time. Uses the current time to calculate a route. Otherwise, the best time of day to travel with the best traffic conditions is used to calculate the route.</p>
     /// <p>Default Value: <code>false</code> </p>
     /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
-    pub fn set_depart_now(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_depart_now(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_depart_now(input);
         self
     }
@@ -262,7 +274,7 @@ impl CalculateRouteFluentBuilder {
     /// <p>Default Value: <code>Kilometers</code> </p>
     pub fn set_distance_unit(
         mut self,
-        input: std::option::Option<crate::types::DistanceUnit>,
+        input: ::std::option::Option<crate::types::DistanceUnit>,
     ) -> Self {
         self.inner = self.inner.set_distance_unit(input);
         self
@@ -277,7 +289,7 @@ impl CalculateRouteFluentBuilder {
     /// <p>Set to include the geometry details in the result for each path between a pair of positions.</p>
     /// <p>Default Value: <code>false</code> </p>
     /// <p>Valid Values: <code>false</code> | <code>true</code> </p>
-    pub fn set_include_leg_geometry(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_include_leg_geometry(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_include_leg_geometry(input);
         self
     }
@@ -291,7 +303,7 @@ impl CalculateRouteFluentBuilder {
     /// <p>Requirements: <code>TravelMode</code> must be specified as <code>Car</code>.</p>
     pub fn set_car_mode_options(
         mut self,
-        input: std::option::Option<crate::types::CalculateRouteCarModeOptions>,
+        input: ::std::option::Option<crate::types::CalculateRouteCarModeOptions>,
     ) -> Self {
         self.inner = self.inner.set_car_mode_options(input);
         self
@@ -309,7 +321,7 @@ impl CalculateRouteFluentBuilder {
     /// <p>Requirements: <code>TravelMode</code> must be specified as <code>Truck</code>.</p>
     pub fn set_truck_mode_options(
         mut self,
-        input: std::option::Option<crate::types::CalculateRouteTruckModeOptions>,
+        input: ::std::option::Option<crate::types::CalculateRouteTruckModeOptions>,
     ) -> Self {
         self.inner = self.inner.set_truck_mode_options(input);
         self

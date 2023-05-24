@@ -2,20 +2,20 @@
 
 /// <p>Represents the output of a <code>BatchGetApplications</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BatchGetApplicationsOutput {
     /// <p>Information about the applications.</p>
     #[doc(hidden)]
-    pub applications_info: std::option::Option<std::vec::Vec<crate::types::ApplicationInfo>>,
+    pub applications_info: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationInfo>>,
     _request_id: Option<String>,
 }
 impl BatchGetApplicationsOutput {
     /// <p>Information about the applications.</p>
-    pub fn applications_info(&self) -> std::option::Option<&[crate::types::ApplicationInfo]> {
+    pub fn applications_info(&self) -> ::std::option::Option<&[crate::types::ApplicationInfo]> {
         self.applications_info.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for BatchGetApplicationsOutput {
+impl ::aws_http::request_id::RequestId for BatchGetApplicationsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,9 +30,12 @@ impl BatchGetApplicationsOutput {
 
 /// A builder for [`BatchGetApplicationsOutput`](crate::operation::batch_get_applications::BatchGetApplicationsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BatchGetApplicationsOutputBuilder {
-    pub(crate) applications_info: std::option::Option<std::vec::Vec<crate::types::ApplicationInfo>>,
+    pub(crate) applications_info:
+        ::std::option::Option<::std::vec::Vec<crate::types::ApplicationInfo>>,
     _request_id: Option<String>,
 }
 impl BatchGetApplicationsOutputBuilder {
@@ -44,13 +47,13 @@ impl BatchGetApplicationsOutputBuilder {
     pub fn applications_info(mut self, input: crate::types::ApplicationInfo) -> Self {
         let mut v = self.applications_info.unwrap_or_default();
         v.push(input);
-        self.applications_info = Some(v);
+        self.applications_info = ::std::option::Option::Some(v);
         self
     }
     /// <p>Information about the applications.</p>
     pub fn set_applications_info(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ApplicationInfo>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ApplicationInfo>>,
     ) -> Self {
         self.applications_info = input;
         self

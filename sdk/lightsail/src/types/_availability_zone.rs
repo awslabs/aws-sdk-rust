@@ -2,22 +2,22 @@
 
 /// <p>Describes an Availability Zone. This is returned only as part of a <code>GetRegions</code> request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AvailabilityZone {
     /// <p>The name of the Availability Zone. The format is <code>us-east-2a</code> (case-sensitive).</p>
     #[doc(hidden)]
-    pub zone_name: std::option::Option<std::string::String>,
+    pub zone_name: ::std::option::Option<::std::string::String>,
     /// <p>The state of the Availability Zone.</p>
     #[doc(hidden)]
-    pub state: std::option::Option<std::string::String>,
+    pub state: ::std::option::Option<::std::string::String>,
 }
 impl AvailabilityZone {
     /// <p>The name of the Availability Zone. The format is <code>us-east-2a</code> (case-sensitive).</p>
-    pub fn zone_name(&self) -> std::option::Option<&str> {
+    pub fn zone_name(&self) -> ::std::option::Option<&str> {
         self.zone_name.as_deref()
     }
     /// <p>The state of the Availability Zone.</p>
-    pub fn state(&self) -> std::option::Option<&str> {
+    pub fn state(&self) -> ::std::option::Option<&str> {
         self.state.as_deref()
     }
 }
@@ -30,29 +30,31 @@ impl AvailabilityZone {
 
 /// A builder for [`AvailabilityZone`](crate::types::AvailabilityZone).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AvailabilityZoneBuilder {
-    pub(crate) zone_name: std::option::Option<std::string::String>,
-    pub(crate) state: std::option::Option<std::string::String>,
+    pub(crate) zone_name: ::std::option::Option<::std::string::String>,
+    pub(crate) state: ::std::option::Option<::std::string::String>,
 }
 impl AvailabilityZoneBuilder {
     /// <p>The name of the Availability Zone. The format is <code>us-east-2a</code> (case-sensitive).</p>
-    pub fn zone_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.zone_name = Some(input.into());
+    pub fn zone_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.zone_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Availability Zone. The format is <code>us-east-2a</code> (case-sensitive).</p>
-    pub fn set_zone_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_zone_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.zone_name = input;
         self
     }
     /// <p>The state of the Availability Zone.</p>
-    pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
-        self.state = Some(input.into());
+    pub fn state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.state = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The state of the Availability Zone.</p>
-    pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state = input;
         self
     }

@@ -2,17 +2,17 @@
 
 /// <p>Describes a through resource statement.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ThroughResourcesStatementRequest {
     /// <p>The resource statement.</p>
     #[doc(hidden)]
-    pub resource_statement: std::option::Option<crate::types::ResourceStatementRequest>,
+    pub resource_statement: ::std::option::Option<crate::types::ResourceStatementRequest>,
 }
 impl ThroughResourcesStatementRequest {
     /// <p>The resource statement.</p>
     pub fn resource_statement(
         &self,
-    ) -> std::option::Option<&crate::types::ResourceStatementRequest> {
+    ) -> ::std::option::Option<&crate::types::ResourceStatementRequest> {
         self.resource_statement.as_ref()
     }
 }
@@ -25,20 +25,22 @@ impl ThroughResourcesStatementRequest {
 
 /// A builder for [`ThroughResourcesStatementRequest`](crate::types::ThroughResourcesStatementRequest).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ThroughResourcesStatementRequestBuilder {
-    pub(crate) resource_statement: std::option::Option<crate::types::ResourceStatementRequest>,
+    pub(crate) resource_statement: ::std::option::Option<crate::types::ResourceStatementRequest>,
 }
 impl ThroughResourcesStatementRequestBuilder {
     /// <p>The resource statement.</p>
     pub fn resource_statement(mut self, input: crate::types::ResourceStatementRequest) -> Self {
-        self.resource_statement = Some(input);
+        self.resource_statement = ::std::option::Option::Some(input);
         self
     }
     /// <p>The resource statement.</p>
     pub fn set_resource_statement(
         mut self,
-        input: std::option::Option<crate::types::ResourceStatementRequest>,
+        input: ::std::option::Option<crate::types::ResourceStatementRequest>,
     ) -> Self {
         self.resource_statement = input;
         self

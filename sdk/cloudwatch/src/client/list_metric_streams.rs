@@ -4,7 +4,7 @@ impl super::Client {
     /// This operation supports pagination; See [`into_paginator()`](crate::operation::list_metric_streams::builders::ListMetricStreamsFluentBuilder::into_paginator).
     ///
     /// - The fluent builder is configurable:
-    ///   - [`next_token(impl Into<String>)`](crate::operation::list_metric_streams::builders::ListMetricStreamsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_metric_streams::builders::ListMetricStreamsFluentBuilder::set_next_token): <p>Include this value, if it was returned by the previous call, to get the next set of metric streams.</p>
+    ///   - [`next_token(impl ::std::convert::Into<String>)`](crate::operation::list_metric_streams::builders::ListMetricStreamsFluentBuilder::next_token) / [`set_next_token(Option<String>)`](crate::operation::list_metric_streams::builders::ListMetricStreamsFluentBuilder::set_next_token): <p>Include this value, if it was returned by the previous call, to get the next set of metric streams.</p>
     ///   - [`max_results(i32)`](crate::operation::list_metric_streams::builders::ListMetricStreamsFluentBuilder::max_results) / [`set_max_results(Option<i32>)`](crate::operation::list_metric_streams::builders::ListMetricStreamsFluentBuilder::set_max_results): <p>The maximum number of results to return in one operation.</p>
     /// - On success, responds with [`ListMetricStreamsOutput`](crate::operation::list_metric_streams::ListMetricStreamsOutput) with field(s):
     ///   - [`next_token(Option<String>)`](crate::operation::list_metric_streams::ListMetricStreamsOutput::next_token): <p>The token that marks the start of the next batch of returned results. You can use this token in a subsequent operation to get the next batch of results.</p>

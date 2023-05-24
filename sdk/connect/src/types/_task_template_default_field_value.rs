@@ -2,22 +2,22 @@
 
 /// <p>Describes a default field and its corresponding value.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TaskTemplateDefaultFieldValue {
     /// <p>Identifier of a field. </p>
     #[doc(hidden)]
-    pub id: std::option::Option<crate::types::TaskTemplateFieldIdentifier>,
+    pub id: ::std::option::Option<crate::types::TaskTemplateFieldIdentifier>,
     /// <p>Default value for the field.</p>
     #[doc(hidden)]
-    pub default_value: std::option::Option<std::string::String>,
+    pub default_value: ::std::option::Option<::std::string::String>,
 }
 impl TaskTemplateDefaultFieldValue {
     /// <p>Identifier of a field. </p>
-    pub fn id(&self) -> std::option::Option<&crate::types::TaskTemplateFieldIdentifier> {
+    pub fn id(&self) -> ::std::option::Option<&crate::types::TaskTemplateFieldIdentifier> {
         self.id.as_ref()
     }
     /// <p>Default value for the field.</p>
-    pub fn default_value(&self) -> std::option::Option<&str> {
+    pub fn default_value(&self) -> ::std::option::Option<&str> {
         self.default_value.as_deref()
     }
 }
@@ -30,32 +30,40 @@ impl TaskTemplateDefaultFieldValue {
 
 /// A builder for [`TaskTemplateDefaultFieldValue`](crate::types::TaskTemplateDefaultFieldValue).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TaskTemplateDefaultFieldValueBuilder {
-    pub(crate) id: std::option::Option<crate::types::TaskTemplateFieldIdentifier>,
-    pub(crate) default_value: std::option::Option<std::string::String>,
+    pub(crate) id: ::std::option::Option<crate::types::TaskTemplateFieldIdentifier>,
+    pub(crate) default_value: ::std::option::Option<::std::string::String>,
 }
 impl TaskTemplateDefaultFieldValueBuilder {
     /// <p>Identifier of a field. </p>
     pub fn id(mut self, input: crate::types::TaskTemplateFieldIdentifier) -> Self {
-        self.id = Some(input);
+        self.id = ::std::option::Option::Some(input);
         self
     }
     /// <p>Identifier of a field. </p>
     pub fn set_id(
         mut self,
-        input: std::option::Option<crate::types::TaskTemplateFieldIdentifier>,
+        input: ::std::option::Option<crate::types::TaskTemplateFieldIdentifier>,
     ) -> Self {
         self.id = input;
         self
     }
     /// <p>Default value for the field.</p>
-    pub fn default_value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.default_value = Some(input.into());
+    pub fn default_value(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.default_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Default value for the field.</p>
-    pub fn set_default_value(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_default_value(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.default_value = input;
         self
     }

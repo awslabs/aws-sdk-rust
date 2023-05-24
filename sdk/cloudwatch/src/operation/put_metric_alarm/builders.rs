@@ -22,56 +22,63 @@ pub use crate::operation::put_metric_alarm::_put_metric_alarm_input::PutMetricAl
 /// <li> <p>The account where the metrics are located (the <i>sharing account</i>) must already have a sharing role named <b>CloudWatch-CrossAccountSharingRole</b>. If it does not already have this role, you must create it using the instructions in <b>Set up a sharing account</b> in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Cross-Account-Cross-Region.html#enable-cross-account-cross-Region"> Cross-account cross-Region CloudWatch console</a>. The policy for that role must grant access to the ID of the account where you are creating the alarm. </p> </li>
 /// <li> <p>The account where you are creating the alarm (the <i>monitoring account</i>) must already have a service-linked role named <b>AWSServiceRoleForCloudWatchCrossAccount</b> to allow CloudWatch to assume the sharing role in the sharing account. If it does not, you must create it following the directions in <b>Set up a monitoring account</b> in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Cross-Account-Cross-Region.html#enable-cross-account-cross-Region"> Cross-account cross-Region CloudWatch console</a>.</p> </li>
 /// </ul>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct PutMetricAlarmFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::put_metric_alarm::builders::PutMetricAlarmInputBuilder,
 }
 impl PutMetricAlarmFluentBuilder {
     /// Creates a new `PutMetricAlarm`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::put_metric_alarm::PutMetricAlarm,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::put_metric_alarm::PutMetricAlarmError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_metric_alarm::PutMetricAlarmError,
+        >,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::put_metric_alarm::PutMetricAlarmOutput,
-        aws_smithy_http::result::SdkError<crate::operation::put_metric_alarm::PutMetricAlarmError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_metric_alarm::PutMetricAlarmError,
+        >,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -84,33 +91,38 @@ impl PutMetricAlarmFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::put_metric_alarm::PutMetricAlarmOutput,
-        aws_smithy_http::result::SdkError<crate::operation::put_metric_alarm::PutMetricAlarmError>,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_metric_alarm::PutMetricAlarmError,
+        >,
     > {
         self.send_middleware().await
     }
     /// <p>The name for the alarm. This name must be unique within the Region.</p>
     /// <p>The name must contain only UTF-8 characters, and can't contain ASCII control characters</p>
-    pub fn alarm_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn alarm_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.alarm_name(input.into());
         self
     }
     /// <p>The name for the alarm. This name must be unique within the Region.</p>
     /// <p>The name must contain only UTF-8 characters, and can't contain ASCII control characters</p>
-    pub fn set_alarm_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_alarm_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_alarm_name(input);
         self
     }
     /// <p>The description for the alarm.</p>
-    pub fn alarm_description(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn alarm_description(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.alarm_description(input.into());
         self
     }
     /// <p>The description for the alarm.</p>
     pub fn set_alarm_description(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_alarm_description(input);
         self
@@ -121,7 +133,7 @@ impl PutMetricAlarmFluentBuilder {
         self
     }
     /// <p>Indicates whether actions should be executed during any changes to the alarm state. The default is <code>TRUE</code>.</p>
-    pub fn set_actions_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_actions_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.inner = self.inner.set_actions_enabled(input);
         self
     }
@@ -154,7 +166,7 @@ impl PutMetricAlarmFluentBuilder {
     /// <li> <p> <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>#CATEGORY=<i>category-name</i> </code> </p> </li>
     /// <li> <p> <code>arn:aws:ssm-incidents::<i>account-id</i>:responseplan/<i>response-plan-name</i> </code> </p> </li>
     /// </ul>
-    pub fn ok_actions(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn ok_actions(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.ok_actions(input.into());
         self
     }
@@ -185,7 +197,7 @@ impl PutMetricAlarmFluentBuilder {
     /// </ul>
     pub fn set_ok_actions(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_ok_actions(input);
         self
@@ -219,7 +231,10 @@ impl PutMetricAlarmFluentBuilder {
     /// <li> <p> <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>#CATEGORY=<i>category-name</i> </code> </p> </li>
     /// <li> <p> <code>arn:aws:ssm-incidents::<i>account-id</i>:responseplan/<i>response-plan-name</i> </code> </p> </li>
     /// </ul>
-    pub fn alarm_actions(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn alarm_actions(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.alarm_actions(input.into());
         self
     }
@@ -250,7 +265,7 @@ impl PutMetricAlarmFluentBuilder {
     /// </ul>
     pub fn set_alarm_actions(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_alarm_actions(input);
         self
@@ -284,7 +299,10 @@ impl PutMetricAlarmFluentBuilder {
     /// <li> <p> <code>arn:aws:ssm:<i>region</i>:<i>account-id</i>:opsitem:<i>severity</i>#CATEGORY=<i>category-name</i> </code> </p> </li>
     /// <li> <p> <code>arn:aws:ssm-incidents::<i>account-id</i>:responseplan/<i>response-plan-name</i> </code> </p> </li>
     /// </ul>
-    pub fn insufficient_data_actions(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn insufficient_data_actions(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.insufficient_data_actions(input.into());
         self
     }
@@ -315,30 +333,30 @@ impl PutMetricAlarmFluentBuilder {
     /// </ul>
     pub fn set_insufficient_data_actions(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.inner = self.inner.set_insufficient_data_actions(input);
         self
     }
     /// <p>The name for the metric associated with the alarm. For each <code>PutMetricAlarm</code> operation, you must specify either <code>MetricName</code> or a <code>Metrics</code> array.</p>
     /// <p>If you are creating an alarm based on a math expression, you cannot specify this parameter, or any of the <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters. Instead, you specify all this information in the <code>Metrics</code> array.</p>
-    pub fn metric_name(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn metric_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.metric_name(input.into());
         self
     }
     /// <p>The name for the metric associated with the alarm. For each <code>PutMetricAlarm</code> operation, you must specify either <code>MetricName</code> or a <code>Metrics</code> array.</p>
     /// <p>If you are creating an alarm based on a math expression, you cannot specify this parameter, or any of the <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters. Instead, you specify all this information in the <code>Metrics</code> array.</p>
-    pub fn set_metric_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_metric_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_metric_name(input);
         self
     }
     /// <p>The namespace for the metric associated specified in <code>MetricName</code>.</p>
-    pub fn namespace(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn namespace(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.namespace(input.into());
         self
     }
     /// <p>The namespace for the metric associated specified in <code>MetricName</code>.</p>
-    pub fn set_namespace(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_namespace(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_namespace(input);
         self
     }
@@ -348,19 +366,22 @@ impl PutMetricAlarmFluentBuilder {
         self
     }
     /// <p>The statistic for the metric specified in <code>MetricName</code>, other than percentile. For percentile statistics, use <code>ExtendedStatistic</code>. When you call <code>PutMetricAlarm</code> and specify a <code>MetricName</code>, you must specify either <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.</p>
-    pub fn set_statistic(mut self, input: std::option::Option<crate::types::Statistic>) -> Self {
+    pub fn set_statistic(mut self, input: ::std::option::Option<crate::types::Statistic>) -> Self {
         self.inner = self.inner.set_statistic(input);
         self
     }
     /// <p>The percentile statistic for the metric specified in <code>MetricName</code>. Specify a value between p0.0 and p100. When you call <code>PutMetricAlarm</code> and specify a <code>MetricName</code>, you must specify either <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.</p>
-    pub fn extended_statistic(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn extended_statistic(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.extended_statistic(input.into());
         self
     }
     /// <p>The percentile statistic for the metric specified in <code>MetricName</code>. Specify a value between p0.0 and p100. When you call <code>PutMetricAlarm</code> and specify a <code>MetricName</code>, you must specify either <code>Statistic</code> or <code>ExtendedStatistic,</code> but not both.</p>
     pub fn set_extended_statistic(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_extended_statistic(input);
         self
@@ -377,7 +398,7 @@ impl PutMetricAlarmFluentBuilder {
     /// <p>The dimensions for the metric specified in <code>MetricName</code>.</p>
     pub fn set_dimensions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Dimension>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Dimension>>,
     ) -> Self {
         self.inner = self.inner.set_dimensions(input);
         self
@@ -394,7 +415,7 @@ impl PutMetricAlarmFluentBuilder {
     /// <p> <code>Period</code> is required for alarms based on static thresholds. If you are creating an alarm based on a metric math expression, you specify the period for each metric within the objects in the <code>Metrics</code> array.</p>
     /// <p>Be sure to specify 10 or 30 only for metrics that are stored by a <code>PutMetricData</code> call with a <code>StorageResolution</code> of 1. If you specify a period of 10 or 30 for a metric that does not have sub-minute resolution, the alarm still attempts to gather data at the period rate that you specify. In this case, it does not receive data for the attempts that do not correspond to a one-minute data resolution, and the alarm might often lapse into INSUFFICENT_DATA status. Specifying 10 or 30 also sets this alarm as a high-resolution alarm, which has a higher charge than other alarms. For more information about pricing, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.</p>
     /// <p>An alarm's total current evaluation period can be no longer than one day, so <code>Period</code> multiplied by <code>EvaluationPeriods</code> cannot be more than 86,400 seconds.</p>
-    pub fn set_period(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_period(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_period(input);
         self
     }
@@ -410,7 +431,7 @@ impl PutMetricAlarmFluentBuilder {
     /// <p>If you don't specify <code>Unit</code>, CloudWatch retrieves all unit types that have been published for the metric and attempts to evaluate the alarm. Usually, metrics are published with only one unit, so the alarm works as intended.</p>
     /// <p>However, if the metric is published with multiple types of units and you don't specify a unit, the alarm's behavior is not defined and it behaves unpredictably.</p>
     /// <p>We recommend omitting <code>Unit</code> so that you don't inadvertently specify an incorrect unit that is not published for this metric. Doing so causes the alarm to be stuck in the <code>INSUFFICIENT DATA</code> state.</p>
-    pub fn set_unit(mut self, input: std::option::Option<crate::types::StandardUnit>) -> Self {
+    pub fn set_unit(mut self, input: ::std::option::Option<crate::types::StandardUnit>) -> Self {
         self.inner = self.inner.set_unit(input);
         self
     }
@@ -422,7 +443,7 @@ impl PutMetricAlarmFluentBuilder {
     }
     /// <p>The number of periods over which data is compared to the specified threshold. If you are setting an alarm that requires that a number of consecutive data points be breaching to trigger the alarm, this value specifies that number. If you are setting an "M out of N" alarm, this value is the N.</p>
     /// <p>An alarm's total current evaluation period can be no longer than one day, so this number multiplied by <code>Period</code> cannot be more than 86,400 seconds.</p>
-    pub fn set_evaluation_periods(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_evaluation_periods(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_evaluation_periods(input);
         self
     }
@@ -432,7 +453,7 @@ impl PutMetricAlarmFluentBuilder {
         self
     }
     /// <p>The number of data points that must be breaching to trigger the alarm. This is used only if you are setting an "M out of N" alarm. In that case, this value is the M. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/AlarmThatSendsEmail.html#alarm-evaluation">Evaluating an Alarm</a> in the <i>Amazon CloudWatch User Guide</i>.</p>
-    pub fn set_datapoints_to_alarm(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_datapoints_to_alarm(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_datapoints_to_alarm(input);
         self
     }
@@ -444,7 +465,7 @@ impl PutMetricAlarmFluentBuilder {
     }
     /// <p>The value against which the specified statistic is compared.</p>
     /// <p>This parameter is required for alarms based on static thresholds, but should not be used for alarms based on anomaly detection models.</p>
-    pub fn set_threshold(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_threshold(mut self, input: ::std::option::Option<f64>) -> Self {
         self.inner = self.inner.set_threshold(input);
         self
     }
@@ -458,7 +479,7 @@ impl PutMetricAlarmFluentBuilder {
     /// <p>The values <code>LessThanLowerOrGreaterThanUpperThreshold</code>, <code>LessThanLowerThreshold</code>, and <code>GreaterThanUpperThreshold</code> are used only for alarms based on anomaly detection models.</p>
     pub fn set_comparison_operator(
         mut self,
-        input: std::option::Option<crate::types::ComparisonOperator>,
+        input: ::std::option::Option<crate::types::ComparisonOperator>,
     ) -> Self {
         self.inner = self.inner.set_comparison_operator(input);
         self
@@ -467,7 +488,10 @@ impl PutMetricAlarmFluentBuilder {
     /// <p>Valid Values: <code>breaching | notBreaching | ignore | missing</code> </p> <note>
     /// <p>Alarms that evaluate metrics in the <code>AWS/DynamoDB</code> namespace always <code>ignore</code> missing data even if you choose a different option for <code>TreatMissingData</code>. When an <code>AWS/DynamoDB</code> metric has missing data, alarms that evaluate that metric remain in their current state.</p>
     /// </note>
-    pub fn treat_missing_data(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn treat_missing_data(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.treat_missing_data(input.into());
         self
     }
@@ -477,7 +501,7 @@ impl PutMetricAlarmFluentBuilder {
     /// </note>
     pub fn set_treat_missing_data(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_treat_missing_data(input);
         self
@@ -486,7 +510,7 @@ impl PutMetricAlarmFluentBuilder {
     /// <p>Valid Values: <code>evaluate | ignore</code> </p>
     pub fn evaluate_low_sample_count_percentile(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self
             .inner
@@ -497,7 +521,7 @@ impl PutMetricAlarmFluentBuilder {
     /// <p>Valid Values: <code>evaluate | ignore</code> </p>
     pub fn set_evaluate_low_sample_count_percentile(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_evaluate_low_sample_count_percentile(input);
         self
@@ -520,7 +544,7 @@ impl PutMetricAlarmFluentBuilder {
     /// <p>If you use the <code>Metrics</code> parameter, you cannot include the <code>MetricName</code>, <code>Dimensions</code>, <code>Period</code>, <code>Namespace</code>, <code>Statistic</code>, or <code>ExtendedStatistic</code> parameters of <code>PutMetricAlarm</code> in the same operation. Instead, you retrieve the metrics you are using in your math expression as part of the <code>Metrics</code> array.</p>
     pub fn set_metrics(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::MetricDataQuery>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::MetricDataQuery>>,
     ) -> Self {
         self.inner = self.inner.set_metrics(input);
         self
@@ -541,7 +565,7 @@ impl PutMetricAlarmFluentBuilder {
     /// <p>If you are using this operation to update an existing alarm, any tags you specify in this parameter are ignored. To change the tags of an existing alarm, use <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_TagResource.html">TagResource</a> or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.inner = self.inner.set_tags(input);
         self
@@ -549,7 +573,10 @@ impl PutMetricAlarmFluentBuilder {
     /// <p>If this is an alarm based on an anomaly detection model, make this value match the ID of the <code>ANOMALY_DETECTION_BAND</code> function.</p>
     /// <p>For an example of how to use this parameter, see the <b>Anomaly Detection Model Alarm</b> example on this page.</p>
     /// <p>If your alarm uses this parameter, it cannot have Auto Scaling actions.</p>
-    pub fn threshold_metric_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn threshold_metric_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.threshold_metric_id(input.into());
         self
     }
@@ -558,7 +585,7 @@ impl PutMetricAlarmFluentBuilder {
     /// <p>If your alarm uses this parameter, it cannot have Auto Scaling actions.</p>
     pub fn set_threshold_metric_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_threshold_metric_id(input);
         self

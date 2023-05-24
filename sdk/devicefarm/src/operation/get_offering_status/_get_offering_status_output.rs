@@ -2,46 +2,46 @@
 
 /// <p>Returns the status result for a device offering.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetOfferingStatusOutput {
     /// <p>When specified, gets the offering status for the current period.</p>
     #[doc(hidden)]
-    pub current: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::OfferingStatus>,
+    pub current: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::OfferingStatus>,
     >,
     /// <p>When specified, gets the offering status for the next period.</p>
     #[doc(hidden)]
-    pub next_period: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::OfferingStatus>,
+    pub next_period: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::OfferingStatus>,
     >,
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetOfferingStatusOutput {
     /// <p>When specified, gets the offering status for the current period.</p>
     pub fn current(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::types::OfferingStatus>,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, crate::types::OfferingStatus>,
     > {
         self.current.as_ref()
     }
     /// <p>When specified, gets the offering status for the next period.</p>
     pub fn next_period(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::types::OfferingStatus>,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, crate::types::OfferingStatus>,
     > {
         self.next_period.as_ref()
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for GetOfferingStatusOutput {
+impl ::aws_http::request_id::RequestId for GetOfferingStatusOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -56,15 +56,17 @@ impl GetOfferingStatusOutput {
 
 /// A builder for [`GetOfferingStatusOutput`](crate::operation::get_offering_status::GetOfferingStatusOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetOfferingStatusOutputBuilder {
-    pub(crate) current: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::OfferingStatus>,
+    pub(crate) current: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::OfferingStatus>,
     >,
-    pub(crate) next_period: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::OfferingStatus>,
+    pub(crate) next_period: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::OfferingStatus>,
     >,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetOfferingStatusOutputBuilder {
@@ -75,19 +77,19 @@ impl GetOfferingStatusOutputBuilder {
     /// <p>When specified, gets the offering status for the current period.</p>
     pub fn current(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::OfferingStatus,
     ) -> Self {
         let mut hash_map = self.current.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.current = Some(hash_map);
+        self.current = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>When specified, gets the offering status for the current period.</p>
     pub fn set_current(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::OfferingStatus>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, crate::types::OfferingStatus>,
         >,
     ) -> Self {
         self.current = input;
@@ -100,31 +102,31 @@ impl GetOfferingStatusOutputBuilder {
     /// <p>When specified, gets the offering status for the next period.</p>
     pub fn next_period(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::OfferingStatus,
     ) -> Self {
         let mut hash_map = self.next_period.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.next_period = Some(hash_map);
+        self.next_period = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>When specified, gets the offering status for the next period.</p>
     pub fn set_next_period(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::OfferingStatus>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, crate::types::OfferingStatus>,
         >,
     ) -> Self {
         self.next_period = input;
         self
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An identifier that was returned from the previous call to this operation, which can be used to return the next set of items in the list.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

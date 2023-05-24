@@ -2,22 +2,22 @@
 
 /// <p>Location and destination information about the source code files provided with the project request. The source code is uploaded to the new project source repository after project creation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Code {
     /// <p>The location where the source code files provided with the project request are stored. AWS CodeStar retrieves the files during project creation.</p>
     #[doc(hidden)]
-    pub source: std::option::Option<crate::types::CodeSource>,
+    pub source: ::std::option::Option<crate::types::CodeSource>,
     /// <p>The repository to be created in AWS CodeStar. Valid values are AWS CodeCommit or GitHub. After AWS CodeStar provisions the new repository, the source code files provided with the project request are placed in the repository.</p>
     #[doc(hidden)]
-    pub destination: std::option::Option<crate::types::CodeDestination>,
+    pub destination: ::std::option::Option<crate::types::CodeDestination>,
 }
 impl Code {
     /// <p>The location where the source code files provided with the project request are stored. AWS CodeStar retrieves the files during project creation.</p>
-    pub fn source(&self) -> std::option::Option<&crate::types::CodeSource> {
+    pub fn source(&self) -> ::std::option::Option<&crate::types::CodeSource> {
         self.source.as_ref()
     }
     /// <p>The repository to be created in AWS CodeStar. Valid values are AWS CodeCommit or GitHub. After AWS CodeStar provisions the new repository, the source code files provided with the project request are placed in the repository.</p>
-    pub fn destination(&self) -> std::option::Option<&crate::types::CodeDestination> {
+    pub fn destination(&self) -> ::std::option::Option<&crate::types::CodeDestination> {
         self.destination.as_ref()
     }
 }
@@ -30,31 +30,33 @@ impl Code {
 
 /// A builder for [`Code`](crate::types::Code).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CodeBuilder {
-    pub(crate) source: std::option::Option<crate::types::CodeSource>,
-    pub(crate) destination: std::option::Option<crate::types::CodeDestination>,
+    pub(crate) source: ::std::option::Option<crate::types::CodeSource>,
+    pub(crate) destination: ::std::option::Option<crate::types::CodeDestination>,
 }
 impl CodeBuilder {
     /// <p>The location where the source code files provided with the project request are stored. AWS CodeStar retrieves the files during project creation.</p>
     pub fn source(mut self, input: crate::types::CodeSource) -> Self {
-        self.source = Some(input);
+        self.source = ::std::option::Option::Some(input);
         self
     }
     /// <p>The location where the source code files provided with the project request are stored. AWS CodeStar retrieves the files during project creation.</p>
-    pub fn set_source(mut self, input: std::option::Option<crate::types::CodeSource>) -> Self {
+    pub fn set_source(mut self, input: ::std::option::Option<crate::types::CodeSource>) -> Self {
         self.source = input;
         self
     }
     /// <p>The repository to be created in AWS CodeStar. Valid values are AWS CodeCommit or GitHub. After AWS CodeStar provisions the new repository, the source code files provided with the project request are placed in the repository.</p>
     pub fn destination(mut self, input: crate::types::CodeDestination) -> Self {
-        self.destination = Some(input);
+        self.destination = ::std::option::Option::Some(input);
         self
     }
     /// <p>The repository to be created in AWS CodeStar. Valid values are AWS CodeCommit or GitHub. After AWS CodeStar provisions the new repository, the source code files provided with the project request are placed in the repository.</p>
     pub fn set_destination(
         mut self,
-        input: std::option::Option<crate::types::CodeDestination>,
+        input: ::std::option::Option<crate::types::CodeDestination>,
     ) -> Self {
         self.destination = input;
         self

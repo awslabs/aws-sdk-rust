@@ -2,15 +2,15 @@
 
 /// <p>A structure that contains one or more attendee IDs.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AttendeeIdItem {
     /// <p>A list of one or more attendee IDs.</p>
     #[doc(hidden)]
-    pub attendee_id: std::option::Option<std::string::String>,
+    pub attendee_id: ::std::option::Option<::std::string::String>,
 }
 impl AttendeeIdItem {
     /// <p>A list of one or more attendee IDs.</p>
-    pub fn attendee_id(&self) -> std::option::Option<&str> {
+    pub fn attendee_id(&self) -> ::std::option::Option<&str> {
         self.attendee_id.as_deref()
     }
 }
@@ -23,18 +23,20 @@ impl AttendeeIdItem {
 
 /// A builder for [`AttendeeIdItem`](crate::types::AttendeeIdItem).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AttendeeIdItemBuilder {
-    pub(crate) attendee_id: std::option::Option<std::string::String>,
+    pub(crate) attendee_id: ::std::option::Option<::std::string::String>,
 }
 impl AttendeeIdItemBuilder {
     /// <p>A list of one or more attendee IDs.</p>
-    pub fn attendee_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.attendee_id = Some(input.into());
+    pub fn attendee_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.attendee_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A list of one or more attendee IDs.</p>
-    pub fn set_attendee_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_attendee_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.attendee_id = input;
         self
     }

@@ -9,43 +9,45 @@
 /// <li> <p> <code>LastSuccessfulSyncProvisioningArtifactID</code> </p> </li>
 /// </ul>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LastSync {
     /// <p>The time of the last attempted sync from the repository to the Service Catalog product. </p>
     #[doc(hidden)]
-    pub last_sync_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_sync_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The current status of the sync. Responses include <code>SUCCEEDED</code> or <code>FAILED</code>. </p>
     #[doc(hidden)]
-    pub last_sync_status: std::option::Option<crate::types::LastSyncStatus>,
+    pub last_sync_status: ::std::option::Option<crate::types::LastSyncStatus>,
     /// <p>The sync's status message. </p>
     #[doc(hidden)]
-    pub last_sync_status_message: std::option::Option<std::string::String>,
+    pub last_sync_status_message: ::std::option::Option<::std::string::String>,
     /// <p>The time of the latest successful sync from the source repo artifact to the Service Catalog product.</p>
     #[doc(hidden)]
-    pub last_successful_sync_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub last_successful_sync_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The ProvisioningArtifactID of the ProvisioningArtifact created from the latest successful sync. </p>
     #[doc(hidden)]
-    pub last_successful_sync_provisioning_artifact_id: std::option::Option<std::string::String>,
+    pub last_successful_sync_provisioning_artifact_id: ::std::option::Option<::std::string::String>,
 }
 impl LastSync {
     /// <p>The time of the last attempted sync from the repository to the Service Catalog product. </p>
-    pub fn last_sync_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_sync_time(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_sync_time.as_ref()
     }
     /// <p>The current status of the sync. Responses include <code>SUCCEEDED</code> or <code>FAILED</code>. </p>
-    pub fn last_sync_status(&self) -> std::option::Option<&crate::types::LastSyncStatus> {
+    pub fn last_sync_status(&self) -> ::std::option::Option<&crate::types::LastSyncStatus> {
         self.last_sync_status.as_ref()
     }
     /// <p>The sync's status message. </p>
-    pub fn last_sync_status_message(&self) -> std::option::Option<&str> {
+    pub fn last_sync_status_message(&self) -> ::std::option::Option<&str> {
         self.last_sync_status_message.as_deref()
     }
     /// <p>The time of the latest successful sync from the source repo artifact to the Service Catalog product.</p>
-    pub fn last_successful_sync_time(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn last_successful_sync_time(
+        &self,
+    ) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.last_successful_sync_time.as_ref()
     }
     /// <p>The ProvisioningArtifactID of the ProvisioningArtifact created from the latest successful sync. </p>
-    pub fn last_successful_sync_provisioning_artifact_id(&self) -> std::option::Option<&str> {
+    pub fn last_successful_sync_provisioning_artifact_id(&self) -> ::std::option::Option<&str> {
         self.last_successful_sync_provisioning_artifact_id
             .as_deref()
     }
@@ -59,64 +61,69 @@ impl LastSync {
 
 /// A builder for [`LastSync`](crate::types::LastSync).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LastSyncBuilder {
-    pub(crate) last_sync_time: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) last_sync_status: std::option::Option<crate::types::LastSyncStatus>,
-    pub(crate) last_sync_status_message: std::option::Option<std::string::String>,
-    pub(crate) last_successful_sync_time: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) last_sync_time: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) last_sync_status: ::std::option::Option<crate::types::LastSyncStatus>,
+    pub(crate) last_sync_status_message: ::std::option::Option<::std::string::String>,
+    pub(crate) last_successful_sync_time: ::std::option::Option<::aws_smithy_types::DateTime>,
     pub(crate) last_successful_sync_provisioning_artifact_id:
-        std::option::Option<std::string::String>,
+        ::std::option::Option<::std::string::String>,
 }
 impl LastSyncBuilder {
     /// <p>The time of the last attempted sync from the repository to the Service Catalog product. </p>
-    pub fn last_sync_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_sync_time = Some(input);
+    pub fn last_sync_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_sync_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time of the last attempted sync from the repository to the Service Catalog product. </p>
     pub fn set_last_sync_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_sync_time = input;
         self
     }
     /// <p>The current status of the sync. Responses include <code>SUCCEEDED</code> or <code>FAILED</code>. </p>
     pub fn last_sync_status(mut self, input: crate::types::LastSyncStatus) -> Self {
-        self.last_sync_status = Some(input);
+        self.last_sync_status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current status of the sync. Responses include <code>SUCCEEDED</code> or <code>FAILED</code>. </p>
     pub fn set_last_sync_status(
         mut self,
-        input: std::option::Option<crate::types::LastSyncStatus>,
+        input: ::std::option::Option<crate::types::LastSyncStatus>,
     ) -> Self {
         self.last_sync_status = input;
         self
     }
     /// <p>The sync's status message. </p>
-    pub fn last_sync_status_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.last_sync_status_message = Some(input.into());
+    pub fn last_sync_status_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.last_sync_status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The sync's status message. </p>
     pub fn set_last_sync_status_message(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.last_sync_status_message = input;
         self
     }
     /// <p>The time of the latest successful sync from the source repo artifact to the Service Catalog product.</p>
-    pub fn last_successful_sync_time(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.last_successful_sync_time = Some(input);
+    pub fn last_successful_sync_time(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.last_successful_sync_time = ::std::option::Option::Some(input);
         self
     }
     /// <p>The time of the latest successful sync from the source repo artifact to the Service Catalog product.</p>
     pub fn set_last_successful_sync_time(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.last_successful_sync_time = input;
         self
@@ -124,15 +131,16 @@ impl LastSyncBuilder {
     /// <p>The ProvisioningArtifactID of the ProvisioningArtifact created from the latest successful sync. </p>
     pub fn last_successful_sync_provisioning_artifact_id(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.last_successful_sync_provisioning_artifact_id = Some(input.into());
+        self.last_successful_sync_provisioning_artifact_id =
+            ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ProvisioningArtifactID of the ProvisioningArtifact created from the latest successful sync. </p>
     pub fn set_last_successful_sync_provisioning_artifact_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.last_successful_sync_provisioning_artifact_id = input;
         self

@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum OpenZfsDataCompressionType {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum OpenZfsDataCompressionType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for OpenZfsDataCompressionType {
+impl ::std::convert::From<&str> for OpenZfsDataCompressionType {
     fn from(s: &str) -> Self {
         match s {
             "LZ4" => OpenZfsDataCompressionType::Lz4,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for OpenZfsDataCompressionType {
         }
     }
 }
-impl std::str::FromStr for OpenZfsDataCompressionType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for OpenZfsDataCompressionType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(OpenZfsDataCompressionType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(OpenZfsDataCompressionType::from(s))
     }
 }
 impl OpenZfsDataCompressionType {
@@ -91,7 +91,7 @@ impl OpenZfsDataCompressionType {
         &["LZ4", "NONE", "ZSTD"]
     }
 }
-impl AsRef<str> for OpenZfsDataCompressionType {
+impl ::std::convert::AsRef<str> for OpenZfsDataCompressionType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

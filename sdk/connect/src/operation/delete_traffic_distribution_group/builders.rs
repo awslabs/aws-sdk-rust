@@ -7,47 +7,50 @@ pub use crate::operation::delete_traffic_distribution_group::_delete_traffic_dis
 ///
 /// <p>Deletes a traffic distribution group. This API can be called only in the Region where the traffic distribution group is created.</p>
 /// <p>For more information about deleting traffic distribution groups, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/delete-traffic-distribution-groups.html">Delete traffic distribution groups</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct DeleteTrafficDistributionGroupFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
                     inner: crate::operation::delete_traffic_distribution_group::builders::DeleteTrafficDistributionGroupInputBuilder,
 }
 impl DeleteTrafficDistributionGroupFluentBuilder {
     /// Creates a new `DeleteTrafficDistributionGroup`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
-                    pub async fn customize(self) -> std::result::Result<
-                        crate::client::customize::CustomizableOperation<crate::operation::delete_traffic_distribution_group::DeleteTrafficDistributionGroup, aws_http::retry::AwsResponseRetryClassifier,>,
-                        aws_smithy_http::result::SdkError<crate::operation::delete_traffic_distribution_group::DeleteTrafficDistributionGroupError>
+                    pub async fn customize(self) -> ::std::result::Result<
+                        crate::client::customize::CustomizableOperation<crate::operation::delete_traffic_distribution_group::DeleteTrafficDistributionGroup, ::aws_http::retry::AwsResponseRetryClassifier,>,
+                        ::aws_smithy_http::result::SdkError<crate::operation::delete_traffic_distribution_group::DeleteTrafficDistributionGroupError>
     >{
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
-                    pub async fn send_middleware(self) -> std::result::Result<crate::operation::delete_traffic_distribution_group::DeleteTrafficDistributionGroupOutput, aws_smithy_http::result::SdkError<crate::operation::delete_traffic_distribution_group::DeleteTrafficDistributionGroupError>>
+                    pub async fn send_middleware(self) -> ::std::result::Result<crate::operation::delete_traffic_distribution_group::DeleteTrafficDistributionGroupOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_traffic_distribution_group::DeleteTrafficDistributionGroupError>>
                      {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -58,19 +61,22 @@ impl DeleteTrafficDistributionGroupFluentBuilder {
     /// By default, any retryable failures will be retried twice. Retry behavior
     /// is configurable with the [RetryConfig](aws_smithy_types::retry::RetryConfig), which can be
     /// set when configuring the client.
-                        pub async fn send(self) -> std::result::Result<crate::operation::delete_traffic_distribution_group::DeleteTrafficDistributionGroupOutput, aws_smithy_http::result::SdkError<crate::operation::delete_traffic_distribution_group::DeleteTrafficDistributionGroupError>>
+                        pub async fn send(self) -> ::std::result::Result<crate::operation::delete_traffic_distribution_group::DeleteTrafficDistributionGroupOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_traffic_distribution_group::DeleteTrafficDistributionGroupError>>
                          {
         self.send_middleware().await
     }
     /// <p>The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.</p>
-    pub fn traffic_distribution_group_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn traffic_distribution_group_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.traffic_distribution_group_id(input.into());
         self
     }
     /// <p>The identifier of the traffic distribution group. This can be the ID or the ARN if the API is being called in the Region where the traffic distribution group was created. The ARN must be provided if the call is from the replicated Region.</p>
     pub fn set_traffic_distribution_group_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_traffic_distribution_group_id(input);
         self

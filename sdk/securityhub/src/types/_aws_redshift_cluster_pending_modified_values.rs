@@ -2,35 +2,35 @@
 
 /// <p>Changes to the Amazon Redshift cluster that are currently pending.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsRedshiftClusterPendingModifiedValues {
     /// <p>The pending or in-progress change to the automated snapshot retention period.</p>
     #[doc(hidden)]
     pub automated_snapshot_retention_period: i32,
     /// <p>The pending or in-progress change to the identifier for the cluster.</p>
     #[doc(hidden)]
-    pub cluster_identifier: std::option::Option<std::string::String>,
+    pub cluster_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The pending or in-progress change to the cluster type.</p>
     #[doc(hidden)]
-    pub cluster_type: std::option::Option<std::string::String>,
+    pub cluster_type: ::std::option::Option<::std::string::String>,
     /// <p>The pending or in-progress change to the service version.</p>
     #[doc(hidden)]
-    pub cluster_version: std::option::Option<std::string::String>,
+    pub cluster_version: ::std::option::Option<::std::string::String>,
     /// <p>The encryption type for a cluster.</p>
     #[doc(hidden)]
-    pub encryption_type: std::option::Option<std::string::String>,
+    pub encryption_type: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether to create the cluster with enhanced VPC routing enabled.</p>
     #[doc(hidden)]
     pub enhanced_vpc_routing: bool,
     /// <p>The name of the maintenance track that the cluster changes to during the next maintenance window.</p>
     #[doc(hidden)]
-    pub maintenance_track_name: std::option::Option<std::string::String>,
+    pub maintenance_track_name: ::std::option::Option<::std::string::String>,
     /// <p>The pending or in-progress change to the master user password for the cluster.</p>
     #[doc(hidden)]
-    pub master_user_password: std::option::Option<std::string::String>,
+    pub master_user_password: ::std::option::Option<::std::string::String>,
     /// <p>The pending or in-progress change to the cluster's node type.</p>
     #[doc(hidden)]
-    pub node_type: std::option::Option<std::string::String>,
+    pub node_type: ::std::option::Option<::std::string::String>,
     /// <p>The pending or in-progress change to the number of nodes in the cluster.</p>
     #[doc(hidden)]
     pub number_of_nodes: i32,
@@ -44,19 +44,19 @@ impl AwsRedshiftClusterPendingModifiedValues {
         self.automated_snapshot_retention_period
     }
     /// <p>The pending or in-progress change to the identifier for the cluster.</p>
-    pub fn cluster_identifier(&self) -> std::option::Option<&str> {
+    pub fn cluster_identifier(&self) -> ::std::option::Option<&str> {
         self.cluster_identifier.as_deref()
     }
     /// <p>The pending or in-progress change to the cluster type.</p>
-    pub fn cluster_type(&self) -> std::option::Option<&str> {
+    pub fn cluster_type(&self) -> ::std::option::Option<&str> {
         self.cluster_type.as_deref()
     }
     /// <p>The pending or in-progress change to the service version.</p>
-    pub fn cluster_version(&self) -> std::option::Option<&str> {
+    pub fn cluster_version(&self) -> ::std::option::Option<&str> {
         self.cluster_version.as_deref()
     }
     /// <p>The encryption type for a cluster.</p>
-    pub fn encryption_type(&self) -> std::option::Option<&str> {
+    pub fn encryption_type(&self) -> ::std::option::Option<&str> {
         self.encryption_type.as_deref()
     }
     /// <p>Indicates whether to create the cluster with enhanced VPC routing enabled.</p>
@@ -64,15 +64,15 @@ impl AwsRedshiftClusterPendingModifiedValues {
         self.enhanced_vpc_routing
     }
     /// <p>The name of the maintenance track that the cluster changes to during the next maintenance window.</p>
-    pub fn maintenance_track_name(&self) -> std::option::Option<&str> {
+    pub fn maintenance_track_name(&self) -> ::std::option::Option<&str> {
         self.maintenance_track_name.as_deref()
     }
     /// <p>The pending or in-progress change to the master user password for the cluster.</p>
-    pub fn master_user_password(&self) -> std::option::Option<&str> {
+    pub fn master_user_password(&self) -> ::std::option::Option<&str> {
         self.master_user_password.as_deref()
     }
     /// <p>The pending or in-progress change to the cluster's node type.</p>
-    pub fn node_type(&self) -> std::option::Option<&str> {
+    pub fn node_type(&self) -> ::std::option::Option<&str> {
         self.node_type.as_deref()
     }
     /// <p>The pending or in-progress change to the number of nodes in the cluster.</p>
@@ -93,140 +93,163 @@ impl AwsRedshiftClusterPendingModifiedValues {
 
 /// A builder for [`AwsRedshiftClusterPendingModifiedValues`](crate::types::AwsRedshiftClusterPendingModifiedValues).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsRedshiftClusterPendingModifiedValuesBuilder {
-    pub(crate) automated_snapshot_retention_period: std::option::Option<i32>,
-    pub(crate) cluster_identifier: std::option::Option<std::string::String>,
-    pub(crate) cluster_type: std::option::Option<std::string::String>,
-    pub(crate) cluster_version: std::option::Option<std::string::String>,
-    pub(crate) encryption_type: std::option::Option<std::string::String>,
-    pub(crate) enhanced_vpc_routing: std::option::Option<bool>,
-    pub(crate) maintenance_track_name: std::option::Option<std::string::String>,
-    pub(crate) master_user_password: std::option::Option<std::string::String>,
-    pub(crate) node_type: std::option::Option<std::string::String>,
-    pub(crate) number_of_nodes: std::option::Option<i32>,
-    pub(crate) publicly_accessible: std::option::Option<bool>,
+    pub(crate) automated_snapshot_retention_period: ::std::option::Option<i32>,
+    pub(crate) cluster_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) cluster_type: ::std::option::Option<::std::string::String>,
+    pub(crate) cluster_version: ::std::option::Option<::std::string::String>,
+    pub(crate) encryption_type: ::std::option::Option<::std::string::String>,
+    pub(crate) enhanced_vpc_routing: ::std::option::Option<bool>,
+    pub(crate) maintenance_track_name: ::std::option::Option<::std::string::String>,
+    pub(crate) master_user_password: ::std::option::Option<::std::string::String>,
+    pub(crate) node_type: ::std::option::Option<::std::string::String>,
+    pub(crate) number_of_nodes: ::std::option::Option<i32>,
+    pub(crate) publicly_accessible: ::std::option::Option<bool>,
 }
 impl AwsRedshiftClusterPendingModifiedValuesBuilder {
     /// <p>The pending or in-progress change to the automated snapshot retention period.</p>
     pub fn automated_snapshot_retention_period(mut self, input: i32) -> Self {
-        self.automated_snapshot_retention_period = Some(input);
+        self.automated_snapshot_retention_period = ::std::option::Option::Some(input);
         self
     }
     /// <p>The pending or in-progress change to the automated snapshot retention period.</p>
     pub fn set_automated_snapshot_retention_period(
         mut self,
-        input: std::option::Option<i32>,
+        input: ::std::option::Option<i32>,
     ) -> Self {
         self.automated_snapshot_retention_period = input;
         self
     }
     /// <p>The pending or in-progress change to the identifier for the cluster.</p>
-    pub fn cluster_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cluster_identifier = Some(input.into());
+    pub fn cluster_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.cluster_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The pending or in-progress change to the identifier for the cluster.</p>
     pub fn set_cluster_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.cluster_identifier = input;
         self
     }
     /// <p>The pending or in-progress change to the cluster type.</p>
-    pub fn cluster_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cluster_type = Some(input.into());
+    pub fn cluster_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cluster_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The pending or in-progress change to the cluster type.</p>
-    pub fn set_cluster_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cluster_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cluster_type = input;
         self
     }
     /// <p>The pending or in-progress change to the service version.</p>
-    pub fn cluster_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cluster_version = Some(input.into());
+    pub fn cluster_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.cluster_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The pending or in-progress change to the service version.</p>
-    pub fn set_cluster_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cluster_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.cluster_version = input;
         self
     }
     /// <p>The encryption type for a cluster.</p>
-    pub fn encryption_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.encryption_type = Some(input.into());
+    pub fn encryption_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.encryption_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The encryption type for a cluster.</p>
-    pub fn set_encryption_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_encryption_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.encryption_type = input;
         self
     }
     /// <p>Indicates whether to create the cluster with enhanced VPC routing enabled.</p>
     pub fn enhanced_vpc_routing(mut self, input: bool) -> Self {
-        self.enhanced_vpc_routing = Some(input);
+        self.enhanced_vpc_routing = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether to create the cluster with enhanced VPC routing enabled.</p>
-    pub fn set_enhanced_vpc_routing(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enhanced_vpc_routing(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enhanced_vpc_routing = input;
         self
     }
     /// <p>The name of the maintenance track that the cluster changes to during the next maintenance window.</p>
-    pub fn maintenance_track_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.maintenance_track_name = Some(input.into());
+    pub fn maintenance_track_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.maintenance_track_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the maintenance track that the cluster changes to during the next maintenance window.</p>
     pub fn set_maintenance_track_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.maintenance_track_name = input;
         self
     }
     /// <p>The pending or in-progress change to the master user password for the cluster.</p>
-    pub fn master_user_password(mut self, input: impl Into<std::string::String>) -> Self {
-        self.master_user_password = Some(input.into());
+    pub fn master_user_password(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.master_user_password = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The pending or in-progress change to the master user password for the cluster.</p>
     pub fn set_master_user_password(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.master_user_password = input;
         self
     }
     /// <p>The pending or in-progress change to the cluster's node type.</p>
-    pub fn node_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.node_type = Some(input.into());
+    pub fn node_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.node_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The pending or in-progress change to the cluster's node type.</p>
-    pub fn set_node_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_node_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.node_type = input;
         self
     }
     /// <p>The pending or in-progress change to the number of nodes in the cluster.</p>
     pub fn number_of_nodes(mut self, input: i32) -> Self {
-        self.number_of_nodes = Some(input);
+        self.number_of_nodes = ::std::option::Option::Some(input);
         self
     }
     /// <p>The pending or in-progress change to the number of nodes in the cluster.</p>
-    pub fn set_number_of_nodes(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_number_of_nodes(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_nodes = input;
         self
     }
     /// <p>The pending or in-progress change to whether the cluster can be connected to from the public network.</p>
     pub fn publicly_accessible(mut self, input: bool) -> Self {
-        self.publicly_accessible = Some(input);
+        self.publicly_accessible = ::std::option::Option::Some(input);
         self
     }
     /// <p>The pending or in-progress change to whether the cluster can be connected to from the public network.</p>
-    pub fn set_publicly_accessible(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_publicly_accessible(mut self, input: ::std::option::Option<bool>) -> Self {
         self.publicly_accessible = input;
         self
     }

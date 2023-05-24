@@ -2,15 +2,15 @@
 
 /// <p>The controls that Config uses for executing remediations.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ExecutionControls {
     /// <p>A SsmControls object.</p>
     #[doc(hidden)]
-    pub ssm_controls: std::option::Option<crate::types::SsmControls>,
+    pub ssm_controls: ::std::option::Option<crate::types::SsmControls>,
 }
 impl ExecutionControls {
     /// <p>A SsmControls object.</p>
-    pub fn ssm_controls(&self) -> std::option::Option<&crate::types::SsmControls> {
+    pub fn ssm_controls(&self) -> ::std::option::Option<&crate::types::SsmControls> {
         self.ssm_controls.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl ExecutionControls {
 
 /// A builder for [`ExecutionControls`](crate::types::ExecutionControls).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ExecutionControlsBuilder {
-    pub(crate) ssm_controls: std::option::Option<crate::types::SsmControls>,
+    pub(crate) ssm_controls: ::std::option::Option<crate::types::SsmControls>,
 }
 impl ExecutionControlsBuilder {
     /// <p>A SsmControls object.</p>
     pub fn ssm_controls(mut self, input: crate::types::SsmControls) -> Self {
-        self.ssm_controls = Some(input);
+        self.ssm_controls = ::std::option::Option::Some(input);
         self
     }
     /// <p>A SsmControls object.</p>
     pub fn set_ssm_controls(
         mut self,
-        input: std::option::Option<crate::types::SsmControls>,
+        input: ::std::option::Option<crate::types::SsmControls>,
     ) -> Self {
         self.ssm_controls = input;
         self

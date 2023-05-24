@@ -2,27 +2,27 @@
 
 /// <p> Container for the parameters for response received from <code> <code>ListElasticsearchVersions</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListElasticsearchVersionsOutput {
     /// <p>List of supported elastic search versions. </p>
     #[doc(hidden)]
-    pub elasticsearch_versions: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub elasticsearch_versions: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p> Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. </p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListElasticsearchVersionsOutput {
     /// <p>List of supported elastic search versions. </p>
-    pub fn elasticsearch_versions(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn elasticsearch_versions(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.elasticsearch_versions.as_deref()
     }
     /// <p> Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListElasticsearchVersionsOutput {
+impl ::aws_http::request_id::RequestId for ListElasticsearchVersionsOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,10 +36,13 @@ impl ListElasticsearchVersionsOutput {
 
 /// A builder for [`ListElasticsearchVersionsOutput`](crate::operation::list_elasticsearch_versions::ListElasticsearchVersionsOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListElasticsearchVersionsOutputBuilder {
-    pub(crate) elasticsearch_versions: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) elasticsearch_versions:
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListElasticsearchVersionsOutputBuilder {
@@ -48,27 +51,30 @@ impl ListElasticsearchVersionsOutputBuilder {
     /// To override the contents of this collection use [`set_elasticsearch_versions`](Self::set_elasticsearch_versions).
     ///
     /// <p>List of supported elastic search versions. </p>
-    pub fn elasticsearch_versions(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn elasticsearch_versions(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.elasticsearch_versions.unwrap_or_default();
         v.push(input.into());
-        self.elasticsearch_versions = Some(v);
+        self.elasticsearch_versions = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of supported elastic search versions. </p>
     pub fn set_elasticsearch_versions(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.elasticsearch_versions = input;
         self
     }
     /// <p> Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. </p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> Paginated APIs accepts NextToken input to returns next page results and provides a NextToken output in the response which can be used by the client to retrieve more results. </p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum SkillTypeFilter {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum SkillTypeFilter {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for SkillTypeFilter {
+impl ::std::convert::From<&str> for SkillTypeFilter {
     fn from(s: &str) -> Self {
         match s {
             "ALL" => SkillTypeFilter::All,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for SkillTypeFilter {
         }
     }
 }
-impl std::str::FromStr for SkillTypeFilter {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for SkillTypeFilter {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SkillTypeFilter::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(SkillTypeFilter::from(s))
     }
 }
 impl SkillTypeFilter {
@@ -91,7 +91,7 @@ impl SkillTypeFilter {
         &["ALL", "PRIVATE", "PUBLIC"]
     }
 }
-impl AsRef<str> for SkillTypeFilter {
+impl ::std::convert::AsRef<str> for SkillTypeFilter {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

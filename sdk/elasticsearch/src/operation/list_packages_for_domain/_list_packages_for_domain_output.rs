@@ -2,30 +2,30 @@
 
 /// <p> Container for response parameters to <code> <code>ListPackagesForDomain</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListPackagesForDomainOutput {
     /// <p>List of <code>DomainPackageDetails</code> objects.</p>
     #[doc(hidden)]
     pub domain_package_details_list:
-        std::option::Option<std::vec::Vec<crate::types::DomainPackageDetails>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::DomainPackageDetails>>,
     /// <p>Pagination token that needs to be supplied to the next call to get the next page of results.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListPackagesForDomainOutput {
     /// <p>List of <code>DomainPackageDetails</code> objects.</p>
     pub fn domain_package_details_list(
         &self,
-    ) -> std::option::Option<&[crate::types::DomainPackageDetails]> {
+    ) -> ::std::option::Option<&[crate::types::DomainPackageDetails]> {
         self.domain_package_details_list.as_deref()
     }
     /// <p>Pagination token that needs to be supplied to the next call to get the next page of results.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListPackagesForDomainOutput {
+impl ::aws_http::request_id::RequestId for ListPackagesForDomainOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -41,11 +41,13 @@ impl ListPackagesForDomainOutput {
 
 /// A builder for [`ListPackagesForDomainOutput`](crate::operation::list_packages_for_domain::ListPackagesForDomainOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListPackagesForDomainOutputBuilder {
     pub(crate) domain_package_details_list:
-        std::option::Option<std::vec::Vec<crate::types::DomainPackageDetails>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::DomainPackageDetails>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListPackagesForDomainOutputBuilder {
@@ -60,24 +62,24 @@ impl ListPackagesForDomainOutputBuilder {
     ) -> Self {
         let mut v = self.domain_package_details_list.unwrap_or_default();
         v.push(input);
-        self.domain_package_details_list = Some(v);
+        self.domain_package_details_list = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of <code>DomainPackageDetails</code> objects.</p>
     pub fn set_domain_package_details_list(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DomainPackageDetails>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DomainPackageDetails>>,
     ) -> Self {
         self.domain_package_details_list = input;
         self
     }
     /// <p>Pagination token that needs to be supplied to the next call to get the next page of results.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Pagination token that needs to be supplied to the next call to get the next page of results.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

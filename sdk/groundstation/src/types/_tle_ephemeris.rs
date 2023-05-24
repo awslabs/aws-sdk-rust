@@ -2,22 +2,22 @@
 
 /// <p>Two-line element set (TLE) ephemeris.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TleEphemeris {
     /// <p>Identifies the S3 object to be used as the ephemeris.</p>
     #[doc(hidden)]
-    pub s3_object: std::option::Option<crate::types::S3Object>,
+    pub s3_object: ::std::option::Option<crate::types::S3Object>,
     /// <p>The data for a TLE ephemeris, supplied directly in the request rather than through an S3 object.</p>
     #[doc(hidden)]
-    pub tle_data: std::option::Option<std::vec::Vec<crate::types::TleData>>,
+    pub tle_data: ::std::option::Option<::std::vec::Vec<crate::types::TleData>>,
 }
 impl TleEphemeris {
     /// <p>Identifies the S3 object to be used as the ephemeris.</p>
-    pub fn s3_object(&self) -> std::option::Option<&crate::types::S3Object> {
+    pub fn s3_object(&self) -> ::std::option::Option<&crate::types::S3Object> {
         self.s3_object.as_ref()
     }
     /// <p>The data for a TLE ephemeris, supplied directly in the request rather than through an S3 object.</p>
-    pub fn tle_data(&self) -> std::option::Option<&[crate::types::TleData]> {
+    pub fn tle_data(&self) -> ::std::option::Option<&[crate::types::TleData]> {
         self.tle_data.as_deref()
     }
 }
@@ -30,19 +30,21 @@ impl TleEphemeris {
 
 /// A builder for [`TleEphemeris`](crate::types::TleEphemeris).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TleEphemerisBuilder {
-    pub(crate) s3_object: std::option::Option<crate::types::S3Object>,
-    pub(crate) tle_data: std::option::Option<std::vec::Vec<crate::types::TleData>>,
+    pub(crate) s3_object: ::std::option::Option<crate::types::S3Object>,
+    pub(crate) tle_data: ::std::option::Option<::std::vec::Vec<crate::types::TleData>>,
 }
 impl TleEphemerisBuilder {
     /// <p>Identifies the S3 object to be used as the ephemeris.</p>
     pub fn s3_object(mut self, input: crate::types::S3Object) -> Self {
-        self.s3_object = Some(input);
+        self.s3_object = ::std::option::Option::Some(input);
         self
     }
     /// <p>Identifies the S3 object to be used as the ephemeris.</p>
-    pub fn set_s3_object(mut self, input: std::option::Option<crate::types::S3Object>) -> Self {
+    pub fn set_s3_object(mut self, input: ::std::option::Option<crate::types::S3Object>) -> Self {
         self.s3_object = input;
         self
     }
@@ -54,13 +56,13 @@ impl TleEphemerisBuilder {
     pub fn tle_data(mut self, input: crate::types::TleData) -> Self {
         let mut v = self.tle_data.unwrap_or_default();
         v.push(input);
-        self.tle_data = Some(v);
+        self.tle_data = ::std::option::Option::Some(v);
         self
     }
     /// <p>The data for a TLE ephemeris, supplied directly in the request rather than through an S3 object.</p>
     pub fn set_tle_data(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TleData>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TleData>>,
     ) -> Self {
         self.tle_data = input;
         self

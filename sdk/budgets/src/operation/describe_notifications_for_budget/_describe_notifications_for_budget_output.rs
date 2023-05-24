@@ -2,27 +2,27 @@
 
 /// <p> Response of GetNotificationsForBudget </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DescribeNotificationsForBudgetOutput {
     /// <p>A list of notifications that are associated with a budget.</p>
     #[doc(hidden)]
-    pub notifications: std::option::Option<std::vec::Vec<crate::types::Notification>>,
+    pub notifications: ::std::option::Option<::std::vec::Vec<crate::types::Notification>>,
     /// <p>The pagination token in the service response that indicates the next set of results that you can retrieve.</p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeNotificationsForBudgetOutput {
     /// <p>A list of notifications that are associated with a budget.</p>
-    pub fn notifications(&self) -> std::option::Option<&[crate::types::Notification]> {
+    pub fn notifications(&self) -> ::std::option::Option<&[crate::types::Notification]> {
         self.notifications.as_deref()
     }
     /// <p>The pagination token in the service response that indicates the next set of results that you can retrieve.</p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for DescribeNotificationsForBudgetOutput {
+impl ::aws_http::request_id::RequestId for DescribeNotificationsForBudgetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,10 +36,12 @@ impl DescribeNotificationsForBudgetOutput {
 
 /// A builder for [`DescribeNotificationsForBudgetOutput`](crate::operation::describe_notifications_for_budget::DescribeNotificationsForBudgetOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DescribeNotificationsForBudgetOutputBuilder {
-    pub(crate) notifications: std::option::Option<std::vec::Vec<crate::types::Notification>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+    pub(crate) notifications: ::std::option::Option<::std::vec::Vec<crate::types::Notification>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl DescribeNotificationsForBudgetOutputBuilder {
@@ -51,24 +53,24 @@ impl DescribeNotificationsForBudgetOutputBuilder {
     pub fn notifications(mut self, input: crate::types::Notification) -> Self {
         let mut v = self.notifications.unwrap_or_default();
         v.push(input);
-        self.notifications = Some(v);
+        self.notifications = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of notifications that are associated with a budget.</p>
     pub fn set_notifications(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Notification>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Notification>>,
     ) -> Self {
         self.notifications = input;
         self
     }
     /// <p>The pagination token in the service response that indicates the next set of results that you can retrieve.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The pagination token in the service response that indicates the next set of results that you can retrieve.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

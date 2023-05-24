@@ -2,40 +2,40 @@
 
 /// <p>Describes an Amazon Lightsail bucket.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Bucket {
     /// <p>The Lightsail resource type of the bucket (for example, <code>Bucket</code>).</p>
     #[doc(hidden)]
-    pub resource_type: std::option::Option<std::string::String>,
+    pub resource_type: ::std::option::Option<::std::string::String>,
     /// <p>An object that describes the access rules of the bucket.</p>
     #[doc(hidden)]
-    pub access_rules: std::option::Option<crate::types::AccessRules>,
+    pub access_rules: ::std::option::Option<crate::types::AccessRules>,
     /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the bundle currently applied to the bucket.</p>
     /// <p>A bucket bundle specifies the monthly cost, storage space, and data transfer quota for a bucket.</p>
     /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucketBundle.html">UpdateBucketBundle</a> action to change the bundle of a bucket.</p>
     #[doc(hidden)]
-    pub bundle_id: std::option::Option<std::string::String>,
+    pub bundle_id: ::std::option::Option<::std::string::String>,
     /// <p>The timestamp when the distribution was created.</p>
     #[doc(hidden)]
-    pub created_at: std::option::Option<aws_smithy_types::DateTime>,
+    pub created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The URL of the bucket.</p>
     #[doc(hidden)]
-    pub url: std::option::Option<std::string::String>,
+    pub url: ::std::option::Option<::std::string::String>,
     /// <p>An object that describes the location of the bucket, such as the Amazon Web Services Region and Availability Zone.</p>
     #[doc(hidden)]
-    pub location: std::option::Option<crate::types::ResourceLocation>,
+    pub location: ::std::option::Option<crate::types::ResourceLocation>,
     /// <p>The name of the bucket.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The support code for a bucket. Include this code in your email to support when you have questions about a Lightsail bucket. This code enables our support team to look up your Lightsail information more easily.</p>
     #[doc(hidden)]
-    pub support_code: std::option::Option<std::string::String>,
+    pub support_code: ::std::option::Option<::std::string::String>,
     /// <p>The tag keys and optional values for the bucket. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Tags in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     /// <p>Indicates whether object versioning is enabled for the bucket.</p>
     /// <p>The following options can be configured:</p>
     /// <ul>
@@ -44,68 +44,68 @@ pub struct Bucket {
     /// <li> <p> <code>NeverEnabled</code> - Object versioning has never been enabled.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub object_versioning: std::option::Option<std::string::String>,
+    pub object_versioning: ::std::option::Option<::std::string::String>,
     /// <p>Indicates whether the bundle that is currently applied to a bucket can be changed to another bundle.</p>
     /// <p>You can update a bucket's bundle only one time within a monthly Amazon Web Services billing cycle.</p>
     /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucketBundle.html">UpdateBucketBundle</a> action to change a bucket's bundle.</p>
     #[doc(hidden)]
-    pub able_to_update_bundle: std::option::Option<bool>,
+    pub able_to_update_bundle: ::std::option::Option<bool>,
     /// <p>An array of strings that specify the Amazon Web Services account IDs that have read-only access to the bucket.</p>
     #[doc(hidden)]
-    pub readonly_access_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub readonly_access_accounts: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An array of objects that describe Lightsail instances that have access to the bucket.</p>
     /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a> action to update the instances that have access to a bucket.</p>
     #[doc(hidden)]
     pub resources_receiving_access:
-        std::option::Option<std::vec::Vec<crate::types::ResourceReceivingAccess>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ResourceReceivingAccess>>,
     /// <p>An object that describes the state of the bucket.</p>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::BucketState>,
+    pub state: ::std::option::Option<crate::types::BucketState>,
     /// <p>An object that describes the access log configuration for the bucket.</p>
     #[doc(hidden)]
-    pub access_log_config: std::option::Option<crate::types::BucketAccessLogConfig>,
+    pub access_log_config: ::std::option::Option<crate::types::BucketAccessLogConfig>,
 }
 impl Bucket {
     /// <p>The Lightsail resource type of the bucket (for example, <code>Bucket</code>).</p>
-    pub fn resource_type(&self) -> std::option::Option<&str> {
+    pub fn resource_type(&self) -> ::std::option::Option<&str> {
         self.resource_type.as_deref()
     }
     /// <p>An object that describes the access rules of the bucket.</p>
-    pub fn access_rules(&self) -> std::option::Option<&crate::types::AccessRules> {
+    pub fn access_rules(&self) -> ::std::option::Option<&crate::types::AccessRules> {
         self.access_rules.as_ref()
     }
     /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The ID of the bundle currently applied to the bucket.</p>
     /// <p>A bucket bundle specifies the monthly cost, storage space, and data transfer quota for a bucket.</p>
     /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucketBundle.html">UpdateBucketBundle</a> action to change the bundle of a bucket.</p>
-    pub fn bundle_id(&self) -> std::option::Option<&str> {
+    pub fn bundle_id(&self) -> ::std::option::Option<&str> {
         self.bundle_id.as_deref()
     }
     /// <p>The timestamp when the distribution was created.</p>
-    pub fn created_at(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn created_at(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.created_at.as_ref()
     }
     /// <p>The URL of the bucket.</p>
-    pub fn url(&self) -> std::option::Option<&str> {
+    pub fn url(&self) -> ::std::option::Option<&str> {
         self.url.as_deref()
     }
     /// <p>An object that describes the location of the bucket, such as the Amazon Web Services Region and Availability Zone.</p>
-    pub fn location(&self) -> std::option::Option<&crate::types::ResourceLocation> {
+    pub fn location(&self) -> ::std::option::Option<&crate::types::ResourceLocation> {
         self.location.as_ref()
     }
     /// <p>The name of the bucket.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The support code for a bucket. Include this code in your email to support when you have questions about a Lightsail bucket. This code enables our support team to look up your Lightsail information more easily.</p>
-    pub fn support_code(&self) -> std::option::Option<&str> {
+    pub fn support_code(&self) -> ::std::option::Option<&str> {
         self.support_code.as_deref()
     }
     /// <p>The tag keys and optional values for the bucket. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Tags in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
     /// <p>Indicates whether object versioning is enabled for the bucket.</p>
@@ -115,32 +115,32 @@ impl Bucket {
     /// <li> <p> <code>Suspended</code> - Object versioning was previously enabled but is currently suspended. Existing object versions are retained.</p> </li>
     /// <li> <p> <code>NeverEnabled</code> - Object versioning has never been enabled.</p> </li>
     /// </ul>
-    pub fn object_versioning(&self) -> std::option::Option<&str> {
+    pub fn object_versioning(&self) -> ::std::option::Option<&str> {
         self.object_versioning.as_deref()
     }
     /// <p>Indicates whether the bundle that is currently applied to a bucket can be changed to another bundle.</p>
     /// <p>You can update a bucket's bundle only one time within a monthly Amazon Web Services billing cycle.</p>
     /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucketBundle.html">UpdateBucketBundle</a> action to change a bucket's bundle.</p>
-    pub fn able_to_update_bundle(&self) -> std::option::Option<bool> {
+    pub fn able_to_update_bundle(&self) -> ::std::option::Option<bool> {
         self.able_to_update_bundle
     }
     /// <p>An array of strings that specify the Amazon Web Services account IDs that have read-only access to the bucket.</p>
-    pub fn readonly_access_accounts(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn readonly_access_accounts(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.readonly_access_accounts.as_deref()
     }
     /// <p>An array of objects that describe Lightsail instances that have access to the bucket.</p>
     /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a> action to update the instances that have access to a bucket.</p>
     pub fn resources_receiving_access(
         &self,
-    ) -> std::option::Option<&[crate::types::ResourceReceivingAccess]> {
+    ) -> ::std::option::Option<&[crate::types::ResourceReceivingAccess]> {
         self.resources_receiving_access.as_deref()
     }
     /// <p>An object that describes the state of the bucket.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::BucketState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::BucketState> {
         self.state.as_ref()
     }
     /// <p>An object that describes the access log configuration for the bucket.</p>
-    pub fn access_log_config(&self) -> std::option::Option<&crate::types::BucketAccessLogConfig> {
+    pub fn access_log_config(&self) -> ::std::option::Option<&crate::types::BucketAccessLogConfig> {
         self.access_log_config.as_ref()
     }
 }
@@ -153,127 +153,136 @@ impl Bucket {
 
 /// A builder for [`Bucket`](crate::types::Bucket).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BucketBuilder {
-    pub(crate) resource_type: std::option::Option<std::string::String>,
-    pub(crate) access_rules: std::option::Option<crate::types::AccessRules>,
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) bundle_id: std::option::Option<std::string::String>,
-    pub(crate) created_at: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) url: std::option::Option<std::string::String>,
-    pub(crate) location: std::option::Option<crate::types::ResourceLocation>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) support_code: std::option::Option<std::string::String>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
-    pub(crate) object_versioning: std::option::Option<std::string::String>,
-    pub(crate) able_to_update_bundle: std::option::Option<bool>,
-    pub(crate) readonly_access_accounts: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub(crate) resource_type: ::std::option::Option<::std::string::String>,
+    pub(crate) access_rules: ::std::option::Option<crate::types::AccessRules>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) bundle_id: ::std::option::Option<::std::string::String>,
+    pub(crate) created_at: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) url: ::std::option::Option<::std::string::String>,
+    pub(crate) location: ::std::option::Option<crate::types::ResourceLocation>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) support_code: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
+    pub(crate) object_versioning: ::std::option::Option<::std::string::String>,
+    pub(crate) able_to_update_bundle: ::std::option::Option<bool>,
+    pub(crate) readonly_access_accounts:
+        ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     pub(crate) resources_receiving_access:
-        std::option::Option<std::vec::Vec<crate::types::ResourceReceivingAccess>>,
-    pub(crate) state: std::option::Option<crate::types::BucketState>,
-    pub(crate) access_log_config: std::option::Option<crate::types::BucketAccessLogConfig>,
+        ::std::option::Option<::std::vec::Vec<crate::types::ResourceReceivingAccess>>,
+    pub(crate) state: ::std::option::Option<crate::types::BucketState>,
+    pub(crate) access_log_config: ::std::option::Option<crate::types::BucketAccessLogConfig>,
 }
 impl BucketBuilder {
     /// <p>The Lightsail resource type of the bucket (for example, <code>Bucket</code>).</p>
-    pub fn resource_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_type = Some(input.into());
+    pub fn resource_type(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.resource_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Lightsail resource type of the bucket (for example, <code>Bucket</code>).</p>
-    pub fn set_resource_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_type(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.resource_type = input;
         self
     }
     /// <p>An object that describes the access rules of the bucket.</p>
     pub fn access_rules(mut self, input: crate::types::AccessRules) -> Self {
-        self.access_rules = Some(input);
+        self.access_rules = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that describes the access rules of the bucket.</p>
     pub fn set_access_rules(
         mut self,
-        input: std::option::Option<crate::types::AccessRules>,
+        input: ::std::option::Option<crate::types::AccessRules>,
     ) -> Self {
         self.access_rules = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the bucket.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The ID of the bundle currently applied to the bucket.</p>
     /// <p>A bucket bundle specifies the monthly cost, storage space, and data transfer quota for a bucket.</p>
     /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucketBundle.html">UpdateBucketBundle</a> action to change the bundle of a bucket.</p>
-    pub fn bundle_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.bundle_id = Some(input.into());
+    pub fn bundle_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.bundle_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the bundle currently applied to the bucket.</p>
     /// <p>A bucket bundle specifies the monthly cost, storage space, and data transfer quota for a bucket.</p>
     /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucketBundle.html">UpdateBucketBundle</a> action to change the bundle of a bucket.</p>
-    pub fn set_bundle_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_bundle_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.bundle_id = input;
         self
     }
     /// <p>The timestamp when the distribution was created.</p>
-    pub fn created_at(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.created_at = Some(input);
+    pub fn created_at(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.created_at = ::std::option::Option::Some(input);
         self
     }
     /// <p>The timestamp when the distribution was created.</p>
     pub fn set_created_at(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.created_at = input;
         self
     }
     /// <p>The URL of the bucket.</p>
-    pub fn url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.url = Some(input.into());
+    pub fn url(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The URL of the bucket.</p>
-    pub fn set_url(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_url(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.url = input;
         self
     }
     /// <p>An object that describes the location of the bucket, such as the Amazon Web Services Region and Availability Zone.</p>
     pub fn location(mut self, input: crate::types::ResourceLocation) -> Self {
-        self.location = Some(input);
+        self.location = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that describes the location of the bucket, such as the Amazon Web Services Region and Availability Zone.</p>
     pub fn set_location(
         mut self,
-        input: std::option::Option<crate::types::ResourceLocation>,
+        input: ::std::option::Option<crate::types::ResourceLocation>,
     ) -> Self {
         self.location = input;
         self
     }
     /// <p>The name of the bucket.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the bucket.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The support code for a bucket. Include this code in your email to support when you have questions about a Lightsail bucket. This code enables our support team to look up your Lightsail information more easily.</p>
-    pub fn support_code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.support_code = Some(input.into());
+    pub fn support_code(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.support_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The support code for a bucket. Include this code in your email to support when you have questions about a Lightsail bucket. This code enables our support team to look up your Lightsail information more easily.</p>
-    pub fn set_support_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_support_code(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.support_code = input;
         self
     }
@@ -285,13 +294,13 @@ impl BucketBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>The tag keys and optional values for the bucket. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Tags in Amazon Lightsail</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self
@@ -303,8 +312,11 @@ impl BucketBuilder {
     /// <li> <p> <code>Suspended</code> - Object versioning was previously enabled but is currently suspended. Existing object versions are retained.</p> </li>
     /// <li> <p> <code>NeverEnabled</code> - Object versioning has never been enabled.</p> </li>
     /// </ul>
-    pub fn object_versioning(mut self, input: impl Into<std::string::String>) -> Self {
-        self.object_versioning = Some(input.into());
+    pub fn object_versioning(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.object_versioning = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Indicates whether object versioning is enabled for the bucket.</p>
@@ -316,7 +328,7 @@ impl BucketBuilder {
     /// </ul>
     pub fn set_object_versioning(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.object_versioning = input;
         self
@@ -325,13 +337,13 @@ impl BucketBuilder {
     /// <p>You can update a bucket's bundle only one time within a monthly Amazon Web Services billing cycle.</p>
     /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucketBundle.html">UpdateBucketBundle</a> action to change a bucket's bundle.</p>
     pub fn able_to_update_bundle(mut self, input: bool) -> Self {
-        self.able_to_update_bundle = Some(input);
+        self.able_to_update_bundle = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether the bundle that is currently applied to a bucket can be changed to another bundle.</p>
     /// <p>You can update a bucket's bundle only one time within a monthly Amazon Web Services billing cycle.</p>
     /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_UpdateBucketBundle.html">UpdateBucketBundle</a> action to change a bucket's bundle.</p>
-    pub fn set_able_to_update_bundle(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_able_to_update_bundle(mut self, input: ::std::option::Option<bool>) -> Self {
         self.able_to_update_bundle = input;
         self
     }
@@ -340,16 +352,19 @@ impl BucketBuilder {
     /// To override the contents of this collection use [`set_readonly_access_accounts`](Self::set_readonly_access_accounts).
     ///
     /// <p>An array of strings that specify the Amazon Web Services account IDs that have read-only access to the bucket.</p>
-    pub fn readonly_access_accounts(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn readonly_access_accounts(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         let mut v = self.readonly_access_accounts.unwrap_or_default();
         v.push(input.into());
-        self.readonly_access_accounts = Some(v);
+        self.readonly_access_accounts = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of strings that specify the Amazon Web Services account IDs that have read-only access to the bucket.</p>
     pub fn set_readonly_access_accounts(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.readonly_access_accounts = input;
         self
@@ -366,37 +381,37 @@ impl BucketBuilder {
     ) -> Self {
         let mut v = self.resources_receiving_access.unwrap_or_default();
         v.push(input);
-        self.resources_receiving_access = Some(v);
+        self.resources_receiving_access = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of objects that describe Lightsail instances that have access to the bucket.</p>
     /// <p>Use the <a href="https://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_SetResourceAccessForBucket.html">SetResourceAccessForBucket</a> action to update the instances that have access to a bucket.</p>
     pub fn set_resources_receiving_access(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::ResourceReceivingAccess>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::ResourceReceivingAccess>>,
     ) -> Self {
         self.resources_receiving_access = input;
         self
     }
     /// <p>An object that describes the state of the bucket.</p>
     pub fn state(mut self, input: crate::types::BucketState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that describes the state of the bucket.</p>
-    pub fn set_state(mut self, input: std::option::Option<crate::types::BucketState>) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::BucketState>) -> Self {
         self.state = input;
         self
     }
     /// <p>An object that describes the access log configuration for the bucket.</p>
     pub fn access_log_config(mut self, input: crate::types::BucketAccessLogConfig) -> Self {
-        self.access_log_config = Some(input);
+        self.access_log_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that describes the access log configuration for the bucket.</p>
     pub fn set_access_log_config(
         mut self,
-        input: std::option::Option<crate::types::BucketAccessLogConfig>,
+        input: ::std::option::Option<crate::types::BucketAccessLogConfig>,
     ) -> Self {
         self.access_log_config = input;
         self

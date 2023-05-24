@@ -2,18 +2,18 @@
 
 /// VPC connectivity access control for brokers.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcConnectivity {
     /// <p>Includes all client authentication information for VPC connectivity.</p>
     #[doc(hidden)]
     pub client_authentication:
-        std::option::Option<crate::types::VpcConnectivityClientAuthentication>,
+        ::std::option::Option<crate::types::VpcConnectivityClientAuthentication>,
 }
 impl VpcConnectivity {
     /// <p>Includes all client authentication information for VPC connectivity.</p>
     pub fn client_authentication(
         &self,
-    ) -> std::option::Option<&crate::types::VpcConnectivityClientAuthentication> {
+    ) -> ::std::option::Option<&crate::types::VpcConnectivityClientAuthentication> {
         self.client_authentication.as_ref()
     }
 }
@@ -26,10 +26,12 @@ impl VpcConnectivity {
 
 /// A builder for [`VpcConnectivity`](crate::types::VpcConnectivity).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VpcConnectivityBuilder {
     pub(crate) client_authentication:
-        std::option::Option<crate::types::VpcConnectivityClientAuthentication>,
+        ::std::option::Option<crate::types::VpcConnectivityClientAuthentication>,
 }
 impl VpcConnectivityBuilder {
     /// <p>Includes all client authentication information for VPC connectivity.</p>
@@ -37,13 +39,13 @@ impl VpcConnectivityBuilder {
         mut self,
         input: crate::types::VpcConnectivityClientAuthentication,
     ) -> Self {
-        self.client_authentication = Some(input);
+        self.client_authentication = ::std::option::Option::Some(input);
         self
     }
     /// <p>Includes all client authentication information for VPC connectivity.</p>
     pub fn set_client_authentication(
         mut self,
-        input: std::option::Option<crate::types::VpcConnectivityClientAuthentication>,
+        input: ::std::option::Option<crate::types::VpcConnectivityClientAuthentication>,
     ) -> Self {
         self.client_authentication = input;
         self

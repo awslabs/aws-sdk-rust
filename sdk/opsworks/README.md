@@ -62,9 +62,9 @@ Then in code, a client can be created with the following:
 ```rust,no_run
 use aws_sdk_opsworks as opsworks;
 
-#[tokio::main]
+#[::tokio::main]
 async fn main() -> Result<(), opsworks::Error> {
-    let config = aws_config::load_from_env().await;
+    let config = ::aws_config::load_from_env().await;
     let client = opsworks::Client::new(&config);
 
     // ... make some calls with the client

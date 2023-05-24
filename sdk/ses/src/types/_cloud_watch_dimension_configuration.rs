@@ -3,7 +3,7 @@
 /// <p>Contains the dimension configuration to use when you publish email sending events to Amazon CloudWatch.</p>
 /// <p>For information about publishing email sending events to Amazon CloudWatch, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CloudWatchDimensionConfiguration {
     /// <p>The name of an Amazon CloudWatch dimension associated with an email sending metric. The name must:</p>
     /// <ul>
@@ -11,17 +11,17 @@ pub struct CloudWatchDimensionConfiguration {
     /// <li> <p>Contain less than 256 characters.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub dimension_name: std::option::Option<std::string::String>,
+    pub dimension_name: ::std::option::Option<::std::string::String>,
     /// <p>The place where Amazon SES finds the value of a dimension to publish to Amazon CloudWatch. If you want Amazon SES to use the message tags that you specify using an <code>X-SES-MESSAGE-TAGS</code> header or a parameter to the <code>SendEmail</code>/<code>SendRawEmail</code> API, choose <code>messageTag</code>. If you want Amazon SES to use your own email headers, choose <code>emailHeader</code>.</p>
     #[doc(hidden)]
-    pub dimension_value_source: std::option::Option<crate::types::DimensionValueSource>,
+    pub dimension_value_source: ::std::option::Option<crate::types::DimensionValueSource>,
     /// <p>The default value of the dimension that is published to Amazon CloudWatch if you do not provide the value of the dimension when you send an email. The default value must:</p>
     /// <ul>
     /// <li> <p>This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
     /// <li> <p>Contain less than 256 characters.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub default_dimension_value: std::option::Option<std::string::String>,
+    pub default_dimension_value: ::std::option::Option<::std::string::String>,
 }
 impl CloudWatchDimensionConfiguration {
     /// <p>The name of an Amazon CloudWatch dimension associated with an email sending metric. The name must:</p>
@@ -29,13 +29,13 @@ impl CloudWatchDimensionConfiguration {
     /// <li> <p>This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
     /// <li> <p>Contain less than 256 characters.</p> </li>
     /// </ul>
-    pub fn dimension_name(&self) -> std::option::Option<&str> {
+    pub fn dimension_name(&self) -> ::std::option::Option<&str> {
         self.dimension_name.as_deref()
     }
     /// <p>The place where Amazon SES finds the value of a dimension to publish to Amazon CloudWatch. If you want Amazon SES to use the message tags that you specify using an <code>X-SES-MESSAGE-TAGS</code> header or a parameter to the <code>SendEmail</code>/<code>SendRawEmail</code> API, choose <code>messageTag</code>. If you want Amazon SES to use your own email headers, choose <code>emailHeader</code>.</p>
     pub fn dimension_value_source(
         &self,
-    ) -> std::option::Option<&crate::types::DimensionValueSource> {
+    ) -> ::std::option::Option<&crate::types::DimensionValueSource> {
         self.dimension_value_source.as_ref()
     }
     /// <p>The default value of the dimension that is published to Amazon CloudWatch if you do not provide the value of the dimension when you send an email. The default value must:</p>
@@ -43,7 +43,7 @@ impl CloudWatchDimensionConfiguration {
     /// <li> <p>This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
     /// <li> <p>Contain less than 256 characters.</p> </li>
     /// </ul>
-    pub fn default_dimension_value(&self) -> std::option::Option<&str> {
+    pub fn default_dimension_value(&self) -> ::std::option::Option<&str> {
         self.default_dimension_value.as_deref()
     }
 }
@@ -56,11 +56,13 @@ impl CloudWatchDimensionConfiguration {
 
 /// A builder for [`CloudWatchDimensionConfiguration`](crate::types::CloudWatchDimensionConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CloudWatchDimensionConfigurationBuilder {
-    pub(crate) dimension_name: std::option::Option<std::string::String>,
-    pub(crate) dimension_value_source: std::option::Option<crate::types::DimensionValueSource>,
-    pub(crate) default_dimension_value: std::option::Option<std::string::String>,
+    pub(crate) dimension_name: ::std::option::Option<::std::string::String>,
+    pub(crate) dimension_value_source: ::std::option::Option<crate::types::DimensionValueSource>,
+    pub(crate) default_dimension_value: ::std::option::Option<::std::string::String>,
 }
 impl CloudWatchDimensionConfigurationBuilder {
     /// <p>The name of an Amazon CloudWatch dimension associated with an email sending metric. The name must:</p>
@@ -68,8 +70,11 @@ impl CloudWatchDimensionConfigurationBuilder {
     /// <li> <p>This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
     /// <li> <p>Contain less than 256 characters.</p> </li>
     /// </ul>
-    pub fn dimension_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.dimension_name = Some(input.into());
+    pub fn dimension_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.dimension_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of an Amazon CloudWatch dimension associated with an email sending metric. The name must:</p>
@@ -77,19 +82,22 @@ impl CloudWatchDimensionConfigurationBuilder {
     /// <li> <p>This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
     /// <li> <p>Contain less than 256 characters.</p> </li>
     /// </ul>
-    pub fn set_dimension_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_dimension_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.dimension_name = input;
         self
     }
     /// <p>The place where Amazon SES finds the value of a dimension to publish to Amazon CloudWatch. If you want Amazon SES to use the message tags that you specify using an <code>X-SES-MESSAGE-TAGS</code> header or a parameter to the <code>SendEmail</code>/<code>SendRawEmail</code> API, choose <code>messageTag</code>. If you want Amazon SES to use your own email headers, choose <code>emailHeader</code>.</p>
     pub fn dimension_value_source(mut self, input: crate::types::DimensionValueSource) -> Self {
-        self.dimension_value_source = Some(input);
+        self.dimension_value_source = ::std::option::Option::Some(input);
         self
     }
     /// <p>The place where Amazon SES finds the value of a dimension to publish to Amazon CloudWatch. If you want Amazon SES to use the message tags that you specify using an <code>X-SES-MESSAGE-TAGS</code> header or a parameter to the <code>SendEmail</code>/<code>SendRawEmail</code> API, choose <code>messageTag</code>. If you want Amazon SES to use your own email headers, choose <code>emailHeader</code>.</p>
     pub fn set_dimension_value_source(
         mut self,
-        input: std::option::Option<crate::types::DimensionValueSource>,
+        input: ::std::option::Option<crate::types::DimensionValueSource>,
     ) -> Self {
         self.dimension_value_source = input;
         self
@@ -99,8 +107,11 @@ impl CloudWatchDimensionConfigurationBuilder {
     /// <li> <p>This value can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or dashes (-).</p> </li>
     /// <li> <p>Contain less than 256 characters.</p> </li>
     /// </ul>
-    pub fn default_dimension_value(mut self, input: impl Into<std::string::String>) -> Self {
-        self.default_dimension_value = Some(input.into());
+    pub fn default_dimension_value(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.default_dimension_value = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The default value of the dimension that is published to Amazon CloudWatch if you do not provide the value of the dimension when you send an email. The default value must:</p>
@@ -110,7 +121,7 @@ impl CloudWatchDimensionConfigurationBuilder {
     /// </ul>
     pub fn set_default_dimension_value(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.default_dimension_value = input;
         self

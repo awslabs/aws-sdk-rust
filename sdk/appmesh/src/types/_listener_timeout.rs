@@ -2,7 +2,7 @@
 
 /// <p>An object that represents timeouts for different protocols.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum ListenerTimeout {
     /// <p>An object that represents types of timeouts. </p>
     Grpc(crate::types::GrpcTimeout),
@@ -25,11 +25,11 @@ pub enum ListenerTimeout {
 impl ListenerTimeout {
     /// Tries to convert the enum instance into [`Grpc`](crate::types::ListenerTimeout::Grpc), extracting the inner [`GrpcTimeout`](crate::types::GrpcTimeout).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_grpc(&self) -> std::result::Result<&crate::types::GrpcTimeout, &Self> {
+    pub fn as_grpc(&self) -> ::std::result::Result<&crate::types::GrpcTimeout, &Self> {
         if let ListenerTimeout::Grpc(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Grpc`](crate::types::ListenerTimeout::Grpc).
@@ -38,11 +38,11 @@ impl ListenerTimeout {
     }
     /// Tries to convert the enum instance into [`Http`](crate::types::ListenerTimeout::Http), extracting the inner [`HttpTimeout`](crate::types::HttpTimeout).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_http(&self) -> std::result::Result<&crate::types::HttpTimeout, &Self> {
+    pub fn as_http(&self) -> ::std::result::Result<&crate::types::HttpTimeout, &Self> {
         if let ListenerTimeout::Http(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Http`](crate::types::ListenerTimeout::Http).
@@ -51,11 +51,11 @@ impl ListenerTimeout {
     }
     /// Tries to convert the enum instance into [`Http2`](crate::types::ListenerTimeout::Http2), extracting the inner [`HttpTimeout`](crate::types::HttpTimeout).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_http2(&self) -> std::result::Result<&crate::types::HttpTimeout, &Self> {
+    pub fn as_http2(&self) -> ::std::result::Result<&crate::types::HttpTimeout, &Self> {
         if let ListenerTimeout::Http2(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Http2`](crate::types::ListenerTimeout::Http2).
@@ -64,11 +64,11 @@ impl ListenerTimeout {
     }
     /// Tries to convert the enum instance into [`Tcp`](crate::types::ListenerTimeout::Tcp), extracting the inner [`TcpTimeout`](crate::types::TcpTimeout).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_tcp(&self) -> std::result::Result<&crate::types::TcpTimeout, &Self> {
+    pub fn as_tcp(&self) -> ::std::result::Result<&crate::types::TcpTimeout, &Self> {
         if let ListenerTimeout::Tcp(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`Tcp`](crate::types::ListenerTimeout::Tcp).

@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ProactiveEngagementStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum ProactiveEngagementStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ProactiveEngagementStatus {
+impl ::std::convert::From<&str> for ProactiveEngagementStatus {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => ProactiveEngagementStatus::Disabled,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for ProactiveEngagementStatus {
         }
     }
 }
-impl std::str::FromStr for ProactiveEngagementStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ProactiveEngagementStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ProactiveEngagementStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ProactiveEngagementStatus::from(s))
     }
 }
 impl ProactiveEngagementStatus {
@@ -91,7 +91,7 @@ impl ProactiveEngagementStatus {
         &["DISABLED", "ENABLED", "PENDING"]
     }
 }
-impl AsRef<str> for ProactiveEngagementStatus {
+impl ::std::convert::AsRef<str> for ProactiveEngagementStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetNetworkProfile`](crate::operation::get_network_profile::builders::GetNetworkProfileFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`network_profile_arn(impl Into<String>)`](crate::operation::get_network_profile::builders::GetNetworkProfileFluentBuilder::network_profile_arn) / [`set_network_profile_arn(Option<String>)`](crate::operation::get_network_profile::builders::GetNetworkProfileFluentBuilder::set_network_profile_arn): <p>The ARN of the network profile associated with a device.</p>
+    ///   - [`network_profile_arn(impl ::std::convert::Into<String>)`](crate::operation::get_network_profile::builders::GetNetworkProfileFluentBuilder::network_profile_arn) / [`set_network_profile_arn(Option<String>)`](crate::operation::get_network_profile::builders::GetNetworkProfileFluentBuilder::set_network_profile_arn): <p>The ARN of the network profile associated with a device.</p>
     /// - On success, responds with [`GetNetworkProfileOutput`](crate::operation::get_network_profile::GetNetworkProfileOutput) with field(s):
     ///   - [`network_profile(Option<NetworkProfile>)`](crate::operation::get_network_profile::GetNetworkProfileOutput::network_profile): <p>The network profile associated with a device.</p>
     /// - On failure, responds with [`SdkError<GetNetworkProfileError>`](crate::operation::get_network_profile::GetNetworkProfileError)

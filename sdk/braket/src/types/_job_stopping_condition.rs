@@ -2,15 +2,15 @@
 
 /// <p>Specifies limits for how long an Amazon Braket job can run. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct JobStoppingCondition {
     /// <p>The maximum length of time, in seconds, that an Amazon Braket job can run.</p>
     #[doc(hidden)]
-    pub max_runtime_in_seconds: std::option::Option<i32>,
+    pub max_runtime_in_seconds: ::std::option::Option<i32>,
 }
 impl JobStoppingCondition {
     /// <p>The maximum length of time, in seconds, that an Amazon Braket job can run.</p>
-    pub fn max_runtime_in_seconds(&self) -> std::option::Option<i32> {
+    pub fn max_runtime_in_seconds(&self) -> ::std::option::Option<i32> {
         self.max_runtime_in_seconds
     }
 }
@@ -23,18 +23,20 @@ impl JobStoppingCondition {
 
 /// A builder for [`JobStoppingCondition`](crate::types::JobStoppingCondition).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct JobStoppingConditionBuilder {
-    pub(crate) max_runtime_in_seconds: std::option::Option<i32>,
+    pub(crate) max_runtime_in_seconds: ::std::option::Option<i32>,
 }
 impl JobStoppingConditionBuilder {
     /// <p>The maximum length of time, in seconds, that an Amazon Braket job can run.</p>
     pub fn max_runtime_in_seconds(mut self, input: i32) -> Self {
-        self.max_runtime_in_seconds = Some(input);
+        self.max_runtime_in_seconds = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum length of time, in seconds, that an Amazon Braket job can run.</p>
-    pub fn set_max_runtime_in_seconds(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_runtime_in_seconds(mut self, input: ::std::option::Option<i32>) -> Self {
         self.max_runtime_in_seconds = input;
         self
     }

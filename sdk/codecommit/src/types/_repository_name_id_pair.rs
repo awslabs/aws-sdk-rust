@@ -2,22 +2,22 @@
 
 /// <p>Information about a repository name and ID.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RepositoryNameIdPair {
     /// <p>The name associated with the repository.</p>
     #[doc(hidden)]
-    pub repository_name: std::option::Option<std::string::String>,
+    pub repository_name: ::std::option::Option<::std::string::String>,
     /// <p>The ID associated with the repository.</p>
     #[doc(hidden)]
-    pub repository_id: std::option::Option<std::string::String>,
+    pub repository_id: ::std::option::Option<::std::string::String>,
 }
 impl RepositoryNameIdPair {
     /// <p>The name associated with the repository.</p>
-    pub fn repository_name(&self) -> std::option::Option<&str> {
+    pub fn repository_name(&self) -> ::std::option::Option<&str> {
         self.repository_name.as_deref()
     }
     /// <p>The ID associated with the repository.</p>
-    pub fn repository_id(&self) -> std::option::Option<&str> {
+    pub fn repository_id(&self) -> ::std::option::Option<&str> {
         self.repository_id.as_deref()
     }
 }
@@ -30,29 +30,43 @@ impl RepositoryNameIdPair {
 
 /// A builder for [`RepositoryNameIdPair`](crate::types::RepositoryNameIdPair).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RepositoryNameIdPairBuilder {
-    pub(crate) repository_name: std::option::Option<std::string::String>,
-    pub(crate) repository_id: std::option::Option<std::string::String>,
+    pub(crate) repository_name: ::std::option::Option<::std::string::String>,
+    pub(crate) repository_id: ::std::option::Option<::std::string::String>,
 }
 impl RepositoryNameIdPairBuilder {
     /// <p>The name associated with the repository.</p>
-    pub fn repository_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.repository_name = Some(input.into());
+    pub fn repository_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.repository_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name associated with the repository.</p>
-    pub fn set_repository_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_repository_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.repository_name = input;
         self
     }
     /// <p>The ID associated with the repository.</p>
-    pub fn repository_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.repository_id = Some(input.into());
+    pub fn repository_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.repository_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID associated with the repository.</p>
-    pub fn set_repository_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_repository_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.repository_id = input;
         self
     }

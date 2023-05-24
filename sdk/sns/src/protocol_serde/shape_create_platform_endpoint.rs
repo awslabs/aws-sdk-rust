@@ -2,7 +2,7 @@
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_platform_endpoint_http_error(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::create_platform_endpoint::CreatePlatformEndpointOutput,
@@ -15,7 +15,7 @@ pub fn de_create_platform_endpoint_http_error(
         _response_body,
     )
     .map_err(crate::operation::create_platform_endpoint::CreatePlatformEndpointError::unhandled)?;
-    generic_builder = aws_http::request_id::apply_request_id(generic_builder, _response_headers);
+    generic_builder = ::aws_http::request_id::apply_request_id(generic_builder, _response_headers);
     let generic = generic_builder.build();
     let error_code =
         match generic.code() {
@@ -100,7 +100,7 @@ pub fn de_create_platform_endpoint_http_error(
 #[allow(clippy::unnecessary_wraps)]
 pub fn de_create_platform_endpoint_http_response_with_props(
     _response_status: u16,
-    _response_headers: &http::header::HeaderMap,
+    _response_headers: &::http::header::HeaderMap,
     _response_body: &[u8],
 ) -> std::result::Result<
     crate::operation::create_platform_endpoint::CreatePlatformEndpointOutput,
@@ -118,7 +118,7 @@ pub fn de_create_platform_endpoint_http_response_with_props(
                 crate::operation::create_platform_endpoint::CreatePlatformEndpointError::unhandled,
             )?;
         output._set_request_id(
-            aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
+            ::aws_http::request_id::RequestId::request_id(_response_headers).map(str::to_string),
         );
         output.build()
     })
@@ -130,16 +130,16 @@ pub fn de_create_platform_endpoint(
     mut builder: crate::operation::create_platform_endpoint::builders::CreatePlatformEndpointOutputBuilder,
 ) -> Result<
     crate::operation::create_platform_endpoint::builders::CreatePlatformEndpointOutputBuilder,
-    aws_smithy_xml::decode::XmlDecodeError,
+    ::aws_smithy_xml::decode::XmlDecodeError,
 > {
-    let mut doc = aws_smithy_xml::decode::Document::try_from(inp)?;
+    let mut doc = ::aws_smithy_xml::decode::Document::try_from(inp)?;
 
     #[allow(unused_mut)]
     let mut decoder = doc.root_element()?;
     #[allow(unused_variables)]
     let start_el = decoder.start_el();
     if !(start_el.matches("CreatePlatformEndpointResponse")) {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
             "invalid root, expected CreatePlatformEndpointResponse got {:?}",
             start_el
         )));
@@ -147,7 +147,7 @@ pub fn de_create_platform_endpoint(
     if let Some(mut result_tag) = decoder.next_tag() {
         let start_el = result_tag.start_el();
         if !(start_el.matches("CreatePlatformEndpointResult")) {
-            return Err(aws_smithy_xml::decode::XmlDecodeError::custom(format!(
+            return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(format!(
                 "invalid result, expected CreatePlatformEndpointResult got {:?}",
                 start_el
             )));
@@ -157,8 +157,8 @@ pub fn de_create_platform_endpoint(
             s if s.matches("EndpointArn") /* EndpointArn com.amazonaws.sns.synthetic#CreatePlatformEndpointOutput$EndpointArn */ =>  {
                 let var_1 =
                     Some(
-                        Result::<std::string::String, aws_smithy_xml::decode::XmlDecodeError>::Ok(
-                            aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
+                        Result::<::std::string::String, ::aws_smithy_xml::decode::XmlDecodeError>::Ok(
+                            ::aws_smithy_xml::decode::try_data(&mut tag)?.as_ref()
                             .into()
                         )
                         ?
@@ -171,7 +171,7 @@ pub fn de_create_platform_endpoint(
         }
         }
     } else {
-        return Err(aws_smithy_xml::decode::XmlDecodeError::custom(
+        return Err(::aws_smithy_xml::decode::XmlDecodeError::custom(
             "expected CreatePlatformEndpointResult tag",
         ));
     };

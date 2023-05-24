@@ -2,15 +2,15 @@
 
 /// <p>A request to return the policies of an email identity.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetEmailIdentityPoliciesInput {
     /// <p>The email identity.</p>
     #[doc(hidden)]
-    pub email_identity: std::option::Option<std::string::String>,
+    pub email_identity: ::std::option::Option<::std::string::String>,
 }
 impl GetEmailIdentityPoliciesInput {
     /// <p>The email identity.</p>
-    pub fn email_identity(&self) -> std::option::Option<&str> {
+    pub fn email_identity(&self) -> ::std::option::Option<&str> {
         self.email_identity.as_deref()
     }
 }
@@ -25,29 +25,37 @@ impl GetEmailIdentityPoliciesInput {
 
 /// A builder for [`GetEmailIdentityPoliciesInput`](crate::operation::get_email_identity_policies::GetEmailIdentityPoliciesInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetEmailIdentityPoliciesInputBuilder {
-    pub(crate) email_identity: std::option::Option<std::string::String>,
+    pub(crate) email_identity: ::std::option::Option<::std::string::String>,
 }
 impl GetEmailIdentityPoliciesInputBuilder {
     /// <p>The email identity.</p>
-    pub fn email_identity(mut self, input: impl Into<std::string::String>) -> Self {
-        self.email_identity = Some(input.into());
+    pub fn email_identity(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.email_identity = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The email identity.</p>
-    pub fn set_email_identity(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_email_identity(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.email_identity = input;
         self
     }
     /// Consumes the builder and constructs a [`GetEmailIdentityPoliciesInput`](crate::operation::get_email_identity_policies::GetEmailIdentityPoliciesInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::get_email_identity_policies::GetEmailIdentityPoliciesInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(
+        ::std::result::Result::Ok(
             crate::operation::get_email_identity_policies::GetEmailIdentityPoliciesInput {
                 email_identity: self.email_identity,
             },

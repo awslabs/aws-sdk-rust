@@ -2,27 +2,27 @@
 
 /// <p>Represents the collection of usage plan keys added to usage plans for the associated API keys and, possibly, other types of keys.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetUsagePlanKeysOutput {
     /// <p>The current page of elements from this collection.</p>
     #[doc(hidden)]
-    pub items: std::option::Option<std::vec::Vec<crate::types::UsagePlanKey>>,
+    pub items: ::std::option::Option<::std::vec::Vec<crate::types::UsagePlanKey>>,
     /// <p>The current pagination position in the paged result set.</p>
     #[doc(hidden)]
-    pub position: std::option::Option<std::string::String>,
+    pub position: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetUsagePlanKeysOutput {
     /// <p>The current page of elements from this collection.</p>
-    pub fn items(&self) -> std::option::Option<&[crate::types::UsagePlanKey]> {
+    pub fn items(&self) -> ::std::option::Option<&[crate::types::UsagePlanKey]> {
         self.items.as_deref()
     }
     /// <p>The current pagination position in the paged result set.</p>
-    pub fn position(&self) -> std::option::Option<&str> {
+    pub fn position(&self) -> ::std::option::Option<&str> {
         self.position.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for GetUsagePlanKeysOutput {
+impl ::aws_http::request_id::RequestId for GetUsagePlanKeysOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -37,10 +37,12 @@ impl GetUsagePlanKeysOutput {
 
 /// A builder for [`GetUsagePlanKeysOutput`](crate::operation::get_usage_plan_keys::GetUsagePlanKeysOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetUsagePlanKeysOutputBuilder {
-    pub(crate) items: std::option::Option<std::vec::Vec<crate::types::UsagePlanKey>>,
-    pub(crate) position: std::option::Option<std::string::String>,
+    pub(crate) items: ::std::option::Option<::std::vec::Vec<crate::types::UsagePlanKey>>,
+    pub(crate) position: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetUsagePlanKeysOutputBuilder {
@@ -52,24 +54,24 @@ impl GetUsagePlanKeysOutputBuilder {
     pub fn items(mut self, input: crate::types::UsagePlanKey) -> Self {
         let mut v = self.items.unwrap_or_default();
         v.push(input);
-        self.items = Some(v);
+        self.items = ::std::option::Option::Some(v);
         self
     }
     /// <p>The current page of elements from this collection.</p>
     pub fn set_items(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::UsagePlanKey>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::UsagePlanKey>>,
     ) -> Self {
         self.items = input;
         self
     }
     /// <p>The current pagination position in the paged result set.</p>
-    pub fn position(mut self, input: impl Into<std::string::String>) -> Self {
-        self.position = Some(input.into());
+    pub fn position(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.position = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The current pagination position in the paged result set.</p>
-    pub fn set_position(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_position(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.position = input;
         self
     }

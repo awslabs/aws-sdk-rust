@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ErrorCause {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum ErrorCause {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ErrorCause {
+impl ::std::convert::From<&str> for ErrorCause {
     fn from(s: &str) -> Self {
         match s {
             "IAM_PERMISSION_REVOKED" => ErrorCause::IamPermissionRevoked,
@@ -63,11 +63,11 @@ impl std::convert::From<&str> for ErrorCause {
         }
     }
 }
-impl std::str::FromStr for ErrorCause {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ErrorCause {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ErrorCause::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ErrorCause::from(s))
     }
 }
 impl ErrorCause {
@@ -84,7 +84,7 @@ impl ErrorCause {
         &["IAM_PERMISSION_REVOKED", "KINESIS_STREAM_NOT_FOUND"]
     }
 }
-impl AsRef<str> for ErrorCause {
+impl ::std::convert::AsRef<str> for ErrorCause {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -42,13 +42,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ResourceMappingType {
     #[allow(missing_docs)] // documentation missing in model
@@ -66,7 +66,7 @@ pub enum ResourceMappingType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ResourceMappingType {
+impl ::std::convert::From<&str> for ResourceMappingType {
     fn from(s: &str) -> Self {
         match s {
             "AppRegistryApp" => ResourceMappingType::AppRegistryApp,
@@ -81,11 +81,11 @@ impl std::convert::From<&str> for ResourceMappingType {
         }
     }
 }
-impl std::str::FromStr for ResourceMappingType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ResourceMappingType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ResourceMappingType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ResourceMappingType::from(s))
     }
 }
 impl ResourceMappingType {
@@ -113,7 +113,7 @@ impl ResourceMappingType {
         ]
     }
 }
-impl AsRef<str> for ResourceMappingType {
+impl ::std::convert::AsRef<str> for ResourceMappingType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

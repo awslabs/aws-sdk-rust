@@ -38,13 +38,13 @@
 /// By default, the service terminates any unterminated captions at the end of each input. If you want the caption to continue onto your next input, disable this setting.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum EmbeddedTerminateCaptions {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum EmbeddedTerminateCaptions {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for EmbeddedTerminateCaptions {
+impl ::std::convert::From<&str> for EmbeddedTerminateCaptions {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => EmbeddedTerminateCaptions::Disabled,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for EmbeddedTerminateCaptions {
         }
     }
 }
-impl std::str::FromStr for EmbeddedTerminateCaptions {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for EmbeddedTerminateCaptions {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(EmbeddedTerminateCaptions::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(EmbeddedTerminateCaptions::from(s))
     }
 }
 impl EmbeddedTerminateCaptions {
@@ -86,7 +86,7 @@ impl EmbeddedTerminateCaptions {
         &["DISABLED", "END_OF_INPUT"]
     }
 }
-impl AsRef<str> for EmbeddedTerminateCaptions {
+impl ::std::convert::AsRef<str> for EmbeddedTerminateCaptions {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

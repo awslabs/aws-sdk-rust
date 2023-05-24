@@ -3,18 +3,18 @@
 /// <p>The navigation operation that navigates between different sheets in the same analysis.</p>
 /// <p>This is a union type structure. For this structure to be valid, only one of the attributes can be defined.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CustomActionNavigationOperation {
     /// <p>The configuration that chooses the navigation target.</p>
     #[doc(hidden)]
     pub local_navigation_configuration:
-        std::option::Option<crate::types::LocalNavigationConfiguration>,
+        ::std::option::Option<crate::types::LocalNavigationConfiguration>,
 }
 impl CustomActionNavigationOperation {
     /// <p>The configuration that chooses the navigation target.</p>
     pub fn local_navigation_configuration(
         &self,
-    ) -> std::option::Option<&crate::types::LocalNavigationConfiguration> {
+    ) -> ::std::option::Option<&crate::types::LocalNavigationConfiguration> {
         self.local_navigation_configuration.as_ref()
     }
 }
@@ -27,10 +27,12 @@ impl CustomActionNavigationOperation {
 
 /// A builder for [`CustomActionNavigationOperation`](crate::types::CustomActionNavigationOperation).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CustomActionNavigationOperationBuilder {
     pub(crate) local_navigation_configuration:
-        std::option::Option<crate::types::LocalNavigationConfiguration>,
+        ::std::option::Option<crate::types::LocalNavigationConfiguration>,
 }
 impl CustomActionNavigationOperationBuilder {
     /// <p>The configuration that chooses the navigation target.</p>
@@ -38,13 +40,13 @@ impl CustomActionNavigationOperationBuilder {
         mut self,
         input: crate::types::LocalNavigationConfiguration,
     ) -> Self {
-        self.local_navigation_configuration = Some(input);
+        self.local_navigation_configuration = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration that chooses the navigation target.</p>
     pub fn set_local_navigation_configuration(
         mut self,
-        input: std::option::Option<crate::types::LocalNavigationConfiguration>,
+        input: ::std::option::Option<crate::types::LocalNavigationConfiguration>,
     ) -> Self {
         self.local_navigation_configuration = input;
         self

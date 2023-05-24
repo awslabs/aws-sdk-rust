@@ -2,11 +2,11 @@
 
 /// <p>The response from the server to the change password request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChangePasswordOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for ChangePasswordOutput {
+impl ::aws_http::request_id::RequestId for ChangePasswordOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -20,7 +20,9 @@ impl ChangePasswordOutput {
 
 /// A builder for [`ChangePasswordOutput`](crate::operation::change_password::ChangePasswordOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ChangePasswordOutputBuilder {
     _request_id: Option<String>,
 }

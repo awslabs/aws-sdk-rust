@@ -2,15 +2,15 @@
 
 /// <p>A structure that keeps track of which training jobs launched by your hyperparameter tuning job are not improving model performance as evaluated against an objective function.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct BestObjectiveNotImproving {
     /// <p>The number of training jobs that have failed to improve model performance by 1% or greater over prior training jobs as evaluated against an objective function.</p>
     #[doc(hidden)]
-    pub max_number_of_training_jobs_not_improving: std::option::Option<i32>,
+    pub max_number_of_training_jobs_not_improving: ::std::option::Option<i32>,
 }
 impl BestObjectiveNotImproving {
     /// <p>The number of training jobs that have failed to improve model performance by 1% or greater over prior training jobs as evaluated against an objective function.</p>
-    pub fn max_number_of_training_jobs_not_improving(&self) -> std::option::Option<i32> {
+    pub fn max_number_of_training_jobs_not_improving(&self) -> ::std::option::Option<i32> {
         self.max_number_of_training_jobs_not_improving
     }
 }
@@ -23,20 +23,22 @@ impl BestObjectiveNotImproving {
 
 /// A builder for [`BestObjectiveNotImproving`](crate::types::BestObjectiveNotImproving).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct BestObjectiveNotImprovingBuilder {
-    pub(crate) max_number_of_training_jobs_not_improving: std::option::Option<i32>,
+    pub(crate) max_number_of_training_jobs_not_improving: ::std::option::Option<i32>,
 }
 impl BestObjectiveNotImprovingBuilder {
     /// <p>The number of training jobs that have failed to improve model performance by 1% or greater over prior training jobs as evaluated against an objective function.</p>
     pub fn max_number_of_training_jobs_not_improving(mut self, input: i32) -> Self {
-        self.max_number_of_training_jobs_not_improving = Some(input);
+        self.max_number_of_training_jobs_not_improving = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of training jobs that have failed to improve model performance by 1% or greater over prior training jobs as evaluated against an objective function.</p>
     pub fn set_max_number_of_training_jobs_not_improving(
         mut self,
-        input: std::option::Option<i32>,
+        input: ::std::option::Option<i32>,
     ) -> Self {
         self.max_number_of_training_jobs_not_improving = input;
         self

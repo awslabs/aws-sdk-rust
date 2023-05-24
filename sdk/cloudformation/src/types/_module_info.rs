@@ -3,32 +3,32 @@
 /// <p>Contains information about the module from which the resource was created, if the resource was created from a module included in the stack template.</p>
 /// <p>For more information about modules, see <a href="AWSCloudFormation/latest/UserGuide/modules.html">Using modules to encapsulate and reuse resource configurations</a> in the <i>CloudFormation User Guide</i>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModuleInfo {
     /// <p>A concatenated list of the module type or types containing the resource. Module types are listed starting with the inner-most nested module, and separated by <code>/</code>.</p>
     /// <p>In the following example, the resource was created from a module of type <code>AWS::First::Example::MODULE</code>, that's nested inside a parent module of type <code>AWS::Second::Example::MODULE</code>.</p>
     /// <p> <code>AWS::First::Example::MODULE/AWS::Second::Example::MODULE</code> </p>
     #[doc(hidden)]
-    pub type_hierarchy: std::option::Option<std::string::String>,
+    pub type_hierarchy: ::std::option::Option<::std::string::String>,
     /// <p>A concatenated list of the logical IDs of the module or modules containing the resource. Modules are listed starting with the inner-most nested module, and separated by <code>/</code>.</p>
     /// <p>In the following example, the resource was created from a module, <code>moduleA</code>, that's nested inside a parent module, <code>moduleB</code>.</p>
     /// <p> <code>moduleA/moduleB</code> </p>
     /// <p>For more information, see <a href="AWSCloudFormation/latest/UserGuide/modules.html#module-ref-resources">Referencing resources in a module</a> in the <i>CloudFormation User Guide</i>.</p>
     #[doc(hidden)]
-    pub logical_id_hierarchy: std::option::Option<std::string::String>,
+    pub logical_id_hierarchy: ::std::option::Option<::std::string::String>,
 }
 impl ModuleInfo {
     /// <p>A concatenated list of the module type or types containing the resource. Module types are listed starting with the inner-most nested module, and separated by <code>/</code>.</p>
     /// <p>In the following example, the resource was created from a module of type <code>AWS::First::Example::MODULE</code>, that's nested inside a parent module of type <code>AWS::Second::Example::MODULE</code>.</p>
     /// <p> <code>AWS::First::Example::MODULE/AWS::Second::Example::MODULE</code> </p>
-    pub fn type_hierarchy(&self) -> std::option::Option<&str> {
+    pub fn type_hierarchy(&self) -> ::std::option::Option<&str> {
         self.type_hierarchy.as_deref()
     }
     /// <p>A concatenated list of the logical IDs of the module or modules containing the resource. Modules are listed starting with the inner-most nested module, and separated by <code>/</code>.</p>
     /// <p>In the following example, the resource was created from a module, <code>moduleA</code>, that's nested inside a parent module, <code>moduleB</code>.</p>
     /// <p> <code>moduleA/moduleB</code> </p>
     /// <p>For more information, see <a href="AWSCloudFormation/latest/UserGuide/modules.html#module-ref-resources">Referencing resources in a module</a> in the <i>CloudFormation User Guide</i>.</p>
-    pub fn logical_id_hierarchy(&self) -> std::option::Option<&str> {
+    pub fn logical_id_hierarchy(&self) -> ::std::option::Option<&str> {
         self.logical_id_hierarchy.as_deref()
     }
 }
@@ -41,23 +41,31 @@ impl ModuleInfo {
 
 /// A builder for [`ModuleInfo`](crate::types::ModuleInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ModuleInfoBuilder {
-    pub(crate) type_hierarchy: std::option::Option<std::string::String>,
-    pub(crate) logical_id_hierarchy: std::option::Option<std::string::String>,
+    pub(crate) type_hierarchy: ::std::option::Option<::std::string::String>,
+    pub(crate) logical_id_hierarchy: ::std::option::Option<::std::string::String>,
 }
 impl ModuleInfoBuilder {
     /// <p>A concatenated list of the module type or types containing the resource. Module types are listed starting with the inner-most nested module, and separated by <code>/</code>.</p>
     /// <p>In the following example, the resource was created from a module of type <code>AWS::First::Example::MODULE</code>, that's nested inside a parent module of type <code>AWS::Second::Example::MODULE</code>.</p>
     /// <p> <code>AWS::First::Example::MODULE/AWS::Second::Example::MODULE</code> </p>
-    pub fn type_hierarchy(mut self, input: impl Into<std::string::String>) -> Self {
-        self.type_hierarchy = Some(input.into());
+    pub fn type_hierarchy(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.type_hierarchy = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A concatenated list of the module type or types containing the resource. Module types are listed starting with the inner-most nested module, and separated by <code>/</code>.</p>
     /// <p>In the following example, the resource was created from a module of type <code>AWS::First::Example::MODULE</code>, that's nested inside a parent module of type <code>AWS::Second::Example::MODULE</code>.</p>
     /// <p> <code>AWS::First::Example::MODULE/AWS::Second::Example::MODULE</code> </p>
-    pub fn set_type_hierarchy(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_type_hierarchy(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.type_hierarchy = input;
         self
     }
@@ -65,8 +73,11 @@ impl ModuleInfoBuilder {
     /// <p>In the following example, the resource was created from a module, <code>moduleA</code>, that's nested inside a parent module, <code>moduleB</code>.</p>
     /// <p> <code>moduleA/moduleB</code> </p>
     /// <p>For more information, see <a href="AWSCloudFormation/latest/UserGuide/modules.html#module-ref-resources">Referencing resources in a module</a> in the <i>CloudFormation User Guide</i>.</p>
-    pub fn logical_id_hierarchy(mut self, input: impl Into<std::string::String>) -> Self {
-        self.logical_id_hierarchy = Some(input.into());
+    pub fn logical_id_hierarchy(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.logical_id_hierarchy = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A concatenated list of the logical IDs of the module or modules containing the resource. Modules are listed starting with the inner-most nested module, and separated by <code>/</code>.</p>
@@ -75,7 +86,7 @@ impl ModuleInfoBuilder {
     /// <p>For more information, see <a href="AWSCloudFormation/latest/UserGuide/modules.html#module-ref-resources">Referencing resources in a module</a> in the <i>CloudFormation User Guide</i>.</p>
     pub fn set_logical_id_hierarchy(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.logical_id_hierarchy = input;
         self

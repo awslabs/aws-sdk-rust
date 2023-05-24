@@ -2,7 +2,7 @@
 
 /// <p>Container for restore job parameters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RestoreRequest {
     /// <p>Lifetime of the active copy in days. Do not use with restores that specify <code>OutputLocation</code>.</p>
     /// <p>The Days element is required for regular restores, and must not be provided for select requests.</p>
@@ -10,22 +10,22 @@ pub struct RestoreRequest {
     pub days: i32,
     /// <p>S3 Glacier related parameters pertaining to this job. Do not use with restores that specify <code>OutputLocation</code>.</p>
     #[doc(hidden)]
-    pub glacier_job_parameters: std::option::Option<crate::types::GlacierJobParameters>,
+    pub glacier_job_parameters: ::std::option::Option<crate::types::GlacierJobParameters>,
     /// <p>Type of restore request.</p>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::RestoreRequestType>,
+    pub r#type: ::std::option::Option<crate::types::RestoreRequestType>,
     /// <p>Retrieval tier at which the restore will be processed.</p>
     #[doc(hidden)]
-    pub tier: std::option::Option<crate::types::Tier>,
+    pub tier: ::std::option::Option<crate::types::Tier>,
     /// <p>The optional description for the job.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>Describes the parameters for Select job types.</p>
     #[doc(hidden)]
-    pub select_parameters: std::option::Option<crate::types::SelectParameters>,
+    pub select_parameters: ::std::option::Option<crate::types::SelectParameters>,
     /// <p>Describes the location where the restore job's output is stored.</p>
     #[doc(hidden)]
-    pub output_location: std::option::Option<crate::types::OutputLocation>,
+    pub output_location: ::std::option::Option<crate::types::OutputLocation>,
 }
 impl RestoreRequest {
     /// <p>Lifetime of the active copy in days. Do not use with restores that specify <code>OutputLocation</code>.</p>
@@ -36,27 +36,27 @@ impl RestoreRequest {
     /// <p>S3 Glacier related parameters pertaining to this job. Do not use with restores that specify <code>OutputLocation</code>.</p>
     pub fn glacier_job_parameters(
         &self,
-    ) -> std::option::Option<&crate::types::GlacierJobParameters> {
+    ) -> ::std::option::Option<&crate::types::GlacierJobParameters> {
         self.glacier_job_parameters.as_ref()
     }
     /// <p>Type of restore request.</p>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::RestoreRequestType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::RestoreRequestType> {
         self.r#type.as_ref()
     }
     /// <p>Retrieval tier at which the restore will be processed.</p>
-    pub fn tier(&self) -> std::option::Option<&crate::types::Tier> {
+    pub fn tier(&self) -> ::std::option::Option<&crate::types::Tier> {
         self.tier.as_ref()
     }
     /// <p>The optional description for the job.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>Describes the parameters for Select job types.</p>
-    pub fn select_parameters(&self) -> std::option::Option<&crate::types::SelectParameters> {
+    pub fn select_parameters(&self) -> ::std::option::Option<&crate::types::SelectParameters> {
         self.select_parameters.as_ref()
     }
     /// <p>Describes the location where the restore job's output is stored.</p>
-    pub fn output_location(&self) -> std::option::Option<&crate::types::OutputLocation> {
+    pub fn output_location(&self) -> ::std::option::Option<&crate::types::OutputLocation> {
         self.output_location.as_ref()
     }
 }
@@ -69,97 +69,99 @@ impl RestoreRequest {
 
 /// A builder for [`RestoreRequest`](crate::types::RestoreRequest).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RestoreRequestBuilder {
-    pub(crate) days: std::option::Option<i32>,
-    pub(crate) glacier_job_parameters: std::option::Option<crate::types::GlacierJobParameters>,
-    pub(crate) r#type: std::option::Option<crate::types::RestoreRequestType>,
-    pub(crate) tier: std::option::Option<crate::types::Tier>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) select_parameters: std::option::Option<crate::types::SelectParameters>,
-    pub(crate) output_location: std::option::Option<crate::types::OutputLocation>,
+    pub(crate) days: ::std::option::Option<i32>,
+    pub(crate) glacier_job_parameters: ::std::option::Option<crate::types::GlacierJobParameters>,
+    pub(crate) r#type: ::std::option::Option<crate::types::RestoreRequestType>,
+    pub(crate) tier: ::std::option::Option<crate::types::Tier>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) select_parameters: ::std::option::Option<crate::types::SelectParameters>,
+    pub(crate) output_location: ::std::option::Option<crate::types::OutputLocation>,
 }
 impl RestoreRequestBuilder {
     /// <p>Lifetime of the active copy in days. Do not use with restores that specify <code>OutputLocation</code>.</p>
     /// <p>The Days element is required for regular restores, and must not be provided for select requests.</p>
     pub fn days(mut self, input: i32) -> Self {
-        self.days = Some(input);
+        self.days = ::std::option::Option::Some(input);
         self
     }
     /// <p>Lifetime of the active copy in days. Do not use with restores that specify <code>OutputLocation</code>.</p>
     /// <p>The Days element is required for regular restores, and must not be provided for select requests.</p>
-    pub fn set_days(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_days(mut self, input: ::std::option::Option<i32>) -> Self {
         self.days = input;
         self
     }
     /// <p>S3 Glacier related parameters pertaining to this job. Do not use with restores that specify <code>OutputLocation</code>.</p>
     pub fn glacier_job_parameters(mut self, input: crate::types::GlacierJobParameters) -> Self {
-        self.glacier_job_parameters = Some(input);
+        self.glacier_job_parameters = ::std::option::Option::Some(input);
         self
     }
     /// <p>S3 Glacier related parameters pertaining to this job. Do not use with restores that specify <code>OutputLocation</code>.</p>
     pub fn set_glacier_job_parameters(
         mut self,
-        input: std::option::Option<crate::types::GlacierJobParameters>,
+        input: ::std::option::Option<crate::types::GlacierJobParameters>,
     ) -> Self {
         self.glacier_job_parameters = input;
         self
     }
     /// <p>Type of restore request.</p>
     pub fn r#type(mut self, input: crate::types::RestoreRequestType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>Type of restore request.</p>
     pub fn set_type(
         mut self,
-        input: std::option::Option<crate::types::RestoreRequestType>,
+        input: ::std::option::Option<crate::types::RestoreRequestType>,
     ) -> Self {
         self.r#type = input;
         self
     }
     /// <p>Retrieval tier at which the restore will be processed.</p>
     pub fn tier(mut self, input: crate::types::Tier) -> Self {
-        self.tier = Some(input);
+        self.tier = ::std::option::Option::Some(input);
         self
     }
     /// <p>Retrieval tier at which the restore will be processed.</p>
-    pub fn set_tier(mut self, input: std::option::Option<crate::types::Tier>) -> Self {
+    pub fn set_tier(mut self, input: ::std::option::Option<crate::types::Tier>) -> Self {
         self.tier = input;
         self
     }
     /// <p>The optional description for the job.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The optional description for the job.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>Describes the parameters for Select job types.</p>
     pub fn select_parameters(mut self, input: crate::types::SelectParameters) -> Self {
-        self.select_parameters = Some(input);
+        self.select_parameters = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the parameters for Select job types.</p>
     pub fn set_select_parameters(
         mut self,
-        input: std::option::Option<crate::types::SelectParameters>,
+        input: ::std::option::Option<crate::types::SelectParameters>,
     ) -> Self {
         self.select_parameters = input;
         self
     }
     /// <p>Describes the location where the restore job's output is stored.</p>
     pub fn output_location(mut self, input: crate::types::OutputLocation) -> Self {
-        self.output_location = Some(input);
+        self.output_location = ::std::option::Option::Some(input);
         self
     }
     /// <p>Describes the location where the restore job's output is stored.</p>
     pub fn set_output_location(
         mut self,
-        input: std::option::Option<crate::types::OutputLocation>,
+        input: ::std::option::Option<crate::types::OutputLocation>,
     ) -> Self {
         self.output_location = input;
         self

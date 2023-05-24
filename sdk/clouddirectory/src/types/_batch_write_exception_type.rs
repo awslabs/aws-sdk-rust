@@ -54,13 +54,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum BatchWriteExceptionType {
     #[allow(missing_docs)] // documentation missing in model
@@ -102,7 +102,7 @@ pub enum BatchWriteExceptionType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for BatchWriteExceptionType {
+impl ::std::convert::From<&str> for BatchWriteExceptionType {
     fn from(s: &str) -> Self {
         match s {
             "AccessDeniedException" => BatchWriteExceptionType::AccessDeniedException,
@@ -137,11 +137,11 @@ impl std::convert::From<&str> for BatchWriteExceptionType {
         }
     }
 }
-impl std::str::FromStr for BatchWriteExceptionType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for BatchWriteExceptionType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(BatchWriteExceptionType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(BatchWriteExceptionType::from(s))
     }
 }
 impl BatchWriteExceptionType {
@@ -201,7 +201,7 @@ impl BatchWriteExceptionType {
         ]
     }
 }
-impl AsRef<str> for BatchWriteExceptionType {
+impl ::std::convert::AsRef<str> for BatchWriteExceptionType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

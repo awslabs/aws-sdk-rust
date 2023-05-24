@@ -2,15 +2,15 @@
 
 /// <p>A complex type that contains information about changes to the Route&nbsp;53 DNS records that Cloud Map creates when you register an instance.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DnsConfigChange {
     /// <p>An array that contains one <code>DnsRecord</code> object for each Route&nbsp;53 record that you want Cloud Map to create when you register an instance.</p>
     #[doc(hidden)]
-    pub dns_records: std::option::Option<std::vec::Vec<crate::types::DnsRecord>>,
+    pub dns_records: ::std::option::Option<::std::vec::Vec<crate::types::DnsRecord>>,
 }
 impl DnsConfigChange {
     /// <p>An array that contains one <code>DnsRecord</code> object for each Route&nbsp;53 record that you want Cloud Map to create when you register an instance.</p>
-    pub fn dns_records(&self) -> std::option::Option<&[crate::types::DnsRecord]> {
+    pub fn dns_records(&self) -> ::std::option::Option<&[crate::types::DnsRecord]> {
         self.dns_records.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl DnsConfigChange {
 
 /// A builder for [`DnsConfigChange`](crate::types::DnsConfigChange).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DnsConfigChangeBuilder {
-    pub(crate) dns_records: std::option::Option<std::vec::Vec<crate::types::DnsRecord>>,
+    pub(crate) dns_records: ::std::option::Option<::std::vec::Vec<crate::types::DnsRecord>>,
 }
 impl DnsConfigChangeBuilder {
     /// Appends an item to `dns_records`.
@@ -36,13 +38,13 @@ impl DnsConfigChangeBuilder {
     pub fn dns_records(mut self, input: crate::types::DnsRecord) -> Self {
         let mut v = self.dns_records.unwrap_or_default();
         v.push(input);
-        self.dns_records = Some(v);
+        self.dns_records = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array that contains one <code>DnsRecord</code> object for each Route&nbsp;53 record that you want Cloud Map to create when you register an instance.</p>
     pub fn set_dns_records(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::DnsRecord>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::DnsRecord>>,
     ) -> Self {
         self.dns_records = input;
         self

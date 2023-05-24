@@ -2,15 +2,15 @@
 
 /// <p>Information about input answers for a contact evaluation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct EvaluationAnswerInput {
     /// <p>The value for an answer in a contact evaluation.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<crate::types::EvaluationAnswerData>,
+    pub value: ::std::option::Option<crate::types::EvaluationAnswerData>,
 }
 impl EvaluationAnswerInput {
     /// <p>The value for an answer in a contact evaluation.</p>
-    pub fn value(&self) -> std::option::Option<&crate::types::EvaluationAnswerData> {
+    pub fn value(&self) -> ::std::option::Option<&crate::types::EvaluationAnswerData> {
         self.value.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl EvaluationAnswerInput {
 
 /// A builder for [`EvaluationAnswerInput`](crate::types::EvaluationAnswerInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct EvaluationAnswerInputBuilder {
-    pub(crate) value: std::option::Option<crate::types::EvaluationAnswerData>,
+    pub(crate) value: ::std::option::Option<crate::types::EvaluationAnswerData>,
 }
 impl EvaluationAnswerInputBuilder {
     /// <p>The value for an answer in a contact evaluation.</p>
     pub fn value(mut self, input: crate::types::EvaluationAnswerData) -> Self {
-        self.value = Some(input);
+        self.value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The value for an answer in a contact evaluation.</p>
     pub fn set_value(
         mut self,
-        input: std::option::Option<crate::types::EvaluationAnswerData>,
+        input: ::std::option::Option<crate::types::EvaluationAnswerData>,
     ) -> Self {
         self.value = input;
         self

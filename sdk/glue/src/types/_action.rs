@@ -2,34 +2,35 @@
 
 /// <p>Defines an action to be initiated by a trigger.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Action {
     /// <p>The name of a job to be run.</p>
     #[doc(hidden)]
-    pub job_name: std::option::Option<std::string::String>,
+    pub job_name: ::std::option::Option<::std::string::String>,
     /// <p>The job arguments used when this trigger fires. For this job run, they replace the default arguments set in the job definition itself.</p>
     /// <p>You can specify arguments here that your own job-execution script consumes, as well as arguments that Glue itself consumes.</p>
     /// <p>For information about how to specify and consume your own Job arguments, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-python-calling.html">Calling Glue APIs in Python</a> topic in the developer guide.</p>
     /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
     #[doc(hidden)]
-    pub arguments:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
+    pub arguments: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
     /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This overrides the timeout value set in the parent job.</p>
     #[doc(hidden)]
-    pub timeout: std::option::Option<i32>,
+    pub timeout: ::std::option::Option<i32>,
     /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this action.</p>
     #[doc(hidden)]
-    pub security_configuration: std::option::Option<std::string::String>,
+    pub security_configuration: ::std::option::Option<::std::string::String>,
     /// <p>Specifies configuration properties of a job run notification.</p>
     #[doc(hidden)]
-    pub notification_property: std::option::Option<crate::types::NotificationProperty>,
+    pub notification_property: ::std::option::Option<crate::types::NotificationProperty>,
     /// <p>The name of the crawler to be used with this action.</p>
     #[doc(hidden)]
-    pub crawler_name: std::option::Option<std::string::String>,
+    pub crawler_name: ::std::option::Option<::std::string::String>,
 }
 impl Action {
     /// <p>The name of a job to be run.</p>
-    pub fn job_name(&self) -> std::option::Option<&str> {
+    pub fn job_name(&self) -> ::std::option::Option<&str> {
         self.job_name.as_deref()
     }
     /// <p>The job arguments used when this trigger fires. For this job run, they replace the default arguments set in the job definition itself.</p>
@@ -38,26 +39,27 @@ impl Action {
     /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
     pub fn arguments(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, std::string::String>>
-    {
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    > {
         self.arguments.as_ref()
     }
     /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This overrides the timeout value set in the parent job.</p>
-    pub fn timeout(&self) -> std::option::Option<i32> {
+    pub fn timeout(&self) -> ::std::option::Option<i32> {
         self.timeout
     }
     /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this action.</p>
-    pub fn security_configuration(&self) -> std::option::Option<&str> {
+    pub fn security_configuration(&self) -> ::std::option::Option<&str> {
         self.security_configuration.as_deref()
     }
     /// <p>Specifies configuration properties of a job run notification.</p>
     pub fn notification_property(
         &self,
-    ) -> std::option::Option<&crate::types::NotificationProperty> {
+    ) -> ::std::option::Option<&crate::types::NotificationProperty> {
         self.notification_property.as_ref()
     }
     /// <p>The name of the crawler to be used with this action.</p>
-    pub fn crawler_name(&self) -> std::option::Option<&str> {
+    pub fn crawler_name(&self) -> ::std::option::Option<&str> {
         self.crawler_name.as_deref()
     }
 }
@@ -70,24 +72,27 @@ impl Action {
 
 /// A builder for [`Action`](crate::types::Action).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ActionBuilder {
-    pub(crate) job_name: std::option::Option<std::string::String>,
-    pub(crate) arguments:
-        std::option::Option<std::collections::HashMap<std::string::String, std::string::String>>,
-    pub(crate) timeout: std::option::Option<i32>,
-    pub(crate) security_configuration: std::option::Option<std::string::String>,
-    pub(crate) notification_property: std::option::Option<crate::types::NotificationProperty>,
-    pub(crate) crawler_name: std::option::Option<std::string::String>,
+    pub(crate) job_name: ::std::option::Option<::std::string::String>,
+    pub(crate) arguments: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, ::std::string::String>,
+    >,
+    pub(crate) timeout: ::std::option::Option<i32>,
+    pub(crate) security_configuration: ::std::option::Option<::std::string::String>,
+    pub(crate) notification_property: ::std::option::Option<crate::types::NotificationProperty>,
+    pub(crate) crawler_name: ::std::option::Option<::std::string::String>,
 }
 impl ActionBuilder {
     /// <p>The name of a job to be run.</p>
-    pub fn job_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.job_name = Some(input.into());
+    pub fn job_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.job_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of a job to be run.</p>
-    pub fn set_job_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_job_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.job_name = input;
         self
     }
@@ -101,12 +106,12 @@ impl ActionBuilder {
     /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
     pub fn arguments(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         let mut hash_map = self.arguments.unwrap_or_default();
         hash_map.insert(k.into(), v.into());
-        self.arguments = Some(hash_map);
+        self.arguments = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The job arguments used when this trigger fires. For this job run, they replace the default arguments set in the job definition itself.</p>
@@ -115,8 +120,8 @@ impl ActionBuilder {
     /// <p>For information about the key-value pairs that Glue consumes to set up your job, see the <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-programming-etl-glue-arguments.html">Special Parameters Used by Glue</a> topic in the developer guide.</p>
     pub fn set_arguments(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.arguments = input;
@@ -124,47 +129,50 @@ impl ActionBuilder {
     }
     /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This overrides the timeout value set in the parent job.</p>
     pub fn timeout(mut self, input: i32) -> Self {
-        self.timeout = Some(input);
+        self.timeout = ::std::option::Option::Some(input);
         self
     }
     /// <p>The <code>JobRun</code> timeout in minutes. This is the maximum time that a job run can consume resources before it is terminated and enters <code>TIMEOUT</code> status. The default is 2,880 minutes (48 hours). This overrides the timeout value set in the parent job.</p>
-    pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
         self.timeout = input;
         self
     }
     /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this action.</p>
-    pub fn security_configuration(mut self, input: impl Into<std::string::String>) -> Self {
-        self.security_configuration = Some(input.into());
+    pub fn security_configuration(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.security_configuration = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the <code>SecurityConfiguration</code> structure to be used with this action.</p>
     pub fn set_security_configuration(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.security_configuration = input;
         self
     }
     /// <p>Specifies configuration properties of a job run notification.</p>
     pub fn notification_property(mut self, input: crate::types::NotificationProperty) -> Self {
-        self.notification_property = Some(input);
+        self.notification_property = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies configuration properties of a job run notification.</p>
     pub fn set_notification_property(
         mut self,
-        input: std::option::Option<crate::types::NotificationProperty>,
+        input: ::std::option::Option<crate::types::NotificationProperty>,
     ) -> Self {
         self.notification_property = input;
         self
     }
     /// <p>The name of the crawler to be used with this action.</p>
-    pub fn crawler_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.crawler_name = Some(input.into());
+    pub fn crawler_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.crawler_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the crawler to be used with this action.</p>
-    pub fn set_crawler_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_crawler_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.crawler_name = input;
         self
     }

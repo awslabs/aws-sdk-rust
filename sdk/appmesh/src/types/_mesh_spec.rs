@@ -2,22 +2,22 @@
 
 /// <p>An object that represents the specification of a service mesh.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MeshSpec {
     /// <p>The egress filter rules for the service mesh.</p>
     #[doc(hidden)]
-    pub egress_filter: std::option::Option<crate::types::EgressFilter>,
+    pub egress_filter: ::std::option::Option<crate::types::EgressFilter>,
     /// <p>An object that represents the service discovery information for a service mesh.</p>
     #[doc(hidden)]
-    pub service_discovery: std::option::Option<crate::types::MeshServiceDiscovery>,
+    pub service_discovery: ::std::option::Option<crate::types::MeshServiceDiscovery>,
 }
 impl MeshSpec {
     /// <p>The egress filter rules for the service mesh.</p>
-    pub fn egress_filter(&self) -> std::option::Option<&crate::types::EgressFilter> {
+    pub fn egress_filter(&self) -> ::std::option::Option<&crate::types::EgressFilter> {
         self.egress_filter.as_ref()
     }
     /// <p>An object that represents the service discovery information for a service mesh.</p>
-    pub fn service_discovery(&self) -> std::option::Option<&crate::types::MeshServiceDiscovery> {
+    pub fn service_discovery(&self) -> ::std::option::Option<&crate::types::MeshServiceDiscovery> {
         self.service_discovery.as_ref()
     }
 }
@@ -30,34 +30,36 @@ impl MeshSpec {
 
 /// A builder for [`MeshSpec`](crate::types::MeshSpec).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MeshSpecBuilder {
-    pub(crate) egress_filter: std::option::Option<crate::types::EgressFilter>,
-    pub(crate) service_discovery: std::option::Option<crate::types::MeshServiceDiscovery>,
+    pub(crate) egress_filter: ::std::option::Option<crate::types::EgressFilter>,
+    pub(crate) service_discovery: ::std::option::Option<crate::types::MeshServiceDiscovery>,
 }
 impl MeshSpecBuilder {
     /// <p>The egress filter rules for the service mesh.</p>
     pub fn egress_filter(mut self, input: crate::types::EgressFilter) -> Self {
-        self.egress_filter = Some(input);
+        self.egress_filter = ::std::option::Option::Some(input);
         self
     }
     /// <p>The egress filter rules for the service mesh.</p>
     pub fn set_egress_filter(
         mut self,
-        input: std::option::Option<crate::types::EgressFilter>,
+        input: ::std::option::Option<crate::types::EgressFilter>,
     ) -> Self {
         self.egress_filter = input;
         self
     }
     /// <p>An object that represents the service discovery information for a service mesh.</p>
     pub fn service_discovery(mut self, input: crate::types::MeshServiceDiscovery) -> Self {
-        self.service_discovery = Some(input);
+        self.service_discovery = ::std::option::Option::Some(input);
         self
     }
     /// <p>An object that represents the service discovery information for a service mesh.</p>
     pub fn set_service_discovery(
         mut self,
-        input: std::option::Option<crate::types::MeshServiceDiscovery>,
+        input: ::std::option::Option<crate::types::MeshServiceDiscovery>,
     ) -> Self {
         self.service_discovery = input;
         self

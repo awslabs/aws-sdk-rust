@@ -2,27 +2,27 @@
 
 /// <p>Represents the output of a <code>CreatePipeline</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePipelineOutput {
     /// <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
     #[doc(hidden)]
-    pub pipeline: std::option::Option<crate::types::PipelineDeclaration>,
+    pub pipeline: ::std::option::Option<crate::types::PipelineDeclaration>,
     /// <p>Specifies the tags applied to the pipeline.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     _request_id: Option<String>,
 }
 impl CreatePipelineOutput {
     /// <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
-    pub fn pipeline(&self) -> std::option::Option<&crate::types::PipelineDeclaration> {
+    pub fn pipeline(&self) -> ::std::option::Option<&crate::types::PipelineDeclaration> {
         self.pipeline.as_ref()
     }
     /// <p>Specifies the tags applied to the pipeline.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for CreatePipelineOutput {
+impl ::aws_http::request_id::RequestId for CreatePipelineOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -36,22 +36,24 @@ impl CreatePipelineOutput {
 
 /// A builder for [`CreatePipelineOutput`](crate::operation::create_pipeline::CreatePipelineOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreatePipelineOutputBuilder {
-    pub(crate) pipeline: std::option::Option<crate::types::PipelineDeclaration>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub(crate) pipeline: ::std::option::Option<crate::types::PipelineDeclaration>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     _request_id: Option<String>,
 }
 impl CreatePipelineOutputBuilder {
     /// <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
     pub fn pipeline(mut self, input: crate::types::PipelineDeclaration) -> Self {
-        self.pipeline = Some(input);
+        self.pipeline = ::std::option::Option::Some(input);
         self
     }
     /// <p>Represents the structure of actions and stages to be performed in the pipeline. </p>
     pub fn set_pipeline(
         mut self,
-        input: std::option::Option<crate::types::PipelineDeclaration>,
+        input: ::std::option::Option<crate::types::PipelineDeclaration>,
     ) -> Self {
         self.pipeline = input;
         self
@@ -64,13 +66,13 @@ impl CreatePipelineOutputBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>Specifies the tags applied to the pipeline.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self

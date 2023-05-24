@@ -2,22 +2,22 @@
 
 /// <p>Provides the location, using character count, in your transcript where a match is identified. For example, the location of an issue or a category match within a segment.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CharacterOffsets {
     /// <p>Provides the character count of the first character where a match is identified. For example, the first character associated with an issue or a category match in a segment transcript.</p>
     #[doc(hidden)]
-    pub begin: std::option::Option<i32>,
+    pub begin: ::std::option::Option<i32>,
     /// <p>Provides the character count of the last character where a match is identified. For example, the last character associated with an issue or a category match in a segment transcript.</p>
     #[doc(hidden)]
-    pub end: std::option::Option<i32>,
+    pub end: ::std::option::Option<i32>,
 }
 impl CharacterOffsets {
     /// <p>Provides the character count of the first character where a match is identified. For example, the first character associated with an issue or a category match in a segment transcript.</p>
-    pub fn begin(&self) -> std::option::Option<i32> {
+    pub fn begin(&self) -> ::std::option::Option<i32> {
         self.begin
     }
     /// <p>Provides the character count of the last character where a match is identified. For example, the last character associated with an issue or a category match in a segment transcript.</p>
-    pub fn end(&self) -> std::option::Option<i32> {
+    pub fn end(&self) -> ::std::option::Option<i32> {
         self.end
     }
 }
@@ -30,29 +30,31 @@ impl CharacterOffsets {
 
 /// A builder for [`CharacterOffsets`](crate::types::CharacterOffsets).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CharacterOffsetsBuilder {
-    pub(crate) begin: std::option::Option<i32>,
-    pub(crate) end: std::option::Option<i32>,
+    pub(crate) begin: ::std::option::Option<i32>,
+    pub(crate) end: ::std::option::Option<i32>,
 }
 impl CharacterOffsetsBuilder {
     /// <p>Provides the character count of the first character where a match is identified. For example, the first character associated with an issue or a category match in a segment transcript.</p>
     pub fn begin(mut self, input: i32) -> Self {
-        self.begin = Some(input);
+        self.begin = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides the character count of the first character where a match is identified. For example, the first character associated with an issue or a category match in a segment transcript.</p>
-    pub fn set_begin(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_begin(mut self, input: ::std::option::Option<i32>) -> Self {
         self.begin = input;
         self
     }
     /// <p>Provides the character count of the last character where a match is identified. For example, the last character associated with an issue or a category match in a segment transcript.</p>
     pub fn end(mut self, input: i32) -> Self {
-        self.end = Some(input);
+        self.end = ::std::option::Option::Some(input);
         self
     }
     /// <p>Provides the character count of the last character where a match is identified. For example, the last character associated with an issue or a category match in a segment transcript.</p>
-    pub fn set_end(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_end(mut self, input: ::std::option::Option<i32>) -> Self {
         self.end = input;
         self
     }

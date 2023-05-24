@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteDetectorModel`](crate::operation::delete_detector_model::builders::DeleteDetectorModelFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`detector_model_name(impl Into<String>)`](crate::operation::delete_detector_model::builders::DeleteDetectorModelFluentBuilder::detector_model_name) / [`set_detector_model_name(Option<String>)`](crate::operation::delete_detector_model::builders::DeleteDetectorModelFluentBuilder::set_detector_model_name): <p>The name of the detector model to be deleted.</p>
+    ///   - [`detector_model_name(impl ::std::convert::Into<String>)`](crate::operation::delete_detector_model::builders::DeleteDetectorModelFluentBuilder::detector_model_name) / [`set_detector_model_name(Option<String>)`](crate::operation::delete_detector_model::builders::DeleteDetectorModelFluentBuilder::set_detector_model_name): <p>The name of the detector model to be deleted.</p>
     /// - On success, responds with [`DeleteDetectorModelOutput`](crate::operation::delete_detector_model::DeleteDetectorModelOutput)
     /// - On failure, responds with [`SdkError<DeleteDetectorModelError>`](crate::operation::delete_detector_model::DeleteDetectorModelError)
     pub fn delete_detector_model(

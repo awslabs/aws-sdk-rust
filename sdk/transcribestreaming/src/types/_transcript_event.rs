@@ -3,15 +3,15 @@
 /// <p>The <code>TranscriptEvent</code> associated with a <code>TranscriptResultStream</code>.</p>
 /// <p>Contains a set of transcription results from one or more audio segments, along with additional information per your request parameters.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TranscriptEvent {
     /// <p>Contains <code>Results</code>, which contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
     #[doc(hidden)]
-    pub transcript: std::option::Option<crate::types::Transcript>,
+    pub transcript: ::std::option::Option<crate::types::Transcript>,
 }
 impl TranscriptEvent {
     /// <p>Contains <code>Results</code>, which contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
-    pub fn transcript(&self) -> std::option::Option<&crate::types::Transcript> {
+    pub fn transcript(&self) -> ::std::option::Option<&crate::types::Transcript> {
         self.transcript.as_ref()
     }
 }
@@ -24,18 +24,23 @@ impl TranscriptEvent {
 
 /// A builder for [`TranscriptEvent`](crate::types::TranscriptEvent).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TranscriptEventBuilder {
-    pub(crate) transcript: std::option::Option<crate::types::Transcript>,
+    pub(crate) transcript: ::std::option::Option<crate::types::Transcript>,
 }
 impl TranscriptEventBuilder {
     /// <p>Contains <code>Results</code>, which contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
     pub fn transcript(mut self, input: crate::types::Transcript) -> Self {
-        self.transcript = Some(input);
+        self.transcript = ::std::option::Option::Some(input);
         self
     }
     /// <p>Contains <code>Results</code>, which contains a set of transcription results from one or more audio segments, along with additional information per your request parameters. This can include information relating to alternative transcriptions, channel identification, partial result stabilization, language identification, and other transcription-related data.</p>
-    pub fn set_transcript(mut self, input: std::option::Option<crate::types::Transcript>) -> Self {
+    pub fn set_transcript(
+        mut self,
+        input: ::std::option::Option<crate::types::Transcript>,
+    ) -> Self {
         self.transcript = input;
         self
     }

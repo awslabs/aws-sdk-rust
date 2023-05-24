@@ -2,20 +2,20 @@
 
 /// <p>The result of a <code>DefineSuggester</code> request. Contains the status of the newly-configured suggester.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DefineSuggesterOutput {
     /// <p>The value of a <code>Suggester</code> and its current status.</p>
     #[doc(hidden)]
-    pub suggester: std::option::Option<crate::types::SuggesterStatus>,
+    pub suggester: ::std::option::Option<crate::types::SuggesterStatus>,
     _request_id: Option<String>,
 }
 impl DefineSuggesterOutput {
     /// <p>The value of a <code>Suggester</code> and its current status.</p>
-    pub fn suggester(&self) -> std::option::Option<&crate::types::SuggesterStatus> {
+    pub fn suggester(&self) -> ::std::option::Option<&crate::types::SuggesterStatus> {
         self.suggester.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for DefineSuggesterOutput {
+impl ::aws_http::request_id::RequestId for DefineSuggesterOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,21 +29,23 @@ impl DefineSuggesterOutput {
 
 /// A builder for [`DefineSuggesterOutput`](crate::operation::define_suggester::DefineSuggesterOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DefineSuggesterOutputBuilder {
-    pub(crate) suggester: std::option::Option<crate::types::SuggesterStatus>,
+    pub(crate) suggester: ::std::option::Option<crate::types::SuggesterStatus>,
     _request_id: Option<String>,
 }
 impl DefineSuggesterOutputBuilder {
     /// <p>The value of a <code>Suggester</code> and its current status.</p>
     pub fn suggester(mut self, input: crate::types::SuggesterStatus) -> Self {
-        self.suggester = Some(input);
+        self.suggester = ::std::option::Option::Some(input);
         self
     }
     /// <p>The value of a <code>Suggester</code> and its current status.</p>
     pub fn set_suggester(
         mut self,
-        input: std::option::Option<crate::types::SuggesterStatus>,
+        input: ::std::option::Option<crate::types::SuggesterStatus>,
     ) -> Self {
         self.suggester = input;
         self

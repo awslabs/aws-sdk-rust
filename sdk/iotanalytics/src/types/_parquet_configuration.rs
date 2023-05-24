@@ -2,15 +2,15 @@
 
 /// <p>Contains the configuration information of the Parquet format.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ParquetConfiguration {
     /// <p>Information needed to define a schema.</p>
     #[doc(hidden)]
-    pub schema_definition: std::option::Option<crate::types::SchemaDefinition>,
+    pub schema_definition: ::std::option::Option<crate::types::SchemaDefinition>,
 }
 impl ParquetConfiguration {
     /// <p>Information needed to define a schema.</p>
-    pub fn schema_definition(&self) -> std::option::Option<&crate::types::SchemaDefinition> {
+    pub fn schema_definition(&self) -> ::std::option::Option<&crate::types::SchemaDefinition> {
         self.schema_definition.as_ref()
     }
 }
@@ -23,20 +23,22 @@ impl ParquetConfiguration {
 
 /// A builder for [`ParquetConfiguration`](crate::types::ParquetConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ParquetConfigurationBuilder {
-    pub(crate) schema_definition: std::option::Option<crate::types::SchemaDefinition>,
+    pub(crate) schema_definition: ::std::option::Option<crate::types::SchemaDefinition>,
 }
 impl ParquetConfigurationBuilder {
     /// <p>Information needed to define a schema.</p>
     pub fn schema_definition(mut self, input: crate::types::SchemaDefinition) -> Self {
-        self.schema_definition = Some(input);
+        self.schema_definition = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information needed to define a schema.</p>
     pub fn set_schema_definition(
         mut self,
-        input: std::option::Option<crate::types::SchemaDefinition>,
+        input: ::std::option::Option<crate::types::SchemaDefinition>,
     ) -> Self {
         self.schema_definition = input;
         self

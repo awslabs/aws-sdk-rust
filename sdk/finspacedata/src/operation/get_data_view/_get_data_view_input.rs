@@ -2,22 +2,22 @@
 
 /// Request for retrieving a data view detail. Grouped / accessible within a dataset by its dataset id.
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetDataViewInput {
     /// <p>The unique identifier for the Dataview.</p>
     #[doc(hidden)]
-    pub data_view_id: std::option::Option<std::string::String>,
+    pub data_view_id: ::std::option::Option<::std::string::String>,
     /// <p>The unique identifier for the Dataset used in the Dataview.</p>
     #[doc(hidden)]
-    pub dataset_id: std::option::Option<std::string::String>,
+    pub dataset_id: ::std::option::Option<::std::string::String>,
 }
 impl GetDataViewInput {
     /// <p>The unique identifier for the Dataview.</p>
-    pub fn data_view_id(&self) -> std::option::Option<&str> {
+    pub fn data_view_id(&self) -> ::std::option::Option<&str> {
         self.data_view_id.as_deref()
     }
     /// <p>The unique identifier for the Dataset used in the Dataview.</p>
-    pub fn dataset_id(&self) -> std::option::Option<&str> {
+    pub fn dataset_id(&self) -> ::std::option::Option<&str> {
         self.dataset_id.as_deref()
     }
 }
@@ -30,40 +30,42 @@ impl GetDataViewInput {
 
 /// A builder for [`GetDataViewInput`](crate::operation::get_data_view::GetDataViewInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetDataViewInputBuilder {
-    pub(crate) data_view_id: std::option::Option<std::string::String>,
-    pub(crate) dataset_id: std::option::Option<std::string::String>,
+    pub(crate) data_view_id: ::std::option::Option<::std::string::String>,
+    pub(crate) dataset_id: ::std::option::Option<::std::string::String>,
 }
 impl GetDataViewInputBuilder {
     /// <p>The unique identifier for the Dataview.</p>
-    pub fn data_view_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.data_view_id = Some(input.into());
+    pub fn data_view_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.data_view_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the Dataview.</p>
-    pub fn set_data_view_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_data_view_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.data_view_id = input;
         self
     }
     /// <p>The unique identifier for the Dataset used in the Dataview.</p>
-    pub fn dataset_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.dataset_id = Some(input.into());
+    pub fn dataset_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.dataset_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier for the Dataset used in the Dataview.</p>
-    pub fn set_dataset_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_dataset_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.dataset_id = input;
         self
     }
     /// Consumes the builder and constructs a [`GetDataViewInput`](crate::operation::get_data_view::GetDataViewInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::get_data_view::GetDataViewInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::get_data_view::GetDataViewInput {
+        ::std::result::Result::Ok(crate::operation::get_data_view::GetDataViewInput {
             data_view_id: self.data_view_id,
             dataset_id: self.dataset_id,
         })

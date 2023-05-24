@@ -2,29 +2,29 @@
 
 /// <p>Error information when attempting to describe an Amazon OpenSearch Service-managed VPC endpoint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VpcEndpointError {
     /// <p>The unique identifier of the endpoint. </p>
     #[doc(hidden)]
-    pub vpc_endpoint_id: std::option::Option<std::string::String>,
+    pub vpc_endpoint_id: ::std::option::Option<::std::string::String>,
     /// <p>The code associated with the error.</p>
     #[doc(hidden)]
-    pub error_code: std::option::Option<crate::types::VpcEndpointErrorCode>,
+    pub error_code: ::std::option::Option<crate::types::VpcEndpointErrorCode>,
     /// <p>A message describing the error.</p>
     #[doc(hidden)]
-    pub error_message: std::option::Option<std::string::String>,
+    pub error_message: ::std::option::Option<::std::string::String>,
 }
 impl VpcEndpointError {
     /// <p>The unique identifier of the endpoint. </p>
-    pub fn vpc_endpoint_id(&self) -> std::option::Option<&str> {
+    pub fn vpc_endpoint_id(&self) -> ::std::option::Option<&str> {
         self.vpc_endpoint_id.as_deref()
     }
     /// <p>The code associated with the error.</p>
-    pub fn error_code(&self) -> std::option::Option<&crate::types::VpcEndpointErrorCode> {
+    pub fn error_code(&self) -> ::std::option::Option<&crate::types::VpcEndpointErrorCode> {
         self.error_code.as_ref()
     }
     /// <p>A message describing the error.</p>
-    pub fn error_message(&self) -> std::option::Option<&str> {
+    pub fn error_message(&self) -> ::std::option::Option<&str> {
         self.error_message.as_deref()
     }
 }
@@ -37,43 +37,57 @@ impl VpcEndpointError {
 
 /// A builder for [`VpcEndpointError`](crate::types::VpcEndpointError).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VpcEndpointErrorBuilder {
-    pub(crate) vpc_endpoint_id: std::option::Option<std::string::String>,
-    pub(crate) error_code: std::option::Option<crate::types::VpcEndpointErrorCode>,
-    pub(crate) error_message: std::option::Option<std::string::String>,
+    pub(crate) vpc_endpoint_id: ::std::option::Option<::std::string::String>,
+    pub(crate) error_code: ::std::option::Option<crate::types::VpcEndpointErrorCode>,
+    pub(crate) error_message: ::std::option::Option<::std::string::String>,
 }
 impl VpcEndpointErrorBuilder {
     /// <p>The unique identifier of the endpoint. </p>
-    pub fn vpc_endpoint_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.vpc_endpoint_id = Some(input.into());
+    pub fn vpc_endpoint_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.vpc_endpoint_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The unique identifier of the endpoint. </p>
-    pub fn set_vpc_endpoint_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_vpc_endpoint_id(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.vpc_endpoint_id = input;
         self
     }
     /// <p>The code associated with the error.</p>
     pub fn error_code(mut self, input: crate::types::VpcEndpointErrorCode) -> Self {
-        self.error_code = Some(input);
+        self.error_code = ::std::option::Option::Some(input);
         self
     }
     /// <p>The code associated with the error.</p>
     pub fn set_error_code(
         mut self,
-        input: std::option::Option<crate::types::VpcEndpointErrorCode>,
+        input: ::std::option::Option<crate::types::VpcEndpointErrorCode>,
     ) -> Self {
         self.error_code = input;
         self
     }
     /// <p>A message describing the error.</p>
-    pub fn error_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.error_message = Some(input.into());
+    pub fn error_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.error_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A message describing the error.</p>
-    pub fn set_error_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_error_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.error_message = input;
         self
     }

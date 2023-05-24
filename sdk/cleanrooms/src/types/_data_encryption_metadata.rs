@@ -2,36 +2,36 @@
 
 /// <p>The settings for client-side encryption for cryptographic computing.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataEncryptionMetadata {
     /// <p>Indicates whether encrypted tables can contain cleartext data (true) or are to cryptographically process every column (false).</p>
     #[doc(hidden)]
-    pub allow_cleartext: std::option::Option<bool>,
+    pub allow_cleartext: ::std::option::Option<bool>,
     /// <p>Indicates whether Fingerprint columns can contain duplicate entries (true) or are to contain only non-repeated values (false).</p>
     #[doc(hidden)]
-    pub allow_duplicates: std::option::Option<bool>,
+    pub allow_duplicates: ::std::option::Option<bool>,
     /// <p>Indicates whether Fingerprint columns can be joined on any other Fingerprint column with a different name (true) or can only be joined on Fingerprint columns of the same name (false).</p>
     #[doc(hidden)]
-    pub allow_joins_on_columns_with_different_names: std::option::Option<bool>,
+    pub allow_joins_on_columns_with_different_names: ::std::option::Option<bool>,
     /// <p>Indicates whether NULL values are to be copied as NULL to encrypted tables (true) or cryptographically processed (false).</p>
     #[doc(hidden)]
-    pub preserve_nulls: std::option::Option<bool>,
+    pub preserve_nulls: ::std::option::Option<bool>,
 }
 impl DataEncryptionMetadata {
     /// <p>Indicates whether encrypted tables can contain cleartext data (true) or are to cryptographically process every column (false).</p>
-    pub fn allow_cleartext(&self) -> std::option::Option<bool> {
+    pub fn allow_cleartext(&self) -> ::std::option::Option<bool> {
         self.allow_cleartext
     }
     /// <p>Indicates whether Fingerprint columns can contain duplicate entries (true) or are to contain only non-repeated values (false).</p>
-    pub fn allow_duplicates(&self) -> std::option::Option<bool> {
+    pub fn allow_duplicates(&self) -> ::std::option::Option<bool> {
         self.allow_duplicates
     }
     /// <p>Indicates whether Fingerprint columns can be joined on any other Fingerprint column with a different name (true) or can only be joined on Fingerprint columns of the same name (false).</p>
-    pub fn allow_joins_on_columns_with_different_names(&self) -> std::option::Option<bool> {
+    pub fn allow_joins_on_columns_with_different_names(&self) -> ::std::option::Option<bool> {
         self.allow_joins_on_columns_with_different_names
     }
     /// <p>Indicates whether NULL values are to be copied as NULL to encrypted tables (true) or cryptographically processed (false).</p>
-    pub fn preserve_nulls(&self) -> std::option::Option<bool> {
+    pub fn preserve_nulls(&self) -> ::std::option::Option<bool> {
         self.preserve_nulls
     }
 }
@@ -44,54 +44,56 @@ impl DataEncryptionMetadata {
 
 /// A builder for [`DataEncryptionMetadata`](crate::types::DataEncryptionMetadata).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DataEncryptionMetadataBuilder {
-    pub(crate) allow_cleartext: std::option::Option<bool>,
-    pub(crate) allow_duplicates: std::option::Option<bool>,
-    pub(crate) allow_joins_on_columns_with_different_names: std::option::Option<bool>,
-    pub(crate) preserve_nulls: std::option::Option<bool>,
+    pub(crate) allow_cleartext: ::std::option::Option<bool>,
+    pub(crate) allow_duplicates: ::std::option::Option<bool>,
+    pub(crate) allow_joins_on_columns_with_different_names: ::std::option::Option<bool>,
+    pub(crate) preserve_nulls: ::std::option::Option<bool>,
 }
 impl DataEncryptionMetadataBuilder {
     /// <p>Indicates whether encrypted tables can contain cleartext data (true) or are to cryptographically process every column (false).</p>
     pub fn allow_cleartext(mut self, input: bool) -> Self {
-        self.allow_cleartext = Some(input);
+        self.allow_cleartext = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether encrypted tables can contain cleartext data (true) or are to cryptographically process every column (false).</p>
-    pub fn set_allow_cleartext(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_allow_cleartext(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allow_cleartext = input;
         self
     }
     /// <p>Indicates whether Fingerprint columns can contain duplicate entries (true) or are to contain only non-repeated values (false).</p>
     pub fn allow_duplicates(mut self, input: bool) -> Self {
-        self.allow_duplicates = Some(input);
+        self.allow_duplicates = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether Fingerprint columns can contain duplicate entries (true) or are to contain only non-repeated values (false).</p>
-    pub fn set_allow_duplicates(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_allow_duplicates(mut self, input: ::std::option::Option<bool>) -> Self {
         self.allow_duplicates = input;
         self
     }
     /// <p>Indicates whether Fingerprint columns can be joined on any other Fingerprint column with a different name (true) or can only be joined on Fingerprint columns of the same name (false).</p>
     pub fn allow_joins_on_columns_with_different_names(mut self, input: bool) -> Self {
-        self.allow_joins_on_columns_with_different_names = Some(input);
+        self.allow_joins_on_columns_with_different_names = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether Fingerprint columns can be joined on any other Fingerprint column with a different name (true) or can only be joined on Fingerprint columns of the same name (false).</p>
     pub fn set_allow_joins_on_columns_with_different_names(
         mut self,
-        input: std::option::Option<bool>,
+        input: ::std::option::Option<bool>,
     ) -> Self {
         self.allow_joins_on_columns_with_different_names = input;
         self
     }
     /// <p>Indicates whether NULL values are to be copied as NULL to encrypted tables (true) or cryptographically processed (false).</p>
     pub fn preserve_nulls(mut self, input: bool) -> Self {
-        self.preserve_nulls = Some(input);
+        self.preserve_nulls = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates whether NULL values are to be copied as NULL to encrypted tables (true) or cryptographically processed (false).</p>
-    pub fn set_preserve_nulls(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_preserve_nulls(mut self, input: ::std::option::Option<bool>) -> Self {
         self.preserve_nulls = input;
         self
     }

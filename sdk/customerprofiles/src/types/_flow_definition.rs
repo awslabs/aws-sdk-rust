@@ -2,50 +2,50 @@
 
 /// <p>The configurations that control how Customer Profiles retrieves data from the source, Amazon AppFlow. Customer Profiles uses this information to create an AppFlow flow on behalf of customers.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FlowDefinition {
     /// <p>A description of the flow you want to create.</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The specified name of the flow. Use underscores (_) or hyphens (-) only. Spaces are not allowed.</p>
     #[doc(hidden)]
-    pub flow_name: std::option::Option<std::string::String>,
+    pub flow_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name of the AWS Key Management Service (KMS) key you provide for encryption.</p>
     #[doc(hidden)]
-    pub kms_arn: std::option::Option<std::string::String>,
+    pub kms_arn: ::std::option::Option<::std::string::String>,
     /// <p>The configuration that controls how Customer Profiles retrieves data from the source.</p>
     #[doc(hidden)]
-    pub source_flow_config: std::option::Option<crate::types::SourceFlowConfig>,
+    pub source_flow_config: ::std::option::Option<crate::types::SourceFlowConfig>,
     /// <p>A list of tasks that Customer Profiles performs while transferring the data in the flow run.</p>
     #[doc(hidden)]
-    pub tasks: std::option::Option<std::vec::Vec<crate::types::Task>>,
+    pub tasks: ::std::option::Option<::std::vec::Vec<crate::types::Task>>,
     /// <p>The trigger settings that determine how and when the flow runs.</p>
     #[doc(hidden)]
-    pub trigger_config: std::option::Option<crate::types::TriggerConfig>,
+    pub trigger_config: ::std::option::Option<crate::types::TriggerConfig>,
 }
 impl FlowDefinition {
     /// <p>A description of the flow you want to create.</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The specified name of the flow. Use underscores (_) or hyphens (-) only. Spaces are not allowed.</p>
-    pub fn flow_name(&self) -> std::option::Option<&str> {
+    pub fn flow_name(&self) -> ::std::option::Option<&str> {
         self.flow_name.as_deref()
     }
     /// <p>The Amazon Resource Name of the AWS Key Management Service (KMS) key you provide for encryption.</p>
-    pub fn kms_arn(&self) -> std::option::Option<&str> {
+    pub fn kms_arn(&self) -> ::std::option::Option<&str> {
         self.kms_arn.as_deref()
     }
     /// <p>The configuration that controls how Customer Profiles retrieves data from the source.</p>
-    pub fn source_flow_config(&self) -> std::option::Option<&crate::types::SourceFlowConfig> {
+    pub fn source_flow_config(&self) -> ::std::option::Option<&crate::types::SourceFlowConfig> {
         self.source_flow_config.as_ref()
     }
     /// <p>A list of tasks that Customer Profiles performs while transferring the data in the flow run.</p>
-    pub fn tasks(&self) -> std::option::Option<&[crate::types::Task]> {
+    pub fn tasks(&self) -> ::std::option::Option<&[crate::types::Task]> {
         self.tasks.as_deref()
     }
     /// <p>The trigger settings that determine how and when the flow runs.</p>
-    pub fn trigger_config(&self) -> std::option::Option<&crate::types::TriggerConfig> {
+    pub fn trigger_config(&self) -> ::std::option::Option<&crate::types::TriggerConfig> {
         self.trigger_config.as_ref()
     }
 }
@@ -58,55 +58,57 @@ impl FlowDefinition {
 
 /// A builder for [`FlowDefinition`](crate::types::FlowDefinition).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FlowDefinitionBuilder {
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) flow_name: std::option::Option<std::string::String>,
-    pub(crate) kms_arn: std::option::Option<std::string::String>,
-    pub(crate) source_flow_config: std::option::Option<crate::types::SourceFlowConfig>,
-    pub(crate) tasks: std::option::Option<std::vec::Vec<crate::types::Task>>,
-    pub(crate) trigger_config: std::option::Option<crate::types::TriggerConfig>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) flow_name: ::std::option::Option<::std::string::String>,
+    pub(crate) kms_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) source_flow_config: ::std::option::Option<crate::types::SourceFlowConfig>,
+    pub(crate) tasks: ::std::option::Option<::std::vec::Vec<crate::types::Task>>,
+    pub(crate) trigger_config: ::std::option::Option<crate::types::TriggerConfig>,
 }
 impl FlowDefinitionBuilder {
     /// <p>A description of the flow you want to create.</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the flow you want to create.</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The specified name of the flow. Use underscores (_) or hyphens (-) only. Spaces are not allowed.</p>
-    pub fn flow_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.flow_name = Some(input.into());
+    pub fn flow_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.flow_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The specified name of the flow. Use underscores (_) or hyphens (-) only. Spaces are not allowed.</p>
-    pub fn set_flow_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_flow_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.flow_name = input;
         self
     }
     /// <p>The Amazon Resource Name of the AWS Key Management Service (KMS) key you provide for encryption.</p>
-    pub fn kms_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.kms_arn = Some(input.into());
+    pub fn kms_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name of the AWS Key Management Service (KMS) key you provide for encryption.</p>
-    pub fn set_kms_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_kms_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_arn = input;
         self
     }
     /// <p>The configuration that controls how Customer Profiles retrieves data from the source.</p>
     pub fn source_flow_config(mut self, input: crate::types::SourceFlowConfig) -> Self {
-        self.source_flow_config = Some(input);
+        self.source_flow_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The configuration that controls how Customer Profiles retrieves data from the source.</p>
     pub fn set_source_flow_config(
         mut self,
-        input: std::option::Option<crate::types::SourceFlowConfig>,
+        input: ::std::option::Option<crate::types::SourceFlowConfig>,
     ) -> Self {
         self.source_flow_config = input;
         self
@@ -119,26 +121,26 @@ impl FlowDefinitionBuilder {
     pub fn tasks(mut self, input: crate::types::Task) -> Self {
         let mut v = self.tasks.unwrap_or_default();
         v.push(input);
-        self.tasks = Some(v);
+        self.tasks = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of tasks that Customer Profiles performs while transferring the data in the flow run.</p>
     pub fn set_tasks(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Task>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Task>>,
     ) -> Self {
         self.tasks = input;
         self
     }
     /// <p>The trigger settings that determine how and when the flow runs.</p>
     pub fn trigger_config(mut self, input: crate::types::TriggerConfig) -> Self {
-        self.trigger_config = Some(input);
+        self.trigger_config = ::std::option::Option::Some(input);
         self
     }
     /// <p>The trigger settings that determine how and when the flow runs.</p>
     pub fn set_trigger_config(
         mut self,
-        input: std::option::Option<crate::types::TriggerConfig>,
+        input: ::std::option::Option<crate::types::TriggerConfig>,
     ) -> Self {
         self.trigger_config = input;
         self

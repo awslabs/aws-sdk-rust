@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ValidityType {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum ValidityType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ValidityType {
+impl ::std::convert::From<&str> for ValidityType {
     fn from(s: &str) -> Self {
         match s {
             "DAYS" => ValidityType::Days,
@@ -69,11 +69,11 @@ impl std::convert::From<&str> for ValidityType {
         }
     }
 }
-impl std::str::FromStr for ValidityType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ValidityType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ValidityType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ValidityType::from(s))
     }
 }
 impl ValidityType {
@@ -91,7 +91,7 @@ impl ValidityType {
         &["DAYS", "MONTHS", "YEARS"]
     }
 }
-impl AsRef<str> for ValidityType {
+impl ::std::convert::AsRef<str> for ValidityType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

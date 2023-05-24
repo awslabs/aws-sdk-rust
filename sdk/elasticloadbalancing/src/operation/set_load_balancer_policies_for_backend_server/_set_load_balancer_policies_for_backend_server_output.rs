@@ -2,11 +2,11 @@
 
 /// <p>Contains the output of SetLoadBalancerPoliciesForBackendServer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SetLoadBalancerPoliciesForBackendServerOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for SetLoadBalancerPoliciesForBackendServerOutput {
+impl ::aws_http::request_id::RequestId for SetLoadBalancerPoliciesForBackendServerOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -20,7 +20,9 @@ impl SetLoadBalancerPoliciesForBackendServerOutput {
 
 /// A builder for [`SetLoadBalancerPoliciesForBackendServerOutput`](crate::operation::set_load_balancer_policies_for_backend_server::SetLoadBalancerPoliciesForBackendServerOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SetLoadBalancerPoliciesForBackendServerOutputBuilder {
     _request_id: Option<String>,
 }

@@ -2,7 +2,7 @@
 
 /// <p>Contains information about the health checks that are conducted on the load balancer.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsElbLoadBalancerHealthCheck {
     /// <p>The number of consecutive health check successes required before the instance is moved to the Healthy state.</p>
     #[doc(hidden)]
@@ -21,7 +21,7 @@ pub struct AwsElbLoadBalancerHealthCheck {
     /// <port></port></i>/<i>
     /// <path to ping></path></i> </code>.</p>
     #[doc(hidden)]
-    pub target: std::option::Option<std::string::String>,
+    pub target: ::std::option::Option<::std::string::String>,
     /// <p>The amount of time, in seconds, during which no response means a failed health check.</p>
     #[doc(hidden)]
     pub timeout: i32,
@@ -48,7 +48,7 @@ impl AwsElbLoadBalancerHealthCheck {
     /// <protocol></protocol></i>:<i>
     /// <port></port></i>/<i>
     /// <path to ping></path></i> </code>.</p>
-    pub fn target(&self) -> std::option::Option<&str> {
+    pub fn target(&self) -> ::std::option::Option<&str> {
         self.target.as_deref()
     }
     /// <p>The amount of time, in seconds, during which no response means a failed health check.</p>
@@ -69,32 +69,34 @@ impl AwsElbLoadBalancerHealthCheck {
 
 /// A builder for [`AwsElbLoadBalancerHealthCheck`](crate::types::AwsElbLoadBalancerHealthCheck).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsElbLoadBalancerHealthCheckBuilder {
-    pub(crate) healthy_threshold: std::option::Option<i32>,
-    pub(crate) interval: std::option::Option<i32>,
-    pub(crate) target: std::option::Option<std::string::String>,
-    pub(crate) timeout: std::option::Option<i32>,
-    pub(crate) unhealthy_threshold: std::option::Option<i32>,
+    pub(crate) healthy_threshold: ::std::option::Option<i32>,
+    pub(crate) interval: ::std::option::Option<i32>,
+    pub(crate) target: ::std::option::Option<::std::string::String>,
+    pub(crate) timeout: ::std::option::Option<i32>,
+    pub(crate) unhealthy_threshold: ::std::option::Option<i32>,
 }
 impl AwsElbLoadBalancerHealthCheckBuilder {
     /// <p>The number of consecutive health check successes required before the instance is moved to the Healthy state.</p>
     pub fn healthy_threshold(mut self, input: i32) -> Self {
-        self.healthy_threshold = Some(input);
+        self.healthy_threshold = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of consecutive health check successes required before the instance is moved to the Healthy state.</p>
-    pub fn set_healthy_threshold(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_healthy_threshold(mut self, input: ::std::option::Option<i32>) -> Self {
         self.healthy_threshold = input;
         self
     }
     /// <p>The approximate interval, in seconds, between health checks of an individual instance.</p>
     pub fn interval(mut self, input: i32) -> Self {
-        self.interval = Some(input);
+        self.interval = ::std::option::Option::Some(input);
         self
     }
     /// <p>The approximate interval, in seconds, between health checks of an individual instance.</p>
-    pub fn set_interval(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_interval(mut self, input: ::std::option::Option<i32>) -> Self {
         self.interval = input;
         self
     }
@@ -108,8 +110,8 @@ impl AwsElbLoadBalancerHealthCheckBuilder {
     /// <protocol></protocol></i>:<i>
     /// <port></port></i>/<i>
     /// <path to ping></path></i> </code>.</p>
-    pub fn target(mut self, input: impl Into<std::string::String>) -> Self {
-        self.target = Some(input.into());
+    pub fn target(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.target = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The instance that is being checked. The target specifies the protocol and port. The available protocols are TCP, SSL, HTTP, and HTTPS. The range of valid ports is 1 through 65535.</p>
@@ -122,27 +124,27 @@ impl AwsElbLoadBalancerHealthCheckBuilder {
     /// <protocol></protocol></i>:<i>
     /// <port></port></i>/<i>
     /// <path to ping></path></i> </code>.</p>
-    pub fn set_target(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_target(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.target = input;
         self
     }
     /// <p>The amount of time, in seconds, during which no response means a failed health check.</p>
     pub fn timeout(mut self, input: i32) -> Self {
-        self.timeout = Some(input);
+        self.timeout = ::std::option::Option::Some(input);
         self
     }
     /// <p>The amount of time, in seconds, during which no response means a failed health check.</p>
-    pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
         self.timeout = input;
         self
     }
     /// <p>The number of consecutive health check failures that must occur before the instance is moved to the Unhealthy state.</p>
     pub fn unhealthy_threshold(mut self, input: i32) -> Self {
-        self.unhealthy_threshold = Some(input);
+        self.unhealthy_threshold = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of consecutive health check failures that must occur before the instance is moved to the Unhealthy state.</p>
-    pub fn set_unhealthy_threshold(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_unhealthy_threshold(mut self, input: ::std::option::Option<i32>) -> Self {
         self.unhealthy_threshold = input;
         self
     }

@@ -2,36 +2,36 @@
 
 /// <p>Describes an Amazon EC2 security group.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Ec2SecurityGroup {
     /// <p>The status of the EC2 security group.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<std::string::String>,
+    pub status: ::std::option::Option<::std::string::String>,
     /// <p>The name of the EC2 Security Group.</p>
     #[doc(hidden)]
-    pub ec2_security_group_name: std::option::Option<std::string::String>,
+    pub ec2_security_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services account ID of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code> field. </p>
     #[doc(hidden)]
-    pub ec2_security_group_owner_id: std::option::Option<std::string::String>,
+    pub ec2_security_group_owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The list of tags for the EC2 security group.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl Ec2SecurityGroup {
     /// <p>The status of the EC2 security group.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
     /// <p>The name of the EC2 Security Group.</p>
-    pub fn ec2_security_group_name(&self) -> std::option::Option<&str> {
+    pub fn ec2_security_group_name(&self) -> ::std::option::Option<&str> {
         self.ec2_security_group_name.as_deref()
     }
     /// <p>The Amazon Web Services account ID of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code> field. </p>
-    pub fn ec2_security_group_owner_id(&self) -> std::option::Option<&str> {
+    pub fn ec2_security_group_owner_id(&self) -> ::std::option::Option<&str> {
         self.ec2_security_group_owner_id.as_deref()
     }
     /// <p>The list of tags for the EC2 security group.</p>
-    pub fn tags(&self) -> std::option::Option<&[crate::types::Tag]> {
+    pub fn tags(&self) -> ::std::option::Option<&[crate::types::Tag]> {
         self.tags.as_deref()
     }
 }
@@ -44,46 +44,54 @@ impl Ec2SecurityGroup {
 
 /// A builder for [`Ec2SecurityGroup`](crate::types::Ec2SecurityGroup).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct Ec2SecurityGroupBuilder {
-    pub(crate) status: std::option::Option<std::string::String>,
-    pub(crate) ec2_security_group_name: std::option::Option<std::string::String>,
-    pub(crate) ec2_security_group_owner_id: std::option::Option<std::string::String>,
-    pub(crate) tags: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
+    pub(crate) ec2_security_group_name: ::std::option::Option<::std::string::String>,
+    pub(crate) ec2_security_group_owner_id: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
 }
 impl Ec2SecurityGroupBuilder {
     /// <p>The status of the EC2 security group.</p>
-    pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status = Some(input.into());
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the EC2 security group.</p>
-    pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }
     /// <p>The name of the EC2 Security Group.</p>
-    pub fn ec2_security_group_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ec2_security_group_name = Some(input.into());
+    pub fn ec2_security_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.ec2_security_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the EC2 Security Group.</p>
     pub fn set_ec2_security_group_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.ec2_security_group_name = input;
         self
     }
     /// <p>The Amazon Web Services account ID of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code> field. </p>
-    pub fn ec2_security_group_owner_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.ec2_security_group_owner_id = Some(input.into());
+    pub fn ec2_security_group_owner_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.ec2_security_group_owner_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services account ID of the owner of the EC2 security group specified in the <code>EC2SecurityGroupName</code> field. </p>
     pub fn set_ec2_security_group_owner_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.ec2_security_group_owner_id = input;
         self
@@ -96,13 +104,13 @@ impl Ec2SecurityGroupBuilder {
     pub fn tags(mut self, input: crate::types::Tag) -> Self {
         let mut v = self.tags.unwrap_or_default();
         v.push(input);
-        self.tags = Some(v);
+        self.tags = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of tags for the EC2 security group.</p>
     pub fn set_tags(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Tag>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Tag>>,
     ) -> Self {
         self.tags = input;
         self

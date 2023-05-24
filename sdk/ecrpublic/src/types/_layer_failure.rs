@@ -2,29 +2,29 @@
 
 /// <p>An object that represents an Amazon ECR image layer failure.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LayerFailure {
     /// <p>The layer digest that's associated with the failure.</p>
     #[doc(hidden)]
-    pub layer_digest: std::option::Option<std::string::String>,
+    pub layer_digest: ::std::option::Option<::std::string::String>,
     /// <p>The failure code that's associated with the failure.</p>
     #[doc(hidden)]
-    pub failure_code: std::option::Option<crate::types::LayerFailureCode>,
+    pub failure_code: ::std::option::Option<crate::types::LayerFailureCode>,
     /// <p>The reason for the failure.</p>
     #[doc(hidden)]
-    pub failure_reason: std::option::Option<std::string::String>,
+    pub failure_reason: ::std::option::Option<::std::string::String>,
 }
 impl LayerFailure {
     /// <p>The layer digest that's associated with the failure.</p>
-    pub fn layer_digest(&self) -> std::option::Option<&str> {
+    pub fn layer_digest(&self) -> ::std::option::Option<&str> {
         self.layer_digest.as_deref()
     }
     /// <p>The failure code that's associated with the failure.</p>
-    pub fn failure_code(&self) -> std::option::Option<&crate::types::LayerFailureCode> {
+    pub fn failure_code(&self) -> ::std::option::Option<&crate::types::LayerFailureCode> {
         self.failure_code.as_ref()
     }
     /// <p>The reason for the failure.</p>
-    pub fn failure_reason(&self) -> std::option::Option<&str> {
+    pub fn failure_reason(&self) -> ::std::option::Option<&str> {
         self.failure_reason.as_deref()
     }
 }
@@ -37,43 +37,51 @@ impl LayerFailure {
 
 /// A builder for [`LayerFailure`](crate::types::LayerFailure).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LayerFailureBuilder {
-    pub(crate) layer_digest: std::option::Option<std::string::String>,
-    pub(crate) failure_code: std::option::Option<crate::types::LayerFailureCode>,
-    pub(crate) failure_reason: std::option::Option<std::string::String>,
+    pub(crate) layer_digest: ::std::option::Option<::std::string::String>,
+    pub(crate) failure_code: ::std::option::Option<crate::types::LayerFailureCode>,
+    pub(crate) failure_reason: ::std::option::Option<::std::string::String>,
 }
 impl LayerFailureBuilder {
     /// <p>The layer digest that's associated with the failure.</p>
-    pub fn layer_digest(mut self, input: impl Into<std::string::String>) -> Self {
-        self.layer_digest = Some(input.into());
+    pub fn layer_digest(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.layer_digest = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The layer digest that's associated with the failure.</p>
-    pub fn set_layer_digest(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_layer_digest(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.layer_digest = input;
         self
     }
     /// <p>The failure code that's associated with the failure.</p>
     pub fn failure_code(mut self, input: crate::types::LayerFailureCode) -> Self {
-        self.failure_code = Some(input);
+        self.failure_code = ::std::option::Option::Some(input);
         self
     }
     /// <p>The failure code that's associated with the failure.</p>
     pub fn set_failure_code(
         mut self,
-        input: std::option::Option<crate::types::LayerFailureCode>,
+        input: ::std::option::Option<crate::types::LayerFailureCode>,
     ) -> Self {
         self.failure_code = input;
         self
     }
     /// <p>The reason for the failure.</p>
-    pub fn failure_reason(mut self, input: impl Into<std::string::String>) -> Self {
-        self.failure_reason = Some(input.into());
+    pub fn failure_reason(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.failure_reason = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The reason for the failure.</p>
-    pub fn set_failure_reason(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_failure_reason(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.failure_reason = input;
         self
     }

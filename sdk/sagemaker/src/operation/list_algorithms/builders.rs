@@ -6,56 +6,59 @@ pub use crate::operation::list_algorithms::_list_algorithms_input::ListAlgorithm
 /// Fluent builder constructing a request to `ListAlgorithms`.
 ///
 /// <p>Lists the machine learning algorithms that have been created.</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct ListAlgorithmsFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::list_algorithms::builders::ListAlgorithmsInputBuilder,
 }
 impl ListAlgorithmsFluentBuilder {
     /// Creates a new `ListAlgorithms`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::list_algorithms::ListAlgorithms,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::list_algorithms::ListAlgorithmsError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_algorithms::ListAlgorithmsError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_algorithms::ListAlgorithmsOutput,
-        aws_smithy_http::result::SdkError<crate::operation::list_algorithms::ListAlgorithmsError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_algorithms::ListAlgorithmsError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -68,9 +71,9 @@ impl ListAlgorithmsFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::list_algorithms::ListAlgorithmsOutput,
-        aws_smithy_http::result::SdkError<crate::operation::list_algorithms::ListAlgorithmsError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::list_algorithms::ListAlgorithmsError>,
     > {
         self.send_middleware().await
     }
@@ -86,27 +89,27 @@ impl ListAlgorithmsFluentBuilder {
         )
     }
     /// <p>A filter that returns only algorithms created after the specified time (timestamp).</p>
-    pub fn creation_time_after(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn creation_time_after(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.creation_time_after(input);
         self
     }
     /// <p>A filter that returns only algorithms created after the specified time (timestamp).</p>
     pub fn set_creation_time_after(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.inner = self.inner.set_creation_time_after(input);
         self
     }
     /// <p>A filter that returns only algorithms created before the specified time (timestamp).</p>
-    pub fn creation_time_before(mut self, input: aws_smithy_types::DateTime) -> Self {
+    pub fn creation_time_before(mut self, input: ::aws_smithy_types::DateTime) -> Self {
         self.inner = self.inner.creation_time_before(input);
         self
     }
     /// <p>A filter that returns only algorithms created before the specified time (timestamp).</p>
     pub fn set_creation_time_before(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.inner = self.inner.set_creation_time_before(input);
         self
@@ -117,27 +120,33 @@ impl ListAlgorithmsFluentBuilder {
         self
     }
     /// <p>The maximum number of algorithms to return in the response.</p>
-    pub fn set_max_results(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_max_results(mut self, input: ::std::option::Option<i32>) -> Self {
         self.inner = self.inner.set_max_results(input);
         self
     }
     /// <p>A string in the algorithm name. This filter returns only algorithms whose name contains the specified string.</p>
-    pub fn name_contains(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn name_contains(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.name_contains(input.into());
         self
     }
     /// <p>A string in the algorithm name. This filter returns only algorithms whose name contains the specified string.</p>
-    pub fn set_name_contains(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name_contains(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.set_name_contains(input);
         self
     }
     /// <p>If the response to a previous <code>ListAlgorithms</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of algorithms, use the token in the next request.</p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.next_token(input.into());
         self
     }
     /// <p>If the response to a previous <code>ListAlgorithms</code> request was truncated, the response includes a <code>NextToken</code>. To retrieve the next set of algorithms, use the token in the next request.</p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_next_token(input);
         self
     }
@@ -149,7 +158,7 @@ impl ListAlgorithmsFluentBuilder {
     /// <p>The parameter by which to sort the results. The default is <code>CreationTime</code>.</p>
     pub fn set_sort_by(
         mut self,
-        input: std::option::Option<crate::types::AlgorithmSortBy>,
+        input: ::std::option::Option<crate::types::AlgorithmSortBy>,
     ) -> Self {
         self.inner = self.inner.set_sort_by(input);
         self
@@ -160,7 +169,7 @@ impl ListAlgorithmsFluentBuilder {
         self
     }
     /// <p>The sort order for the results. The default is <code>Ascending</code>.</p>
-    pub fn set_sort_order(mut self, input: std::option::Option<crate::types::SortOrder>) -> Self {
+    pub fn set_sort_order(mut self, input: ::std::option::Option<crate::types::SortOrder>) -> Self {
         self.inner = self.inner.set_sort_order(input);
         self
     }

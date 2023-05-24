@@ -3,78 +3,78 @@
 /// <p>High-level information about a list of firewall domains for use in a <code>FirewallRule</code>. This is returned by <code>GetFirewallDomainList</code>.</p>
 /// <p>To retrieve the domains that are defined for this domain list, call <code>ListFirewallDomains</code>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FirewallDomainList {
     /// <p>The ID of the domain list. </p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the firewall domain list.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The name of the domain list. </p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The number of domain names that are specified in the domain list.</p>
     #[doc(hidden)]
-    pub domain_count: std::option::Option<i32>,
+    pub domain_count: ::std::option::Option<i32>,
     /// <p>The status of the domain list. </p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::FirewallDomainListStatus>,
+    pub status: ::std::option::Option<crate::types::FirewallDomainListStatus>,
     /// <p>Additional information about the status of the list, if available.</p>
     #[doc(hidden)]
-    pub status_message: std::option::Option<std::string::String>,
+    pub status_message: ::std::option::Option<::std::string::String>,
     /// <p>The owner of the list, used only for lists that are not managed by you. For example, the managed domain list <code>AWSManagedDomainsMalwareDomainList</code> has the managed owner name <code>Route 53 Resolver DNS Firewall</code>.</p>
     #[doc(hidden)]
-    pub managed_owner_name: std::option::Option<std::string::String>,
+    pub managed_owner_name: ::std::option::Option<::std::string::String>,
     /// <p>A unique string defined by you to identify the request. This allows you to retry failed requests without the risk of running the operation twice. This can be any unique string, for example, a timestamp. </p>
     #[doc(hidden)]
-    pub creator_request_id: std::option::Option<std::string::String>,
+    pub creator_request_id: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the domain list was created, in Unix time format and Coordinated Universal Time (UTC). </p>
     #[doc(hidden)]
-    pub creation_time: std::option::Option<std::string::String>,
+    pub creation_time: ::std::option::Option<::std::string::String>,
     /// <p>The date and time that the domain list was last modified, in Unix time format and Coordinated Universal Time (UTC). </p>
     #[doc(hidden)]
-    pub modification_time: std::option::Option<std::string::String>,
+    pub modification_time: ::std::option::Option<::std::string::String>,
 }
 impl FirewallDomainList {
     /// <p>The ID of the domain list. </p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall domain list.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The name of the domain list. </p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The number of domain names that are specified in the domain list.</p>
-    pub fn domain_count(&self) -> std::option::Option<i32> {
+    pub fn domain_count(&self) -> ::std::option::Option<i32> {
         self.domain_count
     }
     /// <p>The status of the domain list. </p>
-    pub fn status(&self) -> std::option::Option<&crate::types::FirewallDomainListStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::FirewallDomainListStatus> {
         self.status.as_ref()
     }
     /// <p>Additional information about the status of the list, if available.</p>
-    pub fn status_message(&self) -> std::option::Option<&str> {
+    pub fn status_message(&self) -> ::std::option::Option<&str> {
         self.status_message.as_deref()
     }
     /// <p>The owner of the list, used only for lists that are not managed by you. For example, the managed domain list <code>AWSManagedDomainsMalwareDomainList</code> has the managed owner name <code>Route 53 Resolver DNS Firewall</code>.</p>
-    pub fn managed_owner_name(&self) -> std::option::Option<&str> {
+    pub fn managed_owner_name(&self) -> ::std::option::Option<&str> {
         self.managed_owner_name.as_deref()
     }
     /// <p>A unique string defined by you to identify the request. This allows you to retry failed requests without the risk of running the operation twice. This can be any unique string, for example, a timestamp. </p>
-    pub fn creator_request_id(&self) -> std::option::Option<&str> {
+    pub fn creator_request_id(&self) -> ::std::option::Option<&str> {
         self.creator_request_id.as_deref()
     }
     /// <p>The date and time that the domain list was created, in Unix time format and Coordinated Universal Time (UTC). </p>
-    pub fn creation_time(&self) -> std::option::Option<&str> {
+    pub fn creation_time(&self) -> ::std::option::Option<&str> {
         self.creation_time.as_deref()
     }
     /// <p>The date and time that the domain list was last modified, in Unix time format and Coordinated Universal Time (UTC). </p>
-    pub fn modification_time(&self) -> std::option::Option<&str> {
+    pub fn modification_time(&self) -> ::std::option::Option<&str> {
         self.modification_time.as_deref()
     }
 }
@@ -87,128 +87,151 @@ impl FirewallDomainList {
 
 /// A builder for [`FirewallDomainList`](crate::types::FirewallDomainList).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FirewallDomainListBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) domain_count: std::option::Option<i32>,
-    pub(crate) status: std::option::Option<crate::types::FirewallDomainListStatus>,
-    pub(crate) status_message: std::option::Option<std::string::String>,
-    pub(crate) managed_owner_name: std::option::Option<std::string::String>,
-    pub(crate) creator_request_id: std::option::Option<std::string::String>,
-    pub(crate) creation_time: std::option::Option<std::string::String>,
-    pub(crate) modification_time: std::option::Option<std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) domain_count: ::std::option::Option<i32>,
+    pub(crate) status: ::std::option::Option<crate::types::FirewallDomainListStatus>,
+    pub(crate) status_message: ::std::option::Option<::std::string::String>,
+    pub(crate) managed_owner_name: ::std::option::Option<::std::string::String>,
+    pub(crate) creator_request_id: ::std::option::Option<::std::string::String>,
+    pub(crate) creation_time: ::std::option::Option<::std::string::String>,
+    pub(crate) modification_time: ::std::option::Option<::std::string::String>,
 }
 impl FirewallDomainListBuilder {
     /// <p>The ID of the domain list. </p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the domain list. </p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall domain list.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the firewall domain list.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The name of the domain list. </p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the domain list. </p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The number of domain names that are specified in the domain list.</p>
     pub fn domain_count(mut self, input: i32) -> Self {
-        self.domain_count = Some(input);
+        self.domain_count = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of domain names that are specified in the domain list.</p>
-    pub fn set_domain_count(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_domain_count(mut self, input: ::std::option::Option<i32>) -> Self {
         self.domain_count = input;
         self
     }
     /// <p>The status of the domain list. </p>
     pub fn status(mut self, input: crate::types::FirewallDomainListStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the domain list. </p>
     pub fn set_status(
         mut self,
-        input: std::option::Option<crate::types::FirewallDomainListStatus>,
+        input: ::std::option::Option<crate::types::FirewallDomainListStatus>,
     ) -> Self {
         self.status = input;
         self
     }
     /// <p>Additional information about the status of the list, if available.</p>
-    pub fn status_message(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status_message = Some(input.into());
+    pub fn status_message(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.status_message = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Additional information about the status of the list, if available.</p>
-    pub fn set_status_message(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status_message(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.status_message = input;
         self
     }
     /// <p>The owner of the list, used only for lists that are not managed by you. For example, the managed domain list <code>AWSManagedDomainsMalwareDomainList</code> has the managed owner name <code>Route 53 Resolver DNS Firewall</code>.</p>
-    pub fn managed_owner_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.managed_owner_name = Some(input.into());
+    pub fn managed_owner_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.managed_owner_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The owner of the list, used only for lists that are not managed by you. For example, the managed domain list <code>AWSManagedDomainsMalwareDomainList</code> has the managed owner name <code>Route 53 Resolver DNS Firewall</code>.</p>
     pub fn set_managed_owner_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.managed_owner_name = input;
         self
     }
     /// <p>A unique string defined by you to identify the request. This allows you to retry failed requests without the risk of running the operation twice. This can be any unique string, for example, a timestamp. </p>
-    pub fn creator_request_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.creator_request_id = Some(input.into());
+    pub fn creator_request_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.creator_request_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A unique string defined by you to identify the request. This allows you to retry failed requests without the risk of running the operation twice. This can be any unique string, for example, a timestamp. </p>
     pub fn set_creator_request_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.creator_request_id = input;
         self
     }
     /// <p>The date and time that the domain list was created, in Unix time format and Coordinated Universal Time (UTC). </p>
-    pub fn creation_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.creation_time = Some(input.into());
+    pub fn creation_time(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.creation_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time that the domain list was created, in Unix time format and Coordinated Universal Time (UTC). </p>
-    pub fn set_creation_time(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_creation_time(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.creation_time = input;
         self
     }
     /// <p>The date and time that the domain list was last modified, in Unix time format and Coordinated Universal Time (UTC). </p>
-    pub fn modification_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.modification_time = Some(input.into());
+    pub fn modification_time(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.modification_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The date and time that the domain list was last modified, in Unix time format and Coordinated Universal Time (UTC). </p>
     pub fn set_modification_time(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.modification_time = input;
         self

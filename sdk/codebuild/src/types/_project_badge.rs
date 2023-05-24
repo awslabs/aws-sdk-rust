@@ -2,14 +2,14 @@
 
 /// <p>Information about the build badge for the build project.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ProjectBadge {
     /// <p>Set this to true to generate a publicly accessible URL for your project's build badge.</p>
     #[doc(hidden)]
     pub badge_enabled: bool,
     /// <p>The publicly-accessible URL through which you can access the build badge for your project. </p>
     #[doc(hidden)]
-    pub badge_request_url: std::option::Option<std::string::String>,
+    pub badge_request_url: ::std::option::Option<::std::string::String>,
 }
 impl ProjectBadge {
     /// <p>Set this to true to generate a publicly accessible URL for your project's build badge.</p>
@@ -17,7 +17,7 @@ impl ProjectBadge {
         self.badge_enabled
     }
     /// <p>The publicly-accessible URL through which you can access the build badge for your project. </p>
-    pub fn badge_request_url(&self) -> std::option::Option<&str> {
+    pub fn badge_request_url(&self) -> ::std::option::Option<&str> {
         self.badge_request_url.as_deref()
     }
 }
@@ -30,31 +30,36 @@ impl ProjectBadge {
 
 /// A builder for [`ProjectBadge`](crate::types::ProjectBadge).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ProjectBadgeBuilder {
-    pub(crate) badge_enabled: std::option::Option<bool>,
-    pub(crate) badge_request_url: std::option::Option<std::string::String>,
+    pub(crate) badge_enabled: ::std::option::Option<bool>,
+    pub(crate) badge_request_url: ::std::option::Option<::std::string::String>,
 }
 impl ProjectBadgeBuilder {
     /// <p>Set this to true to generate a publicly accessible URL for your project's build badge.</p>
     pub fn badge_enabled(mut self, input: bool) -> Self {
-        self.badge_enabled = Some(input);
+        self.badge_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Set this to true to generate a publicly accessible URL for your project's build badge.</p>
-    pub fn set_badge_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_badge_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.badge_enabled = input;
         self
     }
     /// <p>The publicly-accessible URL through which you can access the build badge for your project. </p>
-    pub fn badge_request_url(mut self, input: impl Into<std::string::String>) -> Self {
-        self.badge_request_url = Some(input.into());
+    pub fn badge_request_url(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.badge_request_url = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The publicly-accessible URL through which you can access the build badge for your project. </p>
     pub fn set_badge_request_url(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.badge_request_url = input;
         self

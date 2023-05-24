@@ -2,22 +2,22 @@
 
 /// <p>The output resolution (in target georeferenced units) of the result of the operation</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UserDefined {
     /// <p>The value for output resolution of the result.</p>
     #[doc(hidden)]
-    pub value: std::option::Option<f32>,
+    pub value: ::std::option::Option<f32>,
     /// <p>The units for output resolution of the result.</p>
     #[doc(hidden)]
-    pub unit: std::option::Option<crate::types::Unit>,
+    pub unit: ::std::option::Option<crate::types::Unit>,
 }
 impl UserDefined {
     /// <p>The value for output resolution of the result.</p>
-    pub fn value(&self) -> std::option::Option<f32> {
+    pub fn value(&self) -> ::std::option::Option<f32> {
         self.value
     }
     /// <p>The units for output resolution of the result.</p>
-    pub fn unit(&self) -> std::option::Option<&crate::types::Unit> {
+    pub fn unit(&self) -> ::std::option::Option<&crate::types::Unit> {
         self.unit.as_ref()
     }
 }
@@ -30,29 +30,31 @@ impl UserDefined {
 
 /// A builder for [`UserDefined`](crate::types::UserDefined).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UserDefinedBuilder {
-    pub(crate) value: std::option::Option<f32>,
-    pub(crate) unit: std::option::Option<crate::types::Unit>,
+    pub(crate) value: ::std::option::Option<f32>,
+    pub(crate) unit: ::std::option::Option<crate::types::Unit>,
 }
 impl UserDefinedBuilder {
     /// <p>The value for output resolution of the result.</p>
     pub fn value(mut self, input: f32) -> Self {
-        self.value = Some(input);
+        self.value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The value for output resolution of the result.</p>
-    pub fn set_value(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<f32>) -> Self {
         self.value = input;
         self
     }
     /// <p>The units for output resolution of the result.</p>
     pub fn unit(mut self, input: crate::types::Unit) -> Self {
-        self.unit = Some(input);
+        self.unit = ::std::option::Option::Some(input);
         self
     }
     /// <p>The units for output resolution of the result.</p>
-    pub fn set_unit(mut self, input: std::option::Option<crate::types::Unit>) -> Self {
+    pub fn set_unit(mut self, input: ::std::option::Option<crate::types::Unit>) -> Self {
         self.unit = input;
         self
     }

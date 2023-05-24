@@ -2,53 +2,53 @@
 
 /// <p>Describes the Amazon Web Services Region.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Region {
     /// <p>The continent code (e.g., <code>NA</code>, meaning North America).</p>
     #[doc(hidden)]
-    pub continent_code: std::option::Option<std::string::String>,
+    pub continent_code: ::std::option::Option<::std::string::String>,
     /// <p>The description of the Amazon Web Services Region (e.g., <code>This region is recommended to serve users in the eastern United States and eastern Canada</code>).</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The display name (e.g., <code>Ohio</code>).</p>
     #[doc(hidden)]
-    pub display_name: std::option::Option<std::string::String>,
+    pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The region name (e.g., <code>us-east-2</code>).</p>
     #[doc(hidden)]
-    pub name: std::option::Option<crate::types::RegionName>,
+    pub name: ::std::option::Option<crate::types::RegionName>,
     /// <p>The Availability Zones. Follows the format <code>us-east-2a</code> (case-sensitive).</p>
     #[doc(hidden)]
-    pub availability_zones: std::option::Option<std::vec::Vec<crate::types::AvailabilityZone>>,
+    pub availability_zones: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>>,
     /// <p>The Availability Zones for databases. Follows the format <code>us-east-2a</code> (case-sensitive).</p>
     #[doc(hidden)]
     pub relational_database_availability_zones:
-        std::option::Option<std::vec::Vec<crate::types::AvailabilityZone>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>>,
 }
 impl Region {
     /// <p>The continent code (e.g., <code>NA</code>, meaning North America).</p>
-    pub fn continent_code(&self) -> std::option::Option<&str> {
+    pub fn continent_code(&self) -> ::std::option::Option<&str> {
         self.continent_code.as_deref()
     }
     /// <p>The description of the Amazon Web Services Region (e.g., <code>This region is recommended to serve users in the eastern United States and eastern Canada</code>).</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The display name (e.g., <code>Ohio</code>).</p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
     /// <p>The region name (e.g., <code>us-east-2</code>).</p>
-    pub fn name(&self) -> std::option::Option<&crate::types::RegionName> {
+    pub fn name(&self) -> ::std::option::Option<&crate::types::RegionName> {
         self.name.as_ref()
     }
     /// <p>The Availability Zones. Follows the format <code>us-east-2a</code> (case-sensitive).</p>
-    pub fn availability_zones(&self) -> std::option::Option<&[crate::types::AvailabilityZone]> {
+    pub fn availability_zones(&self) -> ::std::option::Option<&[crate::types::AvailabilityZone]> {
         self.availability_zones.as_deref()
     }
     /// <p>The Availability Zones for databases. Follows the format <code>us-east-2a</code> (case-sensitive).</p>
     pub fn relational_database_availability_zones(
         &self,
-    ) -> std::option::Option<&[crate::types::AvailabilityZone]> {
+    ) -> ::std::option::Option<&[crate::types::AvailabilityZone]> {
         self.relational_database_availability_zones.as_deref()
     }
 }
@@ -61,55 +61,63 @@ impl Region {
 
 /// A builder for [`Region`](crate::types::Region).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RegionBuilder {
-    pub(crate) continent_code: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) display_name: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<crate::types::RegionName>,
+    pub(crate) continent_code: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) display_name: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<crate::types::RegionName>,
     pub(crate) availability_zones:
-        std::option::Option<std::vec::Vec<crate::types::AvailabilityZone>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>>,
     pub(crate) relational_database_availability_zones:
-        std::option::Option<std::vec::Vec<crate::types::AvailabilityZone>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>>,
 }
 impl RegionBuilder {
     /// <p>The continent code (e.g., <code>NA</code>, meaning North America).</p>
-    pub fn continent_code(mut self, input: impl Into<std::string::String>) -> Self {
-        self.continent_code = Some(input.into());
+    pub fn continent_code(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.continent_code = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The continent code (e.g., <code>NA</code>, meaning North America).</p>
-    pub fn set_continent_code(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_continent_code(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.continent_code = input;
         self
     }
     /// <p>The description of the Amazon Web Services Region (e.g., <code>This region is recommended to serve users in the eastern United States and eastern Canada</code>).</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The description of the Amazon Web Services Region (e.g., <code>This region is recommended to serve users in the eastern United States and eastern Canada</code>).</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The display name (e.g., <code>Ohio</code>).</p>
-    pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.display_name = Some(input.into());
+    pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.display_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The display name (e.g., <code>Ohio</code>).</p>
-    pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
     }
     /// <p>The region name (e.g., <code>us-east-2</code>).</p>
     pub fn name(mut self, input: crate::types::RegionName) -> Self {
-        self.name = Some(input);
+        self.name = ::std::option::Option::Some(input);
         self
     }
     /// <p>The region name (e.g., <code>us-east-2</code>).</p>
-    pub fn set_name(mut self, input: std::option::Option<crate::types::RegionName>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<crate::types::RegionName>) -> Self {
         self.name = input;
         self
     }
@@ -121,13 +129,13 @@ impl RegionBuilder {
     pub fn availability_zones(mut self, input: crate::types::AvailabilityZone) -> Self {
         let mut v = self.availability_zones.unwrap_or_default();
         v.push(input);
-        self.availability_zones = Some(v);
+        self.availability_zones = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Availability Zones. Follows the format <code>us-east-2a</code> (case-sensitive).</p>
     pub fn set_availability_zones(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AvailabilityZone>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>>,
     ) -> Self {
         self.availability_zones = input;
         self
@@ -145,13 +153,13 @@ impl RegionBuilder {
             .relational_database_availability_zones
             .unwrap_or_default();
         v.push(input);
-        self.relational_database_availability_zones = Some(v);
+        self.relational_database_availability_zones = ::std::option::Option::Some(v);
         self
     }
     /// <p>The Availability Zones for databases. Follows the format <code>us-east-2a</code> (case-sensitive).</p>
     pub fn set_relational_database_availability_zones(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::AvailabilityZone>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::AvailabilityZone>>,
     ) -> Self {
         self.relational_database_availability_zones = input;
         self

@@ -41,13 +41,13 @@
 /// of the current calendar month.</p>
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum DeliverabilityDashboardAccountStatus {
     #[allow(missing_docs)] // documentation missing in model
@@ -59,7 +59,7 @@ pub enum DeliverabilityDashboardAccountStatus {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for DeliverabilityDashboardAccountStatus {
+impl ::std::convert::From<&str> for DeliverabilityDashboardAccountStatus {
     fn from(s: &str) -> Self {
         match s {
             "ACTIVE" => DeliverabilityDashboardAccountStatus::Active,
@@ -71,11 +71,11 @@ impl std::convert::From<&str> for DeliverabilityDashboardAccountStatus {
         }
     }
 }
-impl std::str::FromStr for DeliverabilityDashboardAccountStatus {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for DeliverabilityDashboardAccountStatus {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(DeliverabilityDashboardAccountStatus::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(DeliverabilityDashboardAccountStatus::from(s))
     }
 }
 impl DeliverabilityDashboardAccountStatus {
@@ -93,7 +93,7 @@ impl DeliverabilityDashboardAccountStatus {
         &["ACTIVE", "DISABLED", "PENDING_EXPIRATION"]
     }
 }
-impl AsRef<str> for DeliverabilityDashboardAccountStatus {
+impl ::std::convert::AsRef<str> for DeliverabilityDashboardAccountStatus {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

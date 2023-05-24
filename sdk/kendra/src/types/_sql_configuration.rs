@@ -2,7 +2,7 @@
 
 /// <p>Provides the configuration information to use a SQL database.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SqlConfiguration {
     /// <p>Determines whether Amazon Kendra encloses SQL identifiers for tables and column names in double quotes (") when making a database query.</p>
     /// <p>By default, Amazon Kendra passes SQL identifiers the way that they are entered into the data source configuration. It does not change the case of identifiers or enclose them in quotes.</p>
@@ -10,7 +10,7 @@ pub struct SqlConfiguration {
     /// <p>For MySQL databases, you must enable the <code>ansi_quotes</code> option when you set this field to <code>DOUBLE_QUOTES</code>.</p>
     #[doc(hidden)]
     pub query_identifiers_enclosing_option:
-        std::option::Option<crate::types::QueryIdentifiersEnclosingOption>,
+        ::std::option::Option<crate::types::QueryIdentifiersEnclosingOption>,
 }
 impl SqlConfiguration {
     /// <p>Determines whether Amazon Kendra encloses SQL identifiers for tables and column names in double quotes (") when making a database query.</p>
@@ -19,7 +19,7 @@ impl SqlConfiguration {
     /// <p>For MySQL databases, you must enable the <code>ansi_quotes</code> option when you set this field to <code>DOUBLE_QUOTES</code>.</p>
     pub fn query_identifiers_enclosing_option(
         &self,
-    ) -> std::option::Option<&crate::types::QueryIdentifiersEnclosingOption> {
+    ) -> ::std::option::Option<&crate::types::QueryIdentifiersEnclosingOption> {
         self.query_identifiers_enclosing_option.as_ref()
     }
 }
@@ -32,10 +32,12 @@ impl SqlConfiguration {
 
 /// A builder for [`SqlConfiguration`](crate::types::SqlConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SqlConfigurationBuilder {
     pub(crate) query_identifiers_enclosing_option:
-        std::option::Option<crate::types::QueryIdentifiersEnclosingOption>,
+        ::std::option::Option<crate::types::QueryIdentifiersEnclosingOption>,
 }
 impl SqlConfigurationBuilder {
     /// <p>Determines whether Amazon Kendra encloses SQL identifiers for tables and column names in double quotes (") when making a database query.</p>
@@ -46,7 +48,7 @@ impl SqlConfigurationBuilder {
         mut self,
         input: crate::types::QueryIdentifiersEnclosingOption,
     ) -> Self {
-        self.query_identifiers_enclosing_option = Some(input);
+        self.query_identifiers_enclosing_option = ::std::option::Option::Some(input);
         self
     }
     /// <p>Determines whether Amazon Kendra encloses SQL identifiers for tables and column names in double quotes (") when making a database query.</p>
@@ -55,7 +57,7 @@ impl SqlConfigurationBuilder {
     /// <p>For MySQL databases, you must enable the <code>ansi_quotes</code> option when you set this field to <code>DOUBLE_QUOTES</code>.</p>
     pub fn set_query_identifiers_enclosing_option(
         mut self,
-        input: std::option::Option<crate::types::QueryIdentifiersEnclosingOption>,
+        input: ::std::option::Option<crate::types::QueryIdentifiersEnclosingOption>,
     ) -> Self {
         self.query_identifiers_enclosing_option = input;
         self

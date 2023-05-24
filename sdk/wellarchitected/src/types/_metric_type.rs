@@ -37,13 +37,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum MetricType {
     #[allow(missing_docs)] // documentation missing in model
@@ -51,7 +51,7 @@ pub enum MetricType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for MetricType {
+impl ::std::convert::From<&str> for MetricType {
     fn from(s: &str) -> Self {
         match s {
             "WORKLOAD" => MetricType::Workload,
@@ -59,11 +59,11 @@ impl std::convert::From<&str> for MetricType {
         }
     }
 }
-impl std::str::FromStr for MetricType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for MetricType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(MetricType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(MetricType::from(s))
     }
 }
 impl MetricType {
@@ -79,7 +79,7 @@ impl MetricType {
         &["WORKLOAD"]
     }
 }
-impl AsRef<str> for MetricType {
+impl ::std::convert::AsRef<str> for MetricType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

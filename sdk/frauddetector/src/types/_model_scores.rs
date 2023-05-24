@@ -2,24 +2,24 @@
 
 /// <p>The fraud prediction scores.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ModelScores {
     /// <p>The model version.</p>
     #[doc(hidden)]
-    pub model_version: std::option::Option<crate::types::ModelVersion>,
+    pub model_version: ::std::option::Option<crate::types::ModelVersion>,
     /// <p>The model's fraud prediction scores.</p>
     #[doc(hidden)]
-    pub scores: std::option::Option<std::collections::HashMap<std::string::String, f32>>,
+    pub scores: ::std::option::Option<::std::collections::HashMap<::std::string::String, f32>>,
 }
 impl ModelScores {
     /// <p>The model version.</p>
-    pub fn model_version(&self) -> std::option::Option<&crate::types::ModelVersion> {
+    pub fn model_version(&self) -> ::std::option::Option<&crate::types::ModelVersion> {
         self.model_version.as_ref()
     }
     /// <p>The model's fraud prediction scores.</p>
     pub fn scores(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, f32>> {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, f32>> {
         self.scores.as_ref()
     }
 }
@@ -32,21 +32,24 @@ impl ModelScores {
 
 /// A builder for [`ModelScores`](crate::types::ModelScores).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ModelScoresBuilder {
-    pub(crate) model_version: std::option::Option<crate::types::ModelVersion>,
-    pub(crate) scores: std::option::Option<std::collections::HashMap<std::string::String, f32>>,
+    pub(crate) model_version: ::std::option::Option<crate::types::ModelVersion>,
+    pub(crate) scores:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, f32>>,
 }
 impl ModelScoresBuilder {
     /// <p>The model version.</p>
     pub fn model_version(mut self, input: crate::types::ModelVersion) -> Self {
-        self.model_version = Some(input);
+        self.model_version = ::std::option::Option::Some(input);
         self
     }
     /// <p>The model version.</p>
     pub fn set_model_version(
         mut self,
-        input: std::option::Option<crate::types::ModelVersion>,
+        input: ::std::option::Option<crate::types::ModelVersion>,
     ) -> Self {
         self.model_version = input;
         self
@@ -56,16 +59,16 @@ impl ModelScoresBuilder {
     /// To override the contents of this collection use [`set_scores`](Self::set_scores).
     ///
     /// <p>The model's fraud prediction scores.</p>
-    pub fn scores(mut self, k: impl Into<std::string::String>, v: f32) -> Self {
+    pub fn scores(mut self, k: impl ::std::convert::Into<::std::string::String>, v: f32) -> Self {
         let mut hash_map = self.scores.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.scores = Some(hash_map);
+        self.scores = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The model's fraud prediction scores.</p>
     pub fn set_scores(
         mut self,
-        input: std::option::Option<std::collections::HashMap<std::string::String, f32>>,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, f32>>,
     ) -> Self {
         self.scores = input;
         self

@@ -2,7 +2,7 @@
 
 /// <p>Used to update information about the investigation into the finding.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct WorkflowUpdate {
     /// <p>The status of the investigation into the finding. The workflow status is specific to an individual finding. It does not affect the generation of new findings. For example, setting the workflow status to <code>SUPPRESSED</code> or <code>RESOLVED</code> does not prevent a new finding for the same issue.</p>
     /// <p>The allowed values are the following.</p>
@@ -17,7 +17,7 @@ pub struct WorkflowUpdate {
     /// <li> <p> <code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not believe that any action is needed. The finding is no longer updated.</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::WorkflowStatus>,
+    pub status: ::std::option::Option<crate::types::WorkflowStatus>,
 }
 impl WorkflowUpdate {
     /// <p>The status of the investigation into the finding. The workflow status is specific to an individual finding. It does not affect the generation of new findings. For example, setting the workflow status to <code>SUPPRESSED</code> or <code>RESOLVED</code> does not prevent a new finding for the same issue.</p>
@@ -32,7 +32,7 @@ impl WorkflowUpdate {
     /// <li> <p> <code>RESOLVED</code> - The finding was reviewed and remediated and is now considered resolved.</p> </li>
     /// <li> <p> <code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not believe that any action is needed. The finding is no longer updated.</p> </li>
     /// </ul>
-    pub fn status(&self) -> std::option::Option<&crate::types::WorkflowStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::WorkflowStatus> {
         self.status.as_ref()
     }
 }
@@ -45,9 +45,11 @@ impl WorkflowUpdate {
 
 /// A builder for [`WorkflowUpdate`](crate::types::WorkflowUpdate).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct WorkflowUpdateBuilder {
-    pub(crate) status: std::option::Option<crate::types::WorkflowStatus>,
+    pub(crate) status: ::std::option::Option<crate::types::WorkflowStatus>,
 }
 impl WorkflowUpdateBuilder {
     /// <p>The status of the investigation into the finding. The workflow status is specific to an individual finding. It does not affect the generation of new findings. For example, setting the workflow status to <code>SUPPRESSED</code> or <code>RESOLVED</code> does not prevent a new finding for the same issue.</p>
@@ -63,7 +65,7 @@ impl WorkflowUpdateBuilder {
     /// <li> <p> <code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not believe that any action is needed. The finding is no longer updated.</p> </li>
     /// </ul>
     pub fn status(mut self, input: crate::types::WorkflowStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status of the investigation into the finding. The workflow status is specific to an individual finding. It does not affect the generation of new findings. For example, setting the workflow status to <code>SUPPRESSED</code> or <code>RESOLVED</code> does not prevent a new finding for the same issue.</p>
@@ -78,7 +80,10 @@ impl WorkflowUpdateBuilder {
     /// <li> <p> <code>RESOLVED</code> - The finding was reviewed and remediated and is now considered resolved.</p> </li>
     /// <li> <p> <code>SUPPRESSED</code> - Indicates that you reviewed the finding and do not believe that any action is needed. The finding is no longer updated.</p> </li>
     /// </ul>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::WorkflowStatus>) -> Self {
+    pub fn set_status(
+        mut self,
+        input: ::std::option::Option<crate::types::WorkflowStatus>,
+    ) -> Self {
         self.status = input;
         self
     }

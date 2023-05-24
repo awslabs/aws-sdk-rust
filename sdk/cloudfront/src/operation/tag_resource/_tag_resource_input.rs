@@ -2,22 +2,22 @@
 
 /// <p>The request to add tags to a CloudFront resource.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TagResourceInput {
     /// <p>An ARN of a CloudFront resource.</p>
     #[doc(hidden)]
-    pub resource: std::option::Option<std::string::String>,
+    pub resource: ::std::option::Option<::std::string::String>,
     /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
     #[doc(hidden)]
-    pub tags: std::option::Option<crate::types::Tags>,
+    pub tags: ::std::option::Option<crate::types::Tags>,
 }
 impl TagResourceInput {
     /// <p>An ARN of a CloudFront resource.</p>
-    pub fn resource(&self) -> std::option::Option<&str> {
+    pub fn resource(&self) -> ::std::option::Option<&str> {
         self.resource.as_deref()
     }
     /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
-    pub fn tags(&self) -> std::option::Option<&crate::types::Tags> {
+    pub fn tags(&self) -> ::std::option::Option<&crate::types::Tags> {
         self.tags.as_ref()
     }
 }
@@ -30,40 +30,42 @@ impl TagResourceInput {
 
 /// A builder for [`TagResourceInput`](crate::operation::tag_resource::TagResourceInput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TagResourceInputBuilder {
-    pub(crate) resource: std::option::Option<std::string::String>,
-    pub(crate) tags: std::option::Option<crate::types::Tags>,
+    pub(crate) resource: ::std::option::Option<::std::string::String>,
+    pub(crate) tags: ::std::option::Option<crate::types::Tags>,
 }
 impl TagResourceInputBuilder {
     /// <p>An ARN of a CloudFront resource.</p>
-    pub fn resource(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource = Some(input.into());
+    pub fn resource(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>An ARN of a CloudFront resource.</p>
-    pub fn set_resource(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource = input;
         self
     }
     /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
     pub fn tags(mut self, input: crate::types::Tags) -> Self {
-        self.tags = Some(input);
+        self.tags = ::std::option::Option::Some(input);
         self
     }
     /// <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
-    pub fn set_tags(mut self, input: std::option::Option<crate::types::Tags>) -> Self {
+    pub fn set_tags(mut self, input: ::std::option::Option<crate::types::Tags>) -> Self {
         self.tags = input;
         self
     }
     /// Consumes the builder and constructs a [`TagResourceInput`](crate::operation::tag_resource::TagResourceInput).
     pub fn build(
         self,
-    ) -> Result<
+    ) -> ::std::result::Result<
         crate::operation::tag_resource::TagResourceInput,
-        aws_smithy_http::operation::error::BuildError,
+        ::aws_smithy_http::operation::error::BuildError,
     > {
-        Ok(crate::operation::tag_resource::TagResourceInput {
+        ::std::result::Result::Ok(crate::operation::tag_resource::TagResourceInput {
             resource: self.resource,
             tags: self.tags,
         })

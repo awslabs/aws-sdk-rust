@@ -2,20 +2,20 @@
 
 /// <p>Result message containing a single description of an application.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateApplicationOutput {
     /// <p> The <code>ApplicationDescription</code> of the application. </p>
     #[doc(hidden)]
-    pub application: std::option::Option<crate::types::ApplicationDescription>,
+    pub application: ::std::option::Option<crate::types::ApplicationDescription>,
     _request_id: Option<String>,
 }
 impl UpdateApplicationOutput {
     /// <p> The <code>ApplicationDescription</code> of the application. </p>
-    pub fn application(&self) -> std::option::Option<&crate::types::ApplicationDescription> {
+    pub fn application(&self) -> ::std::option::Option<&crate::types::ApplicationDescription> {
         self.application.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for UpdateApplicationOutput {
+impl ::aws_http::request_id::RequestId for UpdateApplicationOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -30,21 +30,23 @@ impl UpdateApplicationOutput {
 
 /// A builder for [`UpdateApplicationOutput`](crate::operation::update_application::UpdateApplicationOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateApplicationOutputBuilder {
-    pub(crate) application: std::option::Option<crate::types::ApplicationDescription>,
+    pub(crate) application: ::std::option::Option<crate::types::ApplicationDescription>,
     _request_id: Option<String>,
 }
 impl UpdateApplicationOutputBuilder {
     /// <p> The <code>ApplicationDescription</code> of the application. </p>
     pub fn application(mut self, input: crate::types::ApplicationDescription) -> Self {
-        self.application = Some(input);
+        self.application = ::std::option::Option::Some(input);
         self
     }
     /// <p> The <code>ApplicationDescription</code> of the application. </p>
     pub fn set_application(
         mut self,
-        input: std::option::Option<crate::types::ApplicationDescription>,
+        input: ::std::option::Option<crate::types::ApplicationDescription>,
     ) -> Self {
         self.application = input;
         self

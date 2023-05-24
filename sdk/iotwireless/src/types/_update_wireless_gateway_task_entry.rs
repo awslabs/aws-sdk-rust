@@ -2,29 +2,29 @@
 
 /// <p>UpdateWirelessGatewayTaskEntry object.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct UpdateWirelessGatewayTaskEntry {
     /// <p>The ID of the new wireless gateway task entry.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The properties that relate to the LoRaWAN wireless gateway.</p>
     #[doc(hidden)]
-    pub lo_ra_wan: std::option::Option<crate::types::LoRaWanUpdateGatewayTaskEntry>,
+    pub lo_ra_wan: ::std::option::Option<crate::types::LoRaWanUpdateGatewayTaskEntry>,
     /// <p>The Amazon Resource Name of the resource.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdateWirelessGatewayTaskEntry {
     /// <p>The ID of the new wireless gateway task entry.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The properties that relate to the LoRaWAN wireless gateway.</p>
-    pub fn lo_ra_wan(&self) -> std::option::Option<&crate::types::LoRaWanUpdateGatewayTaskEntry> {
+    pub fn lo_ra_wan(&self) -> ::std::option::Option<&crate::types::LoRaWanUpdateGatewayTaskEntry> {
         self.lo_ra_wan.as_ref()
     }
     /// <p>The Amazon Resource Name of the resource.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
 }
@@ -37,43 +37,45 @@ impl UpdateWirelessGatewayTaskEntry {
 
 /// A builder for [`UpdateWirelessGatewayTaskEntry`](crate::types::UpdateWirelessGatewayTaskEntry).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UpdateWirelessGatewayTaskEntryBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) lo_ra_wan: std::option::Option<crate::types::LoRaWanUpdateGatewayTaskEntry>,
-    pub(crate) arn: std::option::Option<std::string::String>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) lo_ra_wan: ::std::option::Option<crate::types::LoRaWanUpdateGatewayTaskEntry>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
 }
 impl UpdateWirelessGatewayTaskEntryBuilder {
     /// <p>The ID of the new wireless gateway task entry.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the new wireless gateway task entry.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The properties that relate to the LoRaWAN wireless gateway.</p>
     pub fn lo_ra_wan(mut self, input: crate::types::LoRaWanUpdateGatewayTaskEntry) -> Self {
-        self.lo_ra_wan = Some(input);
+        self.lo_ra_wan = ::std::option::Option::Some(input);
         self
     }
     /// <p>The properties that relate to the LoRaWAN wireless gateway.</p>
     pub fn set_lo_ra_wan(
         mut self,
-        input: std::option::Option<crate::types::LoRaWanUpdateGatewayTaskEntry>,
+        input: ::std::option::Option<crate::types::LoRaWanUpdateGatewayTaskEntry>,
     ) -> Self {
         self.lo_ra_wan = input;
         self
     }
     /// <p>The Amazon Resource Name of the resource.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name of the resource.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }

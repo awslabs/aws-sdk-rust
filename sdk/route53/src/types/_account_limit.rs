@@ -2,7 +2,7 @@
 
 /// <p>A complex type that contains the type of limit that you specified in the request and the current value for that limit.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AccountLimit {
     /// <p>The limit that you requested. Valid values include the following:</p>
     /// <ul>
@@ -13,7 +13,7 @@ pub struct AccountLimit {
     /// <li> <p> <b>MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER</b>: The maximum number of traffic policy instances that you can create using the current account. (Traffic policy instances are referred to as traffic flow policy records in the Amazon Route 53 console.)</p> </li>
     /// </ul>
     #[doc(hidden)]
-    pub r#type: std::option::Option<crate::types::AccountLimitType>,
+    pub r#type: ::std::option::Option<crate::types::AccountLimitType>,
     /// <p>The current value for the limit that is specified by <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AccountLimit.html#Route53-Type-AccountLimit-Type">Type</a>.</p>
     #[doc(hidden)]
     pub value: i64,
@@ -27,7 +27,7 @@ impl AccountLimit {
     /// <li> <p> <b>MAX_TRAFFIC_POLICIES_BY_OWNER</b>: The maximum number of traffic policies that you can create using the current account.</p> </li>
     /// <li> <p> <b>MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER</b>: The maximum number of traffic policy instances that you can create using the current account. (Traffic policy instances are referred to as traffic flow policy records in the Amazon Route 53 console.)</p> </li>
     /// </ul>
-    pub fn r#type(&self) -> std::option::Option<&crate::types::AccountLimitType> {
+    pub fn r#type(&self) -> ::std::option::Option<&crate::types::AccountLimitType> {
         self.r#type.as_ref()
     }
     /// <p>The current value for the limit that is specified by <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AccountLimit.html#Route53-Type-AccountLimit-Type">Type</a>.</p>
@@ -44,10 +44,12 @@ impl AccountLimit {
 
 /// A builder for [`AccountLimit`](crate::types::AccountLimit).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AccountLimitBuilder {
-    pub(crate) r#type: std::option::Option<crate::types::AccountLimitType>,
-    pub(crate) value: std::option::Option<i64>,
+    pub(crate) r#type: ::std::option::Option<crate::types::AccountLimitType>,
+    pub(crate) value: ::std::option::Option<i64>,
 }
 impl AccountLimitBuilder {
     /// <p>The limit that you requested. Valid values include the following:</p>
@@ -59,7 +61,7 @@ impl AccountLimitBuilder {
     /// <li> <p> <b>MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER</b>: The maximum number of traffic policy instances that you can create using the current account. (Traffic policy instances are referred to as traffic flow policy records in the Amazon Route 53 console.)</p> </li>
     /// </ul>
     pub fn r#type(mut self, input: crate::types::AccountLimitType) -> Self {
-        self.r#type = Some(input);
+        self.r#type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The limit that you requested. Valid values include the following:</p>
@@ -70,17 +72,20 @@ impl AccountLimitBuilder {
     /// <li> <p> <b>MAX_TRAFFIC_POLICIES_BY_OWNER</b>: The maximum number of traffic policies that you can create using the current account.</p> </li>
     /// <li> <p> <b>MAX_TRAFFIC_POLICY_INSTANCES_BY_OWNER</b>: The maximum number of traffic policy instances that you can create using the current account. (Traffic policy instances are referred to as traffic flow policy records in the Amazon Route 53 console.)</p> </li>
     /// </ul>
-    pub fn set_type(mut self, input: std::option::Option<crate::types::AccountLimitType>) -> Self {
+    pub fn set_type(
+        mut self,
+        input: ::std::option::Option<crate::types::AccountLimitType>,
+    ) -> Self {
         self.r#type = input;
         self
     }
     /// <p>The current value for the limit that is specified by <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AccountLimit.html#Route53-Type-AccountLimit-Type">Type</a>.</p>
     pub fn value(mut self, input: i64) -> Self {
-        self.value = Some(input);
+        self.value = ::std::option::Option::Some(input);
         self
     }
     /// <p>The current value for the limit that is specified by <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_AccountLimit.html#Route53-Type-AccountLimit-Type">Type</a>.</p>
-    pub fn set_value(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_value(mut self, input: ::std::option::Option<i64>) -> Self {
         self.value = input;
         self
     }

@@ -40,13 +40,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum AccountFilterType {
     #[allow(missing_docs)] // documentation missing in model
@@ -60,7 +60,7 @@ pub enum AccountFilterType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for AccountFilterType {
+impl ::std::convert::From<&str> for AccountFilterType {
     fn from(s: &str) -> Self {
         match s {
             "DIFFERENCE" => AccountFilterType::Difference,
@@ -73,11 +73,11 @@ impl std::convert::From<&str> for AccountFilterType {
         }
     }
 }
-impl std::str::FromStr for AccountFilterType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for AccountFilterType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(AccountFilterType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(AccountFilterType::from(s))
     }
 }
 impl AccountFilterType {
@@ -96,7 +96,7 @@ impl AccountFilterType {
         &["DIFFERENCE", "INTERSECTION", "NONE", "UNION"]
     }
 }
-impl AsRef<str> for AccountFilterType {
+impl ::std::convert::AsRef<str> for AccountFilterType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

@@ -2,30 +2,30 @@
 
 /// <p> Container for the parameters returned by <code> <code>ListElasticsearchInstanceTypes</code> </code> operation. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ListElasticsearchInstanceTypesOutput {
     /// <p> List of instance types supported by Amazon Elasticsearch service for given <code> <code>ElasticsearchVersion</code> </code> </p>
     #[doc(hidden)]
     pub elasticsearch_instance_types:
-        std::option::Option<std::vec::Vec<crate::types::EsPartitionInstanceType>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::EsPartitionInstanceType>>,
     /// <p>In case if there are more results available NextToken would be present, make further request to the same API with received NextToken to paginate remaining results. </p>
     #[doc(hidden)]
-    pub next_token: std::option::Option<std::string::String>,
+    pub next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListElasticsearchInstanceTypesOutput {
     /// <p> List of instance types supported by Amazon Elasticsearch service for given <code> <code>ElasticsearchVersion</code> </code> </p>
     pub fn elasticsearch_instance_types(
         &self,
-    ) -> std::option::Option<&[crate::types::EsPartitionInstanceType]> {
+    ) -> ::std::option::Option<&[crate::types::EsPartitionInstanceType]> {
         self.elasticsearch_instance_types.as_deref()
     }
     /// <p>In case if there are more results available NextToken would be present, make further request to the same API with received NextToken to paginate remaining results. </p>
-    pub fn next_token(&self) -> std::option::Option<&str> {
+    pub fn next_token(&self) -> ::std::option::Option<&str> {
         self.next_token.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for ListElasticsearchInstanceTypesOutput {
+impl ::aws_http::request_id::RequestId for ListElasticsearchInstanceTypesOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -39,11 +39,13 @@ impl ListElasticsearchInstanceTypesOutput {
 
 /// A builder for [`ListElasticsearchInstanceTypesOutput`](crate::operation::list_elasticsearch_instance_types::ListElasticsearchInstanceTypesOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ListElasticsearchInstanceTypesOutputBuilder {
     pub(crate) elasticsearch_instance_types:
-        std::option::Option<std::vec::Vec<crate::types::EsPartitionInstanceType>>,
-    pub(crate) next_token: std::option::Option<std::string::String>,
+        ::std::option::Option<::std::vec::Vec<crate::types::EsPartitionInstanceType>>,
+    pub(crate) next_token: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl ListElasticsearchInstanceTypesOutputBuilder {
@@ -58,24 +60,24 @@ impl ListElasticsearchInstanceTypesOutputBuilder {
     ) -> Self {
         let mut v = self.elasticsearch_instance_types.unwrap_or_default();
         v.push(input);
-        self.elasticsearch_instance_types = Some(v);
+        self.elasticsearch_instance_types = ::std::option::Option::Some(v);
         self
     }
     /// <p> List of instance types supported by Amazon Elasticsearch service for given <code> <code>ElasticsearchVersion</code> </code> </p>
     pub fn set_elasticsearch_instance_types(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::EsPartitionInstanceType>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::EsPartitionInstanceType>>,
     ) -> Self {
         self.elasticsearch_instance_types = input;
         self
     }
     /// <p>In case if there are more results available NextToken would be present, make further request to the same API with received NextToken to paginate remaining results. </p>
-    pub fn next_token(mut self, input: impl Into<std::string::String>) -> Self {
-        self.next_token = Some(input.into());
+    pub fn next_token(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.next_token = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>In case if there are more results available NextToken would be present, make further request to the same API with received NextToken to paginate remaining results. </p>
-    pub fn set_next_token(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_next_token(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.next_token = input;
         self
     }

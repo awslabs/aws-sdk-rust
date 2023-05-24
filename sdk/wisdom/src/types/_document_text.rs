@@ -2,27 +2,27 @@
 
 /// <p>The text of the document.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq)]
 pub struct DocumentText {
     /// <p>Text in the document.</p>
     #[doc(hidden)]
-    pub text: std::option::Option<std::string::String>,
+    pub text: ::std::option::Option<::std::string::String>,
     /// <p>Highlights in the document text.</p>
     #[doc(hidden)]
-    pub highlights: std::option::Option<std::vec::Vec<crate::types::Highlight>>,
+    pub highlights: ::std::option::Option<::std::vec::Vec<crate::types::Highlight>>,
 }
 impl DocumentText {
     /// <p>Text in the document.</p>
-    pub fn text(&self) -> std::option::Option<&str> {
+    pub fn text(&self) -> ::std::option::Option<&str> {
         self.text.as_deref()
     }
     /// <p>Highlights in the document text.</p>
-    pub fn highlights(&self) -> std::option::Option<&[crate::types::Highlight]> {
+    pub fn highlights(&self) -> ::std::option::Option<&[crate::types::Highlight]> {
         self.highlights.as_deref()
     }
 }
-impl std::fmt::Debug for DocumentText {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for DocumentText {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DocumentText");
         formatter.field("text", &"*** Sensitive Data Redacted ***");
         formatter.field("highlights", &self.highlights);
@@ -38,19 +38,19 @@ impl DocumentText {
 
 /// A builder for [`DocumentText`](crate::types::DocumentText).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default)]
 pub struct DocumentTextBuilder {
-    pub(crate) text: std::option::Option<std::string::String>,
-    pub(crate) highlights: std::option::Option<std::vec::Vec<crate::types::Highlight>>,
+    pub(crate) text: ::std::option::Option<::std::string::String>,
+    pub(crate) highlights: ::std::option::Option<::std::vec::Vec<crate::types::Highlight>>,
 }
 impl DocumentTextBuilder {
     /// <p>Text in the document.</p>
-    pub fn text(mut self, input: impl Into<std::string::String>) -> Self {
-        self.text = Some(input.into());
+    pub fn text(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.text = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Text in the document.</p>
-    pub fn set_text(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_text(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.text = input;
         self
     }
@@ -62,13 +62,13 @@ impl DocumentTextBuilder {
     pub fn highlights(mut self, input: crate::types::Highlight) -> Self {
         let mut v = self.highlights.unwrap_or_default();
         v.push(input);
-        self.highlights = Some(v);
+        self.highlights = ::std::option::Option::Some(v);
         self
     }
     /// <p>Highlights in the document text.</p>
     pub fn set_highlights(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Highlight>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Highlight>>,
     ) -> Self {
         self.highlights = input;
         self
@@ -81,8 +81,8 @@ impl DocumentTextBuilder {
         }
     }
 }
-impl std::fmt::Debug for DocumentTextBuilder {
-    fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+impl ::std::fmt::Debug for DocumentTextBuilder {
+    fn fmt(&self, f: &mut ::std::fmt::Formatter<'_>) -> ::std::fmt::Result {
         let mut formatter = f.debug_struct("DocumentTextBuilder");
         formatter.field("text", &"*** Sensitive Data Redacted ***");
         formatter.field("highlights", &self.highlights);

@@ -2,29 +2,29 @@
 
 /// <p>The meta data of the Glue table which serves as data catalog for the <code>OfflineStore</code>. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DataCatalogConfig {
     /// <p>The name of the Glue table.</p>
     #[doc(hidden)]
-    pub table_name: std::option::Option<std::string::String>,
+    pub table_name: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Glue table catalog.</p>
     #[doc(hidden)]
-    pub catalog: std::option::Option<std::string::String>,
+    pub catalog: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Glue table database.</p>
     #[doc(hidden)]
-    pub database: std::option::Option<std::string::String>,
+    pub database: ::std::option::Option<::std::string::String>,
 }
 impl DataCatalogConfig {
     /// <p>The name of the Glue table.</p>
-    pub fn table_name(&self) -> std::option::Option<&str> {
+    pub fn table_name(&self) -> ::std::option::Option<&str> {
         self.table_name.as_deref()
     }
     /// <p>The name of the Glue table catalog.</p>
-    pub fn catalog(&self) -> std::option::Option<&str> {
+    pub fn catalog(&self) -> ::std::option::Option<&str> {
         self.catalog.as_deref()
     }
     /// <p>The name of the Glue table database.</p>
-    pub fn database(&self) -> std::option::Option<&str> {
+    pub fn database(&self) -> ::std::option::Option<&str> {
         self.database.as_deref()
     }
 }
@@ -37,40 +37,42 @@ impl DataCatalogConfig {
 
 /// A builder for [`DataCatalogConfig`](crate::types::DataCatalogConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DataCatalogConfigBuilder {
-    pub(crate) table_name: std::option::Option<std::string::String>,
-    pub(crate) catalog: std::option::Option<std::string::String>,
-    pub(crate) database: std::option::Option<std::string::String>,
+    pub(crate) table_name: ::std::option::Option<::std::string::String>,
+    pub(crate) catalog: ::std::option::Option<::std::string::String>,
+    pub(crate) database: ::std::option::Option<::std::string::String>,
 }
 impl DataCatalogConfigBuilder {
     /// <p>The name of the Glue table.</p>
-    pub fn table_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.table_name = Some(input.into());
+    pub fn table_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.table_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Glue table.</p>
-    pub fn set_table_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_table_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.table_name = input;
         self
     }
     /// <p>The name of the Glue table catalog.</p>
-    pub fn catalog(mut self, input: impl Into<std::string::String>) -> Self {
-        self.catalog = Some(input.into());
+    pub fn catalog(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.catalog = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Glue table catalog.</p>
-    pub fn set_catalog(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_catalog(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.catalog = input;
         self
     }
     /// <p>The name of the Glue table database.</p>
-    pub fn database(mut self, input: impl Into<std::string::String>) -> Self {
-        self.database = Some(input.into());
+    pub fn database(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.database = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Glue table database.</p>
-    pub fn set_database(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_database(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.database = input;
         self
     }

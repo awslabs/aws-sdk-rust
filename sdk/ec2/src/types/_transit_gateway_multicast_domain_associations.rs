@@ -2,52 +2,52 @@
 
 /// <p>Describes the multicast domain associations.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TransitGatewayMulticastDomainAssociations {
     /// <p>The ID of the transit gateway multicast domain.</p>
     #[doc(hidden)]
-    pub transit_gateway_multicast_domain_id: std::option::Option<std::string::String>,
+    pub transit_gateway_multicast_domain_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the transit gateway attachment.</p>
     #[doc(hidden)]
-    pub transit_gateway_attachment_id: std::option::Option<std::string::String>,
+    pub transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,
     /// <p>The ID of the resource.</p>
     #[doc(hidden)]
-    pub resource_id: std::option::Option<std::string::String>,
+    pub resource_id: ::std::option::Option<::std::string::String>,
     /// <p>The type of resource, for example a VPC attachment.</p>
     #[doc(hidden)]
-    pub resource_type: std::option::Option<crate::types::TransitGatewayAttachmentResourceType>,
+    pub resource_type: ::std::option::Option<crate::types::TransitGatewayAttachmentResourceType>,
     /// <p> The ID of the Amazon Web Services account that owns the resource.</p>
     #[doc(hidden)]
-    pub resource_owner_id: std::option::Option<std::string::String>,
+    pub resource_owner_id: ::std::option::Option<::std::string::String>,
     /// <p>The subnets associated with the multicast domain.</p>
     #[doc(hidden)]
-    pub subnets: std::option::Option<std::vec::Vec<crate::types::SubnetAssociation>>,
+    pub subnets: ::std::option::Option<::std::vec::Vec<crate::types::SubnetAssociation>>,
 }
 impl TransitGatewayMulticastDomainAssociations {
     /// <p>The ID of the transit gateway multicast domain.</p>
-    pub fn transit_gateway_multicast_domain_id(&self) -> std::option::Option<&str> {
+    pub fn transit_gateway_multicast_domain_id(&self) -> ::std::option::Option<&str> {
         self.transit_gateway_multicast_domain_id.as_deref()
     }
     /// <p>The ID of the transit gateway attachment.</p>
-    pub fn transit_gateway_attachment_id(&self) -> std::option::Option<&str> {
+    pub fn transit_gateway_attachment_id(&self) -> ::std::option::Option<&str> {
         self.transit_gateway_attachment_id.as_deref()
     }
     /// <p>The ID of the resource.</p>
-    pub fn resource_id(&self) -> std::option::Option<&str> {
+    pub fn resource_id(&self) -> ::std::option::Option<&str> {
         self.resource_id.as_deref()
     }
     /// <p>The type of resource, for example a VPC attachment.</p>
     pub fn resource_type(
         &self,
-    ) -> std::option::Option<&crate::types::TransitGatewayAttachmentResourceType> {
+    ) -> ::std::option::Option<&crate::types::TransitGatewayAttachmentResourceType> {
         self.resource_type.as_ref()
     }
     /// <p> The ID of the Amazon Web Services account that owns the resource.</p>
-    pub fn resource_owner_id(&self) -> std::option::Option<&str> {
+    pub fn resource_owner_id(&self) -> ::std::option::Option<&str> {
         self.resource_owner_id.as_deref()
     }
     /// <p>The subnets associated with the multicast domain.</p>
-    pub fn subnets(&self) -> std::option::Option<&[crate::types::SubnetAssociation]> {
+    pub fn subnets(&self) -> ::std::option::Option<&[crate::types::SubnetAssociation]> {
         self.subnets.as_deref()
     }
 }
@@ -60,53 +60,58 @@ impl TransitGatewayMulticastDomainAssociations {
 
 /// A builder for [`TransitGatewayMulticastDomainAssociations`](crate::types::TransitGatewayMulticastDomainAssociations).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TransitGatewayMulticastDomainAssociationsBuilder {
-    pub(crate) transit_gateway_multicast_domain_id: std::option::Option<std::string::String>,
-    pub(crate) transit_gateway_attachment_id: std::option::Option<std::string::String>,
-    pub(crate) resource_id: std::option::Option<std::string::String>,
+    pub(crate) transit_gateway_multicast_domain_id: ::std::option::Option<::std::string::String>,
+    pub(crate) transit_gateway_attachment_id: ::std::option::Option<::std::string::String>,
+    pub(crate) resource_id: ::std::option::Option<::std::string::String>,
     pub(crate) resource_type:
-        std::option::Option<crate::types::TransitGatewayAttachmentResourceType>,
-    pub(crate) resource_owner_id: std::option::Option<std::string::String>,
-    pub(crate) subnets: std::option::Option<std::vec::Vec<crate::types::SubnetAssociation>>,
+        ::std::option::Option<crate::types::TransitGatewayAttachmentResourceType>,
+    pub(crate) resource_owner_id: ::std::option::Option<::std::string::String>,
+    pub(crate) subnets: ::std::option::Option<::std::vec::Vec<crate::types::SubnetAssociation>>,
 }
 impl TransitGatewayMulticastDomainAssociationsBuilder {
     /// <p>The ID of the transit gateway multicast domain.</p>
     pub fn transit_gateway_multicast_domain_id(
         mut self,
-        input: impl Into<std::string::String>,
+        input: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
-        self.transit_gateway_multicast_domain_id = Some(input.into());
+        self.transit_gateway_multicast_domain_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the transit gateway multicast domain.</p>
     pub fn set_transit_gateway_multicast_domain_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.transit_gateway_multicast_domain_id = input;
         self
     }
     /// <p>The ID of the transit gateway attachment.</p>
-    pub fn transit_gateway_attachment_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.transit_gateway_attachment_id = Some(input.into());
+    pub fn transit_gateway_attachment_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.transit_gateway_attachment_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the transit gateway attachment.</p>
     pub fn set_transit_gateway_attachment_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.transit_gateway_attachment_id = input;
         self
     }
     /// <p>The ID of the resource.</p>
-    pub fn resource_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_id = Some(input.into());
+    pub fn resource_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the resource.</p>
-    pub fn set_resource_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_id = input;
         self
     }
@@ -115,26 +120,29 @@ impl TransitGatewayMulticastDomainAssociationsBuilder {
         mut self,
         input: crate::types::TransitGatewayAttachmentResourceType,
     ) -> Self {
-        self.resource_type = Some(input);
+        self.resource_type = ::std::option::Option::Some(input);
         self
     }
     /// <p>The type of resource, for example a VPC attachment.</p>
     pub fn set_resource_type(
         mut self,
-        input: std::option::Option<crate::types::TransitGatewayAttachmentResourceType>,
+        input: ::std::option::Option<crate::types::TransitGatewayAttachmentResourceType>,
     ) -> Self {
         self.resource_type = input;
         self
     }
     /// <p> The ID of the Amazon Web Services account that owns the resource.</p>
-    pub fn resource_owner_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_owner_id = Some(input.into());
+    pub fn resource_owner_id(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.resource_owner_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p> The ID of the Amazon Web Services account that owns the resource.</p>
     pub fn set_resource_owner_id(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.resource_owner_id = input;
         self
@@ -147,13 +155,13 @@ impl TransitGatewayMulticastDomainAssociationsBuilder {
     pub fn subnets(mut self, input: crate::types::SubnetAssociation) -> Self {
         let mut v = self.subnets.unwrap_or_default();
         v.push(input);
-        self.subnets = Some(v);
+        self.subnets = ::std::option::Option::Some(v);
         self
     }
     /// <p>The subnets associated with the multicast domain.</p>
     pub fn set_subnets(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SubnetAssociation>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SubnetAssociation>>,
     ) -> Self {
         self.subnets = input;
         self

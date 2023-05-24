@@ -2,78 +2,78 @@
 
 /// <p>Information about a vulnerable package that Amazon Inspector identifies in a finding.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct VulnerablePackage {
     /// <p>The name of the vulnerable package.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The version of the vulnerable package.</p>
     #[doc(hidden)]
-    pub version: std::option::Option<std::string::String>,
+    pub version: ::std::option::Option<::std::string::String>,
     /// <p>The source layer hash of the vulnerable package.</p>
     #[doc(hidden)]
-    pub source_layer_hash: std::option::Option<std::string::String>,
+    pub source_layer_hash: ::std::option::Option<::std::string::String>,
     /// <p>The epoch of the vulnerable package.</p>
     #[doc(hidden)]
-    pub epoch: std::option::Option<i32>,
+    pub epoch: ::std::option::Option<i32>,
     /// <p>The release of the vulnerable package.</p>
     #[doc(hidden)]
-    pub release: std::option::Option<std::string::String>,
+    pub release: ::std::option::Option<::std::string::String>,
     /// <p>The architecture of the vulnerable package.</p>
     #[doc(hidden)]
-    pub arch: std::option::Option<std::string::String>,
+    pub arch: ::std::option::Option<::std::string::String>,
     /// <p>The package manager of the vulnerable package.</p>
     #[doc(hidden)]
-    pub package_manager: std::option::Option<std::string::String>,
+    pub package_manager: ::std::option::Option<::std::string::String>,
     /// <p>The file path of the vulnerable package.</p>
     #[doc(hidden)]
-    pub file_path: std::option::Option<std::string::String>,
+    pub file_path: ::std::option::Option<::std::string::String>,
     /// <p>The version of the package that contains the vulnerability fix.</p>
     #[doc(hidden)]
-    pub fixed_in_version: std::option::Option<std::string::String>,
+    pub fixed_in_version: ::std::option::Option<::std::string::String>,
     /// <p>The code to run in your environment to update packages with a fix available.</p>
     #[doc(hidden)]
-    pub remediation: std::option::Option<std::string::String>,
+    pub remediation: ::std::option::Option<::std::string::String>,
 }
 impl VulnerablePackage {
     /// <p>The name of the vulnerable package.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The version of the vulnerable package.</p>
-    pub fn version(&self) -> std::option::Option<&str> {
+    pub fn version(&self) -> ::std::option::Option<&str> {
         self.version.as_deref()
     }
     /// <p>The source layer hash of the vulnerable package.</p>
-    pub fn source_layer_hash(&self) -> std::option::Option<&str> {
+    pub fn source_layer_hash(&self) -> ::std::option::Option<&str> {
         self.source_layer_hash.as_deref()
     }
     /// <p>The epoch of the vulnerable package.</p>
-    pub fn epoch(&self) -> std::option::Option<i32> {
+    pub fn epoch(&self) -> ::std::option::Option<i32> {
         self.epoch
     }
     /// <p>The release of the vulnerable package.</p>
-    pub fn release(&self) -> std::option::Option<&str> {
+    pub fn release(&self) -> ::std::option::Option<&str> {
         self.release.as_deref()
     }
     /// <p>The architecture of the vulnerable package.</p>
-    pub fn arch(&self) -> std::option::Option<&str> {
+    pub fn arch(&self) -> ::std::option::Option<&str> {
         self.arch.as_deref()
     }
     /// <p>The package manager of the vulnerable package.</p>
-    pub fn package_manager(&self) -> std::option::Option<&str> {
+    pub fn package_manager(&self) -> ::std::option::Option<&str> {
         self.package_manager.as_deref()
     }
     /// <p>The file path of the vulnerable package.</p>
-    pub fn file_path(&self) -> std::option::Option<&str> {
+    pub fn file_path(&self) -> ::std::option::Option<&str> {
         self.file_path.as_deref()
     }
     /// <p>The version of the package that contains the vulnerability fix.</p>
-    pub fn fixed_in_version(&self) -> std::option::Option<&str> {
+    pub fn fixed_in_version(&self) -> ::std::option::Option<&str> {
         self.fixed_in_version.as_deref()
     }
     /// <p>The code to run in your environment to update packages with a fix available.</p>
-    pub fn remediation(&self) -> std::option::Option<&str> {
+    pub fn remediation(&self) -> ::std::option::Option<&str> {
         self.remediation.as_deref()
     }
 }
@@ -86,120 +86,137 @@ impl VulnerablePackage {
 
 /// A builder for [`VulnerablePackage`](crate::types::VulnerablePackage).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct VulnerablePackageBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) version: std::option::Option<std::string::String>,
-    pub(crate) source_layer_hash: std::option::Option<std::string::String>,
-    pub(crate) epoch: std::option::Option<i32>,
-    pub(crate) release: std::option::Option<std::string::String>,
-    pub(crate) arch: std::option::Option<std::string::String>,
-    pub(crate) package_manager: std::option::Option<std::string::String>,
-    pub(crate) file_path: std::option::Option<std::string::String>,
-    pub(crate) fixed_in_version: std::option::Option<std::string::String>,
-    pub(crate) remediation: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) version: ::std::option::Option<::std::string::String>,
+    pub(crate) source_layer_hash: ::std::option::Option<::std::string::String>,
+    pub(crate) epoch: ::std::option::Option<i32>,
+    pub(crate) release: ::std::option::Option<::std::string::String>,
+    pub(crate) arch: ::std::option::Option<::std::string::String>,
+    pub(crate) package_manager: ::std::option::Option<::std::string::String>,
+    pub(crate) file_path: ::std::option::Option<::std::string::String>,
+    pub(crate) fixed_in_version: ::std::option::Option<::std::string::String>,
+    pub(crate) remediation: ::std::option::Option<::std::string::String>,
 }
 impl VulnerablePackageBuilder {
     /// <p>The name of the vulnerable package.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the vulnerable package.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The version of the vulnerable package.</p>
-    pub fn version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.version = Some(input.into());
+    pub fn version(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the vulnerable package.</p>
-    pub fn set_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_version(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.version = input;
         self
     }
     /// <p>The source layer hash of the vulnerable package.</p>
-    pub fn source_layer_hash(mut self, input: impl Into<std::string::String>) -> Self {
-        self.source_layer_hash = Some(input.into());
+    pub fn source_layer_hash(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.source_layer_hash = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The source layer hash of the vulnerable package.</p>
     pub fn set_source_layer_hash(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.source_layer_hash = input;
         self
     }
     /// <p>The epoch of the vulnerable package.</p>
     pub fn epoch(mut self, input: i32) -> Self {
-        self.epoch = Some(input);
+        self.epoch = ::std::option::Option::Some(input);
         self
     }
     /// <p>The epoch of the vulnerable package.</p>
-    pub fn set_epoch(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_epoch(mut self, input: ::std::option::Option<i32>) -> Self {
         self.epoch = input;
         self
     }
     /// <p>The release of the vulnerable package.</p>
-    pub fn release(mut self, input: impl Into<std::string::String>) -> Self {
-        self.release = Some(input.into());
+    pub fn release(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.release = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The release of the vulnerable package.</p>
-    pub fn set_release(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_release(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.release = input;
         self
     }
     /// <p>The architecture of the vulnerable package.</p>
-    pub fn arch(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arch = Some(input.into());
+    pub fn arch(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arch = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The architecture of the vulnerable package.</p>
-    pub fn set_arch(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arch(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arch = input;
         self
     }
     /// <p>The package manager of the vulnerable package.</p>
-    pub fn package_manager(mut self, input: impl Into<std::string::String>) -> Self {
-        self.package_manager = Some(input.into());
+    pub fn package_manager(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.package_manager = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The package manager of the vulnerable package.</p>
-    pub fn set_package_manager(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_package_manager(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.package_manager = input;
         self
     }
     /// <p>The file path of the vulnerable package.</p>
-    pub fn file_path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.file_path = Some(input.into());
+    pub fn file_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.file_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The file path of the vulnerable package.</p>
-    pub fn set_file_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_file_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_path = input;
         self
     }
     /// <p>The version of the package that contains the vulnerability fix.</p>
-    pub fn fixed_in_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.fixed_in_version = Some(input.into());
+    pub fn fixed_in_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.fixed_in_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The version of the package that contains the vulnerability fix.</p>
-    pub fn set_fixed_in_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_fixed_in_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.fixed_in_version = input;
         self
     }
     /// <p>The code to run in your environment to update packages with a fix available.</p>
-    pub fn remediation(mut self, input: impl Into<std::string::String>) -> Self {
-        self.remediation = Some(input.into());
+    pub fn remediation(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.remediation = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The code to run in your environment to update packages with a fix available.</p>
-    pub fn set_remediation(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_remediation(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.remediation = input;
         self
     }

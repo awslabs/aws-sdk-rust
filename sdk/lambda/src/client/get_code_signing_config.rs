@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`GetCodeSigningConfig`](crate::operation::get_code_signing_config::builders::GetCodeSigningConfigFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`code_signing_config_arn(impl Into<String>)`](crate::operation::get_code_signing_config::builders::GetCodeSigningConfigFluentBuilder::code_signing_config_arn) / [`set_code_signing_config_arn(Option<String>)`](crate::operation::get_code_signing_config::builders::GetCodeSigningConfigFluentBuilder::set_code_signing_config_arn): <p>The The Amazon Resource Name (ARN) of the code signing configuration. </p>
+    ///   - [`code_signing_config_arn(impl ::std::convert::Into<String>)`](crate::operation::get_code_signing_config::builders::GetCodeSigningConfigFluentBuilder::code_signing_config_arn) / [`set_code_signing_config_arn(Option<String>)`](crate::operation::get_code_signing_config::builders::GetCodeSigningConfigFluentBuilder::set_code_signing_config_arn): <p>The The Amazon Resource Name (ARN) of the code signing configuration. </p>
     /// - On success, responds with [`GetCodeSigningConfigOutput`](crate::operation::get_code_signing_config::GetCodeSigningConfigOutput) with field(s):
     ///   - [`code_signing_config(Option<CodeSigningConfig>)`](crate::operation::get_code_signing_config::GetCodeSigningConfigOutput::code_signing_config): <p>The code signing configuration</p>
     /// - On failure, responds with [`SdkError<GetCodeSigningConfigError>`](crate::operation::get_code_signing_config::GetCodeSigningConfigError)

@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeleteBusinessReportSchedule`](crate::operation::delete_business_report_schedule::builders::DeleteBusinessReportScheduleFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`schedule_arn(impl Into<String>)`](crate::operation::delete_business_report_schedule::builders::DeleteBusinessReportScheduleFluentBuilder::schedule_arn) / [`set_schedule_arn(Option<String>)`](crate::operation::delete_business_report_schedule::builders::DeleteBusinessReportScheduleFluentBuilder::set_schedule_arn): <p>The ARN of the business report schedule.</p>
+    ///   - [`schedule_arn(impl ::std::convert::Into<String>)`](crate::operation::delete_business_report_schedule::builders::DeleteBusinessReportScheduleFluentBuilder::schedule_arn) / [`set_schedule_arn(Option<String>)`](crate::operation::delete_business_report_schedule::builders::DeleteBusinessReportScheduleFluentBuilder::set_schedule_arn): <p>The ARN of the business report schedule.</p>
     /// - On success, responds with [`DeleteBusinessReportScheduleOutput`](crate::operation::delete_business_report_schedule::DeleteBusinessReportScheduleOutput)
     /// - On failure, responds with [`SdkError<DeleteBusinessReportScheduleError>`](crate::operation::delete_business_report_schedule::DeleteBusinessReportScheduleError)
     pub fn delete_business_report_schedule(&self) -> crate::operation::delete_business_report_schedule::builders::DeleteBusinessReportScheduleFluentBuilder{

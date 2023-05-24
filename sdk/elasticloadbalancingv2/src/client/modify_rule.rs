@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`ModifyRule`](crate::operation::modify_rule::builders::ModifyRuleFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`rule_arn(impl Into<String>)`](crate::operation::modify_rule::builders::ModifyRuleFluentBuilder::rule_arn) / [`set_rule_arn(Option<String>)`](crate::operation::modify_rule::builders::ModifyRuleFluentBuilder::set_rule_arn): <p>The Amazon Resource Name (ARN) of the rule.</p>
+    ///   - [`rule_arn(impl ::std::convert::Into<String>)`](crate::operation::modify_rule::builders::ModifyRuleFluentBuilder::rule_arn) / [`set_rule_arn(Option<String>)`](crate::operation::modify_rule::builders::ModifyRuleFluentBuilder::set_rule_arn): <p>The Amazon Resource Name (ARN) of the rule.</p>
     ///   - [`conditions(Vec<RuleCondition>)`](crate::operation::modify_rule::builders::ModifyRuleFluentBuilder::conditions) / [`set_conditions(Option<Vec<RuleCondition>>)`](crate::operation::modify_rule::builders::ModifyRuleFluentBuilder::set_conditions): <p>The conditions.</p>
     ///   - [`actions(Vec<Action>)`](crate::operation::modify_rule::builders::ModifyRuleFluentBuilder::actions) / [`set_actions(Option<Vec<Action>>)`](crate::operation::modify_rule::builders::ModifyRuleFluentBuilder::set_actions): <p>The actions.</p>
     /// - On success, responds with [`ModifyRuleOutput`](crate::operation::modify_rule::ModifyRuleOutput) with field(s):

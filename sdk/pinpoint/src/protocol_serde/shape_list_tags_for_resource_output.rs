@@ -2,7 +2,7 @@
 pub(crate) fn de_tags_model_payload(
     body: &[u8],
 ) -> std::result::Result<
-    std::option::Option<crate::types::TagsModel>,
+    ::std::option::Option<crate::types::TagsModel>,
     crate::operation::list_tags_for_resource::ListTagsForResourceError,
 > {
     (!body.is_empty())

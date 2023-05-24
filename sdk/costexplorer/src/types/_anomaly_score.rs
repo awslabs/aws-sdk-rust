@@ -2,7 +2,7 @@
 
 /// <p>Quantifies the anomaly. The higher score means that it's more anomalous. </p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AnomalyScore {
     /// <p>The maximum score that's observed during the <code>AnomalyDateInterval</code>. </p>
     #[doc(hidden)]
@@ -30,29 +30,31 @@ impl AnomalyScore {
 
 /// A builder for [`AnomalyScore`](crate::types::AnomalyScore).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AnomalyScoreBuilder {
-    pub(crate) max_score: std::option::Option<f64>,
-    pub(crate) current_score: std::option::Option<f64>,
+    pub(crate) max_score: ::std::option::Option<f64>,
+    pub(crate) current_score: ::std::option::Option<f64>,
 }
 impl AnomalyScoreBuilder {
     /// <p>The maximum score that's observed during the <code>AnomalyDateInterval</code>. </p>
     pub fn max_score(mut self, input: f64) -> Self {
-        self.max_score = Some(input);
+        self.max_score = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum score that's observed during the <code>AnomalyDateInterval</code>. </p>
-    pub fn set_max_score(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_max_score(mut self, input: ::std::option::Option<f64>) -> Self {
         self.max_score = input;
         self
     }
     /// <p>The last observed score. </p>
     pub fn current_score(mut self, input: f64) -> Self {
-        self.current_score = Some(input);
+        self.current_score = ::std::option::Option::Some(input);
         self
     }
     /// <p>The last observed score. </p>
-    pub fn set_current_score(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_current_score(mut self, input: ::std::option::Option<f64>) -> Self {
         self.current_score = input;
         self
     }

@@ -2,22 +2,22 @@
 
 /// <p>The challenge response type.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ChallengeResponseType {
     /// <p>The challenge name.</p>
     #[doc(hidden)]
-    pub challenge_name: std::option::Option<crate::types::ChallengeName>,
+    pub challenge_name: ::std::option::Option<crate::types::ChallengeName>,
     /// <p>The challenge response.</p>
     #[doc(hidden)]
-    pub challenge_response: std::option::Option<crate::types::ChallengeResponse>,
+    pub challenge_response: ::std::option::Option<crate::types::ChallengeResponse>,
 }
 impl ChallengeResponseType {
     /// <p>The challenge name.</p>
-    pub fn challenge_name(&self) -> std::option::Option<&crate::types::ChallengeName> {
+    pub fn challenge_name(&self) -> ::std::option::Option<&crate::types::ChallengeName> {
         self.challenge_name.as_ref()
     }
     /// <p>The challenge response.</p>
-    pub fn challenge_response(&self) -> std::option::Option<&crate::types::ChallengeResponse> {
+    pub fn challenge_response(&self) -> ::std::option::Option<&crate::types::ChallengeResponse> {
         self.challenge_response.as_ref()
     }
 }
@@ -30,34 +30,36 @@ impl ChallengeResponseType {
 
 /// A builder for [`ChallengeResponseType`](crate::types::ChallengeResponseType).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ChallengeResponseTypeBuilder {
-    pub(crate) challenge_name: std::option::Option<crate::types::ChallengeName>,
-    pub(crate) challenge_response: std::option::Option<crate::types::ChallengeResponse>,
+    pub(crate) challenge_name: ::std::option::Option<crate::types::ChallengeName>,
+    pub(crate) challenge_response: ::std::option::Option<crate::types::ChallengeResponse>,
 }
 impl ChallengeResponseTypeBuilder {
     /// <p>The challenge name.</p>
     pub fn challenge_name(mut self, input: crate::types::ChallengeName) -> Self {
-        self.challenge_name = Some(input);
+        self.challenge_name = ::std::option::Option::Some(input);
         self
     }
     /// <p>The challenge name.</p>
     pub fn set_challenge_name(
         mut self,
-        input: std::option::Option<crate::types::ChallengeName>,
+        input: ::std::option::Option<crate::types::ChallengeName>,
     ) -> Self {
         self.challenge_name = input;
         self
     }
     /// <p>The challenge response.</p>
     pub fn challenge_response(mut self, input: crate::types::ChallengeResponse) -> Self {
-        self.challenge_response = Some(input);
+        self.challenge_response = ::std::option::Option::Some(input);
         self
     }
     /// <p>The challenge response.</p>
     pub fn set_challenge_response(
         mut self,
-        input: std::option::Option<crate::types::ChallengeResponse>,
+        input: ::std::option::Option<crate::types::ChallengeResponse>,
     ) -> Self {
         self.challenge_response = input;
         self

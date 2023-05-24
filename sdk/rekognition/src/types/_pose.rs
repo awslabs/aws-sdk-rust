@@ -2,29 +2,29 @@
 
 /// <p>Indicates the pose of the face as determined by its pitch, roll, and yaw.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Pose {
     /// <p>Value representing the face rotation on the roll axis.</p>
     #[doc(hidden)]
-    pub roll: std::option::Option<f32>,
+    pub roll: ::std::option::Option<f32>,
     /// <p>Value representing the face rotation on the yaw axis.</p>
     #[doc(hidden)]
-    pub yaw: std::option::Option<f32>,
+    pub yaw: ::std::option::Option<f32>,
     /// <p>Value representing the face rotation on the pitch axis.</p>
     #[doc(hidden)]
-    pub pitch: std::option::Option<f32>,
+    pub pitch: ::std::option::Option<f32>,
 }
 impl Pose {
     /// <p>Value representing the face rotation on the roll axis.</p>
-    pub fn roll(&self) -> std::option::Option<f32> {
+    pub fn roll(&self) -> ::std::option::Option<f32> {
         self.roll
     }
     /// <p>Value representing the face rotation on the yaw axis.</p>
-    pub fn yaw(&self) -> std::option::Option<f32> {
+    pub fn yaw(&self) -> ::std::option::Option<f32> {
         self.yaw
     }
     /// <p>Value representing the face rotation on the pitch axis.</p>
-    pub fn pitch(&self) -> std::option::Option<f32> {
+    pub fn pitch(&self) -> ::std::option::Option<f32> {
         self.pitch
     }
 }
@@ -37,40 +37,42 @@ impl Pose {
 
 /// A builder for [`Pose`](crate::types::Pose).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PoseBuilder {
-    pub(crate) roll: std::option::Option<f32>,
-    pub(crate) yaw: std::option::Option<f32>,
-    pub(crate) pitch: std::option::Option<f32>,
+    pub(crate) roll: ::std::option::Option<f32>,
+    pub(crate) yaw: ::std::option::Option<f32>,
+    pub(crate) pitch: ::std::option::Option<f32>,
 }
 impl PoseBuilder {
     /// <p>Value representing the face rotation on the roll axis.</p>
     pub fn roll(mut self, input: f32) -> Self {
-        self.roll = Some(input);
+        self.roll = ::std::option::Option::Some(input);
         self
     }
     /// <p>Value representing the face rotation on the roll axis.</p>
-    pub fn set_roll(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_roll(mut self, input: ::std::option::Option<f32>) -> Self {
         self.roll = input;
         self
     }
     /// <p>Value representing the face rotation on the yaw axis.</p>
     pub fn yaw(mut self, input: f32) -> Self {
-        self.yaw = Some(input);
+        self.yaw = ::std::option::Option::Some(input);
         self
     }
     /// <p>Value representing the face rotation on the yaw axis.</p>
-    pub fn set_yaw(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_yaw(mut self, input: ::std::option::Option<f32>) -> Self {
         self.yaw = input;
         self
     }
     /// <p>Value representing the face rotation on the pitch axis.</p>
     pub fn pitch(mut self, input: f32) -> Self {
-        self.pitch = Some(input);
+        self.pitch = ::std::option::Option::Some(input);
         self
     }
     /// <p>Value representing the face rotation on the pitch axis.</p>
-    pub fn set_pitch(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_pitch(mut self, input: ::std::option::Option<f32>) -> Self {
         self.pitch = input;
         self
     }

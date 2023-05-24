@@ -2,22 +2,22 @@
 
 /// <p>Error in data replication.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct RecoveryInstanceDataReplicationError {
     /// <p>Error in data replication.</p>
     #[doc(hidden)]
-    pub error: std::option::Option<crate::types::FailbackReplicationError>,
+    pub error: ::std::option::Option<crate::types::FailbackReplicationError>,
     /// <p>Error in data replication.</p>
     #[doc(hidden)]
-    pub raw_error: std::option::Option<std::string::String>,
+    pub raw_error: ::std::option::Option<::std::string::String>,
 }
 impl RecoveryInstanceDataReplicationError {
     /// <p>Error in data replication.</p>
-    pub fn error(&self) -> std::option::Option<&crate::types::FailbackReplicationError> {
+    pub fn error(&self) -> ::std::option::Option<&crate::types::FailbackReplicationError> {
         self.error.as_ref()
     }
     /// <p>Error in data replication.</p>
-    pub fn raw_error(&self) -> std::option::Option<&str> {
+    pub fn raw_error(&self) -> ::std::option::Option<&str> {
         self.raw_error.as_deref()
     }
 }
@@ -30,32 +30,34 @@ impl RecoveryInstanceDataReplicationError {
 
 /// A builder for [`RecoveryInstanceDataReplicationError`](crate::types::RecoveryInstanceDataReplicationError).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct RecoveryInstanceDataReplicationErrorBuilder {
-    pub(crate) error: std::option::Option<crate::types::FailbackReplicationError>,
-    pub(crate) raw_error: std::option::Option<std::string::String>,
+    pub(crate) error: ::std::option::Option<crate::types::FailbackReplicationError>,
+    pub(crate) raw_error: ::std::option::Option<::std::string::String>,
 }
 impl RecoveryInstanceDataReplicationErrorBuilder {
     /// <p>Error in data replication.</p>
     pub fn error(mut self, input: crate::types::FailbackReplicationError) -> Self {
-        self.error = Some(input);
+        self.error = ::std::option::Option::Some(input);
         self
     }
     /// <p>Error in data replication.</p>
     pub fn set_error(
         mut self,
-        input: std::option::Option<crate::types::FailbackReplicationError>,
+        input: ::std::option::Option<crate::types::FailbackReplicationError>,
     ) -> Self {
         self.error = input;
         self
     }
     /// <p>Error in data replication.</p>
-    pub fn raw_error(mut self, input: impl Into<std::string::String>) -> Self {
-        self.raw_error = Some(input.into());
+    pub fn raw_error(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.raw_error = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Error in data replication.</p>
-    pub fn set_raw_error(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_raw_error(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.raw_error = input;
         self
     }

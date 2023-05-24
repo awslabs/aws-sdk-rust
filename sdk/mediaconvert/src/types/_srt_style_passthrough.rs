@@ -38,13 +38,13 @@
 /// Set Style passthrough (StylePassthrough) to ENABLED to use the available style, color, and position information from your input captions. MediaConvert uses default settings for any missing style and position information in your input captions. Set Style passthrough to DISABLED, or leave blank, to ignore the style and position information from your input captions and use simplified output captions.
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum SrtStylePassthrough {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum SrtStylePassthrough {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for SrtStylePassthrough {
+impl ::std::convert::From<&str> for SrtStylePassthrough {
     fn from(s: &str) -> Self {
         match s {
             "DISABLED" => SrtStylePassthrough::Disabled,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for SrtStylePassthrough {
         }
     }
 }
-impl std::str::FromStr for SrtStylePassthrough {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for SrtStylePassthrough {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(SrtStylePassthrough::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(SrtStylePassthrough::from(s))
     }
 }
 impl SrtStylePassthrough {
@@ -86,7 +86,7 @@ impl SrtStylePassthrough {
         &["DISABLED", "ENABLED"]
     }
 }
-impl AsRef<str> for SrtStylePassthrough {
+impl ::std::convert::AsRef<str> for SrtStylePassthrough {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

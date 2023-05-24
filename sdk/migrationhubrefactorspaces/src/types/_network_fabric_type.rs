@@ -38,13 +38,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum NetworkFabricType {
     #[allow(missing_docs)] // documentation missing in model
@@ -54,7 +54,7 @@ pub enum NetworkFabricType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for NetworkFabricType {
+impl ::std::convert::From<&str> for NetworkFabricType {
     fn from(s: &str) -> Self {
         match s {
             "NONE" => NetworkFabricType::None,
@@ -65,11 +65,11 @@ impl std::convert::From<&str> for NetworkFabricType {
         }
     }
 }
-impl std::str::FromStr for NetworkFabricType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for NetworkFabricType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(NetworkFabricType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(NetworkFabricType::from(s))
     }
 }
 impl NetworkFabricType {
@@ -86,7 +86,7 @@ impl NetworkFabricType {
         &["NONE", "TRANSIT_GATEWAY"]
     }
 }
-impl AsRef<str> for NetworkFabricType {
+impl ::std::convert::AsRef<str> for NetworkFabricType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

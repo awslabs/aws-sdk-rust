@@ -2,26 +2,26 @@
 
 /// <p>Specifies one of the following actions to receive notifications when the alarm state changes.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AlarmAction {
     /// <p>Information required to publish the Amazon SNS message.</p>
     #[doc(hidden)]
-    pub sns: std::option::Option<crate::types::SnsTopicPublishAction>,
+    pub sns: ::std::option::Option<crate::types::SnsTopicPublishAction>,
     /// <p>Information required to publish the MQTT message through the AWS IoT message broker.</p>
     #[doc(hidden)]
-    pub iot_topic_publish: std::option::Option<crate::types::IotTopicPublishAction>,
+    pub iot_topic_publish: ::std::option::Option<crate::types::IotTopicPublishAction>,
     /// <p>Calls a Lambda function, passing in information about the detector model instance and the event that triggered the action.</p>
     #[doc(hidden)]
-    pub lambda: std::option::Option<crate::types::LambdaAction>,
+    pub lambda: ::std::option::Option<crate::types::LambdaAction>,
     /// <p>Sends an AWS IoT Events input, passing in information about the detector model instance and the event that triggered the action.</p>
     #[doc(hidden)]
-    pub iot_events: std::option::Option<crate::types::IotEventsAction>,
+    pub iot_events: ::std::option::Option<crate::types::IotEventsAction>,
     /// <p>Sends information about the detector model instance and the event that triggered the action to an Amazon SQS queue.</p>
     #[doc(hidden)]
-    pub sqs: std::option::Option<crate::types::SqsAction>,
+    pub sqs: ::std::option::Option<crate::types::SqsAction>,
     /// <p>Sends information about the detector model instance and the event that triggered the action to an Amazon Kinesis Data Firehose delivery stream.</p>
     #[doc(hidden)]
-    pub firehose: std::option::Option<crate::types::FirehoseAction>,
+    pub firehose: ::std::option::Option<crate::types::FirehoseAction>,
     /// <p>Defines an action to write to the Amazon DynamoDB table that you created. The standard action payload contains all the information about the detector model instance and the event that triggered the action. You can customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. One column of the DynamoDB table receives all attribute-value pairs in the payload that you specify.</p>
     /// <p>You must use expressions for all parameters in <code>DynamoDBAction</code>. The expressions accept literals, operators, functions, references, and substitution templates.</p>
     /// <p class="title"> <b>Examples</b> </p>
@@ -37,7 +37,7 @@ pub struct AlarmAction {
     /// _raw
     /// </payload-field></code>.</p>
     #[doc(hidden)]
-    pub dynamo_db: std::option::Option<crate::types::DynamoDbAction>,
+    pub dynamo_db: ::std::option::Option<crate::types::DynamoDbAction>,
     /// <p>Defines an action to write to the Amazon DynamoDB table that you created. The default action payload contains all the information about the detector model instance and the event that triggered the action. You can customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. A separate column of the DynamoDB table receives one attribute-value pair in the payload that you specify.</p>
     /// <p>You must use expressions for all parameters in <code>DynamoDBv2Action</code>. The expressions accept literals, operators, functions, references, and substitution templates.</p>
     /// <p class="title"> <b>Examples</b> </p>
@@ -50,7 +50,7 @@ pub struct AlarmAction {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
     /// <p>The value for the <code>type</code> parameter in <code>Payload</code> must be <code>JSON</code>.</p>
     #[doc(hidden)]
-    pub dynamo_d_bv2: std::option::Option<crate::types::DynamoDBv2Action>,
+    pub dynamo_d_bv2: ::std::option::Option<crate::types::DynamoDBv2Action>,
     /// <p>Sends information about the detector model instance and the event that triggered the action to a specified asset property in AWS IoT SiteWise.</p>
     /// <p>You must use expressions for all parameters in <code>IotSiteWiseAction</code>. The expressions accept literals, operators, functions, references, and substitutions templates.</p>
     /// <p class="title"> <b>Examples</b> </p>
@@ -62,31 +62,31 @@ pub struct AlarmAction {
     /// <p>You must specify either <code>propertyAlias</code> or both <code>assetId</code> and <code>propertyId</code> to identify the target asset property in AWS IoT SiteWise.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
     #[doc(hidden)]
-    pub iot_site_wise: std::option::Option<crate::types::IotSiteWiseAction>,
+    pub iot_site_wise: ::std::option::Option<crate::types::IotSiteWiseAction>,
 }
 impl AlarmAction {
     /// <p>Information required to publish the Amazon SNS message.</p>
-    pub fn sns(&self) -> std::option::Option<&crate::types::SnsTopicPublishAction> {
+    pub fn sns(&self) -> ::std::option::Option<&crate::types::SnsTopicPublishAction> {
         self.sns.as_ref()
     }
     /// <p>Information required to publish the MQTT message through the AWS IoT message broker.</p>
-    pub fn iot_topic_publish(&self) -> std::option::Option<&crate::types::IotTopicPublishAction> {
+    pub fn iot_topic_publish(&self) -> ::std::option::Option<&crate::types::IotTopicPublishAction> {
         self.iot_topic_publish.as_ref()
     }
     /// <p>Calls a Lambda function, passing in information about the detector model instance and the event that triggered the action.</p>
-    pub fn lambda(&self) -> std::option::Option<&crate::types::LambdaAction> {
+    pub fn lambda(&self) -> ::std::option::Option<&crate::types::LambdaAction> {
         self.lambda.as_ref()
     }
     /// <p>Sends an AWS IoT Events input, passing in information about the detector model instance and the event that triggered the action.</p>
-    pub fn iot_events(&self) -> std::option::Option<&crate::types::IotEventsAction> {
+    pub fn iot_events(&self) -> ::std::option::Option<&crate::types::IotEventsAction> {
         self.iot_events.as_ref()
     }
     /// <p>Sends information about the detector model instance and the event that triggered the action to an Amazon SQS queue.</p>
-    pub fn sqs(&self) -> std::option::Option<&crate::types::SqsAction> {
+    pub fn sqs(&self) -> ::std::option::Option<&crate::types::SqsAction> {
         self.sqs.as_ref()
     }
     /// <p>Sends information about the detector model instance and the event that triggered the action to an Amazon Kinesis Data Firehose delivery stream.</p>
-    pub fn firehose(&self) -> std::option::Option<&crate::types::FirehoseAction> {
+    pub fn firehose(&self) -> ::std::option::Option<&crate::types::FirehoseAction> {
         self.firehose.as_ref()
     }
     /// <p>Defines an action to write to the Amazon DynamoDB table that you created. The standard action payload contains all the information about the detector model instance and the event that triggered the action. You can customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. One column of the DynamoDB table receives all attribute-value pairs in the payload that you specify.</p>
@@ -103,7 +103,7 @@ impl AlarmAction {
     /// <payload-field>
     /// _raw
     /// </payload-field></code>.</p>
-    pub fn dynamo_db(&self) -> std::option::Option<&crate::types::DynamoDbAction> {
+    pub fn dynamo_db(&self) -> ::std::option::Option<&crate::types::DynamoDbAction> {
         self.dynamo_db.as_ref()
     }
     /// <p>Defines an action to write to the Amazon DynamoDB table that you created. The default action payload contains all the information about the detector model instance and the event that triggered the action. You can customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. A separate column of the DynamoDB table receives one attribute-value pair in the payload that you specify.</p>
@@ -117,7 +117,7 @@ impl AlarmAction {
     /// </ul>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
     /// <p>The value for the <code>type</code> parameter in <code>Payload</code> must be <code>JSON</code>.</p>
-    pub fn dynamo_d_bv2(&self) -> std::option::Option<&crate::types::DynamoDBv2Action> {
+    pub fn dynamo_d_bv2(&self) -> ::std::option::Option<&crate::types::DynamoDBv2Action> {
         self.dynamo_d_bv2.as_ref()
     }
     /// <p>Sends information about the detector model instance and the event that triggered the action to a specified asset property in AWS IoT SiteWise.</p>
@@ -130,7 +130,7 @@ impl AlarmAction {
     /// </ul>
     /// <p>You must specify either <code>propertyAlias</code> or both <code>assetId</code> and <code>propertyId</code> to identify the target asset property in AWS IoT SiteWise.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
-    pub fn iot_site_wise(&self) -> std::option::Option<&crate::types::IotSiteWiseAction> {
+    pub fn iot_site_wise(&self) -> ::std::option::Option<&crate::types::IotSiteWiseAction> {
         self.iot_site_wise.as_ref()
     }
 }
@@ -143,87 +143,89 @@ impl AlarmAction {
 
 /// A builder for [`AlarmAction`](crate::types::AlarmAction).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AlarmActionBuilder {
-    pub(crate) sns: std::option::Option<crate::types::SnsTopicPublishAction>,
-    pub(crate) iot_topic_publish: std::option::Option<crate::types::IotTopicPublishAction>,
-    pub(crate) lambda: std::option::Option<crate::types::LambdaAction>,
-    pub(crate) iot_events: std::option::Option<crate::types::IotEventsAction>,
-    pub(crate) sqs: std::option::Option<crate::types::SqsAction>,
-    pub(crate) firehose: std::option::Option<crate::types::FirehoseAction>,
-    pub(crate) dynamo_db: std::option::Option<crate::types::DynamoDbAction>,
-    pub(crate) dynamo_d_bv2: std::option::Option<crate::types::DynamoDBv2Action>,
-    pub(crate) iot_site_wise: std::option::Option<crate::types::IotSiteWiseAction>,
+    pub(crate) sns: ::std::option::Option<crate::types::SnsTopicPublishAction>,
+    pub(crate) iot_topic_publish: ::std::option::Option<crate::types::IotTopicPublishAction>,
+    pub(crate) lambda: ::std::option::Option<crate::types::LambdaAction>,
+    pub(crate) iot_events: ::std::option::Option<crate::types::IotEventsAction>,
+    pub(crate) sqs: ::std::option::Option<crate::types::SqsAction>,
+    pub(crate) firehose: ::std::option::Option<crate::types::FirehoseAction>,
+    pub(crate) dynamo_db: ::std::option::Option<crate::types::DynamoDbAction>,
+    pub(crate) dynamo_d_bv2: ::std::option::Option<crate::types::DynamoDBv2Action>,
+    pub(crate) iot_site_wise: ::std::option::Option<crate::types::IotSiteWiseAction>,
 }
 impl AlarmActionBuilder {
     /// <p>Information required to publish the Amazon SNS message.</p>
     pub fn sns(mut self, input: crate::types::SnsTopicPublishAction) -> Self {
-        self.sns = Some(input);
+        self.sns = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information required to publish the Amazon SNS message.</p>
     pub fn set_sns(
         mut self,
-        input: std::option::Option<crate::types::SnsTopicPublishAction>,
+        input: ::std::option::Option<crate::types::SnsTopicPublishAction>,
     ) -> Self {
         self.sns = input;
         self
     }
     /// <p>Information required to publish the MQTT message through the AWS IoT message broker.</p>
     pub fn iot_topic_publish(mut self, input: crate::types::IotTopicPublishAction) -> Self {
-        self.iot_topic_publish = Some(input);
+        self.iot_topic_publish = ::std::option::Option::Some(input);
         self
     }
     /// <p>Information required to publish the MQTT message through the AWS IoT message broker.</p>
     pub fn set_iot_topic_publish(
         mut self,
-        input: std::option::Option<crate::types::IotTopicPublishAction>,
+        input: ::std::option::Option<crate::types::IotTopicPublishAction>,
     ) -> Self {
         self.iot_topic_publish = input;
         self
     }
     /// <p>Calls a Lambda function, passing in information about the detector model instance and the event that triggered the action.</p>
     pub fn lambda(mut self, input: crate::types::LambdaAction) -> Self {
-        self.lambda = Some(input);
+        self.lambda = ::std::option::Option::Some(input);
         self
     }
     /// <p>Calls a Lambda function, passing in information about the detector model instance and the event that triggered the action.</p>
-    pub fn set_lambda(mut self, input: std::option::Option<crate::types::LambdaAction>) -> Self {
+    pub fn set_lambda(mut self, input: ::std::option::Option<crate::types::LambdaAction>) -> Self {
         self.lambda = input;
         self
     }
     /// <p>Sends an AWS IoT Events input, passing in information about the detector model instance and the event that triggered the action.</p>
     pub fn iot_events(mut self, input: crate::types::IotEventsAction) -> Self {
-        self.iot_events = Some(input);
+        self.iot_events = ::std::option::Option::Some(input);
         self
     }
     /// <p>Sends an AWS IoT Events input, passing in information about the detector model instance and the event that triggered the action.</p>
     pub fn set_iot_events(
         mut self,
-        input: std::option::Option<crate::types::IotEventsAction>,
+        input: ::std::option::Option<crate::types::IotEventsAction>,
     ) -> Self {
         self.iot_events = input;
         self
     }
     /// <p>Sends information about the detector model instance and the event that triggered the action to an Amazon SQS queue.</p>
     pub fn sqs(mut self, input: crate::types::SqsAction) -> Self {
-        self.sqs = Some(input);
+        self.sqs = ::std::option::Option::Some(input);
         self
     }
     /// <p>Sends information about the detector model instance and the event that triggered the action to an Amazon SQS queue.</p>
-    pub fn set_sqs(mut self, input: std::option::Option<crate::types::SqsAction>) -> Self {
+    pub fn set_sqs(mut self, input: ::std::option::Option<crate::types::SqsAction>) -> Self {
         self.sqs = input;
         self
     }
     /// <p>Sends information about the detector model instance and the event that triggered the action to an Amazon Kinesis Data Firehose delivery stream.</p>
     pub fn firehose(mut self, input: crate::types::FirehoseAction) -> Self {
-        self.firehose = Some(input);
+        self.firehose = ::std::option::Option::Some(input);
         self
     }
     /// <p>Sends information about the detector model instance and the event that triggered the action to an Amazon Kinesis Data Firehose delivery stream.</p>
     pub fn set_firehose(
         mut self,
-        input: std::option::Option<crate::types::FirehoseAction>,
+        input: ::std::option::Option<crate::types::FirehoseAction>,
     ) -> Self {
         self.firehose = input;
         self
@@ -243,7 +245,7 @@ impl AlarmActionBuilder {
     /// _raw
     /// </payload-field></code>.</p>
     pub fn dynamo_db(mut self, input: crate::types::DynamoDbAction) -> Self {
-        self.dynamo_db = Some(input);
+        self.dynamo_db = ::std::option::Option::Some(input);
         self
     }
     /// <p>Defines an action to write to the Amazon DynamoDB table that you created. The standard action payload contains all the information about the detector model instance and the event that triggered the action. You can customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. One column of the DynamoDB table receives all attribute-value pairs in the payload that you specify.</p>
@@ -262,7 +264,7 @@ impl AlarmActionBuilder {
     /// </payload-field></code>.</p>
     pub fn set_dynamo_db(
         mut self,
-        input: std::option::Option<crate::types::DynamoDbAction>,
+        input: ::std::option::Option<crate::types::DynamoDbAction>,
     ) -> Self {
         self.dynamo_db = input;
         self
@@ -279,7 +281,7 @@ impl AlarmActionBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
     /// <p>The value for the <code>type</code> parameter in <code>Payload</code> must be <code>JSON</code>.</p>
     pub fn dynamo_d_bv2(mut self, input: crate::types::DynamoDBv2Action) -> Self {
-        self.dynamo_d_bv2 = Some(input);
+        self.dynamo_d_bv2 = ::std::option::Option::Some(input);
         self
     }
     /// <p>Defines an action to write to the Amazon DynamoDB table that you created. The default action payload contains all the information about the detector model instance and the event that triggered the action. You can customize the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Payload.html">payload</a>. A separate column of the DynamoDB table receives one attribute-value pair in the payload that you specify.</p>
@@ -295,7 +297,7 @@ impl AlarmActionBuilder {
     /// <p>The value for the <code>type</code> parameter in <code>Payload</code> must be <code>JSON</code>.</p>
     pub fn set_dynamo_d_bv2(
         mut self,
-        input: std::option::Option<crate::types::DynamoDBv2Action>,
+        input: ::std::option::Option<crate::types::DynamoDBv2Action>,
     ) -> Self {
         self.dynamo_d_bv2 = input;
         self
@@ -311,7 +313,7 @@ impl AlarmActionBuilder {
     /// <p>You must specify either <code>propertyAlias</code> or both <code>assetId</code> and <code>propertyId</code> to identify the target asset property in AWS IoT SiteWise.</p>
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
     pub fn iot_site_wise(mut self, input: crate::types::IotSiteWiseAction) -> Self {
-        self.iot_site_wise = Some(input);
+        self.iot_site_wise = ::std::option::Option::Some(input);
         self
     }
     /// <p>Sends information about the detector model instance and the event that triggered the action to a specified asset property in AWS IoT SiteWise.</p>
@@ -326,7 +328,7 @@ impl AlarmActionBuilder {
     /// <p>For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-expressions.html">Expressions</a> in the <i>AWS IoT Events Developer Guide</i>.</p>
     pub fn set_iot_site_wise(
         mut self,
-        input: std::option::Option<crate::types::IotSiteWiseAction>,
+        input: ::std::option::Option<crate::types::IotSiteWiseAction>,
     ) -> Self {
         self.iot_site_wise = input;
         self

@@ -2,53 +2,53 @@
 
 /// <p>The result of a <code>Search</code> request. Contains the documents that match the specified search criteria and any requested fields, highlights, and facet information.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct SearchOutput {
     /// <p>The status information returned for the search request.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<crate::types::SearchStatus>,
+    pub status: ::std::option::Option<crate::types::SearchStatus>,
     /// <p>The documents that match the search criteria.</p>
     #[doc(hidden)]
-    pub hits: std::option::Option<crate::types::Hits>,
+    pub hits: ::std::option::Option<crate::types::Hits>,
     /// <p>The requested facet information.</p>
     #[doc(hidden)]
-    pub facets: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::BucketInfo>,
+    pub facets: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::BucketInfo>,
     >,
     /// <p>The requested field statistics information.</p>
     #[doc(hidden)]
-    pub stats: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::FieldStats>,
+    pub stats: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::FieldStats>,
     >,
     _request_id: Option<String>,
 }
 impl SearchOutput {
     /// <p>The status information returned for the search request.</p>
-    pub fn status(&self) -> std::option::Option<&crate::types::SearchStatus> {
+    pub fn status(&self) -> ::std::option::Option<&crate::types::SearchStatus> {
         self.status.as_ref()
     }
     /// <p>The documents that match the search criteria.</p>
-    pub fn hits(&self) -> std::option::Option<&crate::types::Hits> {
+    pub fn hits(&self) -> ::std::option::Option<&crate::types::Hits> {
         self.hits.as_ref()
     }
     /// <p>The requested facet information.</p>
     pub fn facets(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::types::BucketInfo>,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, crate::types::BucketInfo>,
     > {
         self.facets.as_ref()
     }
     /// <p>The requested field statistics information.</p>
     pub fn stats(
         &self,
-    ) -> std::option::Option<
-        &std::collections::HashMap<std::string::String, crate::types::FieldStats>,
+    ) -> ::std::option::Option<
+        &::std::collections::HashMap<::std::string::String, crate::types::FieldStats>,
     > {
         self.stats.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for SearchOutput {
+impl ::aws_http::request_id::RequestId for SearchOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -62,36 +62,38 @@ impl SearchOutput {
 
 /// A builder for [`SearchOutput`](crate::operation::search::SearchOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SearchOutputBuilder {
-    pub(crate) status: std::option::Option<crate::types::SearchStatus>,
-    pub(crate) hits: std::option::Option<crate::types::Hits>,
-    pub(crate) facets: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::BucketInfo>,
+    pub(crate) status: ::std::option::Option<crate::types::SearchStatus>,
+    pub(crate) hits: ::std::option::Option<crate::types::Hits>,
+    pub(crate) facets: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::BucketInfo>,
     >,
-    pub(crate) stats: std::option::Option<
-        std::collections::HashMap<std::string::String, crate::types::FieldStats>,
+    pub(crate) stats: ::std::option::Option<
+        ::std::collections::HashMap<::std::string::String, crate::types::FieldStats>,
     >,
     _request_id: Option<String>,
 }
 impl SearchOutputBuilder {
     /// <p>The status information returned for the search request.</p>
     pub fn status(mut self, input: crate::types::SearchStatus) -> Self {
-        self.status = Some(input);
+        self.status = ::std::option::Option::Some(input);
         self
     }
     /// <p>The status information returned for the search request.</p>
-    pub fn set_status(mut self, input: std::option::Option<crate::types::SearchStatus>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<crate::types::SearchStatus>) -> Self {
         self.status = input;
         self
     }
     /// <p>The documents that match the search criteria.</p>
     pub fn hits(mut self, input: crate::types::Hits) -> Self {
-        self.hits = Some(input);
+        self.hits = ::std::option::Option::Some(input);
         self
     }
     /// <p>The documents that match the search criteria.</p>
-    pub fn set_hits(mut self, input: std::option::Option<crate::types::Hits>) -> Self {
+    pub fn set_hits(mut self, input: ::std::option::Option<crate::types::Hits>) -> Self {
         self.hits = input;
         self
     }
@@ -102,19 +104,19 @@ impl SearchOutputBuilder {
     /// <p>The requested facet information.</p>
     pub fn facets(
         mut self,
-        k: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
         v: crate::types::BucketInfo,
     ) -> Self {
         let mut hash_map = self.facets.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.facets = Some(hash_map);
+        self.facets = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The requested facet information.</p>
     pub fn set_facets(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::BucketInfo>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, crate::types::BucketInfo>,
         >,
     ) -> Self {
         self.facets = input;
@@ -125,17 +127,21 @@ impl SearchOutputBuilder {
     /// To override the contents of this collection use [`set_stats`](Self::set_stats).
     ///
     /// <p>The requested field statistics information.</p>
-    pub fn stats(mut self, k: impl Into<std::string::String>, v: crate::types::FieldStats) -> Self {
+    pub fn stats(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: crate::types::FieldStats,
+    ) -> Self {
         let mut hash_map = self.stats.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.stats = Some(hash_map);
+        self.stats = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>The requested field statistics information.</p>
     pub fn set_stats(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, crate::types::FieldStats>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, crate::types::FieldStats>,
         >,
     ) -> Self {
         self.stats = input;

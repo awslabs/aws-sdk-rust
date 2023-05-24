@@ -2,64 +2,64 @@
 
 /// <p>The representation of an WorkMail user.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct User {
     /// <p>The identifier of the user.</p>
     #[doc(hidden)]
-    pub id: std::option::Option<std::string::String>,
+    pub id: ::std::option::Option<::std::string::String>,
     /// <p>The email of the user.</p>
     #[doc(hidden)]
-    pub email: std::option::Option<std::string::String>,
+    pub email: ::std::option::Option<::std::string::String>,
     /// <p>The name of the user.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>The display name of the user.</p>
     #[doc(hidden)]
-    pub display_name: std::option::Option<std::string::String>,
+    pub display_name: ::std::option::Option<::std::string::String>,
     /// <p>The state of the user, which can be ENABLED, DISABLED, or DELETED.</p>
     #[doc(hidden)]
-    pub state: std::option::Option<crate::types::EntityState>,
+    pub state: ::std::option::Option<crate::types::EntityState>,
     /// <p>The role of the user.</p>
     #[doc(hidden)]
-    pub user_role: std::option::Option<crate::types::UserRole>,
+    pub user_role: ::std::option::Option<crate::types::UserRole>,
     /// <p>The date indicating when the user was enabled for WorkMail use.</p>
     #[doc(hidden)]
-    pub enabled_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub enabled_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date indicating when the user was disabled from WorkMail use.</p>
     #[doc(hidden)]
-    pub disabled_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub disabled_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl User {
     /// <p>The identifier of the user.</p>
-    pub fn id(&self) -> std::option::Option<&str> {
+    pub fn id(&self) -> ::std::option::Option<&str> {
         self.id.as_deref()
     }
     /// <p>The email of the user.</p>
-    pub fn email(&self) -> std::option::Option<&str> {
+    pub fn email(&self) -> ::std::option::Option<&str> {
         self.email.as_deref()
     }
     /// <p>The name of the user.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>The display name of the user.</p>
-    pub fn display_name(&self) -> std::option::Option<&str> {
+    pub fn display_name(&self) -> ::std::option::Option<&str> {
         self.display_name.as_deref()
     }
     /// <p>The state of the user, which can be ENABLED, DISABLED, or DELETED.</p>
-    pub fn state(&self) -> std::option::Option<&crate::types::EntityState> {
+    pub fn state(&self) -> ::std::option::Option<&crate::types::EntityState> {
         self.state.as_ref()
     }
     /// <p>The role of the user.</p>
-    pub fn user_role(&self) -> std::option::Option<&crate::types::UserRole> {
+    pub fn user_role(&self) -> ::std::option::Option<&crate::types::UserRole> {
         self.user_role.as_ref()
     }
     /// <p>The date indicating when the user was enabled for WorkMail use.</p>
-    pub fn enabled_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn enabled_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.enabled_date.as_ref()
     }
     /// <p>The date indicating when the user was disabled from WorkMail use.</p>
-    pub fn disabled_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn disabled_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.disabled_date.as_ref()
     }
 }
@@ -72,100 +72,102 @@ impl User {
 
 /// A builder for [`User`](crate::types::User).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct UserBuilder {
-    pub(crate) id: std::option::Option<std::string::String>,
-    pub(crate) email: std::option::Option<std::string::String>,
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) display_name: std::option::Option<std::string::String>,
-    pub(crate) state: std::option::Option<crate::types::EntityState>,
-    pub(crate) user_role: std::option::Option<crate::types::UserRole>,
-    pub(crate) enabled_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) disabled_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) id: ::std::option::Option<::std::string::String>,
+    pub(crate) email: ::std::option::Option<::std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) display_name: ::std::option::Option<::std::string::String>,
+    pub(crate) state: ::std::option::Option<crate::types::EntityState>,
+    pub(crate) user_role: ::std::option::Option<crate::types::UserRole>,
+    pub(crate) enabled_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) disabled_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl UserBuilder {
     /// <p>The identifier of the user.</p>
-    pub fn id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.id = Some(input.into());
+    pub fn id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the user.</p>
-    pub fn set_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.id = input;
         self
     }
     /// <p>The email of the user.</p>
-    pub fn email(mut self, input: impl Into<std::string::String>) -> Self {
-        self.email = Some(input.into());
+    pub fn email(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.email = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The email of the user.</p>
-    pub fn set_email(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_email(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.email = input;
         self
     }
     /// <p>The name of the user.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the user.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>The display name of the user.</p>
-    pub fn display_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.display_name = Some(input.into());
+    pub fn display_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.display_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The display name of the user.</p>
-    pub fn set_display_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_display_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.display_name = input;
         self
     }
     /// <p>The state of the user, which can be ENABLED, DISABLED, or DELETED.</p>
     pub fn state(mut self, input: crate::types::EntityState) -> Self {
-        self.state = Some(input);
+        self.state = ::std::option::Option::Some(input);
         self
     }
     /// <p>The state of the user, which can be ENABLED, DISABLED, or DELETED.</p>
-    pub fn set_state(mut self, input: std::option::Option<crate::types::EntityState>) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<crate::types::EntityState>) -> Self {
         self.state = input;
         self
     }
     /// <p>The role of the user.</p>
     pub fn user_role(mut self, input: crate::types::UserRole) -> Self {
-        self.user_role = Some(input);
+        self.user_role = ::std::option::Option::Some(input);
         self
     }
     /// <p>The role of the user.</p>
-    pub fn set_user_role(mut self, input: std::option::Option<crate::types::UserRole>) -> Self {
+    pub fn set_user_role(mut self, input: ::std::option::Option<crate::types::UserRole>) -> Self {
         self.user_role = input;
         self
     }
     /// <p>The date indicating when the user was enabled for WorkMail use.</p>
-    pub fn enabled_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.enabled_date = Some(input);
+    pub fn enabled_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.enabled_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date indicating when the user was enabled for WorkMail use.</p>
     pub fn set_enabled_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.enabled_date = input;
         self
     }
     /// <p>The date indicating when the user was disabled from WorkMail use.</p>
-    pub fn disabled_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.disabled_date = Some(input);
+    pub fn disabled_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.disabled_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date indicating when the user was disabled from WorkMail use.</p>
     pub fn set_disabled_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.disabled_date = input;
         self

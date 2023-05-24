@@ -2,29 +2,29 @@
 
 /// <p>The maximum allowed cumulative resources for an application. No new resources will be created once the limit is hit.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct MaximumAllowedResources {
     /// <p>The maximum allowed CPU for an application.</p>
     #[doc(hidden)]
-    pub cpu: std::option::Option<std::string::String>,
+    pub cpu: ::std::option::Option<::std::string::String>,
     /// <p>The maximum allowed resources for an application.</p>
     #[doc(hidden)]
-    pub memory: std::option::Option<std::string::String>,
+    pub memory: ::std::option::Option<::std::string::String>,
     /// <p>The maximum allowed disk for an application.</p>
     #[doc(hidden)]
-    pub disk: std::option::Option<std::string::String>,
+    pub disk: ::std::option::Option<::std::string::String>,
 }
 impl MaximumAllowedResources {
     /// <p>The maximum allowed CPU for an application.</p>
-    pub fn cpu(&self) -> std::option::Option<&str> {
+    pub fn cpu(&self) -> ::std::option::Option<&str> {
         self.cpu.as_deref()
     }
     /// <p>The maximum allowed resources for an application.</p>
-    pub fn memory(&self) -> std::option::Option<&str> {
+    pub fn memory(&self) -> ::std::option::Option<&str> {
         self.memory.as_deref()
     }
     /// <p>The maximum allowed disk for an application.</p>
-    pub fn disk(&self) -> std::option::Option<&str> {
+    pub fn disk(&self) -> ::std::option::Option<&str> {
         self.disk.as_deref()
     }
 }
@@ -37,40 +37,42 @@ impl MaximumAllowedResources {
 
 /// A builder for [`MaximumAllowedResources`](crate::types::MaximumAllowedResources).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct MaximumAllowedResourcesBuilder {
-    pub(crate) cpu: std::option::Option<std::string::String>,
-    pub(crate) memory: std::option::Option<std::string::String>,
-    pub(crate) disk: std::option::Option<std::string::String>,
+    pub(crate) cpu: ::std::option::Option<::std::string::String>,
+    pub(crate) memory: ::std::option::Option<::std::string::String>,
+    pub(crate) disk: ::std::option::Option<::std::string::String>,
 }
 impl MaximumAllowedResourcesBuilder {
     /// <p>The maximum allowed CPU for an application.</p>
-    pub fn cpu(mut self, input: impl Into<std::string::String>) -> Self {
-        self.cpu = Some(input.into());
+    pub fn cpu(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.cpu = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The maximum allowed CPU for an application.</p>
-    pub fn set_cpu(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_cpu(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.cpu = input;
         self
     }
     /// <p>The maximum allowed resources for an application.</p>
-    pub fn memory(mut self, input: impl Into<std::string::String>) -> Self {
-        self.memory = Some(input.into());
+    pub fn memory(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.memory = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The maximum allowed resources for an application.</p>
-    pub fn set_memory(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_memory(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.memory = input;
         self
     }
     /// <p>The maximum allowed disk for an application.</p>
-    pub fn disk(mut self, input: impl Into<std::string::String>) -> Self {
-        self.disk = Some(input.into());
+    pub fn disk(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.disk = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The maximum allowed disk for an application.</p>
-    pub fn set_disk(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_disk(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.disk = input;
         self
     }

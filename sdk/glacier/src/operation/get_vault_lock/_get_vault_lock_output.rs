@@ -2,41 +2,41 @@
 
 /// <p>Contains the Amazon S3 Glacier response to your request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct GetVaultLockOutput {
     /// <p>The vault lock policy as a JSON string, which uses "\" as an escape character.</p>
     #[doc(hidden)]
-    pub policy: std::option::Option<std::string::String>,
+    pub policy: ::std::option::Option<::std::string::String>,
     /// <p>The state of the vault lock. <code>InProgress</code> or <code>Locked</code>.</p>
     #[doc(hidden)]
-    pub state: std::option::Option<std::string::String>,
+    pub state: ::std::option::Option<::std::string::String>,
     /// <p>The UTC date and time at which the lock ID expires. This value can be <code>null</code> if the vault lock is in a <code>Locked</code> state.</p>
     #[doc(hidden)]
-    pub expiration_date: std::option::Option<std::string::String>,
+    pub expiration_date: ::std::option::Option<::std::string::String>,
     /// <p>The UTC date and time at which the vault lock was put into the <code>InProgress</code> state.</p>
     #[doc(hidden)]
-    pub creation_date: std::option::Option<std::string::String>,
+    pub creation_date: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetVaultLockOutput {
     /// <p>The vault lock policy as a JSON string, which uses "\" as an escape character.</p>
-    pub fn policy(&self) -> std::option::Option<&str> {
+    pub fn policy(&self) -> ::std::option::Option<&str> {
         self.policy.as_deref()
     }
     /// <p>The state of the vault lock. <code>InProgress</code> or <code>Locked</code>.</p>
-    pub fn state(&self) -> std::option::Option<&str> {
+    pub fn state(&self) -> ::std::option::Option<&str> {
         self.state.as_deref()
     }
     /// <p>The UTC date and time at which the lock ID expires. This value can be <code>null</code> if the vault lock is in a <code>Locked</code> state.</p>
-    pub fn expiration_date(&self) -> std::option::Option<&str> {
+    pub fn expiration_date(&self) -> ::std::option::Option<&str> {
         self.expiration_date.as_deref()
     }
     /// <p>The UTC date and time at which the vault lock was put into the <code>InProgress</code> state.</p>
-    pub fn creation_date(&self) -> std::option::Option<&str> {
+    pub fn creation_date(&self) -> ::std::option::Option<&str> {
         self.creation_date.as_deref()
     }
 }
-impl aws_http::request_id::RequestId for GetVaultLockOutput {
+impl ::aws_http::request_id::RequestId for GetVaultLockOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -50,52 +50,66 @@ impl GetVaultLockOutput {
 
 /// A builder for [`GetVaultLockOutput`](crate::operation::get_vault_lock::GetVaultLockOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct GetVaultLockOutputBuilder {
-    pub(crate) policy: std::option::Option<std::string::String>,
-    pub(crate) state: std::option::Option<std::string::String>,
-    pub(crate) expiration_date: std::option::Option<std::string::String>,
-    pub(crate) creation_date: std::option::Option<std::string::String>,
+    pub(crate) policy: ::std::option::Option<::std::string::String>,
+    pub(crate) state: ::std::option::Option<::std::string::String>,
+    pub(crate) expiration_date: ::std::option::Option<::std::string::String>,
+    pub(crate) creation_date: ::std::option::Option<::std::string::String>,
     _request_id: Option<String>,
 }
 impl GetVaultLockOutputBuilder {
     /// <p>The vault lock policy as a JSON string, which uses "\" as an escape character.</p>
-    pub fn policy(mut self, input: impl Into<std::string::String>) -> Self {
-        self.policy = Some(input.into());
+    pub fn policy(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.policy = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The vault lock policy as a JSON string, which uses "\" as an escape character.</p>
-    pub fn set_policy(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_policy(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.policy = input;
         self
     }
     /// <p>The state of the vault lock. <code>InProgress</code> or <code>Locked</code>.</p>
-    pub fn state(mut self, input: impl Into<std::string::String>) -> Self {
-        self.state = Some(input.into());
+    pub fn state(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.state = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The state of the vault lock. <code>InProgress</code> or <code>Locked</code>.</p>
-    pub fn set_state(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_state(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.state = input;
         self
     }
     /// <p>The UTC date and time at which the lock ID expires. This value can be <code>null</code> if the vault lock is in a <code>Locked</code> state.</p>
-    pub fn expiration_date(mut self, input: impl Into<std::string::String>) -> Self {
-        self.expiration_date = Some(input.into());
+    pub fn expiration_date(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.expiration_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The UTC date and time at which the lock ID expires. This value can be <code>null</code> if the vault lock is in a <code>Locked</code> state.</p>
-    pub fn set_expiration_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_expiration_date(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.expiration_date = input;
         self
     }
     /// <p>The UTC date and time at which the vault lock was put into the <code>InProgress</code> state.</p>
-    pub fn creation_date(mut self, input: impl Into<std::string::String>) -> Self {
-        self.creation_date = Some(input.into());
+    pub fn creation_date(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.creation_date = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The UTC date and time at which the vault lock was put into the <code>InProgress</code> state.</p>
-    pub fn set_creation_date(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_creation_date(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.creation_date = input;
         self
     }

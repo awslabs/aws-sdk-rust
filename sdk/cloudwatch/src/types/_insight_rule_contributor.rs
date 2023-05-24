@@ -4,32 +4,32 @@
 /// <p>If the rule contains a single key, then each unique contributor is each unique value for this key.</p>
 /// <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetInsightRuleReport.html">GetInsightRuleReport</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct InsightRuleContributor {
     /// <p>One of the log entry field keywords that is used to define contributors for this rule.</p>
     #[doc(hidden)]
-    pub keys: std::option::Option<std::vec::Vec<std::string::String>>,
+    pub keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     /// <p>An approximation of the aggregate value that comes from this contributor.</p>
     #[doc(hidden)]
-    pub approximate_aggregate_value: std::option::Option<f64>,
+    pub approximate_aggregate_value: ::std::option::Option<f64>,
     /// <p>An array of the data points where this contributor is present. Only the data points when this contributor appeared are included in the array.</p>
     #[doc(hidden)]
     pub datapoints:
-        std::option::Option<std::vec::Vec<crate::types::InsightRuleContributorDatapoint>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::InsightRuleContributorDatapoint>>,
 }
 impl InsightRuleContributor {
     /// <p>One of the log entry field keywords that is used to define contributors for this rule.</p>
-    pub fn keys(&self) -> std::option::Option<&[std::string::String]> {
+    pub fn keys(&self) -> ::std::option::Option<&[::std::string::String]> {
         self.keys.as_deref()
     }
     /// <p>An approximation of the aggregate value that comes from this contributor.</p>
-    pub fn approximate_aggregate_value(&self) -> std::option::Option<f64> {
+    pub fn approximate_aggregate_value(&self) -> ::std::option::Option<f64> {
         self.approximate_aggregate_value
     }
     /// <p>An array of the data points where this contributor is present. Only the data points when this contributor appeared are included in the array.</p>
     pub fn datapoints(
         &self,
-    ) -> std::option::Option<&[crate::types::InsightRuleContributorDatapoint]> {
+    ) -> ::std::option::Option<&[crate::types::InsightRuleContributorDatapoint]> {
         self.datapoints.as_deref()
     }
 }
@@ -42,12 +42,14 @@ impl InsightRuleContributor {
 
 /// A builder for [`InsightRuleContributor`](crate::types::InsightRuleContributor).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct InsightRuleContributorBuilder {
-    pub(crate) keys: std::option::Option<std::vec::Vec<std::string::String>>,
-    pub(crate) approximate_aggregate_value: std::option::Option<f64>,
+    pub(crate) keys: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
+    pub(crate) approximate_aggregate_value: ::std::option::Option<f64>,
     pub(crate) datapoints:
-        std::option::Option<std::vec::Vec<crate::types::InsightRuleContributorDatapoint>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::InsightRuleContributorDatapoint>>,
 }
 impl InsightRuleContributorBuilder {
     /// Appends an item to `keys`.
@@ -55,27 +57,27 @@ impl InsightRuleContributorBuilder {
     /// To override the contents of this collection use [`set_keys`](Self::set_keys).
     ///
     /// <p>One of the log entry field keywords that is used to define contributors for this rule.</p>
-    pub fn keys(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn keys(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         let mut v = self.keys.unwrap_or_default();
         v.push(input.into());
-        self.keys = Some(v);
+        self.keys = ::std::option::Option::Some(v);
         self
     }
     /// <p>One of the log entry field keywords that is used to define contributors for this rule.</p>
     pub fn set_keys(
         mut self,
-        input: std::option::Option<std::vec::Vec<std::string::String>>,
+        input: ::std::option::Option<::std::vec::Vec<::std::string::String>>,
     ) -> Self {
         self.keys = input;
         self
     }
     /// <p>An approximation of the aggregate value that comes from this contributor.</p>
     pub fn approximate_aggregate_value(mut self, input: f64) -> Self {
-        self.approximate_aggregate_value = Some(input);
+        self.approximate_aggregate_value = ::std::option::Option::Some(input);
         self
     }
     /// <p>An approximation of the aggregate value that comes from this contributor.</p>
-    pub fn set_approximate_aggregate_value(mut self, input: std::option::Option<f64>) -> Self {
+    pub fn set_approximate_aggregate_value(mut self, input: ::std::option::Option<f64>) -> Self {
         self.approximate_aggregate_value = input;
         self
     }
@@ -87,13 +89,15 @@ impl InsightRuleContributorBuilder {
     pub fn datapoints(mut self, input: crate::types::InsightRuleContributorDatapoint) -> Self {
         let mut v = self.datapoints.unwrap_or_default();
         v.push(input);
-        self.datapoints = Some(v);
+        self.datapoints = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of the data points where this contributor is present. Only the data points when this contributor appeared are included in the array.</p>
     pub fn set_datapoints(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::InsightRuleContributorDatapoint>>,
+        input: ::std::option::Option<
+            ::std::vec::Vec<crate::types::InsightRuleContributorDatapoint>,
+        >,
     ) -> Self {
         self.datapoints = input;
         self

@@ -2,31 +2,31 @@
 
 /// <p>Returns information about the location of a change or comment in the comparison between two commits or a pull request.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Location {
     /// <p>The name of the file being compared, including its extension and subdirectory, if any.</p>
     #[doc(hidden)]
-    pub file_path: std::option::Option<std::string::String>,
+    pub file_path: ::std::option::Option<::std::string::String>,
     /// <p>The position of a change in a compared file, in line number format.</p>
     #[doc(hidden)]
-    pub file_position: std::option::Option<i64>,
+    pub file_position: ::std::option::Option<i64>,
     /// <p>In a comparison of commits or a pull request, whether the change is in the before or after of that comparison.</p>
     #[doc(hidden)]
-    pub relative_file_version: std::option::Option<crate::types::RelativeFileVersionEnum>,
+    pub relative_file_version: ::std::option::Option<crate::types::RelativeFileVersionEnum>,
 }
 impl Location {
     /// <p>The name of the file being compared, including its extension and subdirectory, if any.</p>
-    pub fn file_path(&self) -> std::option::Option<&str> {
+    pub fn file_path(&self) -> ::std::option::Option<&str> {
         self.file_path.as_deref()
     }
     /// <p>The position of a change in a compared file, in line number format.</p>
-    pub fn file_position(&self) -> std::option::Option<i64> {
+    pub fn file_position(&self) -> ::std::option::Option<i64> {
         self.file_position
     }
     /// <p>In a comparison of commits or a pull request, whether the change is in the before or after of that comparison.</p>
     pub fn relative_file_version(
         &self,
-    ) -> std::option::Option<&crate::types::RelativeFileVersionEnum> {
+    ) -> ::std::option::Option<&crate::types::RelativeFileVersionEnum> {
         self.relative_file_version.as_ref()
     }
 }
@@ -39,42 +39,44 @@ impl Location {
 
 /// A builder for [`Location`](crate::types::Location).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LocationBuilder {
-    pub(crate) file_path: std::option::Option<std::string::String>,
-    pub(crate) file_position: std::option::Option<i64>,
-    pub(crate) relative_file_version: std::option::Option<crate::types::RelativeFileVersionEnum>,
+    pub(crate) file_path: ::std::option::Option<::std::string::String>,
+    pub(crate) file_position: ::std::option::Option<i64>,
+    pub(crate) relative_file_version: ::std::option::Option<crate::types::RelativeFileVersionEnum>,
 }
 impl LocationBuilder {
     /// <p>The name of the file being compared, including its extension and subdirectory, if any.</p>
-    pub fn file_path(mut self, input: impl Into<std::string::String>) -> Self {
-        self.file_path = Some(input.into());
+    pub fn file_path(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.file_path = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the file being compared, including its extension and subdirectory, if any.</p>
-    pub fn set_file_path(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_file_path(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.file_path = input;
         self
     }
     /// <p>The position of a change in a compared file, in line number format.</p>
     pub fn file_position(mut self, input: i64) -> Self {
-        self.file_position = Some(input);
+        self.file_position = ::std::option::Option::Some(input);
         self
     }
     /// <p>The position of a change in a compared file, in line number format.</p>
-    pub fn set_file_position(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_file_position(mut self, input: ::std::option::Option<i64>) -> Self {
         self.file_position = input;
         self
     }
     /// <p>In a comparison of commits or a pull request, whether the change is in the before or after of that comparison.</p>
     pub fn relative_file_version(mut self, input: crate::types::RelativeFileVersionEnum) -> Self {
-        self.relative_file_version = Some(input);
+        self.relative_file_version = ::std::option::Option::Some(input);
         self
     }
     /// <p>In a comparison of commits or a pull request, whether the change is in the before or after of that comparison.</p>
     pub fn set_relative_file_version(
         mut self,
-        input: std::option::Option<crate::types::RelativeFileVersionEnum>,
+        input: ::std::option::Option<crate::types::RelativeFileVersionEnum>,
     ) -> Self {
         self.relative_file_version = input;
         self

@@ -2,22 +2,22 @@
 
 /// <p>Container for information about an OpenSearch Ingestion blueprint.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct PipelineBlueprint {
     /// <p>The name of the blueprint.</p>
     #[doc(hidden)]
-    pub blueprint_name: std::option::Option<std::string::String>,
+    pub blueprint_name: ::std::option::Option<::std::string::String>,
     /// <p>The YAML configuration of the blueprint.</p>
     #[doc(hidden)]
-    pub pipeline_configuration_body: std::option::Option<std::string::String>,
+    pub pipeline_configuration_body: ::std::option::Option<::std::string::String>,
 }
 impl PipelineBlueprint {
     /// <p>The name of the blueprint.</p>
-    pub fn blueprint_name(&self) -> std::option::Option<&str> {
+    pub fn blueprint_name(&self) -> ::std::option::Option<&str> {
         self.blueprint_name.as_deref()
     }
     /// <p>The YAML configuration of the blueprint.</p>
-    pub fn pipeline_configuration_body(&self) -> std::option::Option<&str> {
+    pub fn pipeline_configuration_body(&self) -> ::std::option::Option<&str> {
         self.pipeline_configuration_body.as_deref()
     }
 }
@@ -30,31 +30,42 @@ impl PipelineBlueprint {
 
 /// A builder for [`PipelineBlueprint`](crate::types::PipelineBlueprint).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct PipelineBlueprintBuilder {
-    pub(crate) blueprint_name: std::option::Option<std::string::String>,
-    pub(crate) pipeline_configuration_body: std::option::Option<std::string::String>,
+    pub(crate) blueprint_name: ::std::option::Option<::std::string::String>,
+    pub(crate) pipeline_configuration_body: ::std::option::Option<::std::string::String>,
 }
 impl PipelineBlueprintBuilder {
     /// <p>The name of the blueprint.</p>
-    pub fn blueprint_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.blueprint_name = Some(input.into());
+    pub fn blueprint_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.blueprint_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the blueprint.</p>
-    pub fn set_blueprint_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_blueprint_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.blueprint_name = input;
         self
     }
     /// <p>The YAML configuration of the blueprint.</p>
-    pub fn pipeline_configuration_body(mut self, input: impl Into<std::string::String>) -> Self {
-        self.pipeline_configuration_body = Some(input.into());
+    pub fn pipeline_configuration_body(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.pipeline_configuration_body = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The YAML configuration of the blueprint.</p>
     pub fn set_pipeline_configuration_body(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.pipeline_configuration_body = input;
         self

@@ -4,29 +4,29 @@
 /// <p> <code>LoggingInfo</code> has been deprecated. To specify an Amazon Simple Storage Service (Amazon S3) bucket to contain logs, instead use the <code>OutputS3BucketName</code> and <code>OutputS3KeyPrefix</code> options in the <code>TaskInvocationParameters</code> structure. For information about how Amazon Web Services Systems Manager handles these options for the supported maintenance window task types, see <code>MaintenanceWindowTaskInvocationParameters</code>.</p>
 /// </note>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct LoggingInfo {
     /// <p>The name of an S3 bucket where execution logs are stored.</p>
     #[doc(hidden)]
-    pub s3_bucket_name: std::option::Option<std::string::String>,
+    pub s3_bucket_name: ::std::option::Option<::std::string::String>,
     /// <p>(Optional) The S3 bucket subfolder. </p>
     #[doc(hidden)]
-    pub s3_key_prefix: std::option::Option<std::string::String>,
+    pub s3_key_prefix: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Web Services Region where the S3 bucket is located.</p>
     #[doc(hidden)]
-    pub s3_region: std::option::Option<std::string::String>,
+    pub s3_region: ::std::option::Option<::std::string::String>,
 }
 impl LoggingInfo {
     /// <p>The name of an S3 bucket where execution logs are stored.</p>
-    pub fn s3_bucket_name(&self) -> std::option::Option<&str> {
+    pub fn s3_bucket_name(&self) -> ::std::option::Option<&str> {
         self.s3_bucket_name.as_deref()
     }
     /// <p>(Optional) The S3 bucket subfolder. </p>
-    pub fn s3_key_prefix(&self) -> std::option::Option<&str> {
+    pub fn s3_key_prefix(&self) -> ::std::option::Option<&str> {
         self.s3_key_prefix.as_deref()
     }
     /// <p>The Amazon Web Services Region where the S3 bucket is located.</p>
-    pub fn s3_region(&self) -> std::option::Option<&str> {
+    pub fn s3_region(&self) -> ::std::option::Option<&str> {
         self.s3_region.as_deref()
     }
 }
@@ -39,40 +39,54 @@ impl LoggingInfo {
 
 /// A builder for [`LoggingInfo`](crate::types::LoggingInfo).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct LoggingInfoBuilder {
-    pub(crate) s3_bucket_name: std::option::Option<std::string::String>,
-    pub(crate) s3_key_prefix: std::option::Option<std::string::String>,
-    pub(crate) s3_region: std::option::Option<std::string::String>,
+    pub(crate) s3_bucket_name: ::std::option::Option<::std::string::String>,
+    pub(crate) s3_key_prefix: ::std::option::Option<::std::string::String>,
+    pub(crate) s3_region: ::std::option::Option<::std::string::String>,
 }
 impl LoggingInfoBuilder {
     /// <p>The name of an S3 bucket where execution logs are stored.</p>
-    pub fn s3_bucket_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.s3_bucket_name = Some(input.into());
+    pub fn s3_bucket_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.s3_bucket_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of an S3 bucket where execution logs are stored.</p>
-    pub fn set_s3_bucket_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_s3_bucket_name(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.s3_bucket_name = input;
         self
     }
     /// <p>(Optional) The S3 bucket subfolder. </p>
-    pub fn s3_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
-        self.s3_key_prefix = Some(input.into());
+    pub fn s3_key_prefix(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.s3_key_prefix = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>(Optional) The S3 bucket subfolder. </p>
-    pub fn set_s3_key_prefix(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_s3_key_prefix(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.s3_key_prefix = input;
         self
     }
     /// <p>The Amazon Web Services Region where the S3 bucket is located.</p>
-    pub fn s3_region(mut self, input: impl Into<std::string::String>) -> Self {
-        self.s3_region = Some(input.into());
+    pub fn s3_region(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.s3_region = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Web Services Region where the S3 bucket is located.</p>
-    pub fn set_s3_region(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_s3_region(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.s3_region = input;
         self
     }

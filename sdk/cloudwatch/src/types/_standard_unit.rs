@@ -63,13 +63,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum StandardUnit {
     #[allow(missing_docs)] // documentation missing in model
@@ -129,7 +129,7 @@ pub enum StandardUnit {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for StandardUnit {
+impl ::std::convert::From<&str> for StandardUnit {
     fn from(s: &str) -> Self {
         match s {
             "Bits" => StandardUnit::Bits,
@@ -165,11 +165,11 @@ impl std::convert::From<&str> for StandardUnit {
         }
     }
 }
-impl std::str::FromStr for StandardUnit {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for StandardUnit {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(StandardUnit::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(StandardUnit::from(s))
     }
 }
 impl StandardUnit {
@@ -239,7 +239,7 @@ impl StandardUnit {
         ]
     }
 }
-impl AsRef<str> for StandardUnit {
+impl ::std::convert::AsRef<str> for StandardUnit {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

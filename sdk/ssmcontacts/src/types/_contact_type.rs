@@ -39,13 +39,13 @@
 #[allow(missing_docs)] // documentation missing in model
 #[non_exhaustive]
 #[derive(
-    std::clone::Clone,
-    std::cmp::Eq,
-    std::cmp::Ord,
-    std::cmp::PartialEq,
-    std::cmp::PartialOrd,
-    std::fmt::Debug,
-    std::hash::Hash,
+    ::std::clone::Clone,
+    ::std::cmp::Eq,
+    ::std::cmp::Ord,
+    ::std::cmp::PartialEq,
+    ::std::cmp::PartialOrd,
+    ::std::fmt::Debug,
+    ::std::hash::Hash,
 )]
 pub enum ContactType {
     #[allow(missing_docs)] // documentation missing in model
@@ -57,7 +57,7 @@ pub enum ContactType {
     /// `Unknown` contains new variants that have been added since this code was generated.
     Unknown(crate::primitives::UnknownVariantValue),
 }
-impl std::convert::From<&str> for ContactType {
+impl ::std::convert::From<&str> for ContactType {
     fn from(s: &str) -> Self {
         match s {
             "ESCALATION" => ContactType::Escalation,
@@ -67,11 +67,11 @@ impl std::convert::From<&str> for ContactType {
         }
     }
 }
-impl std::str::FromStr for ContactType {
-    type Err = std::convert::Infallible;
+impl ::std::str::FromStr for ContactType {
+    type Err = ::std::convert::Infallible;
 
-    fn from_str(s: &str) -> std::result::Result<Self, Self::Err> {
-        Ok(ContactType::from(s))
+    fn from_str(s: &str) -> ::std::result::Result<Self, <Self as ::std::str::FromStr>::Err> {
+        ::std::result::Result::Ok(ContactType::from(s))
     }
 }
 impl ContactType {
@@ -89,7 +89,7 @@ impl ContactType {
         &["ESCALATION", "ONCALL_SCHEDULE", "PERSONAL"]
     }
 }
-impl AsRef<str> for ContactType {
+impl ::std::convert::AsRef<str> for ContactType {
     fn as_ref(&self) -> &str {
         self.as_str()
     }

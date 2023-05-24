@@ -2,29 +2,30 @@
 
 /// <p>This data type is used as a response element in the <code>ListEventSubscriptions</code> action.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Subscription {
     /// <p>The ARN of the assessment template that is used during the event for which the SNS notification is sent.</p>
     #[doc(hidden)]
-    pub resource_arn: std::option::Option<std::string::String>,
+    pub resource_arn: ::std::option::Option<::std::string::String>,
     /// <p>The ARN of the Amazon Simple Notification Service (SNS) topic to which the SNS notifications are sent.</p>
     #[doc(hidden)]
-    pub topic_arn: std::option::Option<std::string::String>,
+    pub topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>The list of existing event subscriptions.</p>
     #[doc(hidden)]
-    pub event_subscriptions: std::option::Option<std::vec::Vec<crate::types::EventSubscription>>,
+    pub event_subscriptions:
+        ::std::option::Option<::std::vec::Vec<crate::types::EventSubscription>>,
 }
 impl Subscription {
     /// <p>The ARN of the assessment template that is used during the event for which the SNS notification is sent.</p>
-    pub fn resource_arn(&self) -> std::option::Option<&str> {
+    pub fn resource_arn(&self) -> ::std::option::Option<&str> {
         self.resource_arn.as_deref()
     }
     /// <p>The ARN of the Amazon Simple Notification Service (SNS) topic to which the SNS notifications are sent.</p>
-    pub fn topic_arn(&self) -> std::option::Option<&str> {
+    pub fn topic_arn(&self) -> ::std::option::Option<&str> {
         self.topic_arn.as_deref()
     }
     /// <p>The list of existing event subscriptions.</p>
-    pub fn event_subscriptions(&self) -> std::option::Option<&[crate::types::EventSubscription]> {
+    pub fn event_subscriptions(&self) -> ::std::option::Option<&[crate::types::EventSubscription]> {
         self.event_subscriptions.as_deref()
     }
 }
@@ -37,31 +38,33 @@ impl Subscription {
 
 /// A builder for [`Subscription`](crate::types::Subscription).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct SubscriptionBuilder {
-    pub(crate) resource_arn: std::option::Option<std::string::String>,
-    pub(crate) topic_arn: std::option::Option<std::string::String>,
+    pub(crate) resource_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) topic_arn: ::std::option::Option<::std::string::String>,
     pub(crate) event_subscriptions:
-        std::option::Option<std::vec::Vec<crate::types::EventSubscription>>,
+        ::std::option::Option<::std::vec::Vec<crate::types::EventSubscription>>,
 }
 impl SubscriptionBuilder {
     /// <p>The ARN of the assessment template that is used during the event for which the SNS notification is sent.</p>
-    pub fn resource_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.resource_arn = Some(input.into());
+    pub fn resource_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.resource_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the assessment template that is used during the event for which the SNS notification is sent.</p>
-    pub fn set_resource_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_resource_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.resource_arn = input;
         self
     }
     /// <p>The ARN of the Amazon Simple Notification Service (SNS) topic to which the SNS notifications are sent.</p>
-    pub fn topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.topic_arn = Some(input.into());
+    pub fn topic_arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.topic_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ARN of the Amazon Simple Notification Service (SNS) topic to which the SNS notifications are sent.</p>
-    pub fn set_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_topic_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.topic_arn = input;
         self
     }
@@ -73,13 +76,13 @@ impl SubscriptionBuilder {
     pub fn event_subscriptions(mut self, input: crate::types::EventSubscription) -> Self {
         let mut v = self.event_subscriptions.unwrap_or_default();
         v.push(input);
-        self.event_subscriptions = Some(v);
+        self.event_subscriptions = ::std::option::Option::Some(v);
         self
     }
     /// <p>The list of existing event subscriptions.</p>
     pub fn set_event_subscriptions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::EventSubscription>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::EventSubscription>>,
     ) -> Self {
         self.event_subscriptions = input;
         self

@@ -3,22 +3,22 @@
 /// <p>Information about one of the entities found by targeted sentiment analysis.</p>
 /// <p>For more information about targeted sentiment, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html">Targeted sentiment</a>.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct TargetedSentimentEntity {
     /// <p>One or more index into the Mentions array that provides the best name for the entity group.</p>
     #[doc(hidden)]
-    pub descriptive_mention_index: std::option::Option<std::vec::Vec<i32>>,
+    pub descriptive_mention_index: ::std::option::Option<::std::vec::Vec<i32>>,
     /// <p>An array of mentions of the entity in the document. The array represents a co-reference group. See <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html#how-targeted-sentiment-values"> Co-reference group</a> for an example. </p>
     #[doc(hidden)]
-    pub mentions: std::option::Option<std::vec::Vec<crate::types::TargetedSentimentMention>>,
+    pub mentions: ::std::option::Option<::std::vec::Vec<crate::types::TargetedSentimentMention>>,
 }
 impl TargetedSentimentEntity {
     /// <p>One or more index into the Mentions array that provides the best name for the entity group.</p>
-    pub fn descriptive_mention_index(&self) -> std::option::Option<&[i32]> {
+    pub fn descriptive_mention_index(&self) -> ::std::option::Option<&[i32]> {
         self.descriptive_mention_index.as_deref()
     }
     /// <p>An array of mentions of the entity in the document. The array represents a co-reference group. See <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html#how-targeted-sentiment-values"> Co-reference group</a> for an example. </p>
-    pub fn mentions(&self) -> std::option::Option<&[crate::types::TargetedSentimentMention]> {
+    pub fn mentions(&self) -> ::std::option::Option<&[crate::types::TargetedSentimentMention]> {
         self.mentions.as_deref()
     }
 }
@@ -31,10 +31,13 @@ impl TargetedSentimentEntity {
 
 /// A builder for [`TargetedSentimentEntity`](crate::types::TargetedSentimentEntity).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct TargetedSentimentEntityBuilder {
-    pub(crate) descriptive_mention_index: std::option::Option<std::vec::Vec<i32>>,
-    pub(crate) mentions: std::option::Option<std::vec::Vec<crate::types::TargetedSentimentMention>>,
+    pub(crate) descriptive_mention_index: ::std::option::Option<::std::vec::Vec<i32>>,
+    pub(crate) mentions:
+        ::std::option::Option<::std::vec::Vec<crate::types::TargetedSentimentMention>>,
 }
 impl TargetedSentimentEntityBuilder {
     /// Appends an item to `descriptive_mention_index`.
@@ -45,13 +48,13 @@ impl TargetedSentimentEntityBuilder {
     pub fn descriptive_mention_index(mut self, input: i32) -> Self {
         let mut v = self.descriptive_mention_index.unwrap_or_default();
         v.push(input);
-        self.descriptive_mention_index = Some(v);
+        self.descriptive_mention_index = ::std::option::Option::Some(v);
         self
     }
     /// <p>One or more index into the Mentions array that provides the best name for the entity group.</p>
     pub fn set_descriptive_mention_index(
         mut self,
-        input: std::option::Option<std::vec::Vec<i32>>,
+        input: ::std::option::Option<::std::vec::Vec<i32>>,
     ) -> Self {
         self.descriptive_mention_index = input;
         self
@@ -64,13 +67,13 @@ impl TargetedSentimentEntityBuilder {
     pub fn mentions(mut self, input: crate::types::TargetedSentimentMention) -> Self {
         let mut v = self.mentions.unwrap_or_default();
         v.push(input);
-        self.mentions = Some(v);
+        self.mentions = ::std::option::Option::Some(v);
         self
     }
     /// <p>An array of mentions of the entity in the document. The array represents a co-reference group. See <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-targeted-sentiment.html#how-targeted-sentiment-values"> Co-reference group</a> for an example. </p>
     pub fn set_mentions(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::TargetedSentimentMention>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::TargetedSentimentMention>>,
     ) -> Self {
         self.mentions = input;
         self

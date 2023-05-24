@@ -2,11 +2,11 @@
 
 /// <p>Returns the following response if successful. Otherwise, returns an error.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct DeregisterOrganizationDelegatedAdminOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for DeregisterOrganizationDelegatedAdminOutput {
+impl ::aws_http::request_id::RequestId for DeregisterOrganizationDelegatedAdminOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -20,7 +20,9 @@ impl DeregisterOrganizationDelegatedAdminOutput {
 
 /// A builder for [`DeregisterOrganizationDelegatedAdminOutput`](crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct DeregisterOrganizationDelegatedAdminOutputBuilder {
     _request_id: Option<String>,
 }

@@ -3,15 +3,15 @@
 /// <p>This structure specifies how to split the data into train and validation datasets.</p>
 /// <p>If you are using the V1 API (for example <code>CreateAutoMLJob</code>) or the V2 API for Natural Language Processing problems (for example <code>CreateAutoMLJobV2</code> with a <code>TextClassificationJobConfig</code> problem type), the validation and training datasets must contain the same headers. Also, for V1 API jobs, the validation dataset must be less than 2 GB in size.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AutoMlDataSplitConfig {
     /// <p>The validation fraction (optional) is a float that specifies the portion of the training dataset to be used for validation. The default value is 0.2, and values must be greater than 0 and less than 1. We recommend setting this value to be less than 0.5.</p>
     #[doc(hidden)]
-    pub validation_fraction: std::option::Option<f32>,
+    pub validation_fraction: ::std::option::Option<f32>,
 }
 impl AutoMlDataSplitConfig {
     /// <p>The validation fraction (optional) is a float that specifies the portion of the training dataset to be used for validation. The default value is 0.2, and values must be greater than 0 and less than 1. We recommend setting this value to be less than 0.5.</p>
-    pub fn validation_fraction(&self) -> std::option::Option<f32> {
+    pub fn validation_fraction(&self) -> ::std::option::Option<f32> {
         self.validation_fraction
     }
 }
@@ -24,18 +24,20 @@ impl AutoMlDataSplitConfig {
 
 /// A builder for [`AutoMlDataSplitConfig`](crate::types::AutoMlDataSplitConfig).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AutoMlDataSplitConfigBuilder {
-    pub(crate) validation_fraction: std::option::Option<f32>,
+    pub(crate) validation_fraction: ::std::option::Option<f32>,
 }
 impl AutoMlDataSplitConfigBuilder {
     /// <p>The validation fraction (optional) is a float that specifies the portion of the training dataset to be used for validation. The default value is 0.2, and values must be greater than 0 and less than 1. We recommend setting this value to be less than 0.5.</p>
     pub fn validation_fraction(mut self, input: f32) -> Self {
-        self.validation_fraction = Some(input);
+        self.validation_fraction = ::std::option::Option::Some(input);
         self
     }
     /// <p>The validation fraction (optional) is a float that specifies the portion of the training dataset to be used for validation. The default value is 0.2, and values must be greater than 0 and less than 1. We recommend setting this value to be less than 0.5.</p>
-    pub fn set_validation_fraction(mut self, input: std::option::Option<f32>) -> Self {
+    pub fn set_validation_fraction(mut self, input: ::std::option::Option<f32>) -> Self {
         self.validation_fraction = input;
         self
     }

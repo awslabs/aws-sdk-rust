@@ -2,14 +2,14 @@
 
 /// <p>Information about the <code>ConnectionDraining</code> attribute.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ConnectionDraining {
     /// <p>Specifies whether connection draining is enabled for the load balancer.</p>
     #[doc(hidden)]
     pub enabled: bool,
     /// <p>The maximum time, in seconds, to keep the existing connections open before deregistering the instances.</p>
     #[doc(hidden)]
-    pub timeout: std::option::Option<i32>,
+    pub timeout: ::std::option::Option<i32>,
 }
 impl ConnectionDraining {
     /// <p>Specifies whether connection draining is enabled for the load balancer.</p>
@@ -17,7 +17,7 @@ impl ConnectionDraining {
         self.enabled
     }
     /// <p>The maximum time, in seconds, to keep the existing connections open before deregistering the instances.</p>
-    pub fn timeout(&self) -> std::option::Option<i32> {
+    pub fn timeout(&self) -> ::std::option::Option<i32> {
         self.timeout
     }
 }
@@ -30,29 +30,31 @@ impl ConnectionDraining {
 
 /// A builder for [`ConnectionDraining`](crate::types::ConnectionDraining).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ConnectionDrainingBuilder {
-    pub(crate) enabled: std::option::Option<bool>,
-    pub(crate) timeout: std::option::Option<i32>,
+    pub(crate) enabled: ::std::option::Option<bool>,
+    pub(crate) timeout: ::std::option::Option<i32>,
 }
 impl ConnectionDrainingBuilder {
     /// <p>Specifies whether connection draining is enabled for the load balancer.</p>
     pub fn enabled(mut self, input: bool) -> Self {
-        self.enabled = Some(input);
+        self.enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>Specifies whether connection draining is enabled for the load balancer.</p>
-    pub fn set_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.enabled = input;
         self
     }
     /// <p>The maximum time, in seconds, to keep the existing connections open before deregistering the instances.</p>
     pub fn timeout(mut self, input: i32) -> Self {
-        self.timeout = Some(input);
+        self.timeout = ::std::option::Option::Some(input);
         self
     }
     /// <p>The maximum time, in seconds, to keep the existing connections open before deregistering the instances.</p>
-    pub fn set_timeout(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_timeout(mut self, input: ::std::option::Option<i32>) -> Self {
         self.timeout = input;
         self
     }

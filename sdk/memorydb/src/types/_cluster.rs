@@ -2,190 +2,193 @@
 
 /// <p>Contains all of the attributes of a specific cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct Cluster {
     /// <p>The user-supplied name of the cluster. This identifier is a unique key that identifies a cluster.</p>
     #[doc(hidden)]
-    pub name: std::option::Option<std::string::String>,
+    pub name: ::std::option::Option<::std::string::String>,
     /// <p>A description of the cluster</p>
     #[doc(hidden)]
-    pub description: std::option::Option<std::string::String>,
+    pub description: ::std::option::Option<::std::string::String>,
     /// <p>The status of the cluster. For example, Available, Updating, Creating.</p>
     #[doc(hidden)]
-    pub status: std::option::Option<std::string::String>,
+    pub status: ::std::option::Option<::std::string::String>,
     /// <p>A group of settings that are currently being applied.</p>
     #[doc(hidden)]
-    pub pending_updates: std::option::Option<crate::types::ClusterPendingUpdates>,
+    pub pending_updates: ::std::option::Option<crate::types::ClusterPendingUpdates>,
     /// <p>The number of shards in the cluster</p>
     #[doc(hidden)]
-    pub number_of_shards: std::option::Option<i32>,
+    pub number_of_shards: ::std::option::Option<i32>,
     /// <p>A list of shards that are members of the cluster.</p>
     #[doc(hidden)]
-    pub shards: std::option::Option<std::vec::Vec<crate::types::Shard>>,
+    pub shards: ::std::option::Option<::std::vec::Vec<crate::types::Shard>>,
     /// <p>Indicates if the cluster has a Multi-AZ configuration (multiaz) or not (singleaz).</p>
     #[doc(hidden)]
-    pub availability_mode: std::option::Option<crate::types::AzStatus>,
+    pub availability_mode: ::std::option::Option<crate::types::AzStatus>,
     /// <p>The cluster's configuration endpoint</p>
     #[doc(hidden)]
-    pub cluster_endpoint: std::option::Option<crate::types::Endpoint>,
+    pub cluster_endpoint: ::std::option::Option<crate::types::Endpoint>,
     /// <p>The cluster's node type</p>
     #[doc(hidden)]
-    pub node_type: std::option::Option<std::string::String>,
+    pub node_type: ::std::option::Option<::std::string::String>,
     /// <p>The Redis engine version used by the cluster</p>
     #[doc(hidden)]
-    pub engine_version: std::option::Option<std::string::String>,
+    pub engine_version: ::std::option::Option<::std::string::String>,
     /// <p>The Redis engine patch version used by the cluster</p>
     #[doc(hidden)]
-    pub engine_patch_version: std::option::Option<std::string::String>,
+    pub engine_patch_version: ::std::option::Option<::std::string::String>,
     /// <p>The name of the parameter group used by the cluster</p>
     #[doc(hidden)]
-    pub parameter_group_name: std::option::Option<std::string::String>,
+    pub parameter_group_name: ::std::option::Option<::std::string::String>,
     /// <p>The status of the parameter group used by the cluster, for example 'active' or 'applying'.</p>
     #[doc(hidden)]
-    pub parameter_group_status: std::option::Option<std::string::String>,
+    pub parameter_group_status: ::std::option::Option<::std::string::String>,
     /// <p>A list of security groups used by the cluster</p>
     #[doc(hidden)]
-    pub security_groups: std::option::Option<std::vec::Vec<crate::types::SecurityGroupMembership>>,
+    pub security_groups:
+        ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupMembership>>,
     /// <p>The name of the subnet group used by the cluster</p>
     #[doc(hidden)]
-    pub subnet_group_name: std::option::Option<std::string::String>,
+    pub subnet_group_name: ::std::option::Option<::std::string::String>,
     /// <p>A flag to indicate if In-transit encryption is enabled</p>
     #[doc(hidden)]
-    pub tls_enabled: std::option::Option<bool>,
+    pub tls_enabled: ::std::option::Option<bool>,
     /// <p>The ID of the KMS key used to encrypt the cluster</p>
     #[doc(hidden)]
-    pub kms_key_id: std::option::Option<std::string::String>,
+    pub kms_key_id: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
     #[doc(hidden)]
-    pub arn: std::option::Option<std::string::String>,
+    pub arn: ::std::option::Option<::std::string::String>,
     /// <p>The Amazon Resource Name (ARN) of the SNS notification topic</p>
     #[doc(hidden)]
-    pub sns_topic_arn: std::option::Option<std::string::String>,
+    pub sns_topic_arn: ::std::option::Option<::std::string::String>,
     /// <p>The SNS topic must be in Active status to receive notifications</p>
     #[doc(hidden)]
-    pub sns_topic_status: std::option::Option<std::string::String>,
+    pub sns_topic_status: ::std::option::Option<::std::string::String>,
     /// <p>The number of days for which MemoryDB retains automatic snapshots before deleting them. For example, if you set SnapshotRetentionLimit to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p>
     #[doc(hidden)]
-    pub snapshot_retention_limit: std::option::Option<i32>,
+    pub snapshot_retention_limit: ::std::option::Option<i32>,
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period. </p>
     #[doc(hidden)]
-    pub maintenance_window: std::option::Option<std::string::String>,
+    pub maintenance_window: ::std::option::Option<::std::string::String>,
     /// <p>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your shard. Example: 05:00-09:00 If you do not specify this parameter, MemoryDB automatically chooses an appropriate time range.</p>
     #[doc(hidden)]
-    pub snapshot_window: std::option::Option<std::string::String>,
+    pub snapshot_window: ::std::option::Option<::std::string::String>,
     /// <p>The name of the Access Control List associated with this cluster.</p>
     #[doc(hidden)]
-    pub acl_name: std::option::Option<std::string::String>,
+    pub acl_name: ::std::option::Option<::std::string::String>,
     /// <p>When set to true, the cluster will automatically receive minor engine version upgrades after launch.</p>
     #[doc(hidden)]
-    pub auto_minor_version_upgrade: std::option::Option<bool>,
+    pub auto_minor_version_upgrade: ::std::option::Option<bool>,
     /// <p>Enables data tiering. Data tiering is only supported for clusters using the r6gd node type. This parameter must be set when using r6gd nodes. For more information, see <a href="https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html">Data tiering</a>.</p>
     #[doc(hidden)]
-    pub data_tiering: std::option::Option<crate::types::DataTieringStatus>,
+    pub data_tiering: ::std::option::Option<crate::types::DataTieringStatus>,
 }
 impl Cluster {
     /// <p>The user-supplied name of the cluster. This identifier is a unique key that identifies a cluster.</p>
-    pub fn name(&self) -> std::option::Option<&str> {
+    pub fn name(&self) -> ::std::option::Option<&str> {
         self.name.as_deref()
     }
     /// <p>A description of the cluster</p>
-    pub fn description(&self) -> std::option::Option<&str> {
+    pub fn description(&self) -> ::std::option::Option<&str> {
         self.description.as_deref()
     }
     /// <p>The status of the cluster. For example, Available, Updating, Creating.</p>
-    pub fn status(&self) -> std::option::Option<&str> {
+    pub fn status(&self) -> ::std::option::Option<&str> {
         self.status.as_deref()
     }
     /// <p>A group of settings that are currently being applied.</p>
-    pub fn pending_updates(&self) -> std::option::Option<&crate::types::ClusterPendingUpdates> {
+    pub fn pending_updates(&self) -> ::std::option::Option<&crate::types::ClusterPendingUpdates> {
         self.pending_updates.as_ref()
     }
     /// <p>The number of shards in the cluster</p>
-    pub fn number_of_shards(&self) -> std::option::Option<i32> {
+    pub fn number_of_shards(&self) -> ::std::option::Option<i32> {
         self.number_of_shards
     }
     /// <p>A list of shards that are members of the cluster.</p>
-    pub fn shards(&self) -> std::option::Option<&[crate::types::Shard]> {
+    pub fn shards(&self) -> ::std::option::Option<&[crate::types::Shard]> {
         self.shards.as_deref()
     }
     /// <p>Indicates if the cluster has a Multi-AZ configuration (multiaz) or not (singleaz).</p>
-    pub fn availability_mode(&self) -> std::option::Option<&crate::types::AzStatus> {
+    pub fn availability_mode(&self) -> ::std::option::Option<&crate::types::AzStatus> {
         self.availability_mode.as_ref()
     }
     /// <p>The cluster's configuration endpoint</p>
-    pub fn cluster_endpoint(&self) -> std::option::Option<&crate::types::Endpoint> {
+    pub fn cluster_endpoint(&self) -> ::std::option::Option<&crate::types::Endpoint> {
         self.cluster_endpoint.as_ref()
     }
     /// <p>The cluster's node type</p>
-    pub fn node_type(&self) -> std::option::Option<&str> {
+    pub fn node_type(&self) -> ::std::option::Option<&str> {
         self.node_type.as_deref()
     }
     /// <p>The Redis engine version used by the cluster</p>
-    pub fn engine_version(&self) -> std::option::Option<&str> {
+    pub fn engine_version(&self) -> ::std::option::Option<&str> {
         self.engine_version.as_deref()
     }
     /// <p>The Redis engine patch version used by the cluster</p>
-    pub fn engine_patch_version(&self) -> std::option::Option<&str> {
+    pub fn engine_patch_version(&self) -> ::std::option::Option<&str> {
         self.engine_patch_version.as_deref()
     }
     /// <p>The name of the parameter group used by the cluster</p>
-    pub fn parameter_group_name(&self) -> std::option::Option<&str> {
+    pub fn parameter_group_name(&self) -> ::std::option::Option<&str> {
         self.parameter_group_name.as_deref()
     }
     /// <p>The status of the parameter group used by the cluster, for example 'active' or 'applying'.</p>
-    pub fn parameter_group_status(&self) -> std::option::Option<&str> {
+    pub fn parameter_group_status(&self) -> ::std::option::Option<&str> {
         self.parameter_group_status.as_deref()
     }
     /// <p>A list of security groups used by the cluster</p>
-    pub fn security_groups(&self) -> std::option::Option<&[crate::types::SecurityGroupMembership]> {
+    pub fn security_groups(
+        &self,
+    ) -> ::std::option::Option<&[crate::types::SecurityGroupMembership]> {
         self.security_groups.as_deref()
     }
     /// <p>The name of the subnet group used by the cluster</p>
-    pub fn subnet_group_name(&self) -> std::option::Option<&str> {
+    pub fn subnet_group_name(&self) -> ::std::option::Option<&str> {
         self.subnet_group_name.as_deref()
     }
     /// <p>A flag to indicate if In-transit encryption is enabled</p>
-    pub fn tls_enabled(&self) -> std::option::Option<bool> {
+    pub fn tls_enabled(&self) -> ::std::option::Option<bool> {
         self.tls_enabled
     }
     /// <p>The ID of the KMS key used to encrypt the cluster</p>
-    pub fn kms_key_id(&self) -> std::option::Option<&str> {
+    pub fn kms_key_id(&self) -> ::std::option::Option<&str> {
         self.kms_key_id.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
-    pub fn arn(&self) -> std::option::Option<&str> {
+    pub fn arn(&self) -> ::std::option::Option<&str> {
         self.arn.as_deref()
     }
     /// <p>The Amazon Resource Name (ARN) of the SNS notification topic</p>
-    pub fn sns_topic_arn(&self) -> std::option::Option<&str> {
+    pub fn sns_topic_arn(&self) -> ::std::option::Option<&str> {
         self.sns_topic_arn.as_deref()
     }
     /// <p>The SNS topic must be in Active status to receive notifications</p>
-    pub fn sns_topic_status(&self) -> std::option::Option<&str> {
+    pub fn sns_topic_status(&self) -> ::std::option::Option<&str> {
         self.sns_topic_status.as_deref()
     }
     /// <p>The number of days for which MemoryDB retains automatic snapshots before deleting them. For example, if you set SnapshotRetentionLimit to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p>
-    pub fn snapshot_retention_limit(&self) -> std::option::Option<i32> {
+    pub fn snapshot_retention_limit(&self) -> ::std::option::Option<i32> {
         self.snapshot_retention_limit
     }
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period. </p>
-    pub fn maintenance_window(&self) -> std::option::Option<&str> {
+    pub fn maintenance_window(&self) -> ::std::option::Option<&str> {
         self.maintenance_window.as_deref()
     }
     /// <p>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your shard. Example: 05:00-09:00 If you do not specify this parameter, MemoryDB automatically chooses an appropriate time range.</p>
-    pub fn snapshot_window(&self) -> std::option::Option<&str> {
+    pub fn snapshot_window(&self) -> ::std::option::Option<&str> {
         self.snapshot_window.as_deref()
     }
     /// <p>The name of the Access Control List associated with this cluster.</p>
-    pub fn acl_name(&self) -> std::option::Option<&str> {
+    pub fn acl_name(&self) -> ::std::option::Option<&str> {
         self.acl_name.as_deref()
     }
     /// <p>When set to true, the cluster will automatically receive minor engine version upgrades after launch.</p>
-    pub fn auto_minor_version_upgrade(&self) -> std::option::Option<bool> {
+    pub fn auto_minor_version_upgrade(&self) -> ::std::option::Option<bool> {
         self.auto_minor_version_upgrade
     }
     /// <p>Enables data tiering. Data tiering is only supported for clusters using the r6gd node type. This parameter must be set when using r6gd nodes. For more information, see <a href="https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html">Data tiering</a>.</p>
-    pub fn data_tiering(&self) -> std::option::Option<&crate::types::DataTieringStatus> {
+    pub fn data_tiering(&self) -> ::std::option::Option<&crate::types::DataTieringStatus> {
         self.data_tiering.as_ref()
     }
 }
@@ -198,87 +201,89 @@ impl Cluster {
 
 /// A builder for [`Cluster`](crate::types::Cluster).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ClusterBuilder {
-    pub(crate) name: std::option::Option<std::string::String>,
-    pub(crate) description: std::option::Option<std::string::String>,
-    pub(crate) status: std::option::Option<std::string::String>,
-    pub(crate) pending_updates: std::option::Option<crate::types::ClusterPendingUpdates>,
-    pub(crate) number_of_shards: std::option::Option<i32>,
-    pub(crate) shards: std::option::Option<std::vec::Vec<crate::types::Shard>>,
-    pub(crate) availability_mode: std::option::Option<crate::types::AzStatus>,
-    pub(crate) cluster_endpoint: std::option::Option<crate::types::Endpoint>,
-    pub(crate) node_type: std::option::Option<std::string::String>,
-    pub(crate) engine_version: std::option::Option<std::string::String>,
-    pub(crate) engine_patch_version: std::option::Option<std::string::String>,
-    pub(crate) parameter_group_name: std::option::Option<std::string::String>,
-    pub(crate) parameter_group_status: std::option::Option<std::string::String>,
+    pub(crate) name: ::std::option::Option<::std::string::String>,
+    pub(crate) description: ::std::option::Option<::std::string::String>,
+    pub(crate) status: ::std::option::Option<::std::string::String>,
+    pub(crate) pending_updates: ::std::option::Option<crate::types::ClusterPendingUpdates>,
+    pub(crate) number_of_shards: ::std::option::Option<i32>,
+    pub(crate) shards: ::std::option::Option<::std::vec::Vec<crate::types::Shard>>,
+    pub(crate) availability_mode: ::std::option::Option<crate::types::AzStatus>,
+    pub(crate) cluster_endpoint: ::std::option::Option<crate::types::Endpoint>,
+    pub(crate) node_type: ::std::option::Option<::std::string::String>,
+    pub(crate) engine_version: ::std::option::Option<::std::string::String>,
+    pub(crate) engine_patch_version: ::std::option::Option<::std::string::String>,
+    pub(crate) parameter_group_name: ::std::option::Option<::std::string::String>,
+    pub(crate) parameter_group_status: ::std::option::Option<::std::string::String>,
     pub(crate) security_groups:
-        std::option::Option<std::vec::Vec<crate::types::SecurityGroupMembership>>,
-    pub(crate) subnet_group_name: std::option::Option<std::string::String>,
-    pub(crate) tls_enabled: std::option::Option<bool>,
-    pub(crate) kms_key_id: std::option::Option<std::string::String>,
-    pub(crate) arn: std::option::Option<std::string::String>,
-    pub(crate) sns_topic_arn: std::option::Option<std::string::String>,
-    pub(crate) sns_topic_status: std::option::Option<std::string::String>,
-    pub(crate) snapshot_retention_limit: std::option::Option<i32>,
-    pub(crate) maintenance_window: std::option::Option<std::string::String>,
-    pub(crate) snapshot_window: std::option::Option<std::string::String>,
-    pub(crate) acl_name: std::option::Option<std::string::String>,
-    pub(crate) auto_minor_version_upgrade: std::option::Option<bool>,
-    pub(crate) data_tiering: std::option::Option<crate::types::DataTieringStatus>,
+        ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupMembership>>,
+    pub(crate) subnet_group_name: ::std::option::Option<::std::string::String>,
+    pub(crate) tls_enabled: ::std::option::Option<bool>,
+    pub(crate) kms_key_id: ::std::option::Option<::std::string::String>,
+    pub(crate) arn: ::std::option::Option<::std::string::String>,
+    pub(crate) sns_topic_arn: ::std::option::Option<::std::string::String>,
+    pub(crate) sns_topic_status: ::std::option::Option<::std::string::String>,
+    pub(crate) snapshot_retention_limit: ::std::option::Option<i32>,
+    pub(crate) maintenance_window: ::std::option::Option<::std::string::String>,
+    pub(crate) snapshot_window: ::std::option::Option<::std::string::String>,
+    pub(crate) acl_name: ::std::option::Option<::std::string::String>,
+    pub(crate) auto_minor_version_upgrade: ::std::option::Option<bool>,
+    pub(crate) data_tiering: ::std::option::Option<crate::types::DataTieringStatus>,
 }
 impl ClusterBuilder {
     /// <p>The user-supplied name of the cluster. This identifier is a unique key that identifies a cluster.</p>
-    pub fn name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.name = Some(input.into());
+    pub fn name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The user-supplied name of the cluster. This identifier is a unique key that identifies a cluster.</p>
-    pub fn set_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.name = input;
         self
     }
     /// <p>A description of the cluster</p>
-    pub fn description(mut self, input: impl Into<std::string::String>) -> Self {
-        self.description = Some(input.into());
+    pub fn description(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.description = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>A description of the cluster</p>
-    pub fn set_description(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_description(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.description = input;
         self
     }
     /// <p>The status of the cluster. For example, Available, Updating, Creating.</p>
-    pub fn status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.status = Some(input.into());
+    pub fn status(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the cluster. For example, Available, Updating, Creating.</p>
-    pub fn set_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_status(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.status = input;
         self
     }
     /// <p>A group of settings that are currently being applied.</p>
     pub fn pending_updates(mut self, input: crate::types::ClusterPendingUpdates) -> Self {
-        self.pending_updates = Some(input);
+        self.pending_updates = ::std::option::Option::Some(input);
         self
     }
     /// <p>A group of settings that are currently being applied.</p>
     pub fn set_pending_updates(
         mut self,
-        input: std::option::Option<crate::types::ClusterPendingUpdates>,
+        input: ::std::option::Option<crate::types::ClusterPendingUpdates>,
     ) -> Self {
         self.pending_updates = input;
         self
     }
     /// <p>The number of shards in the cluster</p>
     pub fn number_of_shards(mut self, input: i32) -> Self {
-        self.number_of_shards = Some(input);
+        self.number_of_shards = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of shards in the cluster</p>
-    pub fn set_number_of_shards(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_number_of_shards(mut self, input: ::std::option::Option<i32>) -> Self {
         self.number_of_shards = input;
         self
     }
@@ -290,98 +295,113 @@ impl ClusterBuilder {
     pub fn shards(mut self, input: crate::types::Shard) -> Self {
         let mut v = self.shards.unwrap_or_default();
         v.push(input);
-        self.shards = Some(v);
+        self.shards = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of shards that are members of the cluster.</p>
     pub fn set_shards(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Shard>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Shard>>,
     ) -> Self {
         self.shards = input;
         self
     }
     /// <p>Indicates if the cluster has a Multi-AZ configuration (multiaz) or not (singleaz).</p>
     pub fn availability_mode(mut self, input: crate::types::AzStatus) -> Self {
-        self.availability_mode = Some(input);
+        self.availability_mode = ::std::option::Option::Some(input);
         self
     }
     /// <p>Indicates if the cluster has a Multi-AZ configuration (multiaz) or not (singleaz).</p>
     pub fn set_availability_mode(
         mut self,
-        input: std::option::Option<crate::types::AzStatus>,
+        input: ::std::option::Option<crate::types::AzStatus>,
     ) -> Self {
         self.availability_mode = input;
         self
     }
     /// <p>The cluster's configuration endpoint</p>
     pub fn cluster_endpoint(mut self, input: crate::types::Endpoint) -> Self {
-        self.cluster_endpoint = Some(input);
+        self.cluster_endpoint = ::std::option::Option::Some(input);
         self
     }
     /// <p>The cluster's configuration endpoint</p>
     pub fn set_cluster_endpoint(
         mut self,
-        input: std::option::Option<crate::types::Endpoint>,
+        input: ::std::option::Option<crate::types::Endpoint>,
     ) -> Self {
         self.cluster_endpoint = input;
         self
     }
     /// <p>The cluster's node type</p>
-    pub fn node_type(mut self, input: impl Into<std::string::String>) -> Self {
-        self.node_type = Some(input.into());
+    pub fn node_type(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.node_type = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The cluster's node type</p>
-    pub fn set_node_type(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_node_type(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.node_type = input;
         self
     }
     /// <p>The Redis engine version used by the cluster</p>
-    pub fn engine_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.engine_version = Some(input.into());
+    pub fn engine_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.engine_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Redis engine version used by the cluster</p>
-    pub fn set_engine_version(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_engine_version(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.engine_version = input;
         self
     }
     /// <p>The Redis engine patch version used by the cluster</p>
-    pub fn engine_patch_version(mut self, input: impl Into<std::string::String>) -> Self {
-        self.engine_patch_version = Some(input.into());
+    pub fn engine_patch_version(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.engine_patch_version = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Redis engine patch version used by the cluster</p>
     pub fn set_engine_patch_version(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.engine_patch_version = input;
         self
     }
     /// <p>The name of the parameter group used by the cluster</p>
-    pub fn parameter_group_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.parameter_group_name = Some(input.into());
+    pub fn parameter_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.parameter_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the parameter group used by the cluster</p>
     pub fn set_parameter_group_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.parameter_group_name = input;
         self
     }
     /// <p>The status of the parameter group used by the cluster, for example 'active' or 'applying'.</p>
-    pub fn parameter_group_status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.parameter_group_status = Some(input.into());
+    pub fn parameter_group_status(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.parameter_group_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The status of the parameter group used by the cluster, for example 'active' or 'applying'.</p>
     pub fn set_parameter_group_status(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.parameter_group_status = input;
         self
@@ -394,142 +414,166 @@ impl ClusterBuilder {
     pub fn security_groups(mut self, input: crate::types::SecurityGroupMembership) -> Self {
         let mut v = self.security_groups.unwrap_or_default();
         v.push(input);
-        self.security_groups = Some(v);
+        self.security_groups = ::std::option::Option::Some(v);
         self
     }
     /// <p>A list of security groups used by the cluster</p>
     pub fn set_security_groups(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::SecurityGroupMembership>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::SecurityGroupMembership>>,
     ) -> Self {
         self.security_groups = input;
         self
     }
     /// <p>The name of the subnet group used by the cluster</p>
-    pub fn subnet_group_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.subnet_group_name = Some(input.into());
+    pub fn subnet_group_name(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.subnet_group_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the subnet group used by the cluster</p>
     pub fn set_subnet_group_name(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.subnet_group_name = input;
         self
     }
     /// <p>A flag to indicate if In-transit encryption is enabled</p>
     pub fn tls_enabled(mut self, input: bool) -> Self {
-        self.tls_enabled = Some(input);
+        self.tls_enabled = ::std::option::Option::Some(input);
         self
     }
     /// <p>A flag to indicate if In-transit encryption is enabled</p>
-    pub fn set_tls_enabled(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_tls_enabled(mut self, input: ::std::option::Option<bool>) -> Self {
         self.tls_enabled = input;
         self
     }
     /// <p>The ID of the KMS key used to encrypt the cluster</p>
-    pub fn kms_key_id(mut self, input: impl Into<std::string::String>) -> Self {
-        self.kms_key_id = Some(input.into());
+    pub fn kms_key_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.kms_key_id = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The ID of the KMS key used to encrypt the cluster</p>
-    pub fn set_kms_key_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_kms_key_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.kms_key_id = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
-    pub fn arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.arn = Some(input.into());
+    pub fn arn(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the cluster.</p>
-    pub fn set_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_arn(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.arn = input;
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the SNS notification topic</p>
-    pub fn sns_topic_arn(mut self, input: impl Into<std::string::String>) -> Self {
-        self.sns_topic_arn = Some(input.into());
+    pub fn sns_topic_arn(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.sns_topic_arn = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The Amazon Resource Name (ARN) of the SNS notification topic</p>
-    pub fn set_sns_topic_arn(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_sns_topic_arn(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.sns_topic_arn = input;
         self
     }
     /// <p>The SNS topic must be in Active status to receive notifications</p>
-    pub fn sns_topic_status(mut self, input: impl Into<std::string::String>) -> Self {
-        self.sns_topic_status = Some(input.into());
+    pub fn sns_topic_status(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.sns_topic_status = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The SNS topic must be in Active status to receive notifications</p>
-    pub fn set_sns_topic_status(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_sns_topic_status(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.sns_topic_status = input;
         self
     }
     /// <p>The number of days for which MemoryDB retains automatic snapshots before deleting them. For example, if you set SnapshotRetentionLimit to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p>
     pub fn snapshot_retention_limit(mut self, input: i32) -> Self {
-        self.snapshot_retention_limit = Some(input);
+        self.snapshot_retention_limit = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of days for which MemoryDB retains automatic snapshots before deleting them. For example, if you set SnapshotRetentionLimit to 5, a snapshot that was taken today is retained for 5 days before being deleted.</p>
-    pub fn set_snapshot_retention_limit(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_snapshot_retention_limit(mut self, input: ::std::option::Option<i32>) -> Self {
         self.snapshot_retention_limit = input;
         self
     }
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period. </p>
-    pub fn maintenance_window(mut self, input: impl Into<std::string::String>) -> Self {
-        self.maintenance_window = Some(input.into());
+    pub fn maintenance_window(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.maintenance_window = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>Specifies the weekly time range during which maintenance on the cluster is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H Clock UTC). The minimum maintenance window is a 60 minute period. </p>
     pub fn set_maintenance_window(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.maintenance_window = input;
         self
     }
     /// <p>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your shard. Example: 05:00-09:00 If you do not specify this parameter, MemoryDB automatically chooses an appropriate time range.</p>
-    pub fn snapshot_window(mut self, input: impl Into<std::string::String>) -> Self {
-        self.snapshot_window = Some(input.into());
+    pub fn snapshot_window(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.snapshot_window = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The daily time range (in UTC) during which MemoryDB begins taking a daily snapshot of your shard. Example: 05:00-09:00 If you do not specify this parameter, MemoryDB automatically chooses an appropriate time range.</p>
-    pub fn set_snapshot_window(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_snapshot_window(
+        mut self,
+        input: ::std::option::Option<::std::string::String>,
+    ) -> Self {
         self.snapshot_window = input;
         self
     }
     /// <p>The name of the Access Control List associated with this cluster.</p>
-    pub fn acl_name(mut self, input: impl Into<std::string::String>) -> Self {
-        self.acl_name = Some(input.into());
+    pub fn acl_name(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
+        self.acl_name = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The name of the Access Control List associated with this cluster.</p>
-    pub fn set_acl_name(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_acl_name(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.acl_name = input;
         self
     }
     /// <p>When set to true, the cluster will automatically receive minor engine version upgrades after launch.</p>
     pub fn auto_minor_version_upgrade(mut self, input: bool) -> Self {
-        self.auto_minor_version_upgrade = Some(input);
+        self.auto_minor_version_upgrade = ::std::option::Option::Some(input);
         self
     }
     /// <p>When set to true, the cluster will automatically receive minor engine version upgrades after launch.</p>
-    pub fn set_auto_minor_version_upgrade(mut self, input: std::option::Option<bool>) -> Self {
+    pub fn set_auto_minor_version_upgrade(mut self, input: ::std::option::Option<bool>) -> Self {
         self.auto_minor_version_upgrade = input;
         self
     }
     /// <p>Enables data tiering. Data tiering is only supported for clusters using the r6gd node type. This parameter must be set when using r6gd nodes. For more information, see <a href="https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html">Data tiering</a>.</p>
     pub fn data_tiering(mut self, input: crate::types::DataTieringStatus) -> Self {
-        self.data_tiering = Some(input);
+        self.data_tiering = ::std::option::Option::Some(input);
         self
     }
     /// <p>Enables data tiering. Data tiering is only supported for clusters using the r6gd node type. This parameter must be set when using r6gd nodes. For more information, see <a href="https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html">Data tiering</a>.</p>
     pub fn set_data_tiering(
         mut self,
-        input: std::option::Option<crate::types::DataTieringStatus>,
+        input: ::std::option::Option<crate::types::DataTieringStatus>,
     ) -> Self {
         self.data_tiering = input;
         self

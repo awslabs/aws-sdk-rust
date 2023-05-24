@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`DeprecateWorkflowType`](crate::operation::deprecate_workflow_type::builders::DeprecateWorkflowTypeFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`domain(impl Into<String>)`](crate::operation::deprecate_workflow_type::builders::DeprecateWorkflowTypeFluentBuilder::domain) / [`set_domain(Option<String>)`](crate::operation::deprecate_workflow_type::builders::DeprecateWorkflowTypeFluentBuilder::set_domain): <p>The name of the domain in which the workflow type is registered.</p>
+    ///   - [`domain(impl ::std::convert::Into<String>)`](crate::operation::deprecate_workflow_type::builders::DeprecateWorkflowTypeFluentBuilder::domain) / [`set_domain(Option<String>)`](crate::operation::deprecate_workflow_type::builders::DeprecateWorkflowTypeFluentBuilder::set_domain): <p>The name of the domain in which the workflow type is registered.</p>
     ///   - [`workflow_type(WorkflowType)`](crate::operation::deprecate_workflow_type::builders::DeprecateWorkflowTypeFluentBuilder::workflow_type) / [`set_workflow_type(Option<WorkflowType>)`](crate::operation::deprecate_workflow_type::builders::DeprecateWorkflowTypeFluentBuilder::set_workflow_type): <p>The workflow type to deprecate.</p>
     /// - On success, responds with [`DeprecateWorkflowTypeOutput`](crate::operation::deprecate_workflow_type::DeprecateWorkflowTypeOutput)
     /// - On failure, responds with [`SdkError<DeprecateWorkflowTypeError>`](crate::operation::deprecate_workflow_type::DeprecateWorkflowTypeError)

@@ -2,33 +2,33 @@
 
 /// <p>A time windows during which maintenance was deferred for an Amazon Redshift cluster.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct AwsRedshiftClusterDeferredMaintenanceWindow {
     /// <p>The end of the time window for which maintenance was deferred.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     #[doc(hidden)]
-    pub defer_maintenance_end_time: std::option::Option<std::string::String>,
+    pub defer_maintenance_end_time: ::std::option::Option<::std::string::String>,
     /// <p>The identifier of the maintenance window.</p>
     #[doc(hidden)]
-    pub defer_maintenance_identifier: std::option::Option<std::string::String>,
+    pub defer_maintenance_identifier: ::std::option::Option<::std::string::String>,
     /// <p>The start of the time window for which maintenance was deferred.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     #[doc(hidden)]
-    pub defer_maintenance_start_time: std::option::Option<std::string::String>,
+    pub defer_maintenance_start_time: ::std::option::Option<::std::string::String>,
 }
 impl AwsRedshiftClusterDeferredMaintenanceWindow {
     /// <p>The end of the time window for which maintenance was deferred.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn defer_maintenance_end_time(&self) -> std::option::Option<&str> {
+    pub fn defer_maintenance_end_time(&self) -> ::std::option::Option<&str> {
         self.defer_maintenance_end_time.as_deref()
     }
     /// <p>The identifier of the maintenance window.</p>
-    pub fn defer_maintenance_identifier(&self) -> std::option::Option<&str> {
+    pub fn defer_maintenance_identifier(&self) -> ::std::option::Option<&str> {
         self.defer_maintenance_identifier.as_deref()
     }
     /// <p>The start of the time window for which maintenance was deferred.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn defer_maintenance_start_time(&self) -> std::option::Option<&str> {
+    pub fn defer_maintenance_start_time(&self) -> ::std::option::Option<&str> {
         self.defer_maintenance_start_time.as_deref()
     }
 }
@@ -41,52 +41,63 @@ impl AwsRedshiftClusterDeferredMaintenanceWindow {
 
 /// A builder for [`AwsRedshiftClusterDeferredMaintenanceWindow`](crate::types::AwsRedshiftClusterDeferredMaintenanceWindow).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct AwsRedshiftClusterDeferredMaintenanceWindowBuilder {
-    pub(crate) defer_maintenance_end_time: std::option::Option<std::string::String>,
-    pub(crate) defer_maintenance_identifier: std::option::Option<std::string::String>,
-    pub(crate) defer_maintenance_start_time: std::option::Option<std::string::String>,
+    pub(crate) defer_maintenance_end_time: ::std::option::Option<::std::string::String>,
+    pub(crate) defer_maintenance_identifier: ::std::option::Option<::std::string::String>,
+    pub(crate) defer_maintenance_start_time: ::std::option::Option<::std::string::String>,
 }
 impl AwsRedshiftClusterDeferredMaintenanceWindowBuilder {
     /// <p>The end of the time window for which maintenance was deferred.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn defer_maintenance_end_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.defer_maintenance_end_time = Some(input.into());
+    pub fn defer_maintenance_end_time(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.defer_maintenance_end_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The end of the time window for which maintenance was deferred.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn set_defer_maintenance_end_time(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.defer_maintenance_end_time = input;
         self
     }
     /// <p>The identifier of the maintenance window.</p>
-    pub fn defer_maintenance_identifier(mut self, input: impl Into<std::string::String>) -> Self {
-        self.defer_maintenance_identifier = Some(input.into());
+    pub fn defer_maintenance_identifier(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.defer_maintenance_identifier = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The identifier of the maintenance window.</p>
     pub fn set_defer_maintenance_identifier(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.defer_maintenance_identifier = input;
         self
     }
     /// <p>The start of the time window for which maintenance was deferred.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
-    pub fn defer_maintenance_start_time(mut self, input: impl Into<std::string::String>) -> Self {
-        self.defer_maintenance_start_time = Some(input.into());
+    pub fn defer_maintenance_start_time(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
+        self.defer_maintenance_start_time = ::std::option::Option::Some(input.into());
         self
     }
     /// <p>The start of the time window for which maintenance was deferred.</p>
     /// <p>Uses the <code>date-time</code> format specified in <a href="https://tools.ietf.org/html/rfc3339#section-5.6">RFC 3339 section 5.6, Internet Date/Time Format</a>. The value cannot contain spaces, and date and time should be separated by <code>T</code>. For example, <code>2020-03-22T13:22:13.933Z</code>.</p>
     pub fn set_defer_maintenance_start_time(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.defer_maintenance_start_time = input;
         self

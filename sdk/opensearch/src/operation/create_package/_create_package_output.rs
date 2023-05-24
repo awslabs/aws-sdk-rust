@@ -2,20 +2,20 @@
 
 /// <p>Container for the response returned by the <code>CreatePackage</code> operation.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreatePackageOutput {
     /// <p>Basic information about an OpenSearch Service package.</p>
     #[doc(hidden)]
-    pub package_details: std::option::Option<crate::types::PackageDetails>,
+    pub package_details: ::std::option::Option<crate::types::PackageDetails>,
     _request_id: Option<String>,
 }
 impl CreatePackageOutput {
     /// <p>Basic information about an OpenSearch Service package.</p>
-    pub fn package_details(&self) -> std::option::Option<&crate::types::PackageDetails> {
+    pub fn package_details(&self) -> ::std::option::Option<&crate::types::PackageDetails> {
         self.package_details.as_ref()
     }
 }
-impl aws_http::request_id::RequestId for CreatePackageOutput {
+impl ::aws_http::request_id::RequestId for CreatePackageOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -29,21 +29,23 @@ impl CreatePackageOutput {
 
 /// A builder for [`CreatePackageOutput`](crate::operation::create_package::CreatePackageOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreatePackageOutputBuilder {
-    pub(crate) package_details: std::option::Option<crate::types::PackageDetails>,
+    pub(crate) package_details: ::std::option::Option<crate::types::PackageDetails>,
     _request_id: Option<String>,
 }
 impl CreatePackageOutputBuilder {
     /// <p>Basic information about an OpenSearch Service package.</p>
     pub fn package_details(mut self, input: crate::types::PackageDetails) -> Self {
-        self.package_details = Some(input);
+        self.package_details = ::std::option::Option::Some(input);
         self
     }
     /// <p>Basic information about an OpenSearch Service package.</p>
     pub fn set_package_details(
         mut self,
-        input: std::option::Option<crate::types::PackageDetails>,
+        input: ::std::option::Option<crate::types::PackageDetails>,
     ) -> Self {
         self.package_details = input;
         self

@@ -2,17 +2,18 @@
 
 /// <p>Contains information about finding statistics.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct FindingStatistics {
     /// <p>Represents a map of severity to count statistics for a set of findings.</p>
     #[doc(hidden)]
-    pub count_by_severity: std::option::Option<std::collections::HashMap<std::string::String, i32>>,
+    pub count_by_severity:
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>,
 }
 impl FindingStatistics {
     /// <p>Represents a map of severity to count statistics for a set of findings.</p>
     pub fn count_by_severity(
         &self,
-    ) -> std::option::Option<&std::collections::HashMap<std::string::String, i32>> {
+    ) -> ::std::option::Option<&::std::collections::HashMap<::std::string::String, i32>> {
         self.count_by_severity.as_ref()
     }
 }
@@ -25,10 +26,12 @@ impl FindingStatistics {
 
 /// A builder for [`FindingStatistics`](crate::types::FindingStatistics).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct FindingStatisticsBuilder {
     pub(crate) count_by_severity:
-        std::option::Option<std::collections::HashMap<std::string::String, i32>>,
+        ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>,
 }
 impl FindingStatisticsBuilder {
     /// Adds a key-value pair to `count_by_severity`.
@@ -36,16 +39,20 @@ impl FindingStatisticsBuilder {
     /// To override the contents of this collection use [`set_count_by_severity`](Self::set_count_by_severity).
     ///
     /// <p>Represents a map of severity to count statistics for a set of findings.</p>
-    pub fn count_by_severity(mut self, k: impl Into<std::string::String>, v: i32) -> Self {
+    pub fn count_by_severity(
+        mut self,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: i32,
+    ) -> Self {
         let mut hash_map = self.count_by_severity.unwrap_or_default();
         hash_map.insert(k.into(), v);
-        self.count_by_severity = Some(hash_map);
+        self.count_by_severity = ::std::option::Option::Some(hash_map);
         self
     }
     /// <p>Represents a map of severity to count statistics for a set of findings.</p>
     pub fn set_count_by_severity(
         mut self,
-        input: std::option::Option<std::collections::HashMap<std::string::String, i32>>,
+        input: ::std::option::Option<::std::collections::HashMap<::std::string::String, i32>>,
     ) -> Self {
         self.count_by_severity = input;
         self

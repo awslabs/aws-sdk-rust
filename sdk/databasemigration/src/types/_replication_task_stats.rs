@@ -2,7 +2,7 @@
 
 /// <p>In response to a request by the <code>DescribeReplicationTasks</code> operation, this object provides a collection of statistics about a replication task.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct ReplicationTaskStats {
     /// <p>The percent complete for the full load migration task.</p>
     #[doc(hidden)]
@@ -24,19 +24,19 @@ pub struct ReplicationTaskStats {
     pub tables_errored: i32,
     /// <p>The date the replication task was started either with a fresh start or a target reload.</p>
     #[doc(hidden)]
-    pub fresh_start_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub fresh_start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date the replication task was started either with a fresh start or a resume. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html#DMS-StartReplicationTask-request-StartReplicationTaskType">StartReplicationTaskType</a>.</p>
     #[doc(hidden)]
-    pub start_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date the replication task was stopped.</p>
     #[doc(hidden)]
-    pub stop_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub stop_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date the replication task full load was started.</p>
     #[doc(hidden)]
-    pub full_load_start_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub full_load_start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
     /// <p>The date the replication task full load was completed.</p>
     #[doc(hidden)]
-    pub full_load_finish_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub full_load_finish_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ReplicationTaskStats {
     /// <p>The percent complete for the full load migration task.</p>
@@ -64,23 +64,23 @@ impl ReplicationTaskStats {
         self.tables_errored
     }
     /// <p>The date the replication task was started either with a fresh start or a target reload.</p>
-    pub fn fresh_start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn fresh_start_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.fresh_start_date.as_ref()
     }
     /// <p>The date the replication task was started either with a fresh start or a resume. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html#DMS-StartReplicationTask-request-StartReplicationTaskType">StartReplicationTaskType</a>.</p>
-    pub fn start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn start_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.start_date.as_ref()
     }
     /// <p>The date the replication task was stopped.</p>
-    pub fn stop_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn stop_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.stop_date.as_ref()
     }
     /// <p>The date the replication task full load was started.</p>
-    pub fn full_load_start_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn full_load_start_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.full_load_start_date.as_ref()
     }
     /// <p>The date the replication task full load was completed.</p>
-    pub fn full_load_finish_date(&self) -> std::option::Option<&aws_smithy_types::DateTime> {
+    pub fn full_load_finish_date(&self) -> ::std::option::Option<&::aws_smithy_types::DateTime> {
         self.full_load_finish_date.as_ref()
     }
 }
@@ -93,139 +93,144 @@ impl ReplicationTaskStats {
 
 /// A builder for [`ReplicationTaskStats`](crate::types::ReplicationTaskStats).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct ReplicationTaskStatsBuilder {
-    pub(crate) full_load_progress_percent: std::option::Option<i32>,
-    pub(crate) elapsed_time_millis: std::option::Option<i64>,
-    pub(crate) tables_loaded: std::option::Option<i32>,
-    pub(crate) tables_loading: std::option::Option<i32>,
-    pub(crate) tables_queued: std::option::Option<i32>,
-    pub(crate) tables_errored: std::option::Option<i32>,
-    pub(crate) fresh_start_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) start_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) stop_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) full_load_start_date: std::option::Option<aws_smithy_types::DateTime>,
-    pub(crate) full_load_finish_date: std::option::Option<aws_smithy_types::DateTime>,
+    pub(crate) full_load_progress_percent: ::std::option::Option<i32>,
+    pub(crate) elapsed_time_millis: ::std::option::Option<i64>,
+    pub(crate) tables_loaded: ::std::option::Option<i32>,
+    pub(crate) tables_loading: ::std::option::Option<i32>,
+    pub(crate) tables_queued: ::std::option::Option<i32>,
+    pub(crate) tables_errored: ::std::option::Option<i32>,
+    pub(crate) fresh_start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) stop_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) full_load_start_date: ::std::option::Option<::aws_smithy_types::DateTime>,
+    pub(crate) full_load_finish_date: ::std::option::Option<::aws_smithy_types::DateTime>,
 }
 impl ReplicationTaskStatsBuilder {
     /// <p>The percent complete for the full load migration task.</p>
     pub fn full_load_progress_percent(mut self, input: i32) -> Self {
-        self.full_load_progress_percent = Some(input);
+        self.full_load_progress_percent = ::std::option::Option::Some(input);
         self
     }
     /// <p>The percent complete for the full load migration task.</p>
-    pub fn set_full_load_progress_percent(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_full_load_progress_percent(mut self, input: ::std::option::Option<i32>) -> Self {
         self.full_load_progress_percent = input;
         self
     }
     /// <p>The elapsed time of the task, in milliseconds.</p>
     pub fn elapsed_time_millis(mut self, input: i64) -> Self {
-        self.elapsed_time_millis = Some(input);
+        self.elapsed_time_millis = ::std::option::Option::Some(input);
         self
     }
     /// <p>The elapsed time of the task, in milliseconds.</p>
-    pub fn set_elapsed_time_millis(mut self, input: std::option::Option<i64>) -> Self {
+    pub fn set_elapsed_time_millis(mut self, input: ::std::option::Option<i64>) -> Self {
         self.elapsed_time_millis = input;
         self
     }
     /// <p>The number of tables loaded for this task.</p>
     pub fn tables_loaded(mut self, input: i32) -> Self {
-        self.tables_loaded = Some(input);
+        self.tables_loaded = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of tables loaded for this task.</p>
-    pub fn set_tables_loaded(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_tables_loaded(mut self, input: ::std::option::Option<i32>) -> Self {
         self.tables_loaded = input;
         self
     }
     /// <p>The number of tables currently loading for this task.</p>
     pub fn tables_loading(mut self, input: i32) -> Self {
-        self.tables_loading = Some(input);
+        self.tables_loading = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of tables currently loading for this task.</p>
-    pub fn set_tables_loading(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_tables_loading(mut self, input: ::std::option::Option<i32>) -> Self {
         self.tables_loading = input;
         self
     }
     /// <p>The number of tables queued for this task.</p>
     pub fn tables_queued(mut self, input: i32) -> Self {
-        self.tables_queued = Some(input);
+        self.tables_queued = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of tables queued for this task.</p>
-    pub fn set_tables_queued(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_tables_queued(mut self, input: ::std::option::Option<i32>) -> Self {
         self.tables_queued = input;
         self
     }
     /// <p>The number of errors that have occurred during this task.</p>
     pub fn tables_errored(mut self, input: i32) -> Self {
-        self.tables_errored = Some(input);
+        self.tables_errored = ::std::option::Option::Some(input);
         self
     }
     /// <p>The number of errors that have occurred during this task.</p>
-    pub fn set_tables_errored(mut self, input: std::option::Option<i32>) -> Self {
+    pub fn set_tables_errored(mut self, input: ::std::option::Option<i32>) -> Self {
         self.tables_errored = input;
         self
     }
     /// <p>The date the replication task was started either with a fresh start or a target reload.</p>
-    pub fn fresh_start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.fresh_start_date = Some(input);
+    pub fn fresh_start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.fresh_start_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date the replication task was started either with a fresh start or a target reload.</p>
     pub fn set_fresh_start_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.fresh_start_date = input;
         self
     }
     /// <p>The date the replication task was started either with a fresh start or a resume. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html#DMS-StartReplicationTask-request-StartReplicationTaskType">StartReplicationTaskType</a>.</p>
-    pub fn start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.start_date = Some(input);
+    pub fn start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.start_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date the replication task was started either with a fresh start or a resume. For more information, see <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartReplicationTask.html#DMS-StartReplicationTask-request-StartReplicationTaskType">StartReplicationTaskType</a>.</p>
     pub fn set_start_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.start_date = input;
         self
     }
     /// <p>The date the replication task was stopped.</p>
-    pub fn stop_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.stop_date = Some(input);
+    pub fn stop_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.stop_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date the replication task was stopped.</p>
-    pub fn set_stop_date(mut self, input: std::option::Option<aws_smithy_types::DateTime>) -> Self {
+    pub fn set_stop_date(
+        mut self,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
+    ) -> Self {
         self.stop_date = input;
         self
     }
     /// <p>The date the replication task full load was started.</p>
-    pub fn full_load_start_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.full_load_start_date = Some(input);
+    pub fn full_load_start_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.full_load_start_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date the replication task full load was started.</p>
     pub fn set_full_load_start_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.full_load_start_date = input;
         self
     }
     /// <p>The date the replication task full load was completed.</p>
-    pub fn full_load_finish_date(mut self, input: aws_smithy_types::DateTime) -> Self {
-        self.full_load_finish_date = Some(input);
+    pub fn full_load_finish_date(mut self, input: ::aws_smithy_types::DateTime) -> Self {
+        self.full_load_finish_date = ::std::option::Option::Some(input);
         self
     }
     /// <p>The date the replication task full load was completed.</p>
     pub fn set_full_load_finish_date(
         mut self,
-        input: std::option::Option<aws_smithy_types::DateTime>,
+        input: ::std::option::Option<::aws_smithy_types::DateTime>,
     ) -> Self {
         self.full_load_finish_date = input;
         self

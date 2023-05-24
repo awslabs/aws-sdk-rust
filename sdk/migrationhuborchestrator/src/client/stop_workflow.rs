@@ -3,7 +3,7 @@ impl super::Client {
     /// Constructs a fluent builder for the [`StopWorkflow`](crate::operation::stop_workflow::builders::StopWorkflowFluentBuilder) operation.
     ///
     /// - The fluent builder is configurable:
-    ///   - [`id(impl Into<String>)`](crate::operation::stop_workflow::builders::StopWorkflowFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::stop_workflow::builders::StopWorkflowFluentBuilder::set_id): <p>The ID of the migration workflow.</p>
+    ///   - [`id(impl ::std::convert::Into<String>)`](crate::operation::stop_workflow::builders::StopWorkflowFluentBuilder::id) / [`set_id(Option<String>)`](crate::operation::stop_workflow::builders::StopWorkflowFluentBuilder::set_id): <p>The ID of the migration workflow.</p>
     /// - On success, responds with [`StopWorkflowOutput`](crate::operation::stop_workflow::StopWorkflowOutput) with field(s):
     ///   - [`id(Option<String>)`](crate::operation::stop_workflow::StopWorkflowOutput::id): <p>The ID of the migration workflow.</p>
     ///   - [`arn(Option<String>)`](crate::operation::stop_workflow::StopWorkflowOutput::arn): <p>The Amazon Resource Name (ARN) of the migration workflow.</p>

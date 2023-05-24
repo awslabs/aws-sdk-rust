@@ -2,7 +2,7 @@
 
 /// <p>Contains detailed information about your Call Analytics streaming session. These details are provided in the <code>UtteranceEvent</code> and <code>CategoryEvent</code> objects.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub enum CallAnalyticsTranscriptResultStream {
     /// <p>Provides information on matched categories that were used to generate real-time supervisor alerts.</p>
     CategoryEvent(crate::types::CategoryEvent),
@@ -21,11 +21,11 @@ pub enum CallAnalyticsTranscriptResultStream {
 impl CallAnalyticsTranscriptResultStream {
     /// Tries to convert the enum instance into [`CategoryEvent`](crate::types::CallAnalyticsTranscriptResultStream::CategoryEvent), extracting the inner [`CategoryEvent`](crate::types::CategoryEvent).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_category_event(&self) -> std::result::Result<&crate::types::CategoryEvent, &Self> {
+    pub fn as_category_event(&self) -> ::std::result::Result<&crate::types::CategoryEvent, &Self> {
         if let CallAnalyticsTranscriptResultStream::CategoryEvent(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`CategoryEvent`](crate::types::CallAnalyticsTranscriptResultStream::CategoryEvent).
@@ -34,11 +34,13 @@ impl CallAnalyticsTranscriptResultStream {
     }
     /// Tries to convert the enum instance into [`UtteranceEvent`](crate::types::CallAnalyticsTranscriptResultStream::UtteranceEvent), extracting the inner [`UtteranceEvent`](crate::types::UtteranceEvent).
     /// Returns `Err(&Self)` if it can't be converted.
-    pub fn as_utterance_event(&self) -> std::result::Result<&crate::types::UtteranceEvent, &Self> {
+    pub fn as_utterance_event(
+        &self,
+    ) -> ::std::result::Result<&crate::types::UtteranceEvent, &Self> {
         if let CallAnalyticsTranscriptResultStream::UtteranceEvent(val) = &self {
-            Ok(val)
+            ::std::result::Result::Ok(val)
         } else {
-            Err(self)
+            ::std::result::Result::Err(self)
         }
     }
     /// Returns true if this is a [`UtteranceEvent`](crate::types::CallAnalyticsTranscriptResultStream::UtteranceEvent).

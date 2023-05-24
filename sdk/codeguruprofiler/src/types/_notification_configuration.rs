@@ -2,15 +2,15 @@
 
 /// <p>The configuration for notifications stored for each profiling group. This includes up to to two channels and a list of event publishers associated with each channel.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct NotificationConfiguration {
     /// <p>List of up to two channels to be used for sending notifications for events detected from the application profile.</p>
     #[doc(hidden)]
-    pub channels: std::option::Option<std::vec::Vec<crate::types::Channel>>,
+    pub channels: ::std::option::Option<::std::vec::Vec<crate::types::Channel>>,
 }
 impl NotificationConfiguration {
     /// <p>List of up to two channels to be used for sending notifications for events detected from the application profile.</p>
-    pub fn channels(&self) -> std::option::Option<&[crate::types::Channel]> {
+    pub fn channels(&self) -> ::std::option::Option<&[crate::types::Channel]> {
         self.channels.as_deref()
     }
 }
@@ -23,9 +23,11 @@ impl NotificationConfiguration {
 
 /// A builder for [`NotificationConfiguration`](crate::types::NotificationConfiguration).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct NotificationConfigurationBuilder {
-    pub(crate) channels: std::option::Option<std::vec::Vec<crate::types::Channel>>,
+    pub(crate) channels: ::std::option::Option<::std::vec::Vec<crate::types::Channel>>,
 }
 impl NotificationConfigurationBuilder {
     /// Appends an item to `channels`.
@@ -36,13 +38,13 @@ impl NotificationConfigurationBuilder {
     pub fn channels(mut self, input: crate::types::Channel) -> Self {
         let mut v = self.channels.unwrap_or_default();
         v.push(input);
-        self.channels = Some(v);
+        self.channels = ::std::option::Option::Some(v);
         self
     }
     /// <p>List of up to two channels to be used for sending notifications for events detected from the application profile.</p>
     pub fn set_channels(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::Channel>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::Channel>>,
     ) -> Self {
         self.channels = input;
         self

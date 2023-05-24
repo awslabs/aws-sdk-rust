@@ -2,11 +2,11 @@
 
 /// <p>An HTTP 200 response if the request succeeds, or an error message if the request fails.</p>
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::cmp::PartialEq, ::std::fmt::Debug)]
 pub struct CreateConfigurationSetOutput {
     _request_id: Option<String>,
 }
-impl aws_http::request_id::RequestId for CreateConfigurationSetOutput {
+impl ::aws_http::request_id::RequestId for CreateConfigurationSetOutput {
     fn request_id(&self) -> Option<&str> {
         self._request_id.as_deref()
     }
@@ -22,7 +22,9 @@ impl CreateConfigurationSetOutput {
 
 /// A builder for [`CreateConfigurationSetOutput`](crate::operation::create_configuration_set::CreateConfigurationSetOutput).
 #[non_exhaustive]
-#[derive(std::clone::Clone, std::cmp::PartialEq, std::default::Default, std::fmt::Debug)]
+#[derive(
+    ::std::clone::Clone, ::std::cmp::PartialEq, ::std::default::Default, ::std::fmt::Debug,
+)]
 pub struct CreateConfigurationSetOutputBuilder {
     _request_id: Option<String>,
 }

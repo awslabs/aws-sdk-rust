@@ -7,56 +7,59 @@ pub use crate::operation::create_job::_create_job_input::CreateJobInputBuilder;
 ///
 /// <p>When you create a job, Elastic Transcoder returns JSON data that includes the values that you specified plus information about the job that is created.</p>
 /// <p>If you have specified more than one output for your jobs (for example, one output for the Kindle Fire and another output for the Apple iPhone 4s), you currently must use the Elastic Transcoder API to list the jobs (as opposed to the AWS Console).</p>
-#[derive(std::clone::Clone, std::fmt::Debug)]
+#[derive(::std::clone::Clone, ::std::fmt::Debug)]
 pub struct CreateJobFluentBuilder {
-    handle: std::sync::Arc<crate::client::Handle>,
+    handle: ::std::sync::Arc<crate::client::Handle>,
     inner: crate::operation::create_job::builders::CreateJobInputBuilder,
 }
 impl CreateJobFluentBuilder {
     /// Creates a new `CreateJob`.
-    pub(crate) fn new(handle: std::sync::Arc<crate::client::Handle>) -> Self {
+    pub(crate) fn new(handle: ::std::sync::Arc<crate::client::Handle>) -> Self {
         Self {
             handle,
-            inner: Default::default(),
+            inner: ::std::default::Default::default(),
         }
     }
     /// Consume this builder, creating a customizable operation that can be modified before being
     /// sent. The operation's inner [http::Request] can be modified as well.
     pub async fn customize(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::client::customize::CustomizableOperation<
             crate::operation::create_job::CreateJob,
-            aws_http::retry::AwsResponseRetryClassifier,
+            ::aws_http::retry::AwsResponseRetryClassifier,
         >,
-        aws_smithy_http::result::SdkError<crate::operation::create_job::CreateJobError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_job::CreateJobError>,
     > {
         let handle = self.handle.clone();
         let operation = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
-        Ok(crate::client::customize::CustomizableOperation { handle, operation })
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
+        ::std::result::Result::Ok(crate::client::customize::CustomizableOperation {
+            handle,
+            operation,
+        })
     }
 
     // This function will go away in the near future. Do not rely on it.
     #[doc(hidden)]
     pub async fn send_middleware(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_job::CreateJobOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_job::CreateJobError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_job::CreateJobError>,
     > {
         let op = self
             .inner
             .build()
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?
             .make_operation(&self.handle.conf)
             .await
-            .map_err(aws_smithy_http::result::SdkError::construction_failure)?;
+            .map_err(::aws_smithy_http::result::SdkError::construction_failure)?;
         self.handle.client.call(op).await
     }
     /// Sends the request and returns the response.
@@ -69,19 +72,19 @@ impl CreateJobFluentBuilder {
     /// set when configuring the client.
     pub async fn send(
         self,
-    ) -> std::result::Result<
+    ) -> ::std::result::Result<
         crate::operation::create_job::CreateJobOutput,
-        aws_smithy_http::result::SdkError<crate::operation::create_job::CreateJobError>,
+        ::aws_smithy_http::result::SdkError<crate::operation::create_job::CreateJobError>,
     > {
         self.send_middleware().await
     }
     /// <p>The <code>Id</code> of the pipeline that you want Elastic Transcoder to use for transcoding. The pipeline determines several settings, including the Amazon S3 bucket from which Elastic Transcoder gets the files to transcode and the bucket into which Elastic Transcoder puts the transcoded files.</p>
-    pub fn pipeline_id(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn pipeline_id(mut self, input: impl ::std::convert::Into<::std::string::String>) -> Self {
         self.inner = self.inner.pipeline_id(input.into());
         self
     }
     /// <p>The <code>Id</code> of the pipeline that you want Elastic Transcoder to use for transcoding. The pipeline determines several settings, including the Amazon S3 bucket from which Elastic Transcoder gets the files to transcode and the bucket into which Elastic Transcoder puts the transcoded files.</p>
-    pub fn set_pipeline_id(mut self, input: std::option::Option<std::string::String>) -> Self {
+    pub fn set_pipeline_id(mut self, input: ::std::option::Option<::std::string::String>) -> Self {
         self.inner = self.inner.set_pipeline_id(input);
         self
     }
@@ -91,7 +94,7 @@ impl CreateJobFluentBuilder {
         self
     }
     /// <p>A section of the request body that provides information about the file that is being transcoded.</p>
-    pub fn set_input(mut self, input: std::option::Option<crate::types::JobInput>) -> Self {
+    pub fn set_input(mut self, input: ::std::option::Option<crate::types::JobInput>) -> Self {
         self.inner = self.inner.set_input(input);
         self
     }
@@ -107,7 +110,7 @@ impl CreateJobFluentBuilder {
     /// <p>A section of the request body that provides information about the files that are being transcoded.</p>
     pub fn set_inputs(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::JobInput>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::JobInput>>,
     ) -> Self {
         self.inner = self.inner.set_inputs(input);
         self
@@ -118,7 +121,10 @@ impl CreateJobFluentBuilder {
         self
     }
     /// <p> A section of the request body that provides information about the transcoded (target) file. We strongly recommend that you use the <code>Outputs</code> syntax instead of the <code>Output</code> syntax. </p>
-    pub fn set_output(mut self, input: std::option::Option<crate::types::CreateJobOutput>) -> Self {
+    pub fn set_output(
+        mut self,
+        input: ::std::option::Option<crate::types::CreateJobOutput>,
+    ) -> Self {
         self.inner = self.inner.set_output(input);
         self
     }
@@ -134,20 +140,23 @@ impl CreateJobFluentBuilder {
     /// <p> A section of the request body that provides information about the transcoded (target) files. We recommend that you use the <code>Outputs</code> syntax instead of the <code>Output</code> syntax. </p>
     pub fn set_outputs(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CreateJobOutput>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CreateJobOutput>>,
     ) -> Self {
         self.inner = self.inner.set_outputs(input);
         self
     }
     /// <p>The value, if any, that you want Elastic Transcoder to prepend to the names of all files that this job creates, including output files, thumbnails, and playlists.</p>
-    pub fn output_key_prefix(mut self, input: impl Into<std::string::String>) -> Self {
+    pub fn output_key_prefix(
+        mut self,
+        input: impl ::std::convert::Into<::std::string::String>,
+    ) -> Self {
         self.inner = self.inner.output_key_prefix(input.into());
         self
     }
     /// <p>The value, if any, that you want Elastic Transcoder to prepend to the names of all files that this job creates, including output files, thumbnails, and playlists.</p>
     pub fn set_output_key_prefix(
         mut self,
-        input: std::option::Option<std::string::String>,
+        input: ::std::option::Option<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.set_output_key_prefix(input);
         self
@@ -166,7 +175,7 @@ impl CreateJobFluentBuilder {
     /// <p>The maximum number of master playlists in a job is 30.</p>
     pub fn set_playlists(
         mut self,
-        input: std::option::Option<std::vec::Vec<crate::types::CreateJobPlaylist>>,
+        input: ::std::option::Option<::std::vec::Vec<crate::types::CreateJobPlaylist>>,
     ) -> Self {
         self.inner = self.inner.set_playlists(input);
         self
@@ -178,8 +187,8 @@ impl CreateJobFluentBuilder {
     /// <p>User-defined metadata that you want to associate with an Elastic Transcoder job. You specify metadata in <code>key/value</code> pairs, and you can add up to 10 <code>key/value</code> pairs per job. Elastic Transcoder does not guarantee that <code>key/value</code> pairs are returned in the same order in which you specify them.</p>
     pub fn user_metadata(
         mut self,
-        k: impl Into<std::string::String>,
-        v: impl Into<std::string::String>,
+        k: impl ::std::convert::Into<::std::string::String>,
+        v: impl ::std::convert::Into<::std::string::String>,
     ) -> Self {
         self.inner = self.inner.user_metadata(k.into(), v.into());
         self
@@ -187,8 +196,8 @@ impl CreateJobFluentBuilder {
     /// <p>User-defined metadata that you want to associate with an Elastic Transcoder job. You specify metadata in <code>key/value</code> pairs, and you can add up to 10 <code>key/value</code> pairs per job. Elastic Transcoder does not guarantee that <code>key/value</code> pairs are returned in the same order in which you specify them.</p>
     pub fn set_user_metadata(
         mut self,
-        input: std::option::Option<
-            std::collections::HashMap<std::string::String, std::string::String>,
+        input: ::std::option::Option<
+            ::std::collections::HashMap<::std::string::String, ::std::string::String>,
         >,
     ) -> Self {
         self.inner = self.inner.set_user_metadata(input);
