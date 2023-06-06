@@ -760,6 +760,12 @@
                         "smithy.api#enumValue": "ap-south-1"
                     }
                 },
+                "HYDERABAD": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ap-south-2"
+                    }
+                },
                 "SINGAPORE": {
                     "target": "smithy.api#Unit",
                     "traits": {
@@ -806,6 +812,12 @@
                     "target": "smithy.api#Unit",
                     "traits": {
                         "smithy.api#enumValue": "eu-central-1"
+                    }
+                },
+                "ZURICH": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "eu-central-2"
                     }
                 },
                 "IRELAND": {
@@ -1005,7 +1017,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>Deletes the specified report.</p>"
+                "smithy.api#documentation": "<p>Deletes the specified report.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.costandusagereportservice#DeleteReportDefinitionResponse": {
@@ -1016,7 +1029,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>If the action is successful, the service sends back an HTTP 200 response.</p>"
+                "smithy.api#documentation": "<p>If the action is successful, the service sends back an HTTP 200 response.</p>",
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.costandusagereportservice#DeleteResponseMessage": {
@@ -1058,7 +1072,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>Requests a list of AWS Cost and Usage reports owned by the account.</p>"
+                "smithy.api#documentation": "<p>Requests a list of AWS Cost and Usage reports owned by the account.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.costandusagereportservice#DescribeReportDefinitionsResponse": {
@@ -1075,7 +1090,8 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>If the action is successful, the service sends back an HTTP 200 response.</p>"
+                "smithy.api#documentation": "<p>If the action is successful, the service sends back an HTTP 200 response.</p>",
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.costandusagereportservice#DuplicateReportNameException": {
@@ -1164,11 +1180,17 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.costandusagereportservice#ModifyReportDefinitionResponse": {
             "type": "structure",
-            "members": {}
+            "members": {},
+            "traits": {
+                "smithy.api#output": {}
+            }
         },
         "com.amazonaws.costandusagereportservice#PutReportDefinition": {
             "type": "operation",
@@ -1208,14 +1230,16 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>Creates a Cost and Usage Report.</p>"
+                "smithy.api#documentation": "<p>Creates a Cost and Usage Report.</p>",
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.costandusagereportservice#PutReportDefinitionResponse": {
             "type": "structure",
             "members": {},
             "traits": {
-                "smithy.api#documentation": "<p>If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.</p>"
+                "smithy.api#documentation": "<p>If the action is successful, the service sends back an HTTP 200 response with an empty HTTP body.</p>",
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.costandusagereportservice#RefreshClosedReports": {
@@ -1400,6 +1424,12 @@
                     "target": "smithy.api#Unit",
                     "traits": {
                         "smithy.api#enumValue": "RESOURCES"
+                    }
+                },
+                "SPLIT_COST_ALLOCATION_DATA": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "SPLIT_COST_ALLOCATION_DATA"
                     }
                 }
             },
