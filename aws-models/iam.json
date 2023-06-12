@@ -2577,6 +2577,9 @@
             },
             "errors": [
                 {
+                    "target": "com.amazonaws.iam#ConcurrentModificationException"
+                },
+                {
                     "target": "com.amazonaws.iam#EntityAlreadyExistsException"
                 },
                 {
@@ -2587,7 +2590,7 @@
                 }
             ],
             "traits": {
-                "smithy.api#documentation": "<p>Creates an alias for your Amazon Web Services account. For information about using an Amazon Web Services account\n            alias, see <a href=\"https://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html\">Using an\n                alias for your Amazon Web Services account ID</a> in the\n            <i>IAM User Guide</i>.</p>"
+                "smithy.api#documentation": "<p>Creates an alias for your Amazon Web Services account. For information about using an Amazon Web Services account\n            alias, see <a href=\"https://docs.aws.amazon.com/signin/latest/userguide/CreateAccountAlias.html\">Creating, deleting, and\n                listing an Amazon Web Services account alias</a> in the <i>Amazon Web Services Sign-In User\n                Guide</i>.</p>"
             }
         },
         "com.amazonaws.iam#CreateAccountAliasRequest": {
@@ -3575,6 +3578,9 @@
             },
             "errors": [
                 {
+                    "target": "com.amazonaws.iam#ConcurrentModificationException"
+                },
+                {
                     "target": "com.amazonaws.iam#EntityTemporarilyUnmodifiableException"
                 },
                 {
@@ -3667,6 +3673,9 @@
             },
             "errors": [
                 {
+                    "target": "com.amazonaws.iam#ConcurrentModificationException"
+                },
+                {
                     "target": "com.amazonaws.iam#LimitExceededException"
                 },
                 {
@@ -3677,7 +3686,7 @@
                 }
             ],
             "traits": {
-                "smithy.api#documentation": "<p> Deletes the specified Amazon Web Services account alias. For information about using an Amazon Web Services\n            account alias, see <a href=\"https://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html\">Using an alias for your Amazon Web Services account ID</a> in the\n                <i>IAM User Guide</i>.</p>"
+                "smithy.api#documentation": "<p> Deletes the specified Amazon Web Services account alias. For information about using an Amazon Web Services\n            account alias, see <a href=\"https://docs.aws.amazon.com/signin/latest/userguide/CreateAccountAlias.html\">Creating, deleting, and\n                listing an Amazon Web Services account alias</a> in the <i>Amazon Web Services Sign-In User\n                Guide</i>.</p>"
             }
         },
         "com.amazonaws.iam#DeleteAccountAliasRequest": {
@@ -4391,6 +4400,9 @@
             },
             "errors": [
                 {
+                    "target": "com.amazonaws.iam#ConcurrentModificationException"
+                },
+                {
                     "target": "com.amazonaws.iam#LimitExceededException"
                 },
                 {
@@ -4558,6 +4570,9 @@
                 "target": "smithy.api#Unit"
             },
             "errors": [
+                {
+                    "target": "com.amazonaws.iam#ConcurrentModificationException"
+                },
                 {
                     "target": "com.amazonaws.iam#DeleteConflictException"
                 },
@@ -4838,6 +4853,9 @@
                 "target": "smithy.api#Unit"
             },
             "errors": [
+                {
+                    "target": "com.amazonaws.iam#ConcurrentModificationException"
+                },
                 {
                     "target": "com.amazonaws.iam#EntityAlreadyExistsException"
                 },
@@ -7364,7 +7382,7 @@
                 }
             ],
             "traits": {
-                "smithy.api#documentation": "<p>Lists the account alias associated with the Amazon Web Services account (Note: you can have only\n            one). For information about using an Amazon Web Services account alias, see <a href=\"https://docs.aws.amazon.com/IAM/latest/UserGuide/AccountAlias.html\">Using an alias for your\n                Amazon Web Services account ID</a> in the <i>IAM User Guide</i>.</p>",
+                "smithy.api#documentation": "<p>Lists the account alias associated with the Amazon Web Services account (Note: you can have only\n            one). For information about using an Amazon Web Services account alias, see <a href=\"https://docs.aws.amazon.com/signin/latest/userguide/CreateAccountAlias.html\">Creating,\n                deleting, and listing an Amazon Web Services account alias</a> in the <i>Amazon Web Services Sign-In\n                User Guide</i>.</p>",
                 "smithy.api#paginated": {
                     "inputToken": "Marker",
                     "outputToken": "Marker",
@@ -11311,6 +11329,9 @@
             },
             "errors": [
                 {
+                    "target": "com.amazonaws.iam#ConcurrentModificationException"
+                },
+                {
                     "target": "com.amazonaws.iam#InvalidAuthenticationCodeException"
                 },
                 {
@@ -14238,6 +14259,9 @@
             },
             "errors": [
                 {
+                    "target": "com.amazonaws.iam#ConcurrentModificationException"
+                },
+                {
                     "target": "com.amazonaws.iam#DuplicateCertificateException"
                 },
                 {
@@ -14439,7 +14463,7 @@
                 "Base32StringSeed": {
                     "target": "com.amazonaws.iam#BootstrapDatum",
                     "traits": {
-                        "smithy.api#documentation": "<p> The base32 seed defined as specified in <a href=\"https://tools.ietf.org/html/rfc3548.txt\">RFC3548</a>. The <code>Base32StringSeed</code> is base64-encoded. </p>"
+                        "smithy.api#documentation": "<p> The base32 seed defined as specified in <a href=\"https://tools.ietf.org/html/rfc3548.txt\">RFC3548</a>. The <code>Base32StringSeed</code> is base32-encoded. </p>"
                     }
                 },
                 "QRCodePNG": {
@@ -14509,7 +14533,7 @@
                     "min": 3,
                     "max": 63
                 },
-                "smithy.api#pattern": "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$"
+                "smithy.api#pattern": "^[a-z0-9]([a-z0-9]|-(?!-)){1,61}[a-z0-9]$"
             }
         },
         "com.amazonaws.iam#arnType": {
@@ -14963,7 +14987,7 @@
                     "min": 1,
                     "max": 512
                 },
-                "smithy.api#pattern": "^(\\u002F)|(\\u002F[\\u0021-\\u007F]+\\u002F)$"
+                "smithy.api#pattern": "^(\\u002F)|(\\u002F[\\u0021-\\u007E]+\\u002F)$"
             }
         },
         "com.amazonaws.iam#policyDescriptionType": {
@@ -15167,7 +15191,7 @@
                     "min": 0,
                     "max": 1000
                 },
-                "smithy.api#pattern": "^[\\p{L}\\p{M}\\p{Z}\\p{S}\\p{N}\\p{P}]*$"
+                "smithy.api#pattern": "^[\\u0009\\u000A\\u000D\\u0020-\\u007E\\u00A1-\\u00FF]*$"
             }
         },
         "com.amazonaws.iam#roleDetailListType": {
