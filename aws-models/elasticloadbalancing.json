@@ -1304,6 +1304,9 @@
             ],
             "traits": {
                 "smithy.api#documentation": "<p>Describes the state of the specified instances with respect to the specified load balancer. If no instances are specified, the call describes the state of all instances that are currently registered with the load balancer. If instances are specified, their state is returned even if they are no longer registered with the load balancer. The state of terminated instances is not returned.</p>",
+                "smithy.api#suppress": [
+                    "WaitableTraitInvalidErrorType"
+                ],
                 "smithy.waiters#waitable": {
                     "AnyInstanceInService": {
                         "acceptors": [
@@ -1315,6 +1318,48 @@
                                         "expected": "InService",
                                         "comparator": "anyStringEquals"
                                     }
+                                }
+                            }
+                        ],
+                        "minDelay": 15
+                    },
+                    "InstanceDeregistered": {
+                        "acceptors": [
+                            {
+                                "state": "success",
+                                "matcher": {
+                                    "output": {
+                                        "path": "InstanceStates[].State",
+                                        "expected": "OutOfService",
+                                        "comparator": "allStringEquals"
+                                    }
+                                }
+                            },
+                            {
+                                "state": "success",
+                                "matcher": {
+                                    "errorType": "InvalidInstance"
+                                }
+                            }
+                        ],
+                        "minDelay": 15
+                    },
+                    "InstanceInService": {
+                        "acceptors": [
+                            {
+                                "state": "success",
+                                "matcher": {
+                                    "output": {
+                                        "path": "InstanceStates[].State",
+                                        "expected": "InService",
+                                        "comparator": "allStringEquals"
+                                    }
+                                }
+                            },
+                            {
+                                "state": "retry",
+                                "matcher": {
+                                    "errorType": "InvalidInstance"
                                 }
                             }
                         ],

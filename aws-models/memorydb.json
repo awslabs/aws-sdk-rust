@@ -1344,6 +1344,12 @@
                     "traits": {
                         "smithy.api#enumValue": "no-password"
                     }
+                },
+                "IAM": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "iam"
+                    }
                 }
             }
         },
@@ -1400,6 +1406,9 @@
                         "smithy.api#documentation": "<p>The unique ID of the service update</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.memorydb#BatchUpdateClusterResponse": {
@@ -1417,6 +1426,9 @@
                         "smithy.api#documentation": "<p>The list of clusters where updates have not been applied.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.memorydb#Boolean": {
@@ -1855,6 +1867,9 @@
                         "smithy.api#documentation": "<p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.memorydb#CopySnapshotResponse": {
@@ -1866,6 +1881,9 @@
                         "smithy.api#documentation": "<p>Represents a copy of an entire cluster as of the time when the snapshot was taken.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.memorydb#CreateACL": {
@@ -1925,6 +1943,9 @@
                         "smithy.api#documentation": "<p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.memorydb#CreateACLResponse": {
@@ -1936,6 +1957,9 @@
                         "smithy.api#documentation": "<p>The newly-created Access Control List.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.memorydb#CreateCluster": {
@@ -2138,6 +2162,9 @@
                         "smithy.api#documentation": "<p>Enables data tiering. Data tiering is only supported for clusters using the r6gd node type. \n            This parameter must be set when using r6gd nodes. For more information, see <a href=\"https://docs.aws.amazon.com/memorydb/latest/devguide/data-tiering.html\">Data tiering</a>.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.memorydb#CreateClusterResponse": {
@@ -2149,6 +2176,9 @@
                         "smithy.api#documentation": "<p>The newly-created cluster.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.memorydb#CreateParameterGroup": {
@@ -2215,6 +2245,9 @@
                         "smithy.api#documentation": "<p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.memorydb#CreateParameterGroupResponse": {
@@ -2226,6 +2259,9 @@
                         "smithy.api#documentation": "<p>The newly-created parameter group.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.memorydb#CreateSnapshot": {
@@ -2295,6 +2331,9 @@
                         "smithy.api#documentation": "<p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.memorydb#CreateSnapshotResponse": {
@@ -2306,6 +2345,9 @@
                         "smithy.api#documentation": "<p>The newly-created snapshot.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.memorydb#CreateSubnetGroup": {
@@ -2372,6 +2414,9 @@
                         "smithy.api#documentation": "<p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.memorydb#CreateSubnetGroupResponse": {
@@ -2383,6 +2428,9 @@
                         "smithy.api#documentation": "<p>The newly-created subnet group</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.memorydb#CreateUser": {
@@ -2447,6 +2495,9 @@
                         "smithy.api#documentation": "<p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.memorydb#CreateUserResponse": {
@@ -2458,6 +2509,9 @@
                         "smithy.api#documentation": "<p>The newly-created user.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.memorydb#DataTieringStatus": {
@@ -2527,6 +2581,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.memorydb#DeleteACLResponse": {
@@ -2538,6 +2595,9 @@
                         "smithy.api#documentation": "<p>The Access Control List object that has been deleted.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.memorydb#DeleteCluster": {
@@ -2588,6 +2648,9 @@
                         "smithy.api#documentation": "<p>The user-supplied name of a final cluster snapshot. This is the unique name that identifies the snapshot. MemoryDB creates the snapshot, and then deletes the cluster immediately afterward.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.memorydb#DeleteClusterResponse": {
@@ -2599,6 +2662,9 @@
                         "smithy.api#documentation": "<p>The cluster object that has been deleted</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.memorydb#DeleteParameterGroup": {
@@ -2640,6 +2706,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.memorydb#DeleteParameterGroupResponse": {
@@ -2651,6 +2720,9 @@
                         "smithy.api#documentation": "<p>The parameter group that has been deleted.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.memorydb#DeleteSnapshot": {
@@ -2692,6 +2764,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.memorydb#DeleteSnapshotResponse": {
@@ -2703,6 +2778,9 @@
                         "smithy.api#documentation": "<p>The snapshot object that has been deleted.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.memorydb#DeleteSubnetGroup": {
@@ -2738,6 +2816,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.memorydb#DeleteSubnetGroupResponse": {
@@ -2749,6 +2830,9 @@
                         "smithy.api#documentation": "<p>The subnet group object that has been deleted.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.memorydb#DeleteUser": {
@@ -2784,6 +2868,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.memorydb#DeleteUserResponse": {
@@ -2795,6 +2882,9 @@
                         "smithy.api#documentation": "<p>The user object that has been deleted.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.memorydb#DescribeACLs": {
@@ -2844,6 +2934,9 @@
                         "smithy.api#documentation": "<p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.memorydb#DescribeACLsResponse": {
@@ -2861,6 +2954,9 @@
                         "smithy.api#documentation": "<p>If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.memorydb#DescribeClusters": {
@@ -2922,6 +3018,9 @@
                         "smithy.api#documentation": "<p>An optional flag that can be included in the request to retrieve information about the individual shard(s).</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.memorydb#DescribeClustersResponse": {
@@ -2939,6 +3038,9 @@
                         "smithy.api#documentation": "<p>A list of clusters</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.memorydb#DescribeEngineVersions": {
@@ -3004,6 +3106,9 @@
                         "smithy.api#documentation": "<p>If true, specifies that only the default version of the specified engine or engine and major version combination is to be returned.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.memorydb#DescribeEngineVersionsResponse": {
@@ -3021,6 +3126,9 @@
                         "smithy.api#documentation": "<p>A list of engine version details. Each element in the list contains detailed information about one engine version.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.memorydb#DescribeEvents": {
@@ -3097,6 +3205,9 @@
                         "smithy.api#documentation": "<p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.memorydb#DescribeEventsResponse": {
@@ -3114,6 +3225,9 @@
                         "smithy.api#documentation": "<p>A list of events. Each element in the list contains detailed information about one event.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.memorydb#DescribeParameterGroups": {
@@ -3169,6 +3283,9 @@
                         "smithy.api#documentation": "<p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.memorydb#DescribeParameterGroupsResponse": {
@@ -3186,6 +3303,9 @@
                         "smithy.api#documentation": "<p>A list of parameter groups. Each element in the list contains detailed information about one parameter group.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.memorydb#DescribeParameters": {
@@ -3242,6 +3362,9 @@
                         "smithy.api#documentation": "<p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.memorydb#DescribeParametersResponse": {
@@ -3259,6 +3382,9 @@
                         "smithy.api#documentation": "<p>A list of parameters specific to a particular parameter group. Each element in the list contains detailed information about one parameter.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.memorydb#DescribeReservedNodes": {
@@ -3364,6 +3490,9 @@
                         "smithy.api#documentation": "<p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.memorydb#DescribeReservedNodesOfferingsResponse": {
@@ -3381,6 +3510,9 @@
                         "smithy.api#documentation": "<p>Lists available reserved node offerings.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.memorydb#DescribeReservedNodesRequest": {
@@ -3428,6 +3560,9 @@
                         "smithy.api#documentation": "<p>An optional marker returned from a prior request. Use this marker for pagination of results from this operation. If this parameter is specified, the response includes only records beyond the marker, up to the value specified by MaxRecords.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.memorydb#DescribeReservedNodesResponse": {
@@ -3445,6 +3580,9 @@
                         "smithy.api#documentation": "<p>Returns information about reserved nodes for this account, or about a specified reserved node.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.memorydb#DescribeServiceUpdates": {
@@ -3506,6 +3644,9 @@
                         "smithy.api#documentation": "<p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.memorydb#DescribeServiceUpdatesResponse": {
@@ -3523,6 +3664,9 @@
                         "smithy.api#documentation": "<p>A list of service updates</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.memorydb#DescribeSnapshots": {
@@ -3596,6 +3740,9 @@
                         "smithy.api#documentation": "<p>A Boolean value which if true, the shard configuration is included in the snapshot description.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.memorydb#DescribeSnapshotsResponse": {
@@ -3613,6 +3760,9 @@
                         "smithy.api#documentation": "<p>A list of snapshots. Each item in the list contains detailed information about one snapshot.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.memorydb#DescribeSubnetGroups": {
@@ -3662,6 +3812,9 @@
                         "smithy.api#documentation": "<p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.memorydb#DescribeSubnetGroupsResponse": {
@@ -3679,6 +3832,9 @@
                         "smithy.api#documentation": "<p>A list of subnet groups. Each element in the list contains detailed information about one group.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.memorydb#DescribeUsers": {
@@ -3734,6 +3890,9 @@
                         "smithy.api#documentation": "<p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.memorydb#DescribeUsersResponse": {
@@ -3751,6 +3910,9 @@
                         "smithy.api#documentation": "<p>An optional argument to pass in case the total number of records exceeds the value of MaxResults. If nextToken is returned, there are more results available. The value of nextToken is a unique pagination token for each page. Make the call again using the returned token to retrieve the next page. Keep all other arguments unchanged. </p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.memorydb#Double": {
@@ -3928,6 +4090,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.memorydb#FailoverShardResponse": {
@@ -3939,6 +4104,9 @@
                         "smithy.api#documentation": "<p>The cluster being failed over</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.memorydb#Filter": {
@@ -3999,6 +4167,12 @@
                     "target": "smithy.api#Unit",
                     "traits": {
                         "smithy.api#enumValue": "password"
+                    }
+                },
+                "IAM": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "iam"
                     }
                 }
             }
@@ -4301,6 +4475,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.memorydb#ListAllowedNodeTypeUpdatesResponse": {
@@ -4318,6 +4495,9 @@
                         "smithy.api#documentation": "<p>A list node types which you can use to scale down your cluster.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.memorydb#ListTags": {
@@ -4371,6 +4551,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.memorydb#ListTagsResponse": {
@@ -4382,6 +4565,9 @@
                         "smithy.api#documentation": "<p>A list of tags as key-value pairs.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.memorydb#NoOperationFault": {
@@ -4771,6 +4957,9 @@
                         "smithy.api#documentation": "<p>A list of tags to be added to this resource. A tag is a key-value pair. A tag key must be accompanied by a tag value, although null is accepted.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.memorydb#PurchaseReservedNodesOfferingResponse": {
@@ -4782,6 +4971,9 @@
                         "smithy.api#documentation": "<p>Represents the output of a <code>PurchaseReservedNodesOffering</code> operation.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.memorydb#RecurringCharge": {
@@ -5090,6 +5282,9 @@
                         "smithy.api#documentation": "<p>An array of parameter names to reset to their default values. If AllParameters is true, do not use ParameterNames. If AllParameters is false, you must specify the name of at least one parameter to reset.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.memorydb#ResetParameterGroupResponse": {
@@ -5101,6 +5296,9 @@
                         "smithy.api#documentation": "<p>The parameter group being reset.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.memorydb#ReshardingStatus": {
@@ -5980,6 +6178,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.memorydb#TagResourceResponse": {
@@ -5991,6 +6192,9 @@
                         "smithy.api#documentation": "<p>A list of tags as key-value pairs.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.memorydb#TargetBucket": {
@@ -6116,6 +6320,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.memorydb#UntagResourceResponse": {
@@ -6127,6 +6334,9 @@
                         "smithy.api#documentation": "<p>The list of tags removed</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.memorydb#UpdateACL": {
@@ -6186,6 +6396,9 @@
                         "smithy.api#documentation": "<p>The list of users to remove from the Access Control List</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.memorydb#UpdateACLResponse": {
@@ -6197,6 +6410,9 @@
                         "smithy.api#documentation": "<p>The updated Access Control List</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.memorydb#UpdateCluster": {
@@ -6349,6 +6565,9 @@
                         "smithy.api#documentation": "<p>The Access Control List that is associated with the cluster</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.memorydb#UpdateClusterResponse": {
@@ -6360,6 +6579,9 @@
                         "smithy.api#documentation": "<p>The updated cluster</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.memorydb#UpdateParameterGroup": {
@@ -6408,6 +6630,9 @@
                         "smithy.api#required": {}
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.memorydb#UpdateParameterGroupResponse": {
@@ -6419,6 +6644,9 @@
                         "smithy.api#documentation": "<p>The updated parameter group</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.memorydb#UpdateSubnetGroup": {
@@ -6475,6 +6703,9 @@
                         "smithy.api#documentation": "<p>The EC2 subnet IDs for the subnet group.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.memorydb#UpdateSubnetGroupResponse": {
@@ -6486,6 +6717,9 @@
                         "smithy.api#documentation": "<p>The updated subnet group</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.memorydb#UpdateUser": {
@@ -6536,6 +6770,9 @@
                         "smithy.api#documentation": "<p>Access permissions string used for this user.</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#input": {}
             }
         },
         "com.amazonaws.memorydb#UpdateUserResponse": {
@@ -6547,6 +6784,9 @@
                         "smithy.api#documentation": "<p>The updated user</p>"
                     }
                 }
+            },
+            "traits": {
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.memorydb#User": {

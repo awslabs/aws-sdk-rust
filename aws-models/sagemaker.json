@@ -3337,6 +3337,40 @@
                 }
             }
         },
+        "com.amazonaws.sagemaker#AutoParameter": {
+            "type": "structure",
+            "members": {
+                "Name": {
+                    "target": "com.amazonaws.sagemaker#ParameterKey",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of the hyperparameter to optimize using Autotune.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "ValueHint": {
+                    "target": "com.amazonaws.sagemaker#ParameterValue",
+                    "traits": {
+                        "smithy.api#documentation": "<p>An example value of the hyperparameter to optimize using Autotune.</p>",
+                        "smithy.api#required": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The name and an example value of the hyperparameter that\n            you want to use in Autotune. If Automatic model tuning (AMT) determines that your hyperparameter is eligible\n            for Autotune, an optimal hyperparameter range is selected for you.</p>"
+            }
+        },
+        "com.amazonaws.sagemaker#AutoParameters": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.sagemaker#AutoParameter"
+            },
+            "traits": {
+                "smithy.api#length": {
+                    "min": 0,
+                    "max": 100
+                }
+            }
+        },
         "com.amazonaws.sagemaker#AutoRollbackConfig": {
             "type": "structure",
             "members": {
@@ -3349,6 +3383,32 @@
             },
             "traits": {
                 "smithy.api#documentation": "<p>Automatic rollback configuration for handling endpoint deployment failures and\n            recovery.</p>"
+            }
+        },
+        "com.amazonaws.sagemaker#Autotune": {
+            "type": "structure",
+            "members": {
+                "Mode": {
+                    "target": "com.amazonaws.sagemaker#AutotuneMode",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Set <code>Mode</code> to <code>Enabled</code> if you want to use Autotune.</p>",
+                        "smithy.api#required": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>A flag to indicate if you want to use Autotune to automatically find optimal values for\n            the following fields:</p>\n         <ul>\n            <li>\n               <p>\n                  <a href=\"https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobConfig.html#sagemaker-Type-HyperParameterTuningJobConfig-ParameterRanges\">ParameterRanges</a>: The names and ranges of parameters that a hyperparameter\n                    tuning job can optimize.</p>\n            </li>\n            <li>\n               <p>\n                  <a href=\"https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ResourceLimits.html\">ResourceLimits</a>: The maximum resources that can be used for a training job.\n                    These resources include the maximum number of training jobs, the maximum runtime of a\n                    tuning job, and the maximum number of training jobs to run at the same time.</p>\n            </li>\n            <li>\n               <p>\n                  <a href=\"https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobConfig.html#sagemaker-Type-HyperParameterTuningJobConfig-TrainingJobEarlyStoppingType\">TrainingJobEarlyStoppingType</a>: A flag that specifies whether or not to use\n                    early stopping for training jobs launched by a hyperparameter tuning job.</p>\n            </li>\n            <li>\n               <p>\n                  <a href=\"https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html#sagemaker-Type-HyperParameterTrainingJobDefinition-RetryStrategy\">RetryStrategy</a>: The number of times to retry a training job.</p>\n            </li>\n            <li>\n               <p>\n                  <a href=\"https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobConfig.html\">Strategy</a>: Specifies how hyperparameter tuning chooses the combinations of\n                    hyperparameter values to use for the training jobs that it launches.</p>\n            </li>\n            <li>\n               <p>\n                  <a href=\"https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ConvergenceDetected.html\">ConvergenceDetected</a>: A flag to indicate that Automatic model tuning (AMT) has detected model\n                    convergence.</p>\n            </li>\n         </ul>"
+            }
+        },
+        "com.amazonaws.sagemaker#AutotuneMode": {
+            "type": "enum",
+            "members": {
+                "ENABLED": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "Enabled"
+                    }
+                }
             }
         },
         "com.amazonaws.sagemaker#AwsManagedHumanLoopRequestSource": {
@@ -8094,6 +8154,12 @@
                     "traits": {
                         "smithy.api#documentation": "<p>An array of key-value pairs. You can use tags to categorize your Amazon Web Services\n            resources in different ways, for example, by purpose, owner, or environment. For more\n            information, see <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html\">Tagging Amazon Web Services Resources</a>.</p>\n         <p>Tags that you specify for the tuning job are also added to all training jobs that the\n            tuning job launches.</p>"
                     }
+                },
+                "Autotune": {
+                    "target": "com.amazonaws.sagemaker#Autotune",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Configures SageMaker Automatic model tuning (AMT) to automatically find optimal parameters\n            for the following fields:</p>\n         <ul>\n            <li>\n               <p>\n                  <a href=\"https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobConfig.html#sagemaker-Type-HyperParameterTuningJobConfig-ParameterRanges\">ParameterRanges</a>: The names and ranges of parameters that a hyperparameter\n                    tuning job can optimize.</p>\n            </li>\n            <li>\n               <p>\n                  <a href=\"https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ResourceLimits.html\">ResourceLimits</a>: The maximum resources that can be used for a training job.\n                    These resources include the maximum number of training jobs, the maximum runtime of a\n                    tuning job, and the maximum number of training jobs to run at the same time.</p>\n            </li>\n            <li>\n               <p>\n                  <a href=\"https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobConfig.html#sagemaker-Type-HyperParameterTuningJobConfig-TrainingJobEarlyStoppingType\">TrainingJobEarlyStoppingType</a>: A flag that specifies whether or not to use\n                    early stopping for training jobs launched by a hyperparameter tuning job.</p>\n            </li>\n            <li>\n               <p>\n                  <a href=\"https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTrainingJobDefinition.html#sagemaker-Type-HyperParameterTrainingJobDefinition-RetryStrategy\">RetryStrategy</a>: The number of times to retry a training job.</p>\n            </li>\n            <li>\n               <p>\n                  <a href=\"https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobConfig.html\">Strategy</a>: Specifies how hyperparameter tuning chooses the combinations of\n                    hyperparameter values to use for the training jobs that it launches.</p>\n            </li>\n            <li>\n               <p>\n                  <a href=\"https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ConvergenceDetected.html\">ConvergenceDetected</a>: A flag to indicate that Automatic model tuning (AMT) has detected model\n                    convergence.</p>\n            </li>\n         </ul>"
+                    }
                 }
             },
             "traits": {
@@ -10239,7 +10305,7 @@
                 "InputDataConfig": {
                     "target": "com.amazonaws.sagemaker#InputDataConfig",
                     "traits": {
-                        "smithy.api#documentation": "<p>An array of <code>Channel</code> objects. Each channel is a named input source.\n                <code>InputDataConfig</code> describes the input data and its location. </p>\n         <p>Algorithms can accept input data from one or more channels. For example, an\n            algorithm might have two channels of input data, <code>training_data</code> and\n                <code>validation_data</code>. The configuration for each channel provides the S3,\n            EFS, or FSx location where the input data is stored. It also provides information about\n            the stored data: the MIME type, compression method, and whether the data is wrapped in\n            RecordIO format. </p>\n         <p>Depending on the input mode that the algorithm supports, SageMaker either copies input\n            data files from an S3 bucket to a local directory in the Docker container, or makes it\n            available as input streams. For example, if you specify an EFS location, input data\n            files are available as input streams. They do not need to be downloaded.</p>"
+                        "smithy.api#documentation": "<p>An array of <code>Channel</code> objects. Each channel is a named input source.\n                <code>InputDataConfig</code> describes the input data and its location. </p>\n         <p>Algorithms can accept input data from one or more channels. For example, an\n            algorithm might have two channels of input data, <code>training_data</code> and\n                <code>validation_data</code>. The configuration for each channel provides the S3,\n            EFS, or FSx location where the input data is stored. It also provides information about\n            the stored data: the MIME type, compression method, and whether the data is wrapped in\n            RecordIO format. </p>\n         <p>Depending on the input mode that the algorithm supports, SageMaker either copies input\n            data files from an S3 bucket to a local directory in the Docker container, or makes it\n            available as input streams. For example, if you specify an EFS location, input data\n            files are available as input streams. They do not need to be downloaded.</p>\n         <p>Your input must be in the same Amazon Web Services region as your training job.</p>"
                     }
                 },
                 "OutputDataConfig": {
@@ -13315,6 +13381,27 @@
             },
             "traits": {
                 "smithy.api#documentation": "<p>The deployment configuration for an endpoint, which contains the desired deployment\n            strategy and rollback configurations.</p>"
+            }
+        },
+        "com.amazonaws.sagemaker#DeploymentRecommendation": {
+            "type": "structure",
+            "members": {
+                "RecommendationStatus": {
+                    "target": "com.amazonaws.sagemaker#RecommendationStatus",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Status of the deployment recommendation. The status <code>NOT_APPLICABLE</code> means that SageMaker\n         is unable to provide a default recommendation for the model using the information provided. If the deployment status is <code>IN_PROGRESS</code>,\n         retry your API call after a few seconds to get a <code>COMPLETED</code> deployment recommendation.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "RealTimeInferenceRecommendations": {
+                    "target": "com.amazonaws.sagemaker#RealTimeInferenceRecommendations",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A list of <a href=\"https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_RealTimeInferenceRecommendation.html\">RealTimeInferenceRecommendation</a> items.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>A set of recommended deployment configurations for the model. To get more advanced recommendations, see\n         <a href=\"https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateInferenceRecommendationsJob.html\">CreateInferenceRecommendationsJob</a>\n         to create an inference recommendation job.</p>"
             }
         },
         "com.amazonaws.sagemaker#DeploymentStage": {
@@ -16457,7 +16544,7 @@
                 }
             ],
             "traits": {
-                "smithy.api#documentation": "<p>Gets\n            a description of a hyperparameter tuning job.</p>"
+                "smithy.api#documentation": "<p>Returns a description of a hyperparameter tuning job, depending on the fields\n            selected. These fields can include the name, Amazon Resource Name (ARN), job status of\n            your tuning job and more.</p>"
             }
         },
         "com.amazonaws.sagemaker#DescribeHyperParameterTuningJobRequest": {
@@ -16481,7 +16568,7 @@
                 "HyperParameterTuningJobName": {
                     "target": "com.amazonaws.sagemaker#HyperParameterTuningJobName",
                     "traits": {
-                        "smithy.api#documentation": "<p>The name of the tuning job.</p>",
+                        "smithy.api#documentation": "<p>The name of the hyperparameter tuning job.</p>",
                         "smithy.api#required": {}
                     }
                 },
@@ -16583,6 +16670,12 @@
                 },
                 "ConsumedResources": {
                     "target": "com.amazonaws.sagemaker#HyperParameterTuningJobConsumedResources"
+                },
+                "Autotune": {
+                    "target": "com.amazonaws.sagemaker#Autotune",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A flag to indicate if autotune is enabled for the hyperparameter tuning job.</p>"
+                    }
                 }
             },
             "traits": {
@@ -18036,6 +18129,12 @@
                         "smithy.api#default": false,
                         "smithy.api#documentation": "<p>If <code>True</code>, no inbound or outbound network calls can be made to or from the\n            model container.</p>"
                     }
+                },
+                "DeploymentRecommendation": {
+                    "target": "com.amazonaws.sagemaker#DeploymentRecommendation",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A set of recommended deployment configurations for the model.</p>"
+                    }
                 }
             },
             "traits": {
@@ -18993,6 +19092,12 @@
                     "target": "com.amazonaws.sagemaker#ParallelismConfiguration",
                     "traits": {
                         "smithy.api#documentation": "<p>The parallelism configuration applied to the pipeline.</p>"
+                    }
+                },
+                "SelectiveExecutionConfig": {
+                    "target": "com.amazonaws.sagemaker#SelectiveExecutionConfig",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The selective execution configuration applied to the pipeline run.</p>"
                     }
                 }
             },
@@ -27450,6 +27555,18 @@
                     "traits": {
                         "smithy.api#documentation": "<p>The recommendation ID which uniquely identifies each recommendation.</p>"
                     }
+                },
+                "InvocationEndTime": {
+                    "target": "com.amazonaws.sagemaker#InvocationEndTime",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A timestamp that shows when the benchmark completed.</p>"
+                    }
+                },
+                "InvocationStartTime": {
+                    "target": "com.amazonaws.sagemaker#InvocationStartTime",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A timestamp that shows when the benchmark started.</p>"
+                    }
                 }
             },
             "traits": {
@@ -27537,6 +27654,24 @@
                     "target": "com.amazonaws.sagemaker#FailureReason",
                     "traits": {
                         "smithy.api#documentation": "<p>If the job fails, provides information why the job failed.</p>"
+                    }
+                },
+                "ModelName": {
+                    "target": "com.amazonaws.sagemaker#ModelName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of the created model.</p>"
+                    }
+                },
+                "SamplePayloadUrl": {
+                    "target": "com.amazonaws.sagemaker#S3Uri",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The Amazon Simple Storage Service (Amazon S3) path where the sample payload is stored.\n         This path must point to a single gzip compressed tar archive (.tar.gz suffix).</p>"
+                    }
+                },
+                "ModelPackageVersionArn": {
+                    "target": "com.amazonaws.sagemaker#ModelPackageArn",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The Amazon Resource Name (ARN) of a versioned model package.</p>"
                     }
                 }
             },
@@ -28228,6 +28363,42 @@
                     "traits": {
                         "smithy.api#enumValue": "ml.g5.48xlarge"
                     }
+                },
+                "ML_INF1_XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.inf1.xlarge"
+                    }
+                },
+                "ML_INF1_2XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.inf1.2xlarge"
+                    }
+                },
+                "ML_INF1_6XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.inf1.6xlarge"
+                    }
+                },
+                "ML_INF1_24XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.inf1.24xlarge"
+                    }
+                },
+                "ML_P4D_24XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.p4d.24xlarge"
+                    }
+                },
+                "ML_P4DE_24XLARGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ml.p4de.24xlarge"
+                    }
                 }
             }
         },
@@ -28311,6 +28482,12 @@
             "traits": {
                 "smithy.api#default": 0
             }
+        },
+        "com.amazonaws.sagemaker#InvocationEndTime": {
+            "type": "timestamp"
+        },
+        "com.amazonaws.sagemaker#InvocationStartTime": {
+            "type": "timestamp"
         },
         "com.amazonaws.sagemaker#InvocationsMaxRetries": {
             "type": "integer",
@@ -32567,6 +32744,18 @@
                     "traits": {
                         "smithy.api#documentation": "<p>The maximum number of recommendations to return in the response.</p>"
                     }
+                },
+                "ModelNameEquals": {
+                    "target": "com.amazonaws.sagemaker#ModelName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A filter that returns only jobs that were created for this model.</p>"
+                    }
+                },
+                "ModelPackageVersionArnEquals": {
+                    "target": "com.amazonaws.sagemaker#ModelPackageArn",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A filter that returns only jobs that were created for this versioned model package.</p>"
+                    }
                 }
             },
             "traits": {
@@ -36773,6 +36962,12 @@
                     "target": "com.amazonaws.sagemaker#TagList",
                     "traits": {
                         "smithy.api#documentation": "<p>A list of key-value pairs associated with the model. For more information, see\n            <a href=\"https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html\">Tagging Amazon Web Services\n                resources</a> in the <i>Amazon Web Services General Reference Guide</i>.</p>"
+                    }
+                },
+                "DeploymentRecommendation": {
+                    "target": "com.amazonaws.sagemaker#DeploymentRecommendation",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A set of recommended deployment configurations for the model.</p>"
                     }
                 }
             },
@@ -41561,6 +41756,12 @@
                     "traits": {
                         "smithy.api#documentation": "<p>The array of <a href=\"https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CategoricalParameterRange.html\">CategoricalParameterRange</a> objects that specify ranges\n            of categorical hyperparameters that a hyperparameter tuning job searches.</p>"
                     }
+                },
+                "AutoParameters": {
+                    "target": "com.amazonaws.sagemaker#AutoParameters",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A list containing hyperparameter names and example values to be used by Autotune to determine optimal ranges for your tuning job.</p>"
+                    }
                 }
             },
             "traits": {
@@ -42044,6 +42245,12 @@
                     "traits": {
                         "smithy.api#documentation": "<p>Contains a list of pipeline parameters. This list can be empty. </p>"
                     }
+                },
+                "SelectiveExecutionConfig": {
+                    "target": "com.amazonaws.sagemaker#SelectiveExecutionConfig",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The selective execution configuration applied to the pipeline run.</p>"
+                    }
                 }
             },
             "traits": {
@@ -42187,6 +42394,12 @@
                     "target": "com.amazonaws.sagemaker#PipelineExecutionStepMetadata",
                     "traits": {
                         "smithy.api#documentation": "<p>Metadata to run the pipeline step.</p>"
+                    }
+                },
+                "SelectiveExecutionResult": {
+                    "target": "com.amazonaws.sagemaker#SelectiveExecutionResult",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The ARN from an execution of the current pipeline from which\n           results are reused for this step.</p>"
                     }
                 }
             },
@@ -45730,7 +45943,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>A collection of settings that configure user interaction with the\n                <code>RStudioServerPro</code> app. <code>RStudioServerProAppSettings</code> cannot\n            be updated. The <code>RStudioServerPro</code> app must be deleted and a new one created\n            to make any changes.</p>"
+                "smithy.api#documentation": "<p>A collection of settings that configure user interaction with the\n                <code>RStudioServerPro</code> app.</p>"
             }
         },
         "com.amazonaws.sagemaker#RStudioServerProDomainSettings": {
@@ -45838,6 +46051,46 @@
             },
             "traits": {
                 "smithy.api#documentation": "<p>The infrastructure configuration for deploying the model to a real-time inference endpoint.</p>"
+            }
+        },
+        "com.amazonaws.sagemaker#RealTimeInferenceRecommendation": {
+            "type": "structure",
+            "members": {
+                "RecommendationId": {
+                    "target": "com.amazonaws.sagemaker#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The recommendation ID which uniquely identifies each recommendation.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "InstanceType": {
+                    "target": "com.amazonaws.sagemaker#ProductionVariantInstanceType",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The recommended instance type for Real-Time Inference.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "Environment": {
+                    "target": "com.amazonaws.sagemaker#EnvironmentMap",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The recommended environment variables to set in the model container for Real-Time Inference.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The recommended configuration to use for Real-Time Inference.</p>"
+            }
+        },
+        "com.amazonaws.sagemaker#RealTimeInferenceRecommendations": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.sagemaker#RealTimeInferenceRecommendation"
+            },
+            "traits": {
+                "smithy.api#length": {
+                    "min": 0,
+                    "max": 3
+                }
             }
         },
         "com.amazonaws.sagemaker#RealtimeInferenceInstanceTypes": {
@@ -45981,6 +46234,18 @@
                 },
                 "EndpointMetrics": {
                     "target": "com.amazonaws.sagemaker#InferenceMetrics"
+                },
+                "InvocationEndTime": {
+                    "target": "com.amazonaws.sagemaker#InvocationEndTime",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A timestamp that shows when the benchmark completed.</p>"
+                    }
+                },
+                "InvocationStartTime": {
+                    "target": "com.amazonaws.sagemaker#InvocationStartTime",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A timestamp that shows when the benchmark started.</p>"
+                    }
                 }
             },
             "traits": {
@@ -46332,6 +46597,35 @@
             },
             "traits": {
                 "smithy.api#documentation": "<p>The metrics of recommendations.</p>"
+            }
+        },
+        "com.amazonaws.sagemaker#RecommendationStatus": {
+            "type": "enum",
+            "members": {
+                "IN_PROGRESS": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "IN_PROGRESS"
+                    }
+                },
+                "COMPLETED": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "COMPLETED"
+                    }
+                },
+                "FAILED": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "FAILED"
+                    }
+                },
+                "NOT_APPLICABLE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "NOT_APPLICABLE"
+                    }
+                }
             }
         },
         "com.amazonaws.sagemaker#RecommendationStepType": {
@@ -47334,7 +47628,7 @@
                 "S3Uri": {
                     "target": "com.amazonaws.sagemaker#S3Uri",
                     "traits": {
-                        "smithy.api#documentation": "<p>Depending on the value specified for the <code>S3DataType</code>, identifies either\n            a key name prefix or a manifest. For example: </p>\n         <ul>\n            <li>\n               <p> A key name prefix might look like this:\n                        <code>s3://bucketname/exampleprefix</code>\n               </p>\n            </li>\n            <li>\n               <p> A manifest might look like this:\n                        <code>s3://bucketname/example.manifest</code>\n               </p>\n               <p> A manifest is an S3 object which is a JSON file consisting of an array of\n                    elements. The first element is a prefix which is followed by one or more\n                    suffixes. SageMaker appends the suffix elements to the prefix to get a full set\n                    of <code>S3Uri</code>. Note that the prefix must be a valid non-empty\n                        <code>S3Uri</code> that precludes users from specifying a manifest whose\n                    individual <code>S3Uri</code> is sourced from different S3 buckets.</p>\n               <p> The following code example shows a valid manifest format: </p>\n               <p>\n                  <code>[ {\"prefix\": \"s3://customer_bucket/some/prefix/\"},</code>\n               </p>\n               <p>\n                  <code> \"relative/path/to/custdata-1\",</code>\n               </p>\n               <p>\n                  <code> \"relative/path/custdata-2\",</code>\n               </p>\n               <p>\n                  <code> ...</code>\n               </p>\n               <p>\n                  <code> \"relative/path/custdata-N\"</code>\n               </p>\n               <p>\n                  <code>]</code>\n               </p>\n               <p> This JSON is equivalent to the following <code>S3Uri</code>\n                    list:</p>\n               <p>\n                  <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code>\n               </p>\n               <p>\n                  <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code>\n               </p>\n               <p>\n                  <code>...</code>\n               </p>\n               <p>\n                  <code>s3://customer_bucket/some/prefix/relative/path/custdata-N</code>\n               </p>\n               <p>The complete set of <code>S3Uri</code> in this manifest is the input data\n                    for the channel for this data source. The object that each <code>S3Uri</code>\n                    points to must be readable by the IAM role that SageMaker uses to perform tasks on\n                    your behalf. </p>\n            </li>\n         </ul>",
+                        "smithy.api#documentation": "<p>Depending on the value specified for the <code>S3DataType</code>, identifies either\n            a key name prefix or a manifest. For example: </p>\n         <ul>\n            <li>\n               <p> A key name prefix might look like this:\n                        <code>s3://bucketname/exampleprefix</code>\n               </p>\n            </li>\n            <li>\n               <p> A manifest might look like this:\n                        <code>s3://bucketname/example.manifest</code>\n               </p>\n               <p> A manifest is an S3 object which is a JSON file consisting of an array of\n                    elements. The first element is a prefix which is followed by one or more\n                    suffixes. SageMaker appends the suffix elements to the prefix to get a full set\n                    of <code>S3Uri</code>. Note that the prefix must be a valid non-empty\n                        <code>S3Uri</code> that precludes users from specifying a manifest whose\n                    individual <code>S3Uri</code> is sourced from different S3 buckets.</p>\n               <p> The following code example shows a valid manifest format: </p>\n               <p>\n                  <code>[ {\"prefix\": \"s3://customer_bucket/some/prefix/\"},</code>\n               </p>\n               <p>\n                  <code> \"relative/path/to/custdata-1\",</code>\n               </p>\n               <p>\n                  <code> \"relative/path/custdata-2\",</code>\n               </p>\n               <p>\n                  <code> ...</code>\n               </p>\n               <p>\n                  <code> \"relative/path/custdata-N\"</code>\n               </p>\n               <p>\n                  <code>]</code>\n               </p>\n               <p> This JSON is equivalent to the following <code>S3Uri</code>\n                    list:</p>\n               <p>\n                  <code>s3://customer_bucket/some/prefix/relative/path/to/custdata-1</code>\n               </p>\n               <p>\n                  <code>s3://customer_bucket/some/prefix/relative/path/custdata-2</code>\n               </p>\n               <p>\n                  <code>...</code>\n               </p>\n               <p>\n                  <code>s3://customer_bucket/some/prefix/relative/path/custdata-N</code>\n               </p>\n               <p>The complete set of <code>S3Uri</code> in this manifest is the input data\n                    for the channel for this data source. The object that each <code>S3Uri</code>\n                    points to must be readable by the IAM role that SageMaker uses to perform tasks on\n                    your behalf. </p>\n            </li>\n         </ul>\n         <p>Your input bucket must be located in same Amazon Web Services region as your training job.</p>",
                         "smithy.api#required": {}
                     }
                 },
@@ -47358,7 +47652,7 @@
                 }
             },
             "traits": {
-                "smithy.api#documentation": "<p>Describes the S3 data source.</p>"
+                "smithy.api#documentation": "<p>Describes the S3 data source.</p>\n         <p>Your input bucket must be in the same Amazon Web Services region as your training job.</p>"
             }
         },
         "com.amazonaws.sagemaker#S3DataType": {
@@ -49924,6 +50218,69 @@
                 "smithy.api#default": 0
             }
         },
+        "com.amazonaws.sagemaker#SelectedStep": {
+            "type": "structure",
+            "members": {
+                "StepName": {
+                    "target": "com.amazonaws.sagemaker#String256",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of the pipeline step.</p>",
+                        "smithy.api#required": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>A step selected to run in selective execution mode.</p>"
+            }
+        },
+        "com.amazonaws.sagemaker#SelectedStepList": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.sagemaker#SelectedStep"
+            },
+            "traits": {
+                "smithy.api#length": {
+                    "min": 1,
+                    "max": 50
+                }
+            }
+        },
+        "com.amazonaws.sagemaker#SelectiveExecutionConfig": {
+            "type": "structure",
+            "members": {
+                "SourcePipelineExecutionArn": {
+                    "target": "com.amazonaws.sagemaker#PipelineExecutionArn",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The ARN from a reference execution of the current pipeline. \n        Used to copy input collaterals needed for the selected steps to run.\n        The execution status of the pipeline can be either <code>Failed</code>\n        or <code>Success</code>.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "SelectedSteps": {
+                    "target": "com.amazonaws.sagemaker#SelectedStepList",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A list of pipeline steps to run. All step(s) in all path(s) between\n        two selected steps should be included.</p>",
+                        "smithy.api#required": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The selective execution configuration applied to the pipeline run.</p>"
+            }
+        },
+        "com.amazonaws.sagemaker#SelectiveExecutionResult": {
+            "type": "structure",
+            "members": {
+                "SourcePipelineExecutionArn": {
+                    "target": "com.amazonaws.sagemaker#PipelineExecutionArn",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The ARN from an execution of the current pipeline.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The ARN from an execution of the current pipeline.</p>"
+            }
+        },
         "com.amazonaws.sagemaker#SendPipelineExecutionStepFailure": {
             "type": "operation",
             "input": {
@@ -50533,7 +50890,7 @@
                 "ModelDataUrl": {
                     "target": "com.amazonaws.sagemaker#Url",
                     "traits": {
-                        "smithy.api#documentation": "<p>The Amazon S3 path where the model artifacts, which result from model training, are stored.\n            This path must point to a single <code>gzip</code> compressed tar archive\n                (<code>.tar.gz</code> suffix).</p>\n         <note>\n            <p>The model artifacts must be in an S3 bucket that is in the same region as the\n                algorithm.</p>\n         </note>"
+                        "smithy.api#documentation": "<p>The Amazon S3 path where the model artifacts, which result from model training, are stored.\n            This path must point to a single <code>gzip</code> compressed tar archive\n                (<code>.tar.gz</code> suffix).</p>\n         <note>\n            <p>The model artifacts must be in an S3 bucket that is in the same Amazon Web Services region as the\n                algorithm.</p>\n         </note>"
                     }
                 },
                 "AlgorithmName": {
@@ -51049,6 +51406,12 @@
                     "target": "com.amazonaws.sagemaker#ParallelismConfiguration",
                     "traits": {
                         "smithy.api#documentation": "<p>This configuration, if specified, overrides the parallelism configuration \n            of the parent pipeline for this specific run.</p>"
+                    }
+                },
+                "SelectiveExecutionConfig": {
+                    "target": "com.amazonaws.sagemaker#SelectiveExecutionConfig",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The selective execution configuration applied to the pipeline run.</p>"
                     }
                 }
             },
@@ -53236,7 +53599,7 @@
                 "InputDataConfig": {
                     "target": "com.amazonaws.sagemaker#InputDataConfig",
                     "traits": {
-                        "smithy.api#documentation": "<p>An array of <code>Channel</code> objects that describes each data input\n            channel.</p>"
+                        "smithy.api#documentation": "<p>An array of <code>Channel</code> objects that describes each data input\n            channel.</p>\n         <p>Your input must be in the same Amazon Web Services region as your training job.</p>"
                     }
                 },
                 "OutputDataConfig": {

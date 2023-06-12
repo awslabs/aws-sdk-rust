@@ -677,6 +677,12 @@
                     "traits": {
                         "smithy.api#enumValue": "fi-FI"
                     }
+                },
+                "en_IE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "en-IE"
+                    }
                 }
             }
         },
@@ -3370,6 +3376,18 @@
                     "target": "smithy.api#Unit",
                     "traits": {
                         "smithy.api#enumValue": "Tomoko"
+                    }
+                },
+                "Niamh": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "Niamh"
+                    }
+                },
+                "Sofie": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "Sofie"
                     }
                 }
             }
