@@ -1595,7 +1595,8 @@
                 "smithy.api#paginated": {
                     "inputToken": "NextToken",
                     "outputToken": "NextToken",
-                    "pageSize": "MaxResults"
+                    "pageSize": "MaxResults",
+                    "items": "Regions"
                 },
                 "smithy.api#readonly": {},
                 "smithy.api#suppress": [
