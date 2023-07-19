@@ -1,4 +1,4 @@
-smithy_rs_revision = 'e3c65ffe1be1f319e69b65e4b2cbdc72b00279fa'
+smithy_rs_revision = '64fb3dd76878fee6d062b850ad5416f4f5d138e3'
 aws_doc_sdk_examples_revision = 'f4fc46139c2ea0784e31cadd19b430fcd2bbc21a'
 
 [manual_interventions]
