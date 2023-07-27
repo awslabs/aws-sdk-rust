@@ -4604,6 +4604,12 @@
                     "traits": {
                         "smithy.api#documentation": "<p>If using automatic language identification in your request and you want to apply a\n            custom language model, a custom vocabulary, or a custom vocabulary filter, include\n                <code>LanguageIdSettings</code> with the relevant sub-parameters\n                (<code>VocabularyName</code>, <code>LanguageModelName</code>, and\n                <code>VocabularyFilterName</code>). Note that multi-language identification\n                (<code>IdentifyMultipleLanguages</code>) doesn't support custom language\n            models.</p>\n         <p>\n            <code>LanguageIdSettings</code> supports two to five language codes. Each language\n            code you include can have an associated custom language model, custom vocabulary, and\n            custom vocabulary filter. The language codes that you specify must match the languages\n            of the associated custom language models, custom vocabularies, and custom vocabulary\n            filters.</p>\n         <p>It's recommended that you include <code>LanguageOptions</code> when using\n                <code>LanguageIdSettings</code> to ensure that the correct language dialect is\n            identified. For example, if you specify a custom vocabulary that is in\n                <code>en-US</code> but Amazon Transcribe determines that the language spoken in\n            your media is <code>en-AU</code>, your custom vocabulary <i>is not</i>\n            applied to your transcription. If you include <code>LanguageOptions</code> and include\n                <code>en-US</code> as the only English language dialect, your custom vocabulary\n                <i>is</i> applied to your transcription.</p>\n         <p>If you want to include a custom language model with your request but <b>do not</b> want to use automatic language identification, use\n            instead the <code></code> parameter with the\n                <code>LanguageModelName</code> sub-parameter. If you want to include a custom\n            vocabulary or a custom vocabulary filter (or both) with your request but <b>do not</b> want to use automatic language identification, use\n            instead the <code></code> parameter with the\n                <code>VocabularyName</code> or <code>VocabularyFilterName</code> (or both)\n            sub-parameter.</p>"
                     }
+                },
+                "ToxicityDetection": {
+                    "target": "com.amazonaws.transcribe#ToxicityDetection",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Enables toxic speech detection in your transcript. If you include \n            <code>ToxicityDetection</code> in your request, you must also include\n            <code>ToxicityCategories</code>.</p>\n         <p>For information on the types of toxic speech Amazon Transcribe can detect, see \n            <a href=\"https://docs.aws.amazon.com/transcribe/latest/dg/toxic-language.html\">Detecting toxic\n                speech</a>.</p>"
+                    }
                 }
             },
             "traits": {
@@ -4857,6 +4863,56 @@
                     "min": 0,
                     "max": 14400000
                 }
+            }
+        },
+        "com.amazonaws.transcribe#ToxicityCategories": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.transcribe#ToxicityCategory"
+            },
+            "traits": {
+                "smithy.api#length": {
+                    "min": 1,
+                    "max": 1
+                }
+            }
+        },
+        "com.amazonaws.transcribe#ToxicityCategory": {
+            "type": "enum",
+            "members": {
+                "ALL": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "ALL"
+                    }
+                }
+            }
+        },
+        "com.amazonaws.transcribe#ToxicityDetection": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.transcribe#ToxicityDetectionSettings"
+            },
+            "traits": {
+                "smithy.api#length": {
+                    "min": 1,
+                    "max": 1
+                }
+            }
+        },
+        "com.amazonaws.transcribe#ToxicityDetectionSettings": {
+            "type": "structure",
+            "members": {
+                "ToxicityCategories": {
+                    "target": "com.amazonaws.transcribe#ToxicityCategories",
+                    "traits": {
+                        "smithy.api#documentation": "<p> If you include <code>ToxicityDetection</code> in your transcription request, you \n            must also include <code>ToxicityCategories</code>. The only accepted value for this \n            parameter is <code>ALL</code>.</p>",
+                        "smithy.api#required": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Contains <code>ToxicityCategories</code>, which is a required parameter if you \n            want to enable toxicity detection (<code>ToxicityDetection</code>) in your transcription \n            request.</p>"
             }
         },
         "com.amazonaws.transcribe#Transcribe": {
@@ -6301,6 +6357,12 @@
                     "traits": {
                         "smithy.api#documentation": "<p>Provides the name and language of all custom language models, custom vocabularies, and\n            custom vocabulary filters that you included in your request.</p>"
                     }
+                },
+                "ToxicityDetection": {
+                    "target": "com.amazonaws.transcribe#ToxicityDetection",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Provides information about the toxicity detection settings applied to your transcription.</p>"
+                    }
                 }
             },
             "traits": {
@@ -6434,6 +6496,12 @@
                     "target": "com.amazonaws.transcribe#LanguageCodeList",
                     "traits": {
                         "smithy.api#documentation": "<p>The language codes used to create your transcription job. This parameter is used with\n            multi-language identification. For single-language identification, the singular version\n            of this parameter, <code>LanguageCode</code>, is present.</p>"
+                    }
+                },
+                "ToxicityDetection": {
+                    "target": "com.amazonaws.transcribe#ToxicityDetection",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Indicates whether toxicity detection was enabled for the specified transcription \n            job.</p>"
                     }
                 }
             },

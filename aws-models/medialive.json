@@ -586,6 +586,21 @@
                 "smithy.api#documentation": "Accessibility Type"
             }
         },
+        "com.amazonaws.medialive#AccountConfiguration": {
+            "type": "structure",
+            "members": {
+                "KmsKeyId": {
+                    "target": "com.amazonaws.medialive#__string",
+                    "traits": {
+                        "smithy.api#documentation": "Specifies the KMS key to use for all features that use key encryption. Specify the ARN of a KMS key that you have created. Or leave blank to use the key that MediaLive creates and manages for you.",
+                        "smithy.api#jsonName": "kmsKeyId"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "Placeholder documentation for AccountConfiguration"
+            }
+        },
         "com.amazonaws.medialive#AfdSignaling": {
             "type": "enum",
             "members": {
@@ -4934,6 +4949,66 @@
                 "smithy.api#input": {}
             }
         },
+        "com.amazonaws.medialive#DescribeAccountConfiguration": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.medialive#DescribeAccountConfigurationRequest"
+            },
+            "output": {
+                "target": "com.amazonaws.medialive#DescribeAccountConfigurationResponse"
+            },
+            "errors": [
+                {
+                    "target": "com.amazonaws.medialive#BadGatewayException"
+                },
+                {
+                    "target": "com.amazonaws.medialive#BadRequestException"
+                },
+                {
+                    "target": "com.amazonaws.medialive#ForbiddenException"
+                },
+                {
+                    "target": "com.amazonaws.medialive#GatewayTimeoutException"
+                },
+                {
+                    "target": "com.amazonaws.medialive#InternalServerErrorException"
+                },
+                {
+                    "target": "com.amazonaws.medialive#TooManyRequestsException"
+                }
+            ],
+            "traits": {
+                "smithy.api#documentation": "Get account configuration",
+                "smithy.api#http": {
+                    "method": "GET",
+                    "uri": "/prod/accountConfiguration",
+                    "code": 200
+                }
+            }
+        },
+        "com.amazonaws.medialive#DescribeAccountConfigurationRequest": {
+            "type": "structure",
+            "members": {},
+            "traits": {
+                "smithy.api#documentation": "Placeholder documentation for DescribeAccountConfigurationRequest",
+                "smithy.api#input": {}
+            }
+        },
+        "com.amazonaws.medialive#DescribeAccountConfigurationResponse": {
+            "type": "structure",
+            "members": {
+                "AccountConfiguration": {
+                    "target": "com.amazonaws.medialive#AccountConfiguration",
+                    "traits": {
+                        "smithy.api#jsonName": "accountConfiguration"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "Placeholder documentation for DescribeAccountConfigurationResponse",
+                "smithy.api#output": {}
+            }
+        },
         "com.amazonaws.medialive#DescribeChannel": {
             "type": "operation",
             "input": {
@@ -6749,6 +6824,97 @@
                 "smithy.api#output": {}
             }
         },
+        "com.amazonaws.medialive#DescribeThumbnails": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.medialive#DescribeThumbnailsRequest"
+            },
+            "output": {
+                "target": "com.amazonaws.medialive#DescribeThumbnailsResponse"
+            },
+            "errors": [
+                {
+                    "target": "com.amazonaws.medialive#BadGatewayException"
+                },
+                {
+                    "target": "com.amazonaws.medialive#BadRequestException"
+                },
+                {
+                    "target": "com.amazonaws.medialive#ConflictException"
+                },
+                {
+                    "target": "com.amazonaws.medialive#ForbiddenException"
+                },
+                {
+                    "target": "com.amazonaws.medialive#GatewayTimeoutException"
+                },
+                {
+                    "target": "com.amazonaws.medialive#InternalServerErrorException"
+                },
+                {
+                    "target": "com.amazonaws.medialive#NotFoundException"
+                },
+                {
+                    "target": "com.amazonaws.medialive#TooManyRequestsException"
+                }
+            ],
+            "traits": {
+                "smithy.api#documentation": "Describe the latest thumbnails data.",
+                "smithy.api#http": {
+                    "method": "GET",
+                    "uri": "/prod/channels/{ChannelId}/thumbnails",
+                    "code": 200
+                }
+            }
+        },
+        "com.amazonaws.medialive#DescribeThumbnailsRequest": {
+            "type": "structure",
+            "members": {
+                "ChannelId": {
+                    "target": "com.amazonaws.medialive#__string",
+                    "traits": {
+                        "smithy.api#documentation": "Unique ID of the channel",
+                        "smithy.api#httpLabel": {},
+                        "smithy.api#required": {}
+                    }
+                },
+                "PipelineId": {
+                    "target": "com.amazonaws.medialive#__string",
+                    "traits": {
+                        "smithy.api#documentation": "Pipeline ID (\"0\" or \"1\")",
+                        "smithy.api#httpQuery": "pipelineId",
+                        "smithy.api#required": {}
+                    }
+                },
+                "ThumbnailType": {
+                    "target": "com.amazonaws.medialive#__string",
+                    "traits": {
+                        "smithy.api#documentation": "thumbnail type",
+                        "smithy.api#httpQuery": "thumbnailType",
+                        "smithy.api#required": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "Placeholder documentation for DescribeThumbnailsRequest",
+                "smithy.api#input": {}
+            }
+        },
+        "com.amazonaws.medialive#DescribeThumbnailsResponse": {
+            "type": "structure",
+            "members": {
+                "ThumbnailDetails": {
+                    "target": "com.amazonaws.medialive#__listOfThumbnailDetail",
+                    "traits": {
+                        "smithy.api#jsonName": "thumbnailDetails"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "Placeholder documentation for DescribeThumbnailsResponse",
+                "smithy.api#output": {}
+            }
+        },
         "com.amazonaws.medialive#DeviceSettingsSyncState": {
             "type": "enum",
             "members": {
@@ -8304,6 +8470,13 @@
                     "traits": {
                         "smithy.api#jsonName": "videoDescriptions",
                         "smithy.api#required": {}
+                    }
+                },
+                "ThumbnailConfiguration": {
+                    "target": "com.amazonaws.medialive#ThumbnailConfiguration",
+                    "traits": {
+                        "smithy.api#documentation": "Thumbnail configuration settings.",
+                        "smithy.api#jsonName": "thumbnailConfiguration"
                     }
                 }
             },
@@ -15845,6 +16018,9 @@
                     "target": "com.amazonaws.medialive#DeleteTags"
                 },
                 {
+                    "target": "com.amazonaws.medialive#DescribeAccountConfiguration"
+                },
+                {
                     "target": "com.amazonaws.medialive#DescribeChannel"
                 },
                 {
@@ -15873,6 +16049,9 @@
                 },
                 {
                     "target": "com.amazonaws.medialive#DescribeSchedule"
+                },
+                {
+                    "target": "com.amazonaws.medialive#DescribeThumbnails"
                 },
                 {
                     "target": "com.amazonaws.medialive#ListChannels"
@@ -15930,6 +16109,9 @@
                 },
                 {
                     "target": "com.amazonaws.medialive#TransferInputDevice"
+                },
+                {
+                    "target": "com.amazonaws.medialive#UpdateAccountConfiguration"
                 },
                 {
                     "target": "com.amazonaws.medialive#UpdateChannel"
@@ -22099,6 +22281,120 @@
                 "smithy.api#documentation": "Temporal Filter Strength"
             }
         },
+        "com.amazonaws.medialive#Thumbnail": {
+            "type": "structure",
+            "members": {
+                "Body": {
+                    "target": "com.amazonaws.medialive#__string",
+                    "traits": {
+                        "smithy.api#documentation": "The binary data for the latest thumbnail.",
+                        "smithy.api#jsonName": "body"
+                    }
+                },
+                "ContentType": {
+                    "target": "com.amazonaws.medialive#__string",
+                    "traits": {
+                        "smithy.api#documentation": "The content type for the latest thumbnail.",
+                        "smithy.api#jsonName": "contentType"
+                    }
+                },
+                "ThumbnailType": {
+                    "target": "com.amazonaws.medialive#ThumbnailType",
+                    "traits": {
+                        "smithy.api#documentation": "Thumbnail Type",
+                        "smithy.api#jsonName": "thumbnailType"
+                    }
+                },
+                "TimeStamp": {
+                    "target": "com.amazonaws.medialive#__timestampIso8601",
+                    "traits": {
+                        "smithy.api#documentation": "Time stamp for the latest thumbnail.",
+                        "smithy.api#jsonName": "timeStamp"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "Details of a single thumbnail"
+            }
+        },
+        "com.amazonaws.medialive#ThumbnailConfiguration": {
+            "type": "structure",
+            "members": {
+                "State": {
+                    "target": "com.amazonaws.medialive#ThumbnailState",
+                    "traits": {
+                        "smithy.api#documentation": "Whether Thumbnail is enabled.",
+                        "smithy.api#jsonName": "state",
+                        "smithy.api#required": {}
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "Thumbnail Configuration"
+            }
+        },
+        "com.amazonaws.medialive#ThumbnailDetail": {
+            "type": "structure",
+            "members": {
+                "PipelineId": {
+                    "target": "com.amazonaws.medialive#__string",
+                    "traits": {
+                        "smithy.api#documentation": "Pipeline ID",
+                        "smithy.api#jsonName": "pipelineId"
+                    }
+                },
+                "Thumbnails": {
+                    "target": "com.amazonaws.medialive#__listOfThumbnail",
+                    "traits": {
+                        "smithy.api#documentation": "thumbnails of a single pipeline",
+                        "smithy.api#jsonName": "thumbnails"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "Thumbnail details for one pipeline of a running channel."
+            }
+        },
+        "com.amazonaws.medialive#ThumbnailState": {
+            "type": "enum",
+            "members": {
+                "AUTO": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "AUTO"
+                    }
+                },
+                "DISABLED": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "DISABLED"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "Thumbnail State"
+            }
+        },
+        "com.amazonaws.medialive#ThumbnailType": {
+            "type": "enum",
+            "members": {
+                "UNSPECIFIED": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "UNSPECIFIED"
+                    }
+                },
+                "CURRENT_ACTIVE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "CURRENT_ACTIVE"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "Thumbnail type."
+            }
+        },
         "com.amazonaws.medialive#TimecodeBurninFontSize": {
             "type": "enum",
             "members": {
@@ -22580,6 +22876,76 @@
                 "smithy.api#documentation": "Placeholder documentation for UnprocessableEntityException",
                 "smithy.api#error": "client",
                 "smithy.api#httpError": 422
+            }
+        },
+        "com.amazonaws.medialive#UpdateAccountConfiguration": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.medialive#UpdateAccountConfigurationRequest"
+            },
+            "output": {
+                "target": "com.amazonaws.medialive#UpdateAccountConfigurationResponse"
+            },
+            "errors": [
+                {
+                    "target": "com.amazonaws.medialive#BadGatewayException"
+                },
+                {
+                    "target": "com.amazonaws.medialive#BadRequestException"
+                },
+                {
+                    "target": "com.amazonaws.medialive#ForbiddenException"
+                },
+                {
+                    "target": "com.amazonaws.medialive#GatewayTimeoutException"
+                },
+                {
+                    "target": "com.amazonaws.medialive#InternalServerErrorException"
+                },
+                {
+                    "target": "com.amazonaws.medialive#TooManyRequestsException"
+                },
+                {
+                    "target": "com.amazonaws.medialive#UnprocessableEntityException"
+                }
+            ],
+            "traits": {
+                "smithy.api#documentation": "Update account configuration",
+                "smithy.api#http": {
+                    "method": "PUT",
+                    "uri": "/prod/accountConfiguration",
+                    "code": 200
+                }
+            }
+        },
+        "com.amazonaws.medialive#UpdateAccountConfigurationRequest": {
+            "type": "structure",
+            "members": {
+                "AccountConfiguration": {
+                    "target": "com.amazonaws.medialive#AccountConfiguration",
+                    "traits": {
+                        "smithy.api#jsonName": "accountConfiguration"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "List of account configuration parameters to update.",
+                "smithy.api#input": {}
+            }
+        },
+        "com.amazonaws.medialive#UpdateAccountConfigurationResponse": {
+            "type": "structure",
+            "members": {
+                "AccountConfiguration": {
+                    "target": "com.amazonaws.medialive#AccountConfiguration",
+                    "traits": {
+                        "smithy.api#jsonName": "accountConfiguration"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "Placeholder documentation for UpdateAccountConfigurationResponse",
+                "smithy.api#output": {}
             }
         },
         "com.amazonaws.medialive#UpdateChannel": {
@@ -24921,6 +25287,24 @@
                 "smithy.api#documentation": "Placeholder documentation for __listOfScte35Descriptor"
             }
         },
+        "com.amazonaws.medialive#__listOfThumbnail": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.medialive#Thumbnail"
+            },
+            "traits": {
+                "smithy.api#documentation": "Placeholder documentation for __listOfThumbnail"
+            }
+        },
+        "com.amazonaws.medialive#__listOfThumbnailDetail": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.medialive#ThumbnailDetail"
+            },
+            "traits": {
+                "smithy.api#documentation": "Placeholder documentation for __listOfThumbnailDetail"
+            }
+        },
         "com.amazonaws.medialive#__listOfTransferringInputDeviceSummary": {
             "type": "list",
             "member": {
@@ -25178,6 +25562,13 @@
             "type": "timestamp",
             "traits": {
                 "smithy.api#documentation": "Placeholder documentation for __timestamp"
+            }
+        },
+        "com.amazonaws.medialive#__timestampIso8601": {
+            "type": "timestamp",
+            "traits": {
+                "smithy.api#documentation": "Placeholder documentation for __timestampIso8601",
+                "smithy.api#timestampFormat": "date-time"
             }
         }
     }
