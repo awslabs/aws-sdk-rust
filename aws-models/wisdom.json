@@ -331,10 +331,30 @@
                     "traits": {
                         "smithy.api#documentation": "<p>The KMS key used for encryption.</p>"
                     }
+                },
+                "integrationConfiguration": {
+                    "target": "com.amazonaws.wisdom#AssistantIntegrationConfiguration",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The configuration information for the Wisdom assistant integration.</p>"
+                    }
                 }
             },
             "traits": {
                 "smithy.api#documentation": "<p>The assistant data.</p>"
+            }
+        },
+        "com.amazonaws.wisdom#AssistantIntegrationConfiguration": {
+            "type": "structure",
+            "members": {
+                "topicIntegrationArn": {
+                    "target": "com.amazonaws.wisdom#GenericArn",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The Amazon Resource Name (ARN) of the integrated Amazon SNS topic used for streaming chat messages.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The configuration information for the Wisdom assistant integration.</p>"
             }
         },
         "com.amazonaws.wisdom#AssistantList": {
@@ -428,6 +448,12 @@
                     "target": "com.amazonaws.wisdom#ServerSideEncryptionConfiguration",
                     "traits": {
                         "smithy.api#documentation": "<p>The KMS key used for encryption.</p>"
+                    }
+                },
+                "integrationConfiguration": {
+                    "target": "com.amazonaws.wisdom#AssistantIntegrationConfiguration",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The configuration information for the Wisdom assistant integration.</p>"
                     }
                 }
             },
@@ -3538,10 +3564,30 @@
                     "traits": {
                         "smithy.api#documentation": "<p>The tags used to organize, track, or control access for this resource.</p>"
                     }
+                },
+                "integrationConfiguration": {
+                    "target": "com.amazonaws.wisdom#SessionIntegrationConfiguration",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The configuration information for the session integration.</p>"
+                    }
                 }
             },
             "traits": {
                 "smithy.api#documentation": "<p>Information about the session.</p>"
+            }
+        },
+        "com.amazonaws.wisdom#SessionIntegrationConfiguration": {
+            "type": "structure",
+            "members": {
+                "topicIntegrationArn": {
+                    "target": "com.amazonaws.wisdom#GenericArn",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The Amazon Resource Name (ARN) of the integrated Amazon SNS topic used for streaming chat messages.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The configuration information for the session integration.</p>"
             }
         },
         "com.amazonaws.wisdom#SessionSummaries": {

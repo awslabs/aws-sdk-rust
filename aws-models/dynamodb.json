@@ -790,7 +790,7 @@
                 "Responses": {
                     "target": "com.amazonaws.dynamodb#PartiQLBatchResponse",
                     "traits": {
-                        "smithy.api#documentation": "<p>The response to each PartiQL statement in the batch.</p>"
+                        "smithy.api#documentation": "<p>The response to each PartiQL statement in the batch. The values of the list are \n            ordered according to the ordering of the request statements.</p>"
                     }
                 },
                 "ConsumedCapacity": {
@@ -920,6 +920,12 @@
                     "traits": {
                         "smithy.api#documentation": "<p> The error message associated with the PartiQL batch response. </p>"
                     }
+                },
+                "Item": {
+                    "target": "com.amazonaws.dynamodb#AttributeMap",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The item which caused the condition check to fail. This will be set if ReturnValuesOnConditionCheckFailure is specified as <code>ALL_OLD</code>.</p>"
+                    }
                 }
             },
             "traits": {
@@ -1017,6 +1023,12 @@
                     "target": "com.amazonaws.dynamodb#ConsistentRead",
                     "traits": {
                         "smithy.api#documentation": "<p> The read consistency of the PartiQL batch request. </p>"
+                    }
+                },
+                "ReturnValuesOnConditionCheckFailure": {
+                    "target": "com.amazonaws.dynamodb#ReturnValuesOnConditionCheckFailure",
+                    "traits": {
+                        "smithy.api#documentation": "<p>An optional parameter that returns the item attributes for a PartiQL batch request\n            operation that failed a condition check.</p>\n         <p>There is no additional cost associated with requesting a return value aside from the\n            small network and processing overhead of receiving a larger response. No read capacity\n            units are consumed.</p>"
                     }
                 }
             },
@@ -1464,6 +1476,12 @@
                     "target": "com.amazonaws.dynamodb#ErrorMessage",
                     "traits": {
                         "smithy.api#documentation": "<p>The conditional request failed.</p>"
+                    }
+                },
+                "Item": {
+                    "target": "com.amazonaws.dynamodb#AttributeMap",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Item which caused the <code>ConditionalCheckFailedException</code>.</p>"
                     }
                 }
             },
@@ -2335,6 +2353,12 @@
                     "traits": {
                         "smithy.api#documentation": "<p>One or more values that can be substituted in an expression.</p>\n         <p>Use the <b>:</b> (colon) character in an expression to\n            dereference an attribute value. For example, suppose that you wanted to check whether\n            the value of the <i>ProductStatus</i> attribute was one of the following: </p>\n         <p>\n            <code>Available | Backordered | Discontinued</code>\n         </p>\n         <p>You would first need to specify <code>ExpressionAttributeValues</code> as\n            follows:</p>\n         <p>\n            <code>{ \":avail\":{\"S\":\"Available\"}, \":back\":{\"S\":\"Backordered\"},\n                \":disc\":{\"S\":\"Discontinued\"} }</code>\n         </p>\n         <p>You could then use these values in an expression, such as this:</p>\n         <p>\n            <code>ProductStatus IN (:avail, :back, :disc)</code>\n         </p>\n         <p>For more information on expression attribute values, see <a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html\">Condition Expressions</a> in the <i>Amazon DynamoDB Developer\n                Guide</i>.</p>"
                     }
+                },
+                "ReturnValuesOnConditionCheckFailure": {
+                    "target": "com.amazonaws.dynamodb#ReturnValuesOnConditionCheckFailure",
+                    "traits": {
+                        "smithy.api#documentation": "<p>An optional parameter that returns the item attributes for a <code>DeleteItem</code>\n            operation that failed a condition check.</p>\n         <p>There is no additional cost associated with requesting a return value aside from the\n            small network and processing overhead of receiving a larger response. No read capacity\n            units are consumed.</p>"
+                    }
                 }
             },
             "traits": {
@@ -2684,7 +2708,7 @@
                 "target": "com.amazonaws.dynamodb#DescribeEndpointsResponse"
             },
             "traits": {
-                "smithy.api#documentation": "<p>Returns the regional endpoint information. This action must be included in your VPC \n            endpoint policies, or access to the DescribeEndpoints API will be denied. For more information \n            on policy permissions, please see <a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/inter-network-traffic-privacy.html#inter-network-traffic-DescribeEndpoints\">Internetwork traffic privacy</a>.</p>"
+                "smithy.api#documentation": "<p>Returns the regional endpoint information. For more information \n            on policy permissions, please see <a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/inter-network-traffic-privacy.html#inter-network-traffic-DescribeEndpoints\">Internetwork traffic privacy</a>.</p>"
             }
         },
         "com.amazonaws.dynamodb#DescribeEndpointsRequest": {
@@ -4780,6 +4804,12 @@
                     "target": "com.amazonaws.dynamodb#PositiveIntegerObject",
                     "traits": {
                         "smithy.api#documentation": "<p>The maximum number of items to evaluate (not necessarily the number of matching\n            items). If DynamoDB processes the number of items up to the limit while processing the\n            results, it stops the operation and returns the matching values up to that point, along\n            with a key in <code>LastEvaluatedKey</code> to apply in a subsequent operation so you\n            can pick up where you left off. Also, if the processed dataset size exceeds 1 MB before\n            DynamoDB reaches this limit, it stops the operation and returns the matching values up\n            to the limit, and a key in <code>LastEvaluatedKey</code> to apply in a subsequent\n            operation to continue the operation. </p>"
+                    }
+                },
+                "ReturnValuesOnConditionCheckFailure": {
+                    "target": "com.amazonaws.dynamodb#ReturnValuesOnConditionCheckFailure",
+                    "traits": {
+                        "smithy.api#documentation": "<p>An optional parameter that returns the item attributes for an\n            <code>ExecuteStatement</code> operation that failed a condition check.</p>\n         <p>There is no additional cost associated with requesting a return value aside from the\n            small network and processing overhead of receiving a larger response. No read capacity\n            units are consumed.</p>"
                     }
                 }
             },
@@ -7477,6 +7507,12 @@
                     "traits": {
                         "smithy.api#documentation": "<p> The parameter values. </p>"
                     }
+                },
+                "ReturnValuesOnConditionCheckFailure": {
+                    "target": "com.amazonaws.dynamodb#ReturnValuesOnConditionCheckFailure",
+                    "traits": {
+                        "smithy.api#documentation": "<p>An optional parameter that returns the item attributes for a PartiQL\n            <code>ParameterizedStatement</code> operation that failed a condition check.</p>\n         <p>There is no additional cost associated with requesting a return value aside from the\n            small network and processing overhead of receiving a larger response. No read capacity\n            units are consumed.</p>"
+                    }
                 }
             },
             "traits": {
@@ -7919,6 +7955,12 @@
                     "target": "com.amazonaws.dynamodb#ExpressionAttributeValueMap",
                     "traits": {
                         "smithy.api#documentation": "<p>One or more values that can be substituted in an expression.</p>\n         <p>Use the <b>:</b> (colon) character in an expression to\n            dereference an attribute value. For example, suppose that you wanted to check whether\n            the value of the <i>ProductStatus</i> attribute was one of the following: </p>\n         <p>\n            <code>Available | Backordered | Discontinued</code>\n         </p>\n         <p>You would first need to specify <code>ExpressionAttributeValues</code> as\n            follows:</p>\n         <p>\n            <code>{ \":avail\":{\"S\":\"Available\"}, \":back\":{\"S\":\"Backordered\"},\n                \":disc\":{\"S\":\"Discontinued\"} }</code>\n         </p>\n         <p>You could then use these values in an expression, such as this:</p>\n         <p>\n            <code>ProductStatus IN (:avail, :back, :disc)</code>\n         </p>\n         <p>For more information on expression attribute values, see <a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html\">Condition Expressions</a> in the <i>Amazon DynamoDB Developer\n                Guide</i>.</p>"
+                    }
+                },
+                "ReturnValuesOnConditionCheckFailure": {
+                    "target": "com.amazonaws.dynamodb#ReturnValuesOnConditionCheckFailure",
+                    "traits": {
+                        "smithy.api#documentation": "<p>An optional parameter that returns the item attributes for a <code>PutItem</code>\n            operation that failed a condition check.</p>\n         <p>There is no additional cost associated with requesting a return value aside from the\n            small network and processing overhead of receiving a larger response. No read capacity\n            units are consumed.</p>"
                     }
                 }
             },
@@ -9444,7 +9486,7 @@
                 "aws.api#clientDiscoveredEndpoint": {
                     "required": false
                 },
-                "smithy.api#documentation": "<p>The <code>Scan</code> operation returns one or more items and item attributes by\n            accessing every item in a table or a secondary index. To have DynamoDB return fewer\n            items, you can provide a <code>FilterExpression</code> operation.</p>\n         <p>If the total number of scanned items exceeds the maximum dataset size limit of 1 MB,\n            the scan stops and results are returned to the user as a <code>LastEvaluatedKey</code>\n            value to continue the scan in a subsequent operation. The results also include the\n            number of items exceeding the limit. A scan can result in no table data meeting the\n            filter criteria. </p>\n         <p>A single <code>Scan</code> operation reads up to the maximum number of items set (if\n            using the <code>Limit</code> parameter) or a maximum of 1 MB of data and then apply any\n            filtering to the results using <code>FilterExpression</code>. If\n                <code>LastEvaluatedKey</code> is present in the response, you need to paginate the\n            result set. For more information, see <a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html#Scan.Pagination\">Paginating the\n                Results</a> in the <i>Amazon DynamoDB Developer Guide</i>. </p>\n         <p>\n            <code>Scan</code> operations proceed sequentially; however, for faster performance on\n            a large table or secondary index, applications can request a parallel <code>Scan</code>\n            operation by providing the <code>Segment</code> and <code>TotalSegments</code>\n            parameters. For more information, see <a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html#Scan.ParallelScan\">Parallel\n                Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>\n         <p>\n            <code>Scan</code> uses eventually consistent reads when accessing the data in a table;\n            therefore, the result set might not include the changes to data in the table immediately\n            before the operation began. If you need a consistent copy of the data, as of the time\n            that the <code>Scan</code> begins, you can set the <code>ConsistentRead</code> parameter\n            to <code>true</code>.</p>",
+                "smithy.api#documentation": "<p>The <code>Scan</code> operation returns one or more items and item attributes by\n            accessing every item in a table or a secondary index. To have DynamoDB return fewer\n            items, you can provide a <code>FilterExpression</code> operation.</p>\n         <p>If the total size of scanned items exceeds the maximum dataset size limit of 1 MB,\n            the scan completes and results are returned to the user. The <code>LastEvaluatedKey</code> \n            value is also returned and the requestor can use the <code>LastEvaluatedKey</code> to continue \n            the scan in a subsequent operation. Each scan response also includes number of items that were \n            scanned (ScannedCount) as part of the request. If using a <code>FilterExpression</code>, a scan result \n            can result in no items meeting the criteria and the <code>Count</code> will result in zero. If \n            you did not use a <code>FilterExpression</code> in the scan request, then <code>Count</code> is \n            the same as <code>ScannedCount</code>.</p>\n         <note>\n            <p>\n               <code>Count</code> and <code>ScannedCount</code> only return the count of items specific to a \n                single scan request and, unless the table is less than 1MB, do not represent the total number \n                of items in the table.\n            </p>\n         </note>\n         <p>A single <code>Scan</code> operation first reads up to the maximum number of items set (if\n            using the <code>Limit</code> parameter) or a maximum of 1 MB of data and then applies any\n            filtering to the results if a <code>FilterExpression</code> is provided. If\n                <code>LastEvaluatedKey</code> is present in the response, pagination is required to complete the\n            full table scan. For more information, see <a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html#Scan.Pagination\">Paginating the\n                Results</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>\n         <p>\n            <code>Scan</code> operations proceed sequentially; however, for faster performance on\n            a large table or secondary index, applications can request a parallel <code>Scan</code>\n            operation by providing the <code>Segment</code> and <code>TotalSegments</code>\n            parameters. For more information, see <a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Scan.html#Scan.ParallelScan\">Parallel\n                Scan</a> in the <i>Amazon DynamoDB Developer Guide</i>.</p>\n         <p>By default, a <code>Scan</code> uses eventually consistent reads when accessing the items in a table. \n            Therefore, the results from an eventually consistent <code>Scan</code> may not include the latest item \n            changes at the time the scan iterates through each item in the table. If you require a strongly consistent \n            read of each item as the scan iterates through the items in the table, you can set the <code>ConsistentRead</code> \n            parameter to true. Strong consistency only relates to the consistency of the read at the item level.</p>\n         <note>\n            <p>\n                DynamoDB does not provide snapshot isolation for a scan operation when the <code>ConsistentRead</code> \n                parameter is set to true. Thus, a DynamoDB scan operation does not guarantee that all reads in a scan \n                see a consistent snapshot of the table when the scan operation was requested.\n            </p>\n         </note>",
                 "smithy.api#paginated": {
                     "inputToken": "ExclusiveStartKey",
                     "outputToken": "LastEvaluatedKey",
@@ -10777,7 +10819,7 @@
                 "ReturnValuesOnConditionCheckFailure": {
                     "target": "com.amazonaws.dynamodb#ReturnValuesOnConditionCheckFailure",
                     "traits": {
-                        "smithy.api#documentation": "<p>Use <code>ReturnValuesOnConditionCheckFailure</code> to get the item attributes if the\n                <code>Update</code> condition fails. For\n                <code>ReturnValuesOnConditionCheckFailure</code>, the valid values are: NONE,\n            ALL_OLD, UPDATED_OLD, ALL_NEW, UPDATED_NEW.</p>"
+                        "smithy.api#documentation": "<p>Use <code>ReturnValuesOnConditionCheckFailure</code> to get the item attributes if the\n                <code>Update</code> condition fails. For\n                <code>ReturnValuesOnConditionCheckFailure</code>, the valid values are: NONE and\n            ALL_OLD.</p>"
                     }
                 }
             },
@@ -11236,6 +11278,12 @@
                     "target": "com.amazonaws.dynamodb#ExpressionAttributeValueMap",
                     "traits": {
                         "smithy.api#documentation": "<p>One or more values that can be substituted in an expression.</p>\n         <p>Use the <b>:</b> (colon) character in an expression to\n            dereference an attribute value. For example, suppose that you wanted to check whether\n            the value of the <code>ProductStatus</code> attribute was one of the following: </p>\n         <p>\n            <code>Available | Backordered | Discontinued</code>\n         </p>\n         <p>You would first need to specify <code>ExpressionAttributeValues</code> as\n            follows:</p>\n         <p>\n            <code>{ \":avail\":{\"S\":\"Available\"}, \":back\":{\"S\":\"Backordered\"},\n                \":disc\":{\"S\":\"Discontinued\"} }</code>\n         </p>\n         <p>You could then use these values in an expression, such as this:</p>\n         <p>\n            <code>ProductStatus IN (:avail, :back, :disc)</code>\n         </p>\n         <p>For more information on expression attribute values, see <a href=\"https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Expressions.SpecifyingConditions.html\">Condition Expressions</a> in the <i>Amazon DynamoDB Developer\n                Guide</i>.</p>"
+                    }
+                },
+                "ReturnValuesOnConditionCheckFailure": {
+                    "target": "com.amazonaws.dynamodb#ReturnValuesOnConditionCheckFailure",
+                    "traits": {
+                        "smithy.api#documentation": "<p>An optional parameter that returns the item attributes for an <code>UpdateItem</code> operation that failed a\n            condition check.</p>\n         <p>There is no additional cost associated with requesting a return value aside from the\n            small network and processing overhead of receiving a larger response. No read capacity\n            units are consumed.</p>"
                     }
                 }
             },
