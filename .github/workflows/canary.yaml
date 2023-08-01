@@ -5,7 +5,7 @@ on:
   workflow_dispatch:
   pull_request:
 env:
-  tool_rust_version: 1.66.1
+  tool_rust_version: 1.68.2
 
 jobs:
   generate-canary-matrix:
