@@ -3,6 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+//! Auth scheme implementations for HTTP API Key, Basic Auth, Bearer Token, and Digest auth.
+
 use aws_smithy_http::query_writer::QueryWriter;
 use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::client::auth::http::{
@@ -24,7 +26,9 @@ use http::HeaderValue;
 /// Destination for the API key
 #[derive(Copy, Clone, Debug)]
 pub enum ApiKeyLocation {
+    /// Place the API key in the URL query parameters
     Query,
+    /// Place the API key in the request headers
     Header,
 }
 

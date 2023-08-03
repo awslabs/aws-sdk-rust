@@ -19,6 +19,7 @@ use aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin;
 use aws_smithy_types::config_bag::ConfigBag;
 use std::borrow::Cow;
 
+/// Auth scheme ID for "no auth".
 pub const NO_AUTH_SCHEME_ID: AuthSchemeId = AuthSchemeId::new("no_auth");
 
 /// A [`RuntimePlugin`] that registers a "no auth" identity resolver and auth scheme.
@@ -36,6 +37,7 @@ impl Default for NoAuthRuntimePlugin {
 }
 
 impl NoAuthRuntimePlugin {
+    /// Creates a new `NoAuthRuntimePlugin`.
     pub fn new() -> Self {
         Self(
             RuntimeComponentsBuilder::new("NoAuthRuntimePlugin")
@@ -54,12 +56,19 @@ impl RuntimePlugin for NoAuthRuntimePlugin {
     }
 }
 
+/// The "no auth" auth scheme.
+///
+/// The orchestrator requires an auth scheme, so Smithy's `@optionalAuth` trait is implemented
+/// by placing a "no auth" auth scheme at the end of the auth scheme options list so that it is
+/// used if there's no identity resolver available for the other auth schemes. It's also used
+/// for models that don't have auth at all.
 #[derive(Debug, Default)]
 pub struct NoAuthScheme {
     signer: NoAuthSigner,
 }
 
 impl NoAuthScheme {
+    /// Creates a new `NoAuthScheme`.
     pub fn new() -> Self {
         Self::default()
     }

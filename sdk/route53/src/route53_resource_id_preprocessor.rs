@@ -62,6 +62,10 @@ where
     G: for<'a> Fn(&'a mut T) -> &'a mut Option<String> + Send + Sync,
     T: fmt::Debug + Send + Sync + 'static,
 {
+    fn name(&self) -> &'static str {
+        "Route53ResourceIdInterceptor"
+    }
+
     fn modify_before_serialization(
         &self,
         context: &mut BeforeSerializationInterceptorContextMut<'_>,

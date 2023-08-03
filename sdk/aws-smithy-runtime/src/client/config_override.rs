@@ -10,11 +10,13 @@ use aws_smithy_types::config_bag::{
 };
 
 macro_rules! component {
-    ($typ:ty, $accessor:ident, $latest_accessor:ident) => {
+    ($typ:ty, $accessor:ident, $latest_accessor:ident, $doc:tt) => {
+        #[doc = $doc]
         pub fn $accessor(&self) -> Option<$typ> {
             fallback_component!(self, $typ, $accessor)
         }
 
+        #[doc = $doc]
         pub fn $latest_accessor(&self) -> Option<$typ> {
             latest_component!(self, $typ, $accessor)
         }
@@ -162,7 +164,12 @@ impl<'a> Resolver<'a> {
     }
 
     // Add additional component methods as needed
-    component!(SharedAsyncSleep, sleep_impl, latest_sleep_impl);
+    component!(
+        SharedAsyncSleep,
+        sleep_impl,
+        latest_sleep_impl,
+        "The async sleep implementation."
+    );
 
     fn config(&self) -> &Layer {
         match &self.inner {

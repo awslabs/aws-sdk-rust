@@ -36,13 +36,65 @@ use std::fmt::Debug;
 use std::{fmt, mem};
 use tracing::{debug, error, trace};
 
-// TODO(enableNewSmithyRuntimeLaunch): New-type `Input`/`Output`/`Error`
-/// Type-erased operation input.
-pub type Input = TypeErasedBox;
-/// Type-erased operation output.
-pub type Output = TypeErasedBox;
-/// Type-erased operation error.
-pub type Error = TypeErasedError;
+macro_rules! new_type_box {
+    ($name:ident, $doc:literal) => {
+        new_type_box!($name, TypeErasedBox, $doc, Send, Sync, fmt::Debug,);
+    };
+    ($name:ident, $underlying:ident, $doc:literal, $($additional_bound:path,)*) => {
+        #[doc = $doc]
+        #[derive(Debug)]
+        pub struct $name($underlying);
+
+        impl $name {
+            #[doc = concat!("Creates a new `", stringify!($name), "` with the provided concrete input value.")]
+            pub fn erase<T: $($additional_bound +)* Send + Sync + fmt::Debug + 'static>(input: T) -> Self {
+                Self($underlying::new(input))
+            }
+
+            #[doc = concat!("Downcasts to the concrete input value.")]
+            pub fn downcast_ref<T: $($additional_bound +)* Send + Sync + fmt::Debug + 'static>(&self) -> Option<&T> {
+                self.0.downcast_ref()
+            }
+
+            #[doc = concat!("Downcasts to the concrete input value.")]
+            pub fn downcast_mut<T: $($additional_bound +)* Send + Sync + fmt::Debug + 'static>(&mut self) -> Option<&mut T> {
+                self.0.downcast_mut()
+            }
+
+            #[doc = concat!("Downcasts to the concrete input value.")]
+            pub fn downcast<T: $($additional_bound +)* Send + Sync + fmt::Debug + 'static>(self) -> Result<T, Self> {
+                self.0.downcast::<T>().map(|v| *v).map_err(Self)
+            }
+
+            #[doc = concat!("Returns a `", stringify!($name), "` with a fake/test value with the expectation that it won't be downcast in the test.")]
+            #[cfg(feature = "test-util")]
+            pub fn doesnt_matter() -> Self {
+                Self($underlying::doesnt_matter())
+            }
+        }
+    };
+}
+
+new_type_box!(Input, "Type-erased operation input.");
+new_type_box!(Output, "Type-erased operation output.");
+new_type_box!(
+    Error,
+    TypeErasedError,
+    "Type-erased operation error.",
+    std::error::Error,
+);
+
+impl fmt::Display for Error {
+    fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+        fmt::Display::fmt(&self.0, f)
+    }
+}
+impl std::error::Error for Error {
+    fn source(&self) -> Option<&(dyn std::error::Error + 'static)> {
+        self.0.source()
+    }
+}
+
 /// Type-erased result for an operation.
 pub type OutputOrError = Result<Output, OrchestratorError<Error>>;
 
@@ -391,27 +443,20 @@ fn try_clone(request: &HttpRequest) -> Option<HttpRequest> {
     )
 }
 
-#[cfg(test)]
+#[cfg(all(test, feature = "test-util"))]
 mod tests {
     use super::*;
     use aws_smithy_http::body::SdkBody;
-    use aws_smithy_types::type_erasure::TypedBox;
     use http::header::{AUTHORIZATION, CONTENT_LENGTH};
     use http::{HeaderValue, Uri};
 
     #[test]
     fn test_success_transitions() {
-        let input = TypedBox::new("input".to_string()).erase();
-        let output = TypedBox::new("output".to_string()).erase();
+        let input = Input::doesnt_matter();
+        let output = Output::erase("output".to_string());
 
         let mut context = InterceptorContext::new(input);
-        assert_eq!(
-            "input",
-            context
-                .input()
-                .and_then(|i| i.downcast_ref::<String>())
-                .unwrap()
-        );
+        assert!(context.input().is_some());
         context.input_mut();
 
         context.enter_serialization_phase();
@@ -447,29 +492,13 @@ mod tests {
 
     #[test]
     fn test_rewind_for_retry() {
-        use std::fmt;
-        #[derive(Debug)]
-        struct Error;
-        impl fmt::Display for Error {
-            fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-                f.write_str("don't care")
-            }
-        }
-        impl std::error::Error for Error {}
-
         let mut cfg = ConfigBag::base();
-        let input = TypedBox::new("input".to_string()).erase();
-        let output = TypedBox::new("output".to_string()).erase();
-        let error = TypedBox::new(Error).erase_error();
+        let input = Input::doesnt_matter();
+        let output = Output::erase("output".to_string());
+        let error = Error::doesnt_matter();
 
         let mut context = InterceptorContext::new(input);
-        assert_eq!(
-            "input",
-            context
-                .input()
-                .and_then(|i| i.downcast_ref::<String>())
-                .unwrap()
-        );
+        assert!(context.input().is_some());
 
         context.enter_serialization_phase();
         let _ = context.take_input();

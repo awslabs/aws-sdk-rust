@@ -26,11 +26,8 @@ impl ListNotebookInstanceLifecycleConfigs {
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >| {
             err.map_service_error(|err| {
-                ::aws_smithy_types::type_erasure::TypedBox::<
-                    crate::operation::list_notebook_instance_lifecycle_configs::ListNotebookInstanceLifecycleConfigsError,
-                >::assume_from(err.into())
-                .expect("correct error type")
-                .unwrap()
+                err.downcast::<crate::operation::list_notebook_instance_lifecycle_configs::ListNotebookInstanceLifecycleConfigsError>()
+                    .expect("correct error type")
             })
         };
         let context = Self::orchestrate_with_stop_point(runtime_plugins, input, ::aws_smithy_runtime::client::orchestrator::StopPoint::None)
@@ -38,11 +35,9 @@ impl ListNotebookInstanceLifecycleConfigs {
             .map_err(map_err)?;
         let output = context.finalize().map_err(map_err)?;
         ::std::result::Result::Ok(
-            ::aws_smithy_types::type_erasure::TypedBox::<
-                crate::operation::list_notebook_instance_lifecycle_configs::ListNotebookInstanceLifecycleConfigsOutput,
-            >::assume_from(output)
-            .expect("correct output type")
-            .unwrap(),
+            output
+                .downcast::<crate::operation::list_notebook_instance_lifecycle_configs::ListNotebookInstanceLifecycleConfigsOutput>()
+                .expect("correct output type"),
         )
     }
 
@@ -57,7 +52,7 @@ impl ListNotebookInstanceLifecycleConfigs {
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = ::aws_smithy_types::type_erasure::TypedBox::new(input).erase();
+        let input = ::aws_smithy_runtime_api::client::interceptors::context::Input::erase(input);
         ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point(
             "sagemaker",
             "ListNotebookInstanceLifecycleConfigs",
@@ -186,11 +181,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ListNoteboo
         input: ::aws_smithy_runtime_api::client::interceptors::context::Input,
         _cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::std::result::Result<::aws_smithy_runtime_api::client::orchestrator::HttpRequest, ::aws_smithy_runtime_api::box_error::BoxError> {
-        let input = ::aws_smithy_types::type_erasure::TypedBox::<
-            crate::operation::list_notebook_instance_lifecycle_configs::ListNotebookInstanceLifecycleConfigsInput,
-        >::assume_from(input)
-        .expect("correct type")
-        .unwrap();
+        let input = input
+            .downcast::<crate::operation::list_notebook_instance_lifecycle_configs::ListNotebookInstanceLifecycleConfigsInput>()
+            .expect("correct type");
         let _header_serialization_settings = _cfg
             .load::<crate::serialization_settings::HeaderSerializationSettings>()
             .cloned()
@@ -236,6 +229,10 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for ListNoteboo
 struct ListNotebookInstanceLifecycleConfigsEndpointParamsInterceptor;
 
 impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for ListNotebookInstanceLifecycleConfigsEndpointParamsInterceptor {
+    fn name(&self) -> &'static str {
+        "ListNotebookInstanceLifecycleConfigsEndpointParamsInterceptor"
+    }
+
     fn read_before_execution(
         &self,
         context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<

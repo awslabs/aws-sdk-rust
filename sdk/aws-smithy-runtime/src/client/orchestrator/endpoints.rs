@@ -21,12 +21,14 @@ use std::fmt::Debug;
 use std::str::FromStr;
 use tracing::trace;
 
-#[derive(Debug, Clone)]
+/// An endpoint resolver that uses a static URI.
+#[derive(Clone, Debug)]
 pub struct StaticUriEndpointResolver {
     endpoint: Uri,
 }
 
 impl StaticUriEndpointResolver {
+    /// Create a resolver that resolves to `http://localhost:{port}`.
     pub fn http_localhost(port: u16) -> Self {
         Self {
             endpoint: Uri::from_str(&format!("http://localhost:{port}"))
@@ -34,6 +36,7 @@ impl StaticUriEndpointResolver {
         }
     }
 
+    /// Create a resolver that resolves to the given URI.
     pub fn uri(endpoint: Uri) -> Self {
         Self { endpoint }
     }
@@ -64,7 +67,13 @@ impl From<StaticUriEndpointResolverParams> for EndpointResolverParams {
     }
 }
 
-#[derive(Debug, Clone)]
+/// Default implementation of [`EndpointResolver`].
+///
+/// This default endpoint resolver implements the `EndpointResolver` trait by
+/// converting the type-erased [`EndpointResolverParams`] into the concrete
+/// endpoint params for the service. It then delegates endpoint resolution
+/// to an underlying resolver that is aware of the concrete type.
+#[derive(Clone, Debug)]
 pub struct DefaultEndpointResolver<Params> {
     inner: SharedEndpointResolver<Params>,
 }
@@ -77,6 +86,7 @@ where
 }
 
 impl<Params> DefaultEndpointResolver<Params> {
+    /// Creates a new `DefaultEndpointResolver`.
     pub fn new(resolve_endpoint: SharedEndpointResolver<Params>) -> Self {
         Self {
             inner: resolve_endpoint,

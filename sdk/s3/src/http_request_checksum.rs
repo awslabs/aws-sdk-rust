@@ -75,6 +75,10 @@ impl<AP> Interceptor for RequestChecksumInterceptor<AP>
 where
     AP: Fn(&Input) -> Result<Option<ChecksumAlgorithm>, BoxError> + Send + Sync,
 {
+    fn name(&self) -> &'static str {
+        "RequestChecksumInterceptor"
+    }
+
     fn read_before_serialization(
         &self,
         context: &BeforeSerializationInterceptorContextRef<'_>,

@@ -145,9 +145,8 @@ impl DeleteObjectFluentBuilder {
         .await
         .map_err(|err| {
             err.map_service_error(|err| {
-                ::aws_smithy_types::type_erasure::TypedBox::<crate::operation::delete_object::DeleteObjectError>::assume_from(err.into())
+                err.downcast::<crate::operation::delete_object::DeleteObjectError>()
                     .expect("correct error type")
-                    .unwrap()
             })
         })?;
         let request = context.take_request().expect("request set before transmit");

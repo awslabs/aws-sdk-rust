@@ -26,11 +26,8 @@ impl PutAppInstanceUserExpirationSettings {
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >| {
             err.map_service_error(|err| {
-                ::aws_smithy_types::type_erasure::TypedBox::<
-                    crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettingsError,
-                >::assume_from(err.into())
-                .expect("correct error type")
-                .unwrap()
+                err.downcast::<crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettingsError>()
+                    .expect("correct error type")
             })
         };
         let context = Self::orchestrate_with_stop_point(runtime_plugins, input, ::aws_smithy_runtime::client::orchestrator::StopPoint::None)
@@ -38,11 +35,9 @@ impl PutAppInstanceUserExpirationSettings {
             .map_err(map_err)?;
         let output = context.finalize().map_err(map_err)?;
         ::std::result::Result::Ok(
-            ::aws_smithy_types::type_erasure::TypedBox::<
-                crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettingsOutput,
-            >::assume_from(output)
-            .expect("correct output type")
-            .unwrap(),
+            output
+                .downcast::<crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettingsOutput>()
+                .expect("correct output type"),
         )
     }
 
@@ -57,7 +52,7 @@ impl PutAppInstanceUserExpirationSettings {
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = ::aws_smithy_types::type_erasure::TypedBox::new(input).erase();
+        let input = ::aws_smithy_runtime_api::client::interceptors::context::Input::erase(input);
         ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point(
             "chimesdkidentity",
             "PutAppInstanceUserExpirationSettings",
@@ -186,11 +181,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for PutAppInsta
         input: ::aws_smithy_runtime_api::client::interceptors::context::Input,
         _cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::std::result::Result<::aws_smithy_runtime_api::client::orchestrator::HttpRequest, ::aws_smithy_runtime_api::box_error::BoxError> {
-        let input = ::aws_smithy_types::type_erasure::TypedBox::<
-            crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettingsInput,
-        >::assume_from(input)
-        .expect("correct type")
-        .unwrap();
+        let input = input
+            .downcast::<crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettingsInput>()
+            .expect("correct type");
         let _header_serialization_settings = _cfg
             .load::<crate::serialization_settings::HeaderSerializationSettings>()
             .cloned()
@@ -247,6 +240,10 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for PutAppInsta
 struct PutAppInstanceUserExpirationSettingsEndpointParamsInterceptor;
 
 impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for PutAppInstanceUserExpirationSettingsEndpointParamsInterceptor {
+    fn name(&self) -> &'static str {
+        "PutAppInstanceUserExpirationSettingsEndpointParamsInterceptor"
+    }
+
     fn read_before_execution(
         &self,
         context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<

@@ -12,8 +12,8 @@ use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
 use aws_smithy_types::config_bag::ConfigBag;
 use std::time::Duration;
 
-// A retry policy used in tests. This relies on an error classifier already present in the config bag.
-// If a server response is retryable, it will be retried after a fixed delay.
+/// A retry policy used in tests. This relies on an error classifier already present in the config bag.
+/// If a server response is retryable, it will be retried after a fixed delay.
 #[derive(Debug, Clone)]
 pub struct FixedDelayRetryStrategy {
     fixed_delay: Duration,
@@ -21,6 +21,7 @@ pub struct FixedDelayRetryStrategy {
 }
 
 impl FixedDelayRetryStrategy {
+    /// Create a new retry policy with a fixed delay.
     pub fn new(fixed_delay: Duration) -> Self {
         Self {
             fixed_delay,
@@ -28,6 +29,7 @@ impl FixedDelayRetryStrategy {
         }
     }
 
+    /// Create a new retry policy with a one second delay.
     pub fn one_second_delay() -> Self {
         Self::new(Duration::from_secs(1))
     }

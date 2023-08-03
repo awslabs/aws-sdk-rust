@@ -34,7 +34,7 @@ pub mod timeout;
 mod builder;
 pub use builder::Builder;
 
-#[cfg(feature = "test-util")]
+#[cfg(all(feature = "test-util", feature = "client-hyper"))]
 pub mod dvr;
 #[cfg(feature = "test-util")]
 pub mod test_connection;

@@ -12,7 +12,7 @@
 //! - `test-util`: Enables utilities for unit tests. DO NOT ENABLE IN PRODUCTION.
 
 #![warn(
-    // missing_docs,
+    missing_docs,
     rustdoc::missing_crate_level_docs,
     unreachable_pub,
     rust_2018_idioms
@@ -22,6 +22,7 @@
 #[cfg(feature = "client")]
 pub mod client;
 
+/// A data structure for persisting and sharing state between multiple clients.
 pub mod static_partition_map;
 
 /// General testing utilities.

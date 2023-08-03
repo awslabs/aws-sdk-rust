@@ -96,7 +96,7 @@ version = "0.0.0-smithy-rs-head"
 
 [dev-dependencies.aws-smithy-client]
 path = "../aws-smithy-client"
-features = ["test-util"]
+features = ["test-util", "wiremock"]
 version = "0.0.0-smithy-rs-head"
 
 [dev-dependencies.aws-smithy-protocol-test]

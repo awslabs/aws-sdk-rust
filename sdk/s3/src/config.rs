@@ -702,12 +702,14 @@ impl Builder {
         self
     }
     /// Adds a runtime plugin to the config.
-    pub fn runtime_plugin(mut self, plugin: impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin + 'static) -> Self {
+    #[allow(unused)]
+    pub(crate) fn runtime_plugin(mut self, plugin: impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin + 'static) -> Self {
         self.push_runtime_plugin(::aws_smithy_runtime_api::client::runtime_plugin::SharedRuntimePlugin::new(plugin));
         self
     }
     /// Adds a runtime plugin to the config.
-    pub fn push_runtime_plugin(&mut self, plugin: ::aws_smithy_runtime_api::client::runtime_plugin::SharedRuntimePlugin) -> &mut Self {
+    #[allow(unused)]
+    pub(crate) fn push_runtime_plugin(&mut self, plugin: ::aws_smithy_runtime_api::client::runtime_plugin::SharedRuntimePlugin) -> &mut Self {
         self.runtime_plugins.push(plugin);
         self
     }
@@ -824,7 +826,7 @@ impl ServiceRuntimePlugin {
             ::aws_smithy_runtime::client::connectors::connection_poisoning::ConnectionPoisoningInterceptor::new(),
         ) as _);
         runtime_components.push_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::new(
-            ::aws_smithy_runtime::client::orchestrator::interceptors::ServiceClockSkewInterceptor::new(),
+            ::aws_runtime::service_clock_skew::ServiceClockSkewInterceptor::new(),
         ) as _);
         runtime_components.push_interceptor(::aws_smithy_runtime_api::client::interceptors::SharedInterceptor::new(
             ::aws_runtime::request_info::RequestInfoInterceptor::new(),
@@ -937,9 +939,7 @@ impl ::aws_smithy_runtime_api::client::runtime_plugin::RuntimePlugin for ConfigO
 
 pub use ::aws_smithy_runtime_api::client::interceptors::Interceptor;
 pub use ::aws_smithy_runtime_api::client::interceptors::SharedInterceptor;
-pub use ::aws_smithy_runtime_api::client::runtime_plugin::{RuntimePlugin, SharedRuntimePlugin};
 pub use ::aws_smithy_types::config_bag::ConfigBag;
-pub use ::aws_smithy_types::config_bag::FrozenLayer;
 
 pub use ::aws_credential_types::Credentials;
 

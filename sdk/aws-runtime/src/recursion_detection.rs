@@ -40,6 +40,10 @@ impl RecursionDetectionInterceptor {
 }
 
 impl Interceptor for RecursionDetectionInterceptor {
+    fn name(&self) -> &'static str {
+        "RecursionDetectionInterceptor"
+    }
+
     fn modify_before_signing(
         &self,
         context: &mut BeforeTransmitInterceptorContextMut<'_>,
@@ -76,9 +80,8 @@ mod tests {
     use super::*;
     use aws_smithy_http::body::SdkBody;
     use aws_smithy_protocol_test::{assert_ok, validate_headers};
-    use aws_smithy_runtime_api::client::interceptors::context::InterceptorContext;
+    use aws_smithy_runtime_api::client::interceptors::context::{Input, InterceptorContext};
     use aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder;
-    use aws_smithy_types::type_erasure::TypeErasedBox;
     use aws_types::os_shim_internal::Env;
     use http::HeaderValue;
     use proptest::{prelude::*, proptest};
@@ -152,7 +155,7 @@ mod tests {
             request = request.header(name, value);
         }
         let request = request.body(SdkBody::empty()).expect("must be valid");
-        let mut context = InterceptorContext::new(TypeErasedBox::doesnt_matter());
+        let mut context = InterceptorContext::new(Input::doesnt_matter());
         context.enter_serialization_phase();
         context.set_request(request);
         let _ = context.take_input();

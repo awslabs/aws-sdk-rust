@@ -24,6 +24,7 @@ use tracing::debug;
 // The initial attempt, plus three retries.
 const DEFAULT_MAX_ATTEMPTS: u32 = 4;
 
+/// Retry strategy with exponential backoff, max attempts, and a token bucket.
 #[derive(Debug)]
 pub struct StandardRetryStrategy {
     // Retry settings
@@ -39,13 +40,13 @@ impl Storable for StandardRetryStrategy {
 }
 
 impl StandardRetryStrategy {
+    /// Create a new standard retry strategy with the given config.
     pub fn new(retry_config: &RetryConfig) -> Self {
         let base = if retry_config.use_static_exponential_base() {
             || 1.0
         } else {
             fastrand::f64
         };
-        // TODO(enableNewSmithyRuntimeLaunch) add support for `retry_config.reconnect_mode()` here or in the orchestrator flow.
         Self::default()
             .with_base(base)
             .with_max_backoff(retry_config.max_backoff())
@@ -53,21 +54,25 @@ impl StandardRetryStrategy {
             .with_initial_backoff(retry_config.initial_backoff())
     }
 
+    /// Changes the exponential backoff base.
     pub fn with_base(mut self, base: fn() -> f64) -> Self {
         self.base = base;
         self
     }
 
+    /// Changes the max number of attempts.
     pub fn with_max_attempts(mut self, max_attempts: u32) -> Self {
         self.max_attempts = max_attempts;
         self
     }
 
+    /// Changes the initial backoff time.
     pub fn with_initial_backoff(mut self, initial_backoff: Duration) -> Self {
         self.initial_backoff = initial_backoff;
         self
     }
 
+    /// Changes the maximum backoff time.
     pub fn with_max_backoff(mut self, max_backoff: Duration) -> Self {
         self.max_backoff = max_backoff;
         self
@@ -317,21 +322,21 @@ mod tests {
     use aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder;
     use aws_smithy_types::config_bag::Layer;
     use aws_smithy_types::retry::{ErrorKind, ProvideErrorKind};
-    use aws_smithy_types::type_erasure::TypeErasedBox;
     use std::fmt;
     use std::sync::Mutex;
     use std::time::Duration;
 
     #[cfg(feature = "test-util")]
     use crate::client::retries::token_bucket::TokenBucket;
+    use aws_smithy_runtime_api::client::interceptors::context::{Input, Output};
 
     #[test]
     fn no_retry_necessary_for_ok_result() {
         let cfg = ConfigBag::base();
         let rc = RuntimeComponentsBuilder::for_tests().build().unwrap();
-        let mut ctx = InterceptorContext::new(TypeErasedBox::doesnt_matter());
+        let mut ctx = InterceptorContext::new(Input::doesnt_matter());
         let strategy = StandardRetryStrategy::default();
-        ctx.set_output_or_error(Ok(TypeErasedBox::doesnt_matter()));
+        ctx.set_output_or_error(Ok(Output::doesnt_matter()));
         let actual = strategy
             .should_attempt_retry(&ctx, &rc, &cfg)
             .expect("method is infallible for this use");
@@ -342,7 +347,7 @@ mod tests {
         error_kind: ErrorKind,
         current_request_attempts: u32,
     ) -> (InterceptorContext, RuntimeComponents, ConfigBag) {
-        let mut ctx = InterceptorContext::new(TypeErasedBox::doesnt_matter());
+        let mut ctx = InterceptorContext::new(Input::doesnt_matter());
         ctx.set_output_or_error(Err(OrchestratorError::other("doesn't matter")));
         let rc = RuntimeComponentsBuilder::for_tests()
             .with_retry_classifiers(Some(
@@ -469,7 +474,7 @@ mod tests {
             .build()
             .unwrap();
         let cfg = ConfigBag::base();
-        let mut ctx = InterceptorContext::new(TypeErasedBox::doesnt_matter());
+        let mut ctx = InterceptorContext::new(Input::doesnt_matter());
         // This type doesn't matter b/c the classifier will just return whatever we tell it to.
         ctx.set_output_or_error(Err(OrchestratorError::other("doesn't matter")));
 
@@ -498,7 +503,7 @@ mod tests {
         assert_eq!(dur, Duration::from_secs(2));
         assert_eq!(token_bucket.available_permits(), 490);
 
-        ctx.set_output_or_error(Ok(TypeErasedBox::doesnt_matter()));
+        ctx.set_output_or_error(Ok(Output::doesnt_matter()));
 
         cfg.interceptor_state().store_put(RequestAttempts::new(3));
         let no_retry = strategy.should_attempt_retry(&ctx, &rc, &cfg).unwrap();
@@ -581,7 +586,7 @@ mod tests {
         assert_eq!(dur, Duration::from_secs(1));
         assert_eq!(token_bucket.available_permits(), 90);
 
-        ctx.set_output_or_error(Ok(TypeErasedBox::doesnt_matter()));
+        ctx.set_output_or_error(Ok(Output::doesnt_matter()));
 
         cfg.interceptor_state().store_put(RequestAttempts::new(3));
         let no_retry = strategy.should_attempt_retry(&ctx, &rc, &cfg).unwrap();
@@ -623,7 +628,7 @@ mod tests {
         let permit = strategy.retry_permit.lock().unwrap().take().unwrap();
         permit.forget();
 
-        ctx.set_output_or_error(Ok(TypeErasedBox::doesnt_matter()));
+        ctx.set_output_or_error(Ok(Output::doesnt_matter()));
 
         // Replenish permits until we get back to `PERMIT_COUNT`
         while token_bucket.available_permits() < PERMIT_COUNT {

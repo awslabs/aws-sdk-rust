@@ -3,15 +3,19 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+/// Smithy retry classifiers.
 pub mod classifier;
+
+/// Smithy retry strategies.
 pub mod strategy;
 
 mod client_rate_limiter;
 mod token_bucket;
 
 use aws_smithy_types::config_bag::{Storable, StoreReplace};
-pub use client_rate_limiter::{ClientRateLimiter, ClientRateLimiterRuntimePlugin};
 use std::fmt;
+
+pub use client_rate_limiter::{ClientRateLimiter, ClientRateLimiterRuntimePlugin};
 pub use token_bucket::{TokenBucket, TokenBucketRuntimePlugin};
 
 #[doc(hidden)]

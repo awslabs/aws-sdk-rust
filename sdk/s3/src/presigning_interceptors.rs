@@ -39,6 +39,10 @@ impl SigV4PresigningInterceptor {
 }
 
 impl Interceptor for SigV4PresigningInterceptor {
+    fn name(&self) -> &'static str {
+        "SigV4PresigningInterceptor"
+    }
+
     fn modify_before_serialization(
         &self,
         _context: &mut BeforeSerializationInterceptorContextMut<'_>,

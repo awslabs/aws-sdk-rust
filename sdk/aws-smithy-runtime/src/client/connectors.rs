@@ -3,7 +3,9 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+/// Interceptor for connection poisoning.
 pub mod connection_poisoning;
+
 #[cfg(feature = "test-util")]
 pub mod test_util;
 
@@ -17,6 +19,11 @@ pub mod adapter {
     use aws_smithy_runtime_api::client::orchestrator::{BoxFuture, HttpRequest, HttpResponse};
     use std::sync::{Arc, Mutex};
 
+    /// Adapts a [`DynConnector`] to the [`HttpConnector`] trait.
+    ///
+    /// This is a temporary adapter that allows the old-style tower-based connectors to
+    /// work with the new non-tower based architecture of the generated clients.
+    /// It will be removed in a future release.
     #[derive(Debug)]
     pub struct DynConnectorAdapter {
         // `DynConnector` requires `&mut self`, so we need interior mutability to adapt to it
@@ -24,6 +31,7 @@ pub mod adapter {
     }
 
     impl DynConnectorAdapter {
+        /// Creates a new `DynConnectorAdapter`.
         pub fn new(dyn_connector: DynConnector) -> Self {
             Self {
                 dyn_connector: Arc::new(Mutex::new(dyn_connector)),

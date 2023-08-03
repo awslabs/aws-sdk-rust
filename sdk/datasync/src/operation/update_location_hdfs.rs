@@ -26,9 +26,8 @@ impl UpdateLocationHdfs {
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >| {
             err.map_service_error(|err| {
-                ::aws_smithy_types::type_erasure::TypedBox::<crate::operation::update_location_hdfs::UpdateLocationHdfsError>::assume_from(err.into())
+                err.downcast::<crate::operation::update_location_hdfs::UpdateLocationHdfsError>()
                     .expect("correct error type")
-                    .unwrap()
             })
         };
         let context = Self::orchestrate_with_stop_point(runtime_plugins, input, ::aws_smithy_runtime::client::orchestrator::StopPoint::None)
@@ -36,9 +35,9 @@ impl UpdateLocationHdfs {
             .map_err(map_err)?;
         let output = context.finalize().map_err(map_err)?;
         ::std::result::Result::Ok(
-            ::aws_smithy_types::type_erasure::TypedBox::<crate::operation::update_location_hdfs::UpdateLocationHdfsOutput>::assume_from(output)
-                .expect("correct output type")
-                .unwrap(),
+            output
+                .downcast::<crate::operation::update_location_hdfs::UpdateLocationHdfsOutput>()
+                .expect("correct output type"),
         )
     }
 
@@ -53,7 +52,7 @@ impl UpdateLocationHdfs {
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = ::aws_smithy_types::type_erasure::TypedBox::new(input).erase();
+        let input = ::aws_smithy_runtime_api::client::interceptors::context::Input::erase(input);
         ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point("datasync", "UpdateLocationHdfs", input, runtime_plugins, stop_point).await
     }
 
@@ -168,9 +167,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for UpdateLocat
         input: ::aws_smithy_runtime_api::client::interceptors::context::Input,
         _cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::std::result::Result<::aws_smithy_runtime_api::client::orchestrator::HttpRequest, ::aws_smithy_runtime_api::box_error::BoxError> {
-        let input = ::aws_smithy_types::type_erasure::TypedBox::<crate::operation::update_location_hdfs::UpdateLocationHdfsInput>::assume_from(input)
-            .expect("correct type")
-            .unwrap();
+        let input = input
+            .downcast::<crate::operation::update_location_hdfs::UpdateLocationHdfsInput>()
+            .expect("correct type");
         let _header_serialization_settings = _cfg
             .load::<crate::serialization_settings::HeaderSerializationSettings>()
             .cloned()
@@ -214,6 +213,10 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for UpdateLocat
 struct UpdateLocationHdfsEndpointParamsInterceptor;
 
 impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for UpdateLocationHdfsEndpointParamsInterceptor {
+    fn name(&self) -> &'static str {
+        "UpdateLocationHdfsEndpointParamsInterceptor"
+    }
+
     fn read_before_execution(
         &self,
         context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<

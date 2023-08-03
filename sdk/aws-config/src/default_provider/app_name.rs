@@ -118,12 +118,9 @@ mod tests {
     async fn profile_name_override() {
         let fs = Fs::from_slice(&[("test_config", "[profile custom]\nsdk_ua_app_id = correct")]);
         let conf = crate::from_env()
-            .configure(
-                ProviderConfig::empty()
-                    .with_fs(fs)
-                    .with_sleep(InstantSleep)
-                    .with_http_connector(no_traffic_connector()),
-            )
+            .sleep_impl(InstantSleep)
+            .fs(fs)
+            .http_connector(no_traffic_connector())
             .profile_name("custom")
             .profile_files(
                 ProfileFiles::builder()

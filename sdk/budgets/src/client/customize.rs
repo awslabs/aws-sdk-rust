@@ -188,6 +188,10 @@ mod test_params_setter_interceptor {
     where
         F: Fn(&mut BeforeTransmitInterceptorContextMut<'_>, &mut ConfigBag) + Send + Sync + 'static,
     {
+        fn name(&self) -> &'static str {
+            "TestParamsSetterInterceptor"
+        }
+
         fn modify_before_signing(
             &self,
             context: &mut BeforeTransmitInterceptorContextMut<'_>,

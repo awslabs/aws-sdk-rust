@@ -8,7 +8,7 @@
 use crate::client::orchestrator::Future;
 use aws_smithy_types::config_bag::{Storable, StoreReplace};
 use aws_smithy_types::endpoint::Endpoint;
-use aws_smithy_types::type_erasure::{TypeErasedBox, TypedBox};
+use aws_smithy_types::type_erasure::TypeErasedBox;
 use std::fmt;
 use std::sync::Arc;
 
@@ -23,7 +23,7 @@ pub struct EndpointResolverParams(TypeErasedBox);
 impl EndpointResolverParams {
     /// Creates a new [`EndpointResolverParams`] from a concrete parameters instance.
     pub fn new<T: fmt::Debug + Send + Sync + 'static>(params: T) -> Self {
-        Self(TypedBox::new(params).erase())
+        Self(TypeErasedBox::new(params))
     }
 
     /// Attempts to downcast the underlying concrete parameters to `T` and return it as a reference.

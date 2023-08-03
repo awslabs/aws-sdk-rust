@@ -11,25 +11,28 @@ use aws_smithy_runtime_api::client::ser_de::{RequestSerializer, SharedRequestSer
 use aws_smithy_types::config_bag::{ConfigBag, FrozenLayer, Layer};
 use std::sync::Mutex;
 
+/// Test [`RequestSerializer`] that returns a canned request.
 #[derive(Default, Debug)]
 pub struct CannedRequestSerializer {
     inner: Mutex<Option<Result<HttpRequest, BoxError>>>,
 }
 
 impl CannedRequestSerializer {
+    /// Create a new [`CannedRequestSerializer`] with a successful canned request.
     pub fn success(request: HttpRequest) -> Self {
         Self {
             inner: Mutex::new(Some(Ok(request))),
         }
     }
 
+    /// Create a new [`CannedRequestSerializer`] with a canned error.
     pub fn failure(error: BoxError) -> Self {
         Self {
             inner: Mutex::new(Some(Err(error))),
         }
     }
 
-    pub fn take(&self) -> Option<Result<HttpRequest, BoxError>> {
+    fn take(&self) -> Option<Result<HttpRequest, BoxError>> {
         match self.inner.lock() {
             Ok(mut guard) => guard.take(),
             Err(_) => None,

@@ -26,11 +26,8 @@ impl CancelAuditMitigationActionsTask {
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >| {
             err.map_service_error(|err| {
-                ::aws_smithy_types::type_erasure::TypedBox::<
-                    crate::operation::cancel_audit_mitigation_actions_task::CancelAuditMitigationActionsTaskError,
-                >::assume_from(err.into())
-                .expect("correct error type")
-                .unwrap()
+                err.downcast::<crate::operation::cancel_audit_mitigation_actions_task::CancelAuditMitigationActionsTaskError>()
+                    .expect("correct error type")
             })
         };
         let context = Self::orchestrate_with_stop_point(runtime_plugins, input, ::aws_smithy_runtime::client::orchestrator::StopPoint::None)
@@ -38,11 +35,9 @@ impl CancelAuditMitigationActionsTask {
             .map_err(map_err)?;
         let output = context.finalize().map_err(map_err)?;
         ::std::result::Result::Ok(
-            ::aws_smithy_types::type_erasure::TypedBox::<
-                crate::operation::cancel_audit_mitigation_actions_task::CancelAuditMitigationActionsTaskOutput,
-            >::assume_from(output)
-            .expect("correct output type")
-            .unwrap(),
+            output
+                .downcast::<crate::operation::cancel_audit_mitigation_actions_task::CancelAuditMitigationActionsTaskOutput>()
+                .expect("correct output type"),
         )
     }
 
@@ -57,7 +52,7 @@ impl CancelAuditMitigationActionsTask {
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = ::aws_smithy_types::type_erasure::TypedBox::new(input).erase();
+        let input = ::aws_smithy_runtime_api::client::interceptors::context::Input::erase(input);
         ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point(
             "iot",
             "CancelAuditMitigationActionsTask",
@@ -183,11 +178,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for CancelAudit
         input: ::aws_smithy_runtime_api::client::interceptors::context::Input,
         _cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::std::result::Result<::aws_smithy_runtime_api::client::orchestrator::HttpRequest, ::aws_smithy_runtime_api::box_error::BoxError> {
-        let input = ::aws_smithy_types::type_erasure::TypedBox::<
-            crate::operation::cancel_audit_mitigation_actions_task::CancelAuditMitigationActionsTaskInput,
-        >::assume_from(input)
-        .expect("correct type")
-        .unwrap();
+        let input = input
+            .downcast::<crate::operation::cancel_audit_mitigation_actions_task::CancelAuditMitigationActionsTaskInput>()
+            .expect("correct type");
         let _header_serialization_settings = _cfg
             .load::<crate::serialization_settings::HeaderSerializationSettings>()
             .cloned()
@@ -233,6 +226,10 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for CancelAudit
 struct CancelAuditMitigationActionsTaskEndpointParamsInterceptor;
 
 impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for CancelAuditMitigationActionsTaskEndpointParamsInterceptor {
+    fn name(&self) -> &'static str {
+        "CancelAuditMitigationActionsTaskEndpointParamsInterceptor"
+    }
+
     fn read_before_execution(
         &self,
         context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<

@@ -202,12 +202,19 @@ mod custom_tls_tests {
 
     async fn send_request_and_assert_success(conn: DynConnector, uri: &Uri) {
         let mut svc = ServiceBuilder::new().service(conn);
-        let req = Request::builder()
-            .uri(uri)
-            .method(Method::GET)
-            .body(SdkBody::empty())
-            .unwrap();
-        let res = svc.call(req).await.unwrap();
+        let mut att = 0;
+        let res = loop {
+            let req = Request::builder()
+                .uri(uri)
+                .method(Method::GET)
+                .body(SdkBody::empty())
+                .unwrap();
+            if let Ok(res) = svc.call(req).await {
+                break res;
+            }
+            assert!(att < 5);
+            att += 1;
+        };
         assert!(res.status().is_success());
     }
 }

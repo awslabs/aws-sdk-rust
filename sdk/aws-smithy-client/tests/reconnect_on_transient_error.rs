@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-#![cfg(feature = "test-util")]
+#![cfg(feature = "wiremock")]
 
 mod test_operation;
 

@@ -16,7 +16,7 @@ rustdoc-args = ["--cfg", "docsrs"]
 default = []
 client = []
 http-auth = ["dep:zeroize"]
-test-util = []
+test-util = ["aws-smithy-types/test-util"]
 
 [dependencies]
 bytes = "1"

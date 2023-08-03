@@ -10,7 +10,7 @@ use crate::client::identity::{Identity, SharedIdentityResolver};
 use crate::client::orchestrator::HttpRequest;
 use crate::client::runtime_components::{GetIdentityResolver, RuntimeComponents};
 use aws_smithy_types::config_bag::{ConfigBag, Storable, StoreReplace};
-use aws_smithy_types::type_erasure::{TypeErasedBox, TypedBox};
+use aws_smithy_types::type_erasure::TypeErasedBox;
 use aws_smithy_types::Document;
 use std::borrow::Cow;
 use std::fmt;
@@ -66,7 +66,7 @@ pub struct AuthSchemeOptionResolverParams(TypeErasedBox);
 impl AuthSchemeOptionResolverParams {
     /// Creates a new [`AuthSchemeOptionResolverParams`].
     pub fn new<T: fmt::Debug + Send + Sync + 'static>(params: T) -> Self {
-        Self(TypedBox::new(params).erase())
+        Self(TypeErasedBox::new(params))
     }
 
     /// Returns the underlying parameters as the type `T` if they are that type.

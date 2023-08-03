@@ -26,9 +26,8 @@ impl PutKeyword {
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >| {
             err.map_service_error(|err| {
-                ::aws_smithy_types::type_erasure::TypedBox::<crate::operation::put_keyword::PutKeywordError>::assume_from(err.into())
+                err.downcast::<crate::operation::put_keyword::PutKeywordError>()
                     .expect("correct error type")
-                    .unwrap()
             })
         };
         let context = Self::orchestrate_with_stop_point(runtime_plugins, input, ::aws_smithy_runtime::client::orchestrator::StopPoint::None)
@@ -36,9 +35,9 @@ impl PutKeyword {
             .map_err(map_err)?;
         let output = context.finalize().map_err(map_err)?;
         ::std::result::Result::Ok(
-            ::aws_smithy_types::type_erasure::TypedBox::<crate::operation::put_keyword::PutKeywordOutput>::assume_from(output)
-                .expect("correct output type")
-                .unwrap(),
+            output
+                .downcast::<crate::operation::put_keyword::PutKeywordOutput>()
+                .expect("correct output type"),
         )
     }
 
@@ -53,7 +52,7 @@ impl PutKeyword {
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = ::aws_smithy_types::type_erasure::TypedBox::new(input).erase();
+        let input = ::aws_smithy_runtime_api::client::interceptors::context::Input::erase(input);
         ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point("pinpointsmsvoicev2", "PutKeyword", input, runtime_plugins, stop_point)
             .await
     }
@@ -167,9 +166,7 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for PutKeywordR
         input: ::aws_smithy_runtime_api::client::interceptors::context::Input,
         _cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::std::result::Result<::aws_smithy_runtime_api::client::orchestrator::HttpRequest, ::aws_smithy_runtime_api::box_error::BoxError> {
-        let input = ::aws_smithy_types::type_erasure::TypedBox::<crate::operation::put_keyword::PutKeywordInput>::assume_from(input)
-            .expect("correct type")
-            .unwrap();
+        let input = input.downcast::<crate::operation::put_keyword::PutKeywordInput>().expect("correct type");
         let _header_serialization_settings = _cfg
             .load::<crate::serialization_settings::HeaderSerializationSettings>()
             .cloned()
@@ -213,6 +210,10 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for PutKeywordR
 struct PutKeywordEndpointParamsInterceptor;
 
 impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for PutKeywordEndpointParamsInterceptor {
+    fn name(&self) -> &'static str {
+        "PutKeywordEndpointParamsInterceptor"
+    }
+
     fn read_before_execution(
         &self,
         context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<

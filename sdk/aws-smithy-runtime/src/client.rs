@@ -3,6 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+/// Smithy auth scheme implementations.
 pub mod auth;
 
 /// Smithy code related to connectors and connections.

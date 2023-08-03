@@ -26,21 +26,18 @@ impl CreatePartnerEventSource {
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >| {
             err.map_service_error(|err| {
-                                    ::aws_smithy_types::type_erasure::TypedBox::<crate::operation::create_partner_event_source::CreatePartnerEventSourceError>::assume_from(err.into())
-                                        .expect("correct error type")
-                                        .unwrap()
-                                })
+                err.downcast::<crate::operation::create_partner_event_source::CreatePartnerEventSourceError>()
+                    .expect("correct error type")
+            })
         };
         let context = Self::orchestrate_with_stop_point(runtime_plugins, input, ::aws_smithy_runtime::client::orchestrator::StopPoint::None)
             .await
             .map_err(map_err)?;
         let output = context.finalize().map_err(map_err)?;
         ::std::result::Result::Ok(
-            ::aws_smithy_types::type_erasure::TypedBox::<crate::operation::create_partner_event_source::CreatePartnerEventSourceOutput>::assume_from(
-                output,
-            )
-            .expect("correct output type")
-            .unwrap(),
+            output
+                .downcast::<crate::operation::create_partner_event_source::CreatePartnerEventSourceOutput>()
+                .expect("correct output type"),
         )
     }
 
@@ -55,7 +52,7 @@ impl CreatePartnerEventSource {
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = ::aws_smithy_types::type_erasure::TypedBox::new(input).erase();
+        let input = ::aws_smithy_runtime_api::client::interceptors::context::Input::erase(input);
         ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point(
             "eventbridge",
             "CreatePartnerEventSource",
@@ -177,12 +174,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for CreatePartn
         input: ::aws_smithy_runtime_api::client::interceptors::context::Input,
         _cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::std::result::Result<::aws_smithy_runtime_api::client::orchestrator::HttpRequest, ::aws_smithy_runtime_api::box_error::BoxError> {
-        let input =
-            ::aws_smithy_types::type_erasure::TypedBox::<crate::operation::create_partner_event_source::CreatePartnerEventSourceInput>::assume_from(
-                input,
-            )
-            .expect("correct type")
-            .unwrap();
+        let input = input
+            .downcast::<crate::operation::create_partner_event_source::CreatePartnerEventSourceInput>()
+            .expect("correct type");
         let _header_serialization_settings = _cfg
             .load::<crate::serialization_settings::HeaderSerializationSettings>()
             .cloned()
@@ -228,6 +222,10 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for CreatePartn
 struct CreatePartnerEventSourceEndpointParamsInterceptor;
 
 impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for CreatePartnerEventSourceEndpointParamsInterceptor {
+    fn name(&self) -> &'static str {
+        "CreatePartnerEventSourceEndpointParamsInterceptor"
+    }
+
     fn read_before_execution(
         &self,
         context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<

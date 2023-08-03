@@ -18,8 +18,6 @@ use aws_smithy_http::body::SdkBody;
 use crate::dvr::{self, Action, BodyData, ConnectionId, Direction, Error, NetworkTraffic, Version};
 
 use super::Event;
-use crate::conns::Https;
-use crate::hyper_ext::Adapter;
 use std::fmt::Display;
 use std::io;
 use std::path::Path;
@@ -34,9 +32,9 @@ pub struct RecordingConnection<S> {
     pub(crate) inner: S,
 }
 
-impl RecordingConnection<Adapter<Https>> {
+#[cfg(all(feature = "rustls", feature = "client-hyper"))]
+impl RecordingConnection<crate::hyper_ext::Adapter<crate::conns::Https>> {
     /// Construct a recording connection wrapping a default HTTPS implementation
-    #[cfg(feature = "rustls")]
     pub fn https() -> Self {
         Self {
             data: Default::default(),

@@ -12,19 +12,16 @@ use aws_smithy_types::date_time::Format;
 use aws_smithy_types::DateTime;
 use std::time::{Duration, SystemTime};
 
+/// Amount of clock skew between the client and the service.
 #[derive(Debug, Clone)]
 #[non_exhaustive]
-pub struct ServiceClockSkew {
+pub(crate) struct ServiceClockSkew {
     inner: Duration,
 }
 
 impl ServiceClockSkew {
     fn new(inner: Duration) -> Self {
         Self { inner }
-    }
-
-    pub fn skew(&self) -> Duration {
-        self.inner
     }
 }
 
@@ -38,11 +35,13 @@ impl From<ServiceClockSkew> for Duration {
     }
 }
 
+/// Interceptor that determines the clock skew between the client and service.
 #[derive(Debug, Default)]
 #[non_exhaustive]
-pub struct ServiceClockSkewInterceptor {}
+pub struct ServiceClockSkewInterceptor;
 
 impl ServiceClockSkewInterceptor {
+    /// Creates a new `ServiceClockSkewInterceptor`.
     pub fn new() -> Self {
         Self::default()
     }
@@ -66,6 +65,10 @@ fn extract_time_sent_from_response(
 }
 
 impl Interceptor for ServiceClockSkewInterceptor {
+    fn name(&self) -> &'static str {
+        "ServiceClockSkewInterceptor"
+    }
+
     fn modify_before_deserialization(
         &self,
         ctx: &mut BeforeDeserializationInterceptorContextMut<'_>,

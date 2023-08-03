@@ -26,9 +26,8 @@ impl AcknowledgeJob {
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >| {
             err.map_service_error(|err| {
-                ::aws_smithy_types::type_erasure::TypedBox::<crate::operation::acknowledge_job::AcknowledgeJobError>::assume_from(err.into())
+                err.downcast::<crate::operation::acknowledge_job::AcknowledgeJobError>()
                     .expect("correct error type")
-                    .unwrap()
             })
         };
         let context = Self::orchestrate_with_stop_point(runtime_plugins, input, ::aws_smithy_runtime::client::orchestrator::StopPoint::None)
@@ -36,9 +35,9 @@ impl AcknowledgeJob {
             .map_err(map_err)?;
         let output = context.finalize().map_err(map_err)?;
         ::std::result::Result::Ok(
-            ::aws_smithy_types::type_erasure::TypedBox::<crate::operation::acknowledge_job::AcknowledgeJobOutput>::assume_from(output)
-                .expect("correct output type")
-                .unwrap(),
+            output
+                .downcast::<crate::operation::acknowledge_job::AcknowledgeJobOutput>()
+                .expect("correct output type"),
         )
     }
 
@@ -53,7 +52,7 @@ impl AcknowledgeJob {
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = ::aws_smithy_types::type_erasure::TypedBox::new(input).erase();
+        let input = ::aws_smithy_runtime_api::client::interceptors::context::Input::erase(input);
         ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point("codepipeline", "AcknowledgeJob", input, runtime_plugins, stop_point).await
     }
 
@@ -168,9 +167,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for Acknowledge
         input: ::aws_smithy_runtime_api::client::interceptors::context::Input,
         _cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::std::result::Result<::aws_smithy_runtime_api::client::orchestrator::HttpRequest, ::aws_smithy_runtime_api::box_error::BoxError> {
-        let input = ::aws_smithy_types::type_erasure::TypedBox::<crate::operation::acknowledge_job::AcknowledgeJobInput>::assume_from(input)
-            .expect("correct type")
-            .unwrap();
+        let input = input
+            .downcast::<crate::operation::acknowledge_job::AcknowledgeJobInput>()
+            .expect("correct type");
         let _header_serialization_settings = _cfg
             .load::<crate::serialization_settings::HeaderSerializationSettings>()
             .cloned()
@@ -214,6 +213,10 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for Acknowledge
 struct AcknowledgeJobEndpointParamsInterceptor;
 
 impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for AcknowledgeJobEndpointParamsInterceptor {
+    fn name(&self) -> &'static str {
+        "AcknowledgeJobEndpointParamsInterceptor"
+    }
+
     fn read_before_execution(
         &self,
         context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<

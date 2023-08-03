@@ -72,6 +72,10 @@ fn header_values(
 }
 
 impl Interceptor for UserAgentInterceptor {
+    fn name(&self) -> &'static str {
+        "UserAgentInterceptor"
+    }
+
     fn modify_before_signing(
         &self,
         context: &mut BeforeTransmitInterceptorContextMut<'_>,
@@ -110,12 +114,11 @@ impl Interceptor for UserAgentInterceptor {
 mod tests {
     use super::*;
     use aws_smithy_http::body::SdkBody;
-    use aws_smithy_runtime_api::client::interceptors::context::InterceptorContext;
+    use aws_smithy_runtime_api::client::interceptors::context::{Input, InterceptorContext};
     use aws_smithy_runtime_api::client::interceptors::Interceptor;
     use aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder;
     use aws_smithy_types::config_bag::{ConfigBag, Layer};
     use aws_smithy_types::error::display::DisplayErrorContext;
-    use aws_smithy_types::type_erasure::TypeErasedBox;
 
     fn expect_header<'a>(context: &'a InterceptorContext, header_name: &str) -> &'a str {
         context
@@ -129,7 +132,7 @@ mod tests {
     }
 
     fn context() -> InterceptorContext {
-        let mut context = InterceptorContext::new(TypeErasedBox::doesnt_matter());
+        let mut context = InterceptorContext::new(Input::doesnt_matter());
         context.enter_serialization_phase();
         context.set_request(http::Request::builder().body(SdkBody::empty()).unwrap());
         let _ = context.take_input();

@@ -26,11 +26,8 @@ impl CreateCertificateAuthorityAuditReport {
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >| {
             err.map_service_error(|err| {
-                ::aws_smithy_types::type_erasure::TypedBox::<
-                    crate::operation::create_certificate_authority_audit_report::CreateCertificateAuthorityAuditReportError,
-                >::assume_from(err.into())
-                .expect("correct error type")
-                .unwrap()
+                err.downcast::<crate::operation::create_certificate_authority_audit_report::CreateCertificateAuthorityAuditReportError>()
+                    .expect("correct error type")
             })
         };
         let context = Self::orchestrate_with_stop_point(runtime_plugins, input, ::aws_smithy_runtime::client::orchestrator::StopPoint::None)
@@ -38,11 +35,9 @@ impl CreateCertificateAuthorityAuditReport {
             .map_err(map_err)?;
         let output = context.finalize().map_err(map_err)?;
         ::std::result::Result::Ok(
-            ::aws_smithy_types::type_erasure::TypedBox::<
-                crate::operation::create_certificate_authority_audit_report::CreateCertificateAuthorityAuditReportOutput,
-            >::assume_from(output)
-            .expect("correct output type")
-            .unwrap(),
+            output
+                .downcast::<crate::operation::create_certificate_authority_audit_report::CreateCertificateAuthorityAuditReportOutput>()
+                .expect("correct output type"),
         )
     }
 
@@ -57,7 +52,7 @@ impl CreateCertificateAuthorityAuditReport {
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = ::aws_smithy_types::type_erasure::TypedBox::new(input).erase();
+        let input = ::aws_smithy_runtime_api::client::interceptors::context::Input::erase(input);
         ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point(
             "acmpca",
             "CreateCertificateAuthorityAuditReport",
@@ -186,11 +181,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for CreateCerti
         input: ::aws_smithy_runtime_api::client::interceptors::context::Input,
         _cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::std::result::Result<::aws_smithy_runtime_api::client::orchestrator::HttpRequest, ::aws_smithy_runtime_api::box_error::BoxError> {
-        let input = ::aws_smithy_types::type_erasure::TypedBox::<
-            crate::operation::create_certificate_authority_audit_report::CreateCertificateAuthorityAuditReportInput,
-        >::assume_from(input)
-        .expect("correct type")
-        .unwrap();
+        let input = input
+            .downcast::<crate::operation::create_certificate_authority_audit_report::CreateCertificateAuthorityAuditReportInput>()
+            .expect("correct type");
         let _header_serialization_settings = _cfg
             .load::<crate::serialization_settings::HeaderSerializationSettings>()
             .cloned()
@@ -236,6 +229,10 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for CreateCerti
 struct CreateCertificateAuthorityAuditReportEndpointParamsInterceptor;
 
 impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for CreateCertificateAuthorityAuditReportEndpointParamsInterceptor {
+    fn name(&self) -> &'static str {
+        "CreateCertificateAuthorityAuditReportEndpointParamsInterceptor"
+    }
+
     fn read_before_execution(
         &self,
         context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<

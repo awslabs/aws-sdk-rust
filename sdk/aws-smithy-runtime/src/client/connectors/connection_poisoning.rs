@@ -34,12 +34,17 @@ use tracing::{debug, error};
 pub struct ConnectionPoisoningInterceptor {}
 
 impl ConnectionPoisoningInterceptor {
+    /// Create a new `ConnectionPoisoningInterceptor`.
     pub fn new() -> Self {
         Self::default()
     }
 }
 
 impl Interceptor for ConnectionPoisoningInterceptor {
+    fn name(&self) -> &'static str {
+        "ConnectionPoisoningInterceptor"
+    }
+
     fn modify_before_transmit(
         &self,
         context: &mut BeforeTransmitInterceptorContextMut<'_>,
@@ -95,28 +100,32 @@ impl Interceptor for ConnectionPoisoningInterceptor {
     }
 }
 
-// TODO(enableNewSmithyRuntimeLaunch) We won't need this once we absorb aws_smithy_http into the
-//    new runtime crate.
+// TODO(enableNewSmithyRuntimeCleanup): A storable wrapper won't be needed anymore once we absorb aws_smithy_http into the new runtime crate.
+/// A wrapper around CaptureSmithyConnection that implements `Storable` so that it can be added to the `ConfigBag`.
 #[derive(Clone, Default)]
 pub struct CaptureSmithyConnectionWrapper {
     inner: CaptureSmithyConnection,
 }
 
 impl CaptureSmithyConnectionWrapper {
+    /// Creates a new `CaptureSmithyConnectionWrapper`.
     pub fn new() -> Self {
         Self {
             inner: CaptureSmithyConnection::new(),
         }
     }
 
+    /// Returns a reference to the inner `CaptureSmithyConnection`.
     pub fn clone_inner(&self) -> CaptureSmithyConnection {
         self.inner.clone()
     }
 
+    /// Returns the captured connection metadata, if any.
     pub fn get(&self) -> Option<ConnectionMetadata> {
         self.inner.get()
     }
 
+    /// Sets the connection retriever function.
     pub fn set_connection_retriever<F>(&self, f: F)
     where
         F: Fn() -> Option<ConnectionMetadata> + Send + Sync + 'static,

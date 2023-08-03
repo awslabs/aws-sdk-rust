@@ -161,13 +161,12 @@ mod tests {
     use aws_smithy_runtime_api::client::identity::{
         Identity, IdentityResolver, SharedIdentityResolver,
     };
-    use aws_smithy_runtime_api::client::interceptors::context::InterceptorContext;
+    use aws_smithy_runtime_api::client::interceptors::context::{Input, InterceptorContext};
     use aws_smithy_runtime_api::client::orchestrator::{Future, HttpRequest};
     use aws_smithy_runtime_api::client::runtime_components::{
         GetIdentityResolver, RuntimeComponentsBuilder,
     };
     use aws_smithy_types::config_bag::Layer;
-    use aws_smithy_types::type_erasure::TypedBox;
     use std::collections::HashMap;
 
     #[tokio::test]
@@ -222,7 +221,7 @@ mod tests {
             }
         }
 
-        let mut ctx = InterceptorContext::new(TypedBox::new("doesnt-matter").erase());
+        let mut ctx = InterceptorContext::new(Input::doesnt_matter());
         ctx.enter_serialization_phase();
         ctx.set_request(http::Request::builder().body(SdkBody::empty()).unwrap());
         let _ = ctx.take_input();
@@ -268,7 +267,7 @@ mod tests {
         };
         use aws_smithy_runtime_api::client::identity::http::{Login, Token};
 
-        let mut ctx = InterceptorContext::new(TypedBox::new("doesnt-matter").erase());
+        let mut ctx = InterceptorContext::new(Input::doesnt_matter());
         ctx.enter_serialization_phase();
         ctx.set_request(http::Request::builder().body(SdkBody::empty()).unwrap());
         let _ = ctx.take_input();
@@ -317,7 +316,7 @@ mod tests {
         // Next, test the presence of a bearer token and absence of basic auth
         let (runtime_components, cfg) =
             config_with_identity(HTTP_BEARER_AUTH_SCHEME_ID, Token::new("t", None));
-        let mut ctx = InterceptorContext::new(TypedBox::new("doesnt-matter").erase());
+        let mut ctx = InterceptorContext::new(Input::erase("doesnt-matter"));
         ctx.enter_serialization_phase();
         ctx.set_request(http::Request::builder().body(SdkBody::empty()).unwrap());
         let _ = ctx.take_input();

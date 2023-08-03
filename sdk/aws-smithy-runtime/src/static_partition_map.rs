@@ -77,6 +77,7 @@ pub struct StaticPartitionMap<K, V> {
 }
 
 impl<K, V> StaticPartitionMap<K, V> {
+    /// Creates a new `StaticPartitionMap`.
     pub const fn new() -> Self {
         Self {
             inner: OnceCell::new(),
@@ -102,18 +103,20 @@ where
     K: Eq + Hash,
     V: Clone,
 {
+    /// Gets the value for the given partition key.
     #[must_use]
     pub fn get(&self, partition_key: K) -> Option<V> {
         self.get_or_init_inner().get(&partition_key).cloned()
     }
 
+    /// Gets the value for the given partition key, initializing it with `init` if it doesn't exist.
     #[must_use]
-    pub fn get_or_init<F>(&self, partition_key: K, f: F) -> V
+    pub fn get_or_init<F>(&self, partition_key: K, init: F) -> V
     where
         F: FnOnce() -> V,
     {
         let mut inner = self.get_or_init_inner();
-        let v = inner.entry(partition_key).or_insert_with(f);
+        let v = inner.entry(partition_key).or_insert_with(init);
         v.clone()
     }
 }
@@ -123,6 +126,7 @@ where
     K: Eq + Hash,
     V: Clone + Default,
 {
+    /// Gets the value for the given partition key, initializing it if it doesn't exist.
     #[must_use]
     pub fn get_or_init_default(&self, partition_key: K) -> V {
         self.get_or_init(partition_key, V::default)

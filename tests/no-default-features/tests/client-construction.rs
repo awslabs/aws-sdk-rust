@@ -9,10 +9,10 @@ use aws_smithy_async::rt::sleep::AsyncSleep;
 use std::time::Duration;
 
 // This will fail due to lack of a connector when constructing the SDK Config
+// If this test doesn't panic, you may have accidentally unified features, resulting in
+// the connector being enabled transitively
 #[tokio::test]
-#[should_panic(
-    expected = "No HTTP connector was available. Enable the `rustls` crate feature or set a connector to fix this."
-)]
+#[should_panic(expected = "Enable the `rustls` crate feature or set a connector to fix this.")]
 async fn test_clients_from_sdk_config() {
     aws_config::load_from_env().await;
 }

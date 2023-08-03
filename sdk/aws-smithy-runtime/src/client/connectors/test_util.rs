@@ -94,6 +94,11 @@ pub fn capture_request(
 
 type ConnectionEvents = Vec<ConnectionEvent>;
 
+/// Test data for the [`TestConnector`].
+///
+/// Each `ConnectionEvent` represents one HTTP request and response
+/// through the connector. Optionally, a latency value can be set to simulate
+/// network latency (done via async sleep in the `TestConnector`).
 #[derive(Debug)]
 pub struct ConnectionEvent {
     latency: Duration,
@@ -102,6 +107,7 @@ pub struct ConnectionEvent {
 }
 
 impl ConnectionEvent {
+    /// Creates a new `ConnectionEvent`.
     pub fn new(req: HttpRequest, res: HttpResponse) -> Self {
         Self {
             res,
@@ -116,11 +122,13 @@ impl ConnectionEvent {
         self
     }
 
-    pub fn req(&self) -> &HttpRequest {
+    /// Returns the test request.
+    pub fn request(&self) -> &HttpRequest {
         &self.req
     }
 
-    pub fn res(&self) -> &HttpResponse {
+    /// Returns the test response.
+    pub fn response(&self) -> &HttpResponse {
         &self.res
     }
 }
@@ -132,13 +140,13 @@ impl From<(HttpRequest, HttpResponse)> for ConnectionEvent {
 }
 
 #[derive(Debug)]
-pub struct ValidateRequest {
-    pub expected: HttpRequest,
-    pub actual: HttpRequest,
+struct ValidateRequest {
+    expected: HttpRequest,
+    actual: HttpRequest,
 }
 
 impl ValidateRequest {
-    pub fn assert_matches(&self, index: usize, ignore_headers: &[HeaderName]) {
+    fn assert_matches(&self, index: usize, ignore_headers: &[HeaderName]) {
         let (actual, expected) = (&self.actual, &self.expected);
         assert_eq!(
             actual.uri(),
@@ -181,32 +189,41 @@ impl ValidateRequest {
     }
 }
 
-/// TestConnection for use as a [`HttpConnector`].
+/// Test connector for use as a [`HttpConnector`].
 ///
 /// A basic test connection. It will:
 /// - Respond to requests with a preloaded series of responses
 /// - Record requests for future examination
 #[derive(Debug, Clone)]
-pub struct TestConnection {
+pub struct TestConnector {
     data: Arc<Mutex<ConnectionEvents>>,
     requests: Arc<Mutex<Vec<ValidateRequest>>>,
     sleep_impl: SharedAsyncSleep,
 }
 
-impl TestConnection {
+impl TestConnector {
+    /// Creates a new test connector.
     pub fn new(mut data: ConnectionEvents, sleep_impl: impl Into<SharedAsyncSleep>) -> Self {
         data.reverse();
-        TestConnection {
+        TestConnector {
             data: Arc::new(Mutex::new(data)),
             requests: Default::default(),
             sleep_impl: sleep_impl.into(),
         }
     }
 
-    pub fn requests(&self) -> impl Deref<Target = Vec<ValidateRequest>> + '_ {
+    fn requests(&self) -> impl Deref<Target = Vec<ValidateRequest>> + '_ {
         self.requests.lock().unwrap()
     }
 
+    /// Asserts the expected requests match the actual requests.
+    ///
+    /// The expected requests are given as the connection events when the `TestConnector`
+    /// is created. The `TestConnector` will record the actual requests and assert that
+    /// they match the expected requests.
+    ///
+    /// A list of headers that should be ignored when comparing requests can be passed
+    /// for cases where headers are non-deterministic or are irrelevant to the test.
     #[track_caller]
     pub fn assert_requests_match(&self, ignore_headers: &[HeaderName]) {
         for (i, req) in self.requests().iter().enumerate() {
@@ -222,7 +239,7 @@ impl TestConnection {
     }
 }
 
-impl HttpConnector for TestConnection {
+impl HttpConnector for TestConnector {
     fn call(&self, request: HttpRequest) -> BoxFuture<HttpResponse> {
         let (res, simulated_latency) = if let Some(event) = self.data.lock().unwrap().pop() {
             self.requests.lock().unwrap().push(ValidateRequest {

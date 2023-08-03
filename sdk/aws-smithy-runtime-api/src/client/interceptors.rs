@@ -65,6 +65,9 @@ macro_rules! interceptor_trait_fn {
 ///   to read in-flight request or response messages, or "read/write" hooks, which make it possible
 ///   to modify in-flight request or output messages.
 pub trait Interceptor: fmt::Debug + Send + Sync {
+    /// The name of this interceptor, used in error messages for debugging.
+    fn name(&self) -> &'static str;
+
     /// A hook called at the start of an execution, before the SDK
     /// does anything else.
     ///

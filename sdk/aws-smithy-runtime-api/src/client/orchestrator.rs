@@ -18,12 +18,12 @@
 
 use crate::box_error::BoxError;
 use crate::client::interceptors::context::phase::Phase;
+use crate::client::interceptors::context::Error;
 use crate::client::interceptors::InterceptorError;
 use aws_smithy_async::future::now_or_later::NowOrLater;
 use aws_smithy_http::body::SdkBody;
 use aws_smithy_http::result::{ConnectorError, SdkError};
 use aws_smithy_types::config_bag::{Storable, StoreReplace};
-use aws_smithy_types::type_erasure::TypeErasedError;
 use bytes::Bytes;
 use std::fmt::Debug;
 use std::future::Future as StdFuture;
@@ -247,8 +247,8 @@ where
     }
 }
 
-impl From<TypeErasedError> for OrchestratorError<TypeErasedError> {
-    fn from(err: TypeErasedError) -> Self {
+impl From<Error> for OrchestratorError<Error> {
+    fn from(err: Error) -> Self {
         Self::operation(err)
     }
 }

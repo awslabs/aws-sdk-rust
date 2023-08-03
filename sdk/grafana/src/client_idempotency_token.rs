@@ -51,6 +51,10 @@ impl<S> Interceptor for IdempotencyTokenInterceptor<S>
 where
     S: Fn(IdempotencyTokenProvider, &mut Input) + Send + Sync,
 {
+    fn name(&self) -> &'static str {
+        "IdempotencyTokenInterceptor"
+    }
+
     fn modify_before_serialization(
         &self,
         context: &mut BeforeSerializationInterceptorContextMut<'_>,

@@ -9,11 +9,13 @@ use aws_smithy_runtime_api::client::retries::{RetryStrategy, ShouldAttempt};
 use aws_smithy_runtime_api::client::runtime_components::RuntimeComponents;
 use aws_smithy_types::config_bag::ConfigBag;
 
+/// A retry strategy that never retries.
 #[non_exhaustive]
 #[derive(Debug, Clone, Default)]
-pub struct NeverRetryStrategy {}
+pub struct NeverRetryStrategy;
 
 impl NeverRetryStrategy {
+    /// Creates a new `NeverRetryStrategy`.
     pub fn new() -> Self {
         Self::default()
     }

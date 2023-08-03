@@ -38,6 +38,10 @@ impl RuntimePlugin for HttpChecksumRequiredRuntimePlugin {
 struct HttpChecksumRequiredInterceptor;
 
 impl Interceptor for HttpChecksumRequiredInterceptor {
+    fn name(&self) -> &'static str {
+        "HttpChecksumRequiredInterceptor"
+    }
+
     fn modify_before_signing(
         &self,
         context: &mut BeforeTransmitInterceptorContextMut<'_>,

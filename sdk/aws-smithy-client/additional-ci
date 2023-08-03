@@ -8,6 +8,10 @@
 
 set -e
 
+# TODO(msrvUpgrade): This can be enabled when upgrading to Rust 1.71
+# echo '### Checking compilation under WASM'
+# cargo hack check --no-dev-deps --target wasm32-unknown-unknown
+
 echo "### Checking for duplicate dependency versions in the normal dependency graph with all features enabled"
 cargo tree -d --edges normal --all-features
 

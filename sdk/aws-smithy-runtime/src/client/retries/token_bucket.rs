@@ -11,7 +11,7 @@ use std::sync::Arc;
 use tokio::sync::{OwnedSemaphorePermit, Semaphore};
 use tracing::trace;
 
-/// A [RuntimePlugin] to provide a token bucket, usable by a retry strategy.
+/// A [`RuntimePlugin`] to provide a token bucket, usable by a retry strategy.
 #[non_exhaustive]
 #[derive(Debug, Default)]
 pub struct TokenBucketRuntimePlugin {
@@ -19,6 +19,7 @@ pub struct TokenBucketRuntimePlugin {
 }
 
 impl TokenBucketRuntimePlugin {
+    /// Creates a new `TokenBucketRuntimePlugin` with the given initial quota.
     pub fn new(initial_tokens: usize) -> Self {
         Self {
             token_bucket: TokenBucket::new(initial_tokens),
@@ -53,6 +54,7 @@ const RETRY_COST: u32 = 5;
 const RETRY_TIMEOUT_COST: u32 = RETRY_COST * 2;
 const PERMIT_REGENERATION_AMOUNT: usize = 1;
 
+/// Token bucket used for standard and adaptive retry.
 #[derive(Clone, Debug)]
 pub struct TokenBucket {
     semaphore: Arc<Semaphore>,
@@ -77,6 +79,7 @@ impl Default for TokenBucket {
 }
 
 impl TokenBucket {
+    /// Creates a new `TokenBucket` with the given initial quota.
     pub fn new(initial_quota: usize) -> Self {
         Self {
             semaphore: Arc::new(Semaphore::new(initial_quota)),

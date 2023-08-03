@@ -26,9 +26,8 @@ impl GetWorkUnits {
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >| {
             err.map_service_error(|err| {
-                ::aws_smithy_types::type_erasure::TypedBox::<crate::operation::get_work_units::GetWorkUnitsError>::assume_from(err.into())
+                err.downcast::<crate::operation::get_work_units::GetWorkUnitsError>()
                     .expect("correct error type")
-                    .unwrap()
             })
         };
         let context = Self::orchestrate_with_stop_point(runtime_plugins, input, ::aws_smithy_runtime::client::orchestrator::StopPoint::None)
@@ -36,9 +35,9 @@ impl GetWorkUnits {
             .map_err(map_err)?;
         let output = context.finalize().map_err(map_err)?;
         ::std::result::Result::Ok(
-            ::aws_smithy_types::type_erasure::TypedBox::<crate::operation::get_work_units::GetWorkUnitsOutput>::assume_from(output)
-                .expect("correct output type")
-                .unwrap(),
+            output
+                .downcast::<crate::operation::get_work_units::GetWorkUnitsOutput>()
+                .expect("correct output type"),
         )
     }
 
@@ -53,7 +52,7 @@ impl GetWorkUnits {
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = ::aws_smithy_types::type_erasure::TypedBox::new(input).erase();
+        let input = ::aws_smithy_runtime_api::client::interceptors::context::Input::erase(input);
         ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point("lakeformation", "GetWorkUnits", input, runtime_plugins, stop_point).await
     }
 
@@ -166,9 +165,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetWorkUnit
         input: ::aws_smithy_runtime_api::client::interceptors::context::Input,
         _cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::std::result::Result<::aws_smithy_runtime_api::client::orchestrator::HttpRequest, ::aws_smithy_runtime_api::box_error::BoxError> {
-        let input = ::aws_smithy_types::type_erasure::TypedBox::<crate::operation::get_work_units::GetWorkUnitsInput>::assume_from(input)
-            .expect("correct type")
-            .unwrap();
+        let input = input
+            .downcast::<crate::operation::get_work_units::GetWorkUnitsInput>()
+            .expect("correct type");
         let _header_serialization_settings = _cfg
             .load::<crate::serialization_settings::HeaderSerializationSettings>()
             .cloned()
@@ -207,6 +206,10 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for GetWorkUnit
 struct GetWorkUnitsEndpointParamsInterceptor;
 
 impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for GetWorkUnitsEndpointParamsInterceptor {
+    fn name(&self) -> &'static str {
+        "GetWorkUnitsEndpointParamsInterceptor"
+    }
+
     fn read_before_execution(
         &self,
         context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<

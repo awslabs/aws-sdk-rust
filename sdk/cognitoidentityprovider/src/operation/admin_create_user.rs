@@ -26,9 +26,8 @@ impl AdminCreateUser {
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >| {
             err.map_service_error(|err| {
-                ::aws_smithy_types::type_erasure::TypedBox::<crate::operation::admin_create_user::AdminCreateUserError>::assume_from(err.into())
+                err.downcast::<crate::operation::admin_create_user::AdminCreateUserError>()
                     .expect("correct error type")
-                    .unwrap()
             })
         };
         let context = Self::orchestrate_with_stop_point(runtime_plugins, input, ::aws_smithy_runtime::client::orchestrator::StopPoint::None)
@@ -36,9 +35,9 @@ impl AdminCreateUser {
             .map_err(map_err)?;
         let output = context.finalize().map_err(map_err)?;
         ::std::result::Result::Ok(
-            ::aws_smithy_types::type_erasure::TypedBox::<crate::operation::admin_create_user::AdminCreateUserOutput>::assume_from(output)
-                .expect("correct output type")
-                .unwrap(),
+            output
+                .downcast::<crate::operation::admin_create_user::AdminCreateUserOutput>()
+                .expect("correct output type"),
         )
     }
 
@@ -53,7 +52,7 @@ impl AdminCreateUser {
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = ::aws_smithy_types::type_erasure::TypedBox::new(input).erase();
+        let input = ::aws_smithy_runtime_api::client::interceptors::context::Input::erase(input);
         ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point(
             "cognitoidentityprovider",
             "AdminCreateUser",
@@ -175,9 +174,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for AdminCreate
         input: ::aws_smithy_runtime_api::client::interceptors::context::Input,
         _cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::std::result::Result<::aws_smithy_runtime_api::client::orchestrator::HttpRequest, ::aws_smithy_runtime_api::box_error::BoxError> {
-        let input = ::aws_smithy_types::type_erasure::TypedBox::<crate::operation::admin_create_user::AdminCreateUserInput>::assume_from(input)
-            .expect("correct type")
-            .unwrap();
+        let input = input
+            .downcast::<crate::operation::admin_create_user::AdminCreateUserInput>()
+            .expect("correct type");
         let _header_serialization_settings = _cfg
             .load::<crate::serialization_settings::HeaderSerializationSettings>()
             .cloned()
@@ -221,6 +220,10 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for AdminCreate
 struct AdminCreateUserEndpointParamsInterceptor;
 
 impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for AdminCreateUserEndpointParamsInterceptor {
+    fn name(&self) -> &'static str {
+        "AdminCreateUserEndpointParamsInterceptor"
+    }
+
     fn read_before_execution(
         &self,
         context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<

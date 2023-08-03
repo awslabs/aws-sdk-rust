@@ -202,9 +202,8 @@ impl GetObjectFluentBuilder {
         .await
         .map_err(|err| {
             err.map_service_error(|err| {
-                ::aws_smithy_types::type_erasure::TypedBox::<crate::operation::get_object::GetObjectError>::assume_from(err.into())
+                err.downcast::<crate::operation::get_object::GetObjectError>()
                     .expect("correct error type")
-                    .unwrap()
             })
         })?;
         let request = context.take_request().expect("request set before transmit");

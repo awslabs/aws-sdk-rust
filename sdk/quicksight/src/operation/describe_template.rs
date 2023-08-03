@@ -26,9 +26,8 @@ impl DescribeTemplate {
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >| {
             err.map_service_error(|err| {
-                ::aws_smithy_types::type_erasure::TypedBox::<crate::operation::describe_template::DescribeTemplateError>::assume_from(err.into())
+                err.downcast::<crate::operation::describe_template::DescribeTemplateError>()
                     .expect("correct error type")
-                    .unwrap()
             })
         };
         let context = Self::orchestrate_with_stop_point(runtime_plugins, input, ::aws_smithy_runtime::client::orchestrator::StopPoint::None)
@@ -36,9 +35,9 @@ impl DescribeTemplate {
             .map_err(map_err)?;
         let output = context.finalize().map_err(map_err)?;
         ::std::result::Result::Ok(
-            ::aws_smithy_types::type_erasure::TypedBox::<crate::operation::describe_template::DescribeTemplateOutput>::assume_from(output)
-                .expect("correct output type")
-                .unwrap(),
+            output
+                .downcast::<crate::operation::describe_template::DescribeTemplateOutput>()
+                .expect("correct output type"),
         )
     }
 
@@ -53,7 +52,7 @@ impl DescribeTemplate {
             ::aws_smithy_runtime_api::client::orchestrator::HttpResponse,
         >,
     > {
-        let input = ::aws_smithy_types::type_erasure::TypedBox::new(input).erase();
+        let input = ::aws_smithy_runtime_api::client::interceptors::context::Input::erase(input);
         ::aws_smithy_runtime::client::orchestrator::invoke_with_stop_point("quicksight", "DescribeTemplate", input, runtime_plugins, stop_point).await
     }
 
@@ -168,9 +167,9 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for DescribeTem
         input: ::aws_smithy_runtime_api::client::interceptors::context::Input,
         _cfg: &mut ::aws_smithy_types::config_bag::ConfigBag,
     ) -> ::std::result::Result<::aws_smithy_runtime_api::client::orchestrator::HttpRequest, ::aws_smithy_runtime_api::box_error::BoxError> {
-        let input = ::aws_smithy_types::type_erasure::TypedBox::<crate::operation::describe_template::DescribeTemplateInput>::assume_from(input)
-            .expect("correct type")
-            .unwrap();
+        let input = input
+            .downcast::<crate::operation::describe_template::DescribeTemplateInput>()
+            .expect("correct type");
         let _header_serialization_settings = _cfg
             .load::<crate::serialization_settings::HeaderSerializationSettings>()
             .cloned()
@@ -251,6 +250,10 @@ impl ::aws_smithy_runtime_api::client::ser_de::RequestSerializer for DescribeTem
 struct DescribeTemplateEndpointParamsInterceptor;
 
 impl ::aws_smithy_runtime_api::client::interceptors::Interceptor for DescribeTemplateEndpointParamsInterceptor {
+    fn name(&self) -> &'static str {
+        "DescribeTemplateEndpointParamsInterceptor"
+    }
+
     fn read_before_execution(
         &self,
         context: &::aws_smithy_runtime_api::client::interceptors::context::BeforeSerializationInterceptorContextRef<

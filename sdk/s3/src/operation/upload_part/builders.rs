@@ -173,9 +173,8 @@ impl UploadPartFluentBuilder {
         .await
         .map_err(|err| {
             err.map_service_error(|err| {
-                ::aws_smithy_types::type_erasure::TypedBox::<crate::operation::upload_part::UploadPartError>::assume_from(err.into())
+                err.downcast::<crate::operation::upload_part::UploadPartError>()
                     .expect("correct error type")
-                    .unwrap()
             })
         })?;
         let request = context.take_request().expect("request set before transmit");

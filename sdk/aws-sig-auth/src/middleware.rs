@@ -151,7 +151,6 @@ fn signing_config(
         request_ts: config
             .get::<SharedTimeSource>()
             .map(|t| t.now())
-            // TODO(enableNewSmithyRuntimeLaunch): Remove this fallback
             .unwrap_or_else(|| SharedTimeSource::default().now()),
         region,
         payload_override,

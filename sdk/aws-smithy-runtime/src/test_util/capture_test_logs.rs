@@ -10,12 +10,6 @@ use tracing::subscriber::DefaultGuard;
 use tracing::Level;
 use tracing_subscriber::fmt::TestWriter;
 
-struct Tee<W> {
-    buf: Arc<Mutex<Vec<u8>>>,
-    quiet: bool,
-    inner: W,
-}
-
 /// A guard that resets log capturing upon being dropped.
 #[derive(Debug)]
 pub struct LogCaptureGuard(DefaultGuard);
@@ -44,11 +38,22 @@ pub fn capture_test_logs() -> (LogCaptureGuard, Rx) {
     (LogCaptureGuard(guard), rx)
 }
 
+/// Receiver for the captured logs.
 pub struct Rx(Arc<Mutex<Vec<u8>>>);
 impl Rx {
+    /// Returns the captured logs as a string.
+    ///
+    /// # Panics
+    /// This will panic if the logs are not valid UTF-8.
     pub fn contents(&self) -> String {
         String::from_utf8(self.0.lock().unwrap().clone()).unwrap()
     }
+}
+
+struct Tee<W> {
+    buf: Arc<Mutex<Vec<u8>>>,
+    quiet: bool,
+    inner: W,
 }
 
 impl Tee<TestWriter> {

@@ -16,7 +16,7 @@ use std::sync::{Arc, Mutex};
 use std::time::Duration;
 use tracing::debug;
 
-/// A [RuntimePlugin] to provide a client rate limiter, usable by a retry strategy.
+/// A [`RuntimePlugin`] to provide a client rate limiter, usable by a retry strategy.
 #[non_exhaustive]
 #[derive(Debug)]
 pub struct ClientRateLimiterRuntimePlugin {
@@ -24,6 +24,7 @@ pub struct ClientRateLimiterRuntimePlugin {
 }
 
 impl ClientRateLimiterRuntimePlugin {
+    /// Create a new [`ClientRateLimiterRuntimePlugin`].
     pub fn new(seconds_since_unix_epoch: f64) -> Self {
         Self {
             rate_limiter: ClientRateLimiter::new(seconds_since_unix_epoch),
@@ -65,6 +66,7 @@ const BETA: f64 = 0.7;
 /// Controls how aggressively we scale up after being throttled
 const SCALE_CONSTANT: f64 = 0.4;
 
+/// Rate limiter for adaptive retry.
 #[derive(Clone, Debug)]
 pub struct ClientRateLimiter {
     inner: Arc<Mutex<Inner>>,
@@ -107,6 +109,7 @@ impl Storable for ClientRateLimiter {
 }
 
 impl ClientRateLimiter {
+    /// Creates a new [`ClientRateLimiter`].
     pub fn new(seconds_since_unix_epoch: f64) -> Self {
         Self::builder()
             .tokens_retrieved_per_second(MIN_FILL_RATE)
