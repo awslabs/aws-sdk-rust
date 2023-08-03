@@ -3,6 +3,23 @@ pub use crate::operation::delete_global_cluster::_delete_global_cluster_output::
 
 pub use crate::operation::delete_global_cluster::_delete_global_cluster_input::DeleteGlobalClusterInputBuilder;
 
+impl DeleteGlobalClusterInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_global_cluster::DeleteGlobalClusterOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_global_cluster::DeleteGlobalClusterError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_global_cluster();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteGlobalCluster`.
 ///
 /// <p>Deletes a global database cluster. The primary and secondary clusters must already be detached or destroyed first.</p> <note>

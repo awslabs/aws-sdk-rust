@@ -3,6 +3,23 @@ pub use crate::operation::allocate_hosted_connection::_allocate_hosted_connectio
 
 pub use crate::operation::allocate_hosted_connection::_allocate_hosted_connection_input::AllocateHostedConnectionInputBuilder;
 
+impl AllocateHostedConnectionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::allocate_hosted_connection::AllocateHostedConnectionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::allocate_hosted_connection::AllocateHostedConnectionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.allocate_hosted_connection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AllocateHostedConnection`.
 ///
 /// <p>Creates a hosted connection on the specified interconnect or a link aggregation group (LAG) of interconnects.</p>

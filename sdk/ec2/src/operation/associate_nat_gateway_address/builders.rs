@@ -3,6 +3,23 @@ pub use crate::operation::associate_nat_gateway_address::_associate_nat_gateway_
 
 pub use crate::operation::associate_nat_gateway_address::_associate_nat_gateway_address_input::AssociateNatGatewayAddressInputBuilder;
 
+impl AssociateNatGatewayAddressInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_nat_gateway_address::AssociateNatGatewayAddressOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_nat_gateway_address::AssociateNatGatewayAddressError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_nat_gateway_address();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateNatGatewayAddress`.
 ///
 /// <p>Associates Elastic IP addresses (EIPs) and private IPv4 addresses with a public NAT gateway. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-working-with">Work with NAT gateways</a> in the <i>Amazon VPC User Guide</i>.</p>

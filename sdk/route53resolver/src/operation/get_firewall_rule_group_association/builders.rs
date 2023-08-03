@@ -3,6 +3,17 @@ pub use crate::operation::get_firewall_rule_group_association::_get_firewall_rul
 
 pub use crate::operation::get_firewall_rule_group_association::_get_firewall_rule_group_association_input::GetFirewallRuleGroupAssociationInputBuilder;
 
+impl GetFirewallRuleGroupAssociationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_firewall_rule_group_association::GetFirewallRuleGroupAssociationOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_firewall_rule_group_association::GetFirewallRuleGroupAssociationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_firewall_rule_group_association();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetFirewallRuleGroupAssociation`.
 ///
 /// <p>Retrieves a firewall rule group association, which enables DNS filtering for a VPC with one rule group. A VPC can have more than one firewall rule group association, and a rule group can be associated with more than one VPC.</p>

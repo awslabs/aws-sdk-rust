@@ -3,6 +3,23 @@ pub use crate::operation::get_annotation_store::_get_annotation_store_output::Ge
 
 pub use crate::operation::get_annotation_store::_get_annotation_store_input::GetAnnotationStoreInputBuilder;
 
+impl GetAnnotationStoreInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_annotation_store::GetAnnotationStoreOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_annotation_store::GetAnnotationStoreError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_annotation_store();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetAnnotationStore`.
 ///
 /// <p>Gets information about an annotation store.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::update_experience::_update_experience_output::UpdateEx
 
 pub use crate::operation::update_experience::_update_experience_input::UpdateExperienceInputBuilder;
 
+impl UpdateExperienceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_experience::UpdateExperienceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_experience::UpdateExperienceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_experience();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateExperience`.
 ///
 /// <p>Updates your Amazon Kendra experience such as a search application. For more information on creating a search application experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building a search experience with no code</a>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_file_system::_delete_file_system_output::Delete
 
 pub use crate::operation::delete_file_system::_delete_file_system_input::DeleteFileSystemInputBuilder;
 
+impl DeleteFileSystemInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_file_system::DeleteFileSystemOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_file_system::DeleteFileSystemError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_file_system();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteFileSystem`.
 ///
 /// <p>Deletes a file system. After deletion, the file system no longer exists, and its data is gone. Any existing automatic backups and snapshots are also deleted.</p>

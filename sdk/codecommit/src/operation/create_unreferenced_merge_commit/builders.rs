@@ -3,6 +3,23 @@ pub use crate::operation::create_unreferenced_merge_commit::_create_unreferenced
 
 pub use crate::operation::create_unreferenced_merge_commit::_create_unreferenced_merge_commit_input::CreateUnreferencedMergeCommitInputBuilder;
 
+impl CreateUnreferencedMergeCommitInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_unreferenced_merge_commit::CreateUnreferencedMergeCommitError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_unreferenced_merge_commit();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateUnreferencedMergeCommit`.
 ///
 /// <p>Creates an unreferenced commit that represents the result of merging two branches using a specified merge strategy. This can help you determine the outcome of a potential merge. This API cannot be used with the fast-forward merge strategy because that strategy does not create a merge commit.</p> <note>

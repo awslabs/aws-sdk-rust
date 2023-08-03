@@ -3,6 +3,17 @@ pub use crate::operation::list_application_instance_node_instances::_list_applic
 
 pub use crate::operation::list_application_instance_node_instances::_list_application_instance_node_instances_input::ListApplicationInstanceNodeInstancesInputBuilder;
 
+impl ListApplicationInstanceNodeInstancesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_application_instance_node_instances::ListApplicationInstanceNodeInstancesOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_application_instance_node_instances::ListApplicationInstanceNodeInstancesError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_application_instance_node_instances();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListApplicationInstanceNodeInstances`.
 ///
 /// <p>Returns a list of application node instances.</p>

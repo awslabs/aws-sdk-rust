@@ -3,6 +3,23 @@ pub use crate::operation::create_nfs_file_share::_create_nfs_file_share_output::
 
 pub use crate::operation::create_nfs_file_share::_create_nfs_file_share_input::CreateNfsFileShareInputBuilder;
 
+impl CreateNfsFileShareInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_nfs_file_share::CreateNfsFileShareOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_nfs_file_share::CreateNFSFileShareError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_nfs_file_share();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateNFSFileShare`.
 ///
 /// <p>Creates a Network File System (NFS) file share on an existing S3 File Gateway. In Storage Gateway, a file share is a file system mount point backed by Amazon S3 cloud storage. Storage Gateway exposes file shares using an NFS interface. This operation is only supported for S3 File Gateways.</p> <important>

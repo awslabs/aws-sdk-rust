@@ -3,6 +3,17 @@ pub use crate::operation::get_column_statistics_for_partition::_get_column_stati
 
 pub use crate::operation::get_column_statistics_for_partition::_get_column_statistics_for_partition_input::GetColumnStatisticsForPartitionInputBuilder;
 
+impl GetColumnStatisticsForPartitionInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_column_statistics_for_partition::GetColumnStatisticsForPartitionOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_column_statistics_for_partition::GetColumnStatisticsForPartitionError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_column_statistics_for_partition();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetColumnStatisticsForPartition`.
 ///
 /// <p>Retrieves partition statistics of columns.</p>

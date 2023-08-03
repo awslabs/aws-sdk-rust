@@ -3,6 +3,23 @@ pub use crate::operation::apply_schema::_apply_schema_output::ApplySchemaOutputB
 
 pub use crate::operation::apply_schema::_apply_schema_input::ApplySchemaInputBuilder;
 
+impl ApplySchemaInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::apply_schema::ApplySchemaOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::apply_schema::ApplySchemaError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.apply_schema();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ApplySchema`.
 ///
 /// <p>Copies the input published schema, at the specified version, into the <code>Directory</code> with the same name and version as that of the published schema.</p>

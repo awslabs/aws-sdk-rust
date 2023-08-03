@@ -3,6 +3,17 @@ pub use crate::operation::notify_provision_product_engine_workflow_result::_noti
 
 pub use crate::operation::notify_provision_product_engine_workflow_result::_notify_provision_product_engine_workflow_result_input::NotifyProvisionProductEngineWorkflowResultInputBuilder;
 
+impl NotifyProvisionProductEngineWorkflowResultInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::notify_provision_product_engine_workflow_result::NotifyProvisionProductEngineWorkflowResultOutput, ::aws_smithy_http::result::SdkError<crate::operation::notify_provision_product_engine_workflow_result::NotifyProvisionProductEngineWorkflowResultError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.notify_provision_product_engine_workflow_result();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `NotifyProvisionProductEngineWorkflowResult`.
 ///
 /// <p> Notifies the result of the provisioning engine execution. </p>

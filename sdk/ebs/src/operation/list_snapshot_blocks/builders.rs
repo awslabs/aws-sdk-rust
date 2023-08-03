@@ -3,6 +3,23 @@ pub use crate::operation::list_snapshot_blocks::_list_snapshot_blocks_output::Li
 
 pub use crate::operation::list_snapshot_blocks::_list_snapshot_blocks_input::ListSnapshotBlocksInputBuilder;
 
+impl ListSnapshotBlocksInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_snapshot_blocks::ListSnapshotBlocksOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_snapshot_blocks::ListSnapshotBlocksError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_snapshot_blocks();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListSnapshotBlocks`.
 ///
 /// <p>Returns information about the blocks in an Amazon Elastic Block Store snapshot.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_addon_configuration::_describe_addon_configur
 
 pub use crate::operation::describe_addon_configuration::_describe_addon_configuration_input::DescribeAddonConfigurationInputBuilder;
 
+impl DescribeAddonConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_addon_configuration::DescribeAddonConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_addon_configuration::DescribeAddonConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_addon_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAddonConfiguration`.
 ///
 /// <p>Returns configuration options.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::update_tracker::_update_tracker_output::UpdateTrackerO
 
 pub use crate::operation::update_tracker::_update_tracker_input::UpdateTrackerInputBuilder;
 
+impl UpdateTrackerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_tracker::UpdateTrackerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_tracker::UpdateTrackerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_tracker();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateTracker`.
 ///
 /// <p>Updates the specified properties of a given tracker resource.</p>

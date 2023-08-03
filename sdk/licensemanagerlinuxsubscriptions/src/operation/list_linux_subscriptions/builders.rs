@@ -3,6 +3,23 @@ pub use crate::operation::list_linux_subscriptions::_list_linux_subscriptions_ou
 
 pub use crate::operation::list_linux_subscriptions::_list_linux_subscriptions_input::ListLinuxSubscriptionsInputBuilder;
 
+impl ListLinuxSubscriptionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_linux_subscriptions::ListLinuxSubscriptionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_linux_subscriptions::ListLinuxSubscriptionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_linux_subscriptions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListLinuxSubscriptions`.
 ///
 /// <p>Lists the Linux subscriptions that have been discovered. If you have linked your organization, the returned results will include data aggregated across your accounts in Organizations.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_resource_collection::_get_resource_collection_outp
 
 pub use crate::operation::get_resource_collection::_get_resource_collection_input::GetResourceCollectionInputBuilder;
 
+impl GetResourceCollectionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_resource_collection::GetResourceCollectionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_resource_collection::GetResourceCollectionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_resource_collection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetResourceCollection`.
 ///
 /// <p> Returns lists Amazon Web Services resources that are of the specified resource collection type. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. </p>

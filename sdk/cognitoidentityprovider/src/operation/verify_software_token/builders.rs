@@ -3,6 +3,23 @@ pub use crate::operation::verify_software_token::_verify_software_token_output::
 
 pub use crate::operation::verify_software_token::_verify_software_token_input::VerifySoftwareTokenInputBuilder;
 
+impl VerifySoftwareTokenInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::verify_software_token::VerifySoftwareTokenOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::verify_software_token::VerifySoftwareTokenError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.verify_software_token();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `VerifySoftwareToken`.
 ///
 /// <p>Use this API to register a user's entered time-based one-time password (TOTP) code and mark the user's software token MFA status as "verified" if successful. The request takes an access token or a session string, but not both.</p>

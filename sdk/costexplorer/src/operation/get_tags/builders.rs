@@ -3,6 +3,23 @@ pub use crate::operation::get_tags::_get_tags_output::GetTagsOutputBuilder;
 
 pub use crate::operation::get_tags::_get_tags_input::GetTagsInputBuilder;
 
+impl GetTagsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_tags::GetTagsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_tags::GetTagsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_tags();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetTags`.
 ///
 /// <p>Queries for available tag keys and tag values for a specified period. You can search the tag values for an arbitrary string. </p>

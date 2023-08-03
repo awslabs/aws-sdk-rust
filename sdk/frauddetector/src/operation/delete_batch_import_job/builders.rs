@@ -3,6 +3,23 @@ pub use crate::operation::delete_batch_import_job::_delete_batch_import_job_outp
 
 pub use crate::operation::delete_batch_import_job::_delete_batch_import_job_input::DeleteBatchImportJobInputBuilder;
 
+impl DeleteBatchImportJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_batch_import_job::DeleteBatchImportJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_batch_import_job::DeleteBatchImportJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_batch_import_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteBatchImportJob`.
 ///
 /// <p>Deletes the specified batch import job ID record. This action does not delete the data that was batch imported. </p>

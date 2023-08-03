@@ -3,6 +3,23 @@ pub use crate::operation::list_field_options::_list_field_options_output::ListFi
 
 pub use crate::operation::list_field_options::_list_field_options_input::ListFieldOptionsInputBuilder;
 
+impl ListFieldOptionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_field_options::ListFieldOptionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_field_options::ListFieldOptionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_field_options();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListFieldOptions`.
 ///
 /// <p>Lists all of the field options for a field identifier in the domain. </p>

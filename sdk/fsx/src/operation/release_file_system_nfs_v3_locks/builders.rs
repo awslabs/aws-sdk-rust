@@ -3,6 +3,23 @@ pub use crate::operation::release_file_system_nfs_v3_locks::_release_file_system
 
 pub use crate::operation::release_file_system_nfs_v3_locks::_release_file_system_nfs_v3_locks_input::ReleaseFileSystemNfsV3LocksInputBuilder;
 
+impl ReleaseFileSystemNfsV3LocksInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::release_file_system_nfs_v3_locks::ReleaseFileSystemNfsV3LocksOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::release_file_system_nfs_v3_locks::ReleaseFileSystemNfsV3LocksError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.release_file_system_nfs_v3_locks();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ReleaseFileSystemNfsV3Locks`.
 ///
 /// <p>Releases the file system lock from an Amazon FSx for OpenZFS file system.</p>

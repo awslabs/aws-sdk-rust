@@ -3,6 +3,17 @@ pub use crate::operation::update_connection_alias_permission::_update_connection
 
 pub use crate::operation::update_connection_alias_permission::_update_connection_alias_permission_input::UpdateConnectionAliasPermissionInputBuilder;
 
+impl UpdateConnectionAliasPermissionInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::update_connection_alias_permission::UpdateConnectionAliasPermissionOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_connection_alias_permission::UpdateConnectionAliasPermissionError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.update_connection_alias_permission();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateConnectionAliasPermission`.
 ///
 /// <p>Shares or unshares a connection alias with one account by specifying whether that account has permission to associate the connection alias with a directory. If the association permission is granted, the connection alias is shared with that account. If the association permission is revoked, the connection alias is unshared with the account. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html"> Cross-Region Redirection for Amazon WorkSpaces</a>.</p> <note>

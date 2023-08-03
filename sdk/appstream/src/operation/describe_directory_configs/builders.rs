@@ -3,6 +3,23 @@ pub use crate::operation::describe_directory_configs::_describe_directory_config
 
 pub use crate::operation::describe_directory_configs::_describe_directory_configs_input::DescribeDirectoryConfigsInputBuilder;
 
+impl DescribeDirectoryConfigsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_directory_configs::DescribeDirectoryConfigsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_directory_configs::DescribeDirectoryConfigsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_directory_configs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeDirectoryConfigs`.
 ///
 /// <p>Retrieves a list that describes one or more specified Directory Config objects for AppStream 2.0, if the names for these objects are provided. Otherwise, all Directory Config objects in the account are described. These objects include the configuration information required to join fleets and image builders to Microsoft Active Directory domains. </p>

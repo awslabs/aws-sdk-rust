@@ -3,6 +3,23 @@ pub use crate::operation::associate_ops_item_related_item::_associate_ops_item_r
 
 pub use crate::operation::associate_ops_item_related_item::_associate_ops_item_related_item_input::AssociateOpsItemRelatedItemInputBuilder;
 
+impl AssociateOpsItemRelatedItemInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_ops_item_related_item::AssociateOpsItemRelatedItemOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_ops_item_related_item::AssociateOpsItemRelatedItemError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_ops_item_related_item();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateOpsItemRelatedItem`.
 ///
 /// <p>Associates a related item to a Systems Manager OpsCenter OpsItem. For example, you can associate an Incident Manager incident or analysis with an OpsItem. Incident Manager and OpsCenter are capabilities of Amazon Web Services Systems Manager.</p>

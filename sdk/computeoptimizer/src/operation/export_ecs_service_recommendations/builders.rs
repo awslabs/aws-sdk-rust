@@ -3,6 +3,17 @@ pub use crate::operation::export_ecs_service_recommendations::_export_ecs_servic
 
 pub use crate::operation::export_ecs_service_recommendations::_export_ecs_service_recommendations_input::ExportEcsServiceRecommendationsInputBuilder;
 
+impl ExportEcsServiceRecommendationsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::export_ecs_service_recommendations::ExportEcsServiceRecommendationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::export_ecs_service_recommendations::ExportECSServiceRecommendationsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.export_ecs_service_recommendations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ExportECSServiceRecommendations`.
 ///
 /// <p> Exports optimization recommendations for Amazon ECS services on Fargate. </p>

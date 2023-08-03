@@ -3,6 +3,23 @@ pub use crate::operation::open_tunnel::_open_tunnel_output::OpenTunnelOutputBuil
 
 pub use crate::operation::open_tunnel::_open_tunnel_input::OpenTunnelInputBuilder;
 
+impl OpenTunnelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::open_tunnel::OpenTunnelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::open_tunnel::OpenTunnelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.open_tunnel();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `OpenTunnel`.
 ///
 /// <p>Creates a new tunnel, and returns two client access tokens for clients to use to connect to the IoT Secure Tunneling proxy server.</p>

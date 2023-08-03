@@ -3,6 +3,17 @@ pub use crate::operation::batch_start_viewer_session_revocation::_batch_start_vi
 
 pub use crate::operation::batch_start_viewer_session_revocation::_batch_start_viewer_session_revocation_input::BatchStartViewerSessionRevocationInputBuilder;
 
+impl BatchStartViewerSessionRevocationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::batch_start_viewer_session_revocation::BatchStartViewerSessionRevocationOutput, ::aws_smithy_http::result::SdkError<crate::operation::batch_start_viewer_session_revocation::BatchStartViewerSessionRevocationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.batch_start_viewer_session_revocation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchStartViewerSessionRevocation`.
 ///
 /// <p>Performs <code>StartViewerSessionRevocation</code> on multiple channel ARN and viewer ID pairs simultaneously.</p>

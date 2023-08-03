@@ -3,6 +3,23 @@ pub use crate::operation::disassociate_browser_settings::_disassociate_browser_s
 
 pub use crate::operation::disassociate_browser_settings::_disassociate_browser_settings_input::DisassociateBrowserSettingsInputBuilder;
 
+impl DisassociateBrowserSettingsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_browser_settings::DisassociateBrowserSettingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_browser_settings::DisassociateBrowserSettingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disassociate_browser_settings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateBrowserSettings`.
 ///
 /// <p>Disassociates browser settings from a web portal.</p>

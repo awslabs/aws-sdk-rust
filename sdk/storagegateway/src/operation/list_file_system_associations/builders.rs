@@ -3,6 +3,23 @@ pub use crate::operation::list_file_system_associations::_list_file_system_assoc
 
 pub use crate::operation::list_file_system_associations::_list_file_system_associations_input::ListFileSystemAssociationsInputBuilder;
 
+impl ListFileSystemAssociationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_file_system_associations::ListFileSystemAssociationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_file_system_associations::ListFileSystemAssociationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_file_system_associations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListFileSystemAssociations`.
 ///
 /// <p>Gets a list of <code>FileSystemAssociationSummary</code> objects. Each object contains a summary of a file system association. This operation is only supported for FSx File Gateways.</p>

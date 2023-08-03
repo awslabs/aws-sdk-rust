@@ -3,6 +3,17 @@ pub use crate::operation::modify_db_cluster_snapshot_attribute::_modify_db_clust
 
 pub use crate::operation::modify_db_cluster_snapshot_attribute::_modify_db_cluster_snapshot_attribute_input::ModifyDbClusterSnapshotAttributeInputBuilder;
 
+impl ModifyDbClusterSnapshotAttributeInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::modify_db_cluster_snapshot_attribute::ModifyDbClusterSnapshotAttributeOutput, ::aws_smithy_http::result::SdkError<crate::operation::modify_db_cluster_snapshot_attribute::ModifyDBClusterSnapshotAttributeError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.modify_db_cluster_snapshot_attribute();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyDBClusterSnapshotAttribute`.
 ///
 /// <p>Adds an attribute and values to, or removes an attribute and values from, a manual DB cluster snapshot.</p>

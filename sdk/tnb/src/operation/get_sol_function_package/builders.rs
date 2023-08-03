@@ -3,6 +3,23 @@ pub use crate::operation::get_sol_function_package::_get_sol_function_package_ou
 
 pub use crate::operation::get_sol_function_package::_get_sol_function_package_input::GetSolFunctionPackageInputBuilder;
 
+impl GetSolFunctionPackageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_sol_function_package::GetSolFunctionPackageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_sol_function_package::GetSolFunctionPackageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_sol_function_package();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetSolFunctionPackage`.
 ///
 /// <p>Gets the details of an individual function package, such as the operational state and whether the package is in use.</p>

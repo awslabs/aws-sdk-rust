@@ -3,6 +3,23 @@ pub use crate::operation::delete_resolver_query_log_config::_delete_resolver_que
 
 pub use crate::operation::delete_resolver_query_log_config::_delete_resolver_query_log_config_input::DeleteResolverQueryLogConfigInputBuilder;
 
+impl DeleteResolverQueryLogConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_resolver_query_log_config::DeleteResolverQueryLogConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_resolver_query_log_config::DeleteResolverQueryLogConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_resolver_query_log_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteResolverQueryLogConfig`.
 ///
 /// <p>Deletes a query logging configuration. When you delete a configuration, Resolver stops logging DNS queries for all of the Amazon VPCs that are associated with the configuration. This also applies if the query logging configuration is shared with other Amazon Web Services accounts, and the other accounts have associated VPCs with the shared configuration.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::update_program::_update_program_output::UpdateProgramO
 
 pub use crate::operation::update_program::_update_program_input::UpdateProgramInputBuilder;
 
+impl UpdateProgramInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_program::UpdateProgramOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_program::UpdateProgramError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_program();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateProgram`.
 ///
 /// <p>Updates a program within a channel.</p>

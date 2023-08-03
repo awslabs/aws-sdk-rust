@@ -3,6 +3,23 @@ pub use crate::operation::update_cluster_version::_update_cluster_version_output
 
 pub use crate::operation::update_cluster_version::_update_cluster_version_input::UpdateClusterVersionInputBuilder;
 
+impl UpdateClusterVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_cluster_version::UpdateClusterVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_cluster_version::UpdateClusterVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_cluster_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateClusterVersion`.
 ///
 /// <p>Updates an Amazon EKS cluster to the specified Kubernetes version. Your cluster continues to function during the update. The response output includes an update ID that you can use to track the status of your cluster update with the <code>DescribeUpdate</code> API operation.</p>

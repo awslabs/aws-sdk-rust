@@ -3,6 +3,23 @@ pub use crate::operation::delete_domain_association::_delete_domain_association_
 
 pub use crate::operation::delete_domain_association::_delete_domain_association_input::DeleteDomainAssociationInputBuilder;
 
+impl DeleteDomainAssociationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_domain_association::DeleteDomainAssociationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_domain_association::DeleteDomainAssociationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_domain_association();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteDomainAssociation`.
 ///
 /// <p> Deletes a domain association for an Amplify app. </p>

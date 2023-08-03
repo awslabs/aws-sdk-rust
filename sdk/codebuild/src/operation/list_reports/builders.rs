@@ -3,6 +3,23 @@ pub use crate::operation::list_reports::_list_reports_output::ListReportsOutputB
 
 pub use crate::operation::list_reports::_list_reports_input::ListReportsInputBuilder;
 
+impl ListReportsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_reports::ListReportsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_reports::ListReportsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_reports();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListReports`.
 ///
 /// <p> Returns a list of ARNs for the reports in the current Amazon Web Services account. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_permission_groups::_list_permission_groups_output
 
 pub use crate::operation::list_permission_groups::_list_permission_groups_input::ListPermissionGroupsInputBuilder;
 
+impl ListPermissionGroupsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_permission_groups::ListPermissionGroupsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_permission_groups::ListPermissionGroupsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_permission_groups();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListPermissionGroups`.
 ///
 /// <p>Lists all available permission groups in FinSpace.</p>

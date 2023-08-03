@@ -3,6 +3,23 @@ pub use crate::operation::list_app_version_resources::_list_app_version_resource
 
 pub use crate::operation::list_app_version_resources::_list_app_version_resources_input::ListAppVersionResourcesInputBuilder;
 
+impl ListAppVersionResourcesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_app_version_resources::ListAppVersionResourcesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_app_version_resources::ListAppVersionResourcesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_app_version_resources();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAppVersionResources`.
 ///
 /// <p>Lists all the resources in an Resilience Hub application.</p>

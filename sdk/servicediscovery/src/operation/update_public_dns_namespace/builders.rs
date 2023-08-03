@@ -3,6 +3,23 @@ pub use crate::operation::update_public_dns_namespace::_update_public_dns_namesp
 
 pub use crate::operation::update_public_dns_namespace::_update_public_dns_namespace_input::UpdatePublicDnsNamespaceInputBuilder;
 
+impl UpdatePublicDnsNamespaceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_public_dns_namespace::UpdatePublicDnsNamespaceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_public_dns_namespace::UpdatePublicDnsNamespaceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_public_dns_namespace();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdatePublicDnsNamespace`.
 ///
 /// <p>Updates a public DNS namespace.</p>

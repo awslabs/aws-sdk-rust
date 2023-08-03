@@ -3,6 +3,17 @@ pub use crate::operation::get_storage_lens_configuration_tagging::_get_storage_l
 
 pub use crate::operation::get_storage_lens_configuration_tagging::_get_storage_lens_configuration_tagging_input::GetStorageLensConfigurationTaggingInputBuilder;
 
+impl GetStorageLensConfigurationTaggingInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_storage_lens_configuration_tagging::GetStorageLensConfigurationTaggingOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_storage_lens_configuration_tagging::GetStorageLensConfigurationTaggingError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_storage_lens_configuration_tagging();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetStorageLensConfigurationTagging`.
 ///
 /// <p>Gets the tags of Amazon S3 Storage Lens configuration. For more information about S3 Storage Lens, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Assessing your storage activity and usage with Amazon S3 Storage Lens </a> in the <i>Amazon S3 User Guide</i>.</p> <note>

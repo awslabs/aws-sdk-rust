@@ -3,6 +3,17 @@ pub use crate::operation::get_relational_database_metric_data::_get_relational_d
 
 pub use crate::operation::get_relational_database_metric_data::_get_relational_database_metric_data_input::GetRelationalDatabaseMetricDataInputBuilder;
 
+impl GetRelationalDatabaseMetricDataInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_relational_database_metric_data::GetRelationalDatabaseMetricDataOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_relational_database_metric_data::GetRelationalDatabaseMetricDataError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_relational_database_metric_data();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetRelationalDatabaseMetricData`.
 ///
 /// <p>Returns the data points of the specified metric for a database in Amazon Lightsail.</p>

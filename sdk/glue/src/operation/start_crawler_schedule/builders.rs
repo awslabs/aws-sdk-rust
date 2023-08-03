@@ -3,6 +3,23 @@ pub use crate::operation::start_crawler_schedule::_start_crawler_schedule_output
 
 pub use crate::operation::start_crawler_schedule::_start_crawler_schedule_input::StartCrawlerScheduleInputBuilder;
 
+impl StartCrawlerScheduleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_crawler_schedule::StartCrawlerScheduleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_crawler_schedule::StartCrawlerScheduleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_crawler_schedule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartCrawlerSchedule`.
 ///
 /// <p>Changes the schedule state of the specified crawler to <code>SCHEDULED</code>, unless the crawler is already running or the schedule state is already <code>SCHEDULED</code>.</p>

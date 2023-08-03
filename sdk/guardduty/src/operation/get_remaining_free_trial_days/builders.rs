@@ -3,6 +3,23 @@ pub use crate::operation::get_remaining_free_trial_days::_get_remaining_free_tri
 
 pub use crate::operation::get_remaining_free_trial_days::_get_remaining_free_trial_days_input::GetRemainingFreeTrialDaysInputBuilder;
 
+impl GetRemainingFreeTrialDaysInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_remaining_free_trial_days::GetRemainingFreeTrialDaysOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_remaining_free_trial_days::GetRemainingFreeTrialDaysError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_remaining_free_trial_days();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetRemainingFreeTrialDays`.
 ///
 /// <p>Provides the number of days left for each data source used in the free trial period.</p>

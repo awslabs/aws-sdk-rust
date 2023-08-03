@@ -3,6 +3,23 @@ pub use crate::operation::register_robot::_register_robot_output::RegisterRobotO
 
 pub use crate::operation::register_robot::_register_robot_input::RegisterRobotInputBuilder;
 
+impl RegisterRobotInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::register_robot::RegisterRobotOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::register_robot::RegisterRobotError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.register_robot();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RegisterRobot`.
 ///
 /// <p>Registers a robot with a fleet.</p> <important>

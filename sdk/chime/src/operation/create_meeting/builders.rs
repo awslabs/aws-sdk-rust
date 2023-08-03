@@ -3,6 +3,23 @@ pub use crate::operation::create_meeting::_create_meeting_output::CreateMeetingO
 
 pub use crate::operation::create_meeting::_create_meeting_input::CreateMeetingInputBuilder;
 
+impl CreateMeetingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_meeting::CreateMeetingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_meeting::CreateMeetingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_meeting();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateMeeting`.
 ///
 /// <p>Creates a new Amazon Chime SDK meeting in the specified media Region with no initial attendees. For more information about specifying media Regions, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/chime-sdk-meetings-regions.html">Amazon Chime SDK Media Regions</a> in the <i>Amazon Chime SDK Developer Guide</i> . For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> <important>

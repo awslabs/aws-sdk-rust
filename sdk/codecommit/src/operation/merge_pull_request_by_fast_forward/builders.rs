@@ -3,6 +3,17 @@ pub use crate::operation::merge_pull_request_by_fast_forward::_merge_pull_reques
 
 pub use crate::operation::merge_pull_request_by_fast_forward::_merge_pull_request_by_fast_forward_input::MergePullRequestByFastForwardInputBuilder;
 
+impl MergePullRequestByFastForwardInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardOutput, ::aws_smithy_http::result::SdkError<crate::operation::merge_pull_request_by_fast_forward::MergePullRequestByFastForwardError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.merge_pull_request_by_fast_forward();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `MergePullRequestByFastForward`.
 ///
 /// <p>Attempts to merge the source commit of a pull request into the specified destination branch for that pull request at the specified commit using the fast-forward merge strategy. If the merge is successful, it closes the pull request.</p>

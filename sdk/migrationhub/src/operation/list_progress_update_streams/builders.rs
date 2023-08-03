@@ -3,6 +3,23 @@ pub use crate::operation::list_progress_update_streams::_list_progress_update_st
 
 pub use crate::operation::list_progress_update_streams::_list_progress_update_streams_input::ListProgressUpdateStreamsInputBuilder;
 
+impl ListProgressUpdateStreamsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_progress_update_streams::ListProgressUpdateStreamsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_progress_update_streams::ListProgressUpdateStreamsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_progress_update_streams();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListProgressUpdateStreams`.
 ///
 /// <p>Lists progress update streams associated with the user account making this call.</p>

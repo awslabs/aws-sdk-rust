@@ -3,6 +3,23 @@ pub use crate::operation::create_private_dns_namespace::_create_private_dns_name
 
 pub use crate::operation::create_private_dns_namespace::_create_private_dns_namespace_input::CreatePrivateDnsNamespaceInputBuilder;
 
+impl CreatePrivateDnsNamespaceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_private_dns_namespace::CreatePrivateDnsNamespaceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_private_dns_namespace::CreatePrivateDnsNamespaceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_private_dns_namespace();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreatePrivateDnsNamespace`.
 ///
 /// <p>Creates a private namespace based on DNS, which is visible only inside a specified Amazon VPC. The namespace defines your service naming scheme. For example, if you name your namespace <code>example.com</code> and name your service <code>backend</code>, the resulting DNS name for the service is <code>backend.example.com</code>. Service instances that are registered using a private DNS namespace can be discovered using either a <code>DiscoverInstances</code> request or using DNS. For the current quota on the number of namespaces that you can create using the same Amazon Web Services account, see <a href="https://docs.aws.amazon.com/cloud-map/latest/dg/cloud-map-limits.html">Cloud Map quotas</a> in the <i>Cloud Map Developer Guide</i>.</p>

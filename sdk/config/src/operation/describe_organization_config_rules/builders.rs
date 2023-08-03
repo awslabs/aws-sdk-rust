@@ -3,6 +3,17 @@ pub use crate::operation::describe_organization_config_rules::_describe_organiza
 
 pub use crate::operation::describe_organization_config_rules::_describe_organization_config_rules_input::DescribeOrganizationConfigRulesInputBuilder;
 
+impl DescribeOrganizationConfigRulesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_organization_config_rules::DescribeOrganizationConfigRulesOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_organization_config_rules::DescribeOrganizationConfigRulesError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_organization_config_rules();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeOrganizationConfigRules`.
 ///
 /// <p>Returns a list of organization Config rules. </p> <note>

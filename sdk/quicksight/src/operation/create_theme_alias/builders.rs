@@ -3,6 +3,23 @@ pub use crate::operation::create_theme_alias::_create_theme_alias_output::Create
 
 pub use crate::operation::create_theme_alias::_create_theme_alias_input::CreateThemeAliasInputBuilder;
 
+impl CreateThemeAliasInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_theme_alias::CreateThemeAliasOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_theme_alias::CreateThemeAliasError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_theme_alias();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateThemeAlias`.
 ///
 /// <p>Creates a theme alias for a theme.</p>

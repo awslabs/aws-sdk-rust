@@ -3,6 +3,23 @@ pub use crate::operation::list_segments::_list_segments_output::ListSegmentsOutp
 
 pub use crate::operation::list_segments::_list_segments_input::ListSegmentsInputBuilder;
 
+impl ListSegmentsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_segments::ListSegmentsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_segments::ListSegmentsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_segments();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListSegments`.
 ///
 /// <p>Returns a list of audience segments that you have created in your account in this Region.</p>

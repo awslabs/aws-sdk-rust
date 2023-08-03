@@ -3,6 +3,23 @@ pub use crate::operation::add_instance_fleet::_add_instance_fleet_output::AddIns
 
 pub use crate::operation::add_instance_fleet::_add_instance_fleet_input::AddInstanceFleetInputBuilder;
 
+impl AddInstanceFleetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::add_instance_fleet::AddInstanceFleetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::add_instance_fleet::AddInstanceFleetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.add_instance_fleet();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AddInstanceFleet`.
 ///
 /// <p>Adds an instance fleet to a running cluster.</p> <note>

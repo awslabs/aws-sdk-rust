@@ -3,6 +3,23 @@ pub use crate::operation::describe_db_proxies::_describe_db_proxies_output::Desc
 
 pub use crate::operation::describe_db_proxies::_describe_db_proxies_input::DescribeDbProxiesInputBuilder;
 
+impl DescribeDbProxiesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_db_proxies::DescribeDbProxiesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_db_proxies::DescribeDBProxiesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_db_proxies();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeDBProxies`.
 ///
 /// <p>Returns information about DB proxies.</p>

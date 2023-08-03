@@ -3,6 +3,23 @@ pub use crate::operation::update_resource_server::_update_resource_server_output
 
 pub use crate::operation::update_resource_server::_update_resource_server_input::UpdateResourceServerInputBuilder;
 
+impl UpdateResourceServerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_resource_server::UpdateResourceServerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_resource_server::UpdateResourceServerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_resource_server();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateResourceServer`.
 ///
 /// <p>Updates the name and scopes of resource server. All other fields are read-only.</p> <important>

@@ -3,6 +3,23 @@ pub use crate::operation::create_algorithm::_create_algorithm_output::CreateAlgo
 
 pub use crate::operation::create_algorithm::_create_algorithm_input::CreateAlgorithmInputBuilder;
 
+impl CreateAlgorithmInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_algorithm::CreateAlgorithmOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_algorithm::CreateAlgorithmError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_algorithm();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateAlgorithm`.
 ///
 /// <p>Create a machine learning algorithm that you can use in SageMaker and list in the Amazon Web Services Marketplace.</p>

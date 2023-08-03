@@ -3,6 +3,23 @@ pub use crate::operation::create_model_card_export_job::_create_model_card_expor
 
 pub use crate::operation::create_model_card_export_job::_create_model_card_export_job_input::CreateModelCardExportJobInputBuilder;
 
+impl CreateModelCardExportJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_model_card_export_job::CreateModelCardExportJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_model_card_export_job::CreateModelCardExportJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_model_card_export_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateModelCardExportJob`.
 ///
 /// <p>Creates an Amazon SageMaker Model Card export job.</p>

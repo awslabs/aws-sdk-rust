@@ -3,6 +3,23 @@ pub use crate::operation::resume_campaign::_resume_campaign_output::ResumeCampai
 
 pub use crate::operation::resume_campaign::_resume_campaign_input::ResumeCampaignInputBuilder;
 
+impl ResumeCampaignInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::resume_campaign::ResumeCampaignOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::resume_campaign::ResumeCampaignError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.resume_campaign();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ResumeCampaign`.
 ///
 /// Stops a campaign for the specified Amazon Connect account.

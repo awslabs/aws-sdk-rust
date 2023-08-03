@@ -3,6 +3,17 @@ pub use crate::operation::start_audit_mitigation_actions_task::_start_audit_miti
 
 pub use crate::operation::start_audit_mitigation_actions_task::_start_audit_mitigation_actions_task_input::StartAuditMitigationActionsTaskInputBuilder;
 
+impl StartAuditMitigationActionsTaskInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::start_audit_mitigation_actions_task::StartAuditMitigationActionsTaskOutput, ::aws_smithy_http::result::SdkError<crate::operation::start_audit_mitigation_actions_task::StartAuditMitigationActionsTaskError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.start_audit_mitigation_actions_task();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartAuditMitigationActionsTask`.
 ///
 /// <p>Starts a task that applies a set of mitigation actions to the specified target.</p>

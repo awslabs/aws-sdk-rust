@@ -3,6 +3,23 @@ pub use crate::operation::list_models::_list_models_output::ListModelsOutputBuil
 
 pub use crate::operation::list_models::_list_models_input::ListModelsInputBuilder;
 
+impl ListModelsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_models::ListModelsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_models::ListModelsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_models();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListModels`.
 ///
 /// <p>Generates a list of all models in the account, including model name and ARN, dataset, and status. </p>

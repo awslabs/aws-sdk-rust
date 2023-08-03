@@ -3,6 +3,17 @@ pub use crate::operation::describe_recommendation_limitations::_describe_recomme
 
 pub use crate::operation::describe_recommendation_limitations::_describe_recommendation_limitations_input::DescribeRecommendationLimitationsInputBuilder;
 
+impl DescribeRecommendationLimitationsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_recommendation_limitations::DescribeRecommendationLimitationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_recommendation_limitations::DescribeRecommendationLimitationsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_recommendation_limitations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeRecommendationLimitations`.
 ///
 /// <p>Returns a paginated list of limitations for recommendations of target Amazon Web Services engines.</p>

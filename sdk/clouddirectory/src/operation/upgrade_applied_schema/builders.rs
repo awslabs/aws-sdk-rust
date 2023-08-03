@@ -3,6 +3,23 @@ pub use crate::operation::upgrade_applied_schema::_upgrade_applied_schema_output
 
 pub use crate::operation::upgrade_applied_schema::_upgrade_applied_schema_input::UpgradeAppliedSchemaInputBuilder;
 
+impl UpgradeAppliedSchemaInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::upgrade_applied_schema::UpgradeAppliedSchemaOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::upgrade_applied_schema::UpgradeAppliedSchemaError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.upgrade_applied_schema();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpgradeAppliedSchema`.
 ///
 /// <p>Upgrades a single directory in-place using the <code>PublishedSchemaArn</code> with schema updates found in <code>MinorVersion</code>. Backwards-compatible minor version upgrades are instantaneously available for readers on all objects in the directory. Note: This is a synchronous API call and upgrades only one schema on a given directory per call. To upgrade multiple directories from one schema, you would need to call this API on each directory.</p>

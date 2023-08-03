@@ -3,6 +3,23 @@ pub use crate::operation::get_reference_metadata::_get_reference_metadata_output
 
 pub use crate::operation::get_reference_metadata::_get_reference_metadata_input::GetReferenceMetadataInputBuilder;
 
+impl GetReferenceMetadataInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_reference_metadata::GetReferenceMetadataOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_reference_metadata::GetReferenceMetadataError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_reference_metadata();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetReferenceMetadata`.
 ///
 /// <p>Gets information about a genome reference's metadata.</p>

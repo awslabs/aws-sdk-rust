@@ -3,6 +3,23 @@ pub use crate::operation::delete_user::_delete_user_output::DeleteUserOutputBuil
 
 pub use crate::operation::delete_user::_delete_user_input::DeleteUserInputBuilder;
 
+impl DeleteUserInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_user::DeleteUserOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_user::DeleteUserError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_user();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteUser`.
 ///
 /// <p>Deletes the specified IAM user. Unlike the Amazon Web Services Management Console, when you delete a user programmatically, you must delete the items attached to the user manually, or the deletion fails. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_users_manage.html#id_users_deleting_cli">Deleting an IAM user</a>. Before attempting to delete a user, remove the following items:</p>

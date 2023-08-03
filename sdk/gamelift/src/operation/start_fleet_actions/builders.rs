@@ -3,6 +3,23 @@ pub use crate::operation::start_fleet_actions::_start_fleet_actions_output::Star
 
 pub use crate::operation::start_fleet_actions::_start_fleet_actions_input::StartFleetActionsInputBuilder;
 
+impl StartFleetActionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_fleet_actions::StartFleetActionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_fleet_actions::StartFleetActionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_fleet_actions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartFleetActions`.
 ///
 /// <p>Resumes certain types of activity on fleet instances that were suspended with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StopFleetActions.html">StopFleetActions</a>. For multi-location fleets, fleet actions are managed separately for each location. Currently, this operation is used to restart a fleet's auto-scaling activity.</p>

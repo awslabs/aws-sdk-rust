@@ -3,6 +3,23 @@ pub use crate::operation::delete_workload_share::_delete_workload_share_output::
 
 pub use crate::operation::delete_workload_share::_delete_workload_share_input::DeleteWorkloadShareInputBuilder;
 
+impl DeleteWorkloadShareInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_workload_share::DeleteWorkloadShareOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_workload_share::DeleteWorkloadShareError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_workload_share();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteWorkloadShare`.
 ///
 /// <p>Delete a workload share.</p>

@@ -3,6 +3,17 @@ pub use crate::operation::list_channels_moderated_by_app_instance_user::_list_ch
 
 pub use crate::operation::list_channels_moderated_by_app_instance_user::_list_channels_moderated_by_app_instance_user_input::ListChannelsModeratedByAppInstanceUserInputBuilder;
 
+impl ListChannelsModeratedByAppInstanceUserInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_channels_moderated_by_app_instance_user::ListChannelsModeratedByAppInstanceUserOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_channels_moderated_by_app_instance_user::ListChannelsModeratedByAppInstanceUserError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_channels_moderated_by_app_instance_user();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListChannelsModeratedByAppInstanceUser`.
 ///
 /// <p>A list of the channels moderated by an <code>AppInstanceUser</code>.</p> <note>

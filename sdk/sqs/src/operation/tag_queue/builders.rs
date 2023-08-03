@@ -3,6 +3,23 @@ pub use crate::operation::tag_queue::_tag_queue_output::TagQueueOutputBuilder;
 
 pub use crate::operation::tag_queue::_tag_queue_input::TagQueueInputBuilder;
 
+impl TagQueueInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::tag_queue::TagQueueOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::tag_queue::TagQueueError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.tag_queue();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `TagQueue`.
 ///
 /// <p>Add cost allocation tags to the specified Amazon SQS queue. For an overview, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html">Tagging Your Amazon SQS Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_faces::_delete_faces_output::DeleteFacesOutputB
 
 pub use crate::operation::delete_faces::_delete_faces_input::DeleteFacesInputBuilder;
 
+impl DeleteFacesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_faces::DeleteFacesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_faces::DeleteFacesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_faces();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteFaces`.
 ///
 /// <p>Deletes faces from a collection. You specify a collection ID and an array of face IDs to remove from the collection.</p>

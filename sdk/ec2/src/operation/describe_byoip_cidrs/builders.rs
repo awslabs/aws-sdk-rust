@@ -3,6 +3,23 @@ pub use crate::operation::describe_byoip_cidrs::_describe_byoip_cidrs_output::De
 
 pub use crate::operation::describe_byoip_cidrs::_describe_byoip_cidrs_input::DescribeByoipCidrsInputBuilder;
 
+impl DescribeByoipCidrsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_byoip_cidrs::DescribeByoipCidrsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_byoip_cidrs::DescribeByoipCidrsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_byoip_cidrs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeByoipCidrs`.
 ///
 /// <p>Describes the IP address ranges that were specified in calls to <code>ProvisionByoipCidr</code>.</p>

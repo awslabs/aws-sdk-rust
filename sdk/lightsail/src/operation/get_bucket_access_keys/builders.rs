@@ -3,6 +3,23 @@ pub use crate::operation::get_bucket_access_keys::_get_bucket_access_keys_output
 
 pub use crate::operation::get_bucket_access_keys::_get_bucket_access_keys_input::GetBucketAccessKeysInputBuilder;
 
+impl GetBucketAccessKeysInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_bucket_access_keys::GetBucketAccessKeysOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_bucket_access_keys::GetBucketAccessKeysError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_bucket_access_keys();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetBucketAccessKeys`.
 ///
 /// <p>Returns the existing access key IDs for the specified Amazon Lightsail bucket.</p> <important>

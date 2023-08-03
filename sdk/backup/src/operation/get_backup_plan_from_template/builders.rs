@@ -3,6 +3,23 @@ pub use crate::operation::get_backup_plan_from_template::_get_backup_plan_from_t
 
 pub use crate::operation::get_backup_plan_from_template::_get_backup_plan_from_template_input::GetBackupPlanFromTemplateInputBuilder;
 
+impl GetBackupPlanFromTemplateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_backup_plan_from_template::GetBackupPlanFromTemplateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_backup_plan_from_template::GetBackupPlanFromTemplateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_backup_plan_from_template();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetBackupPlanFromTemplate`.
 ///
 /// <p>Returns the template specified by its <code>templateId</code> as a backup plan.</p>

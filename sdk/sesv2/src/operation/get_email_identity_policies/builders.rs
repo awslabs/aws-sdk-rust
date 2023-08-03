@@ -3,6 +3,23 @@ pub use crate::operation::get_email_identity_policies::_get_email_identity_polic
 
 pub use crate::operation::get_email_identity_policies::_get_email_identity_policies_input::GetEmailIdentityPoliciesInputBuilder;
 
+impl GetEmailIdentityPoliciesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_email_identity_policies::GetEmailIdentityPoliciesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_email_identity_policies::GetEmailIdentityPoliciesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_email_identity_policies();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetEmailIdentityPolicies`.
 ///
 /// <p>Returns the requested sending authorization policies for the given identity (an email address or a domain). The policies are returned as a map of policy names to policy contents. You can retrieve a maximum of 20 policies at a time.</p> <note>

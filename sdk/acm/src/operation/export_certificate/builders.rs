@@ -3,6 +3,23 @@ pub use crate::operation::export_certificate::_export_certificate_output::Export
 
 pub use crate::operation::export_certificate::_export_certificate_input::ExportCertificateInputBuilder;
 
+impl ExportCertificateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::export_certificate::ExportCertificateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::export_certificate::ExportCertificateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.export_certificate();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ExportCertificate`.
 ///
 /// <p>Exports a private certificate issued by a private certificate authority (CA) for use anywhere. The exported file contains the certificate, the certificate chain, and the encrypted private 2048-bit RSA key associated with the public key that is embedded in the certificate. For security, you must assign a passphrase for the private key when exporting it. </p>

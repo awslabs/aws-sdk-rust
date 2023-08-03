@@ -3,6 +3,23 @@ pub use crate::operation::update_folder_permissions::_update_folder_permissions_
 
 pub use crate::operation::update_folder_permissions::_update_folder_permissions_input::UpdateFolderPermissionsInputBuilder;
 
+impl UpdateFolderPermissionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_folder_permissions::UpdateFolderPermissionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_folder_permissions::UpdateFolderPermissionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_folder_permissions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateFolderPermissions`.
 ///
 /// <p>Updates permissions of a folder.</p>

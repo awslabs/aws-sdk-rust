@@ -3,6 +3,23 @@ pub use crate::operation::delete_matchmaking_rule_set::_delete_matchmaking_rule_
 
 pub use crate::operation::delete_matchmaking_rule_set::_delete_matchmaking_rule_set_input::DeleteMatchmakingRuleSetInputBuilder;
 
+impl DeleteMatchmakingRuleSetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_matchmaking_rule_set::DeleteMatchmakingRuleSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_matchmaking_rule_set::DeleteMatchmakingRuleSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_matchmaking_rule_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteMatchmakingRuleSet`.
 ///
 /// <p>Deletes an existing matchmaking rule set. To delete the rule set, provide the rule set name. Rule sets cannot be deleted if they are currently being used by a matchmaking configuration. </p>

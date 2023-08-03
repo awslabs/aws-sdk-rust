@@ -3,6 +3,23 @@ pub use crate::operation::describe_document::_describe_document_output::Describe
 
 pub use crate::operation::describe_document::_describe_document_input::DescribeDocumentInputBuilder;
 
+impl DescribeDocumentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_document::DescribeDocumentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_document::DescribeDocumentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_document();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeDocument`.
 ///
 /// <p>Describes the specified Amazon Web Services Systems Manager document (SSM document).</p>

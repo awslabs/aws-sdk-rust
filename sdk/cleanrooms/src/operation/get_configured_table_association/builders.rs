@@ -3,6 +3,23 @@ pub use crate::operation::get_configured_table_association::_get_configured_tabl
 
 pub use crate::operation::get_configured_table_association::_get_configured_table_association_input::GetConfiguredTableAssociationInputBuilder;
 
+impl GetConfiguredTableAssociationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_configured_table_association::GetConfiguredTableAssociationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_configured_table_association::GetConfiguredTableAssociationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_configured_table_association();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetConfiguredTableAssociation`.
 ///
 /// <p>Retrieves a configured table association.</p>

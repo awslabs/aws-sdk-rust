@@ -3,6 +3,17 @@ pub use crate::operation::generate_embed_url_for_anonymous_user::_generate_embed
 
 pub use crate::operation::generate_embed_url_for_anonymous_user::_generate_embed_url_for_anonymous_user_input::GenerateEmbedUrlForAnonymousUserInputBuilder;
 
+impl GenerateEmbedUrlForAnonymousUserInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::generate_embed_url_for_anonymous_user::GenerateEmbedUrlForAnonymousUserOutput, ::aws_smithy_http::result::SdkError<crate::operation::generate_embed_url_for_anonymous_user::GenerateEmbedUrlForAnonymousUserError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.generate_embed_url_for_anonymous_user();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GenerateEmbedUrlForAnonymousUser`.
 ///
 /// <p>Generates an embed URL that you can use to embed an Amazon QuickSight dashboard or visual in your website, without having to register any reader users. Before you use this action, make sure that you have configured the dashboards and permissions.</p>

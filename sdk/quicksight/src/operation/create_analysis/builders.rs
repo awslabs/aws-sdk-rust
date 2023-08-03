@@ -3,6 +3,23 @@ pub use crate::operation::create_analysis::_create_analysis_output::CreateAnalys
 
 pub use crate::operation::create_analysis::_create_analysis_input::CreateAnalysisInputBuilder;
 
+impl CreateAnalysisInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_analysis::CreateAnalysisOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_analysis::CreateAnalysisError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_analysis();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateAnalysis`.
 ///
 /// <p>Creates an analysis in Amazon QuickSight. Analyses can be created either from a template or from an <code>AnalysisDefinition</code>.</p>

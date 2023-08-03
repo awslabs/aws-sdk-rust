@@ -3,6 +3,23 @@ pub use crate::operation::query_table_rows::_query_table_rows_output::QueryTable
 
 pub use crate::operation::query_table_rows::_query_table_rows_input::QueryTableRowsInputBuilder;
 
+impl QueryTableRowsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::query_table_rows::QueryTableRowsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::query_table_rows::QueryTableRowsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.query_table_rows();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `QueryTableRows`.
 ///
 /// <p> The QueryTableRows API allows you to use a filter formula to query for specific rows in a table. </p>

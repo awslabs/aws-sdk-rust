@@ -3,6 +3,23 @@ pub use crate::operation::get_sample_data::_get_sample_data_output::GetSampleDat
 
 pub use crate::operation::get_sample_data::_get_sample_data_input::GetSampleDataInputBuilder;
 
+impl GetSampleDataInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_sample_data::GetSampleDataOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_sample_data::GetSampleDataError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_sample_data();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetSampleData`.
 ///
 /// <p>Returns a selection of sample records from an Amazon S3 datasource.</p>

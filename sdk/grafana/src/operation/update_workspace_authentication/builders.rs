@@ -3,6 +3,23 @@ pub use crate::operation::update_workspace_authentication::_update_workspace_aut
 
 pub use crate::operation::update_workspace_authentication::_update_workspace_authentication_input::UpdateWorkspaceAuthenticationInputBuilder;
 
+impl UpdateWorkspaceAuthenticationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_workspace_authentication::UpdateWorkspaceAuthenticationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_workspace_authentication::UpdateWorkspaceAuthenticationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_workspace_authentication();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateWorkspaceAuthentication`.
 ///
 /// <p>Use this operation to define the identity provider (IdP) that this workspace authenticates users from, using SAML. You can also map SAML assertion attributes to workspace user information and define which groups in the assertion attribute are to have the <code>Admin</code> and <code>Editor</code> roles in the workspace.</p> <note>

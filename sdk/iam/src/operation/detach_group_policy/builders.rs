@@ -3,6 +3,23 @@ pub use crate::operation::detach_group_policy::_detach_group_policy_output::Deta
 
 pub use crate::operation::detach_group_policy::_detach_group_policy_input::DetachGroupPolicyInputBuilder;
 
+impl DetachGroupPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::detach_group_policy::DetachGroupPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::detach_group_policy::DetachGroupPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.detach_group_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DetachGroupPolicy`.
 ///
 /// <p>Removes the specified managed policy from the specified IAM group.</p>

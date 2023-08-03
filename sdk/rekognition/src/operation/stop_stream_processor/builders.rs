@@ -3,6 +3,23 @@ pub use crate::operation::stop_stream_processor::_stop_stream_processor_output::
 
 pub use crate::operation::stop_stream_processor::_stop_stream_processor_input::StopStreamProcessorInputBuilder;
 
+impl StopStreamProcessorInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_stream_processor::StopStreamProcessorOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_stream_processor::StopStreamProcessorError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_stream_processor();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopStreamProcessor`.
 ///
 /// <p>Stops a running stream processor that was created by <code>CreateStreamProcessor</code>.</p>

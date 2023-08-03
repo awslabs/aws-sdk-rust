@@ -3,6 +3,23 @@ pub use crate::operation::delete_connect_instance_config::_delete_connect_instan
 
 pub use crate::operation::delete_connect_instance_config::_delete_connect_instance_config_input::DeleteConnectInstanceConfigInputBuilder;
 
+impl DeleteConnectInstanceConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_connect_instance_config::DeleteConnectInstanceConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_connect_instance_config::DeleteConnectInstanceConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_connect_instance_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteConnectInstanceConfig`.
 ///
 /// Deletes a connect instance config from the specified AWS account.

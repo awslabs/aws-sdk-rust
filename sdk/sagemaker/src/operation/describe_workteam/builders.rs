@@ -3,6 +3,23 @@ pub use crate::operation::describe_workteam::_describe_workteam_output::Describe
 
 pub use crate::operation::describe_workteam::_describe_workteam_input::DescribeWorkteamInputBuilder;
 
+impl DescribeWorkteamInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_workteam::DescribeWorkteamOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_workteam::DescribeWorkteamError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_workteam();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeWorkteam`.
 ///
 /// <p>Gets information about a specific work team. You can see information such as the create date, the last updated date, membership information, and the work team's Amazon Resource Name (ARN).</p>

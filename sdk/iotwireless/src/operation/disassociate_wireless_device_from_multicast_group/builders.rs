@@ -3,6 +3,17 @@ pub use crate::operation::disassociate_wireless_device_from_multicast_group::_di
 
 pub use crate::operation::disassociate_wireless_device_from_multicast_group::_disassociate_wireless_device_from_multicast_group_input::DisassociateWirelessDeviceFromMulticastGroupInputBuilder;
 
+impl DisassociateWirelessDeviceFromMulticastGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::disassociate_wireless_device_from_multicast_group::DisassociateWirelessDeviceFromMulticastGroupOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_wireless_device_from_multicast_group::DisassociateWirelessDeviceFromMulticastGroupError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.disassociate_wireless_device_from_multicast_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateWirelessDeviceFromMulticastGroup`.
 ///
 /// <p>Disassociates a wireless device from a multicast group.</p>

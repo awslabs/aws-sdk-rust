@@ -3,6 +3,23 @@ pub use crate::operation::list_supported_resource_types::_list_supported_resourc
 
 pub use crate::operation::list_supported_resource_types::_list_supported_resource_types_input::ListSupportedResourceTypesInputBuilder;
 
+impl ListSupportedResourceTypesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_supported_resource_types::ListSupportedResourceTypesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_supported_resource_types::ListSupportedResourceTypesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_supported_resource_types();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListSupportedResourceTypes`.
 ///
 /// <p>Retrieves a list of all resource types currently supported by Amazon Web Services Resource Explorer.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_data_source::_create_data_source_output::Create
 
 pub use crate::operation::create_data_source::_create_data_source_input::CreateDataSourceInputBuilder;
 
+impl CreateDataSourceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_data_source::CreateDataSourceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_data_source::CreateDataSourceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_data_source();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateDataSource`.
 ///
 /// <p>Creates a <code>DataSource</code> object.</p>

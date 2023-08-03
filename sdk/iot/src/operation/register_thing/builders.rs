@@ -3,6 +3,23 @@ pub use crate::operation::register_thing::_register_thing_output::RegisterThingO
 
 pub use crate::operation::register_thing::_register_thing_input::RegisterThingInputBuilder;
 
+impl RegisterThingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::register_thing::RegisterThingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::register_thing::RegisterThingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.register_thing();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RegisterThing`.
 ///
 /// <p>Provisions a thing in the device registry. RegisterThing calls other IoT control plane APIs. These calls might exceed your account level <a href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_iot"> IoT Throttling Limits</a> and cause throttle errors. Please contact <a href="https://console.aws.amazon.com/support/home">Amazon Web Services Customer Support</a> to raise your throttling limits if necessary.</p>

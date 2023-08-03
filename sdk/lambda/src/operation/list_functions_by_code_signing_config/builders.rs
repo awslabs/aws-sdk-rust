@@ -3,6 +3,17 @@ pub use crate::operation::list_functions_by_code_signing_config::_list_functions
 
 pub use crate::operation::list_functions_by_code_signing_config::_list_functions_by_code_signing_config_input::ListFunctionsByCodeSigningConfigInputBuilder;
 
+impl ListFunctionsByCodeSigningConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_functions_by_code_signing_config::ListFunctionsByCodeSigningConfigOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_functions_by_code_signing_config::ListFunctionsByCodeSigningConfigError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_functions_by_code_signing_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListFunctionsByCodeSigningConfig`.
 ///
 /// <p>List the functions that use the specified code signing configuration. You can use this method prior to deleting a code signing configuration, to verify that no functions are using it.</p>

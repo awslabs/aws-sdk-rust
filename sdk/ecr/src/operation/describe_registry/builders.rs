@@ -3,6 +3,23 @@ pub use crate::operation::describe_registry::_describe_registry_output::Describe
 
 pub use crate::operation::describe_registry::_describe_registry_input::DescribeRegistryInputBuilder;
 
+impl DescribeRegistryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_registry::DescribeRegistryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_registry::DescribeRegistryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_registry();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeRegistry`.
 ///
 /// <p>Describes the settings for a registry. The replication configuration for a repository can be created or updated with the <code>PutReplicationConfiguration</code> API action.</p>

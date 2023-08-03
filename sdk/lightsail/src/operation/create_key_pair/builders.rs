@@ -3,6 +3,23 @@ pub use crate::operation::create_key_pair::_create_key_pair_output::CreateKeyPai
 
 pub use crate::operation::create_key_pair::_create_key_pair_input::CreateKeyPairInputBuilder;
 
+impl CreateKeyPairInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_key_pair::CreateKeyPairOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_key_pair::CreateKeyPairError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_key_pair();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateKeyPair`.
 ///
 /// <p>Creates a custom SSH key pair that you can use with an Amazon Lightsail instance.</p> <note>

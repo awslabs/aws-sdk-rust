@@ -3,6 +3,23 @@ pub use crate::operation::submit_container_state_change::_submit_container_state
 
 pub use crate::operation::submit_container_state_change::_submit_container_state_change_input::SubmitContainerStateChangeInputBuilder;
 
+impl SubmitContainerStateChangeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::submit_container_state_change::SubmitContainerStateChangeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::submit_container_state_change::SubmitContainerStateChangeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.submit_container_state_change();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SubmitContainerStateChange`.
 ///
 /// <note>

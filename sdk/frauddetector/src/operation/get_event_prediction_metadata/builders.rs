@@ -3,6 +3,23 @@ pub use crate::operation::get_event_prediction_metadata::_get_event_prediction_m
 
 pub use crate::operation::get_event_prediction_metadata::_get_event_prediction_metadata_input::GetEventPredictionMetadataInputBuilder;
 
+impl GetEventPredictionMetadataInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_event_prediction_metadata::GetEventPredictionMetadataOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_event_prediction_metadata::GetEventPredictionMetadataError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_event_prediction_metadata();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetEventPredictionMetadata`.
 ///
 /// <p> Gets details of the past fraud predictions for the specified event ID, event type, detector ID, and detector version ID that was generated in the specified time period. </p>

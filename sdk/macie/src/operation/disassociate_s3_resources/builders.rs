@@ -3,6 +3,23 @@ pub use crate::operation::disassociate_s3_resources::_disassociate_s3_resources_
 
 pub use crate::operation::disassociate_s3_resources::_disassociate_s3_resources_input::DisassociateS3ResourcesInputBuilder;
 
+impl DisassociateS3ResourcesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_s3_resources::DisassociateS3ResourcesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_s3_resources::DisassociateS3ResourcesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disassociate_s3_resources();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateS3Resources`.
 ///
 /// <p>(Discontinued) Removes specified S3 resources from being monitored by Amazon Macie Classic. If <code>memberAccountId</code> isn't specified, the action removes specified S3 resources from Macie Classic for the current Macie Classic administrator account. If <code>memberAccountId</code> is specified, the action removes specified S3 resources from Macie Classic for the specified member account.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::update_chap_credentials::_update_chap_credentials_outp
 
 pub use crate::operation::update_chap_credentials::_update_chap_credentials_input::UpdateChapCredentialsInputBuilder;
 
+impl UpdateChapCredentialsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_chap_credentials::UpdateChapCredentialsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_chap_credentials::UpdateChapCredentialsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_chap_credentials();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateChapCredentials`.
 ///
 /// <p>Updates the Challenge-Handshake Authentication Protocol (CHAP) credentials for a specified iSCSI target. By default, a gateway does not have CHAP enabled; however, for added security, you might use it. This operation is supported in the volume and tape gateway types.</p> <important>

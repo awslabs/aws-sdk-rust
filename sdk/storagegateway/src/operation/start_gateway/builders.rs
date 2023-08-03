@@ -3,6 +3,23 @@ pub use crate::operation::start_gateway::_start_gateway_output::StartGatewayOutp
 
 pub use crate::operation::start_gateway::_start_gateway_input::StartGatewayInputBuilder;
 
+impl StartGatewayInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_gateway::StartGatewayOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_gateway::StartGatewayError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_gateway();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartGateway`.
 ///
 /// <p>Starts a gateway that you previously shut down (see <code>ShutdownGateway</code>). After the gateway starts, you can then make other API calls, your applications can read from or write to the gateway's storage volumes and you will be able to take snapshot backups.</p> <note>

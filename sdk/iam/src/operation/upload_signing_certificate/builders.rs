@@ -3,6 +3,23 @@ pub use crate::operation::upload_signing_certificate::_upload_signing_certificat
 
 pub use crate::operation::upload_signing_certificate::_upload_signing_certificate_input::UploadSigningCertificateInputBuilder;
 
+impl UploadSigningCertificateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::upload_signing_certificate::UploadSigningCertificateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::upload_signing_certificate::UploadSigningCertificateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.upload_signing_certificate();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UploadSigningCertificate`.
 ///
 /// <p>Uploads an X.509 signing certificate and associates it with the specified IAM user. Some Amazon Web Services services require you to use certificates to validate requests that are signed with a corresponding private key. When you upload the certificate, its default status is <code>Active</code>.</p>

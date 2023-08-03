@@ -3,6 +3,23 @@ pub use crate::operation::accept_invitation::_accept_invitation_output::AcceptIn
 
 pub use crate::operation::accept_invitation::_accept_invitation_input::AcceptInvitationInputBuilder;
 
+impl AcceptInvitationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::accept_invitation::AcceptInvitationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::accept_invitation::AcceptInvitationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.accept_invitation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AcceptInvitation`.
 ///
 /// <p>This method is deprecated. Instead, use <code>AcceptAdministratorInvitation</code>.</p>

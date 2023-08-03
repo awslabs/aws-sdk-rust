@@ -3,6 +3,23 @@ pub use crate::operation::update_logging_configuration::_update_logging_configur
 
 pub use crate::operation::update_logging_configuration::_update_logging_configuration_input::UpdateLoggingConfigurationInputBuilder;
 
+impl UpdateLoggingConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_logging_configuration::UpdateLoggingConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_logging_configuration::UpdateLoggingConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_logging_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateLoggingConfiguration`.
 ///
 /// <p>Sets the logging configuration for the specified firewall. </p>

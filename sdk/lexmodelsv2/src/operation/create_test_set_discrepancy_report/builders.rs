@@ -3,6 +3,17 @@ pub use crate::operation::create_test_set_discrepancy_report::_create_test_set_d
 
 pub use crate::operation::create_test_set_discrepancy_report::_create_test_set_discrepancy_report_input::CreateTestSetDiscrepancyReportInputBuilder;
 
+impl CreateTestSetDiscrepancyReportInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::create_test_set_discrepancy_report::CreateTestSetDiscrepancyReportOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_test_set_discrepancy_report::CreateTestSetDiscrepancyReportError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.create_test_set_discrepancy_report();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateTestSetDiscrepancyReport`.
 ///
 /// <p>Create a report that describes the differences between the bot and the test set.</p>

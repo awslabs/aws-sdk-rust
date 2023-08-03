@@ -3,6 +3,23 @@ pub use crate::operation::list_channel_flows::_list_channel_flows_output::ListCh
 
 pub use crate::operation::list_channel_flows::_list_channel_flows_input::ListChannelFlowsInputBuilder;
 
+impl ListChannelFlowsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_channel_flows::ListChannelFlowsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_channel_flows::ListChannelFlowsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_channel_flows();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListChannelFlows`.
 ///
 /// <p>Returns a paginated lists of all the channel flows created under a single Chime. This is a developer API.</p>

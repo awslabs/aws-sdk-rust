@@ -3,6 +3,23 @@ pub use crate::operation::deprovision_byoip_cidr::_deprovision_byoip_cidr_output
 
 pub use crate::operation::deprovision_byoip_cidr::_deprovision_byoip_cidr_input::DeprovisionByoipCidrInputBuilder;
 
+impl DeprovisionByoipCidrInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::deprovision_byoip_cidr::DeprovisionByoipCidrOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::deprovision_byoip_cidr::DeprovisionByoipCidrError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.deprovision_byoip_cidr();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeprovisionByoipCidr`.
 ///
 /// <p>Releases the specified address range that you provisioned to use with your Amazon Web Services resources through bring your own IP addresses (BYOIP) and deletes the corresponding address pool. </p>

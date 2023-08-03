@@ -3,6 +3,23 @@ pub use crate::operation::list_received_grants::_list_received_grants_output::Li
 
 pub use crate::operation::list_received_grants::_list_received_grants_input::ListReceivedGrantsInputBuilder;
 
+impl ListReceivedGrantsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_received_grants::ListReceivedGrantsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_received_grants::ListReceivedGrantsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_received_grants();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListReceivedGrants`.
 ///
 /// <p>Lists grants that are received. Received grants are grants created while specifying the recipient as this Amazon Web Services account, your organization, or an organizational unit (OU) to which this member account belongs.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_asset_bundle_export_job::_describe_asset_bund
 
 pub use crate::operation::describe_asset_bundle_export_job::_describe_asset_bundle_export_job_input::DescribeAssetBundleExportJobInputBuilder;
 
+impl DescribeAssetBundleExportJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_asset_bundle_export_job::DescribeAssetBundleExportJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_asset_bundle_export_job::DescribeAssetBundleExportJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_asset_bundle_export_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAssetBundleExportJob`.
 ///
 /// <p>Describes an existing export job.</p>

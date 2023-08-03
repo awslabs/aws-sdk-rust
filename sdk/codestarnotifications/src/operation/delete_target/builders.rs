@@ -3,6 +3,23 @@ pub use crate::operation::delete_target::_delete_target_output::DeleteTargetOutp
 
 pub use crate::operation::delete_target::_delete_target_input::DeleteTargetInputBuilder;
 
+impl DeleteTargetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_target::DeleteTargetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_target::DeleteTargetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_target();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteTarget`.
 ///
 /// <p>Deletes a specified target for notifications.</p>

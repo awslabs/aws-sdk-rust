@@ -3,6 +3,23 @@ pub use crate::operation::create_sync_job::_create_sync_job_output::CreateSyncJo
 
 pub use crate::operation::create_sync_job::_create_sync_job_input::CreateSyncJobInputBuilder;
 
+impl CreateSyncJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_sync_job::CreateSyncJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_sync_job::CreateSyncJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_sync_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateSyncJob`.
 ///
 /// <p>This action creates a SyncJob.</p>

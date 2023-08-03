@@ -3,6 +3,17 @@ pub use crate::operation::apply_security_groups_to_client_vpn_target_network::_a
 
 pub use crate::operation::apply_security_groups_to_client_vpn_target_network::_apply_security_groups_to_client_vpn_target_network_input::ApplySecurityGroupsToClientVpnTargetNetworkInputBuilder;
 
+impl ApplySecurityGroupsToClientVpnTargetNetworkInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::apply_security_groups_to_client_vpn_target_network::ApplySecurityGroupsToClientVpnTargetNetworkOutput, ::aws_smithy_http::result::SdkError<crate::operation::apply_security_groups_to_client_vpn_target_network::ApplySecurityGroupsToClientVpnTargetNetworkError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.apply_security_groups_to_client_vpn_target_network();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ApplySecurityGroupsToClientVpnTargetNetwork`.
 ///
 /// <p>Applies a security group to the association between the target network and the Client VPN endpoint. This action replaces the existing security groups with the specified security groups.</p>

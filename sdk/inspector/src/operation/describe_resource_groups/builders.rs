@@ -3,6 +3,23 @@ pub use crate::operation::describe_resource_groups::_describe_resource_groups_ou
 
 pub use crate::operation::describe_resource_groups::_describe_resource_groups_input::DescribeResourceGroupsInputBuilder;
 
+impl DescribeResourceGroupsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_resource_groups::DescribeResourceGroupsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_resource_groups::DescribeResourceGroupsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_resource_groups();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeResourceGroups`.
 ///
 /// <p>Describes the resource groups that are specified by the ARNs of the resource groups.</p>

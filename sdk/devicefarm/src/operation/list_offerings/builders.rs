@@ -3,6 +3,23 @@ pub use crate::operation::list_offerings::_list_offerings_output::ListOfferingsO
 
 pub use crate::operation::list_offerings::_list_offerings_input::ListOfferingsInputBuilder;
 
+impl ListOfferingsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_offerings::ListOfferingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_offerings::ListOfferingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_offerings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListOfferings`.
 ///
 /// <p>Returns a list of products or offerings that the user can manage through the API. Each offering record indicates the recurring price per unit and the frequency for that offering. The API returns a <code>NotEligible</code> error if the user is not permitted to invoke the operation. If you must be able to invoke this operation, contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.</p>

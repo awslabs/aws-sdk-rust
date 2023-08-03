@@ -3,6 +3,23 @@ pub use crate::operation::update_domain_entry::_update_domain_entry_output::Upda
 
 pub use crate::operation::update_domain_entry::_update_domain_entry_input::UpdateDomainEntryInputBuilder;
 
+impl UpdateDomainEntryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_domain_entry::UpdateDomainEntryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_domain_entry::UpdateDomainEntryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_domain_entry();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateDomainEntry`.
 ///
 /// <p>Updates a domain recordset after it is created.</p>

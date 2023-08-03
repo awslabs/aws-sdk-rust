@@ -3,6 +3,23 @@ pub use crate::operation::put_public_access_block::_put_public_access_block_outp
 
 pub use crate::operation::put_public_access_block::_put_public_access_block_input::PutPublicAccessBlockInputBuilder;
 
+impl PutPublicAccessBlockInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_public_access_block::PutPublicAccessBlockOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_public_access_block::PutPublicAccessBlockError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_public_access_block();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutPublicAccessBlock`.
 ///
 /// <p>Creates or modifies the <code>PublicAccessBlock</code> configuration for an Amazon Web Services account. For this operation, users must have the <code>s3:PutAccountPublicAccessBlock</code> permission. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/access-control-block-public-access.html"> Using Amazon S3 block public access</a>.</p>

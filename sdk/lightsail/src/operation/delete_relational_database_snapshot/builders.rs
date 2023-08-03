@@ -3,6 +3,17 @@ pub use crate::operation::delete_relational_database_snapshot::_delete_relationa
 
 pub use crate::operation::delete_relational_database_snapshot::_delete_relational_database_snapshot_input::DeleteRelationalDatabaseSnapshotInputBuilder;
 
+impl DeleteRelationalDatabaseSnapshotInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_relational_database_snapshot::DeleteRelationalDatabaseSnapshotOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_relational_database_snapshot::DeleteRelationalDatabaseSnapshotError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.delete_relational_database_snapshot();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteRelationalDatabaseSnapshot`.
 ///
 /// <p>Deletes a database snapshot in Amazon Lightsail.</p>

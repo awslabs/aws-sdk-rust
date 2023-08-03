@@ -3,6 +3,23 @@ pub use crate::operation::cancel_component_deployment::_cancel_component_deploym
 
 pub use crate::operation::cancel_component_deployment::_cancel_component_deployment_input::CancelComponentDeploymentInputBuilder;
 
+impl CancelComponentDeploymentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::cancel_component_deployment::CancelComponentDeploymentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::cancel_component_deployment::CancelComponentDeploymentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.cancel_component_deployment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CancelComponentDeployment`.
 ///
 /// <p>Attempts to cancel a component deployment (for a component that is in the <code>IN_PROGRESS</code> deployment status).</p>

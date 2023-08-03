@@ -3,6 +3,23 @@ pub use crate::operation::create_grant::_create_grant_output::CreateGrantOutputB
 
 pub use crate::operation::create_grant::_create_grant_input::CreateGrantInputBuilder;
 
+impl CreateGrantInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_grant::CreateGrantOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_grant::CreateGrantError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_grant();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateGrant`.
 ///
 /// <p>Adds a grant to a KMS key. </p>

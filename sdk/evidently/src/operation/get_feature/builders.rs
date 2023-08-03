@@ -3,6 +3,23 @@ pub use crate::operation::get_feature::_get_feature_output::GetFeatureOutputBuil
 
 pub use crate::operation::get_feature::_get_feature_input::GetFeatureInputBuilder;
 
+impl GetFeatureInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_feature::GetFeatureOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_feature::GetFeatureError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_feature();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetFeature`.
 ///
 /// <p>Returns the details about one feature. You must already know the feature name. To retrieve a list of features in your account, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_ListFeatures.html">ListFeatures</a>.</p>

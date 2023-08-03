@@ -3,6 +3,23 @@ pub use crate::operation::batch_stop_update_action::_batch_stop_update_action_ou
 
 pub use crate::operation::batch_stop_update_action::_batch_stop_update_action_input::BatchStopUpdateActionInputBuilder;
 
+impl BatchStopUpdateActionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_stop_update_action::BatchStopUpdateActionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_stop_update_action::BatchStopUpdateActionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_stop_update_action();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchStopUpdateAction`.
 ///
 /// <p>Stop the service update. For more information on service updates and stopping them, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/stopping-self-service-updates.html">Stopping Service Updates</a>.</p>

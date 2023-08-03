@@ -3,6 +3,23 @@ pub use crate::operation::delete_cluster_policy::_delete_cluster_policy_output::
 
 pub use crate::operation::delete_cluster_policy::_delete_cluster_policy_input::DeleteClusterPolicyInputBuilder;
 
+impl DeleteClusterPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_cluster_policy::DeleteClusterPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_cluster_policy::DeleteClusterPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_cluster_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteClusterPolicy`.
 ///
 /// <p>Deletes the MSK cluster policy specified by the Amazon Resource Name (ARN) in the request.</p>

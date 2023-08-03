@@ -3,6 +3,23 @@ pub use crate::operation::detect_faces::_detect_faces_output::DetectFacesOutputB
 
 pub use crate::operation::detect_faces::_detect_faces_input::DetectFacesInputBuilder;
 
+impl DetectFacesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::detect_faces::DetectFacesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::detect_faces::DetectFacesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.detect_faces();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DetectFaces`.
 ///
 /// <p>Detects faces within an image that is provided as input.</p>

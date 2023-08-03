@@ -3,6 +3,23 @@ pub use crate::operation::tag_resources::_tag_resources_output::TagResourcesOutp
 
 pub use crate::operation::tag_resources::_tag_resources_input::TagResourcesInputBuilder;
 
+impl TagResourcesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::tag_resources::TagResourcesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::tag_resources::TagResourcesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.tag_resources();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `TagResources`.
 ///
 /// <p>Applies one or more tags to the specified resources. Note the following:</p>

@@ -3,6 +3,23 @@ pub use crate::operation::put_resource_policy::_put_resource_policy_output::PutR
 
 pub use crate::operation::put_resource_policy::_put_resource_policy_input::PutResourcePolicyInputBuilder;
 
+impl PutResourcePolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_resource_policy::PutResourcePolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_resource_policy::PutResourcePolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_resource_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutResourcePolicy`.
 ///
 /// <p>Creates or updates a resource policy allowing other Amazon Web Services services to put log events to this account, such as Amazon Route 53. An account can have up to 10 resource policies per Amazon Web Services Region.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::configure_logs_for_channel::_configure_logs_for_channe
 
 pub use crate::operation::configure_logs_for_channel::_configure_logs_for_channel_input::ConfigureLogsForChannelInputBuilder;
 
+impl ConfigureLogsForChannelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::configure_logs_for_channel::ConfigureLogsForChannelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::configure_logs_for_channel::ConfigureLogsForChannelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.configure_logs_for_channel();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ConfigureLogsForChannel`.
 ///
 /// <p>Configures Amazon CloudWatch log settings for a channel.</p>

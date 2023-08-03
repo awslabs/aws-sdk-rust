@@ -3,6 +3,23 @@ pub use crate::operation::batch_get_rum_metric_definitions::_batch_get_rum_metri
 
 pub use crate::operation::batch_get_rum_metric_definitions::_batch_get_rum_metric_definitions_input::BatchGetRumMetricDefinitionsInputBuilder;
 
+impl BatchGetRumMetricDefinitionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_rum_metric_definitions::BatchGetRumMetricDefinitionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_get_rum_metric_definitions::BatchGetRumMetricDefinitionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_get_rum_metric_definitions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchGetRumMetricDefinitions`.
 ///
 /// <p>Retrieves the list of metrics and dimensions that a RUM app monitor is sending to a single destination.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::accept_vpc_peering_connection::_accept_vpc_peering_con
 
 pub use crate::operation::accept_vpc_peering_connection::_accept_vpc_peering_connection_input::AcceptVpcPeeringConnectionInputBuilder;
 
+impl AcceptVpcPeeringConnectionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::accept_vpc_peering_connection::AcceptVpcPeeringConnectionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::accept_vpc_peering_connection::AcceptVpcPeeringConnectionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.accept_vpc_peering_connection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AcceptVpcPeeringConnection`.
 ///
 /// <p>Accept a VPC peering connection request. To accept a request, the VPC peering connection must be in the <code>pending-acceptance</code> state, and you must be the owner of the peer VPC. Use <code>DescribeVpcPeeringConnections</code> to view your outstanding VPC peering connection requests.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_mobile_device_access_rule::_delete_mobile_devic
 
 pub use crate::operation::delete_mobile_device_access_rule::_delete_mobile_device_access_rule_input::DeleteMobileDeviceAccessRuleInputBuilder;
 
+impl DeleteMobileDeviceAccessRuleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_mobile_device_access_rule::DeleteMobileDeviceAccessRuleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_mobile_device_access_rule::DeleteMobileDeviceAccessRuleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_mobile_device_access_rule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteMobileDeviceAccessRule`.
 ///
 /// <p>Deletes a mobile device access rule for the specified WorkMail organization.</p> <note>

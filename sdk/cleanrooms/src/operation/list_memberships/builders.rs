@@ -3,6 +3,23 @@ pub use crate::operation::list_memberships::_list_memberships_output::ListMember
 
 pub use crate::operation::list_memberships::_list_memberships_input::ListMembershipsInputBuilder;
 
+impl ListMembershipsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_memberships::ListMembershipsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_memberships::ListMembershipsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_memberships();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListMemberships`.
 ///
 /// <p>Lists all memberships resources within the caller's account.</p>

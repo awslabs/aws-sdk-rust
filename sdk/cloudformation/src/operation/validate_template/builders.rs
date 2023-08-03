@@ -3,6 +3,23 @@ pub use crate::operation::validate_template::_validate_template_output::Validate
 
 pub use crate::operation::validate_template::_validate_template_input::ValidateTemplateInputBuilder;
 
+impl ValidateTemplateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::validate_template::ValidateTemplateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::validate_template::ValidateTemplateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.validate_template();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ValidateTemplate`.
 ///
 /// <p>Validates a specified template. CloudFormation first checks if the template is valid JSON. If it isn't, CloudFormation checks if the template is valid YAML. If both these checks fail, CloudFormation returns a template validation error.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_task_definition::_describe_task_definition_ou
 
 pub use crate::operation::describe_task_definition::_describe_task_definition_input::DescribeTaskDefinitionInputBuilder;
 
+impl DescribeTaskDefinitionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_task_definition::DescribeTaskDefinitionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_task_definition::DescribeTaskDefinitionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_task_definition();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeTaskDefinition`.
 ///
 /// <p>Describes a task definition. You can specify a <code>family</code> and <code>revision</code> to find information about a specific task definition, or you can simply specify the family to find the latest <code>ACTIVE</code> revision in that family.</p> <note>

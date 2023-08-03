@@ -3,6 +3,17 @@ pub use crate::operation::describe_automation_step_executions::_describe_automat
 
 pub use crate::operation::describe_automation_step_executions::_describe_automation_step_executions_input::DescribeAutomationStepExecutionsInputBuilder;
 
+impl DescribeAutomationStepExecutionsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_automation_step_executions::DescribeAutomationStepExecutionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_automation_step_executions::DescribeAutomationStepExecutionsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_automation_step_executions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAutomationStepExecutions`.
 ///
 /// <p>Information about all active and terminated step executions in an Automation workflow.</p>

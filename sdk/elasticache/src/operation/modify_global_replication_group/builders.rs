@@ -3,6 +3,23 @@ pub use crate::operation::modify_global_replication_group::_modify_global_replic
 
 pub use crate::operation::modify_global_replication_group::_modify_global_replication_group_input::ModifyGlobalReplicationGroupInputBuilder;
 
+impl ModifyGlobalReplicationGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_global_replication_group::ModifyGlobalReplicationGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_global_replication_group::ModifyGlobalReplicationGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_global_replication_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyGlobalReplicationGroup`.
 ///
 /// <p>Modifies the settings for a Global datastore.</p>

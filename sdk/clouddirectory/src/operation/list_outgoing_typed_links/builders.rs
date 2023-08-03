@@ -3,6 +3,23 @@ pub use crate::operation::list_outgoing_typed_links::_list_outgoing_typed_links_
 
 pub use crate::operation::list_outgoing_typed_links::_list_outgoing_typed_links_input::ListOutgoingTypedLinksInputBuilder;
 
+impl ListOutgoingTypedLinksInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_outgoing_typed_links::ListOutgoingTypedLinksOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_outgoing_typed_links::ListOutgoingTypedLinksError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_outgoing_typed_links();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListOutgoingTypedLinks`.
 ///
 /// <p>Returns a paginated list of all the outgoing <code>TypedLinkSpecifier</code> information for an object. It also supports filtering by typed link facet and identity attributes. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>

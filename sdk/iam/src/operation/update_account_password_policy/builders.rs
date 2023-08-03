@@ -3,6 +3,23 @@ pub use crate::operation::update_account_password_policy::_update_account_passwo
 
 pub use crate::operation::update_account_password_policy::_update_account_password_policy_input::UpdateAccountPasswordPolicyInputBuilder;
 
+impl UpdateAccountPasswordPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_account_password_policy::UpdateAccountPasswordPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_account_password_policy::UpdateAccountPasswordPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_account_password_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateAccountPasswordPolicy`.
 ///
 /// <p>Updates the password policy settings for the Amazon Web Services account.</p> <note>

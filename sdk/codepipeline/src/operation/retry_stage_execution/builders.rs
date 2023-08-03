@@ -3,6 +3,23 @@ pub use crate::operation::retry_stage_execution::_retry_stage_execution_output::
 
 pub use crate::operation::retry_stage_execution::_retry_stage_execution_input::RetryStageExecutionInputBuilder;
 
+impl RetryStageExecutionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::retry_stage_execution::RetryStageExecutionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::retry_stage_execution::RetryStageExecutionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.retry_stage_execution();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RetryStageExecution`.
 ///
 /// <p>Resumes the pipeline execution by retrying the last failed actions in a stage. You can retry a stage immediately if any of the actions in the stage fail. When you retry, all actions that are still in progress continue working, and failed actions are triggered again.</p>

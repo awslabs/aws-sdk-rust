@@ -3,6 +3,23 @@ pub use crate::operation::post_comment_for_pull_request::_post_comment_for_pull_
 
 pub use crate::operation::post_comment_for_pull_request::_post_comment_for_pull_request_input::PostCommentForPullRequestInputBuilder;
 
+impl PostCommentForPullRequestInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::post_comment_for_pull_request::PostCommentForPullRequestOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::post_comment_for_pull_request::PostCommentForPullRequestError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.post_comment_for_pull_request();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PostCommentForPullRequest`.
 ///
 /// <p>Posts a comment on a pull request.</p>

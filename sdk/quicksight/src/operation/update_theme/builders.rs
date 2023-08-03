@@ -3,6 +3,23 @@ pub use crate::operation::update_theme::_update_theme_output::UpdateThemeOutputB
 
 pub use crate::operation::update_theme::_update_theme_input::UpdateThemeInputBuilder;
 
+impl UpdateThemeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_theme::UpdateThemeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_theme::UpdateThemeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_theme();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateTheme`.
 ///
 /// <p>Updates a theme.</p>

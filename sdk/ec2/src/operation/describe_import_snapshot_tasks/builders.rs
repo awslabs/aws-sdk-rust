@@ -3,6 +3,23 @@ pub use crate::operation::describe_import_snapshot_tasks::_describe_import_snaps
 
 pub use crate::operation::describe_import_snapshot_tasks::_describe_import_snapshot_tasks_input::DescribeImportSnapshotTasksInputBuilder;
 
+impl DescribeImportSnapshotTasksInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_import_snapshot_tasks::DescribeImportSnapshotTasksOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_import_snapshot_tasks::DescribeImportSnapshotTasksError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_import_snapshot_tasks();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeImportSnapshotTasks`.
 ///
 /// <p>Describes your import snapshot tasks.</p>

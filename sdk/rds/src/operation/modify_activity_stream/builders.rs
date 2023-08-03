@@ -3,6 +3,23 @@ pub use crate::operation::modify_activity_stream::_modify_activity_stream_output
 
 pub use crate::operation::modify_activity_stream::_modify_activity_stream_input::ModifyActivityStreamInputBuilder;
 
+impl ModifyActivityStreamInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_activity_stream::ModifyActivityStreamOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_activity_stream::ModifyActivityStreamError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_activity_stream();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyActivityStream`.
 ///
 /// <p>Changes the audit policy state of a database activity stream to either locked (default) or unlocked. A locked policy is read-only, whereas an unlocked policy is read/write. If your activity stream is started and locked, you can unlock it, customize your audit policy, and then lock your activity stream. Restarting the activity stream isn't required. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/DBActivityStreams.Modifying.html"> Modifying a database activity stream</a> in the <i>Amazon RDS User Guide</i>. </p>

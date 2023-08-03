@@ -3,6 +3,23 @@ pub use crate::operation::delete_db_instance::_delete_db_instance_output::Delete
 
 pub use crate::operation::delete_db_instance::_delete_db_instance_input::DeleteDbInstanceInputBuilder;
 
+impl DeleteDbInstanceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_db_instance::DeleteDbInstanceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_db_instance::DeleteDBInstanceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_db_instance();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteDBInstance`.
 ///
 /// <p>Deletes a previously provisioned instance.</p>

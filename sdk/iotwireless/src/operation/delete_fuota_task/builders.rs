@@ -3,6 +3,23 @@ pub use crate::operation::delete_fuota_task::_delete_fuota_task_output::DeleteFu
 
 pub use crate::operation::delete_fuota_task::_delete_fuota_task_input::DeleteFuotaTaskInputBuilder;
 
+impl DeleteFuotaTaskInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_fuota_task::DeleteFuotaTaskOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_fuota_task::DeleteFuotaTaskError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_fuota_task();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteFuotaTask`.
 ///
 /// <p>Deletes a FUOTA task.</p>

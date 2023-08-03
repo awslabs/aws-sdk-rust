@@ -3,6 +3,23 @@ pub use crate::operation::get_dnssec::_get_dnssec_output::GetDnssecOutputBuilder
 
 pub use crate::operation::get_dnssec::_get_dnssec_input::GetDnssecInputBuilder;
 
+impl GetDnssecInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_dnssec::GetDnssecOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_dnssec::GetDNSSECError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_dnssec();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetDNSSEC`.
 ///
 /// <p>Returns information about DNSSEC for a specific hosted zone, including the key-signing keys (KSKs) in the hosted zone.</p>

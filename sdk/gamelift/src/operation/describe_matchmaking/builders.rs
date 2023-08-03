@@ -3,6 +3,23 @@ pub use crate::operation::describe_matchmaking::_describe_matchmaking_output::De
 
 pub use crate::operation::describe_matchmaking::_describe_matchmaking_input::DescribeMatchmakingInputBuilder;
 
+impl DescribeMatchmakingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_matchmaking::DescribeMatchmakingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_matchmaking::DescribeMatchmakingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_matchmaking();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeMatchmaking`.
 ///
 /// <p>Retrieves one or more matchmaking tickets. Use this operation to retrieve ticket information, including--after a successful match is made--connection information for the resulting new game session. </p>

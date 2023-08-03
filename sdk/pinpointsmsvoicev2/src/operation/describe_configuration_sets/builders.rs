@@ -3,6 +3,23 @@ pub use crate::operation::describe_configuration_sets::_describe_configuration_s
 
 pub use crate::operation::describe_configuration_sets::_describe_configuration_sets_input::DescribeConfigurationSetsInputBuilder;
 
+impl DescribeConfigurationSetsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_configuration_sets::DescribeConfigurationSetsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_configuration_sets::DescribeConfigurationSetsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_configuration_sets();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeConfigurationSets`.
 ///
 /// <p>Describes the specified configuration sets or all in your account.</p>

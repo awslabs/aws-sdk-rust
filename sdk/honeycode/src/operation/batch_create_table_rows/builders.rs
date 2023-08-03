@@ -3,6 +3,23 @@ pub use crate::operation::batch_create_table_rows::_batch_create_table_rows_outp
 
 pub use crate::operation::batch_create_table_rows::_batch_create_table_rows_input::BatchCreateTableRowsInputBuilder;
 
+impl BatchCreateTableRowsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_create_table_rows::BatchCreateTableRowsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_create_table_rows::BatchCreateTableRowsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_create_table_rows();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchCreateTableRows`.
 ///
 /// <p> The BatchCreateTableRows API allows you to create one or more rows at the end of a table in a workbook. The API allows you to specify the values to set in some or all of the columns in the new rows. </p>

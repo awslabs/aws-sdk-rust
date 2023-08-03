@@ -3,6 +3,23 @@ pub use crate::operation::describe_directories::_describe_directories_output::De
 
 pub use crate::operation::describe_directories::_describe_directories_input::DescribeDirectoriesInputBuilder;
 
+impl DescribeDirectoriesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_directories::DescribeDirectoriesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_directories::DescribeDirectoriesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_directories();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeDirectories`.
 ///
 /// <p>Obtains information about the directories that belong to this account.</p>

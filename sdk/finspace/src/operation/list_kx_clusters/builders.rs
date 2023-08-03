@@ -3,6 +3,23 @@ pub use crate::operation::list_kx_clusters::_list_kx_clusters_output::ListKxClus
 
 pub use crate::operation::list_kx_clusters::_list_kx_clusters_input::ListKxClustersInputBuilder;
 
+impl ListKxClustersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_kx_clusters::ListKxClustersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_kx_clusters::ListKxClustersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_kx_clusters();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListKxClusters`.
 ///
 /// <p>Returns a list of clusters.</p>

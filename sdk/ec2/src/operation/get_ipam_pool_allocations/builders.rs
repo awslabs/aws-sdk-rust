@@ -3,6 +3,23 @@ pub use crate::operation::get_ipam_pool_allocations::_get_ipam_pool_allocations_
 
 pub use crate::operation::get_ipam_pool_allocations::_get_ipam_pool_allocations_input::GetIpamPoolAllocationsInputBuilder;
 
+impl GetIpamPoolAllocationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_ipam_pool_allocations::GetIpamPoolAllocationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_ipam_pool_allocations::GetIpamPoolAllocationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_ipam_pool_allocations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetIpamPoolAllocations`.
 ///
 /// <p>Get a list of all the CIDR allocations in an IPAM pool. The Region you use should be the IPAM pool locale. The locale is the Amazon Web Services Region where this IPAM pool is available for allocations.</p> <note>

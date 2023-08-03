@@ -3,6 +3,23 @@ pub use crate::operation::create_finding_aggregator::_create_finding_aggregator_
 
 pub use crate::operation::create_finding_aggregator::_create_finding_aggregator_input::CreateFindingAggregatorInputBuilder;
 
+impl CreateFindingAggregatorInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_finding_aggregator::CreateFindingAggregatorOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_finding_aggregator::CreateFindingAggregatorError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_finding_aggregator();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateFindingAggregator`.
 ///
 /// <p>Used to enable finding aggregation. Must be called from the aggregation Region.</p>

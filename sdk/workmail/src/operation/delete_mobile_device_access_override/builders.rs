@@ -3,6 +3,17 @@ pub use crate::operation::delete_mobile_device_access_override::_delete_mobile_d
 
 pub use crate::operation::delete_mobile_device_access_override::_delete_mobile_device_access_override_input::DeleteMobileDeviceAccessOverrideInputBuilder;
 
+impl DeleteMobileDeviceAccessOverrideInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_mobile_device_access_override::DeleteMobileDeviceAccessOverrideOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_mobile_device_access_override::DeleteMobileDeviceAccessOverrideError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.delete_mobile_device_access_override();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteMobileDeviceAccessOverride`.
 ///
 /// <p>Deletes the mobile device access override for the given WorkMail organization, user, and device.</p> <note>

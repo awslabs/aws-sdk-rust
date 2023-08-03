@@ -3,6 +3,17 @@ pub use crate::operation::update_automatic_tape_creation_policy::_update_automat
 
 pub use crate::operation::update_automatic_tape_creation_policy::_update_automatic_tape_creation_policy_input::UpdateAutomaticTapeCreationPolicyInputBuilder;
 
+impl UpdateAutomaticTapeCreationPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::update_automatic_tape_creation_policy::UpdateAutomaticTapeCreationPolicyOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_automatic_tape_creation_policy::UpdateAutomaticTapeCreationPolicyError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.update_automatic_tape_creation_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateAutomaticTapeCreationPolicy`.
 ///
 /// <p>Updates the automatic tape creation policy of a gateway. Use this to update the policy with a new set of automatic tape creation rules. This is only supported for tape gateways.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_layer::_create_layer_output::CreateLayerOutputB
 
 pub use crate::operation::create_layer::_create_layer_input::CreateLayerInputBuilder;
 
+impl CreateLayerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_layer::CreateLayerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_layer::CreateLayerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_layer();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateLayer`.
 ///
 /// <p>Creates a layer. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-create.html">How to Create a Layer</a>.</p> <note>

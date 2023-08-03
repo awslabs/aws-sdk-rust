@@ -3,6 +3,23 @@ pub use crate::operation::batch_get_projects::_batch_get_projects_output::BatchG
 
 pub use crate::operation::batch_get_projects::_batch_get_projects_input::BatchGetProjectsInputBuilder;
 
+impl BatchGetProjectsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_projects::BatchGetProjectsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_get_projects::BatchGetProjectsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_get_projects();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchGetProjects`.
 ///
 /// <p>Gets information about one or more build projects.</p>

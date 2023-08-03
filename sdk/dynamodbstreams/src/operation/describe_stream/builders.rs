@@ -3,6 +3,23 @@ pub use crate::operation::describe_stream::_describe_stream_output::DescribeStre
 
 pub use crate::operation::describe_stream::_describe_stream_input::DescribeStreamInputBuilder;
 
+impl DescribeStreamInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_stream::DescribeStreamOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_stream::DescribeStreamError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_stream();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeStream`.
 ///
 /// <p>Returns information about a stream, including the current status of the stream, its Amazon Resource Name (ARN), the composition of its shards, and its corresponding DynamoDB table.</p> <note>

@@ -3,6 +3,23 @@ pub use crate::operation::create_thing::_create_thing_output::CreateThingOutputB
 
 pub use crate::operation::create_thing::_create_thing_input::CreateThingInputBuilder;
 
+impl CreateThingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_thing::CreateThingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_thing::CreateThingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_thing();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateThing`.
 ///
 /// <p>Creates a thing record in the registry. If this call is made multiple times using the same thing name and configuration, the call will succeed. If this call is made with the same thing name but different configuration a <code>ResourceAlreadyExistsException</code> is thrown.</p> <note>

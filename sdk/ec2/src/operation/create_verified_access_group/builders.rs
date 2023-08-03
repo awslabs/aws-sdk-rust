@@ -3,6 +3,23 @@ pub use crate::operation::create_verified_access_group::_create_verified_access_
 
 pub use crate::operation::create_verified_access_group::_create_verified_access_group_input::CreateVerifiedAccessGroupInputBuilder;
 
+impl CreateVerifiedAccessGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_verified_access_group::CreateVerifiedAccessGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_verified_access_group::CreateVerifiedAccessGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_verified_access_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateVerifiedAccessGroup`.
 ///
 /// <p>An Amazon Web Services Verified Access group is a collection of Amazon Web Services Verified Access endpoints who's associated applications have similar security requirements. Each instance within a Verified Access group shares an Verified Access policy. For example, you can group all Verified Access instances associated with "sales" applications together and use one common Verified Access policy.</p>

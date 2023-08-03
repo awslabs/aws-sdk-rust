@@ -3,6 +3,23 @@ pub use crate::operation::put_account_policy::_put_account_policy_output::PutAcc
 
 pub use crate::operation::put_account_policy::_put_account_policy_input::PutAccountPolicyInputBuilder;
 
+impl PutAccountPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_account_policy::PutAccountPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_account_policy::PutAccountPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_account_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutAccountPolicy`.
 ///
 /// <p>Creates an account-level data protection policy that applies to all log groups in the account. A data protection policy can help safeguard sensitive data that's ingested by your log groups by auditing and masking the sensitive log data. Each account can have only one account-level policy.</p> <important>

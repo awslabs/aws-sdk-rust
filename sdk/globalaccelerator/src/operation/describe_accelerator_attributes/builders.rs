@@ -3,6 +3,23 @@ pub use crate::operation::describe_accelerator_attributes::_describe_accelerator
 
 pub use crate::operation::describe_accelerator_attributes::_describe_accelerator_attributes_input::DescribeAcceleratorAttributesInputBuilder;
 
+impl DescribeAcceleratorAttributesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_accelerator_attributes::DescribeAcceleratorAttributesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_accelerator_attributes::DescribeAcceleratorAttributesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_accelerator_attributes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAcceleratorAttributes`.
 ///
 /// <p>Describe the attributes of an accelerator. </p>

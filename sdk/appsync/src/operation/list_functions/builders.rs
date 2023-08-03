@@ -3,6 +3,23 @@ pub use crate::operation::list_functions::_list_functions_output::ListFunctionsO
 
 pub use crate::operation::list_functions::_list_functions_input::ListFunctionsInputBuilder;
 
+impl ListFunctionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_functions::ListFunctionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_functions::ListFunctionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_functions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListFunctions`.
 ///
 /// <p>List multiple functions.</p>

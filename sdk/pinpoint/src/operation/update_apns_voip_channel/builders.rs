@@ -3,6 +3,23 @@ pub use crate::operation::update_apns_voip_channel::_update_apns_voip_channel_ou
 
 pub use crate::operation::update_apns_voip_channel::_update_apns_voip_channel_input::UpdateApnsVoipChannelInputBuilder;
 
+impl UpdateApnsVoipChannelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_apns_voip_channel::UpdateApnsVoipChannelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_apns_voip_channel::UpdateApnsVoipChannelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_apns_voip_channel();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateApnsVoipChannel`.
 ///
 /// <p>Enables the APNs VoIP channel for an application or updates the status and settings of the APNs VoIP channel for an application.</p>

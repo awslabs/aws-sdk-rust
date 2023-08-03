@@ -3,6 +3,23 @@ pub use crate::operation::list_compliance_items::_list_compliance_items_output::
 
 pub use crate::operation::list_compliance_items::_list_compliance_items_input::ListComplianceItemsInputBuilder;
 
+impl ListComplianceItemsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_compliance_items::ListComplianceItemsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_compliance_items::ListComplianceItemsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_compliance_items();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListComplianceItems`.
 ///
 /// <p>For a specified resource ID, this API operation returns a list of compliance statuses for different resource types. Currently, you can only specify one resource ID per call. List results depend on the criteria specified in the filter.</p>

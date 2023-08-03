@@ -3,6 +3,23 @@ pub use crate::operation::get_public_key::_get_public_key_output::GetPublicKeyOu
 
 pub use crate::operation::get_public_key::_get_public_key_input::GetPublicKeyInputBuilder;
 
+impl GetPublicKeyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_public_key::GetPublicKeyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_public_key::GetPublicKeyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_public_key();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetPublicKey`.
 ///
 /// <p>Gets a public key.</p>

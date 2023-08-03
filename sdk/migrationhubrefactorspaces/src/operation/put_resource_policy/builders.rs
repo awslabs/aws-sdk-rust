@@ -3,6 +3,23 @@ pub use crate::operation::put_resource_policy::_put_resource_policy_output::PutR
 
 pub use crate::operation::put_resource_policy::_put_resource_policy_input::PutResourcePolicyInputBuilder;
 
+impl PutResourcePolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_resource_policy::PutResourcePolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_resource_policy::PutResourcePolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_resource_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutResourcePolicy`.
 ///
 /// <p>Attaches a resource-based permission policy to the Amazon Web Services Migration Hub Refactor Spaces environment. The policy must contain the same actions and condition statements as the <code>arn:aws:ram::aws:permission/AWSRAMDefaultPermissionRefactorSpacesEnvironment</code> permission in Resource Access Manager. The policy must not contain new lines or blank lines. </p>

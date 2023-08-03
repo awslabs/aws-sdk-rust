@@ -3,6 +3,23 @@ pub use crate::operation::list_lens_reviews::_list_lens_reviews_output::ListLens
 
 pub use crate::operation::list_lens_reviews::_list_lens_reviews_input::ListLensReviewsInputBuilder;
 
+impl ListLensReviewsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_lens_reviews::ListLensReviewsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_lens_reviews::ListLensReviewsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_lens_reviews();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListLensReviews`.
 ///
 /// <p>List lens reviews for a particular workload.</p>

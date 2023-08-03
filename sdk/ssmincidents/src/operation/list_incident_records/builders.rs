@@ -3,6 +3,23 @@ pub use crate::operation::list_incident_records::_list_incident_records_output::
 
 pub use crate::operation::list_incident_records::_list_incident_records_input::ListIncidentRecordsInputBuilder;
 
+impl ListIncidentRecordsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_incident_records::ListIncidentRecordsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_incident_records::ListIncidentRecordsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_incident_records();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListIncidentRecords`.
 ///
 /// <p>Lists all incident records in your account. Use this command to retrieve the Amazon Resource Name (ARN) of the incident record you want to update. </p>

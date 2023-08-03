@@ -3,6 +3,23 @@ pub use crate::operation::get_multicast_group_session::_get_multicast_group_sess
 
 pub use crate::operation::get_multicast_group_session::_get_multicast_group_session_input::GetMulticastGroupSessionInputBuilder;
 
+impl GetMulticastGroupSessionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_multicast_group_session::GetMulticastGroupSessionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_multicast_group_session::GetMulticastGroupSessionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_multicast_group_session();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetMulticastGroupSession`.
 ///
 /// <p>Gets information about a multicast group session.</p>

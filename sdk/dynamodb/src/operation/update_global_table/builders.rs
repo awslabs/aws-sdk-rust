@@ -3,6 +3,23 @@ pub use crate::operation::update_global_table::_update_global_table_output::Upda
 
 pub use crate::operation::update_global_table::_update_global_table_input::UpdateGlobalTableInputBuilder;
 
+impl UpdateGlobalTableInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_global_table::UpdateGlobalTableOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_global_table::UpdateGlobalTableError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_global_table();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateGlobalTable`.
 ///
 /// <p>Adds or removes replicas in the specified global table. The global table must already exist to be able to use this operation. Any replica to be added must be empty, have the same name as the global table, have the same key schema, have DynamoDB Streams enabled, and have the same provisioned and maximum write capacity units.</p> <important>

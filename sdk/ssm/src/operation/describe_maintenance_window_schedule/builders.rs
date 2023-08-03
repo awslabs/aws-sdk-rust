@@ -3,6 +3,17 @@ pub use crate::operation::describe_maintenance_window_schedule::_describe_mainte
 
 pub use crate::operation::describe_maintenance_window_schedule::_describe_maintenance_window_schedule_input::DescribeMaintenanceWindowScheduleInputBuilder;
 
+impl DescribeMaintenanceWindowScheduleInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_maintenance_window_schedule::DescribeMaintenanceWindowScheduleOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_maintenance_window_schedule::DescribeMaintenanceWindowScheduleError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_maintenance_window_schedule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeMaintenanceWindowSchedule`.
 ///
 /// <p>Retrieves information about upcoming executions of a maintenance window.</p>

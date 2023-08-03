@@ -3,6 +3,23 @@ pub use crate::operation::add_tags_to_certificate::_add_tags_to_certificate_outp
 
 pub use crate::operation::add_tags_to_certificate::_add_tags_to_certificate_input::AddTagsToCertificateInputBuilder;
 
+impl AddTagsToCertificateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::add_tags_to_certificate::AddTagsToCertificateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::add_tags_to_certificate::AddTagsToCertificateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.add_tags_to_certificate();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AddTagsToCertificate`.
 ///
 /// <p>Adds one or more tags to an ACM certificate. Tags are labels that you can use to identify and organize your Amazon Web Services resources. Each tag consists of a <code>key</code> and an optional <code>value</code>. You specify the certificate on input by its Amazon Resource Name (ARN). You specify the tag by using a key-value pair. </p>

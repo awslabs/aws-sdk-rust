@@ -3,6 +3,23 @@ pub use crate::operation::list_event_integrations::_list_event_integrations_outp
 
 pub use crate::operation::list_event_integrations::_list_event_integrations_input::ListEventIntegrationsInputBuilder;
 
+impl ListEventIntegrationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_event_integrations::ListEventIntegrationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_event_integrations::ListEventIntegrationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_event_integrations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListEventIntegrations`.
 ///
 /// <p>Returns a paginated list of event integrations in the account.</p>

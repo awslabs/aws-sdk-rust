@@ -3,6 +3,17 @@ pub use crate::operation::delete_tls_inspection_configuration::_delete_tls_inspe
 
 pub use crate::operation::delete_tls_inspection_configuration::_delete_tls_inspection_configuration_input::DeleteTlsInspectionConfigurationInputBuilder;
 
+impl DeleteTlsInspectionConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_tls_inspection_configuration::DeleteTlsInspectionConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_tls_inspection_configuration::DeleteTLSInspectionConfigurationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.delete_tls_inspection_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteTLSInspectionConfiguration`.
 ///
 /// <p>Deletes the specified <code>TLSInspectionConfiguration</code>.</p>

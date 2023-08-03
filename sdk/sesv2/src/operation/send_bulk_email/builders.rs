@@ -3,6 +3,23 @@ pub use crate::operation::send_bulk_email::_send_bulk_email_output::SendBulkEmai
 
 pub use crate::operation::send_bulk_email::_send_bulk_email_input::SendBulkEmailInputBuilder;
 
+impl SendBulkEmailInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::send_bulk_email::SendBulkEmailOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::send_bulk_email::SendBulkEmailError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.send_bulk_email();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SendBulkEmail`.
 ///
 /// <p>Composes an email message to multiple destinations.</p>

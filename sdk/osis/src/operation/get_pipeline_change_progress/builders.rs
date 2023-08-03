@@ -3,6 +3,23 @@ pub use crate::operation::get_pipeline_change_progress::_get_pipeline_change_pro
 
 pub use crate::operation::get_pipeline_change_progress::_get_pipeline_change_progress_input::GetPipelineChangeProgressInputBuilder;
 
+impl GetPipelineChangeProgressInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_pipeline_change_progress::GetPipelineChangeProgressOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_pipeline_change_progress::GetPipelineChangeProgressError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_pipeline_change_progress();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetPipelineChangeProgress`.
 ///
 /// <p>Returns progress information for the current change happening on an OpenSearch Ingestion pipeline. Currently, this operation only returns information when a pipeline is being created.</p>

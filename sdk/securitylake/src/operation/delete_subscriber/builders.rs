@@ -3,6 +3,23 @@ pub use crate::operation::delete_subscriber::_delete_subscriber_output::DeleteSu
 
 pub use crate::operation::delete_subscriber::_delete_subscriber_input::DeleteSubscriberInputBuilder;
 
+impl DeleteSubscriberInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_subscriber::DeleteSubscriberOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_subscriber::DeleteSubscriberError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_subscriber();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteSubscriber`.
 ///
 /// <p>Deletes the subscription permission and all notification settings for accounts that are already enabled in Amazon Security Lake. When you run <code>DeleteSubscriber</code>, the subscriber will no longer consume data from Security Lake and the subscriber is removed. This operation deletes the subscriber and removes access to data in the current Amazon Web Services Region.</p>

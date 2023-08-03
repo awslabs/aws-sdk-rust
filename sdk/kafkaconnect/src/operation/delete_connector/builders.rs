@@ -3,6 +3,23 @@ pub use crate::operation::delete_connector::_delete_connector_output::DeleteConn
 
 pub use crate::operation::delete_connector::_delete_connector_input::DeleteConnectorInputBuilder;
 
+impl DeleteConnectorInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_connector::DeleteConnectorOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_connector::DeleteConnectorError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_connector();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteConnector`.
 ///
 /// <p>Deletes the specified connector.</p>

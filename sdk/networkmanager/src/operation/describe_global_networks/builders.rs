@@ -3,6 +3,23 @@ pub use crate::operation::describe_global_networks::_describe_global_networks_ou
 
 pub use crate::operation::describe_global_networks::_describe_global_networks_input::DescribeGlobalNetworksInputBuilder;
 
+impl DescribeGlobalNetworksInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_global_networks::DescribeGlobalNetworksOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_global_networks::DescribeGlobalNetworksError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_global_networks();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeGlobalNetworks`.
 ///
 /// <p>Describes one or more global networks. By default, all global networks are described. To describe the objects in your global network, you must use the appropriate <code>Get*</code> action. For example, to list the transit gateways in your global network, use <code>GetTransitGatewayRegistrations</code>.</p>

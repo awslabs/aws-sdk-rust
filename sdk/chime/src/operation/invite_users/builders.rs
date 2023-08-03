@@ -3,6 +3,23 @@ pub use crate::operation::invite_users::_invite_users_output::InviteUsersOutputB
 
 pub use crate::operation::invite_users::_invite_users_input::InviteUsersInputBuilder;
 
+impl InviteUsersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::invite_users::InviteUsersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::invite_users::InviteUsersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.invite_users();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `InviteUsers`.
 ///
 /// <p>Sends email to a maximum of 50 users, inviting them to the specified Amazon Chime <code>Team</code> account. Only <code>Team</code> account types are currently supported for this action.</p>

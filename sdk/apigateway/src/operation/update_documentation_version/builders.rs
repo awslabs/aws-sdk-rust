@@ -3,6 +3,23 @@ pub use crate::operation::update_documentation_version::_update_documentation_ve
 
 pub use crate::operation::update_documentation_version::_update_documentation_version_input::UpdateDocumentationVersionInputBuilder;
 
+impl UpdateDocumentationVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_documentation_version::UpdateDocumentationVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_documentation_version::UpdateDocumentationVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_documentation_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateDocumentationVersion`.
 ///
 /// <p>Updates a documentation version.</p>

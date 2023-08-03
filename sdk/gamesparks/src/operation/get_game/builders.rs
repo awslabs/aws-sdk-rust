@@ -3,6 +3,23 @@ pub use crate::operation::get_game::_get_game_output::GetGameOutputBuilder;
 
 pub use crate::operation::get_game::_get_game_input::GetGameInputBuilder;
 
+impl GetGameInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_game::GetGameOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_game::GetGameError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_game();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetGame`.
 ///
 /// <p>Gets details about a game.</p>

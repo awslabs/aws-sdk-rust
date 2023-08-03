@@ -3,6 +3,23 @@ pub use crate::operation::list_endpoint_configs::_list_endpoint_configs_output::
 
 pub use crate::operation::list_endpoint_configs::_list_endpoint_configs_input::ListEndpointConfigsInputBuilder;
 
+impl ListEndpointConfigsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_endpoint_configs::ListEndpointConfigsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_endpoint_configs::ListEndpointConfigsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_endpoint_configs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListEndpointConfigs`.
 ///
 /// <p>Lists endpoint configurations.</p>

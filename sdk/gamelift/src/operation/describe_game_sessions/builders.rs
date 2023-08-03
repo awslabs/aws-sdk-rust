@@ -3,6 +3,23 @@ pub use crate::operation::describe_game_sessions::_describe_game_sessions_output
 
 pub use crate::operation::describe_game_sessions::_describe_game_sessions_input::DescribeGameSessionsInputBuilder;
 
+impl DescribeGameSessionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_game_sessions::DescribeGameSessionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_game_sessions::DescribeGameSessionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_game_sessions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeGameSessions`.
 ///
 /// <p>Retrieves a set of one or more game sessions in a specific fleet location. You can optionally filter the results by current game session status.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_role_policy::_delete_role_policy_output::Delete
 
 pub use crate::operation::delete_role_policy::_delete_role_policy_input::DeleteRolePolicyInputBuilder;
 
+impl DeleteRolePolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_role_policy::DeleteRolePolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_role_policy::DeleteRolePolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_role_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteRolePolicy`.
 ///
 /// <p>Deletes the specified inline policy that is embedded in the specified IAM role.</p>

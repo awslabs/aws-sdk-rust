@@ -3,6 +3,17 @@ pub use crate::operation::register_instances_with_load_balancer::_register_insta
 
 pub use crate::operation::register_instances_with_load_balancer::_register_instances_with_load_balancer_input::RegisterInstancesWithLoadBalancerInputBuilder;
 
+impl RegisterInstancesWithLoadBalancerInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::register_instances_with_load_balancer::RegisterInstancesWithLoadBalancerOutput, ::aws_smithy_http::result::SdkError<crate::operation::register_instances_with_load_balancer::RegisterInstancesWithLoadBalancerError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.register_instances_with_load_balancer();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RegisterInstancesWithLoadBalancer`.
 ///
 /// <p>Adds the specified instances to the specified load balancer.</p>

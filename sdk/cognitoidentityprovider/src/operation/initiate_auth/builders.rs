@@ -3,6 +3,23 @@ pub use crate::operation::initiate_auth::_initiate_auth_output::InitiateAuthOutp
 
 pub use crate::operation::initiate_auth::_initiate_auth_input::InitiateAuthInputBuilder;
 
+impl InitiateAuthInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::initiate_auth::InitiateAuthOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::initiate_auth::InitiateAuthError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.initiate_auth();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `InitiateAuth`.
 ///
 /// <p>Initiates sign-in for a user in the Amazon Cognito user directory. You can't sign in a user with a federated IdP with <code>InitiateAuth</code>. For more information, see <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-identity-federation.html"> Adding user pool sign-in through a third party</a>.</p> <note>

@@ -3,6 +3,23 @@ pub use crate::operation::start_content_upload::_start_content_upload_output::St
 
 pub use crate::operation::start_content_upload::_start_content_upload_input::StartContentUploadInputBuilder;
 
+impl StartContentUploadInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_content_upload::StartContentUploadOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_content_upload::StartContentUploadError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_content_upload();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartContentUpload`.
 ///
 /// <p>Get a URL to upload content to a knowledge base. To upload content, first make a PUT request to the returned URL with your file, making sure to include the required headers. Then use <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_CreateContent.html">CreateContent</a> to finalize the content creation process or <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_UpdateContent.html">UpdateContent</a> to modify an existing resource. You can only upload content to a knowledge base of type CUSTOM.</p>

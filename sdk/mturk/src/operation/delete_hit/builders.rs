@@ -3,6 +3,23 @@ pub use crate::operation::delete_hit::_delete_hit_output::DeleteHitOutputBuilder
 
 pub use crate::operation::delete_hit::_delete_hit_input::DeleteHitInputBuilder;
 
+impl DeleteHitInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_hit::DeleteHitOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_hit::DeleteHITError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_hit();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteHIT`.
 ///
 /// <p> The <code>DeleteHIT</code> operation is used to delete HIT that is no longer needed. Only the Requester who created the HIT can delete it. </p>

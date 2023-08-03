@@ -3,6 +3,17 @@ pub use crate::operation::delete_launch_configuration_template::_delete_launch_c
 
 pub use crate::operation::delete_launch_configuration_template::_delete_launch_configuration_template_input::DeleteLaunchConfigurationTemplateInputBuilder;
 
+impl DeleteLaunchConfigurationTemplateInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_launch_configuration_template::DeleteLaunchConfigurationTemplateOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_launch_configuration_template::DeleteLaunchConfigurationTemplateError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.delete_launch_configuration_template();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteLaunchConfigurationTemplate`.
 ///
 /// <p>Deletes a single Launch Configuration Template by ID.</p>

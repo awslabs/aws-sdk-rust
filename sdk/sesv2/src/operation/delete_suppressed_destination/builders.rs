@@ -3,6 +3,23 @@ pub use crate::operation::delete_suppressed_destination::_delete_suppressed_dest
 
 pub use crate::operation::delete_suppressed_destination::_delete_suppressed_destination_input::DeleteSuppressedDestinationInputBuilder;
 
+impl DeleteSuppressedDestinationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_suppressed_destination::DeleteSuppressedDestinationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_suppressed_destination::DeleteSuppressedDestinationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_suppressed_destination();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteSuppressedDestination`.
 ///
 /// <p>Removes an email address from the suppression list for your account.</p>

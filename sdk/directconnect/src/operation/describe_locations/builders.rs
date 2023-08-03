@@ -3,6 +3,23 @@ pub use crate::operation::describe_locations::_describe_locations_output::Descri
 
 pub use crate::operation::describe_locations::_describe_locations_input::DescribeLocationsInputBuilder;
 
+impl DescribeLocationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_locations::DescribeLocationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_locations::DescribeLocationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_locations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeLocations`.
 ///
 /// <p>Lists the Direct Connect locations in the current Amazon Web Services Region. These are the locations that can be selected when calling <code>CreateConnection</code> or <code>CreateInterconnect</code>.</p>

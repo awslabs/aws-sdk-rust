@@ -3,6 +3,23 @@ pub use crate::operation::list_device_profiles::_list_device_profiles_output::Li
 
 pub use crate::operation::list_device_profiles::_list_device_profiles_input::ListDeviceProfilesInputBuilder;
 
+impl ListDeviceProfilesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_device_profiles::ListDeviceProfilesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_device_profiles::ListDeviceProfilesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_device_profiles();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDeviceProfiles`.
 ///
 /// <p>Lists the device profiles registered to your AWS account.</p>

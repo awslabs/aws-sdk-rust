@@ -3,6 +3,23 @@ pub use crate::operation::describe_all_managed_products::_describe_all_managed_p
 
 pub use crate::operation::describe_all_managed_products::_describe_all_managed_products_input::DescribeAllManagedProductsInputBuilder;
 
+impl DescribeAllManagedProductsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_all_managed_products::DescribeAllManagedProductsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_all_managed_products::DescribeAllManagedProductsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_all_managed_products();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAllManagedProducts`.
 ///
 /// <p>Provides high-level information for the Amazon Web Services Managed Rules rule groups and Amazon Web Services Marketplace managed rule groups. </p>

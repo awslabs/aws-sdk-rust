@@ -3,6 +3,23 @@ pub use crate::operation::create_configuration_set::_create_configuration_set_ou
 
 pub use crate::operation::create_configuration_set::_create_configuration_set_input::CreateConfigurationSetInputBuilder;
 
+impl CreateConfigurationSetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_configuration_set::CreateConfigurationSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_configuration_set::CreateConfigurationSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_configuration_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateConfigurationSet`.
 ///
 /// <p>Create a configuration set. <i>Configuration sets</i> are groups of rules that you can apply to the emails that you send. You apply a configuration set to an email by specifying the name of the configuration set when you call the Amazon SES API v2. When you apply a configuration set to an email, all of the rules in that configuration set are applied to the email. </p>

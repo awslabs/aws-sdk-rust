@@ -3,6 +3,23 @@ pub use crate::operation::get_parameters_by_path::_get_parameters_by_path_output
 
 pub use crate::operation::get_parameters_by_path::_get_parameters_by_path_input::GetParametersByPathInputBuilder;
 
+impl GetParametersByPathInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_parameters_by_path::GetParametersByPathOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_parameters_by_path::GetParametersByPathError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_parameters_by_path();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetParametersByPath`.
 ///
 /// <p>Retrieve information about one or more parameters in a specific hierarchy. </p>

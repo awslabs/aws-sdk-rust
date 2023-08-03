@@ -3,6 +3,23 @@ pub use crate::operation::delete_objects_on_cancel::_delete_objects_on_cancel_ou
 
 pub use crate::operation::delete_objects_on_cancel::_delete_objects_on_cancel_input::DeleteObjectsOnCancelInputBuilder;
 
+impl DeleteObjectsOnCancelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_objects_on_cancel::DeleteObjectsOnCancelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_objects_on_cancel::DeleteObjectsOnCancelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_objects_on_cancel();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteObjectsOnCancel`.
 ///
 /// <p>For a specific governed table, provides a list of Amazon S3 objects that will be written during the current transaction and that can be automatically deleted if the transaction is canceled. Without this call, no Amazon S3 objects are automatically deleted when a transaction cancels. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::update_input_device::_update_input_device_output::Upda
 
 pub use crate::operation::update_input_device::_update_input_device_input::UpdateInputDeviceInputBuilder;
 
+impl UpdateInputDeviceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_input_device::UpdateInputDeviceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_input_device::UpdateInputDeviceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_input_device();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateInputDevice`.
 ///
 /// Updates the parameters for the input device.

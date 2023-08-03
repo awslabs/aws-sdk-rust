@@ -3,6 +3,23 @@ pub use crate::operation::list_theme_aliases::_list_theme_aliases_output::ListTh
 
 pub use crate::operation::list_theme_aliases::_list_theme_aliases_input::ListThemeAliasesInputBuilder;
 
+impl ListThemeAliasesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_theme_aliases::ListThemeAliasesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_theme_aliases::ListThemeAliasesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_theme_aliases();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListThemeAliases`.
 ///
 /// <p>Lists all the aliases of a theme.</p>

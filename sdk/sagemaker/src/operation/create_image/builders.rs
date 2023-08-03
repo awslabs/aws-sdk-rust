@@ -3,6 +3,23 @@ pub use crate::operation::create_image::_create_image_output::CreateImageOutputB
 
 pub use crate::operation::create_image::_create_image_input::CreateImageInputBuilder;
 
+impl CreateImageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_image::CreateImageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_image::CreateImageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_image();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateImage`.
 ///
 /// <p>Creates a custom SageMaker image. A SageMaker image is a set of image versions. Each image version represents a container image stored in Amazon Elastic Container Registry (ECR). For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/studio-byoi.html">Bring your own SageMaker image</a>.</p>

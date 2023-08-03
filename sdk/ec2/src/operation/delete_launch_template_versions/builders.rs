@@ -3,6 +3,23 @@ pub use crate::operation::delete_launch_template_versions::_delete_launch_templa
 
 pub use crate::operation::delete_launch_template_versions::_delete_launch_template_versions_input::DeleteLaunchTemplateVersionsInputBuilder;
 
+impl DeleteLaunchTemplateVersionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_launch_template_versions::DeleteLaunchTemplateVersionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_launch_template_versions::DeleteLaunchTemplateVersionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_launch_template_versions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteLaunchTemplateVersions`.
 ///
 /// <p>Deletes one or more versions of a launch template. You cannot delete the default version of a launch template; you must first assign a different version as the default. If the default version is the only version for the launch template, you must delete the entire launch template using <code>DeleteLaunchTemplate</code>.</p>

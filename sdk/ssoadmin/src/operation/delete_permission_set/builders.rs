@@ -3,6 +3,23 @@ pub use crate::operation::delete_permission_set::_delete_permission_set_output::
 
 pub use crate::operation::delete_permission_set::_delete_permission_set_input::DeletePermissionSetInputBuilder;
 
+impl DeletePermissionSetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_permission_set::DeletePermissionSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_permission_set::DeletePermissionSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_permission_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeletePermissionSet`.
 ///
 /// <p>Deletes the specified permission set.</p>

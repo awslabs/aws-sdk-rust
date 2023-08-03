@@ -3,6 +3,23 @@ pub use crate::operation::get_recording_configuration::_get_recording_configurat
 
 pub use crate::operation::get_recording_configuration::_get_recording_configuration_input::GetRecordingConfigurationInputBuilder;
 
+impl GetRecordingConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_recording_configuration::GetRecordingConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_recording_configuration::GetRecordingConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_recording_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetRecordingConfiguration`.
 ///
 /// <p>Gets the recording configuration for the specified ARN.</p>

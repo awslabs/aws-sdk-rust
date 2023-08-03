@@ -3,6 +3,23 @@ pub use crate::operation::disassociate_fleet::_disassociate_fleet_output::Disass
 
 pub use crate::operation::disassociate_fleet::_disassociate_fleet_input::DisassociateFleetInputBuilder;
 
+impl DisassociateFleetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_fleet::DisassociateFleetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_fleet::DisassociateFleetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disassociate_fleet();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateFleet`.
 ///
 /// <p>Disassociates the specified fleet from the specified stack.</p>

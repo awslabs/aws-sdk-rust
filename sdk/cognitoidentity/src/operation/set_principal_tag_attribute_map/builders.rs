@@ -3,6 +3,23 @@ pub use crate::operation::set_principal_tag_attribute_map::_set_principal_tag_at
 
 pub use crate::operation::set_principal_tag_attribute_map::_set_principal_tag_attribute_map_input::SetPrincipalTagAttributeMapInputBuilder;
 
+impl SetPrincipalTagAttributeMapInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::set_principal_tag_attribute_map::SetPrincipalTagAttributeMapOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::set_principal_tag_attribute_map::SetPrincipalTagAttributeMapError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.set_principal_tag_attribute_map();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SetPrincipalTagAttributeMap`.
 ///
 /// <p>You can use this operation to use default (username and clientID) attribute or custom attribute mappings.</p>

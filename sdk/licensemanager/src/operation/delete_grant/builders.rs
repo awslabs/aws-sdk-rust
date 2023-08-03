@@ -3,6 +3,23 @@ pub use crate::operation::delete_grant::_delete_grant_output::DeleteGrantOutputB
 
 pub use crate::operation::delete_grant::_delete_grant_input::DeleteGrantInputBuilder;
 
+impl DeleteGrantInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_grant::DeleteGrantOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_grant::DeleteGrantError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_grant();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteGrant`.
 ///
 /// <p>Deletes the specified grant.</p>

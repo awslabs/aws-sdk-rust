@@ -3,6 +3,17 @@ pub use crate::operation::associate_device_with_network_profile::_associate_devi
 
 pub use crate::operation::associate_device_with_network_profile::_associate_device_with_network_profile_input::AssociateDeviceWithNetworkProfileInputBuilder;
 
+impl AssociateDeviceWithNetworkProfileInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::associate_device_with_network_profile::AssociateDeviceWithNetworkProfileOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_device_with_network_profile::AssociateDeviceWithNetworkProfileError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.associate_device_with_network_profile();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateDeviceWithNetworkProfile`.
 ///
 /// <p>Associates a device with the specified network profile.</p>

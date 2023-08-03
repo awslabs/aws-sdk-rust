@@ -3,6 +3,23 @@ pub use crate::operation::start_relational_database::_start_relational_database_
 
 pub use crate::operation::start_relational_database::_start_relational_database_input::StartRelationalDatabaseInputBuilder;
 
+impl StartRelationalDatabaseInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_relational_database::StartRelationalDatabaseOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_relational_database::StartRelationalDatabaseError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_relational_database();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartRelationalDatabase`.
 ///
 /// <p>Starts a specific database from a stopped state in Amazon Lightsail. To restart a database, use the <code>reboot relational database</code> operation.</p>

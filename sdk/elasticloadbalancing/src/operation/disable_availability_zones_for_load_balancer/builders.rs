@@ -3,6 +3,17 @@ pub use crate::operation::disable_availability_zones_for_load_balancer::_disable
 
 pub use crate::operation::disable_availability_zones_for_load_balancer::_disable_availability_zones_for_load_balancer_input::DisableAvailabilityZonesForLoadBalancerInputBuilder;
 
+impl DisableAvailabilityZonesForLoadBalancerInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::disable_availability_zones_for_load_balancer::DisableAvailabilityZonesForLoadBalancerOutput, ::aws_smithy_http::result::SdkError<crate::operation::disable_availability_zones_for_load_balancer::DisableAvailabilityZonesForLoadBalancerError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.disable_availability_zones_for_load_balancer();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisableAvailabilityZonesForLoadBalancer`.
 ///
 /// <p>Removes the specified Availability Zones from the set of Availability Zones for the specified load balancer in EC2-Classic or a default VPC.</p>

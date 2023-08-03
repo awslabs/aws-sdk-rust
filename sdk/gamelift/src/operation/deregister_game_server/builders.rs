@@ -3,6 +3,23 @@ pub use crate::operation::deregister_game_server::_deregister_game_server_output
 
 pub use crate::operation::deregister_game_server::_deregister_game_server_input::DeregisterGameServerInputBuilder;
 
+impl DeregisterGameServerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::deregister_game_server::DeregisterGameServerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::deregister_game_server::DeregisterGameServerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.deregister_game_server();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeregisterGameServer`.
 ///
 /// <p> <b>This operation is used with the Amazon GameLift FleetIQ solution and game server groups.</b> </p>

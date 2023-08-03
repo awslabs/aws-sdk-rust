@@ -3,6 +3,23 @@ pub use crate::operation::list_work_groups::_list_work_groups_output::ListWorkGr
 
 pub use crate::operation::list_work_groups::_list_work_groups_input::ListWorkGroupsInputBuilder;
 
+impl ListWorkGroupsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_work_groups::ListWorkGroupsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_work_groups::ListWorkGroupsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_work_groups();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListWorkGroups`.
 ///
 /// <p>Lists available workgroups for the account.</p>

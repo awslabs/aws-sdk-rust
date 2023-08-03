@@ -3,6 +3,17 @@ pub use crate::operation::delete_vpc_endpoint_service_configurations::_delete_vp
 
 pub use crate::operation::delete_vpc_endpoint_service_configurations::_delete_vpc_endpoint_service_configurations_input::DeleteVpcEndpointServiceConfigurationsInputBuilder;
 
+impl DeleteVpcEndpointServiceConfigurationsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_vpc_endpoint_service_configurations::DeleteVpcEndpointServiceConfigurationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_vpc_endpoint_service_configurations::DeleteVpcEndpointServiceConfigurationsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.delete_vpc_endpoint_service_configurations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteVpcEndpointServiceConfigurations`.
 ///
 /// <p>Deletes the specified VPC endpoint service configurations. Before you can delete an endpoint service configuration, you must reject any <code>Available</code> or <code>PendingAcceptance</code> interface endpoint connections that are attached to the service.</p>

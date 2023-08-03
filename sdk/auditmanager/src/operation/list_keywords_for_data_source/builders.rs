@@ -3,6 +3,23 @@ pub use crate::operation::list_keywords_for_data_source::_list_keywords_for_data
 
 pub use crate::operation::list_keywords_for_data_source::_list_keywords_for_data_source_input::ListKeywordsForDataSourceInputBuilder;
 
+impl ListKeywordsForDataSourceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_keywords_for_data_source::ListKeywordsForDataSourceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_keywords_for_data_source::ListKeywordsForDataSourceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_keywords_for_data_source();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListKeywordsForDataSource`.
 ///
 /// <p> Returns a list of keywords that are pre-mapped to the specified control data source. </p>

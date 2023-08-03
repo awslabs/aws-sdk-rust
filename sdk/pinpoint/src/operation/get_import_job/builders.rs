@@ -3,6 +3,23 @@ pub use crate::operation::get_import_job::_get_import_job_output::GetImportJobOu
 
 pub use crate::operation::get_import_job::_get_import_job_input::GetImportJobInputBuilder;
 
+impl GetImportJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_import_job::GetImportJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_import_job::GetImportJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_import_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetImportJob`.
 ///
 /// <p>Retrieves information about the status and settings of a specific import job for an application.</p>

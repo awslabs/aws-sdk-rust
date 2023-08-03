@@ -3,6 +3,23 @@ pub use crate::operation::set_user_pool_mfa_config::_set_user_pool_mfa_config_ou
 
 pub use crate::operation::set_user_pool_mfa_config::_set_user_pool_mfa_config_input::SetUserPoolMfaConfigInputBuilder;
 
+impl SetUserPoolMfaConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::set_user_pool_mfa_config::SetUserPoolMfaConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.set_user_pool_mfa_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SetUserPoolMfaConfig`.
 ///
 /// <p>Sets the user pool multi-factor authentication (MFA) configuration.</p> <note>

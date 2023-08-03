@@ -3,6 +3,23 @@ pub use crate::operation::get_table_metadata::_get_table_metadata_output::GetTab
 
 pub use crate::operation::get_table_metadata::_get_table_metadata_input::GetTableMetadataInputBuilder;
 
+impl GetTableMetadataInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_table_metadata::GetTableMetadataOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_table_metadata::GetTableMetadataError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_table_metadata();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetTableMetadata`.
 ///
 /// <p>Returns table metadata for the specified catalog, database, and table.</p>

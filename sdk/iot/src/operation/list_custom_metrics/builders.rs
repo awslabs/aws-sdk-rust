@@ -3,6 +3,23 @@ pub use crate::operation::list_custom_metrics::_list_custom_metrics_output::List
 
 pub use crate::operation::list_custom_metrics::_list_custom_metrics_input::ListCustomMetricsInputBuilder;
 
+impl ListCustomMetricsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_custom_metrics::ListCustomMetricsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_custom_metrics::ListCustomMetricsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_custom_metrics();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListCustomMetrics`.
 ///
 /// <p> Lists your Device Defender detect custom metrics. </p>

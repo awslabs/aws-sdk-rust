@@ -3,6 +3,23 @@ pub use crate::operation::get_classification_scope::_get_classification_scope_ou
 
 pub use crate::operation::get_classification_scope::_get_classification_scope_input::GetClassificationScopeInputBuilder;
 
+impl GetClassificationScopeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_classification_scope::GetClassificationScopeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_classification_scope::GetClassificationScopeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_classification_scope();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetClassificationScope`.
 ///
 /// <p>Retrieves the classification scope settings for an account.</p>

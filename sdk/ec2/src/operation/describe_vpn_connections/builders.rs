@@ -3,6 +3,23 @@ pub use crate::operation::describe_vpn_connections::_describe_vpn_connections_ou
 
 pub use crate::operation::describe_vpn_connections::_describe_vpn_connections_input::DescribeVpnConnectionsInputBuilder;
 
+impl DescribeVpnConnectionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_vpn_connections::DescribeVpnConnectionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_vpn_connections::DescribeVpnConnectionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_vpn_connections();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeVpnConnections`.
 ///
 /// <p>Describes one or more of your VPN connections.</p>

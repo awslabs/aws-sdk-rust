@@ -3,6 +3,23 @@ pub use crate::operation::reject_shared_directory::_reject_shared_directory_outp
 
 pub use crate::operation::reject_shared_directory::_reject_shared_directory_input::RejectSharedDirectoryInputBuilder;
 
+impl RejectSharedDirectoryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::reject_shared_directory::RejectSharedDirectoryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::reject_shared_directory::RejectSharedDirectoryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.reject_shared_directory();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RejectSharedDirectory`.
 ///
 /// <p>Rejects a directory sharing request that was sent from the directory owner account.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_topic_refresh::_describe_topic_refresh_output
 
 pub use crate::operation::describe_topic_refresh::_describe_topic_refresh_input::DescribeTopicRefreshInputBuilder;
 
+impl DescribeTopicRefreshInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_topic_refresh::DescribeTopicRefreshOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_topic_refresh::DescribeTopicRefreshError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_topic_refresh();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeTopicRefresh`.
 ///
 /// <p>Describes the status of a topic refresh.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_vod_sources::_list_vod_sources_output::ListVodSou
 
 pub use crate::operation::list_vod_sources::_list_vod_sources_input::ListVodSourcesInputBuilder;
 
+impl ListVodSourcesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_vod_sources::ListVodSourcesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_vod_sources::ListVodSourcesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_vod_sources();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListVodSources`.
 ///
 /// <p>Lists the VOD sources contained in a source location. A source represents a piece of content.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::remove_flow_output::_remove_flow_output_output::Remove
 
 pub use crate::operation::remove_flow_output::_remove_flow_output_input::RemoveFlowOutputInputBuilder;
 
+impl RemoveFlowOutputInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::remove_flow_output::RemoveFlowOutputOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::remove_flow_output::RemoveFlowOutputError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.remove_flow_output();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RemoveFlowOutput`.
 ///
 /// Removes an output from an existing flow. This request can be made only on an output that does not have an entitlement associated with it. If the output has an entitlement, you must revoke the entitlement instead. When an entitlement is revoked from a flow, the service automatically removes the associated output.

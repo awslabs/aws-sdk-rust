@@ -3,6 +3,23 @@ pub use crate::operation::test_repository_triggers::_test_repository_triggers_ou
 
 pub use crate::operation::test_repository_triggers::_test_repository_triggers_input::TestRepositoryTriggersInputBuilder;
 
+impl TestRepositoryTriggersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::test_repository_triggers::TestRepositoryTriggersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::test_repository_triggers::TestRepositoryTriggersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.test_repository_triggers();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `TestRepositoryTriggers`.
 ///
 /// <p>Tests the functionality of repository triggers by sending information to the trigger target. If real data is available in the repository, the test sends data from the last commit. If no data is available, sample data is generated.</p>

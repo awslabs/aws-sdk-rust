@@ -3,6 +3,23 @@ pub use crate::operation::create_directory::_create_directory_output::CreateDire
 
 pub use crate::operation::create_directory::_create_directory_input::CreateDirectoryInputBuilder;
 
+impl CreateDirectoryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_directory::CreateDirectoryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_directory::CreateDirectoryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_directory();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateDirectory`.
 ///
 /// <p>Creates a <code>Directory</code> by copying the published schema into the directory. A directory cannot be created without a schema.</p>

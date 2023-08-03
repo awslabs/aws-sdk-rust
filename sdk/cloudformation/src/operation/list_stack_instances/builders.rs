@@ -3,6 +3,23 @@ pub use crate::operation::list_stack_instances::_list_stack_instances_output::Li
 
 pub use crate::operation::list_stack_instances::_list_stack_instances_input::ListStackInstancesInputBuilder;
 
+impl ListStackInstancesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_stack_instances::ListStackInstancesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_stack_instances::ListStackInstancesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_stack_instances();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListStackInstances`.
 ///
 /// <p>Returns summary information about stack instances that are associated with the specified stack set. You can filter for stack instances that are associated with a specific Amazon Web Services account name or Region, or that have a specific status.</p>

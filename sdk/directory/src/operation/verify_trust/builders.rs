@@ -3,6 +3,23 @@ pub use crate::operation::verify_trust::_verify_trust_output::VerifyTrustOutputB
 
 pub use crate::operation::verify_trust::_verify_trust_input::VerifyTrustInputBuilder;
 
+impl VerifyTrustInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::verify_trust::VerifyTrustOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::verify_trust::VerifyTrustError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.verify_trust();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `VerifyTrust`.
 ///
 /// <p>Directory Service for Microsoft Active Directory allows you to configure and verify trust relationships.</p>

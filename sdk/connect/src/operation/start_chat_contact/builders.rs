@@ -3,6 +3,23 @@ pub use crate::operation::start_chat_contact::_start_chat_contact_output::StartC
 
 pub use crate::operation::start_chat_contact::_start_chat_contact_input::StartChatContactInputBuilder;
 
+impl StartChatContactInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_chat_contact::StartChatContactOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_chat_contact::StartChatContactError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_chat_contact();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartChatContact`.
 ///
 /// <p>Initiates a flow to start a new chat for the customer. Response of this API provides a token required to obtain credentials from the <a href="https://docs.aws.amazon.com/connect-participant/latest/APIReference/API_CreateParticipantConnection.html">CreateParticipantConnection</a> API in the Amazon Connect Participant Service.</p>

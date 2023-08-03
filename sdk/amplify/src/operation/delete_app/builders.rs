@@ -3,6 +3,23 @@ pub use crate::operation::delete_app::_delete_app_output::DeleteAppOutputBuilder
 
 pub use crate::operation::delete_app::_delete_app_input::DeleteAppInputBuilder;
 
+impl DeleteAppInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_app::DeleteAppOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_app::DeleteAppError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_app();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteApp`.
 ///
 /// <p> Deletes an existing Amplify app specified by an app ID. </p>

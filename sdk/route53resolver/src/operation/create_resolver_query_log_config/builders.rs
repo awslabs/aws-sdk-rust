@@ -3,6 +3,23 @@ pub use crate::operation::create_resolver_query_log_config::_create_resolver_que
 
 pub use crate::operation::create_resolver_query_log_config::_create_resolver_query_log_config_input::CreateResolverQueryLogConfigInputBuilder;
 
+impl CreateResolverQueryLogConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_resolver_query_log_config::CreateResolverQueryLogConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_resolver_query_log_config::CreateResolverQueryLogConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_resolver_query_log_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateResolverQueryLogConfig`.
 ///
 /// <p>Creates a Resolver query logging configuration, which defines where you want Resolver to save DNS query logs that originate in your VPCs. Resolver can log queries only for VPCs that are in the same Region as the query logging configuration.</p>

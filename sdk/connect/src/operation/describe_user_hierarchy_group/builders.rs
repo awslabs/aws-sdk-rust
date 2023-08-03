@@ -3,6 +3,23 @@ pub use crate::operation::describe_user_hierarchy_group::_describe_user_hierarch
 
 pub use crate::operation::describe_user_hierarchy_group::_describe_user_hierarchy_group_input::DescribeUserHierarchyGroupInputBuilder;
 
+impl DescribeUserHierarchyGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_user_hierarchy_group::DescribeUserHierarchyGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_user_hierarchy_group::DescribeUserHierarchyGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_user_hierarchy_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeUserHierarchyGroup`.
 ///
 /// <p>Describes the specified hierarchy group.</p>

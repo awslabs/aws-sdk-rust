@@ -3,6 +3,23 @@ pub use crate::operation::admin_disable_user::_admin_disable_user_output::AdminD
 
 pub use crate::operation::admin_disable_user::_admin_disable_user_input::AdminDisableUserInputBuilder;
 
+impl AdminDisableUserInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::admin_disable_user::AdminDisableUserOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::admin_disable_user::AdminDisableUserError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.admin_disable_user();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AdminDisableUser`.
 ///
 /// <p>Deactivates a user and revokes all access tokens for the user. A deactivated user can't sign in, but still appears in the responses to <code>GetUser</code> and <code>ListUsers</code> API requests.</p>

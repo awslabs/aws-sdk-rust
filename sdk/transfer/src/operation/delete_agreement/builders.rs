@@ -3,6 +3,23 @@ pub use crate::operation::delete_agreement::_delete_agreement_output::DeleteAgre
 
 pub use crate::operation::delete_agreement::_delete_agreement_input::DeleteAgreementInputBuilder;
 
+impl DeleteAgreementInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_agreement::DeleteAgreementOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_agreement::DeleteAgreementError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_agreement();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteAgreement`.
 ///
 /// <p>Delete the agreement that's specified in the provided <code>AgreementId</code>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::set_repository_policy::_set_repository_policy_output::
 
 pub use crate::operation::set_repository_policy::_set_repository_policy_input::SetRepositoryPolicyInputBuilder;
 
+impl SetRepositoryPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::set_repository_policy::SetRepositoryPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::set_repository_policy::SetRepositoryPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.set_repository_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SetRepositoryPolicy`.
 ///
 /// <p>Applies a repository policy to the specified public repository to control access permissions. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/repository-policies.html">Amazon ECR Repository Policies</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>

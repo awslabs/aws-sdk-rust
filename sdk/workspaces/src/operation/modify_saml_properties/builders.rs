@@ -3,6 +3,23 @@ pub use crate::operation::modify_saml_properties::_modify_saml_properties_output
 
 pub use crate::operation::modify_saml_properties::_modify_saml_properties_input::ModifySamlPropertiesInputBuilder;
 
+impl ModifySamlPropertiesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_saml_properties::ModifySamlPropertiesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_saml_properties::ModifySamlPropertiesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_saml_properties();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifySamlProperties`.
 ///
 /// <p>Modifies multiple properties related to SAML 2.0 authentication, including the enablement status, user access URL, and relay state parameter name that are used for configuring federation with an SAML 2.0 identity provider.</p>

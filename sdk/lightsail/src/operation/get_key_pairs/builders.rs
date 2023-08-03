@@ -3,6 +3,23 @@ pub use crate::operation::get_key_pairs::_get_key_pairs_output::GetKeyPairsOutpu
 
 pub use crate::operation::get_key_pairs::_get_key_pairs_input::GetKeyPairsInputBuilder;
 
+impl GetKeyPairsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_key_pairs::GetKeyPairsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_key_pairs::GetKeyPairsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_key_pairs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetKeyPairs`.
 ///
 /// <p>Returns information about all key pairs in the user's account.</p>

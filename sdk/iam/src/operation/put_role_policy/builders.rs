@@ -3,6 +3,23 @@ pub use crate::operation::put_role_policy::_put_role_policy_output::PutRolePolic
 
 pub use crate::operation::put_role_policy::_put_role_policy_input::PutRolePolicyInputBuilder;
 
+impl PutRolePolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_role_policy::PutRolePolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_role_policy::PutRolePolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_role_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutRolePolicy`.
 ///
 /// <p>Adds or updates an inline policy document that is embedded in the specified IAM role.</p>

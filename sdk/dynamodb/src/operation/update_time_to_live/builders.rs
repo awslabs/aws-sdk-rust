@@ -3,6 +3,23 @@ pub use crate::operation::update_time_to_live::_update_time_to_live_output::Upda
 
 pub use crate::operation::update_time_to_live::_update_time_to_live_input::UpdateTimeToLiveInputBuilder;
 
+impl UpdateTimeToLiveInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_time_to_live::UpdateTimeToLiveOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_time_to_live::UpdateTimeToLiveError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_time_to_live();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateTimeToLive`.
 ///
 /// <p>The <code>UpdateTimeToLive</code> method enables or disables Time to Live (TTL) for the specified table. A successful <code>UpdateTimeToLive</code> call returns the current <code>TimeToLiveSpecification</code>. It can take up to one hour for the change to fully process. Any additional <code>UpdateTimeToLive</code> calls for the same table during this one hour duration result in a <code>ValidationException</code>. </p>

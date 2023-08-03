@@ -3,6 +3,23 @@ pub use crate::operation::describe_ipam_pools::_describe_ipam_pools_output::Desc
 
 pub use crate::operation::describe_ipam_pools::_describe_ipam_pools_input::DescribeIpamPoolsInputBuilder;
 
+impl DescribeIpamPoolsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_ipam_pools::DescribeIpamPoolsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_ipam_pools::DescribeIpamPoolsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_ipam_pools();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeIpamPools`.
 ///
 /// <p>Get information about your IPAM pools.</p>

@@ -3,6 +3,17 @@ pub use crate::operation::update_configuration_set_event_destination::_update_co
 
 pub use crate::operation::update_configuration_set_event_destination::_update_configuration_set_event_destination_input::UpdateConfigurationSetEventDestinationInputBuilder;
 
+impl UpdateConfigurationSetEventDestinationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::update_configuration_set_event_destination::UpdateConfigurationSetEventDestinationOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_configuration_set_event_destination::UpdateConfigurationSetEventDestinationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.update_configuration_set_event_destination();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateConfigurationSetEventDestination`.
 ///
 /// Update an event destination in a configuration set. An event destination is a location that you publish information about your voice calls to. For example, you can log an event to an Amazon CloudWatch destination when a call fails.

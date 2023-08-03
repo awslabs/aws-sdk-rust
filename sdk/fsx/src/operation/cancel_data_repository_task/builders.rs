@@ -3,6 +3,23 @@ pub use crate::operation::cancel_data_repository_task::_cancel_data_repository_t
 
 pub use crate::operation::cancel_data_repository_task::_cancel_data_repository_task_input::CancelDataRepositoryTaskInputBuilder;
 
+impl CancelDataRepositoryTaskInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::cancel_data_repository_task::CancelDataRepositoryTaskOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::cancel_data_repository_task::CancelDataRepositoryTaskError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.cancel_data_repository_task();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CancelDataRepositoryTask`.
 ///
 /// <p>Cancels an existing Amazon FSx for Lustre data repository task if that task is in either the <code>PENDING</code> or <code>EXECUTING</code> state. When you cancel a task, Amazon FSx does the following.</p>

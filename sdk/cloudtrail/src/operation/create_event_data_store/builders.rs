@@ -3,6 +3,23 @@ pub use crate::operation::create_event_data_store::_create_event_data_store_outp
 
 pub use crate::operation::create_event_data_store::_create_event_data_store_input::CreateEventDataStoreInputBuilder;
 
+impl CreateEventDataStoreInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_event_data_store::CreateEventDataStoreOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_event_data_store::CreateEventDataStoreError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_event_data_store();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateEventDataStore`.
 ///
 /// <p>Creates a new event data store.</p>

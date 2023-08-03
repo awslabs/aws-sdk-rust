@@ -3,6 +3,23 @@ pub use crate::operation::delete_view::_delete_view_output::DeleteViewOutputBuil
 
 pub use crate::operation::delete_view::_delete_view_input::DeleteViewInputBuilder;
 
+impl DeleteViewInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_view::DeleteViewOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_view::DeleteViewError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_view();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteView`.
 ///
 /// <p>Deletes the specified view.</p>

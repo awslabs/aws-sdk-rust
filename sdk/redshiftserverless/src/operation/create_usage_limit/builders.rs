@@ -3,6 +3,23 @@ pub use crate::operation::create_usage_limit::_create_usage_limit_output::Create
 
 pub use crate::operation::create_usage_limit::_create_usage_limit_input::CreateUsageLimitInputBuilder;
 
+impl CreateUsageLimitInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_usage_limit::CreateUsageLimitOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_usage_limit::CreateUsageLimitError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_usage_limit();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateUsageLimit`.
 ///
 /// <p>Creates a usage limit for a specified Amazon Redshift Serverless usage type. The usage limit is identified by the returned usage limit identifier. </p>

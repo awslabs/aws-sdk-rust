@@ -3,6 +3,23 @@ pub use crate::operation::describe_location_azure_blob::_describe_location_azure
 
 pub use crate::operation::describe_location_azure_blob::_describe_location_azure_blob_input::DescribeLocationAzureBlobInputBuilder;
 
+impl DescribeLocationAzureBlobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_location_azure_blob::DescribeLocationAzureBlobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_location_azure_blob::DescribeLocationAzureBlobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_location_azure_blob();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeLocationAzureBlob`.
 ///
 /// <p>Provides details about how an DataSync transfer location for Microsoft Azure Blob Storage is configured.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::search_organization_insights::_search_organization_ins
 
 pub use crate::operation::search_organization_insights::_search_organization_insights_input::SearchOrganizationInsightsInputBuilder;
 
+impl SearchOrganizationInsightsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::search_organization_insights::SearchOrganizationInsightsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::search_organization_insights::SearchOrganizationInsightsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.search_organization_insights();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SearchOrganizationInsights`.
 ///
 /// <p> Returns a list of insights in your organization. You can specify which insights are returned by their start time, one or more statuses (<code>ONGOING</code>, <code>CLOSED</code>, and <code>CLOSED</code>), one or more severities (<code>LOW</code>, <code>MEDIUM</code>, and <code>HIGH</code>), and type (<code>REACTIVE</code> or <code>PROACTIVE</code>). </p>

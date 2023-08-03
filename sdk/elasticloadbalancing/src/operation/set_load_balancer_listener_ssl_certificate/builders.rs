@@ -3,6 +3,17 @@ pub use crate::operation::set_load_balancer_listener_ssl_certificate::_set_load_
 
 pub use crate::operation::set_load_balancer_listener_ssl_certificate::_set_load_balancer_listener_ssl_certificate_input::SetLoadBalancerListenerSslCertificateInputBuilder;
 
+impl SetLoadBalancerListenerSslCertificateInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::set_load_balancer_listener_ssl_certificate::SetLoadBalancerListenerSslCertificateOutput, ::aws_smithy_http::result::SdkError<crate::operation::set_load_balancer_listener_ssl_certificate::SetLoadBalancerListenerSSLCertificateError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.set_load_balancer_listener_ssl_certificate();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SetLoadBalancerListenerSSLCertificate`.
 ///
 /// <p>Sets the certificate that terminates the specified listener's SSL connections. The specified certificate replaces any prior certificate that was used on the same load balancer and port.</p>

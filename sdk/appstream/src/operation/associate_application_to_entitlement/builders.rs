@@ -3,6 +3,17 @@ pub use crate::operation::associate_application_to_entitlement::_associate_appli
 
 pub use crate::operation::associate_application_to_entitlement::_associate_application_to_entitlement_input::AssociateApplicationToEntitlementInputBuilder;
 
+impl AssociateApplicationToEntitlementInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::associate_application_to_entitlement::AssociateApplicationToEntitlementOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_application_to_entitlement::AssociateApplicationToEntitlementError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.associate_application_to_entitlement();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateApplicationToEntitlement`.
 ///
 /// <p>Associates an application to entitle.</p>

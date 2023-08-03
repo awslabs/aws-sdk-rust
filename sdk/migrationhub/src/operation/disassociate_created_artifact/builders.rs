@@ -3,6 +3,23 @@ pub use crate::operation::disassociate_created_artifact::_disassociate_created_a
 
 pub use crate::operation::disassociate_created_artifact::_disassociate_created_artifact_input::DisassociateCreatedArtifactInputBuilder;
 
+impl DisassociateCreatedArtifactInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_created_artifact::DisassociateCreatedArtifactOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_created_artifact::DisassociateCreatedArtifactError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disassociate_created_artifact();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateCreatedArtifact`.
 ///
 /// <p>Disassociates a created artifact of an AWS resource with a migration task performed by a migration tool that was previously associated. This API has the following traits:</p>

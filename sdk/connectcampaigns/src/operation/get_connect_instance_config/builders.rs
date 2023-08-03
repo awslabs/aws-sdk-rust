@@ -3,6 +3,23 @@ pub use crate::operation::get_connect_instance_config::_get_connect_instance_con
 
 pub use crate::operation::get_connect_instance_config::_get_connect_instance_config_input::GetConnectInstanceConfigInputBuilder;
 
+impl GetConnectInstanceConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_connect_instance_config::GetConnectInstanceConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_connect_instance_config::GetConnectInstanceConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_connect_instance_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetConnectInstanceConfig`.
 ///
 /// Get the specific Connect instance config.

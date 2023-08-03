@@ -3,6 +3,23 @@ pub use crate::operation::update_answer::_update_answer_output::UpdateAnswerOutp
 
 pub use crate::operation::update_answer::_update_answer_input::UpdateAnswerInputBuilder;
 
+impl UpdateAnswerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_answer::UpdateAnswerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_answer::UpdateAnswerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_answer();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateAnswer`.
 ///
 /// <p>Update the answer to a specific question in a workload review.</p>

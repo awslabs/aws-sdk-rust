@@ -3,6 +3,23 @@ pub use crate::operation::describe_routing_control::_describe_routing_control_ou
 
 pub use crate::operation::describe_routing_control::_describe_routing_control_input::DescribeRoutingControlInputBuilder;
 
+impl DescribeRoutingControlInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_routing_control::DescribeRoutingControlOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_routing_control::DescribeRoutingControlError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_routing_control();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeRoutingControl`.
 ///
 /// <p>Displays details about a routing control. A routing control has one of two states: ON and OFF. You can map the routing control state to the state of an Amazon Route 53 health check, which can be used to control routing.</p>

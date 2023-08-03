@@ -3,6 +3,23 @@ pub use crate::operation::update_sip_media_application::_update_sip_media_applic
 
 pub use crate::operation::update_sip_media_application::_update_sip_media_application_input::UpdateSipMediaApplicationInputBuilder;
 
+impl UpdateSipMediaApplicationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_sip_media_application::UpdateSipMediaApplicationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_sip_media_application::UpdateSipMediaApplicationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_sip_media_application();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateSipMediaApplication`.
 ///
 /// <p>Updates the details of the specified SIP media application.</p>

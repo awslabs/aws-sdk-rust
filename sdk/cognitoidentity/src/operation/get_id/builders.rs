@@ -3,6 +3,23 @@ pub use crate::operation::get_id::_get_id_output::GetIdOutputBuilder;
 
 pub use crate::operation::get_id::_get_id_input::GetIdInputBuilder;
 
+impl GetIdInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_id::GetIdOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_id::GetIdError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_id();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetId`.
 ///
 /// <p>Generates (or retrieves) a Cognito ID. Supplying multiple logins will create an implicit linked account.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_dataset_group::_delete_dataset_group_output::De
 
 pub use crate::operation::delete_dataset_group::_delete_dataset_group_input::DeleteDatasetGroupInputBuilder;
 
+impl DeleteDatasetGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_dataset_group::DeleteDatasetGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_dataset_group::DeleteDatasetGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_dataset_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteDatasetGroup`.
 ///
 /// <p>Deletes a dataset group created using the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetGroup.html">CreateDatasetGroup</a> operation. You can only delete dataset groups that have a status of <code>ACTIVE</code>, <code>CREATE_FAILED</code>, or <code>UPDATE_FAILED</code>. To get the status, use the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDatasetGroup.html">DescribeDatasetGroup</a> operation.</p>

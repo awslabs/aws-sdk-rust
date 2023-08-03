@@ -3,6 +3,23 @@ pub use crate::operation::create_model::_create_model_output::CreateModelOutputB
 
 pub use crate::operation::create_model::_create_model_input::CreateModelInputBuilder;
 
+impl CreateModelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_model::CreateModelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_model::CreateModelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_model();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateModel`.
 ///
 /// <p>Creates a model in SageMaker. In the request, you name the model and describe a primary container. For the primary container, you specify the Docker image that contains inference code, artifacts (from prior training), and a custom environment map that the inference code uses when you deploy the model for predictions.</p>

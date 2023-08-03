@@ -3,6 +3,23 @@ pub use crate::operation::start_replication::_start_replication_output::StartRep
 
 pub use crate::operation::start_replication::_start_replication_input::StartReplicationInputBuilder;
 
+impl StartReplicationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_replication::StartReplicationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_replication::StartReplicationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_replication();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartReplication`.
 ///
 /// <p>Starts replication for a stopped Source Server. This action would make the Source Server protected again and restart billing for it.</p>

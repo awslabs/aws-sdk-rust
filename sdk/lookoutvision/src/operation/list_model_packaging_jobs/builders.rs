@@ -3,6 +3,23 @@ pub use crate::operation::list_model_packaging_jobs::_list_model_packaging_jobs_
 
 pub use crate::operation::list_model_packaging_jobs::_list_model_packaging_jobs_input::ListModelPackagingJobsInputBuilder;
 
+impl ListModelPackagingJobsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_model_packaging_jobs::ListModelPackagingJobsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_model_packaging_jobs::ListModelPackagingJobsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_model_packaging_jobs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListModelPackagingJobs`.
 ///
 /// <p> Lists the model packaging jobs created for an Amazon Lookout for Vision project. </p>

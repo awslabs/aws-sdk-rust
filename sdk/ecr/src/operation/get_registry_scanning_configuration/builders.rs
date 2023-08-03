@@ -3,6 +3,17 @@ pub use crate::operation::get_registry_scanning_configuration::_get_registry_sca
 
 pub use crate::operation::get_registry_scanning_configuration::_get_registry_scanning_configuration_input::GetRegistryScanningConfigurationInputBuilder;
 
+impl GetRegistryScanningConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_registry_scanning_configuration::GetRegistryScanningConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_registry_scanning_configuration::GetRegistryScanningConfigurationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_registry_scanning_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetRegistryScanningConfiguration`.
 ///
 /// <p>Retrieves the scanning configuration for a registry.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::resume_game_server_group::_resume_game_server_group_ou
 
 pub use crate::operation::resume_game_server_group::_resume_game_server_group_input::ResumeGameServerGroupInputBuilder;
 
+impl ResumeGameServerGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::resume_game_server_group::ResumeGameServerGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::resume_game_server_group::ResumeGameServerGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.resume_game_server_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ResumeGameServerGroup`.
 ///
 /// <p> <b>This operation is used with the Amazon GameLift FleetIQ solution and game server groups.</b> </p>

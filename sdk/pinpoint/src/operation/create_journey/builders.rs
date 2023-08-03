@@ -3,6 +3,23 @@ pub use crate::operation::create_journey::_create_journey_output::CreateJourneyO
 
 pub use crate::operation::create_journey::_create_journey_input::CreateJourneyInputBuilder;
 
+impl CreateJourneyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_journey::CreateJourneyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_journey::CreateJourneyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_journey();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateJourney`.
 ///
 /// <p>Creates a journey for an application.</p>

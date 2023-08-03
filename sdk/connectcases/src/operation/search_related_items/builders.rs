@@ -3,6 +3,23 @@ pub use crate::operation::search_related_items::_search_related_items_output::Se
 
 pub use crate::operation::search_related_items::_search_related_items_input::SearchRelatedItemsInputBuilder;
 
+impl SearchRelatedItemsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::search_related_items::SearchRelatedItemsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::search_related_items::SearchRelatedItemsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.search_related_items();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SearchRelatedItems`.
 ///
 /// <p>Searches for related items that are associated with a case.</p> <note>

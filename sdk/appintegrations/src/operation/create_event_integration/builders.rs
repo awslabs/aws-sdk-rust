@@ -3,6 +3,23 @@ pub use crate::operation::create_event_integration::_create_event_integration_ou
 
 pub use crate::operation::create_event_integration::_create_event_integration_input::CreateEventIntegrationInputBuilder;
 
+impl CreateEventIntegrationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_event_integration::CreateEventIntegrationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_event_integration::CreateEventIntegrationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_event_integration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateEventIntegration`.
 ///
 /// <p>Creates an EventIntegration, given a specified name, description, and a reference to an Amazon EventBridge bus in your account and a partner event source that pushes events to that bus. No objects are created in the your account, only metadata that is persisted on the EventIntegration control plane.</p>

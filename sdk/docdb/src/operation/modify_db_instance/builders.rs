@@ -3,6 +3,23 @@ pub use crate::operation::modify_db_instance::_modify_db_instance_output::Modify
 
 pub use crate::operation::modify_db_instance::_modify_db_instance_input::ModifyDbInstanceInputBuilder;
 
+impl ModifyDbInstanceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_db_instance::ModifyDbInstanceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_db_instance::ModifyDBInstanceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_db_instance();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyDBInstance`.
 ///
 /// <p>Modifies settings for an instance. You can change one or more database configuration parameters by specifying these parameters and the new values in the request.</p>

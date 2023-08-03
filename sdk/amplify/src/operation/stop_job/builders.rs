@@ -3,6 +3,23 @@ pub use crate::operation::stop_job::_stop_job_output::StopJobOutputBuilder;
 
 pub use crate::operation::stop_job::_stop_job_input::StopJobInputBuilder;
 
+impl StopJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_job::StopJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_job::StopJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopJob`.
 ///
 /// <p> Stops a job that is in progress for a branch of an Amplify app. </p>

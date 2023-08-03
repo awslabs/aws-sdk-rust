@@ -3,6 +3,23 @@ pub use crate::operation::create_model_manifest::_create_model_manifest_output::
 
 pub use crate::operation::create_model_manifest::_create_model_manifest_input::CreateModelManifestInputBuilder;
 
+impl CreateModelManifestInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_model_manifest::CreateModelManifestOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_model_manifest::CreateModelManifestError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_model_manifest();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateModelManifest`.
 ///
 /// <p> Creates a vehicle model (model manifest) that specifies signals (attributes, branches, sensors, and actuators). </p>

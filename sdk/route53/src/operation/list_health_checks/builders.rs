@@ -3,6 +3,23 @@ pub use crate::operation::list_health_checks::_list_health_checks_output::ListHe
 
 pub use crate::operation::list_health_checks::_list_health_checks_input::ListHealthChecksInputBuilder;
 
+impl ListHealthChecksInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_health_checks::ListHealthChecksOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_health_checks::ListHealthChecksError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_health_checks();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListHealthChecks`.
 ///
 /// <p>Retrieve a list of the health checks that are associated with the current Amazon Web Services account. </p>

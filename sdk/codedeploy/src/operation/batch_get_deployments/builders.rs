@@ -3,6 +3,23 @@ pub use crate::operation::batch_get_deployments::_batch_get_deployments_output::
 
 pub use crate::operation::batch_get_deployments::_batch_get_deployments_input::BatchGetDeploymentsInputBuilder;
 
+impl BatchGetDeploymentsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_deployments::BatchGetDeploymentsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_get_deployments::BatchGetDeploymentsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_get_deployments();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchGetDeployments`.
 ///
 /// <p>Gets information about one or more deployments. The maximum number of deployments that can be returned is 25.</p>

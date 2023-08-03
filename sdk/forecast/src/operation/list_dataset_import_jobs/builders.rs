@@ -3,6 +3,23 @@ pub use crate::operation::list_dataset_import_jobs::_list_dataset_import_jobs_ou
 
 pub use crate::operation::list_dataset_import_jobs::_list_dataset_import_jobs_input::ListDatasetImportJobsInputBuilder;
 
+impl ListDatasetImportJobsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_dataset_import_jobs::ListDatasetImportJobsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_dataset_import_jobs::ListDatasetImportJobsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_dataset_import_jobs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDatasetImportJobs`.
 ///
 /// <p>Returns a list of dataset import jobs created using the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a> operation. For each import job, this operation returns a summary of its properties, including its Amazon Resource Name (ARN). You can retrieve the complete set of properties by using the ARN with the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDatasetImportJob.html">DescribeDatasetImportJob</a> operation. You can filter the list by providing an array of <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_Filter.html">Filter</a> objects.</p>

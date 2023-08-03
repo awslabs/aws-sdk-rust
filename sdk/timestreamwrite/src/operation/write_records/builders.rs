@@ -3,6 +3,23 @@ pub use crate::operation::write_records::_write_records_output::WriteRecordsOutp
 
 pub use crate::operation::write_records::_write_records_input::WriteRecordsInputBuilder;
 
+impl WriteRecordsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::write_records::WriteRecordsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::write_records::WriteRecordsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.write_records();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `WriteRecords`.
 ///
 /// <p>Enables you to write your time-series data into Timestream. You can specify a single data point or a batch of data points to be inserted into the system. Timestream offers you a flexible schema that auto detects the column names and data types for your Timestream tables based on the dimension names and data types of the data points you specify when invoking writes into the database. </p>

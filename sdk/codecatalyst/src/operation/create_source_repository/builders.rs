@@ -3,6 +3,23 @@ pub use crate::operation::create_source_repository::_create_source_repository_ou
 
 pub use crate::operation::create_source_repository::_create_source_repository_input::CreateSourceRepositoryInputBuilder;
 
+impl CreateSourceRepositoryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_source_repository::CreateSourceRepositoryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_source_repository::CreateSourceRepositoryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_source_repository();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateSourceRepository`.
 ///
 /// <p>Creates an empty Git-based source repository in a specified project. The repository is created with an initial empty commit with a default branch named <code>main</code>.</p>

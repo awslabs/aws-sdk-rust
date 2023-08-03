@@ -3,6 +3,23 @@ pub use crate::operation::get_suppressed_destination::_get_suppressed_destinatio
 
 pub use crate::operation::get_suppressed_destination::_get_suppressed_destination_input::GetSuppressedDestinationInputBuilder;
 
+impl GetSuppressedDestinationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_suppressed_destination::GetSuppressedDestinationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_suppressed_destination::GetSuppressedDestinationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_suppressed_destination();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetSuppressedDestination`.
 ///
 /// <p>Retrieves information about a specific email address that's on the suppression list for your account.</p>

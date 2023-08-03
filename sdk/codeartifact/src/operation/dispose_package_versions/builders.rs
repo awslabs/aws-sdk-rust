@@ -3,6 +3,23 @@ pub use crate::operation::dispose_package_versions::_dispose_package_versions_ou
 
 pub use crate::operation::dispose_package_versions::_dispose_package_versions_input::DisposePackageVersionsInputBuilder;
 
+impl DisposePackageVersionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::dispose_package_versions::DisposePackageVersionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::dispose_package_versions::DisposePackageVersionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.dispose_package_versions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisposePackageVersions`.
 ///
 /// <p> Deletes the assets in package versions and sets the package versions' status to <code>Disposed</code>. A disposed package version cannot be restored in your repository because its assets are deleted. </p>

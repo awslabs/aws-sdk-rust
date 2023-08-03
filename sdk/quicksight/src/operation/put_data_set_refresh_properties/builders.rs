@@ -3,6 +3,23 @@ pub use crate::operation::put_data_set_refresh_properties::_put_data_set_refresh
 
 pub use crate::operation::put_data_set_refresh_properties::_put_data_set_refresh_properties_input::PutDataSetRefreshPropertiesInputBuilder;
 
+impl PutDataSetRefreshPropertiesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_data_set_refresh_properties::PutDataSetRefreshPropertiesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_data_set_refresh_properties::PutDataSetRefreshPropertiesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_data_set_refresh_properties();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutDataSetRefreshProperties`.
 ///
 /// <p>Creates or updates the dataset refresh properties for the dataset.</p>

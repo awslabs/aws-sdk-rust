@@ -3,6 +3,23 @@ pub use crate::operation::create_quantum_task::_create_quantum_task_output::Crea
 
 pub use crate::operation::create_quantum_task::_create_quantum_task_input::CreateQuantumTaskInputBuilder;
 
+impl CreateQuantumTaskInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_quantum_task::CreateQuantumTaskOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_quantum_task::CreateQuantumTaskError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_quantum_task();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateQuantumTask`.
 ///
 /// <p>Creates a quantum task.</p>

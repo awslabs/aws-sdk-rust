@@ -3,6 +3,23 @@ pub use crate::operation::stop_data_collection_by_agent_ids::_stop_data_collecti
 
 pub use crate::operation::stop_data_collection_by_agent_ids::_stop_data_collection_by_agent_ids_input::StopDataCollectionByAgentIdsInputBuilder;
 
+impl StopDataCollectionByAgentIdsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_data_collection_by_agent_ids::StopDataCollectionByAgentIdsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_data_collection_by_agent_ids::StopDataCollectionByAgentIdsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_data_collection_by_agent_ids();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopDataCollectionByAgentIds`.
 ///
 /// <p>Instructs the specified agents to stop collecting data.</p>

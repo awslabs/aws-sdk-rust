@@ -3,6 +3,23 @@ pub use crate::operation::describe_stale_security_groups::_describe_stale_securi
 
 pub use crate::operation::describe_stale_security_groups::_describe_stale_security_groups_input::DescribeStaleSecurityGroupsInputBuilder;
 
+impl DescribeStaleSecurityGroupsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_stale_security_groups::DescribeStaleSecurityGroupsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_stale_security_groups::DescribeStaleSecurityGroupsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_stale_security_groups();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeStaleSecurityGroups`.
 ///
 /// <p>Describes the stale security group rules for security groups in a specified VPC. Rules are stale when they reference a deleted security group in the same VPC or in a peer VPC, or if they reference a security group in a peer VPC for which the VPC peering connection has been deleted.</p>

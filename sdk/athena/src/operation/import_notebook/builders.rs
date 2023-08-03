@@ -3,6 +3,23 @@ pub use crate::operation::import_notebook::_import_notebook_output::ImportNotebo
 
 pub use crate::operation::import_notebook::_import_notebook_input::ImportNotebookInputBuilder;
 
+impl ImportNotebookInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::import_notebook::ImportNotebookOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::import_notebook::ImportNotebookError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.import_notebook();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ImportNotebook`.
 ///
 /// <p>Imports a single <code>ipynb</code> file to a Spark enabled workgroup. The maximum file size that can be imported is 10 megabytes. If an <code>ipynb</code> file with the same name already exists in the workgroup, throws an error.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_access_token::_get_access_token_output::GetAccessT
 
 pub use crate::operation::get_access_token::_get_access_token_input::GetAccessTokenInputBuilder;
 
+impl GetAccessTokenInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_access_token::GetAccessTokenOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_access_token::GetAccessTokenError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_access_token();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetAccessToken`.
 ///
 /// <p>Gets a temporary access token to use with AssumeRoleWithWebIdentity. Access tokens are valid for one hour.</p>

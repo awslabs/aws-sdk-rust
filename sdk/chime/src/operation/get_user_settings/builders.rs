@@ -3,6 +3,23 @@ pub use crate::operation::get_user_settings::_get_user_settings_output::GetUserS
 
 pub use crate::operation::get_user_settings::_get_user_settings_input::GetUserSettingsInputBuilder;
 
+impl GetUserSettingsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_user_settings::GetUserSettingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_user_settings::GetUserSettingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_user_settings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetUserSettings`.
 ///
 /// <p>Retrieves settings for the specified user ID, such as any associated phone number settings.</p>

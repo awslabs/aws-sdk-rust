@@ -3,6 +3,23 @@ pub use crate::operation::batch_disable_alarm::_batch_disable_alarm_output::Batc
 
 pub use crate::operation::batch_disable_alarm::_batch_disable_alarm_input::BatchDisableAlarmInputBuilder;
 
+impl BatchDisableAlarmInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_disable_alarm::BatchDisableAlarmOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_disable_alarm::BatchDisableAlarmError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_disable_alarm();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchDisableAlarm`.
 ///
 /// <p>Disables one or more alarms. The alarms change to the <code>DISABLED</code> state after you disable them.</p>

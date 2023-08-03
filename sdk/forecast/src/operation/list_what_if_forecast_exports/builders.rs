@@ -3,6 +3,23 @@ pub use crate::operation::list_what_if_forecast_exports::_list_what_if_forecast_
 
 pub use crate::operation::list_what_if_forecast_exports::_list_what_if_forecast_exports_input::ListWhatIfForecastExportsInputBuilder;
 
+impl ListWhatIfForecastExportsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_what_if_forecast_exports::ListWhatIfForecastExportsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_what_if_forecast_exports::ListWhatIfForecastExportsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_what_if_forecast_exports();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListWhatIfForecastExports`.
 ///
 /// <p>Returns a list of what-if forecast exports created using the <code>CreateWhatIfForecastExport</code> operation. For each what-if forecast export, this operation returns a summary of its properties, including its Amazon Resource Name (ARN). You can retrieve the complete set of properties by using the what-if forecast export ARN with the <code>DescribeWhatIfForecastExport</code> operation.</p>

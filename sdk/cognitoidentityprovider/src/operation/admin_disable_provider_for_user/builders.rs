@@ -3,6 +3,23 @@ pub use crate::operation::admin_disable_provider_for_user::_admin_disable_provid
 
 pub use crate::operation::admin_disable_provider_for_user::_admin_disable_provider_for_user_input::AdminDisableProviderForUserInputBuilder;
 
+impl AdminDisableProviderForUserInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::admin_disable_provider_for_user::AdminDisableProviderForUserOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::admin_disable_provider_for_user::AdminDisableProviderForUserError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.admin_disable_provider_for_user();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AdminDisableProviderForUser`.
 ///
 /// <p>Prevents the user from signing in with the specified external (SAML or social) identity provider (IdP). If the user that you want to deactivate is a Amazon Cognito user pools native username + password user, they can't use their password to sign in. If the user to deactivate is a linked external IdP user, any link between that user and an existing user is removed. When the external user signs in again, and the user is no longer attached to the previously linked <code>DestinationUser</code>, the user must create a new user account. See <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_AdminLinkProviderForUser.html">AdminLinkProviderForUser</a>.</p>

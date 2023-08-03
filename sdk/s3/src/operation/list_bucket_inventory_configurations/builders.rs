@@ -3,6 +3,17 @@ pub use crate::operation::list_bucket_inventory_configurations::_list_bucket_inv
 
 pub use crate::operation::list_bucket_inventory_configurations::_list_bucket_inventory_configurations_input::ListBucketInventoryConfigurationsInputBuilder;
 
+impl ListBucketInventoryConfigurationsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_bucket_inventory_configurations::ListBucketInventoryConfigurationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_bucket_inventory_configurations::ListBucketInventoryConfigurationsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_bucket_inventory_configurations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListBucketInventoryConfigurations`.
 ///
 /// <p>Returns a list of inventory configurations for the bucket. You can have up to 1,000 analytics configurations per bucket.</p>

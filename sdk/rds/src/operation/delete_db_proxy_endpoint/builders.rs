@@ -3,6 +3,23 @@ pub use crate::operation::delete_db_proxy_endpoint::_delete_db_proxy_endpoint_ou
 
 pub use crate::operation::delete_db_proxy_endpoint::_delete_db_proxy_endpoint_input::DeleteDbProxyEndpointInputBuilder;
 
+impl DeleteDbProxyEndpointInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_db_proxy_endpoint::DeleteDbProxyEndpointOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_db_proxy_endpoint::DeleteDBProxyEndpointError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_db_proxy_endpoint();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteDBProxyEndpoint`.
 ///
 /// <p>Deletes a <code>DBProxyEndpoint</code>. Doing so removes the ability to access the DB proxy using the endpoint that you defined. The endpoint that you delete might have provided capabilities such as read/write or read-only operations, or using a different VPC than the DB proxy's default VPC.</p>

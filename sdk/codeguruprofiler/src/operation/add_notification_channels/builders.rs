@@ -3,6 +3,23 @@ pub use crate::operation::add_notification_channels::_add_notification_channels_
 
 pub use crate::operation::add_notification_channels::_add_notification_channels_input::AddNotificationChannelsInputBuilder;
 
+impl AddNotificationChannelsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::add_notification_channels::AddNotificationChannelsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::add_notification_channels::AddNotificationChannelsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.add_notification_channels();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AddNotificationChannels`.
 ///
 /// <p>Add up to 2 anomaly notifications channels for a profiling group.</p>

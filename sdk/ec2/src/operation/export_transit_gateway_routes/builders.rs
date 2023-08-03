@@ -3,6 +3,23 @@ pub use crate::operation::export_transit_gateway_routes::_export_transit_gateway
 
 pub use crate::operation::export_transit_gateway_routes::_export_transit_gateway_routes_input::ExportTransitGatewayRoutesInputBuilder;
 
+impl ExportTransitGatewayRoutesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::export_transit_gateway_routes::ExportTransitGatewayRoutesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::export_transit_gateway_routes::ExportTransitGatewayRoutesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.export_transit_gateway_routes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ExportTransitGatewayRoutes`.
 ///
 /// <p>Exports routes from the specified transit gateway route table to the specified S3 bucket. By default, all routes are exported. Alternatively, you can filter by CIDR range.</p>

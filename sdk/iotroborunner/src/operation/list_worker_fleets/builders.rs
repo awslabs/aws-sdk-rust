@@ -3,6 +3,23 @@ pub use crate::operation::list_worker_fleets::_list_worker_fleets_output::ListWo
 
 pub use crate::operation::list_worker_fleets::_list_worker_fleets_input::ListWorkerFleetsInputBuilder;
 
+impl ListWorkerFleetsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_worker_fleets::ListWorkerFleetsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_worker_fleets::ListWorkerFleetsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_worker_fleets();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListWorkerFleets`.
 ///
 /// Grants permission to list worker fleets

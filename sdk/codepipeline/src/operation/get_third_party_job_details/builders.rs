@@ -3,6 +3,23 @@ pub use crate::operation::get_third_party_job_details::_get_third_party_job_deta
 
 pub use crate::operation::get_third_party_job_details::_get_third_party_job_details_input::GetThirdPartyJobDetailsInputBuilder;
 
+impl GetThirdPartyJobDetailsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_third_party_job_details::GetThirdPartyJobDetailsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_third_party_job_details::GetThirdPartyJobDetailsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_third_party_job_details();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetThirdPartyJobDetails`.
 ///
 /// <p>Requests the details of a job for a third party action. Used for partner actions only.</p> <important>

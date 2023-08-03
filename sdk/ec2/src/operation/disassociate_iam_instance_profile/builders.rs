@@ -3,6 +3,17 @@ pub use crate::operation::disassociate_iam_instance_profile::_disassociate_iam_i
 
 pub use crate::operation::disassociate_iam_instance_profile::_disassociate_iam_instance_profile_input::DisassociateIamInstanceProfileInputBuilder;
 
+impl DisassociateIamInstanceProfileInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::disassociate_iam_instance_profile::DisassociateIamInstanceProfileOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_iam_instance_profile::DisassociateIamInstanceProfileError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.disassociate_iam_instance_profile();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateIamInstanceProfile`.
 ///
 /// <p>Disassociates an IAM instance profile from a running or stopped instance.</p>

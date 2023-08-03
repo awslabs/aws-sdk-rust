@@ -3,6 +3,17 @@ pub use crate::operation::delete_local_gateway_route_table_vpc_association::_del
 
 pub use crate::operation::delete_local_gateway_route_table_vpc_association::_delete_local_gateway_route_table_vpc_association_input::DeleteLocalGatewayRouteTableVpcAssociationInputBuilder;
 
+impl DeleteLocalGatewayRouteTableVpcAssociationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_local_gateway_route_table_vpc_association::DeleteLocalGatewayRouteTableVpcAssociationOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_local_gateway_route_table_vpc_association::DeleteLocalGatewayRouteTableVpcAssociationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.delete_local_gateway_route_table_vpc_association();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteLocalGatewayRouteTableVpcAssociation`.
 ///
 /// <p>Deletes the specified association between a VPC and local gateway route table.</p>

@@ -3,6 +3,17 @@ pub use crate::operation::deregister_organization_delegated_admin::_deregister_o
 
 pub use crate::operation::deregister_organization_delegated_admin::_deregister_organization_delegated_admin_input::DeregisterOrganizationDelegatedAdminInputBuilder;
 
+impl DeregisterOrganizationDelegatedAdminInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminOutput, ::aws_smithy_http::result::SdkError<crate::operation::deregister_organization_delegated_admin::DeregisterOrganizationDelegatedAdminError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.deregister_organization_delegated_admin();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeregisterOrganizationDelegatedAdmin`.
 ///
 /// <p>Removes CloudTrail delegated administrator permissions from a member account in an organization.</p>

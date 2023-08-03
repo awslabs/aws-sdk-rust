@@ -3,6 +3,23 @@ pub use crate::operation::create_presigned_notebook_url::_create_presigned_noteb
 
 pub use crate::operation::create_presigned_notebook_url::_create_presigned_notebook_url_input::CreatePresignedNotebookUrlInputBuilder;
 
+impl CreatePresignedNotebookUrlInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_presigned_notebook_url::CreatePresignedNotebookUrlOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_presigned_notebook_url::CreatePresignedNotebookUrlError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_presigned_notebook_url();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreatePresignedNotebookUrl`.
 ///
 /// <p>Gets an authentication token and the URL at which the notebook can be accessed. During programmatic access, <code>CreatePresignedNotebookUrl</code> must be called every 10 minutes to refresh the authentication token. For information about granting programmatic access, see <a href="https://docs.aws.amazon.com/athena/latest/ug/setting-up.html#setting-up-grant-programmatic-access">Grant programmatic access</a>.</p>

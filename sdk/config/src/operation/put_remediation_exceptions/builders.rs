@@ -3,6 +3,23 @@ pub use crate::operation::put_remediation_exceptions::_put_remediation_exception
 
 pub use crate::operation::put_remediation_exceptions::_put_remediation_exceptions_input::PutRemediationExceptionsInputBuilder;
 
+impl PutRemediationExceptionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_remediation_exceptions::PutRemediationExceptionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_remediation_exceptions::PutRemediationExceptionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_remediation_exceptions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutRemediationExceptions`.
 ///
 /// <p>A remediation exception is when a specified resource is no longer considered for auto-remediation. This API adds a new exception or updates an existing exception for a specified resource with a specified Config rule. </p> <note>

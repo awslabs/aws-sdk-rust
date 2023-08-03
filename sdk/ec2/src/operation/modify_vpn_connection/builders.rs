@@ -3,6 +3,23 @@ pub use crate::operation::modify_vpn_connection::_modify_vpn_connection_output::
 
 pub use crate::operation::modify_vpn_connection::_modify_vpn_connection_input::ModifyVpnConnectionInputBuilder;
 
+impl ModifyVpnConnectionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_vpn_connection::ModifyVpnConnectionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_vpn_connection::ModifyVpnConnectionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_vpn_connection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyVpnConnection`.
 ///
 /// <p>Modifies the customer gateway or the target gateway of an Amazon Web Services Site-to-Site VPN connection. To modify the target gateway, the following migration options are available:</p>

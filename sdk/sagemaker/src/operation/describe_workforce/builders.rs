@@ -3,6 +3,23 @@ pub use crate::operation::describe_workforce::_describe_workforce_output::Descri
 
 pub use crate::operation::describe_workforce::_describe_workforce_input::DescribeWorkforceInputBuilder;
 
+impl DescribeWorkforceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_workforce::DescribeWorkforceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_workforce::DescribeWorkforceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_workforce();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeWorkforce`.
 ///
 /// <p>Lists private workforce information, including workforce name, Amazon Resource Name (ARN), and, if applicable, allowed IP address ranges (<a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Subnets.html">CIDRs</a>). Allowable IP address ranges are the IP addresses that workers can use to access tasks. </p> <important>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_directory_config::_delete_directory_config_outp
 
 pub use crate::operation::delete_directory_config::_delete_directory_config_input::DeleteDirectoryConfigInputBuilder;
 
+impl DeleteDirectoryConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_directory_config::DeleteDirectoryConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_directory_config::DeleteDirectoryConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_directory_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteDirectoryConfig`.
 ///
 /// <p>Deletes the specified Directory Config object from AppStream 2.0. This object includes the information required to join streaming instances to an Active Directory domain.</p>

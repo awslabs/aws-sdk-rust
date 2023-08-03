@@ -3,6 +3,23 @@ pub use crate::operation::describe_continuous_exports::_describe_continuous_expo
 
 pub use crate::operation::describe_continuous_exports::_describe_continuous_exports_input::DescribeContinuousExportsInputBuilder;
 
+impl DescribeContinuousExportsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_continuous_exports::DescribeContinuousExportsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_continuous_exports::DescribeContinuousExportsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_continuous_exports();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeContinuousExports`.
 ///
 /// <p>Lists exports as specified by ID. All continuous exports associated with your user can be listed if you call <code>DescribeContinuousExports</code> as is without passing any parameters.</p>

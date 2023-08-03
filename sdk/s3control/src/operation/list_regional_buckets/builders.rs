@@ -3,6 +3,23 @@ pub use crate::operation::list_regional_buckets::_list_regional_buckets_output::
 
 pub use crate::operation::list_regional_buckets::_list_regional_buckets_input::ListRegionalBucketsInputBuilder;
 
+impl ListRegionalBucketsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_regional_buckets::ListRegionalBucketsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_regional_buckets::ListRegionalBucketsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_regional_buckets();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListRegionalBuckets`.
 ///
 /// <p>Returns a list of all Outposts buckets in an Outpost that are owned by the authenticated sender of the request. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html">Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>

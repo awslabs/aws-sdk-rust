@@ -3,6 +3,23 @@ pub use crate::operation::create_code_signing_config::_create_code_signing_confi
 
 pub use crate::operation::create_code_signing_config::_create_code_signing_config_input::CreateCodeSigningConfigInputBuilder;
 
+impl CreateCodeSigningConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_code_signing_config::CreateCodeSigningConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_code_signing_config::CreateCodeSigningConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_code_signing_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateCodeSigningConfig`.
 ///
 /// <p>Creates a code signing configuration. A <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-codesigning.html">code signing configuration</a> defines a list of allowed signing profiles and defines the code-signing validation policy (action to be taken if deployment validation checks fail). </p>

@@ -3,6 +3,23 @@ pub use crate::operation::cancel_task::_cancel_task_output::CancelTaskOutputBuil
 
 pub use crate::operation::cancel_task::_cancel_task_input::CancelTaskInputBuilder;
 
+impl CancelTaskInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::cancel_task::CancelTaskOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::cancel_task::CancelTaskError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.cancel_task();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CancelTask`.
 ///
 /// <p>Sends a cancel request for a specified task. You can cancel a task only if it's still in a <code>QUEUED</code> state. Tasks that are already running can't be cancelled.</p> <note>

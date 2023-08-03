@@ -3,6 +3,23 @@ pub use crate::operation::invite_account_to_organization::_invite_account_to_org
 
 pub use crate::operation::invite_account_to_organization::_invite_account_to_organization_input::InviteAccountToOrganizationInputBuilder;
 
+impl InviteAccountToOrganizationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::invite_account_to_organization::InviteAccountToOrganizationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::invite_account_to_organization::InviteAccountToOrganizationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.invite_account_to_organization();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `InviteAccountToOrganization`.
 ///
 /// <p>Sends an invitation to another account to join your organization as a member account. Organizations sends email on your behalf to the email address that is associated with the other account's owner. The invitation is implemented as a <code>Handshake</code> whose details are in the response.</p> <important>

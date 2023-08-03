@@ -3,6 +3,23 @@ pub use crate::operation::create_stack_set::_create_stack_set_output::CreateStac
 
 pub use crate::operation::create_stack_set::_create_stack_set_input::CreateStackSetInputBuilder;
 
+impl CreateStackSetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_stack_set::CreateStackSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_stack_set::CreateStackSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_stack_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateStackSet`.
 ///
 /// <p>Creates a stack set.</p>

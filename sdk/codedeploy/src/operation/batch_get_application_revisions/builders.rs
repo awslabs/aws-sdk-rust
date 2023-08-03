@@ -3,6 +3,23 @@ pub use crate::operation::batch_get_application_revisions::_batch_get_applicatio
 
 pub use crate::operation::batch_get_application_revisions::_batch_get_application_revisions_input::BatchGetApplicationRevisionsInputBuilder;
 
+impl BatchGetApplicationRevisionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_application_revisions::BatchGetApplicationRevisionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_get_application_revisions::BatchGetApplicationRevisionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_get_application_revisions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchGetApplicationRevisions`.
 ///
 /// <p>Gets information about one or more application revisions. The maximum number of application revisions that can be returned is 25.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::update_deletion_protection::_update_deletion_protectio
 
 pub use crate::operation::update_deletion_protection::_update_deletion_protection_input::UpdateDeletionProtectionInputBuilder;
 
+impl UpdateDeletionProtectionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_deletion_protection::UpdateDeletionProtectionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_deletion_protection::UpdateDeletionProtectionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_deletion_protection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateDeletionProtection`.
 ///
 /// <p>Update deletion protection to either allow or deny deletion of the final Region in a replication set.</p>

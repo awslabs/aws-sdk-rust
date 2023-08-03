@@ -3,6 +3,23 @@ pub use crate::operation::describe_stack_resources::_describe_stack_resources_ou
 
 pub use crate::operation::describe_stack_resources::_describe_stack_resources_input::DescribeStackResourcesInputBuilder;
 
+impl DescribeStackResourcesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_stack_resources::DescribeStackResourcesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_stack_resources::DescribeStackResourcesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_stack_resources();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeStackResources`.
 ///
 /// <p>Returns Amazon Web Services resource descriptions for running and deleted stacks. If <code>StackName</code> is specified, all the associated resources that are part of the stack are returned. If <code>PhysicalResourceId</code> is specified, the associated resources of the stack that the resource belongs to are returned.</p> <note>

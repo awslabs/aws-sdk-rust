@@ -3,6 +3,23 @@ pub use crate::operation::create_project::_create_project_output::CreateProjectO
 
 pub use crate::operation::create_project::_create_project_input::CreateProjectInputBuilder;
 
+impl CreateProjectInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_project::CreateProjectOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_project::CreateProjectError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_project();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateProject`.
 ///
 /// <p>Creates an empty Amazon Lookout for Vision project. After you create the project, add a dataset by calling <code>CreateDataset</code>.</p>

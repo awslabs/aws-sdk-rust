@@ -3,6 +3,23 @@ pub use crate::operation::describe_user_stack_associations::_describe_user_stack
 
 pub use crate::operation::describe_user_stack_associations::_describe_user_stack_associations_input::DescribeUserStackAssociationsInputBuilder;
 
+impl DescribeUserStackAssociationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_user_stack_associations::DescribeUserStackAssociationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_user_stack_associations::DescribeUserStackAssociationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_user_stack_associations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeUserStackAssociations`.
 ///
 /// <p>Retrieves a list that describes the UserStackAssociation objects. You must specify either or both of the following:</p>

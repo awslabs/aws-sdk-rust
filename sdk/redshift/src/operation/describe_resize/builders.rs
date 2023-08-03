@@ -3,6 +3,23 @@ pub use crate::operation::describe_resize::_describe_resize_output::DescribeResi
 
 pub use crate::operation::describe_resize::_describe_resize_input::DescribeResizeInputBuilder;
 
+impl DescribeResizeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_resize::DescribeResizeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_resize::DescribeResizeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_resize();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeResize`.
 ///
 /// <p>Returns information about the last resize operation for the specified cluster. If no resize operation has ever been initiated for the specified cluster, a <code>HTTP 404</code> error is returned. If a resize operation was initiated and completed, the status of the resize remains as <code>SUCCEEDED</code> until the next resize. </p>

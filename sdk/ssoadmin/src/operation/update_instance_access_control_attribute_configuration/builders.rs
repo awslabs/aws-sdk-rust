@@ -3,6 +3,17 @@ pub use crate::operation::update_instance_access_control_attribute_configuration
 
 pub use crate::operation::update_instance_access_control_attribute_configuration::_update_instance_access_control_attribute_configuration_input::UpdateInstanceAccessControlAttributeConfigurationInputBuilder;
 
+impl UpdateInstanceAccessControlAttributeConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::update_instance_access_control_attribute_configuration::UpdateInstanceAccessControlAttributeConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_instance_access_control_attribute_configuration::UpdateInstanceAccessControlAttributeConfigurationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.update_instance_access_control_attribute_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateInstanceAccessControlAttributeConfiguration`.
 ///
 /// <p>Updates the IAM Identity Center identity store attributes that you can use with the IAM Identity Center instance for attributes-based access control (ABAC). When using an external identity provider as an identity source, you can pass attributes through the SAML assertion as an alternative to configuring attributes from the IAM Identity Center identity store. If a SAML assertion passes any of these attributes, IAM Identity Center replaces the attribute value with the value from the IAM Identity Center identity store. For more information about ABAC, see <a href="/singlesignon/latest/userguide/abac.html">Attribute-Based Access Control</a> in the <i>IAM Identity Center User Guide</i>.</p>

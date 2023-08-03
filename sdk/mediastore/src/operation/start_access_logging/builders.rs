@@ -3,6 +3,23 @@ pub use crate::operation::start_access_logging::_start_access_logging_output::St
 
 pub use crate::operation::start_access_logging::_start_access_logging_input::StartAccessLoggingInputBuilder;
 
+impl StartAccessLoggingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_access_logging::StartAccessLoggingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_access_logging::StartAccessLoggingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_access_logging();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartAccessLogging`.
 ///
 /// <p>Starts access logging on the specified container. When you enable access logging on a container, MediaStore delivers access logs for objects stored in that container to Amazon CloudWatch Logs.</p>

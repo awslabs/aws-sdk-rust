@@ -3,6 +3,17 @@ pub use crate::operation::deregister_app_instance_user_endpoint::_deregister_app
 
 pub use crate::operation::deregister_app_instance_user_endpoint::_deregister_app_instance_user_endpoint_input::DeregisterAppInstanceUserEndpointInputBuilder;
 
+impl DeregisterAppInstanceUserEndpointInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::deregister_app_instance_user_endpoint::DeregisterAppInstanceUserEndpointOutput, ::aws_smithy_http::result::SdkError<crate::operation::deregister_app_instance_user_endpoint::DeregisterAppInstanceUserEndpointError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.deregister_app_instance_user_endpoint();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeregisterAppInstanceUserEndpoint`.
 ///
 /// <p>Deregisters an <code>AppInstanceUserEndpoint</code>.</p>

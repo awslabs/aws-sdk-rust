@@ -3,6 +3,23 @@ pub use crate::operation::update_state_machine_alias::_update_state_machine_alia
 
 pub use crate::operation::update_state_machine_alias::_update_state_machine_alias_input::UpdateStateMachineAliasInputBuilder;
 
+impl UpdateStateMachineAliasInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_state_machine_alias::UpdateStateMachineAliasOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_state_machine_alias::UpdateStateMachineAliasError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_state_machine_alias();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateStateMachineAlias`.
 ///
 /// <p>Updates the configuration of an existing state machine <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a> by modifying its <code>description</code> or <code>routingConfiguration</code>.</p>

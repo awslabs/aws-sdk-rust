@@ -3,6 +3,23 @@ pub use crate::operation::untag_policy::_untag_policy_output::UntagPolicyOutputB
 
 pub use crate::operation::untag_policy::_untag_policy_input::UntagPolicyInputBuilder;
 
+impl UntagPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::untag_policy::UntagPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::untag_policy::UntagPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.untag_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UntagPolicy`.
 ///
 /// <p>Removes the specified tags from the customer managed policy. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>

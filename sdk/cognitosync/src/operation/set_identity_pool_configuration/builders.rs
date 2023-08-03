@@ -3,6 +3,23 @@ pub use crate::operation::set_identity_pool_configuration::_set_identity_pool_co
 
 pub use crate::operation::set_identity_pool_configuration::_set_identity_pool_configuration_input::SetIdentityPoolConfigurationInputBuilder;
 
+impl SetIdentityPoolConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::set_identity_pool_configuration::SetIdentityPoolConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::set_identity_pool_configuration::SetIdentityPoolConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.set_identity_pool_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SetIdentityPoolConfiguration`.
 ///
 /// <p>Sets the necessary configuration for push sync.</p>

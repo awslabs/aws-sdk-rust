@@ -3,6 +3,23 @@ pub use crate::operation::get_schedule::_get_schedule_output::GetScheduleOutputB
 
 pub use crate::operation::get_schedule::_get_schedule_input::GetScheduleInputBuilder;
 
+impl GetScheduleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_schedule::GetScheduleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_schedule::GetScheduleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_schedule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetSchedule`.
 ///
 /// <p>Retrieves the specified schedule.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::search_resources::_search_resources_output::SearchReso
 
 pub use crate::operation::search_resources::_search_resources_input::SearchResourcesInputBuilder;
 
+impl SearchResourcesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::search_resources::SearchResourcesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::search_resources::SearchResourcesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.search_resources();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SearchResources`.
 ///
 /// <p>Returns a list of Amazon Web Services resource identifiers that matches the specified query. The query uses the same format as a resource query in a <code>CreateGroup</code> or <code>UpdateGroupQuery</code> operation.</p>

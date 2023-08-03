@@ -3,6 +3,23 @@ pub use crate::operation::get_entities::_get_entities_output::GetEntitiesOutputB
 
 pub use crate::operation::get_entities::_get_entities_input::GetEntitiesInputBuilder;
 
+impl GetEntitiesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_entities::GetEntitiesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_entities::GetEntitiesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_entities();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetEntities`.
 ///
 /// <p>Gets definitions of the specified entities. Uses the latest version of the user's namespace by default. This API returns the following TDM entities.</p>

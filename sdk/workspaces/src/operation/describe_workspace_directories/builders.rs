@@ -3,6 +3,23 @@ pub use crate::operation::describe_workspace_directories::_describe_workspace_di
 
 pub use crate::operation::describe_workspace_directories::_describe_workspace_directories_input::DescribeWorkspaceDirectoriesInputBuilder;
 
+impl DescribeWorkspaceDirectoriesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_workspace_directories::DescribeWorkspaceDirectoriesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_workspace_directories::DescribeWorkspaceDirectoriesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_workspace_directories();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeWorkspaceDirectories`.
 ///
 /// <p>Describes the available directories that are registered with Amazon WorkSpaces.</p>

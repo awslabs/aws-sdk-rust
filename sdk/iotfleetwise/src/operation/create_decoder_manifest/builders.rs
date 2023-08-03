@@ -3,6 +3,23 @@ pub use crate::operation::create_decoder_manifest::_create_decoder_manifest_outp
 
 pub use crate::operation::create_decoder_manifest::_create_decoder_manifest_input::CreateDecoderManifestInputBuilder;
 
+impl CreateDecoderManifestInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_decoder_manifest::CreateDecoderManifestOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_decoder_manifest::CreateDecoderManifestError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_decoder_manifest();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateDecoderManifest`.
 ///
 /// <p>Creates the decoder manifest associated with a model manifest. To create a decoder manifest, the following must be true:</p>

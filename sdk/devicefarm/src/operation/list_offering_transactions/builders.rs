@@ -3,6 +3,23 @@ pub use crate::operation::list_offering_transactions::_list_offering_transaction
 
 pub use crate::operation::list_offering_transactions::_list_offering_transactions_input::ListOfferingTransactionsInputBuilder;
 
+impl ListOfferingTransactionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_offering_transactions::ListOfferingTransactionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_offering_transactions::ListOfferingTransactionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_offering_transactions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListOfferingTransactions`.
 ///
 /// <p>Returns a list of all historical purchases, renewals, and system renewal transactions for an AWS account. The list is paginated and ordered by a descending timestamp (most recent transactions are first). The API returns a <code>NotEligible</code> error if the user is not permitted to invoke the operation. If you must be able to invoke this operation, contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_typed_link_facet::_delete_typed_link_facet_outp
 
 pub use crate::operation::delete_typed_link_facet::_delete_typed_link_facet_input::DeleteTypedLinkFacetInputBuilder;
 
+impl DeleteTypedLinkFacetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_typed_link_facet::DeleteTypedLinkFacetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_typed_link_facet::DeleteTypedLinkFacetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_typed_link_facet();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteTypedLinkFacet`.
 ///
 /// <p>Deletes a <code>TypedLinkFacet</code>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_table_restore_status::_list_table_restore_status_
 
 pub use crate::operation::list_table_restore_status::_list_table_restore_status_input::ListTableRestoreStatusInputBuilder;
 
+impl ListTableRestoreStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_table_restore_status::ListTableRestoreStatusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_table_restore_status::ListTableRestoreStatusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_table_restore_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListTableRestoreStatus`.
 ///
 /// <p>Returns information about an array of <code>TableRestoreStatus</code> objects.</p>

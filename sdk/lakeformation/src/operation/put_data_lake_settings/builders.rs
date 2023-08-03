@@ -3,6 +3,23 @@ pub use crate::operation::put_data_lake_settings::_put_data_lake_settings_output
 
 pub use crate::operation::put_data_lake_settings::_put_data_lake_settings_input::PutDataLakeSettingsInputBuilder;
 
+impl PutDataLakeSettingsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_data_lake_settings::PutDataLakeSettingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_data_lake_settings::PutDataLakeSettingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_data_lake_settings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutDataLakeSettings`.
 ///
 /// <p>Sets the list of data lake administrators who have admin privileges on all resources managed by Lake Formation. For more information on admin privileges, see <a href="https://docs.aws.amazon.com/lake-formation/latest/dg/lake-formation-permissions.html">Granting Lake Formation Permissions</a>.</p>

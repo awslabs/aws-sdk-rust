@@ -3,6 +3,23 @@ pub use crate::operation::query_assistant::_query_assistant_output::QueryAssista
 
 pub use crate::operation::query_assistant::_query_assistant_input::QueryAssistantInputBuilder;
 
+impl QueryAssistantInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::query_assistant::QueryAssistantOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::query_assistant::QueryAssistantError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.query_assistant();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `QueryAssistant`.
 ///
 /// <p>Performs a manual search against the specified assistant. To retrieve recommendations for an assistant, use <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetRecommendations.html">GetRecommendations</a>. </p>

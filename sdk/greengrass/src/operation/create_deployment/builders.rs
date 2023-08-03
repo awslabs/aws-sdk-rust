@@ -3,6 +3,23 @@ pub use crate::operation::create_deployment::_create_deployment_output::CreateDe
 
 pub use crate::operation::create_deployment::_create_deployment_input::CreateDeploymentInputBuilder;
 
+impl CreateDeploymentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_deployment::CreateDeploymentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_deployment::CreateDeploymentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_deployment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateDeployment`.
 ///
 /// Creates a deployment. ''CreateDeployment'' requests are idempotent with respect to the ''X-Amzn-Client-Token'' token and the request parameters.

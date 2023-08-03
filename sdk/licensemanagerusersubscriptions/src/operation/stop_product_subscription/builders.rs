@@ -3,6 +3,23 @@ pub use crate::operation::stop_product_subscription::_stop_product_subscription_
 
 pub use crate::operation::stop_product_subscription::_stop_product_subscription_input::StopProductSubscriptionInputBuilder;
 
+impl StopProductSubscriptionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_product_subscription::StopProductSubscriptionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_product_subscription::StopProductSubscriptionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_product_subscription();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopProductSubscription`.
 ///
 /// <p>Stops a product subscription for a user with the specified identity provider.</p>

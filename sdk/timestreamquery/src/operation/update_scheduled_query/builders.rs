@@ -3,6 +3,23 @@ pub use crate::operation::update_scheduled_query::_update_scheduled_query_output
 
 pub use crate::operation::update_scheduled_query::_update_scheduled_query_input::UpdateScheduledQueryInputBuilder;
 
+impl UpdateScheduledQueryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_scheduled_query::UpdateScheduledQueryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_scheduled_query::UpdateScheduledQueryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_scheduled_query();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateScheduledQuery`.
 ///
 /// <p>Update a scheduled query.</p>

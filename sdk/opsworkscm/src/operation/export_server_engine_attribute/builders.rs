@@ -3,6 +3,23 @@ pub use crate::operation::export_server_engine_attribute::_export_server_engine_
 
 pub use crate::operation::export_server_engine_attribute::_export_server_engine_attribute_input::ExportServerEngineAttributeInputBuilder;
 
+impl ExportServerEngineAttributeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::export_server_engine_attribute::ExportServerEngineAttributeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::export_server_engine_attribute::ExportServerEngineAttributeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.export_server_engine_attribute();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ExportServerEngineAttribute`.
 ///
 /// <p> Exports a specified server engine attribute as a base64-encoded string. For example, you can export user data that you can use in EC2 to associate nodes with a server. </p>

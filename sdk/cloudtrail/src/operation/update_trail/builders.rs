@@ -3,6 +3,23 @@ pub use crate::operation::update_trail::_update_trail_output::UpdateTrailOutputB
 
 pub use crate::operation::update_trail::_update_trail_input::UpdateTrailInputBuilder;
 
+impl UpdateTrailInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_trail::UpdateTrailOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_trail::UpdateTrailError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_trail();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateTrail`.
 ///
 /// <p>Updates trail settings that control what events you are logging, and how to handle log files. Changes to a trail do not require stopping the CloudTrail service. Use this action to designate an existing bucket for log delivery. If the existing bucket has previously been a target for CloudTrail log files, an IAM policy exists for the bucket. <code>UpdateTrail</code> must be called from the Region in which the trail was created; otherwise, an <code>InvalidHomeRegionException</code> is thrown.</p>

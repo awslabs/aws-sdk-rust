@@ -3,6 +3,23 @@ pub use crate::operation::list_code_signing_configs::_list_code_signing_configs_
 
 pub use crate::operation::list_code_signing_configs::_list_code_signing_configs_input::ListCodeSigningConfigsInputBuilder;
 
+impl ListCodeSigningConfigsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_code_signing_configs::ListCodeSigningConfigsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_code_signing_configs::ListCodeSigningConfigsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_code_signing_configs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListCodeSigningConfigs`.
 ///
 /// <p>Returns a list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuring-codesigning.html">code signing configurations</a>. A request returns up to 10,000 configurations per call. You can use the <code>MaxItems</code> parameter to return fewer configurations per call. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_user::_describe_user_output::DescribeUserOutp
 
 pub use crate::operation::describe_user::_describe_user_input::DescribeUserInputBuilder;
 
+impl DescribeUserInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_user::DescribeUserOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_user::DescribeUserError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_user();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeUser`.
 ///
 /// <p>Describes the user assigned to the specific file transfer protocol-enabled server, as identified by its <code>ServerId</code> property.</p>

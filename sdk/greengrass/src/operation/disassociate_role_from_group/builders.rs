@@ -3,6 +3,23 @@ pub use crate::operation::disassociate_role_from_group::_disassociate_role_from_
 
 pub use crate::operation::disassociate_role_from_group::_disassociate_role_from_group_input::DisassociateRoleFromGroupInputBuilder;
 
+impl DisassociateRoleFromGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_role_from_group::DisassociateRoleFromGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_role_from_group::DisassociateRoleFromGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disassociate_role_from_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateRoleFromGroup`.
 ///
 /// Disassociates the role from a group.

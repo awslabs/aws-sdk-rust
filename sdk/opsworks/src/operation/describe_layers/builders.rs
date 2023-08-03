@@ -3,6 +3,23 @@ pub use crate::operation::describe_layers::_describe_layers_output::DescribeLaye
 
 pub use crate::operation::describe_layers::_describe_layers_input::DescribeLayersInputBuilder;
 
+impl DescribeLayersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_layers::DescribeLayersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_layers::DescribeLayersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_layers();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeLayers`.
 ///
 /// <p>Requests a description of one or more layers in a specified stack.</p> <note>

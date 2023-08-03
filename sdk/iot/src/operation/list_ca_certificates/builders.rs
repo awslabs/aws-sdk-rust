@@ -3,6 +3,23 @@ pub use crate::operation::list_ca_certificates::_list_ca_certificates_output::Li
 
 pub use crate::operation::list_ca_certificates::_list_ca_certificates_input::ListCaCertificatesInputBuilder;
 
+impl ListCaCertificatesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_ca_certificates::ListCaCertificatesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_ca_certificates::ListCACertificatesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_ca_certificates();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListCACertificates`.
 ///
 /// <p>Lists the CA certificates registered for your Amazon Web Services account.</p>

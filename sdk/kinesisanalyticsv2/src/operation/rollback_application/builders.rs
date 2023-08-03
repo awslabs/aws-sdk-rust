@@ -3,6 +3,23 @@ pub use crate::operation::rollback_application::_rollback_application_output::Ro
 
 pub use crate::operation::rollback_application::_rollback_application_input::RollbackApplicationInputBuilder;
 
+impl RollbackApplicationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::rollback_application::RollbackApplicationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::rollback_application::RollbackApplicationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.rollback_application();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RollbackApplication`.
 ///
 /// <p>Reverts the application to the previous running version. You can roll back an application if you suspect it is stuck in a transient status. </p>

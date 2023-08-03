@@ -3,6 +3,23 @@ pub use crate::operation::modify_replication_config::_modify_replication_config_
 
 pub use crate::operation::modify_replication_config::_modify_replication_config_input::ModifyReplicationConfigInputBuilder;
 
+impl ModifyReplicationConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_replication_config::ModifyReplicationConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_replication_config::ModifyReplicationConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_replication_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyReplicationConfig`.
 ///
 /// <p>Modifies an existing DMS Serverless replication configuration that you can use to start a replication. This command includes input validation and logic to check the state of any replication that uses this configuration. You can only modify a replication configuration before any replication that uses it has started. As soon as you have initially started a replication with a given configuiration, you can't modify that configuration, even if you stop it.</p>

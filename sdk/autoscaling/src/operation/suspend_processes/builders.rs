@@ -3,6 +3,23 @@ pub use crate::operation::suspend_processes::_suspend_processes_output::SuspendP
 
 pub use crate::operation::suspend_processes::_suspend_processes_input::SuspendProcessesInputBuilder;
 
+impl SuspendProcessesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::suspend_processes::SuspendProcessesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::suspend_processes::SuspendProcessesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.suspend_processes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SuspendProcesses`.
 ///
 /// <p>Suspends the specified auto scaling processes, or all processes, for the specified Auto Scaling group.</p>

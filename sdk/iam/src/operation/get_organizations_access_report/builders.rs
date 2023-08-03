@@ -3,6 +3,23 @@ pub use crate::operation::get_organizations_access_report::_get_organizations_ac
 
 pub use crate::operation::get_organizations_access_report::_get_organizations_access_report_input::GetOrganizationsAccessReportInputBuilder;
 
+impl GetOrganizationsAccessReportInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_organizations_access_report::GetOrganizationsAccessReportOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_organizations_access_report::GetOrganizationsAccessReportError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_organizations_access_report();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetOrganizationsAccessReport`.
 ///
 /// <p>Retrieves the service last accessed data report for Organizations that was previously generated using the <code> <code>GenerateOrganizationsAccessReport</code> </code> operation. This operation retrieves the status of your report job and the report contents.</p>

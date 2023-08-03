@@ -3,6 +3,23 @@ pub use crate::operation::get_stage_deployment::_get_stage_deployment_output::Ge
 
 pub use crate::operation::get_stage_deployment::_get_stage_deployment_input::GetStageDeploymentInputBuilder;
 
+impl GetStageDeploymentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_stage_deployment::GetStageDeploymentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_stage_deployment::GetStageDeploymentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_stage_deployment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetStageDeployment`.
 ///
 /// <p>Gets information about a stage deployment.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_report_job::_describe_report_job_output::Desc
 
 pub use crate::operation::describe_report_job::_describe_report_job_input::DescribeReportJobInputBuilder;
 
+impl DescribeReportJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_report_job::DescribeReportJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_report_job::DescribeReportJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_report_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeReportJob`.
 ///
 /// <p>Returns the details associated with creating a report as specified by its <code>ReportJobId</code>.</p>

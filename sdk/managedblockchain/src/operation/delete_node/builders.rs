@@ -3,6 +3,23 @@ pub use crate::operation::delete_node::_delete_node_output::DeleteNodeOutputBuil
 
 pub use crate::operation::delete_node::_delete_node_input::DeleteNodeInputBuilder;
 
+impl DeleteNodeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_node::DeleteNodeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_node::DeleteNodeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_node();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteNode`.
 ///
 /// <p>Deletes a node that your Amazon Web Services account owns. All data on the node is lost and cannot be recovered.</p>

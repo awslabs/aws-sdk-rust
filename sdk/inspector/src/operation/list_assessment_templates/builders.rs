@@ -3,6 +3,23 @@ pub use crate::operation::list_assessment_templates::_list_assessment_templates_
 
 pub use crate::operation::list_assessment_templates::_list_assessment_templates_input::ListAssessmentTemplatesInputBuilder;
 
+impl ListAssessmentTemplatesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_assessment_templates::ListAssessmentTemplatesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_assessment_templates::ListAssessmentTemplatesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_assessment_templates();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAssessmentTemplates`.
 ///
 /// <p>Lists the assessment templates that correspond to the assessment targets that are specified by the ARNs of the assessment targets.</p>

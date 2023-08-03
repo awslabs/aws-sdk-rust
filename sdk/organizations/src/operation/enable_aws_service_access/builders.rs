@@ -3,6 +3,23 @@ pub use crate::operation::enable_aws_service_access::_enable_aws_service_access_
 
 pub use crate::operation::enable_aws_service_access::_enable_aws_service_access_input::EnableAwsServiceAccessInputBuilder;
 
+impl EnableAwsServiceAccessInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::enable_aws_service_access::EnableAwsServiceAccessOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::enable_aws_service_access::EnableAWSServiceAccessError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.enable_aws_service_access();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `EnableAWSServiceAccess`.
 ///
 /// <p>Enables the integration of an Amazon Web Services service (the service that is specified by <code>ServicePrincipal</code>) with Organizations. When you enable integration, you allow the specified service to create a <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html">service-linked role</a> in all the accounts in your organization. This allows the service to perform operations on your behalf in your organization and its accounts.</p> <important>

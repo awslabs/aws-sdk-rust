@@ -3,6 +3,23 @@ pub use crate::operation::describe_detector_model::_describe_detector_model_outp
 
 pub use crate::operation::describe_detector_model::_describe_detector_model_input::DescribeDetectorModelInputBuilder;
 
+impl DescribeDetectorModelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_detector_model::DescribeDetectorModelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_detector_model::DescribeDetectorModelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_detector_model();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeDetectorModel`.
 ///
 /// <p>Describes a detector model. If the <code>version</code> parameter is not specified, information about the latest version is returned.</p>

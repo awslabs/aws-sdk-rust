@@ -3,6 +3,23 @@ pub use crate::operation::provision_device::_provision_device_output::ProvisionD
 
 pub use crate::operation::provision_device::_provision_device_input::ProvisionDeviceInputBuilder;
 
+impl ProvisionDeviceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::provision_device::ProvisionDeviceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::provision_device::ProvisionDeviceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.provision_device();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ProvisionDevice`.
 ///
 /// <p>Creates a device and returns a configuration archive. The configuration archive is a ZIP file that contains a provisioning certificate that is valid for 5 minutes. Name the configuration archive <code>certificates-omni_<i>device-name</i>.zip</code> and transfer it to the device within 5 minutes. Use the included USB storage device and connect it to the USB 3.0 port next to the HDMI output.</p>

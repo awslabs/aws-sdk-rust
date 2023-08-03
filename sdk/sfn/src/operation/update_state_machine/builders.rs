@@ -3,6 +3,23 @@ pub use crate::operation::update_state_machine::_update_state_machine_output::Up
 
 pub use crate::operation::update_state_machine::_update_state_machine_input::UpdateStateMachineInputBuilder;
 
+impl UpdateStateMachineInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_state_machine::UpdateStateMachineOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_state_machine::UpdateStateMachineError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_state_machine();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateStateMachine`.
 ///
 /// <p>Updates an existing state machine by modifying its <code>definition</code>, <code>roleArn</code>, or <code>loggingConfiguration</code>. Running executions will continue to use the previous <code>definition</code> and <code>roleArn</code>. You must include at least one of <code>definition</code> or <code>roleArn</code> or you will receive a <code>MissingRequiredParameter</code> error.</p>

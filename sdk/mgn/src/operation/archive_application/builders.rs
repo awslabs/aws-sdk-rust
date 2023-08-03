@@ -3,6 +3,23 @@ pub use crate::operation::archive_application::_archive_application_output::Arch
 
 pub use crate::operation::archive_application::_archive_application_input::ArchiveApplicationInputBuilder;
 
+impl ArchiveApplicationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::archive_application::ArchiveApplicationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::archive_application::ArchiveApplicationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.archive_application();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ArchiveApplication`.
 ///
 /// <p>Archive application.</p>

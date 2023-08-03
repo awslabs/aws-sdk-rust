@@ -3,6 +3,23 @@ pub use crate::operation::describe_theme_alias::_describe_theme_alias_output::De
 
 pub use crate::operation::describe_theme_alias::_describe_theme_alias_input::DescribeThemeAliasInputBuilder;
 
+impl DescribeThemeAliasInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_theme_alias::DescribeThemeAliasOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_theme_alias::DescribeThemeAliasError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_theme_alias();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeThemeAlias`.
 ///
 /// <p>Describes the alias for a theme.</p>

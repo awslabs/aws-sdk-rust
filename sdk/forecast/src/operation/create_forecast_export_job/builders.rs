@@ -3,6 +3,23 @@ pub use crate::operation::create_forecast_export_job::_create_forecast_export_jo
 
 pub use crate::operation::create_forecast_export_job::_create_forecast_export_job_input::CreateForecastExportJobInputBuilder;
 
+impl CreateForecastExportJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_forecast_export_job::CreateForecastExportJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_forecast_export_job::CreateForecastExportJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_forecast_export_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateForecastExportJob`.
 ///
 /// <p>Exports a forecast created by the <code>CreateForecast</code> operation to your Amazon Simple Storage Service (Amazon S3) bucket. The forecast file name will match the following conventions:</p>

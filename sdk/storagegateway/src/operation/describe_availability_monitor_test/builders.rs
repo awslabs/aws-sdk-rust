@@ -3,6 +3,17 @@ pub use crate::operation::describe_availability_monitor_test::_describe_availabi
 
 pub use crate::operation::describe_availability_monitor_test::_describe_availability_monitor_test_input::DescribeAvailabilityMonitorTestInputBuilder;
 
+impl DescribeAvailabilityMonitorTestInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_availability_monitor_test::DescribeAvailabilityMonitorTestOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_availability_monitor_test::DescribeAvailabilityMonitorTestError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_availability_monitor_test();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAvailabilityMonitorTest`.
 ///
 /// <p>Returns information about the most recent high availability monitoring test that was performed on the host in a cluster. If a test isn't performed, the status and start time in the response would be null.</p>

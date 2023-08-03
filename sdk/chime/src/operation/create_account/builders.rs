@@ -3,6 +3,23 @@ pub use crate::operation::create_account::_create_account_output::CreateAccountO
 
 pub use crate::operation::create_account::_create_account_input::CreateAccountInputBuilder;
 
+impl CreateAccountInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_account::CreateAccountOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_account::CreateAccountError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_account();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateAccount`.
 ///
 /// <p>Creates an Amazon Chime account under the administrator's AWS account. Only <code>Team</code> account types are currently supported for this action. For more information about different account types, see <a href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing Your Amazon Chime Accounts</a> in the <i>Amazon Chime Administration Guide</i>.</p>

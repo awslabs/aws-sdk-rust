@@ -3,6 +3,23 @@ pub use crate::operation::disable_serial_console_access::_disable_serial_console
 
 pub use crate::operation::disable_serial_console_access::_disable_serial_console_access_input::DisableSerialConsoleAccessInputBuilder;
 
+impl DisableSerialConsoleAccessInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disable_serial_console_access::DisableSerialConsoleAccessOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disable_serial_console_access::DisableSerialConsoleAccessError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disable_serial_console_access();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisableSerialConsoleAccess`.
 ///
 /// <p>Disables access to the EC2 serial console of all instances for your account. By default, access to the EC2 serial console is disabled for your account. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configure-access-to-serial-console.html#serial-console-account-access">Manage account access to the EC2 serial console</a> in the <i>Amazon EC2 User Guide</i>.</p>

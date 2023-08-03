@@ -3,6 +3,23 @@ pub use crate::operation::delete_tags::_delete_tags_output::DeleteTagsOutputBuil
 
 pub use crate::operation::delete_tags::_delete_tags_input::DeleteTagsInputBuilder;
 
+impl DeleteTagsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_tags::DeleteTagsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_tags::DeleteTagsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_tags();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteTags`.
 ///
 /// <p>Deletes the specified tags from an SageMaker resource.</p>

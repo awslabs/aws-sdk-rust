@@ -3,6 +3,23 @@ pub use crate::operation::update_container_agent::_update_container_agent_output
 
 pub use crate::operation::update_container_agent::_update_container_agent_input::UpdateContainerAgentInputBuilder;
 
+impl UpdateContainerAgentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_container_agent::UpdateContainerAgentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_container_agent::UpdateContainerAgentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_container_agent();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateContainerAgent`.
 ///
 /// <p>Updates the Amazon ECS container agent on a specified container instance. Updating the Amazon ECS container agent doesn't interrupt running tasks or services on the container instance. The process for updating the agent differs depending on whether your container instance was launched with the Amazon ECS-optimized AMI or another operating system.</p> <note>

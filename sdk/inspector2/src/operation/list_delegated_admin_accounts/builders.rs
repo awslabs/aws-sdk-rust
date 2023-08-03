@@ -3,6 +3,23 @@ pub use crate::operation::list_delegated_admin_accounts::_list_delegated_admin_a
 
 pub use crate::operation::list_delegated_admin_accounts::_list_delegated_admin_accounts_input::ListDelegatedAdminAccountsInputBuilder;
 
+impl ListDelegatedAdminAccountsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_delegated_admin_accounts::ListDelegatedAdminAccountsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_delegated_admin_accounts::ListDelegatedAdminAccountsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_delegated_admin_accounts();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDelegatedAdminAccounts`.
 ///
 /// <p>Lists information about the Amazon Inspector delegated administrator of your organization.</p>

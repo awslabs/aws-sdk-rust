@@ -3,6 +3,23 @@ pub use crate::operation::disassociate_admin_account::_disassociate_admin_accoun
 
 pub use crate::operation::disassociate_admin_account::_disassociate_admin_account_input::DisassociateAdminAccountInputBuilder;
 
+impl DisassociateAdminAccountInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_admin_account::DisassociateAdminAccountOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_admin_account::DisassociateAdminAccountError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disassociate_admin_account();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateAdminAccount`.
 ///
 /// <p>Disassociates an Firewall Manager administrator account. To set a different account as an Firewall Manager administrator, submit a <code>PutAdminAccount</code> request. To set an account as a default administrator account, you must submit an <code>AssociateAdminAccount</code> request.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::associate_firewall_rule_group::_associate_firewall_rul
 
 pub use crate::operation::associate_firewall_rule_group::_associate_firewall_rule_group_input::AssociateFirewallRuleGroupInputBuilder;
 
+impl AssociateFirewallRuleGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_firewall_rule_group::AssociateFirewallRuleGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_firewall_rule_group::AssociateFirewallRuleGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_firewall_rule_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateFirewallRuleGroup`.
 ///
 /// <p>Associates a <code>FirewallRuleGroup</code> with a VPC, to provide DNS filtering for the VPC. </p>

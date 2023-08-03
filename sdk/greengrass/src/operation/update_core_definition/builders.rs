@@ -3,6 +3,23 @@ pub use crate::operation::update_core_definition::_update_core_definition_output
 
 pub use crate::operation::update_core_definition::_update_core_definition_input::UpdateCoreDefinitionInputBuilder;
 
+impl UpdateCoreDefinitionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_core_definition::UpdateCoreDefinitionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_core_definition::UpdateCoreDefinitionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_core_definition();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateCoreDefinition`.
 ///
 /// Updates a core definition.

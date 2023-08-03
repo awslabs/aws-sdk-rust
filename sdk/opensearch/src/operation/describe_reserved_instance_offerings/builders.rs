@@ -3,6 +3,17 @@ pub use crate::operation::describe_reserved_instance_offerings::_describe_reserv
 
 pub use crate::operation::describe_reserved_instance_offerings::_describe_reserved_instance_offerings_input::DescribeReservedInstanceOfferingsInputBuilder;
 
+impl DescribeReservedInstanceOfferingsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_reserved_instance_offerings::DescribeReservedInstanceOfferingsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_reserved_instance_offerings::DescribeReservedInstanceOfferingsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_reserved_instance_offerings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeReservedInstanceOfferings`.
 ///
 /// <p>Describes the available Amazon OpenSearch Service Reserved Instance offerings for a given Region. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/ri.html">Reserved Instances in Amazon OpenSearch Service</a>.</p>

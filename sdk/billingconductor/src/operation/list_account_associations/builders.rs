@@ -3,6 +3,23 @@ pub use crate::operation::list_account_associations::_list_account_associations_
 
 pub use crate::operation::list_account_associations::_list_account_associations_input::ListAccountAssociationsInputBuilder;
 
+impl ListAccountAssociationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_account_associations::ListAccountAssociationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_account_associations::ListAccountAssociationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_account_associations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAccountAssociations`.
 ///
 /// <p> This is a paginated call to list linked accounts that are linked to the payer account for the specified time period. If no information is provided, the current billing period is used. The response will optionally include the billing group that's associated with the linked account.</p>

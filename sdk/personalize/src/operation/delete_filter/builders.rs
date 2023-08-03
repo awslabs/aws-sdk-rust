@@ -3,6 +3,23 @@ pub use crate::operation::delete_filter::_delete_filter_output::DeleteFilterOutp
 
 pub use crate::operation::delete_filter::_delete_filter_input::DeleteFilterInputBuilder;
 
+impl DeleteFilterInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_filter::DeleteFilterOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_filter::DeleteFilterError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_filter();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteFilter`.
 ///
 /// <p>Deletes a filter.</p>

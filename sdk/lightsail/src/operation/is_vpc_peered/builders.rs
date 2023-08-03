@@ -3,6 +3,23 @@ pub use crate::operation::is_vpc_peered::_is_vpc_peered_output::IsVpcPeeredOutpu
 
 pub use crate::operation::is_vpc_peered::_is_vpc_peered_input::IsVpcPeeredInputBuilder;
 
+impl IsVpcPeeredInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::is_vpc_peered::IsVpcPeeredOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::is_vpc_peered::IsVpcPeeredError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.is_vpc_peered();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `IsVpcPeered`.
 ///
 /// <p>Returns a Boolean value indicating whether your Lightsail VPC is peered.</p>

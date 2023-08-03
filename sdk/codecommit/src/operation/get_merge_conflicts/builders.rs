@@ -3,6 +3,23 @@ pub use crate::operation::get_merge_conflicts::_get_merge_conflicts_output::GetM
 
 pub use crate::operation::get_merge_conflicts::_get_merge_conflicts_input::GetMergeConflictsInputBuilder;
 
+impl GetMergeConflictsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_merge_conflicts::GetMergeConflictsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_merge_conflicts::GetMergeConflictsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_merge_conflicts();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetMergeConflicts`.
 ///
 /// <p>Returns information about merge conflicts between the before and after commit IDs for a pull request in a repository.</p>

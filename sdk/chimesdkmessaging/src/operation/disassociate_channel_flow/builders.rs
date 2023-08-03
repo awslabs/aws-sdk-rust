@@ -3,6 +3,23 @@ pub use crate::operation::disassociate_channel_flow::_disassociate_channel_flow_
 
 pub use crate::operation::disassociate_channel_flow::_disassociate_channel_flow_input::DisassociateChannelFlowInputBuilder;
 
+impl DisassociateChannelFlowInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_channel_flow::DisassociateChannelFlowOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_channel_flow::DisassociateChannelFlowError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disassociate_channel_flow();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateChannelFlow`.
 ///
 /// <p>Disassociates a channel flow from all its channels. Once disassociated, all messages to that channel stop going through the channel flow processor.</p> <note>

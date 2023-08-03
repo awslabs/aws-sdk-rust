@@ -3,6 +3,23 @@ pub use crate::operation::list_activity_types::_list_activity_types_output::List
 
 pub use crate::operation::list_activity_types::_list_activity_types_input::ListActivityTypesInputBuilder;
 
+impl ListActivityTypesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_activity_types::ListActivityTypesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_activity_types::ListActivityTypesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_activity_types();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListActivityTypes`.
 ///
 /// <p>Returns information about all activities registered in the specified domain that match the specified name and registration status. The result includes information like creation date, current status of the activity, etc. The results may be split into multiple pages. To retrieve subsequent pages, make the call again using the <code>nextPageToken</code> returned by the initial call.</p>

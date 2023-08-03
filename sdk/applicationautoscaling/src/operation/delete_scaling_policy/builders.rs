@@ -3,6 +3,23 @@ pub use crate::operation::delete_scaling_policy::_delete_scaling_policy_output::
 
 pub use crate::operation::delete_scaling_policy::_delete_scaling_policy_input::DeleteScalingPolicyInputBuilder;
 
+impl DeleteScalingPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_scaling_policy::DeleteScalingPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_scaling_policy::DeleteScalingPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_scaling_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteScalingPolicy`.
 ///
 /// <p>Deletes the specified scaling policy for an Application Auto Scaling scalable target.</p>

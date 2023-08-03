@@ -3,6 +3,23 @@ pub use crate::operation::start_instance_onboarding_job::_start_instance_onboard
 
 pub use crate::operation::start_instance_onboarding_job::_start_instance_onboarding_job_input::StartInstanceOnboardingJobInputBuilder;
 
+impl StartInstanceOnboardingJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_instance_onboarding_job::StartInstanceOnboardingJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_instance_onboarding_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartInstanceOnboardingJob`.
 ///
 /// Onboard the specific Amazon Connect instance to Connect Campaigns.

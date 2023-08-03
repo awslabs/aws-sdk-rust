@@ -3,6 +3,23 @@ pub use crate::operation::describe_pull_through_cache_rules::_describe_pull_thro
 
 pub use crate::operation::describe_pull_through_cache_rules::_describe_pull_through_cache_rules_input::DescribePullThroughCacheRulesInputBuilder;
 
+impl DescribePullThroughCacheRulesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_pull_through_cache_rules::DescribePullThroughCacheRulesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_pull_through_cache_rules::DescribePullThroughCacheRulesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_pull_through_cache_rules();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribePullThroughCacheRules`.
 ///
 /// <p>Returns the pull through cache rules for a registry.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_traffic_sources::_describe_traffic_sources_ou
 
 pub use crate::operation::describe_traffic_sources::_describe_traffic_sources_input::DescribeTrafficSourcesInputBuilder;
 
+impl DescribeTrafficSourcesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_traffic_sources::DescribeTrafficSourcesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_traffic_sources::DescribeTrafficSourcesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_traffic_sources();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeTrafficSources`.
 ///
 /// <p>Gets information about the traffic sources for the specified Auto Scaling group.</p>

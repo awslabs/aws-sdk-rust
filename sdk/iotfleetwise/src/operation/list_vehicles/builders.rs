@@ -3,6 +3,23 @@ pub use crate::operation::list_vehicles::_list_vehicles_output::ListVehiclesOutp
 
 pub use crate::operation::list_vehicles::_list_vehicles_input::ListVehiclesInputBuilder;
 
+impl ListVehiclesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_vehicles::ListVehiclesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_vehicles::ListVehiclesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_vehicles();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListVehicles`.
 ///
 /// <p> Retrieves a list of summaries of created vehicles. </p> <note>

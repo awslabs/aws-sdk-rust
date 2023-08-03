@@ -3,6 +3,23 @@ pub use crate::operation::get_document_text_detection::_get_document_text_detect
 
 pub use crate::operation::get_document_text_detection::_get_document_text_detection_input::GetDocumentTextDetectionInputBuilder;
 
+impl GetDocumentTextDetectionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_document_text_detection::GetDocumentTextDetectionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_document_text_detection::GetDocumentTextDetectionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_document_text_detection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetDocumentTextDetection`.
 ///
 /// <p>Gets the results for an Amazon Textract asynchronous operation that detects text in a document. Amazon Textract can detect lines of text and the words that make up a line of text.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_destination::_get_destination_output::GetDestinati
 
 pub use crate::operation::get_destination::_get_destination_input::GetDestinationInputBuilder;
 
+impl GetDestinationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_destination::GetDestinationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_destination::GetDestinationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_destination();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetDestination`.
 ///
 /// Grants permission to get a destination

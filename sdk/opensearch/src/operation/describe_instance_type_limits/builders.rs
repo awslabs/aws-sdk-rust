@@ -3,6 +3,23 @@ pub use crate::operation::describe_instance_type_limits::_describe_instance_type
 
 pub use crate::operation::describe_instance_type_limits::_describe_instance_type_limits_input::DescribeInstanceTypeLimitsInputBuilder;
 
+impl DescribeInstanceTypeLimitsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_instance_type_limits::DescribeInstanceTypeLimitsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_instance_type_limits::DescribeInstanceTypeLimitsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_instance_type_limits();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeInstanceTypeLimits`.
 ///
 /// <p>Describes the instance count, storage, and master node limits for a given OpenSearch or Elasticsearch version and instance type.</p>

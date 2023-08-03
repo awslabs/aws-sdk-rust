@@ -3,6 +3,17 @@ pub use crate::operation::purchase_reserved_elasticsearch_instance_offering::_pu
 
 pub use crate::operation::purchase_reserved_elasticsearch_instance_offering::_purchase_reserved_elasticsearch_instance_offering_input::PurchaseReservedElasticsearchInstanceOfferingInputBuilder;
 
+impl PurchaseReservedElasticsearchInstanceOfferingInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::purchase_reserved_elasticsearch_instance_offering::PurchaseReservedElasticsearchInstanceOfferingOutput, ::aws_smithy_http::result::SdkError<crate::operation::purchase_reserved_elasticsearch_instance_offering::PurchaseReservedElasticsearchInstanceOfferingError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.purchase_reserved_elasticsearch_instance_offering();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PurchaseReservedElasticsearchInstanceOffering`.
 ///
 /// <p>Allows you to purchase reserved Elasticsearch instances.</p>

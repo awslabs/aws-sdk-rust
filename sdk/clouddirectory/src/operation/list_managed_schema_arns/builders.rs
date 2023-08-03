@@ -3,6 +3,23 @@ pub use crate::operation::list_managed_schema_arns::_list_managed_schema_arns_ou
 
 pub use crate::operation::list_managed_schema_arns::_list_managed_schema_arns_input::ListManagedSchemaArnsInputBuilder;
 
+impl ListManagedSchemaArnsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_managed_schema_arns::ListManagedSchemaArnsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_managed_schema_arns::ListManagedSchemaArnsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_managed_schema_arns();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListManagedSchemaArns`.
 ///
 /// <p>Lists the major version families of each managed schema. If a major version ARN is provided as SchemaArn, the minor version revisions in that family are listed instead.</p>

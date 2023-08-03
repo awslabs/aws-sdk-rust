@@ -3,6 +3,23 @@ pub use crate::operation::start_route_analysis::_start_route_analysis_output::St
 
 pub use crate::operation::start_route_analysis::_start_route_analysis_input::StartRouteAnalysisInputBuilder;
 
+impl StartRouteAnalysisInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_route_analysis::StartRouteAnalysisOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_route_analysis::StartRouteAnalysisError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_route_analysis();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartRouteAnalysis`.
 ///
 /// <p>Starts analyzing the routing path between the specified source and destination. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/tgw/route-analyzer.html">Route Analyzer</a>.</p>

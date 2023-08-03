@@ -3,6 +3,23 @@ pub use crate::operation::batch_check_layer_availability::_batch_check_layer_ava
 
 pub use crate::operation::batch_check_layer_availability::_batch_check_layer_availability_input::BatchCheckLayerAvailabilityInputBuilder;
 
+impl BatchCheckLayerAvailabilityInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_check_layer_availability::BatchCheckLayerAvailabilityOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_check_layer_availability::BatchCheckLayerAvailabilityError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_check_layer_availability();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchCheckLayerAvailability`.
 ///
 /// <p>Checks the availability of one or more image layers that are within a repository in a public registry. When an image is pushed to a repository, each image layer is checked to verify if it has been uploaded before. If it has been uploaded, then the image layer is skipped.</p> <note>

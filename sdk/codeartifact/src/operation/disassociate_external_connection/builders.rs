@@ -3,6 +3,23 @@ pub use crate::operation::disassociate_external_connection::_disassociate_extern
 
 pub use crate::operation::disassociate_external_connection::_disassociate_external_connection_input::DisassociateExternalConnectionInputBuilder;
 
+impl DisassociateExternalConnectionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_external_connection::DisassociateExternalConnectionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_external_connection::DisassociateExternalConnectionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disassociate_external_connection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateExternalConnection`.
 ///
 /// <p> Removes an existing external connection from a repository. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_canary::_create_canary_output::CreateCanaryOutp
 
 pub use crate::operation::create_canary::_create_canary_input::CreateCanaryInputBuilder;
 
+impl CreateCanaryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_canary::CreateCanaryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_canary::CreateCanaryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_canary();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateCanary`.
 ///
 /// <p>Creates a canary. Canaries are scripts that monitor your endpoints and APIs from the outside-in. Canaries help you check the availability and latency of your web services and troubleshoot anomalies by investigating load time data, screenshots of the UI, logs, and metrics. You can set up a canary to run continuously or just once. </p>

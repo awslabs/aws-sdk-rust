@@ -3,6 +3,23 @@ pub use crate::operation::delete_instance_event_window::_delete_instance_event_w
 
 pub use crate::operation::delete_instance_event_window::_delete_instance_event_window_input::DeleteInstanceEventWindowInputBuilder;
 
+impl DeleteInstanceEventWindowInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_instance_event_window::DeleteInstanceEventWindowOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_instance_event_window::DeleteInstanceEventWindowError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_instance_event_window();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteInstanceEventWindow`.
 ///
 /// <p>Deletes the specified event window.</p>

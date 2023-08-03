@@ -3,6 +3,23 @@ pub use crate::operation::describe_global_settings::_describe_global_settings_ou
 
 pub use crate::operation::describe_global_settings::_describe_global_settings_input::DescribeGlobalSettingsInputBuilder;
 
+impl DescribeGlobalSettingsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_global_settings::DescribeGlobalSettingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_global_settings::DescribeGlobalSettingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_global_settings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeGlobalSettings`.
 ///
 /// <p>Describes whether the Amazon Web Services account is opted in to cross-account backup. Returns an error if the account is not a member of an Organizations organization. Example: <code>describe-global-settings --region us-west-2</code> </p>

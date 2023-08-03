@@ -3,6 +3,23 @@ pub use crate::operation::update_matchmaking_configuration::_update_matchmaking_
 
 pub use crate::operation::update_matchmaking_configuration::_update_matchmaking_configuration_input::UpdateMatchmakingConfigurationInputBuilder;
 
+impl UpdateMatchmakingConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_matchmaking_configuration::UpdateMatchmakingConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_matchmaking_configuration::UpdateMatchmakingConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_matchmaking_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateMatchmakingConfiguration`.
 ///
 /// <p>Updates settings for a FlexMatch matchmaking configuration. These changes affect all matches and game sessions that are created after the update. To update settings, specify the configuration name to be updated and provide the new settings. </p>

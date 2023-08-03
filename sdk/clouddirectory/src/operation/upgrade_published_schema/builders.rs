@@ -3,6 +3,23 @@ pub use crate::operation::upgrade_published_schema::_upgrade_published_schema_ou
 
 pub use crate::operation::upgrade_published_schema::_upgrade_published_schema_input::UpgradePublishedSchemaInputBuilder;
 
+impl UpgradePublishedSchemaInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::upgrade_published_schema::UpgradePublishedSchemaOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::upgrade_published_schema::UpgradePublishedSchemaError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.upgrade_published_schema();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpgradePublishedSchema`.
 ///
 /// <p>Upgrades a published schema under a new minor version revision using the current contents of <code>DevelopmentSchemaArn</code>.</p>

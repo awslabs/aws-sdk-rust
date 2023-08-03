@@ -3,6 +3,23 @@ pub use crate::operation::batch_get_token_balance::_batch_get_token_balance_outp
 
 pub use crate::operation::batch_get_token_balance::_batch_get_token_balance_input::BatchGetTokenBalanceInputBuilder;
 
+impl BatchGetTokenBalanceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_token_balance::BatchGetTokenBalanceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_get_token_balance::BatchGetTokenBalanceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_get_token_balance();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchGetTokenBalance`.
 ///
 /// <p>Gets the token balance for a batch of tokens by using the <code>GetTokenBalance</code> action for every token in the request.</p> <note>

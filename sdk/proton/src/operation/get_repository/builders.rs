@@ -3,6 +3,23 @@ pub use crate::operation::get_repository::_get_repository_output::GetRepositoryO
 
 pub use crate::operation::get_repository::_get_repository_input::GetRepositoryInputBuilder;
 
+impl GetRepositoryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_repository::GetRepositoryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_repository::GetRepositoryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_repository();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetRepository`.
 ///
 /// <p>Get detail data for a linked repository.</p>

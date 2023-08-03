@@ -3,6 +3,17 @@ pub use crate::operation::delete_data_repository_association::_delete_data_repos
 
 pub use crate::operation::delete_data_repository_association::_delete_data_repository_association_input::DeleteDataRepositoryAssociationInputBuilder;
 
+impl DeleteDataRepositoryAssociationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_data_repository_association::DeleteDataRepositoryAssociationOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_data_repository_association::DeleteDataRepositoryAssociationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.delete_data_repository_association();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteDataRepositoryAssociation`.
 ///
 /// <p>Deletes a data repository association on an Amazon FSx for Lustre file system. Deleting the data repository association unlinks the file system from the Amazon S3 bucket. When deleting a data repository association, you have the option of deleting the data in the file system that corresponds to the data repository association. Data repository associations are supported on all FSx for Lustre 2.12 and newer file systems, excluding <code>scratch_1</code> deployment type.</p>

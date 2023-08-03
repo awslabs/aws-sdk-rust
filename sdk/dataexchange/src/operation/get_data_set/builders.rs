@@ -3,6 +3,23 @@ pub use crate::operation::get_data_set::_get_data_set_output::GetDataSetOutputBu
 
 pub use crate::operation::get_data_set::_get_data_set_input::GetDataSetInputBuilder;
 
+impl GetDataSetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_data_set::GetDataSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_data_set::GetDataSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_data_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetDataSet`.
 ///
 /// <p>This operation returns information about a data set.</p>

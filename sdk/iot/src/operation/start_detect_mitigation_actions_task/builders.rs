@@ -3,6 +3,17 @@ pub use crate::operation::start_detect_mitigation_actions_task::_start_detect_mi
 
 pub use crate::operation::start_detect_mitigation_actions_task::_start_detect_mitigation_actions_task_input::StartDetectMitigationActionsTaskInputBuilder;
 
+impl StartDetectMitigationActionsTaskInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::start_detect_mitigation_actions_task::StartDetectMitigationActionsTaskOutput, ::aws_smithy_http::result::SdkError<crate::operation::start_detect_mitigation_actions_task::StartDetectMitigationActionsTaskError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.start_detect_mitigation_actions_task();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartDetectMitigationActionsTask`.
 ///
 /// <p> Starts a Device Defender ML Detect mitigation actions task. </p>

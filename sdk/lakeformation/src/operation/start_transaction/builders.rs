@@ -3,6 +3,23 @@ pub use crate::operation::start_transaction::_start_transaction_output::StartTra
 
 pub use crate::operation::start_transaction::_start_transaction_input::StartTransactionInputBuilder;
 
+impl StartTransactionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_transaction::StartTransactionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_transaction::StartTransactionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_transaction();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartTransaction`.
 ///
 /// <p>Starts a new transaction and returns its transaction ID. Transaction IDs are opaque objects that you can use to identify a transaction.</p>

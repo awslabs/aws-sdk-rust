@@ -3,6 +3,23 @@ pub use crate::operation::get_phone_number_order::_get_phone_number_order_output
 
 pub use crate::operation::get_phone_number_order::_get_phone_number_order_input::GetPhoneNumberOrderInputBuilder;
 
+impl GetPhoneNumberOrderInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_phone_number_order::GetPhoneNumberOrderOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_phone_number_order::GetPhoneNumberOrderError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_phone_number_order();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetPhoneNumberOrder`.
 ///
 /// <p>Retrieves details for the specified phone number order, such as the order creation timestamp, phone numbers in E.164 format, product type, and order status.</p>

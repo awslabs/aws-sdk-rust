@@ -3,6 +3,23 @@ pub use crate::operation::assume_role_with_web_identity::_assume_role_with_web_i
 
 pub use crate::operation::assume_role_with_web_identity::_assume_role_with_web_identity_input::AssumeRoleWithWebIdentityInputBuilder;
 
+impl AssumeRoleWithWebIdentityInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::assume_role_with_web_identity::AssumeRoleWithWebIdentityError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.assume_role_with_web_identity();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssumeRoleWithWebIdentity`.
 ///
 /// <p>Returns a set of temporary security credentials for users who have been authenticated in a mobile or web application with a web identity provider. Example providers include the OAuth 2.0 providers Login with Amazon and Facebook, or any OpenID Connect-compatible identity provider such as Google or <a href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-identity.html">Amazon Cognito federated identities</a>.</p> <note>

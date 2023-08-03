@@ -3,6 +3,23 @@ pub use crate::operation::start_discovery_job::_start_discovery_job_output::Star
 
 pub use crate::operation::start_discovery_job::_start_discovery_job_input::StartDiscoveryJobInputBuilder;
 
+impl StartDiscoveryJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_discovery_job::StartDiscoveryJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_discovery_job::StartDiscoveryJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_discovery_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartDiscoveryJob`.
 ///
 /// <p>Runs a DataSync discovery job on your on-premises storage system. If you haven't added the storage system to DataSync Discovery yet, do this first by using the <a href="https://docs.aws.amazon.com/datasync/latest/userguide/API_AddStorageSystem.html">AddStorageSystem</a> operation.</p>

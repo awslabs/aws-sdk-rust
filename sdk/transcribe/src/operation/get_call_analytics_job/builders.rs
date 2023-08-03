@@ -3,6 +3,23 @@ pub use crate::operation::get_call_analytics_job::_get_call_analytics_job_output
 
 pub use crate::operation::get_call_analytics_job::_get_call_analytics_job_input::GetCallAnalyticsJobInputBuilder;
 
+impl GetCallAnalyticsJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_call_analytics_job::GetCallAnalyticsJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_call_analytics_job::GetCallAnalyticsJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_call_analytics_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetCallAnalyticsJob`.
 ///
 /// <p>Provides information about the specified Call Analytics job.</p>

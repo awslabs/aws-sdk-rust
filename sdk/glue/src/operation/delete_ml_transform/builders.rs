@@ -3,6 +3,23 @@ pub use crate::operation::delete_ml_transform::_delete_ml_transform_output::Dele
 
 pub use crate::operation::delete_ml_transform::_delete_ml_transform_input::DeleteMlTransformInputBuilder;
 
+impl DeleteMlTransformInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_ml_transform::DeleteMlTransformOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_ml_transform::DeleteMLTransformError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_ml_transform();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteMLTransform`.
 ///
 /// <p>Deletes an Glue machine learning transform. Machine learning transforms are a special type of transform that use machine learning to learn the details of the transformation to be performed by learning from examples provided by humans. These transformations are then saved by Glue. If you no longer need a transform, you can delete it by calling <code>DeleteMLTransforms</code>. However, any Glue jobs that still reference the deleted transform will no longer succeed.</p>

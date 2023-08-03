@@ -3,6 +3,23 @@ pub use crate::operation::describe_recovery_snapshots::_describe_recovery_snapsh
 
 pub use crate::operation::describe_recovery_snapshots::_describe_recovery_snapshots_input::DescribeRecoverySnapshotsInputBuilder;
 
+impl DescribeRecoverySnapshotsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_recovery_snapshots::DescribeRecoverySnapshotsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_recovery_snapshots::DescribeRecoverySnapshotsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_recovery_snapshots();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeRecoverySnapshots`.
 ///
 /// <p>Lists all Recovery Snapshots for a single Source Server.</p>

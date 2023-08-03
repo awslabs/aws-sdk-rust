@@ -3,6 +3,23 @@ pub use crate::operation::describe_compliance_by_resource::_describe_compliance_
 
 pub use crate::operation::describe_compliance_by_resource::_describe_compliance_by_resource_input::DescribeComplianceByResourceInputBuilder;
 
+impl DescribeComplianceByResourceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_compliance_by_resource::DescribeComplianceByResourceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_compliance_by_resource::DescribeComplianceByResourceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_compliance_by_resource();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeComplianceByResource`.
 ///
 /// <p>Indicates whether the specified Amazon Web Services resources are compliant. If a resource is noncompliant, this action returns the number of Config rules that the resource does not comply with.</p>

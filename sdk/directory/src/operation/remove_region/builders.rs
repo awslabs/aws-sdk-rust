@@ -3,6 +3,23 @@ pub use crate::operation::remove_region::_remove_region_output::RemoveRegionOutp
 
 pub use crate::operation::remove_region::_remove_region_input::RemoveRegionInputBuilder;
 
+impl RemoveRegionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::remove_region::RemoveRegionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::remove_region::RemoveRegionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.remove_region();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RemoveRegion`.
 ///
 /// <p>Stops all replication and removes the domain controllers from the specified Region. You cannot remove the primary Region with this operation. Instead, use the <code>DeleteDirectory</code> API.</p>

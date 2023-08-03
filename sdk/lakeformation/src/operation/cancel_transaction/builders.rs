@@ -3,6 +3,23 @@ pub use crate::operation::cancel_transaction::_cancel_transaction_output::Cancel
 
 pub use crate::operation::cancel_transaction::_cancel_transaction_input::CancelTransactionInputBuilder;
 
+impl CancelTransactionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::cancel_transaction::CancelTransactionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::cancel_transaction::CancelTransactionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.cancel_transaction();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CancelTransaction`.
 ///
 /// <p>Attempts to cancel the specified transaction. Returns an exception if the transaction was previously committed.</p>

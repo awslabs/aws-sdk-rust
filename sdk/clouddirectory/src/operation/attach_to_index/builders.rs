@@ -3,6 +3,23 @@ pub use crate::operation::attach_to_index::_attach_to_index_output::AttachToInde
 
 pub use crate::operation::attach_to_index::_attach_to_index_input::AttachToIndexInputBuilder;
 
+impl AttachToIndexInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::attach_to_index::AttachToIndexOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::attach_to_index::AttachToIndexError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.attach_to_index();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AttachToIndex`.
 ///
 /// <p>Attaches the specified object to the specified index.</p>

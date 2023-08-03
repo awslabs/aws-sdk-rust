@@ -3,6 +3,23 @@ pub use crate::operation::sync_resource::_sync_resource_output::SyncResourceOutp
 
 pub use crate::operation::sync_resource::_sync_resource_input::SyncResourceInputBuilder;
 
+impl SyncResourceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::sync_resource::SyncResourceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::sync_resource::SyncResourceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.sync_resource();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SyncResource`.
 ///
 /// <p>Syncs the resource with current AppRegistry records.</p>

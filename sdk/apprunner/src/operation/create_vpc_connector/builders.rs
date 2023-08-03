@@ -3,6 +3,23 @@ pub use crate::operation::create_vpc_connector::_create_vpc_connector_output::Cr
 
 pub use crate::operation::create_vpc_connector::_create_vpc_connector_input::CreateVpcConnectorInputBuilder;
 
+impl CreateVpcConnectorInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_vpc_connector::CreateVpcConnectorOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_vpc_connector::CreateVpcConnectorError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_vpc_connector();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateVpcConnector`.
 ///
 /// <p>Create an App Runner VPC connector resource. App Runner requires this resource when you want to associate your App Runner service to a custom Amazon Virtual Private Cloud (Amazon VPC).</p>

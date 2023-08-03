@@ -3,6 +3,23 @@ pub use crate::operation::stop_delivery_stream_encryption::_stop_delivery_stream
 
 pub use crate::operation::stop_delivery_stream_encryption::_stop_delivery_stream_encryption_input::StopDeliveryStreamEncryptionInputBuilder;
 
+impl StopDeliveryStreamEncryptionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_delivery_stream_encryption::StopDeliveryStreamEncryptionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_delivery_stream_encryption::StopDeliveryStreamEncryptionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_delivery_stream_encryption();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopDeliveryStreamEncryption`.
 ///
 /// <p>Disables server-side encryption (SSE) for the delivery stream. </p>

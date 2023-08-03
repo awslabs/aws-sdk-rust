@@ -3,6 +3,23 @@ pub use crate::operation::create_key_group::_create_key_group_output::CreateKeyG
 
 pub use crate::operation::create_key_group::_create_key_group_input::CreateKeyGroupInputBuilder;
 
+impl CreateKeyGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_key_group::CreateKeyGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_key_group::CreateKeyGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_key_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateKeyGroup`.
 ///
 /// <p>Creates a key group that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">CloudFront signed URLs and signed cookies</a>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_configuration_sets::_list_configuration_sets_outp
 
 pub use crate::operation::list_configuration_sets::_list_configuration_sets_input::ListConfigurationSetsInputBuilder;
 
+impl ListConfigurationSetsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_configuration_sets::ListConfigurationSetsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_configuration_sets::ListConfigurationSetsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_configuration_sets();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListConfigurationSets`.
 ///
 /// <p>Provides a list of the configuration sets associated with your Amazon SES account in the current AWS Region. For information about using configuration sets, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Monitoring Your Amazon SES Sending Activity</a> in the <i>Amazon SES Developer Guide.</i> </p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_cache::_describe_cache_output::DescribeCacheO
 
 pub use crate::operation::describe_cache::_describe_cache_input::DescribeCacheInputBuilder;
 
+impl DescribeCacheInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_cache::DescribeCacheOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_cache::DescribeCacheError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_cache();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeCache`.
 ///
 /// <p>Returns information about the cache of a gateway. This operation is only supported in the cached volume, tape, and file gateway types.</p>

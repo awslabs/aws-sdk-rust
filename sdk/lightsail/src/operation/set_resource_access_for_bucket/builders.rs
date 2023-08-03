@@ -3,6 +3,23 @@ pub use crate::operation::set_resource_access_for_bucket::_set_resource_access_f
 
 pub use crate::operation::set_resource_access_for_bucket::_set_resource_access_for_bucket_input::SetResourceAccessForBucketInputBuilder;
 
+impl SetResourceAccessForBucketInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucketOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::set_resource_access_for_bucket::SetResourceAccessForBucketError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.set_resource_access_for_bucket();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SetResourceAccessForBucket`.
 ///
 /// <p>Sets the Amazon Lightsail resources that can access the specified Lightsail bucket.</p>

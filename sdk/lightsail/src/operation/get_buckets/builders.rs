@@ -3,6 +3,23 @@ pub use crate::operation::get_buckets::_get_buckets_output::GetBucketsOutputBuil
 
 pub use crate::operation::get_buckets::_get_buckets_input::GetBucketsInputBuilder;
 
+impl GetBucketsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_buckets::GetBucketsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_buckets::GetBucketsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_buckets();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetBuckets`.
 ///
 /// <p>Returns information about one or more Amazon Lightsail buckets. The information returned includes the synchronization status of the Amazon Simple Storage Service (Amazon S3) account-level block public access feature for your Lightsail buckets.</p>

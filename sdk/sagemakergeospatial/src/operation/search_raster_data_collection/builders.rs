@@ -3,6 +3,23 @@ pub use crate::operation::search_raster_data_collection::_search_raster_data_col
 
 pub use crate::operation::search_raster_data_collection::_search_raster_data_collection_input::SearchRasterDataCollectionInputBuilder;
 
+impl SearchRasterDataCollectionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::search_raster_data_collection::SearchRasterDataCollectionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::search_raster_data_collection::SearchRasterDataCollectionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.search_raster_data_collection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SearchRasterDataCollection`.
 ///
 /// <p>Allows you run image query on a specific raster data collection to get a list of the satellite imagery matching the selected filters.</p>

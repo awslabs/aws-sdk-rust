@@ -3,6 +3,23 @@ pub use crate::operation::create_db_instance_read_replica::_create_db_instance_r
 
 pub use crate::operation::create_db_instance_read_replica::_create_db_instance_read_replica_input::CreateDbInstanceReadReplicaInputBuilder;
 
+impl CreateDbInstanceReadReplicaInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_db_instance_read_replica::CreateDbInstanceReadReplicaOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_db_instance_read_replica::CreateDBInstanceReadReplicaError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_db_instance_read_replica();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateDBInstanceReadReplica`.
 ///
 /// <p>Creates a new DB instance that acts as a read replica for an existing source DB instance or Multi-AZ DB cluster. You can create a read replica for a DB instance running MySQL, MariaDB, Oracle, PostgreSQL, or SQL Server. You can create a read replica for a Multi-AZ DB cluster running MySQL or PostgreSQL. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html">Working with read replicas</a> and <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/multi-az-db-clusters-concepts.html#multi-az-db-clusters-migrating-to-instance-with-read-replica">Migrating from a Multi-AZ DB cluster to a DB instance using a read replica</a> in the <i>Amazon RDS User Guide</i>.</p>

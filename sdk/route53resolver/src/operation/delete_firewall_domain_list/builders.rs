@@ -3,6 +3,23 @@ pub use crate::operation::delete_firewall_domain_list::_delete_firewall_domain_l
 
 pub use crate::operation::delete_firewall_domain_list::_delete_firewall_domain_list_input::DeleteFirewallDomainListInputBuilder;
 
+impl DeleteFirewallDomainListInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_firewall_domain_list::DeleteFirewallDomainListOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_firewall_domain_list::DeleteFirewallDomainListError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_firewall_domain_list();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteFirewallDomainList`.
 ///
 /// <p>Deletes the specified domain list. </p>

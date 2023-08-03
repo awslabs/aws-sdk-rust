@@ -3,6 +3,17 @@ pub use crate::operation::list_repositories_for_approval_rule_template::_list_re
 
 pub use crate::operation::list_repositories_for_approval_rule_template::_list_repositories_for_approval_rule_template_input::ListRepositoriesForApprovalRuleTemplateInputBuilder;
 
+impl ListRepositoriesForApprovalRuleTemplateInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_repositories_for_approval_rule_template::ListRepositoriesForApprovalRuleTemplateOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_repositories_for_approval_rule_template::ListRepositoriesForApprovalRuleTemplateError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_repositories_for_approval_rule_template();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListRepositoriesForApprovalRuleTemplate`.
 ///
 /// <p>Lists all repositories associated with the specified approval rule template.</p>

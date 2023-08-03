@@ -3,6 +3,23 @@ pub use crate::operation::list_labeling_jobs_for_workteam::_list_labeling_jobs_f
 
 pub use crate::operation::list_labeling_jobs_for_workteam::_list_labeling_jobs_for_workteam_input::ListLabelingJobsForWorkteamInputBuilder;
 
+impl ListLabelingJobsForWorkteamInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_labeling_jobs_for_workteam::ListLabelingJobsForWorkteamOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_labeling_jobs_for_workteam::ListLabelingJobsForWorkteamError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_labeling_jobs_for_workteam();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListLabelingJobsForWorkteam`.
 ///
 /// <p>Gets a list of labeling jobs assigned to a specified work team.</p>

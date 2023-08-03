@@ -3,6 +3,23 @@ pub use crate::operation::describe_capacity_reservations::_describe_capacity_res
 
 pub use crate::operation::describe_capacity_reservations::_describe_capacity_reservations_input::DescribeCapacityReservationsInputBuilder;
 
+impl DescribeCapacityReservationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_capacity_reservations::DescribeCapacityReservationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_capacity_reservations::DescribeCapacityReservationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_capacity_reservations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeCapacityReservations`.
 ///
 /// <p>Describes one or more of your Capacity Reservations. The results describe only the Capacity Reservations in the Amazon Web Services Region that you're currently using.</p>

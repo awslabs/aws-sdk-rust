@@ -3,6 +3,23 @@ pub use crate::operation::delete_application_output::_delete_application_output_
 
 pub use crate::operation::delete_application_output::_delete_application_output_input::DeleteApplicationOutputInputBuilder;
 
+impl DeleteApplicationOutputInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_application_output::DeleteApplicationOutputOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_application_output::DeleteApplicationOutputError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_application_output();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteApplicationOutput`.
 ///
 /// <note>

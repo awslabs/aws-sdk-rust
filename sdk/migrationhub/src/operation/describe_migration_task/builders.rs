@@ -3,6 +3,23 @@ pub use crate::operation::describe_migration_task::_describe_migration_task_outp
 
 pub use crate::operation::describe_migration_task::_describe_migration_task_input::DescribeMigrationTaskInputBuilder;
 
+impl DescribeMigrationTaskInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_migration_task::DescribeMigrationTaskOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_migration_task::DescribeMigrationTaskError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_migration_task();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeMigrationTask`.
 ///
 /// <p>Retrieves a list of all attributes associated with a specific migration task.</p>

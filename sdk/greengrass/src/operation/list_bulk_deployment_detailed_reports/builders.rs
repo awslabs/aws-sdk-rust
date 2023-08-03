@@ -3,6 +3,17 @@ pub use crate::operation::list_bulk_deployment_detailed_reports::_list_bulk_depl
 
 pub use crate::operation::list_bulk_deployment_detailed_reports::_list_bulk_deployment_detailed_reports_input::ListBulkDeploymentDetailedReportsInputBuilder;
 
+impl ListBulkDeploymentDetailedReportsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_bulk_deployment_detailed_reports::ListBulkDeploymentDetailedReportsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_bulk_deployment_detailed_reports::ListBulkDeploymentDetailedReportsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_bulk_deployment_detailed_reports();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListBulkDeploymentDetailedReports`.
 ///
 /// Gets a paginated list of the deployments that have been started in a bulk deployment operation, and their current deployment status.

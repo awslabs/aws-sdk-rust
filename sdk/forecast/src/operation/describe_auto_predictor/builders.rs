@@ -3,6 +3,23 @@ pub use crate::operation::describe_auto_predictor::_describe_auto_predictor_outp
 
 pub use crate::operation::describe_auto_predictor::_describe_auto_predictor_input::DescribeAutoPredictorInputBuilder;
 
+impl DescribeAutoPredictorInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_auto_predictor::DescribeAutoPredictorOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_auto_predictor::DescribeAutoPredictorError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_auto_predictor();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAutoPredictor`.
 ///
 /// <p>Describes a predictor created using the CreateAutoPredictor operation.</p>

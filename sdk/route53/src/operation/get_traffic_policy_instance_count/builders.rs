@@ -3,6 +3,23 @@ pub use crate::operation::get_traffic_policy_instance_count::_get_traffic_policy
 
 pub use crate::operation::get_traffic_policy_instance_count::_get_traffic_policy_instance_count_input::GetTrafficPolicyInstanceCountInputBuilder;
 
+impl GetTrafficPolicyInstanceCountInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_traffic_policy_instance_count::GetTrafficPolicyInstanceCountOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_traffic_policy_instance_count::GetTrafficPolicyInstanceCountError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_traffic_policy_instance_count();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetTrafficPolicyInstanceCount`.
 ///
 /// <p>Gets the number of traffic policy instances that are associated with the current Amazon Web Services account.</p>

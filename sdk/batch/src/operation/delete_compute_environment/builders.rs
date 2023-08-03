@@ -3,6 +3,23 @@ pub use crate::operation::delete_compute_environment::_delete_compute_environmen
 
 pub use crate::operation::delete_compute_environment::_delete_compute_environment_input::DeleteComputeEnvironmentInputBuilder;
 
+impl DeleteComputeEnvironmentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_compute_environment::DeleteComputeEnvironmentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_compute_environment::DeleteComputeEnvironmentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_compute_environment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteComputeEnvironment`.
 ///
 /// <p>Deletes an Batch compute environment.</p>

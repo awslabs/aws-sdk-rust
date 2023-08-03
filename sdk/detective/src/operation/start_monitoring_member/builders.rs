@@ -3,6 +3,23 @@ pub use crate::operation::start_monitoring_member::_start_monitoring_member_outp
 
 pub use crate::operation::start_monitoring_member::_start_monitoring_member_input::StartMonitoringMemberInputBuilder;
 
+impl StartMonitoringMemberInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_monitoring_member::StartMonitoringMemberOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_monitoring_member::StartMonitoringMemberError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_monitoring_member();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartMonitoringMember`.
 ///
 /// <p>Sends a request to enable data ingest for a member account that has a status of <code>ACCEPTED_BUT_DISABLED</code>.</p>

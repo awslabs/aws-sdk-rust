@@ -3,6 +3,23 @@ pub use crate::operation::describe_ledger::_describe_ledger_output::DescribeLedg
 
 pub use crate::operation::describe_ledger::_describe_ledger_input::DescribeLedgerInputBuilder;
 
+impl DescribeLedgerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_ledger::DescribeLedgerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_ledger::DescribeLedgerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_ledger();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeLedger`.
 ///
 /// <p>Returns information about a ledger, including its state, permissions mode, encryption at rest settings, and when it was created.</p>

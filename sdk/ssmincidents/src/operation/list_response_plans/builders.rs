@@ -3,6 +3,23 @@ pub use crate::operation::list_response_plans::_list_response_plans_output::List
 
 pub use crate::operation::list_response_plans::_list_response_plans_input::ListResponsePlansInputBuilder;
 
+impl ListResponsePlansInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_response_plans::ListResponsePlansOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_response_plans::ListResponsePlansError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_response_plans();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListResponsePlans`.
 ///
 /// <p>Lists all response plans in your account.</p>

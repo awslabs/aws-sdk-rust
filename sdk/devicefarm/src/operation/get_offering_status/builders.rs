@@ -3,6 +3,23 @@ pub use crate::operation::get_offering_status::_get_offering_status_output::GetO
 
 pub use crate::operation::get_offering_status::_get_offering_status_input::GetOfferingStatusInputBuilder;
 
+impl GetOfferingStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_offering_status::GetOfferingStatusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_offering_status::GetOfferingStatusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_offering_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetOfferingStatus`.
 ///
 /// <p>Gets the current status and future status of all offerings purchased by an AWS account. The response indicates how many offerings are currently available and the offerings that will be available in the next period. The API returns a <code>NotEligible</code> error if the user is not permitted to invoke the operation. If you must be able to invoke this operation, contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.</p>

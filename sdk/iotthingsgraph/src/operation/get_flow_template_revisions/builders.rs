@@ -3,6 +3,23 @@ pub use crate::operation::get_flow_template_revisions::_get_flow_template_revisi
 
 pub use crate::operation::get_flow_template_revisions::_get_flow_template_revisions_input::GetFlowTemplateRevisionsInputBuilder;
 
+impl GetFlowTemplateRevisionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_flow_template_revisions::GetFlowTemplateRevisionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_flow_template_revisions::GetFlowTemplateRevisionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_flow_template_revisions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetFlowTemplateRevisions`.
 ///
 /// <p>Gets revisions of the specified workflow. Only the last 100 revisions are stored. If the workflow has been deprecated, this action will return revisions that occurred before the deprecation. This action won't work for workflows that have been deleted.</p>

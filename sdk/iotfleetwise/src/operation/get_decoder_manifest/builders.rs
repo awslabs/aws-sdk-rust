@@ -3,6 +3,23 @@ pub use crate::operation::get_decoder_manifest::_get_decoder_manifest_output::Ge
 
 pub use crate::operation::get_decoder_manifest::_get_decoder_manifest_input::GetDecoderManifestInputBuilder;
 
+impl GetDecoderManifestInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_decoder_manifest::GetDecoderManifestOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_decoder_manifest::GetDecoderManifestError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_decoder_manifest();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetDecoderManifest`.
 ///
 /// <p> Retrieves information about a created decoder manifest. </p>

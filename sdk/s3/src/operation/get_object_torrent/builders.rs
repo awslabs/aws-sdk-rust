@@ -3,6 +3,23 @@ pub use crate::operation::get_object_torrent::_get_object_torrent_output::GetObj
 
 pub use crate::operation::get_object_torrent::_get_object_torrent_input::GetObjectTorrentInputBuilder;
 
+impl GetObjectTorrentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_object_torrent::GetObjectTorrentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_object_torrent::GetObjectTorrentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_object_torrent();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetObjectTorrent`.
 ///
 /// <p>Returns torrent files from a bucket. BitTorrent can save you bandwidth when you're distributing large files.</p> <note>

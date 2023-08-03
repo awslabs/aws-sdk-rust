@@ -3,6 +3,23 @@ pub use crate::operation::delete_virtual_interface::_delete_virtual_interface_ou
 
 pub use crate::operation::delete_virtual_interface::_delete_virtual_interface_input::DeleteVirtualInterfaceInputBuilder;
 
+impl DeleteVirtualInterfaceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_virtual_interface::DeleteVirtualInterfaceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_virtual_interface::DeleteVirtualInterfaceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_virtual_interface();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteVirtualInterface`.
 ///
 /// <p>Deletes a virtual interface.</p>

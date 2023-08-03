@@ -3,6 +3,23 @@ pub use crate::operation::create_iam_policy_assignment::_create_iam_policy_assig
 
 pub use crate::operation::create_iam_policy_assignment::_create_iam_policy_assignment_input::CreateIamPolicyAssignmentInputBuilder;
 
+impl CreateIamPolicyAssignmentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_iam_policy_assignment::CreateIamPolicyAssignmentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_iam_policy_assignment::CreateIAMPolicyAssignmentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_iam_policy_assignment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateIAMPolicyAssignment`.
 ///
 /// <p>Creates an assignment with one specified IAM policy, identified by its Amazon Resource Name (ARN). This policy assignment is attached to the specified groups or users of Amazon QuickSight. Assignment names are unique per Amazon Web Services account. To avoid overwriting rules in other namespaces, use assignment names that are unique.</p>

@@ -3,6 +3,17 @@ pub use crate::operation::list_elasticsearch_instance_types::_list_elasticsearch
 
 pub use crate::operation::list_elasticsearch_instance_types::_list_elasticsearch_instance_types_input::ListElasticsearchInstanceTypesInputBuilder;
 
+impl ListElasticsearchInstanceTypesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_elasticsearch_instance_types::ListElasticsearchInstanceTypesOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_elasticsearch_instance_types::ListElasticsearchInstanceTypesError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_elasticsearch_instance_types();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListElasticsearchInstanceTypes`.
 ///
 /// <p>List all Elasticsearch instance types that are supported for given ElasticsearchVersion</p>

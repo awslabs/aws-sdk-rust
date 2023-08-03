@@ -3,6 +3,23 @@ pub use crate::operation::delete_classifier::_delete_classifier_output::DeleteCl
 
 pub use crate::operation::delete_classifier::_delete_classifier_input::DeleteClassifierInputBuilder;
 
+impl DeleteClassifierInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_classifier::DeleteClassifierOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_classifier::DeleteClassifierError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_classifier();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteClassifier`.
 ///
 /// <p>Removes a classifier from the Data Catalog.</p>

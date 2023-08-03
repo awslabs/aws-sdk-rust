@@ -3,6 +3,23 @@ pub use crate::operation::list_firewall_rules::_list_firewall_rules_output::List
 
 pub use crate::operation::list_firewall_rules::_list_firewall_rules_input::ListFirewallRulesInputBuilder;
 
+impl ListFirewallRulesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_firewall_rules::ListFirewallRulesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_firewall_rules::ListFirewallRulesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_firewall_rules();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListFirewallRules`.
 ///
 /// <p>Retrieves the firewall rules that you have defined for the specified firewall rule group. DNS Firewall uses the rules in a rule group to filter DNS network traffic for a VPC. </p>

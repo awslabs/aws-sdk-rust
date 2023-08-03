@@ -3,6 +3,23 @@ pub use crate::operation::update_server_engine_attributes::_update_server_engine
 
 pub use crate::operation::update_server_engine_attributes::_update_server_engine_attributes_input::UpdateServerEngineAttributesInputBuilder;
 
+impl UpdateServerEngineAttributesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_server_engine_attributes::UpdateServerEngineAttributesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_server_engine_attributes::UpdateServerEngineAttributesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_server_engine_attributes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateServerEngineAttributes`.
 ///
 /// <p> Updates engine-specific attributes on a specified server. The server enters the <code>MODIFYING</code> state when this operation is in progress. Only one update can occur at a time. You can use this command to reset a Chef server's public key (<code>CHEF_PIVOTAL_KEY</code>) or a Puppet server's admin password (<code>PUPPET_ADMIN_PASSWORD</code>). </p>

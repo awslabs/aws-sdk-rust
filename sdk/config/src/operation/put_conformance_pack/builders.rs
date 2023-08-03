@@ -3,6 +3,23 @@ pub use crate::operation::put_conformance_pack::_put_conformance_pack_output::Pu
 
 pub use crate::operation::put_conformance_pack::_put_conformance_pack_input::PutConformancePackInputBuilder;
 
+impl PutConformancePackInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_conformance_pack::PutConformancePackOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_conformance_pack::PutConformancePackError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_conformance_pack();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutConformancePack`.
 ///
 /// <p>Creates or updates a conformance pack. A conformance pack is a collection of Config rules that can be easily deployed in an account and a region and across an organization. For information on how many conformance packs you can have per account, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html"> <b>Service Limits</b> </a> in the <i>Config Developer Guide</i>.</p>

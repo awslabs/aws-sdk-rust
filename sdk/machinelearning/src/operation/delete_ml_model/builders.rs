@@ -3,6 +3,23 @@ pub use crate::operation::delete_ml_model::_delete_ml_model_output::DeleteMlMode
 
 pub use crate::operation::delete_ml_model::_delete_ml_model_input::DeleteMlModelInputBuilder;
 
+impl DeleteMlModelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_ml_model::DeleteMlModelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_ml_model::DeleteMLModelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_ml_model();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteMLModel`.
 ///
 /// <p>Assigns the <code>DELETED</code> status to an <code>MLModel</code>, rendering it unusable.</p>

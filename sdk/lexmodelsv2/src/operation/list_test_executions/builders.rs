@@ -3,6 +3,23 @@ pub use crate::operation::list_test_executions::_list_test_executions_output::Li
 
 pub use crate::operation::list_test_executions::_list_test_executions_input::ListTestExecutionsInputBuilder;
 
+impl ListTestExecutionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_test_executions::ListTestExecutionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_test_executions::ListTestExecutionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_test_executions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListTestExecutions`.
 ///
 /// <p>The list of test set executions.</p>

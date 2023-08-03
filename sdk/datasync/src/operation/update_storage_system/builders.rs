@@ -3,6 +3,23 @@ pub use crate::operation::update_storage_system::_update_storage_system_output::
 
 pub use crate::operation::update_storage_system::_update_storage_system_input::UpdateStorageSystemInputBuilder;
 
+impl UpdateStorageSystemInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_storage_system::UpdateStorageSystemOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_storage_system::UpdateStorageSystemError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_storage_system();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateStorageSystem`.
 ///
 /// <p>Modifies some configurations of an on-premises storage system resource that you're using with DataSync Discovery.</p>

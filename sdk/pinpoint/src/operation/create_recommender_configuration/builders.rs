@@ -3,6 +3,23 @@ pub use crate::operation::create_recommender_configuration::_create_recommender_
 
 pub use crate::operation::create_recommender_configuration::_create_recommender_configuration_input::CreateRecommenderConfigurationInputBuilder;
 
+impl CreateRecommenderConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_recommender_configuration::CreateRecommenderConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_recommender_configuration::CreateRecommenderConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_recommender_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateRecommenderConfiguration`.
 ///
 /// <p>Creates an Amazon Pinpoint configuration for a recommender model.</p>

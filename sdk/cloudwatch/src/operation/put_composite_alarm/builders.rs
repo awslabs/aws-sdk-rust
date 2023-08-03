@@ -3,6 +3,23 @@ pub use crate::operation::put_composite_alarm::_put_composite_alarm_output::PutC
 
 pub use crate::operation::put_composite_alarm::_put_composite_alarm_input::PutCompositeAlarmInputBuilder;
 
+impl PutCompositeAlarmInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_composite_alarm::PutCompositeAlarmOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_composite_alarm::PutCompositeAlarmError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_composite_alarm();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutCompositeAlarm`.
 ///
 /// <p>Creates or updates a <i>composite alarm</i>. When you create a composite alarm, you specify a rule expression for the alarm that takes into account the alarm states of other alarms that you have created. The composite alarm goes into ALARM state only if all conditions of the rule are met.</p>

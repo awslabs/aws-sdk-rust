@@ -3,6 +3,23 @@ pub use crate::operation::delete_image::_delete_image_output::DeleteImageOutputB
 
 pub use crate::operation::delete_image::_delete_image_input::DeleteImageInputBuilder;
 
+impl DeleteImageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_image::DeleteImageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_image::DeleteImageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_image();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteImage`.
 ///
 /// <p>Deletes an Image Builder image resource. This does not delete any EC2 AMIs or ECR container images that are created during the image build process. You must clean those up separately, using the appropriate Amazon EC2 or Amazon ECR console actions, or API or CLI commands.</p>

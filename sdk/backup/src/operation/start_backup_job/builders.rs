@@ -3,6 +3,23 @@ pub use crate::operation::start_backup_job::_start_backup_job_output::StartBacku
 
 pub use crate::operation::start_backup_job::_start_backup_job_input::StartBackupJobInputBuilder;
 
+impl StartBackupJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_backup_job::StartBackupJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_backup_job::StartBackupJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_backup_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartBackupJob`.
 ///
 /// <p>Starts an on-demand backup job for the specified resource.</p>

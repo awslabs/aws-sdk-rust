@@ -3,6 +3,23 @@ pub use crate::operation::create_context::_create_context_output::CreateContextO
 
 pub use crate::operation::create_context::_create_context_input::CreateContextInputBuilder;
 
+impl CreateContextInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_context::CreateContextOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_context::CreateContextError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_context();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateContext`.
 ///
 /// <p>Creates a <i>context</i>. A context is a lineage tracking entity that represents a logical grouping of other tracking or experiment entities. Some examples are an endpoint and a model package. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html">Amazon SageMaker ML Lineage Tracking</a>.</p>

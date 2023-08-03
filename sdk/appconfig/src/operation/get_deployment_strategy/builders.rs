@@ -3,6 +3,23 @@ pub use crate::operation::get_deployment_strategy::_get_deployment_strategy_outp
 
 pub use crate::operation::get_deployment_strategy::_get_deployment_strategy_input::GetDeploymentStrategyInputBuilder;
 
+impl GetDeploymentStrategyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_deployment_strategy::GetDeploymentStrategyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_deployment_strategy::GetDeploymentStrategyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_deployment_strategy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetDeploymentStrategy`.
 ///
 /// <p>Retrieves information about a deployment strategy. A deployment strategy defines important criteria for rolling out your configuration to the designated targets. A deployment strategy includes the overall duration required, a percentage of targets to receive the deployment during each interval, an algorithm that defines how percentage grows, and bake time.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::renew_offering::_renew_offering_output::RenewOfferingO
 
 pub use crate::operation::renew_offering::_renew_offering_input::RenewOfferingInputBuilder;
 
+impl RenewOfferingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::renew_offering::RenewOfferingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::renew_offering::RenewOfferingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.renew_offering();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RenewOffering`.
 ///
 /// <p>Explicitly sets the quantity of devices to renew for an offering, starting from the <code>effectiveDate</code> of the next period. The API returns a <code>NotEligible</code> error if the user is not permitted to invoke the operation. If you must be able to invoke this operation, contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a>.</p>

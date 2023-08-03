@@ -3,6 +3,23 @@ pub use crate::operation::list_pickup_locations::_list_pickup_locations_output::
 
 pub use crate::operation::list_pickup_locations::_list_pickup_locations_input::ListPickupLocationsInputBuilder;
 
+impl ListPickupLocationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_pickup_locations::ListPickupLocationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_pickup_locations::ListPickupLocationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_pickup_locations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListPickupLocations`.
 ///
 /// <p>A list of locations from which the customer can choose to pickup a device.</p>

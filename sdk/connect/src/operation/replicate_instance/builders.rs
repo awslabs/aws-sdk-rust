@@ -3,6 +3,23 @@ pub use crate::operation::replicate_instance::_replicate_instance_output::Replic
 
 pub use crate::operation::replicate_instance::_replicate_instance_input::ReplicateInstanceInputBuilder;
 
+impl ReplicateInstanceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::replicate_instance::ReplicateInstanceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::replicate_instance::ReplicateInstanceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.replicate_instance();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ReplicateInstance`.
 ///
 /// <p>Replicates an Amazon Connect instance in the specified Amazon Web Services Region.</p>

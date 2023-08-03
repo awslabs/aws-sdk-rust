@@ -3,6 +3,23 @@ pub use crate::operation::create_game_server_group::_create_game_server_group_ou
 
 pub use crate::operation::create_game_server_group::_create_game_server_group_input::CreateGameServerGroupInputBuilder;
 
+impl CreateGameServerGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_game_server_group::CreateGameServerGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_game_server_group::CreateGameServerGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_game_server_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateGameServerGroup`.
 ///
 /// <p> <b>This operation is used with the Amazon GameLift FleetIQ solution and game server groups.</b> </p>

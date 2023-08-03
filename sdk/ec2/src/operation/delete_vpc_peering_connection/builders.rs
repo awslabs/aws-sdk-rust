@@ -3,6 +3,23 @@ pub use crate::operation::delete_vpc_peering_connection::_delete_vpc_peering_con
 
 pub use crate::operation::delete_vpc_peering_connection::_delete_vpc_peering_connection_input::DeleteVpcPeeringConnectionInputBuilder;
 
+impl DeleteVpcPeeringConnectionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnectionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_vpc_peering_connection::DeleteVpcPeeringConnectionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_vpc_peering_connection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteVpcPeeringConnection`.
 ///
 /// <p>Deletes a VPC peering connection. Either the owner of the requester VPC or the owner of the accepter VPC can delete the VPC peering connection if it's in the <code>active</code> state. The owner of the requester VPC can delete a VPC peering connection in the <code>pending-acceptance</code> state. You cannot delete a VPC peering connection that's in the <code>failed</code> state.</p>

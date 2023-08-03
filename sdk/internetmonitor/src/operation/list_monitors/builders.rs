@@ -3,6 +3,23 @@ pub use crate::operation::list_monitors::_list_monitors_output::ListMonitorsOutp
 
 pub use crate::operation::list_monitors::_list_monitors_input::ListMonitorsInputBuilder;
 
+impl ListMonitorsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_monitors::ListMonitorsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_monitors::ListMonitorsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_monitors();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListMonitors`.
 ///
 /// <p>Lists all of your monitors for Amazon CloudWatch Internet Monitor and their statuses, along with the Amazon Resource Name (ARN) and name of each monitor.</p>

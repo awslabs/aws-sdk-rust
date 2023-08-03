@@ -3,6 +3,23 @@ pub use crate::operation::get_sites::_get_sites_output::GetSitesOutputBuilder;
 
 pub use crate::operation::get_sites::_get_sites_input::GetSitesInputBuilder;
 
+impl GetSitesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_sites::GetSitesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_sites::GetSitesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_sites();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetSites`.
 ///
 /// <p>Gets information about one or more of your sites in a global network.</p>

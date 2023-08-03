@@ -3,6 +3,23 @@ pub use crate::operation::describe_images::_describe_images_output::DescribeImag
 
 pub use crate::operation::describe_images::_describe_images_input::DescribeImagesInputBuilder;
 
+impl DescribeImagesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_images::DescribeImagesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_images::DescribeImagesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_images();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeImages`.
 ///
 /// <p>Describes the specified images (AMIs, AKIs, and ARIs) available to you or all of the images available to you.</p>

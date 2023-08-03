@@ -3,6 +3,17 @@ pub use crate::operation::modify_vpc_endpoint_service_payer_responsibility::_mod
 
 pub use crate::operation::modify_vpc_endpoint_service_payer_responsibility::_modify_vpc_endpoint_service_payer_responsibility_input::ModifyVpcEndpointServicePayerResponsibilityInputBuilder;
 
+impl ModifyVpcEndpointServicePayerResponsibilityInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::modify_vpc_endpoint_service_payer_responsibility::ModifyVpcEndpointServicePayerResponsibilityOutput, ::aws_smithy_http::result::SdkError<crate::operation::modify_vpc_endpoint_service_payer_responsibility::ModifyVpcEndpointServicePayerResponsibilityError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.modify_vpc_endpoint_service_payer_responsibility();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyVpcEndpointServicePayerResponsibility`.
 ///
 /// <p>Modifies the payer responsibility for your VPC endpoint service.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_drt_access::_describe_drt_access_output::Desc
 
 pub use crate::operation::describe_drt_access::_describe_drt_access_input::DescribeDrtAccessInputBuilder;
 
+impl DescribeDrtAccessInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_drt_access::DescribeDrtAccessOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_drt_access::DescribeDRTAccessError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_drt_access();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeDRTAccess`.
 ///
 /// <p>Returns the current role and list of Amazon S3 log buckets used by the Shield Response Team (SRT) to access your Amazon Web Services account while assisting with attack mitigation.</p>

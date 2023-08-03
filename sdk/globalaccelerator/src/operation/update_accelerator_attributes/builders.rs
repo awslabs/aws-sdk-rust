@@ -3,6 +3,23 @@ pub use crate::operation::update_accelerator_attributes::_update_accelerator_att
 
 pub use crate::operation::update_accelerator_attributes::_update_accelerator_attributes_input::UpdateAcceleratorAttributesInputBuilder;
 
+impl UpdateAcceleratorAttributesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_accelerator_attributes::UpdateAcceleratorAttributesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_accelerator_attributes::UpdateAcceleratorAttributesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_accelerator_attributes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateAcceleratorAttributes`.
 ///
 /// <p>Update the attributes for an accelerator. </p>

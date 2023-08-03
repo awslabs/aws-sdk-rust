@@ -3,6 +3,23 @@ pub use crate::operation::create_web_acl_migration_stack::_create_web_acl_migrat
 
 pub use crate::operation::create_web_acl_migration_stack::_create_web_acl_migration_stack_input::CreateWebAclMigrationStackInputBuilder;
 
+impl CreateWebAclMigrationStackInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_web_acl_migration_stack::CreateWebAclMigrationStackOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_web_acl_migration_stack::CreateWebACLMigrationStackError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_web_acl_migration_stack();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateWebACLMigrationStack`.
 ///
 /// <p>Creates an AWS CloudFormation WAFV2 template for the specified web ACL in the specified Amazon S3 bucket. Then, in CloudFormation, you create a stack from the template, to create the web ACL and its resources in AWS WAFV2. Use this to migrate your AWS WAF Classic web ACL to the latest version of AWS WAF.</p>

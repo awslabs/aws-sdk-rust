@@ -3,6 +3,17 @@ pub use crate::operation::describe_maintenance_window_executions::_describe_main
 
 pub use crate::operation::describe_maintenance_window_executions::_describe_maintenance_window_executions_input::DescribeMaintenanceWindowExecutionsInputBuilder;
 
+impl DescribeMaintenanceWindowExecutionsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_maintenance_window_executions::DescribeMaintenanceWindowExecutionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_maintenance_window_executions::DescribeMaintenanceWindowExecutionsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_maintenance_window_executions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeMaintenanceWindowExecutions`.
 ///
 /// <p>Lists the executions of a maintenance window. This includes information about when the maintenance window was scheduled to be active, and information about tasks registered and run with the maintenance window.</p>

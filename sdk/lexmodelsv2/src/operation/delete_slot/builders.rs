@@ -3,6 +3,23 @@ pub use crate::operation::delete_slot::_delete_slot_output::DeleteSlotOutputBuil
 
 pub use crate::operation::delete_slot::_delete_slot_input::DeleteSlotInputBuilder;
 
+impl DeleteSlotInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_slot::DeleteSlotOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_slot::DeleteSlotError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_slot();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteSlot`.
 ///
 /// <p>Deletes the specified slot from an intent.</p>

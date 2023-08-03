@@ -3,6 +3,23 @@ pub use crate::operation::create_deployment_strategy::_create_deployment_strateg
 
 pub use crate::operation::create_deployment_strategy::_create_deployment_strategy_input::CreateDeploymentStrategyInputBuilder;
 
+impl CreateDeploymentStrategyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_deployment_strategy::CreateDeploymentStrategyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_deployment_strategy::CreateDeploymentStrategyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_deployment_strategy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateDeploymentStrategy`.
 ///
 /// <p>Creates a deployment strategy that defines important criteria for rolling out your configuration to the designated targets. A deployment strategy includes the overall duration required, a percentage of targets to receive the deployment during each interval, an algorithm that defines how percentage grows, and bake time.</p>

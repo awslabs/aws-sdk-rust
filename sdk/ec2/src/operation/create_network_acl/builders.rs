@@ -3,6 +3,23 @@ pub use crate::operation::create_network_acl::_create_network_acl_output::Create
 
 pub use crate::operation::create_network_acl::_create_network_acl_input::CreateNetworkAclInputBuilder;
 
+impl CreateNetworkAclInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_network_acl::CreateNetworkAclOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_network_acl::CreateNetworkAclError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_network_acl();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateNetworkAcl`.
 ///
 /// <p>Creates a network ACL in a VPC. Network ACLs provide an optional layer of security (in addition to security groups) for the instances in your VPC.</p>

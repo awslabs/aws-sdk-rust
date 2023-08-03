@@ -3,6 +3,23 @@ pub use crate::operation::get_anomaly_subscriptions::_get_anomaly_subscriptions_
 
 pub use crate::operation::get_anomaly_subscriptions::_get_anomaly_subscriptions_input::GetAnomalySubscriptionsInputBuilder;
 
+impl GetAnomalySubscriptionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_anomaly_subscriptions::GetAnomalySubscriptionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_anomaly_subscriptions::GetAnomalySubscriptionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_anomaly_subscriptions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetAnomalySubscriptions`.
 ///
 /// <p>Retrieves the cost anomaly subscription objects for your account. You can filter using a list of cost anomaly monitor Amazon Resource Names (ARNs). </p>

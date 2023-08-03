@@ -3,6 +3,23 @@ pub use crate::operation::put_resource_attributes::_put_resource_attributes_outp
 
 pub use crate::operation::put_resource_attributes::_put_resource_attributes_input::PutResourceAttributesInputBuilder;
 
+impl PutResourceAttributesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_resource_attributes::PutResourceAttributesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_resource_attributes::PutResourceAttributesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_resource_attributes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutResourceAttributes`.
 ///
 /// <p>Provides identifying details of the resource being migrated so that it can be associated in the Application Discovery Service repository. This association occurs asynchronously after <code>PutResourceAttributes</code> returns.</p> <important>

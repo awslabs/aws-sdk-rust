@@ -3,6 +3,23 @@ pub use crate::operation::get_permission_group::_get_permission_group_output::Ge
 
 pub use crate::operation::get_permission_group::_get_permission_group_input::GetPermissionGroupInputBuilder;
 
+impl GetPermissionGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_permission_group::GetPermissionGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_permission_group::GetPermissionGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_permission_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetPermissionGroup`.
 ///
 /// <p>Retrieves the details of a specific permission group.</p>

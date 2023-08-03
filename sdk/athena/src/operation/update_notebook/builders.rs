@@ -3,6 +3,23 @@ pub use crate::operation::update_notebook::_update_notebook_output::UpdateNotebo
 
 pub use crate::operation::update_notebook::_update_notebook_input::UpdateNotebookInputBuilder;
 
+impl UpdateNotebookInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_notebook::UpdateNotebookOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_notebook::UpdateNotebookError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_notebook();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateNotebook`.
 ///
 /// <p>Updates the contents of a Spark notebook.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_service_template::_create_service_template_outp
 
 pub use crate::operation::create_service_template::_create_service_template_input::CreateServiceTemplateInputBuilder;
 
+impl CreateServiceTemplateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_service_template::CreateServiceTemplateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_service_template::CreateServiceTemplateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_service_template();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateServiceTemplate`.
 ///
 /// <p>Create a service template. The administrator creates a service template to define standardized infrastructure and an optional CI/CD service pipeline. Developers, in turn, select the service template from Proton. If the selected service template includes a service pipeline definition, they provide a link to their source code repository. Proton then deploys and manages the infrastructure defined by the selected service template. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-templates.html">Proton templates</a> in the <i>Proton User Guide</i>.</p>

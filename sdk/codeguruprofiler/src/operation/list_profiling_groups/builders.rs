@@ -3,6 +3,23 @@ pub use crate::operation::list_profiling_groups::_list_profiling_groups_output::
 
 pub use crate::operation::list_profiling_groups::_list_profiling_groups_input::ListProfilingGroupsInputBuilder;
 
+impl ListProfilingGroupsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_profiling_groups::ListProfilingGroupsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_profiling_groups::ListProfilingGroupsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_profiling_groups();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListProfilingGroups`.
 ///
 /// <p> Returns a list of profiling groups. The profiling groups are returned as <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> objects. </p>

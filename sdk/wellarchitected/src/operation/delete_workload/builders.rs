@@ -3,6 +3,23 @@ pub use crate::operation::delete_workload::_delete_workload_output::DeleteWorklo
 
 pub use crate::operation::delete_workload::_delete_workload_input::DeleteWorkloadInputBuilder;
 
+impl DeleteWorkloadInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_workload::DeleteWorkloadOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_workload::DeleteWorkloadError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_workload();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteWorkload`.
 ///
 /// <p>Delete an existing workload.</p>

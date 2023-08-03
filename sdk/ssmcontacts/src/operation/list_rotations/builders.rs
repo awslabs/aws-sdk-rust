@@ -3,6 +3,23 @@ pub use crate::operation::list_rotations::_list_rotations_output::ListRotationsO
 
 pub use crate::operation::list_rotations::_list_rotations_input::ListRotationsInputBuilder;
 
+impl ListRotationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_rotations::ListRotationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_rotations::ListRotationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_rotations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListRotations`.
 ///
 /// <p>Retrieves a list of on-call rotations.</p>

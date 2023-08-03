@@ -3,6 +3,23 @@ pub use crate::operation::create_image::_create_image_output::CreateImageOutputB
 
 pub use crate::operation::create_image::_create_image_input::CreateImageInputBuilder;
 
+impl CreateImageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_image::CreateImageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_image::CreateImageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_image();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateImage`.
 ///
 /// <p>Creates an Amazon EBS-backed AMI from an Amazon EBS-backed instance that is either running or stopped.</p>

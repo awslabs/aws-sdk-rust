@@ -3,6 +3,17 @@ pub use crate::operation::register_organization_admin_account::_register_organiz
 
 pub use crate::operation::register_organization_admin_account::_register_organization_admin_account_input::RegisterOrganizationAdminAccountInputBuilder;
 
+impl RegisterOrganizationAdminAccountInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::register_organization_admin_account::RegisterOrganizationAdminAccountOutput, ::aws_smithy_http::result::SdkError<crate::operation::register_organization_admin_account::RegisterOrganizationAdminAccountError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.register_organization_admin_account();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RegisterOrganizationAdminAccount`.
 ///
 /// <p> Enables an Amazon Web Services account within the organization as the delegated administrator for Audit Manager. </p>

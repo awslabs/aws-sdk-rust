@@ -3,6 +3,23 @@ pub use crate::operation::get_container_policy::_get_container_policy_output::Ge
 
 pub use crate::operation::get_container_policy::_get_container_policy_input::GetContainerPolicyInputBuilder;
 
+impl GetContainerPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_container_policy::GetContainerPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_container_policy::GetContainerPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_container_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetContainerPolicy`.
 ///
 /// <p>Retrieves the access policy for the specified container. For information about the data that is included in an access policy, see the <a href="https://aws.amazon.com/documentation/iam/">AWS Identity and Access Management User Guide</a>.</p>

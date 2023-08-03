@@ -3,6 +3,23 @@ pub use crate::operation::delete_vpc_connection::_delete_vpc_connection_output::
 
 pub use crate::operation::delete_vpc_connection::_delete_vpc_connection_input::DeleteVpcConnectionInputBuilder;
 
+impl DeleteVpcConnectionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_vpc_connection::DeleteVpcConnectionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_vpc_connection::DeleteVpcConnectionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_vpc_connection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteVpcConnection`.
 ///
 /// <p>Deletes a MSK VPC connection.</p>

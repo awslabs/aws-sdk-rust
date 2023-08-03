@@ -3,6 +3,23 @@ pub use crate::operation::describe_inventory_deletions::_describe_inventory_dele
 
 pub use crate::operation::describe_inventory_deletions::_describe_inventory_deletions_input::DescribeInventoryDeletionsInputBuilder;
 
+impl DescribeInventoryDeletionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_inventory_deletions::DescribeInventoryDeletionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_inventory_deletions::DescribeInventoryDeletionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_inventory_deletions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeInventoryDeletions`.
 ///
 /// <p>Describes a specific delete inventory operation.</p>

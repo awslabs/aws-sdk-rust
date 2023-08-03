@@ -3,6 +3,23 @@ pub use crate::operation::post_content::_post_content_output::PostContentOutputB
 
 pub use crate::operation::post_content::_post_content_input::PostContentInputBuilder;
 
+impl PostContentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::post_content::PostContentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::post_content::PostContentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.post_content();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PostContent`.
 ///
 /// <p> Sends user input (text or speech) to Amazon Lex. Clients use this API to send text and audio requests to Amazon Lex at runtime. Amazon Lex interprets the user input using the machine learning model that it built for the bot. </p>

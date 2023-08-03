@@ -3,6 +3,23 @@ pub use crate::operation::describe_account_attributes::_describe_account_attribu
 
 pub use crate::operation::describe_account_attributes::_describe_account_attributes_input::DescribeAccountAttributesInputBuilder;
 
+impl DescribeAccountAttributesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_account_attributes::DescribeAccountAttributesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_account_attributes::DescribeAccountAttributesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_account_attributes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAccountAttributes`.
 ///
 /// <p>Returns attributes related to AWS Elastic Beanstalk that are associated with the calling AWS account.</p>

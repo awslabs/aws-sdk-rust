@@ -3,6 +3,23 @@ pub use crate::operation::stop_image_builder::_stop_image_builder_output::StopIm
 
 pub use crate::operation::stop_image_builder::_stop_image_builder_input::StopImageBuilderInputBuilder;
 
+impl StopImageBuilderInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_image_builder::StopImageBuilderOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_image_builder::StopImageBuilderError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_image_builder();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopImageBuilder`.
 ///
 /// <p>Stops the specified image builder.</p>

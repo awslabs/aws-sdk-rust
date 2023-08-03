@@ -3,6 +3,23 @@ pub use crate::operation::get_group_configuration::_get_group_configuration_outp
 
 pub use crate::operation::get_group_configuration::_get_group_configuration_input::GetGroupConfigurationInputBuilder;
 
+impl GetGroupConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_group_configuration::GetGroupConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_group_configuration::GetGroupConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_group_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetGroupConfiguration`.
 ///
 /// <p>Retrieves the service configuration associated with the specified resource group. For details about the service configuration syntax, see <a href="https://docs.aws.amazon.com/ARG/latest/APIReference/about-slg.html">Service configurations for Resource Groups</a>.</p>

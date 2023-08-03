@@ -3,6 +3,23 @@ pub use crate::operation::batch_update_detector::_batch_update_detector_output::
 
 pub use crate::operation::batch_update_detector::_batch_update_detector_input::BatchUpdateDetectorInputBuilder;
 
+impl BatchUpdateDetectorInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_update_detector::BatchUpdateDetectorOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_update_detector::BatchUpdateDetectorError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_update_detector();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchUpdateDetector`.
 ///
 /// <p>Updates the state, variable values, and timer settings of one or more detectors (instances) of a specified detector model.</p>

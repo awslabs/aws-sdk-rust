@@ -3,6 +3,17 @@ pub use crate::operation::resend_contact_reachability_email::_resend_contact_rea
 
 pub use crate::operation::resend_contact_reachability_email::_resend_contact_reachability_email_input::ResendContactReachabilityEmailInputBuilder;
 
+impl ResendContactReachabilityEmailInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::resend_contact_reachability_email::ResendContactReachabilityEmailOutput, ::aws_smithy_http::result::SdkError<crate::operation::resend_contact_reachability_email::ResendContactReachabilityEmailError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.resend_contact_reachability_email();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ResendContactReachabilityEmail`.
 ///
 /// <p>For operations that require confirmation that the email address for the registrant contact is valid, such as registering a new domain, this operation resends the confirmation email to the current email address for the registrant contact.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_related_item::_create_related_item_output::Crea
 
 pub use crate::operation::create_related_item::_create_related_item_input::CreateRelatedItemInputBuilder;
 
+impl CreateRelatedItemInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_related_item::CreateRelatedItemOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_related_item::CreateRelatedItemError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_related_item();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateRelatedItem`.
 ///
 /// <p>Creates a related item (comments, tasks, and contacts) and associates it with a case.</p> <note>

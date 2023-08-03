@@ -3,6 +3,23 @@ pub use crate::operation::update_data_quality_ruleset::_update_data_quality_rule
 
 pub use crate::operation::update_data_quality_ruleset::_update_data_quality_ruleset_input::UpdateDataQualityRulesetInputBuilder;
 
+impl UpdateDataQualityRulesetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_data_quality_ruleset::UpdateDataQualityRulesetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_data_quality_ruleset::UpdateDataQualityRulesetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_data_quality_ruleset();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateDataQualityRuleset`.
 ///
 /// <p>Updates the specified data quality ruleset.</p>

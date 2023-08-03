@@ -3,6 +3,23 @@ pub use crate::operation::revoke_grant::_revoke_grant_output::RevokeGrantOutputB
 
 pub use crate::operation::revoke_grant::_revoke_grant_input::RevokeGrantInputBuilder;
 
+impl RevokeGrantInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::revoke_grant::RevokeGrantOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::revoke_grant::RevokeGrantError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.revoke_grant();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RevokeGrant`.
 ///
 /// <p>Deletes the specified grant. You revoke a grant to terminate the permissions that the grant allows. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/managing-grants.html#grant-delete">Retiring and revoking grants</a> in the <i> <i>Key Management Service Developer Guide</i> </i>.</p>

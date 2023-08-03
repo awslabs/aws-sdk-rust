@@ -3,6 +3,23 @@ pub use crate::operation::create_attribute_group::_create_attribute_group_output
 
 pub use crate::operation::create_attribute_group::_create_attribute_group_input::CreateAttributeGroupInputBuilder;
 
+impl CreateAttributeGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_attribute_group::CreateAttributeGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_attribute_group::CreateAttributeGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_attribute_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateAttributeGroup`.
 ///
 /// <p>Creates a new attribute group as a container for user-defined attributes. This feature enables users to have full control over their cloud application's metadata in a rich machine-readable format to facilitate integration with automated workflows and third-party tools.</p>

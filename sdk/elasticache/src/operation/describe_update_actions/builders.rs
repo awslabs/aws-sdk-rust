@@ -3,6 +3,23 @@ pub use crate::operation::describe_update_actions::_describe_update_actions_outp
 
 pub use crate::operation::describe_update_actions::_describe_update_actions_input::DescribeUpdateActionsInputBuilder;
 
+impl DescribeUpdateActionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_update_actions::DescribeUpdateActionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_update_actions::DescribeUpdateActionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_update_actions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeUpdateActions`.
 ///
 /// <p>Returns details of the update actions </p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_dhcp_options::_delete_dhcp_options_output::Dele
 
 pub use crate::operation::delete_dhcp_options::_delete_dhcp_options_input::DeleteDhcpOptionsInputBuilder;
 
+impl DeleteDhcpOptionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_dhcp_options::DeleteDhcpOptionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_dhcp_options::DeleteDhcpOptionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_dhcp_options();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteDhcpOptions`.
 ///
 /// <p>Deletes the specified set of DHCP options. You must disassociate the set of DHCP options before you can delete it. You can disassociate the set of DHCP options by associating either a new set of options or the default set of options with the VPC.</p>

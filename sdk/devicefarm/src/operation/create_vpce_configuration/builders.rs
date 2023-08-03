@@ -3,6 +3,23 @@ pub use crate::operation::create_vpce_configuration::_create_vpce_configuration_
 
 pub use crate::operation::create_vpce_configuration::_create_vpce_configuration_input::CreateVpceConfigurationInputBuilder;
 
+impl CreateVpceConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_vpce_configuration::CreateVpceConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_vpce_configuration::CreateVPCEConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_vpce_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateVPCEConfiguration`.
 ///
 /// <p>Creates a configuration record in Device Farm for your Amazon Virtual Private Cloud (VPC) endpoint.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_fhir_datastores::_list_fhir_datastores_output::Li
 
 pub use crate::operation::list_fhir_datastores::_list_fhir_datastores_input::ListFhirDatastoresInputBuilder;
 
+impl ListFhirDatastoresInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_fhir_datastores::ListFhirDatastoresOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_fhir_datastores::ListFHIRDatastoresError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_fhir_datastores();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListFHIRDatastores`.
 ///
 /// <p>Lists all FHIR data stores that are in the user’s account, regardless of data store status.</p>

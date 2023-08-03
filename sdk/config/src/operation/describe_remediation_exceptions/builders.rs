@@ -3,6 +3,23 @@ pub use crate::operation::describe_remediation_exceptions::_describe_remediation
 
 pub use crate::operation::describe_remediation_exceptions::_describe_remediation_exceptions_input::DescribeRemediationExceptionsInputBuilder;
 
+impl DescribeRemediationExceptionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_remediation_exceptions::DescribeRemediationExceptionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_remediation_exceptions::DescribeRemediationExceptionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_remediation_exceptions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeRemediationExceptions`.
 ///
 /// <p>Returns the details of one or more remediation exceptions. A detailed view of a remediation exception for a set of resources that includes an explanation of an exception and the time when the exception will be deleted. When you specify the limit and the next token, you receive a paginated response. </p> <note>

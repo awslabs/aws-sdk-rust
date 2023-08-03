@@ -3,6 +3,23 @@ pub use crate::operation::list_typed_link_facet_attributes::_list_typed_link_fac
 
 pub use crate::operation::list_typed_link_facet_attributes::_list_typed_link_facet_attributes_input::ListTypedLinkFacetAttributesInputBuilder;
 
+impl ListTypedLinkFacetAttributesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_typed_link_facet_attributes::ListTypedLinkFacetAttributesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_typed_link_facet_attributes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListTypedLinkFacetAttributes`.
 ///
 /// <p>Returns a paginated list of all attribute definitions for a particular <code>TypedLinkFacet</code>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>

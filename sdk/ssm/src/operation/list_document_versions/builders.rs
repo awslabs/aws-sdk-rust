@@ -3,6 +3,23 @@ pub use crate::operation::list_document_versions::_list_document_versions_output
 
 pub use crate::operation::list_document_versions::_list_document_versions_input::ListDocumentVersionsInputBuilder;
 
+impl ListDocumentVersionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_document_versions::ListDocumentVersionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_document_versions::ListDocumentVersionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_document_versions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDocumentVersions`.
 ///
 /// <p>List all versions for a document.</p>

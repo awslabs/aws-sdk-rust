@@ -3,6 +3,23 @@ pub use crate::operation::list_event_trackers::_list_event_trackers_output::List
 
 pub use crate::operation::list_event_trackers::_list_event_trackers_input::ListEventTrackersInputBuilder;
 
+impl ListEventTrackersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_event_trackers::ListEventTrackersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_event_trackers::ListEventTrackersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_event_trackers();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListEventTrackers`.
 ///
 /// <p>Returns the list of event trackers associated with the account. The response provides the properties for each event tracker, including the Amazon Resource Name (ARN) and tracking ID. For more information on event trackers, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateEventTracker.html">CreateEventTracker</a>.</p>

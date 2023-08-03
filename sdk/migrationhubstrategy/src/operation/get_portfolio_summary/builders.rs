@@ -3,6 +3,23 @@ pub use crate::operation::get_portfolio_summary::_get_portfolio_summary_output::
 
 pub use crate::operation::get_portfolio_summary::_get_portfolio_summary_input::GetPortfolioSummaryInputBuilder;
 
+impl GetPortfolioSummaryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_portfolio_summary::GetPortfolioSummaryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_portfolio_summary::GetPortfolioSummaryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_portfolio_summary();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetPortfolioSummary`.
 ///
 /// <p> Retrieves overall summary including the number of servers to rehost and the overall number of anti-patterns. </p>

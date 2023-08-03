@@ -3,6 +3,23 @@ pub use crate::operation::list_triggers::_list_triggers_output::ListTriggersOutp
 
 pub use crate::operation::list_triggers::_list_triggers_input::ListTriggersInputBuilder;
 
+impl ListTriggersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_triggers::ListTriggersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_triggers::ListTriggersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_triggers();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListTriggers`.
 ///
 /// <p>Retrieves the names of all trigger resources in this Amazon Web Services account, or the resources with the specified tag. This operation allows you to see which resources are available in your account, and their names.</p>

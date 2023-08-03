@@ -3,6 +3,23 @@ pub use crate::operation::delete_user::_delete_user_output::DeleteUserOutputBuil
 
 pub use crate::operation::delete_user::_delete_user_input::DeleteUserInputBuilder;
 
+impl DeleteUserInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_user::DeleteUserOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_user::DeleteUserError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_user();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteUser`.
 ///
 /// <p>Deletes a user within an identity store given <code>UserId</code>.</p>

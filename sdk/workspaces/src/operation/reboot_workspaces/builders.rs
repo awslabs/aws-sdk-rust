@@ -3,6 +3,23 @@ pub use crate::operation::reboot_workspaces::_reboot_workspaces_output::RebootWo
 
 pub use crate::operation::reboot_workspaces::_reboot_workspaces_input::RebootWorkspacesInputBuilder;
 
+impl RebootWorkspacesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::reboot_workspaces::RebootWorkspacesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::reboot_workspaces::RebootWorkspacesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.reboot_workspaces();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RebootWorkspaces`.
 ///
 /// <p>Reboots the specified WorkSpaces.</p>

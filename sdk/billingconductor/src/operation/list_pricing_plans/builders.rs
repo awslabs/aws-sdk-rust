@@ -3,6 +3,23 @@ pub use crate::operation::list_pricing_plans::_list_pricing_plans_output::ListPr
 
 pub use crate::operation::list_pricing_plans::_list_pricing_plans_input::ListPricingPlansInputBuilder;
 
+impl ListPricingPlansInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_pricing_plans::ListPricingPlansOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_pricing_plans::ListPricingPlansError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_pricing_plans();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListPricingPlans`.
 ///
 /// <p>A paginated call to get pricing plans for the given billing period. If you don't provide a billing period, the current billing period is used. </p>

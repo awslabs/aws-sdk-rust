@@ -3,6 +3,23 @@ pub use crate::operation::describe_endpoint_group::_describe_endpoint_group_outp
 
 pub use crate::operation::describe_endpoint_group::_describe_endpoint_group_input::DescribeEndpointGroupInputBuilder;
 
+impl DescribeEndpointGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_endpoint_group::DescribeEndpointGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_endpoint_group::DescribeEndpointGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_endpoint_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeEndpointGroup`.
 ///
 /// <p>Describe an endpoint group. </p>

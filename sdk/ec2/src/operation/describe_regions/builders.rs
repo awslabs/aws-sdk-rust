@@ -3,6 +3,23 @@ pub use crate::operation::describe_regions::_describe_regions_output::DescribeRe
 
 pub use crate::operation::describe_regions::_describe_regions_input::DescribeRegionsInputBuilder;
 
+impl DescribeRegionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_regions::DescribeRegionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_regions::DescribeRegionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_regions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeRegions`.
 ///
 /// <p>Describes the Regions that are enabled for your account, or all Regions.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_bridges::_list_bridges_output::ListBridgesOutputB
 
 pub use crate::operation::list_bridges::_list_bridges_input::ListBridgesInputBuilder;
 
+impl ListBridgesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_bridges::ListBridgesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_bridges::ListBridgesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_bridges();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListBridges`.
 ///
 /// Displays a list of bridges that are associated with this account and an optionally specified Arn. This request returns a paginated result.

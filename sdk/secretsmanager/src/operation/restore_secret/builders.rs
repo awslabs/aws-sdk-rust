@@ -3,6 +3,23 @@ pub use crate::operation::restore_secret::_restore_secret_output::RestoreSecretO
 
 pub use crate::operation::restore_secret::_restore_secret_input::RestoreSecretInputBuilder;
 
+impl RestoreSecretInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::restore_secret::RestoreSecretOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::restore_secret::RestoreSecretError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.restore_secret();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RestoreSecret`.
 ///
 /// <p>Cancels the scheduled deletion of a secret by removing the <code>DeletedDate</code> time stamp. You can access a secret again after it has been restored.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_users_in_group::_list_users_in_group_output::List
 
 pub use crate::operation::list_users_in_group::_list_users_in_group_input::ListUsersInGroupInputBuilder;
 
+impl ListUsersInGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_users_in_group::ListUsersInGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_users_in_group::ListUsersInGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_users_in_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListUsersInGroup`.
 ///
 /// <p>Lists the users in the specified group.</p>

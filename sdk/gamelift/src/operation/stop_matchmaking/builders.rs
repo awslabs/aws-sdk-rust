@@ -3,6 +3,23 @@ pub use crate::operation::stop_matchmaking::_stop_matchmaking_output::StopMatchm
 
 pub use crate::operation::stop_matchmaking::_stop_matchmaking_input::StopMatchmakingInputBuilder;
 
+impl StopMatchmakingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_matchmaking::StopMatchmakingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_matchmaking::StopMatchmakingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_matchmaking();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopMatchmaking`.
 ///
 /// <p>Cancels a matchmaking ticket or match backfill ticket that is currently being processed. To stop the matchmaking operation, specify the ticket ID. If successful, work on the ticket is stopped, and the ticket status is changed to <code>CANCELLED</code>.</p>

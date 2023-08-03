@@ -3,6 +3,23 @@ pub use crate::operation::get_device_registration::_get_device_registration_outp
 
 pub use crate::operation::get_device_registration::_get_device_registration_input::GetDeviceRegistrationInputBuilder;
 
+impl GetDeviceRegistrationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_device_registration::GetDeviceRegistrationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_device_registration::GetDeviceRegistrationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_device_registration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetDeviceRegistration`.
 ///
 /// <p>Use to check if a device is registered with SageMaker Edge Manager.</p>

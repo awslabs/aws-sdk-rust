@@ -3,6 +3,17 @@ pub use crate::operation::disassociate_resolver_endpoint_ip_address::_disassocia
 
 pub use crate::operation::disassociate_resolver_endpoint_ip_address::_disassociate_resolver_endpoint_ip_address_input::DisassociateResolverEndpointIpAddressInputBuilder;
 
+impl DisassociateResolverEndpointIpAddressInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddressOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_resolver_endpoint_ip_address::DisassociateResolverEndpointIpAddressError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.disassociate_resolver_endpoint_ip_address();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateResolverEndpointIpAddress`.
 ///
 /// <p>Removes IP addresses from an inbound or an outbound Resolver endpoint. If you want to remove more than one IP address, submit one <code>DisassociateResolverEndpointIpAddress</code> request for each IP address.</p>

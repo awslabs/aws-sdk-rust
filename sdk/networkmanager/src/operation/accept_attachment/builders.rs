@@ -3,6 +3,23 @@ pub use crate::operation::accept_attachment::_accept_attachment_output::AcceptAt
 
 pub use crate::operation::accept_attachment::_accept_attachment_input::AcceptAttachmentInputBuilder;
 
+impl AcceptAttachmentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::accept_attachment::AcceptAttachmentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::accept_attachment::AcceptAttachmentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.accept_attachment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AcceptAttachment`.
 ///
 /// <p>Accepts a core network attachment request. </p>

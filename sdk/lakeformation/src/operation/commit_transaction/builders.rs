@@ -3,6 +3,23 @@ pub use crate::operation::commit_transaction::_commit_transaction_output::Commit
 
 pub use crate::operation::commit_transaction::_commit_transaction_input::CommitTransactionInputBuilder;
 
+impl CommitTransactionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::commit_transaction::CommitTransactionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::commit_transaction::CommitTransactionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.commit_transaction();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CommitTransaction`.
 ///
 /// <p>Attempts to commit the specified transaction. Returns an exception if the transaction was previously aborted. This API action is idempotent if called multiple times for the same transaction.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_create_account_status::_describe_create_accou
 
 pub use crate::operation::describe_create_account_status::_describe_create_account_status_input::DescribeCreateAccountStatusInputBuilder;
 
+impl DescribeCreateAccountStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_create_account_status::DescribeCreateAccountStatusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_create_account_status::DescribeCreateAccountStatusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_create_account_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeCreateAccountStatus`.
 ///
 /// <p>Retrieves the current status of an asynchronous request to create an account.</p>

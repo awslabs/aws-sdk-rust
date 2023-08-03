@@ -3,6 +3,23 @@ pub use crate::operation::describe_snapshot_schedule::_describe_snapshot_schedul
 
 pub use crate::operation::describe_snapshot_schedule::_describe_snapshot_schedule_input::DescribeSnapshotScheduleInputBuilder;
 
+impl DescribeSnapshotScheduleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_snapshot_schedule::DescribeSnapshotScheduleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_snapshot_schedule::DescribeSnapshotScheduleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_snapshot_schedule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeSnapshotSchedule`.
 ///
 /// <p>Describes the snapshot schedule for the specified gateway volume. The snapshot schedule information includes intervals at which snapshots are automatically initiated on the volume. This operation is only supported in the cached volume and stored volume types.</p>

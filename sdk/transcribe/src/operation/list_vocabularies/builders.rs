@@ -3,6 +3,23 @@ pub use crate::operation::list_vocabularies::_list_vocabularies_output::ListVoca
 
 pub use crate::operation::list_vocabularies::_list_vocabularies_input::ListVocabulariesInputBuilder;
 
+impl ListVocabulariesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_vocabularies::ListVocabulariesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_vocabularies::ListVocabulariesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_vocabularies();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListVocabularies`.
 ///
 /// <p>Provides a list of custom vocabularies that match the specified criteria. If no criteria are specified, all custom vocabularies are returned.</p>

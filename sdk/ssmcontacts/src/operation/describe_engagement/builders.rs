@@ -3,6 +3,23 @@ pub use crate::operation::describe_engagement::_describe_engagement_output::Desc
 
 pub use crate::operation::describe_engagement::_describe_engagement_input::DescribeEngagementInputBuilder;
 
+impl DescribeEngagementInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_engagement::DescribeEngagementOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_engagement::DescribeEngagementError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_engagement();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeEngagement`.
 ///
 /// <p>Incident Manager uses engagements to engage contacts and escalation plans during an incident. Use this command to describe the engagement that occurred during an incident.</p>

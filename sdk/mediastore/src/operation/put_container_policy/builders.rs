@@ -3,6 +3,23 @@ pub use crate::operation::put_container_policy::_put_container_policy_output::Pu
 
 pub use crate::operation::put_container_policy::_put_container_policy_input::PutContainerPolicyInputBuilder;
 
+impl PutContainerPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_container_policy::PutContainerPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_container_policy::PutContainerPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_container_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutContainerPolicy`.
 ///
 /// <p>Creates an access policy for the specified container to restrict the users and clients that can access it. For information about the data that is included in an access policy, see the <a href="https://aws.amazon.com/documentation/iam/">AWS Identity and Access Management User Guide</a>.</p>

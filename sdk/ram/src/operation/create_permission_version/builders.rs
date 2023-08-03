@@ -3,6 +3,23 @@ pub use crate::operation::create_permission_version::_create_permission_version_
 
 pub use crate::operation::create_permission_version::_create_permission_version_input::CreatePermissionVersionInputBuilder;
 
+impl CreatePermissionVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_permission_version::CreatePermissionVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_permission_version::CreatePermissionVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_permission_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreatePermissionVersion`.
 ///
 /// <p>Creates a new version of the specified customer managed permission. The new version is automatically set as the default version of the customer managed permission. New resource shares automatically use the default permission. Existing resource shares continue to use their original permission versions, but you can use <code>ReplacePermissionAssociations</code> to update them.</p>

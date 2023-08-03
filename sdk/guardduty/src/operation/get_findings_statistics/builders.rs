@@ -3,6 +3,23 @@ pub use crate::operation::get_findings_statistics::_get_findings_statistics_outp
 
 pub use crate::operation::get_findings_statistics::_get_findings_statistics_input::GetFindingsStatisticsInputBuilder;
 
+impl GetFindingsStatisticsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_findings_statistics::GetFindingsStatisticsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_findings_statistics::GetFindingsStatisticsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_findings_statistics();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetFindingsStatistics`.
 ///
 /// <p>Lists Amazon GuardDuty findings statistics for the specified detector ID.</p>

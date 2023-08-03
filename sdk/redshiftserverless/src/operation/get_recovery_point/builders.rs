@@ -3,6 +3,23 @@ pub use crate::operation::get_recovery_point::_get_recovery_point_output::GetRec
 
 pub use crate::operation::get_recovery_point::_get_recovery_point_input::GetRecoveryPointInputBuilder;
 
+impl GetRecoveryPointInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_recovery_point::GetRecoveryPointOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_recovery_point::GetRecoveryPointError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_recovery_point();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetRecoveryPoint`.
 ///
 /// <p>Returns information about a recovery point.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::deny_custom_routing_traffic::_deny_custom_routing_traf
 
 pub use crate::operation::deny_custom_routing_traffic::_deny_custom_routing_traffic_input::DenyCustomRoutingTrafficInputBuilder;
 
+impl DenyCustomRoutingTrafficInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::deny_custom_routing_traffic::DenyCustomRoutingTrafficOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::deny_custom_routing_traffic::DenyCustomRoutingTrafficError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.deny_custom_routing_traffic();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DenyCustomRoutingTraffic`.
 ///
 /// <p>Specify the Amazon EC2 instance (destination) IP addresses and ports for a VPC subnet endpoint that cannot receive traffic for a custom routing accelerator. You can deny traffic to all destinations in the VPC endpoint, or deny traffic to a specified list of destination IP addresses and ports. Note that you cannot specify IP addresses or ports outside of the range that you configured for the endpoint group.</p>

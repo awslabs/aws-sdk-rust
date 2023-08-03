@@ -3,6 +3,17 @@ pub use crate::operation::get_identity_verification_attributes::_get_identity_ve
 
 pub use crate::operation::get_identity_verification_attributes::_get_identity_verification_attributes_input::GetIdentityVerificationAttributesInputBuilder;
 
+impl GetIdentityVerificationAttributesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_identity_verification_attributes::GetIdentityVerificationAttributesOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_identity_verification_attributes::GetIdentityVerificationAttributesError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_identity_verification_attributes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetIdentityVerificationAttributes`.
 ///
 /// <p>Given a list of identities (email addresses and/or domains), returns the verification status and (for domain identities) the verification token for each identity.</p>

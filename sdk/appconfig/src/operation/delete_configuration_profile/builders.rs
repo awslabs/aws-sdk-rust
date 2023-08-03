@@ -3,6 +3,23 @@ pub use crate::operation::delete_configuration_profile::_delete_configuration_pr
 
 pub use crate::operation::delete_configuration_profile::_delete_configuration_profile_input::DeleteConfigurationProfileInputBuilder;
 
+impl DeleteConfigurationProfileInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_configuration_profile::DeleteConfigurationProfileOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_configuration_profile::DeleteConfigurationProfileError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_configuration_profile();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteConfigurationProfile`.
 ///
 /// <p>Deletes a configuration profile. Deleting a configuration profile does not delete a configuration from a host.</p>

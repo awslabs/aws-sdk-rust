@@ -3,6 +3,23 @@ pub use crate::operation::update_gateway_software_now::_update_gateway_software_
 
 pub use crate::operation::update_gateway_software_now::_update_gateway_software_now_input::UpdateGatewaySoftwareNowInputBuilder;
 
+impl UpdateGatewaySoftwareNowInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_gateway_software_now::UpdateGatewaySoftwareNowOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_gateway_software_now::UpdateGatewaySoftwareNowError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_gateway_software_now();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateGatewaySoftwareNow`.
 ///
 /// <p>Updates the gateway virtual machine (VM) software. The request immediately triggers the software update.</p> <note>

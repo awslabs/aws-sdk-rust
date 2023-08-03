@@ -3,6 +3,23 @@ pub use crate::operation::get_schema_as_json::_get_schema_as_json_output::GetSch
 
 pub use crate::operation::get_schema_as_json::_get_schema_as_json_input::GetSchemaAsJsonInputBuilder;
 
+impl GetSchemaAsJsonInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_schema_as_json::GetSchemaAsJsonOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_schema_as_json::GetSchemaAsJsonError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_schema_as_json();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetSchemaAsJson`.
 ///
 /// <p>Retrieves a JSON representation of the schema. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_jsonformat.html#schemas_json">JSON Schema Format</a> for more information.</p>

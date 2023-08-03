@@ -3,6 +3,23 @@ pub use crate::operation::get_screen_data::_get_screen_data_output::GetScreenDat
 
 pub use crate::operation::get_screen_data::_get_screen_data_input::GetScreenDataInputBuilder;
 
+impl GetScreenDataInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_screen_data::GetScreenDataOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_screen_data::GetScreenDataError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_screen_data();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetScreenData`.
 ///
 /// <p> The GetScreenData API allows retrieval of data from a screen in a Honeycode app. The API allows setting local variables in the screen to filter, sort or otherwise affect what will be displayed on the screen. </p>

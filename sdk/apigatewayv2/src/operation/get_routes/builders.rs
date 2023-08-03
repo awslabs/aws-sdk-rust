@@ -3,6 +3,23 @@ pub use crate::operation::get_routes::_get_routes_output::GetRoutesOutputBuilder
 
 pub use crate::operation::get_routes::_get_routes_input::GetRoutesInputBuilder;
 
+impl GetRoutesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_routes::GetRoutesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_routes::GetRoutesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_routes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetRoutes`.
 ///
 /// <p>Gets the Routes for an API.</p>

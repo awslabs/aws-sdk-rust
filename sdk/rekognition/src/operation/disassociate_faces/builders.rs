@@ -3,6 +3,23 @@ pub use crate::operation::disassociate_faces::_disassociate_faces_output::Disass
 
 pub use crate::operation::disassociate_faces::_disassociate_faces_input::DisassociateFacesInputBuilder;
 
+impl DisassociateFacesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_faces::DisassociateFacesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_faces::DisassociateFacesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disassociate_faces();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateFaces`.
 ///
 /// <p>Removes the association between a <code>Face</code> supplied in an array of <code>FaceIds</code> and the User. If the User is not present already, then a <code>ResourceNotFound</code> exception is thrown. If successful, an array of faces that are disassociated from the User is returned. If a given face is already disassociated from the given UserID, it will be ignored and not be returned in the response. If a given face is already associated with a different User or not found in the collection it will be returned as part of <code>UnsuccessfulDisassociations</code>. You can remove 1 - 100 face IDs from a user at one time.</p>

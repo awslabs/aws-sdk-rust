@@ -3,6 +3,23 @@ pub use crate::operation::batch_delete_read_set::_batch_delete_read_set_output::
 
 pub use crate::operation::batch_delete_read_set::_batch_delete_read_set_input::BatchDeleteReadSetInputBuilder;
 
+impl BatchDeleteReadSetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_delete_read_set::BatchDeleteReadSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_delete_read_set::BatchDeleteReadSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_delete_read_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchDeleteReadSet`.
 ///
 /// <p>Deletes one or more read sets.</p>

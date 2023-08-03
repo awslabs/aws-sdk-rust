@@ -3,6 +3,23 @@ pub use crate::operation::reboot_replication_instance::_reboot_replication_insta
 
 pub use crate::operation::reboot_replication_instance::_reboot_replication_instance_input::RebootReplicationInstanceInputBuilder;
 
+impl RebootReplicationInstanceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::reboot_replication_instance::RebootReplicationInstanceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::reboot_replication_instance::RebootReplicationInstanceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.reboot_replication_instance();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RebootReplicationInstance`.
 ///
 /// <p>Reboots a replication instance. Rebooting results in a momentary outage, until the replication instance becomes available again.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_tags::_list_tags_output::ListTagsOutputBuilder;
 
 pub use crate::operation::list_tags::_list_tags_input::ListTagsInputBuilder;
 
+impl ListTagsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_tags::ListTagsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_tags::ListTagsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_tags();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListTags`.
 ///
 /// <p>Returns all resource tags for an Amazon OpenSearch Service domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-awsresourcetagging.html">Tagging Amazon OpenSearch Service domains</a>.</p>

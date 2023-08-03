@@ -3,6 +3,17 @@ pub use crate::operation::delete_elasticsearch_service_role::_delete_elasticsear
 
 pub use crate::operation::delete_elasticsearch_service_role::_delete_elasticsearch_service_role_input::DeleteElasticsearchServiceRoleInputBuilder;
 
+impl DeleteElasticsearchServiceRoleInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_elasticsearch_service_role::DeleteElasticsearchServiceRoleOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_elasticsearch_service_role::DeleteElasticsearchServiceRoleError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.delete_elasticsearch_service_role();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteElasticsearchServiceRole`.
 ///
 /// <p>Deletes the service-linked role that Elasticsearch Service uses to manage and maintain VPC domains. Role deletion will fail if any existing VPC domains use the role. You must delete any such Elasticsearch domains before deleting the role. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-vpc.html#es-enabling-slr" target="_blank">Deleting Elasticsearch Service Role</a> in <i>VPC Endpoints for Amazon Elasticsearch Service Domains</i>.</p>

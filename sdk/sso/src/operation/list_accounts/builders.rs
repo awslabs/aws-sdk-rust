@@ -3,6 +3,23 @@ pub use crate::operation::list_accounts::_list_accounts_output::ListAccountsOutp
 
 pub use crate::operation::list_accounts::_list_accounts_input::ListAccountsInputBuilder;
 
+impl ListAccountsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_accounts::ListAccountsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_accounts::ListAccountsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_accounts();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAccounts`.
 ///
 /// <p>Lists all AWS accounts assigned to the user. These AWS accounts are assigned by the administrator of the account. For more information, see <a href="https://docs.aws.amazon.com/singlesignon/latest/userguide/useraccess.html#assignusers">Assign User Access</a> in the <i>IAM Identity Center User Guide</i>. This operation returns a paginated response.</p>

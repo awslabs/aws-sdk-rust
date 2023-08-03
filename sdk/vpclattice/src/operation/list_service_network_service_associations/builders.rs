@@ -3,6 +3,17 @@ pub use crate::operation::list_service_network_service_associations::_list_servi
 
 pub use crate::operation::list_service_network_service_associations::_list_service_network_service_associations_input::ListServiceNetworkServiceAssociationsInputBuilder;
 
+impl ListServiceNetworkServiceAssociationsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_service_network_service_associations::ListServiceNetworkServiceAssociationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_service_network_service_associations::ListServiceNetworkServiceAssociationsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_service_network_service_associations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListServiceNetworkServiceAssociations`.
 ///
 /// <p>Lists the associations between the service network and the service. You can filter the list either by service or service network. You must provide either the service network identifier or the service identifier.</p>

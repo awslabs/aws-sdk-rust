@@ -3,6 +3,23 @@ pub use crate::operation::delete_dev_environment::_delete_dev_environment_output
 
 pub use crate::operation::delete_dev_environment::_delete_dev_environment_input::DeleteDevEnvironmentInputBuilder;
 
+impl DeleteDevEnvironmentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_dev_environment::DeleteDevEnvironmentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_dev_environment::DeleteDevEnvironmentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_dev_environment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteDevEnvironment`.
 ///
 /// <p>Deletes a Dev Environment. </p>

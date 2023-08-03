@@ -3,6 +3,23 @@ pub use crate::operation::search_content::_search_content_output::SearchContentO
 
 pub use crate::operation::search_content::_search_content_input::SearchContentInputBuilder;
 
+impl SearchContentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::search_content::SearchContentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::search_content::SearchContentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.search_content();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SearchContent`.
 ///
 /// <p>Searches for content in a specified knowledge base. Can be used to get a specific content resource by its name.</p>

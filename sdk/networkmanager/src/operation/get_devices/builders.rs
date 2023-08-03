@@ -3,6 +3,23 @@ pub use crate::operation::get_devices::_get_devices_output::GetDevicesOutputBuil
 
 pub use crate::operation::get_devices::_get_devices_input::GetDevicesInputBuilder;
 
+impl GetDevicesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_devices::GetDevicesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_devices::GetDevicesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_devices();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetDevices`.
 ///
 /// <p>Gets information about one or more of your devices in a global network.</p>

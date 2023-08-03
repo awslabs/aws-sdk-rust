@@ -3,6 +3,23 @@ pub use crate::operation::associate_default_vocabulary::_associate_default_vocab
 
 pub use crate::operation::associate_default_vocabulary::_associate_default_vocabulary_input::AssociateDefaultVocabularyInputBuilder;
 
+impl AssociateDefaultVocabularyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_default_vocabulary::AssociateDefaultVocabularyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_default_vocabulary::AssociateDefaultVocabularyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_default_vocabulary();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateDefaultVocabulary`.
 ///
 /// <p>Associates an existing vocabulary as the default. Contact Lens for Amazon Connect uses the vocabulary in post-call and real-time analysis sessions for the given language.</p>

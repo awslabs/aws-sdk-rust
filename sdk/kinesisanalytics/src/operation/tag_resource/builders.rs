@@ -3,6 +3,23 @@ pub use crate::operation::tag_resource::_tag_resource_output::TagResourceOutputB
 
 pub use crate::operation::tag_resource::_tag_resource_input::TagResourceInputBuilder;
 
+impl TagResourceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::tag_resource::TagResourceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::tag_resource::TagResourceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.tag_resource();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `TagResource`.
 ///
 /// <p>Adds one or more key-value tags to a Kinesis Analytics application. Note that the maximum number of application tags includes system tags. The maximum number of user-defined application tags is 50. For more information, see <a href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-tagging.html">Using Tagging</a>.</p>

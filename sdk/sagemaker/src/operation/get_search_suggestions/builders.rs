@@ -3,6 +3,23 @@ pub use crate::operation::get_search_suggestions::_get_search_suggestions_output
 
 pub use crate::operation::get_search_suggestions::_get_search_suggestions_input::GetSearchSuggestionsInputBuilder;
 
+impl GetSearchSuggestionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_search_suggestions::GetSearchSuggestionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_search_suggestions::GetSearchSuggestionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_search_suggestions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetSearchSuggestions`.
 ///
 /// <p>An auto-complete API for the search functionality in the SageMaker console. It returns suggestions of possible matches for the property name to use in <code>Search</code> queries. Provides suggestions for <code>HyperParameters</code>, <code>Tags</code>, and <code>Metrics</code>.</p>

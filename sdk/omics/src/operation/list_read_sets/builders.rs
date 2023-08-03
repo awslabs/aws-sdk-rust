@@ -3,6 +3,23 @@ pub use crate::operation::list_read_sets::_list_read_sets_output::ListReadSetsOu
 
 pub use crate::operation::list_read_sets::_list_read_sets_input::ListReadSetsInputBuilder;
 
+impl ListReadSetsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_read_sets::ListReadSetsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_read_sets::ListReadSetsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_read_sets();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListReadSets`.
 ///
 /// <p>Retrieves a list of read sets.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_subnet::_delete_subnet_output::DeleteSubnetOutp
 
 pub use crate::operation::delete_subnet::_delete_subnet_input::DeleteSubnetInputBuilder;
 
+impl DeleteSubnetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_subnet::DeleteSubnetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_subnet::DeleteSubnetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_subnet();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteSubnet`.
 ///
 /// <p>Deletes the specified subnet. You must terminate all running instances in the subnet before you can delete the subnet.</p>

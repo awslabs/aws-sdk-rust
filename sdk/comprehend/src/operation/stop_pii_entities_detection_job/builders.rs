@@ -3,6 +3,23 @@ pub use crate::operation::stop_pii_entities_detection_job::_stop_pii_entities_de
 
 pub use crate::operation::stop_pii_entities_detection_job::_stop_pii_entities_detection_job_input::StopPiiEntitiesDetectionJobInputBuilder;
 
+impl StopPiiEntitiesDetectionJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_pii_entities_detection_job::StopPiiEntitiesDetectionJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_pii_entities_detection_job::StopPiiEntitiesDetectionJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_pii_entities_detection_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopPiiEntitiesDetectionJob`.
 ///
 /// <p>Stops a PII entities detection job in progress.</p>

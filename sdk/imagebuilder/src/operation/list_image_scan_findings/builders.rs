@@ -3,6 +3,23 @@ pub use crate::operation::list_image_scan_findings::_list_image_scan_findings_ou
 
 pub use crate::operation::list_image_scan_findings::_list_image_scan_findings_input::ListImageScanFindingsInputBuilder;
 
+impl ListImageScanFindingsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_image_scan_findings::ListImageScanFindingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_image_scan_findings::ListImageScanFindingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_image_scan_findings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListImageScanFindings`.
 ///
 /// <p>Returns a list of image scan findings for your account.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::enable_key_rotation::_enable_key_rotation_output::Enab
 
 pub use crate::operation::enable_key_rotation::_enable_key_rotation_input::EnableKeyRotationInputBuilder;
 
+impl EnableKeyRotationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::enable_key_rotation::EnableKeyRotationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::enable_key_rotation::EnableKeyRotationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.enable_key_rotation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `EnableKeyRotation`.
 ///
 /// <p>Enables <a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">automatic rotation of the key material</a> of the specified symmetric encryption KMS key. </p>

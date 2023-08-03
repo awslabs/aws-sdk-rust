@@ -3,6 +3,23 @@ pub use crate::operation::set_alarm_state::_set_alarm_state_output::SetAlarmStat
 
 pub use crate::operation::set_alarm_state::_set_alarm_state_input::SetAlarmStateInputBuilder;
 
+impl SetAlarmStateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::set_alarm_state::SetAlarmStateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::set_alarm_state::SetAlarmStateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.set_alarm_state();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SetAlarmState`.
 ///
 /// <p>Temporarily sets the state of an alarm for testing purposes. When the updated state differs from the previous value, the action configured for the appropriate state is invoked. For example, if your alarm is configured to send an Amazon SNS message when an alarm is triggered, temporarily changing the alarm state to <code>ALARM</code> sends an SNS message.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_network_settings::_list_network_settings_output::
 
 pub use crate::operation::list_network_settings::_list_network_settings_input::ListNetworkSettingsInputBuilder;
 
+impl ListNetworkSettingsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_network_settings::ListNetworkSettingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_network_settings::ListNetworkSettingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_network_settings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListNetworkSettings`.
 ///
 /// <p>Retrieves a list of network settings.</p>

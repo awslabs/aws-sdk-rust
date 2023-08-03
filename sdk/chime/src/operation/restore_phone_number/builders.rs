@@ -3,6 +3,23 @@ pub use crate::operation::restore_phone_number::_restore_phone_number_output::Re
 
 pub use crate::operation::restore_phone_number::_restore_phone_number_input::RestorePhoneNumberInputBuilder;
 
+impl RestorePhoneNumberInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::restore_phone_number::RestorePhoneNumberOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::restore_phone_number::RestorePhoneNumberError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.restore_phone_number();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RestorePhoneNumber`.
 ///
 /// <p>Moves a phone number from the <b>Deletion queue</b> back into the phone number <b>Inventory</b>.</p>

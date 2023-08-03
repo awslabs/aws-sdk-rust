@@ -3,6 +3,23 @@ pub use crate::operation::update_link::_update_link_output::UpdateLinkOutputBuil
 
 pub use crate::operation::update_link::_update_link_input::UpdateLinkInputBuilder;
 
+impl UpdateLinkInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_link::UpdateLinkOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_link::UpdateLinkError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_link();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateLink`.
 ///
 /// <p>Use this operation to change what types of data are shared from a source account to its linked monitoring account sink. You can't change the sink or change the monitoring account with this operation.</p>

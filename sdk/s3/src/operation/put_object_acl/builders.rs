@@ -3,6 +3,23 @@ pub use crate::operation::put_object_acl::_put_object_acl_output::PutObjectAclOu
 
 pub use crate::operation::put_object_acl::_put_object_acl_input::PutObjectAclInputBuilder;
 
+impl PutObjectAclInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_object_acl::PutObjectAclOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_object_acl::PutObjectAclError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_object_acl();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutObjectAcl`.
 ///
 /// <p>Uses the <code>acl</code> subresource to set the access control list (ACL) permissions for a new or existing object in an S3 bucket. You must have <code>WRITE_ACP</code> permission to set the ACL of an object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/acl-overview.html#permissions">What permissions can I grant?</a> in the <i>Amazon S3 User Guide</i>.</p>

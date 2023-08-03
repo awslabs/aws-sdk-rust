@@ -3,6 +3,23 @@ pub use crate::operation::disable_domain_auto_renew::_disable_domain_auto_renew_
 
 pub use crate::operation::disable_domain_auto_renew::_disable_domain_auto_renew_input::DisableDomainAutoRenewInputBuilder;
 
+impl DisableDomainAutoRenewInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disable_domain_auto_renew::DisableDomainAutoRenewOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disable_domain_auto_renew::DisableDomainAutoRenewError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disable_domain_auto_renew();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisableDomainAutoRenew`.
 ///
 /// <p>This operation disables automatic renewal of domain registration for the specified domain.</p>

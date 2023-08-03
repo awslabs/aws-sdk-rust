@@ -3,6 +3,17 @@ pub use crate::operation::get_open_id_token_for_developer_identity::_get_open_id
 
 pub use crate::operation::get_open_id_token_for_developer_identity::_get_open_id_token_for_developer_identity_input::GetOpenIdTokenForDeveloperIdentityInputBuilder;
 
+impl GetOpenIdTokenForDeveloperIdentityInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_open_id_token_for_developer_identity::GetOpenIdTokenForDeveloperIdentityOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_open_id_token_for_developer_identity::GetOpenIdTokenForDeveloperIdentityError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_open_id_token_for_developer_identity();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetOpenIdTokenForDeveloperIdentity`.
 ///
 /// <p>Registers (or retrieves) a Cognito <code>IdentityId</code> and an OpenID Connect token for a user authenticated by your backend authentication process. Supplying multiple logins will create an implicit linked account. You can only specify one developer provider as part of the <code>Logins</code> map, which is linked to the identity pool. The developer provider is the "domain" by which Cognito will refer to your users.</p>

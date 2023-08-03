@@ -3,6 +3,23 @@ pub use crate::operation::describe_function::_describe_function_output::Describe
 
 pub use crate::operation::describe_function::_describe_function_input::DescribeFunctionInputBuilder;
 
+impl DescribeFunctionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_function::DescribeFunctionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_function::DescribeFunctionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_function();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeFunction`.
 ///
 /// <p>Gets configuration information and metadata about a CloudFront function, but not the function's code. To get a function's code, use <code>GetFunction</code>.</p>

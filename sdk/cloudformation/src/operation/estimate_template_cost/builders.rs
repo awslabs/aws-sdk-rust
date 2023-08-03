@@ -3,6 +3,23 @@ pub use crate::operation::estimate_template_cost::_estimate_template_cost_output
 
 pub use crate::operation::estimate_template_cost::_estimate_template_cost_input::EstimateTemplateCostInputBuilder;
 
+impl EstimateTemplateCostInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::estimate_template_cost::EstimateTemplateCostOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::estimate_template_cost::EstimateTemplateCostError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.estimate_template_cost();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `EstimateTemplateCost`.
 ///
 /// <p>Returns the estimated monthly cost of a template. The return value is an Amazon Web Services Simple Monthly Calculator URL with a query string that describes the resources required to run the template.</p>

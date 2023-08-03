@@ -3,6 +3,23 @@ pub use crate::operation::register_certificate_without_ca::_register_certificate
 
 pub use crate::operation::register_certificate_without_ca::_register_certificate_without_ca_input::RegisterCertificateWithoutCaInputBuilder;
 
+impl RegisterCertificateWithoutCaInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::register_certificate_without_ca::RegisterCertificateWithoutCaOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::register_certificate_without_ca::RegisterCertificateWithoutCAError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.register_certificate_without_ca();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RegisterCertificateWithoutCA`.
 ///
 /// <p>Register a certificate that does not have a certificate authority (CA). For supported certificates, consult <a href="https://docs.aws.amazon.com/iot/latest/developerguide/x509-client-certs.html#x509-cert-algorithms"> Certificate signing algorithms supported by IoT</a>. </p>

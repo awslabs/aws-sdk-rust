@@ -3,6 +3,23 @@ pub use crate::operation::batch_put_geofence::_batch_put_geofence_output::BatchP
 
 pub use crate::operation::batch_put_geofence::_batch_put_geofence_input::BatchPutGeofenceInputBuilder;
 
+impl BatchPutGeofenceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_put_geofence::BatchPutGeofenceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_put_geofence::BatchPutGeofenceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_put_geofence();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchPutGeofence`.
 ///
 /// <p>A batch request for storing geofence geometries into a given geofence collection, or updates the geometry of an existing geofence if a geofence ID is included in the request.</p>

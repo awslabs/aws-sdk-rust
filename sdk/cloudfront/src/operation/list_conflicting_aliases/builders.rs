@@ -3,6 +3,23 @@ pub use crate::operation::list_conflicting_aliases::_list_conflicting_aliases_ou
 
 pub use crate::operation::list_conflicting_aliases::_list_conflicting_aliases_input::ListConflictingAliasesInputBuilder;
 
+impl ListConflictingAliasesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_conflicting_aliases::ListConflictingAliasesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_conflicting_aliases::ListConflictingAliasesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_conflicting_aliases();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListConflictingAliases`.
 ///
 /// <p>Gets a list of aliases (also called CNAMEs or alternate domain names) that conflict or overlap with the provided alias, and the associated CloudFront distributions and Amazon Web Services accounts for each conflicting alias. In the returned list, the distribution and account IDs are partially hidden, which allows you to identify the distributions and accounts that you own, but helps to protect the information of ones that you don't own.</p>

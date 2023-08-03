@@ -3,6 +3,23 @@ pub use crate::operation::get_maintenance_window_task::_get_maintenance_window_t
 
 pub use crate::operation::get_maintenance_window_task::_get_maintenance_window_task_input::GetMaintenanceWindowTaskInputBuilder;
 
+impl GetMaintenanceWindowTaskInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_maintenance_window_task::GetMaintenanceWindowTaskOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_maintenance_window_task::GetMaintenanceWindowTaskError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_maintenance_window_task();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetMaintenanceWindowTask`.
 ///
 /// <p>Retrieves the details of a maintenance window task.</p> <note>

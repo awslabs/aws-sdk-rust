@@ -3,6 +3,23 @@ pub use crate::operation::list_monitors::_list_monitors_output::ListMonitorsOutp
 
 pub use crate::operation::list_monitors::_list_monitors_input::ListMonitorsInputBuilder;
 
+impl ListMonitorsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_monitors::ListMonitorsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_monitors::ListMonitorsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_monitors();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListMonitors`.
 ///
 /// <p>Returns a list of monitors created with the <code>CreateMonitor</code> operation and <code>CreateAutoPredictor</code> operation. For each monitor resource, this operation returns of a summary of its properties, including its Amazon Resource Name (ARN). You can retrieve a complete set of properties of a monitor resource by specify the monitor's ARN in the <code>DescribeMonitor</code> operation.</p>

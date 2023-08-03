@@ -3,6 +3,23 @@ pub use crate::operation::list_fleets::_list_fleets_output::ListFleetsOutputBuil
 
 pub use crate::operation::list_fleets::_list_fleets_input::ListFleetsInputBuilder;
 
+impl ListFleetsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_fleets::ListFleetsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_fleets::ListFleetsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_fleets();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListFleets`.
 ///
 /// <p> Retrieves information for each created fleet in an Amazon Web Services account. </p> <note>

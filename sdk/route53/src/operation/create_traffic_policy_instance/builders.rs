@@ -3,6 +3,23 @@ pub use crate::operation::create_traffic_policy_instance::_create_traffic_policy
 
 pub use crate::operation::create_traffic_policy_instance::_create_traffic_policy_instance_input::CreateTrafficPolicyInstanceInputBuilder;
 
+impl CreateTrafficPolicyInstanceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_traffic_policy_instance::CreateTrafficPolicyInstanceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_traffic_policy_instance::CreateTrafficPolicyInstanceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_traffic_policy_instance();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateTrafficPolicyInstance`.
 ///
 /// <p>Creates resource record sets in a specified hosted zone based on the settings in a specified traffic policy version. In addition, <code>CreateTrafficPolicyInstance</code> associates the resource record sets with a specified domain name (such as example.com) or subdomain name (such as www.example.com). Amazon Route 53 responds to DNS queries for the domain or subdomain name by using the resource record sets that <code>CreateTrafficPolicyInstance</code> created.</p> <note>

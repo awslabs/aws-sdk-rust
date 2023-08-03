@@ -3,6 +3,23 @@ pub use crate::operation::describe_table_restore_status::_describe_table_restore
 
 pub use crate::operation::describe_table_restore_status::_describe_table_restore_status_input::DescribeTableRestoreStatusInputBuilder;
 
+impl DescribeTableRestoreStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_table_restore_status::DescribeTableRestoreStatusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_table_restore_status::DescribeTableRestoreStatusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_table_restore_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeTableRestoreStatus`.
 ///
 /// <p>Lists the status of one or more table restore requests made using the <code>RestoreTableFromClusterSnapshot</code> API action. If you don't specify a value for the <code>TableRestoreRequestId</code> parameter, then <code>DescribeTableRestoreStatus</code> returns the status of all table restore requests ordered by the date and time of the request in ascending order. Otherwise <code>DescribeTableRestoreStatus</code> returns the status of the table specified by <code>TableRestoreRequestId</code>.</p>

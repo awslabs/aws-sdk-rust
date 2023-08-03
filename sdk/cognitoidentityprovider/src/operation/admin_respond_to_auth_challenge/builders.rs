@@ -3,6 +3,23 @@ pub use crate::operation::admin_respond_to_auth_challenge::_admin_respond_to_aut
 
 pub use crate::operation::admin_respond_to_auth_challenge::_admin_respond_to_auth_challenge_input::AdminRespondToAuthChallengeInputBuilder;
 
+impl AdminRespondToAuthChallengeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthChallengeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::admin_respond_to_auth_challenge::AdminRespondToAuthChallengeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.admin_respond_to_auth_challenge();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AdminRespondToAuthChallenge`.
 ///
 /// <p>Responds to an authentication challenge, as an administrator.</p> <note>

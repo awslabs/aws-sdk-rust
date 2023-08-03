@@ -3,6 +3,23 @@ pub use crate::operation::describe_rule::_describe_rule_output::DescribeRuleOutp
 
 pub use crate::operation::describe_rule::_describe_rule_input::DescribeRuleInputBuilder;
 
+impl DescribeRuleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_rule::DescribeRuleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_rule::DescribeRuleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_rule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeRule`.
 ///
 /// <p>Describes a rule for the specified Amazon Connect instance.</p>

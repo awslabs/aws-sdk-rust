@@ -3,6 +3,23 @@ pub use crate::operation::delete_network_settings::_delete_network_settings_outp
 
 pub use crate::operation::delete_network_settings::_delete_network_settings_input::DeleteNetworkSettingsInputBuilder;
 
+impl DeleteNetworkSettingsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_network_settings::DeleteNetworkSettingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_network_settings::DeleteNetworkSettingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_network_settings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteNetworkSettings`.
 ///
 /// <p>Deletes network settings.</p>

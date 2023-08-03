@@ -3,6 +3,23 @@ pub use crate::operation::search_place_index_for_text::_search_place_index_for_t
 
 pub use crate::operation::search_place_index_for_text::_search_place_index_for_text_input::SearchPlaceIndexForTextInputBuilder;
 
+impl SearchPlaceIndexForTextInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::search_place_index_for_text::SearchPlaceIndexForTextOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::search_place_index_for_text::SearchPlaceIndexForTextError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.search_place_index_for_text();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SearchPlaceIndexForText`.
 ///
 /// <p>Geocodes free-form text, such as an address, name, city, or region to allow you to search for Places or points of interest. </p>

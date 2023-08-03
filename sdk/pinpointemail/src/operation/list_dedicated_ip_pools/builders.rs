@@ -3,6 +3,23 @@ pub use crate::operation::list_dedicated_ip_pools::_list_dedicated_ip_pools_outp
 
 pub use crate::operation::list_dedicated_ip_pools::_list_dedicated_ip_pools_input::ListDedicatedIpPoolsInputBuilder;
 
+impl ListDedicatedIpPoolsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_dedicated_ip_pools::ListDedicatedIpPoolsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_dedicated_ip_pools::ListDedicatedIpPoolsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_dedicated_ip_pools();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDedicatedIpPools`.
 ///
 /// <p>List all of the dedicated IP pools that exist in your Amazon Pinpoint account in the current AWS Region.</p>

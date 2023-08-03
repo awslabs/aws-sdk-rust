@@ -3,6 +3,23 @@ pub use crate::operation::disassociate_web_acl::_disassociate_web_acl_output::Di
 
 pub use crate::operation::disassociate_web_acl::_disassociate_web_acl_input::DisassociateWebAclInputBuilder;
 
+impl DisassociateWebAclInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_web_acl::DisassociateWebAclOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_web_acl::DisassociateWebACLError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disassociate_web_acl();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateWebACL`.
 ///
 /// <note>

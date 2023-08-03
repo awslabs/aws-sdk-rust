@@ -3,6 +3,23 @@ pub use crate::operation::create_app::_create_app_output::CreateAppOutputBuilder
 
 pub use crate::operation::create_app::_create_app_input::CreateAppInputBuilder;
 
+impl CreateAppInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_app::CreateAppOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_app::CreateAppError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_app();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateApp`.
 ///
 /// <p>Creates a running app for the specified UserProfile. This operation is automatically invoked by Amazon SageMaker Studio upon access to the associated Domain, and when new kernel configurations are selected by the user. A user may have multiple Apps active simultaneously.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::put_account_vdm_attributes::_put_account_vdm_attribute
 
 pub use crate::operation::put_account_vdm_attributes::_put_account_vdm_attributes_input::PutAccountVdmAttributesInputBuilder;
 
+impl PutAccountVdmAttributesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_account_vdm_attributes::PutAccountVdmAttributesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_account_vdm_attributes::PutAccountVdmAttributesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_account_vdm_attributes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutAccountVdmAttributes`.
 ///
 /// <p>Update your Amazon SES account VDM attributes.</p>

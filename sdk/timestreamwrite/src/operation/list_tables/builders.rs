@@ -3,6 +3,23 @@ pub use crate::operation::list_tables::_list_tables_output::ListTablesOutputBuil
 
 pub use crate::operation::list_tables::_list_tables_input::ListTablesInputBuilder;
 
+impl ListTablesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_tables::ListTablesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_tables::ListTablesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_tables();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListTables`.
 ///
 /// <p>Provides a list of tables, along with the name, status, and retention properties of each table. See <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.list-table.html">code sample</a> for details. </p>

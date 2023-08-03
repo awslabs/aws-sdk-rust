@@ -3,6 +3,23 @@ pub use crate::operation::grant_access::_grant_access_output::GrantAccessOutputB
 
 pub use crate::operation::grant_access::_grant_access_input::GrantAccessInputBuilder;
 
+impl GrantAccessInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::grant_access::GrantAccessOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::grant_access::GrantAccessError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.grant_access();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GrantAccess`.
 ///
 /// <note>

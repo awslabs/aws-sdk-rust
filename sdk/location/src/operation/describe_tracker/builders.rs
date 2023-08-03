@@ -3,6 +3,23 @@ pub use crate::operation::describe_tracker::_describe_tracker_output::DescribeTr
 
 pub use crate::operation::describe_tracker::_describe_tracker_input::DescribeTrackerInputBuilder;
 
+impl DescribeTrackerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_tracker::DescribeTrackerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_tracker::DescribeTrackerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_tracker();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeTracker`.
 ///
 /// <p>Retrieves the tracker resource details.</p>

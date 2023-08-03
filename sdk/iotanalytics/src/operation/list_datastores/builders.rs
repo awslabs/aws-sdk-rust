@@ -3,6 +3,23 @@ pub use crate::operation::list_datastores::_list_datastores_output::ListDatastor
 
 pub use crate::operation::list_datastores::_list_datastores_input::ListDatastoresInputBuilder;
 
+impl ListDatastoresInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_datastores::ListDatastoresOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_datastores::ListDatastoresError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_datastores();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDatastores`.
 ///
 /// <p>Retrieves a list of data stores.</p>

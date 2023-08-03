@@ -3,6 +3,23 @@ pub use crate::operation::get_transcription_job::_get_transcription_job_output::
 
 pub use crate::operation::get_transcription_job::_get_transcription_job_input::GetTranscriptionJobInputBuilder;
 
+impl GetTranscriptionJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_transcription_job::GetTranscriptionJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_transcription_job::GetTranscriptionJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_transcription_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetTranscriptionJob`.
 ///
 /// <p>Provides information about the specified transcription job.</p>

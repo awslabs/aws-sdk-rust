@@ -3,6 +3,23 @@ pub use crate::operation::update_location_azure_blob::_update_location_azure_blo
 
 pub use crate::operation::update_location_azure_blob::_update_location_azure_blob_input::UpdateLocationAzureBlobInputBuilder;
 
+impl UpdateLocationAzureBlobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_location_azure_blob::UpdateLocationAzureBlobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_location_azure_blob::UpdateLocationAzureBlobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_location_azure_blob();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateLocationAzureBlob`.
 ///
 /// <p>Modifies some configurations of the Microsoft Azure Blob Storage transfer location that you're using with DataSync.</p>

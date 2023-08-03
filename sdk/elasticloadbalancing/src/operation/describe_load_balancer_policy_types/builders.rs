@@ -3,6 +3,17 @@ pub use crate::operation::describe_load_balancer_policy_types::_describe_load_ba
 
 pub use crate::operation::describe_load_balancer_policy_types::_describe_load_balancer_policy_types_input::DescribeLoadBalancerPolicyTypesInputBuilder;
 
+impl DescribeLoadBalancerPolicyTypesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_load_balancer_policy_types::DescribeLoadBalancerPolicyTypesOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_load_balancer_policy_types::DescribeLoadBalancerPolicyTypesError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_load_balancer_policy_types();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeLoadBalancerPolicyTypes`.
 ///
 /// <p>Describes the specified load balancer policy types or all load balancer policy types.</p>

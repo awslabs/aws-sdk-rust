@@ -3,6 +3,23 @@ pub use crate::operation::describe_provisioning_artifact::_describe_provisioning
 
 pub use crate::operation::describe_provisioning_artifact::_describe_provisioning_artifact_input::DescribeProvisioningArtifactInputBuilder;
 
+impl DescribeProvisioningArtifactInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_provisioning_artifact::DescribeProvisioningArtifactOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_provisioning_artifact::DescribeProvisioningArtifactError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_provisioning_artifact();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeProvisioningArtifact`.
 ///
 /// <p>Gets information about the specified provisioning artifact (also known as a version) for the specified product.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_stored_queries::_list_stored_queries_output::List
 
 pub use crate::operation::list_stored_queries::_list_stored_queries_input::ListStoredQueriesInputBuilder;
 
+impl ListStoredQueriesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_stored_queries::ListStoredQueriesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_stored_queries::ListStoredQueriesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_stored_queries();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListStoredQueries`.
 ///
 /// <p>Lists the stored queries for a single Amazon Web Services account and a single Amazon Web Services Region. The default is 100. </p>

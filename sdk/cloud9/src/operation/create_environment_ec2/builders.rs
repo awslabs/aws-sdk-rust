@@ -3,6 +3,23 @@ pub use crate::operation::create_environment_ec2::_create_environment_ec2_output
 
 pub use crate::operation::create_environment_ec2::_create_environment_ec2_input::CreateEnvironmentEc2InputBuilder;
 
+impl CreateEnvironmentEc2InputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_environment_ec2::CreateEnvironmentEc2Output,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_environment_ec2::CreateEnvironmentEC2Error,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_environment_ec2();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateEnvironmentEC2`.
 ///
 /// <p>Creates an Cloud9 development environment, launches an Amazon Elastic Compute Cloud (Amazon EC2) instance, and then connects from the instance to the environment.</p>

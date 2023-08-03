@@ -3,6 +3,23 @@ pub use crate::operation::create_asset::_create_asset_output::CreateAssetOutputB
 
 pub use crate::operation::create_asset::_create_asset_input::CreateAssetInputBuilder;
 
+impl CreateAssetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_asset::CreateAssetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_asset::CreateAssetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_asset();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateAsset`.
 ///
 /// <p>Creates an asset from an existing asset model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/create-assets.html">Creating assets</a> in the <i>IoT SiteWise User Guide</i>.</p>

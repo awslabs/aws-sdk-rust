@@ -3,6 +3,23 @@ pub use crate::operation::stop_streaming_session::_stop_streaming_session_output
 
 pub use crate::operation::stop_streaming_session::_stop_streaming_session_input::StopStreamingSessionInputBuilder;
 
+impl StopStreamingSessionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_streaming_session::StopStreamingSessionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_streaming_session::StopStreamingSessionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_streaming_session();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopStreamingSession`.
 ///
 /// <p>Transitions sessions from the <code>READY</code> state into the <code>STOPPED</code> state. The <code>STOP_IN_PROGRESS</code> state is the intermediate state between the <code>READY</code> and <code>STOPPED</code> states.</p>

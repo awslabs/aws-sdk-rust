@@ -3,6 +3,23 @@ pub use crate::operation::deactivate_user::_deactivate_user_output::DeactivateUs
 
 pub use crate::operation::deactivate_user::_deactivate_user_input::DeactivateUserInputBuilder;
 
+impl DeactivateUserInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::deactivate_user::DeactivateUserOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::deactivate_user::DeactivateUserError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.deactivate_user();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeactivateUser`.
 ///
 /// <p>Deactivates the specified user, which revokes the user's access to Amazon WorkDocs.</p>

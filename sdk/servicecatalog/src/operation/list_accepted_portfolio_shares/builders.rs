@@ -3,6 +3,23 @@ pub use crate::operation::list_accepted_portfolio_shares::_list_accepted_portfol
 
 pub use crate::operation::list_accepted_portfolio_shares::_list_accepted_portfolio_shares_input::ListAcceptedPortfolioSharesInputBuilder;
 
+impl ListAcceptedPortfolioSharesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_accepted_portfolio_shares::ListAcceptedPortfolioSharesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_accepted_portfolio_shares::ListAcceptedPortfolioSharesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_accepted_portfolio_shares();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAcceptedPortfolioShares`.
 ///
 /// <p>Lists all imported portfolios for which account-to-account shares were accepted by this account. By specifying the <code>PortfolioShareType</code>, you can list portfolios for which organizational shares were accepted by this account.</p>

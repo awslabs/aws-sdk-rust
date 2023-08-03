@@ -3,6 +3,23 @@ pub use crate::operation::renew_certificate::_renew_certificate_output::RenewCer
 
 pub use crate::operation::renew_certificate::_renew_certificate_input::RenewCertificateInputBuilder;
 
+impl RenewCertificateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::renew_certificate::RenewCertificateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::renew_certificate::RenewCertificateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.renew_certificate();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RenewCertificate`.
 ///
 /// <p>Renews an eligible ACM certificate. At this time, only exported private certificates can be renewed with this operation. In order to renew your Amazon Web Services Private CA certificates with ACM, you must first <a href="https://docs.aws.amazon.com/privateca/latest/userguide/PcaPermissions.html">grant the ACM service principal permission to do so</a>. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/manual-renewal.html">Testing Managed Renewal</a> in the ACM User Guide.</p>

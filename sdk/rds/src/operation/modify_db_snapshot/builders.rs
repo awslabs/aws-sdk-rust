@@ -3,6 +3,23 @@ pub use crate::operation::modify_db_snapshot::_modify_db_snapshot_output::Modify
 
 pub use crate::operation::modify_db_snapshot::_modify_db_snapshot_input::ModifyDbSnapshotInputBuilder;
 
+impl ModifyDbSnapshotInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_db_snapshot::ModifyDbSnapshotOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_db_snapshot::ModifyDBSnapshotError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_db_snapshot();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyDBSnapshot`.
 ///
 /// <p>Updates a manual DB snapshot with a new engine version. The snapshot can be encrypted or unencrypted, but not shared or public. </p>

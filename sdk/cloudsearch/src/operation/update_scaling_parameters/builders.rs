@@ -3,6 +3,23 @@ pub use crate::operation::update_scaling_parameters::_update_scaling_parameters_
 
 pub use crate::operation::update_scaling_parameters::_update_scaling_parameters_input::UpdateScalingParametersInputBuilder;
 
+impl UpdateScalingParametersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_scaling_parameters::UpdateScalingParametersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_scaling_parameters::UpdateScalingParametersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_scaling_parameters();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateScalingParameters`.
 ///
 /// <p>Configures scaling parameters for a domain. A domain's scaling parameters specify the desired search instance type and replication count. Amazon CloudSearch will still automatically scale your domain based on the volume of data and traffic, but not below the desired instance type and replication count. If the Multi-AZ option is enabled, these values control the resources used per Availability Zone. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-scaling-options.html" target="_blank">Configuring Scaling Options</a> in the <i>Amazon CloudSearch Developer Guide</i>. </p>

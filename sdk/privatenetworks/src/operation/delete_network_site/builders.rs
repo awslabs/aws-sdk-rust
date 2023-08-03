@@ -3,6 +3,23 @@ pub use crate::operation::delete_network_site::_delete_network_site_output::Dele
 
 pub use crate::operation::delete_network_site::_delete_network_site_input::DeleteNetworkSiteInputBuilder;
 
+impl DeleteNetworkSiteInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_network_site::DeleteNetworkSiteOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_network_site::DeleteNetworkSiteError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_network_site();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteNetworkSite`.
 ///
 /// <p>Deletes the specified network site. Return the hardware after you delete the network site. You are responsible for minimum charges. For more information, see <a href="https://docs.aws.amazon.com/private-networks/latest/userguide/hardware-maintenance.html">Hardware returns</a> in the <i>Amazon Web Services Private 5G User Guide</i>. </p>

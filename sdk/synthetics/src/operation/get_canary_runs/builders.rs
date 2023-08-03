@@ -3,6 +3,23 @@ pub use crate::operation::get_canary_runs::_get_canary_runs_output::GetCanaryRun
 
 pub use crate::operation::get_canary_runs::_get_canary_runs_input::GetCanaryRunsInputBuilder;
 
+impl GetCanaryRunsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_canary_runs::GetCanaryRunsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_canary_runs::GetCanaryRunsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_canary_runs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetCanaryRuns`.
 ///
 /// <p>Retrieves a list of runs for a specified canary.</p>

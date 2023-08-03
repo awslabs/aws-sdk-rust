@@ -3,6 +3,23 @@ pub use crate::operation::modify_private_dns_name_options::_modify_private_dns_n
 
 pub use crate::operation::modify_private_dns_name_options::_modify_private_dns_name_options_input::ModifyPrivateDnsNameOptionsInputBuilder;
 
+impl ModifyPrivateDnsNameOptionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_private_dns_name_options::ModifyPrivateDnsNameOptionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_private_dns_name_options::ModifyPrivateDnsNameOptionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_private_dns_name_options();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyPrivateDnsNameOptions`.
 ///
 /// <p>Modifies the options for instance hostnames for the specified instance.</p>

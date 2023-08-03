@@ -3,6 +3,23 @@ pub use crate::operation::report_task_progress::_report_task_progress_output::Re
 
 pub use crate::operation::report_task_progress::_report_task_progress_input::ReportTaskProgressInputBuilder;
 
+impl ReportTaskProgressInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::report_task_progress::ReportTaskProgressOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::report_task_progress::ReportTaskProgressError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.report_task_progress();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ReportTaskProgress`.
 ///
 /// <p>Task runners call <code>ReportTaskProgress</code> when assigned a task to acknowledge that it has the task. If the web service does not receive this acknowledgement within 2 minutes, it assigns the task in a subsequent <code>PollForTask</code> call. After this initial acknowledgement, the task runner only needs to report progress every 15 minutes to maintain its ownership of the task. You can change this reporting time from 15 minutes by specifying a <code>reportProgressTimeout</code> field in your pipeline.</p>

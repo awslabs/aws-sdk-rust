@@ -3,6 +3,23 @@ pub use crate::operation::stop_earth_observation_job::_stop_earth_observation_jo
 
 pub use crate::operation::stop_earth_observation_job::_stop_earth_observation_job_input::StopEarthObservationJobInputBuilder;
 
+impl StopEarthObservationJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_earth_observation_job::StopEarthObservationJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_earth_observation_job::StopEarthObservationJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_earth_observation_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopEarthObservationJob`.
 ///
 /// <p>Use this operation to stop an existing earth observation job.</p>

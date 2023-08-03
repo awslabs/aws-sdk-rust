@@ -3,6 +3,17 @@ pub use crate::operation::create_vpc_endpoint_service_configuration::_create_vpc
 
 pub use crate::operation::create_vpc_endpoint_service_configuration::_create_vpc_endpoint_service_configuration_input::CreateVpcEndpointServiceConfigurationInputBuilder;
 
+impl CreateVpcEndpointServiceConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::create_vpc_endpoint_service_configuration::CreateVpcEndpointServiceConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_vpc_endpoint_service_configuration::CreateVpcEndpointServiceConfigurationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.create_vpc_endpoint_service_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateVpcEndpointServiceConfiguration`.
 ///
 /// <p>Creates a VPC endpoint service to which service consumers (Amazon Web Services accounts, users, and IAM roles) can connect.</p>

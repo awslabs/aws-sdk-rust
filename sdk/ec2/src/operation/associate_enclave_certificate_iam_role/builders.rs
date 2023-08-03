@@ -3,6 +3,17 @@ pub use crate::operation::associate_enclave_certificate_iam_role::_associate_enc
 
 pub use crate::operation::associate_enclave_certificate_iam_role::_associate_enclave_certificate_iam_role_input::AssociateEnclaveCertificateIamRoleInputBuilder;
 
+impl AssociateEnclaveCertificateIamRoleInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::associate_enclave_certificate_iam_role::AssociateEnclaveCertificateIamRoleOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_enclave_certificate_iam_role::AssociateEnclaveCertificateIamRoleError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.associate_enclave_certificate_iam_role();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateEnclaveCertificateIamRole`.
 ///
 /// <p>Associates an Identity and Access Management (IAM) role with an Certificate Manager (ACM) certificate. This enables the certificate to be used by the ACM for Nitro Enclaves application inside an enclave. For more information, see <a href="https://docs.aws.amazon.com/enclaves/latest/user/nitro-enclave-refapp.html">Certificate Manager for Nitro Enclaves</a> in the <i>Amazon Web Services Nitro Enclaves User Guide</i>.</p>

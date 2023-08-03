@@ -3,6 +3,23 @@ pub use crate::operation::detect_protective_equipment::_detect_protective_equipm
 
 pub use crate::operation::detect_protective_equipment::_detect_protective_equipment_input::DetectProtectiveEquipmentInputBuilder;
 
+impl DetectProtectiveEquipmentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::detect_protective_equipment::DetectProtectiveEquipmentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::detect_protective_equipment::DetectProtectiveEquipmentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.detect_protective_equipment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DetectProtectiveEquipment`.
 ///
 /// <p>Detects Personal Protective Equipment (PPE) worn by people detected in an image. Amazon Rekognition can detect the following types of PPE.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::cancel_conversion_task::_cancel_conversion_task_output
 
 pub use crate::operation::cancel_conversion_task::_cancel_conversion_task_input::CancelConversionTaskInputBuilder;
 
+impl CancelConversionTaskInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::cancel_conversion_task::CancelConversionTaskOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::cancel_conversion_task::CancelConversionTaskError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.cancel_conversion_task();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CancelConversionTask`.
 ///
 /// <p>Cancels an active conversion task. The task can be the import of an instance or volume. The action removes all artifacts of the conversion, including a partially uploaded volume or instance. If the conversion is complete or is in the process of transferring the final disk image, the command fails and returns an exception.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_findings_report::_create_findings_report_output
 
 pub use crate::operation::create_findings_report::_create_findings_report_input::CreateFindingsReportInputBuilder;
 
+impl CreateFindingsReportInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_findings_report::CreateFindingsReportOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_findings_report::CreateFindingsReportError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_findings_report();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateFindingsReport`.
 ///
 /// <p>Creates a finding report. By default only <code>ACTIVE</code> findings are returned in the report. To see <code>SUPRESSED</code> or <code>CLOSED</code> findings you must specify a value for the <code>findingStatus</code> filter criteria. </p>

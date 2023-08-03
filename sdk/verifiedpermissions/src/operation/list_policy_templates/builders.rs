@@ -3,6 +3,23 @@ pub use crate::operation::list_policy_templates::_list_policy_templates_output::
 
 pub use crate::operation::list_policy_templates::_list_policy_templates_input::ListPolicyTemplatesInputBuilder;
 
+impl ListPolicyTemplatesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_policy_templates::ListPolicyTemplatesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_policy_templates::ListPolicyTemplatesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_policy_templates();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListPolicyTemplates`.
 ///
 /// <p>Returns a paginated list of all policy templates in the specified policy store.</p>

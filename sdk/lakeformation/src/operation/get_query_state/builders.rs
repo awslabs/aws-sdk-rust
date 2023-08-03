@@ -3,6 +3,23 @@ pub use crate::operation::get_query_state::_get_query_state_output::GetQueryStat
 
 pub use crate::operation::get_query_state::_get_query_state_input::GetQueryStateInputBuilder;
 
+impl GetQueryStateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_query_state::GetQueryStateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_query_state::GetQueryStateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_query_state();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetQueryState`.
 ///
 /// <p>Returns the state of a query previously submitted. Clients are expected to poll <code>GetQueryState</code> to monitor the current state of the planning before retrieving the work units. A query state is only visible to the principal that made the initial call to <code>StartQueryPlanning</code>.</p>

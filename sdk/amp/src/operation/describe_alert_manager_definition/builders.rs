@@ -3,6 +3,17 @@ pub use crate::operation::describe_alert_manager_definition::_describe_alert_man
 
 pub use crate::operation::describe_alert_manager_definition::_describe_alert_manager_definition_input::DescribeAlertManagerDefinitionInputBuilder;
 
+impl DescribeAlertManagerDefinitionInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_alert_manager_definition::DescribeAlertManagerDefinitionOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_alert_manager_definition::DescribeAlertManagerDefinitionError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_alert_manager_definition();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAlertManagerDefinition`.
 ///
 /// Describes an alert manager definition.

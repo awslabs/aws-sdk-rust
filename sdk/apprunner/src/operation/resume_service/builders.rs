@@ -3,6 +3,23 @@ pub use crate::operation::resume_service::_resume_service_output::ResumeServiceO
 
 pub use crate::operation::resume_service::_resume_service_input::ResumeServiceInputBuilder;
 
+impl ResumeServiceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::resume_service::ResumeServiceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::resume_service::ResumeServiceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.resume_service();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ResumeService`.
 ///
 /// <p>Resume an active App Runner service. App Runner provisions compute capacity for the service.</p>

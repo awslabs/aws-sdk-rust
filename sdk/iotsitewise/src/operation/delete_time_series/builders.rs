@@ -3,6 +3,23 @@ pub use crate::operation::delete_time_series::_delete_time_series_output::Delete
 
 pub use crate::operation::delete_time_series::_delete_time_series_input::DeleteTimeSeriesInputBuilder;
 
+impl DeleteTimeSeriesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_time_series::DeleteTimeSeriesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_time_series::DeleteTimeSeriesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_time_series();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteTimeSeries`.
 ///
 /// <p>Deletes a time series (data stream). If you delete a time series that's associated with an asset property, the asset property still exists, but the time series will no longer be associated with this asset property.</p>

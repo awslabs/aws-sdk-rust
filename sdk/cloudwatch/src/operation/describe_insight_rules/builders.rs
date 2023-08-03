@@ -3,6 +3,23 @@ pub use crate::operation::describe_insight_rules::_describe_insight_rules_output
 
 pub use crate::operation::describe_insight_rules::_describe_insight_rules_input::DescribeInsightRulesInputBuilder;
 
+impl DescribeInsightRulesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_insight_rules::DescribeInsightRulesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_insight_rules::DescribeInsightRulesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_insight_rules();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeInsightRules`.
 ///
 /// <p>Returns a list of all the Contributor Insights rules in your account.</p>

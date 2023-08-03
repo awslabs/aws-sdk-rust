@@ -3,6 +3,23 @@ pub use crate::operation::describe_import_image_tasks::_describe_import_image_ta
 
 pub use crate::operation::describe_import_image_tasks::_describe_import_image_tasks_input::DescribeImportImageTasksInputBuilder;
 
+impl DescribeImportImageTasksInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_import_image_tasks::DescribeImportImageTasksOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_import_image_tasks::DescribeImportImageTasksError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_import_image_tasks();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeImportImageTasks`.
 ///
 /// <p>Displays details about an import virtual machine or import snapshot tasks that are already created.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_anomaly_group_time_series::_list_anomaly_group_ti
 
 pub use crate::operation::list_anomaly_group_time_series::_list_anomaly_group_time_series_input::ListAnomalyGroupTimeSeriesInputBuilder;
 
+impl ListAnomalyGroupTimeSeriesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_anomaly_group_time_series::ListAnomalyGroupTimeSeriesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_anomaly_group_time_series::ListAnomalyGroupTimeSeriesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_anomaly_group_time_series();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAnomalyGroupTimeSeries`.
 ///
 /// <p>Gets a list of anomalous metrics for a measure in an anomaly group.</p>

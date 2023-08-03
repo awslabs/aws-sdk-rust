@@ -3,6 +3,23 @@ pub use crate::operation::check_capacity::_check_capacity_output::CheckCapacityO
 
 pub use crate::operation::check_capacity::_check_capacity_input::CheckCapacityInputBuilder;
 
+impl CheckCapacityInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::check_capacity::CheckCapacityOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::check_capacity::CheckCapacityError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.check_capacity();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CheckCapacity`.
 ///
 /// <p>Returns the web ACL capacity unit (WCU) requirements for a specified scope and set of rules. You can use this to check the capacity requirements for the rules you want to use in a <code>RuleGroup</code> or <code>WebACL</code>. </p>

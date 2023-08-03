@@ -3,6 +3,23 @@ pub use crate::operation::delete_identity_source::_delete_identity_source_output
 
 pub use crate::operation::delete_identity_source::_delete_identity_source_input::DeleteIdentitySourceInputBuilder;
 
+impl DeleteIdentitySourceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_identity_source::DeleteIdentitySourceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_identity_source::DeleteIdentitySourceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_identity_source();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteIdentitySource`.
 ///
 /// <p>Deletes an identity source that references an identity provider (IdP) such as Amazon Cognito. After you delete the identity source, you can no longer use tokens for identities from that identity source to represent principals in authorization queries made using <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_IsAuthorizedWithToken.html">IsAuthorizedWithToken</a>. operations.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_channels::_get_channels_output::GetChannelsOutputB
 
 pub use crate::operation::get_channels::_get_channels_input::GetChannelsInputBuilder;
 
+impl GetChannelsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_channels::GetChannelsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_channels::GetChannelsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_channels();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetChannels`.
 ///
 /// <p>Retrieves information about the history and status of each channel for an application.</p>

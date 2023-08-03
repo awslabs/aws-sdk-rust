@@ -3,6 +3,23 @@ pub use crate::operation::modify_workspace_properties::_modify_workspace_propert
 
 pub use crate::operation::modify_workspace_properties::_modify_workspace_properties_input::ModifyWorkspacePropertiesInputBuilder;
 
+impl ModifyWorkspacePropertiesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_workspace_properties::ModifyWorkspacePropertiesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_workspace_properties::ModifyWorkspacePropertiesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_workspace_properties();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyWorkspaceProperties`.
 ///
 /// <p>Modifies the specified WorkSpace properties. For important information about how to modify the size of the root and user volumes, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/modify-workspaces.html"> Modify a WorkSpace</a>. </p> <note>

@@ -3,6 +3,23 @@ pub use crate::operation::get_job_manifest::_get_job_manifest_output::GetJobMani
 
 pub use crate::operation::get_job_manifest::_get_job_manifest_input::GetJobManifestInputBuilder;
 
+impl GetJobManifestInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_job_manifest::GetJobManifestOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_job_manifest::GetJobManifestError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_job_manifest();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetJobManifest`.
 ///
 /// <p>Returns a link to an Amazon S3 presigned URL for the manifest file associated with the specified <code>JobId</code> value. You can access the manifest file for up to 60 minutes after this request has been made. To access the manifest file after 60 minutes have passed, you'll have to make another call to the <code>GetJobManifest</code> action.</p>

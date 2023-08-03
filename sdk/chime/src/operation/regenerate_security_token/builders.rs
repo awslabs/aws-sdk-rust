@@ -3,6 +3,23 @@ pub use crate::operation::regenerate_security_token::_regenerate_security_token_
 
 pub use crate::operation::regenerate_security_token::_regenerate_security_token_input::RegenerateSecurityTokenInputBuilder;
 
+impl RegenerateSecurityTokenInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::regenerate_security_token::RegenerateSecurityTokenOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::regenerate_security_token::RegenerateSecurityTokenError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.regenerate_security_token();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RegenerateSecurityToken`.
 ///
 /// <p>Regenerates the security token for a bot.</p>

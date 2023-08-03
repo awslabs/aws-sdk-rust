@@ -3,6 +3,23 @@ pub use crate::operation::list_trial_components::_list_trial_components_output::
 
 pub use crate::operation::list_trial_components::_list_trial_components_input::ListTrialComponentsInputBuilder;
 
+impl ListTrialComponentsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_trial_components::ListTrialComponentsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_trial_components::ListTrialComponentsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_trial_components();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListTrialComponents`.
 ///
 /// <p>Lists the trial components in your account. You can sort the list by trial component name or creation time. You can filter the list to show only components that were created in a specific time range. You can also filter on one of the following:</p>

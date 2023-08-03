@@ -3,6 +3,23 @@ pub use crate::operation::create_platform_application::_create_platform_applicat
 
 pub use crate::operation::create_platform_application::_create_platform_application_input::CreatePlatformApplicationInputBuilder;
 
+impl CreatePlatformApplicationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_platform_application::CreatePlatformApplicationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_platform_application::CreatePlatformApplicationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_platform_application();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreatePlatformApplication`.
 ///
 /// <p>Creates a platform application object for one of the supported push notification services, such as APNS and GCM (Firebase Cloud Messaging), to which devices and mobile apps may register. You must specify <code>PlatformPrincipal</code> and <code>PlatformCredential</code> attributes when using the <code>CreatePlatformApplication</code> action.</p>

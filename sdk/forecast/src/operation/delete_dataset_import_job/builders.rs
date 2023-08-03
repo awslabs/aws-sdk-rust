@@ -3,6 +3,23 @@ pub use crate::operation::delete_dataset_import_job::_delete_dataset_import_job_
 
 pub use crate::operation::delete_dataset_import_job::_delete_dataset_import_job_input::DeleteDatasetImportJobInputBuilder;
 
+impl DeleteDatasetImportJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_dataset_import_job::DeleteDatasetImportJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_dataset_import_job::DeleteDatasetImportJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_dataset_import_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteDatasetImportJob`.
 ///
 /// <p>Deletes a dataset import job created using the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a> operation. You can delete only dataset import jobs that have a status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>. To get the status, use the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_DescribeDatasetImportJob.html">DescribeDatasetImportJob</a> operation.</p>

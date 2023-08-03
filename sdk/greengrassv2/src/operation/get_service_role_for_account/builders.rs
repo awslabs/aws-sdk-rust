@@ -3,6 +3,23 @@ pub use crate::operation::get_service_role_for_account::_get_service_role_for_ac
 
 pub use crate::operation::get_service_role_for_account::_get_service_role_for_account_input::GetServiceRoleForAccountInputBuilder;
 
+impl GetServiceRoleForAccountInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_service_role_for_account::GetServiceRoleForAccountOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_service_role_for_account::GetServiceRoleForAccountError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_service_role_for_account();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetServiceRoleForAccount`.
 ///
 /// <p>Gets the service role associated with IoT Greengrass for your Amazon Web Services account in this Amazon Web Services Region. IoT Greengrass uses this role to verify the identity of client devices and manage core device connectivity information. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-service-role.html">Greengrass service role</a> in the <i>IoT Greengrass Version 2 Developer Guide</i>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_data_set::_create_data_set_output::CreateDataSe
 
 pub use crate::operation::create_data_set::_create_data_set_input::CreateDataSetInputBuilder;
 
+impl CreateDataSetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_data_set::CreateDataSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_data_set::CreateDataSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_data_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateDataSet`.
 ///
 /// <p>This operation creates a data set.</p>

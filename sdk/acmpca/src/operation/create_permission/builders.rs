@@ -3,6 +3,23 @@ pub use crate::operation::create_permission::_create_permission_output::CreatePe
 
 pub use crate::operation::create_permission::_create_permission_input::CreatePermissionInputBuilder;
 
+impl CreatePermissionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_permission::CreatePermissionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_permission::CreatePermissionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_permission();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreatePermission`.
 ///
 /// <p>Grants one or more permissions on a private CA to the Certificate Manager (ACM) service principal (<code>acm.amazonaws.com</code>). These permissions allow ACM to issue and renew ACM certificates that reside in the same Amazon Web Services account as the CA.</p>

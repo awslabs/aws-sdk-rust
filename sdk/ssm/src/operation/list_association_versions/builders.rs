@@ -3,6 +3,23 @@ pub use crate::operation::list_association_versions::_list_association_versions_
 
 pub use crate::operation::list_association_versions::_list_association_versions_input::ListAssociationVersionsInputBuilder;
 
+impl ListAssociationVersionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_association_versions::ListAssociationVersionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_association_versions::ListAssociationVersionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_association_versions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAssociationVersions`.
 ///
 /// <p>Retrieves all versions of an association for a specific association ID.</p>

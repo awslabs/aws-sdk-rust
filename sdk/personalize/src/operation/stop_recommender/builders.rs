@@ -3,6 +3,23 @@ pub use crate::operation::stop_recommender::_stop_recommender_output::StopRecomm
 
 pub use crate::operation::stop_recommender::_stop_recommender_input::StopRecommenderInputBuilder;
 
+impl StopRecommenderInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_recommender::StopRecommenderOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_recommender::StopRecommenderError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_recommender();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopRecommender`.
 ///
 /// <p>Stops a recommender that is ACTIVE. Stopping a recommender halts billing and automatic retraining for the recommender.</p>

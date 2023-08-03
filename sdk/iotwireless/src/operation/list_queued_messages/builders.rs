@@ -3,6 +3,23 @@ pub use crate::operation::list_queued_messages::_list_queued_messages_output::Li
 
 pub use crate::operation::list_queued_messages::_list_queued_messages_input::ListQueuedMessagesInputBuilder;
 
+impl ListQueuedMessagesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_queued_messages::ListQueuedMessagesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_queued_messages::ListQueuedMessagesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_queued_messages();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListQueuedMessages`.
 ///
 /// <p>List queued messages in the downlink queue.</p>

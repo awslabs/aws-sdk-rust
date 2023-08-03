@@ -3,6 +3,23 @@ pub use crate::operation::describe_available_patches::_describe_available_patche
 
 pub use crate::operation::describe_available_patches::_describe_available_patches_input::DescribeAvailablePatchesInputBuilder;
 
+impl DescribeAvailablePatchesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_available_patches::DescribeAvailablePatchesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_available_patches::DescribeAvailablePatchesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_available_patches();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAvailablePatches`.
 ///
 /// <p>Lists all patches eligible to be included in a patch baseline.</p>

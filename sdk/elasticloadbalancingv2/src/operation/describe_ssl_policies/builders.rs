@@ -3,6 +3,23 @@ pub use crate::operation::describe_ssl_policies::_describe_ssl_policies_output::
 
 pub use crate::operation::describe_ssl_policies::_describe_ssl_policies_input::DescribeSslPoliciesInputBuilder;
 
+impl DescribeSslPoliciesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_ssl_policies::DescribeSslPoliciesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_ssl_policies::DescribeSSLPoliciesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_ssl_policies();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeSSLPolicies`.
 ///
 /// <p>Describes the specified policies or all policies used for SSL negotiation.</p>

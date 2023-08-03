@@ -3,6 +3,23 @@ pub use crate::operation::disassociate_from_master_account::_disassociate_from_m
 
 pub use crate::operation::disassociate_from_master_account::_disassociate_from_master_account_input::DisassociateFromMasterAccountInputBuilder;
 
+impl DisassociateFromMasterAccountInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_from_master_account::DisassociateFromMasterAccountOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_from_master_account::DisassociateFromMasterAccountError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disassociate_from_master_account();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateFromMasterAccount`.
 ///
 /// <p>(Deprecated) Disassociates a member account from its Amazon Macie administrator account. This operation has been replaced by the

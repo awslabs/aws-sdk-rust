@@ -3,6 +3,23 @@ pub use crate::operation::list_notebook_instances::_list_notebook_instances_outp
 
 pub use crate::operation::list_notebook_instances::_list_notebook_instances_input::ListNotebookInstancesInputBuilder;
 
+impl ListNotebookInstancesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_notebook_instances::ListNotebookInstancesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_notebook_instances::ListNotebookInstancesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_notebook_instances();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListNotebookInstances`.
 ///
 /// <p>Returns a list of the SageMaker notebook instances in the requester's account in an Amazon Web Services Region. </p>

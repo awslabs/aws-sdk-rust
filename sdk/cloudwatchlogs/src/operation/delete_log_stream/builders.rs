@@ -3,6 +3,23 @@ pub use crate::operation::delete_log_stream::_delete_log_stream_output::DeleteLo
 
 pub use crate::operation::delete_log_stream::_delete_log_stream_input::DeleteLogStreamInputBuilder;
 
+impl DeleteLogStreamInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_log_stream::DeleteLogStreamOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_log_stream::DeleteLogStreamError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_log_stream();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteLogStream`.
 ///
 /// <p>Deletes the specified log stream and permanently deletes all the archived log events associated with the log stream.</p>

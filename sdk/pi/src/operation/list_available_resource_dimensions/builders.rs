@@ -3,6 +3,17 @@ pub use crate::operation::list_available_resource_dimensions::_list_available_re
 
 pub use crate::operation::list_available_resource_dimensions::_list_available_resource_dimensions_input::ListAvailableResourceDimensionsInputBuilder;
 
+impl ListAvailableResourceDimensionsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_available_resource_dimensions::ListAvailableResourceDimensionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_available_resource_dimensions::ListAvailableResourceDimensionsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_available_resource_dimensions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAvailableResourceDimensions`.
 ///
 /// <p>Retrieve the dimensions that can be queried for each specified metric type on a specified DB instance.</p>

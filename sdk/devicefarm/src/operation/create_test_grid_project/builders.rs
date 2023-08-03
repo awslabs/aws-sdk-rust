@@ -3,6 +3,23 @@ pub use crate::operation::create_test_grid_project::_create_test_grid_project_ou
 
 pub use crate::operation::create_test_grid_project::_create_test_grid_project_input::CreateTestGridProjectInputBuilder;
 
+impl CreateTestGridProjectInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_test_grid_project::CreateTestGridProjectOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_test_grid_project::CreateTestGridProjectError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_test_grid_project();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateTestGridProject`.
 ///
 /// <p>Creates a Selenium testing project. Projects are used to track <code>TestGridSession</code> instances.</p>

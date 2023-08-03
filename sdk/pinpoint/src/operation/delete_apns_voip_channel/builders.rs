@@ -3,6 +3,23 @@ pub use crate::operation::delete_apns_voip_channel::_delete_apns_voip_channel_ou
 
 pub use crate::operation::delete_apns_voip_channel::_delete_apns_voip_channel_input::DeleteApnsVoipChannelInputBuilder;
 
+impl DeleteApnsVoipChannelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_apns_voip_channel::DeleteApnsVoipChannelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_apns_voip_channel::DeleteApnsVoipChannelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_apns_voip_channel();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteApnsVoipChannel`.
 ///
 /// <p>Disables the APNs VoIP channel for an application and deletes any existing settings for the channel.</p>

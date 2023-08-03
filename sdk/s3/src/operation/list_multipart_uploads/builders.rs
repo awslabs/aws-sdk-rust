@@ -3,6 +3,23 @@ pub use crate::operation::list_multipart_uploads::_list_multipart_uploads_output
 
 pub use crate::operation::list_multipart_uploads::_list_multipart_uploads_input::ListMultipartUploadsInputBuilder;
 
+impl ListMultipartUploadsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_multipart_uploads::ListMultipartUploadsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_multipart_uploads::ListMultipartUploadsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_multipart_uploads();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListMultipartUploads`.
 ///
 /// <p>This action lists in-progress multipart uploads. An in-progress multipart upload is a multipart upload that has been initiated using the Initiate Multipart Upload request, but has not yet been completed or aborted.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::send_test_event_notification::_send_test_event_notific
 
 pub use crate::operation::send_test_event_notification::_send_test_event_notification_input::SendTestEventNotificationInputBuilder;
 
+impl SendTestEventNotificationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::send_test_event_notification::SendTestEventNotificationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::send_test_event_notification::SendTestEventNotificationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.send_test_event_notification();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SendTestEventNotification`.
 ///
 /// <p> The <code>SendTestEventNotification</code> operation causes Amazon Mechanical Turk to send a notification message as if a HIT event occurred, according to the provided notification specification. This allows you to test notifications without setting up notifications for a real HIT type and trying to trigger them using the website. When you call this operation, the service attempts to send the test notification immediately. </p>

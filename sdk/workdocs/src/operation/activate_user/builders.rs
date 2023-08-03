@@ -3,6 +3,23 @@ pub use crate::operation::activate_user::_activate_user_output::ActivateUserOutp
 
 pub use crate::operation::activate_user::_activate_user_input::ActivateUserInputBuilder;
 
+impl ActivateUserInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::activate_user::ActivateUserOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::activate_user::ActivateUserError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.activate_user();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ActivateUser`.
 ///
 /// <p>Activates the specified user. Only active users can access Amazon WorkDocs.</p>

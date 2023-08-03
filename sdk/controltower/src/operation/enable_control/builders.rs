@@ -3,6 +3,23 @@ pub use crate::operation::enable_control::_enable_control_output::EnableControlO
 
 pub use crate::operation::enable_control::_enable_control_input::EnableControlInputBuilder;
 
+impl EnableControlInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::enable_control::EnableControlOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::enable_control::EnableControlError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.enable_control();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `EnableControl`.
 ///
 /// <p>This API call activates a control. It starts an asynchronous operation that creates AWS resources on the specified organizational unit and the accounts it contains. The resources created will vary according to the control that you specify.</p>

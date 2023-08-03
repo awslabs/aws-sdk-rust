@@ -3,6 +3,23 @@ pub use crate::operation::list_contact_flows::_list_contact_flows_output::ListCo
 
 pub use crate::operation::list_contact_flows::_list_contact_flows_input::ListContactFlowsInputBuilder;
 
+impl ListContactFlowsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_contact_flows::ListContactFlowsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_contact_flows::ListContactFlowsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_contact_flows();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListContactFlows`.
 ///
 /// <p>Provides information about the flows for the specified Amazon Connect instance.</p>

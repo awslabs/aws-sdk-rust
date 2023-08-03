@@ -3,6 +3,23 @@ pub use crate::operation::tag_user::_tag_user_output::TagUserOutputBuilder;
 
 pub use crate::operation::tag_user::_tag_user_input::TagUserInputBuilder;
 
+impl TagUserInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::tag_user::TagUserOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::tag_user::TagUserError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.tag_user();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `TagUser`.
 ///
 /// <p>Adds one or more tags to an IAM user. If a tag with the same key name already exists, then that tag is overwritten with the new value.</p>

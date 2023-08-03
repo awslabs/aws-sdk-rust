@@ -3,6 +3,23 @@ pub use crate::operation::delete_export::_delete_export_output::DeleteExportOutp
 
 pub use crate::operation::delete_export::_delete_export_input::DeleteExportInputBuilder;
 
+impl DeleteExportInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_export::DeleteExportOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_export::DeleteExportError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_export();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteExport`.
 ///
 /// <p>Removes a previous export and the associated files stored in an S3 bucket.</p>

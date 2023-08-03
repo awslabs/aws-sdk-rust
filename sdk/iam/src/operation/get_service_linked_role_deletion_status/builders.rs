@@ -3,6 +3,17 @@ pub use crate::operation::get_service_linked_role_deletion_status::_get_service_
 
 pub use crate::operation::get_service_linked_role_deletion_status::_get_service_linked_role_deletion_status_input::GetServiceLinkedRoleDeletionStatusInputBuilder;
 
+impl GetServiceLinkedRoleDeletionStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_service_linked_role_deletion_status::GetServiceLinkedRoleDeletionStatusOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_service_linked_role_deletion_status::GetServiceLinkedRoleDeletionStatusError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_service_linked_role_deletion_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetServiceLinkedRoleDeletionStatus`.
 ///
 /// <p>Retrieves the status of your service-linked role deletion. After you use <code>DeleteServiceLinkedRole</code> to submit a service-linked role for deletion, you can use the <code>DeletionTaskId</code> parameter in <code>GetServiceLinkedRoleDeletionStatus</code> to check the status of the deletion. If the deletion fails, this operation returns the reason that it failed, if that information is returned by the service.</p>

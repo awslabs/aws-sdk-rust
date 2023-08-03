@@ -3,6 +3,23 @@ pub use crate::operation::create_coip_pool::_create_coip_pool_output::CreateCoip
 
 pub use crate::operation::create_coip_pool::_create_coip_pool_input::CreateCoipPoolInputBuilder;
 
+impl CreateCoipPoolInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_coip_pool::CreateCoipPoolOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_coip_pool::CreateCoipPoolError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_coip_pool();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateCoipPool`.
 ///
 /// <p> Creates a pool of customer-owned IP (CoIP) addresses. </p>

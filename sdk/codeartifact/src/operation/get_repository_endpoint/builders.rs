@@ -3,6 +3,23 @@ pub use crate::operation::get_repository_endpoint::_get_repository_endpoint_outp
 
 pub use crate::operation::get_repository_endpoint::_get_repository_endpoint_input::GetRepositoryEndpointInputBuilder;
 
+impl GetRepositoryEndpointInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_repository_endpoint::GetRepositoryEndpointOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_repository_endpoint::GetRepositoryEndpointError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_repository_endpoint();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetRepositoryEndpoint`.
 ///
 /// <p> Returns the endpoint of a repository for a specific package format. A repository has one endpoint for each package format: </p>

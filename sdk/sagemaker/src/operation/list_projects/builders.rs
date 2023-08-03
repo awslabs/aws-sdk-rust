@@ -3,6 +3,23 @@ pub use crate::operation::list_projects::_list_projects_output::ListProjectsOutp
 
 pub use crate::operation::list_projects::_list_projects_input::ListProjectsInputBuilder;
 
+impl ListProjectsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_projects::ListProjectsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_projects::ListProjectsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_projects();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListProjects`.
 ///
 /// <p>Gets a list of the projects in an Amazon Web Services account.</p>

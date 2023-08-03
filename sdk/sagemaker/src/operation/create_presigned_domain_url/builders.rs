@@ -3,6 +3,23 @@ pub use crate::operation::create_presigned_domain_url::_create_presigned_domain_
 
 pub use crate::operation::create_presigned_domain_url::_create_presigned_domain_url_input::CreatePresignedDomainUrlInputBuilder;
 
+impl CreatePresignedDomainUrlInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_presigned_domain_url::CreatePresignedDomainUrlOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_presigned_domain_url::CreatePresignedDomainUrlError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_presigned_domain_url();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreatePresignedDomainUrl`.
 ///
 /// <p>Creates a URL for a specified UserProfile in a Domain. When accessed in a web browser, the user will be automatically signed in to Amazon SageMaker Studio, and granted access to all of the Apps and files associated with the Domain's Amazon Elastic File System (EFS) volume. This operation can only be called when the authentication mode equals IAM. </p>

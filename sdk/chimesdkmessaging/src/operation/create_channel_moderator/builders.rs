@@ -3,6 +3,23 @@ pub use crate::operation::create_channel_moderator::_create_channel_moderator_ou
 
 pub use crate::operation::create_channel_moderator::_create_channel_moderator_input::CreateChannelModeratorInputBuilder;
 
+impl CreateChannelModeratorInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_channel_moderator::CreateChannelModeratorOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_channel_moderator::CreateChannelModeratorError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_channel_moderator();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateChannelModerator`.
 ///
 /// <p>Creates a new <code>ChannelModerator</code>. A channel moderator can:</p>

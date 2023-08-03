@@ -3,6 +3,23 @@ pub use crate::operation::describe_faq::_describe_faq_output::DescribeFaqOutputB
 
 pub use crate::operation::describe_faq::_describe_faq_input::DescribeFaqInputBuilder;
 
+impl DescribeFaqInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_faq::DescribeFaqOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_faq::DescribeFaqError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_faq();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeFaq`.
 ///
 /// <p>Gets information about an FAQ list.</p>

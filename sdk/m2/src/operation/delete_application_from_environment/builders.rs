@@ -3,6 +3,17 @@ pub use crate::operation::delete_application_from_environment::_delete_applicati
 
 pub use crate::operation::delete_application_from_environment::_delete_application_from_environment_input::DeleteApplicationFromEnvironmentInputBuilder;
 
+impl DeleteApplicationFromEnvironmentInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_application_from_environment::DeleteApplicationFromEnvironmentOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_application_from_environment::DeleteApplicationFromEnvironmentError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.delete_application_from_environment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteApplicationFromEnvironment`.
 ///
 /// <p>Deletes a specific application from the specific runtime environment where it was previously deployed. You cannot delete a runtime environment using DeleteEnvironment if any application has ever been deployed to it. This API removes the association of the application with the runtime environment so you can delete the environment smoothly.</p>

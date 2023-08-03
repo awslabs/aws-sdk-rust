@@ -3,6 +3,23 @@ pub use crate::operation::get_matches::_get_matches_output::GetMatchesOutputBuil
 
 pub use crate::operation::get_matches::_get_matches_input::GetMatchesInputBuilder;
 
+impl GetMatchesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_matches::GetMatchesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_matches::GetMatchesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_matches();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetMatches`.
 ///
 /// <p>Before calling this API, use <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateDomain.html">CreateDomain</a> or <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UpdateDomain.html">UpdateDomain</a> to enable identity resolution: set <code>Matching</code> to true.</p>

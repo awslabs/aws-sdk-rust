@@ -3,6 +3,23 @@ pub use crate::operation::create_domain_entry::_create_domain_entry_output::Crea
 
 pub use crate::operation::create_domain_entry::_create_domain_entry_input::CreateDomainEntryInputBuilder;
 
+impl CreateDomainEntryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_domain_entry::CreateDomainEntryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_domain_entry::CreateDomainEntryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_domain_entry();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateDomainEntry`.
 ///
 /// <p>Creates one of the following domain name system (DNS) records in a domain DNS zone: Address (A), canonical name (CNAME), mail exchanger (MX), name server (NS), start of authority (SOA), service locator (SRV), or text (TXT).</p>

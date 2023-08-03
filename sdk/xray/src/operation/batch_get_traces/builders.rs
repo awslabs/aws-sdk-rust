@@ -3,6 +3,23 @@ pub use crate::operation::batch_get_traces::_batch_get_traces_output::BatchGetTr
 
 pub use crate::operation::batch_get_traces::_batch_get_traces_input::BatchGetTracesInputBuilder;
 
+impl BatchGetTracesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_traces::BatchGetTracesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_get_traces::BatchGetTracesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_get_traces();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchGetTraces`.
 ///
 /// <p>Retrieves a list of traces specified by ID. Each trace is a collection of segment documents that originates from a single request. Use <code>GetTraceSummaries</code> to get a list of trace IDs.</p>

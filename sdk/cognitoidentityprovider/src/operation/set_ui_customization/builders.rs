@@ -3,6 +3,23 @@ pub use crate::operation::set_ui_customization::_set_ui_customization_output::Se
 
 pub use crate::operation::set_ui_customization::_set_ui_customization_input::SetUiCustomizationInputBuilder;
 
+impl SetUiCustomizationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::set_ui_customization::SetUiCustomizationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::set_ui_customization::SetUICustomizationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.set_ui_customization();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SetUICustomization`.
 ///
 /// <p>Sets the user interface (UI) customization information for a user pool's built-in app UI.</p>

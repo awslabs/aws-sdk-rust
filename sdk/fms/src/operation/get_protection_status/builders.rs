@@ -3,6 +3,23 @@ pub use crate::operation::get_protection_status::_get_protection_status_output::
 
 pub use crate::operation::get_protection_status::_get_protection_status_input::GetProtectionStatusInputBuilder;
 
+impl GetProtectionStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_protection_status::GetProtectionStatusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_protection_status::GetProtectionStatusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_protection_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetProtectionStatus`.
 ///
 /// <p>If you created a Shield Advanced policy, returns policy-level attack summary information in the event of a potential DDoS attack. Other policy types are currently unsupported.</p>

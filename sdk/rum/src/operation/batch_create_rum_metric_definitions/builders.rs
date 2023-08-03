@@ -3,6 +3,17 @@ pub use crate::operation::batch_create_rum_metric_definitions::_batch_create_rum
 
 pub use crate::operation::batch_create_rum_metric_definitions::_batch_create_rum_metric_definitions_input::BatchCreateRumMetricDefinitionsInputBuilder;
 
+impl BatchCreateRumMetricDefinitionsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::batch_create_rum_metric_definitions::BatchCreateRumMetricDefinitionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::batch_create_rum_metric_definitions::BatchCreateRumMetricDefinitionsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.batch_create_rum_metric_definitions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchCreateRumMetricDefinitions`.
 ///
 /// <p>Specifies the extended metrics and custom metrics that you want a CloudWatch RUM app monitor to send to a destination. Valid destinations include CloudWatch and Evidently.</p>

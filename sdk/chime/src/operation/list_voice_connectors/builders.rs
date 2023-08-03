@@ -3,6 +3,23 @@ pub use crate::operation::list_voice_connectors::_list_voice_connectors_output::
 
 pub use crate::operation::list_voice_connectors::_list_voice_connectors_input::ListVoiceConnectorsInputBuilder;
 
+impl ListVoiceConnectorsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_voice_connectors::ListVoiceConnectorsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_voice_connectors::ListVoiceConnectorsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_voice_connectors();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListVoiceConnectors`.
 ///
 /// <p>Lists the Amazon Chime Voice Connectors for the administrator's AWS account.</p> <important>

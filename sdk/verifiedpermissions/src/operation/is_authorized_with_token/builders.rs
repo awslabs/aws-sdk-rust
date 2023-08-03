@@ -3,6 +3,23 @@ pub use crate::operation::is_authorized_with_token::_is_authorized_with_token_ou
 
 pub use crate::operation::is_authorized_with_token::_is_authorized_with_token_input::IsAuthorizedWithTokenInputBuilder;
 
+impl IsAuthorizedWithTokenInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::is_authorized_with_token::IsAuthorizedWithTokenOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::is_authorized_with_token::IsAuthorizedWithTokenError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.is_authorized_with_token();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `IsAuthorizedWithToken`.
 ///
 /// <p>Makes an authorization decision about a service request described in the parameters. The principal in this request comes from an external identity source. The information in the parameters can also define additional context that Verified Permissions can include in the evaluation. The request is evaluated against all matching policies in the specified policy store. The result of the decision is either <code>Allow</code> or <code>Deny</code>, along with a list of the policies that resulted in the decision.</p> <important>

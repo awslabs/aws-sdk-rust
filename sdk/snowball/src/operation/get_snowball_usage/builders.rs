@@ -3,6 +3,23 @@ pub use crate::operation::get_snowball_usage::_get_snowball_usage_output::GetSno
 
 pub use crate::operation::get_snowball_usage::_get_snowball_usage_input::GetSnowballUsageInputBuilder;
 
+impl GetSnowballUsageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_snowball_usage::GetSnowballUsageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_snowball_usage::GetSnowballUsageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_snowball_usage();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetSnowballUsage`.
 ///
 /// <p>Returns information about the Snow Family service limit for your account, and also the number of Snow devices your account has in use.</p>

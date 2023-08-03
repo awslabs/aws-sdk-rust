@@ -3,6 +3,23 @@ pub use crate::operation::list_device_fleets::_list_device_fleets_output::ListDe
 
 pub use crate::operation::list_device_fleets::_list_device_fleets_input::ListDeviceFleetsInputBuilder;
 
+impl ListDeviceFleetsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_device_fleets::ListDeviceFleetsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_device_fleets::ListDeviceFleetsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_device_fleets();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDeviceFleets`.
 ///
 /// <p>Returns a list of devices in the fleet.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_receipt_rule_set::_delete_receipt_rule_set_outp
 
 pub use crate::operation::delete_receipt_rule_set::_delete_receipt_rule_set_input::DeleteReceiptRuleSetInputBuilder;
 
+impl DeleteReceiptRuleSetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_receipt_rule_set::DeleteReceiptRuleSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_receipt_rule_set::DeleteReceiptRuleSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_receipt_rule_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteReceiptRuleSet`.
 ///
 /// <p>Deletes the specified receipt rule set and all of the receipt rules it contains.</p> <note>

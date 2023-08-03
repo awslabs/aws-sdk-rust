@@ -3,6 +3,23 @@ pub use crate::operation::update_service_network::_update_service_network_output
 
 pub use crate::operation::update_service_network::_update_service_network_input::UpdateServiceNetworkInputBuilder;
 
+impl UpdateServiceNetworkInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_service_network::UpdateServiceNetworkOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_service_network::UpdateServiceNetworkError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_service_network();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateServiceNetwork`.
 ///
 /// <p>Updates the specified service network.</p>

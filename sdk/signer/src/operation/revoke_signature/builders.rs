@@ -3,6 +3,23 @@ pub use crate::operation::revoke_signature::_revoke_signature_output::RevokeSign
 
 pub use crate::operation::revoke_signature::_revoke_signature_input::RevokeSignatureInputBuilder;
 
+impl RevokeSignatureInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::revoke_signature::RevokeSignatureOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::revoke_signature::RevokeSignatureError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.revoke_signature();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RevokeSignature`.
 ///
 /// <p>Changes the state of a signing job to REVOKED. This indicates that the signature is no longer valid.</p>

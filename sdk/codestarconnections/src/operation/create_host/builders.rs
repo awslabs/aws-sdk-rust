@@ -3,6 +3,23 @@ pub use crate::operation::create_host::_create_host_output::CreateHostOutputBuil
 
 pub use crate::operation::create_host::_create_host_input::CreateHostInputBuilder;
 
+impl CreateHostInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_host::CreateHostOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_host::CreateHostError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_host();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateHost`.
 ///
 /// <p>Creates a resource that represents the infrastructure where a third-party provider is installed. The host is used when you create connections to an installed third-party provider type, such as GitHub Enterprise Server. You create one host for all connections to that provider.</p> <note>

@@ -3,6 +3,23 @@ pub use crate::operation::batch_get_field::_batch_get_field_output::BatchGetFiel
 
 pub use crate::operation::batch_get_field::_batch_get_field_input::BatchGetFieldInputBuilder;
 
+impl BatchGetFieldInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_field::BatchGetFieldOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_get_field::BatchGetFieldError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_get_field();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchGetField`.
 ///
 /// <p>Returns the description for the list of fields in the request parameters. </p>

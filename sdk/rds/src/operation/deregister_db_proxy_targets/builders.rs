@@ -3,6 +3,23 @@ pub use crate::operation::deregister_db_proxy_targets::_deregister_db_proxy_targ
 
 pub use crate::operation::deregister_db_proxy_targets::_deregister_db_proxy_targets_input::DeregisterDbProxyTargetsInputBuilder;
 
+impl DeregisterDbProxyTargetsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::deregister_db_proxy_targets::DeregisterDbProxyTargetsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::deregister_db_proxy_targets::DeregisterDBProxyTargetsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.deregister_db_proxy_targets();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeregisterDBProxyTargets`.
 ///
 /// <p>Remove the association between one or more <code>DBProxyTarget</code> data structures and a <code>DBProxyTargetGroup</code>.</p>

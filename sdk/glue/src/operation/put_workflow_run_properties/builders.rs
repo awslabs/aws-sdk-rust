@@ -3,6 +3,23 @@ pub use crate::operation::put_workflow_run_properties::_put_workflow_run_propert
 
 pub use crate::operation::put_workflow_run_properties::_put_workflow_run_properties_input::PutWorkflowRunPropertiesInputBuilder;
 
+impl PutWorkflowRunPropertiesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_workflow_run_properties::PutWorkflowRunPropertiesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_workflow_run_properties::PutWorkflowRunPropertiesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_workflow_run_properties();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutWorkflowRunProperties`.
 ///
 /// <p>Puts the specified workflow run properties for the given workflow run. If a property already exists for the specified run, then it overrides the value otherwise adds the property to existing properties.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_data_lake_exceptions::_list_data_lake_exceptions_
 
 pub use crate::operation::list_data_lake_exceptions::_list_data_lake_exceptions_input::ListDataLakeExceptionsInputBuilder;
 
+impl ListDataLakeExceptionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_data_lake_exceptions::ListDataLakeExceptionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_data_lake_exceptions::ListDataLakeExceptionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_data_lake_exceptions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDataLakeExceptions`.
 ///
 /// <p>Lists the Amazon Security Lake exceptions that you can use to find the source of problems and fix them.</p>

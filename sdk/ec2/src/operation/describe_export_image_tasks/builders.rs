@@ -3,6 +3,23 @@ pub use crate::operation::describe_export_image_tasks::_describe_export_image_ta
 
 pub use crate::operation::describe_export_image_tasks::_describe_export_image_tasks_input::DescribeExportImageTasksInputBuilder;
 
+impl DescribeExportImageTasksInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_export_image_tasks::DescribeExportImageTasksOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_export_image_tasks::DescribeExportImageTasksError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_export_image_tasks();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeExportImageTasks`.
 ///
 /// <p>Describes the specified export image tasks or all of your export image tasks.</p>

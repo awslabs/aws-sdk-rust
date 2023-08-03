@@ -3,6 +3,23 @@ pub use crate::operation::update_featured_results_set::_update_featured_results_
 
 pub use crate::operation::update_featured_results_set::_update_featured_results_set_input::UpdateFeaturedResultsSetInputBuilder;
 
+impl UpdateFeaturedResultsSetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_featured_results_set::UpdateFeaturedResultsSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_featured_results_set::UpdateFeaturedResultsSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_featured_results_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateFeaturedResultsSet`.
 ///
 /// <p>Updates a set of featured results. Features results are placed above all other results for certain queries. You map specific queries to specific documents for featuring in the results. If a query contains an exact match of a query, then one or more specific documents are featured in the search results.</p>

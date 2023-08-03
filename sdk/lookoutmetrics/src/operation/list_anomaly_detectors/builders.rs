@@ -3,6 +3,23 @@ pub use crate::operation::list_anomaly_detectors::_list_anomaly_detectors_output
 
 pub use crate::operation::list_anomaly_detectors::_list_anomaly_detectors_input::ListAnomalyDetectorsInputBuilder;
 
+impl ListAnomalyDetectorsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_anomaly_detectors::ListAnomalyDetectorsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_anomaly_detectors::ListAnomalyDetectorsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_anomaly_detectors();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAnomalyDetectors`.
 ///
 /// <p>Lists the detectors in the current AWS Region.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_prefix_lists::_describe_prefix_lists_output::
 
 pub use crate::operation::describe_prefix_lists::_describe_prefix_lists_input::DescribePrefixListsInputBuilder;
 
+impl DescribePrefixListsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_prefix_lists::DescribePrefixListsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_prefix_lists::DescribePrefixListsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_prefix_lists();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribePrefixLists`.
 ///
 /// <p>Describes available Amazon Web Services services in a prefix list format, which includes the prefix list name and prefix list ID of the service and the IP address range for the service.</p>

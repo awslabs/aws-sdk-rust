@@ -3,6 +3,23 @@ pub use crate::operation::describe_entity_recognizer::_describe_entity_recognize
 
 pub use crate::operation::describe_entity_recognizer::_describe_entity_recognizer_input::DescribeEntityRecognizerInputBuilder;
 
+impl DescribeEntityRecognizerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_entity_recognizer::DescribeEntityRecognizerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_entity_recognizer::DescribeEntityRecognizerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_entity_recognizer();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeEntityRecognizer`.
 ///
 /// <p>Provides details about an entity recognizer including status, S3 buckets containing training data, recognizer metadata, metrics, and so on.</p>

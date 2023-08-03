@@ -3,6 +3,23 @@ pub use crate::operation::update_business_report_schedule::_update_business_repo
 
 pub use crate::operation::update_business_report_schedule::_update_business_report_schedule_input::UpdateBusinessReportScheduleInputBuilder;
 
+impl UpdateBusinessReportScheduleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_business_report_schedule::UpdateBusinessReportScheduleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_business_report_schedule::UpdateBusinessReportScheduleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_business_report_schedule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateBusinessReportSchedule`.
 ///
 /// <p>Updates the configuration of the report delivery schedule with the specified schedule ARN.</p>

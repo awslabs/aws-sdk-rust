@@ -3,6 +3,23 @@ pub use crate::operation::update_security_config::_update_security_config_output
 
 pub use crate::operation::update_security_config::_update_security_config_input::UpdateSecurityConfigInputBuilder;
 
+impl UpdateSecurityConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_security_config::UpdateSecurityConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_security_config::UpdateSecurityConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_security_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateSecurityConfig`.
 ///
 /// <p>Updates a security configuration for OpenSearch Serverless. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-saml.html">SAML authentication for Amazon OpenSearch Serverless</a>.</p>

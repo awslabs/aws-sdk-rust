@@ -3,6 +3,23 @@ pub use crate::operation::update_zonal_shift::_update_zonal_shift_output::Update
 
 pub use crate::operation::update_zonal_shift::_update_zonal_shift_input::UpdateZonalShiftInputBuilder;
 
+impl UpdateZonalShiftInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_zonal_shift::UpdateZonalShiftOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_zonal_shift::UpdateZonalShiftError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_zonal_shift();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateZonalShift`.
 ///
 /// <p>Update an active zonal shift in Amazon Route 53 Application Recovery Controller in your AWS account. You can update a zonal shift to set a new expiration, or edit or replace the comment for the zonal shift. </p>

@@ -3,6 +3,17 @@ pub use crate::operation::delete_calculated_attribute_definition::_delete_calcul
 
 pub use crate::operation::delete_calculated_attribute_definition::_delete_calculated_attribute_definition_input::DeleteCalculatedAttributeDefinitionInputBuilder;
 
+impl DeleteCalculatedAttributeDefinitionInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_calculated_attribute_definition::DeleteCalculatedAttributeDefinitionOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_calculated_attribute_definition::DeleteCalculatedAttributeDefinitionError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.delete_calculated_attribute_definition();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteCalculatedAttributeDefinition`.
 ///
 /// <p>Deletes an existing calculated attribute definition. Note that deleting a default calculated attribute is possible, however once deleted, you will be unable to undo that action and will need to recreate it on your own using the CreateCalculatedAttributeDefinition API if you want it back.</p>

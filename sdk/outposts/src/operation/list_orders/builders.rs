@@ -3,6 +3,23 @@ pub use crate::operation::list_orders::_list_orders_output::ListOrdersOutputBuil
 
 pub use crate::operation::list_orders::_list_orders_input::ListOrdersInputBuilder;
 
+impl ListOrdersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_orders::ListOrdersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_orders::ListOrdersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_orders();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListOrders`.
 ///
 /// <p>Lists the Outpost orders for your Amazon Web Services account.</p>

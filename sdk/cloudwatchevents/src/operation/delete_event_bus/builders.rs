@@ -3,6 +3,23 @@ pub use crate::operation::delete_event_bus::_delete_event_bus_output::DeleteEven
 
 pub use crate::operation::delete_event_bus::_delete_event_bus_input::DeleteEventBusInputBuilder;
 
+impl DeleteEventBusInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_event_bus::DeleteEventBusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_event_bus::DeleteEventBusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_event_bus();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteEventBus`.
 ///
 /// <p>Deletes the specified custom event bus or partner event bus. All rules associated with this event bus need to be deleted. You can't delete your account's default event bus.</p>

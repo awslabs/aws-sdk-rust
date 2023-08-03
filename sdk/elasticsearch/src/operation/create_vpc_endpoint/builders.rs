@@ -3,6 +3,23 @@ pub use crate::operation::create_vpc_endpoint::_create_vpc_endpoint_output::Crea
 
 pub use crate::operation::create_vpc_endpoint::_create_vpc_endpoint_input::CreateVpcEndpointInputBuilder;
 
+impl CreateVpcEndpointInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_vpc_endpoint::CreateVpcEndpointOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_vpc_endpoint::CreateVpcEndpointError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_vpc_endpoint();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateVpcEndpoint`.
 ///
 /// <p>Creates an Amazon OpenSearch Service-managed VPC endpoint.</p>

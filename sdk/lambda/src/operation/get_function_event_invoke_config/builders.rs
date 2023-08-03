@@ -3,6 +3,23 @@ pub use crate::operation::get_function_event_invoke_config::_get_function_event_
 
 pub use crate::operation::get_function_event_invoke_config::_get_function_event_invoke_config_input::GetFunctionEventInvokeConfigInputBuilder;
 
+impl GetFunctionEventInvokeConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_function_event_invoke_config::GetFunctionEventInvokeConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_function_event_invoke_config::GetFunctionEventInvokeConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_function_event_invoke_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetFunctionEventInvokeConfig`.
 ///
 /// <p>Retrieves the configuration for asynchronous invocation for a function, version, or alias.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_regions::_list_regions_output::ListRegionsOutputB
 
 pub use crate::operation::list_regions::_list_regions_input::ListRegionsInputBuilder;
 
+impl ListRegionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_regions::ListRegionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_regions::ListRegionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_regions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListRegions`.
 ///
 /// <p>Lists all the Regions for a given account and their respective opt-in statuses. Optionally, this list can be filtered by the <code>region-opt-status-contains</code> parameter. </p>

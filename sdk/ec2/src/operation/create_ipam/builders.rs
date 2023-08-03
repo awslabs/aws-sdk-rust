@@ -3,6 +3,23 @@ pub use crate::operation::create_ipam::_create_ipam_output::CreateIpamOutputBuil
 
 pub use crate::operation::create_ipam::_create_ipam_input::CreateIpamInputBuilder;
 
+impl CreateIpamInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_ipam::CreateIpamOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_ipam::CreateIpamError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_ipam();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateIpam`.
 ///
 /// <p>Create an IPAM. Amazon VPC IP Address Manager (IPAM) is a VPC feature that you can use to automate your IP address management workflows including assigning, tracking, troubleshooting, and auditing IP addresses across Amazon Web Services Regions and accounts throughout your Amazon Web Services Organization.</p>

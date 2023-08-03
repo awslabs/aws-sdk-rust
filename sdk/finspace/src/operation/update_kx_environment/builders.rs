@@ -3,6 +3,23 @@ pub use crate::operation::update_kx_environment::_update_kx_environment_output::
 
 pub use crate::operation::update_kx_environment::_update_kx_environment_input::UpdateKxEnvironmentInputBuilder;
 
+impl UpdateKxEnvironmentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_kx_environment::UpdateKxEnvironmentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_kx_environment::UpdateKxEnvironmentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_kx_environment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateKxEnvironment`.
 ///
 /// <p>Updates information for the given kdb environment.</p>

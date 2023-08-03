@@ -3,6 +3,23 @@ pub use crate::operation::start_configuration_session::_start_configuration_sess
 
 pub use crate::operation::start_configuration_session::_start_configuration_session_input::StartConfigurationSessionInputBuilder;
 
+impl StartConfigurationSessionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_configuration_session::StartConfigurationSessionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_configuration_session::StartConfigurationSessionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_configuration_session();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartConfigurationSession`.
 ///
 /// <p>Starts a configuration session used to retrieve a deployed configuration. For more information about this API action and to view example CLI commands that show how to use it with the <code>GetLatestConfiguration</code> API action, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration">Retrieving the configuration</a> in the <i>AppConfig User Guide</i>. </p>

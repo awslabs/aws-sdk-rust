@@ -3,6 +3,23 @@ pub use crate::operation::terminate_job_flows::_terminate_job_flows_output::Term
 
 pub use crate::operation::terminate_job_flows::_terminate_job_flows_input::TerminateJobFlowsInputBuilder;
 
+impl TerminateJobFlowsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::terminate_job_flows::TerminateJobFlowsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::terminate_job_flows::TerminateJobFlowsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.terminate_job_flows();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `TerminateJobFlows`.
 ///
 /// <p>TerminateJobFlows shuts a list of clusters (job flows) down. When a job flow is shut down, any step not yet completed is canceled and the Amazon EC2 instances on which the cluster is running are stopped. Any log files not already saved are uploaded to Amazon S3 if a LogUri was specified when the cluster was created.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::update_traffic_policy_instance::_update_traffic_policy
 
 pub use crate::operation::update_traffic_policy_instance::_update_traffic_policy_instance_input::UpdateTrafficPolicyInstanceInputBuilder;
 
+impl UpdateTrafficPolicyInstanceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_traffic_policy_instance::UpdateTrafficPolicyInstanceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_traffic_policy_instance::UpdateTrafficPolicyInstanceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_traffic_policy_instance();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateTrafficPolicyInstance`.
 ///
 /// <note>

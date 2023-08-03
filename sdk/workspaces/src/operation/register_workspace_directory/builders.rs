@@ -3,6 +3,23 @@ pub use crate::operation::register_workspace_directory::_register_workspace_dire
 
 pub use crate::operation::register_workspace_directory::_register_workspace_directory_input::RegisterWorkspaceDirectoryInputBuilder;
 
+impl RegisterWorkspaceDirectoryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::register_workspace_directory::RegisterWorkspaceDirectoryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::register_workspace_directory::RegisterWorkspaceDirectoryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.register_workspace_directory();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RegisterWorkspaceDirectory`.
 ///
 /// <p>Registers the specified directory. This operation is asynchronous and returns before the WorkSpace directory is registered. If this is the first time you are registering a directory, you will need to create the workspaces_DefaultRole role before you can register a directory. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/workspaces-access-control.html#create-default-role"> Creating the workspaces_DefaultRole Role</a>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_permission_version::_delete_permission_version_
 
 pub use crate::operation::delete_permission_version::_delete_permission_version_input::DeletePermissionVersionInputBuilder;
 
+impl DeletePermissionVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_permission_version::DeletePermissionVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_permission_version::DeletePermissionVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_permission_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeletePermissionVersion`.
 ///
 /// <p>Deletes one version of a customer managed permission. The version you specify must not be attached to any resource share and must not be the default version for the permission.</p>

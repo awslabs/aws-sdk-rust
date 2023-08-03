@@ -3,6 +3,23 @@ pub use crate::operation::batch_get_vpc_endpoint::_batch_get_vpc_endpoint_output
 
 pub use crate::operation::batch_get_vpc_endpoint::_batch_get_vpc_endpoint_input::BatchGetVpcEndpointInputBuilder;
 
+impl BatchGetVpcEndpointInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_vpc_endpoint::BatchGetVpcEndpointOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_get_vpc_endpoint::BatchGetVpcEndpointError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_get_vpc_endpoint();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchGetVpcEndpoint`.
 ///
 /// <p>Returns attributes for one or more VPC endpoints associated with the current account. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-vpc.html">Access Amazon OpenSearch Serverless using an interface endpoint</a>.</p>

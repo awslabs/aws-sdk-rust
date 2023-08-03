@@ -3,6 +3,23 @@ pub use crate::operation::list_suite_runs::_list_suite_runs_output::ListSuiteRun
 
 pub use crate::operation::list_suite_runs::_list_suite_runs_input::ListSuiteRunsInputBuilder;
 
+impl ListSuiteRunsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_suite_runs::ListSuiteRunsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_suite_runs::ListSuiteRunsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_suite_runs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListSuiteRuns`.
 ///
 /// <p>Lists runs of the specified Device Advisor test suite. You can list all runs of the test suite, or the runs of a specific version of the test suite.</p>

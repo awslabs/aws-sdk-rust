@@ -3,6 +3,23 @@ pub use crate::operation::put_file::_put_file_output::PutFileOutputBuilder;
 
 pub use crate::operation::put_file::_put_file_input::PutFileInputBuilder;
 
+impl PutFileInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_file::PutFileOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_file::PutFileError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_file();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutFile`.
 ///
 /// <p>Adds or updates a file in a branch in an AWS CodeCommit repository, and generates a commit for the addition in the specified branch.</p>

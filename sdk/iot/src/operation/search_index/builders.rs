@@ -3,6 +3,23 @@ pub use crate::operation::search_index::_search_index_output::SearchIndexOutputB
 
 pub use crate::operation::search_index::_search_index_input::SearchIndexInputBuilder;
 
+impl SearchIndexInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::search_index::SearchIndexOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::search_index::SearchIndexError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.search_index();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SearchIndex`.
 ///
 /// <p>The query search index.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_records::_get_records_output::GetRecordsOutputBuil
 
 pub use crate::operation::get_records::_get_records_input::GetRecordsInputBuilder;
 
+impl GetRecordsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_records::GetRecordsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_records::GetRecordsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_records();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetRecords`.
 ///
 /// <p>Gets data records from a Kinesis data stream's shard.</p> <note>

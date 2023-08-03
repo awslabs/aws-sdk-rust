@@ -3,6 +3,23 @@ pub use crate::operation::create_public_virtual_interface::_create_public_virtua
 
 pub use crate::operation::create_public_virtual_interface::_create_public_virtual_interface_input::CreatePublicVirtualInterfaceInputBuilder;
 
+impl CreatePublicVirtualInterfaceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_public_virtual_interface::CreatePublicVirtualInterfaceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_public_virtual_interface::CreatePublicVirtualInterfaceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_public_virtual_interface();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreatePublicVirtualInterface`.
 ///
 /// <p>Creates a public virtual interface. A virtual interface is the VLAN that transports Direct Connect traffic. A public virtual interface supports sending traffic to public services of Amazon Web Services such as Amazon S3.</p>

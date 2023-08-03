@@ -3,6 +3,23 @@ pub use crate::operation::describe_query_definitions::_describe_query_definition
 
 pub use crate::operation::describe_query_definitions::_describe_query_definitions_input::DescribeQueryDefinitionsInputBuilder;
 
+impl DescribeQueryDefinitionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_query_definitions::DescribeQueryDefinitionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_query_definitions::DescribeQueryDefinitionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_query_definitions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeQueryDefinitions`.
 ///
 /// <p>This operation returns a paginated list of your saved CloudWatch Logs Insights query definitions.</p>

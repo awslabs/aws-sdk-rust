@@ -3,6 +3,23 @@ pub use crate::operation::disable_vgw_route_propagation::_disable_vgw_route_prop
 
 pub use crate::operation::disable_vgw_route_propagation::_disable_vgw_route_propagation_input::DisableVgwRoutePropagationInputBuilder;
 
+impl DisableVgwRoutePropagationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disable_vgw_route_propagation::DisableVgwRoutePropagationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disable_vgw_route_propagation::DisableVgwRoutePropagationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disable_vgw_route_propagation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisableVgwRoutePropagation`.
 ///
 /// <p>Disables a virtual private gateway (VGW) from propagating routes to a specified route table of a VPC.</p>

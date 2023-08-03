@@ -3,6 +3,23 @@ pub use crate::operation::delete_subnet_group::_delete_subnet_group_output::Dele
 
 pub use crate::operation::delete_subnet_group::_delete_subnet_group_input::DeleteSubnetGroupInputBuilder;
 
+impl DeleteSubnetGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_subnet_group::DeleteSubnetGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_subnet_group::DeleteSubnetGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_subnet_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteSubnetGroup`.
 ///
 /// <p>Deletes a subnet group. You cannot delete a default subnet group or one that is associated with any clusters.</p>

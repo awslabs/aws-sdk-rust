@@ -3,6 +3,23 @@ pub use crate::operation::send_voice_message::_send_voice_message_output::SendVo
 
 pub use crate::operation::send_voice_message::_send_voice_message_input::SendVoiceMessageInputBuilder;
 
+impl SendVoiceMessageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::send_voice_message::SendVoiceMessageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::send_voice_message::SendVoiceMessageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.send_voice_message();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SendVoiceMessage`.
 ///
 /// <p>Allows you to send a request that sends a text message through Amazon Pinpoint. This operation uses <a href="http://aws.amazon.com/polly/">Amazon Polly</a> to convert a text script into a voice message.</p>

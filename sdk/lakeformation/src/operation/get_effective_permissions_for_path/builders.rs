@@ -3,6 +3,17 @@ pub use crate::operation::get_effective_permissions_for_path::_get_effective_per
 
 pub use crate::operation::get_effective_permissions_for_path::_get_effective_permissions_for_path_input::GetEffectivePermissionsForPathInputBuilder;
 
+impl GetEffectivePermissionsForPathInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_effective_permissions_for_path::GetEffectivePermissionsForPathOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_effective_permissions_for_path::GetEffectivePermissionsForPathError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_effective_permissions_for_path();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetEffectivePermissionsForPath`.
 ///
 /// <p>Returns the Lake Formation permissions for a specified table or database resource located at a path in Amazon S3. <code>GetEffectivePermissionsForPath</code> will not return databases and tables if the catalog is encrypted.</p>

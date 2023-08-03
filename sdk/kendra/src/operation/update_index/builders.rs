@@ -3,6 +3,23 @@ pub use crate::operation::update_index::_update_index_output::UpdateIndexOutputB
 
 pub use crate::operation::update_index::_update_index_input::UpdateIndexInputBuilder;
 
+impl UpdateIndexInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_index::UpdateIndexOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_index::UpdateIndexError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_index();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateIndex`.
 ///
 /// <p>Updates an existing Amazon Kendra index.</p>

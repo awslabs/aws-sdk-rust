@@ -3,6 +3,23 @@ pub use crate::operation::list_phone_number_orders::_list_phone_number_orders_ou
 
 pub use crate::operation::list_phone_number_orders::_list_phone_number_orders_input::ListPhoneNumberOrdersInputBuilder;
 
+impl ListPhoneNumberOrdersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_phone_number_orders::ListPhoneNumberOrdersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_phone_number_orders::ListPhoneNumberOrdersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_phone_number_orders();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListPhoneNumberOrders`.
 ///
 /// <p>Lists the phone numbers for an administrator's Amazon Chime SDK account.</p>

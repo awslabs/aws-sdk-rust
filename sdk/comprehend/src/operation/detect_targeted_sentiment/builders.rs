@@ -3,6 +3,23 @@ pub use crate::operation::detect_targeted_sentiment::_detect_targeted_sentiment_
 
 pub use crate::operation::detect_targeted_sentiment::_detect_targeted_sentiment_input::DetectTargetedSentimentInputBuilder;
 
+impl DetectTargetedSentimentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::detect_targeted_sentiment::DetectTargetedSentimentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::detect_targeted_sentiment::DetectTargetedSentimentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.detect_targeted_sentiment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DetectTargetedSentiment`.
 ///
 /// <p>Inspects the input text and returns a sentiment analysis for each entity identified in the text.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_dashboard::_create_dashboard_output::CreateDash
 
 pub use crate::operation::create_dashboard::_create_dashboard_input::CreateDashboardInputBuilder;
 
+impl CreateDashboardInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_dashboard::CreateDashboardOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_dashboard::CreateDashboardError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_dashboard();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateDashboard`.
 ///
 /// <p>Creates a dashboard in an IoT SiteWise Monitor project.</p>

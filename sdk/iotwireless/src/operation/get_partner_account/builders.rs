@@ -3,6 +3,23 @@ pub use crate::operation::get_partner_account::_get_partner_account_output::GetP
 
 pub use crate::operation::get_partner_account::_get_partner_account_input::GetPartnerAccountInputBuilder;
 
+impl GetPartnerAccountInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_partner_account::GetPartnerAccountOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_partner_account::GetPartnerAccountError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_partner_account();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetPartnerAccount`.
 ///
 /// <p>Gets information about a partner account. If <code>PartnerAccountId</code> and <code>PartnerType</code> are <code>null</code>, returns all partner accounts.</p>

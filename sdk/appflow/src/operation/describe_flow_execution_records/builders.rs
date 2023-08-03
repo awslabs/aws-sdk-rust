@@ -3,6 +3,23 @@ pub use crate::operation::describe_flow_execution_records::_describe_flow_execut
 
 pub use crate::operation::describe_flow_execution_records::_describe_flow_execution_records_input::DescribeFlowExecutionRecordsInputBuilder;
 
+impl DescribeFlowExecutionRecordsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_flow_execution_records::DescribeFlowExecutionRecordsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_flow_execution_records::DescribeFlowExecutionRecordsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_flow_execution_records();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeFlowExecutionRecords`.
 ///
 /// <p> Fetches the execution history of the flow. </p>

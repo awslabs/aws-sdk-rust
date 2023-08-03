@@ -3,6 +3,23 @@ pub use crate::operation::start_image_scan::_start_image_scan_output::StartImage
 
 pub use crate::operation::start_image_scan::_start_image_scan_input::StartImageScanInputBuilder;
 
+impl StartImageScanInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_image_scan::StartImageScanOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_image_scan::StartImageScanError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_image_scan();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartImageScan`.
 ///
 /// <p>Starts an image vulnerability scan. An image scan can only be started once per 24 hours on an individual image. This limit includes if an image was scanned on initial push. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-scanning.html">Image scanning</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>

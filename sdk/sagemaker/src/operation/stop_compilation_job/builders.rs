@@ -3,6 +3,23 @@ pub use crate::operation::stop_compilation_job::_stop_compilation_job_output::St
 
 pub use crate::operation::stop_compilation_job::_stop_compilation_job_input::StopCompilationJobInputBuilder;
 
+impl StopCompilationJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_compilation_job::StopCompilationJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_compilation_job::StopCompilationJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_compilation_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopCompilationJob`.
 ///
 /// <p>Stops a model compilation job.</p>

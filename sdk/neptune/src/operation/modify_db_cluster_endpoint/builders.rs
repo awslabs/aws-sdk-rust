@@ -3,6 +3,23 @@ pub use crate::operation::modify_db_cluster_endpoint::_modify_db_cluster_endpoin
 
 pub use crate::operation::modify_db_cluster_endpoint::_modify_db_cluster_endpoint_input::ModifyDbClusterEndpointInputBuilder;
 
+impl ModifyDbClusterEndpointInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_db_cluster_endpoint::ModifyDbClusterEndpointOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_db_cluster_endpoint::ModifyDBClusterEndpointError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_db_cluster_endpoint();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyDBClusterEndpoint`.
 ///
 /// <p>Modifies the properties of an endpoint in an Amazon Neptune DB cluster.</p>

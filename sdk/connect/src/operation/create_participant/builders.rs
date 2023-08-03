@@ -3,6 +3,23 @@ pub use crate::operation::create_participant::_create_participant_output::Create
 
 pub use crate::operation::create_participant::_create_participant_input::CreateParticipantInputBuilder;
 
+impl CreateParticipantInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_participant::CreateParticipantOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_participant::CreateParticipantError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_participant();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateParticipant`.
 ///
 /// <p>Adds a new participant into an on-going chat contact. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-customize-flow.html">Customize chat flow experiences by integrating custom participants</a>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_preview_rotation_shifts::_list_preview_rotation_s
 
 pub use crate::operation::list_preview_rotation_shifts::_list_preview_rotation_shifts_input::ListPreviewRotationShiftsInputBuilder;
 
+impl ListPreviewRotationShiftsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_preview_rotation_shifts::ListPreviewRotationShiftsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_preview_rotation_shifts::ListPreviewRotationShiftsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_preview_rotation_shifts();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListPreviewRotationShifts`.
 ///
 /// <p>Returns a list of shifts based on rotation configuration parameters.</p> <note>

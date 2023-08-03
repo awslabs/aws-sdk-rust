@@ -3,6 +3,23 @@ pub use crate::operation::start_generated_code_job::_start_generated_code_job_ou
 
 pub use crate::operation::start_generated_code_job::_start_generated_code_job_input::StartGeneratedCodeJobInputBuilder;
 
+impl StartGeneratedCodeJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_generated_code_job::StartGeneratedCodeJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_generated_code_job::StartGeneratedCodeJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_generated_code_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartGeneratedCodeJob`.
 ///
 /// <p> Starts an asynchronous process that generates client code for system-defined and custom messages. The resulting code is collected as a .zip file and uploaded to a pre-signed Amazon S3 URL. </p>

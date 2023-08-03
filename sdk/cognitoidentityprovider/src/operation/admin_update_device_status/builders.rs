@@ -3,6 +3,23 @@ pub use crate::operation::admin_update_device_status::_admin_update_device_statu
 
 pub use crate::operation::admin_update_device_status::_admin_update_device_status_input::AdminUpdateDeviceStatusInputBuilder;
 
+impl AdminUpdateDeviceStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::admin_update_device_status::AdminUpdateDeviceStatusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::admin_update_device_status::AdminUpdateDeviceStatusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.admin_update_device_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AdminUpdateDeviceStatus`.
 ///
 /// <p>Updates the device status as an administrator.</p>

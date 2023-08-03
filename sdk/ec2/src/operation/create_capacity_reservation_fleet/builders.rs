@@ -3,6 +3,17 @@ pub use crate::operation::create_capacity_reservation_fleet::_create_capacity_re
 
 pub use crate::operation::create_capacity_reservation_fleet::_create_capacity_reservation_fleet_input::CreateCapacityReservationFleetInputBuilder;
 
+impl CreateCapacityReservationFleetInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::create_capacity_reservation_fleet::CreateCapacityReservationFleetOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_capacity_reservation_fleet::CreateCapacityReservationFleetError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.create_capacity_reservation_fleet();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateCapacityReservationFleet`.
 ///
 /// <p>Creates a Capacity Reservation Fleet. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/work-with-cr-fleets.html#create-crfleet">Create a Capacity Reservation Fleet</a> in the Amazon EC2 User Guide.</p>

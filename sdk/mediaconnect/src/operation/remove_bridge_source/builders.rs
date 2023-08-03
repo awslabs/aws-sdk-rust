@@ -3,6 +3,23 @@ pub use crate::operation::remove_bridge_source::_remove_bridge_source_output::Re
 
 pub use crate::operation::remove_bridge_source::_remove_bridge_source_input::RemoveBridgeSourceInputBuilder;
 
+impl RemoveBridgeSourceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::remove_bridge_source::RemoveBridgeSourceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::remove_bridge_source::RemoveBridgeSourceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.remove_bridge_source();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RemoveBridgeSource`.
 ///
 /// Removes a source from a bridge.

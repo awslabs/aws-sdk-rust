@@ -3,6 +3,23 @@ pub use crate::operation::modify_vpn_tunnel_options::_modify_vpn_tunnel_options_
 
 pub use crate::operation::modify_vpn_tunnel_options::_modify_vpn_tunnel_options_input::ModifyVpnTunnelOptionsInputBuilder;
 
+impl ModifyVpnTunnelOptionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_vpn_tunnel_options::ModifyVpnTunnelOptionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_vpn_tunnel_options::ModifyVpnTunnelOptionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_vpn_tunnel_options();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyVpnTunnelOptions`.
 ///
 /// <p>Modifies the options for a VPN tunnel in an Amazon Web Services Site-to-Site VPN connection. You can modify multiple options for a tunnel in a single request, but you can only modify one tunnel at a time. For more information, see <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/VPNTunnels.html">Site-to-Site VPN tunnel options for your Site-to-Site VPN connection</a> in the <i>Amazon Web Services Site-to-Site VPN User Guide</i>.</p>

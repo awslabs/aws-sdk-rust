@@ -3,6 +3,23 @@ pub use crate::operation::start_detector_model_analysis::_start_detector_model_a
 
 pub use crate::operation::start_detector_model_analysis::_start_detector_model_analysis_input::StartDetectorModelAnalysisInputBuilder;
 
+impl StartDetectorModelAnalysisInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_detector_model_analysis::StartDetectorModelAnalysisOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_detector_model_analysis::StartDetectorModelAnalysisError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_detector_model_analysis();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartDetectorModelAnalysis`.
 ///
 /// <p>Performs an analysis of your detector model. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/iotevents-analyze-api.html">Troubleshooting a detector model</a> in the <i>AWS IoT Events Developer Guide</i>.</p>

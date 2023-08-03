@@ -3,6 +3,23 @@ pub use crate::operation::get_collaboration::_get_collaboration_output::GetColla
 
 pub use crate::operation::get_collaboration::_get_collaboration_input::GetCollaborationInputBuilder;
 
+impl GetCollaborationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_collaboration::GetCollaborationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_collaboration::GetCollaborationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_collaboration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetCollaboration`.
 ///
 /// <p>Returns metadata about a collaboration.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_custom_db_engine_version::_create_custom_db_eng
 
 pub use crate::operation::create_custom_db_engine_version::_create_custom_db_engine_version_input::CreateCustomDbEngineVersionInputBuilder;
 
+impl CreateCustomDbEngineVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_custom_db_engine_version::CreateCustomDbEngineVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_custom_db_engine_version::CreateCustomDBEngineVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_custom_db_engine_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateCustomDBEngineVersion`.
 ///
 /// <p>Creates a custom DB engine version (CEV).</p>

@@ -3,6 +3,17 @@ pub use crate::operation::enable_ipam_organization_admin_account::_enable_ipam_o
 
 pub use crate::operation::enable_ipam_organization_admin_account::_enable_ipam_organization_admin_account_input::EnableIpamOrganizationAdminAccountInputBuilder;
 
+impl EnableIpamOrganizationAdminAccountInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::enable_ipam_organization_admin_account::EnableIpamOrganizationAdminAccountOutput, ::aws_smithy_http::result::SdkError<crate::operation::enable_ipam_organization_admin_account::EnableIpamOrganizationAdminAccountError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.enable_ipam_organization_admin_account();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `EnableIpamOrganizationAdminAccount`.
 ///
 /// <p>Enable an Organizations member account as the IPAM admin account. You cannot select the Organizations management account as the IPAM admin account. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/enable-integ-ipam.html">Enable integration with Organizations</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>

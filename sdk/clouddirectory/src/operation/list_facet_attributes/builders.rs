@@ -3,6 +3,23 @@ pub use crate::operation::list_facet_attributes::_list_facet_attributes_output::
 
 pub use crate::operation::list_facet_attributes::_list_facet_attributes_input::ListFacetAttributesInputBuilder;
 
+impl ListFacetAttributesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_facet_attributes::ListFacetAttributesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_facet_attributes::ListFacetAttributesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_facet_attributes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListFacetAttributes`.
 ///
 /// <p>Retrieves attributes attached to the facet.</p>

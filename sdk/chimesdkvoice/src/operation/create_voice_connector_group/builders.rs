@@ -3,6 +3,23 @@ pub use crate::operation::create_voice_connector_group::_create_voice_connector_
 
 pub use crate::operation::create_voice_connector_group::_create_voice_connector_group_input::CreateVoiceConnectorGroupInputBuilder;
 
+impl CreateVoiceConnectorGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_voice_connector_group::CreateVoiceConnectorGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_voice_connector_group::CreateVoiceConnectorGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_voice_connector_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateVoiceConnectorGroup`.
 ///
 /// <p>Creates an Amazon Chime SDK Voice Connector group under the administrator's AWS account. You can associate Amazon Chime SDK Voice Connectors with the Voice Connector group by including <code>VoiceConnectorItems</code> in the request. </p>

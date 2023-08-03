@@ -3,6 +3,23 @@ pub use crate::operation::get_lifecycle_policies::_get_lifecycle_policies_output
 
 pub use crate::operation::get_lifecycle_policies::_get_lifecycle_policies_input::GetLifecyclePoliciesInputBuilder;
 
+impl GetLifecyclePoliciesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_lifecycle_policies::GetLifecyclePoliciesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_lifecycle_policies::GetLifecyclePoliciesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_lifecycle_policies();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetLifecyclePolicies`.
 ///
 /// <p>Gets summary information about all or the specified data lifecycle policies.</p>

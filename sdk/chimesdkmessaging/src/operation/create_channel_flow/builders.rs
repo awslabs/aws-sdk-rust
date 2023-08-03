@@ -3,6 +3,23 @@ pub use crate::operation::create_channel_flow::_create_channel_flow_output::Crea
 
 pub use crate::operation::create_channel_flow::_create_channel_flow_input::CreateChannelFlowInputBuilder;
 
+impl CreateChannelFlowInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_channel_flow::CreateChannelFlowOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_channel_flow::CreateChannelFlowError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_channel_flow();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateChannelFlow`.
 ///
 /// <p>Creates a channel flow, a container for processors. Processors are AWS Lambda functions that perform actions on chat messages, such as stripping out profanity. You can associate channel flows with channels, and the processors in the channel flow then take action on all messages sent to that channel. This is a developer API.</p>

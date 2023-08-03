@@ -3,6 +3,23 @@ pub use crate::operation::describe_connectors::_describe_connectors_output::Desc
 
 pub use crate::operation::describe_connectors::_describe_connectors_input::DescribeConnectorsInputBuilder;
 
+impl DescribeConnectorsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_connectors::DescribeConnectorsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_connectors::DescribeConnectorsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_connectors();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeConnectors`.
 ///
 /// <p> Describes the connectors vended by Amazon AppFlow for specified connector types. If you don't specify a connector type, this operation describes all connectors vended by Amazon AppFlow. If there are more connectors than can be returned in one page, the response contains a <code>nextToken</code> object, which can be be passed in to the next call to the <code>DescribeConnectors</code> API operation to retrieve the next page. </p>

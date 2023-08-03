@@ -3,6 +3,23 @@ pub use crate::operation::detach_role_policy::_detach_role_policy_output::Detach
 
 pub use crate::operation::detach_role_policy::_detach_role_policy_input::DetachRolePolicyInputBuilder;
 
+impl DetachRolePolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::detach_role_policy::DetachRolePolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::detach_role_policy::DetachRolePolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.detach_role_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DetachRolePolicy`.
 ///
 /// <p>Removes the specified managed policy from the specified role.</p>

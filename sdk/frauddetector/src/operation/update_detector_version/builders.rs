@@ -3,6 +3,23 @@ pub use crate::operation::update_detector_version::_update_detector_version_outp
 
 pub use crate::operation::update_detector_version::_update_detector_version_input::UpdateDetectorVersionInputBuilder;
 
+impl UpdateDetectorVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_detector_version::UpdateDetectorVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_detector_version::UpdateDetectorVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_detector_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateDetectorVersion`.
 ///
 /// <p> Updates a detector version. The detector version attributes that you can update include models, external model endpoints, rules, rule execution mode, and description. You can only update a <code>DRAFT</code> detector version.</p>

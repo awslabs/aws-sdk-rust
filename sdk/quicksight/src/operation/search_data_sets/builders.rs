@@ -3,6 +3,23 @@ pub use crate::operation::search_data_sets::_search_data_sets_output::SearchData
 
 pub use crate::operation::search_data_sets::_search_data_sets_input::SearchDataSetsInputBuilder;
 
+impl SearchDataSetsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::search_data_sets::SearchDataSetsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::search_data_sets::SearchDataSetsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.search_data_sets();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SearchDataSets`.
 ///
 /// <p>Use the <code>SearchDataSets</code> operation to search for datasets that belong to an account.</p>

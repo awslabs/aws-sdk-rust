@@ -3,6 +3,23 @@ pub use crate::operation::create_vpc::_create_vpc_output::CreateVpcOutputBuilder
 
 pub use crate::operation::create_vpc::_create_vpc_input::CreateVpcInputBuilder;
 
+impl CreateVpcInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_vpc::CreateVpcOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_vpc::CreateVpcError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_vpc();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateVpc`.
 ///
 /// <p>Creates a VPC with the specified CIDR blocks. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-ip-addressing.html">IP addressing for your VPCs and subnets</a> in the <i>Amazon VPC User Guide</i>.</p>

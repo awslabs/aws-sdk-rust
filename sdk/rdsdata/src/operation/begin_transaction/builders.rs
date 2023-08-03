@@ -3,6 +3,23 @@ pub use crate::operation::begin_transaction::_begin_transaction_output::BeginTra
 
 pub use crate::operation::begin_transaction::_begin_transaction_input::BeginTransactionInputBuilder;
 
+impl BeginTransactionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::begin_transaction::BeginTransactionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::begin_transaction::BeginTransactionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.begin_transaction();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BeginTransaction`.
 ///
 /// <p>Starts a SQL transaction.</p> <note>

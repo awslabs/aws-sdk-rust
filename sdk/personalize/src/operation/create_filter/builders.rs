@@ -3,6 +3,23 @@ pub use crate::operation::create_filter::_create_filter_output::CreateFilterOutp
 
 pub use crate::operation::create_filter::_create_filter_input::CreateFilterInputBuilder;
 
+impl CreateFilterInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_filter::CreateFilterOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_filter::CreateFilterError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_filter();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateFilter`.
 ///
 /// <p>Creates a recommendation filter. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/filter.html">Filtering recommendations and user segments</a>.</p>

@@ -3,6 +3,17 @@ pub use crate::operation::create_notebook_instance_lifecycle_config::_create_not
 
 pub use crate::operation::create_notebook_instance_lifecycle_config::_create_notebook_instance_lifecycle_config_input::CreateNotebookInstanceLifecycleConfigInputBuilder;
 
+impl CreateNotebookInstanceLifecycleConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::create_notebook_instance_lifecycle_config::CreateNotebookInstanceLifecycleConfigOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_notebook_instance_lifecycle_config::CreateNotebookInstanceLifecycleConfigError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.create_notebook_instance_lifecycle_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateNotebookInstanceLifecycleConfig`.
 ///
 /// <p>Creates a lifecycle configuration that you can associate with a notebook instance. A <i>lifecycle configuration</i> is a collection of shell scripts that run when you create or start a notebook instance.</p>

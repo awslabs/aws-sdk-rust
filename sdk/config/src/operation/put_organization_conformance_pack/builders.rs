@@ -3,6 +3,17 @@ pub use crate::operation::put_organization_conformance_pack::_put_organization_c
 
 pub use crate::operation::put_organization_conformance_pack::_put_organization_conformance_pack_input::PutOrganizationConformancePackInputBuilder;
 
+impl PutOrganizationConformancePackInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_organization_conformance_pack::PutOrganizationConformancePackError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.put_organization_conformance_pack();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutOrganizationConformancePack`.
 ///
 /// <p>Deploys conformance packs across member accounts in an Amazon Web Services Organization. For information on how many organization conformance packs and how many Config rules you can have per account, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html"> <b>Service Limits</b> </a> in the <i>Config Developer Guide</i>.</p>

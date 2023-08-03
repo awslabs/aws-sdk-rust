@@ -3,6 +3,23 @@ pub use crate::operation::send_api_asset::_send_api_asset_output::SendApiAssetOu
 
 pub use crate::operation::send_api_asset::_send_api_asset_input::SendApiAssetInputBuilder;
 
+impl SendApiAssetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::send_api_asset::SendApiAssetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::send_api_asset::SendApiAssetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.send_api_asset();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SendApiAsset`.
 ///
 /// <p>This operation invokes an API Gateway API asset. The request is proxied to the provider’s API Gateway API.</p>

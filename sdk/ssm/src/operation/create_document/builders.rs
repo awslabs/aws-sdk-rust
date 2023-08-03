@@ -3,6 +3,23 @@ pub use crate::operation::create_document::_create_document_output::CreateDocume
 
 pub use crate::operation::create_document::_create_document_input::CreateDocumentInputBuilder;
 
+impl CreateDocumentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_document::CreateDocumentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_document::CreateDocumentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_document();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateDocument`.
 ///
 /// <p>Creates a Amazon Web Services Systems Manager (SSM document). An SSM document defines the actions that Systems Manager performs on your managed nodes. For more information about SSM documents, including information about supported schemas, features, and syntax, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-ssm-docs.html">Amazon Web Services Systems Manager Documents</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>

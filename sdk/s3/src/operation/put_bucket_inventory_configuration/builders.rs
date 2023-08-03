@@ -3,6 +3,17 @@ pub use crate::operation::put_bucket_inventory_configuration::_put_bucket_invent
 
 pub use crate::operation::put_bucket_inventory_configuration::_put_bucket_inventory_configuration_input::PutBucketInventoryConfigurationInputBuilder;
 
+impl PutBucketInventoryConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::put_bucket_inventory_configuration::PutBucketInventoryConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_bucket_inventory_configuration::PutBucketInventoryConfigurationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.put_bucket_inventory_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutBucketInventoryConfiguration`.
 ///
 /// <p>This implementation of the <code>PUT</code> action adds an inventory configuration (identified by the inventory ID) to the bucket. You can have up to 1,000 inventory configurations per bucket. </p>

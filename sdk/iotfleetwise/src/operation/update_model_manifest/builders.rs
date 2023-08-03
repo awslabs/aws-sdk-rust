@@ -3,6 +3,23 @@ pub use crate::operation::update_model_manifest::_update_model_manifest_output::
 
 pub use crate::operation::update_model_manifest::_update_model_manifest_input::UpdateModelManifestInputBuilder;
 
+impl UpdateModelManifestInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_model_manifest::UpdateModelManifestOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_model_manifest::UpdateModelManifestError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_model_manifest();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateModelManifest`.
 ///
 /// <p> Updates a vehicle model (model manifest). If created vehicles are associated with a vehicle model, it can't be updated.</p>

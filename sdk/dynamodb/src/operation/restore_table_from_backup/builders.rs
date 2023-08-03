@@ -3,6 +3,23 @@ pub use crate::operation::restore_table_from_backup::_restore_table_from_backup_
 
 pub use crate::operation::restore_table_from_backup::_restore_table_from_backup_input::RestoreTableFromBackupInputBuilder;
 
+impl RestoreTableFromBackupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::restore_table_from_backup::RestoreTableFromBackupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::restore_table_from_backup::RestoreTableFromBackupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.restore_table_from_backup();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RestoreTableFromBackup`.
 ///
 /// <p>Creates a new table from an existing backup. Any number of users can execute up to 50 concurrent restores (any type of restore) in a given account. </p>

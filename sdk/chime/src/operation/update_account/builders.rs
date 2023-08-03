@@ -3,6 +3,23 @@ pub use crate::operation::update_account::_update_account_output::UpdateAccountO
 
 pub use crate::operation::update_account::_update_account_input::UpdateAccountInputBuilder;
 
+impl UpdateAccountInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_account::UpdateAccountOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_account::UpdateAccountError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_account();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateAccount`.
 ///
 /// <p>Updates account details for the specified Amazon Chime account. Currently, only account name and default license updates are supported for this action.</p>

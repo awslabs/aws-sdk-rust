@@ -3,6 +3,23 @@ pub use crate::operation::start_matching_job::_start_matching_job_output::StartM
 
 pub use crate::operation::start_matching_job::_start_matching_job_input::StartMatchingJobInputBuilder;
 
+impl StartMatchingJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_matching_job::StartMatchingJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_matching_job::StartMatchingJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_matching_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartMatchingJob`.
 ///
 /// <p>Starts the <code>MatchingJob</code> of a workflow. The workflow must have previously been created using the <code>CreateMatchingWorkflow</code> endpoint.</p>

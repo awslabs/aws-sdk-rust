@@ -3,6 +3,23 @@ pub use crate::operation::describe_identity_pool::_describe_identity_pool_output
 
 pub use crate::operation::describe_identity_pool::_describe_identity_pool_input::DescribeIdentityPoolInputBuilder;
 
+impl DescribeIdentityPoolInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_identity_pool::DescribeIdentityPoolOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_identity_pool::DescribeIdentityPoolError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_identity_pool();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeIdentityPool`.
 ///
 /// <p>Gets details about a particular identity pool, including the pool name, ID description, creation date, and current number of users.</p>

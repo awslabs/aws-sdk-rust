@@ -3,6 +3,23 @@ pub use crate::operation::initiate_vault_lock::_initiate_vault_lock_output::Init
 
 pub use crate::operation::initiate_vault_lock::_initiate_vault_lock_input::InitiateVaultLockInputBuilder;
 
+impl InitiateVaultLockInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::initiate_vault_lock::InitiateVaultLockOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::initiate_vault_lock::InitiateVaultLockError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.initiate_vault_lock();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `InitiateVaultLock`.
 ///
 /// <p>This operation initiates the vault locking process by doing the following:</p>

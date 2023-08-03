@@ -3,6 +3,23 @@ pub use crate::operation::list_wireless_device_import_tasks::_list_wireless_devi
 
 pub use crate::operation::list_wireless_device_import_tasks::_list_wireless_device_import_tasks_input::ListWirelessDeviceImportTasksInputBuilder;
 
+impl ListWirelessDeviceImportTasksInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_wireless_device_import_tasks::ListWirelessDeviceImportTasksOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_wireless_device_import_tasks::ListWirelessDeviceImportTasksError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_wireless_device_import_tasks();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListWirelessDeviceImportTasks`.
 ///
 /// <p>List wireless devices that have been added to an import task.</p>

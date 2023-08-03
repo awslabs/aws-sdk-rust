@@ -3,6 +3,23 @@ pub use crate::operation::describe_return_shipping_label::_describe_return_shipp
 
 pub use crate::operation::describe_return_shipping_label::_describe_return_shipping_label_input::DescribeReturnShippingLabelInputBuilder;
 
+impl DescribeReturnShippingLabelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_return_shipping_label::DescribeReturnShippingLabelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_return_shipping_label::DescribeReturnShippingLabelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_return_shipping_label();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeReturnShippingLabel`.
 ///
 /// <p>Information on the shipping label of a Snow device that is being returned to Amazon Web Services.</p>

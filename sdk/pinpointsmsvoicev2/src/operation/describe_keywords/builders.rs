@@ -3,6 +3,23 @@ pub use crate::operation::describe_keywords::_describe_keywords_output::Describe
 
 pub use crate::operation::describe_keywords::_describe_keywords_input::DescribeKeywordsInputBuilder;
 
+impl DescribeKeywordsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_keywords::DescribeKeywordsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_keywords::DescribeKeywordsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_keywords();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeKeywords`.
 ///
 /// <p>Describes the specified keywords or all keywords on your origination phone number or pool.</p>

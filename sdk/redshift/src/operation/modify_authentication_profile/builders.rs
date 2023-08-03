@@ -3,6 +3,23 @@ pub use crate::operation::modify_authentication_profile::_modify_authentication_
 
 pub use crate::operation::modify_authentication_profile::_modify_authentication_profile_input::ModifyAuthenticationProfileInputBuilder;
 
+impl ModifyAuthenticationProfileInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_authentication_profile::ModifyAuthenticationProfileOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_authentication_profile::ModifyAuthenticationProfileError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_authentication_profile();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyAuthenticationProfile`.
 ///
 /// <p>Modifies an authentication profile.</p>

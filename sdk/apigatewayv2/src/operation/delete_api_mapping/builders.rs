@@ -3,6 +3,23 @@ pub use crate::operation::delete_api_mapping::_delete_api_mapping_output::Delete
 
 pub use crate::operation::delete_api_mapping::_delete_api_mapping_input::DeleteApiMappingInputBuilder;
 
+impl DeleteApiMappingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_api_mapping::DeleteApiMappingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_api_mapping::DeleteApiMappingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_api_mapping();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteApiMapping`.
 ///
 /// <p>Deletes an API mapping.</p>

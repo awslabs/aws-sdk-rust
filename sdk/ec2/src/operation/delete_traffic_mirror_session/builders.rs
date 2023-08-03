@@ -3,6 +3,23 @@ pub use crate::operation::delete_traffic_mirror_session::_delete_traffic_mirror_
 
 pub use crate::operation::delete_traffic_mirror_session::_delete_traffic_mirror_session_input::DeleteTrafficMirrorSessionInputBuilder;
 
+impl DeleteTrafficMirrorSessionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_traffic_mirror_session::DeleteTrafficMirrorSessionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_traffic_mirror_session::DeleteTrafficMirrorSessionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_traffic_mirror_session();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteTrafficMirrorSession`.
 ///
 /// <p>Deletes the specified Traffic Mirror session.</p>

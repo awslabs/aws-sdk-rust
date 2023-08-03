@@ -3,6 +3,23 @@ pub use crate::operation::create_resource_policy_statement::_create_resource_pol
 
 pub use crate::operation::create_resource_policy_statement::_create_resource_policy_statement_input::CreateResourcePolicyStatementInputBuilder;
 
+impl CreateResourcePolicyStatementInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_resource_policy_statement::CreateResourcePolicyStatementOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_resource_policy_statement::CreateResourcePolicyStatementError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_resource_policy_statement();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateResourcePolicyStatement`.
 ///
 /// <p>Adds a new resource policy statement to a bot or bot alias. If a resource policy exists, the statement is added to the current resource policy. If a policy doesn't exist, a new policy is created.</p>

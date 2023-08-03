@@ -3,6 +3,23 @@ pub use crate::operation::list_assets::_list_assets_output::ListAssetsOutputBuil
 
 pub use crate::operation::list_assets::_list_assets_input::ListAssetsInputBuilder;
 
+impl ListAssetsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_assets::ListAssetsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_assets::ListAssetsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_assets();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAssets`.
 ///
 /// <p>Lists the hardware assets for the specified Outpost.</p>

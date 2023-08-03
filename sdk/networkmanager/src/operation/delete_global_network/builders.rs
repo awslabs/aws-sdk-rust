@@ -3,6 +3,23 @@ pub use crate::operation::delete_global_network::_delete_global_network_output::
 
 pub use crate::operation::delete_global_network::_delete_global_network_input::DeleteGlobalNetworkInputBuilder;
 
+impl DeleteGlobalNetworkInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_global_network::DeleteGlobalNetworkOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_global_network::DeleteGlobalNetworkError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_global_network();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteGlobalNetwork`.
 ///
 /// <p>Deletes an existing global network. You must first delete all global network objects (devices, links, and sites), deregister all transit gateways, and delete any core networks.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_report_plan::_create_report_plan_output::Create
 
 pub use crate::operation::create_report_plan::_create_report_plan_input::CreateReportPlanInputBuilder;
 
+impl CreateReportPlanInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_report_plan::CreateReportPlanOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_report_plan::CreateReportPlanError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_report_plan();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateReportPlan`.
 ///
 /// <p>Creates a report plan. A report plan is a document that contains information about the contents of the report and where Backup will deliver it.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_replication_configuration::_create_replication_
 
 pub use crate::operation::create_replication_configuration::_create_replication_configuration_input::CreateReplicationConfigurationInputBuilder;
 
+impl CreateReplicationConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_replication_configuration::CreateReplicationConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_replication_configuration::CreateReplicationConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_replication_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateReplicationConfiguration`.
 ///
 /// <p>Creates a replication configuration that replicates an existing EFS file system to a new, read-only file system. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-replication.html">Amazon EFS replication</a> in the <i>Amazon EFS User Guide</i>. The replication configuration specifies the following:</p>

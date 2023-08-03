@@ -3,6 +3,23 @@ pub use crate::operation::provision_ipam_pool_cidr::_provision_ipam_pool_cidr_ou
 
 pub use crate::operation::provision_ipam_pool_cidr::_provision_ipam_pool_cidr_input::ProvisionIpamPoolCidrInputBuilder;
 
+impl ProvisionIpamPoolCidrInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::provision_ipam_pool_cidr::ProvisionIpamPoolCidrOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::provision_ipam_pool_cidr::ProvisionIpamPoolCidrError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.provision_ipam_pool_cidr();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ProvisionIpamPoolCidr`.
 ///
 /// <p>Provision a CIDR to an IPAM pool. You can use this action to provision new CIDRs to a top-level pool or to transfer a CIDR from a top-level pool to a pool within it.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_credentials::_get_credentials_output::GetCredentia
 
 pub use crate::operation::get_credentials::_get_credentials_input::GetCredentialsInputBuilder;
 
+impl GetCredentialsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_credentials::GetCredentialsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_credentials::GetCredentialsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_credentials();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetCredentials`.
 ///
 /// <p>Returns a database user name and temporary password with temporary authorization to log in to Amazon Redshift Serverless.</p>

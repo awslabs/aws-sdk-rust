@@ -3,6 +3,23 @@ pub use crate::operation::import_key_pair::_import_key_pair_output::ImportKeyPai
 
 pub use crate::operation::import_key_pair::_import_key_pair_input::ImportKeyPairInputBuilder;
 
+impl ImportKeyPairInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::import_key_pair::ImportKeyPairOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::import_key_pair::ImportKeyPairError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.import_key_pair();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ImportKeyPair`.
 ///
 /// <p>Imports the public key from an RSA or ED25519 key pair that you created with a third-party tool. Compare this with <code>CreateKeyPair</code>, in which Amazon Web Services creates the key pair and gives the keys to you (Amazon Web Services keeps a copy of the public key). With ImportKeyPair, you create the key pair and give Amazon Web Services just the public key. The private key is never transferred between you and Amazon Web Services.</p>

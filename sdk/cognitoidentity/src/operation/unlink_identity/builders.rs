@@ -3,6 +3,23 @@ pub use crate::operation::unlink_identity::_unlink_identity_output::UnlinkIdenti
 
 pub use crate::operation::unlink_identity::_unlink_identity_input::UnlinkIdentityInputBuilder;
 
+impl UnlinkIdentityInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::unlink_identity::UnlinkIdentityOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::unlink_identity::UnlinkIdentityError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.unlink_identity();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UnlinkIdentity`.
 ///
 /// <p>Unlinks a federated identity from an existing account. Unlinked logins will be considered new identities next time they are seen. Removing the last linked login will make this identity inaccessible.</p>

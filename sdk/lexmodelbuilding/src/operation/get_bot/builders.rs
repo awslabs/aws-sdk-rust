@@ -3,6 +3,23 @@ pub use crate::operation::get_bot::_get_bot_output::GetBotOutputBuilder;
 
 pub use crate::operation::get_bot::_get_bot_input::GetBotInputBuilder;
 
+impl GetBotInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_bot::GetBotOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_bot::GetBotError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_bot();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetBot`.
 ///
 /// <p>Returns metadata information for a specific bot. You must provide the bot name and the bot version or alias. </p>

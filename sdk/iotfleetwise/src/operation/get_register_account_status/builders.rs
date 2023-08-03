@@ -3,6 +3,23 @@ pub use crate::operation::get_register_account_status::_get_register_account_sta
 
 pub use crate::operation::get_register_account_status::_get_register_account_status_input::GetRegisterAccountStatusInputBuilder;
 
+impl GetRegisterAccountStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_register_account_status::GetRegisterAccountStatusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_register_account_status::GetRegisterAccountStatusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_register_account_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetRegisterAccountStatus`.
 ///
 /// <p> Retrieves information about the status of registering your Amazon Web Services account, IAM, and Amazon Timestream resources so that Amazon Web Services IoT FleetWise can transfer your vehicle data to the Amazon Web Services Cloud. </p>

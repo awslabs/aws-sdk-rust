@@ -3,6 +3,17 @@ pub use crate::operation::associate_wireless_gateway_with_thing::_associate_wire
 
 pub use crate::operation::associate_wireless_gateway_with_thing::_associate_wireless_gateway_with_thing_input::AssociateWirelessGatewayWithThingInputBuilder;
 
+impl AssociateWirelessGatewayWithThingInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::associate_wireless_gateway_with_thing::AssociateWirelessGatewayWithThingOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_wireless_gateway_with_thing::AssociateWirelessGatewayWithThingError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.associate_wireless_gateway_with_thing();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateWirelessGatewayWithThing`.
 ///
 /// <p>Associates a wireless gateway with a thing.</p>

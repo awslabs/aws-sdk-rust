@@ -3,6 +3,23 @@ pub use crate::operation::associate_dhcp_options::_associate_dhcp_options_output
 
 pub use crate::operation::associate_dhcp_options::_associate_dhcp_options_input::AssociateDhcpOptionsInputBuilder;
 
+impl AssociateDhcpOptionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_dhcp_options::AssociateDhcpOptionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_dhcp_options::AssociateDhcpOptionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_dhcp_options();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateDhcpOptions`.
 ///
 /// <p>Associates a set of DHCP options (that you've previously created) with the specified VPC, or associates no DHCP options with the VPC.</p>

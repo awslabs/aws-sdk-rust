@@ -3,6 +3,23 @@ pub use crate::operation::list_certificates::_list_certificates_output::ListCert
 
 pub use crate::operation::list_certificates::_list_certificates_input::ListCertificatesInputBuilder;
 
+impl ListCertificatesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_certificates::ListCertificatesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_certificates::ListCertificatesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_certificates();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListCertificates`.
 ///
 /// <p>Retrieves a list of certificate ARNs and domain names. You can request that only certificates that match a specific status be listed. You can also filter by specific attributes of the certificate. Default filtering returns only <code>RSA_2048</code> certificates. For more information, see <code>Filters</code>.</p>

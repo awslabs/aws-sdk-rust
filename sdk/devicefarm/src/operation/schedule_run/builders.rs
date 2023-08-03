@@ -3,6 +3,23 @@ pub use crate::operation::schedule_run::_schedule_run_output::ScheduleRunOutputB
 
 pub use crate::operation::schedule_run::_schedule_run_input::ScheduleRunInputBuilder;
 
+impl ScheduleRunInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::schedule_run::ScheduleRunOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::schedule_run::ScheduleRunError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.schedule_run();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ScheduleRun`.
 ///
 /// <p>Schedules a run.</p>

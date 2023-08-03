@@ -3,6 +3,23 @@ pub use crate::operation::list_user_hierarchy_groups::_list_user_hierarchy_group
 
 pub use crate::operation::list_user_hierarchy_groups::_list_user_hierarchy_groups_input::ListUserHierarchyGroupsInputBuilder;
 
+impl ListUserHierarchyGroupsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_user_hierarchy_groups::ListUserHierarchyGroupsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_user_hierarchy_groups::ListUserHierarchyGroupsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_user_hierarchy_groups();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListUserHierarchyGroups`.
 ///
 /// <p>Provides summary information about the hierarchy groups for the specified Amazon Connect instance.</p>

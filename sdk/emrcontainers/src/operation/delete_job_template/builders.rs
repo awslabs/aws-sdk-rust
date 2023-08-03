@@ -3,6 +3,23 @@ pub use crate::operation::delete_job_template::_delete_job_template_output::Dele
 
 pub use crate::operation::delete_job_template::_delete_job_template_input::DeleteJobTemplateInputBuilder;
 
+impl DeleteJobTemplateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_job_template::DeleteJobTemplateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_job_template::DeleteJobTemplateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_job_template();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteJobTemplate`.
 ///
 /// <p>Deletes a job template. Job template stores values of StartJobRun API request in a template and can be used to start a job run. Job template allows two use cases: avoid repeating recurring StartJobRun API request values, enforcing certain values in StartJobRun API request.</p>

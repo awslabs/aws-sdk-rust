@@ -3,6 +3,17 @@ pub use crate::operation::get_unfiltered_partition_metadata::_get_unfiltered_par
 
 pub use crate::operation::get_unfiltered_partition_metadata::_get_unfiltered_partition_metadata_input::GetUnfilteredPartitionMetadataInputBuilder;
 
+impl GetUnfilteredPartitionMetadataInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_unfiltered_partition_metadata::GetUnfilteredPartitionMetadataOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_unfiltered_partition_metadata::GetUnfilteredPartitionMetadataError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_unfiltered_partition_metadata();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetUnfilteredPartitionMetadata`.
 ///
 /// <p>Retrieves partition metadata from the Data Catalog that contains unfiltered metadata.</p>

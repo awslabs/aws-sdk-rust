@@ -3,6 +3,23 @@ pub use crate::operation::list_model_cards::_list_model_cards_output::ListModelC
 
 pub use crate::operation::list_model_cards::_list_model_cards_input::ListModelCardsInputBuilder;
 
+impl ListModelCardsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_model_cards::ListModelCardsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_model_cards::ListModelCardsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_model_cards();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListModelCards`.
 ///
 /// <p>List existing model cards.</p>

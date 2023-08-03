@@ -3,6 +3,17 @@ pub use crate::operation::create_direct_connect_gateway_association::_create_dir
 
 pub use crate::operation::create_direct_connect_gateway_association::_create_direct_connect_gateway_association_input::CreateDirectConnectGatewayAssociationInputBuilder;
 
+impl CreateDirectConnectGatewayAssociationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::create_direct_connect_gateway_association::CreateDirectConnectGatewayAssociationOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_direct_connect_gateway_association::CreateDirectConnectGatewayAssociationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.create_direct_connect_gateway_association();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateDirectConnectGatewayAssociation`.
 ///
 /// <p>Creates an association between a Direct Connect gateway and a virtual private gateway. The virtual private gateway must be attached to a VPC and must not be associated with another Direct Connect gateway.</p>

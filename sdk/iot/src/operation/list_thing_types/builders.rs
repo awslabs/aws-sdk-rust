@@ -3,6 +3,23 @@ pub use crate::operation::list_thing_types::_list_thing_types_output::ListThingT
 
 pub use crate::operation::list_thing_types::_list_thing_types_input::ListThingTypesInputBuilder;
 
+impl ListThingTypesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_thing_types::ListThingTypesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_thing_types::ListThingTypesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_thing_types();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListThingTypes`.
 ///
 /// <p>Lists the existing thing types.</p>

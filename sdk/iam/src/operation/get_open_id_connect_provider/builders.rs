@@ -3,6 +3,23 @@ pub use crate::operation::get_open_id_connect_provider::_get_open_id_connect_pro
 
 pub use crate::operation::get_open_id_connect_provider::_get_open_id_connect_provider_input::GetOpenIdConnectProviderInputBuilder;
 
+impl GetOpenIdConnectProviderInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_open_id_connect_provider::GetOpenIdConnectProviderOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_open_id_connect_provider::GetOpenIDConnectProviderError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_open_id_connect_provider();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetOpenIDConnectProvider`.
 ///
 /// <p>Returns information about the specified OpenID Connect (OIDC) provider resource object in IAM.</p>

@@ -3,6 +3,17 @@ pub use crate::operation::associate_user_access_logging_settings::_associate_use
 
 pub use crate::operation::associate_user_access_logging_settings::_associate_user_access_logging_settings_input::AssociateUserAccessLoggingSettingsInputBuilder;
 
+impl AssociateUserAccessLoggingSettingsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::associate_user_access_logging_settings::AssociateUserAccessLoggingSettingsOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_user_access_logging_settings::AssociateUserAccessLoggingSettingsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.associate_user_access_logging_settings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateUserAccessLoggingSettings`.
 ///
 /// <p>Associates a user access logging settings resource with a web portal.</p>

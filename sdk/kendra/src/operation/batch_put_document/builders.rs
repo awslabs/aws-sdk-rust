@@ -3,6 +3,23 @@ pub use crate::operation::batch_put_document::_batch_put_document_output::BatchP
 
 pub use crate::operation::batch_put_document::_batch_put_document_input::BatchPutDocumentInputBuilder;
 
+impl BatchPutDocumentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_put_document::BatchPutDocumentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_put_document::BatchPutDocumentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_put_document();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchPutDocument`.
 ///
 /// <p>Adds one or more documents to an index.</p>

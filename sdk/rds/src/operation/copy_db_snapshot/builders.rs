@@ -3,6 +3,23 @@ pub use crate::operation::copy_db_snapshot::_copy_db_snapshot_output::CopyDbSnap
 
 pub use crate::operation::copy_db_snapshot::_copy_db_snapshot_input::CopyDbSnapshotInputBuilder;
 
+impl CopyDbSnapshotInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::copy_db_snapshot::CopyDbSnapshotOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::copy_db_snapshot::CopyDBSnapshotError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.copy_db_snapshot();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CopyDBSnapshot`.
 ///
 /// <p>Copies the specified DB snapshot. The source DB snapshot must be in the <code>available</code> state.</p>

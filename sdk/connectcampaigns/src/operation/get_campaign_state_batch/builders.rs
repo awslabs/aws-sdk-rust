@@ -3,6 +3,23 @@ pub use crate::operation::get_campaign_state_batch::_get_campaign_state_batch_ou
 
 pub use crate::operation::get_campaign_state_batch::_get_campaign_state_batch_input::GetCampaignStateBatchInputBuilder;
 
+impl GetCampaignStateBatchInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_campaign_state_batch::GetCampaignStateBatchOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_campaign_state_batch::GetCampaignStateBatchError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_campaign_state_batch();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetCampaignStateBatch`.
 ///
 /// Get state of campaigns for the specified Amazon Connect account.

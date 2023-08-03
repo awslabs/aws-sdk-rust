@@ -3,6 +3,23 @@ pub use crate::operation::activate_type::_activate_type_output::ActivateTypeOutp
 
 pub use crate::operation::activate_type::_activate_type_input::ActivateTypeInputBuilder;
 
+impl ActivateTypeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::activate_type::ActivateTypeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::activate_type::ActivateTypeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.activate_type();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ActivateType`.
 ///
 /// <p>Activates a public third-party extension, making it available for use in stack templates. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/registry-public.html">Using public extensions</a> in the <i>CloudFormation User Guide</i>.</p>

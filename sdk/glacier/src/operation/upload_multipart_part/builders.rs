@@ -3,6 +3,23 @@ pub use crate::operation::upload_multipart_part::_upload_multipart_part_output::
 
 pub use crate::operation::upload_multipart_part::_upload_multipart_part_input::UploadMultipartPartInputBuilder;
 
+impl UploadMultipartPartInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::upload_multipart_part::UploadMultipartPartOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::upload_multipart_part::UploadMultipartPartError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.upload_multipart_part();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UploadMultipartPart`.
 ///
 /// <p>This operation uploads a part of an archive. You can upload archive parts in any order. You can also upload them in parallel. You can upload up to 10,000 parts for a multipart upload.</p>

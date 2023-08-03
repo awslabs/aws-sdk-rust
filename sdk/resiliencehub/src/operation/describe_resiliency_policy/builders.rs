@@ -3,6 +3,23 @@ pub use crate::operation::describe_resiliency_policy::_describe_resiliency_polic
 
 pub use crate::operation::describe_resiliency_policy::_describe_resiliency_policy_input::DescribeResiliencyPolicyInputBuilder;
 
+impl DescribeResiliencyPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_resiliency_policy::DescribeResiliencyPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_resiliency_policy::DescribeResiliencyPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_resiliency_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeResiliencyPolicy`.
 ///
 /// <p>Describes a specified resiliency policy for an Resilience Hub application. The returned policy object includes creation time, data location constraints, the Amazon Resource Name (ARN) for the policy, tags, tier, and more.</p>

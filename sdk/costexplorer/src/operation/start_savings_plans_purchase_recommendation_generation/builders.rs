@@ -3,6 +3,17 @@ pub use crate::operation::start_savings_plans_purchase_recommendation_generation
 
 pub use crate::operation::start_savings_plans_purchase_recommendation_generation::_start_savings_plans_purchase_recommendation_generation_input::StartSavingsPlansPurchaseRecommendationGenerationInputBuilder;
 
+impl StartSavingsPlansPurchaseRecommendationGenerationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::start_savings_plans_purchase_recommendation_generation::StartSavingsPlansPurchaseRecommendationGenerationOutput, ::aws_smithy_http::result::SdkError<crate::operation::start_savings_plans_purchase_recommendation_generation::StartSavingsPlansPurchaseRecommendationGenerationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.start_savings_plans_purchase_recommendation_generation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartSavingsPlansPurchaseRecommendationGeneration`.
 ///
 /// <p>Requests a Savings Plans recommendation generation. This enables you to calculate a fresh set of Savings Plans recommendations that takes your latest usage data and current Savings Plans inventory into account. You can refresh Savings Plans recommendations up to three times daily for a consolidated billing family.</p> <note>

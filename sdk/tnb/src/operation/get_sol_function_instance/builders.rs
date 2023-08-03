@@ -3,6 +3,23 @@ pub use crate::operation::get_sol_function_instance::_get_sol_function_instance_
 
 pub use crate::operation::get_sol_function_instance::_get_sol_function_instance_input::GetSolFunctionInstanceInputBuilder;
 
+impl GetSolFunctionInstanceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_sol_function_instance::GetSolFunctionInstanceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_sol_function_instance::GetSolFunctionInstanceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_sol_function_instance();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetSolFunctionInstance`.
 ///
 /// <p>Gets the details of a network function instance, including the instantation state and metadata from the function package descriptor in the network function package.</p>

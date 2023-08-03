@@ -3,6 +3,23 @@ pub use crate::operation::get_calculation_execution_status::_get_calculation_exe
 
 pub use crate::operation::get_calculation_execution_status::_get_calculation_execution_status_input::GetCalculationExecutionStatusInputBuilder;
 
+impl GetCalculationExecutionStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_calculation_execution_status::GetCalculationExecutionStatusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_calculation_execution_status::GetCalculationExecutionStatusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_calculation_execution_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetCalculationExecutionStatus`.
 ///
 /// <p>Gets the status of a current calculation.</p>

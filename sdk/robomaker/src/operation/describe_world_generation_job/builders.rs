@@ -3,6 +3,23 @@ pub use crate::operation::describe_world_generation_job::_describe_world_generat
 
 pub use crate::operation::describe_world_generation_job::_describe_world_generation_job_input::DescribeWorldGenerationJobInputBuilder;
 
+impl DescribeWorldGenerationJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_world_generation_job::DescribeWorldGenerationJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_world_generation_job::DescribeWorldGenerationJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_world_generation_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeWorldGenerationJob`.
 ///
 /// <p>Describes a world generation job.</p>

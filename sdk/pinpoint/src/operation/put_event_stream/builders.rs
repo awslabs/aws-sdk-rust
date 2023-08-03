@@ -3,6 +3,23 @@ pub use crate::operation::put_event_stream::_put_event_stream_output::PutEventSt
 
 pub use crate::operation::put_event_stream::_put_event_stream_input::PutEventStreamInputBuilder;
 
+impl PutEventStreamInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_event_stream::PutEventStreamOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_event_stream::PutEventStreamError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_event_stream();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutEventStream`.
 ///
 /// <p>Creates a new event stream for an application or updates the settings of an existing event stream for an application.</p>

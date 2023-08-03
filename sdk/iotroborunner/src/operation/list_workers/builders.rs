@@ -3,6 +3,23 @@ pub use crate::operation::list_workers::_list_workers_output::ListWorkersOutputB
 
 pub use crate::operation::list_workers::_list_workers_input::ListWorkersInputBuilder;
 
+impl ListWorkersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_workers::ListWorkersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_workers::ListWorkersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_workers();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListWorkers`.
 ///
 /// Grants permission to list workers

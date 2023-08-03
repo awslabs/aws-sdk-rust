@@ -3,6 +3,23 @@ pub use crate::operation::list_routing_controls::_list_routing_controls_output::
 
 pub use crate::operation::list_routing_controls::_list_routing_controls_input::ListRoutingControlsInputBuilder;
 
+impl ListRoutingControlsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_routing_controls::ListRoutingControlsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_routing_controls::ListRoutingControlsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_routing_controls();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListRoutingControls`.
 ///
 /// <p>Returns an array of routing controls for a control panel. A routing control is an Amazon Route 53 Application Recovery Controller construct that has one of two states: ON and OFF. You can map the routing control state to the state of an Amazon Route 53 health check, which can be used to control routing.</p>

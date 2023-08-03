@@ -3,6 +3,23 @@ pub use crate::operation::delete_group::_delete_group_output::DeleteGroupOutputB
 
 pub use crate::operation::delete_group::_delete_group_input::DeleteGroupInputBuilder;
 
+impl DeleteGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_group::DeleteGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_group::DeleteGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteGroup`.
 ///
 /// <p>Deletes the specified IAM group. The group must not contain any users or have any attached policies.</p>

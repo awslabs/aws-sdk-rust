@@ -3,6 +3,17 @@ pub use crate::operation::list_channels_associated_with_channel_flow::_list_chan
 
 pub use crate::operation::list_channels_associated_with_channel_flow::_list_channels_associated_with_channel_flow_input::ListChannelsAssociatedWithChannelFlowInputBuilder;
 
+impl ListChannelsAssociatedWithChannelFlowInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_channels_associated_with_channel_flow::ListChannelsAssociatedWithChannelFlowOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_channels_associated_with_channel_flow::ListChannelsAssociatedWithChannelFlowError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_channels_associated_with_channel_flow();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListChannelsAssociatedWithChannelFlow`.
 ///
 /// <p>Lists all channels associated with a specified channel flow. You can associate a channel flow with multiple channels, but you can only associate a channel with one channel flow. This is a developer API.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_deployment_target::_get_deployment_target_output::
 
 pub use crate::operation::get_deployment_target::_get_deployment_target_input::GetDeploymentTargetInputBuilder;
 
+impl GetDeploymentTargetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_deployment_target::GetDeploymentTargetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_deployment_target::GetDeploymentTargetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_deployment_target();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetDeploymentTarget`.
 ///
 /// <p> Returns information about a deployment target. </p>

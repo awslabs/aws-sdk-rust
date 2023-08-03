@@ -3,6 +3,23 @@ pub use crate::operation::detect_custom_labels::_detect_custom_labels_output::De
 
 pub use crate::operation::detect_custom_labels::_detect_custom_labels_input::DetectCustomLabelsInputBuilder;
 
+impl DetectCustomLabelsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::detect_custom_labels::DetectCustomLabelsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::detect_custom_labels::DetectCustomLabelsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.detect_custom_labels();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DetectCustomLabels`.
 ///
 /// <p>Detects custom labels in a supplied image by using an Amazon Rekognition Custom Labels model. </p>

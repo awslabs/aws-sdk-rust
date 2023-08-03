@@ -3,6 +3,23 @@ pub use crate::operation::get_vpc_link::_get_vpc_link_output::GetVpcLinkOutputBu
 
 pub use crate::operation::get_vpc_link::_get_vpc_link_input::GetVpcLinkInputBuilder;
 
+impl GetVpcLinkInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_vpc_link::GetVpcLinkOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_vpc_link::GetVpcLinkError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_vpc_link();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetVpcLink`.
 ///
 /// <p>Gets a specified VPC link under the caller's account in a region.</p>

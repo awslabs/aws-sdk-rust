@@ -3,6 +3,23 @@ pub use crate::operation::put_record::_put_record_output::PutRecordOutputBuilder
 
 pub use crate::operation::put_record::_put_record_input::PutRecordInputBuilder;
 
+impl PutRecordInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_record::PutRecordOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_record::PutRecordError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_record();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutRecord`.
 ///
 /// <p>Writes a single data record into an Amazon Kinesis data stream. Call <code>PutRecord</code> to send data into the stream for real-time ingestion and subsequent processing, one record at a time. Each shard can support writes up to 1,000 records per second, up to a maximum data write total of 1 MiB per second.</p> <note>

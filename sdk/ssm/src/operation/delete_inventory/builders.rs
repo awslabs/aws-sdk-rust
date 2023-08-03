@@ -3,6 +3,23 @@ pub use crate::operation::delete_inventory::_delete_inventory_output::DeleteInve
 
 pub use crate::operation::delete_inventory::_delete_inventory_input::DeleteInventoryInputBuilder;
 
+impl DeleteInventoryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_inventory::DeleteInventoryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_inventory::DeleteInventoryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_inventory();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteInventory`.
 ///
 /// <p>Delete a custom inventory type or the data associated with a custom Inventory type. Deleting a custom inventory type is also referred to as deleting a custom inventory schema.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::move_byoip_cidr_to_ipam::_move_byoip_cidr_to_ipam_outp
 
 pub use crate::operation::move_byoip_cidr_to_ipam::_move_byoip_cidr_to_ipam_input::MoveByoipCidrToIpamInputBuilder;
 
+impl MoveByoipCidrToIpamInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::move_byoip_cidr_to_ipam::MoveByoipCidrToIpamOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::move_byoip_cidr_to_ipam::MoveByoipCidrToIpamError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.move_byoip_cidr_to_ipam();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `MoveByoipCidrToIpam`.
 ///
 /// <p>Move a BYOIPv4 CIDR to IPAM from a public IPv4 pool.</p>

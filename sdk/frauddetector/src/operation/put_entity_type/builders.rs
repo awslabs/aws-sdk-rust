@@ -3,6 +3,23 @@ pub use crate::operation::put_entity_type::_put_entity_type_output::PutEntityTyp
 
 pub use crate::operation::put_entity_type::_put_entity_type_input::PutEntityTypeInputBuilder;
 
+impl PutEntityTypeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_entity_type::PutEntityTypeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_entity_type::PutEntityTypeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_entity_type();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutEntityType`.
 ///
 /// <p>Creates or updates an entity type. An entity represents who is performing the event. As part of a fraud prediction, you pass the entity ID to indicate the specific entity who performed the event. An entity type classifies the entity. Example classifications include customer, merchant, or account.</p>

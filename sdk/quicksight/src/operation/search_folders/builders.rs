@@ -3,6 +3,23 @@ pub use crate::operation::search_folders::_search_folders_output::SearchFoldersO
 
 pub use crate::operation::search_folders::_search_folders_input::SearchFoldersInputBuilder;
 
+impl SearchFoldersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::search_folders::SearchFoldersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::search_folders::SearchFoldersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.search_folders();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SearchFolders`.
 ///
 /// <p>Searches the subfolders in a folder.</p>

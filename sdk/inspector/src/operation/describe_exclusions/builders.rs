@@ -3,6 +3,23 @@ pub use crate::operation::describe_exclusions::_describe_exclusions_output::Desc
 
 pub use crate::operation::describe_exclusions::_describe_exclusions_input::DescribeExclusionsInputBuilder;
 
+impl DescribeExclusionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_exclusions::DescribeExclusionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_exclusions::DescribeExclusionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_exclusions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeExclusions`.
 ///
 /// <p>Describes the exclusions that are specified by the exclusions' ARNs.</p>

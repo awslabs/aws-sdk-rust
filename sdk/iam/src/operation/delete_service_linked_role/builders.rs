@@ -3,6 +3,23 @@ pub use crate::operation::delete_service_linked_role::_delete_service_linked_rol
 
 pub use crate::operation::delete_service_linked_role::_delete_service_linked_role_input::DeleteServiceLinkedRoleInputBuilder;
 
+impl DeleteServiceLinkedRoleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_service_linked_role::DeleteServiceLinkedRoleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_service_linked_role::DeleteServiceLinkedRoleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_service_linked_role();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteServiceLinkedRole`.
 ///
 /// <p>Submits a service-linked role deletion request and returns a <code>DeletionTaskId</code>, which you can use to check the status of the deletion. Before you call this operation, confirm that the role has no active sessions and that any resources used by the role in the linked service are deleted. If you call this operation more than once for the same service-linked role and an earlier deletion task is not complete, then the <code>DeletionTaskId</code> of the earlier request is returned.</p>

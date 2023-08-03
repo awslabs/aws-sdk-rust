@@ -3,6 +3,23 @@ pub use crate::operation::get_invalidation::_get_invalidation_output::GetInvalid
 
 pub use crate::operation::get_invalidation::_get_invalidation_input::GetInvalidationInputBuilder;
 
+impl GetInvalidationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_invalidation::GetInvalidationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_invalidation::GetInvalidationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_invalidation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetInvalidation`.
 ///
 /// <p>Get the information about an invalidation.</p>

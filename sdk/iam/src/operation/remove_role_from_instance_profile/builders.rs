@@ -3,6 +3,23 @@ pub use crate::operation::remove_role_from_instance_profile::_remove_role_from_i
 
 pub use crate::operation::remove_role_from_instance_profile::_remove_role_from_instance_profile_input::RemoveRoleFromInstanceProfileInputBuilder;
 
+impl RemoveRoleFromInstanceProfileInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::remove_role_from_instance_profile::RemoveRoleFromInstanceProfileOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::remove_role_from_instance_profile::RemoveRoleFromInstanceProfileError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.remove_role_from_instance_profile();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RemoveRoleFromInstanceProfile`.
 ///
 /// <p>Removes the specified IAM role from the specified EC2 instance profile.</p> <important>

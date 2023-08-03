@@ -3,6 +3,23 @@ pub use crate::operation::tag_resource::_tag_resource_output::TagResourceOutputB
 
 pub use crate::operation::tag_resource::_tag_resource_input::TagResourceInputBuilder;
 
+impl TagResourceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::tag_resource::TagResourceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::tag_resource::TagResourceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.tag_resource();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `TagResource`.
 ///
 /// <p>Assigns one or more tags (key-value pairs) to the specified AWS Entity Resolution resource. Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values. In Entity Resolution, <code>SchemaMapping</code>, and <code>MatchingWorkflow</code> can be tagged. Tags don't have any semantic meaning to AWS and are interpreted strictly as strings of characters. You can use the <code>TagResource</code> action with a resource that already has tags. If you specify a new tag key, this tag is appended to the list of tags associated with the resource. If you specify a tag key that is already associated with the resource, the new tag value that you specify replaces the previous value for that tag.</p>

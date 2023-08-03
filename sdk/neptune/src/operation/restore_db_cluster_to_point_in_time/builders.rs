@@ -3,6 +3,17 @@ pub use crate::operation::restore_db_cluster_to_point_in_time::_restore_db_clust
 
 pub use crate::operation::restore_db_cluster_to_point_in_time::_restore_db_cluster_to_point_in_time_input::RestoreDbClusterToPointInTimeInputBuilder;
 
+impl RestoreDbClusterToPointInTimeInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::restore_db_cluster_to_point_in_time::RestoreDbClusterToPointInTimeOutput, ::aws_smithy_http::result::SdkError<crate::operation::restore_db_cluster_to_point_in_time::RestoreDBClusterToPointInTimeError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.restore_db_cluster_to_point_in_time();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RestoreDBClusterToPointInTime`.
 ///
 /// <p>Restores a DB cluster to an arbitrary point in time. Users can restore to any point in time before <code>LatestRestorableTime</code> for up to <code>BackupRetentionPeriod</code> days. The target DB cluster is created from the source DB cluster with the same configuration as the original DB cluster, except that the new DB cluster is created with the default DB security group.</p> <note>

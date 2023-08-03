@@ -3,6 +3,23 @@ pub use crate::operation::list_firewalls::_list_firewalls_output::ListFirewallsO
 
 pub use crate::operation::list_firewalls::_list_firewalls_input::ListFirewallsInputBuilder;
 
+impl ListFirewallsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_firewalls::ListFirewallsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_firewalls::ListFirewallsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_firewalls();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListFirewalls`.
 ///
 /// <p>Retrieves the metadata for the firewalls that you have defined. If you provide VPC identifiers in your request, this returns only the firewalls for those VPCs.</p>

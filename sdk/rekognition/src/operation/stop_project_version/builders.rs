@@ -3,6 +3,23 @@ pub use crate::operation::stop_project_version::_stop_project_version_output::St
 
 pub use crate::operation::stop_project_version::_stop_project_version_input::StopProjectVersionInputBuilder;
 
+impl StopProjectVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_project_version::StopProjectVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_project_version::StopProjectVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_project_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopProjectVersion`.
 ///
 /// <p>Stops a running model. The operation might take a while to complete. To check the current status, call <code>DescribeProjectVersions</code>. </p>

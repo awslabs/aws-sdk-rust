@@ -3,6 +3,23 @@ pub use crate::operation::delete_speaker::_delete_speaker_output::DeleteSpeakerO
 
 pub use crate::operation::delete_speaker::_delete_speaker_input::DeleteSpeakerInputBuilder;
 
+impl DeleteSpeakerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_speaker::DeleteSpeakerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_speaker::DeleteSpeakerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_speaker();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteSpeaker`.
 ///
 /// <p>Deletes the specified speaker from Voice ID.</p>

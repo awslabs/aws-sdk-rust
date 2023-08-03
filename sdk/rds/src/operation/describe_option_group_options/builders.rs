@@ -3,6 +3,23 @@ pub use crate::operation::describe_option_group_options::_describe_option_group_
 
 pub use crate::operation::describe_option_group_options::_describe_option_group_options_input::DescribeOptionGroupOptionsInputBuilder;
 
+impl DescribeOptionGroupOptionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_option_group_options::DescribeOptionGroupOptionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_option_group_options::DescribeOptionGroupOptionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_option_group_options();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeOptionGroupOptions`.
 ///
 /// <p>Describes all available options.</p>

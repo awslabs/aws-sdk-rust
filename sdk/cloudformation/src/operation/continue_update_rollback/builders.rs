@@ -3,6 +3,23 @@ pub use crate::operation::continue_update_rollback::_continue_update_rollback_ou
 
 pub use crate::operation::continue_update_rollback::_continue_update_rollback_input::ContinueUpdateRollbackInputBuilder;
 
+impl ContinueUpdateRollbackInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::continue_update_rollback::ContinueUpdateRollbackOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::continue_update_rollback::ContinueUpdateRollbackError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.continue_update_rollback();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ContinueUpdateRollback`.
 ///
 /// <p>For a specified stack that's in the <code>UPDATE_ROLLBACK_FAILED</code> state, continues rolling it back to the <code>UPDATE_ROLLBACK_COMPLETE</code> state. Depending on the cause of the failure, you can manually <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/troubleshooting.html#troubleshooting-errors-update-rollback-failed"> fix the error</a> and continue the rollback. By continuing the rollback, you can return your stack to a working state (the <code>UPDATE_ROLLBACK_COMPLETE</code> state), and then try to update the stack again.</p>

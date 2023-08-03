@@ -3,6 +3,23 @@ pub use crate::operation::stop_sentiment_detection_job::_stop_sentiment_detectio
 
 pub use crate::operation::stop_sentiment_detection_job::_stop_sentiment_detection_job_input::StopSentimentDetectionJobInputBuilder;
 
+impl StopSentimentDetectionJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_sentiment_detection_job::StopSentimentDetectionJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_sentiment_detection_job::StopSentimentDetectionJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_sentiment_detection_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopSentimentDetectionJob`.
 ///
 /// <p>Stops a sentiment detection job in progress.</p>

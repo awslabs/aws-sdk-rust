@@ -3,6 +3,23 @@ pub use crate::operation::describe_location_hdfs::_describe_location_hdfs_output
 
 pub use crate::operation::describe_location_hdfs::_describe_location_hdfs_input::DescribeLocationHdfsInputBuilder;
 
+impl DescribeLocationHdfsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_location_hdfs::DescribeLocationHdfsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_location_hdfs::DescribeLocationHdfsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_location_hdfs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeLocationHdfs`.
 ///
 /// <p>Returns metadata, such as the authentication information about the Hadoop Distributed File System (HDFS) location. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::copy_fpga_image::_copy_fpga_image_output::CopyFpgaImag
 
 pub use crate::operation::copy_fpga_image::_copy_fpga_image_input::CopyFpgaImageInputBuilder;
 
+impl CopyFpgaImageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::copy_fpga_image::CopyFpgaImageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::copy_fpga_image::CopyFpgaImageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.copy_fpga_image();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CopyFpgaImage`.
 ///
 /// <p>Copies the specified Amazon FPGA Image (AFI) to the current Region.</p>

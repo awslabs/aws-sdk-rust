@@ -3,6 +3,23 @@ pub use crate::operation::purchase_scheduled_instances::_purchase_scheduled_inst
 
 pub use crate::operation::purchase_scheduled_instances::_purchase_scheduled_instances_input::PurchaseScheduledInstancesInputBuilder;
 
+impl PurchaseScheduledInstancesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::purchase_scheduled_instances::PurchaseScheduledInstancesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::purchase_scheduled_instances::PurchaseScheduledInstancesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.purchase_scheduled_instances();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PurchaseScheduledInstances`.
 ///
 /// <note>

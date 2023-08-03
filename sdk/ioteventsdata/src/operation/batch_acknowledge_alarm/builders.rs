@@ -3,6 +3,23 @@ pub use crate::operation::batch_acknowledge_alarm::_batch_acknowledge_alarm_outp
 
 pub use crate::operation::batch_acknowledge_alarm::_batch_acknowledge_alarm_input::BatchAcknowledgeAlarmInputBuilder;
 
+impl BatchAcknowledgeAlarmInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_acknowledge_alarm::BatchAcknowledgeAlarmOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_acknowledge_alarm::BatchAcknowledgeAlarmError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_acknowledge_alarm();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchAcknowledgeAlarm`.
 ///
 /// <p>Acknowledges one or more alarms. The alarms change to the <code>ACKNOWLEDGED</code> state after you acknowledge them.</p>

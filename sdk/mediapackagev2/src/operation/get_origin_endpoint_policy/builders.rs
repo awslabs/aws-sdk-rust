@@ -3,6 +3,23 @@ pub use crate::operation::get_origin_endpoint_policy::_get_origin_endpoint_polic
 
 pub use crate::operation::get_origin_endpoint_policy::_get_origin_endpoint_policy_input::GetOriginEndpointPolicyInputBuilder;
 
+impl GetOriginEndpointPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_origin_endpoint_policy::GetOriginEndpointPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_origin_endpoint_policy::GetOriginEndpointPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_origin_endpoint_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetOriginEndpointPolicy`.
 ///
 /// <p>Retrieves the specified origin endpoint policy that's configured in AWS Elemental MediaPackage.</p>

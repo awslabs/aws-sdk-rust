@@ -3,6 +3,17 @@ pub use crate::operation::add_draft_app_version_resource_mappings::_add_draft_ap
 
 pub use crate::operation::add_draft_app_version_resource_mappings::_add_draft_app_version_resource_mappings_input::AddDraftAppVersionResourceMappingsInputBuilder;
 
+impl AddDraftAppVersionResourceMappingsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappingsOutput, ::aws_smithy_http::result::SdkError<crate::operation::add_draft_app_version_resource_mappings::AddDraftAppVersionResourceMappingsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.add_draft_app_version_resource_mappings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AddDraftAppVersionResourceMappings`.
 ///
 /// <p>Adds the resource mapping for the draft application version. You can also update an existing resource mapping to a new physical resource.</p>

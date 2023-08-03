@@ -3,6 +3,23 @@ pub use crate::operation::translate_text::_translate_text_output::TranslateTextO
 
 pub use crate::operation::translate_text::_translate_text_input::TranslateTextInputBuilder;
 
+impl TranslateTextInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::translate_text::TranslateTextOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::translate_text::TranslateTextError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.translate_text();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `TranslateText`.
 ///
 /// <p>Translates input text from the source language to the target language. For a list of available languages and language codes, see <a href="https://docs.aws.amazon.com/translate/latest/dg/what-is-languages.html">Supported languages</a>.</p>

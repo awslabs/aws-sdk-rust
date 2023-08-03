@@ -3,6 +3,23 @@ pub use crate::operation::start_workflow::_start_workflow_output::StartWorkflowO
 
 pub use crate::operation::start_workflow::_start_workflow_input::StartWorkflowInputBuilder;
 
+impl StartWorkflowInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_workflow::StartWorkflowOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_workflow::StartWorkflowError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_workflow();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartWorkflow`.
 ///
 /// <p>Start a migration workflow.</p>

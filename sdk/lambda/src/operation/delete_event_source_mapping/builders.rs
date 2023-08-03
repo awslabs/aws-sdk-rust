@@ -3,6 +3,23 @@ pub use crate::operation::delete_event_source_mapping::_delete_event_source_mapp
 
 pub use crate::operation::delete_event_source_mapping::_delete_event_source_mapping_input::DeleteEventSourceMappingInputBuilder;
 
+impl DeleteEventSourceMappingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_event_source_mapping::DeleteEventSourceMappingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_event_source_mapping::DeleteEventSourceMappingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_event_source_mapping();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteEventSourceMapping`.
 ///
 /// <p>Deletes an <a href="https://docs.aws.amazon.com/lambda/latest/dg/intro-invocation-modes.html">event source mapping</a>. You can get the identifier of a mapping from the output of <code>ListEventSourceMappings</code>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_vehicle::_create_vehicle_output::CreateVehicleO
 
 pub use crate::operation::create_vehicle::_create_vehicle_input::CreateVehicleInputBuilder;
 
+impl CreateVehicleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_vehicle::CreateVehicleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_vehicle::CreateVehicleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_vehicle();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateVehicle`.
 ///
 /// <p> Creates a vehicle, which is an instance of a vehicle model (model manifest). Vehicles created from the same vehicle model consist of the same signals inherited from the vehicle model.</p> <note>

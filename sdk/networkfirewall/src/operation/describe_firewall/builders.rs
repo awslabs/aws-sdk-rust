@@ -3,6 +3,23 @@ pub use crate::operation::describe_firewall::_describe_firewall_output::Describe
 
 pub use crate::operation::describe_firewall::_describe_firewall_input::DescribeFirewallInputBuilder;
 
+impl DescribeFirewallInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_firewall::DescribeFirewallOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_firewall::DescribeFirewallError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_firewall();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeFirewall`.
 ///
 /// <p>Returns the data objects for the specified firewall. </p>

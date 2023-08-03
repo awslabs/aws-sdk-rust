@@ -3,6 +3,23 @@ pub use crate::operation::update_position::_update_position_output::UpdatePositi
 
 pub use crate::operation::update_position::_update_position_input::UpdatePositionInputBuilder;
 
+impl UpdatePositionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_position::UpdatePositionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_position::UpdatePositionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_position();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdatePosition`.
 ///
 /// <p>Update the position information of a resource.</p> <important>

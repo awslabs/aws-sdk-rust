@@ -3,6 +3,23 @@ pub use crate::operation::list_anomalies_for_insight::_list_anomalies_for_insigh
 
 pub use crate::operation::list_anomalies_for_insight::_list_anomalies_for_insight_input::ListAnomaliesForInsightInputBuilder;
 
+impl ListAnomaliesForInsightInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_anomalies_for_insight::ListAnomaliesForInsightOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_anomalies_for_insight::ListAnomaliesForInsightError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_anomalies_for_insight();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAnomaliesForInsight`.
 ///
 /// <p> Returns a list of the anomalies that belong to an insight that you specify using its ID. </p>

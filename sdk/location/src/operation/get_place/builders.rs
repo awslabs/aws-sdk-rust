@@ -3,6 +3,23 @@ pub use crate::operation::get_place::_get_place_output::GetPlaceOutputBuilder;
 
 pub use crate::operation::get_place::_get_place_input::GetPlaceInputBuilder;
 
+impl GetPlaceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_place::GetPlaceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_place::GetPlaceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_place();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetPlace`.
 ///
 /// <p>Finds a place by its unique ID. A <code>PlaceId</code> is returned by other search operations.</p> <note>

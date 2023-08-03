@@ -3,6 +3,23 @@ pub use crate::operation::stop_experiment::_stop_experiment_output::StopExperime
 
 pub use crate::operation::stop_experiment::_stop_experiment_input::StopExperimentInputBuilder;
 
+impl StopExperimentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_experiment::StopExperimentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_experiment::StopExperimentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_experiment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopExperiment`.
 ///
 /// <p>Stops the specified experiment.</p>

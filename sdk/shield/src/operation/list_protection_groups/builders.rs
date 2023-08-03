@@ -3,6 +3,23 @@ pub use crate::operation::list_protection_groups::_list_protection_groups_output
 
 pub use crate::operation::list_protection_groups::_list_protection_groups_input::ListProtectionGroupsInputBuilder;
 
+impl ListProtectionGroupsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_protection_groups::ListProtectionGroupsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_protection_groups::ListProtectionGroupsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_protection_groups();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListProtectionGroups`.
 ///
 /// <p>Retrieves <code>ProtectionGroup</code> objects for the account. You can retrieve all protection groups or you can provide filtering criteria and retrieve just the subset of protection groups that match the criteria. </p>

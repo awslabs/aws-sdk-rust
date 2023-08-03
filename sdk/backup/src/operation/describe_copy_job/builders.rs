@@ -3,6 +3,23 @@ pub use crate::operation::describe_copy_job::_describe_copy_job_output::Describe
 
 pub use crate::operation::describe_copy_job::_describe_copy_job_input::DescribeCopyJobInputBuilder;
 
+impl DescribeCopyJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_copy_job::DescribeCopyJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_copy_job::DescribeCopyJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_copy_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeCopyJob`.
 ///
 /// <p>Returns metadata associated with creating a copy of a resource.</p>

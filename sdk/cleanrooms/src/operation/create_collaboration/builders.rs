@@ -3,6 +3,23 @@ pub use crate::operation::create_collaboration::_create_collaboration_output::Cr
 
 pub use crate::operation::create_collaboration::_create_collaboration_input::CreateCollaborationInputBuilder;
 
+impl CreateCollaborationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_collaboration::CreateCollaborationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_collaboration::CreateCollaborationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_collaboration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateCollaboration`.
 ///
 /// <p>Creates a new collaboration.</p>

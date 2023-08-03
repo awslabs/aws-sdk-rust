@@ -3,6 +3,17 @@ pub use crate::operation::get_subscription_definition_version::_get_subscription
 
 pub use crate::operation::get_subscription_definition_version::_get_subscription_definition_version_input::GetSubscriptionDefinitionVersionInputBuilder;
 
+impl GetSubscriptionDefinitionVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_subscription_definition_version::GetSubscriptionDefinitionVersionOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_subscription_definition_version::GetSubscriptionDefinitionVersionError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_subscription_definition_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetSubscriptionDefinitionVersion`.
 ///
 /// Retrieves information about a subscription definition version.

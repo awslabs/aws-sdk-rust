@@ -3,6 +3,23 @@ pub use crate::operation::get_accessor::_get_accessor_output::GetAccessorOutputB
 
 pub use crate::operation::get_accessor::_get_accessor_input::GetAccessorInputBuilder;
 
+impl GetAccessorInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_accessor::GetAccessorOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_accessor::GetAccessorError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_accessor();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetAccessor`.
 ///
 /// <p>Returns detailed information about an accessor. An accessor object is a container that has the information required for token based access to your Ethereum nodes.</p>

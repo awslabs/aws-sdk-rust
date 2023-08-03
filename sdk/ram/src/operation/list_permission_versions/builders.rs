@@ -3,6 +3,23 @@ pub use crate::operation::list_permission_versions::_list_permission_versions_ou
 
 pub use crate::operation::list_permission_versions::_list_permission_versions_input::ListPermissionVersionsInputBuilder;
 
+impl ListPermissionVersionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_permission_versions::ListPermissionVersionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_permission_versions::ListPermissionVersionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_permission_versions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListPermissionVersions`.
 ///
 /// <p>Lists the available versions of the specified RAM permission.</p>

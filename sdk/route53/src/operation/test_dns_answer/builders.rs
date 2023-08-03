@@ -3,6 +3,23 @@ pub use crate::operation::test_dns_answer::_test_dns_answer_output::TestDnsAnswe
 
 pub use crate::operation::test_dns_answer::_test_dns_answer_input::TestDnsAnswerInputBuilder;
 
+impl TestDnsAnswerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::test_dns_answer::TestDnsAnswerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::test_dns_answer::TestDNSAnswerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.test_dns_answer();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `TestDNSAnswer`.
 ///
 /// <p>Gets the value that Amazon Route 53 returns in response to a DNS request for a specified record name and type. You can optionally specify the IP address of a DNS resolver, an EDNS0 client subnet IP address, and a subnet mask. </p>

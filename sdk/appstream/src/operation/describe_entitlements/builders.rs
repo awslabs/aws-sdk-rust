@@ -3,6 +3,23 @@ pub use crate::operation::describe_entitlements::_describe_entitlements_output::
 
 pub use crate::operation::describe_entitlements::_describe_entitlements_input::DescribeEntitlementsInputBuilder;
 
+impl DescribeEntitlementsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_entitlements::DescribeEntitlementsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_entitlements::DescribeEntitlementsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_entitlements();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeEntitlements`.
 ///
 /// <p>Retrieves a list that describes one of more entitlements.</p>

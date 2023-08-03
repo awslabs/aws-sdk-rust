@@ -3,6 +3,23 @@ pub use crate::operation::describe_conformance_packs::_describe_conformance_pack
 
 pub use crate::operation::describe_conformance_packs::_describe_conformance_packs_input::DescribeConformancePacksInputBuilder;
 
+impl DescribeConformancePacksInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_conformance_packs::DescribeConformancePacksOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_conformance_packs::DescribeConformancePacksError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_conformance_packs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeConformancePacks`.
 ///
 /// <p>Returns a list of one or more conformance packs.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_transcript::_get_transcript_output::GetTranscriptO
 
 pub use crate::operation::get_transcript::_get_transcript_input::GetTranscriptInputBuilder;
 
+impl GetTranscriptInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_transcript::GetTranscriptOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_transcript::GetTranscriptError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_transcript();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetTranscript`.
 ///
 /// <p>Retrieves a transcript of the session, including details about any attachments. For information about accessing past chat contact transcripts for a persistent chat, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/chat-persistence.html">Enable persistent chat</a>. </p> <note>

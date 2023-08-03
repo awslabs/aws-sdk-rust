@@ -3,6 +3,23 @@ pub use crate::operation::describe_device_ec2_instances::_describe_device_ec2_in
 
 pub use crate::operation::describe_device_ec2_instances::_describe_device_ec2_instances_input::DescribeDeviceEc2InstancesInputBuilder;
 
+impl DescribeDeviceEc2InstancesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_device_ec2_instances::DescribeDeviceEc2InstancesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_device_ec2_instances::DescribeDeviceEc2InstancesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_device_ec2_instances();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeDeviceEc2Instances`.
 ///
 /// <p>Checks the current state of the Amazon EC2 instances. The output is similar to <code>describeDevice</code>, but the results are sourced from the device cache in the Amazon Web Services Cloud and include a subset of the available fields. </p>

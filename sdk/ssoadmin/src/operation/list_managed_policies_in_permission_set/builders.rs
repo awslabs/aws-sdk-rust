@@ -3,6 +3,17 @@ pub use crate::operation::list_managed_policies_in_permission_set::_list_managed
 
 pub use crate::operation::list_managed_policies_in_permission_set::_list_managed_policies_in_permission_set_input::ListManagedPoliciesInPermissionSetInputBuilder;
 
+impl ListManagedPoliciesInPermissionSetInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_managed_policies_in_permission_set::ListManagedPoliciesInPermissionSetOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_managed_policies_in_permission_set::ListManagedPoliciesInPermissionSetError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_managed_policies_in_permission_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListManagedPoliciesInPermissionSet`.
 ///
 /// <p>Lists the AWS managed policy that is attached to a specified permission set.</p>

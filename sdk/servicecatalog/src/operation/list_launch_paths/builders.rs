@@ -3,6 +3,23 @@ pub use crate::operation::list_launch_paths::_list_launch_paths_output::ListLaun
 
 pub use crate::operation::list_launch_paths::_list_launch_paths_input::ListLaunchPathsInputBuilder;
 
+impl ListLaunchPathsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_launch_paths::ListLaunchPathsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_launch_paths::ListLaunchPathsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_launch_paths();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListLaunchPaths`.
 ///
 /// <p> Lists the paths to the specified product. A path describes how the user gets access to a specified product and is necessary when provisioning a product. A path also determines the constraints that are put on a product. A path is dependent on a specific product, porfolio, and principal. </p> <note>

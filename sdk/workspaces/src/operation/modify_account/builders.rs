@@ -3,6 +3,23 @@ pub use crate::operation::modify_account::_modify_account_output::ModifyAccountO
 
 pub use crate::operation::modify_account::_modify_account_input::ModifyAccountInputBuilder;
 
+impl ModifyAccountInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_account::ModifyAccountOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_account::ModifyAccountError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_account();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyAccount`.
 ///
 /// <p>Modifies the configuration of Bring Your Own License (BYOL) for the specified account.</p>

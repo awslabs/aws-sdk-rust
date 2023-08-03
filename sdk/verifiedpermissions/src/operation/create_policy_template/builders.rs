@@ -3,6 +3,23 @@ pub use crate::operation::create_policy_template::_create_policy_template_output
 
 pub use crate::operation::create_policy_template::_create_policy_template_input::CreatePolicyTemplateInputBuilder;
 
+impl CreatePolicyTemplateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_policy_template::CreatePolicyTemplateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_policy_template::CreatePolicyTemplateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_policy_template();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreatePolicyTemplate`.
 ///
 /// <p>Creates a policy template. A template can use placeholders for the principal and resource. A template must be instantiated into a policy by associating it with specific principals and resources to use for the placeholders. That instantiated policy can then be considered in authorization decisions. The instantiated policy works identically to any other policy, except that it is dynamically linked to the template. If the template changes, then any policies that are linked to that template are immediately updated as well.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_coverage_statistics::_get_coverage_statistics_outp
 
 pub use crate::operation::get_coverage_statistics::_get_coverage_statistics_input::GetCoverageStatisticsInputBuilder;
 
+impl GetCoverageStatisticsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_coverage_statistics::GetCoverageStatisticsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_coverage_statistics::GetCoverageStatisticsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_coverage_statistics();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetCoverageStatistics`.
 ///
 /// <p>Retrieves aggregated statistics for your account. If you are a GuardDuty administrator, you can retrieve the statistics for all the resources associated with the active member accounts in your organization who have enabled EKS Runtime Monitoring and have the GuardDuty agent running on their EKS nodes.</p>

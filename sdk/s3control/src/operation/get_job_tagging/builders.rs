@@ -3,6 +3,23 @@ pub use crate::operation::get_job_tagging::_get_job_tagging_output::GetJobTaggin
 
 pub use crate::operation::get_job_tagging::_get_job_tagging_input::GetJobTaggingInputBuilder;
 
+impl GetJobTaggingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_job_tagging::GetJobTaggingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_job_tagging::GetJobTaggingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_job_tagging();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetJobTagging`.
 ///
 /// <p>Returns the tags on an S3 Batch Operations job. To use the <code>GetJobTagging</code> operation, you must have permission to perform the <code>s3:GetJobTagging</code> action. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags">Controlling access and labeling jobs using tags</a> in the <i>Amazon S3 User Guide</i>.</p>

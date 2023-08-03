@@ -3,6 +3,23 @@ pub use crate::operation::attach_static_ip::_attach_static_ip_output::AttachStat
 
 pub use crate::operation::attach_static_ip::_attach_static_ip_input::AttachStaticIpInputBuilder;
 
+impl AttachStaticIpInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::attach_static_ip::AttachStaticIpOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::attach_static_ip::AttachStaticIpError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.attach_static_ip();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AttachStaticIp`.
 ///
 /// <p>Attaches a static IP address to a specific Amazon Lightsail instance.</p>

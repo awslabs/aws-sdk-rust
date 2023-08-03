@@ -3,6 +3,23 @@ pub use crate::operation::describe_log_pattern::_describe_log_pattern_output::De
 
 pub use crate::operation::describe_log_pattern::_describe_log_pattern_input::DescribeLogPatternInputBuilder;
 
+impl DescribeLogPatternInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_log_pattern::DescribeLogPatternOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_log_pattern::DescribeLogPatternError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_log_pattern();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeLogPattern`.
 ///
 /// <p>Describe a specific log pattern from a <code>LogPatternSet</code>.</p>

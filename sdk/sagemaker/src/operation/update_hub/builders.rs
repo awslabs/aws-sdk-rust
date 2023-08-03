@@ -3,6 +3,23 @@ pub use crate::operation::update_hub::_update_hub_output::UpdateHubOutputBuilder
 
 pub use crate::operation::update_hub::_update_hub_input::UpdateHubInputBuilder;
 
+impl UpdateHubInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_hub::UpdateHubOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_hub::UpdateHubError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_hub();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateHub`.
 ///
 /// <p>Update a hub.</p> <note>

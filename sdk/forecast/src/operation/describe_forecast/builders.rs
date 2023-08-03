@@ -3,6 +3,23 @@ pub use crate::operation::describe_forecast::_describe_forecast_output::Describe
 
 pub use crate::operation::describe_forecast::_describe_forecast_input::DescribeForecastInputBuilder;
 
+impl DescribeForecastInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_forecast::DescribeForecastOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_forecast::DescribeForecastError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_forecast();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeForecast`.
 ///
 /// <p>Describes a forecast created using the <code>CreateForecast</code> operation.</p>

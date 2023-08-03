@@ -3,6 +3,23 @@ pub use crate::operation::create_entity::_create_entity_output::CreateEntityOutp
 
 pub use crate::operation::create_entity::_create_entity_input::CreateEntityInputBuilder;
 
+impl CreateEntityInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_entity::CreateEntityOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_entity::CreateEntityError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_entity();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateEntity`.
 ///
 /// <p>Creates an entity.</p>

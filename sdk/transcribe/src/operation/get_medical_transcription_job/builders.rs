@@ -3,6 +3,23 @@ pub use crate::operation::get_medical_transcription_job::_get_medical_transcript
 
 pub use crate::operation::get_medical_transcription_job::_get_medical_transcription_job_input::GetMedicalTranscriptionJobInputBuilder;
 
+impl GetMedicalTranscriptionJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_medical_transcription_job::GetMedicalTranscriptionJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_medical_transcription_job::GetMedicalTranscriptionJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_medical_transcription_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetMedicalTranscriptionJob`.
 ///
 /// <p>Provides information about the specified medical transcription job.</p>

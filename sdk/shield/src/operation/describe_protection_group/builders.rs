@@ -3,6 +3,23 @@ pub use crate::operation::describe_protection_group::_describe_protection_group_
 
 pub use crate::operation::describe_protection_group::_describe_protection_group_input::DescribeProtectionGroupInputBuilder;
 
+impl DescribeProtectionGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_protection_group::DescribeProtectionGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_protection_group::DescribeProtectionGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_protection_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeProtectionGroup`.
 ///
 /// <p>Returns the specification for the specified protection group.</p>

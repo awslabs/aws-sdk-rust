@@ -3,6 +3,23 @@ pub use crate::operation::describe_workspaces::_describe_workspaces_output::Desc
 
 pub use crate::operation::describe_workspaces::_describe_workspaces_input::DescribeWorkspacesInputBuilder;
 
+impl DescribeWorkspacesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_workspaces::DescribeWorkspacesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_workspaces::DescribeWorkspacesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_workspaces();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeWorkspaces`.
 ///
 /// <p>Describes the specified WorkSpaces.</p>

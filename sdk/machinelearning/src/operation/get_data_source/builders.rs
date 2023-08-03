@@ -3,6 +3,23 @@ pub use crate::operation::get_data_source::_get_data_source_output::GetDataSourc
 
 pub use crate::operation::get_data_source::_get_data_source_input::GetDataSourceInputBuilder;
 
+impl GetDataSourceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_data_source::GetDataSourceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_data_source::GetDataSourceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_data_source();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetDataSource`.
 ///
 /// <p>Returns a <code>DataSource</code> that includes metadata and data file information, as well as the current status of the <code>DataSource</code>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_db_cluster_snapshot::_create_db_cluster_snapsho
 
 pub use crate::operation::create_db_cluster_snapshot::_create_db_cluster_snapshot_input::CreateDbClusterSnapshotInputBuilder;
 
+impl CreateDbClusterSnapshotInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_db_cluster_snapshot::CreateDbClusterSnapshotOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_db_cluster_snapshot::CreateDBClusterSnapshotError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_db_cluster_snapshot();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateDBClusterSnapshot`.
 ///
 /// <p>Creates a snapshot of a cluster. </p>

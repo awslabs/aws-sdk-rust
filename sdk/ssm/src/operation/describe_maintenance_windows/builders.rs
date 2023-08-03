@@ -3,6 +3,23 @@ pub use crate::operation::describe_maintenance_windows::_describe_maintenance_wi
 
 pub use crate::operation::describe_maintenance_windows::_describe_maintenance_windows_input::DescribeMaintenanceWindowsInputBuilder;
 
+impl DescribeMaintenanceWindowsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_maintenance_windows::DescribeMaintenanceWindowsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_maintenance_windows::DescribeMaintenanceWindowsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_maintenance_windows();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeMaintenanceWindows`.
 ///
 /// <p>Retrieves the maintenance windows in an Amazon Web Services account.</p>

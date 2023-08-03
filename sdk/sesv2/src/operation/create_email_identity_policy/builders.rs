@@ -3,6 +3,23 @@ pub use crate::operation::create_email_identity_policy::_create_email_identity_p
 
 pub use crate::operation::create_email_identity_policy::_create_email_identity_policy_input::CreateEmailIdentityPolicyInputBuilder;
 
+impl CreateEmailIdentityPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_email_identity_policy::CreateEmailIdentityPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_email_identity_policy::CreateEmailIdentityPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_email_identity_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateEmailIdentityPolicy`.
 ///
 /// <p>Creates the specified sending authorization policy for the given identity (an email address or a domain).</p> <note>

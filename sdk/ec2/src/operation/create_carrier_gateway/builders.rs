@@ -3,6 +3,23 @@ pub use crate::operation::create_carrier_gateway::_create_carrier_gateway_output
 
 pub use crate::operation::create_carrier_gateway::_create_carrier_gateway_input::CreateCarrierGatewayInputBuilder;
 
+impl CreateCarrierGatewayInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_carrier_gateway::CreateCarrierGatewayOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_carrier_gateway::CreateCarrierGatewayError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_carrier_gateway();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateCarrierGateway`.
 ///
 /// <p>Creates a carrier gateway. For more information about carrier gateways, see <a href="https://docs.aws.amazon.com/wavelength/latest/developerguide/how-wavelengths-work.html#wavelength-carrier-gateway">Carrier gateways</a> in the <i>Amazon Web Services Wavelength Developer Guide</i>.</p>

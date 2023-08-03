@@ -3,6 +3,23 @@ pub use crate::operation::delete_account_alias::_delete_account_alias_output::De
 
 pub use crate::operation::delete_account_alias::_delete_account_alias_input::DeleteAccountAliasInputBuilder;
 
+impl DeleteAccountAliasInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_account_alias::DeleteAccountAliasOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_account_alias::DeleteAccountAliasError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_account_alias();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteAccountAlias`.
 ///
 /// <p> Deletes the specified Amazon Web Services account alias. For information about using an Amazon Web Services account alias, see <a href="https://docs.aws.amazon.com/signin/latest/userguide/CreateAccountAlias.html">Creating, deleting, and listing an Amazon Web Services account alias</a> in the <i>Amazon Web Services Sign-In User Guide</i>.</p>

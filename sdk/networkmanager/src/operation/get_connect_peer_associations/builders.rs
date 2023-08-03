@@ -3,6 +3,23 @@ pub use crate::operation::get_connect_peer_associations::_get_connect_peer_assoc
 
 pub use crate::operation::get_connect_peer_associations::_get_connect_peer_associations_input::GetConnectPeerAssociationsInputBuilder;
 
+impl GetConnectPeerAssociationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_connect_peer_associations::GetConnectPeerAssociationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_connect_peer_associations::GetConnectPeerAssociationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_connect_peer_associations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetConnectPeerAssociations`.
 ///
 /// <p>Returns information about a core network Connect peer associations.</p>

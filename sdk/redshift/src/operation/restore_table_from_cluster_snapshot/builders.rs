@@ -3,6 +3,17 @@ pub use crate::operation::restore_table_from_cluster_snapshot::_restore_table_fr
 
 pub use crate::operation::restore_table_from_cluster_snapshot::_restore_table_from_cluster_snapshot_input::RestoreTableFromClusterSnapshotInputBuilder;
 
+impl RestoreTableFromClusterSnapshotInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotOutput, ::aws_smithy_http::result::SdkError<crate::operation::restore_table_from_cluster_snapshot::RestoreTableFromClusterSnapshotError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.restore_table_from_cluster_snapshot();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RestoreTableFromClusterSnapshot`.
 ///
 /// <p>Creates a new table from a table in an Amazon Redshift cluster snapshot. You must create the new table within the Amazon Redshift cluster that the snapshot was taken from.</p>

@@ -3,6 +3,17 @@ pub use crate::operation::list_bucket_intelligent_tiering_configurations::_list_
 
 pub use crate::operation::list_bucket_intelligent_tiering_configurations::_list_bucket_intelligent_tiering_configurations_input::ListBucketIntelligentTieringConfigurationsInputBuilder;
 
+impl ListBucketIntelligentTieringConfigurationsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_bucket_intelligent_tiering_configurations::ListBucketIntelligentTieringConfigurationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_bucket_intelligent_tiering_configurations::ListBucketIntelligentTieringConfigurationsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_bucket_intelligent_tiering_configurations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListBucketIntelligentTieringConfigurations`.
 ///
 /// <p>Lists the S3 Intelligent-Tiering configuration from the specified bucket.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_access_token::_create_access_token_output::Crea
 
 pub use crate::operation::create_access_token::_create_access_token_input::CreateAccessTokenInputBuilder;
 
+impl CreateAccessTokenInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_access_token::CreateAccessTokenOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_access_token::CreateAccessTokenError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_access_token();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateAccessToken`.
 ///
 /// <p>Creates a personal access token (PAT) for the current user. A personal access token (PAT) is similar to a password. It is associated with your user identity for use across all spaces and projects in Amazon CodeCatalyst. You use PATs to access CodeCatalyst from resources that include integrated development environments (IDEs) and Git-based source repositories. PATs represent you in Amazon CodeCatalyst and you can manage them in your user settings.For more information, see <a href="https://docs.aws.amazon.com/codecatalyst/latest/userguide/ipa-tokens-keys.html">Managing personal access tokens in Amazon CodeCatalyst</a>.</p>

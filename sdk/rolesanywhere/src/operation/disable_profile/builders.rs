@@ -3,6 +3,23 @@ pub use crate::operation::disable_profile::_disable_profile_output::DisableProfi
 
 pub use crate::operation::disable_profile::_disable_profile_input::DisableProfileInputBuilder;
 
+impl DisableProfileInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disable_profile::DisableProfileOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disable_profile::DisableProfileError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disable_profile();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisableProfile`.
 ///
 /// <p>Disables a profile. When disabled, temporary credential requests with this profile fail.</p>

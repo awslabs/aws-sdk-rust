@@ -3,6 +3,23 @@ pub use crate::operation::get_generated_code_job::_get_generated_code_job_output
 
 pub use crate::operation::get_generated_code_job::_get_generated_code_job_input::GetGeneratedCodeJobInputBuilder;
 
+impl GetGeneratedCodeJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_generated_code_job::GetGeneratedCodeJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_generated_code_job::GetGeneratedCodeJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_generated_code_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetGeneratedCodeJob`.
 ///
 /// <p>Gets details about a job that is generating code for a snapshot.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_event::_get_event_output::GetEventOutputBuilder;
 
 pub use crate::operation::get_event::_get_event_input::GetEventInputBuilder;
 
+impl GetEventInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_event::GetEventOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_event::GetEventError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_event();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetEvent`.
 ///
 /// <p>Retrieves details of events stored with Amazon Fraud Detector. This action does not retrieve prediction results.</p>

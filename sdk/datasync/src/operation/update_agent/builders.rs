@@ -3,6 +3,23 @@ pub use crate::operation::update_agent::_update_agent_output::UpdateAgentOutputB
 
 pub use crate::operation::update_agent::_update_agent_input::UpdateAgentInputBuilder;
 
+impl UpdateAgentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_agent::UpdateAgentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_agent::UpdateAgentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_agent();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateAgent`.
 ///
 /// <p>Updates the name of an agent.</p>

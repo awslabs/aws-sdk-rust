@@ -3,6 +3,23 @@ pub use crate::operation::decode_authorization_message::_decode_authorization_me
 
 pub use crate::operation::decode_authorization_message::_decode_authorization_message_input::DecodeAuthorizationMessageInputBuilder;
 
+impl DecodeAuthorizationMessageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::decode_authorization_message::DecodeAuthorizationMessageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::decode_authorization_message::DecodeAuthorizationMessageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.decode_authorization_message();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DecodeAuthorizationMessage`.
 ///
 /// <p>Decodes additional information about the authorization status of a request from an encoded message returned in response to an Amazon Web Services request.</p>

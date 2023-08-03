@@ -3,6 +3,23 @@ pub use crate::operation::untag_saml_provider::_untag_saml_provider_output::Unta
 
 pub use crate::operation::untag_saml_provider::_untag_saml_provider_input::UntagSamlProviderInputBuilder;
 
+impl UntagSamlProviderInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::untag_saml_provider::UntagSamlProviderOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::untag_saml_provider::UntagSAMLProviderError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.untag_saml_provider();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UntagSAMLProvider`.
 ///
 /// <p>Removes the specified tags from the specified Security Assertion Markup Language (SAML) identity provider in IAM. For more information about these providers, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_oidc.html">About web identity federation</a>. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>

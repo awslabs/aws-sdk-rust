@@ -3,6 +3,23 @@ pub use crate::operation::create_snapshot_copy_grant::_create_snapshot_copy_gran
 
 pub use crate::operation::create_snapshot_copy_grant::_create_snapshot_copy_grant_input::CreateSnapshotCopyGrantInputBuilder;
 
+impl CreateSnapshotCopyGrantInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_snapshot_copy_grant::CreateSnapshotCopyGrantError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_snapshot_copy_grant();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateSnapshotCopyGrant`.
 ///
 /// <p>Creates a snapshot copy grant that permits Amazon Redshift to use an encrypted symmetric key from Key Management Service (KMS) to encrypt copied snapshots in a destination region.</p>

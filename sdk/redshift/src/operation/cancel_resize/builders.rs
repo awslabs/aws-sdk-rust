@@ -3,6 +3,23 @@ pub use crate::operation::cancel_resize::_cancel_resize_output::CancelResizeOutp
 
 pub use crate::operation::cancel_resize::_cancel_resize_input::CancelResizeInputBuilder;
 
+impl CancelResizeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::cancel_resize::CancelResizeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::cancel_resize::CancelResizeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.cancel_resize();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CancelResize`.
 ///
 /// <p>Cancels a resize operation for a cluster.</p>

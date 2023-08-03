@@ -3,6 +3,23 @@ pub use crate::operation::update_attendee_capabilities::_update_attendee_capabil
 
 pub use crate::operation::update_attendee_capabilities::_update_attendee_capabilities_input::UpdateAttendeeCapabilitiesInputBuilder;
 
+impl UpdateAttendeeCapabilitiesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_attendee_capabilities::UpdateAttendeeCapabilitiesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_attendee_capabilities::UpdateAttendeeCapabilitiesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_attendee_capabilities();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateAttendeeCapabilities`.
 ///
 /// <p>The capabilities that you want to update.</p> <note>

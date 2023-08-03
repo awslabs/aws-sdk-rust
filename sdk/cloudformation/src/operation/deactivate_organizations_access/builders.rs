@@ -3,6 +3,23 @@ pub use crate::operation::deactivate_organizations_access::_deactivate_organizat
 
 pub use crate::operation::deactivate_organizations_access::_deactivate_organizations_access_input::DeactivateOrganizationsAccessInputBuilder;
 
+impl DeactivateOrganizationsAccessInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::deactivate_organizations_access::DeactivateOrganizationsAccessOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::deactivate_organizations_access::DeactivateOrganizationsAccessError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.deactivate_organizations_access();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeactivateOrganizationsAccess`.
 ///
 /// <p>Deactivates trusted access with Organizations. If trusted access is deactivated, the management account does not have permissions to create and manage service-managed StackSets for your organization.</p>

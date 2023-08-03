@@ -3,6 +3,23 @@ pub use crate::operation::create_sip_media_application::_create_sip_media_applic
 
 pub use crate::operation::create_sip_media_application::_create_sip_media_application_input::CreateSipMediaApplicationInputBuilder;
 
+impl CreateSipMediaApplicationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_sip_media_application::CreateSipMediaApplicationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_sip_media_application::CreateSipMediaApplicationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_sip_media_application();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateSipMediaApplication`.
 ///
 /// <p>Creates a SIP media application. For more information about SIP media applications, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/ag/manage-sip-applications.html">Managing SIP media applications and rules</a> in the <i>Amazon Chime SDK Administrator Guide</i>.</p>

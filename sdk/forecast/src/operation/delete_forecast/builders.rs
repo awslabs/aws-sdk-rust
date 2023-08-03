@@ -3,6 +3,23 @@ pub use crate::operation::delete_forecast::_delete_forecast_output::DeleteForeca
 
 pub use crate::operation::delete_forecast::_delete_forecast_input::DeleteForecastInputBuilder;
 
+impl DeleteForecastInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_forecast::DeleteForecastOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_forecast::DeleteForecastError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_forecast();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteForecast`.
 ///
 /// <p>Deletes a forecast created using the <code>CreateForecast</code> operation. You can delete only forecasts that have a status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>. To get the status, use the <code>DescribeForecast</code> operation.</p>

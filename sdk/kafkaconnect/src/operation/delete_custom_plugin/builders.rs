@@ -3,6 +3,23 @@ pub use crate::operation::delete_custom_plugin::_delete_custom_plugin_output::De
 
 pub use crate::operation::delete_custom_plugin::_delete_custom_plugin_input::DeleteCustomPluginInputBuilder;
 
+impl DeleteCustomPluginInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_custom_plugin::DeleteCustomPluginOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_custom_plugin::DeleteCustomPluginError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_custom_plugin();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteCustomPlugin`.
 ///
 /// <p>Deletes a custom plugin.</p>

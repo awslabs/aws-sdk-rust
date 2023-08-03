@@ -3,6 +3,23 @@ pub use crate::operation::describe_customer_gateways::_describe_customer_gateway
 
 pub use crate::operation::describe_customer_gateways::_describe_customer_gateways_input::DescribeCustomerGatewaysInputBuilder;
 
+impl DescribeCustomerGatewaysInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_customer_gateways::DescribeCustomerGatewaysOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_customer_gateways::DescribeCustomerGatewaysError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_customer_gateways();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeCustomerGateways`.
 ///
 /// <p>Describes one or more of your VPN customer gateways.</p>

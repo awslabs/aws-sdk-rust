@@ -3,6 +3,23 @@ pub use crate::operation::remove_permission::_remove_permission_output::RemovePe
 
 pub use crate::operation::remove_permission::_remove_permission_input::RemovePermissionInputBuilder;
 
+impl RemovePermissionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::remove_permission::RemovePermissionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::remove_permission::RemovePermissionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.remove_permission();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RemovePermission`.
 ///
 /// <p>Removes a statement from a topic's access control policy.</p> <note>

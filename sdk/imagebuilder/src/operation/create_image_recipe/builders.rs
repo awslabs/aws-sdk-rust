@@ -3,6 +3,23 @@ pub use crate::operation::create_image_recipe::_create_image_recipe_output::Crea
 
 pub use crate::operation::create_image_recipe::_create_image_recipe_input::CreateImageRecipeInputBuilder;
 
+impl CreateImageRecipeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_image_recipe::CreateImageRecipeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_image_recipe::CreateImageRecipeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_image_recipe();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateImageRecipe`.
 ///
 /// <p>Creates a new image recipe. Image recipes define how images are configured, tested, and assessed.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_transform_job::_describe_transform_job_output
 
 pub use crate::operation::describe_transform_job::_describe_transform_job_input::DescribeTransformJobInputBuilder;
 
+impl DescribeTransformJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_transform_job::DescribeTransformJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_transform_job::DescribeTransformJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_transform_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeTransformJob`.
 ///
 /// <p>Returns information about a transform job.</p>

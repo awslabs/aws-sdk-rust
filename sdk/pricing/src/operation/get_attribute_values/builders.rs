@@ -3,6 +3,23 @@ pub use crate::operation::get_attribute_values::_get_attribute_values_output::Ge
 
 pub use crate::operation::get_attribute_values::_get_attribute_values_input::GetAttributeValuesInputBuilder;
 
+impl GetAttributeValuesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_attribute_values::GetAttributeValuesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_attribute_values::GetAttributeValuesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_attribute_values();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetAttributeValues`.
 ///
 /// <p>Returns a list of attribute values. Attributes are similar to the details in a Price List API offer file. For a list of available attributes, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/reading-an-offer.html#pps-defs">Offer File Definitions</a> in the <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/billing-what-is.html">Billing and Cost Management User Guide</a>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_published_schema_arns::_list_published_schema_arn
 
 pub use crate::operation::list_published_schema_arns::_list_published_schema_arns_input::ListPublishedSchemaArnsInputBuilder;
 
+impl ListPublishedSchemaArnsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_published_schema_arns::ListPublishedSchemaArnsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_published_schema_arns::ListPublishedSchemaArnsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_published_schema_arns();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListPublishedSchemaArns`.
 ///
 /// <p>Lists the major version families of each published schema. If a major version ARN is provided as <code>SchemaArn</code>, the minor version revisions in that family are listed instead.</p>

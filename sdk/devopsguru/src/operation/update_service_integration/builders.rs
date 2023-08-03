@@ -3,6 +3,23 @@ pub use crate::operation::update_service_integration::_update_service_integratio
 
 pub use crate::operation::update_service_integration::_update_service_integration_input::UpdateServiceIntegrationInputBuilder;
 
+impl UpdateServiceIntegrationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_service_integration::UpdateServiceIntegrationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_service_integration::UpdateServiceIntegrationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_service_integration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateServiceIntegration`.
 ///
 /// <p> Enables or disables integration with a service that can be integrated with DevOps Guru. The one service that can be integrated with DevOps Guru is Amazon Web Services Systems Manager, which can be used to create an OpsItem for each generated insight. </p>

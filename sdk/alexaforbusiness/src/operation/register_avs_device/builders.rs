@@ -3,6 +3,23 @@ pub use crate::operation::register_avs_device::_register_avs_device_output::Regi
 
 pub use crate::operation::register_avs_device::_register_avs_device_input::RegisterAvsDeviceInputBuilder;
 
+impl RegisterAvsDeviceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::register_avs_device::RegisterAvsDeviceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::register_avs_device::RegisterAVSDeviceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.register_avs_device();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RegisterAVSDevice`.
 ///
 /// <p>Registers an Alexa-enabled device built by an Original Equipment Manufacturer (OEM) using Alexa Voice Service (AVS).</p>

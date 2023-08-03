@@ -3,6 +3,23 @@ pub use crate::operation::import_app_catalog::_import_app_catalog_output::Import
 
 pub use crate::operation::import_app_catalog::_import_app_catalog_input::ImportAppCatalogInputBuilder;
 
+impl ImportAppCatalogInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::import_app_catalog::ImportAppCatalogOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::import_app_catalog::ImportAppCatalogError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.import_app_catalog();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ImportAppCatalog`.
 ///
 /// <p>Allows application import from Migration Hub.</p>

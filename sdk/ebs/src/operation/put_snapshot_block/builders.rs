@@ -3,6 +3,23 @@ pub use crate::operation::put_snapshot_block::_put_snapshot_block_output::PutSna
 
 pub use crate::operation::put_snapshot_block::_put_snapshot_block_input::PutSnapshotBlockInputBuilder;
 
+impl PutSnapshotBlockInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_snapshot_block::PutSnapshotBlockOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_snapshot_block::PutSnapshotBlockError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_snapshot_block();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutSnapshotBlock`.
 ///
 /// <p>Writes a block of data to a snapshot. If the specified block contains data, the existing data is overwritten. The target snapshot must be in the <code>pending</code> state.</p>

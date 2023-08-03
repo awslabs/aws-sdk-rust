@@ -3,6 +3,23 @@ pub use crate::operation::delete_route_settings::_delete_route_settings_output::
 
 pub use crate::operation::delete_route_settings::_delete_route_settings_input::DeleteRouteSettingsInputBuilder;
 
+impl DeleteRouteSettingsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_route_settings::DeleteRouteSettingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_route_settings::DeleteRouteSettingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_route_settings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteRouteSettings`.
 ///
 /// <p>Deletes the RouteSettings for a stage.</p>

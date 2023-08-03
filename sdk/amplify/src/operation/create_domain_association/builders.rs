@@ -3,6 +3,23 @@ pub use crate::operation::create_domain_association::_create_domain_association_
 
 pub use crate::operation::create_domain_association::_create_domain_association_input::CreateDomainAssociationInputBuilder;
 
+impl CreateDomainAssociationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_domain_association::CreateDomainAssociationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_domain_association::CreateDomainAssociationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_domain_association();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateDomainAssociation`.
 ///
 /// <p> Creates a new domain association for an Amplify app. This action associates a custom domain with the Amplify app </p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_csv_header::_get_csv_header_output::GetCsvHeaderOu
 
 pub use crate::operation::get_csv_header::_get_csv_header_input::GetCsvHeaderInputBuilder;
 
+impl GetCsvHeaderInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_csv_header::GetCsvHeaderOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_csv_header::GetCSVHeaderError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_csv_header();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetCSVHeader`.
 ///
 /// <p>Gets the header information for the comma-separated value (CSV) file to be used as input for the user import job.</p>

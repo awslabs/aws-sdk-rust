@@ -3,6 +3,23 @@ pub use crate::operation::start_export_task::_start_export_task_output::StartExp
 
 pub use crate::operation::start_export_task::_start_export_task_input::StartExportTaskInputBuilder;
 
+impl StartExportTaskInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_export_task::StartExportTaskOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_export_task::StartExportTaskError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_export_task();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartExportTask`.
 ///
 /// <p>Begins the export of a discovered data report to an Amazon S3 bucket managed by Amazon Web Services.</p> <note>

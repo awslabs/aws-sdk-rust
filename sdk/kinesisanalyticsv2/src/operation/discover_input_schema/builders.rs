@@ -3,6 +3,23 @@ pub use crate::operation::discover_input_schema::_discover_input_schema_output::
 
 pub use crate::operation::discover_input_schema::_discover_input_schema_input::DiscoverInputSchemaInputBuilder;
 
+impl DiscoverInputSchemaInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::discover_input_schema::DiscoverInputSchemaOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::discover_input_schema::DiscoverInputSchemaError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.discover_input_schema();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DiscoverInputSchema`.
 ///
 /// <p>Infers a schema for a SQL-based Kinesis Data Analytics application by evaluating sample records on the specified streaming source (Kinesis data stream or Kinesis Data Firehose delivery stream) or Amazon S3 object. In the response, the operation returns the inferred schema and also the sample records that the operation used to infer the schema.</p>

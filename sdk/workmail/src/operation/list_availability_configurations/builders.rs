@@ -3,6 +3,23 @@ pub use crate::operation::list_availability_configurations::_list_availability_c
 
 pub use crate::operation::list_availability_configurations::_list_availability_configurations_input::ListAvailabilityConfigurationsInputBuilder;
 
+impl ListAvailabilityConfigurationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_availability_configurations::ListAvailabilityConfigurationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_availability_configurations::ListAvailabilityConfigurationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_availability_configurations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAvailabilityConfigurations`.
 ///
 /// <p>List all the <code>AvailabilityConfiguration</code>'s for the given WorkMail organization.</p>

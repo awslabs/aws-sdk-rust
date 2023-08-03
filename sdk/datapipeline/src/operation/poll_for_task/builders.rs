@@ -3,6 +3,23 @@ pub use crate::operation::poll_for_task::_poll_for_task_output::PollForTaskOutpu
 
 pub use crate::operation::poll_for_task::_poll_for_task_input::PollForTaskInputBuilder;
 
+impl PollForTaskInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::poll_for_task::PollForTaskOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::poll_for_task::PollForTaskError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.poll_for_task();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PollForTask`.
 ///
 /// <p>Task runners call <code>PollForTask</code> to receive a task to perform from AWS Data Pipeline. The task runner specifies which tasks it can perform by setting a value for the <code>workerGroup</code> parameter. The task returned can come from any of the pipelines that match the <code>workerGroup</code> value passed in by the task runner and that was launched using the IAM user credentials specified by the task runner.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_portal::_delete_portal_output::DeletePortalOutp
 
 pub use crate::operation::delete_portal::_delete_portal_input::DeletePortalInputBuilder;
 
+impl DeletePortalInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_portal::DeletePortalOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_portal::DeletePortalError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_portal();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeletePortal`.
 ///
 /// <p>Deletes a portal from IoT SiteWise Monitor.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::update_package_version::_update_package_version_output
 
 pub use crate::operation::update_package_version::_update_package_version_input::UpdatePackageVersionInputBuilder;
 
+impl UpdatePackageVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_package_version::UpdatePackageVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_package_version::UpdatePackageVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_package_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdatePackageVersion`.
 ///
 /// <p>Updates the supported fields for a specific package version.</p>

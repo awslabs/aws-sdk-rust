@@ -3,6 +3,23 @@ pub use crate::operation::get_mailbox_details::_get_mailbox_details_output::GetM
 
 pub use crate::operation::get_mailbox_details::_get_mailbox_details_input::GetMailboxDetailsInputBuilder;
 
+impl GetMailboxDetailsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_mailbox_details::GetMailboxDetailsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_mailbox_details::GetMailboxDetailsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_mailbox_details();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetMailboxDetails`.
 ///
 /// <p>Requests a user's mailbox details for a specified organization and user.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::analyze_id::_analyze_id_output::AnalyzeIdOutputBuilder
 
 pub use crate::operation::analyze_id::_analyze_id_input::AnalyzeIdInputBuilder;
 
+impl AnalyzeIdInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::analyze_id::AnalyzeIdOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::analyze_id::AnalyzeIDError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.analyze_id();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AnalyzeID`.
 ///
 /// <p>Analyzes identity documents for relevant information. This information is extracted and returned as <code>IdentityDocumentFields</code>, which records both the normalized field and value of the extracted text. Unlike other Amazon Textract operations, <code>AnalyzeID</code> doesn't return any Geometry data.</p>

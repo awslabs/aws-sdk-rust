@@ -3,6 +3,23 @@ pub use crate::operation::update_quick_connect_config::_update_quick_connect_con
 
 pub use crate::operation::update_quick_connect_config::_update_quick_connect_config_input::UpdateQuickConnectConfigInputBuilder;
 
+impl UpdateQuickConnectConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_quick_connect_config::UpdateQuickConnectConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_quick_connect_config::UpdateQuickConnectConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_quick_connect_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateQuickConnectConfig`.
 ///
 /// <p>Updates the configuration settings for the specified quick connect.</p>

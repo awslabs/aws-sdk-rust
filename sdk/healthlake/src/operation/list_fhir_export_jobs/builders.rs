@@ -3,6 +3,23 @@ pub use crate::operation::list_fhir_export_jobs::_list_fhir_export_jobs_output::
 
 pub use crate::operation::list_fhir_export_jobs::_list_fhir_export_jobs_input::ListFhirExportJobsInputBuilder;
 
+impl ListFhirExportJobsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_fhir_export_jobs::ListFhirExportJobsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_fhir_export_jobs::ListFHIRExportJobsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_fhir_export_jobs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListFHIRExportJobs`.
 ///
 /// <p> Lists all FHIR export jobs associated with an account and their statuses. </p>

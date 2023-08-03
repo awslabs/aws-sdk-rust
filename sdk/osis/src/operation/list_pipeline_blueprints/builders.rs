@@ -3,6 +3,23 @@ pub use crate::operation::list_pipeline_blueprints::_list_pipeline_blueprints_ou
 
 pub use crate::operation::list_pipeline_blueprints::_list_pipeline_blueprints_input::ListPipelineBlueprintsInputBuilder;
 
+impl ListPipelineBlueprintsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_pipeline_blueprints::ListPipelineBlueprintsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_pipeline_blueprints::ListPipelineBlueprintsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_pipeline_blueprints();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListPipelineBlueprints`.
 ///
 /// <p>Retrieves a list of all available blueprints for Data Prepper. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/creating-pipeline.html#pipeline-blueprint">Using blueprints to create a pipeline</a>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_language_model::_delete_language_model_output::
 
 pub use crate::operation::delete_language_model::_delete_language_model_input::DeleteLanguageModelInputBuilder;
 
+impl DeleteLanguageModelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_language_model::DeleteLanguageModelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_language_model::DeleteLanguageModelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_language_model();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteLanguageModel`.
 ///
 /// <p>Deletes a custom language model. To use this operation, specify the name of the language model you want to delete using <code>ModelName</code>. custom language model names are case sensitive.</p>

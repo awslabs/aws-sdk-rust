@@ -3,6 +3,23 @@ pub use crate::operation::tag_server_certificate::_tag_server_certificate_output
 
 pub use crate::operation::tag_server_certificate::_tag_server_certificate_input::TagServerCertificateInputBuilder;
 
+impl TagServerCertificateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::tag_server_certificate::TagServerCertificateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::tag_server_certificate::TagServerCertificateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.tag_server_certificate();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `TagServerCertificate`.
 ///
 /// <p>Adds one or more tags to an IAM server certificate. If a tag with the same key name already exists, then that tag is overwritten with the new value.</p> <note>

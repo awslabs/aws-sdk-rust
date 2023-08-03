@@ -3,6 +3,23 @@ pub use crate::operation::create_long_term_pricing::_create_long_term_pricing_ou
 
 pub use crate::operation::create_long_term_pricing::_create_long_term_pricing_input::CreateLongTermPricingInputBuilder;
 
+impl CreateLongTermPricingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_long_term_pricing::CreateLongTermPricingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_long_term_pricing::CreateLongTermPricingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_long_term_pricing();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateLongTermPricing`.
 ///
 /// <p>Creates a job with the long-term usage option for a device. The long-term usage is a 1-year or 3-year long-term pricing type for the device. You are billed upfront, and Amazon Web Services provides discounts for long-term pricing. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_game_configuration::_get_game_configuration_output
 
 pub use crate::operation::get_game_configuration::_get_game_configuration_input::GetGameConfigurationInputBuilder;
 
+impl GetGameConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_game_configuration::GetGameConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_game_configuration::GetGameConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_game_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetGameConfiguration`.
 ///
 /// <p>Gets the configuration of the game.</p>

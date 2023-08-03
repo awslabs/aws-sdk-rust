@@ -3,6 +3,23 @@ pub use crate::operation::list_tunnels::_list_tunnels_output::ListTunnelsOutputB
 
 pub use crate::operation::list_tunnels::_list_tunnels_input::ListTunnelsInputBuilder;
 
+impl ListTunnelsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_tunnels::ListTunnelsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_tunnels::ListTunnelsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_tunnels();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListTunnels`.
 ///
 /// <p>List all tunnels for an Amazon Web Services account. Tunnels are listed by creation time in descending order, newer tunnels will be listed before older tunnels.</p>

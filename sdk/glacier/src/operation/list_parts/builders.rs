@@ -3,6 +3,23 @@ pub use crate::operation::list_parts::_list_parts_output::ListPartsOutputBuilder
 
 pub use crate::operation::list_parts::_list_parts_input::ListPartsInputBuilder;
 
+impl ListPartsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_parts::ListPartsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_parts::ListPartsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_parts();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListParts`.
 ///
 /// <p>This operation lists the parts of an archive that have been uploaded in a specific multipart upload. You can make this request at any time during an in-progress multipart upload before you complete the upload (see <code>CompleteMultipartUpload</code>. List Parts returns an error for completed uploads. The list returned in the List Parts response is sorted by part range. </p>

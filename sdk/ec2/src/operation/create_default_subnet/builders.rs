@@ -3,6 +3,23 @@ pub use crate::operation::create_default_subnet::_create_default_subnet_output::
 
 pub use crate::operation::create_default_subnet::_create_default_subnet_input::CreateDefaultSubnetInputBuilder;
 
+impl CreateDefaultSubnetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_default_subnet::CreateDefaultSubnetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_default_subnet::CreateDefaultSubnetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_default_subnet();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateDefaultSubnet`.
 ///
 /// <p>Creates a default subnet with a size <code>/20</code> IPv4 CIDR block in the specified Availability Zone in your default VPC. You can have only one default subnet per Availability Zone. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html#create-default-subnet">Create a default subnet</a> in the <i>Amazon VPC User Guide</i>.</p>

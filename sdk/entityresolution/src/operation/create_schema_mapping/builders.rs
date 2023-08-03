@@ -3,6 +3,23 @@ pub use crate::operation::create_schema_mapping::_create_schema_mapping_output::
 
 pub use crate::operation::create_schema_mapping::_create_schema_mapping_input::CreateSchemaMappingInputBuilder;
 
+impl CreateSchemaMappingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_schema_mapping::CreateSchemaMappingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_schema_mapping::CreateSchemaMappingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_schema_mapping();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateSchemaMapping`.
 ///
 /// <p>Creates a schema mapping, which defines the schema of the input customer records table. The <code>SchemaMapping</code> also provides Entity Resolution with some metadata about the table, such as the attribute types of the columns and which columns to match on.</p>

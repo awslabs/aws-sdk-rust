@@ -3,6 +3,17 @@ pub use crate::operation::batch_get_member_ec2_deep_inspection_status::_batch_ge
 
 pub use crate::operation::batch_get_member_ec2_deep_inspection_status::_batch_get_member_ec2_deep_inspection_status_input::BatchGetMemberEc2DeepInspectionStatusInputBuilder;
 
+impl BatchGetMemberEc2DeepInspectionStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::batch_get_member_ec2_deep_inspection_status::BatchGetMemberEc2DeepInspectionStatusOutput, ::aws_smithy_http::result::SdkError<crate::operation::batch_get_member_ec2_deep_inspection_status::BatchGetMemberEc2DeepInspectionStatusError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.batch_get_member_ec2_deep_inspection_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchGetMemberEc2DeepInspectionStatus`.
 ///
 /// <p>Retrieves Amazon Inspector deep inspection activation status of multiple member accounts within your organization. You must be the delegated administrator of an organization in Amazon Inspector to use this API.</p>

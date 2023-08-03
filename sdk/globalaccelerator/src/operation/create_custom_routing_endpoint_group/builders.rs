@@ -3,6 +3,17 @@ pub use crate::operation::create_custom_routing_endpoint_group::_create_custom_r
 
 pub use crate::operation::create_custom_routing_endpoint_group::_create_custom_routing_endpoint_group_input::CreateCustomRoutingEndpointGroupInputBuilder;
 
+impl CreateCustomRoutingEndpointGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::create_custom_routing_endpoint_group::CreateCustomRoutingEndpointGroupOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_custom_routing_endpoint_group::CreateCustomRoutingEndpointGroupError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.create_custom_routing_endpoint_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateCustomRoutingEndpointGroup`.
 ///
 /// <p>Create an endpoint group for the specified listener for a custom routing accelerator. An endpoint group is a collection of endpoints in one Amazon Web Services Region. </p>

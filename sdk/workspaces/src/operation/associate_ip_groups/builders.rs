@@ -3,6 +3,23 @@ pub use crate::operation::associate_ip_groups::_associate_ip_groups_output::Asso
 
 pub use crate::operation::associate_ip_groups::_associate_ip_groups_input::AssociateIpGroupsInputBuilder;
 
+impl AssociateIpGroupsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_ip_groups::AssociateIpGroupsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_ip_groups::AssociateIpGroupsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_ip_groups();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateIpGroups`.
 ///
 /// <p>Associates the specified IP access control group with the specified directory.</p>

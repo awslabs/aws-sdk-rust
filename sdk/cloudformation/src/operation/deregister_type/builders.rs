@@ -3,6 +3,23 @@ pub use crate::operation::deregister_type::_deregister_type_output::DeregisterTy
 
 pub use crate::operation::deregister_type::_deregister_type_input::DeregisterTypeInputBuilder;
 
+impl DeregisterTypeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::deregister_type::DeregisterTypeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::deregister_type::DeregisterTypeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.deregister_type();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeregisterType`.
 ///
 /// <p>Marks an extension or extension version as <code>DEPRECATED</code> in the CloudFormation registry, removing it from active use. Deprecated extensions or extension versions cannot be used in CloudFormation operations.</p>

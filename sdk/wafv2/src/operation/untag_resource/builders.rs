@@ -3,6 +3,23 @@ pub use crate::operation::untag_resource::_untag_resource_output::UntagResourceO
 
 pub use crate::operation::untag_resource::_untag_resource_input::UntagResourceInputBuilder;
 
+impl UntagResourceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::untag_resource::UntagResourceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::untag_resource::UntagResourceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.untag_resource();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UntagResource`.
 ///
 /// <p>Disassociates tags from an Amazon Web Services resource. Tags are key:value pairs that you can associate with Amazon Web Services resources. For example, the tag key might be "customer" and the tag value might be "companyA." You can specify one or more tags to add to each container. You can add up to 50 tags to each Amazon Web Services resource.</p>

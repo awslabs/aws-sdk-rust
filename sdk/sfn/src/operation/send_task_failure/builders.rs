@@ -3,6 +3,23 @@ pub use crate::operation::send_task_failure::_send_task_failure_output::SendTask
 
 pub use crate::operation::send_task_failure::_send_task_failure_input::SendTaskFailureInputBuilder;
 
+impl SendTaskFailureInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::send_task_failure::SendTaskFailureOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::send_task_failure::SendTaskFailureError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.send_task_failure();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SendTaskFailure`.
 ///
 /// <p>Used by activity workers and task states using the <a href="https://docs.aws.amazon.com/step-functions/latest/dg/connect-to-resource.html#connect-wait-token">callback</a> pattern to report that the task identified by the <code>taskToken</code> failed.</p>

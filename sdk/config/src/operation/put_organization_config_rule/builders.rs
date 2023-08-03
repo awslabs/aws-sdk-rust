@@ -3,6 +3,23 @@ pub use crate::operation::put_organization_config_rule::_put_organization_config
 
 pub use crate::operation::put_organization_config_rule::_put_organization_config_rule_input::PutOrganizationConfigRuleInputBuilder;
 
+impl PutOrganizationConfigRuleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_organization_config_rule::PutOrganizationConfigRuleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_organization_config_rule::PutOrganizationConfigRuleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_organization_config_rule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutOrganizationConfigRule`.
 ///
 /// <p>Adds or updates an Config rule for your entire organization to evaluate if your Amazon Web Services resources comply with your desired configurations. For information on how many organization Config rules you can have per account, see <a href="https://docs.aws.amazon.com/config/latest/developerguide/configlimits.html"> <b>Service Limits</b> </a> in the <i>Config Developer Guide</i>.</p>

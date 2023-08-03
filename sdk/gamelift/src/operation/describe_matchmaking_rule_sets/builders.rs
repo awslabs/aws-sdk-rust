@@ -3,6 +3,23 @@ pub use crate::operation::describe_matchmaking_rule_sets::_describe_matchmaking_
 
 pub use crate::operation::describe_matchmaking_rule_sets::_describe_matchmaking_rule_sets_input::DescribeMatchmakingRuleSetsInputBuilder;
 
+impl DescribeMatchmakingRuleSetsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_matchmaking_rule_sets::DescribeMatchmakingRuleSetsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_matchmaking_rule_sets::DescribeMatchmakingRuleSetsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_matchmaking_rule_sets();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeMatchmakingRuleSets`.
 ///
 /// <p>Retrieves the details for FlexMatch matchmaking rule sets. You can request all existing rule sets for the Region, or provide a list of one or more rule set names. When requesting multiple items, use the pagination parameters to retrieve results as a set of sequential pages. If successful, a rule set is returned for each requested name. </p>

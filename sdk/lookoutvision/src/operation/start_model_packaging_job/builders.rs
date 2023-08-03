@@ -3,6 +3,23 @@ pub use crate::operation::start_model_packaging_job::_start_model_packaging_job_
 
 pub use crate::operation::start_model_packaging_job::_start_model_packaging_job_input::StartModelPackagingJobInputBuilder;
 
+impl StartModelPackagingJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_model_packaging_job::StartModelPackagingJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_model_packaging_job::StartModelPackagingJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_model_packaging_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartModelPackagingJob`.
 ///
 /// <p>Starts an Amazon Lookout for Vision model packaging job. A model packaging job creates an AWS IoT Greengrass component for a Lookout for Vision model. You can use the component to deploy your model to an edge device managed by Greengrass. </p>

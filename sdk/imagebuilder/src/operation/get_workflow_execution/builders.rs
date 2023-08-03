@@ -3,6 +3,23 @@ pub use crate::operation::get_workflow_execution::_get_workflow_execution_output
 
 pub use crate::operation::get_workflow_execution::_get_workflow_execution_input::GetWorkflowExecutionInputBuilder;
 
+impl GetWorkflowExecutionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_workflow_execution::GetWorkflowExecutionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_workflow_execution::GetWorkflowExecutionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_workflow_execution();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetWorkflowExecution`.
 ///
 /// <p>Get the runtime information that was logged for a specific runtime instance of the workflow.</p>

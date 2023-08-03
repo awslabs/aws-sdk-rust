@@ -3,6 +3,23 @@ pub use crate::operation::delete_intent::_delete_intent_output::DeleteIntentOutp
 
 pub use crate::operation::delete_intent::_delete_intent_input::DeleteIntentInputBuilder;
 
+impl DeleteIntentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_intent::DeleteIntentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_intent::DeleteIntentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_intent();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteIntent`.
 ///
 /// <p>Deletes all versions of the intent, including the <code>$LATEST</code> version. To delete a specific version of the intent, use the <code>DeleteIntentVersion</code> operation.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_agent::_delete_agent_output::DeleteAgentOutputB
 
 pub use crate::operation::delete_agent::_delete_agent_input::DeleteAgentInputBuilder;
 
+impl DeleteAgentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_agent::DeleteAgentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_agent::DeleteAgentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_agent();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteAgent`.
 ///
 /// <p>Deletes an agent. To specify which agent to delete, use the Amazon Resource Name (ARN) of the agent in your request. The operation disassociates the agent from your Amazon Web Services account. However, it doesn't delete the agent virtual machine (VM) from your on-premises environment.</p>

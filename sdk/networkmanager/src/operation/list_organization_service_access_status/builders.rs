@@ -3,6 +3,17 @@ pub use crate::operation::list_organization_service_access_status::_list_organiz
 
 pub use crate::operation::list_organization_service_access_status::_list_organization_service_access_status_input::ListOrganizationServiceAccessStatusInputBuilder;
 
+impl ListOrganizationServiceAccessStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_organization_service_access_status::ListOrganizationServiceAccessStatusOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_organization_service_access_status::ListOrganizationServiceAccessStatusError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_organization_service_access_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListOrganizationServiceAccessStatus`.
 ///
 /// <p>Gets the status of the Service Linked Role (SLR) deployment for the accounts in a given Amazon Web Services Organization.</p>

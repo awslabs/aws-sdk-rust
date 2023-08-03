@@ -3,6 +3,23 @@ pub use crate::operation::batch_unsuspend_user::_batch_unsuspend_user_output::Ba
 
 pub use crate::operation::batch_unsuspend_user::_batch_unsuspend_user_input::BatchUnsuspendUserInputBuilder;
 
+impl BatchUnsuspendUserInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_unsuspend_user::BatchUnsuspendUserOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_unsuspend_user::BatchUnsuspendUserError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_unsuspend_user();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchUnsuspendUser`.
 ///
 /// <p>Removes the suspension from up to 50 previously suspended users for the specified Amazon Chime <code>EnterpriseLWA</code> account. Only users on <code>EnterpriseLWA</code> accounts can be unsuspended using this action. For more information about different account types, see <a href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html"> Managing Your Amazon Chime Accounts </a> in the account types, in the <i>Amazon Chime Administration Guide</i>. </p>

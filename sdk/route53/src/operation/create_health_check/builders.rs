@@ -3,6 +3,23 @@ pub use crate::operation::create_health_check::_create_health_check_output::Crea
 
 pub use crate::operation::create_health_check::_create_health_check_input::CreateHealthCheckInputBuilder;
 
+impl CreateHealthCheckInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_health_check::CreateHealthCheckOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_health_check::CreateHealthCheckError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_health_check();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateHealthCheck`.
 ///
 /// <p>Creates a new health check.</p>

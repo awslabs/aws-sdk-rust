@@ -3,6 +3,23 @@ pub use crate::operation::register_transit_gateway::_register_transit_gateway_ou
 
 pub use crate::operation::register_transit_gateway::_register_transit_gateway_input::RegisterTransitGatewayInputBuilder;
 
+impl RegisterTransitGatewayInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::register_transit_gateway::RegisterTransitGatewayOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::register_transit_gateway::RegisterTransitGatewayError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.register_transit_gateway();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RegisterTransitGateway`.
 ///
 /// <p>Registers a transit gateway in your global network. Not all Regions support transit gateways for global networks. For a list of the supported Regions, see <a href="https://docs.aws.amazon.com/network-manager/latest/tgwnm/what-are-global-networks.html#nm-available-regions">Region Availability</a> in the <i>Amazon Web Services Transit Gateways for Global Networks User Guide</i>. The transit gateway can be in any of the supported Amazon Web Services Regions, but it must be owned by the same Amazon Web Services account that owns the global network. You cannot register a transit gateway in more than one global network.</p>

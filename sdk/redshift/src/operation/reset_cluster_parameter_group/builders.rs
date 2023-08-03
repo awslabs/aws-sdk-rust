@@ -3,6 +3,23 @@ pub use crate::operation::reset_cluster_parameter_group::_reset_cluster_paramete
 
 pub use crate::operation::reset_cluster_parameter_group::_reset_cluster_parameter_group_input::ResetClusterParameterGroupInputBuilder;
 
+impl ResetClusterParameterGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::reset_cluster_parameter_group::ResetClusterParameterGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::reset_cluster_parameter_group::ResetClusterParameterGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.reset_cluster_parameter_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ResetClusterParameterGroup`.
 ///
 /// <p>Sets one or more parameters of the specified parameter group to their default values and sets the source values of the parameters to "engine-default". To reset the entire parameter group specify the <i>ResetAllParameters</i> parameter. For parameter changes to take effect you must reboot any associated clusters. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_organization_insights::_list_organization_insight
 
 pub use crate::operation::list_organization_insights::_list_organization_insights_input::ListOrganizationInsightsInputBuilder;
 
+impl ListOrganizationInsightsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_organization_insights::ListOrganizationInsightsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_organization_insights::ListOrganizationInsightsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_organization_insights();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListOrganizationInsights`.
 ///
 /// <p>Returns a list of insights associated with the account or OU Id.</p>

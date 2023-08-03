@@ -3,6 +3,17 @@ pub use crate::operation::describe_transit_gateway_attachments::_describe_transi
 
 pub use crate::operation::describe_transit_gateway_attachments::_describe_transit_gateway_attachments_input::DescribeTransitGatewayAttachmentsInputBuilder;
 
+impl DescribeTransitGatewayAttachmentsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_transit_gateway_attachments::DescribeTransitGatewayAttachmentsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_transit_gateway_attachments::DescribeTransitGatewayAttachmentsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_transit_gateway_attachments();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeTransitGatewayAttachments`.
 ///
 /// <p>Describes one or more attachments between resources and transit gateways. By default, all attachments are described. Alternatively, you can filter the results by attachment ID, attachment state, resource ID, or resource owner.</p>

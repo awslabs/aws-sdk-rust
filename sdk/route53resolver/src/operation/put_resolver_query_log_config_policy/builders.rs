@@ -3,6 +3,17 @@ pub use crate::operation::put_resolver_query_log_config_policy::_put_resolver_qu
 
 pub use crate::operation::put_resolver_query_log_config_policy::_put_resolver_query_log_config_policy_input::PutResolverQueryLogConfigPolicyInputBuilder;
 
+impl PutResolverQueryLogConfigPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::put_resolver_query_log_config_policy::PutResolverQueryLogConfigPolicyOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_resolver_query_log_config_policy::PutResolverQueryLogConfigPolicyError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.put_resolver_query_log_config_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutResolverQueryLogConfigPolicy`.
 ///
 /// <p>Specifies an Amazon Web Services account that you want to share a query logging configuration with, the query logging configuration that you want to share, and the operations that you want the account to be able to perform on the configuration.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_created_artifacts::_list_created_artifacts_output
 
 pub use crate::operation::list_created_artifacts::_list_created_artifacts_input::ListCreatedArtifactsInputBuilder;
 
+impl ListCreatedArtifactsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_created_artifacts::ListCreatedArtifactsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_created_artifacts::ListCreatedArtifactsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_created_artifacts();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListCreatedArtifacts`.
 ///
 /// <p>Lists the created artifacts attached to a given migration task in an update stream. This API has the following traits:</p>

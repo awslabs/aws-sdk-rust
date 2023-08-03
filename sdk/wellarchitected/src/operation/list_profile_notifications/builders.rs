@@ -3,6 +3,23 @@ pub use crate::operation::list_profile_notifications::_list_profile_notification
 
 pub use crate::operation::list_profile_notifications::_list_profile_notifications_input::ListProfileNotificationsInputBuilder;
 
+impl ListProfileNotificationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_profile_notifications::ListProfileNotificationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_profile_notifications::ListProfileNotificationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_profile_notifications();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListProfileNotifications`.
 ///
 /// <p>List profile notifications.</p>

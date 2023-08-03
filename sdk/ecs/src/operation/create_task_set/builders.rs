@@ -3,6 +3,23 @@ pub use crate::operation::create_task_set::_create_task_set_output::CreateTaskSe
 
 pub use crate::operation::create_task_set::_create_task_set_input::CreateTaskSetInputBuilder;
 
+impl CreateTaskSetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_task_set::CreateTaskSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_task_set::CreateTaskSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_task_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateTaskSet`.
 ///
 /// <p>Create a task set in the specified cluster and service. This is used when a service uses the <code>EXTERNAL</code> deployment controller type. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS deployment types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>

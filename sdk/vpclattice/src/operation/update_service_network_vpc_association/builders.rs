@@ -3,6 +3,17 @@ pub use crate::operation::update_service_network_vpc_association::_update_servic
 
 pub use crate::operation::update_service_network_vpc_association::_update_service_network_vpc_association_input::UpdateServiceNetworkVpcAssociationInputBuilder;
 
+impl UpdateServiceNetworkVpcAssociationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::update_service_network_vpc_association::UpdateServiceNetworkVpcAssociationOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_service_network_vpc_association::UpdateServiceNetworkVpcAssociationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.update_service_network_vpc_association();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateServiceNetworkVpcAssociation`.
 ///
 /// <p>Updates the service network and VPC association. If you add a security group to the service network and VPC association, the association must continue to always have at least one security group. You can add or edit security groups at any time. However, to remove all security groups, you must first delete the association and recreate it without security groups.</p>

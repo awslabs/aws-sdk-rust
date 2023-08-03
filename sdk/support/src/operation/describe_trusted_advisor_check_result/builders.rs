@@ -3,6 +3,17 @@ pub use crate::operation::describe_trusted_advisor_check_result::_describe_trust
 
 pub use crate::operation::describe_trusted_advisor_check_result::_describe_trusted_advisor_check_result_input::DescribeTrustedAdvisorCheckResultInputBuilder;
 
+impl DescribeTrustedAdvisorCheckResultInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_trusted_advisor_check_result::DescribeTrustedAdvisorCheckResultOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_trusted_advisor_check_result::DescribeTrustedAdvisorCheckResultError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_trusted_advisor_check_result();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeTrustedAdvisorCheckResult`.
 ///
 /// <p>Returns the results of the Trusted Advisor check that has the specified check ID. You can get the check IDs by calling the <code>DescribeTrustedAdvisorChecks</code> operation.</p>

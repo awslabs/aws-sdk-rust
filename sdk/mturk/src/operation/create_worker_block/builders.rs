@@ -3,6 +3,23 @@ pub use crate::operation::create_worker_block::_create_worker_block_output::Crea
 
 pub use crate::operation::create_worker_block::_create_worker_block_input::CreateWorkerBlockInputBuilder;
 
+impl CreateWorkerBlockInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_worker_block::CreateWorkerBlockOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_worker_block::CreateWorkerBlockError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_worker_block();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateWorkerBlock`.
 ///
 /// <p>The <code>CreateWorkerBlock</code> operation allows you to prevent a Worker from working on your HITs. For example, you can block a Worker who is producing poor quality work. You can block up to 100,000 Workers.</p>

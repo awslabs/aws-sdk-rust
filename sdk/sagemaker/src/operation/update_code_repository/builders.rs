@@ -3,6 +3,23 @@ pub use crate::operation::update_code_repository::_update_code_repository_output
 
 pub use crate::operation::update_code_repository::_update_code_repository_input::UpdateCodeRepositoryInputBuilder;
 
+impl UpdateCodeRepositoryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_code_repository::UpdateCodeRepositoryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_code_repository::UpdateCodeRepositoryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_code_repository();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateCodeRepository`.
 ///
 /// <p>Updates the specified Git repository with the specified values.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_anomaly_monitor::_delete_anomaly_monitor_output
 
 pub use crate::operation::delete_anomaly_monitor::_delete_anomaly_monitor_input::DeleteAnomalyMonitorInputBuilder;
 
+impl DeleteAnomalyMonitorInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_anomaly_monitor::DeleteAnomalyMonitorOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_anomaly_monitor::DeleteAnomalyMonitorError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_anomaly_monitor();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteAnomalyMonitor`.
 ///
 /// <p>Deletes a cost anomaly monitor. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_authorizer::_create_authorizer_output::CreateAu
 
 pub use crate::operation::create_authorizer::_create_authorizer_input::CreateAuthorizerInputBuilder;
 
+impl CreateAuthorizerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_authorizer::CreateAuthorizerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_authorizer::CreateAuthorizerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_authorizer();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateAuthorizer`.
 ///
 /// <p>Adds a new Authorizer resource to an existing RestApi resource.</p>

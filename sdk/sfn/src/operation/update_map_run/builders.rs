@@ -3,6 +3,23 @@ pub use crate::operation::update_map_run::_update_map_run_output::UpdateMapRunOu
 
 pub use crate::operation::update_map_run::_update_map_run_input::UpdateMapRunInputBuilder;
 
+impl UpdateMapRunInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_map_run::UpdateMapRunOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_map_run::UpdateMapRunError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_map_run();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateMapRun`.
 ///
 /// <p>Updates an in-progress Map Run's configuration to include changes to the settings that control maximum concurrency and Map Run failure.</p>

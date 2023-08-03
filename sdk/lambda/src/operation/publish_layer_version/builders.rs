@@ -3,6 +3,23 @@ pub use crate::operation::publish_layer_version::_publish_layer_version_output::
 
 pub use crate::operation::publish_layer_version::_publish_layer_version_input::PublishLayerVersionInputBuilder;
 
+impl PublishLayerVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::publish_layer_version::PublishLayerVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::publish_layer_version::PublishLayerVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.publish_layer_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PublishLayerVersion`.
 ///
 /// <p>Creates an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda layer</a> from a ZIP archive. Each time you call <code>PublishLayerVersion</code> with the same layer name, a new version is created.</p>

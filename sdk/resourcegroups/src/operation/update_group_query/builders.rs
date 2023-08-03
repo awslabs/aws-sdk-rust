@@ -3,6 +3,23 @@ pub use crate::operation::update_group_query::_update_group_query_output::Update
 
 pub use crate::operation::update_group_query::_update_group_query_input::UpdateGroupQueryInputBuilder;
 
+impl UpdateGroupQueryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_group_query::UpdateGroupQueryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_group_query::UpdateGroupQueryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_group_query();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateGroupQuery`.
 ///
 /// <p>Updates the resource query of a group. For more information about resource queries, see <a href="https://docs.aws.amazon.com/ARG/latest/userguide/gettingstarted-query.html#gettingstarted-query-cli-tag">Create a tag-based group in Resource Groups</a>.</p>

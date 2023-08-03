@@ -3,6 +3,23 @@ pub use crate::operation::update_scheduled_action::_update_scheduled_action_outp
 
 pub use crate::operation::update_scheduled_action::_update_scheduled_action_input::UpdateScheduledActionInputBuilder;
 
+impl UpdateScheduledActionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_scheduled_action::UpdateScheduledActionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_scheduled_action::UpdateScheduledActionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_scheduled_action();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateScheduledAction`.
 ///
 /// <p>Reschedules a planned domain configuration change for a later time. This change can be a scheduled <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/service-software.html">service software update</a> or a <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html#auto-tune-types">blue/green Auto-Tune enhancement</a>.</p>

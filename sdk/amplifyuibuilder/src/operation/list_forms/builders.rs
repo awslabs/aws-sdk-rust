@@ -3,6 +3,23 @@ pub use crate::operation::list_forms::_list_forms_output::ListFormsOutputBuilder
 
 pub use crate::operation::list_forms::_list_forms_input::ListFormsInputBuilder;
 
+impl ListFormsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_forms::ListFormsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_forms::ListFormsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_forms();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListForms`.
 ///
 /// <p>Retrieves a list of forms for a specified Amplify app and backend environment.</p>

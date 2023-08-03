@@ -3,6 +3,23 @@ pub use crate::operation::get_service_profile::_get_service_profile_output::GetS
 
 pub use crate::operation::get_service_profile::_get_service_profile_input::GetServiceProfileInputBuilder;
 
+impl GetServiceProfileInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_service_profile::GetServiceProfileOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_service_profile::GetServiceProfileError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_service_profile();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetServiceProfile`.
 ///
 /// <p>Gets information about a service profile.</p>

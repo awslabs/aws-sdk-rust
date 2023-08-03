@@ -3,6 +3,23 @@ pub use crate::operation::create_trust::_create_trust_output::CreateTrustOutputB
 
 pub use crate::operation::create_trust::_create_trust_input::CreateTrustInputBuilder;
 
+impl CreateTrustInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_trust::CreateTrustOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_trust::CreateTrustError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_trust();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateTrust`.
 ///
 /// <p>Directory Service for Microsoft Active Directory allows you to configure trust relationships. For example, you can establish a trust between your Managed Microsoft AD directory, and your existing self-managed Microsoft Active Directory. This would allow you to provide users and groups access to resources in either domain, with a single set of credentials.</p>

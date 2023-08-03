@@ -3,6 +3,23 @@ pub use crate::operation::describe_trails::_describe_trails_output::DescribeTrai
 
 pub use crate::operation::describe_trails::_describe_trails_input::DescribeTrailsInputBuilder;
 
+impl DescribeTrailsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_trails::DescribeTrailsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_trails::DescribeTrailsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_trails();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeTrails`.
 ///
 /// <p>Retrieves settings for one or more trails associated with the current Region for your account.</p>

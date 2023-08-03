@@ -3,6 +3,23 @@ pub use crate::operation::disassociate_skill_from_users::_disassociate_skill_fro
 
 pub use crate::operation::disassociate_skill_from_users::_disassociate_skill_from_users_input::DisassociateSkillFromUsersInputBuilder;
 
+impl DisassociateSkillFromUsersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_skill_from_users::DisassociateSkillFromUsersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_skill_from_users::DisassociateSkillFromUsersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disassociate_skill_from_users();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateSkillFromUsers`.
 ///
 /// <p>Makes a private skill unavailable for enrolled users and prevents them from enabling it on their devices.</p>

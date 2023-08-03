@@ -3,6 +3,23 @@ pub use crate::operation::start_transcription_job::_start_transcription_job_outp
 
 pub use crate::operation::start_transcription_job::_start_transcription_job_input::StartTranscriptionJobInputBuilder;
 
+impl StartTranscriptionJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_transcription_job::StartTranscriptionJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_transcription_job::StartTranscriptionJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_transcription_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartTranscriptionJob`.
 ///
 /// <p>Transcribes the audio from a media file and applies any additional Request Parameters you choose to include in your request.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::put_position_configuration::_put_position_configuratio
 
 pub use crate::operation::put_position_configuration::_put_position_configuration_input::PutPositionConfigurationInputBuilder;
 
+impl PutPositionConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_position_configuration::PutPositionConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_position_configuration::PutPositionConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_position_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutPositionConfiguration`.
 ///
 /// <p>Put position configuration for a given resource.</p> <important>

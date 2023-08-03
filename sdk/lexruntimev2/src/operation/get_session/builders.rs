@@ -3,6 +3,23 @@ pub use crate::operation::get_session::_get_session_output::GetSessionOutputBuil
 
 pub use crate::operation::get_session::_get_session_input::GetSessionInputBuilder;
 
+impl GetSessionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_session::GetSessionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_session::GetSessionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_session();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetSession`.
 ///
 /// <p>Returns session information for a specified bot, alias, and user.</p>

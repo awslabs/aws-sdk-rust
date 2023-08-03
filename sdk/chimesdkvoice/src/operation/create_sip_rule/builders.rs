@@ -3,6 +3,23 @@ pub use crate::operation::create_sip_rule::_create_sip_rule_output::CreateSipRul
 
 pub use crate::operation::create_sip_rule::_create_sip_rule_input::CreateSipRuleInputBuilder;
 
+impl CreateSipRuleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_sip_rule::CreateSipRuleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_sip_rule::CreateSipRuleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_sip_rule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateSipRule`.
 ///
 /// <p>Creates a SIP rule, which can be used to run a SIP media application as a target for a specific trigger type. For more information about SIP rules, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/ag/manage-sip-applications.html">Managing SIP media applications and rules</a> in the <i>Amazon Chime SDK Administrator Guide</i>.</p>

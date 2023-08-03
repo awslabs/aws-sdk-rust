@@ -3,6 +3,23 @@ pub use crate::operation::search_channels::_search_channels_output::SearchChanne
 
 pub use crate::operation::search_channels::_search_channels_input::SearchChannelsInputBuilder;
 
+impl SearchChannelsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::search_channels::SearchChannelsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::search_channels::SearchChannelsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.search_channels();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SearchChannels`.
 ///
 /// <p>Allows the <code>ChimeBearer</code> to search channels by channel members. Users or bots can search across the channels that they belong to. Users in the <code>AppInstanceAdmin</code> role can search across all channels.</p>

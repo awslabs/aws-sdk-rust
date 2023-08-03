@@ -3,6 +3,23 @@ pub use crate::operation::list_sessions::_list_sessions_output::ListSessionsOutp
 
 pub use crate::operation::list_sessions::_list_sessions_input::ListSessionsInputBuilder;
 
+impl ListSessionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_sessions::ListSessionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_sessions::ListSessionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_sessions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListSessions`.
 ///
 /// <p>Retrieve a list of sessions.</p>

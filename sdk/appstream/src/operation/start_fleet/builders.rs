@@ -3,6 +3,23 @@ pub use crate::operation::start_fleet::_start_fleet_output::StartFleetOutputBuil
 
 pub use crate::operation::start_fleet::_start_fleet_input::StartFleetInputBuilder;
 
+impl StartFleetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_fleet::StartFleetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_fleet::StartFleetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_fleet();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartFleet`.
 ///
 /// <p>Starts the specified fleet.</p>

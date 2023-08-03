@@ -3,6 +3,23 @@ pub use crate::operation::get_distributions::_get_distributions_output::GetDistr
 
 pub use crate::operation::get_distributions::_get_distributions_input::GetDistributionsInputBuilder;
 
+impl GetDistributionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_distributions::GetDistributionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_distributions::GetDistributionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_distributions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetDistributions`.
 ///
 /// <p>Returns information about one or more of your Amazon Lightsail content delivery network (CDN) distributions.</p>

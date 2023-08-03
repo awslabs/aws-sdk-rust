@@ -3,6 +3,23 @@ pub use crate::operation::describe_instance_attribute::_describe_instance_attrib
 
 pub use crate::operation::describe_instance_attribute::_describe_instance_attribute_input::DescribeInstanceAttributeInputBuilder;
 
+impl DescribeInstanceAttributeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_instance_attribute::DescribeInstanceAttributeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_instance_attribute::DescribeInstanceAttributeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_instance_attribute();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeInstanceAttribute`.
 ///
 /// <p>Describes the specified attribute of the specified instance. You can specify only one attribute at a time. Valid attribute values are: <code>instanceType</code> | <code>kernel</code> | <code>ramdisk</code> | <code>userData</code> | <code>disableApiTermination</code> | <code>instanceInitiatedShutdownBehavior</code> | <code>rootDeviceName</code> | <code>blockDeviceMapping</code> | <code>productCodes</code> | <code>sourceDestCheck</code> | <code>groupSet</code> | <code>ebsOptimized</code> | <code>sriovNetSupport</code> </p>

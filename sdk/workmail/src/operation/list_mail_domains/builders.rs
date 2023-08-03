@@ -3,6 +3,23 @@ pub use crate::operation::list_mail_domains::_list_mail_domains_output::ListMail
 
 pub use crate::operation::list_mail_domains::_list_mail_domains_input::ListMailDomainsInputBuilder;
 
+impl ListMailDomainsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_mail_domains::ListMailDomainsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_mail_domains::ListMailDomainsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_mail_domains();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListMailDomains`.
 ///
 /// <p>Lists the mail domains in a given WorkMail organization.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_image::_get_image_output::GetImageOutputBuilder;
 
 pub use crate::operation::get_image::_get_image_input::GetImageInputBuilder;
 
+impl GetImageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_image::GetImageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_image::GetImageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_image();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetImage`.
 ///
 /// <p>Gets an image.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_volumes::_list_volumes_output::ListVolumesOutputB
 
 pub use crate::operation::list_volumes::_list_volumes_input::ListVolumesInputBuilder;
 
+impl ListVolumesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_volumes::ListVolumesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_volumes::ListVolumesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_volumes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListVolumes`.
 ///
 /// <p>Lists the iSCSI stored volumes of a gateway. Results are sorted by volume ARN. The response includes only the volume ARNs. If you want additional volume information, use the <code>DescribeStorediSCSIVolumes</code> or the <code>DescribeCachediSCSIVolumes</code> API.</p>

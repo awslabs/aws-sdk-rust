@@ -3,6 +3,23 @@ pub use crate::operation::describe_fleet_utilization::_describe_fleet_utilizatio
 
 pub use crate::operation::describe_fleet_utilization::_describe_fleet_utilization_input::DescribeFleetUtilizationInputBuilder;
 
+impl DescribeFleetUtilizationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_fleet_utilization::DescribeFleetUtilizationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_fleet_utilization::DescribeFleetUtilizationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_fleet_utilization();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeFleetUtilization`.
 ///
 /// <p>Retrieves utilization statistics for one or more fleets. Utilization data provides a snapshot of how the fleet's hosting resources are currently being used. For fleets with remote locations, this operation retrieves data for the fleet's home Region only. See <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeFleetLocationUtilization.html">DescribeFleetLocationUtilization</a> to get utilization statistics for a fleet's remote locations.</p>

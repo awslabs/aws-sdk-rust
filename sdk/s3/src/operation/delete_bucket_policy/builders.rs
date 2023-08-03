@@ -3,6 +3,23 @@ pub use crate::operation::delete_bucket_policy::_delete_bucket_policy_output::De
 
 pub use crate::operation::delete_bucket_policy::_delete_bucket_policy_input::DeleteBucketPolicyInputBuilder;
 
+impl DeleteBucketPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_bucket_policy::DeleteBucketPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_bucket_policy::DeleteBucketPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_bucket_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteBucketPolicy`.
 ///
 /// <p>This implementation of the DELETE action uses the policy subresource to delete the policy of a specified bucket. If you are using an identity other than the root user of the Amazon Web Services account that owns the bucket, the calling identity must have the <code>DeleteBucketPolicy</code> permissions on the specified bucket and belong to the bucket owner's account to use this operation. </p>

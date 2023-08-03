@@ -3,6 +3,23 @@ pub use crate::operation::delete_integration_association::_delete_integration_as
 
 pub use crate::operation::delete_integration_association::_delete_integration_association_input::DeleteIntegrationAssociationInputBuilder;
 
+impl DeleteIntegrationAssociationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_integration_association::DeleteIntegrationAssociationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_integration_association::DeleteIntegrationAssociationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_integration_association();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteIntegrationAssociation`.
 ///
 /// <p>Deletes an Amazon Web Services resource association from an Amazon Connect instance. The association must not have any use cases associated with it.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_activities::_list_activities_output::ListActiviti
 
 pub use crate::operation::list_activities::_list_activities_input::ListActivitiesInputBuilder;
 
+impl ListActivitiesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_activities::ListActivitiesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_activities::ListActivitiesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_activities();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListActivities`.
 ///
 /// <p>Lists the existing activities.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_theme_alias::_delete_theme_alias_output::Delete
 
 pub use crate::operation::delete_theme_alias::_delete_theme_alias_input::DeleteThemeAliasInputBuilder;
 
+impl DeleteThemeAliasInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_theme_alias::DeleteThemeAliasOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_theme_alias::DeleteThemeAliasError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_theme_alias();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteThemeAlias`.
 ///
 /// <p>Deletes the version of the theme that the specified theme alias points to. If you provide a specific alias, you delete the version of the theme that the alias points to.</p>

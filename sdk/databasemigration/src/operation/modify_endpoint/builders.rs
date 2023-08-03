@@ -3,6 +3,23 @@ pub use crate::operation::modify_endpoint::_modify_endpoint_output::ModifyEndpoi
 
 pub use crate::operation::modify_endpoint::_modify_endpoint_input::ModifyEndpointInputBuilder;
 
+impl ModifyEndpointInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_endpoint::ModifyEndpointOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_endpoint::ModifyEndpointError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_endpoint();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyEndpoint`.
 ///
 /// <p>Modifies the specified endpoint.</p> <note>

@@ -3,6 +3,23 @@ pub use crate::operation::enable_fast_launch::_enable_fast_launch_output::Enable
 
 pub use crate::operation::enable_fast_launch::_enable_fast_launch_input::EnableFastLaunchInputBuilder;
 
+impl EnableFastLaunchInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::enable_fast_launch::EnableFastLaunchOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::enable_fast_launch::EnableFastLaunchError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.enable_fast_launch();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `EnableFastLaunch`.
 ///
 /// <p>When you enable faster launching for a Windows AMI, images are pre-provisioned, using snapshots to launch instances up to 65% faster. To create the optimized Windows image, Amazon EC2 launches an instance and runs through Sysprep steps, rebooting as required. Then it creates a set of reserved snapshots that are used for subsequent launches. The reserved snapshots are automatically replenished as they are used, depending on your settings for launch frequency.</p> <note>

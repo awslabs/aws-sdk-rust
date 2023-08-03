@@ -3,6 +3,23 @@ pub use crate::operation::create_repository::_create_repository_output::CreateRe
 
 pub use crate::operation::create_repository::_create_repository_input::CreateRepositoryInputBuilder;
 
+impl CreateRepositoryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_repository::CreateRepositoryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_repository::CreateRepositoryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_repository();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateRepository`.
 ///
 /// <p>Create and register a link to a repository. Proton uses the link to repeatedly access the repository, to either push to it (self-managed provisioning) or pull from it (template sync). You can share a linked repository across multiple resources (like environments using self-managed provisioning, or synced templates). When you create a repository link, Proton creates a <a href="https://docs.aws.amazon.com/proton/latest/userguide/using-service-linked-roles.html">service-linked role</a> for you.</p>

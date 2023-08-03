@@ -3,6 +3,23 @@ pub use crate::operation::list_project_policies::_list_project_policies_output::
 
 pub use crate::operation::list_project_policies::_list_project_policies_input::ListProjectPoliciesInputBuilder;
 
+impl ListProjectPoliciesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_project_policies::ListProjectPoliciesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_project_policies::ListProjectPoliciesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_project_policies();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListProjectPolicies`.
 ///
 /// <p>Gets a list of the project policies attached to a project.</p>

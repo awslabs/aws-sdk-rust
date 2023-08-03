@@ -3,6 +3,17 @@ pub use crate::operation::batch_associate_client_device_with_core_device::_batch
 
 pub use crate::operation::batch_associate_client_device_with_core_device::_batch_associate_client_device_with_core_device_input::BatchAssociateClientDeviceWithCoreDeviceInputBuilder;
 
+impl BatchAssociateClientDeviceWithCoreDeviceInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::batch_associate_client_device_with_core_device::BatchAssociateClientDeviceWithCoreDeviceOutput, ::aws_smithy_http::result::SdkError<crate::operation::batch_associate_client_device_with_core_device::BatchAssociateClientDeviceWithCoreDeviceError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.batch_associate_client_device_with_core_device();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchAssociateClientDeviceWithCoreDevice`.
 ///
 /// <p>Associates a list of client devices with a core device. Use this API operation to specify which client devices can discover a core device through cloud discovery. With cloud discovery, client devices connect to IoT Greengrass to retrieve associated core devices' connectivity information and certificates. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/configure-cloud-discovery.html">Configure cloud discovery</a> in the <i>IoT Greengrass V2 Developer Guide</i>.</p> <note>

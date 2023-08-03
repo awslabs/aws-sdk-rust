@@ -3,6 +3,17 @@ pub use crate::operation::get_relational_database_master_user_password::_get_rel
 
 pub use crate::operation::get_relational_database_master_user_password::_get_relational_database_master_user_password_input::GetRelationalDatabaseMasterUserPasswordInputBuilder;
 
+impl GetRelationalDatabaseMasterUserPasswordInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_relational_database_master_user_password::GetRelationalDatabaseMasterUserPasswordError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_relational_database_master_user_password();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetRelationalDatabaseMasterUserPassword`.
 ///
 /// <p>Returns the current, previous, or pending versions of the master user password for a Lightsail database.</p>

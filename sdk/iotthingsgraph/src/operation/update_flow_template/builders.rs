@@ -3,6 +3,23 @@ pub use crate::operation::update_flow_template::_update_flow_template_output::Up
 
 pub use crate::operation::update_flow_template::_update_flow_template_input::UpdateFlowTemplateInputBuilder;
 
+impl UpdateFlowTemplateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_flow_template::UpdateFlowTemplateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_flow_template::UpdateFlowTemplateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_flow_template();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateFlowTemplate`.
 ///
 /// <p>Updates the specified workflow. All deployed systems and system instances that use the workflow will see the changes in the flow when it is redeployed. If you don't want this behavior, copy the workflow (creating a new workflow with a different ID), and update the copy. The workflow can contain only entities in the specified namespace. </p>

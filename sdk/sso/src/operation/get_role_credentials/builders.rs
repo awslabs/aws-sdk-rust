@@ -3,6 +3,23 @@ pub use crate::operation::get_role_credentials::_get_role_credentials_output::Ge
 
 pub use crate::operation::get_role_credentials::_get_role_credentials_input::GetRoleCredentialsInputBuilder;
 
+impl GetRoleCredentialsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_role_credentials::GetRoleCredentialsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_role_credentials::GetRoleCredentialsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_role_credentials();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetRoleCredentials`.
 ///
 /// <p>Returns the STS short-term credentials for a given role name that is assigned to the user.</p>

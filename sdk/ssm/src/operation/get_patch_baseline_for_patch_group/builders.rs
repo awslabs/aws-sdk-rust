@@ -3,6 +3,17 @@ pub use crate::operation::get_patch_baseline_for_patch_group::_get_patch_baselin
 
 pub use crate::operation::get_patch_baseline_for_patch_group::_get_patch_baseline_for_patch_group_input::GetPatchBaselineForPatchGroupInputBuilder;
 
+impl GetPatchBaselineForPatchGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_patch_baseline_for_patch_group::GetPatchBaselineForPatchGroupOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_patch_baseline_for_patch_group::GetPatchBaselineForPatchGroupError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_patch_baseline_for_patch_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetPatchBaselineForPatchGroup`.
 ///
 /// <p>Retrieves the patch baseline that should be used for the specified patch group.</p>

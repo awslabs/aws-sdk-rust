@@ -3,6 +3,23 @@ pub use crate::operation::create_human_task_ui::_create_human_task_ui_output::Cr
 
 pub use crate::operation::create_human_task_ui::_create_human_task_ui_input::CreateHumanTaskUiInputBuilder;
 
+impl CreateHumanTaskUiInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_human_task_ui::CreateHumanTaskUiOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_human_task_ui::CreateHumanTaskUiError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_human_task_ui();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateHumanTaskUi`.
 ///
 /// <p>Defines the settings you will use for the human review workflow user interface. Reviewers will see a three-panel interface with an instruction area, the item to review, and an input area.</p>

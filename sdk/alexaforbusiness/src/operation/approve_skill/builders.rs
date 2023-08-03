@@ -3,6 +3,23 @@ pub use crate::operation::approve_skill::_approve_skill_output::ApproveSkillOutp
 
 pub use crate::operation::approve_skill::_approve_skill_input::ApproveSkillInputBuilder;
 
+impl ApproveSkillInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::approve_skill::ApproveSkillOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::approve_skill::ApproveSkillError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.approve_skill();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ApproveSkill`.
 ///
 /// <p>Associates a skill with the organization under the customer's AWS account. If a skill is private, the user implicitly accepts access to this skill during enablement.</p>

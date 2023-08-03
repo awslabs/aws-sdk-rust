@@ -3,6 +3,23 @@ pub use crate::operation::create_crawler::_create_crawler_output::CreateCrawlerO
 
 pub use crate::operation::create_crawler::_create_crawler_input::CreateCrawlerInputBuilder;
 
+impl CreateCrawlerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_crawler::CreateCrawlerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_crawler::CreateCrawlerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_crawler();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateCrawler`.
 ///
 /// <p>Creates a new crawler with specified targets, role, configuration, and optional schedule. At least one crawl target must be specified, in the <code>s3Targets</code> field, the <code>jdbcTargets</code> field, or the <code>DynamoDBTargets</code> field.</p>

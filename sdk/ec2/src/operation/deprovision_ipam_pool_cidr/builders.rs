@@ -3,6 +3,23 @@ pub use crate::operation::deprovision_ipam_pool_cidr::_deprovision_ipam_pool_cid
 
 pub use crate::operation::deprovision_ipam_pool_cidr::_deprovision_ipam_pool_cidr_input::DeprovisionIpamPoolCidrInputBuilder;
 
+impl DeprovisionIpamPoolCidrInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::deprovision_ipam_pool_cidr::DeprovisionIpamPoolCidrOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::deprovision_ipam_pool_cidr::DeprovisionIpamPoolCidrError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.deprovision_ipam_pool_cidr();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeprovisionIpamPoolCidr`.
 ///
 /// <p>Deprovision a CIDR provisioned from an IPAM pool. If you deprovision a CIDR from a pool that has a source pool, the CIDR is recycled back into the source pool. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/depro-pool-cidr-ipam.html">Deprovision pool CIDRs</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>

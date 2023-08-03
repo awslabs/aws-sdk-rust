@@ -3,6 +3,23 @@ pub use crate::operation::update_resiliency_policy::_update_resiliency_policy_ou
 
 pub use crate::operation::update_resiliency_policy::_update_resiliency_policy_input::UpdateResiliencyPolicyInputBuilder;
 
+impl UpdateResiliencyPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_resiliency_policy::UpdateResiliencyPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_resiliency_policy::UpdateResiliencyPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_resiliency_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateResiliencyPolicy`.
 ///
 /// <p>Updates a resiliency policy.</p>

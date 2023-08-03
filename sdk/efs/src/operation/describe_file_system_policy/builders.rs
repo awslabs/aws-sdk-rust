@@ -3,6 +3,23 @@ pub use crate::operation::describe_file_system_policy::_describe_file_system_pol
 
 pub use crate::operation::describe_file_system_policy::_describe_file_system_policy_input::DescribeFileSystemPolicyInputBuilder;
 
+impl DescribeFileSystemPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_file_system_policy::DescribeFileSystemPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_file_system_policy::DescribeFileSystemPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_file_system_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeFileSystemPolicy`.
 ///
 /// <p>Returns the <code>FileSystemPolicy</code> for the specified EFS file system.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::stop_transform_job::_stop_transform_job_output::StopTr
 
 pub use crate::operation::stop_transform_job::_stop_transform_job_input::StopTransformJobInputBuilder;
 
+impl StopTransformJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_transform_job::StopTransformJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_transform_job::StopTransformJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_transform_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopTransformJob`.
 ///
 /// <p>Stops a batch transform job.</p>

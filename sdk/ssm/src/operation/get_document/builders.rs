@@ -3,6 +3,23 @@ pub use crate::operation::get_document::_get_document_output::GetDocumentOutputB
 
 pub use crate::operation::get_document::_get_document_input::GetDocumentInputBuilder;
 
+impl GetDocumentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_document::GetDocumentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_document::GetDocumentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_document();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetDocument`.
 ///
 /// <p>Gets the contents of the specified Amazon Web Services Systems Manager document (SSM document).</p>

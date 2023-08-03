@@ -3,6 +3,23 @@ pub use crate::operation::update_nodegroup_config::_update_nodegroup_config_outp
 
 pub use crate::operation::update_nodegroup_config::_update_nodegroup_config_input::UpdateNodegroupConfigInputBuilder;
 
+impl UpdateNodegroupConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_nodegroup_config::UpdateNodegroupConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_nodegroup_config::UpdateNodegroupConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_nodegroup_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateNodegroupConfig`.
 ///
 /// <p>Updates an Amazon EKS managed node group configuration. Your node group continues to function during the update. The response output includes an update ID that you can use to track the status of your node group update with the <code>DescribeUpdate</code> API operation. Currently you can update the Kubernetes labels for a node group or the scaling configuration.</p>

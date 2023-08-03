@@ -3,6 +3,23 @@ pub use crate::operation::update_voice_channel::_update_voice_channel_output::Up
 
 pub use crate::operation::update_voice_channel::_update_voice_channel_input::UpdateVoiceChannelInputBuilder;
 
+impl UpdateVoiceChannelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_voice_channel::UpdateVoiceChannelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_voice_channel::UpdateVoiceChannelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_voice_channel();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateVoiceChannel`.
 ///
 /// <p>Enables the voice channel for an application or updates the status and settings of the voice channel for an application.</p>

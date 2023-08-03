@@ -3,6 +3,23 @@ pub use crate::operation::get_vpce_configuration::_get_vpce_configuration_output
 
 pub use crate::operation::get_vpce_configuration::_get_vpce_configuration_input::GetVpceConfigurationInputBuilder;
 
+impl GetVpceConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_vpce_configuration::GetVpceConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_vpce_configuration::GetVPCEConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_vpce_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetVPCEConfiguration`.
 ///
 /// <p>Returns information about the configuration settings for your Amazon Virtual Private Cloud (VPC) endpoint.</p>

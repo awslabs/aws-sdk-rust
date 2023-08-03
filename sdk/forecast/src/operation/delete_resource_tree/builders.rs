@@ -3,6 +3,23 @@ pub use crate::operation::delete_resource_tree::_delete_resource_tree_output::De
 
 pub use crate::operation::delete_resource_tree::_delete_resource_tree_input::DeleteResourceTreeInputBuilder;
 
+impl DeleteResourceTreeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_resource_tree::DeleteResourceTreeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_resource_tree::DeleteResourceTreeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_resource_tree();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteResourceTree`.
 ///
 /// <p>Deletes an entire resource tree. This operation will delete the parent resource and its child resources.</p>

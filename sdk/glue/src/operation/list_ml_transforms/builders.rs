@@ -3,6 +3,23 @@ pub use crate::operation::list_ml_transforms::_list_ml_transforms_output::ListMl
 
 pub use crate::operation::list_ml_transforms::_list_ml_transforms_input::ListMlTransformsInputBuilder;
 
+impl ListMlTransformsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_ml_transforms::ListMlTransformsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_ml_transforms::ListMLTransformsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_ml_transforms();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListMLTransforms`.
 ///
 /// <p> Retrieves a sortable, filterable list of existing Glue machine learning transforms in this Amazon Web Services account, or the resources with the specified tag. This operation takes the optional <code>Tags</code> field, which you can use as a filter of the responses so that tagged resources can be retrieved as a group. If you choose to use tag filtering, only resources with the tags are retrieved. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_logging_status::_describe_logging_status_outp
 
 pub use crate::operation::describe_logging_status::_describe_logging_status_input::DescribeLoggingStatusInputBuilder;
 
+impl DescribeLoggingStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_logging_status::DescribeLoggingStatusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_logging_status::DescribeLoggingStatusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_logging_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeLoggingStatus`.
 ///
 /// <p>Describes whether information, such as queries and connection attempts, is being logged for the specified Amazon Redshift cluster.</p>

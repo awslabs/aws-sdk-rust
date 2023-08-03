@@ -3,6 +3,23 @@ pub use crate::operation::get_service_setting::_get_service_setting_output::GetS
 
 pub use crate::operation::get_service_setting::_get_service_setting_input::GetServiceSettingInputBuilder;
 
+impl GetServiceSettingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_service_setting::GetServiceSettingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_service_setting::GetServiceSettingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_service_setting();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetServiceSetting`.
 ///
 /// <p> <code>ServiceSetting</code> is an account-level setting for an Amazon Web Services service. This setting defines how a user interacts with or uses a service or a feature of a service. For example, if an Amazon Web Services service charges money to the account based on feature or service usage, then the Amazon Web Services service team might create a default setting of <code>false</code>. This means the user can't use this feature unless they change the setting to <code>true</code> and intentionally opt in for a paid feature.</p>

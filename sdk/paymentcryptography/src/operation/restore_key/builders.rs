@@ -3,6 +3,23 @@ pub use crate::operation::restore_key::_restore_key_output::RestoreKeyOutputBuil
 
 pub use crate::operation::restore_key::_restore_key_input::RestoreKeyInputBuilder;
 
+impl RestoreKeyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::restore_key::RestoreKeyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::restore_key::RestoreKeyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.restore_key();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RestoreKey`.
 ///
 /// <p>Cancels a scheduled key deletion during the waiting period. Use this operation to restore a <code>Key</code> that is scheduled for deletion.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_network_interface::_delete_network_interface_ou
 
 pub use crate::operation::delete_network_interface::_delete_network_interface_input::DeleteNetworkInterfaceInputBuilder;
 
+impl DeleteNetworkInterfaceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_network_interface::DeleteNetworkInterfaceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_network_interface::DeleteNetworkInterfaceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_network_interface();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteNetworkInterface`.
 ///
 /// <p>Deletes the specified network interface. You must detach the network interface before you can delete it.</p>

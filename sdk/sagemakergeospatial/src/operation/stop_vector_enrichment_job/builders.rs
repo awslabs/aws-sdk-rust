@@ -3,6 +3,23 @@ pub use crate::operation::stop_vector_enrichment_job::_stop_vector_enrichment_jo
 
 pub use crate::operation::stop_vector_enrichment_job::_stop_vector_enrichment_job_input::StopVectorEnrichmentJobInputBuilder;
 
+impl StopVectorEnrichmentJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_vector_enrichment_job::StopVectorEnrichmentJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_vector_enrichment_job::StopVectorEnrichmentJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_vector_enrichment_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopVectorEnrichmentJob`.
 ///
 /// <p>Stops the Vector Enrichment job for a given job ARN.</p>

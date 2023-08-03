@@ -3,6 +3,23 @@ pub use crate::operation::list_suites::_list_suites_output::ListSuitesOutputBuil
 
 pub use crate::operation::list_suites::_list_suites_input::ListSuitesInputBuilder;
 
+impl ListSuitesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_suites::ListSuitesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_suites::ListSuitesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_suites();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListSuites`.
 ///
 /// <p>Gets information about test suites for a given job.</p>

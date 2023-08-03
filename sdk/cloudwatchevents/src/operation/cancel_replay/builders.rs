@@ -3,6 +3,23 @@ pub use crate::operation::cancel_replay::_cancel_replay_output::CancelReplayOutp
 
 pub use crate::operation::cancel_replay::_cancel_replay_input::CancelReplayInputBuilder;
 
+impl CancelReplayInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::cancel_replay::CancelReplayOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::cancel_replay::CancelReplayError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.cancel_replay();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CancelReplay`.
 ///
 /// <p>Cancels the specified replay.</p>

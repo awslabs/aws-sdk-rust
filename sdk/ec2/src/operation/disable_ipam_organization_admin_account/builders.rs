@@ -3,6 +3,17 @@ pub use crate::operation::disable_ipam_organization_admin_account::_disable_ipam
 
 pub use crate::operation::disable_ipam_organization_admin_account::_disable_ipam_organization_admin_account_input::DisableIpamOrganizationAdminAccountInputBuilder;
 
+impl DisableIpamOrganizationAdminAccountInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::disable_ipam_organization_admin_account::DisableIpamOrganizationAdminAccountOutput, ::aws_smithy_http::result::SdkError<crate::operation::disable_ipam_organization_admin_account::DisableIpamOrganizationAdminAccountError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.disable_ipam_organization_admin_account();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisableIpamOrganizationAdminAccount`.
 ///
 /// <p>Disable the IPAM account. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/enable-integ-ipam.html">Enable integration with Organizations</a> in the <i>Amazon VPC IPAM User Guide</i>. </p>

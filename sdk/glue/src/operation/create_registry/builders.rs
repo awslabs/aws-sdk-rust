@@ -3,6 +3,23 @@ pub use crate::operation::create_registry::_create_registry_output::CreateRegist
 
 pub use crate::operation::create_registry::_create_registry_input::CreateRegistryInputBuilder;
 
+impl CreateRegistryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_registry::CreateRegistryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_registry::CreateRegistryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_registry();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateRegistry`.
 ///
 /// <p>Creates a new registry which may be used to hold a collection of schemas.</p>

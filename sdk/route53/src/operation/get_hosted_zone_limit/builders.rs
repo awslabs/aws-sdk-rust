@@ -3,6 +3,23 @@ pub use crate::operation::get_hosted_zone_limit::_get_hosted_zone_limit_output::
 
 pub use crate::operation::get_hosted_zone_limit::_get_hosted_zone_limit_input::GetHostedZoneLimitInputBuilder;
 
+impl GetHostedZoneLimitInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_hosted_zone_limit::GetHostedZoneLimitOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_hosted_zone_limit::GetHostedZoneLimitError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_hosted_zone_limit();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetHostedZoneLimit`.
 ///
 /// <p>Gets the specified limit for a specified hosted zone, for example, the maximum number of records that you can create in the hosted zone. </p>

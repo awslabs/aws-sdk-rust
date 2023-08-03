@@ -3,6 +3,23 @@ pub use crate::operation::get_blacklist_reports::_get_blacklist_reports_output::
 
 pub use crate::operation::get_blacklist_reports::_get_blacklist_reports_input::GetBlacklistReportsInputBuilder;
 
+impl GetBlacklistReportsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_blacklist_reports::GetBlacklistReportsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_blacklist_reports::GetBlacklistReportsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_blacklist_reports();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetBlacklistReports`.
 ///
 /// <p>Retrieve a list of the blacklists that your dedicated IP addresses appear on.</p>

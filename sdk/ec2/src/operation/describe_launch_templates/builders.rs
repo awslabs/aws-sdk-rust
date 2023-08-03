@@ -3,6 +3,23 @@ pub use crate::operation::describe_launch_templates::_describe_launch_templates_
 
 pub use crate::operation::describe_launch_templates::_describe_launch_templates_input::DescribeLaunchTemplatesInputBuilder;
 
+impl DescribeLaunchTemplatesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_launch_templates::DescribeLaunchTemplatesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_launch_templates::DescribeLaunchTemplatesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_launch_templates();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeLaunchTemplates`.
 ///
 /// <p>Describes one or more launch templates.</p>

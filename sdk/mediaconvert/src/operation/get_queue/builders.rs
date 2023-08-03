@@ -3,6 +3,23 @@ pub use crate::operation::get_queue::_get_queue_output::GetQueueOutputBuilder;
 
 pub use crate::operation::get_queue::_get_queue_input::GetQueueInputBuilder;
 
+impl GetQueueInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_queue::GetQueueOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_queue::GetQueueError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_queue();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetQueue`.
 ///
 /// Retrieve the JSON for a specific queue.

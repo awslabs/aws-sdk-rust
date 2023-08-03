@@ -3,6 +3,23 @@ pub use crate::operation::list_bonus_payments::_list_bonus_payments_output::List
 
 pub use crate::operation::list_bonus_payments::_list_bonus_payments_input::ListBonusPaymentsInputBuilder;
 
+impl ListBonusPaymentsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_bonus_payments::ListBonusPaymentsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_bonus_payments::ListBonusPaymentsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_bonus_payments();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListBonusPayments`.
 ///
 /// <p> The <code>ListBonusPayments</code> operation retrieves the amounts of bonuses you have paid to Workers for a given HIT or assignment. </p>

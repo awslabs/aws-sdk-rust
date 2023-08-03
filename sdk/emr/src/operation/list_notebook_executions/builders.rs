@@ -3,6 +3,23 @@ pub use crate::operation::list_notebook_executions::_list_notebook_executions_ou
 
 pub use crate::operation::list_notebook_executions::_list_notebook_executions_input::ListNotebookExecutionsInputBuilder;
 
+impl ListNotebookExecutionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_notebook_executions::ListNotebookExecutionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_notebook_executions::ListNotebookExecutionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_notebook_executions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListNotebookExecutions`.
 ///
 /// <p>Provides summaries of all notebook executions. You can filter the list based on multiple criteria such as status, time range, and editor id. Returns a maximum of 50 notebook executions and a marker to track the paging of a longer notebook execution list across multiple <code>ListNotebookExecutions</code> calls.</p>

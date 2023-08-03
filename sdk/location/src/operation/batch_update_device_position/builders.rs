@@ -3,6 +3,23 @@ pub use crate::operation::batch_update_device_position::_batch_update_device_pos
 
 pub use crate::operation::batch_update_device_position::_batch_update_device_position_input::BatchUpdateDevicePositionInputBuilder;
 
+impl BatchUpdateDevicePositionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_update_device_position::BatchUpdateDevicePositionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_update_device_position::BatchUpdateDevicePositionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_update_device_position();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchUpdateDevicePosition`.
 ///
 /// <p>Uploads position update data for one or more devices to a tracker resource (up to 10 devices per batch). Amazon Location uses the data when it reports the last known device position and position history. Amazon Location retains location data for 30 days.</p> <note>

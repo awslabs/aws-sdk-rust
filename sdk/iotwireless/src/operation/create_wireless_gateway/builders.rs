@@ -3,6 +3,23 @@ pub use crate::operation::create_wireless_gateway::_create_wireless_gateway_outp
 
 pub use crate::operation::create_wireless_gateway::_create_wireless_gateway_input::CreateWirelessGatewayInputBuilder;
 
+impl CreateWirelessGatewayInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_wireless_gateway::CreateWirelessGatewayOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_wireless_gateway::CreateWirelessGatewayError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_wireless_gateway();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateWirelessGateway`.
 ///
 /// <p>Provisions a wireless gateway.</p>

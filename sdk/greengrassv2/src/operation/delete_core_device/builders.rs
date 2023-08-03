@@ -3,6 +3,23 @@ pub use crate::operation::delete_core_device::_delete_core_device_output::Delete
 
 pub use crate::operation::delete_core_device::_delete_core_device_input::DeleteCoreDeviceInputBuilder;
 
+impl DeleteCoreDeviceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_core_device::DeleteCoreDeviceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_core_device::DeleteCoreDeviceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_core_device();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteCoreDevice`.
 ///
 /// <p>Deletes a Greengrass core device, which is an IoT thing. This operation removes the core device from the list of core devices. This operation doesn't delete the IoT thing. For more information about how to delete the IoT thing, see <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_DeleteThing.html">DeleteThing</a> in the <i>IoT API Reference</i>.</p>

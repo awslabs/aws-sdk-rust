@@ -3,6 +3,23 @@ pub use crate::operation::stop_suite_run::_stop_suite_run_output::StopSuiteRunOu
 
 pub use crate::operation::stop_suite_run::_stop_suite_run_input::StopSuiteRunInputBuilder;
 
+impl StopSuiteRunInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_suite_run::StopSuiteRunOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_suite_run::StopSuiteRunError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_suite_run();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopSuiteRun`.
 ///
 /// <p>Stops a Device Advisor test suite run that is currently running.</p>

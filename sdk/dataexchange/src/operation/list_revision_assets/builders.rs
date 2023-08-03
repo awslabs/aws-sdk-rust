@@ -3,6 +3,23 @@ pub use crate::operation::list_revision_assets::_list_revision_assets_output::Li
 
 pub use crate::operation::list_revision_assets::_list_revision_assets_input::ListRevisionAssetsInputBuilder;
 
+impl ListRevisionAssetsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_revision_assets::ListRevisionAssetsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_revision_assets::ListRevisionAssetsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_revision_assets();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListRevisionAssets`.
 ///
 /// <p>This operation lists a revision's assets sorted alphabetically in descending order.</p>

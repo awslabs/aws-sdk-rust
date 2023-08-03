@@ -3,6 +3,23 @@ pub use crate::operation::update_thesaurus::_update_thesaurus_output::UpdateThes
 
 pub use crate::operation::update_thesaurus::_update_thesaurus_input::UpdateThesaurusInputBuilder;
 
+impl UpdateThesaurusInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_thesaurus::UpdateThesaurusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_thesaurus::UpdateThesaurusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_thesaurus();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateThesaurus`.
 ///
 /// <p>Updates a thesaurus for an index.</p>

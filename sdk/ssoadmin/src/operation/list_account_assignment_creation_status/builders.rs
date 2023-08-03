@@ -3,6 +3,17 @@ pub use crate::operation::list_account_assignment_creation_status::_list_account
 
 pub use crate::operation::list_account_assignment_creation_status::_list_account_assignment_creation_status_input::ListAccountAssignmentCreationStatusInputBuilder;
 
+impl ListAccountAssignmentCreationStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_account_assignment_creation_status::ListAccountAssignmentCreationStatusOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_account_assignment_creation_status::ListAccountAssignmentCreationStatusError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_account_assignment_creation_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAccountAssignmentCreationStatus`.
 ///
 /// <p>Lists the status of the AWS account assignment creation requests for a specified IAM Identity Center instance.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::provision_permission_set::_provision_permission_set_ou
 
 pub use crate::operation::provision_permission_set::_provision_permission_set_input::ProvisionPermissionSetInputBuilder;
 
+impl ProvisionPermissionSetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::provision_permission_set::ProvisionPermissionSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::provision_permission_set::ProvisionPermissionSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.provision_permission_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ProvisionPermissionSet`.
 ///
 /// <p>The process by which a specified permission set is provisioned to the specified target.</p>

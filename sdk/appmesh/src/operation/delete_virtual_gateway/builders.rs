@@ -3,6 +3,23 @@ pub use crate::operation::delete_virtual_gateway::_delete_virtual_gateway_output
 
 pub use crate::operation::delete_virtual_gateway::_delete_virtual_gateway_input::DeleteVirtualGatewayInputBuilder;
 
+impl DeleteVirtualGatewayInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_virtual_gateway::DeleteVirtualGatewayOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_virtual_gateway::DeleteVirtualGatewayError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_virtual_gateway();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteVirtualGateway`.
 ///
 /// <p>Deletes an existing virtual gateway. You cannot delete a virtual gateway if any gateway routes are associated to it.</p>

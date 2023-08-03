@@ -3,6 +3,23 @@ pub use crate::operation::untag_queue::_untag_queue_output::UntagQueueOutputBuil
 
 pub use crate::operation::untag_queue::_untag_queue_input::UntagQueueInputBuilder;
 
+impl UntagQueueInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::untag_queue::UntagQueueOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::untag_queue::UntagQueueError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.untag_queue();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UntagQueue`.
 ///
 /// <p>Remove cost allocation tags from the specified Amazon SQS queue. For an overview, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-queue-tags.html">Tagging Your Amazon SQS Queues</a> in the <i>Amazon SQS Developer Guide</i>.</p> <note>

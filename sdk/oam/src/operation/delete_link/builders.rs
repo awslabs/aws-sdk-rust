@@ -3,6 +3,23 @@ pub use crate::operation::delete_link::_delete_link_output::DeleteLinkOutputBuil
 
 pub use crate::operation::delete_link::_delete_link_input::DeleteLinkInputBuilder;
 
+impl DeleteLinkInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_link::DeleteLinkOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_link::DeleteLinkError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_link();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteLink`.
 ///
 /// <p>Deletes a link between a monitoring account sink and a source account. You must run this operation in the source account.</p>

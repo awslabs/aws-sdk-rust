@@ -3,6 +3,23 @@ pub use crate::operation::delete_environment_membership::_delete_environment_mem
 
 pub use crate::operation::delete_environment_membership::_delete_environment_membership_input::DeleteEnvironmentMembershipInputBuilder;
 
+impl DeleteEnvironmentMembershipInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_environment_membership::DeleteEnvironmentMembershipOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_environment_membership::DeleteEnvironmentMembershipError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_environment_membership();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteEnvironmentMembership`.
 ///
 /// <p>Deletes an environment member from a development environment.</p>

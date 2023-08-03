@@ -3,6 +3,23 @@ pub use crate::operation::restore_table::_restore_table_output::RestoreTableOutp
 
 pub use crate::operation::restore_table::_restore_table_input::RestoreTableInputBuilder;
 
+impl RestoreTableInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::restore_table::RestoreTableOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::restore_table::RestoreTableError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.restore_table();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RestoreTable`.
 ///
 /// <p>Restores the specified table to the specified point in time within the <code>earliest_restorable_timestamp</code> and the current time. For more information about restore points, see <a href="https://docs.aws.amazon.com/keyspaces/latest/devguide/PointInTimeRecovery_HowItWorks.html#howitworks_backup_window"> Time window for PITR continuous backups</a> in the <i>Amazon Keyspaces Developer Guide</i>.</p>

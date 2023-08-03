@@ -3,6 +3,23 @@ pub use crate::operation::unarchive_findings::_unarchive_findings_output::Unarch
 
 pub use crate::operation::unarchive_findings::_unarchive_findings_input::UnarchiveFindingsInputBuilder;
 
+impl UnarchiveFindingsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::unarchive_findings::UnarchiveFindingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::unarchive_findings::UnarchiveFindingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.unarchive_findings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UnarchiveFindings`.
 ///
 /// <p>Unarchives GuardDuty findings specified by the <code>findingIds</code>.</p>

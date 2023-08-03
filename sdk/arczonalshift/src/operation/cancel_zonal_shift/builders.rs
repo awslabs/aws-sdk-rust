@@ -3,6 +3,23 @@ pub use crate::operation::cancel_zonal_shift::_cancel_zonal_shift_output::Cancel
 
 pub use crate::operation::cancel_zonal_shift::_cancel_zonal_shift_input::CancelZonalShiftInputBuilder;
 
+impl CancelZonalShiftInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::cancel_zonal_shift::CancelZonalShiftOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::cancel_zonal_shift::CancelZonalShiftError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.cancel_zonal_shift();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CancelZonalShift`.
 ///
 /// <p>Cancel a zonal shift in Amazon Route 53 Application Recovery Controller that you've started for a resource in your AWS account in an AWS Region. </p>

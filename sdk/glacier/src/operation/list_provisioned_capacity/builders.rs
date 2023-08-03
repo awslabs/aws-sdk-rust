@@ -3,6 +3,23 @@ pub use crate::operation::list_provisioned_capacity::_list_provisioned_capacity_
 
 pub use crate::operation::list_provisioned_capacity::_list_provisioned_capacity_input::ListProvisionedCapacityInputBuilder;
 
+impl ListProvisionedCapacityInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_provisioned_capacity::ListProvisionedCapacityOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_provisioned_capacity::ListProvisionedCapacityError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_provisioned_capacity();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListProvisionedCapacity`.
 ///
 /// <p>This operation lists the provisioned capacity units for the specified AWS account.</p>

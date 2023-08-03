@@ -3,6 +3,17 @@ pub use crate::operation::put_backup_vault_lock_configuration::_put_backup_vault
 
 pub use crate::operation::put_backup_vault_lock_configuration::_put_backup_vault_lock_configuration_input::PutBackupVaultLockConfigurationInputBuilder;
 
+impl PutBackupVaultLockConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::put_backup_vault_lock_configuration::PutBackupVaultLockConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_backup_vault_lock_configuration::PutBackupVaultLockConfigurationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.put_backup_vault_lock_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutBackupVaultLockConfiguration`.
 ///
 /// <p>Applies Backup Vault Lock to a backup vault, preventing attempts to delete any recovery point stored in or created in a backup vault. Vault Lock also prevents attempts to update the lifecycle policy that controls the retention period of any recovery point currently stored in a backup vault. If specified, Vault Lock enforces a minimum and maximum retention period for future backup and copy jobs that target a backup vault.</p> <note>

@@ -3,6 +3,17 @@ pub use crate::operation::list_continuous_deployment_policies::_list_continuous_
 
 pub use crate::operation::list_continuous_deployment_policies::_list_continuous_deployment_policies_input::ListContinuousDeploymentPoliciesInputBuilder;
 
+impl ListContinuousDeploymentPoliciesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_continuous_deployment_policies::ListContinuousDeploymentPoliciesOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_continuous_deployment_policies::ListContinuousDeploymentPoliciesError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_continuous_deployment_policies();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListContinuousDeploymentPolicies`.
 ///
 /// <p>Gets a list of the continuous deployment policies in your Amazon Web Services account.</p>

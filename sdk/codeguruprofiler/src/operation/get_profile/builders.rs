@@ -3,6 +3,23 @@ pub use crate::operation::get_profile::_get_profile_output::GetProfileOutputBuil
 
 pub use crate::operation::get_profile::_get_profile_input::GetProfileInputBuilder;
 
+impl GetProfileInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_profile::GetProfileOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_profile::GetProfileError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_profile();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetProfile`.
 ///
 /// <p> Gets the aggregated profile of a profiling group for a specified time range. Amazon CodeGuru Profiler collects posted agent profiles for a profiling group into aggregated profiles. </p> <note>

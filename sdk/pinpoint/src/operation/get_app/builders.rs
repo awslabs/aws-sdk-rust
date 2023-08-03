@@ -3,6 +3,23 @@ pub use crate::operation::get_app::_get_app_output::GetAppOutputBuilder;
 
 pub use crate::operation::get_app::_get_app_input::GetAppInputBuilder;
 
+impl GetAppInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_app::GetAppOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_app::GetAppError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_app();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetApp`.
 ///
 /// <p>Retrieves information about an application.</p>

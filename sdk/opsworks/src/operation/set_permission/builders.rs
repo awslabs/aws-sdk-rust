@@ -3,6 +3,23 @@ pub use crate::operation::set_permission::_set_permission_output::SetPermissionO
 
 pub use crate::operation::set_permission::_set_permission_input::SetPermissionInputBuilder;
 
+impl SetPermissionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::set_permission::SetPermissionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::set_permission::SetPermissionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.set_permission();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SetPermission`.
 ///
 /// <p>Specifies a user's permissions. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingsecurity.html">Security and Permissions</a>.</p>

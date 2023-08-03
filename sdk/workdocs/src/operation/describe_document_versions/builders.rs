@@ -3,6 +3,23 @@ pub use crate::operation::describe_document_versions::_describe_document_version
 
 pub use crate::operation::describe_document_versions::_describe_document_versions_input::DescribeDocumentVersionsInputBuilder;
 
+impl DescribeDocumentVersionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_document_versions::DescribeDocumentVersionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_document_versions::DescribeDocumentVersionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_document_versions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeDocumentVersions`.
 ///
 /// <p>Retrieves the document versions for the specified document.</p>

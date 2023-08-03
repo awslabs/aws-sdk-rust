@@ -3,6 +3,23 @@ pub use crate::operation::evaluate_code::_evaluate_code_output::EvaluateCodeOutp
 
 pub use crate::operation::evaluate_code::_evaluate_code_input::EvaluateCodeInputBuilder;
 
+impl EvaluateCodeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::evaluate_code::EvaluateCodeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::evaluate_code::EvaluateCodeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.evaluate_code();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `EvaluateCode`.
 ///
 /// <p>Evaluates the given code and returns the response. The code definition requirements depend on the specified runtime. For <code>APPSYNC_JS</code> runtimes, the code defines the request and response functions. The request function takes the incoming request after a GraphQL operation is parsed and converts it into a request configuration for the selected data source operation. The response function interprets responses from the data source and maps it to the shape of the GraphQL field output type. </p>

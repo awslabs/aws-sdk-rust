@@ -3,6 +3,17 @@ pub use crate::operation::create_reserved_instances_listing::_create_reserved_in
 
 pub use crate::operation::create_reserved_instances_listing::_create_reserved_instances_listing_input::CreateReservedInstancesListingInputBuilder;
 
+impl CreateReservedInstancesListingInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::create_reserved_instances_listing::CreateReservedInstancesListingOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_reserved_instances_listing::CreateReservedInstancesListingError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.create_reserved_instances_listing();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateReservedInstancesListing`.
 ///
 /// <p>Creates a listing for Amazon EC2 Standard Reserved Instances to be sold in the Reserved Instance Marketplace. You can submit one Standard Reserved Instance listing at a time. To get a list of your Standard Reserved Instances, you can use the <code>DescribeReservedInstances</code> operation.</p> <note>

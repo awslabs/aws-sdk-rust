@@ -3,6 +3,17 @@ pub use crate::operation::disassociate_wireless_device_from_fuota_task::_disasso
 
 pub use crate::operation::disassociate_wireless_device_from_fuota_task::_disassociate_wireless_device_from_fuota_task_input::DisassociateWirelessDeviceFromFuotaTaskInputBuilder;
 
+impl DisassociateWirelessDeviceFromFuotaTaskInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::disassociate_wireless_device_from_fuota_task::DisassociateWirelessDeviceFromFuotaTaskOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_wireless_device_from_fuota_task::DisassociateWirelessDeviceFromFuotaTaskError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.disassociate_wireless_device_from_fuota_task();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateWirelessDeviceFromFuotaTask`.
 ///
 /// <p>Disassociates a wireless device from a FUOTA task.</p>

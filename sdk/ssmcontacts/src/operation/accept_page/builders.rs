@@ -3,6 +3,23 @@ pub use crate::operation::accept_page::_accept_page_output::AcceptPageOutputBuil
 
 pub use crate::operation::accept_page::_accept_page_input::AcceptPageInputBuilder;
 
+impl AcceptPageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::accept_page::AcceptPageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::accept_page::AcceptPageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.accept_page();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AcceptPage`.
 ///
 /// <p>Used to acknowledge an engagement to a contact channel during an incident.</p>

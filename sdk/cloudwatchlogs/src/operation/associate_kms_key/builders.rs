@@ -3,6 +3,23 @@ pub use crate::operation::associate_kms_key::_associate_kms_key_output::Associat
 
 pub use crate::operation::associate_kms_key::_associate_kms_key_input::AssociateKmsKeyInputBuilder;
 
+impl AssociateKmsKeyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_kms_key::AssociateKmsKeyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_kms_key::AssociateKmsKeyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_kms_key();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateKmsKey`.
 ///
 /// <p>Associates the specified KMS key with either one log group in the account, or with all stored CloudWatch Logs query insights results in the account.</p>

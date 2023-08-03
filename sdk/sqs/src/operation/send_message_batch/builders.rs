@@ -3,6 +3,23 @@ pub use crate::operation::send_message_batch::_send_message_batch_output::SendMe
 
 pub use crate::operation::send_message_batch::_send_message_batch_input::SendMessageBatchInputBuilder;
 
+impl SendMessageBatchInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::send_message_batch::SendMessageBatchOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::send_message_batch::SendMessageBatchError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.send_message_batch();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SendMessageBatch`.
 ///
 /// <p>You can use <code>SendMessageBatch</code> to send up to 10 messages to the specified queue by assigning either identical or different values to each message (or by not assigning values at all). This is a batch version of <code> <code>SendMessage</code>.</code> For a FIFO queue, multiple messages within a single batch are enqueued in the order they are sent.</p>

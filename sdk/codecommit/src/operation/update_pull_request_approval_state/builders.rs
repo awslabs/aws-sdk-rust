@@ -3,6 +3,17 @@ pub use crate::operation::update_pull_request_approval_state::_update_pull_reque
 
 pub use crate::operation::update_pull_request_approval_state::_update_pull_request_approval_state_input::UpdatePullRequestApprovalStateInputBuilder;
 
+impl UpdatePullRequestApprovalStateInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_pull_request_approval_state::UpdatePullRequestApprovalStateError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.update_pull_request_approval_state();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdatePullRequestApprovalState`.
 ///
 /// <p>Updates the state of a user's approval on a pull request. The user is derived from the signed-in account when the request is made.</p>

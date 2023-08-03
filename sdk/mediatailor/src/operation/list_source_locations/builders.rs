@@ -3,6 +3,23 @@ pub use crate::operation::list_source_locations::_list_source_locations_output::
 
 pub use crate::operation::list_source_locations::_list_source_locations_input::ListSourceLocationsInputBuilder;
 
+impl ListSourceLocationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_source_locations::ListSourceLocationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_source_locations::ListSourceLocationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_source_locations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListSourceLocations`.
 ///
 /// <p>Lists the source locations for a channel. A source location defines the host server URL, and contains a list of sources.</p>

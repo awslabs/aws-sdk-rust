@@ -3,6 +3,23 @@ pub use crate::operation::put_user_status::_put_user_status_output::PutUserStatu
 
 pub use crate::operation::put_user_status::_put_user_status_input::PutUserStatusInputBuilder;
 
+impl PutUserStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_user_status::PutUserStatusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_user_status::PutUserStatusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_user_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutUserStatus`.
 ///
 /// <p>Changes the current status of a user or agent in Amazon Connect. If the agent is currently handling a contact, this sets the agent's next status.</p>

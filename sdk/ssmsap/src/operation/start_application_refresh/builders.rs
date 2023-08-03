@@ -3,6 +3,23 @@ pub use crate::operation::start_application_refresh::_start_application_refresh_
 
 pub use crate::operation::start_application_refresh::_start_application_refresh_input::StartApplicationRefreshInputBuilder;
 
+impl StartApplicationRefreshInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_application_refresh::StartApplicationRefreshOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_application_refresh::StartApplicationRefreshError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_application_refresh();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartApplicationRefresh`.
 ///
 /// <p>Refreshes a registered application.</p>

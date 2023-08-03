@@ -3,6 +3,23 @@ pub use crate::operation::delete_anomaly_detector::_delete_anomaly_detector_outp
 
 pub use crate::operation::delete_anomaly_detector::_delete_anomaly_detector_input::DeleteAnomalyDetectorInputBuilder;
 
+impl DeleteAnomalyDetectorInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_anomaly_detector();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteAnomalyDetector`.
 ///
 /// <p>Deletes a detector. Deleting an anomaly detector will delete all of its corresponding resources including any configured datasets and alerts.</p>

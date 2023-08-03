@@ -3,6 +3,23 @@ pub use crate::operation::update_account_sending_enabled::_update_account_sendin
 
 pub use crate::operation::update_account_sending_enabled::_update_account_sending_enabled_input::UpdateAccountSendingEnabledInputBuilder;
 
+impl UpdateAccountSendingEnabledInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_account_sending_enabled::UpdateAccountSendingEnabledOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_account_sending_enabled::UpdateAccountSendingEnabledError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_account_sending_enabled();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateAccountSendingEnabled`.
 ///
 /// <p>Enables or disables email sending across your entire Amazon SES account in the current AWS Region. You can use this operation in conjunction with Amazon CloudWatch alarms to temporarily pause email sending across your Amazon SES account in a given AWS Region when reputation metrics (such as your bounce or complaint rates) reach certain thresholds.</p>

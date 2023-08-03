@@ -3,6 +3,23 @@ pub use crate::operation::delete_custom_vocabulary::_delete_custom_vocabulary_ou
 
 pub use crate::operation::delete_custom_vocabulary::_delete_custom_vocabulary_input::DeleteCustomVocabularyInputBuilder;
 
+impl DeleteCustomVocabularyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_custom_vocabulary::DeleteCustomVocabularyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_custom_vocabulary::DeleteCustomVocabularyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_custom_vocabulary();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteCustomVocabulary`.
 ///
 /// <p>Removes a custom vocabulary from the specified locale in the specified bot.</p>

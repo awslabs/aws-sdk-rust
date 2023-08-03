@@ -3,6 +3,23 @@ pub use crate::operation::delete_api_cache::_delete_api_cache_output::DeleteApiC
 
 pub use crate::operation::delete_api_cache::_delete_api_cache_input::DeleteApiCacheInputBuilder;
 
+impl DeleteApiCacheInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_api_cache::DeleteApiCacheOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_api_cache::DeleteApiCacheError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_api_cache();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteApiCache`.
 ///
 /// <p>Deletes an <code>ApiCache</code> object.</p>

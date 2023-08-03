@@ -3,6 +3,23 @@ pub use crate::operation::disassociate_trunk_interface::_disassociate_trunk_inte
 
 pub use crate::operation::disassociate_trunk_interface::_disassociate_trunk_interface_input::DisassociateTrunkInterfaceInputBuilder;
 
+impl DisassociateTrunkInterfaceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_trunk_interface::DisassociateTrunkInterfaceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_trunk_interface::DisassociateTrunkInterfaceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disassociate_trunk_interface();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateTrunkInterface`.
 ///
 /// <note>

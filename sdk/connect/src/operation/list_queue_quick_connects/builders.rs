@@ -3,6 +3,23 @@ pub use crate::operation::list_queue_quick_connects::_list_queue_quick_connects_
 
 pub use crate::operation::list_queue_quick_connects::_list_queue_quick_connects_input::ListQueueQuickConnectsInputBuilder;
 
+impl ListQueueQuickConnectsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_queue_quick_connects::ListQueueQuickConnectsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_queue_quick_connects::ListQueueQuickConnectsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_queue_quick_connects();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListQueueQuickConnects`.
 ///
 /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>

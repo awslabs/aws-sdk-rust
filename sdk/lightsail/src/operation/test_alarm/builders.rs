@@ -3,6 +3,23 @@ pub use crate::operation::test_alarm::_test_alarm_output::TestAlarmOutputBuilder
 
 pub use crate::operation::test_alarm::_test_alarm_input::TestAlarmInputBuilder;
 
+impl TestAlarmInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::test_alarm::TestAlarmOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::test_alarm::TestAlarmError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.test_alarm();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `TestAlarm`.
 ///
 /// <p>Tests an alarm by displaying a banner on the Amazon Lightsail console. If a notification trigger is configured for the specified alarm, the test also sends a notification to the notification protocol (<code>Email</code> and/or <code>SMS</code>) configured for the alarm.</p>

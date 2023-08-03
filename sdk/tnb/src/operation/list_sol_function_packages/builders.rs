@@ -3,6 +3,23 @@ pub use crate::operation::list_sol_function_packages::_list_sol_function_package
 
 pub use crate::operation::list_sol_function_packages::_list_sol_function_packages_input::ListSolFunctionPackagesInputBuilder;
 
+impl ListSolFunctionPackagesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_sol_function_packages::ListSolFunctionPackagesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_sol_function_packages::ListSolFunctionPackagesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_sol_function_packages();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListSolFunctionPackages`.
 ///
 /// <p>Lists information about function packages.</p>

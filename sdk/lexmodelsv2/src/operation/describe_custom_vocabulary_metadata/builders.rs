@@ -3,6 +3,17 @@ pub use crate::operation::describe_custom_vocabulary_metadata::_describe_custom_
 
 pub use crate::operation::describe_custom_vocabulary_metadata::_describe_custom_vocabulary_metadata_input::DescribeCustomVocabularyMetadataInputBuilder;
 
+impl DescribeCustomVocabularyMetadataInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_custom_vocabulary_metadata::DescribeCustomVocabularyMetadataOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_custom_vocabulary_metadata::DescribeCustomVocabularyMetadataError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_custom_vocabulary_metadata();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeCustomVocabularyMetadata`.
 ///
 /// <p>Provides metadata information about a custom vocabulary.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::batch_get_free_trial_info::_batch_get_free_trial_info_
 
 pub use crate::operation::batch_get_free_trial_info::_batch_get_free_trial_info_input::BatchGetFreeTrialInfoInputBuilder;
 
+impl BatchGetFreeTrialInfoInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_get_free_trial_info::BatchGetFreeTrialInfoError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_get_free_trial_info();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchGetFreeTrialInfo`.
 ///
 /// <p>Gets free trial status for multiple Amazon Web Services accounts.</p>

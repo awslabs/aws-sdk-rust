@@ -3,6 +3,23 @@ pub use crate::operation::get_cost_forecast::_get_cost_forecast_output::GetCostF
 
 pub use crate::operation::get_cost_forecast::_get_cost_forecast_input::GetCostForecastInputBuilder;
 
+impl GetCostForecastInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_cost_forecast::GetCostForecastOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_cost_forecast::GetCostForecastError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_cost_forecast();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetCostForecast`.
 ///
 /// <p>Retrieves a forecast for how much Amazon Web Services predicts that you will spend over the forecast time period that you select, based on your past costs. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::start_snapshot::_start_snapshot_output::StartSnapshotO
 
 pub use crate::operation::start_snapshot::_start_snapshot_input::StartSnapshotInputBuilder;
 
+impl StartSnapshotInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_snapshot::StartSnapshotOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_snapshot::StartSnapshotError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_snapshot();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartSnapshot`.
 ///
 /// <p>Creates a new Amazon EBS snapshot. The new snapshot enters the <code>pending</code> state after the request completes. </p>

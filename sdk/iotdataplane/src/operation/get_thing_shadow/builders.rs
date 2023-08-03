@@ -3,6 +3,23 @@ pub use crate::operation::get_thing_shadow::_get_thing_shadow_output::GetThingSh
 
 pub use crate::operation::get_thing_shadow::_get_thing_shadow_input::GetThingShadowInputBuilder;
 
+impl GetThingShadowInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_thing_shadow::GetThingShadowOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_thing_shadow::GetThingShadowError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_thing_shadow();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetThingShadow`.
 ///
 /// <p>Gets the shadow for the specified thing.</p>

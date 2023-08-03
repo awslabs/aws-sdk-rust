@@ -3,6 +3,23 @@ pub use crate::operation::import_migration_task::_import_migration_task_output::
 
 pub use crate::operation::import_migration_task::_import_migration_task_input::ImportMigrationTaskInputBuilder;
 
+impl ImportMigrationTaskInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::import_migration_task::ImportMigrationTaskOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::import_migration_task::ImportMigrationTaskError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.import_migration_task();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ImportMigrationTask`.
 ///
 /// <p>Registers a new migration task which represents a server, database, etc., being migrated to AWS by a migration tool.</p>

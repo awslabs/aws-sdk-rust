@@ -3,6 +3,23 @@ pub use crate::operation::list_portfolios_for_product::_list_portfolios_for_prod
 
 pub use crate::operation::list_portfolios_for_product::_list_portfolios_for_product_input::ListPortfoliosForProductInputBuilder;
 
+impl ListPortfoliosForProductInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_portfolios_for_product::ListPortfoliosForProductOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_portfolios_for_product::ListPortfoliosForProductError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_portfolios_for_product();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListPortfoliosForProduct`.
 ///
 /// <p>Lists all portfolios that the specified product is associated with.</p>

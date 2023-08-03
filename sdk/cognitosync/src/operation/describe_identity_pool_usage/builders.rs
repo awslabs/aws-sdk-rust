@@ -3,6 +3,23 @@ pub use crate::operation::describe_identity_pool_usage::_describe_identity_pool_
 
 pub use crate::operation::describe_identity_pool_usage::_describe_identity_pool_usage_input::DescribeIdentityPoolUsageInputBuilder;
 
+impl DescribeIdentityPoolUsageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_identity_pool_usage::DescribeIdentityPoolUsageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_identity_pool_usage::DescribeIdentityPoolUsageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_identity_pool_usage();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeIdentityPoolUsage`.
 ///
 /// <p>Gets usage details (for example, data storage) about a particular identity pool.</p>

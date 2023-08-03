@@ -3,6 +3,23 @@ pub use crate::operation::list_contributor_insights::_list_contributor_insights_
 
 pub use crate::operation::list_contributor_insights::_list_contributor_insights_input::ListContributorInsightsInputBuilder;
 
+impl ListContributorInsightsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_contributor_insights::ListContributorInsightsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_contributor_insights::ListContributorInsightsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_contributor_insights();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListContributorInsights`.
 ///
 /// <p>Returns a list of ContributorInsightsSummary for a table and all its global secondary indexes.</p>

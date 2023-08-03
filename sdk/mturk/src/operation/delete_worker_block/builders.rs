@@ -3,6 +3,23 @@ pub use crate::operation::delete_worker_block::_delete_worker_block_output::Dele
 
 pub use crate::operation::delete_worker_block::_delete_worker_block_input::DeleteWorkerBlockInputBuilder;
 
+impl DeleteWorkerBlockInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_worker_block::DeleteWorkerBlockOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_worker_block::DeleteWorkerBlockError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_worker_block();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteWorkerBlock`.
 ///
 /// <p>The <code>DeleteWorkerBlock</code> operation allows you to reinstate a blocked Worker to work on your HITs. This operation reverses the effects of the CreateWorkerBlock operation. You need the Worker ID to use this operation. If the Worker ID is missing or invalid, this operation fails and returns the message “WorkerId is invalid.” If the specified Worker is not blocked, this operation returns successfully.</p>

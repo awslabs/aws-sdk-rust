@@ -3,6 +3,23 @@ pub use crate::operation::put_replication_configuration::_put_replication_config
 
 pub use crate::operation::put_replication_configuration::_put_replication_configuration_input::PutReplicationConfigurationInputBuilder;
 
+impl PutReplicationConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_replication_configuration::PutReplicationConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_replication_configuration::PutReplicationConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_replication_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutReplicationConfiguration`.
 ///
 /// <p>Creates or updates the replication configuration for a registry. The existing replication configuration for a repository can be retrieved with the <code>DescribeRegistry</code> API action. The first time the PutReplicationConfiguration API is called, a service-linked IAM role is created in your account for the replication process. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/using-service-linked-roles.html">Using service-linked roles for Amazon ECR</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p> <note>

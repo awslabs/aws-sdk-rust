@@ -3,6 +3,23 @@ pub use crate::operation::deregister_task_definition::_deregister_task_definitio
 
 pub use crate::operation::deregister_task_definition::_deregister_task_definition_input::DeregisterTaskDefinitionInputBuilder;
 
+impl DeregisterTaskDefinitionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::deregister_task_definition::DeregisterTaskDefinitionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::deregister_task_definition::DeregisterTaskDefinitionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.deregister_task_definition();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeregisterTaskDefinition`.
 ///
 /// <p>Deregisters the specified task definition by family and revision. Upon deregistration, the task definition is marked as <code>INACTIVE</code>. Existing tasks and services that reference an <code>INACTIVE</code> task definition continue to run without disruption. Existing services that reference an <code>INACTIVE</code> task definition can still scale up or down by modifying the service's desired count. If you want to delete a task definition revision, you must first deregister the task definition revision.</p>

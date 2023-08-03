@@ -3,6 +3,23 @@ pub use crate::operation::delete_domain::_delete_domain_output::DeleteDomainOutp
 
 pub use crate::operation::delete_domain::_delete_domain_input::DeleteDomainInputBuilder;
 
+impl DeleteDomainInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_domain::DeleteDomainOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_domain::DeleteDomainError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_domain();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteDomain`.
 ///
 /// <p>Permanently deletes a search domain and all of its data. Once a domain has been deleted, it cannot be recovered. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/deleting-domains.html" target="_blank">Deleting a Search Domain</a> in the <i>Amazon CloudSearch Developer Guide</i>. </p>

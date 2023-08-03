@@ -3,6 +3,23 @@ pub use crate::operation::check_schema_version_validity::_check_schema_version_v
 
 pub use crate::operation::check_schema_version_validity::_check_schema_version_validity_input::CheckSchemaVersionValidityInputBuilder;
 
+impl CheckSchemaVersionValidityInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::check_schema_version_validity::CheckSchemaVersionValidityOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::check_schema_version_validity::CheckSchemaVersionValidityError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.check_schema_version_validity();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CheckSchemaVersionValidity`.
 ///
 /// <p>Validates the supplied schema. This call has no side effects, it simply validates using the supplied schema using <code>DataFormat</code> as the format. Since it does not take a schema set name, no compatibility checks are performed.</p>

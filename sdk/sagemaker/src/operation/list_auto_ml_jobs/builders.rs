@@ -3,6 +3,23 @@ pub use crate::operation::list_auto_ml_jobs::_list_auto_ml_jobs_output::ListAuto
 
 pub use crate::operation::list_auto_ml_jobs::_list_auto_ml_jobs_input::ListAutoMlJobsInputBuilder;
 
+impl ListAutoMlJobsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_auto_ml_jobs::ListAutoMlJobsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_auto_ml_jobs::ListAutoMLJobsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_auto_ml_jobs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAutoMLJobs`.
 ///
 /// <p>Request a list of jobs.</p>

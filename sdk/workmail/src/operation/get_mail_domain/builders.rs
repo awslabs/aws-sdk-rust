@@ -3,6 +3,23 @@ pub use crate::operation::get_mail_domain::_get_mail_domain_output::GetMailDomai
 
 pub use crate::operation::get_mail_domain::_get_mail_domain_input::GetMailDomainInputBuilder;
 
+impl GetMailDomainInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_mail_domain::GetMailDomainOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_mail_domain::GetMailDomainError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_mail_domain();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetMailDomain`.
 ///
 /// <p>Gets details for a mail domain, including domain records required to configure your domain with recommended security.</p>

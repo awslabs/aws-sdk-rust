@@ -3,6 +3,23 @@ pub use crate::operation::get_contact_information::_get_contact_information_outp
 
 pub use crate::operation::get_contact_information::_get_contact_information_input::GetContactInformationInputBuilder;
 
+impl GetContactInformationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_contact_information::GetContactInformationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_contact_information::GetContactInformationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_contact_information();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetContactInformation`.
 ///
 /// <p>Retrieves the primary contact information of an Amazon Web Services account.</p>

@@ -3,6 +3,17 @@ pub use crate::operation::describe_vpc_peering_authorizations::_describe_vpc_pee
 
 pub use crate::operation::describe_vpc_peering_authorizations::_describe_vpc_peering_authorizations_input::DescribeVpcPeeringAuthorizationsInputBuilder;
 
+impl DescribeVpcPeeringAuthorizationsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_vpc_peering_authorizations::DescribeVpcPeeringAuthorizationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_vpc_peering_authorizations::DescribeVpcPeeringAuthorizationsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_vpc_peering_authorizations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeVpcPeeringAuthorizations`.
 ///
 /// <p>Retrieves valid VPC peering authorizations that are pending for the Amazon Web Services account. This operation returns all VPC peering authorizations and requests for peering. This includes those initiated and received by this account. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::request_service_quota_increase::_request_service_quota
 
 pub use crate::operation::request_service_quota_increase::_request_service_quota_increase_input::RequestServiceQuotaIncreaseInputBuilder;
 
+impl RequestServiceQuotaIncreaseInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::request_service_quota_increase::RequestServiceQuotaIncreaseOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::request_service_quota_increase::RequestServiceQuotaIncreaseError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.request_service_quota_increase();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RequestServiceQuotaIncrease`.
 ///
 /// <p>Submits a quota increase request for the specified quota.</p>

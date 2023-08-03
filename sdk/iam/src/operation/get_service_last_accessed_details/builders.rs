@@ -3,6 +3,23 @@ pub use crate::operation::get_service_last_accessed_details::_get_service_last_a
 
 pub use crate::operation::get_service_last_accessed_details::_get_service_last_accessed_details_input::GetServiceLastAccessedDetailsInputBuilder;
 
+impl GetServiceLastAccessedDetailsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetailsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_service_last_accessed_details::GetServiceLastAccessedDetailsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_service_last_accessed_details();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetServiceLastAccessedDetails`.
 ///
 /// <p>Retrieves a service last accessed report that was created using the <code>GenerateServiceLastAccessedDetails</code> operation. You can use the <code>JobId</code> parameter in <code>GetServiceLastAccessedDetails</code> to retrieve the status of your report job. When the report is complete, you can retrieve the generated report. The report includes a list of Amazon Web Services services that the resource (user, group, role, or managed policy) can access.</p> <note>

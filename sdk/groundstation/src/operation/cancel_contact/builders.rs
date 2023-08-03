@@ -3,6 +3,23 @@ pub use crate::operation::cancel_contact::_cancel_contact_output::CancelContactO
 
 pub use crate::operation::cancel_contact::_cancel_contact_input::CancelContactInputBuilder;
 
+impl CancelContactInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::cancel_contact::CancelContactOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::cancel_contact::CancelContactError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.cancel_contact();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CancelContact`.
 ///
 /// <p>Cancels a contact with a specified contact ID.</p>

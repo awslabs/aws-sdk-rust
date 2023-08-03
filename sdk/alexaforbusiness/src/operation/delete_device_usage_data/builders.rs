@@ -3,6 +3,23 @@ pub use crate::operation::delete_device_usage_data::_delete_device_usage_data_ou
 
 pub use crate::operation::delete_device_usage_data::_delete_device_usage_data_input::DeleteDeviceUsageDataInputBuilder;
 
+impl DeleteDeviceUsageDataInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_device_usage_data::DeleteDeviceUsageDataOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_device_usage_data::DeleteDeviceUsageDataError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_device_usage_data();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteDeviceUsageData`.
 ///
 /// <p>When this action is called for a specified shared device, it allows authorized users to delete the device's entire previous history of voice input data and associated response data. This action can be called once every 24 hours for a specific shared device.</p>

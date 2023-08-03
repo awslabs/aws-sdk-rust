@@ -3,6 +3,23 @@ pub use crate::operation::list_users::_list_users_output::ListUsersOutputBuilder
 
 pub use crate::operation::list_users::_list_users_input::ListUsersInputBuilder;
 
+impl ListUsersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_users::ListUsersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_users::ListUsersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_users();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListUsers`.
 ///
 /// <p>Returns metadata of the User such as <code>UserID</code> in the specified collection. Anonymous User (to reserve faces without any identity) is not returned as part of this request. The results are sorted by system generated primary key ID. If the response is truncated, <code>NextToken</code> is returned in the response that can be used in the subsequent request to retrieve the next set of identities.</p>

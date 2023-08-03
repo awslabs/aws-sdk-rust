@@ -3,6 +3,23 @@ pub use crate::operation::list_permission_groups_by_user::_list_permission_group
 
 pub use crate::operation::list_permission_groups_by_user::_list_permission_groups_by_user_input::ListPermissionGroupsByUserInputBuilder;
 
+impl ListPermissionGroupsByUserInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_permission_groups_by_user::ListPermissionGroupsByUserOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_permission_groups_by_user::ListPermissionGroupsByUserError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_permission_groups_by_user();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListPermissionGroupsByUser`.
 ///
 /// <p>Lists all the permission groups that are associated with a specific user account.</p>

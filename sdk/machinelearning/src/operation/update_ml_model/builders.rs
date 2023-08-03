@@ -3,6 +3,23 @@ pub use crate::operation::update_ml_model::_update_ml_model_output::UpdateMlMode
 
 pub use crate::operation::update_ml_model::_update_ml_model_input::UpdateMlModelInputBuilder;
 
+impl UpdateMlModelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_ml_model::UpdateMlModelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_ml_model::UpdateMLModelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_ml_model();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateMLModel`.
 ///
 /// <p>Updates the <code>MLModelName</code> and the <code>ScoreThreshold</code> of an <code>MLModel</code>.</p>

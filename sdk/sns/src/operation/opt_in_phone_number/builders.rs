@@ -3,6 +3,23 @@ pub use crate::operation::opt_in_phone_number::_opt_in_phone_number_output::OptI
 
 pub use crate::operation::opt_in_phone_number::_opt_in_phone_number_input::OptInPhoneNumberInputBuilder;
 
+impl OptInPhoneNumberInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::opt_in_phone_number::OptInPhoneNumberOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::opt_in_phone_number::OptInPhoneNumberError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.opt_in_phone_number();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `OptInPhoneNumber`.
 ///
 /// <p>Use this request to opt in a phone number that is opted out, which enables you to resume sending SMS messages to the number.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::reserve_contact::_reserve_contact_output::ReserveConta
 
 pub use crate::operation::reserve_contact::_reserve_contact_input::ReserveContactInputBuilder;
 
+impl ReserveContactInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::reserve_contact::ReserveContactOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::reserve_contact::ReserveContactError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.reserve_contact();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ReserveContact`.
 ///
 /// <p>Reserves a contact using specified parameters.</p>

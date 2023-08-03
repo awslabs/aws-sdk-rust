@@ -3,6 +3,23 @@ pub use crate::operation::list_app_versions::_list_app_versions_output::ListAppV
 
 pub use crate::operation::list_app_versions::_list_app_versions_input::ListAppVersionsInputBuilder;
 
+impl ListAppVersionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_app_versions::ListAppVersionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_app_versions::ListAppVersionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_app_versions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAppVersions`.
 ///
 /// <p>Lists the different versions for the Resilience Hub applications.</p>

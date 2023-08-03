@@ -3,6 +3,23 @@ pub use crate::operation::describe_context::_describe_context_output::DescribeCo
 
 pub use crate::operation::describe_context::_describe_context_input::DescribeContextInputBuilder;
 
+impl DescribeContextInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_context::DescribeContextOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_context::DescribeContextError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_context();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeContext`.
 ///
 /// <p>Describes a context.</p>

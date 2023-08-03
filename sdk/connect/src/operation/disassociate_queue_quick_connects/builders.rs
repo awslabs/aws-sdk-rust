@@ -3,6 +3,17 @@ pub use crate::operation::disassociate_queue_quick_connects::_disassociate_queue
 
 pub use crate::operation::disassociate_queue_quick_connects::_disassociate_queue_quick_connects_input::DisassociateQueueQuickConnectsInputBuilder;
 
+impl DisassociateQueueQuickConnectsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::disassociate_queue_quick_connects::DisassociateQueueQuickConnectsOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_queue_quick_connects::DisassociateQueueQuickConnectsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.disassociate_queue_quick_connects();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateQueueQuickConnects`.
 ///
 /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>

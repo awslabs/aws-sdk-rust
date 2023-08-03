@@ -3,6 +3,23 @@ pub use crate::operation::update_domain_name::_update_domain_name_output::Update
 
 pub use crate::operation::update_domain_name::_update_domain_name_input::UpdateDomainNameInputBuilder;
 
+impl UpdateDomainNameInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_domain_name::UpdateDomainNameOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_domain_name::UpdateDomainNameError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_domain_name();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateDomainName`.
 ///
 /// <p>Updates a custom <code>DomainName</code> object.</p>

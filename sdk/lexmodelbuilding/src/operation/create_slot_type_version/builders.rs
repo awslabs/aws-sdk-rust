@@ -3,6 +3,23 @@ pub use crate::operation::create_slot_type_version::_create_slot_type_version_ou
 
 pub use crate::operation::create_slot_type_version::_create_slot_type_version_input::CreateSlotTypeVersionInputBuilder;
 
+impl CreateSlotTypeVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_slot_type_version::CreateSlotTypeVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_slot_type_version::CreateSlotTypeVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_slot_type_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateSlotTypeVersion`.
 ///
 /// <p>Creates a new version of a slot type based on the <code>$LATEST</code> version of the specified slot type. If the <code>$LATEST</code> version of this resource has not changed since the last version that you created, Amazon Lex doesn't create a new version. It returns the last version that you created. </p> <note>

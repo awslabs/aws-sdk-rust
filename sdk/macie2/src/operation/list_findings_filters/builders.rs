@@ -3,6 +3,23 @@ pub use crate::operation::list_findings_filters::_list_findings_filters_output::
 
 pub use crate::operation::list_findings_filters::_list_findings_filters_input::ListFindingsFiltersInputBuilder;
 
+impl ListFindingsFiltersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_findings_filters::ListFindingsFiltersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_findings_filters::ListFindingsFiltersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_findings_filters();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListFindingsFilters`.
 ///
 /// <p>Retrieves a subset of information about all the findings filters for an account.</p>

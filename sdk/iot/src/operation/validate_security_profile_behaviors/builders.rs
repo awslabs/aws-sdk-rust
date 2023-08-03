@@ -3,6 +3,17 @@ pub use crate::operation::validate_security_profile_behaviors::_validate_securit
 
 pub use crate::operation::validate_security_profile_behaviors::_validate_security_profile_behaviors_input::ValidateSecurityProfileBehaviorsInputBuilder;
 
+impl ValidateSecurityProfileBehaviorsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::validate_security_profile_behaviors::ValidateSecurityProfileBehaviorsOutput, ::aws_smithy_http::result::SdkError<crate::operation::validate_security_profile_behaviors::ValidateSecurityProfileBehaviorsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.validate_security_profile_behaviors();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ValidateSecurityProfileBehaviors`.
 ///
 /// <p>Validates a Device Defender security profile behaviors specification.</p>

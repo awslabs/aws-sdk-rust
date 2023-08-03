@@ -3,6 +3,23 @@ pub use crate::operation::batch_stop_job_run::_batch_stop_job_run_output::BatchS
 
 pub use crate::operation::batch_stop_job_run::_batch_stop_job_run_input::BatchStopJobRunInputBuilder;
 
+impl BatchStopJobRunInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_stop_job_run::BatchStopJobRunOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_stop_job_run::BatchStopJobRunError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_stop_job_run();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchStopJobRun`.
 ///
 /// <p>Stops one or more job runs for a specified job definition.</p>

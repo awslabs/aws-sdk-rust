@@ -3,6 +3,23 @@ pub use crate::operation::execute_budget_action::_execute_budget_action_output::
 
 pub use crate::operation::execute_budget_action::_execute_budget_action_input::ExecuteBudgetActionInputBuilder;
 
+impl ExecuteBudgetActionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::execute_budget_action::ExecuteBudgetActionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::execute_budget_action::ExecuteBudgetActionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.execute_budget_action();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ExecuteBudgetAction`.
 ///
 /// <p> Executes a budget action. </p>

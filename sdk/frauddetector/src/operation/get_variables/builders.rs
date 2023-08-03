@@ -3,6 +3,23 @@ pub use crate::operation::get_variables::_get_variables_output::GetVariablesOutp
 
 pub use crate::operation::get_variables::_get_variables_input::GetVariablesInputBuilder;
 
+impl GetVariablesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_variables::GetVariablesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_variables::GetVariablesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_variables();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetVariables`.
 ///
 /// <p>Gets all of the variables or the specific variable. This is a paginated API. Providing null <code>maxSizePerPage</code> results in retrieving maximum of 100 records per page. If you provide <code>maxSizePerPage</code> the value must be between 50 and 100. To get the next page result, a provide a pagination token from <code>GetVariablesResult</code> as part of your request. Null pagination token fetches the records from the beginning. </p>

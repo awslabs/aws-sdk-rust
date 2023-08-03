@@ -3,6 +3,23 @@ pub use crate::operation::create_environment_membership::_create_environment_mem
 
 pub use crate::operation::create_environment_membership::_create_environment_membership_input::CreateEnvironmentMembershipInputBuilder;
 
+impl CreateEnvironmentMembershipInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_environment_membership::CreateEnvironmentMembershipOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_environment_membership::CreateEnvironmentMembershipError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_environment_membership();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateEnvironmentMembership`.
 ///
 /// <p>Adds an environment member to an Cloud9 development environment.</p>

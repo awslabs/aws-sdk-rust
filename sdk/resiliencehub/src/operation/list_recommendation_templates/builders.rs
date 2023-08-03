@@ -3,6 +3,23 @@ pub use crate::operation::list_recommendation_templates::_list_recommendation_te
 
 pub use crate::operation::list_recommendation_templates::_list_recommendation_templates_input::ListRecommendationTemplatesInputBuilder;
 
+impl ListRecommendationTemplatesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_recommendation_templates::ListRecommendationTemplatesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_recommendation_templates::ListRecommendationTemplatesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_recommendation_templates();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListRecommendationTemplates`.
 ///
 /// <p>Lists the recommendation templates for the Resilience Hub applications.</p>

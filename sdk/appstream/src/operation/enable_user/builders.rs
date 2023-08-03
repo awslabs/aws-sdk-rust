@@ -3,6 +3,23 @@ pub use crate::operation::enable_user::_enable_user_output::EnableUserOutputBuil
 
 pub use crate::operation::enable_user::_enable_user_input::EnableUserInputBuilder;
 
+impl EnableUserInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::enable_user::EnableUserOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::enable_user::EnableUserError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.enable_user();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `EnableUser`.
 ///
 /// <p>Enables a user in the user pool. After being enabled, users can sign in to AppStream 2.0 and open applications from the stacks to which they are assigned.</p>

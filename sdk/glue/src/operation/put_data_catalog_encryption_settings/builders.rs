@@ -3,6 +3,17 @@ pub use crate::operation::put_data_catalog_encryption_settings::_put_data_catalo
 
 pub use crate::operation::put_data_catalog_encryption_settings::_put_data_catalog_encryption_settings_input::PutDataCatalogEncryptionSettingsInputBuilder;
 
+impl PutDataCatalogEncryptionSettingsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::put_data_catalog_encryption_settings::PutDataCatalogEncryptionSettingsOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_data_catalog_encryption_settings::PutDataCatalogEncryptionSettingsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.put_data_catalog_encryption_settings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutDataCatalogEncryptionSettings`.
 ///
 /// <p>Sets the security configuration for a specified catalog. After the configuration has been set, the specified encryption is applied to every catalog write thereafter.</p>

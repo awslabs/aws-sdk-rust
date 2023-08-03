@@ -3,6 +3,23 @@ pub use crate::operation::describe_broker_engine_types::_describe_broker_engine_
 
 pub use crate::operation::describe_broker_engine_types::_describe_broker_engine_types_input::DescribeBrokerEngineTypesInputBuilder;
 
+impl DescribeBrokerEngineTypesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_broker_engine_types::DescribeBrokerEngineTypesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_broker_engine_types::DescribeBrokerEngineTypesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_broker_engine_types();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeBrokerEngineTypes`.
 ///
 /// <p>Describe available engine types and versions.</p>

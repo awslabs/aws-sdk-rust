@@ -3,6 +3,23 @@ pub use crate::operation::list_collections::_list_collections_output::ListCollec
 
 pub use crate::operation::list_collections::_list_collections_input::ListCollectionsInputBuilder;
 
+impl ListCollectionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_collections::ListCollectionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_collections::ListCollectionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_collections();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListCollections`.
 ///
 /// <p>Returns list of collection IDs in your account. If the result is truncated, the response also provides a <code>NextToken</code> that you can use in the subsequent request to fetch the next set of collection IDs.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_room_skill_parameter::_delete_room_skill_parame
 
 pub use crate::operation::delete_room_skill_parameter::_delete_room_skill_parameter_input::DeleteRoomSkillParameterInputBuilder;
 
+impl DeleteRoomSkillParameterInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_room_skill_parameter::DeleteRoomSkillParameterOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_room_skill_parameter::DeleteRoomSkillParameterError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_room_skill_parameter();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteRoomSkillParameter`.
 ///
 /// <p>Deletes room skill parameter details by room, skill, and parameter key ID.</p>

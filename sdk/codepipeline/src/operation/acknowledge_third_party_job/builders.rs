@@ -3,6 +3,23 @@ pub use crate::operation::acknowledge_third_party_job::_acknowledge_third_party_
 
 pub use crate::operation::acknowledge_third_party_job::_acknowledge_third_party_job_input::AcknowledgeThirdPartyJobInputBuilder;
 
+impl AcknowledgeThirdPartyJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::acknowledge_third_party_job::AcknowledgeThirdPartyJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::acknowledge_third_party_job::AcknowledgeThirdPartyJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.acknowledge_third_party_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AcknowledgeThirdPartyJob`.
 ///
 /// <p>Confirms a job worker has received the specified job. Used for partner actions only.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::submit_job::_submit_job_output::SubmitJobOutputBuilder
 
 pub use crate::operation::submit_job::_submit_job_input::SubmitJobInputBuilder;
 
+impl SubmitJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::submit_job::SubmitJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::submit_job::SubmitJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.submit_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SubmitJob`.
 ///
 /// <p>Submits an Batch job from a job definition. Parameters that are specified during <code>SubmitJob</code> override parameters defined in the job definition. vCPU and memory requirements that are specified in the <code>resourceRequirements</code> objects in the job definition are the exception. They can't be overridden this way using the <code>memory</code> and <code>vcpus</code> parameters. Rather, you must specify updates to job definition parameters in a <code>resourceRequirements</code> object that's included in the <code>containerOverrides</code> parameter.</p> <note>

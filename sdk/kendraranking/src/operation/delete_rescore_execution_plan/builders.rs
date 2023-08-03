@@ -3,6 +3,23 @@ pub use crate::operation::delete_rescore_execution_plan::_delete_rescore_executi
 
 pub use crate::operation::delete_rescore_execution_plan::_delete_rescore_execution_plan_input::DeleteRescoreExecutionPlanInputBuilder;
 
+impl DeleteRescoreExecutionPlanInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_rescore_execution_plan::DeleteRescoreExecutionPlanOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_rescore_execution_plan::DeleteRescoreExecutionPlanError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_rescore_execution_plan();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteRescoreExecutionPlan`.
 ///
 /// <p>Deletes a rescore execution plan. A rescore execution plan is an Amazon Kendra Intelligent Ranking resource used for provisioning the <code>Rescore</code> API.</p>

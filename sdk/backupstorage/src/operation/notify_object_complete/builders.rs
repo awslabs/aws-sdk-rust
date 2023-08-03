@@ -3,6 +3,23 @@ pub use crate::operation::notify_object_complete::_notify_object_complete_output
 
 pub use crate::operation::notify_object_complete::_notify_object_complete_input::NotifyObjectCompleteInputBuilder;
 
+impl NotifyObjectCompleteInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::notify_object_complete::NotifyObjectCompleteOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::notify_object_complete::NotifyObjectCompleteError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.notify_object_complete();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `NotifyObjectComplete`.
 ///
 /// Complete upload

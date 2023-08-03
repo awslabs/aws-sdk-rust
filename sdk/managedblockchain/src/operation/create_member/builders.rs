@@ -3,6 +3,23 @@ pub use crate::operation::create_member::_create_member_output::CreateMemberOutp
 
 pub use crate::operation::create_member::_create_member_input::CreateMemberInputBuilder;
 
+impl CreateMemberInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_member::CreateMemberOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_member::CreateMemberError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_member();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateMember`.
 ///
 /// <p>Creates a member within a Managed Blockchain network.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_ip_groups::_describe_ip_groups_output::Descri
 
 pub use crate::operation::describe_ip_groups::_describe_ip_groups_input::DescribeIpGroupsInputBuilder;
 
+impl DescribeIpGroupsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_ip_groups::DescribeIpGroupsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_ip_groups::DescribeIpGroupsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_ip_groups();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeIpGroups`.
 ///
 /// <p>Describes one or more of your IP access control groups.</p>

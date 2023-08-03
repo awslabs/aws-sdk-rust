@@ -3,6 +3,23 @@ pub use crate::operation::initiate_job::_initiate_job_output::InitiateJobOutputB
 
 pub use crate::operation::initiate_job::_initiate_job_input::InitiateJobInputBuilder;
 
+impl InitiateJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::initiate_job::InitiateJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::initiate_job::InitiateJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.initiate_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `InitiateJob`.
 ///
 /// <p>This operation initiates a job of the specified type, which can be a select, an archival retrieval, or a vault retrieval. For more information about using this operation, see the documentation for the underlying REST API <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-initiate-job-post.html">Initiate a Job</a>. </p>

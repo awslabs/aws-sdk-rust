@@ -3,6 +3,23 @@ pub use crate::operation::get_usage_statistics::_get_usage_statistics_output::Ge
 
 pub use crate::operation::get_usage_statistics::_get_usage_statistics_input::GetUsageStatisticsInputBuilder;
 
+impl GetUsageStatisticsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_usage_statistics::GetUsageStatisticsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_usage_statistics::GetUsageStatisticsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_usage_statistics();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetUsageStatistics`.
 ///
 /// <p>Lists Amazon GuardDuty usage statistics over the last 30 days for the specified detector ID. For newly enabled detectors or data sources, the cost returned will include only the usage so far under 30 days. This may differ from the cost metrics in the console, which project usage over 30 days to provide a monthly cost estimate. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/monitoring_costs.html#usage-calculations">Understanding How Usage Costs are Calculated</a>.</p>

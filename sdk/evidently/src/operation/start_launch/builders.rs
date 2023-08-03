@@ -3,6 +3,23 @@ pub use crate::operation::start_launch::_start_launch_output::StartLaunchOutputB
 
 pub use crate::operation::start_launch::_start_launch_input::StartLaunchInputBuilder;
 
+impl StartLaunchInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_launch::StartLaunchOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_launch::StartLaunchError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_launch();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartLaunch`.
 ///
 /// <p>Starts an existing launch. To create a launch, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_CreateLaunch.html">CreateLaunch</a>.</p>

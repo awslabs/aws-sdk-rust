@@ -3,6 +3,23 @@ pub use crate::operation::update_route::_update_route_output::UpdateRouteOutputB
 
 pub use crate::operation::update_route::_update_route_input::UpdateRouteInputBuilder;
 
+impl UpdateRouteInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_route::UpdateRouteOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_route::UpdateRouteError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_route();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateRoute`.
 ///
 /// <p>Updates a Route.</p>

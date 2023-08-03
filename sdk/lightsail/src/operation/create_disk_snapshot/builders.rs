@@ -3,6 +3,23 @@ pub use crate::operation::create_disk_snapshot::_create_disk_snapshot_output::Cr
 
 pub use crate::operation::create_disk_snapshot::_create_disk_snapshot_input::CreateDiskSnapshotInputBuilder;
 
+impl CreateDiskSnapshotInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_disk_snapshot::CreateDiskSnapshotOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_disk_snapshot::CreateDiskSnapshotError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_disk_snapshot();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateDiskSnapshot`.
 ///
 /// <p>Creates a snapshot of a block storage disk. You can use snapshots for backups, to make copies of disks, and to save data before shutting down a Lightsail instance.</p>

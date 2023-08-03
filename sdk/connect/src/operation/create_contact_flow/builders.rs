@@ -3,6 +3,23 @@ pub use crate::operation::create_contact_flow::_create_contact_flow_output::Crea
 
 pub use crate::operation::create_contact_flow::_create_contact_flow_input::CreateContactFlowInputBuilder;
 
+impl CreateContactFlowInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_contact_flow::CreateContactFlowOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_contact_flow::CreateContactFlowError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_contact_flow();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateContactFlow`.
 ///
 /// <p>Creates a flow for the specified Amazon Connect instance.</p>

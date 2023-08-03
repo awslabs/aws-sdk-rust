@@ -3,6 +3,23 @@ pub use crate::operation::create_location_efs::_create_location_efs_output::Crea
 
 pub use crate::operation::create_location_efs::_create_location_efs_input::CreateLocationEfsInputBuilder;
 
+impl CreateLocationEfsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_location_efs::CreateLocationEfsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_location_efs::CreateLocationEfsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_location_efs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateLocationEfs`.
 ///
 /// <p>Creates an endpoint for an Amazon EFS file system that DataSync can access for a transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-efs-location.html">Creating a location for Amazon EFS</a>.</p>

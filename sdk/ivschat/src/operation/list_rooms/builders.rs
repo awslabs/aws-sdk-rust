@@ -3,6 +3,23 @@ pub use crate::operation::list_rooms::_list_rooms_output::ListRoomsOutputBuilder
 
 pub use crate::operation::list_rooms::_list_rooms_input::ListRoomsInputBuilder;
 
+impl ListRoomsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_rooms::ListRoomsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_rooms::ListRoomsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_rooms();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListRooms`.
 ///
 /// <p>Gets summary information about all your rooms in the AWS region where the API request is processed. Results are sorted in descending order of <code>updateTime</code>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_file::_get_file_output::GetFileOutputBuilder;
 
 pub use crate::operation::get_file::_get_file_input::GetFileInputBuilder;
 
+impl GetFileInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_file::GetFileOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_file::GetFileError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_file();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetFile`.
 ///
 /// <p>Returns the base-64 encoded contents of a specified file and its metadata.</p>

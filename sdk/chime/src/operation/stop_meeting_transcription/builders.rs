@@ -3,6 +3,23 @@ pub use crate::operation::stop_meeting_transcription::_stop_meeting_transcriptio
 
 pub use crate::operation::stop_meeting_transcription::_stop_meeting_transcription_input::StopMeetingTranscriptionInputBuilder;
 
+impl StopMeetingTranscriptionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_meeting_transcription::StopMeetingTranscriptionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_meeting_transcription::StopMeetingTranscriptionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_meeting_transcription();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopMeetingTranscription`.
 ///
 /// <p>Stops transcription for the specified <code>meetingId</code>.</p> <important>

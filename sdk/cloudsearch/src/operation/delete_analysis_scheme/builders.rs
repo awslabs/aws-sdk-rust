@@ -3,6 +3,23 @@ pub use crate::operation::delete_analysis_scheme::_delete_analysis_scheme_output
 
 pub use crate::operation::delete_analysis_scheme::_delete_analysis_scheme_input::DeleteAnalysisSchemeInputBuilder;
 
+impl DeleteAnalysisSchemeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_analysis_scheme::DeleteAnalysisSchemeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_analysis_scheme::DeleteAnalysisSchemeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_analysis_scheme();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteAnalysisScheme`.
 ///
 /// <p>Deletes an analysis scheme. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html" target="_blank">Configuring Analysis Schemes</a> in the <i>Amazon CloudSearch Developer Guide</i>. </p>

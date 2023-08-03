@@ -3,6 +3,23 @@ pub use crate::operation::list_databases::_list_databases_output::ListDatabasesO
 
 pub use crate::operation::list_databases::_list_databases_input::ListDatabasesInputBuilder;
 
+impl ListDatabasesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_databases::ListDatabasesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_databases::ListDatabasesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_databases();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDatabases`.
 ///
 /// <p>List the databases in a cluster. A token is returned to page through the database list. Depending on the authorization method, use one of the following combinations of request parameters: </p>

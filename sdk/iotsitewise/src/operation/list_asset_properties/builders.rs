@@ -3,6 +3,23 @@ pub use crate::operation::list_asset_properties::_list_asset_properties_output::
 
 pub use crate::operation::list_asset_properties::_list_asset_properties_input::ListAssetPropertiesInputBuilder;
 
+impl ListAssetPropertiesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_asset_properties::ListAssetPropertiesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_asset_properties::ListAssetPropertiesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_asset_properties();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAssetProperties`.
 ///
 /// <p>Retrieves a paginated list of properties associated with an asset. If you update properties associated with the model before you finish listing all the properties, you need to start all over again.</p>

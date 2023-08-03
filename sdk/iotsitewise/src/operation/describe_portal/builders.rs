@@ -3,6 +3,23 @@ pub use crate::operation::describe_portal::_describe_portal_output::DescribePort
 
 pub use crate::operation::describe_portal::_describe_portal_input::DescribePortalInputBuilder;
 
+impl DescribePortalInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_portal::DescribePortalOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_portal::DescribePortalError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_portal();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribePortal`.
 ///
 /// <p>Retrieves information about a portal.</p>

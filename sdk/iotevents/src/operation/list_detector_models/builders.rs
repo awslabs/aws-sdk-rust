@@ -3,6 +3,23 @@ pub use crate::operation::list_detector_models::_list_detector_models_output::Li
 
 pub use crate::operation::list_detector_models::_list_detector_models_input::ListDetectorModelsInputBuilder;
 
+impl ListDetectorModelsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_detector_models::ListDetectorModelsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_detector_models::ListDetectorModelsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_detector_models();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDetectorModels`.
 ///
 /// <p>Lists the detector models you have created. Only the metadata associated with each detector model is returned.</p>

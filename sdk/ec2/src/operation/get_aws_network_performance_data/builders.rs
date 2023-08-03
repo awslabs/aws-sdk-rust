@@ -3,6 +3,23 @@ pub use crate::operation::get_aws_network_performance_data::_get_aws_network_per
 
 pub use crate::operation::get_aws_network_performance_data::_get_aws_network_performance_data_input::GetAwsNetworkPerformanceDataInputBuilder;
 
+impl GetAwsNetworkPerformanceDataInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_aws_network_performance_data::GetAwsNetworkPerformanceDataOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_aws_network_performance_data::GetAwsNetworkPerformanceDataError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_aws_network_performance_data();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetAwsNetworkPerformanceData`.
 ///
 /// <p>Gets network performance data.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_data_cells_filter::_get_data_cells_filter_output::
 
 pub use crate::operation::get_data_cells_filter::_get_data_cells_filter_input::GetDataCellsFilterInputBuilder;
 
+impl GetDataCellsFilterInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_data_cells_filter::GetDataCellsFilterOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_data_cells_filter::GetDataCellsFilterError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_data_cells_filter();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetDataCellsFilter`.
 ///
 /// <p>Returns a data cells filter.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_migration::_get_migration_output::GetMigrationOutp
 
 pub use crate::operation::get_migration::_get_migration_input::GetMigrationInputBuilder;
 
+impl GetMigrationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_migration::GetMigrationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_migration::GetMigrationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_migration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetMigration`.
 ///
 /// <p>Provides details about an ongoing or complete migration from an Amazon Lex V1 bot to an Amazon Lex V2 bot. Use this operation to view the migration alerts and warnings related to the migration.</p>

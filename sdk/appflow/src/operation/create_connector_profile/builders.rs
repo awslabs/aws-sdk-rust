@@ -3,6 +3,23 @@ pub use crate::operation::create_connector_profile::_create_connector_profile_ou
 
 pub use crate::operation::create_connector_profile::_create_connector_profile_input::CreateConnectorProfileInputBuilder;
 
+impl CreateConnectorProfileInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_connector_profile::CreateConnectorProfileOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_connector_profile::CreateConnectorProfileError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_connector_profile();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateConnectorProfile`.
 ///
 /// <p> Creates a new connector profile associated with your Amazon Web Services account. There is a soft quota of 100 connector profiles per Amazon Web Services account. If you need more connector profiles than this quota allows, you can submit a request to the Amazon AppFlow team through the Amazon AppFlow support channel. In each connector profile that you create, you can provide the credentials and properties for only one connector.</p>

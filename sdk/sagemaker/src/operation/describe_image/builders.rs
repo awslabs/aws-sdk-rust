@@ -3,6 +3,23 @@ pub use crate::operation::describe_image::_describe_image_output::DescribeImageO
 
 pub use crate::operation::describe_image::_describe_image_input::DescribeImageInputBuilder;
 
+impl DescribeImageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_image::DescribeImageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_image::DescribeImageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_image();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeImage`.
 ///
 /// <p>Describes a SageMaker image.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::associate_certificate::_associate_certificate_output::
 
 pub use crate::operation::associate_certificate::_associate_certificate_input::AssociateCertificateInputBuilder;
 
+impl AssociateCertificateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_certificate::AssociateCertificateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_certificate::AssociateCertificateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_certificate();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateCertificate`.
 ///
 /// Associates an AWS Certificate Manager (ACM) Amazon Resource Name (ARN) with AWS Elemental MediaConvert.

@@ -3,6 +3,17 @@ pub use crate::operation::describe_connections_on_interconnect::_describe_connec
 
 pub use crate::operation::describe_connections_on_interconnect::_describe_connections_on_interconnect_input::DescribeConnectionsOnInterconnectInputBuilder;
 
+impl DescribeConnectionsOnInterconnectInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_connections_on_interconnect::DescribeConnectionsOnInterconnectOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_connections_on_interconnect::DescribeConnectionsOnInterconnectError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_connections_on_interconnect();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeConnectionsOnInterconnect`.
 ///
 /// <p>Deprecated. Use <code>DescribeHostedConnections</code> instead.</p>

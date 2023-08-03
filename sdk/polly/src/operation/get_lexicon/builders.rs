@@ -3,6 +3,23 @@ pub use crate::operation::get_lexicon::_get_lexicon_output::GetLexiconOutputBuil
 
 pub use crate::operation::get_lexicon::_get_lexicon_input::GetLexiconInputBuilder;
 
+impl GetLexiconInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_lexicon::GetLexiconOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_lexicon::GetLexiconError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_lexicon();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetLexicon`.
 ///
 /// <p>Returns the content of the specified pronunciation lexicon stored in an Amazon Web Services Region. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing Lexicons</a>.</p>

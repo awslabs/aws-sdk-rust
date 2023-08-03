@@ -3,6 +3,23 @@ pub use crate::operation::create_members::_create_members_output::CreateMembersO
 
 pub use crate::operation::create_members::_create_members_input::CreateMembersInputBuilder;
 
+impl CreateMembersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_members::CreateMembersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_members::CreateMembersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_members();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateMembers`.
 ///
 /// <p>Creates a member association in Security Hub between the specified accounts and the account used to make the request, which is the administrator account. If you are integrated with Organizations, then the administrator account is designated by the organization management account.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_image_pipeline::_delete_image_pipeline_output::
 
 pub use crate::operation::delete_image_pipeline::_delete_image_pipeline_input::DeleteImagePipelineInputBuilder;
 
+impl DeleteImagePipelineInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_image_pipeline::DeleteImagePipelineOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_image_pipeline::DeleteImagePipelineError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_image_pipeline();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteImagePipeline`.
 ///
 /// <p>Deletes an image pipeline.</p>

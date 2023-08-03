@@ -3,6 +3,17 @@ pub use crate::operation::describe_fleet_location_attributes::_describe_fleet_lo
 
 pub use crate::operation::describe_fleet_location_attributes::_describe_fleet_location_attributes_input::DescribeFleetLocationAttributesInputBuilder;
 
+impl DescribeFleetLocationAttributesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_fleet_location_attributes::DescribeFleetLocationAttributesOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_fleet_location_attributes::DescribeFleetLocationAttributesError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_fleet_location_attributes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeFleetLocationAttributes`.
 ///
 /// <p>Retrieves information on a fleet's remote locations, including life-cycle status and any suspended fleet activity. </p>

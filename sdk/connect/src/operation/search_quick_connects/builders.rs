@@ -3,6 +3,23 @@ pub use crate::operation::search_quick_connects::_search_quick_connects_output::
 
 pub use crate::operation::search_quick_connects::_search_quick_connects_input::SearchQuickConnectsInputBuilder;
 
+impl SearchQuickConnectsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::search_quick_connects::SearchQuickConnectsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::search_quick_connects::SearchQuickConnectsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.search_quick_connects();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SearchQuickConnects`.
 ///
 /// <p>Searches quick connects in an Amazon Connect instance, with optional filtering.</p>

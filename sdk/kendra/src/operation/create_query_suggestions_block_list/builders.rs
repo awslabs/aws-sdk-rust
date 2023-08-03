@@ -3,6 +3,17 @@ pub use crate::operation::create_query_suggestions_block_list::_create_query_sug
 
 pub use crate::operation::create_query_suggestions_block_list::_create_query_suggestions_block_list_input::CreateQuerySuggestionsBlockListInputBuilder;
 
+impl CreateQuerySuggestionsBlockListInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::create_query_suggestions_block_list::CreateQuerySuggestionsBlockListOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_query_suggestions_block_list::CreateQuerySuggestionsBlockListError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.create_query_suggestions_block_list();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateQuerySuggestionsBlockList`.
 ///
 /// <p>Creates a block list to exlcude certain queries from suggestions.</p>

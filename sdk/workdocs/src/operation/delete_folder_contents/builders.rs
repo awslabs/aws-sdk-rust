@@ -3,6 +3,23 @@ pub use crate::operation::delete_folder_contents::_delete_folder_contents_output
 
 pub use crate::operation::delete_folder_contents::_delete_folder_contents_input::DeleteFolderContentsInputBuilder;
 
+impl DeleteFolderContentsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_folder_contents::DeleteFolderContentsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_folder_contents::DeleteFolderContentsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_folder_contents();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteFolderContents`.
 ///
 /// <p>Deletes the contents of the specified folder.</p>

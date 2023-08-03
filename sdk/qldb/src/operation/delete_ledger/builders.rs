@@ -3,6 +3,23 @@ pub use crate::operation::delete_ledger::_delete_ledger_output::DeleteLedgerOutp
 
 pub use crate::operation::delete_ledger::_delete_ledger_input::DeleteLedgerInputBuilder;
 
+impl DeleteLedgerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_ledger::DeleteLedgerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_ledger::DeleteLedgerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_ledger();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteLedger`.
 ///
 /// <p>Deletes a ledger and all of its contents. This action is irreversible.</p>

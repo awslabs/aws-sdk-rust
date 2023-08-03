@@ -3,6 +3,23 @@ pub use crate::operation::update_data_lake::_update_data_lake_output::UpdateData
 
 pub use crate::operation::update_data_lake::_update_data_lake_input::UpdateDataLakeInputBuilder;
 
+impl UpdateDataLakeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_data_lake::UpdateDataLakeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_data_lake::UpdateDataLakeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_data_lake();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateDataLake`.
 ///
 /// <p>Specifies where to store your security data and for how long. You can add a rollup Region to consolidate data from multiple Amazon Web Services Regions.</p>

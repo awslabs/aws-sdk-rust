@@ -3,6 +3,17 @@ pub use crate::operation::batch_delete_rum_metric_definitions::_batch_delete_rum
 
 pub use crate::operation::batch_delete_rum_metric_definitions::_batch_delete_rum_metric_definitions_input::BatchDeleteRumMetricDefinitionsInputBuilder;
 
+impl BatchDeleteRumMetricDefinitionsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::batch_delete_rum_metric_definitions::BatchDeleteRumMetricDefinitionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::batch_delete_rum_metric_definitions::BatchDeleteRumMetricDefinitionsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.batch_delete_rum_metric_definitions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchDeleteRumMetricDefinitions`.
 ///
 /// <p>Removes the specified metrics from being sent to an extended metrics destination.</p>

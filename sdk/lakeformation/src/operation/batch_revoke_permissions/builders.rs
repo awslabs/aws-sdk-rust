@@ -3,6 +3,23 @@ pub use crate::operation::batch_revoke_permissions::_batch_revoke_permissions_ou
 
 pub use crate::operation::batch_revoke_permissions::_batch_revoke_permissions_input::BatchRevokePermissionsInputBuilder;
 
+impl BatchRevokePermissionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_revoke_permissions::BatchRevokePermissionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_revoke_permissions::BatchRevokePermissionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_revoke_permissions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchRevokePermissions`.
 ///
 /// <p>Batch operation to revoke permissions from the principal.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::merge_shards::_merge_shards_output::MergeShardsOutputB
 
 pub use crate::operation::merge_shards::_merge_shards_input::MergeShardsInputBuilder;
 
+impl MergeShardsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::merge_shards::MergeShardsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::merge_shards::MergeShardsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.merge_shards();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `MergeShards`.
 ///
 /// <p>Merges two adjacent shards in a Kinesis data stream and combines them into a single shard to reduce the stream's capacity to ingest and transport data. This API is only supported for the data streams with the provisioned capacity mode. Two shards are considered adjacent if the union of the hash key ranges for the two shards form a contiguous set with no gaps. For example, if you have two shards, one with a hash key range of 276...381 and the other with a hash key range of 382...454, then you could merge these two shards into a single shard that would have a hash key range of 276...454. After the merge, the single child shard receives data for all hash key values covered by the two parent shards.</p> <note>

@@ -3,6 +3,23 @@ pub use crate::operation::get_workflow_run_properties::_get_workflow_run_propert
 
 pub use crate::operation::get_workflow_run_properties::_get_workflow_run_properties_input::GetWorkflowRunPropertiesInputBuilder;
 
+impl GetWorkflowRunPropertiesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_workflow_run_properties::GetWorkflowRunPropertiesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_workflow_run_properties::GetWorkflowRunPropertiesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_workflow_run_properties();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetWorkflowRunProperties`.
 ///
 /// <p>Retrieves the workflow run properties which were set during the run.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_source_regions::_describe_source_regions_outp
 
 pub use crate::operation::describe_source_regions::_describe_source_regions_input::DescribeSourceRegionsInputBuilder;
 
+impl DescribeSourceRegionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_source_regions::DescribeSourceRegionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_source_regions::DescribeSourceRegionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_source_regions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeSourceRegions`.
 ///
 /// <p>Returns a list of the source Amazon Web Services Regions where the current Amazon Web Services Region can create a read replica, copy a DB snapshot from, or replicate automated backups from.</p>

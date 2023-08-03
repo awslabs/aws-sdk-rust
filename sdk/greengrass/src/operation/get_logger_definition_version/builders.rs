@@ -3,6 +3,23 @@ pub use crate::operation::get_logger_definition_version::_get_logger_definition_
 
 pub use crate::operation::get_logger_definition_version::_get_logger_definition_version_input::GetLoggerDefinitionVersionInputBuilder;
 
+impl GetLoggerDefinitionVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_logger_definition_version::GetLoggerDefinitionVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_logger_definition_version::GetLoggerDefinitionVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_logger_definition_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetLoggerDefinitionVersion`.
 ///
 /// Retrieves information about a logger definition version.

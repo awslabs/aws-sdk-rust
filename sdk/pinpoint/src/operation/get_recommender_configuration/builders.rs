@@ -3,6 +3,23 @@ pub use crate::operation::get_recommender_configuration::_get_recommender_config
 
 pub use crate::operation::get_recommender_configuration::_get_recommender_configuration_input::GetRecommenderConfigurationInputBuilder;
 
+impl GetRecommenderConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_recommender_configuration::GetRecommenderConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_recommender_configuration::GetRecommenderConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_recommender_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetRecommenderConfiguration`.
 ///
 /// <p>Retrieves information about an Amazon Pinpoint configuration for a recommender model.</p>

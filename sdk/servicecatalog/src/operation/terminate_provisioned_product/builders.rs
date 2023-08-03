@@ -3,6 +3,23 @@ pub use crate::operation::terminate_provisioned_product::_terminate_provisioned_
 
 pub use crate::operation::terminate_provisioned_product::_terminate_provisioned_product_input::TerminateProvisionedProductInputBuilder;
 
+impl TerminateProvisionedProductInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::terminate_provisioned_product::TerminateProvisionedProductOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::terminate_provisioned_product::TerminateProvisionedProductError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.terminate_provisioned_product();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `TerminateProvisionedProduct`.
 ///
 /// <p>Terminates the specified provisioned product.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::confirm_product_instance::_confirm_product_instance_ou
 
 pub use crate::operation::confirm_product_instance::_confirm_product_instance_input::ConfirmProductInstanceInputBuilder;
 
+impl ConfirmProductInstanceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::confirm_product_instance::ConfirmProductInstanceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::confirm_product_instance::ConfirmProductInstanceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.confirm_product_instance();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ConfirmProductInstance`.
 ///
 /// <p>Determines whether a product code is associated with an instance. This action can only be used by the owner of the product code. It is useful when a product code owner must verify whether another user's instance is eligible for support.</p>

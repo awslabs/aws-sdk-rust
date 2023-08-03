@@ -3,6 +3,23 @@ pub use crate::operation::get_blueprints::_get_blueprints_output::GetBlueprintsO
 
 pub use crate::operation::get_blueprints::_get_blueprints_input::GetBlueprintsInputBuilder;
 
+impl GetBlueprintsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_blueprints::GetBlueprintsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_blueprints::GetBlueprintsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_blueprints();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetBlueprints`.
 ///
 /// <p>Returns the list of available instance images, or <i>blueprints</i>. You can use a blueprint to create a new instance already running a specific operating system, as well as a preinstalled app or development stack. The software each instance is running depends on the blueprint image you choose.</p> <note>

@@ -3,6 +3,17 @@ pub use crate::operation::list_pending_invitation_resources::_list_pending_invit
 
 pub use crate::operation::list_pending_invitation_resources::_list_pending_invitation_resources_input::ListPendingInvitationResourcesInputBuilder;
 
+impl ListPendingInvitationResourcesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_pending_invitation_resources::ListPendingInvitationResourcesOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_pending_invitation_resources::ListPendingInvitationResourcesError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_pending_invitation_resources();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListPendingInvitationResources`.
 ///
 /// <p>Lists the resources in a resource share that is shared with you but for which the invitation is still <code>PENDING</code>. That means that you haven't accepted or rejected the invitation and the invitation hasn't expired.</p>

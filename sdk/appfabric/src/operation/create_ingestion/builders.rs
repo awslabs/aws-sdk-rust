@@ -3,6 +3,23 @@ pub use crate::operation::create_ingestion::_create_ingestion_output::CreateInge
 
 pub use crate::operation::create_ingestion::_create_ingestion_input::CreateIngestionInputBuilder;
 
+impl CreateIngestionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_ingestion::CreateIngestionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_ingestion::CreateIngestionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_ingestion();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateIngestion`.
 ///
 /// <p>Creates a data ingestion for an application.</p>

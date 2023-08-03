@@ -3,6 +3,23 @@ pub use crate::operation::delete_bucket_access_key::_delete_bucket_access_key_ou
 
 pub use crate::operation::delete_bucket_access_key::_delete_bucket_access_key_input::DeleteBucketAccessKeyInputBuilder;
 
+impl DeleteBucketAccessKeyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_bucket_access_key::DeleteBucketAccessKeyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_bucket_access_key::DeleteBucketAccessKeyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_bucket_access_key();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteBucketAccessKey`.
 ///
 /// <p>Deletes an access key for the specified Amazon Lightsail bucket.</p>

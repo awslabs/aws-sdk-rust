@@ -3,6 +3,23 @@ pub use crate::operation::list_compute::_list_compute_output::ListComputeOutputB
 
 pub use crate::operation::list_compute::_list_compute_input::ListComputeInputBuilder;
 
+impl ListComputeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_compute::ListComputeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_compute::ListComputeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_compute();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListCompute`.
 ///
 /// <p>Retrieves all compute resources registered to a fleet in your Amazon Web Services account. You can filter the result set by location.</p>

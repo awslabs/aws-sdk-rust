@@ -3,6 +3,23 @@ pub use crate::operation::test_wireless_device::_test_wireless_device_output::Te
 
 pub use crate::operation::test_wireless_device::_test_wireless_device_input::TestWirelessDeviceInputBuilder;
 
+impl TestWirelessDeviceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::test_wireless_device::TestWirelessDeviceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::test_wireless_device::TestWirelessDeviceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.test_wireless_device();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `TestWirelessDevice`.
 ///
 /// <p>Simulates a provisioned device by sending an uplink data payload of <code>Hello</code>.</p>

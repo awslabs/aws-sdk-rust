@@ -3,6 +3,23 @@ pub use crate::operation::list_dev_environment_sessions::_list_dev_environment_s
 
 pub use crate::operation::list_dev_environment_sessions::_list_dev_environment_sessions_input::ListDevEnvironmentSessionsInputBuilder;
 
+impl ListDevEnvironmentSessionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_dev_environment_sessions::ListDevEnvironmentSessionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_dev_environment_sessions::ListDevEnvironmentSessionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_dev_environment_sessions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDevEnvironmentSessions`.
 ///
 /// <p>Retrieves a list of active sessions for a Dev Environment in a project.</p>

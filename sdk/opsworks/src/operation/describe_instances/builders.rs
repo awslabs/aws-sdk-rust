@@ -3,6 +3,23 @@ pub use crate::operation::describe_instances::_describe_instances_output::Descri
 
 pub use crate::operation::describe_instances::_describe_instances_input::DescribeInstancesInputBuilder;
 
+impl DescribeInstancesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_instances::DescribeInstancesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_instances::DescribeInstancesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_instances();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeInstances`.
 ///
 /// <p>Requests a description of a set of instances.</p> <note>

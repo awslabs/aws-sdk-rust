@@ -3,6 +3,23 @@ pub use crate::operation::describe_fleet_events::_describe_fleet_events_output::
 
 pub use crate::operation::describe_fleet_events::_describe_fleet_events_input::DescribeFleetEventsInputBuilder;
 
+impl DescribeFleetEventsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_fleet_events::DescribeFleetEventsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_fleet_events::DescribeFleetEventsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_fleet_events();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeFleetEvents`.
 ///
 /// <p>Retrieves entries from a fleet's event log. Fleet events are initiated by changes in status, such as during fleet creation and termination, changes in capacity, etc. If a fleet has multiple locations, events are also initiated by changes to status and capacity in remote locations. </p>

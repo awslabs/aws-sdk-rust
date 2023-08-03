@@ -3,6 +3,23 @@ pub use crate::operation::update_image_version::_update_image_version_output::Up
 
 pub use crate::operation::update_image_version::_update_image_version_input::UpdateImageVersionInputBuilder;
 
+impl UpdateImageVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_image_version::UpdateImageVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_image_version::UpdateImageVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_image_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateImageVersion`.
 ///
 /// <p>Updates the properties of a SageMaker image version.</p>

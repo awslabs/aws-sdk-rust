@@ -3,6 +3,23 @@ pub use crate::operation::create_conditional_forwarder::_create_conditional_forw
 
 pub use crate::operation::create_conditional_forwarder::_create_conditional_forwarder_input::CreateConditionalForwarderInputBuilder;
 
+impl CreateConditionalForwarderInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_conditional_forwarder::CreateConditionalForwarderOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_conditional_forwarder::CreateConditionalForwarderError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_conditional_forwarder();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateConditionalForwarder`.
 ///
 /// <p>Creates a conditional forwarder associated with your Amazon Web Services directory. Conditional forwarders are required in order to set up a trust relationship with another domain. The conditional forwarder points to the trusted domain.</p>

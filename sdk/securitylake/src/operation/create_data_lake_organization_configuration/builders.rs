@@ -3,6 +3,17 @@ pub use crate::operation::create_data_lake_organization_configuration::_create_d
 
 pub use crate::operation::create_data_lake_organization_configuration::_create_data_lake_organization_configuration_input::CreateDataLakeOrganizationConfigurationInputBuilder;
 
+impl CreateDataLakeOrganizationConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::create_data_lake_organization_configuration::CreateDataLakeOrganizationConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_data_lake_organization_configuration::CreateDataLakeOrganizationConfigurationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.create_data_lake_organization_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateDataLakeOrganizationConfiguration`.
 ///
 /// <p>Automatically enables Amazon Security Lake for new member accounts in your organization. Security Lake is not automatically enabled for any existing member accounts in your organization.</p>

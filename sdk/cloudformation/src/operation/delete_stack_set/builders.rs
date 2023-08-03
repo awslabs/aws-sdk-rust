@@ -3,6 +3,23 @@ pub use crate::operation::delete_stack_set::_delete_stack_set_output::DeleteStac
 
 pub use crate::operation::delete_stack_set::_delete_stack_set_input::DeleteStackSetInputBuilder;
 
+impl DeleteStackSetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_stack_set::DeleteStackSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_stack_set::DeleteStackSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_stack_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteStackSet`.
 ///
 /// <p>Deletes a stack set. Before you can delete a stack set, all its member stack instances must be deleted. For more information about how to complete this, see <code>DeleteStackInstances</code>.</p>

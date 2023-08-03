@@ -3,6 +3,23 @@ pub use crate::operation::delete_context::_delete_context_output::DeleteContextO
 
 pub use crate::operation::delete_context::_delete_context_input::DeleteContextInputBuilder;
 
+impl DeleteContextInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_context::DeleteContextOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_context::DeleteContextError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_context();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteContext`.
 ///
 /// <p>Deletes an context.</p>

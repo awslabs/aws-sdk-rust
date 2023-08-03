@@ -3,6 +3,17 @@ pub use crate::operation::associate_environment_operations_role::_associate_envi
 
 pub use crate::operation::associate_environment_operations_role::_associate_environment_operations_role_input::AssociateEnvironmentOperationsRoleInputBuilder;
 
+impl AssociateEnvironmentOperationsRoleInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::associate_environment_operations_role::AssociateEnvironmentOperationsRoleOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_environment_operations_role::AssociateEnvironmentOperationsRoleError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.associate_environment_operations_role();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateEnvironmentOperationsRole`.
 ///
 /// <p>Add or change the operations role used by an environment. After this call is made, Elastic Beanstalk uses the associated operations role for permissions to downstream services during subsequent calls acting on this environment. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p>

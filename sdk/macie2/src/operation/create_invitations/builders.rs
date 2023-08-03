@@ -3,6 +3,23 @@ pub use crate::operation::create_invitations::_create_invitations_output::Create
 
 pub use crate::operation::create_invitations::_create_invitations_input::CreateInvitationsInputBuilder;
 
+impl CreateInvitationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_invitations::CreateInvitationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_invitations::CreateInvitationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_invitations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateInvitations`.
 ///
 /// <p>Sends an Amazon Macie membership invitation to one or more accounts.</p>

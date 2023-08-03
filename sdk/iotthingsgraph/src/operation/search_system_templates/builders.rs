@@ -3,6 +3,23 @@ pub use crate::operation::search_system_templates::_search_system_templates_outp
 
 pub use crate::operation::search_system_templates::_search_system_templates_input::SearchSystemTemplatesInputBuilder;
 
+impl SearchSystemTemplatesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::search_system_templates::SearchSystemTemplatesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::search_system_templates::SearchSystemTemplatesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.search_system_templates();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SearchSystemTemplates`.
 ///
 /// <p>Searches for summary information about systems in the user's account. You can filter by the ID of a workflow to return only systems that use the specified workflow.</p>

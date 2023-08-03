@@ -3,6 +3,17 @@ pub use crate::operation::start_studio_sso_configuration_repair::_start_studio_s
 
 pub use crate::operation::start_studio_sso_configuration_repair::_start_studio_sso_configuration_repair_input::StartStudioSsoConfigurationRepairInputBuilder;
 
+impl StartStudioSsoConfigurationRepairInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::start_studio_sso_configuration_repair::StartStudioSsoConfigurationRepairOutput, ::aws_smithy_http::result::SdkError<crate::operation::start_studio_sso_configuration_repair::StartStudioSSOConfigurationRepairError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.start_studio_sso_configuration_repair();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartStudioSSOConfigurationRepair`.
 ///
 /// <p>Repairs the IAM Identity Center configuration for a given studio.</p>

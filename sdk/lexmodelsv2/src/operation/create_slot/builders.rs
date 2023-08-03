@@ -3,6 +3,23 @@ pub use crate::operation::create_slot::_create_slot_output::CreateSlotOutputBuil
 
 pub use crate::operation::create_slot::_create_slot_input::CreateSlotInputBuilder;
 
+impl CreateSlotInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_slot::CreateSlotOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_slot::CreateSlotError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_slot();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateSlot`.
 ///
 /// <p>Creates a slot in an intent. A slot is a variable needed to fulfill an intent. For example, an <code>OrderPizza</code> intent might need slots for size, crust, and number of pizzas. For each slot, you define one or more utterances that Amazon Lex uses to elicit a response from the user. </p>

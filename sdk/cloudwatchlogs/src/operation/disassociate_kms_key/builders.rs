@@ -3,6 +3,23 @@ pub use crate::operation::disassociate_kms_key::_disassociate_kms_key_output::Di
 
 pub use crate::operation::disassociate_kms_key::_disassociate_kms_key_input::DisassociateKmsKeyInputBuilder;
 
+impl DisassociateKmsKeyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_kms_key::DisassociateKmsKeyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_kms_key::DisassociateKmsKeyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disassociate_kms_key();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateKmsKey`.
 ///
 /// <p>Disassociates the specified KMS key from the specified log group or from all CloudWatch Logs Insights query results in the account.</p>

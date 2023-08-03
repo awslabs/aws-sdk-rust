@@ -3,6 +3,17 @@ pub use crate::operation::register_transit_gateway_multicast_group_sources::_reg
 
 pub use crate::operation::register_transit_gateway_multicast_group_sources::_register_transit_gateway_multicast_group_sources_input::RegisterTransitGatewayMulticastGroupSourcesInputBuilder;
 
+impl RegisterTransitGatewayMulticastGroupSourcesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::register_transit_gateway_multicast_group_sources::RegisterTransitGatewayMulticastGroupSourcesOutput, ::aws_smithy_http::result::SdkError<crate::operation::register_transit_gateway_multicast_group_sources::RegisterTransitGatewayMulticastGroupSourcesError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.register_transit_gateway_multicast_group_sources();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RegisterTransitGatewayMulticastGroupSources`.
 ///
 /// <p>Registers sources (network interfaces) with the specified transit gateway multicast group.</p>

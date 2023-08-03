@@ -3,6 +3,23 @@ pub use crate::operation::describe_internet_gateways::_describe_internet_gateway
 
 pub use crate::operation::describe_internet_gateways::_describe_internet_gateways_input::DescribeInternetGatewaysInputBuilder;
 
+impl DescribeInternetGatewaysInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_internet_gateways::DescribeInternetGatewaysOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_internet_gateways::DescribeInternetGatewaysError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_internet_gateways();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeInternetGateways`.
 ///
 /// <p>Describes one or more of your internet gateways.</p>

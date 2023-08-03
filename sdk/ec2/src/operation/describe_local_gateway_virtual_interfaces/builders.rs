@@ -3,6 +3,17 @@ pub use crate::operation::describe_local_gateway_virtual_interfaces::_describe_l
 
 pub use crate::operation::describe_local_gateway_virtual_interfaces::_describe_local_gateway_virtual_interfaces_input::DescribeLocalGatewayVirtualInterfacesInputBuilder;
 
+impl DescribeLocalGatewayVirtualInterfacesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_local_gateway_virtual_interfaces::DescribeLocalGatewayVirtualInterfacesOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_local_gateway_virtual_interfaces::DescribeLocalGatewayVirtualInterfacesError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_local_gateway_virtual_interfaces();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeLocalGatewayVirtualInterfaces`.
 ///
 /// <p>Describes the specified local gateway virtual interfaces.</p>

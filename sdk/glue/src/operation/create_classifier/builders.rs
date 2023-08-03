@@ -3,6 +3,23 @@ pub use crate::operation::create_classifier::_create_classifier_output::CreateCl
 
 pub use crate::operation::create_classifier::_create_classifier_input::CreateClassifierInputBuilder;
 
+impl CreateClassifierInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_classifier::CreateClassifierOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_classifier::CreateClassifierError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_classifier();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateClassifier`.
 ///
 /// <p>Creates a classifier in the user's account. This can be a <code>GrokClassifier</code>, an <code>XMLClassifier</code>, a <code>JsonClassifier</code>, or a <code>CsvClassifier</code>, depending on which field of the request is present.</p>

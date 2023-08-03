@@ -3,6 +3,23 @@ pub use crate::operation::list_topic_rule_destinations::_list_topic_rule_destina
 
 pub use crate::operation::list_topic_rule_destinations::_list_topic_rule_destinations_input::ListTopicRuleDestinationsInputBuilder;
 
+impl ListTopicRuleDestinationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_topic_rule_destinations::ListTopicRuleDestinationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_topic_rule_destinations::ListTopicRuleDestinationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_topic_rule_destinations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListTopicRuleDestinations`.
 ///
 /// <p>Lists all the topic rule destinations in your Amazon Web Services account.</p>

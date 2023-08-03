@@ -3,6 +3,23 @@ pub use crate::operation::list_images_in_recycle_bin::_list_images_in_recycle_bi
 
 pub use crate::operation::list_images_in_recycle_bin::_list_images_in_recycle_bin_input::ListImagesInRecycleBinInputBuilder;
 
+impl ListImagesInRecycleBinInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_images_in_recycle_bin::ListImagesInRecycleBinOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_images_in_recycle_bin::ListImagesInRecycleBinError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_images_in_recycle_bin();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListImagesInRecycleBin`.
 ///
 /// <p>Lists one or more AMIs that are currently in the Recycle Bin. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin.html">Recycle Bin</a> in the <i>Amazon EC2 User Guide</i>.</p>

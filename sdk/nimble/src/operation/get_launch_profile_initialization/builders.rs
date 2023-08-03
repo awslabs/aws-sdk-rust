@@ -3,6 +3,17 @@ pub use crate::operation::get_launch_profile_initialization::_get_launch_profile
 
 pub use crate::operation::get_launch_profile_initialization::_get_launch_profile_initialization_input::GetLaunchProfileInitializationInputBuilder;
 
+impl GetLaunchProfileInitializationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_launch_profile_initialization::GetLaunchProfileInitializationOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_launch_profile_initialization::GetLaunchProfileInitializationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_launch_profile_initialization();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetLaunchProfileInitialization`.
 ///
 /// <p>Get a launch profile initialization.</p>

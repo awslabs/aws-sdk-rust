@@ -3,6 +3,23 @@ pub use crate::operation::create_gateway_group::_create_gateway_group_output::Cr
 
 pub use crate::operation::create_gateway_group::_create_gateway_group_input::CreateGatewayGroupInputBuilder;
 
+impl CreateGatewayGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_gateway_group::CreateGatewayGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_gateway_group::CreateGatewayGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_gateway_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateGatewayGroup`.
 ///
 /// <p>Creates a gateway group with the specified details.</p>

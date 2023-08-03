@@ -3,6 +3,23 @@ pub use crate::operation::delete_role::_delete_role_output::DeleteRoleOutputBuil
 
 pub use crate::operation::delete_role::_delete_role_input::DeleteRoleInputBuilder;
 
+impl DeleteRoleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_role::DeleteRoleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_role::DeleteRoleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_role();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteRole`.
 ///
 /// <p>Deletes the specified role. Unlike the Amazon Web Services Management Console, when you delete a role programmatically, you must delete the items attached to the role manually, or the deletion fails. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_manage_delete.html#roles-managingrole-deleting-cli">Deleting an IAM role</a>. Before attempting to delete a role, remove the following attached items: </p>

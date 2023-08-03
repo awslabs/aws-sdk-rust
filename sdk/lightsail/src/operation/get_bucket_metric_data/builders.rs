@@ -3,6 +3,23 @@ pub use crate::operation::get_bucket_metric_data::_get_bucket_metric_data_output
 
 pub use crate::operation::get_bucket_metric_data::_get_bucket_metric_data_input::GetBucketMetricDataInputBuilder;
 
+impl GetBucketMetricDataInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_bucket_metric_data::GetBucketMetricDataOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_bucket_metric_data::GetBucketMetricDataError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_bucket_metric_data();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetBucketMetricData`.
 ///
 /// <p>Returns the data points of a specific metric for an Amazon Lightsail bucket.</p>

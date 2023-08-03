@@ -3,6 +3,23 @@ pub use crate::operation::disassociate_lambda_function::_disassociate_lambda_fun
 
 pub use crate::operation::disassociate_lambda_function::_disassociate_lambda_function_input::DisassociateLambdaFunctionInputBuilder;
 
+impl DisassociateLambdaFunctionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_lambda_function::DisassociateLambdaFunctionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_lambda_function::DisassociateLambdaFunctionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disassociate_lambda_function();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateLambdaFunction`.
 ///
 /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>

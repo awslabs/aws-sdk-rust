@@ -3,6 +3,23 @@ pub use crate::operation::start_table_data_import_job::_start_table_data_import_
 
 pub use crate::operation::start_table_data_import_job::_start_table_data_import_job_input::StartTableDataImportJobInputBuilder;
 
+impl StartTableDataImportJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_table_data_import_job::StartTableDataImportJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_table_data_import_job::StartTableDataImportJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_table_data_import_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartTableDataImportJob`.
 ///
 /// <p> The StartTableDataImportJob API allows you to start an import job on a table. This API will only return the id of the job that was started. To find out the status of the import request, you need to call the DescribeTableDataImportJob API. </p>

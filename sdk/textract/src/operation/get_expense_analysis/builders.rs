@@ -3,6 +3,23 @@ pub use crate::operation::get_expense_analysis::_get_expense_analysis_output::Ge
 
 pub use crate::operation::get_expense_analysis::_get_expense_analysis_input::GetExpenseAnalysisInputBuilder;
 
+impl GetExpenseAnalysisInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_expense_analysis::GetExpenseAnalysisOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_expense_analysis::GetExpenseAnalysisError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_expense_analysis();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetExpenseAnalysis`.
 ///
 /// <p>Gets the results for an Amazon Textract asynchronous operation that analyzes invoices and receipts. Amazon Textract finds contact information, items purchased, and vendor name, from input invoices and receipts.</p>

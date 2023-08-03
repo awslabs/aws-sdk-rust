@@ -3,6 +3,23 @@ pub use crate::operation::list_bulk_import_jobs::_list_bulk_import_jobs_output::
 
 pub use crate::operation::list_bulk_import_jobs::_list_bulk_import_jobs_input::ListBulkImportJobsInputBuilder;
 
+impl ListBulkImportJobsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_bulk_import_jobs::ListBulkImportJobsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_bulk_import_jobs::ListBulkImportJobsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_bulk_import_jobs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListBulkImportJobs`.
 ///
 /// <p>Retrieves a paginated list of bulk import job requests. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/ListBulkImportJobs.html">List bulk import jobs (CLI)</a> in the <i>IoT SiteWise User Guide</i>.</p>

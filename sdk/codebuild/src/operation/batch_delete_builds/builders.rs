@@ -3,6 +3,23 @@ pub use crate::operation::batch_delete_builds::_batch_delete_builds_output::Batc
 
 pub use crate::operation::batch_delete_builds::_batch_delete_builds_input::BatchDeleteBuildsInputBuilder;
 
+impl BatchDeleteBuildsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_delete_builds::BatchDeleteBuildsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_delete_builds::BatchDeleteBuildsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_delete_builds();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchDeleteBuilds`.
 ///
 /// <p>Deletes one or more builds.</p>

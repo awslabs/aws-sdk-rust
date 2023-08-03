@@ -3,6 +3,23 @@ pub use crate::operation::delete_function_concurrency::_delete_function_concurre
 
 pub use crate::operation::delete_function_concurrency::_delete_function_concurrency_input::DeleteFunctionConcurrencyInputBuilder;
 
+impl DeleteFunctionConcurrencyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_function_concurrency::DeleteFunctionConcurrencyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_function_concurrency::DeleteFunctionConcurrencyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_function_concurrency();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteFunctionConcurrency`.
 ///
 /// <p>Removes a concurrent execution limit from a function.</p>

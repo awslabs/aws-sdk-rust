@@ -3,6 +3,23 @@ pub use crate::operation::describe_tape_recovery_points::_describe_tape_recovery
 
 pub use crate::operation::describe_tape_recovery_points::_describe_tape_recovery_points_input::DescribeTapeRecoveryPointsInputBuilder;
 
+impl DescribeTapeRecoveryPointsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_tape_recovery_points::DescribeTapeRecoveryPointsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_tape_recovery_points::DescribeTapeRecoveryPointsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_tape_recovery_points();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeTapeRecoveryPoints`.
 ///
 /// <p>Returns a list of virtual tape recovery points that are available for the specified tape gateway.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::cancel_update_stack::_cancel_update_stack_output::Canc
 
 pub use crate::operation::cancel_update_stack::_cancel_update_stack_input::CancelUpdateStackInputBuilder;
 
+impl CancelUpdateStackInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::cancel_update_stack::CancelUpdateStackOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::cancel_update_stack::CancelUpdateStackError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.cancel_update_stack();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CancelUpdateStack`.
 ///
 /// <p>Cancels an update on the specified stack. If the call completes successfully, the stack rolls back the update and reverts to the previous stack configuration.</p> <note>

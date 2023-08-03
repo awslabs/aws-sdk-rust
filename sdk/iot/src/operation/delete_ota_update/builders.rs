@@ -3,6 +3,23 @@ pub use crate::operation::delete_ota_update::_delete_ota_update_output::DeleteOt
 
 pub use crate::operation::delete_ota_update::_delete_ota_update_input::DeleteOtaUpdateInputBuilder;
 
+impl DeleteOtaUpdateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_ota_update::DeleteOtaUpdateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_ota_update::DeleteOTAUpdateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_ota_update();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteOTAUpdate`.
 ///
 /// <p>Delete an OTA update.</p>

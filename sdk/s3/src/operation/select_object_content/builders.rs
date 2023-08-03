@@ -3,6 +3,23 @@ pub use crate::operation::select_object_content::_select_object_content_output::
 
 pub use crate::operation::select_object_content::_select_object_content_input::SelectObjectContentInputBuilder;
 
+impl SelectObjectContentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::select_object_content::SelectObjectContentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::select_object_content::SelectObjectContentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.select_object_content();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SelectObjectContent`.
 ///
 /// <p>This action filters the contents of an Amazon S3 object based on a simple structured query language (SQL) statement. In the request, along with the SQL expression, you must also specify a data serialization format (JSON, CSV, or Apache Parquet) of the object. Amazon S3 uses this format to parse object data into records, and returns only records that match the specified SQL expression. You must also specify the data serialization format for the response.</p>

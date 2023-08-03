@@ -3,6 +3,23 @@ pub use crate::operation::describe_text_translation_job::_describe_text_translat
 
 pub use crate::operation::describe_text_translation_job::_describe_text_translation_job_input::DescribeTextTranslationJobInputBuilder;
 
+impl DescribeTextTranslationJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_text_translation_job::DescribeTextTranslationJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_text_translation_job::DescribeTextTranslationJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_text_translation_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeTextTranslationJob`.
 ///
 /// <p>Gets the properties associated with an asynchronous batch translation job including name, ID, status, source and target languages, input/output S3 buckets, and so on.</p>

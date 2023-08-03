@@ -3,6 +3,23 @@ pub use crate::operation::restore_event_data_store::_restore_event_data_store_ou
 
 pub use crate::operation::restore_event_data_store::_restore_event_data_store_input::RestoreEventDataStoreInputBuilder;
 
+impl RestoreEventDataStoreInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::restore_event_data_store::RestoreEventDataStoreOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::restore_event_data_store::RestoreEventDataStoreError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.restore_event_data_store();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RestoreEventDataStore`.
 ///
 /// <p>Restores a deleted event data store specified by <code>EventDataStore</code>, which accepts an event data store ARN. You can only restore a deleted event data store within the seven-day wait period after deletion. Restoring an event data store can take several minutes, depending on the size of the event data store.</p>

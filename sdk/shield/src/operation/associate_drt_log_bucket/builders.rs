@@ -3,6 +3,23 @@ pub use crate::operation::associate_drt_log_bucket::_associate_drt_log_bucket_ou
 
 pub use crate::operation::associate_drt_log_bucket::_associate_drt_log_bucket_input::AssociateDrtLogBucketInputBuilder;
 
+impl AssociateDrtLogBucketInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_drt_log_bucket::AssociateDrtLogBucketOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_drt_log_bucket::AssociateDRTLogBucketError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_drt_log_bucket();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateDRTLogBucket`.
 ///
 /// <p>Authorizes the Shield Response Team (SRT) to access the specified Amazon S3 bucket containing log data such as Application Load Balancer access logs, CloudFront logs, or logs from third party sources. You can associate up to 10 Amazon S3 buckets with your subscription.</p>

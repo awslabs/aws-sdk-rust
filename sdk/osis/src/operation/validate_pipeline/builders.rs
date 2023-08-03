@@ -3,6 +3,23 @@ pub use crate::operation::validate_pipeline::_validate_pipeline_output::Validate
 
 pub use crate::operation::validate_pipeline::_validate_pipeline_input::ValidatePipelineInputBuilder;
 
+impl ValidatePipelineInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::validate_pipeline::ValidatePipelineOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::validate_pipeline::ValidatePipelineError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.validate_pipeline();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ValidatePipeline`.
 ///
 /// <p>Checks whether an OpenSearch Ingestion pipeline configuration is valid prior to creation. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/creating-pipeline.html">Creating Amazon OpenSearch Ingestion pipelines</a>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::respond_activity_task_completed::_respond_activity_tas
 
 pub use crate::operation::respond_activity_task_completed::_respond_activity_task_completed_input::RespondActivityTaskCompletedInputBuilder;
 
+impl RespondActivityTaskCompletedInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::respond_activity_task_completed::RespondActivityTaskCompletedOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::respond_activity_task_completed::RespondActivityTaskCompletedError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.respond_activity_task_completed();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RespondActivityTaskCompleted`.
 ///
 /// <p>Used by workers to tell the service that the <code>ActivityTask</code> identified by the <code>taskToken</code> completed successfully with a <code>result</code> (if provided). The <code>result</code> appears in the <code>ActivityTaskCompleted</code> event in the workflow history.</p> <important>

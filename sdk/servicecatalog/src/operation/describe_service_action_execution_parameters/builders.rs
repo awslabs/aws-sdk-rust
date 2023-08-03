@@ -3,6 +3,17 @@ pub use crate::operation::describe_service_action_execution_parameters::_describ
 
 pub use crate::operation::describe_service_action_execution_parameters::_describe_service_action_execution_parameters_input::DescribeServiceActionExecutionParametersInputBuilder;
 
+impl DescribeServiceActionExecutionParametersInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_service_action_execution_parameters::DescribeServiceActionExecutionParametersOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_service_action_execution_parameters::DescribeServiceActionExecutionParametersError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_service_action_execution_parameters();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeServiceActionExecutionParameters`.
 ///
 /// <p>Finds the default parameters for a specific self-service action on a specific provisioned product and returns a map of the results to the user.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::update_monitor::_update_monitor_output::UpdateMonitorO
 
 pub use crate::operation::update_monitor::_update_monitor_input::UpdateMonitorInputBuilder;
 
+impl UpdateMonitorInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_monitor::UpdateMonitorOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_monitor::UpdateMonitorError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_monitor();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateMonitor`.
 ///
 /// <p>Updates a monitor. You can update a monitor to change the maximum number of city-networks (locations and ASNs or internet service providers), to add or remove resources, or to change the status of the monitor. Note that you can't change the name of a monitor.</p>

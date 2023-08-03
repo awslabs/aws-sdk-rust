@@ -3,6 +3,17 @@ pub use crate::operation::start_virtual_machines_metadata_sync::_start_virtual_m
 
 pub use crate::operation::start_virtual_machines_metadata_sync::_start_virtual_machines_metadata_sync_input::StartVirtualMachinesMetadataSyncInputBuilder;
 
+impl StartVirtualMachinesMetadataSyncInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::start_virtual_machines_metadata_sync::StartVirtualMachinesMetadataSyncOutput, ::aws_smithy_http::result::SdkError<crate::operation::start_virtual_machines_metadata_sync::StartVirtualMachinesMetadataSyncError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.start_virtual_machines_metadata_sync();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartVirtualMachinesMetadataSync`.
 ///
 /// <p>This action sends a request to sync metadata across the specified virtual machines.</p>

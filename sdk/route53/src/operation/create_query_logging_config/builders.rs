@@ -3,6 +3,23 @@ pub use crate::operation::create_query_logging_config::_create_query_logging_con
 
 pub use crate::operation::create_query_logging_config::_create_query_logging_config_input::CreateQueryLoggingConfigInputBuilder;
 
+impl CreateQueryLoggingConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_query_logging_config::CreateQueryLoggingConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_query_logging_config::CreateQueryLoggingConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_query_logging_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateQueryLoggingConfig`.
 ///
 /// <p>Creates a configuration for DNS query logging. After you create a query logging configuration, Amazon Route 53 begins to publish log data to an Amazon CloudWatch Logs log group.</p>

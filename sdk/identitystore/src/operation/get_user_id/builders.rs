@@ -3,6 +3,23 @@ pub use crate::operation::get_user_id::_get_user_id_output::GetUserIdOutputBuild
 
 pub use crate::operation::get_user_id::_get_user_id_input::GetUserIdInputBuilder;
 
+impl GetUserIdInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_user_id::GetUserIdOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_user_id::GetUserIdError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_user_id();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetUserId`.
 ///
 /// <p>Retrieves the <code>UserId</code> in an identity store.</p>

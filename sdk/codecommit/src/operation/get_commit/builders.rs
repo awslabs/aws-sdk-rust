@@ -3,6 +3,23 @@ pub use crate::operation::get_commit::_get_commit_output::GetCommitOutputBuilder
 
 pub use crate::operation::get_commit::_get_commit_input::GetCommitInputBuilder;
 
+impl GetCommitInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_commit::GetCommitOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_commit::GetCommitError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_commit();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetCommit`.
 ///
 /// <p>Returns information about a commit, including commit message and committer information.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_gateway_response::_get_gateway_response_output::Ge
 
 pub use crate::operation::get_gateway_response::_get_gateway_response_input::GetGatewayResponseInputBuilder;
 
+impl GetGatewayResponseInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_gateway_response::GetGatewayResponseOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_gateway_response::GetGatewayResponseError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_gateway_response();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetGatewayResponse`.
 ///
 /// <p>Gets a GatewayResponse of a specified response type on the given RestApi.</p>

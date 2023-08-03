@@ -3,6 +3,23 @@ pub use crate::operation::disassociate_vpc_cidr_block::_disassociate_vpc_cidr_bl
 
 pub use crate::operation::disassociate_vpc_cidr_block::_disassociate_vpc_cidr_block_input::DisassociateVpcCidrBlockInputBuilder;
 
+impl DisassociateVpcCidrBlockInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_vpc_cidr_block::DisassociateVpcCidrBlockOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_vpc_cidr_block::DisassociateVpcCidrBlockError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disassociate_vpc_cidr_block();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateVpcCidrBlock`.
 ///
 /// <p>Disassociates a CIDR block from a VPC. To disassociate the CIDR block, you must specify its association ID. You can get the association ID by using <code>DescribeVpcs</code>. You must detach or delete all gateways and resources that are associated with the CIDR block before you can disassociate it. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_hsms::_list_hsms_output::ListHsmsOutputBuilder;
 
 pub use crate::operation::list_hsms::_list_hsms_input::ListHsmsInputBuilder;
 
+impl ListHsmsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_hsms::ListHsmsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_hsms::ListHsmsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_hsms();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListHsms`.
 ///
 /// <p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.</p>

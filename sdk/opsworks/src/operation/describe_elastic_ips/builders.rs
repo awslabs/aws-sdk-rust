@@ -3,6 +3,23 @@ pub use crate::operation::describe_elastic_ips::_describe_elastic_ips_output::De
 
 pub use crate::operation::describe_elastic_ips::_describe_elastic_ips_input::DescribeElasticIpsInputBuilder;
 
+impl DescribeElasticIpsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_elastic_ips::DescribeElasticIpsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_elastic_ips::DescribeElasticIpsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_elastic_ips();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeElasticIps`.
 ///
 /// <p>Describes <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic IP addresses</a>.</p> <note>

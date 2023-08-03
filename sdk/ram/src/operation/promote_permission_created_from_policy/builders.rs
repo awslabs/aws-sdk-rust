@@ -3,6 +3,17 @@ pub use crate::operation::promote_permission_created_from_policy::_promote_permi
 
 pub use crate::operation::promote_permission_created_from_policy::_promote_permission_created_from_policy_input::PromotePermissionCreatedFromPolicyInputBuilder;
 
+impl PromotePermissionCreatedFromPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::promote_permission_created_from_policy::PromotePermissionCreatedFromPolicyOutput, ::aws_smithy_http::result::SdkError<crate::operation::promote_permission_created_from_policy::PromotePermissionCreatedFromPolicyError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.promote_permission_created_from_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PromotePermissionCreatedFromPolicy`.
 ///
 /// <p>When you attach a resource-based policy to a resource, RAM automatically creates a resource share of <code>featureSet</code>=<code>CREATED_FROM_POLICY</code> with a managed permission that has the same IAM permissions as the original resource-based policy. However, this type of managed permission is visible to only the resource share owner, and the associated resource share can't be modified by using RAM.</p>

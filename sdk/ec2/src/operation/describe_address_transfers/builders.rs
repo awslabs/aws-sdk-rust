@@ -3,6 +3,23 @@ pub use crate::operation::describe_address_transfers::_describe_address_transfer
 
 pub use crate::operation::describe_address_transfers::_describe_address_transfers_input::DescribeAddressTransfersInputBuilder;
 
+impl DescribeAddressTransfersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_address_transfers::DescribeAddressTransfersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_address_transfers::DescribeAddressTransfersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_address_transfers();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAddressTransfers`.
 ///
 /// <p>Describes an Elastic IP address transfer. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#transfer-EIPs-intro">Transfer Elastic IP addresses</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>

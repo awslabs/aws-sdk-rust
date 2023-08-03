@@ -3,6 +3,23 @@ pub use crate::operation::associate_third_party_firewall::_associate_third_party
 
 pub use crate::operation::associate_third_party_firewall::_associate_third_party_firewall_input::AssociateThirdPartyFirewallInputBuilder;
 
+impl AssociateThirdPartyFirewallInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_third_party_firewall::AssociateThirdPartyFirewallOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_third_party_firewall::AssociateThirdPartyFirewallError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_third_party_firewall();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateThirdPartyFirewall`.
 ///
 /// <p>Sets the Firewall Manager policy administrator as a tenant administrator of a third-party firewall service. A tenant is an instance of the third-party firewall service that's associated with your Amazon Web Services customer account.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_subjects::_list_subjects_output::ListSubjectsOutp
 
 pub use crate::operation::list_subjects::_list_subjects_input::ListSubjectsInputBuilder;
 
+impl ListSubjectsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_subjects::ListSubjectsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_subjects::ListSubjectsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_subjects();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListSubjects`.
 ///
 /// <p>Lists the subjects in the authenticated account and Amazon Web Services Region.</p>

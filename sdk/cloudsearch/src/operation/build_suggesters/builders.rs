@@ -3,6 +3,23 @@ pub use crate::operation::build_suggesters::_build_suggesters_output::BuildSugge
 
 pub use crate::operation::build_suggesters::_build_suggesters_input::BuildSuggestersInputBuilder;
 
+impl BuildSuggestersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::build_suggesters::BuildSuggestersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::build_suggesters::BuildSuggestersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.build_suggesters();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BuildSuggesters`.
 ///
 /// <p>Indexes the search suggestions. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html#configuring-suggesters">Configuring Suggesters</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>

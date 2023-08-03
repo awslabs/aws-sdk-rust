@@ -3,6 +3,23 @@ pub use crate::operation::get_evidence_file_upload_url::_get_evidence_file_uploa
 
 pub use crate::operation::get_evidence_file_upload_url::_get_evidence_file_upload_url_input::GetEvidenceFileUploadUrlInputBuilder;
 
+impl GetEvidenceFileUploadUrlInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_evidence_file_upload_url::GetEvidenceFileUploadUrlOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_evidence_file_upload_url::GetEvidenceFileUploadUrlError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_evidence_file_upload_url();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetEvidenceFileUploadUrl`.
 ///
 /// <p>Creates a presigned Amazon S3 URL that can be used to upload a file as manual evidence. For instructions on how to use this operation, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#how-to-upload-manual-evidence-files">Upload a file from your browser </a> in the <i>Audit Manager User Guide</i>.</p>

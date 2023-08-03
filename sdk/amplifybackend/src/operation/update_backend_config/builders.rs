@@ -3,6 +3,23 @@ pub use crate::operation::update_backend_config::_update_backend_config_output::
 
 pub use crate::operation::update_backend_config::_update_backend_config_input::UpdateBackendConfigInputBuilder;
 
+impl UpdateBackendConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_backend_config::UpdateBackendConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_backend_config::UpdateBackendConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_backend_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateBackendConfig`.
 ///
 /// <p>Updates the AWS resources required to access the Amplify Admin UI.</p>

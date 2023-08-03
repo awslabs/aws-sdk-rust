@@ -3,6 +3,23 @@ pub use crate::operation::get_job_bookmark::_get_job_bookmark_output::GetJobBook
 
 pub use crate::operation::get_job_bookmark::_get_job_bookmark_input::GetJobBookmarkInputBuilder;
 
+impl GetJobBookmarkInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_job_bookmark::GetJobBookmarkOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_job_bookmark::GetJobBookmarkError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_job_bookmark();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetJobBookmark`.
 ///
 /// <p>Returns information on a job bookmark entry.</p>

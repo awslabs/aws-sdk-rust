@@ -3,6 +3,23 @@ pub use crate::operation::get_resolver_config::_get_resolver_config_output::GetR
 
 pub use crate::operation::get_resolver_config::_get_resolver_config_input::GetResolverConfigInputBuilder;
 
+impl GetResolverConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_resolver_config::GetResolverConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_resolver_config::GetResolverConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_resolver_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetResolverConfig`.
 ///
 /// <p>Retrieves the behavior configuration of Route&nbsp;53 Resolver behavior for a single VPC from Amazon Virtual Private Cloud.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_auth_policy::_delete_auth_policy_output::Delete
 
 pub use crate::operation::delete_auth_policy::_delete_auth_policy_input::DeleteAuthPolicyInputBuilder;
 
+impl DeleteAuthPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_auth_policy::DeleteAuthPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_auth_policy::DeleteAuthPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_auth_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteAuthPolicy`.
 ///
 /// <p>Deletes the specified auth policy. If an auth is set to <code>AWS_IAM</code> and the auth policy is deleted, all requests will be denied by default. If you are trying to remove the auth policy completely, you must set the auth_type to <code>NONE</code>. If auth is enabled on the resource, but no auth policy is set, all requests will be denied.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_prompt::_delete_prompt_output::DeletePromptOutp
 
 pub use crate::operation::delete_prompt::_delete_prompt_input::DeletePromptInputBuilder;
 
+impl DeletePromptInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_prompt::DeletePromptOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_prompt::DeletePromptError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_prompt();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeletePrompt`.
 ///
 /// <p>Deletes a prompt.</p>

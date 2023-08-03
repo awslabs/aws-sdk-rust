@@ -3,6 +3,17 @@ pub use crate::operation::disable_vpc_classic_link_dns_support::_disable_vpc_cla
 
 pub use crate::operation::disable_vpc_classic_link_dns_support::_disable_vpc_classic_link_dns_support_input::DisableVpcClassicLinkDnsSupportInputBuilder;
 
+impl DisableVpcClassicLinkDnsSupportInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::disable_vpc_classic_link_dns_support::DisableVpcClassicLinkDnsSupportOutput, ::aws_smithy_http::result::SdkError<crate::operation::disable_vpc_classic_link_dns_support::DisableVpcClassicLinkDnsSupportError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.disable_vpc_classic_link_dns_support();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisableVpcClassicLinkDnsSupport`.
 ///
 /// <note>

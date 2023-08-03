@@ -3,6 +3,23 @@ pub use crate::operation::describe_conformance_pack_status::_describe_conformanc
 
 pub use crate::operation::describe_conformance_pack_status::_describe_conformance_pack_status_input::DescribeConformancePackStatusInputBuilder;
 
+impl DescribeConformancePackStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_conformance_pack_status::DescribeConformancePackStatusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_conformance_pack_status::DescribeConformancePackStatusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_conformance_pack_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeConformancePackStatus`.
 ///
 /// <p>Provides one or more conformance packs deployment status.</p> <note>

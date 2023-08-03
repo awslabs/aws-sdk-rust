@@ -3,6 +3,23 @@ pub use crate::operation::put_domain_permissions_policy::_put_domain_permissions
 
 pub use crate::operation::put_domain_permissions_policy::_put_domain_permissions_policy_input::PutDomainPermissionsPolicyInputBuilder;
 
+impl PutDomainPermissionsPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_domain_permissions_policy::PutDomainPermissionsPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_domain_permissions_policy::PutDomainPermissionsPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_domain_permissions_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutDomainPermissionsPolicy`.
 ///
 /// <p> Sets a resource policy on a domain that specifies permissions to access it. </p>

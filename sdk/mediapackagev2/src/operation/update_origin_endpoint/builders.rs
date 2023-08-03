@@ -3,6 +3,23 @@ pub use crate::operation::update_origin_endpoint::_update_origin_endpoint_output
 
 pub use crate::operation::update_origin_endpoint::_update_origin_endpoint_input::UpdateOriginEndpointInputBuilder;
 
+impl UpdateOriginEndpointInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_origin_endpoint::UpdateOriginEndpointOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_origin_endpoint::UpdateOriginEndpointError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_origin_endpoint();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateOriginEndpoint`.
 ///
 /// <p>Update the specified origin endpoint. Edit the packaging preferences on an endpoint to optimize the viewing experience. You can't edit the name of the endpoint.</p>

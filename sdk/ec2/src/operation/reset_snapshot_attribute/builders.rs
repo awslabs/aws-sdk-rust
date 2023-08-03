@@ -3,6 +3,23 @@ pub use crate::operation::reset_snapshot_attribute::_reset_snapshot_attribute_ou
 
 pub use crate::operation::reset_snapshot_attribute::_reset_snapshot_attribute_input::ResetSnapshotAttributeInputBuilder;
 
+impl ResetSnapshotAttributeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::reset_snapshot_attribute::ResetSnapshotAttributeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::reset_snapshot_attribute::ResetSnapshotAttributeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.reset_snapshot_attribute();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ResetSnapshotAttribute`.
 ///
 /// <p>Resets permission settings for the specified snapshot.</p>

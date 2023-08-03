@@ -3,6 +3,23 @@ pub use crate::operation::batch_update_cluster::_batch_update_cluster_output::Ba
 
 pub use crate::operation::batch_update_cluster::_batch_update_cluster_input::BatchUpdateClusterInputBuilder;
 
+impl BatchUpdateClusterInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_update_cluster::BatchUpdateClusterOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_update_cluster::BatchUpdateClusterError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_update_cluster();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchUpdateCluster`.
 ///
 /// <p>Apply the service update to a list of clusters supplied. For more information on service updates and applying them, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/managing-updates.html#applying-updates">Applying the service updates</a>.</p>

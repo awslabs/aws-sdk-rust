@@ -3,6 +3,23 @@ pub use crate::operation::get_bucket_encryption::_get_bucket_encryption_output::
 
 pub use crate::operation::get_bucket_encryption::_get_bucket_encryption_input::GetBucketEncryptionInputBuilder;
 
+impl GetBucketEncryptionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_bucket_encryption::GetBucketEncryptionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_bucket_encryption::GetBucketEncryptionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_bucket_encryption();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetBucketEncryption`.
 ///
 /// <p>Returns the default encryption configuration for an Amazon S3 bucket. By default, all buckets have a default encryption configuration that uses server-side encryption with Amazon S3 managed keys (SSE-S3). For information about the bucket default encryption feature, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon S3 Bucket Default Encryption</a> in the <i>Amazon S3 User Guide</i>.</p>

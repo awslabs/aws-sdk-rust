@@ -3,6 +3,23 @@ pub use crate::operation::peer_vpc::_peer_vpc_output::PeerVpcOutputBuilder;
 
 pub use crate::operation::peer_vpc::_peer_vpc_input::PeerVpcInputBuilder;
 
+impl PeerVpcInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::peer_vpc::PeerVpcOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::peer_vpc::PeerVpcError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.peer_vpc();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PeerVpc`.
 ///
 /// <p>Peers the Lightsail VPC with the user's default VPC.</p>

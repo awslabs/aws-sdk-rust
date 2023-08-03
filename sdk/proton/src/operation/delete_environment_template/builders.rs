@@ -3,6 +3,23 @@ pub use crate::operation::delete_environment_template::_delete_environment_templ
 
 pub use crate::operation::delete_environment_template::_delete_environment_template_input::DeleteEnvironmentTemplateInputBuilder;
 
+impl DeleteEnvironmentTemplateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_environment_template::DeleteEnvironmentTemplateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_environment_template::DeleteEnvironmentTemplateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_environment_template();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteEnvironmentTemplate`.
 ///
 /// <p>If no other major or minor versions of an environment template exist, delete the environment template.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_stack_resource_drifts::_describe_stack_resour
 
 pub use crate::operation::describe_stack_resource_drifts::_describe_stack_resource_drifts_input::DescribeStackResourceDriftsInputBuilder;
 
+impl DescribeStackResourceDriftsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_stack_resource_drifts::DescribeStackResourceDriftsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_stack_resource_drifts::DescribeStackResourceDriftsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_stack_resource_drifts();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeStackResourceDrifts`.
 ///
 /// <p>Returns drift information for the resources that have been checked for drift in the specified stack. This includes actual and expected configuration values for resources where CloudFormation detects configuration drift.</p>

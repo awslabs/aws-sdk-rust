@@ -3,6 +3,23 @@ pub use crate::operation::create_cluster_v2::_create_cluster_v2_output::CreateCl
 
 pub use crate::operation::create_cluster_v2::_create_cluster_v2_input::CreateClusterV2InputBuilder;
 
+impl CreateClusterV2InputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_cluster_v2::CreateClusterV2Output,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_cluster_v2::CreateClusterV2Error,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_cluster_v2();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateClusterV2`.
 ///
 /// <p>Creates a new MSK cluster.</p>

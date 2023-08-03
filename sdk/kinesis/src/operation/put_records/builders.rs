@@ -3,6 +3,23 @@ pub use crate::operation::put_records::_put_records_output::PutRecordsOutputBuil
 
 pub use crate::operation::put_records::_put_records_input::PutRecordsInputBuilder;
 
+impl PutRecordsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_records::PutRecordsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_records::PutRecordsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_records();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutRecords`.
 ///
 /// <p>Writes multiple data records into a Kinesis data stream in a single call (also referred to as a <code>PutRecords</code> request). Use this operation to send data into the stream for data ingestion and processing. </p> <note>

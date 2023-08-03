@@ -3,6 +3,23 @@ pub use crate::operation::enable_client_authentication::_enable_client_authentic
 
 pub use crate::operation::enable_client_authentication::_enable_client_authentication_input::EnableClientAuthenticationInputBuilder;
 
+impl EnableClientAuthenticationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::enable_client_authentication::EnableClientAuthenticationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::enable_client_authentication::EnableClientAuthenticationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.enable_client_authentication();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `EnableClientAuthentication`.
 ///
 /// <p>Enables alternative client authentication methods for the specified directory.</p>

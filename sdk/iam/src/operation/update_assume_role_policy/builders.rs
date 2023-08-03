@@ -3,6 +3,23 @@ pub use crate::operation::update_assume_role_policy::_update_assume_role_policy_
 
 pub use crate::operation::update_assume_role_policy::_update_assume_role_policy_input::UpdateAssumeRolePolicyInputBuilder;
 
+impl UpdateAssumeRolePolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_assume_role_policy::UpdateAssumeRolePolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_assume_role_policy::UpdateAssumeRolePolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_assume_role_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateAssumeRolePolicy`.
 ///
 /// <p>Updates the policy that grants an IAM entity permission to assume a role. This is typically referred to as the "role trust policy". For more information about roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/roles-toplevel.html">Using roles to delegate permissions and federate identities</a>.</p>

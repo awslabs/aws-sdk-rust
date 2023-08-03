@@ -3,6 +3,23 @@ pub use crate::operation::delete_protection::_delete_protection_output::DeletePr
 
 pub use crate::operation::delete_protection::_delete_protection_input::DeleteProtectionInputBuilder;
 
+impl DeleteProtectionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_protection::DeleteProtectionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_protection::DeleteProtectionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_protection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteProtection`.
 ///
 /// <p>Deletes an Shield Advanced <code>Protection</code>.</p>

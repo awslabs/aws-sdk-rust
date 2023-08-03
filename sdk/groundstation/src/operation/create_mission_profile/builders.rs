@@ -3,6 +3,23 @@ pub use crate::operation::create_mission_profile::_create_mission_profile_output
 
 pub use crate::operation::create_mission_profile::_create_mission_profile_input::CreateMissionProfileInputBuilder;
 
+impl CreateMissionProfileInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_mission_profile::CreateMissionProfileOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_mission_profile::CreateMissionProfileError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_mission_profile();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateMissionProfile`.
 ///
 /// <p>Creates a mission profile.</p>

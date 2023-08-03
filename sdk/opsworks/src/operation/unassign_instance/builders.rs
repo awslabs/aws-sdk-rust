@@ -3,6 +3,23 @@ pub use crate::operation::unassign_instance::_unassign_instance_output::Unassign
 
 pub use crate::operation::unassign_instance::_unassign_instance_input::UnassignInstanceInputBuilder;
 
+impl UnassignInstanceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::unassign_instance::UnassignInstanceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::unassign_instance::UnassignInstanceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.unassign_instance();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UnassignInstance`.
 ///
 /// <p>Unassigns a registered instance from all layers that are using the instance. The instance remains in the stack as an unassigned instance, and can be assigned to another layer as needed. You cannot use this action with instances that were created with AWS OpsWorks Stacks.</p>

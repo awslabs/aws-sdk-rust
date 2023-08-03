@@ -3,6 +3,23 @@ pub use crate::operation::start_associations_once::_start_associations_once_outp
 
 pub use crate::operation::start_associations_once::_start_associations_once_input::StartAssociationsOnceInputBuilder;
 
+impl StartAssociationsOnceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_associations_once::StartAssociationsOnceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_associations_once::StartAssociationsOnceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_associations_once();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartAssociationsOnce`.
 ///
 /// <p>Runs an association immediately and only one time. This operation can be helpful when troubleshooting associations.</p>

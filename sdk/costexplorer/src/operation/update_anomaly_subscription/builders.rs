@@ -3,6 +3,23 @@ pub use crate::operation::update_anomaly_subscription::_update_anomaly_subscript
 
 pub use crate::operation::update_anomaly_subscription::_update_anomaly_subscription_input::UpdateAnomalySubscriptionInputBuilder;
 
+impl UpdateAnomalySubscriptionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_anomaly_subscription::UpdateAnomalySubscriptionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_anomaly_subscription::UpdateAnomalySubscriptionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_anomaly_subscription();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateAnomalySubscription`.
 ///
 /// <p>Updates an existing cost anomaly subscription. Specify the fields that you want to update. Omitted fields are unchanged.</p> <note>

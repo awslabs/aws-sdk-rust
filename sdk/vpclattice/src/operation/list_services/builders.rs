@@ -3,6 +3,23 @@ pub use crate::operation::list_services::_list_services_output::ListServicesOutp
 
 pub use crate::operation::list_services::_list_services_input::ListServicesInputBuilder;
 
+impl ListServicesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_services::ListServicesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_services::ListServicesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_services();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListServices`.
 ///
 /// <p>Lists the services owned by the caller account or shared with the caller account.</p>

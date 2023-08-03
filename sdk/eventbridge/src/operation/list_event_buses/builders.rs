@@ -3,6 +3,23 @@ pub use crate::operation::list_event_buses::_list_event_buses_output::ListEventB
 
 pub use crate::operation::list_event_buses::_list_event_buses_input::ListEventBusesInputBuilder;
 
+impl ListEventBusesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_event_buses::ListEventBusesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_event_buses::ListEventBusesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_event_buses();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListEventBuses`.
 ///
 /// <p>Lists all the event buses in your account, including the default event bus, custom event buses, and partner event buses.</p>

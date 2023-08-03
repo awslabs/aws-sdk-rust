@@ -3,6 +3,23 @@ pub use crate::operation::cancel_cluster::_cancel_cluster_output::CancelClusterO
 
 pub use crate::operation::cancel_cluster::_cancel_cluster_input::CancelClusterInputBuilder;
 
+impl CancelClusterInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::cancel_cluster::CancelClusterOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::cancel_cluster::CancelClusterError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.cancel_cluster();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CancelCluster`.
 ///
 /// <p>Cancels a cluster job. You can only cancel a cluster job while it's in the <code>AwaitingQuorum</code> status. You'll have at least an hour after creating a cluster job to cancel it.</p>

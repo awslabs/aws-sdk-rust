@@ -3,6 +3,23 @@ pub use crate::operation::get_regions::_get_regions_output::GetRegionsOutputBuil
 
 pub use crate::operation::get_regions::_get_regions_input::GetRegionsInputBuilder;
 
+impl GetRegionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_regions::GetRegionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_regions::GetRegionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_regions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetRegions`.
 ///
 /// <p>Returns a list of all valid regions for Amazon Lightsail. Use the <code>include availability zones</code> parameter to also return the Availability Zones in a region.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_data_catalogs::_list_data_catalogs_output::ListDa
 
 pub use crate::operation::list_data_catalogs::_list_data_catalogs_input::ListDataCatalogsInputBuilder;
 
+impl ListDataCatalogsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_data_catalogs::ListDataCatalogsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_data_catalogs::ListDataCatalogsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_data_catalogs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDataCatalogs`.
 ///
 /// <p>Lists the data catalogs in the current Amazon Web Services account.</p> <note>

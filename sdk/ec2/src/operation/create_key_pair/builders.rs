@@ -3,6 +3,23 @@ pub use crate::operation::create_key_pair::_create_key_pair_output::CreateKeyPai
 
 pub use crate::operation::create_key_pair::_create_key_pair_input::CreateKeyPairInputBuilder;
 
+impl CreateKeyPairInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_key_pair::CreateKeyPairOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_key_pair::CreateKeyPairError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_key_pair();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateKeyPair`.
 ///
 /// <p>Creates an ED25519 or 2048-bit RSA key pair with the specified name and in the specified PEM or PPK format. Amazon EC2 stores the public key and displays the private key for you to save to a file. The private key is returned as an unencrypted PEM encoded PKCS#1 private key or an unencrypted PPK formatted private key for use with PuTTY. If a key with the specified name already exists, Amazon EC2 returns an error.</p>

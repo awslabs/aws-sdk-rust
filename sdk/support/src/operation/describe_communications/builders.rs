@@ -3,6 +3,23 @@ pub use crate::operation::describe_communications::_describe_communications_outp
 
 pub use crate::operation::describe_communications::_describe_communications_input::DescribeCommunicationsInputBuilder;
 
+impl DescribeCommunicationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_communications::DescribeCommunicationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_communications::DescribeCommunicationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_communications();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeCommunications`.
 ///
 /// <p>Returns communications and attachments for one or more support cases. Use the <code>afterTime</code> and <code>beforeTime</code> parameters to filter by date. You can use the <code>caseId</code> parameter to restrict the results to a specific case.</p>

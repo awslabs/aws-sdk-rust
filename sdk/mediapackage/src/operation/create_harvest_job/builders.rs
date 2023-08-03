@@ -3,6 +3,23 @@ pub use crate::operation::create_harvest_job::_create_harvest_job_output::Create
 
 pub use crate::operation::create_harvest_job::_create_harvest_job_input::CreateHarvestJobInputBuilder;
 
+impl CreateHarvestJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_harvest_job::CreateHarvestJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_harvest_job::CreateHarvestJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_harvest_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateHarvestJob`.
 ///
 /// Creates a new HarvestJob record.

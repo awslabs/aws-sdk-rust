@@ -3,6 +3,23 @@ pub use crate::operation::subscribe_to_event::_subscribe_to_event_output::Subscr
 
 pub use crate::operation::subscribe_to_event::_subscribe_to_event_input::SubscribeToEventInputBuilder;
 
+impl SubscribeToEventInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::subscribe_to_event::SubscribeToEventOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::subscribe_to_event::SubscribeToEventError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.subscribe_to_event();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SubscribeToEvent`.
 ///
 /// <p>Enables the process of sending Amazon Simple Notification Service (SNS) notifications about a specified event to a specified SNS topic.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::update_schedule::_update_schedule_output::UpdateSchedu
 
 pub use crate::operation::update_schedule::_update_schedule_input::UpdateScheduleInputBuilder;
 
+impl UpdateScheduleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_schedule::UpdateScheduleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_schedule::UpdateScheduleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_schedule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateSchedule`.
 ///
 /// <p> Updates the specified schedule. When you call <code>UpdateSchedule</code>, EventBridge Scheduler uses all values, including empty values, specified in the request and overrides the existing schedule. This is by design. This means that if you do not set an optional field in your request, that field will be set to its system-default value after the update. </p>

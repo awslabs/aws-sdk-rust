@@ -3,6 +3,23 @@ pub use crate::operation::delete_config::_delete_config_output::DeleteConfigOutp
 
 pub use crate::operation::delete_config::_delete_config_input::DeleteConfigInputBuilder;
 
+impl DeleteConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_config::DeleteConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_config::DeleteConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteConfig`.
 ///
 /// <p>Deletes a <code>Config</code>.</p>

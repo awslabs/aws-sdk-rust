@@ -3,6 +3,23 @@ pub use crate::operation::create_dataset_import_job::_create_dataset_import_job_
 
 pub use crate::operation::create_dataset_import_job::_create_dataset_import_job_input::CreateDatasetImportJobInputBuilder;
 
+impl CreateDatasetImportJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_dataset_import_job::CreateDatasetImportJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_dataset_import_job::CreateDatasetImportJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_dataset_import_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateDatasetImportJob`.
 ///
 /// <p>Creates a job that imports training data from your data source (an Amazon S3 bucket) to an Amazon Personalize dataset. To allow Amazon Personalize to import the training data, you must specify an IAM service role that has permission to read from the data source, as Amazon Personalize makes a copy of your data and processes it internally. For information on granting access to your Amazon S3 bucket, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/granting-personalize-s3-access.html">Giving Amazon Personalize Access to Amazon S3 Resources</a>. </p> <important>

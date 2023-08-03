@@ -3,6 +3,23 @@ pub use crate::operation::describe_product_view::_describe_product_view_output::
 
 pub use crate::operation::describe_product_view::_describe_product_view_input::DescribeProductViewInputBuilder;
 
+impl DescribeProductViewInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_product_view::DescribeProductViewOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_product_view::DescribeProductViewError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_product_view();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeProductView`.
 ///
 /// <p>Gets information about the specified product.</p>

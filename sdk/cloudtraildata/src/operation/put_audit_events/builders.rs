@@ -3,6 +3,23 @@ pub use crate::operation::put_audit_events::_put_audit_events_output::PutAuditEv
 
 pub use crate::operation::put_audit_events::_put_audit_events_input::PutAuditEventsInputBuilder;
 
+impl PutAuditEventsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_audit_events::PutAuditEventsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_audit_events::PutAuditEventsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_audit_events();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutAuditEvents`.
 ///
 /// <p>Ingests your application events into CloudTrail Lake. A required parameter, <code>auditEvents</code>, accepts the JSON records (also called <i>payload</i>) of events that you want CloudTrail to ingest. You can add up to 100 of these events (or up to 1 MB) per <code>PutAuditEvents</code> request.</p>

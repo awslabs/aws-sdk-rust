@@ -3,6 +3,23 @@ pub use crate::operation::update_vocabulary::_update_vocabulary_output::UpdateVo
 
 pub use crate::operation::update_vocabulary::_update_vocabulary_input::UpdateVocabularyInputBuilder;
 
+impl UpdateVocabularyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_vocabulary::UpdateVocabularyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_vocabulary::UpdateVocabularyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_vocabulary();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateVocabulary`.
 ///
 /// <p>Updates an existing custom vocabulary with new values. This operation overwrites all existing information with your new values; you cannot append new terms onto an existing custom vocabulary.</p>

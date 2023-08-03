@@ -3,6 +3,23 @@ pub use crate::operation::batch_create_attendee::_batch_create_attendee_output::
 
 pub use crate::operation::batch_create_attendee::_batch_create_attendee_input::BatchCreateAttendeeInputBuilder;
 
+impl BatchCreateAttendeeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_create_attendee::BatchCreateAttendeeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_create_attendee::BatchCreateAttendeeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_create_attendee();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchCreateAttendee`.
 ///
 /// <p>Creates up to 100 attendees for an active Amazon Chime SDK meeting. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p>

@@ -3,6 +3,17 @@ pub use crate::operation::delete_organization_conformance_pack::_delete_organiza
 
 pub use crate::operation::delete_organization_conformance_pack::_delete_organization_conformance_pack_input::DeleteOrganizationConformancePackInputBuilder;
 
+impl DeleteOrganizationConformancePackInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_organization_conformance_pack::DeleteOrganizationConformancePackOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_organization_conformance_pack::DeleteOrganizationConformancePackError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.delete_organization_conformance_pack();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteOrganizationConformancePack`.
 ///
 /// <p>Deletes the specified organization conformance pack and all of the Config rules and remediation actions from all member accounts in that organization. </p>

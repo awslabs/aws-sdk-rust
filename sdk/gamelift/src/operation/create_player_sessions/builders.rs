@@ -3,6 +3,23 @@ pub use crate::operation::create_player_sessions::_create_player_sessions_output
 
 pub use crate::operation::create_player_sessions::_create_player_sessions_input::CreatePlayerSessionsInputBuilder;
 
+impl CreatePlayerSessionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_player_sessions::CreatePlayerSessionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_player_sessions::CreatePlayerSessionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_player_sessions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreatePlayerSessions`.
 ///
 /// <p>Reserves open slots in a game session for a group of players. New player sessions can be created in any game session with an open slot that is in <code>ACTIVE</code> status and has a player creation policy of <code>ACCEPT_ALL</code>. To add a single player to a game session, use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreatePlayerSession.html">CreatePlayerSession</a> </p>

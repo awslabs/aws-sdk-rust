@@ -3,6 +3,17 @@ pub use crate::operation::stop_training_document_classifier::_stop_training_docu
 
 pub use crate::operation::stop_training_document_classifier::_stop_training_document_classifier_input::StopTrainingDocumentClassifierInputBuilder;
 
+impl StopTrainingDocumentClassifierInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::stop_training_document_classifier::StopTrainingDocumentClassifierOutput, ::aws_smithy_http::result::SdkError<crate::operation::stop_training_document_classifier::StopTrainingDocumentClassifierError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.stop_training_document_classifier();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopTrainingDocumentClassifier`.
 ///
 /// <p>Stops a document classifier training job while in progress.</p>

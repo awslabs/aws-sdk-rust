@@ -3,6 +3,23 @@ pub use crate::operation::describe_host_key::_describe_host_key_output::Describe
 
 pub use crate::operation::describe_host_key::_describe_host_key_input::DescribeHostKeyInputBuilder;
 
+impl DescribeHostKeyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_host_key::DescribeHostKeyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_host_key::DescribeHostKeyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_host_key();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeHostKey`.
 ///
 /// <p>Returns the details of the host key that's specified by the <code>HostKeyId</code> and <code>ServerId</code>.</p>

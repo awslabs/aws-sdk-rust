@@ -3,6 +3,23 @@ pub use crate::operation::get_service_sync_blocker_summary::_get_service_sync_bl
 
 pub use crate::operation::get_service_sync_blocker_summary::_get_service_sync_blocker_summary_input::GetServiceSyncBlockerSummaryInputBuilder;
 
+impl GetServiceSyncBlockerSummaryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_service_sync_blocker_summary::GetServiceSyncBlockerSummaryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_service_sync_blocker_summary::GetServiceSyncBlockerSummaryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_service_sync_blocker_summary();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetServiceSyncBlockerSummary`.
 ///
 /// <p>Get detailed data for the service sync blocker summary.</p>

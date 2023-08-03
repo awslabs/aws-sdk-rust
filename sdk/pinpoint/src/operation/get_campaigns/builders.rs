@@ -3,6 +3,23 @@ pub use crate::operation::get_campaigns::_get_campaigns_output::GetCampaignsOutp
 
 pub use crate::operation::get_campaigns::_get_campaigns_input::GetCampaignsInputBuilder;
 
+impl GetCampaignsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_campaigns::GetCampaignsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_campaigns::GetCampaignsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_campaigns();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetCampaigns`.
 ///
 /// <p>Retrieves information about the status, configuration, and other settings for all the campaigns that are associated with an application.</p>

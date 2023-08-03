@@ -3,6 +3,23 @@ pub use crate::operation::get_lens_version_difference::_get_lens_version_differe
 
 pub use crate::operation::get_lens_version_difference::_get_lens_version_difference_input::GetLensVersionDifferenceInputBuilder;
 
+impl GetLensVersionDifferenceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_lens_version_difference::GetLensVersionDifferenceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_lens_version_difference::GetLensVersionDifferenceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_lens_version_difference();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetLensVersionDifference`.
 ///
 /// <p>Get lens version differences.</p>

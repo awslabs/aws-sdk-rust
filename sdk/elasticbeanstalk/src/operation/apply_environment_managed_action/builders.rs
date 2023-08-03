@@ -3,6 +3,23 @@ pub use crate::operation::apply_environment_managed_action::_apply_environment_m
 
 pub use crate::operation::apply_environment_managed_action::_apply_environment_managed_action_input::ApplyEnvironmentManagedActionInputBuilder;
 
+impl ApplyEnvironmentManagedActionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::apply_environment_managed_action::ApplyEnvironmentManagedActionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::apply_environment_managed_action::ApplyEnvironmentManagedActionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.apply_environment_managed_action();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ApplyEnvironmentManagedAction`.
 ///
 /// <p>Applies a scheduled managed action immediately. A managed action can be applied only if its status is <code>Scheduled</code>. Get the status and action ID of a managed action with <code>DescribeEnvironmentManagedActions</code>.</p>

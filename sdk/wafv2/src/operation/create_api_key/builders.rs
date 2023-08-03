@@ -3,6 +3,23 @@ pub use crate::operation::create_api_key::_create_api_key_output::CreateApiKeyOu
 
 pub use crate::operation::create_api_key::_create_api_key_input::CreateApiKeyInputBuilder;
 
+impl CreateApiKeyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_api_key::CreateApiKeyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_api_key::CreateAPIKeyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_api_key();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateAPIKey`.
 ///
 /// <p>Creates an API key that contains a set of token domains.</p>

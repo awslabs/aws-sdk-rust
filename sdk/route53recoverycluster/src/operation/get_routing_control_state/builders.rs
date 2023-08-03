@@ -3,6 +3,23 @@ pub use crate::operation::get_routing_control_state::_get_routing_control_state_
 
 pub use crate::operation::get_routing_control_state::_get_routing_control_state_input::GetRoutingControlStateInputBuilder;
 
+impl GetRoutingControlStateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_routing_control_state::GetRoutingControlStateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_routing_control_state::GetRoutingControlStateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_routing_control_state();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetRoutingControlState`.
 ///
 /// <p>Get the state for a routing control. A routing control is a simple on/off switch that you can use to route traffic to cells. When a routing control state is On, traffic flows to a cell. When the state is Off, traffic does not flow. </p>

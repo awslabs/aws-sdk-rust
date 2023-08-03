@@ -3,6 +3,23 @@ pub use crate::operation::allocate_hosts::_allocate_hosts_output::AllocateHostsO
 
 pub use crate::operation::allocate_hosts::_allocate_hosts_input::AllocateHostsInputBuilder;
 
+impl AllocateHostsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::allocate_hosts::AllocateHostsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::allocate_hosts::AllocateHostsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.allocate_hosts();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AllocateHosts`.
 ///
 /// <p>Allocates a Dedicated Host to your account. At a minimum, specify the supported instance type or instance family, the Availability Zone in which to allocate the host, and the number of hosts to allocate.</p>

@@ -3,6 +3,17 @@ pub use crate::operation::list_workers_with_qualification_type::_list_workers_wi
 
 pub use crate::operation::list_workers_with_qualification_type::_list_workers_with_qualification_type_input::ListWorkersWithQualificationTypeInputBuilder;
 
+impl ListWorkersWithQualificationTypeInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_workers_with_qualification_type::ListWorkersWithQualificationTypeOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_workers_with_qualification_type::ListWorkersWithQualificationTypeError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_workers_with_qualification_type();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListWorkersWithQualificationType`.
 ///
 /// <p> The <code>ListWorkersWithQualificationType</code> operation returns all of the Workers that have been associated with a given Qualification type. </p>

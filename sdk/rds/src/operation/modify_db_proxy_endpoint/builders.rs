@@ -3,6 +3,23 @@ pub use crate::operation::modify_db_proxy_endpoint::_modify_db_proxy_endpoint_ou
 
 pub use crate::operation::modify_db_proxy_endpoint::_modify_db_proxy_endpoint_input::ModifyDbProxyEndpointInputBuilder;
 
+impl ModifyDbProxyEndpointInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_db_proxy_endpoint::ModifyDbProxyEndpointOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_db_proxy_endpoint::ModifyDBProxyEndpointError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_db_proxy_endpoint();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyDBProxyEndpoint`.
 ///
 /// <p>Changes the settings for an existing DB proxy endpoint.</p>

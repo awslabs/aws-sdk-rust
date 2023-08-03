@@ -3,6 +3,23 @@ pub use crate::operation::get_test_execution_artifacts_url::_get_test_execution_
 
 pub use crate::operation::get_test_execution_artifacts_url::_get_test_execution_artifacts_url_input::GetTestExecutionArtifactsUrlInputBuilder;
 
+impl GetTestExecutionArtifactsUrlInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_test_execution_artifacts_url::GetTestExecutionArtifactsUrlOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_test_execution_artifacts_url::GetTestExecutionArtifactsUrlError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_test_execution_artifacts_url();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetTestExecutionArtifactsUrl`.
 ///
 /// <p>The pre-signed Amazon S3 URL to download the test execution result artifacts.</p>

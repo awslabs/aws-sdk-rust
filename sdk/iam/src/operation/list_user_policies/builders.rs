@@ -3,6 +3,23 @@ pub use crate::operation::list_user_policies::_list_user_policies_output::ListUs
 
 pub use crate::operation::list_user_policies::_list_user_policies_input::ListUserPoliciesInputBuilder;
 
+impl ListUserPoliciesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_user_policies::ListUserPoliciesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_user_policies::ListUserPoliciesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_user_policies();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListUserPolicies`.
 ///
 /// <p>Lists the names of the inline policies embedded in the specified IAM user.</p>

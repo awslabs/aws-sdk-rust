@@ -3,6 +3,23 @@ pub use crate::operation::get_face_search::_get_face_search_output::GetFaceSearc
 
 pub use crate::operation::get_face_search::_get_face_search_input::GetFaceSearchInputBuilder;
 
+impl GetFaceSearchInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_face_search::GetFaceSearchOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_face_search::GetFaceSearchError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_face_search();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetFaceSearch`.
 ///
 /// <p>Gets the face search results for Amazon Rekognition Video face search started by <code>StartFaceSearch</code>. The search returns faces in a collection that match the faces of persons detected in a video. It also includes the time(s) that faces are matched in the video.</p>

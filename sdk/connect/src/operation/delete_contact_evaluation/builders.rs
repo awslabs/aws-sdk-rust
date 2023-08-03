@@ -3,6 +3,23 @@ pub use crate::operation::delete_contact_evaluation::_delete_contact_evaluation_
 
 pub use crate::operation::delete_contact_evaluation::_delete_contact_evaluation_input::DeleteContactEvaluationInputBuilder;
 
+impl DeleteContactEvaluationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_contact_evaluation::DeleteContactEvaluationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_contact_evaluation::DeleteContactEvaluationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_contact_evaluation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteContactEvaluation`.
 ///
 /// <p>Deletes a contact evaluation in the specified Amazon Connect instance.</p>

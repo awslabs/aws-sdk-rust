@@ -3,6 +3,23 @@ pub use crate::operation::copy_object::_copy_object_output::CopyObjectOutputBuil
 
 pub use crate::operation::copy_object::_copy_object_input::CopyObjectInputBuilder;
 
+impl CopyObjectInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::copy_object::CopyObjectOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::copy_object::CopyObjectError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.copy_object();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CopyObject`.
 ///
 /// <p>Creates a copy of an object that is already stored in Amazon S3.</p> <note>

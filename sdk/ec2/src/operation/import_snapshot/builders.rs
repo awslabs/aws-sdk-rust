@@ -3,6 +3,23 @@ pub use crate::operation::import_snapshot::_import_snapshot_output::ImportSnapsh
 
 pub use crate::operation::import_snapshot::_import_snapshot_input::ImportSnapshotInputBuilder;
 
+impl ImportSnapshotInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::import_snapshot::ImportSnapshotOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::import_snapshot::ImportSnapshotError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.import_snapshot();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ImportSnapshot`.
 ///
 /// <p>Imports a disk into an EBS snapshot.</p>

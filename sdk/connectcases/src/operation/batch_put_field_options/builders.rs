@@ -3,6 +3,23 @@ pub use crate::operation::batch_put_field_options::_batch_put_field_options_outp
 
 pub use crate::operation::batch_put_field_options::_batch_put_field_options_input::BatchPutFieldOptionsInputBuilder;
 
+impl BatchPutFieldOptionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_put_field_options::BatchPutFieldOptionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_put_field_options::BatchPutFieldOptionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_put_field_options();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchPutFieldOptions`.
 ///
 /// <p>Creates and updates a set of field options for a single select field in a Cases domain.</p>

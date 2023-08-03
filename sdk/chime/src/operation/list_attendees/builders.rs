@@ -3,6 +3,23 @@ pub use crate::operation::list_attendees::_list_attendees_output::ListAttendeesO
 
 pub use crate::operation::list_attendees::_list_attendees_input::ListAttendeesInputBuilder;
 
+impl ListAttendeesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_attendees::ListAttendeesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_attendees::ListAttendeesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_attendees();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAttendees`.
 ///
 /// <p> Lists the attendees for the specified Amazon Chime SDK meeting. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon Chime SDK Developer Guide</i>. </p> <important>

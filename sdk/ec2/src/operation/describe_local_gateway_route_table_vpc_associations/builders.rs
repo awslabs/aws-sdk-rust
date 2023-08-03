@@ -3,6 +3,17 @@ pub use crate::operation::describe_local_gateway_route_table_vpc_associations::_
 
 pub use crate::operation::describe_local_gateway_route_table_vpc_associations::_describe_local_gateway_route_table_vpc_associations_input::DescribeLocalGatewayRouteTableVpcAssociationsInputBuilder;
 
+impl DescribeLocalGatewayRouteTableVpcAssociationsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_local_gateway_route_table_vpc_associations::DescribeLocalGatewayRouteTableVpcAssociationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_local_gateway_route_table_vpc_associations::DescribeLocalGatewayRouteTableVpcAssociationsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_local_gateway_route_table_vpc_associations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeLocalGatewayRouteTableVpcAssociations`.
 ///
 /// <p>Describes the specified associations between VPCs and local gateway route tables.</p>

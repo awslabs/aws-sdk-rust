@@ -3,6 +3,17 @@ pub use crate::operation::describe_kinesis_streaming_destination::_describe_kine
 
 pub use crate::operation::describe_kinesis_streaming_destination::_describe_kinesis_streaming_destination_input::DescribeKinesisStreamingDestinationInputBuilder;
 
+impl DescribeKinesisStreamingDestinationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_kinesis_streaming_destination::DescribeKinesisStreamingDestinationOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_kinesis_streaming_destination::DescribeKinesisStreamingDestinationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_kinesis_streaming_destination();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeKinesisStreamingDestination`.
 ///
 /// <p>Returns information about the status of Kinesis streaming.</p>

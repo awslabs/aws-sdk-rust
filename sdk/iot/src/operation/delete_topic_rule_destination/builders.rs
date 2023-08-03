@@ -3,6 +3,23 @@ pub use crate::operation::delete_topic_rule_destination::_delete_topic_rule_dest
 
 pub use crate::operation::delete_topic_rule_destination::_delete_topic_rule_destination_input::DeleteTopicRuleDestinationInputBuilder;
 
+impl DeleteTopicRuleDestinationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_topic_rule_destination::DeleteTopicRuleDestinationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_topic_rule_destination::DeleteTopicRuleDestinationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_topic_rule_destination();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteTopicRuleDestination`.
 ///
 /// <p>Deletes a topic rule destination.</p>

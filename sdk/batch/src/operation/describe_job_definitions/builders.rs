@@ -3,6 +3,23 @@ pub use crate::operation::describe_job_definitions::_describe_job_definitions_ou
 
 pub use crate::operation::describe_job_definitions::_describe_job_definitions_input::DescribeJobDefinitionsInputBuilder;
 
+impl DescribeJobDefinitionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_job_definitions::DescribeJobDefinitionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_job_definitions::DescribeJobDefinitionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_job_definitions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeJobDefinitions`.
 ///
 /// <p>Describes a list of job definitions. You can specify a <code>status</code> (such as <code>ACTIVE</code>) to only return job definitions that match that status.</p>

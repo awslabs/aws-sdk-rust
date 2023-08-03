@@ -3,6 +3,23 @@ pub use crate::operation::create_app_image_config::_create_app_image_config_outp
 
 pub use crate::operation::create_app_image_config::_create_app_image_config_input::CreateAppImageConfigInputBuilder;
 
+impl CreateAppImageConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_app_image_config::CreateAppImageConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_app_image_config::CreateAppImageConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_app_image_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateAppImageConfig`.
 ///
 /// <p>Creates a configuration for running a SageMaker image as a KernelGateway app. The configuration specifies the Amazon Elastic File System (EFS) storage volume on the image, and a list of the kernels in the image.</p>

@@ -3,6 +3,17 @@ pub use crate::operation::get_ipam_discovered_resource_cidrs::_get_ipam_discover
 
 pub use crate::operation::get_ipam_discovered_resource_cidrs::_get_ipam_discovered_resource_cidrs_input::GetIpamDiscoveredResourceCidrsInputBuilder;
 
+impl GetIpamDiscoveredResourceCidrsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_ipam_discovered_resource_cidrs::GetIpamDiscoveredResourceCidrsOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_ipam_discovered_resource_cidrs::GetIpamDiscoveredResourceCidrsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_ipam_discovered_resource_cidrs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetIpamDiscoveredResourceCidrs`.
 ///
 /// <p>Returns the resource CIDRs that are monitored as part of a resource discovery. A discovered resource is a resource CIDR monitored under a resource discovery. The following resources can be discovered: VPCs, Public IPv4 pools, VPC subnets, and Elastic IP addresses. </p>

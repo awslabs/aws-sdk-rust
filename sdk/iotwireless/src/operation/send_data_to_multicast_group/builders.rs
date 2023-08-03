@@ -3,6 +3,23 @@ pub use crate::operation::send_data_to_multicast_group::_send_data_to_multicast_
 
 pub use crate::operation::send_data_to_multicast_group::_send_data_to_multicast_group_input::SendDataToMulticastGroupInputBuilder;
 
+impl SendDataToMulticastGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::send_data_to_multicast_group::SendDataToMulticastGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::send_data_to_multicast_group::SendDataToMulticastGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.send_data_to_multicast_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SendDataToMulticastGroup`.
 ///
 /// <p>Sends the specified data to a multicast group.</p>

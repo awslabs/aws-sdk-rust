@@ -3,6 +3,23 @@ pub use crate::operation::get_provisioned_product_outputs::_get_provisioned_prod
 
 pub use crate::operation::get_provisioned_product_outputs::_get_provisioned_product_outputs_input::GetProvisionedProductOutputsInputBuilder;
 
+impl GetProvisionedProductOutputsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_provisioned_product_outputs::GetProvisionedProductOutputsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_provisioned_product_outputs::GetProvisionedProductOutputsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_provisioned_product_outputs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetProvisionedProductOutputs`.
 ///
 /// <p>This API takes either a <code>ProvisonedProductId</code> or a <code>ProvisionedProductName</code>, along with a list of one or more output keys, and responds with the key/value pairs of those outputs.</p>

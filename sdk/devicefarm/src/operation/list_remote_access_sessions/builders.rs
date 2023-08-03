@@ -3,6 +3,23 @@ pub use crate::operation::list_remote_access_sessions::_list_remote_access_sessi
 
 pub use crate::operation::list_remote_access_sessions::_list_remote_access_sessions_input::ListRemoteAccessSessionsInputBuilder;
 
+impl ListRemoteAccessSessionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_remote_access_sessions::ListRemoteAccessSessionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_remote_access_sessions::ListRemoteAccessSessionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_remote_access_sessions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListRemoteAccessSessions`.
 ///
 /// <p>Returns a list of all currently running remote access sessions.</p>

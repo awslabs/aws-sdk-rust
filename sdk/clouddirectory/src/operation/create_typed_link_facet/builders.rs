@@ -3,6 +3,23 @@ pub use crate::operation::create_typed_link_facet::_create_typed_link_facet_outp
 
 pub use crate::operation::create_typed_link_facet::_create_typed_link_facet_input::CreateTypedLinkFacetInputBuilder;
 
+impl CreateTypedLinkFacetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_typed_link_facet::CreateTypedLinkFacetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_typed_link_facet::CreateTypedLinkFacetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_typed_link_facet();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateTypedLinkFacet`.
 ///
 /// <p>Creates a <code>TypedLinkFacet</code>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>

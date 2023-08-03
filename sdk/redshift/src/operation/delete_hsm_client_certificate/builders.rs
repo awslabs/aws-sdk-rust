@@ -3,6 +3,23 @@ pub use crate::operation::delete_hsm_client_certificate::_delete_hsm_client_cert
 
 pub use crate::operation::delete_hsm_client_certificate::_delete_hsm_client_certificate_input::DeleteHsmClientCertificateInputBuilder;
 
+impl DeleteHsmClientCertificateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_hsm_client_certificate::DeleteHsmClientCertificateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_hsm_client_certificate::DeleteHsmClientCertificateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_hsm_client_certificate();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteHsmClientCertificate`.
 ///
 /// <p>Deletes the specified HSM client certificate.</p>

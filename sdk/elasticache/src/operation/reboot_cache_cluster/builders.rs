@@ -3,6 +3,23 @@ pub use crate::operation::reboot_cache_cluster::_reboot_cache_cluster_output::Re
 
 pub use crate::operation::reboot_cache_cluster::_reboot_cache_cluster_input::RebootCacheClusterInputBuilder;
 
+impl RebootCacheClusterInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::reboot_cache_cluster::RebootCacheClusterOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::reboot_cache_cluster::RebootCacheClusterError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.reboot_cache_cluster();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RebootCacheCluster`.
 ///
 /// <p>Reboots some, or all, of the cache nodes within a provisioned cluster. This operation applies any modified cache parameter groups to the cluster. The reboot operation takes place as soon as possible, and results in a momentary outage to the cluster. During the reboot, the cluster status is set to REBOOTING.</p>

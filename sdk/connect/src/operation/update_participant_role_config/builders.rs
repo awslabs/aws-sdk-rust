@@ -3,6 +3,23 @@ pub use crate::operation::update_participant_role_config::_update_participant_ro
 
 pub use crate::operation::update_participant_role_config::_update_participant_role_config_input::UpdateParticipantRoleConfigInputBuilder;
 
+impl UpdateParticipantRoleConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_participant_role_config::UpdateParticipantRoleConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_participant_role_config::UpdateParticipantRoleConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_participant_role_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateParticipantRoleConfig`.
 ///
 /// <p>Updates timeouts for when human chat participants are to be considered idle, and when agents are automatically disconnected from a chat due to idleness. You can set four timers:</p>

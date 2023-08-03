@@ -3,6 +3,23 @@ pub use crate::operation::get_in_app_messages::_get_in_app_messages_output::GetI
 
 pub use crate::operation::get_in_app_messages::_get_in_app_messages_input::GetInAppMessagesInputBuilder;
 
+impl GetInAppMessagesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_in_app_messages::GetInAppMessagesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_in_app_messages::GetInAppMessagesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_in_app_messages();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetInAppMessages`.
 ///
 /// <p>Retrieves the in-app messages targeted for the provided endpoint ID.</p>

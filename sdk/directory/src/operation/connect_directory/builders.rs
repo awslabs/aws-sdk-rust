@@ -3,6 +3,23 @@ pub use crate::operation::connect_directory::_connect_directory_output::ConnectD
 
 pub use crate::operation::connect_directory::_connect_directory_input::ConnectDirectoryInputBuilder;
 
+impl ConnectDirectoryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::connect_directory::ConnectDirectoryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::connect_directory::ConnectDirectoryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.connect_directory();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ConnectDirectory`.
 ///
 /// <p>Creates an AD Connector to connect to a self-managed directory.</p>

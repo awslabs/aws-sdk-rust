@@ -3,6 +3,23 @@ pub use crate::operation::create_nat_gateway::_create_nat_gateway_output::Create
 
 pub use crate::operation::create_nat_gateway::_create_nat_gateway_input::CreateNatGatewayInputBuilder;
 
+impl CreateNatGatewayInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_nat_gateway::CreateNatGatewayOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_nat_gateway::CreateNatGatewayError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_nat_gateway();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateNatGateway`.
 ///
 /// <p>Creates a NAT gateway in the specified subnet. This action creates a network interface in the specified subnet with a private IP address from the IP address range of the subnet. You can create either a public NAT gateway or a private NAT gateway.</p>

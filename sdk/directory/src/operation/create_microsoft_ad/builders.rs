@@ -3,6 +3,23 @@ pub use crate::operation::create_microsoft_ad::_create_microsoft_ad_output::Crea
 
 pub use crate::operation::create_microsoft_ad::_create_microsoft_ad_input::CreateMicrosoftAdInputBuilder;
 
+impl CreateMicrosoftAdInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_microsoft_ad::CreateMicrosoftAdOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_microsoft_ad::CreateMicrosoftADError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_microsoft_ad();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateMicrosoftAD`.
 ///
 /// <p>Creates a Microsoft AD directory in the Amazon Web Services Cloud. For more information, see <a href="https://docs.aws.amazon.com/directoryservice/latest/admin-guide/directory_microsoft_ad.html">Managed Microsoft AD</a> in the <i>Directory Service Admin Guide</i>.</p>

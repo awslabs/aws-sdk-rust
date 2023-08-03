@@ -3,6 +3,23 @@ pub use crate::operation::delete_vehicle::_delete_vehicle_output::DeleteVehicleO
 
 pub use crate::operation::delete_vehicle::_delete_vehicle_input::DeleteVehicleInputBuilder;
 
+impl DeleteVehicleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_vehicle::DeleteVehicleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_vehicle::DeleteVehicleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_vehicle();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteVehicle`.
 ///
 /// <p> Deletes a vehicle and removes it from any campaigns.</p> <note>

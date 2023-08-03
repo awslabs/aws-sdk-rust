@@ -3,6 +3,23 @@ pub use crate::operation::update_team_member::_update_team_member_output::Update
 
 pub use crate::operation::update_team_member::_update_team_member_input::UpdateTeamMemberInputBuilder;
 
+impl UpdateTeamMemberInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_team_member::UpdateTeamMemberOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_team_member::UpdateTeamMemberError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_team_member();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateTeamMember`.
 ///
 /// <p>Updates a team member's attributes in an AWS CodeStar project. For example, you can change a team member's role in the project, or change whether they have remote access to project resources.</p>

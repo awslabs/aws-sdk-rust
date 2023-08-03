@@ -3,6 +3,23 @@ pub use crate::operation::create_vpc_peering_connection::_create_vpc_peering_con
 
 pub use crate::operation::create_vpc_peering_connection::_create_vpc_peering_connection_input::CreateVpcPeeringConnectionInputBuilder;
 
+impl CreateVpcPeeringConnectionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_vpc_peering_connection::CreateVpcPeeringConnectionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_vpc_peering_connection::CreateVpcPeeringConnectionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_vpc_peering_connection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateVpcPeeringConnection`.
 ///
 /// <p>Requests a VPC peering connection between two VPCs: a requester VPC that you own and an accepter VPC with which to create the connection. The accepter VPC can belong to another Amazon Web Services account and can be in a different Region to the requester VPC. The requester VPC and accepter VPC cannot have overlapping CIDR blocks.</p> <note>

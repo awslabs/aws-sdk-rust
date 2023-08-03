@@ -3,6 +3,23 @@ pub use crate::operation::get_workflow_execution_history::_get_workflow_executio
 
 pub use crate::operation::get_workflow_execution_history::_get_workflow_execution_history_input::GetWorkflowExecutionHistoryInputBuilder;
 
+impl GetWorkflowExecutionHistoryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_workflow_execution_history::GetWorkflowExecutionHistoryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_workflow_execution_history::GetWorkflowExecutionHistoryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_workflow_execution_history();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetWorkflowExecutionHistory`.
 ///
 /// <p>Returns the history of the specified workflow execution. The results may be split into multiple pages. To retrieve subsequent pages, make the call again using the <code>nextPageToken</code> returned by the initial call.</p> <note>

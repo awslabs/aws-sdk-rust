@@ -3,6 +3,23 @@ pub use crate::operation::list_game_server_groups::_list_game_server_groups_outp
 
 pub use crate::operation::list_game_server_groups::_list_game_server_groups_input::ListGameServerGroupsInputBuilder;
 
+impl ListGameServerGroupsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_game_server_groups::ListGameServerGroupsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_game_server_groups::ListGameServerGroupsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_game_server_groups();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListGameServerGroups`.
 ///
 /// <p>Lists a game server groups.</p>

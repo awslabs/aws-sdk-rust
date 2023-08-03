@@ -3,6 +3,23 @@ pub use crate::operation::put_users::_put_users_output::PutUsersOutputBuilder;
 
 pub use crate::operation::put_users::_put_users_input::PutUsersInputBuilder;
 
+impl PutUsersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_users::PutUsersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_users::PutUsersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_users();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutUsers`.
 ///
 /// <p>Adds one or more users to a Users dataset. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/importing-users.html">Importing Users Incrementally</a>.</p>

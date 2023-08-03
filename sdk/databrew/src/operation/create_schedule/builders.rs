@@ -3,6 +3,23 @@ pub use crate::operation::create_schedule::_create_schedule_output::CreateSchedu
 
 pub use crate::operation::create_schedule::_create_schedule_input::CreateScheduleInputBuilder;
 
+impl CreateScheduleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_schedule::CreateScheduleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_schedule::CreateScheduleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_schedule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateSchedule`.
 ///
 /// <p>Creates a new schedule for one or more DataBrew jobs. Jobs can be run at a specific date and time, or at regular intervals.</p>

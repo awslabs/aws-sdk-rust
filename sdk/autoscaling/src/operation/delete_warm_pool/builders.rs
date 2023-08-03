@@ -3,6 +3,23 @@ pub use crate::operation::delete_warm_pool::_delete_warm_pool_output::DeleteWarm
 
 pub use crate::operation::delete_warm_pool::_delete_warm_pool_input::DeleteWarmPoolInputBuilder;
 
+impl DeleteWarmPoolInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_warm_pool::DeleteWarmPoolOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_warm_pool::DeleteWarmPoolError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_warm_pool();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteWarmPool`.
 ///
 /// <p>Deletes the warm pool for the specified Auto Scaling group.</p>

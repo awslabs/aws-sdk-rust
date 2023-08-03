@@ -3,6 +3,23 @@ pub use crate::operation::stop_instances::_stop_instances_output::StopInstancesO
 
 pub use crate::operation::stop_instances::_stop_instances_input::StopInstancesInputBuilder;
 
+impl StopInstancesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_instances::StopInstancesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_instances::StopInstancesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_instances();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopInstances`.
 ///
 /// <p>Stops an Amazon EBS-backed instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Stop_Start.html">Stop and start your instance</a> in the <i>Amazon EC2 User Guide</i>.</p>

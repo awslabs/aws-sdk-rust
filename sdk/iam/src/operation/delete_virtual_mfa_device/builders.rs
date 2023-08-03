@@ -3,6 +3,23 @@ pub use crate::operation::delete_virtual_mfa_device::_delete_virtual_mfa_device_
 
 pub use crate::operation::delete_virtual_mfa_device::_delete_virtual_mfa_device_input::DeleteVirtualMfaDeviceInputBuilder;
 
+impl DeleteVirtualMfaDeviceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_virtual_mfa_device::DeleteVirtualMfaDeviceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_virtual_mfa_device::DeleteVirtualMFADeviceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_virtual_mfa_device();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteVirtualMFADevice`.
 ///
 /// <p>Deletes a virtual MFA device.</p> <note>

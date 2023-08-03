@@ -3,6 +3,23 @@ pub use crate::operation::list_instance_attributes::_list_instance_attributes_ou
 
 pub use crate::operation::list_instance_attributes::_list_instance_attributes_input::ListInstanceAttributesInputBuilder;
 
+impl ListInstanceAttributesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_instance_attributes::ListInstanceAttributesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_instance_attributes::ListInstanceAttributesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_instance_attributes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListInstanceAttributes`.
 ///
 /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>

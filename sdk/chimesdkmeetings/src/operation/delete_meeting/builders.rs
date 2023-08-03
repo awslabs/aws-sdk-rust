@@ -3,6 +3,23 @@ pub use crate::operation::delete_meeting::_delete_meeting_output::DeleteMeetingO
 
 pub use crate::operation::delete_meeting::_delete_meeting_input::DeleteMeetingInputBuilder;
 
+impl DeleteMeetingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_meeting::DeleteMeetingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_meeting::DeleteMeetingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_meeting();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteMeeting`.
 ///
 /// <p>Deletes the specified Amazon Chime SDK meeting. The operation deletes all attendees, disconnects all clients, and prevents new clients from joining the meeting. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p>

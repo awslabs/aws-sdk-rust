@@ -3,6 +3,23 @@ pub use crate::operation::retry_build::_retry_build_output::RetryBuildOutputBuil
 
 pub use crate::operation::retry_build::_retry_build_input::RetryBuildInputBuilder;
 
+impl RetryBuildInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::retry_build::RetryBuildOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::retry_build::RetryBuildError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.retry_build();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RetryBuild`.
 ///
 /// <p>Restarts a build.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_security_config::_delete_security_config_output
 
 pub use crate::operation::delete_security_config::_delete_security_config_input::DeleteSecurityConfigInputBuilder;
 
+impl DeleteSecurityConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_security_config::DeleteSecurityConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_security_config::DeleteSecurityConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_security_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteSecurityConfig`.
 ///
 /// <p>Deletes a security configuration for OpenSearch Serverless. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-saml.html">SAML authentication for Amazon OpenSearch Serverless</a>.</p>

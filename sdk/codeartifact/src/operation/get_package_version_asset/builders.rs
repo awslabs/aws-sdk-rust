@@ -3,6 +3,23 @@ pub use crate::operation::get_package_version_asset::_get_package_version_asset_
 
 pub use crate::operation::get_package_version_asset::_get_package_version_asset_input::GetPackageVersionAssetInputBuilder;
 
+impl GetPackageVersionAssetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_package_version_asset::GetPackageVersionAssetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_package_version_asset::GetPackageVersionAssetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_package_version_asset();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetPackageVersionAsset`.
 ///
 /// <p> Returns an asset (or file) that is in a package. For example, for a Maven package version, use <code>GetPackageVersionAsset</code> to download a <code>JAR</code> file, a <code>POM</code> file, or any other assets in the package version. </p>

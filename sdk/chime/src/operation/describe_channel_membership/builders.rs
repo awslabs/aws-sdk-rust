@@ -3,6 +3,23 @@ pub use crate::operation::describe_channel_membership::_describe_channel_members
 
 pub use crate::operation::describe_channel_membership::_describe_channel_membership_input::DescribeChannelMembershipInputBuilder;
 
+impl DescribeChannelMembershipInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_channel_membership::DescribeChannelMembershipOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_channel_membership::DescribeChannelMembershipError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_channel_membership();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeChannelMembership`.
 ///
 /// <p>Returns the full details of a user's channel membership.</p> <note>

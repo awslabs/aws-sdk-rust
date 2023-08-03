@@ -3,6 +3,23 @@ pub use crate::operation::put_external_model::_put_external_model_output::PutExt
 
 pub use crate::operation::put_external_model::_put_external_model_input::PutExternalModelInputBuilder;
 
+impl PutExternalModelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_external_model::PutExternalModelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_external_model::PutExternalModelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_external_model();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutExternalModel`.
 ///
 /// <p>Creates or updates an Amazon SageMaker model endpoint. You can also use this action to update the configuration of the model endpoint, including the IAM role and/or the mapped variables. </p>

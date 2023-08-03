@@ -3,6 +3,23 @@ pub use crate::operation::get_snapshot_limits::_get_snapshot_limits_output::GetS
 
 pub use crate::operation::get_snapshot_limits::_get_snapshot_limits_input::GetSnapshotLimitsInputBuilder;
 
+impl GetSnapshotLimitsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_snapshot_limits::GetSnapshotLimitsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_snapshot_limits::GetSnapshotLimitsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_snapshot_limits();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetSnapshotLimits`.
 ///
 /// <p>Obtains the manual snapshot limits for a directory.</p>

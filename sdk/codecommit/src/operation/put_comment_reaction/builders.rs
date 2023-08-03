@@ -3,6 +3,23 @@ pub use crate::operation::put_comment_reaction::_put_comment_reaction_output::Pu
 
 pub use crate::operation::put_comment_reaction::_put_comment_reaction_input::PutCommentReactionInputBuilder;
 
+impl PutCommentReactionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_comment_reaction::PutCommentReactionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_comment_reaction::PutCommentReactionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_comment_reaction();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutCommentReaction`.
 ///
 /// <p>Adds or updates a reaction to a specified comment for the user whose identity is used to make the request. You can only add or update a reaction for yourself. You cannot add, modify, or delete a reaction for another user.</p>

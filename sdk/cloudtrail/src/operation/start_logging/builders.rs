@@ -3,6 +3,23 @@ pub use crate::operation::start_logging::_start_logging_output::StartLoggingOutp
 
 pub use crate::operation::start_logging::_start_logging_input::StartLoggingInputBuilder;
 
+impl StartLoggingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_logging::StartLoggingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_logging::StartLoggingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_logging();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartLogging`.
 ///
 /// <p>Starts the recording of Amazon Web Services API calls and log file delivery for a trail. For a trail that is enabled in all Regions, this operation must be called from the Region in which the trail was created. This operation cannot be called on the shadow trails (replicated trails in other Regions) of a trail that is enabled in all Regions.</p>

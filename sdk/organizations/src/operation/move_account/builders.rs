@@ -3,6 +3,23 @@ pub use crate::operation::move_account::_move_account_output::MoveAccountOutputB
 
 pub use crate::operation::move_account::_move_account_input::MoveAccountInputBuilder;
 
+impl MoveAccountInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::move_account::MoveAccountOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::move_account::MoveAccountError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.move_account();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `MoveAccount`.
 ///
 /// <p>Moves an account from its current source parent root or organizational unit (OU) to the specified destination parent root or OU.</p>

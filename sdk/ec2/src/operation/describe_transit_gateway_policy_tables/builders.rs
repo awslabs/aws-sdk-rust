@@ -3,6 +3,17 @@ pub use crate::operation::describe_transit_gateway_policy_tables::_describe_tran
 
 pub use crate::operation::describe_transit_gateway_policy_tables::_describe_transit_gateway_policy_tables_input::DescribeTransitGatewayPolicyTablesInputBuilder;
 
+impl DescribeTransitGatewayPolicyTablesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_transit_gateway_policy_tables::DescribeTransitGatewayPolicyTablesOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_transit_gateway_policy_tables::DescribeTransitGatewayPolicyTablesError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_transit_gateway_policy_tables();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeTransitGatewayPolicyTables`.
 ///
 /// <p>Describes one or more transit gateway route policy tables. </p>

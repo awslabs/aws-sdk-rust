@@ -3,6 +3,17 @@ pub use crate::operation::associate_wireless_device_with_fuota_task::_associate_
 
 pub use crate::operation::associate_wireless_device_with_fuota_task::_associate_wireless_device_with_fuota_task_input::AssociateWirelessDeviceWithFuotaTaskInputBuilder;
 
+impl AssociateWirelessDeviceWithFuotaTaskInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::associate_wireless_device_with_fuota_task::AssociateWirelessDeviceWithFuotaTaskOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_wireless_device_with_fuota_task::AssociateWirelessDeviceWithFuotaTaskError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.associate_wireless_device_with_fuota_task();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateWirelessDeviceWithFuotaTask`.
 ///
 /// <p>Associate a wireless device with a FUOTA task.</p>

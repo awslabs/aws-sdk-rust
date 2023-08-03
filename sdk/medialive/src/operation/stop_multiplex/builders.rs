@@ -3,6 +3,23 @@ pub use crate::operation::stop_multiplex::_stop_multiplex_output::StopMultiplexO
 
 pub use crate::operation::stop_multiplex::_stop_multiplex_input::StopMultiplexInputBuilder;
 
+impl StopMultiplexInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_multiplex::StopMultiplexOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_multiplex::StopMultiplexError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_multiplex();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopMultiplex`.
 ///
 /// Stops a running multiplex. If the multiplex isn't running, this action has no effect.

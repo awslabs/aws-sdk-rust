@@ -3,6 +3,23 @@ pub use crate::operation::create_node_from_template_job::_create_node_from_templ
 
 pub use crate::operation::create_node_from_template_job::_create_node_from_template_job_input::CreateNodeFromTemplateJobInputBuilder;
 
+impl CreateNodeFromTemplateJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_node_from_template_job::CreateNodeFromTemplateJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_node_from_template_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateNodeFromTemplateJob`.
 ///
 /// <p>Creates a camera stream node.</p>

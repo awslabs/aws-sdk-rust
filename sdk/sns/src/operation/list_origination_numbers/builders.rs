@@ -3,6 +3,23 @@ pub use crate::operation::list_origination_numbers::_list_origination_numbers_ou
 
 pub use crate::operation::list_origination_numbers::_list_origination_numbers_input::ListOriginationNumbersInputBuilder;
 
+impl ListOriginationNumbersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_origination_numbers::ListOriginationNumbersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_origination_numbers::ListOriginationNumbersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_origination_numbers();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListOriginationNumbers`.
 ///
 /// <p>Lists the calling Amazon Web Services account's dedicated origination numbers and their metadata. For more information about origination numbers, see <a href="https://docs.aws.amazon.com/sns/latest/dg/channels-sms-originating-identities-origination-numbers.html">Origination numbers</a> in the <i>Amazon SNS Developer Guide</i>.</p>

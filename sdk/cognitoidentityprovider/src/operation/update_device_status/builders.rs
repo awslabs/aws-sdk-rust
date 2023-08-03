@@ -3,6 +3,23 @@ pub use crate::operation::update_device_status::_update_device_status_output::Up
 
 pub use crate::operation::update_device_status::_update_device_status_input::UpdateDeviceStatusInputBuilder;
 
+impl UpdateDeviceStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_device_status::UpdateDeviceStatusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_device_status::UpdateDeviceStatusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_device_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateDeviceStatus`.
 ///
 /// <p>Updates the device status.</p>

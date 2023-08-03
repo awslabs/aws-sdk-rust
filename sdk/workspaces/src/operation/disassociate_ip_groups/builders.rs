@@ -3,6 +3,23 @@ pub use crate::operation::disassociate_ip_groups::_disassociate_ip_groups_output
 
 pub use crate::operation::disassociate_ip_groups::_disassociate_ip_groups_input::DisassociateIpGroupsInputBuilder;
 
+impl DisassociateIpGroupsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_ip_groups::DisassociateIpGroupsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_ip_groups::DisassociateIpGroupsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disassociate_ip_groups();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateIpGroups`.
 ///
 /// <p>Disassociates the specified IP access control group from the specified directory.</p>

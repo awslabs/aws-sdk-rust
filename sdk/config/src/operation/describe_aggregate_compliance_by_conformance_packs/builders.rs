@@ -3,6 +3,17 @@ pub use crate::operation::describe_aggregate_compliance_by_conformance_packs::_d
 
 pub use crate::operation::describe_aggregate_compliance_by_conformance_packs::_describe_aggregate_compliance_by_conformance_packs_input::DescribeAggregateComplianceByConformancePacksInputBuilder;
 
+impl DescribeAggregateComplianceByConformancePacksInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_aggregate_compliance_by_conformance_packs::DescribeAggregateComplianceByConformancePacksOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_aggregate_compliance_by_conformance_packs::DescribeAggregateComplianceByConformancePacksError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_aggregate_compliance_by_conformance_packs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAggregateComplianceByConformancePacks`.
 ///
 /// <p>Returns a list of the conformance packs and their associated compliance status with the count of compliant and noncompliant Config rules within each conformance pack. Also returns the total rule count which includes compliant rules, noncompliant rules, and rules that cannot be evaluated due to insufficient data.</p> <note>

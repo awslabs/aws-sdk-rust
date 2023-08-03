@@ -3,6 +3,23 @@ pub use crate::operation::cancel_world_generation_job::_cancel_world_generation_
 
 pub use crate::operation::cancel_world_generation_job::_cancel_world_generation_job_input::CancelWorldGenerationJobInputBuilder;
 
+impl CancelWorldGenerationJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::cancel_world_generation_job::CancelWorldGenerationJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::cancel_world_generation_job::CancelWorldGenerationJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.cancel_world_generation_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CancelWorldGenerationJob`.
 ///
 /// <p>Cancels the specified world generator job.</p>

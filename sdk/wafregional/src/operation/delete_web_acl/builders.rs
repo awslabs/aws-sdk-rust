@@ -3,6 +3,23 @@ pub use crate::operation::delete_web_acl::_delete_web_acl_output::DeleteWebAclOu
 
 pub use crate::operation::delete_web_acl::_delete_web_acl_input::DeleteWebAclInputBuilder;
 
+impl DeleteWebAclInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_web_acl::DeleteWebAclOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_web_acl::DeleteWebACLError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_web_acl();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteWebACL`.
 ///
 /// <note>

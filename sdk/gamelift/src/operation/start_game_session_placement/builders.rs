@@ -3,6 +3,23 @@ pub use crate::operation::start_game_session_placement::_start_game_session_plac
 
 pub use crate::operation::start_game_session_placement::_start_game_session_placement_input::StartGameSessionPlacementInputBuilder;
 
+impl StartGameSessionPlacementInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_game_session_placement::StartGameSessionPlacementOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_game_session_placement::StartGameSessionPlacementError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_game_session_placement();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartGameSessionPlacement`.
 ///
 /// <p>Places a request for a new game session in a queue. When processing a placement request, Amazon GameLift searches for available resources on the queue's destinations, scanning each until it finds resources or the placement request times out.</p>

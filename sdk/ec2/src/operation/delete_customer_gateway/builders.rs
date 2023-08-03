@@ -3,6 +3,23 @@ pub use crate::operation::delete_customer_gateway::_delete_customer_gateway_outp
 
 pub use crate::operation::delete_customer_gateway::_delete_customer_gateway_input::DeleteCustomerGatewayInputBuilder;
 
+impl DeleteCustomerGatewayInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_customer_gateway::DeleteCustomerGatewayOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_customer_gateway::DeleteCustomerGatewayError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_customer_gateway();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteCustomerGateway`.
 ///
 /// <p>Deletes the specified customer gateway. You must delete the VPN connection before you can delete the customer gateway.</p>

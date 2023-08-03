@@ -3,6 +3,17 @@ pub use crate::operation::update_subscriptions_to_event_bridge::_update_subscrip
 
 pub use crate::operation::update_subscriptions_to_event_bridge::_update_subscriptions_to_event_bridge_input::UpdateSubscriptionsToEventBridgeInputBuilder;
 
+impl UpdateSubscriptionsToEventBridgeInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::update_subscriptions_to_event_bridge::UpdateSubscriptionsToEventBridgeOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_subscriptions_to_event_bridge::UpdateSubscriptionsToEventBridgeError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.update_subscriptions_to_event_bridge();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateSubscriptionsToEventBridge`.
 ///
 /// <p>Migrates 10 active and enabled Amazon SNS subscriptions at a time and converts them to corresponding Amazon EventBridge rules. By default, this operation migrates subscriptions only when all your replication instance versions are 3.4.6 or higher. If any replication instances are from versions earlier than 3.4.6, the operation raises an error and tells you to upgrade these instances to version 3.4.6 or higher. To enable migration regardless of version, set the <code>Force</code> option to true. However, if you don't upgrade instances earlier than version 3.4.6, some types of events might not be available when you use Amazon EventBridge.</p>

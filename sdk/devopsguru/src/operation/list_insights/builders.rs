@@ -3,6 +3,23 @@ pub use crate::operation::list_insights::_list_insights_output::ListInsightsOutp
 
 pub use crate::operation::list_insights::_list_insights_input::ListInsightsInputBuilder;
 
+impl ListInsightsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_insights::ListInsightsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_insights::ListInsightsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_insights();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListInsights`.
 ///
 /// <p> Returns a list of insights in your Amazon Web Services account. You can specify which insights are returned by their start time and status (<code>ONGOING</code>, <code>CLOSED</code>, or <code>ANY</code>). </p>

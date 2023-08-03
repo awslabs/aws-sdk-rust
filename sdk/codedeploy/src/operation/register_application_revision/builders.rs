@@ -3,6 +3,23 @@ pub use crate::operation::register_application_revision::_register_application_r
 
 pub use crate::operation::register_application_revision::_register_application_revision_input::RegisterApplicationRevisionInputBuilder;
 
+impl RegisterApplicationRevisionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::register_application_revision::RegisterApplicationRevisionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::register_application_revision::RegisterApplicationRevisionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.register_application_revision();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RegisterApplicationRevision`.
 ///
 /// <p>Registers with CodeDeploy a revision for the specified application.</p>

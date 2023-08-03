@@ -3,6 +3,17 @@ pub use crate::operation::list_profile_object_type_templates::_list_profile_obje
 
 pub use crate::operation::list_profile_object_type_templates::_list_profile_object_type_templates_input::ListProfileObjectTypeTemplatesInputBuilder;
 
+impl ListProfileObjectTypeTemplatesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_profile_object_type_templates::ListProfileObjectTypeTemplatesOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_profile_object_type_templates::ListProfileObjectTypeTemplatesError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_profile_object_type_templates();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListProfileObjectTypeTemplates`.
 ///
 /// <p>Lists all of the template information for object types.</p>

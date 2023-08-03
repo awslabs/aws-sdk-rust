@@ -3,6 +3,23 @@ pub use crate::operation::put_project_policy::_put_project_policy_output::PutPro
 
 pub use crate::operation::put_project_policy::_put_project_policy_input::PutProjectPolicyInputBuilder;
 
+impl PutProjectPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_project_policy::PutProjectPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_project_policy::PutProjectPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_project_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutProjectPolicy`.
 ///
 /// <p>Attaches a project policy to a Amazon Rekognition Custom Labels project in a trusting AWS account. A project policy specifies that a trusted AWS account can copy a model version from a trusting AWS account to a project in the trusted AWS account. To copy a model version you use the <code>CopyProjectVersion</code> operation.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_cli_token::_create_cli_token_output::CreateCliT
 
 pub use crate::operation::create_cli_token::_create_cli_token_input::CreateCliTokenInputBuilder;
 
+impl CreateCliTokenInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_cli_token::CreateCliTokenOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_cli_token::CreateCliTokenError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_cli_token();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateCliToken`.
 ///
 /// <p>Creates a CLI token for the Airflow CLI. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/call-mwaa-apis-cli.html">Creating an Apache Airflow CLI token</a>.</p>

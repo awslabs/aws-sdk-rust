@@ -3,6 +3,23 @@ pub use crate::operation::reset_cache::_reset_cache_output::ResetCacheOutputBuil
 
 pub use crate::operation::reset_cache::_reset_cache_input::ResetCacheInputBuilder;
 
+impl ResetCacheInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::reset_cache::ResetCacheOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::reset_cache::ResetCacheError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.reset_cache();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ResetCache`.
 ///
 /// <p>Resets all cache disks that have encountered an error and makes the disks available for reconfiguration as cache storage. If your cache disk encounters an error, the gateway prevents read and write operations on virtual tapes in the gateway. For example, an error can occur when a disk is corrupted or removed from the gateway. When a cache is reset, the gateway loses its cache storage. At this point, you can reconfigure the disks as cache disks. This operation is only supported in the cached volume and tape types.</p> <important>

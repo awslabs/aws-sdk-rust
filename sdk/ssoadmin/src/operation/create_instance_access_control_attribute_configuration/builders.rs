@@ -3,6 +3,17 @@ pub use crate::operation::create_instance_access_control_attribute_configuration
 
 pub use crate::operation::create_instance_access_control_attribute_configuration::_create_instance_access_control_attribute_configuration_input::CreateInstanceAccessControlAttributeConfigurationInputBuilder;
 
+impl CreateInstanceAccessControlAttributeConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::create_instance_access_control_attribute_configuration::CreateInstanceAccessControlAttributeConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_instance_access_control_attribute_configuration::CreateInstanceAccessControlAttributeConfigurationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.create_instance_access_control_attribute_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateInstanceAccessControlAttributeConfiguration`.
 ///
 /// <p>Enables the attributes-based access control (ABAC) feature for the specified IAM Identity Center instance. You can also specify new attributes to add to your ABAC configuration during the enabling process. For more information about ABAC, see <a href="/singlesignon/latest/userguide/abac.html">Attribute-Based Access Control</a> in the <i>IAM Identity Center User Guide</i>.</p> <note>

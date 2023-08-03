@@ -3,6 +3,23 @@ pub use crate::operation::describe_evaluations::_describe_evaluations_output::De
 
 pub use crate::operation::describe_evaluations::_describe_evaluations_input::DescribeEvaluationsInputBuilder;
 
+impl DescribeEvaluationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_evaluations::DescribeEvaluationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_evaluations::DescribeEvaluationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_evaluations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeEvaluations`.
 ///
 /// <p>Returns a list of <code>DescribeEvaluations</code> that match the search criteria in the request.</p>

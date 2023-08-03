@@ -3,6 +3,17 @@ pub use crate::operation::purchase_reserved_instance_offering::_purchase_reserve
 
 pub use crate::operation::purchase_reserved_instance_offering::_purchase_reserved_instance_offering_input::PurchaseReservedInstanceOfferingInputBuilder;
 
+impl PurchaseReservedInstanceOfferingInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::purchase_reserved_instance_offering::PurchaseReservedInstanceOfferingOutput, ::aws_smithy_http::result::SdkError<crate::operation::purchase_reserved_instance_offering::PurchaseReservedInstanceOfferingError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.purchase_reserved_instance_offering();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PurchaseReservedInstanceOffering`.
 ///
 /// <p>Allows you to purchase Amazon OpenSearch Service Reserved Instances.</p>

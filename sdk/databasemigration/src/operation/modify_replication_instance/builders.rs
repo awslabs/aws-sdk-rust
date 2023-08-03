@@ -3,6 +3,23 @@ pub use crate::operation::modify_replication_instance::_modify_replication_insta
 
 pub use crate::operation::modify_replication_instance::_modify_replication_instance_input::ModifyReplicationInstanceInputBuilder;
 
+impl ModifyReplicationInstanceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_replication_instance::ModifyReplicationInstanceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_replication_instance::ModifyReplicationInstanceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_replication_instance();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyReplicationInstance`.
 ///
 /// <p>Modifies the replication instance to apply new settings. You can change one or more parameters by specifying these parameters and the new values in the request.</p>

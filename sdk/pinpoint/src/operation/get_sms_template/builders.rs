@@ -3,6 +3,23 @@ pub use crate::operation::get_sms_template::_get_sms_template_output::GetSmsTemp
 
 pub use crate::operation::get_sms_template::_get_sms_template_input::GetSmsTemplateInputBuilder;
 
+impl GetSmsTemplateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_sms_template::GetSmsTemplateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_sms_template::GetSmsTemplateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_sms_template();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetSmsTemplate`.
 ///
 /// <p>Retrieves the content and settings of a message template for messages that are sent through the SMS channel.</p>

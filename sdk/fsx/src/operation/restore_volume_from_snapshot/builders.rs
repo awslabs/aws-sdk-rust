@@ -3,6 +3,23 @@ pub use crate::operation::restore_volume_from_snapshot::_restore_volume_from_sna
 
 pub use crate::operation::restore_volume_from_snapshot::_restore_volume_from_snapshot_input::RestoreVolumeFromSnapshotInputBuilder;
 
+impl RestoreVolumeFromSnapshotInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshotOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::restore_volume_from_snapshot::RestoreVolumeFromSnapshotError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.restore_volume_from_snapshot();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RestoreVolumeFromSnapshot`.
 ///
 /// <p>Returns an Amazon FSx for OpenZFS volume to the state saved by the specified snapshot.</p>

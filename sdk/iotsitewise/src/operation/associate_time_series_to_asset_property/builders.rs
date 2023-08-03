@@ -3,6 +3,17 @@ pub use crate::operation::associate_time_series_to_asset_property::_associate_ti
 
 pub use crate::operation::associate_time_series_to_asset_property::_associate_time_series_to_asset_property_input::AssociateTimeSeriesToAssetPropertyInputBuilder;
 
+impl AssociateTimeSeriesToAssetPropertyInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::associate_time_series_to_asset_property::AssociateTimeSeriesToAssetPropertyOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_time_series_to_asset_property::AssociateTimeSeriesToAssetPropertyError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.associate_time_series_to_asset_property();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateTimeSeriesToAssetProperty`.
 ///
 /// <p>Associates a time series (data stream) with an asset property.</p>

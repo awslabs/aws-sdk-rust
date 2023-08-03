@@ -3,6 +3,23 @@ pub use crate::operation::create_code_repository::_create_code_repository_output
 
 pub use crate::operation::create_code_repository::_create_code_repository_input::CreateCodeRepositoryInputBuilder;
 
+impl CreateCodeRepositoryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_code_repository::CreateCodeRepositoryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_code_repository::CreateCodeRepositoryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_code_repository();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateCodeRepository`.
 ///
 /// <p>Creates a Git repository as a resource in your SageMaker account. You can associate the repository with notebook instances so that you can use Git source control for the notebooks you create. The Git repository is a resource in your SageMaker account, so it can be associated with more than one notebook instance, and it persists independently from the lifecycle of any notebook instances it is associated with.</p>

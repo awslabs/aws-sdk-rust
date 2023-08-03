@@ -3,6 +3,23 @@ pub use crate::operation::list_vpce_configurations::_list_vpce_configurations_ou
 
 pub use crate::operation::list_vpce_configurations::_list_vpce_configurations_input::ListVpceConfigurationsInputBuilder;
 
+impl ListVpceConfigurationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_vpce_configurations::ListVpceConfigurationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_vpce_configurations::ListVPCEConfigurationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_vpce_configurations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListVPCEConfigurations`.
 ///
 /// <p>Returns information about all Amazon Virtual Private Cloud (VPC) endpoint configurations in the AWS account.</p>

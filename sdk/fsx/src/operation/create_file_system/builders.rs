@@ -3,6 +3,23 @@ pub use crate::operation::create_file_system::_create_file_system_output::Create
 
 pub use crate::operation::create_file_system::_create_file_system_input::CreateFileSystemInputBuilder;
 
+impl CreateFileSystemInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_file_system::CreateFileSystemOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_file_system::CreateFileSystemError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_file_system();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateFileSystem`.
 ///
 /// <p>Creates a new, empty Amazon FSx file system. You can create the following supported Amazon FSx file systems using the <code>CreateFileSystem</code> API operation:</p>

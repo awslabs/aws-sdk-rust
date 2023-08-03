@@ -3,6 +3,23 @@ pub use crate::operation::refresh_schemas::_refresh_schemas_output::RefreshSchem
 
 pub use crate::operation::refresh_schemas::_refresh_schemas_input::RefreshSchemasInputBuilder;
 
+impl RefreshSchemasInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::refresh_schemas::RefreshSchemasOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::refresh_schemas::RefreshSchemasError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.refresh_schemas();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RefreshSchemas`.
 ///
 /// <p>Populates the schema for the specified endpoint. This is an asynchronous operation and can take several minutes. You can check the status of this operation by calling the DescribeRefreshSchemasStatus operation.</p>

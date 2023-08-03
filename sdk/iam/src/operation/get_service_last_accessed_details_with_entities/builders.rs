@@ -3,6 +3,17 @@ pub use crate::operation::get_service_last_accessed_details_with_entities::_get_
 
 pub use crate::operation::get_service_last_accessed_details_with_entities::_get_service_last_accessed_details_with_entities_input::GetServiceLastAccessedDetailsWithEntitiesInputBuilder;
 
+impl GetServiceLastAccessedDetailsWithEntitiesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_service_last_accessed_details_with_entities::GetServiceLastAccessedDetailsWithEntitiesOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_service_last_accessed_details_with_entities::GetServiceLastAccessedDetailsWithEntitiesError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_service_last_accessed_details_with_entities();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetServiceLastAccessedDetailsWithEntities`.
 ///
 /// <p>After you generate a group or policy report using the <code>GenerateServiceLastAccessedDetails</code> operation, you can use the <code>JobId</code> parameter in <code>GetServiceLastAccessedDetailsWithEntities</code>. This operation retrieves the status of your report job and a list of entities that could have used group or policy permissions to access the specified service.</p>

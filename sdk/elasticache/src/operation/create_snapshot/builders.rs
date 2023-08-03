@@ -3,6 +3,23 @@ pub use crate::operation::create_snapshot::_create_snapshot_output::CreateSnapsh
 
 pub use crate::operation::create_snapshot::_create_snapshot_input::CreateSnapshotInputBuilder;
 
+impl CreateSnapshotInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_snapshot::CreateSnapshotOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_snapshot::CreateSnapshotError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_snapshot();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateSnapshot`.
 ///
 /// <p>Creates a copy of an entire cluster or replication group at a specific moment in time.</p> <note>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_resource_definition::_delete_resource_definitio
 
 pub use crate::operation::delete_resource_definition::_delete_resource_definition_input::DeleteResourceDefinitionInputBuilder;
 
+impl DeleteResourceDefinitionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_resource_definition::DeleteResourceDefinitionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_resource_definition::DeleteResourceDefinitionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_resource_definition();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteResourceDefinition`.
 ///
 /// Deletes a resource definition.

@@ -3,6 +3,23 @@ pub use crate::operation::stop_import::_stop_import_output::StopImportOutputBuil
 
 pub use crate::operation::stop_import::_stop_import_input::StopImportInputBuilder;
 
+impl StopImportInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_import::StopImportOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_import::StopImportError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_import();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopImport`.
 ///
 /// <p> Stops a specified import. </p>

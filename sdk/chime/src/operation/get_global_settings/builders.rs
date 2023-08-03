@@ -3,6 +3,23 @@ pub use crate::operation::get_global_settings::_get_global_settings_output::GetG
 
 pub use crate::operation::get_global_settings::_get_global_settings_input::GetGlobalSettingsInputBuilder;
 
+impl GetGlobalSettingsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_global_settings::GetGlobalSettingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_global_settings::GetGlobalSettingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_global_settings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetGlobalSettings`.
 ///
 /// <p>Retrieves global settings for the administrator's AWS account, such as Amazon Chime Business Calling and Amazon Chime Voice Connector settings.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::update_node::_update_node_output::UpdateNodeOutputBuil
 
 pub use crate::operation::update_node::_update_node_input::UpdateNodeInputBuilder;
 
+impl UpdateNodeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_node::UpdateNodeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_node::UpdateNodeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_node();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateNode`.
 ///
 /// <p>Updates a node configuration with new parameters.</p>

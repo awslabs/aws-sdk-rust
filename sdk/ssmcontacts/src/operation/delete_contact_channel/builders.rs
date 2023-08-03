@@ -3,6 +3,23 @@ pub use crate::operation::delete_contact_channel::_delete_contact_channel_output
 
 pub use crate::operation::delete_contact_channel::_delete_contact_channel_input::DeleteContactChannelInputBuilder;
 
+impl DeleteContactChannelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_contact_channel::DeleteContactChannelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_contact_channel::DeleteContactChannelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_contact_channel();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteContactChannel`.
 ///
 /// <p>To no longer receive engagements on a contact channel, you can delete the channel from a contact. Deleting the contact channel removes it from the contact's engagement plan. If you delete the only contact channel for a contact, you won't be able to engage that contact during an incident.</p>

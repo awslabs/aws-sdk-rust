@@ -3,6 +3,23 @@ pub use crate::operation::put_destination::_put_destination_output::PutDestinati
 
 pub use crate::operation::put_destination::_put_destination_input::PutDestinationInputBuilder;
 
+impl PutDestinationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_destination::PutDestinationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_destination::PutDestinationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_destination();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutDestination`.
 ///
 /// <p>Creates or updates a destination. This operation is used only to create destinations for cross-account subscriptions.</p>

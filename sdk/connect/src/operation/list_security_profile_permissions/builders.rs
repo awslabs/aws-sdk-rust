@@ -3,6 +3,17 @@ pub use crate::operation::list_security_profile_permissions::_list_security_prof
 
 pub use crate::operation::list_security_profile_permissions::_list_security_profile_permissions_input::ListSecurityProfilePermissionsInputBuilder;
 
+impl ListSecurityProfilePermissionsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_security_profile_permissions::ListSecurityProfilePermissionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_security_profile_permissions::ListSecurityProfilePermissionsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_security_profile_permissions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListSecurityProfilePermissions`.
 ///
 /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>

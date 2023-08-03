@@ -3,6 +3,17 @@ pub use crate::operation::delete_function_code_signing_config::_delete_function_
 
 pub use crate::operation::delete_function_code_signing_config::_delete_function_code_signing_config_input::DeleteFunctionCodeSigningConfigInputBuilder;
 
+impl DeleteFunctionCodeSigningConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_function_code_signing_config::DeleteFunctionCodeSigningConfigOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_function_code_signing_config::DeleteFunctionCodeSigningConfigError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.delete_function_code_signing_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteFunctionCodeSigningConfig`.
 ///
 /// <p>Removes the code signing configuration from the function.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::put_access_point_policy::_put_access_point_policy_outp
 
 pub use crate::operation::put_access_point_policy::_put_access_point_policy_input::PutAccessPointPolicyInputBuilder;
 
+impl PutAccessPointPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_access_point_policy::PutAccessPointPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_access_point_policy::PutAccessPointPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_access_point_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutAccessPointPolicy`.
 ///
 /// <p>Associates an access policy with the specified access point. Each access point can have only one policy, so a request made to this API replaces any existing policy associated with the specified access point.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_edge_deployment_stage::_create_edge_deployment_
 
 pub use crate::operation::create_edge_deployment_stage::_create_edge_deployment_stage_input::CreateEdgeDeploymentStageInputBuilder;
 
+impl CreateEdgeDeploymentStageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_edge_deployment_stage::CreateEdgeDeploymentStageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_edge_deployment_stage::CreateEdgeDeploymentStageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_edge_deployment_stage();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateEdgeDeploymentStage`.
 ///
 /// <p>Creates a new stage in an existing edge deployment plan.</p>

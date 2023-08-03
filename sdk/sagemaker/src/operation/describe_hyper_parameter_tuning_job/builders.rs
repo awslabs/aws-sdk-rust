@@ -3,6 +3,17 @@ pub use crate::operation::describe_hyper_parameter_tuning_job::_describe_hyper_p
 
 pub use crate::operation::describe_hyper_parameter_tuning_job::_describe_hyper_parameter_tuning_job_input::DescribeHyperParameterTuningJobInputBuilder;
 
+impl DescribeHyperParameterTuningJobInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_hyper_parameter_tuning_job::DescribeHyperParameterTuningJobOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_hyper_parameter_tuning_job::DescribeHyperParameterTuningJobError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_hyper_parameter_tuning_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeHyperParameterTuningJob`.
 ///
 /// <p>Returns a description of a hyperparameter tuning job, depending on the fields selected. These fields can include the name, Amazon Resource Name (ARN), job status of your tuning job and more.</p>

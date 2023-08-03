@@ -3,6 +3,23 @@ pub use crate::operation::describe_state_machine_alias::_describe_state_machine_
 
 pub use crate::operation::describe_state_machine_alias::_describe_state_machine_alias_input::DescribeStateMachineAliasInputBuilder;
 
+impl DescribeStateMachineAliasInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_state_machine_alias::DescribeStateMachineAliasOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_state_machine_alias::DescribeStateMachineAliasError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_state_machine_alias();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeStateMachineAlias`.
 ///
 /// <p>Returns details about a state machine <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a>.</p>

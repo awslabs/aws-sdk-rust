@@ -3,6 +3,23 @@ pub use crate::operation::tag_resource::_tag_resource_output::TagResourceOutputB
 
 pub use crate::operation::tag_resource::_tag_resource_input::TagResourceInputBuilder;
 
+impl TagResourceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::tag_resource::TagResourceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::tag_resource::TagResourceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.tag_resource();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `TagResource`.
 ///
 /// <p>Adds tags to a SimSpace Weaver resource. For more information about tags, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a> in the <i>Amazon Web Services General Reference</i>.</p>

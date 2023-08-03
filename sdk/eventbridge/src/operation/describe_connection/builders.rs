@@ -3,6 +3,23 @@ pub use crate::operation::describe_connection::_describe_connection_output::Desc
 
 pub use crate::operation::describe_connection::_describe_connection_input::DescribeConnectionInputBuilder;
 
+impl DescribeConnectionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_connection::DescribeConnectionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_connection::DescribeConnectionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_connection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeConnection`.
 ///
 /// <p>Retrieves details about a connection.</p>

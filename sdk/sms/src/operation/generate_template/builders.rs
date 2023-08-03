@@ -3,6 +3,23 @@ pub use crate::operation::generate_template::_generate_template_output::Generate
 
 pub use crate::operation::generate_template::_generate_template_input::GenerateTemplateInputBuilder;
 
+impl GenerateTemplateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::generate_template::GenerateTemplateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::generate_template::GenerateTemplateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.generate_template();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GenerateTemplate`.
 ///
 /// <p>Generates an CloudFormation template based on the current launch configuration and writes it to an Amazon S3 object in the customer’s Amazon S3 bucket.</p>

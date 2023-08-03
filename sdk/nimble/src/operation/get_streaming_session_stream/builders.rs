@@ -3,6 +3,23 @@ pub use crate::operation::get_streaming_session_stream::_get_streaming_session_s
 
 pub use crate::operation::get_streaming_session_stream::_get_streaming_session_stream_input::GetStreamingSessionStreamInputBuilder;
 
+impl GetStreamingSessionStreamInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_streaming_session_stream::GetStreamingSessionStreamOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_streaming_session_stream::GetStreamingSessionStreamError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_streaming_session_stream();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetStreamingSessionStream`.
 ///
 /// <p>Gets a StreamingSessionStream for a streaming session.</p>

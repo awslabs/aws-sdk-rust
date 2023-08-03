@@ -3,6 +3,23 @@ pub use crate::operation::batch_get_account_status::_batch_get_account_status_ou
 
 pub use crate::operation::batch_get_account_status::_batch_get_account_status_input::BatchGetAccountStatusInputBuilder;
 
+impl BatchGetAccountStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_account_status::BatchGetAccountStatusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_get_account_status::BatchGetAccountStatusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_get_account_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchGetAccountStatus`.
 ///
 /// <p>Retrieves the Amazon Inspector status of multiple Amazon Web Services accounts within your environment.</p>

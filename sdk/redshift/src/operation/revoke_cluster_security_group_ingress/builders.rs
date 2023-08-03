@@ -3,6 +3,17 @@ pub use crate::operation::revoke_cluster_security_group_ingress::_revoke_cluster
 
 pub use crate::operation::revoke_cluster_security_group_ingress::_revoke_cluster_security_group_ingress_input::RevokeClusterSecurityGroupIngressInputBuilder;
 
+impl RevokeClusterSecurityGroupIngressInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::revoke_cluster_security_group_ingress::RevokeClusterSecurityGroupIngressOutput, ::aws_smithy_http::result::SdkError<crate::operation::revoke_cluster_security_group_ingress::RevokeClusterSecurityGroupIngressError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.revoke_cluster_security_group_ingress();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RevokeClusterSecurityGroupIngress`.
 ///
 /// <p>Revokes an ingress rule in an Amazon Redshift security group for a previously authorized IP range or Amazon EC2 security group. To add an ingress rule, see <code>AuthorizeClusterSecurityGroupIngress</code>. For information about managing security groups, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-security-groups.html">Amazon Redshift Cluster Security Groups</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>

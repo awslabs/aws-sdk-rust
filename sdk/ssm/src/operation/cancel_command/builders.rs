@@ -3,6 +3,23 @@ pub use crate::operation::cancel_command::_cancel_command_output::CancelCommandO
 
 pub use crate::operation::cancel_command::_cancel_command_input::CancelCommandInputBuilder;
 
+impl CancelCommandInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::cancel_command::CancelCommandOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::cancel_command::CancelCommandError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.cancel_command();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CancelCommand`.
 ///
 /// <p>Attempts to cancel the command specified by the Command ID. There is no guarantee that the command will be terminated and the underlying process stopped.</p>

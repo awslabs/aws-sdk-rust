@@ -3,6 +3,23 @@ pub use crate::operation::create_image_builder::_create_image_builder_output::Cr
 
 pub use crate::operation::create_image_builder::_create_image_builder_input::CreateImageBuilderInputBuilder;
 
+impl CreateImageBuilderInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_image_builder::CreateImageBuilderOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_image_builder::CreateImageBuilderError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_image_builder();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateImageBuilder`.
 ///
 /// <p>Creates an image builder. An image builder is a virtual machine that is used to create an image.</p>

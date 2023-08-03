@@ -3,6 +3,23 @@ pub use crate::operation::get_data_integration::_get_data_integration_output::Ge
 
 pub use crate::operation::get_data_integration::_get_data_integration_input::GetDataIntegrationInputBuilder;
 
+impl GetDataIntegrationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_data_integration::GetDataIntegrationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_data_integration::GetDataIntegrationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_data_integration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetDataIntegration`.
 ///
 /// <p>Returns information about the DataIntegration.</p> <note>

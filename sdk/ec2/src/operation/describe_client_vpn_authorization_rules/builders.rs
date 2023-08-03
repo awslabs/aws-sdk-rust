@@ -3,6 +3,17 @@ pub use crate::operation::describe_client_vpn_authorization_rules::_describe_cli
 
 pub use crate::operation::describe_client_vpn_authorization_rules::_describe_client_vpn_authorization_rules_input::DescribeClientVpnAuthorizationRulesInputBuilder;
 
+impl DescribeClientVpnAuthorizationRulesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_client_vpn_authorization_rules::DescribeClientVpnAuthorizationRulesOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_client_vpn_authorization_rules::DescribeClientVpnAuthorizationRulesError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_client_vpn_authorization_rules();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeClientVpnAuthorizationRules`.
 ///
 /// <p>Describes the authorization rules for a specified Client VPN endpoint.</p>

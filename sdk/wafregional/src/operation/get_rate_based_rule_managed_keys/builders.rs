@@ -3,6 +3,23 @@ pub use crate::operation::get_rate_based_rule_managed_keys::_get_rate_based_rule
 
 pub use crate::operation::get_rate_based_rule_managed_keys::_get_rate_based_rule_managed_keys_input::GetRateBasedRuleManagedKeysInputBuilder;
 
+impl GetRateBasedRuleManagedKeysInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_rate_based_rule_managed_keys::GetRateBasedRuleManagedKeysOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_rate_based_rule_managed_keys::GetRateBasedRuleManagedKeysError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_rate_based_rule_managed_keys();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetRateBasedRuleManagedKeys`.
 ///
 /// <note>

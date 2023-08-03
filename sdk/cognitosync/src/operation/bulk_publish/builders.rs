@@ -3,6 +3,23 @@ pub use crate::operation::bulk_publish::_bulk_publish_output::BulkPublishOutputB
 
 pub use crate::operation::bulk_publish::_bulk_publish_input::BulkPublishInputBuilder;
 
+impl BulkPublishInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::bulk_publish::BulkPublishOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::bulk_publish::BulkPublishError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.bulk_publish();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BulkPublish`.
 ///
 /// <p>Initiates a bulk publish of all existing datasets for an Identity Pool to the configured stream. Customers are limited to one successful bulk publish per 24 hours. Bulk publish is an asynchronous request, customers can see the status of the request via the GetBulkPublishDetails operation.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::restore_from_snapshot::_restore_from_snapshot_output::
 
 pub use crate::operation::restore_from_snapshot::_restore_from_snapshot_input::RestoreFromSnapshotInputBuilder;
 
+impl RestoreFromSnapshotInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::restore_from_snapshot::RestoreFromSnapshotOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::restore_from_snapshot::RestoreFromSnapshotError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.restore_from_snapshot();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RestoreFromSnapshot`.
 ///
 /// <p>Restores a namespace from a snapshot.</p>

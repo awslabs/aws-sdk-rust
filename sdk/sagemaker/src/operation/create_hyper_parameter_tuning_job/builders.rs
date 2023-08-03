@@ -3,6 +3,23 @@ pub use crate::operation::create_hyper_parameter_tuning_job::_create_hyper_param
 
 pub use crate::operation::create_hyper_parameter_tuning_job::_create_hyper_parameter_tuning_job_input::CreateHyperParameterTuningJobInputBuilder;
 
+impl CreateHyperParameterTuningJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_hyper_parameter_tuning_job::CreateHyperParameterTuningJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_hyper_parameter_tuning_job::CreateHyperParameterTuningJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_hyper_parameter_tuning_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateHyperParameterTuningJob`.
 ///
 /// <p>Starts a hyperparameter tuning job. A hyperparameter tuning job finds the best version of a model by running many training jobs on your dataset using the algorithm you choose and values for hyperparameters within ranges that you specify. It then chooses the hyperparameter values that result in a model that performs the best, as measured by an objective metric that you choose.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_dedicated_ip_pool::_create_dedicated_ip_pool_ou
 
 pub use crate::operation::create_dedicated_ip_pool::_create_dedicated_ip_pool_input::CreateDedicatedIpPoolInputBuilder;
 
+impl CreateDedicatedIpPoolInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_dedicated_ip_pool::CreateDedicatedIpPoolOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_dedicated_ip_pool::CreateDedicatedIpPoolError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_dedicated_ip_pool();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateDedicatedIpPool`.
 ///
 /// <p>Create a new pool of dedicated IP addresses. A pool can include one or more dedicated IP addresses that are associated with your Amazon Web Services account. You can associate a pool with a configuration set. When you send an email that uses that configuration set, the message is sent from one of the addresses in the associated pool.</p>

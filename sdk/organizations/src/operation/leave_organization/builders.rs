@@ -3,6 +3,23 @@ pub use crate::operation::leave_organization::_leave_organization_output::LeaveO
 
 pub use crate::operation::leave_organization::_leave_organization_input::LeaveOrganizationInputBuilder;
 
+impl LeaveOrganizationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::leave_organization::LeaveOrganizationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::leave_organization::LeaveOrganizationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.leave_organization();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `LeaveOrganization`.
 ///
 /// <p>Removes a member account from its parent organization. This version of the operation is performed by the account that wants to leave. To remove a member account as a user in the management account, use <code>RemoveAccountFromOrganization</code> instead.</p>

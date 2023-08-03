@@ -3,6 +3,23 @@ pub use crate::operation::create_location_s3::_create_location_s3_output::Create
 
 pub use crate::operation::create_location_s3::_create_location_s3_input::CreateLocationS3InputBuilder;
 
+impl CreateLocationS3InputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_location_s3::CreateLocationS3Output,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_location_s3::CreateLocationS3Error,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_location_s3();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateLocationS3`.
 ///
 /// <p>A <i>location</i> is an endpoint for an Amazon S3 bucket. DataSync can use the location as a source or destination for copying data.</p> <important>

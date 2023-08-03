@@ -3,6 +3,23 @@ pub use crate::operation::list_identity_policies::_list_identity_policies_output
 
 pub use crate::operation::list_identity_policies::_list_identity_policies_input::ListIdentityPoliciesInputBuilder;
 
+impl ListIdentityPoliciesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_identity_policies::ListIdentityPoliciesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_identity_policies::ListIdentityPoliciesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_identity_policies();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListIdentityPolicies`.
 ///
 /// <p>Returns a list of sending authorization policies that are attached to the given identity (an email address or a domain). This API returns only a list. If you want the actual policy content, you can use <code>GetIdentityPolicies</code>.</p> <note>

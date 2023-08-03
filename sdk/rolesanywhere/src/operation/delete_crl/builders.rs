@@ -3,6 +3,23 @@ pub use crate::operation::delete_crl::_delete_crl_output::DeleteCrlOutputBuilder
 
 pub use crate::operation::delete_crl::_delete_crl_input::DeleteCrlInputBuilder;
 
+impl DeleteCrlInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_crl::DeleteCrlOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_crl::DeleteCrlError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_crl();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteCrl`.
 ///
 /// <p>Deletes a certificate revocation list (CRL).</p>

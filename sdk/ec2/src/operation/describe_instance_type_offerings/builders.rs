@@ -3,6 +3,23 @@ pub use crate::operation::describe_instance_type_offerings::_describe_instance_t
 
 pub use crate::operation::describe_instance_type_offerings::_describe_instance_type_offerings_input::DescribeInstanceTypeOfferingsInputBuilder;
 
+impl DescribeInstanceTypeOfferingsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_instance_type_offerings::DescribeInstanceTypeOfferingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_instance_type_offerings::DescribeInstanceTypeOfferingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_instance_type_offerings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeInstanceTypeOfferings`.
 ///
 /// <p>Returns a list of all instance types offered. The results can be filtered by location (Region or Availability Zone). If no location is specified, the instance types offered in the current Region are returned.</p>

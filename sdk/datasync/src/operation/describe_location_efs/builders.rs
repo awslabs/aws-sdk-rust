@@ -3,6 +3,23 @@ pub use crate::operation::describe_location_efs::_describe_location_efs_output::
 
 pub use crate::operation::describe_location_efs::_describe_location_efs_input::DescribeLocationEfsInputBuilder;
 
+impl DescribeLocationEfsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_location_efs::DescribeLocationEfsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_location_efs::DescribeLocationEfsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_location_efs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeLocationEfs`.
 ///
 /// <p>Returns metadata about your DataSync location for an Amazon EFS file system.</p>

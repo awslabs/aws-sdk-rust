@@ -3,6 +3,23 @@ pub use crate::operation::list_keyspaces::_list_keyspaces_output::ListKeyspacesO
 
 pub use crate::operation::list_keyspaces::_list_keyspaces_input::ListKeyspacesInputBuilder;
 
+impl ListKeyspacesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_keyspaces::ListKeyspacesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_keyspaces::ListKeyspacesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_keyspaces();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListKeyspaces`.
 ///
 /// <p>Returns a list of keyspaces.</p>

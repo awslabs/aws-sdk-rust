@@ -3,6 +3,23 @@ pub use crate::operation::list_group_policies::_list_group_policies_output::List
 
 pub use crate::operation::list_group_policies::_list_group_policies_input::ListGroupPoliciesInputBuilder;
 
+impl ListGroupPoliciesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_group_policies::ListGroupPoliciesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_group_policies::ListGroupPoliciesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_group_policies();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListGroupPolicies`.
 ///
 /// <p>Lists the names of the inline policies that are embedded in the specified IAM group.</p>

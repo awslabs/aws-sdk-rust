@@ -3,6 +3,17 @@ pub use crate::operation::disassociate_assessment_report_evidence_folder::_disas
 
 pub use crate::operation::disassociate_assessment_report_evidence_folder::_disassociate_assessment_report_evidence_folder_input::DisassociateAssessmentReportEvidenceFolderInputBuilder;
 
+impl DisassociateAssessmentReportEvidenceFolderInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::disassociate_assessment_report_evidence_folder::DisassociateAssessmentReportEvidenceFolderOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_assessment_report_evidence_folder::DisassociateAssessmentReportEvidenceFolderError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.disassociate_assessment_report_evidence_folder();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateAssessmentReportEvidenceFolder`.
 ///
 /// <p> Disassociates an evidence folder from the specified assessment report in Audit Manager. </p>

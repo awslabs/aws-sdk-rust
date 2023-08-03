@@ -3,6 +3,23 @@ pub use crate::operation::list_namespaces::_list_namespaces_output::ListNamespac
 
 pub use crate::operation::list_namespaces::_list_namespaces_input::ListNamespacesInputBuilder;
 
+impl ListNamespacesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_namespaces::ListNamespacesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_namespaces::ListNamespacesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_namespaces();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListNamespaces`.
 ///
 /// <p>Lists the namespaces for the specified Amazon Web Services account. This operation doesn't list deleted namespaces.</p>

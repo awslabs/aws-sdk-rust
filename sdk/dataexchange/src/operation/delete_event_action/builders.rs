@@ -3,6 +3,23 @@ pub use crate::operation::delete_event_action::_delete_event_action_output::Dele
 
 pub use crate::operation::delete_event_action::_delete_event_action_input::DeleteEventActionInputBuilder;
 
+impl DeleteEventActionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_event_action::DeleteEventActionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_event_action::DeleteEventActionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_event_action();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteEventAction`.
 ///
 /// <p>This operation deletes the event action.</p>

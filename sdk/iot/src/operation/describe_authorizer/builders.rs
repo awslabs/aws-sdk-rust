@@ -3,6 +3,23 @@ pub use crate::operation::describe_authorizer::_describe_authorizer_output::Desc
 
 pub use crate::operation::describe_authorizer::_describe_authorizer_input::DescribeAuthorizerInputBuilder;
 
+impl DescribeAuthorizerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_authorizer::DescribeAuthorizerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_authorizer::DescribeAuthorizerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_authorizer();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAuthorizer`.
 ///
 /// <p>Describes an authorizer.</p>

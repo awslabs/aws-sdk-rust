@@ -3,6 +3,23 @@ pub use crate::operation::list_model_package_groups::_list_model_package_groups_
 
 pub use crate::operation::list_model_package_groups::_list_model_package_groups_input::ListModelPackageGroupsInputBuilder;
 
+impl ListModelPackageGroupsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_model_package_groups::ListModelPackageGroupsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_model_package_groups::ListModelPackageGroupsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_model_package_groups();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListModelPackageGroups`.
 ///
 /// <p>Gets a list of the model groups in your Amazon Web Services account.</p>

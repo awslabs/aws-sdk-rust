@@ -3,6 +3,23 @@ pub use crate::operation::delete_model_card::_delete_model_card_output::DeleteMo
 
 pub use crate::operation::delete_model_card::_delete_model_card_input::DeleteModelCardInputBuilder;
 
+impl DeleteModelCardInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_model_card::DeleteModelCardOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_model_card::DeleteModelCardError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_model_card();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteModelCard`.
 ///
 /// <p>Deletes an Amazon SageMaker Model Card.</p>

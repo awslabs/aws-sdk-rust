@@ -3,6 +3,23 @@ pub use crate::operation::send_activation_code::_send_activation_code_output::Se
 
 pub use crate::operation::send_activation_code::_send_activation_code_input::SendActivationCodeInputBuilder;
 
+impl SendActivationCodeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::send_activation_code::SendActivationCodeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::send_activation_code::SendActivationCodeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.send_activation_code();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SendActivationCode`.
 ///
 /// <p>Sends an activation code to a contact channel. The contact can use this code to activate the contact channel in the console or with the <code>ActivateChannel</code> operation. Incident Manager can't engage a contact channel until it has been activated.</p>

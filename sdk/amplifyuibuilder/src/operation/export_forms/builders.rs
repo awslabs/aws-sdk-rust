@@ -3,6 +3,23 @@ pub use crate::operation::export_forms::_export_forms_output::ExportFormsOutputB
 
 pub use crate::operation::export_forms::_export_forms_input::ExportFormsInputBuilder;
 
+impl ExportFormsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::export_forms::ExportFormsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::export_forms::ExportFormsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.export_forms();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ExportForms`.
 ///
 /// <p>Exports form configurations to code that is ready to integrate into an Amplify app.</p>

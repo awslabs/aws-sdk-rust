@@ -3,6 +3,23 @@ pub use crate::operation::describe_expressions::_describe_expressions_output::De
 
 pub use crate::operation::describe_expressions::_describe_expressions_input::DescribeExpressionsInputBuilder;
 
+impl DescribeExpressionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_expressions::DescribeExpressionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_expressions::DescribeExpressionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_expressions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeExpressions`.
 ///
 /// <p>Gets the expressions configured for the search domain. Can be limited to specific expressions by name. By default, shows all expressions and includes any pending changes to the configuration. Set the <code>Deployed</code> option to <code>true</code> to show the active configuration and exclude pending changes. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html" target="_blank">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::put_voice_connector_termination::_put_voice_connector_
 
 pub use crate::operation::put_voice_connector_termination::_put_voice_connector_termination_input::PutVoiceConnectorTerminationInputBuilder;
 
+impl PutVoiceConnectorTerminationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_voice_connector_termination::PutVoiceConnectorTerminationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_voice_connector_termination::PutVoiceConnectorTerminationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_voice_connector_termination();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutVoiceConnectorTermination`.
 ///
 /// <p>Adds termination settings for the specified Amazon Chime Voice Connector.</p> <note>

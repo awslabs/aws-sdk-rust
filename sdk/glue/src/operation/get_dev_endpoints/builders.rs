@@ -3,6 +3,23 @@ pub use crate::operation::get_dev_endpoints::_get_dev_endpoints_output::GetDevEn
 
 pub use crate::operation::get_dev_endpoints::_get_dev_endpoints_input::GetDevEndpointsInputBuilder;
 
+impl GetDevEndpointsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_dev_endpoints::GetDevEndpointsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_dev_endpoints::GetDevEndpointsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_dev_endpoints();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetDevEndpoints`.
 ///
 /// <p>Retrieves all the development endpoints in this Amazon Web Services account.</p> <note>

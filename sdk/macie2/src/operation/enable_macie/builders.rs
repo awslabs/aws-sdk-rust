@@ -3,6 +3,23 @@ pub use crate::operation::enable_macie::_enable_macie_output::EnableMacieOutputB
 
 pub use crate::operation::enable_macie::_enable_macie_input::EnableMacieInputBuilder;
 
+impl EnableMacieInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::enable_macie::EnableMacieOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::enable_macie::EnableMacieError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.enable_macie();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `EnableMacie`.
 ///
 /// <p>Enables Amazon Macie and specifies the configuration settings for a Macie account.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_stream_processor::_describe_stream_processor_
 
 pub use crate::operation::describe_stream_processor::_describe_stream_processor_input::DescribeStreamProcessorInputBuilder;
 
+impl DescribeStreamProcessorInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_stream_processor::DescribeStreamProcessorOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_stream_processor::DescribeStreamProcessorError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_stream_processor();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeStreamProcessor`.
 ///
 /// <p>Provides information about a stream processor created by <code>CreateStreamProcessor</code>. You can get information about the input and output streams, the input parameters for the face recognition being performed, and the current status of the stream processor.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_domain::_create_domain_output::CreateDomainOutp
 
 pub use crate::operation::create_domain::_create_domain_input::CreateDomainInputBuilder;
 
+impl CreateDomainInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_domain::CreateDomainOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_domain::CreateDomainError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_domain();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateDomain`.
 ///
 /// <p>Creates a domain, which is a container for all case data, such as cases, fields, templates and layouts. Each Amazon Connect instance can be associated with only one Cases domain.</p> <important>

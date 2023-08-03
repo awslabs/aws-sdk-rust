@@ -3,6 +3,23 @@ pub use crate::operation::describe_data_repository_tasks::_describe_data_reposit
 
 pub use crate::operation::describe_data_repository_tasks::_describe_data_repository_tasks_input::DescribeDataRepositoryTasksInputBuilder;
 
+impl DescribeDataRepositoryTasksInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_data_repository_tasks::DescribeDataRepositoryTasksOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_data_repository_tasks::DescribeDataRepositoryTasksError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_data_repository_tasks();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeDataRepositoryTasks`.
 ///
 /// <p>Returns the description of specific Amazon FSx for Lustre or Amazon File Cache data repository tasks, if one or more <code>TaskIds</code> values are provided in the request, or if filters are used in the request. You can use filters to narrow the response to include just tasks for specific file systems or caches, or tasks in a specific lifecycle state. Otherwise, it returns all data repository tasks owned by your Amazon Web Services account in the Amazon Web Services Region of the endpoint that you're calling.</p>

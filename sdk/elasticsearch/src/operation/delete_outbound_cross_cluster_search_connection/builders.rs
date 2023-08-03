@@ -3,6 +3,17 @@ pub use crate::operation::delete_outbound_cross_cluster_search_connection::_dele
 
 pub use crate::operation::delete_outbound_cross_cluster_search_connection::_delete_outbound_cross_cluster_search_connection_input::DeleteOutboundCrossClusterSearchConnectionInputBuilder;
 
+impl DeleteOutboundCrossClusterSearchConnectionInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_outbound_cross_cluster_search_connection::DeleteOutboundCrossClusterSearchConnectionOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_outbound_cross_cluster_search_connection::DeleteOutboundCrossClusterSearchConnectionError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.delete_outbound_cross_cluster_search_connection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteOutboundCrossClusterSearchConnection`.
 ///
 /// <p>Allows the source domain owner to delete an existing outbound cross-cluster search connection.</p>

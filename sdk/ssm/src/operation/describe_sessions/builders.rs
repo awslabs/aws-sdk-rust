@@ -3,6 +3,23 @@ pub use crate::operation::describe_sessions::_describe_sessions_output::Describe
 
 pub use crate::operation::describe_sessions::_describe_sessions_input::DescribeSessionsInputBuilder;
 
+impl DescribeSessionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_sessions::DescribeSessionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_sessions::DescribeSessionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_sessions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeSessions`.
 ///
 /// <p>Retrieves a list of all active sessions (both connected and disconnected) or terminated sessions from the past 30 days.</p>

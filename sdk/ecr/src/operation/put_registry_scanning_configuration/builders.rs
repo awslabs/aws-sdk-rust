@@ -3,6 +3,17 @@ pub use crate::operation::put_registry_scanning_configuration::_put_registry_sca
 
 pub use crate::operation::put_registry_scanning_configuration::_put_registry_scanning_configuration_input::PutRegistryScanningConfigurationInputBuilder;
 
+impl PutRegistryScanningConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::put_registry_scanning_configuration::PutRegistryScanningConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_registry_scanning_configuration::PutRegistryScanningConfigurationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.put_registry_scanning_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutRegistryScanningConfiguration`.
 ///
 /// <p>Creates or updates the scanning configuration for your private registry.</p>

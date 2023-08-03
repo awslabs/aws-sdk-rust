@@ -3,6 +3,23 @@ pub use crate::operation::delete_event_data_store::_delete_event_data_store_outp
 
 pub use crate::operation::delete_event_data_store::_delete_event_data_store_input::DeleteEventDataStoreInputBuilder;
 
+impl DeleteEventDataStoreInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_event_data_store::DeleteEventDataStoreOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_event_data_store::DeleteEventDataStoreError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_event_data_store();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteEventDataStore`.
 ///
 /// <p>Disables the event data store specified by <code>EventDataStore</code>, which accepts an event data store ARN. After you run <code>DeleteEventDataStore</code>, the event data store enters a <code>PENDING_DELETION</code> state, and is automatically deleted after a wait period of seven days. <code>TerminationProtectionEnabled</code> must be set to <code>False</code> on the event data store; this operation cannot work if <code>TerminationProtectionEnabled</code> is <code>True</code>.</p>

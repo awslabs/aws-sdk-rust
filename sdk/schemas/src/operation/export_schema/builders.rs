@@ -3,6 +3,23 @@ pub use crate::operation::export_schema::_export_schema_output::ExportSchemaOutp
 
 pub use crate::operation::export_schema::_export_schema_input::ExportSchemaInputBuilder;
 
+impl ExportSchemaInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::export_schema::ExportSchemaOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::export_schema::ExportSchemaError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.export_schema();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ExportSchema`.
 ///
 #[derive(::std::clone::Clone, ::std::fmt::Debug)]

@@ -3,6 +3,23 @@ pub use crate::operation::update_resource_policy::_update_resource_policy_output
 
 pub use crate::operation::update_resource_policy::_update_resource_policy_input::UpdateResourcePolicyInputBuilder;
 
+impl UpdateResourcePolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_resource_policy::UpdateResourcePolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_resource_policy::UpdateResourcePolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_resource_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateResourcePolicy`.
 ///
 /// <p>Replaces the existing resource policy for a bot or bot alias with a new one. If the policy doesn't exist, Amazon Lex returns an exception.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::terminate_instances::_terminate_instances_output::Term
 
 pub use crate::operation::terminate_instances::_terminate_instances_input::TerminateInstancesInputBuilder;
 
+impl TerminateInstancesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::terminate_instances::TerminateInstancesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::terminate_instances::TerminateInstancesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.terminate_instances();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `TerminateInstances`.
 ///
 /// <p>Shuts down the specified instances. This operation is idempotent; if you terminate an instance more than once, each call succeeds. </p>

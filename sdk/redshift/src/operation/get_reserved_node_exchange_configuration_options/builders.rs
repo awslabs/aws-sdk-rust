@@ -3,6 +3,17 @@ pub use crate::operation::get_reserved_node_exchange_configuration_options::_get
 
 pub use crate::operation::get_reserved_node_exchange_configuration_options::_get_reserved_node_exchange_configuration_options_input::GetReservedNodeExchangeConfigurationOptionsInputBuilder;
 
+impl GetReservedNodeExchangeConfigurationOptionsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_reserved_node_exchange_configuration_options::GetReservedNodeExchangeConfigurationOptionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_reserved_node_exchange_configuration_options::GetReservedNodeExchangeConfigurationOptionsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_reserved_node_exchange_configuration_options();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetReservedNodeExchangeConfigurationOptions`.
 ///
 /// <p>Gets the configuration options for the reserved-node exchange. These options include information about the source reserved node and target reserved node offering. Details include the node type, the price, the node count, and the offering type.</p>

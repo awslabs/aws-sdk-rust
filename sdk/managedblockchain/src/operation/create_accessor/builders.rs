@@ -3,6 +3,23 @@ pub use crate::operation::create_accessor::_create_accessor_output::CreateAccess
 
 pub use crate::operation::create_accessor::_create_accessor_input::CreateAccessorInputBuilder;
 
+impl CreateAccessorInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_accessor::CreateAccessorOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_accessor::CreateAccessorError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_accessor();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateAccessor`.
 ///
 /// <p>Creates a new accessor for use with Managed Blockchain Ethereum nodes. An accessor contains information required for token based access to your Ethereum nodes.</p>

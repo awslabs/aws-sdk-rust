@@ -3,6 +3,17 @@ pub use crate::operation::get_evidence_folders_by_assessment::_get_evidence_fold
 
 pub use crate::operation::get_evidence_folders_by_assessment::_get_evidence_folders_by_assessment_input::GetEvidenceFoldersByAssessmentInputBuilder;
 
+impl GetEvidenceFoldersByAssessmentInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_evidence_folders_by_assessment::GetEvidenceFoldersByAssessmentOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_evidence_folders_by_assessment::GetEvidenceFoldersByAssessmentError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_evidence_folders_by_assessment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetEvidenceFoldersByAssessment`.
 ///
 /// <p> Gets the evidence folders from a specified assessment in Audit Manager. </p>

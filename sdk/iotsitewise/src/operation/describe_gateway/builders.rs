@@ -3,6 +3,23 @@ pub use crate::operation::describe_gateway::_describe_gateway_output::DescribeGa
 
 pub use crate::operation::describe_gateway::_describe_gateway_input::DescribeGatewayInputBuilder;
 
+impl DescribeGatewayInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_gateway::DescribeGatewayOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_gateway::DescribeGatewayError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_gateway();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeGateway`.
 ///
 /// <p>Retrieves information about a gateway.</p>

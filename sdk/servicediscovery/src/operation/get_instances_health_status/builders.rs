@@ -3,6 +3,23 @@ pub use crate::operation::get_instances_health_status::_get_instances_health_sta
 
 pub use crate::operation::get_instances_health_status::_get_instances_health_status_input::GetInstancesHealthStatusInputBuilder;
 
+impl GetInstancesHealthStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_instances_health_status::GetInstancesHealthStatusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_instances_health_status::GetInstancesHealthStatusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_instances_health_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetInstancesHealthStatus`.
 ///
 /// <p>Gets the current health status (<code>Healthy</code>, <code>Unhealthy</code>, or <code>Unknown</code>) of one or more instances that are associated with a specified service.</p> <note>

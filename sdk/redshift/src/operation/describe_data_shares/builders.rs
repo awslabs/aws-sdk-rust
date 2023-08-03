@@ -3,6 +3,23 @@ pub use crate::operation::describe_data_shares::_describe_data_shares_output::De
 
 pub use crate::operation::describe_data_shares::_describe_data_shares_input::DescribeDataSharesInputBuilder;
 
+impl DescribeDataSharesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_data_shares::DescribeDataSharesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_data_shares::DescribeDataSharesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_data_shares();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeDataShares`.
 ///
 /// <p>Shows the status of any inbound or outbound datashares available in the specified account.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::batch_delete_cluster_snapshots::_batch_delete_cluster_
 
 pub use crate::operation::batch_delete_cluster_snapshots::_batch_delete_cluster_snapshots_input::BatchDeleteClusterSnapshotsInputBuilder;
 
+impl BatchDeleteClusterSnapshotsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_delete_cluster_snapshots::BatchDeleteClusterSnapshotsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_delete_cluster_snapshots::BatchDeleteClusterSnapshotsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_delete_cluster_snapshots();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchDeleteClusterSnapshots`.
 ///
 /// <p>Deletes a set of cluster snapshots.</p>

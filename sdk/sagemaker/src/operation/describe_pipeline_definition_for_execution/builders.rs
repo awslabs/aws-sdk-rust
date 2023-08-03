@@ -3,6 +3,17 @@ pub use crate::operation::describe_pipeline_definition_for_execution::_describe_
 
 pub use crate::operation::describe_pipeline_definition_for_execution::_describe_pipeline_definition_for_execution_input::DescribePipelineDefinitionForExecutionInputBuilder;
 
+impl DescribePipelineDefinitionForExecutionInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_pipeline_definition_for_execution::DescribePipelineDefinitionForExecutionOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_pipeline_definition_for_execution::DescribePipelineDefinitionForExecutionError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_pipeline_definition_for_execution();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribePipelineDefinitionForExecution`.
 ///
 /// <p>Describes the details of an execution's pipeline definition.</p>

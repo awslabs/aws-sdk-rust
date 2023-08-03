@@ -3,6 +3,23 @@ pub use crate::operation::export_table_to_point_in_time::_export_table_to_point_
 
 pub use crate::operation::export_table_to_point_in_time::_export_table_to_point_in_time_input::ExportTableToPointInTimeInputBuilder;
 
+impl ExportTableToPointInTimeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::export_table_to_point_in_time::ExportTableToPointInTimeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::export_table_to_point_in_time::ExportTableToPointInTimeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.export_table_to_point_in_time();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ExportTableToPointInTime`.
 ///
 /// <p>Exports table data to an S3 bucket. The table must have point in time recovery enabled, and you can export data from any time within the point in time recovery window.</p>

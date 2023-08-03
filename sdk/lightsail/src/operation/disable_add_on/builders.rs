@@ -3,6 +3,23 @@ pub use crate::operation::disable_add_on::_disable_add_on_output::DisableAddOnOu
 
 pub use crate::operation::disable_add_on::_disable_add_on_input::DisableAddOnInputBuilder;
 
+impl DisableAddOnInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disable_add_on::DisableAddOnOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disable_add_on::DisableAddOnError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disable_add_on();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisableAddOn`.
 ///
 /// <p>Disables an add-on for an Amazon Lightsail resource. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_label::_create_label_output::CreateLabelOutputB
 
 pub use crate::operation::create_label::_create_label_input::CreateLabelInputBuilder;
 
+impl CreateLabelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_label::CreateLabelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_label::CreateLabelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_label();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateLabel`.
 ///
 /// <p> Creates a label for an event. </p>

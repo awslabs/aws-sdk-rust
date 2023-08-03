@@ -3,6 +3,23 @@ pub use crate::operation::get_resolver_rule_policy::_get_resolver_rule_policy_ou
 
 pub use crate::operation::get_resolver_rule_policy::_get_resolver_rule_policy_input::GetResolverRulePolicyInputBuilder;
 
+impl GetResolverRulePolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_resolver_rule_policy::GetResolverRulePolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_resolver_rule_policy::GetResolverRulePolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_resolver_rule_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetResolverRulePolicy`.
 ///
 /// <p>Gets information about the Resolver rule policy for a specified rule. A Resolver rule policy includes the rule that you want to share with another account, the account that you want to share the rule with, and the Resolver operations that you want to allow the account to use. </p>

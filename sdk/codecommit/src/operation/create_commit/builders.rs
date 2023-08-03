@@ -3,6 +3,23 @@ pub use crate::operation::create_commit::_create_commit_output::CreateCommitOutp
 
 pub use crate::operation::create_commit::_create_commit_input::CreateCommitInputBuilder;
 
+impl CreateCommitInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_commit::CreateCommitOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_commit::CreateCommitError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_commit();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateCommit`.
 ///
 /// <p>Creates a commit for a repository on the tip of a specified branch.</p>

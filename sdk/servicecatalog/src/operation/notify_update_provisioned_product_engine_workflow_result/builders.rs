@@ -3,6 +3,17 @@ pub use crate::operation::notify_update_provisioned_product_engine_workflow_resu
 
 pub use crate::operation::notify_update_provisioned_product_engine_workflow_result::_notify_update_provisioned_product_engine_workflow_result_input::NotifyUpdateProvisionedProductEngineWorkflowResultInputBuilder;
 
+impl NotifyUpdateProvisionedProductEngineWorkflowResultInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::notify_update_provisioned_product_engine_workflow_result::NotifyUpdateProvisionedProductEngineWorkflowResultOutput, ::aws_smithy_http::result::SdkError<crate::operation::notify_update_provisioned_product_engine_workflow_result::NotifyUpdateProvisionedProductEngineWorkflowResultError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.notify_update_provisioned_product_engine_workflow_result();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `NotifyUpdateProvisionedProductEngineWorkflowResult`.
 ///
 /// <p> Notifies the result of the update engine execution. </p>

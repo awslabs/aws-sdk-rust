@@ -3,6 +3,23 @@ pub use crate::operation::describe_events::_describe_events_output::DescribeEven
 
 pub use crate::operation::describe_events::_describe_events_input::DescribeEventsInputBuilder;
 
+impl DescribeEventsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_events::DescribeEventsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_events::DescribeEventsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_events();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeEvents`.
 ///
 /// <p>Returns events related to clusters, security groups, snapshots, and parameter groups for the past 14 days. Events specific to a particular cluster, security group, snapshot or parameter group can be obtained by providing the name as a parameter. By default, the past hour of events are returned.</p>

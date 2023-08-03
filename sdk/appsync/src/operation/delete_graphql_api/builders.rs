@@ -3,6 +3,23 @@ pub use crate::operation::delete_graphql_api::_delete_graphql_api_output::Delete
 
 pub use crate::operation::delete_graphql_api::_delete_graphql_api_input::DeleteGraphqlApiInputBuilder;
 
+impl DeleteGraphqlApiInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_graphql_api::DeleteGraphqlApiOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_graphql_api::DeleteGraphqlApiError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_graphql_api();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteGraphqlApi`.
 ///
 /// <p>Deletes a <code>GraphqlApi</code> object.</p>

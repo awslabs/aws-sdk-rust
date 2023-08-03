@@ -3,6 +3,23 @@ pub use crate::operation::list_health_events::_list_health_events_output::ListHe
 
 pub use crate::operation::list_health_events::_list_health_events_input::ListHealthEventsInputBuilder;
 
+impl ListHealthEventsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_health_events::ListHealthEventsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_health_events::ListHealthEventsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_health_events();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListHealthEvents`.
 ///
 /// <p>Lists all health events for a monitor in Amazon CloudWatch Internet Monitor. Returns all information for health events including the client location information the network cause and status, event start and end time, percentage of total traffic impacted, and status.</p> <note>

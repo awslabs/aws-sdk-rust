@@ -3,6 +3,23 @@ pub use crate::operation::create_network_settings::_create_network_settings_outp
 
 pub use crate::operation::create_network_settings::_create_network_settings_input::CreateNetworkSettingsInputBuilder;
 
+impl CreateNetworkSettingsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_network_settings::CreateNetworkSettingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_network_settings::CreateNetworkSettingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_network_settings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateNetworkSettings`.
 ///
 /// <p>Creates a network settings resource that can be associated with a web portal. Once associated with a web portal, network settings define how streaming instances will connect with your specified VPC. </p>

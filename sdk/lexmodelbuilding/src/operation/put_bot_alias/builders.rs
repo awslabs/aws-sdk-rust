@@ -3,6 +3,23 @@ pub use crate::operation::put_bot_alias::_put_bot_alias_output::PutBotAliasOutpu
 
 pub use crate::operation::put_bot_alias::_put_bot_alias_input::PutBotAliasInputBuilder;
 
+impl PutBotAliasInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_bot_alias::PutBotAliasOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_bot_alias::PutBotAliasError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_bot_alias();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutBotAlias`.
 ///
 /// <p>Creates an alias for the specified version of the bot or replaces an alias for the specified bot. To change the version of the bot that the alias points to, replace the alias. For more information about aliases, see <code>versioning-aliases</code>.</p>

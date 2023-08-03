@@ -3,6 +3,23 @@ pub use crate::operation::put_profile_object_type::_put_profile_object_type_outp
 
 pub use crate::operation::put_profile_object_type::_put_profile_object_type_input::PutProfileObjectTypeInputBuilder;
 
+impl PutProfileObjectTypeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_profile_object_type::PutProfileObjectTypeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_profile_object_type::PutProfileObjectTypeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_profile_object_type();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutProfileObjectType`.
 ///
 /// <p>Defines a ProfileObjectType.</p>

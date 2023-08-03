@@ -3,6 +3,23 @@ pub use crate::operation::enable::_enable_output::EnableOutputBuilder;
 
 pub use crate::operation::enable::_enable_input::EnableInputBuilder;
 
+impl EnableInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::enable::EnableOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::enable::EnableError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.enable();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `Enable`.
 ///
 /// <p>Enables Amazon Inspector scans for one or more Amazon Web Services accounts.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::send_raw_email::_send_raw_email_output::SendRawEmailOu
 
 pub use crate::operation::send_raw_email::_send_raw_email_input::SendRawEmailInputBuilder;
 
+impl SendRawEmailInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::send_raw_email::SendRawEmailOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::send_raw_email::SendRawEmailError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.send_raw_email();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SendRawEmail`.
 ///
 /// <p>Composes an email message and immediately queues it for sending.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::define_index_field::_define_index_field_output::Define
 
 pub use crate::operation::define_index_field::_define_index_field_input::DefineIndexFieldInputBuilder;
 
+impl DefineIndexFieldInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::define_index_field::DefineIndexFieldOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::define_index_field::DefineIndexFieldError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.define_index_field();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DefineIndexField`.
 ///
 /// <p>Configures an <code><code>IndexField</code></code> for the search domain. Used to create new fields and modify existing ones. You must specify the name of the domain you are configuring and an index field configuration. The index field configuration specifies a unique name, the index field type, and the options you want to configure for the field. The options you can specify depend on the <code><code>IndexFieldType</code></code>. If the field exists, the new configuration replaces the old one. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html" target="_blank">Configuring Index Fields</a> in the <i>Amazon CloudSearch Developer Guide</i>. </p>

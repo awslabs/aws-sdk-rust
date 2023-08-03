@@ -3,6 +3,23 @@ pub use crate::operation::delete_image_permissions::_delete_image_permissions_ou
 
 pub use crate::operation::delete_image_permissions::_delete_image_permissions_input::DeleteImagePermissionsInputBuilder;
 
+impl DeleteImagePermissionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_image_permissions::DeleteImagePermissionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_image_permissions::DeleteImagePermissionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_image_permissions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteImagePermissions`.
 ///
 /// <p>Deletes permissions for the specified private image. After you delete permissions for an image, AWS accounts to which you previously granted these permissions can no longer use the image.</p>

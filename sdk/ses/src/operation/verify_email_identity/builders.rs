@@ -3,6 +3,23 @@ pub use crate::operation::verify_email_identity::_verify_email_identity_output::
 
 pub use crate::operation::verify_email_identity::_verify_email_identity_input::VerifyEmailIdentityInputBuilder;
 
+impl VerifyEmailIdentityInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::verify_email_identity::VerifyEmailIdentityOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::verify_email_identity::VerifyEmailIdentityError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.verify_email_identity();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `VerifyEmailIdentity`.
 ///
 /// <p>Adds an email address to the list of identities for your Amazon SES account in the current AWS region and attempts to verify it. As a result of executing this operation, a verification email is sent to the specified address.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::merge_branches_by_fast_forward::_merge_branches_by_fas
 
 pub use crate::operation::merge_branches_by_fast_forward::_merge_branches_by_fast_forward_input::MergeBranchesByFastForwardInputBuilder;
 
+impl MergeBranchesByFastForwardInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::merge_branches_by_fast_forward::MergeBranchesByFastForwardOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::merge_branches_by_fast_forward::MergeBranchesByFastForwardError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.merge_branches_by_fast_forward();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `MergeBranchesByFastForward`.
 ///
 /// <p>Merges two branches using the fast-forward merge strategy.</p>

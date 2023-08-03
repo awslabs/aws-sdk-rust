@@ -3,6 +3,23 @@ pub use crate::operation::connect_custom_key_store::_connect_custom_key_store_ou
 
 pub use crate::operation::connect_custom_key_store::_connect_custom_key_store_input::ConnectCustomKeyStoreInputBuilder;
 
+impl ConnectCustomKeyStoreInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::connect_custom_key_store::ConnectCustomKeyStoreOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::connect_custom_key_store::ConnectCustomKeyStoreError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.connect_custom_key_store();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ConnectCustomKeyStore`.
 ///
 /// <p>Connects or reconnects a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a> to its backing key store. For an CloudHSM key store, <code>ConnectCustomKeyStore</code> connects the key store to its associated CloudHSM cluster. For an external key store, <code>ConnectCustomKeyStore</code> connects the key store to the external key store proxy that communicates with your external key manager.</p>

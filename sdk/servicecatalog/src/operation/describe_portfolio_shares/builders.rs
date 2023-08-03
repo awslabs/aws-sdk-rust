@@ -3,6 +3,23 @@ pub use crate::operation::describe_portfolio_shares::_describe_portfolio_shares_
 
 pub use crate::operation::describe_portfolio_shares::_describe_portfolio_shares_input::DescribePortfolioSharesInputBuilder;
 
+impl DescribePortfolioSharesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_portfolio_shares::DescribePortfolioSharesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_portfolio_shares::DescribePortfolioSharesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_portfolio_shares();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribePortfolioShares`.
 ///
 /// <p>Returns a summary of each of the portfolio shares that were created for the specified portfolio.</p>

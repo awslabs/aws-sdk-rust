@@ -3,6 +3,23 @@ pub use crate::operation::put_targets::_put_targets_output::PutTargetsOutputBuil
 
 pub use crate::operation::put_targets::_put_targets_input::PutTargetsInputBuilder;
 
+impl PutTargetsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_targets::PutTargetsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_targets::PutTargetsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_targets();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutTargets`.
 ///
 /// <p>Adds the specified targets to the specified rule, or updates the targets if they are already associated with the rule.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::update_stage::_update_stage_output::UpdateStageOutputB
 
 pub use crate::operation::update_stage::_update_stage_input::UpdateStageInputBuilder;
 
+impl UpdateStageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_stage::UpdateStageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_stage::UpdateStageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_stage();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateStage`.
 ///
 /// <p>Updates the metadata of a stage.</p>

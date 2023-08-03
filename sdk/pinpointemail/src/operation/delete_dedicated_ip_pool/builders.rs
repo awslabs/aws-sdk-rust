@@ -3,6 +3,23 @@ pub use crate::operation::delete_dedicated_ip_pool::_delete_dedicated_ip_pool_ou
 
 pub use crate::operation::delete_dedicated_ip_pool::_delete_dedicated_ip_pool_input::DeleteDedicatedIpPoolInputBuilder;
 
+impl DeleteDedicatedIpPoolInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_dedicated_ip_pool::DeleteDedicatedIpPoolOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_dedicated_ip_pool::DeleteDedicatedIpPoolError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_dedicated_ip_pool();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteDedicatedIpPool`.
 ///
 /// <p>Delete a dedicated IP pool.</p>

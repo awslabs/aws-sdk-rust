@@ -3,6 +3,23 @@ pub use crate::operation::detect_stack_set_drift::_detect_stack_set_drift_output
 
 pub use crate::operation::detect_stack_set_drift::_detect_stack_set_drift_input::DetectStackSetDriftInputBuilder;
 
+impl DetectStackSetDriftInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::detect_stack_set_drift::DetectStackSetDriftOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::detect_stack_set_drift::DetectStackSetDriftError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.detect_stack_set_drift();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DetectStackSetDrift`.
 ///
 /// <p>Detect drift on a stack set. When CloudFormation performs drift detection on a stack set, it performs drift detection on the stack associated with each stack instance in the stack set. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-drift.html">How CloudFormation performs drift detection on a stack set</a>.</p>

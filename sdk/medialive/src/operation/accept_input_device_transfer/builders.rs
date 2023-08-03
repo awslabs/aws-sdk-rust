@@ -3,6 +3,23 @@ pub use crate::operation::accept_input_device_transfer::_accept_input_device_tra
 
 pub use crate::operation::accept_input_device_transfer::_accept_input_device_transfer_input::AcceptInputDeviceTransferInputBuilder;
 
+impl AcceptInputDeviceTransferInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::accept_input_device_transfer::AcceptInputDeviceTransferOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::accept_input_device_transfer::AcceptInputDeviceTransferError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.accept_input_device_transfer();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AcceptInputDeviceTransfer`.
 ///
 /// Accept an incoming input device transfer. The ownership of the device will transfer to your AWS account.

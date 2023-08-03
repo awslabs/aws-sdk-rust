@@ -3,6 +3,23 @@ pub use crate::operation::start_read_set_activation_job::_start_read_set_activat
 
 pub use crate::operation::start_read_set_activation_job::_start_read_set_activation_job_input::StartReadSetActivationJobInputBuilder;
 
+impl StartReadSetActivationJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_read_set_activation_job::StartReadSetActivationJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_read_set_activation_job::StartReadSetActivationJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_read_set_activation_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartReadSetActivationJob`.
 ///
 /// <p>Activates an archived read set. To reduce storage charges, Amazon Omics archives unused read sets after 30 days.</p>

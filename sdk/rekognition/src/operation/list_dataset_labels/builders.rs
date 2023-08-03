@@ -3,6 +3,23 @@ pub use crate::operation::list_dataset_labels::_list_dataset_labels_output::List
 
 pub use crate::operation::list_dataset_labels::_list_dataset_labels_input::ListDatasetLabelsInputBuilder;
 
+impl ListDatasetLabelsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_dataset_labels::ListDatasetLabelsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_dataset_labels::ListDatasetLabelsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_dataset_labels();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDatasetLabels`.
 ///
 /// <p>Lists the labels in a dataset. Amazon Rekognition Custom Labels uses labels to describe images. For more information, see <a href="https://docs.aws.amazon.com/rekognition/latest/customlabels-dg/md-labeling-images.html">Labeling images</a>. </p>

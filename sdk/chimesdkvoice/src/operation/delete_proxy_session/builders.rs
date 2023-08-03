@@ -3,6 +3,23 @@ pub use crate::operation::delete_proxy_session::_delete_proxy_session_output::De
 
 pub use crate::operation::delete_proxy_session::_delete_proxy_session_input::DeleteProxySessionInputBuilder;
 
+impl DeleteProxySessionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_proxy_session::DeleteProxySessionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_proxy_session::DeleteProxySessionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_proxy_session();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteProxySession`.
 ///
 /// <p>Deletes the specified proxy session from the specified Amazon Chime SDK Voice Connector.</p>

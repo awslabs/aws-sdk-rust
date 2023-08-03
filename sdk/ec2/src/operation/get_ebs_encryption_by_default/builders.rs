@@ -3,6 +3,23 @@ pub use crate::operation::get_ebs_encryption_by_default::_get_ebs_encryption_by_
 
 pub use crate::operation::get_ebs_encryption_by_default::_get_ebs_encryption_by_default_input::GetEbsEncryptionByDefaultInputBuilder;
 
+impl GetEbsEncryptionByDefaultInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_ebs_encryption_by_default::GetEbsEncryptionByDefaultOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_ebs_encryption_by_default::GetEbsEncryptionByDefaultError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_ebs_encryption_by_default();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetEbsEncryptionByDefault`.
 ///
 /// <p>Describes whether EBS encryption by default is enabled for your account in the current Region.</p>

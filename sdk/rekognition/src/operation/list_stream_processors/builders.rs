@@ -3,6 +3,23 @@ pub use crate::operation::list_stream_processors::_list_stream_processors_output
 
 pub use crate::operation::list_stream_processors::_list_stream_processors_input::ListStreamProcessorsInputBuilder;
 
+impl ListStreamProcessorsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_stream_processors::ListStreamProcessorsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_stream_processors::ListStreamProcessorsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_stream_processors();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListStreamProcessors`.
 ///
 /// <p>Gets a list of stream processors that you have created with <code>CreateStreamProcessor</code>. </p>

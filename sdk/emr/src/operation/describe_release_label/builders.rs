@@ -3,6 +3,23 @@ pub use crate::operation::describe_release_label::_describe_release_label_output
 
 pub use crate::operation::describe_release_label::_describe_release_label_input::DescribeReleaseLabelInputBuilder;
 
+impl DescribeReleaseLabelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_release_label::DescribeReleaseLabelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_release_label::DescribeReleaseLabelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_release_label();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeReleaseLabel`.
 ///
 /// <p>Provides Amazon EMR release label details, such as the releases available the Region where the API request is run, and the available applications for a specific Amazon EMR release label. Can also list Amazon EMR releases that support a specified version of Spark.</p>

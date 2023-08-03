@@ -3,6 +3,23 @@ pub use crate::operation::get_suite::_get_suite_output::GetSuiteOutputBuilder;
 
 pub use crate::operation::get_suite::_get_suite_input::GetSuiteInputBuilder;
 
+impl GetSuiteInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_suite::GetSuiteOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_suite::GetSuiteError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_suite();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetSuite`.
 ///
 /// <p>Gets information about a suite.</p>

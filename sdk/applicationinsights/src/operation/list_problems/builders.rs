@@ -3,6 +3,23 @@ pub use crate::operation::list_problems::_list_problems_output::ListProblemsOutp
 
 pub use crate::operation::list_problems::_list_problems_input::ListProblemsInputBuilder;
 
+impl ListProblemsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_problems::ListProblemsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_problems::ListProblemsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_problems();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListProblems`.
 ///
 /// <p>Lists the problems with your application.</p>

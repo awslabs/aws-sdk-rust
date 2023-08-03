@@ -3,6 +3,23 @@ pub use crate::operation::create_explainability_export::_create_explainability_e
 
 pub use crate::operation::create_explainability_export::_create_explainability_export_input::CreateExplainabilityExportInputBuilder;
 
+impl CreateExplainabilityExportInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_explainability_export::CreateExplainabilityExportOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_explainability_export::CreateExplainabilityExportError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_explainability_export();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateExplainabilityExport`.
 ///
 /// <p>Exports an Explainability resource created by the <code>CreateExplainability</code> operation. Exported files are exported to an Amazon Simple Storage Service (Amazon S3) bucket.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::update_availability_options::_update_availability_opti
 
 pub use crate::operation::update_availability_options::_update_availability_options_input::UpdateAvailabilityOptionsInputBuilder;
 
+impl UpdateAvailabilityOptionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_availability_options::UpdateAvailabilityOptionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_availability_options::UpdateAvailabilityOptionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_availability_options();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateAvailabilityOptions`.
 ///
 /// <p>Configures the availability options for a domain. Enabling the Multi-AZ option expands an Amazon CloudSearch domain to an additional Availability Zone in the same Region to increase fault tolerance in the event of a service disruption. Changes to the Multi-AZ option can take about half an hour to become active. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-availability-options.html" target="_blank">Configuring Availability Options</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>

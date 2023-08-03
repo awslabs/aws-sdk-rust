@@ -3,6 +3,23 @@ pub use crate::operation::delete_thing::_delete_thing_output::DeleteThingOutputB
 
 pub use crate::operation::delete_thing::_delete_thing_input::DeleteThingInputBuilder;
 
+impl DeleteThingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_thing::DeleteThingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_thing::DeleteThingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_thing();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteThing`.
 ///
 /// <p>Deletes the specified thing. Returns successfully with no error if the deletion is successful or you specify a thing that doesn't exist.</p>

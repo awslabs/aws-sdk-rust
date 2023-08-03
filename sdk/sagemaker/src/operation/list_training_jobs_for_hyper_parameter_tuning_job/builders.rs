@@ -3,6 +3,17 @@ pub use crate::operation::list_training_jobs_for_hyper_parameter_tuning_job::_li
 
 pub use crate::operation::list_training_jobs_for_hyper_parameter_tuning_job::_list_training_jobs_for_hyper_parameter_tuning_job_input::ListTrainingJobsForHyperParameterTuningJobInputBuilder;
 
+impl ListTrainingJobsForHyperParameterTuningJobInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_training_jobs_for_hyper_parameter_tuning_job::ListTrainingJobsForHyperParameterTuningJobOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_training_jobs_for_hyper_parameter_tuning_job::ListTrainingJobsForHyperParameterTuningJobError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_training_jobs_for_hyper_parameter_tuning_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListTrainingJobsForHyperParameterTuningJob`.
 ///
 /// <p>Gets a list of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_TrainingJobSummary.html">TrainingJobSummary</a> objects that describe the training jobs that a hyperparameter tuning job launched.</p>

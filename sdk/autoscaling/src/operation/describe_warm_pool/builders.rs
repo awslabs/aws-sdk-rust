@@ -3,6 +3,23 @@ pub use crate::operation::describe_warm_pool::_describe_warm_pool_output::Descri
 
 pub use crate::operation::describe_warm_pool::_describe_warm_pool_input::DescribeWarmPoolInputBuilder;
 
+impl DescribeWarmPoolInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_warm_pool::DescribeWarmPoolOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_warm_pool::DescribeWarmPoolError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_warm_pool();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeWarmPool`.
 ///
 /// <p>Gets information about a warm pool and its instances.</p>

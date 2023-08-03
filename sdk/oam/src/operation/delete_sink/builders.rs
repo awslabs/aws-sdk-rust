@@ -3,6 +3,23 @@ pub use crate::operation::delete_sink::_delete_sink_output::DeleteSinkOutputBuil
 
 pub use crate::operation::delete_sink::_delete_sink_input::DeleteSinkInputBuilder;
 
+impl DeleteSinkInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_sink::DeleteSinkOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_sink::DeleteSinkError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_sink();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteSink`.
 ///
 /// <p>Deletes a sink. You must delete all links to a sink before you can delete that sink.</p>

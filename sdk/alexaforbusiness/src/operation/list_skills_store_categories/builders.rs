@@ -3,6 +3,23 @@ pub use crate::operation::list_skills_store_categories::_list_skills_store_categ
 
 pub use crate::operation::list_skills_store_categories::_list_skills_store_categories_input::ListSkillsStoreCategoriesInputBuilder;
 
+impl ListSkillsStoreCategoriesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_skills_store_categories::ListSkillsStoreCategoriesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_skills_store_categories::ListSkillsStoreCategoriesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_skills_store_categories();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListSkillsStoreCategories`.
 ///
 /// <p>Lists all categories in the Alexa skill store.</p>

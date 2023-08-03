@@ -3,6 +3,17 @@ pub use crate::operation::describe_replication_task_assessment_runs::_describe_r
 
 pub use crate::operation::describe_replication_task_assessment_runs::_describe_replication_task_assessment_runs_input::DescribeReplicationTaskAssessmentRunsInputBuilder;
 
+impl DescribeReplicationTaskAssessmentRunsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_replication_task_assessment_runs::DescribeReplicationTaskAssessmentRunsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_replication_task_assessment_runs::DescribeReplicationTaskAssessmentRunsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_replication_task_assessment_runs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeReplicationTaskAssessmentRuns`.
 ///
 /// <p>Returns a paginated list of premigration assessment runs based on filter settings.</p>

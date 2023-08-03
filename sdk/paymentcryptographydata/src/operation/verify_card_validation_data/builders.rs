@@ -3,6 +3,23 @@ pub use crate::operation::verify_card_validation_data::_verify_card_validation_d
 
 pub use crate::operation::verify_card_validation_data::_verify_card_validation_data_input::VerifyCardValidationDataInputBuilder;
 
+impl VerifyCardValidationDataInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::verify_card_validation_data::VerifyCardValidationDataOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::verify_card_validation_data::VerifyCardValidationDataError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.verify_card_validation_data();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `VerifyCardValidationData`.
 ///
 /// <p>Verifies card-related validation data using algorithms such as Card Verification Values (CVV/CVV2), Dynamic Card Verification Values (dCVV/dCVV2) and Card Security Codes (CSC). For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/verify-card-data.html">Verify card data</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_access_previews::_list_access_previews_output::Li
 
 pub use crate::operation::list_access_previews::_list_access_previews_input::ListAccessPreviewsInputBuilder;
 
+impl ListAccessPreviewsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_access_previews::ListAccessPreviewsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_access_previews::ListAccessPreviewsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_access_previews();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAccessPreviews`.
 ///
 /// <p>Retrieves a list of access previews for the specified analyzer.</p>

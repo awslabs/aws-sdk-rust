@@ -3,6 +3,23 @@ pub use crate::operation::get_gcm_channel::_get_gcm_channel_output::GetGcmChanne
 
 pub use crate::operation::get_gcm_channel::_get_gcm_channel_input::GetGcmChannelInputBuilder;
 
+impl GetGcmChannelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_gcm_channel::GetGcmChannelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_gcm_channel::GetGcmChannelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_gcm_channel();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetGcmChannel`.
 ///
 /// <p>Retrieves information about the status and settings of the GCM channel for an application.</p>

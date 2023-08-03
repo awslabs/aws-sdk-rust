@@ -3,6 +3,23 @@ pub use crate::operation::start_stream_transcription::_start_stream_transcriptio
 
 pub use crate::operation::start_stream_transcription::_start_stream_transcription_input::StartStreamTranscriptionInputBuilder;
 
+impl StartStreamTranscriptionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_stream_transcription::StartStreamTranscriptionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_stream_transcription::StartStreamTranscriptionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_stream_transcription();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartStreamTranscription`.
 ///
 /// <p>Starts a bidirectional HTTP/2 or WebSocket stream where audio is streamed to Amazon Transcribe and the transcription results are streamed to your application.</p>

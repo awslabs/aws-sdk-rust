@@ -3,6 +3,23 @@ pub use crate::operation::list_command_invocations::_list_command_invocations_ou
 
 pub use crate::operation::list_command_invocations::_list_command_invocations_input::ListCommandInvocationsInputBuilder;
 
+impl ListCommandInvocationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_command_invocations::ListCommandInvocationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_command_invocations::ListCommandInvocationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_command_invocations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListCommandInvocations`.
 ///
 /// <p>An invocation is copy of a command sent to a specific managed node. A command can apply to one or more managed nodes. A command invocation applies to one managed node. For example, if a user runs <code>SendCommand</code> against three managed nodes, then a command invocation is created for each requested managed node ID. <code>ListCommandInvocations</code> provide status about command execution.</p>

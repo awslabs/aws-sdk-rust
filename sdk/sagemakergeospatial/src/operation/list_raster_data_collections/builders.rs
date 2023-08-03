@@ -3,6 +3,23 @@ pub use crate::operation::list_raster_data_collections::_list_raster_data_collec
 
 pub use crate::operation::list_raster_data_collections::_list_raster_data_collections_input::ListRasterDataCollectionsInputBuilder;
 
+impl ListRasterDataCollectionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_raster_data_collections::ListRasterDataCollectionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_raster_data_collections::ListRasterDataCollectionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_raster_data_collections();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListRasterDataCollections`.
 ///
 /// <p>Use this operation to get raster data collections.</p>

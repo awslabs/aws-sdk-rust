@@ -3,6 +3,23 @@ pub use crate::operation::get_test_grid_project::_get_test_grid_project_output::
 
 pub use crate::operation::get_test_grid_project::_get_test_grid_project_input::GetTestGridProjectInputBuilder;
 
+impl GetTestGridProjectInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_test_grid_project::GetTestGridProjectOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_test_grid_project::GetTestGridProjectError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_test_grid_project();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetTestGridProject`.
 ///
 /// <p>Retrieves information about a Selenium testing project.</p>

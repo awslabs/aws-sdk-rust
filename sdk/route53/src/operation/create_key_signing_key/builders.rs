@@ -3,6 +3,23 @@ pub use crate::operation::create_key_signing_key::_create_key_signing_key_output
 
 pub use crate::operation::create_key_signing_key::_create_key_signing_key_input::CreateKeySigningKeyInputBuilder;
 
+impl CreateKeySigningKeyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_key_signing_key::CreateKeySigningKeyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_key_signing_key::CreateKeySigningKeyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_key_signing_key();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateKeySigningKey`.
 ///
 /// <p>Creates a new key-signing key (KSK) associated with a hosted zone. You can only have two KSKs per hosted zone.</p>

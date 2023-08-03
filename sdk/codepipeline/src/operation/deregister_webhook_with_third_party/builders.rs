@@ -3,6 +3,17 @@ pub use crate::operation::deregister_webhook_with_third_party::_deregister_webho
 
 pub use crate::operation::deregister_webhook_with_third_party::_deregister_webhook_with_third_party_input::DeregisterWebhookWithThirdPartyInputBuilder;
 
+impl DeregisterWebhookWithThirdPartyInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::deregister_webhook_with_third_party::DeregisterWebhookWithThirdPartyOutput, ::aws_smithy_http::result::SdkError<crate::operation::deregister_webhook_with_third_party::DeregisterWebhookWithThirdPartyError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.deregister_webhook_with_third_party();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeregisterWebhookWithThirdParty`.
 ///
 /// <p>Removes the connection between the webhook that was created by CodePipeline and the external tool with events to be detected. Currently supported only for webhooks that target an action type of GitHub.</p>

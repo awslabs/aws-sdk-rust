@@ -3,6 +3,23 @@ pub use crate::operation::update_workspace_configuration::_update_workspace_conf
 
 pub use crate::operation::update_workspace_configuration::_update_workspace_configuration_input::UpdateWorkspaceConfigurationInputBuilder;
 
+impl UpdateWorkspaceConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_workspace_configuration::UpdateWorkspaceConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_workspace_configuration::UpdateWorkspaceConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_workspace_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateWorkspaceConfiguration`.
 ///
 /// <p>Updates the configuration string for the given workspace</p>

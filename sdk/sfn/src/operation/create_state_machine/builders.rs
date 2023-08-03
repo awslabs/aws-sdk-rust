@@ -3,6 +3,23 @@ pub use crate::operation::create_state_machine::_create_state_machine_output::Cr
 
 pub use crate::operation::create_state_machine::_create_state_machine_input::CreateStateMachineInputBuilder;
 
+impl CreateStateMachineInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_state_machine::CreateStateMachineOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_state_machine::CreateStateMachineError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_state_machine();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateStateMachine`.
 ///
 /// <p>Creates a state machine. A state machine consists of a collection of states that can do work (<code>Task</code> states), determine to which states to transition next (<code>Choice</code> states), stop an execution with an error (<code>Fail</code> states), and so on. State machines are specified using a JSON-based, structured language. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon States Language</a> in the Step Functions User Guide.</p>

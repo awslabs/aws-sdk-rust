@@ -3,6 +3,23 @@ pub use crate::operation::get_item::_get_item_output::GetItemOutputBuilder;
 
 pub use crate::operation::get_item::_get_item_input::GetItemInputBuilder;
 
+impl GetItemInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_item::GetItemOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_item::GetItemError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_item();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetItem`.
 ///
 /// <p>The <code>GetItem</code> operation returns a set of attributes for the item with the given primary key. If there is no matching item, <code>GetItem</code> does not return any data and there will be no <code>Item</code> element in the response.</p>

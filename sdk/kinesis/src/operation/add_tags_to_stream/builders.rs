@@ -3,6 +3,23 @@ pub use crate::operation::add_tags_to_stream::_add_tags_to_stream_output::AddTag
 
 pub use crate::operation::add_tags_to_stream::_add_tags_to_stream_input::AddTagsToStreamInputBuilder;
 
+impl AddTagsToStreamInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::add_tags_to_stream::AddTagsToStreamOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::add_tags_to_stream::AddTagsToStreamError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.add_tags_to_stream();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AddTagsToStream`.
 ///
 /// <p>Adds or updates tags for the specified Kinesis data stream. You can assign up to 50 tags to a data stream.</p> <note>

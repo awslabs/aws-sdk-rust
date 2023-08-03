@@ -3,6 +3,23 @@ pub use crate::operation::import_source_credentials::_import_source_credentials_
 
 pub use crate::operation::import_source_credentials::_import_source_credentials_input::ImportSourceCredentialsInputBuilder;
 
+impl ImportSourceCredentialsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::import_source_credentials::ImportSourceCredentialsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::import_source_credentials::ImportSourceCredentialsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.import_source_credentials();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ImportSourceCredentials`.
 ///
 /// <p> Imports the source repository credentials for an CodeBuild project that has its source code stored in a GitHub, GitHub Enterprise, or Bitbucket repository. </p>

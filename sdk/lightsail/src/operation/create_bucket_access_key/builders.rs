@@ -3,6 +3,23 @@ pub use crate::operation::create_bucket_access_key::_create_bucket_access_key_ou
 
 pub use crate::operation::create_bucket_access_key::_create_bucket_access_key_input::CreateBucketAccessKeyInputBuilder;
 
+impl CreateBucketAccessKeyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_bucket_access_key::CreateBucketAccessKeyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_bucket_access_key::CreateBucketAccessKeyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_bucket_access_key();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateBucketAccessKey`.
 ///
 /// <p>Creates a new access key for the specified Amazon Lightsail bucket. Access keys consist of an access key ID and corresponding secret access key.</p>

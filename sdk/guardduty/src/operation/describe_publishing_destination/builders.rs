@@ -3,6 +3,23 @@ pub use crate::operation::describe_publishing_destination::_describe_publishing_
 
 pub use crate::operation::describe_publishing_destination::_describe_publishing_destination_input::DescribePublishingDestinationInputBuilder;
 
+impl DescribePublishingDestinationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_publishing_destination::DescribePublishingDestinationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_publishing_destination::DescribePublishingDestinationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_publishing_destination();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribePublishingDestination`.
 ///
 /// <p>Returns information about the publishing destination specified by the provided <code>destinationId</code>.</p>

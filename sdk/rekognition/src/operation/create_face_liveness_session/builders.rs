@@ -3,6 +3,23 @@ pub use crate::operation::create_face_liveness_session::_create_face_liveness_se
 
 pub use crate::operation::create_face_liveness_session::_create_face_liveness_session_input::CreateFaceLivenessSessionInputBuilder;
 
+impl CreateFaceLivenessSessionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_face_liveness_session::CreateFaceLivenessSessionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_face_liveness_session::CreateFaceLivenessSessionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_face_liveness_session();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateFaceLivenessSession`.
 ///
 /// <p>This API operation initiates a Face Liveness session. It returns a <code>SessionId</code>, which you can use to start streaming Face Liveness video and get the results for a Face Liveness session. You can use the <code>OutputConfig</code> option in the Settings parameter to provide an Amazon S3 bucket location. The Amazon S3 bucket stores reference images and audit images. You can use <code>AuditImagesLimit</code> to limit the number of audit images returned. This number is between 0 and 4. By default, it is set to 0. The limit is best effort and based on the duration of the selfie-video. </p>

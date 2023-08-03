@@ -3,6 +3,23 @@ pub use crate::operation::describe_human_task_ui::_describe_human_task_ui_output
 
 pub use crate::operation::describe_human_task_ui::_describe_human_task_ui_input::DescribeHumanTaskUiInputBuilder;
 
+impl DescribeHumanTaskUiInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_human_task_ui::DescribeHumanTaskUiOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_human_task_ui::DescribeHumanTaskUiError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_human_task_ui();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeHumanTaskUi`.
 ///
 /// <p>Returns information about the requested human task user interface (worker task template).</p>

@@ -3,6 +3,23 @@ pub use crate::operation::add_storage_system::_add_storage_system_output::AddSto
 
 pub use crate::operation::add_storage_system::_add_storage_system_input::AddStorageSystemInputBuilder;
 
+impl AddStorageSystemInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::add_storage_system::AddStorageSystemOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::add_storage_system::AddStorageSystemError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.add_storage_system();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AddStorageSystem`.
 ///
 /// <p>Creates an Amazon Web Services resource for an on-premises storage system that you want DataSync Discovery to collect information about.</p>

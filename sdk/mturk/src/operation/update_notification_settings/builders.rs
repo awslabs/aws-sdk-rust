@@ -3,6 +3,23 @@ pub use crate::operation::update_notification_settings::_update_notification_set
 
 pub use crate::operation::update_notification_settings::_update_notification_settings_input::UpdateNotificationSettingsInputBuilder;
 
+impl UpdateNotificationSettingsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_notification_settings::UpdateNotificationSettingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_notification_settings::UpdateNotificationSettingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_notification_settings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateNotificationSettings`.
 ///
 /// <p> The <code>UpdateNotificationSettings</code> operation creates, updates, disables or re-enables notifications for a HIT type. If you call the UpdateNotificationSettings operation for a HIT type that already has a notification specification, the operation replaces the old specification with a new one. You can call the UpdateNotificationSettings operation to enable or disable notifications for the HIT type, without having to modify the notification specification itself by providing updates to the Active status without specifying a new notification specification. To change the Active status of a HIT type's notifications, the HIT type must already have a notification specification, or one must be provided in the same call to <code>UpdateNotificationSettings</code>. </p>

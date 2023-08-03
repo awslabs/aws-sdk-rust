@@ -3,6 +3,23 @@ pub use crate::operation::delete_site::_delete_site_output::DeleteSiteOutputBuil
 
 pub use crate::operation::delete_site::_delete_site_input::DeleteSiteInputBuilder;
 
+impl DeleteSiteInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_site::DeleteSiteOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_site::DeleteSiteError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_site();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteSite`.
 ///
 /// <p>Deletes the specified site.</p>

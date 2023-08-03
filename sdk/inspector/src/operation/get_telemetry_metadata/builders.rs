@@ -3,6 +3,23 @@ pub use crate::operation::get_telemetry_metadata::_get_telemetry_metadata_output
 
 pub use crate::operation::get_telemetry_metadata::_get_telemetry_metadata_input::GetTelemetryMetadataInputBuilder;
 
+impl GetTelemetryMetadataInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_telemetry_metadata::GetTelemetryMetadataOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_telemetry_metadata::GetTelemetryMetadataError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_telemetry_metadata();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetTelemetryMetadata`.
 ///
 /// <p>Information about the data that is collected for the specified assessment run.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::retire_grant::_retire_grant_output::RetireGrantOutputB
 
 pub use crate::operation::retire_grant::_retire_grant_input::RetireGrantInputBuilder;
 
+impl RetireGrantInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::retire_grant::RetireGrantOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::retire_grant::RetireGrantError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.retire_grant();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RetireGrant`.
 ///
 /// <p>Deletes a grant. Typically, you retire a grant when you no longer need its permissions. To identify the grant to retire, use a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/grants.html#grant_token">grant token</a>, or both the grant ID and a key identifier (key ID or key ARN) of the KMS key. The <code>CreateGrant</code> operation returns both values.</p>

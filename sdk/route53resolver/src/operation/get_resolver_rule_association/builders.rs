@@ -3,6 +3,23 @@ pub use crate::operation::get_resolver_rule_association::_get_resolver_rule_asso
 
 pub use crate::operation::get_resolver_rule_association::_get_resolver_rule_association_input::GetResolverRuleAssociationInputBuilder;
 
+impl GetResolverRuleAssociationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_resolver_rule_association::GetResolverRuleAssociationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_resolver_rule_association::GetResolverRuleAssociationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_resolver_rule_association();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetResolverRuleAssociation`.
 ///
 /// <p>Gets information about an association between a specified Resolver rule and a VPC. You associate a Resolver rule and a VPC using <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_AssociateResolverRule.html">AssociateResolverRule</a>. </p>

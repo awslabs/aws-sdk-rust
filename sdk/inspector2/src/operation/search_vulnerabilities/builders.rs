@@ -3,6 +3,23 @@ pub use crate::operation::search_vulnerabilities::_search_vulnerabilities_output
 
 pub use crate::operation::search_vulnerabilities::_search_vulnerabilities_input::SearchVulnerabilitiesInputBuilder;
 
+impl SearchVulnerabilitiesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::search_vulnerabilities::SearchVulnerabilitiesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::search_vulnerabilities::SearchVulnerabilitiesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.search_vulnerabilities();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SearchVulnerabilities`.
 ///
 /// <p>Lists Amazon Inspector coverage details for a specific vulnerability.</p>

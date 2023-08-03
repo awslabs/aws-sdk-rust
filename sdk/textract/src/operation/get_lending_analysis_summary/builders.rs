@@ -3,6 +3,23 @@ pub use crate::operation::get_lending_analysis_summary::_get_lending_analysis_su
 
 pub use crate::operation::get_lending_analysis_summary::_get_lending_analysis_summary_input::GetLendingAnalysisSummaryInputBuilder;
 
+impl GetLendingAnalysisSummaryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_lending_analysis_summary::GetLendingAnalysisSummaryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_lending_analysis_summary::GetLendingAnalysisSummaryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_lending_analysis_summary();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetLendingAnalysisSummary`.
 ///
 /// <p>Gets summarized results for the <code>StartLendingAnalysis</code> operation, which analyzes text in a lending document. The returned summary consists of information about documents grouped together by a common document type. Information like detected signatures, page numbers, and split documents is returned with respect to the type of grouped document. </p>

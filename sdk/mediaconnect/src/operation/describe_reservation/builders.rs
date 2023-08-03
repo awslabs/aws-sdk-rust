@@ -3,6 +3,23 @@ pub use crate::operation::describe_reservation::_describe_reservation_output::De
 
 pub use crate::operation::describe_reservation::_describe_reservation_input::DescribeReservationInputBuilder;
 
+impl DescribeReservationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_reservation::DescribeReservationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_reservation::DescribeReservationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_reservation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeReservation`.
 ///
 /// Displays the details of a reservation. The response includes the reservation name, state, start date and time, and the details of the offering that make up the rest of the reservation (such as price, duration, and outbound bandwidth).

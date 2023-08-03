@@ -3,6 +3,23 @@ pub use crate::operation::get_model_version::_get_model_version_output::GetModel
 
 pub use crate::operation::get_model_version::_get_model_version_input::GetModelVersionInputBuilder;
 
+impl GetModelVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_model_version::GetModelVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_model_version::GetModelVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_model_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetModelVersion`.
 ///
 /// <p>Gets the details of the specified model version.</p>

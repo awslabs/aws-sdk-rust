@@ -3,6 +3,23 @@ pub use crate::operation::get_insight_impact_graph::_get_insight_impact_graph_ou
 
 pub use crate::operation::get_insight_impact_graph::_get_insight_impact_graph_input::GetInsightImpactGraphInputBuilder;
 
+impl GetInsightImpactGraphInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_insight_impact_graph::GetInsightImpactGraphOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_insight_impact_graph::GetInsightImpactGraphError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_insight_impact_graph();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetInsightImpactGraph`.
 ///
 /// <p>Retrieves a service graph structure filtered by the specified insight. The service graph is limited to only structural information. For a complete service graph, use this API with the GetServiceGraph API.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_discovery_job::_describe_discovery_job_output
 
 pub use crate::operation::describe_discovery_job::_describe_discovery_job_input::DescribeDiscoveryJobInputBuilder;
 
+impl DescribeDiscoveryJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_discovery_job::DescribeDiscoveryJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_discovery_job::DescribeDiscoveryJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_discovery_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeDiscoveryJob`.
 ///
 /// <p>Returns information about a DataSync discovery job.</p>

@@ -3,6 +3,17 @@ pub use crate::operation::get_journey_execution_activity_metrics::_get_journey_e
 
 pub use crate::operation::get_journey_execution_activity_metrics::_get_journey_execution_activity_metrics_input::GetJourneyExecutionActivityMetricsInputBuilder;
 
+impl GetJourneyExecutionActivityMetricsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_journey_execution_activity_metrics::GetJourneyExecutionActivityMetricsOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_journey_execution_activity_metrics::GetJourneyExecutionActivityMetricsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_journey_execution_activity_metrics();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetJourneyExecutionActivityMetrics`.
 ///
 /// <p>Retrieves (queries) pre-aggregated data for a standard execution metric that applies to a journey activity.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_resources_for_web_acl::_list_resources_for_web_ac
 
 pub use crate::operation::list_resources_for_web_acl::_list_resources_for_web_acl_input::ListResourcesForWebAclInputBuilder;
 
+impl ListResourcesForWebAclInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_resources_for_web_acl::ListResourcesForWebAclOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_resources_for_web_acl::ListResourcesForWebACLError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_resources_for_web_acl();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListResourcesForWebACL`.
 ///
 /// <note>

@@ -3,6 +3,17 @@ pub use crate::operation::put_email_monitoring_configuration::_put_email_monitor
 
 pub use crate::operation::put_email_monitoring_configuration::_put_email_monitoring_configuration_input::PutEmailMonitoringConfigurationInputBuilder;
 
+impl PutEmailMonitoringConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::put_email_monitoring_configuration::PutEmailMonitoringConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_email_monitoring_configuration::PutEmailMonitoringConfigurationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.put_email_monitoring_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutEmailMonitoringConfiguration`.
 ///
 /// <p>Creates or updates the email monitoring configuration for a specified organization.</p>

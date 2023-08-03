@@ -3,6 +3,23 @@ pub use crate::operation::copy_product::_copy_product_output::CopyProductOutputB
 
 pub use crate::operation::copy_product::_copy_product_input::CopyProductInputBuilder;
 
+impl CopyProductInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::copy_product::CopyProductOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::copy_product::CopyProductError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.copy_product();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CopyProduct`.
 ///
 /// <p>Copies the specified source product to the specified target product or a new product.</p>

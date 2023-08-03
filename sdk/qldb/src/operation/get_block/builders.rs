@@ -3,6 +3,23 @@ pub use crate::operation::get_block::_get_block_output::GetBlockOutputBuilder;
 
 pub use crate::operation::get_block::_get_block_input::GetBlockInputBuilder;
 
+impl GetBlockInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_block::GetBlockOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_block::GetBlockError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_block();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetBlock`.
 ///
 /// <p>Returns a block object at a specified address in a journal. Also returns a proof of the specified block for verification if <code>DigestTipAddress</code> is provided.</p>

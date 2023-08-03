@@ -3,6 +3,23 @@ pub use crate::operation::update_ledger_permissions_mode::_update_ledger_permiss
 
 pub use crate::operation::update_ledger_permissions_mode::_update_ledger_permissions_mode_input::UpdateLedgerPermissionsModeInputBuilder;
 
+impl UpdateLedgerPermissionsModeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_ledger_permissions_mode::UpdateLedgerPermissionsModeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_ledger_permissions_mode::UpdateLedgerPermissionsModeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_ledger_permissions_mode();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateLedgerPermissionsMode`.
 ///
 /// <p>Updates the permissions mode of a ledger.</p> <important>

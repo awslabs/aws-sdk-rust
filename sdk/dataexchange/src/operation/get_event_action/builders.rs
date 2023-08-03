@@ -3,6 +3,23 @@ pub use crate::operation::get_event_action::_get_event_action_output::GetEventAc
 
 pub use crate::operation::get_event_action::_get_event_action_input::GetEventActionInputBuilder;
 
+impl GetEventActionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_event_action::GetEventActionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_event_action::GetEventActionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_event_action();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetEventAction`.
 ///
 /// <p>This operation retrieves information about an event action.</p>

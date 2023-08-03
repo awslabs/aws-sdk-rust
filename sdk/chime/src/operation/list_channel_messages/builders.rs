@@ -3,6 +3,23 @@ pub use crate::operation::list_channel_messages::_list_channel_messages_output::
 
 pub use crate::operation::list_channel_messages::_list_channel_messages_input::ListChannelMessagesInputBuilder;
 
+impl ListChannelMessagesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_channel_messages::ListChannelMessagesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_channel_messages::ListChannelMessagesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_channel_messages();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListChannelMessages`.
 ///
 /// <p>List all the messages in a channel. Returns a paginated list of <code>ChannelMessages</code>. By default, sorted by creation timestamp in descending order.</p> <note>

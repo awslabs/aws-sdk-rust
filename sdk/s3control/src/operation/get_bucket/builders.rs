@@ -3,6 +3,23 @@ pub use crate::operation::get_bucket::_get_bucket_output::GetBucketOutputBuilder
 
 pub use crate::operation::get_bucket::_get_bucket_input::GetBucketInputBuilder;
 
+impl GetBucketInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_bucket::GetBucketOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_bucket::GetBucketError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_bucket();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetBucket`.
 ///
 /// <p>Gets an Amazon S3 on Outposts bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/S3onOutposts.html"> Using Amazon S3 on Outposts</a> in the <i>Amazon S3 User Guide</i>.</p>

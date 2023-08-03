@@ -3,6 +3,23 @@ pub use crate::operation::promote_read_replica::_promote_read_replica_output::Pr
 
 pub use crate::operation::promote_read_replica::_promote_read_replica_input::PromoteReadReplicaInputBuilder;
 
+impl PromoteReadReplicaInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::promote_read_replica::PromoteReadReplicaOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::promote_read_replica::PromoteReadReplicaError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.promote_read_replica();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PromoteReadReplica`.
 ///
 /// <p>Promotes a read replica DB instance to a standalone DB instance.</p> <note>

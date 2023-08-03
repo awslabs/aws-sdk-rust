@@ -3,6 +3,23 @@ pub use crate::operation::get_stack_policy::_get_stack_policy_output::GetStackPo
 
 pub use crate::operation::get_stack_policy::_get_stack_policy_input::GetStackPolicyInputBuilder;
 
+impl GetStackPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_stack_policy::GetStackPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_stack_policy::GetStackPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_stack_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetStackPolicy`.
 ///
 /// <p>Returns the stack policy for a specified stack. If a stack doesn't have a policy, a null value is returned.</p>

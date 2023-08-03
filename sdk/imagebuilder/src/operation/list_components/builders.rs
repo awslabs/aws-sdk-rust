@@ -3,6 +3,23 @@ pub use crate::operation::list_components::_list_components_output::ListComponen
 
 pub use crate::operation::list_components::_list_components_input::ListComponentsInputBuilder;
 
+impl ListComponentsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_components::ListComponentsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_components::ListComponentsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_components();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListComponents`.
 ///
 /// <p>Returns the list of components that can be filtered by name, or by using the listed <code>filters</code> to streamline results. Newly created components can take up to two minutes to appear in the ListComponents API Results.</p> <note>

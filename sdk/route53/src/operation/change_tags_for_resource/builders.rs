@@ -3,6 +3,23 @@ pub use crate::operation::change_tags_for_resource::_change_tags_for_resource_ou
 
 pub use crate::operation::change_tags_for_resource::_change_tags_for_resource_input::ChangeTagsForResourceInputBuilder;
 
+impl ChangeTagsForResourceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::change_tags_for_resource::ChangeTagsForResourceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::change_tags_for_resource::ChangeTagsForResourceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.change_tags_for_resource();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ChangeTagsForResource`.
 ///
 /// <p>Adds, edits, or deletes tags for a health check or a hosted zone.</p>

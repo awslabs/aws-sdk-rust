@@ -3,6 +3,23 @@ pub use crate::operation::create_load_balancer_listeners::_create_load_balancer_
 
 pub use crate::operation::create_load_balancer_listeners::_create_load_balancer_listeners_input::CreateLoadBalancerListenersInputBuilder;
 
+impl CreateLoadBalancerListenersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_load_balancer_listeners::CreateLoadBalancerListenersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_load_balancer_listeners::CreateLoadBalancerListenersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_load_balancer_listeners();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateLoadBalancerListeners`.
 ///
 /// <p>Creates one or more listeners for the specified load balancer. If a listener with the specified port does not already exist, it is created; otherwise, the properties of the new listener must match the properties of the existing listener.</p>

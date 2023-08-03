@@ -3,6 +3,23 @@ pub use crate::operation::delete_vault_access_policy::_delete_vault_access_polic
 
 pub use crate::operation::delete_vault_access_policy::_delete_vault_access_policy_input::DeleteVaultAccessPolicyInputBuilder;
 
+impl DeleteVaultAccessPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_vault_access_policy::DeleteVaultAccessPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_vault_access_policy::DeleteVaultAccessPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_vault_access_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteVaultAccessPolicy`.
 ///
 /// <p>This operation deletes the access policy associated with the specified vault. The operation is eventually consistent; that is, it might take some time for Amazon S3 Glacier to completely remove the access policy, and you might still see the effect of the policy for a short time after you send the delete request.</p>

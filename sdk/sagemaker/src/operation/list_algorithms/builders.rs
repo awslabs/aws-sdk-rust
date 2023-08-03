@@ -3,6 +3,23 @@ pub use crate::operation::list_algorithms::_list_algorithms_output::ListAlgorith
 
 pub use crate::operation::list_algorithms::_list_algorithms_input::ListAlgorithmsInputBuilder;
 
+impl ListAlgorithmsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_algorithms::ListAlgorithmsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_algorithms::ListAlgorithmsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_algorithms();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAlgorithms`.
 ///
 /// <p>Lists the machine learning algorithms that have been created.</p>

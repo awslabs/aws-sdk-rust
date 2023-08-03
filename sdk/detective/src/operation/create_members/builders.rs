@@ -3,6 +3,23 @@ pub use crate::operation::create_members::_create_members_output::CreateMembersO
 
 pub use crate::operation::create_members::_create_members_input::CreateMembersInputBuilder;
 
+impl CreateMembersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_members::CreateMembersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_members::CreateMembersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_members();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateMembers`.
 ///
 /// <p> <code>CreateMembers</code> is used to send invitations to accounts. For the organization behavior graph, the Detective administrator account uses <code>CreateMembers</code> to enable organization accounts as member accounts.</p>

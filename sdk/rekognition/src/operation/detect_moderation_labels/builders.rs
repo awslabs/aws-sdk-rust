@@ -3,6 +3,23 @@ pub use crate::operation::detect_moderation_labels::_detect_moderation_labels_ou
 
 pub use crate::operation::detect_moderation_labels::_detect_moderation_labels_input::DetectModerationLabelsInputBuilder;
 
+impl DetectModerationLabelsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::detect_moderation_labels::DetectModerationLabelsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::detect_moderation_labels::DetectModerationLabelsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.detect_moderation_labels();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DetectModerationLabels`.
 ///
 /// <p>Detects unsafe content in a specified JPEG or PNG format image. Use <code>DetectModerationLabels</code> to moderate images depending on your requirements. For example, you might want to filter images that contain nudity, but not images containing suggestive content.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_metadata::_get_metadata_output::GetMetadataOutputB
 
 pub use crate::operation::get_metadata::_get_metadata_input::GetMetadataInputBuilder;
 
+impl GetMetadataInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_metadata::GetMetadataOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_metadata::GetMetadataError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_metadata();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetMetadata`.
 ///
 /// <p>Returns existing metadata for an Amplify app.</p>

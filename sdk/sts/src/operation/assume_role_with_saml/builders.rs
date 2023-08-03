@@ -3,6 +3,23 @@ pub use crate::operation::assume_role_with_saml::_assume_role_with_saml_output::
 
 pub use crate::operation::assume_role_with_saml::_assume_role_with_saml_input::AssumeRoleWithSamlInputBuilder;
 
+impl AssumeRoleWithSamlInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::assume_role_with_saml::AssumeRoleWithSamlOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::assume_role_with_saml::AssumeRoleWithSAMLError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.assume_role_with_saml();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssumeRoleWithSAML`.
 ///
 /// <p>Returns a set of temporary security credentials for users who have been authenticated via a SAML authentication response. This operation provides a mechanism for tying an enterprise identity store or directory to role-based Amazon Web Services access without user-specific credentials or configuration. For a comparison of <code>AssumeRoleWithSAML</code> with the other API operations that produce temporary credentials, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html">Requesting Temporary Security Credentials</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_request.html#stsapi_comparison">Comparing the Amazon Web Services STS API operations</a> in the <i>IAM User Guide</i>.</p>

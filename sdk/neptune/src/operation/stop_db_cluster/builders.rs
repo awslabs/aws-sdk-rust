@@ -3,6 +3,23 @@ pub use crate::operation::stop_db_cluster::_stop_db_cluster_output::StopDbCluste
 
 pub use crate::operation::stop_db_cluster::_stop_db_cluster_input::StopDbClusterInputBuilder;
 
+impl StopDbClusterInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_db_cluster::StopDbClusterOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_db_cluster::StopDBClusterError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_db_cluster();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopDBCluster`.
 ///
 /// <p>Stops an Amazon Neptune DB cluster. When you stop a DB cluster, Neptune retains the DB cluster's metadata, including its endpoints and DB parameter groups.</p>

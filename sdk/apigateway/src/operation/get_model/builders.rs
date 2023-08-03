@@ -3,6 +3,23 @@ pub use crate::operation::get_model::_get_model_output::GetModelOutputBuilder;
 
 pub use crate::operation::get_model::_get_model_input::GetModelInputBuilder;
 
+impl GetModelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_model::GetModelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_model::GetModelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_model();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetModel`.
 ///
 /// <p>Describes an existing model defined for a RestApi resource.</p>

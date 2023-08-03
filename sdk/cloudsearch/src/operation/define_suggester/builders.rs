@@ -3,6 +3,23 @@ pub use crate::operation::define_suggester::_define_suggester_output::DefineSugg
 
 pub use crate::operation::define_suggester::_define_suggester_input::DefineSuggesterInputBuilder;
 
+impl DefineSuggesterInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::define_suggester::DefineSuggesterOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::define_suggester::DefineSuggesterError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.define_suggester();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DefineSuggester`.
 ///
 /// <p>Configures a suggester for a domain. A suggester enables you to display possible matches before users finish typing their queries. When you configure a suggester, you must specify the name of the text field you want to search for possible matches and a unique name for the suggester. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html" target="_blank">Getting Search Suggestions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>

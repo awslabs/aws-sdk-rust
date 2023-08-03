@@ -3,6 +3,23 @@ pub use crate::operation::list_threat_intel_sets::_list_threat_intel_sets_output
 
 pub use crate::operation::list_threat_intel_sets::_list_threat_intel_sets_input::ListThreatIntelSetsInputBuilder;
 
+impl ListThreatIntelSetsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_threat_intel_sets::ListThreatIntelSetsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_threat_intel_sets::ListThreatIntelSetsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_threat_intel_sets();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListThreatIntelSets`.
 ///
 /// <p>Lists the ThreatIntelSets of the GuardDuty service specified by the detector ID. If you use this operation from a member account, the ThreatIntelSets associated with the administrator account are returned.</p>

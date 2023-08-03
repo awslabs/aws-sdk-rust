@@ -3,6 +3,17 @@ pub use crate::operation::delete_access_point_for_object_lambda::_delete_access_
 
 pub use crate::operation::delete_access_point_for_object_lambda::_delete_access_point_for_object_lambda_input::DeleteAccessPointForObjectLambdaInputBuilder;
 
+impl DeleteAccessPointForObjectLambdaInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_access_point_for_object_lambda::DeleteAccessPointForObjectLambdaOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_access_point_for_object_lambda::DeleteAccessPointForObjectLambdaError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.delete_access_point_for_object_lambda();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteAccessPointForObjectLambda`.
 ///
 /// <p>Deletes the specified Object Lambda Access Point.</p>

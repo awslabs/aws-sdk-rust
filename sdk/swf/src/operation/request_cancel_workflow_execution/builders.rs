@@ -3,6 +3,17 @@ pub use crate::operation::request_cancel_workflow_execution::_request_cancel_wor
 
 pub use crate::operation::request_cancel_workflow_execution::_request_cancel_workflow_execution_input::RequestCancelWorkflowExecutionInputBuilder;
 
+impl RequestCancelWorkflowExecutionInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::request_cancel_workflow_execution::RequestCancelWorkflowExecutionOutput, ::aws_smithy_http::result::SdkError<crate::operation::request_cancel_workflow_execution::RequestCancelWorkflowExecutionError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.request_cancel_workflow_execution();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RequestCancelWorkflowExecution`.
 ///
 /// <p>Records a <code>WorkflowExecutionCancelRequested</code> event in the currently running workflow execution identified by the given domain, workflowId, and runId. This logically requests the cancellation of the workflow execution as a whole. It is up to the decider to take appropriate actions when it receives an execution history with this event.</p> <note>

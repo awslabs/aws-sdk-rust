@@ -3,6 +3,23 @@ pub use crate::operation::get_attendee::_get_attendee_output::GetAttendeeOutputB
 
 pub use crate::operation::get_attendee::_get_attendee_input::GetAttendeeInputBuilder;
 
+impl GetAttendeeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_attendee::GetAttendeeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_attendee::GetAttendeeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_attendee();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetAttendee`.
 ///
 /// <p> Gets the Amazon Chime SDK attendee details for a specified meeting ID and attendee ID. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon Chime SDK Developer Guide</i>. </p> <important>

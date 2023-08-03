@@ -3,6 +3,23 @@ pub use crate::operation::start_person_tracking::_start_person_tracking_output::
 
 pub use crate::operation::start_person_tracking::_start_person_tracking_input::StartPersonTrackingInputBuilder;
 
+impl StartPersonTrackingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_person_tracking::StartPersonTrackingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_person_tracking::StartPersonTrackingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_person_tracking();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartPersonTracking`.
 ///
 /// <p>Starts the asynchronous tracking of a person's path in a stored video.</p>

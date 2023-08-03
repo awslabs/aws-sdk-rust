@@ -3,6 +3,23 @@ pub use crate::operation::delete_image_version::_delete_image_version_output::De
 
 pub use crate::operation::delete_image_version::_delete_image_version_input::DeleteImageVersionInputBuilder;
 
+impl DeleteImageVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_image_version::DeleteImageVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_image_version::DeleteImageVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_image_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteImageVersion`.
 ///
 /// <p>Deletes a version of a SageMaker image. The container image the version represents isn't deleted.</p>

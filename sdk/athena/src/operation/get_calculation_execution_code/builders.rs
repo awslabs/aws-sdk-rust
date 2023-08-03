@@ -3,6 +3,23 @@ pub use crate::operation::get_calculation_execution_code::_get_calculation_execu
 
 pub use crate::operation::get_calculation_execution_code::_get_calculation_execution_code_input::GetCalculationExecutionCodeInputBuilder;
 
+impl GetCalculationExecutionCodeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_calculation_execution_code::GetCalculationExecutionCodeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_calculation_execution_code::GetCalculationExecutionCodeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_calculation_execution_code();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetCalculationExecutionCode`.
 ///
 /// <p>Retrieves the unencrypted code that was executed for the calculation.</p>

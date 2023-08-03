@@ -3,6 +3,23 @@ pub use crate::operation::stop_training_job::_stop_training_job_output::StopTrai
 
 pub use crate::operation::stop_training_job::_stop_training_job_input::StopTrainingJobInputBuilder;
 
+impl StopTrainingJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_training_job::StopTrainingJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_training_job::StopTrainingJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_training_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopTrainingJob`.
 ///
 /// <p>Stops a training job. To stop a job, SageMaker sends the algorithm the <code>SIGTERM</code> signal, which delays job termination for 120 seconds. Algorithms might use this 120-second window to save the model artifacts, so the results of the training is not lost. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_channel_message_status::_get_channel_message_statu
 
 pub use crate::operation::get_channel_message_status::_get_channel_message_status_input::GetChannelMessageStatusInputBuilder;
 
+impl GetChannelMessageStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_channel_message_status::GetChannelMessageStatusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_channel_message_status::GetChannelMessageStatusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_channel_message_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetChannelMessageStatus`.
 ///
 /// <p>Gets message status for a specified <code>messageId</code>. Use this API to determine the intermediate status of messages going through channel flow processing. The API provides an alternative to retrieving message status if the event was not received because a client wasn't connected to a websocket. </p>

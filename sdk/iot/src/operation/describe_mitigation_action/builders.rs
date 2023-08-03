@@ -3,6 +3,23 @@ pub use crate::operation::describe_mitigation_action::_describe_mitigation_actio
 
 pub use crate::operation::describe_mitigation_action::_describe_mitigation_action_input::DescribeMitigationActionInputBuilder;
 
+impl DescribeMitigationActionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_mitigation_action::DescribeMitigationActionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_mitigation_action::DescribeMitigationActionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_mitigation_action();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeMitigationAction`.
 ///
 /// <p>Gets information about a mitigation action.</p>

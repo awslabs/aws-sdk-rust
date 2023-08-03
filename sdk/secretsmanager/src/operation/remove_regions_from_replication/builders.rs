@@ -3,6 +3,23 @@ pub use crate::operation::remove_regions_from_replication::_remove_regions_from_
 
 pub use crate::operation::remove_regions_from_replication::_remove_regions_from_replication_input::RemoveRegionsFromReplicationInputBuilder;
 
+impl RemoveRegionsFromReplicationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::remove_regions_from_replication::RemoveRegionsFromReplicationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::remove_regions_from_replication::RemoveRegionsFromReplicationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.remove_regions_from_replication();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RemoveRegionsFromReplication`.
 ///
 /// <p>For a secret that is replicated to other Regions, deletes the secret replicas from the Regions you specify.</p>

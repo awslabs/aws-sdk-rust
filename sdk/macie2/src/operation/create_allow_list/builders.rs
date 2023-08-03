@@ -3,6 +3,23 @@ pub use crate::operation::create_allow_list::_create_allow_list_output::CreateAl
 
 pub use crate::operation::create_allow_list::_create_allow_list_input::CreateAllowListInputBuilder;
 
+impl CreateAllowListInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_allow_list::CreateAllowListOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_allow_list::CreateAllowListError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_allow_list();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateAllowList`.
 ///
 /// <p>Creates and defines the settings for an allow list.</p>

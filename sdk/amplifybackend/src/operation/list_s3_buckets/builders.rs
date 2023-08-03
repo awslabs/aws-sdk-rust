@@ -3,6 +3,23 @@ pub use crate::operation::list_s3_buckets::_list_s3_buckets_output::ListS3Bucket
 
 pub use crate::operation::list_s3_buckets::_list_s3_buckets_input::ListS3BucketsInputBuilder;
 
+impl ListS3BucketsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_s3_buckets::ListS3BucketsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_s3_buckets::ListS3BucketsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_s3_buckets();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListS3Buckets`.
 ///
 /// <p>The list of S3 buckets in your account.</p>

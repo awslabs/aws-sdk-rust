@@ -3,6 +3,23 @@ pub use crate::operation::list_children::_list_children_output::ListChildrenOutp
 
 pub use crate::operation::list_children::_list_children_input::ListChildrenInputBuilder;
 
+impl ListChildrenInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_children::ListChildrenOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_children::ListChildrenError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_children();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListChildren`.
 ///
 /// <p>Lists all of the organizational units (OUs) or accounts that are contained in the specified parent OU or root. This operation, along with <code>ListParents</code> enables you to traverse the tree structure that makes up this root.</p> <note>

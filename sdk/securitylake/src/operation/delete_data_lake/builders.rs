@@ -3,6 +3,23 @@ pub use crate::operation::delete_data_lake::_delete_data_lake_output::DeleteData
 
 pub use crate::operation::delete_data_lake::_delete_data_lake_input::DeleteDataLakeInputBuilder;
 
+impl DeleteDataLakeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_data_lake::DeleteDataLakeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_data_lake::DeleteDataLakeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_data_lake();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteDataLake`.
 ///
 /// <p>When you disable Amazon Security Lake from your account, Security Lake is disabled in all Amazon Web Services Regions and it stops collecting data from your sources. Also, this API automatically takes steps to remove the account from Security Lake. However, Security Lake retains all of your existing settings and the resources that it created in your Amazon Web Services account in the current Amazon Web Services Region.</p>

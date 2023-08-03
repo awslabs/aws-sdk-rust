@@ -3,6 +3,17 @@ pub use crate::operation::delete_firewall_manager_rule_groups::_delete_firewall_
 
 pub use crate::operation::delete_firewall_manager_rule_groups::_delete_firewall_manager_rule_groups_input::DeleteFirewallManagerRuleGroupsInputBuilder;
 
+impl DeleteFirewallManagerRuleGroupsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_firewall_manager_rule_groups::DeleteFirewallManagerRuleGroupsOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_firewall_manager_rule_groups::DeleteFirewallManagerRuleGroupsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.delete_firewall_manager_rule_groups();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteFirewallManagerRuleGroups`.
 ///
 /// <p>Deletes all rule groups that are managed by Firewall Manager for the specified web ACL. </p>

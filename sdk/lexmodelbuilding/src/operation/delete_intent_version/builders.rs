@@ -3,6 +3,23 @@ pub use crate::operation::delete_intent_version::_delete_intent_version_output::
 
 pub use crate::operation::delete_intent_version::_delete_intent_version_input::DeleteIntentVersionInputBuilder;
 
+impl DeleteIntentVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_intent_version::DeleteIntentVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_intent_version::DeleteIntentVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_intent_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteIntentVersion`.
 ///
 /// <p>Deletes a specific version of an intent. To delete all versions of a intent, use the <code>DeleteIntent</code> operation. </p>

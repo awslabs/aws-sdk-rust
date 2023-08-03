@@ -3,6 +3,23 @@ pub use crate::operation::update_lens_review::_update_lens_review_output::Update
 
 pub use crate::operation::update_lens_review::_update_lens_review_input::UpdateLensReviewInputBuilder;
 
+impl UpdateLensReviewInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_lens_review::UpdateLensReviewOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_lens_review::UpdateLensReviewError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_lens_review();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateLensReview`.
 ///
 /// <p>Update lens review for a particular workload.</p>

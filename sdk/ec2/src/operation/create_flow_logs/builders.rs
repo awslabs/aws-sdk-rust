@@ -3,6 +3,23 @@ pub use crate::operation::create_flow_logs::_create_flow_logs_output::CreateFlow
 
 pub use crate::operation::create_flow_logs::_create_flow_logs_input::CreateFlowLogsInputBuilder;
 
+impl CreateFlowLogsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_flow_logs::CreateFlowLogsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_flow_logs::CreateFlowLogsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_flow_logs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateFlowLogs`.
 ///
 /// <p>Creates one or more flow logs to capture information about IP traffic for a specific network interface, subnet, or VPC. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_conversion_tasks::_describe_conversion_tasks_
 
 pub use crate::operation::describe_conversion_tasks::_describe_conversion_tasks_input::DescribeConversionTasksInputBuilder;
 
+impl DescribeConversionTasksInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_conversion_tasks::DescribeConversionTasksOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_conversion_tasks::DescribeConversionTasksError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_conversion_tasks();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeConversionTasks`.
 ///
 /// <p>Describes the specified conversion tasks or all your conversion tasks. For more information, see the <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/">VM Import/Export User Guide</a>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_simulations::_list_simulations_output::ListSimula
 
 pub use crate::operation::list_simulations::_list_simulations_input::ListSimulationsInputBuilder;
 
+impl ListSimulationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_simulations::ListSimulationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_simulations::ListSimulationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_simulations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListSimulations`.
 ///
 /// <p>Lists the SimSpace Weaver simulations in the Amazon Web Services account used to make the API call.</p>

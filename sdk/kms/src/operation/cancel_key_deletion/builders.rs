@@ -3,6 +3,23 @@ pub use crate::operation::cancel_key_deletion::_cancel_key_deletion_output::Canc
 
 pub use crate::operation::cancel_key_deletion::_cancel_key_deletion_input::CancelKeyDeletionInputBuilder;
 
+impl CancelKeyDeletionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::cancel_key_deletion::CancelKeyDeletionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::cancel_key_deletion::CancelKeyDeletionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.cancel_key_deletion();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CancelKeyDeletion`.
 ///
 /// <p>Cancels the deletion of a KMS key. When this operation succeeds, the key state of the KMS key is <code>Disabled</code>. To enable the KMS key, use <code>EnableKey</code>. </p>

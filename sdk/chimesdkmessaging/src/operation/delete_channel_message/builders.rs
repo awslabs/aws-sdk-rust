@@ -3,6 +3,23 @@ pub use crate::operation::delete_channel_message::_delete_channel_message_output
 
 pub use crate::operation::delete_channel_message::_delete_channel_message_input::DeleteChannelMessageInputBuilder;
 
+impl DeleteChannelMessageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_channel_message::DeleteChannelMessageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_channel_message::DeleteChannelMessageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_channel_message();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteChannelMessage`.
 ///
 /// <p>Deletes a channel message. Only admins can perform this action. Deletion makes messages inaccessible immediately. A background process deletes any revisions created by <code>UpdateChannelMessage</code>.</p> <note>

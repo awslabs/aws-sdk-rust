@@ -3,6 +3,23 @@ pub use crate::operation::update_device_fleet::_update_device_fleet_output::Upda
 
 pub use crate::operation::update_device_fleet::_update_device_fleet_input::UpdateDeviceFleetInputBuilder;
 
+impl UpdateDeviceFleetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_device_fleet::UpdateDeviceFleetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_device_fleet::UpdateDeviceFleetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_device_fleet();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateDeviceFleet`.
 ///
 /// <p>Updates a fleet of devices.</p>

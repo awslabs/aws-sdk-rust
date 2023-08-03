@@ -3,6 +3,23 @@ pub use crate::operation::get_service_endpoint::_get_service_endpoint_output::Ge
 
 pub use crate::operation::get_service_endpoint::_get_service_endpoint_input::GetServiceEndpointInputBuilder;
 
+impl GetServiceEndpointInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_service_endpoint::GetServiceEndpointOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_service_endpoint::GetServiceEndpointError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_service_endpoint();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetServiceEndpoint`.
 ///
 /// <p>Gets the account-specific endpoint for Configuration and Update Server (CUPS) protocol or LoRaWAN Network Server (LNS) connections.</p>

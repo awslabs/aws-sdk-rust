@@ -3,6 +3,23 @@ pub use crate::operation::clone_receipt_rule_set::_clone_receipt_rule_set_output
 
 pub use crate::operation::clone_receipt_rule_set::_clone_receipt_rule_set_input::CloneReceiptRuleSetInputBuilder;
 
+impl CloneReceiptRuleSetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::clone_receipt_rule_set::CloneReceiptRuleSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::clone_receipt_rule_set::CloneReceiptRuleSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.clone_receipt_rule_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CloneReceiptRuleSet`.
 ///
 /// <p>Creates a receipt rule set by cloning an existing one. All receipt rules and configurations are copied to the new receipt rule set and are completely independent of the source rule set.</p>

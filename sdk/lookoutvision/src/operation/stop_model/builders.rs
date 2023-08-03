@@ -3,6 +3,23 @@ pub use crate::operation::stop_model::_stop_model_output::StopModelOutputBuilder
 
 pub use crate::operation::stop_model::_stop_model_input::StopModelInputBuilder;
 
+impl StopModelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_model::StopModelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_model::StopModelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_model();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopModel`.
 ///
 /// <p>Stops the hosting of a running model. The operation might take a while to complete. To check the current status, call <code>DescribeModel</code>. </p>

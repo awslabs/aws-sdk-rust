@@ -3,6 +3,23 @@ pub use crate::operation::batch_update_rule::_batch_update_rule_output::BatchUpd
 
 pub use crate::operation::batch_update_rule::_batch_update_rule_input::BatchUpdateRuleInputBuilder;
 
+impl BatchUpdateRuleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_update_rule::BatchUpdateRuleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_update_rule::BatchUpdateRuleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_update_rule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchUpdateRule`.
 ///
 /// <p>Updates the listener rules in a batch. You can use this operation to change the priority of listener rules. This can be useful when bulk updating or swapping rule priority. </p>

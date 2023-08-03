@@ -3,6 +3,23 @@ pub use crate::operation::start_signing_job::_start_signing_job_output::StartSig
 
 pub use crate::operation::start_signing_job::_start_signing_job_input::StartSigningJobInputBuilder;
 
+impl StartSigningJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_signing_job::StartSigningJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_signing_job::StartSigningJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_signing_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartSigningJob`.
 ///
 /// <p>Initiates a signing job to be performed on the code provided. Signing jobs are viewable by the <code>ListSigningJobs</code> operation for two years after they are performed. Note the following requirements: </p>

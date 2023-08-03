@@ -3,6 +3,23 @@ pub use crate::operation::get_log_group_fields::_get_log_group_fields_output::Ge
 
 pub use crate::operation::get_log_group_fields::_get_log_group_fields_input::GetLogGroupFieldsInputBuilder;
 
+impl GetLogGroupFieldsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_log_group_fields::GetLogGroupFieldsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_log_group_fields::GetLogGroupFieldsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_log_group_fields();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetLogGroupFields`.
 ///
 /// <p>Returns a list of the fields that are included in log events in the specified log group. Includes the percentage of log events that contain each field. The search is limited to a time period that you specify.</p>

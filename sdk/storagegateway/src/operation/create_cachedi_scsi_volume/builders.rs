@@ -3,6 +3,23 @@ pub use crate::operation::create_cachedi_scsi_volume::_create_cachedi_scsi_volum
 
 pub use crate::operation::create_cachedi_scsi_volume::_create_cachedi_scsi_volume_input::CreateCachediScsiVolumeInputBuilder;
 
+impl CreateCachediScsiVolumeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_cachedi_scsi_volume::CreateCachediScsiVolumeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_cachedi_scsi_volume::CreateCachediSCSIVolumeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_cachedi_scsi_volume();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateCachediSCSIVolume`.
 ///
 /// <p>Creates a cached volume on a specified cached volume gateway. This operation is only supported in the cached volume gateway type.</p> <note>

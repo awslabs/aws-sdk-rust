@@ -3,6 +3,23 @@ pub use crate::operation::admin_create_user::_admin_create_user_output::AdminCre
 
 pub use crate::operation::admin_create_user::_admin_create_user_input::AdminCreateUserInputBuilder;
 
+impl AdminCreateUserInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::admin_create_user::AdminCreateUserOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::admin_create_user::AdminCreateUserError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.admin_create_user();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AdminCreateUser`.
 ///
 /// <p>Creates a new user in the specified user pool.</p>

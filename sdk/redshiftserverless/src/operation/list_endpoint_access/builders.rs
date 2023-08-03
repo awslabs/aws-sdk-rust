@@ -3,6 +3,23 @@ pub use crate::operation::list_endpoint_access::_list_endpoint_access_output::Li
 
 pub use crate::operation::list_endpoint_access::_list_endpoint_access_input::ListEndpointAccessInputBuilder;
 
+impl ListEndpointAccessInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_endpoint_access::ListEndpointAccessOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_endpoint_access::ListEndpointAccessError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_endpoint_access();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListEndpointAccess`.
 ///
 /// <p>Returns an array of <code>EndpointAccess</code> objects and relevant information.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::query_lineage::_query_lineage_output::QueryLineageOutp
 
 pub use crate::operation::query_lineage::_query_lineage_input::QueryLineageInputBuilder;
 
+impl QueryLineageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::query_lineage::QueryLineageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::query_lineage::QueryLineageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.query_lineage();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `QueryLineage`.
 ///
 /// <p>Use this action to inspect your lineage and discover relationships between entities. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/querying-lineage-entities.html"> Querying Lineage Entities</a> in the <i>Amazon SageMaker Developer Guide</i>.</p>

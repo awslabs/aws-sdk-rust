@@ -3,6 +3,23 @@ pub use crate::operation::poll_for_jobs::_poll_for_jobs_output::PollForJobsOutpu
 
 pub use crate::operation::poll_for_jobs::_poll_for_jobs_input::PollForJobsInputBuilder;
 
+impl PollForJobsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::poll_for_jobs::PollForJobsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::poll_for_jobs::PollForJobsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.poll_for_jobs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PollForJobs`.
 ///
 /// <p>Returns information about any jobs for CodePipeline to act on. <code>PollForJobs</code> is valid only for action types with "Custom" in the owner field. If the action type contains <code>AWS</code> or <code>ThirdParty</code> in the owner field, the <code>PollForJobs</code> action returns an error.</p> <important>

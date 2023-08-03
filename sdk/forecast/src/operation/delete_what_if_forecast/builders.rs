@@ -3,6 +3,23 @@ pub use crate::operation::delete_what_if_forecast::_delete_what_if_forecast_outp
 
 pub use crate::operation::delete_what_if_forecast::_delete_what_if_forecast_input::DeleteWhatIfForecastInputBuilder;
 
+impl DeleteWhatIfForecastInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_what_if_forecast::DeleteWhatIfForecastOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_what_if_forecast::DeleteWhatIfForecastError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_what_if_forecast();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteWhatIfForecast`.
 ///
 /// <p>Deletes a what-if forecast created using the <code>CreateWhatIfForecast</code> operation. You can delete only what-if forecasts that have a status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>. To get the status, use the <code>DescribeWhatIfForecast</code> operation. </p>

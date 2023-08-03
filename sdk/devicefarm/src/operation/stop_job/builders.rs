@@ -3,6 +3,23 @@ pub use crate::operation::stop_job::_stop_job_output::StopJobOutputBuilder;
 
 pub use crate::operation::stop_job::_stop_job_input::StopJobInputBuilder;
 
+impl StopJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_job::StopJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_job::StopJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopJob`.
 ///
 /// <p>Initiates a stop request for the current job. AWS Device Farm immediately stops the job on the device where tests have not started. You are not billed for this device. On the device where tests have started, setup suite and teardown suite tests run to completion on the device. You are billed for setup, teardown, and any tests that were in progress or already completed.</p>

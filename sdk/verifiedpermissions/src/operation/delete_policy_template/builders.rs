@@ -3,6 +3,23 @@ pub use crate::operation::delete_policy_template::_delete_policy_template_output
 
 pub use crate::operation::delete_policy_template::_delete_policy_template_input::DeletePolicyTemplateInputBuilder;
 
+impl DeletePolicyTemplateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_policy_template::DeletePolicyTemplateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_policy_template::DeletePolicyTemplateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_policy_template();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeletePolicyTemplate`.
 ///
 /// <p>Deletes the specified policy template from the policy store.</p> <important>

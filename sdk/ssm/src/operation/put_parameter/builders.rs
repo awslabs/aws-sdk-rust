@@ -3,6 +3,23 @@ pub use crate::operation::put_parameter::_put_parameter_output::PutParameterOutp
 
 pub use crate::operation::put_parameter::_put_parameter_input::PutParameterInputBuilder;
 
+impl PutParameterInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_parameter::PutParameterOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_parameter::PutParameterError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_parameter();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutParameter`.
 ///
 /// <p>Add a parameter to the system.</p>

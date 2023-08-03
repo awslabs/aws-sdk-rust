@@ -3,6 +3,23 @@ pub use crate::operation::update_directory_setup::_update_directory_setup_output
 
 pub use crate::operation::update_directory_setup::_update_directory_setup_input::UpdateDirectorySetupInputBuilder;
 
+impl UpdateDirectorySetupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_directory_setup::UpdateDirectorySetupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_directory_setup::UpdateDirectorySetupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_directory_setup();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateDirectorySetup`.
 ///
 /// <p> Updates the directory for a particular update type. </p>

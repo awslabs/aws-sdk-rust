@@ -3,6 +3,23 @@ pub use crate::operation::deactivate_key_signing_key::_deactivate_key_signing_ke
 
 pub use crate::operation::deactivate_key_signing_key::_deactivate_key_signing_key_input::DeactivateKeySigningKeyInputBuilder;
 
+impl DeactivateKeySigningKeyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::deactivate_key_signing_key::DeactivateKeySigningKeyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::deactivate_key_signing_key::DeactivateKeySigningKeyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.deactivate_key_signing_key();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeactivateKeySigningKey`.
 ///
 /// <p>Deactivates a key-signing key (KSK) so that it will not be used for signing by DNSSEC. This operation changes the KSK status to <code>INACTIVE</code>.</p>

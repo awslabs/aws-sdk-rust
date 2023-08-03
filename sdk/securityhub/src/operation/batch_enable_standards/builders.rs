@@ -3,6 +3,23 @@ pub use crate::operation::batch_enable_standards::_batch_enable_standards_output
 
 pub use crate::operation::batch_enable_standards::_batch_enable_standards_input::BatchEnableStandardsInputBuilder;
 
+impl BatchEnableStandardsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_enable_standards::BatchEnableStandardsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_enable_standards::BatchEnableStandardsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_enable_standards();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchEnableStandards`.
 ///
 /// <p>Enables the standards specified by the provided <code>StandardsArn</code>. To obtain the ARN for a standard, use the <code>DescribeStandards</code> operation.</p>

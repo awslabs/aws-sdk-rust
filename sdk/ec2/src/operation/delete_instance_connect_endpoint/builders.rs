@@ -3,6 +3,23 @@ pub use crate::operation::delete_instance_connect_endpoint::_delete_instance_con
 
 pub use crate::operation::delete_instance_connect_endpoint::_delete_instance_connect_endpoint_input::DeleteInstanceConnectEndpointInputBuilder;
 
+impl DeleteInstanceConnectEndpointInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_instance_connect_endpoint::DeleteInstanceConnectEndpointOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_instance_connect_endpoint::DeleteInstanceConnectEndpointError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_instance_connect_endpoint();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteInstanceConnectEndpoint`.
 ///
 /// <p>Deletes the specified EC2 Instance Connect Endpoint.</p>

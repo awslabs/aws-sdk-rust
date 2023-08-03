@@ -3,6 +3,23 @@ pub use crate::operation::start_matchmaking::_start_matchmaking_output::StartMat
 
 pub use crate::operation::start_matchmaking::_start_matchmaking_input::StartMatchmakingInputBuilder;
 
+impl StartMatchmakingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_matchmaking::StartMatchmakingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_matchmaking::StartMatchmakingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_matchmaking();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartMatchmaking`.
 ///
 /// <p>Uses FlexMatch to create a game match for a group of players based on custom matchmaking rules. With games that use Amazon GameLift managed hosting, this operation also triggers Amazon GameLift to find hosting resources and start a new game session for the new match. Each matchmaking request includes information on one or more players and specifies the FlexMatch matchmaker to use. When a request is for multiple players, FlexMatch attempts to build a match that includes all players in the request, placing them in the same team and finding additional players as needed to fill the match. </p>

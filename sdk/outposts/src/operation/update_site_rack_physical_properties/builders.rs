@@ -3,6 +3,17 @@ pub use crate::operation::update_site_rack_physical_properties::_update_site_rac
 
 pub use crate::operation::update_site_rack_physical_properties::_update_site_rack_physical_properties_input::UpdateSiteRackPhysicalPropertiesInputBuilder;
 
+impl UpdateSiteRackPhysicalPropertiesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::update_site_rack_physical_properties::UpdateSiteRackPhysicalPropertiesOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_site_rack_physical_properties::UpdateSiteRackPhysicalPropertiesError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.update_site_rack_physical_properties();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateSiteRackPhysicalProperties`.
 ///
 /// <p>Update the physical and logistical details for a rack at a site. For more information about hardware requirements for racks, see <a href="https://docs.aws.amazon.com/outposts/latest/userguide/outposts-requirements.html#checklist">Network readiness checklist</a> in the Amazon Web Services Outposts User Guide. </p>

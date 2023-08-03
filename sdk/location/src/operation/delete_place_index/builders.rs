@@ -3,6 +3,23 @@ pub use crate::operation::delete_place_index::_delete_place_index_output::Delete
 
 pub use crate::operation::delete_place_index::_delete_place_index_input::DeletePlaceIndexInputBuilder;
 
+impl DeletePlaceIndexInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_place_index::DeletePlaceIndexOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_place_index::DeletePlaceIndexError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_place_index();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeletePlaceIndex`.
 ///
 /// <p>Deletes a place index resource from your Amazon Web Services account.</p> <note>

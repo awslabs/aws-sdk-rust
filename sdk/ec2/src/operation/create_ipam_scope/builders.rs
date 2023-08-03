@@ -3,6 +3,23 @@ pub use crate::operation::create_ipam_scope::_create_ipam_scope_output::CreateIp
 
 pub use crate::operation::create_ipam_scope::_create_ipam_scope_input::CreateIpamScopeInputBuilder;
 
+impl CreateIpamScopeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_ipam_scope::CreateIpamScopeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_ipam_scope::CreateIpamScopeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_ipam_scope();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateIpamScope`.
 ///
 /// <p>Create an IPAM scope. In IPAM, a scope is the highest-level container within IPAM. An IPAM contains two default scopes. Each scope represents the IP space for a single network. The private scope is intended for all private IP address space. The public scope is intended for all public IP address space. Scopes enable you to reuse IP addresses across multiple unconnected networks without causing IP address overlap or conflict.</p>

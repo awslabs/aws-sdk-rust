@@ -3,6 +3,23 @@ pub use crate::operation::get_operations::_get_operations_output::GetOperationsO
 
 pub use crate::operation::get_operations::_get_operations_input::GetOperationsInputBuilder;
 
+impl GetOperationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_operations::GetOperationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_operations::GetOperationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_operations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetOperations`.
 ///
 /// <p>Returns information about all operations.</p>

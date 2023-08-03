@@ -3,6 +3,23 @@ pub use crate::operation::list_peerings::_list_peerings_output::ListPeeringsOutp
 
 pub use crate::operation::list_peerings::_list_peerings_input::ListPeeringsInputBuilder;
 
+impl ListPeeringsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_peerings::ListPeeringsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_peerings::ListPeeringsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_peerings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListPeerings`.
 ///
 /// <p>Lists the peerings for a core network.</p>

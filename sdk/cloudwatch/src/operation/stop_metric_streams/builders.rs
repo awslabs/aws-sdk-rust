@@ -3,6 +3,23 @@ pub use crate::operation::stop_metric_streams::_stop_metric_streams_output::Stop
 
 pub use crate::operation::stop_metric_streams::_stop_metric_streams_input::StopMetricStreamsInputBuilder;
 
+impl StopMetricStreamsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_metric_streams::StopMetricStreamsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_metric_streams::StopMetricStreamsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_metric_streams();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopMetricStreams`.
 ///
 /// <p>Stops the streaming of metrics for one or more of your metric streams.</p>

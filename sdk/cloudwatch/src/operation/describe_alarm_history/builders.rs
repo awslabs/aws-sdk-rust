@@ -3,6 +3,23 @@ pub use crate::operation::describe_alarm_history::_describe_alarm_history_output
 
 pub use crate::operation::describe_alarm_history::_describe_alarm_history_input::DescribeAlarmHistoryInputBuilder;
 
+impl DescribeAlarmHistoryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_alarm_history::DescribeAlarmHistoryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_alarm_history::DescribeAlarmHistoryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_alarm_history();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAlarmHistory`.
 ///
 /// <p>Retrieves the history for the specified alarm. You can filter the results by date range or item type. If an alarm name is not specified, the histories for either all metric alarms or all composite alarms are returned.</p>

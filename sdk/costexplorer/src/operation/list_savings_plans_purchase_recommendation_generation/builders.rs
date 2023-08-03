@@ -3,6 +3,17 @@ pub use crate::operation::list_savings_plans_purchase_recommendation_generation:
 
 pub use crate::operation::list_savings_plans_purchase_recommendation_generation::_list_savings_plans_purchase_recommendation_generation_input::ListSavingsPlansPurchaseRecommendationGenerationInputBuilder;
 
+impl ListSavingsPlansPurchaseRecommendationGenerationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_savings_plans_purchase_recommendation_generation::ListSavingsPlansPurchaseRecommendationGenerationOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_savings_plans_purchase_recommendation_generation::ListSavingsPlansPurchaseRecommendationGenerationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_savings_plans_purchase_recommendation_generation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListSavingsPlansPurchaseRecommendationGeneration`.
 ///
 /// <p>Retrieves a list of your historical recommendation generations within the past 30 days.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_forecast::_create_forecast_output::CreateForeca
 
 pub use crate::operation::create_forecast::_create_forecast_input::CreateForecastInputBuilder;
 
+impl CreateForecastInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_forecast::CreateForecastOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_forecast::CreateForecastError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_forecast();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateForecast`.
 ///
 /// <p>Creates a forecast for each item in the <code>TARGET_TIME_SERIES</code> dataset that was used to train the predictor. This is known as inference. To retrieve the forecast for a single item at low latency, use the operation. To export the complete forecast into your Amazon Simple Storage Service (Amazon S3) bucket, use the <code>CreateForecastExportJob</code> operation.</p>

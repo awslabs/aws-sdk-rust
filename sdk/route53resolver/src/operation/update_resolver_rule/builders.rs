@@ -3,6 +3,23 @@ pub use crate::operation::update_resolver_rule::_update_resolver_rule_output::Up
 
 pub use crate::operation::update_resolver_rule::_update_resolver_rule_input::UpdateResolverRuleInputBuilder;
 
+impl UpdateResolverRuleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_resolver_rule::UpdateResolverRuleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_resolver_rule::UpdateResolverRuleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_resolver_rule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateResolverRule`.
 ///
 /// <p>Updates settings for a specified Resolver rule. <code>ResolverRuleId</code> is required, and all other parameters are optional. If you don't specify a parameter, it retains its current value.</p>

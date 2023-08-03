@@ -3,6 +3,23 @@ pub use crate::operation::describe_record::_describe_record_output::DescribeReco
 
 pub use crate::operation::describe_record::_describe_record_input::DescribeRecordInputBuilder;
 
+impl DescribeRecordInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_record::DescribeRecordOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_record::DescribeRecordError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_record();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeRecord`.
 ///
 /// <p>Gets information about the specified request operation.</p>

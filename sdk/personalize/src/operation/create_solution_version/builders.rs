@@ -3,6 +3,23 @@ pub use crate::operation::create_solution_version::_create_solution_version_outp
 
 pub use crate::operation::create_solution_version::_create_solution_version_input::CreateSolutionVersionInputBuilder;
 
+impl CreateSolutionVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_solution_version::CreateSolutionVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_solution_version::CreateSolutionVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_solution_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateSolutionVersion`.
 ///
 /// <p>Trains or retrains an active solution in a Custom dataset group. A solution is created using the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a> operation and must be in the ACTIVE state before calling <code>CreateSolutionVersion</code>. A new version of the solution is created every time you call this operation.</p>

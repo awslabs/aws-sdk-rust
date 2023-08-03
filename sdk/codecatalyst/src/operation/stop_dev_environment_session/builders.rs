@@ -3,6 +3,23 @@ pub use crate::operation::stop_dev_environment_session::_stop_dev_environment_se
 
 pub use crate::operation::stop_dev_environment_session::_stop_dev_environment_session_input::StopDevEnvironmentSessionInputBuilder;
 
+impl StopDevEnvironmentSessionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_dev_environment_session::StopDevEnvironmentSessionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_dev_environment_session::StopDevEnvironmentSessionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_dev_environment_session();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopDevEnvironmentSession`.
 ///
 /// <p>Stops a session for a specified Dev Environment.</p>

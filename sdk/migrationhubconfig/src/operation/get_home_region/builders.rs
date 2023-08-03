@@ -3,6 +3,23 @@ pub use crate::operation::get_home_region::_get_home_region_output::GetHomeRegio
 
 pub use crate::operation::get_home_region::_get_home_region_input::GetHomeRegionInputBuilder;
 
+impl GetHomeRegionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_home_region::GetHomeRegionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_home_region::GetHomeRegionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_home_region();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetHomeRegion`.
 ///
 /// <p>Returns the calling account’s home region, if configured. This API is used by other AWS services to determine the regional endpoint for calling AWS Application Discovery Service and Migration Hub. You must call <code>GetHomeRegion</code> at least once before you call any other AWS Application Discovery Service and AWS Migration Hub APIs, to obtain the account's Migration Hub home region.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::submit_contact_evaluation::_submit_contact_evaluation_
 
 pub use crate::operation::submit_contact_evaluation::_submit_contact_evaluation_input::SubmitContactEvaluationInputBuilder;
 
+impl SubmitContactEvaluationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::submit_contact_evaluation::SubmitContactEvaluationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::submit_contact_evaluation::SubmitContactEvaluationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.submit_contact_evaluation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SubmitContactEvaluation`.
 ///
 /// <p>Submits a contact evaluation in the specified Amazon Connect instance. Answers included in the request are merged with existing answers for the given evaluation. If no answers or notes are passed, the evaluation is submitted with the existing answers and notes. You can delete an answer or note by passing an empty object (<code>{}</code>) to the question identifier. </p>

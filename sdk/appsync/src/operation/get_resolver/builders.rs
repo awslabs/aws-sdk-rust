@@ -3,6 +3,23 @@ pub use crate::operation::get_resolver::_get_resolver_output::GetResolverOutputB
 
 pub use crate::operation::get_resolver::_get_resolver_input::GetResolverInputBuilder;
 
+impl GetResolverInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_resolver::GetResolverOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_resolver::GetResolverError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_resolver();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetResolver`.
 ///
 /// <p>Retrieves a <code>Resolver</code> object.</p>

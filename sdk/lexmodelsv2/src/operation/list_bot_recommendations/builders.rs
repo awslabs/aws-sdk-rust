@@ -3,6 +3,23 @@ pub use crate::operation::list_bot_recommendations::_list_bot_recommendations_ou
 
 pub use crate::operation::list_bot_recommendations::_list_bot_recommendations_input::ListBotRecommendationsInputBuilder;
 
+impl ListBotRecommendationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_bot_recommendations::ListBotRecommendationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_bot_recommendations::ListBotRecommendationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_bot_recommendations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListBotRecommendations`.
 ///
 /// <p>Get a list of bot recommendations that meet the specified criteria.</p>

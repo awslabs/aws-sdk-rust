@@ -3,6 +3,23 @@ pub use crate::operation::list_fargate_profiles::_list_fargate_profiles_output::
 
 pub use crate::operation::list_fargate_profiles::_list_fargate_profiles_input::ListFargateProfilesInputBuilder;
 
+impl ListFargateProfilesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_fargate_profiles::ListFargateProfilesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_fargate_profiles::ListFargateProfilesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_fargate_profiles();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListFargateProfiles`.
 ///
 /// <p>Lists the Fargate profiles associated with the specified cluster in your Amazon Web Services account in the specified Region.</p>

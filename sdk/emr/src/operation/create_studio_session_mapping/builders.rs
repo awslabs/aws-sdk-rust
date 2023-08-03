@@ -3,6 +3,23 @@ pub use crate::operation::create_studio_session_mapping::_create_studio_session_
 
 pub use crate::operation::create_studio_session_mapping::_create_studio_session_mapping_input::CreateStudioSessionMappingInputBuilder;
 
+impl CreateStudioSessionMappingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_studio_session_mapping::CreateStudioSessionMappingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_studio_session_mapping::CreateStudioSessionMappingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_studio_session_mapping();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateStudioSessionMapping`.
 ///
 /// <p>Maps a user or group to the Amazon EMR Studio specified by <code>StudioId</code>, and applies a session policy to refine Studio permissions for that user or group. Use <code>CreateStudioSessionMapping</code> to assign users to a Studio when you use IAM Identity Center authentication. For instructions on how to assign users to a Studio when you use IAM authentication, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-studio-manage-users.html#emr-studio-assign-users-groups">Assign a user or group to your EMR Studio</a>.</p>

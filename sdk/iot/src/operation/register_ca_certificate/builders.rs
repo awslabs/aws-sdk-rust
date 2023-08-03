@@ -3,6 +3,23 @@ pub use crate::operation::register_ca_certificate::_register_ca_certificate_outp
 
 pub use crate::operation::register_ca_certificate::_register_ca_certificate_input::RegisterCaCertificateInputBuilder;
 
+impl RegisterCaCertificateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::register_ca_certificate::RegisterCaCertificateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::register_ca_certificate::RegisterCACertificateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.register_ca_certificate();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RegisterCACertificate`.
 ///
 /// <p>Registers a CA certificate with Amazon Web Services IoT Core. There is no limit to the number of CA certificates you can register in your Amazon Web Services account. You can register up to 10 CA certificates with the same <code>CA subject field</code> per Amazon Web Services account.</p>

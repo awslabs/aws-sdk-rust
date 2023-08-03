@@ -3,6 +3,23 @@ pub use crate::operation::delete_service_sync_config::_delete_service_sync_confi
 
 pub use crate::operation::delete_service_sync_config::_delete_service_sync_config_input::DeleteServiceSyncConfigInputBuilder;
 
+impl DeleteServiceSyncConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_service_sync_config::DeleteServiceSyncConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_service_sync_config::DeleteServiceSyncConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_service_sync_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteServiceSyncConfig`.
 ///
 /// <p>Delete the Proton Ops file.</p>

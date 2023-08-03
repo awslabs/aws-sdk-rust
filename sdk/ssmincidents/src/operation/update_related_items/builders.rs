@@ -3,6 +3,23 @@ pub use crate::operation::update_related_items::_update_related_items_output::Up
 
 pub use crate::operation::update_related_items::_update_related_items_input::UpdateRelatedItemsInputBuilder;
 
+impl UpdateRelatedItemsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_related_items::UpdateRelatedItemsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_related_items::UpdateRelatedItemsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_related_items();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateRelatedItems`.
 ///
 /// <p>Add or remove related items from the related items tab of an incident record.</p>

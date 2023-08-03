@@ -3,6 +3,23 @@ pub use crate::operation::describe_label_group::_describe_label_group_output::De
 
 pub use crate::operation::describe_label_group::_describe_label_group_input::DescribeLabelGroupInputBuilder;
 
+impl DescribeLabelGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_label_group::DescribeLabelGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_label_group::DescribeLabelGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_label_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeLabelGroup`.
 ///
 /// <p> Returns information about the label group. </p>

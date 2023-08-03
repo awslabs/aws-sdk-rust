@@ -3,6 +3,23 @@ pub use crate::operation::describe_organizations_access::_describe_organizations
 
 pub use crate::operation::describe_organizations_access::_describe_organizations_access_input::DescribeOrganizationsAccessInputBuilder;
 
+impl DescribeOrganizationsAccessInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_organizations_access::DescribeOrganizationsAccessOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_organizations_access::DescribeOrganizationsAccessError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_organizations_access();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeOrganizationsAccess`.
 ///
 /// <p>Retrieves information about the account's <code>OrganizationAccess</code> status. This API can be called either by the management account or the delegated administrator by using the <code>CallAs</code> parameter. This API can also be called without the <code>CallAs</code> parameter by the management account.</p>

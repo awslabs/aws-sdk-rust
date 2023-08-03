@@ -3,6 +3,23 @@ pub use crate::operation::delete_identity_pool::_delete_identity_pool_output::De
 
 pub use crate::operation::delete_identity_pool::_delete_identity_pool_input::DeleteIdentityPoolInputBuilder;
 
+impl DeleteIdentityPoolInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_identity_pool::DeleteIdentityPoolOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_identity_pool::DeleteIdentityPoolError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_identity_pool();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteIdentityPool`.
 ///
 /// <p>Deletes an identity pool. Once a pool is deleted, users will not be able to authenticate with the pool.</p>

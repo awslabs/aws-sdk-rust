@@ -3,6 +3,23 @@ pub use crate::operation::create_replication_config::_create_replication_config_
 
 pub use crate::operation::create_replication_config::_create_replication_config_input::CreateReplicationConfigInputBuilder;
 
+impl CreateReplicationConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_replication_config::CreateReplicationConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_replication_config::CreateReplicationConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_replication_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateReplicationConfig`.
 ///
 /// <p>Creates a configuration that you can later provide to configure and start an DMS Serverless replication. You can also provide options to validate the configuration inputs before you start the replication.</p>

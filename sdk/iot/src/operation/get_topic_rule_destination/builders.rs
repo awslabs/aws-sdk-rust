@@ -3,6 +3,23 @@ pub use crate::operation::get_topic_rule_destination::_get_topic_rule_destinatio
 
 pub use crate::operation::get_topic_rule_destination::_get_topic_rule_destination_input::GetTopicRuleDestinationInputBuilder;
 
+impl GetTopicRuleDestinationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_topic_rule_destination::GetTopicRuleDestinationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_topic_rule_destination::GetTopicRuleDestinationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_topic_rule_destination();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetTopicRuleDestination`.
 ///
 /// <p>Gets information about a topic rule destination.</p>

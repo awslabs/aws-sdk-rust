@@ -3,6 +3,23 @@ pub use crate::operation::set_smb_guest_password::_set_smb_guest_password_output
 
 pub use crate::operation::set_smb_guest_password::_set_smb_guest_password_input::SetSmbGuestPasswordInputBuilder;
 
+impl SetSmbGuestPasswordInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::set_smb_guest_password::SetSmbGuestPasswordOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::set_smb_guest_password::SetSMBGuestPasswordError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.set_smb_guest_password();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SetSMBGuestPassword`.
 ///
 /// <p>Sets the password for the guest user <code>smbguest</code>. The <code>smbguest</code> user is the user when the authentication method for the file share is set to <code>GuestAccess</code>. This operation only supported for S3 File Gateways</p>

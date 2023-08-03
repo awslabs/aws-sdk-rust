@@ -3,6 +3,23 @@ pub use crate::operation::synthesize_speech::_synthesize_speech_output::Synthesi
 
 pub use crate::operation::synthesize_speech::_synthesize_speech_input::SynthesizeSpeechInputBuilder;
 
+impl SynthesizeSpeechInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::synthesize_speech::SynthesizeSpeechOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::synthesize_speech::SynthesizeSpeechError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.synthesize_speech();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SynthesizeSpeech`.
 ///
 /// <p>Synthesizes UTF-8 input, plain text or SSML, to a stream of bytes. SSML input must be valid, well-formed SSML. Some alphabets might not be available with all the voices (for example, Cyrillic might not be read at all by English voices) unless phoneme mapping is used. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/how-text-to-speech-works.html">How it Works</a>.</p>

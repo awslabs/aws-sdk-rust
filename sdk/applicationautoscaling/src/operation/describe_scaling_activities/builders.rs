@@ -3,6 +3,23 @@ pub use crate::operation::describe_scaling_activities::_describe_scaling_activit
 
 pub use crate::operation::describe_scaling_activities::_describe_scaling_activities_input::DescribeScalingActivitiesInputBuilder;
 
+impl DescribeScalingActivitiesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_scaling_activities::DescribeScalingActivitiesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_scaling_activities::DescribeScalingActivitiesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_scaling_activities();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeScalingActivities`.
 ///
 /// <p>Provides descriptive information about the scaling activities in the specified namespace from the previous six weeks.</p>

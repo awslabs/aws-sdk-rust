@@ -3,6 +3,23 @@ pub use crate::operation::get_domain_names::_get_domain_names_output::GetDomainN
 
 pub use crate::operation::get_domain_names::_get_domain_names_input::GetDomainNamesInputBuilder;
 
+impl GetDomainNamesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_domain_names::GetDomainNamesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_domain_names::GetDomainNamesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_domain_names();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetDomainNames`.
 ///
 /// <p>Gets the domain names for an AWS account.</p>

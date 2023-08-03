@@ -3,6 +3,17 @@ pub use crate::operation::skip_wait_time_for_instance_termination::_skip_wait_ti
 
 pub use crate::operation::skip_wait_time_for_instance_termination::_skip_wait_time_for_instance_termination_input::SkipWaitTimeForInstanceTerminationInputBuilder;
 
+impl SkipWaitTimeForInstanceTerminationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationOutput, ::aws_smithy_http::result::SdkError<crate::operation::skip_wait_time_for_instance_termination::SkipWaitTimeForInstanceTerminationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.skip_wait_time_for_instance_termination();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SkipWaitTimeForInstanceTermination`.
 ///
 /// <p>In a blue/green deployment, overrides any specified wait time and starts terminating instances immediately after the traffic routing is complete.</p>

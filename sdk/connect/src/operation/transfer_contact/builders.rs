@@ -3,6 +3,23 @@ pub use crate::operation::transfer_contact::_transfer_contact_output::TransferCo
 
 pub use crate::operation::transfer_contact::_transfer_contact_input::TransferContactInputBuilder;
 
+impl TransferContactInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::transfer_contact::TransferContactOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::transfer_contact::TransferContactError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.transfer_contact();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `TransferContact`.
 ///
 /// <p>Transfers contacts from one agent or queue to another agent or queue at any point after a contact is created. You can transfer a contact to another queue by providing the flow which orchestrates the contact to the destination queue. This gives you more control over contact handling and helps you adhere to the service level agreement (SLA) guaranteed to your customers.</p>

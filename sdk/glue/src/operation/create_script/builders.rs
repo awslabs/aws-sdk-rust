@@ -3,6 +3,23 @@ pub use crate::operation::create_script::_create_script_output::CreateScriptOutp
 
 pub use crate::operation::create_script::_create_script_input::CreateScriptInputBuilder;
 
+impl CreateScriptInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_script::CreateScriptOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_script::CreateScriptError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_script();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateScript`.
 ///
 /// <p>Transforms a directed acyclic graph (DAG) into code.</p>

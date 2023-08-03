@@ -3,6 +3,17 @@ pub use crate::operation::describe_vpc_endpoint_service_permissions::_describe_v
 
 pub use crate::operation::describe_vpc_endpoint_service_permissions::_describe_vpc_endpoint_service_permissions_input::DescribeVpcEndpointServicePermissionsInputBuilder;
 
+impl DescribeVpcEndpointServicePermissionsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_vpc_endpoint_service_permissions::DescribeVpcEndpointServicePermissionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_vpc_endpoint_service_permissions::DescribeVpcEndpointServicePermissionsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_vpc_endpoint_service_permissions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeVpcEndpointServicePermissions`.
 ///
 /// <p>Describes the principals (service consumers) that are permitted to discover your VPC endpoint service.</p>

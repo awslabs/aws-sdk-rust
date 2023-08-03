@@ -3,6 +3,23 @@ pub use crate::operation::describe_db_instances::_describe_db_instances_output::
 
 pub use crate::operation::describe_db_instances::_describe_db_instances_input::DescribeDbInstancesInputBuilder;
 
+impl DescribeDbInstancesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_db_instances::DescribeDbInstancesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_db_instances::DescribeDBInstancesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_db_instances();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeDBInstances`.
 ///
 /// <p>Returns information about provisioned instances, and supports pagination.</p> <note>

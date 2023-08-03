@@ -3,6 +3,17 @@ pub use crate::operation::put_configuration_set_sending_options::_put_configurat
 
 pub use crate::operation::put_configuration_set_sending_options::_put_configuration_set_sending_options_input::PutConfigurationSetSendingOptionsInputBuilder;
 
+impl PutConfigurationSetSendingOptionsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::put_configuration_set_sending_options::PutConfigurationSetSendingOptionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_configuration_set_sending_options::PutConfigurationSetSendingOptionsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.put_configuration_set_sending_options();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutConfigurationSetSendingOptions`.
 ///
 /// <p>Enable or disable email sending for messages that use a particular configuration set in a specific AWS Region.</p>

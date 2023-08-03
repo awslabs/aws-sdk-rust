@@ -3,6 +3,23 @@ pub use crate::operation::list_change_sets::_list_change_sets_output::ListChange
 
 pub use crate::operation::list_change_sets::_list_change_sets_input::ListChangeSetsInputBuilder;
 
+impl ListChangeSetsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_change_sets::ListChangeSetsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_change_sets::ListChangeSetsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_change_sets();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListChangeSets`.
 ///
 /// <p>Returns the ID and status of each active change set for a stack. For example, CloudFormation lists change sets that are in the <code>CREATE_IN_PROGRESS</code> or <code>CREATE_PENDING</code> state.</p>

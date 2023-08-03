@@ -3,6 +3,23 @@ pub use crate::operation::create_db_proxy::_create_db_proxy_output::CreateDbProx
 
 pub use crate::operation::create_db_proxy::_create_db_proxy_input::CreateDbProxyInputBuilder;
 
+impl CreateDbProxyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_db_proxy::CreateDbProxyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_db_proxy::CreateDBProxyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_db_proxy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateDBProxy`.
 ///
 /// <p>Creates a new DB proxy.</p>

@@ -3,6 +3,17 @@ pub use crate::operation::update_open_id_connect_provider_thumbprint::_update_op
 
 pub use crate::operation::update_open_id_connect_provider_thumbprint::_update_open_id_connect_provider_thumbprint_input::UpdateOpenIdConnectProviderThumbprintInputBuilder;
 
+impl UpdateOpenIdConnectProviderThumbprintInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::update_open_id_connect_provider_thumbprint::UpdateOpenIdConnectProviderThumbprintOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_open_id_connect_provider_thumbprint::UpdateOpenIDConnectProviderThumbprintError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.update_open_id_connect_provider_thumbprint();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateOpenIDConnectProviderThumbprint`.
 ///
 /// <p>Replaces the existing list of server certificate thumbprints associated with an OpenID Connect (OIDC) provider resource object with a new list of thumbprints.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::put_detector::_put_detector_output::PutDetectorOutputB
 
 pub use crate::operation::put_detector::_put_detector_input::PutDetectorInputBuilder;
 
+impl PutDetectorInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_detector::PutDetectorOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_detector::PutDetectorError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_detector();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutDetector`.
 ///
 /// <p>Creates or updates a detector. </p>

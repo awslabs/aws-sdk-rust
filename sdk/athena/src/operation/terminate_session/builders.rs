@@ -3,6 +3,23 @@ pub use crate::operation::terminate_session::_terminate_session_output::Terminat
 
 pub use crate::operation::terminate_session::_terminate_session_input::TerminateSessionInputBuilder;
 
+impl TerminateSessionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::terminate_session::TerminateSessionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::terminate_session::TerminateSessionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.terminate_session();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `TerminateSession`.
 ///
 /// <p>Terminates an active session. A <code>TerminateSession</code> call on a session that is already inactive (for example, in a <code>FAILED</code>, <code>TERMINATED</code> or <code>TERMINATING</code> state) succeeds but has no effect. Calculations running in the session when <code>TerminateSession</code> is called are forcefully stopped, but may display as <code>FAILED</code> instead of <code>STOPPED</code>.</p>

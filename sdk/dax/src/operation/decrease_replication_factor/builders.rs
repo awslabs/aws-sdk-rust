@@ -3,6 +3,23 @@ pub use crate::operation::decrease_replication_factor::_decrease_replication_fac
 
 pub use crate::operation::decrease_replication_factor::_decrease_replication_factor_input::DecreaseReplicationFactorInputBuilder;
 
+impl DecreaseReplicationFactorInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::decrease_replication_factor::DecreaseReplicationFactorOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::decrease_replication_factor::DecreaseReplicationFactorError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.decrease_replication_factor();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DecreaseReplicationFactor`.
 ///
 /// <p>Removes one or more nodes from a DAX cluster.</p> <note>

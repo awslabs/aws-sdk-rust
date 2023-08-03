@@ -3,6 +3,23 @@ pub use crate::operation::create_route::_create_route_output::CreateRouteOutputB
 
 pub use crate::operation::create_route::_create_route_input::CreateRouteInputBuilder;
 
+impl CreateRouteInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_route::CreateRouteOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_route::CreateRouteError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_route();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateRoute`.
 ///
 /// <p>Creates a route in a route table within a VPC.</p>

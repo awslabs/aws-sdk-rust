@@ -3,6 +3,17 @@ pub use crate::operation::create_calculated_attribute_definition::_create_calcul
 
 pub use crate::operation::create_calculated_attribute_definition::_create_calculated_attribute_definition_input::CreateCalculatedAttributeDefinitionInputBuilder;
 
+impl CreateCalculatedAttributeDefinitionInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::create_calculated_attribute_definition::CreateCalculatedAttributeDefinitionOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_calculated_attribute_definition::CreateCalculatedAttributeDefinitionError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.create_calculated_attribute_definition();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateCalculatedAttributeDefinition`.
 ///
 /// <p>Creates a new calculated attribute definition. After creation, new object data ingested into Customer Profiles will be included in the calculated attribute, which can be retrieved for a profile using the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetCalculatedAttributeForProfile.html">GetCalculatedAttributeForProfile</a> API. Defining a calculated attribute makes it available for all profiles within a domain. Each calculated attribute can only reference one <code>ObjectType</code> and at most, two fields from that <code>ObjectType</code>.</p>

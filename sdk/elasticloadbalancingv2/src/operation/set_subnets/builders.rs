@@ -3,6 +3,23 @@ pub use crate::operation::set_subnets::_set_subnets_output::SetSubnetsOutputBuil
 
 pub use crate::operation::set_subnets::_set_subnets_input::SetSubnetsInputBuilder;
 
+impl SetSubnetsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::set_subnets::SetSubnetsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::set_subnets::SetSubnetsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.set_subnets();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SetSubnets`.
 ///
 /// <p>Enables the Availability Zones for the specified public subnets for the specified Application Load Balancer or Network Load Balancer. The specified subnets replace the previously enabled subnets.</p>

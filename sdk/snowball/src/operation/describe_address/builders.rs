@@ -3,6 +3,23 @@ pub use crate::operation::describe_address::_describe_address_output::DescribeAd
 
 pub use crate::operation::describe_address::_describe_address_input::DescribeAddressInputBuilder;
 
+impl DescribeAddressInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_address::DescribeAddressOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_address::DescribeAddressError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_address();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAddress`.
 ///
 /// <p>Takes an <code>AddressId</code> and returns specific details about that address in the form of an <code>Address</code> object.</p>

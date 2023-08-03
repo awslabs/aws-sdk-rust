@@ -3,6 +3,23 @@ pub use crate::operation::disable_trust_anchor::_disable_trust_anchor_output::Di
 
 pub use crate::operation::disable_trust_anchor::_disable_trust_anchor_input::DisableTrustAnchorInputBuilder;
 
+impl DisableTrustAnchorInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disable_trust_anchor::DisableTrustAnchorOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disable_trust_anchor::DisableTrustAnchorError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disable_trust_anchor();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisableTrustAnchor`.
 ///
 /// <p>Disables a trust anchor. When disabled, temporary credential requests specifying this trust anchor are unauthorized.</p>

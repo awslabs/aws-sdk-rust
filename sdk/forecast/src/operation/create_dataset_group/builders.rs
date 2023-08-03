@@ -3,6 +3,23 @@ pub use crate::operation::create_dataset_group::_create_dataset_group_output::Cr
 
 pub use crate::operation::create_dataset_group::_create_dataset_group_input::CreateDatasetGroupInputBuilder;
 
+impl CreateDatasetGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_dataset_group::CreateDatasetGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_dataset_group::CreateDatasetGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_dataset_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateDatasetGroup`.
 ///
 /// <p>Creates a dataset group, which holds a collection of related datasets. You can add datasets to the dataset group when you create the dataset group, or later by using the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_UpdateDatasetGroup.html">UpdateDatasetGroup</a> operation.</p>

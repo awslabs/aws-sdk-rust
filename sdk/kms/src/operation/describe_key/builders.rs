@@ -3,6 +3,23 @@ pub use crate::operation::describe_key::_describe_key_output::DescribeKeyOutputB
 
 pub use crate::operation::describe_key::_describe_key_input::DescribeKeyInputBuilder;
 
+impl DescribeKeyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_key::DescribeKeyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_key::DescribeKeyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_key();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeKey`.
 ///
 /// <p>Provides detailed information about a KMS key. You can run <code>DescribeKey</code> on a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#customer-cmk">customer managed key</a> or an <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon Web Services managed key</a>.</p>

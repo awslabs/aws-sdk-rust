@@ -3,6 +3,23 @@ pub use crate::operation::cancel_flow_executions::_cancel_flow_executions_output
 
 pub use crate::operation::cancel_flow_executions::_cancel_flow_executions_input::CancelFlowExecutionsInputBuilder;
 
+impl CancelFlowExecutionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::cancel_flow_executions::CancelFlowExecutionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::cancel_flow_executions::CancelFlowExecutionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.cancel_flow_executions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CancelFlowExecutions`.
 ///
 /// <p>Cancels active runs for a flow.</p>

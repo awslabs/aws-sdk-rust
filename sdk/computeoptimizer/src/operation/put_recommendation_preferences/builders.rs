@@ -3,6 +3,23 @@ pub use crate::operation::put_recommendation_preferences::_put_recommendation_pr
 
 pub use crate::operation::put_recommendation_preferences::_put_recommendation_preferences_input::PutRecommendationPreferencesInputBuilder;
 
+impl PutRecommendationPreferencesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_recommendation_preferences::PutRecommendationPreferencesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_recommendation_preferences::PutRecommendationPreferencesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_recommendation_preferences();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutRecommendationPreferences`.
 ///
 /// <p>Creates a new recommendation preference or updates an existing recommendation preference, such as enhanced infrastructure metrics.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::upload_entity_definitions::_upload_entity_definitions_
 
 pub use crate::operation::upload_entity_definitions::_upload_entity_definitions_input::UploadEntityDefinitionsInputBuilder;
 
+impl UploadEntityDefinitionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::upload_entity_definitions::UploadEntityDefinitionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::upload_entity_definitions::UploadEntityDefinitionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.upload_entity_definitions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UploadEntityDefinitions`.
 ///
 /// <p>Asynchronously uploads one or more entity definitions to the user's namespace. The <code>document</code> parameter is required if <code>syncWithPublicNamespace</code> and <code>deleteExistingEntites</code> are false. If the <code>syncWithPublicNamespace</code> parameter is set to <code>true</code>, the user's namespace will synchronize with the latest version of the public namespace. If <code>deprecateExistingEntities</code> is set to true, all entities in the latest version will be deleted before the new <code>DefinitionDocument</code> is uploaded.</p>

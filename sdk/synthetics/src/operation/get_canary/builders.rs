@@ -3,6 +3,23 @@ pub use crate::operation::get_canary::_get_canary_output::GetCanaryOutputBuilder
 
 pub use crate::operation::get_canary::_get_canary_input::GetCanaryInputBuilder;
 
+impl GetCanaryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_canary::GetCanaryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_canary::GetCanaryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_canary();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetCanary`.
 ///
 /// <p>Retrieves complete information about one canary. You must specify the name of the canary that you want. To get a list of canaries and their names, use <a href="https://docs.aws.amazon.com/AmazonSynthetics/latest/APIReference/API_DescribeCanaries.html">DescribeCanaries</a>.</p>

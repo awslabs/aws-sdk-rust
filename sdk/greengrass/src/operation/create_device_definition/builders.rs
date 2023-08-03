@@ -3,6 +3,23 @@ pub use crate::operation::create_device_definition::_create_device_definition_ou
 
 pub use crate::operation::create_device_definition::_create_device_definition_input::CreateDeviceDefinitionInputBuilder;
 
+impl CreateDeviceDefinitionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_device_definition::CreateDeviceDefinitionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_device_definition::CreateDeviceDefinitionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_device_definition();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateDeviceDefinition`.
 ///
 /// Creates a device definition. You may provide the initial version of the device definition now or use ''CreateDeviceDefinitionVersion'' at a later time.

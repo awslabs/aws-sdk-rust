@@ -3,6 +3,23 @@ pub use crate::operation::delete_realtime_endpoint::_delete_realtime_endpoint_ou
 
 pub use crate::operation::delete_realtime_endpoint::_delete_realtime_endpoint_input::DeleteRealtimeEndpointInputBuilder;
 
+impl DeleteRealtimeEndpointInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_realtime_endpoint::DeleteRealtimeEndpointOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_realtime_endpoint::DeleteRealtimeEndpointError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_realtime_endpoint();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteRealtimeEndpoint`.
 ///
 /// <p>Deletes a real time endpoint of an <code>MLModel</code>.</p>

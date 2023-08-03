@@ -3,6 +3,23 @@ pub use crate::operation::batch_describe_simulation_job::_batch_describe_simulat
 
 pub use crate::operation::batch_describe_simulation_job::_batch_describe_simulation_job_input::BatchDescribeSimulationJobInputBuilder;
 
+impl BatchDescribeSimulationJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_describe_simulation_job::BatchDescribeSimulationJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_describe_simulation_job::BatchDescribeSimulationJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_describe_simulation_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchDescribeSimulationJob`.
 ///
 /// <p>Describes one or more simulation jobs.</p>

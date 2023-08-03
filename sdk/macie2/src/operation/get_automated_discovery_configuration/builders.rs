@@ -3,6 +3,17 @@ pub use crate::operation::get_automated_discovery_configuration::_get_automated_
 
 pub use crate::operation::get_automated_discovery_configuration::_get_automated_discovery_configuration_input::GetAutomatedDiscoveryConfigurationInputBuilder;
 
+impl GetAutomatedDiscoveryConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_automated_discovery_configuration::GetAutomatedDiscoveryConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_automated_discovery_configuration::GetAutomatedDiscoveryConfigurationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_automated_discovery_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetAutomatedDiscoveryConfiguration`.
 ///
 /// <p>Retrieves the configuration settings and status of automated sensitive data discovery for an account.</p>

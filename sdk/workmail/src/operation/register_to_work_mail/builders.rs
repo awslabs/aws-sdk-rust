@@ -3,6 +3,23 @@ pub use crate::operation::register_to_work_mail::_register_to_work_mail_output::
 
 pub use crate::operation::register_to_work_mail::_register_to_work_mail_input::RegisterToWorkMailInputBuilder;
 
+impl RegisterToWorkMailInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::register_to_work_mail::RegisterToWorkMailOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::register_to_work_mail::RegisterToWorkMailError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.register_to_work_mail();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RegisterToWorkMail`.
 ///
 /// <p>Registers an existing and disabled user, group, or resource for WorkMail use by associating a mailbox and calendaring capabilities. It performs no change if the user, group, or resource is enabled and fails if the user, group, or resource is deleted. This operation results in the accumulation of costs. For more information, see <a href="https://aws.amazon.com/workmail/pricing">Pricing</a>. The equivalent console functionality for this operation is <i>Enable</i>.</p>

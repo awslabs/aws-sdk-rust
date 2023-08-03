@@ -3,6 +3,23 @@ pub use crate::operation::record_activity_task_heartbeat::_record_activity_task_
 
 pub use crate::operation::record_activity_task_heartbeat::_record_activity_task_heartbeat_input::RecordActivityTaskHeartbeatInputBuilder;
 
+impl RecordActivityTaskHeartbeatInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::record_activity_task_heartbeat::RecordActivityTaskHeartbeatOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::record_activity_task_heartbeat::RecordActivityTaskHeartbeatError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.record_activity_task_heartbeat();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RecordActivityTaskHeartbeat`.
 ///
 /// <p>Used by activity workers to report to the service that the <code>ActivityTask</code> represented by the specified <code>taskToken</code> is still making progress. The worker can also specify details of the progress, for example percent complete, using the <code>details</code> parameter. This action can also be used by the worker as a mechanism to check if cancellation is being requested for the activity task. If a cancellation is being attempted for the specified task, then the boolean <code>cancelRequested</code> flag returned by the service is set to <code>true</code>.</p>

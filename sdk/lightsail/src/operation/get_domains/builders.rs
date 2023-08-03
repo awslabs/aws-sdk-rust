@@ -3,6 +3,23 @@ pub use crate::operation::get_domains::_get_domains_output::GetDomainsOutputBuil
 
 pub use crate::operation::get_domains::_get_domains_input::GetDomainsInputBuilder;
 
+impl GetDomainsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_domains::GetDomainsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_domains::GetDomainsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_domains();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetDomains`.
 ///
 /// <p>Returns a list of all domains in the user's account.</p>

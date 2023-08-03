@@ -3,6 +3,23 @@ pub use crate::operation::list_anomaly_group_summaries::_list_anomaly_group_summ
 
 pub use crate::operation::list_anomaly_group_summaries::_list_anomaly_group_summaries_input::ListAnomalyGroupSummariesInputBuilder;
 
+impl ListAnomalyGroupSummariesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_anomaly_group_summaries::ListAnomalyGroupSummariesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_anomaly_group_summaries::ListAnomalyGroupSummariesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_anomaly_group_summaries();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAnomalyGroupSummaries`.
 ///
 /// <p>Returns a list of anomaly groups.</p>

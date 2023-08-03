@@ -3,6 +3,23 @@ pub use crate::operation::get_mapping::_get_mapping_output::GetMappingOutputBuil
 
 pub use crate::operation::get_mapping::_get_mapping_input::GetMappingInputBuilder;
 
+impl GetMappingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_mapping::GetMappingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_mapping::GetMappingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_mapping();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetMapping`.
 ///
 /// <p>Creates mappings.</p>

@@ -3,6 +3,17 @@ pub use crate::operation::reset_network_interface_attribute::_reset_network_inte
 
 pub use crate::operation::reset_network_interface_attribute::_reset_network_interface_attribute_input::ResetNetworkInterfaceAttributeInputBuilder;
 
+impl ResetNetworkInterfaceAttributeInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::reset_network_interface_attribute::ResetNetworkInterfaceAttributeOutput, ::aws_smithy_http::result::SdkError<crate::operation::reset_network_interface_attribute::ResetNetworkInterfaceAttributeError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.reset_network_interface_attribute();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ResetNetworkInterfaceAttribute`.
 ///
 /// <p>Resets a network interface attribute. You can specify only one attribute at a time.</p>

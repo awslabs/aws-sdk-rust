@@ -3,6 +3,23 @@ pub use crate::operation::list_instance_storage_configs::_list_instance_storage_
 
 pub use crate::operation::list_instance_storage_configs::_list_instance_storage_configs_input::ListInstanceStorageConfigsInputBuilder;
 
+impl ListInstanceStorageConfigsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_instance_storage_configs::ListInstanceStorageConfigsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_instance_storage_configs::ListInstanceStorageConfigsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_instance_storage_configs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListInstanceStorageConfigs`.
 ///
 /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>

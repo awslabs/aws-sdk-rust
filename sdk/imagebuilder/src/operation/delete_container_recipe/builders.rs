@@ -3,6 +3,23 @@ pub use crate::operation::delete_container_recipe::_delete_container_recipe_outp
 
 pub use crate::operation::delete_container_recipe::_delete_container_recipe_input::DeleteContainerRecipeInputBuilder;
 
+impl DeleteContainerRecipeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_container_recipe::DeleteContainerRecipeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_container_recipe::DeleteContainerRecipeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_container_recipe();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteContainerRecipe`.
 ///
 /// <p>Deletes a container recipe.</p>

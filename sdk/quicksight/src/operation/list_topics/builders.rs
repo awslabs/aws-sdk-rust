@@ -3,6 +3,23 @@ pub use crate::operation::list_topics::_list_topics_output::ListTopicsOutputBuil
 
 pub use crate::operation::list_topics::_list_topics_input::ListTopicsInputBuilder;
 
+impl ListTopicsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_topics::ListTopicsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_topics::ListTopicsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_topics();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListTopics`.
 ///
 /// <p>Lists all of the topics within an account.</p>

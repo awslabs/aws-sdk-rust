@@ -3,6 +3,23 @@ pub use crate::operation::register_container_instance::_register_container_insta
 
 pub use crate::operation::register_container_instance::_register_container_instance_input::RegisterContainerInstanceInputBuilder;
 
+impl RegisterContainerInstanceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::register_container_instance::RegisterContainerInstanceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::register_container_instance::RegisterContainerInstanceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.register_container_instance();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RegisterContainerInstance`.
 ///
 /// <note>

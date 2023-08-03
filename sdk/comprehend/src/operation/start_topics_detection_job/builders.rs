@@ -3,6 +3,23 @@ pub use crate::operation::start_topics_detection_job::_start_topics_detection_jo
 
 pub use crate::operation::start_topics_detection_job::_start_topics_detection_job_input::StartTopicsDetectionJobInputBuilder;
 
+impl StartTopicsDetectionJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_topics_detection_job::StartTopicsDetectionJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_topics_detection_job::StartTopicsDetectionJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_topics_detection_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartTopicsDetectionJob`.
 ///
 /// <p>Starts an asynchronous topic detection job. Use the <code>DescribeTopicDetectionJob</code> operation to track the status of a job.</p>

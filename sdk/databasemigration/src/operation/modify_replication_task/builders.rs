@@ -3,6 +3,23 @@ pub use crate::operation::modify_replication_task::_modify_replication_task_outp
 
 pub use crate::operation::modify_replication_task::_modify_replication_task_input::ModifyReplicationTaskInputBuilder;
 
+impl ModifyReplicationTaskInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_replication_task::ModifyReplicationTaskOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_replication_task::ModifyReplicationTaskError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_replication_task();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyReplicationTask`.
 ///
 /// <p>Modifies the specified replication task.</p>

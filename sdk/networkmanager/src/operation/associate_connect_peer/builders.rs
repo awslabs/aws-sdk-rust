@@ -3,6 +3,23 @@ pub use crate::operation::associate_connect_peer::_associate_connect_peer_output
 
 pub use crate::operation::associate_connect_peer::_associate_connect_peer_input::AssociateConnectPeerInputBuilder;
 
+impl AssociateConnectPeerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_connect_peer::AssociateConnectPeerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_connect_peer::AssociateConnectPeerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_connect_peer();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateConnectPeer`.
 ///
 /// <p>Associates a core network Connect peer with a device and optionally, with a link. </p>

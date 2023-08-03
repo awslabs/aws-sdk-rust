@@ -3,6 +3,23 @@ pub use crate::operation::list_slot_types::_list_slot_types_output::ListSlotType
 
 pub use crate::operation::list_slot_types::_list_slot_types_input::ListSlotTypesInputBuilder;
 
+impl ListSlotTypesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_slot_types::ListSlotTypesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_slot_types::ListSlotTypesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_slot_types();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListSlotTypes`.
 ///
 /// <p>Gets a list of slot types that match the specified criteria.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::stop_hyper_parameter_tuning_job::_stop_hyper_parameter
 
 pub use crate::operation::stop_hyper_parameter_tuning_job::_stop_hyper_parameter_tuning_job_input::StopHyperParameterTuningJobInputBuilder;
 
+impl StopHyperParameterTuningJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_hyper_parameter_tuning_job::StopHyperParameterTuningJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_hyper_parameter_tuning_job::StopHyperParameterTuningJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_hyper_parameter_tuning_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopHyperParameterTuningJob`.
 ///
 /// <p>Stops a running hyperparameter tuning job and all running training jobs that the tuning job launched.</p>

@@ -3,6 +3,17 @@ pub use crate::operation::create_group_certificate_authority::_create_group_cert
 
 pub use crate::operation::create_group_certificate_authority::_create_group_certificate_authority_input::CreateGroupCertificateAuthorityInputBuilder;
 
+impl CreateGroupCertificateAuthorityInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::create_group_certificate_authority::CreateGroupCertificateAuthorityOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_group_certificate_authority::CreateGroupCertificateAuthorityError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.create_group_certificate_authority();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateGroupCertificateAuthority`.
 ///
 /// Creates a CA for the group. If a CA already exists, it will rotate the existing CA.

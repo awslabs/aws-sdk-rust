@@ -3,6 +3,23 @@ pub use crate::operation::list_images::_list_images_output::ListImagesOutputBuil
 
 pub use crate::operation::list_images::_list_images_input::ListImagesInputBuilder;
 
+impl ListImagesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_images::ListImagesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_images::ListImagesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_images();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListImages`.
 ///
 /// <p>Returns the list of images that you have access to. Newly created images can take up to two minutes to appear in the ListImages API Results.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_queued_reserved_instances::_delete_queued_reser
 
 pub use crate::operation::delete_queued_reserved_instances::_delete_queued_reserved_instances_input::DeleteQueuedReservedInstancesInputBuilder;
 
+impl DeleteQueuedReservedInstancesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_queued_reserved_instances::DeleteQueuedReservedInstancesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_queued_reserved_instances::DeleteQueuedReservedInstancesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_queued_reserved_instances();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteQueuedReservedInstances`.
 ///
 /// <p>Deletes the queued purchases for the specified Reserved Instances.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_aws_default_service_quota::_get_aws_default_servic
 
 pub use crate::operation::get_aws_default_service_quota::_get_aws_default_service_quota_input::GetAwsDefaultServiceQuotaInputBuilder;
 
+impl GetAwsDefaultServiceQuotaInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_aws_default_service_quota::GetAwsDefaultServiceQuotaOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_aws_default_service_quota::GetAWSDefaultServiceQuotaError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_aws_default_service_quota();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetAWSDefaultServiceQuota`.
 ///
 /// <p>Retrieves the default value for the specified quota. The default value does not reflect any quota increases.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_instances::_get_instances_output::GetInstancesOutp
 
 pub use crate::operation::get_instances::_get_instances_input::GetInstancesInputBuilder;
 
+impl GetInstancesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_instances::GetInstancesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_instances::GetInstancesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_instances();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetInstances`.
 ///
 /// <p>Returns information about all Amazon Lightsail virtual private servers, or <i>instances</i>.</p>

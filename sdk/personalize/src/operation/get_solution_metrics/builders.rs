@@ -3,6 +3,23 @@ pub use crate::operation::get_solution_metrics::_get_solution_metrics_output::Ge
 
 pub use crate::operation::get_solution_metrics::_get_solution_metrics_input::GetSolutionMetricsInputBuilder;
 
+impl GetSolutionMetricsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_solution_metrics::GetSolutionMetricsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_solution_metrics::GetSolutionMetricsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_solution_metrics();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetSolutionMetrics`.
 ///
 /// <p>Gets the metrics for the specified solution version.</p>

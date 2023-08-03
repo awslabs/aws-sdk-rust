@@ -3,6 +3,23 @@ pub use crate::operation::list_language_models::_list_language_models_output::Li
 
 pub use crate::operation::list_language_models::_list_language_models_input::ListLanguageModelsInputBuilder;
 
+impl ListLanguageModelsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_language_models::ListLanguageModelsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_language_models::ListLanguageModelsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_language_models();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListLanguageModels`.
 ///
 /// <p>Provides a list of custom language models that match the specified criteria. If no criteria are specified, all custom language models are returned.</p>

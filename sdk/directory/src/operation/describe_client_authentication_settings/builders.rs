@@ -3,6 +3,17 @@ pub use crate::operation::describe_client_authentication_settings::_describe_cli
 
 pub use crate::operation::describe_client_authentication_settings::_describe_client_authentication_settings_input::DescribeClientAuthenticationSettingsInputBuilder;
 
+impl DescribeClientAuthenticationSettingsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_client_authentication_settings::DescribeClientAuthenticationSettingsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_client_authentication_settings::DescribeClientAuthenticationSettingsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_client_authentication_settings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeClientAuthenticationSettings`.
 ///
 /// <p>Retrieves information about the type of client authentication for the specified directory, if the type is specified. If no type is specified, information about all client authentication types that are supported for the specified directory is retrieved. Currently, only <code>SmartCard</code> is supported. </p>

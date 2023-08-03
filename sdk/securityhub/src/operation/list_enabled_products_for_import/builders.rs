@@ -3,6 +3,23 @@ pub use crate::operation::list_enabled_products_for_import::_list_enabled_produc
 
 pub use crate::operation::list_enabled_products_for_import::_list_enabled_products_for_import_input::ListEnabledProductsForImportInputBuilder;
 
+impl ListEnabledProductsForImportInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_enabled_products_for_import::ListEnabledProductsForImportOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_enabled_products_for_import::ListEnabledProductsForImportError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_enabled_products_for_import();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListEnabledProductsForImport`.
 ///
 /// <p>Lists all findings-generating solutions (products) that you are subscribed to receive findings from in Security Hub.</p>

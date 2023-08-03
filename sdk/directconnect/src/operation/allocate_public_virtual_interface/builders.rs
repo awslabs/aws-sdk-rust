@@ -3,6 +3,17 @@ pub use crate::operation::allocate_public_virtual_interface::_allocate_public_vi
 
 pub use crate::operation::allocate_public_virtual_interface::_allocate_public_virtual_interface_input::AllocatePublicVirtualInterfaceInputBuilder;
 
+impl AllocatePublicVirtualInterfaceInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::allocate_public_virtual_interface::AllocatePublicVirtualInterfaceOutput, ::aws_smithy_http::result::SdkError<crate::operation::allocate_public_virtual_interface::AllocatePublicVirtualInterfaceError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.allocate_public_virtual_interface();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AllocatePublicVirtualInterface`.
 ///
 /// <p>Provisions a public virtual interface to be owned by the specified Amazon Web Services account.</p>

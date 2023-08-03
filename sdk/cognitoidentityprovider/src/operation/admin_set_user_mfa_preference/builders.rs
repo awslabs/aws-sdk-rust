@@ -3,6 +3,23 @@ pub use crate::operation::admin_set_user_mfa_preference::_admin_set_user_mfa_pre
 
 pub use crate::operation::admin_set_user_mfa_preference::_admin_set_user_mfa_preference_input::AdminSetUserMfaPreferenceInputBuilder;
 
+impl AdminSetUserMfaPreferenceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::admin_set_user_mfa_preference::AdminSetUserMfaPreferenceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::admin_set_user_mfa_preference::AdminSetUserMFAPreferenceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.admin_set_user_mfa_preference();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AdminSetUserMFAPreference`.
 ///
 /// <p>The user's multi-factor authentication (MFA) preference, including which MFA options are activated, and if any are preferred. Only one factor can be set as preferred. The preferred MFA factor will be used to authenticate a user if multiple factors are activated. If multiple options are activated and no preference is set, a challenge to choose an MFA option will be returned during sign-in.</p>

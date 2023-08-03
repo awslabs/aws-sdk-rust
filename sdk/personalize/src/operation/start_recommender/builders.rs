@@ -3,6 +3,23 @@ pub use crate::operation::start_recommender::_start_recommender_output::StartRec
 
 pub use crate::operation::start_recommender::_start_recommender_input::StartRecommenderInputBuilder;
 
+impl StartRecommenderInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_recommender::StartRecommenderOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_recommender::StartRecommenderError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_recommender();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartRecommender`.
 ///
 /// <p>Starts a recommender that is INACTIVE. Starting a recommender does not create any new models, but resumes billing and automatic retraining for the recommender.</p>

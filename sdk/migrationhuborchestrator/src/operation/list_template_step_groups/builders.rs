@@ -3,6 +3,23 @@ pub use crate::operation::list_template_step_groups::_list_template_step_groups_
 
 pub use crate::operation::list_template_step_groups::_list_template_step_groups_input::ListTemplateStepGroupsInputBuilder;
 
+impl ListTemplateStepGroupsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_template_step_groups::ListTemplateStepGroupsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_template_step_groups::ListTemplateStepGroupsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_template_step_groups();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListTemplateStepGroups`.
 ///
 /// <p>List the step groups in a template.</p>

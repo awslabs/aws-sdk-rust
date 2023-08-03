@@ -3,6 +3,23 @@ pub use crate::operation::create_storage_virtual_machine::_create_storage_virtua
 
 pub use crate::operation::create_storage_virtual_machine::_create_storage_virtual_machine_input::CreateStorageVirtualMachineInputBuilder;
 
+impl CreateStorageVirtualMachineInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_storage_virtual_machine::CreateStorageVirtualMachineOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_storage_virtual_machine::CreateStorageVirtualMachineError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_storage_virtual_machine();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateStorageVirtualMachine`.
 ///
 /// <p>Creates a storage virtual machine (SVM) for an Amazon FSx for ONTAP file system.</p>

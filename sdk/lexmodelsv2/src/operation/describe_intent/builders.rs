@@ -3,6 +3,23 @@ pub use crate::operation::describe_intent::_describe_intent_output::DescribeInte
 
 pub use crate::operation::describe_intent::_describe_intent_input::DescribeIntentInputBuilder;
 
+impl DescribeIntentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_intent::DescribeIntentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_intent::DescribeIntentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_intent();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeIntent`.
 ///
 /// <p>Returns metadata about an intent.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_event_bus::_describe_event_bus_output::Descri
 
 pub use crate::operation::describe_event_bus::_describe_event_bus_input::DescribeEventBusInputBuilder;
 
+impl DescribeEventBusInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_event_bus::DescribeEventBusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_event_bus::DescribeEventBusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_event_bus();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeEventBus`.
 ///
 /// <p>Displays details about an event bus in your account. This can include the external Amazon Web Services accounts that are permitted to write events to your default event bus, and the associated policy. For custom event buses and partner event buses, it displays the name, ARN, policy, state, and creation time.</p>

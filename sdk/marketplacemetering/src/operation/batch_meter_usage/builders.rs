@@ -3,6 +3,23 @@ pub use crate::operation::batch_meter_usage::_batch_meter_usage_output::BatchMet
 
 pub use crate::operation::batch_meter_usage::_batch_meter_usage_input::BatchMeterUsageInputBuilder;
 
+impl BatchMeterUsageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_meter_usage::BatchMeterUsageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_meter_usage::BatchMeterUsageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_meter_usage();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchMeterUsage`.
 ///
 /// <p> <code>BatchMeterUsage</code> is called from a SaaS application listed on AWS Marketplace to post metering records for a set of customers.</p>

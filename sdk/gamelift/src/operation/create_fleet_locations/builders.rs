@@ -3,6 +3,23 @@ pub use crate::operation::create_fleet_locations::_create_fleet_locations_output
 
 pub use crate::operation::create_fleet_locations::_create_fleet_locations_input::CreateFleetLocationsInputBuilder;
 
+impl CreateFleetLocationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_fleet_locations::CreateFleetLocationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_fleet_locations::CreateFleetLocationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_fleet_locations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateFleetLocations`.
 ///
 /// <p>Adds remote locations to a fleet and begins populating the new locations with EC2 instances. The new instances conform to the fleet's instance type, auto-scaling, and other configuration settings. </p> <note>

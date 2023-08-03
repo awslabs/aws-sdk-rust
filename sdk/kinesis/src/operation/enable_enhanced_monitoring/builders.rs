@@ -3,6 +3,23 @@ pub use crate::operation::enable_enhanced_monitoring::_enable_enhanced_monitorin
 
 pub use crate::operation::enable_enhanced_monitoring::_enable_enhanced_monitoring_input::EnableEnhancedMonitoringInputBuilder;
 
+impl EnableEnhancedMonitoringInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::enable_enhanced_monitoring::EnableEnhancedMonitoringOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::enable_enhanced_monitoring::EnableEnhancedMonitoringError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.enable_enhanced_monitoring();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `EnableEnhancedMonitoring`.
 ///
 /// <p>Enables enhanced Kinesis data stream monitoring for shard-level metrics.</p> <note>

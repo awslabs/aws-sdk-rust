@@ -3,6 +3,23 @@ pub use crate::operation::remove_all_resource_permissions::_remove_all_resource_
 
 pub use crate::operation::remove_all_resource_permissions::_remove_all_resource_permissions_input::RemoveAllResourcePermissionsInputBuilder;
 
+impl RemoveAllResourcePermissionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::remove_all_resource_permissions::RemoveAllResourcePermissionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::remove_all_resource_permissions::RemoveAllResourcePermissionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.remove_all_resource_permissions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RemoveAllResourcePermissions`.
 ///
 /// <p>Removes all the permissions from the specified resource.</p>

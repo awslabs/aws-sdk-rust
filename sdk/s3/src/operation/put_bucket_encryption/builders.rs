@@ -3,6 +3,23 @@ pub use crate::operation::put_bucket_encryption::_put_bucket_encryption_output::
 
 pub use crate::operation::put_bucket_encryption::_put_bucket_encryption_input::PutBucketEncryptionInputBuilder;
 
+impl PutBucketEncryptionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_bucket_encryption::PutBucketEncryptionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_bucket_encryption::PutBucketEncryptionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_bucket_encryption();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutBucketEncryption`.
 ///
 /// <p>This action uses the <code>encryption</code> subresource to configure default encryption and Amazon S3 Bucket Keys for an existing bucket.</p>

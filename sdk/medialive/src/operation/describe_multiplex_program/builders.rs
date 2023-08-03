@@ -3,6 +3,23 @@ pub use crate::operation::describe_multiplex_program::_describe_multiplex_progra
 
 pub use crate::operation::describe_multiplex_program::_describe_multiplex_program_input::DescribeMultiplexProgramInputBuilder;
 
+impl DescribeMultiplexProgramInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_multiplex_program::DescribeMultiplexProgramOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_multiplex_program::DescribeMultiplexProgramError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_multiplex_program();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeMultiplexProgram`.
 ///
 /// Get the details for a program in a multiplex.

@@ -3,6 +3,23 @@ pub use crate::operation::delete_domain_configuration::_delete_domain_configurat
 
 pub use crate::operation::delete_domain_configuration::_delete_domain_configuration_input::DeleteDomainConfigurationInputBuilder;
 
+impl DeleteDomainConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_domain_configuration::DeleteDomainConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_domain_configuration::DeleteDomainConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_domain_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteDomainConfiguration`.
 ///
 /// <p>Deletes the specified domain configuration.</p>

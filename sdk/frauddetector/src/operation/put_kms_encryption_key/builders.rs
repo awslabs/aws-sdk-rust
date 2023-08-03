@@ -3,6 +3,23 @@ pub use crate::operation::put_kms_encryption_key::_put_kms_encryption_key_output
 
 pub use crate::operation::put_kms_encryption_key::_put_kms_encryption_key_input::PutKmsEncryptionKeyInputBuilder;
 
+impl PutKmsEncryptionKeyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_kms_encryption_key::PutKmsEncryptionKeyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_kms_encryption_key::PutKMSEncryptionKeyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_kms_encryption_key();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutKMSEncryptionKey`.
 ///
 /// <p>Specifies the KMS key to be used to encrypt content in Amazon Fraud Detector.</p>

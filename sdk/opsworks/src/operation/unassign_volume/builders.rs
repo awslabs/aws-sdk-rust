@@ -3,6 +3,23 @@ pub use crate::operation::unassign_volume::_unassign_volume_output::UnassignVolu
 
 pub use crate::operation::unassign_volume::_unassign_volume_input::UnassignVolumeInputBuilder;
 
+impl UnassignVolumeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::unassign_volume::UnassignVolumeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::unassign_volume::UnassignVolumeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.unassign_volume();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UnassignVolume`.
 ///
 /// <p>Unassigns an assigned Amazon EBS volume. The volume remains registered with the stack. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p>

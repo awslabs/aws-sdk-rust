@@ -3,6 +3,23 @@ pub use crate::operation::create_map::_create_map_output::CreateMapOutputBuilder
 
 pub use crate::operation::create_map::_create_map_input::CreateMapInputBuilder;
 
+impl CreateMapInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_map::CreateMapOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_map::CreateMapError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_map();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateMap`.
 ///
 /// <p>Creates a map resource in your Amazon Web Services account, which provides map tiles of different styles sourced from global location data providers.</p> <note>

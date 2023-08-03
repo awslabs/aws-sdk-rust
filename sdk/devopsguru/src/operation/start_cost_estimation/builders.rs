@@ -3,6 +3,23 @@ pub use crate::operation::start_cost_estimation::_start_cost_estimation_output::
 
 pub use crate::operation::start_cost_estimation::_start_cost_estimation_input::StartCostEstimationInputBuilder;
 
+impl StartCostEstimationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_cost_estimation::StartCostEstimationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_cost_estimation::StartCostEstimationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_cost_estimation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartCostEstimation`.
 ///
 /// <p>Starts the creation of an estimate of the monthly cost to analyze your Amazon Web Services resources.</p>

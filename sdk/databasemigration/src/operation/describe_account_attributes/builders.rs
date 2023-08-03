@@ -3,6 +3,23 @@ pub use crate::operation::describe_account_attributes::_describe_account_attribu
 
 pub use crate::operation::describe_account_attributes::_describe_account_attributes_input::DescribeAccountAttributesInputBuilder;
 
+impl DescribeAccountAttributesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_account_attributes::DescribeAccountAttributesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_account_attributes::DescribeAccountAttributesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_account_attributes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAccountAttributes`.
 ///
 /// <p>Lists all of the DMS attributes for a customer account. These attributes include DMS quotas for the account and a unique account identifier in a particular DMS region. DMS quotas include a list of resource quotas supported by the account, such as the number of replication instances allowed. The description for each resource quota, includes the quota name, current usage toward that quota, and the quota's maximum value. DMS uses the unique account identifier to name each artifact used by DMS in the given region.</p>

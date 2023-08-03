@@ -3,6 +3,23 @@ pub use crate::operation::update_classification_scope::_update_classification_sc
 
 pub use crate::operation::update_classification_scope::_update_classification_scope_input::UpdateClassificationScopeInputBuilder;
 
+impl UpdateClassificationScopeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_classification_scope::UpdateClassificationScopeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_classification_scope::UpdateClassificationScopeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_classification_scope();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateClassificationScope`.
 ///
 /// <p>Updates the classification scope settings for an account.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_maintenance_start_time::_describe_maintenance
 
 pub use crate::operation::describe_maintenance_start_time::_describe_maintenance_start_time_input::DescribeMaintenanceStartTimeInputBuilder;
 
+impl DescribeMaintenanceStartTimeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_maintenance_start_time::DescribeMaintenanceStartTimeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_maintenance_start_time::DescribeMaintenanceStartTimeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_maintenance_start_time();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeMaintenanceStartTime`.
 ///
 /// <p>Returns your gateway's weekly maintenance start time including the day and time of the week. Note that values are in terms of the gateway's time zone.</p>

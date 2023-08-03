@@ -3,6 +3,23 @@ pub use crate::operation::undeprecate_workflow_type::_undeprecate_workflow_type_
 
 pub use crate::operation::undeprecate_workflow_type::_undeprecate_workflow_type_input::UndeprecateWorkflowTypeInputBuilder;
 
+impl UndeprecateWorkflowTypeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::undeprecate_workflow_type::UndeprecateWorkflowTypeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::undeprecate_workflow_type::UndeprecateWorkflowTypeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.undeprecate_workflow_type();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UndeprecateWorkflowType`.
 ///
 /// <p>Undeprecates a previously deprecated <i>workflow type</i>. After a workflow type has been undeprecated, you can create new executions of that type. </p> <note>

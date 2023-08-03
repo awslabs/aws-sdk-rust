@@ -3,6 +3,17 @@ pub use crate::operation::describe_vpc_endpoint_connection_notifications::_descr
 
 pub use crate::operation::describe_vpc_endpoint_connection_notifications::_describe_vpc_endpoint_connection_notifications_input::DescribeVpcEndpointConnectionNotificationsInputBuilder;
 
+impl DescribeVpcEndpointConnectionNotificationsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_vpc_endpoint_connection_notifications::DescribeVpcEndpointConnectionNotificationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_vpc_endpoint_connection_notifications::DescribeVpcEndpointConnectionNotificationsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_vpc_endpoint_connection_notifications();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeVpcEndpointConnectionNotifications`.
 ///
 /// <p>Describes the connection notifications for VPC endpoints and VPC endpoint services.</p>

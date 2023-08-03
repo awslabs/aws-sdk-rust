@@ -3,6 +3,23 @@ pub use crate::operation::filter_log_events::_filter_log_events_output::FilterLo
 
 pub use crate::operation::filter_log_events::_filter_log_events_input::FilterLogEventsInputBuilder;
 
+impl FilterLogEventsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::filter_log_events::FilterLogEventsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::filter_log_events::FilterLogEventsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.filter_log_events();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `FilterLogEvents`.
 ///
 /// <p>Lists log events from the specified log group. You can list all the log events or filter the results using a filter pattern, a time range, and the name of the log stream.</p>

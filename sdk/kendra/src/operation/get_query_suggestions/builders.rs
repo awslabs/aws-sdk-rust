@@ -3,6 +3,23 @@ pub use crate::operation::get_query_suggestions::_get_query_suggestions_output::
 
 pub use crate::operation::get_query_suggestions::_get_query_suggestions_input::GetQuerySuggestionsInputBuilder;
 
+impl GetQuerySuggestionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_query_suggestions::GetQuerySuggestionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_query_suggestions::GetQuerySuggestionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_query_suggestions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetQuerySuggestions`.
 ///
 /// <p>Fetches the queries that are suggested to your users.</p>

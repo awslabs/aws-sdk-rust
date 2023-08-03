@@ -3,6 +3,23 @@ pub use crate::operation::complete_layer_upload::_complete_layer_upload_output::
 
 pub use crate::operation::complete_layer_upload::_complete_layer_upload_input::CompleteLayerUploadInputBuilder;
 
+impl CompleteLayerUploadInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::complete_layer_upload::CompleteLayerUploadOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::complete_layer_upload::CompleteLayerUploadError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.complete_layer_upload();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CompleteLayerUpload`.
 ///
 /// <p>Informs Amazon ECR that the image layer upload is complete for a specified public registry, repository name, and upload ID. You can optionally provide a <code>sha256</code> digest of the image layer for data validation purposes.</p>

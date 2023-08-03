@@ -3,6 +3,23 @@ pub use crate::operation::create_safety_rule::_create_safety_rule_output::Create
 
 pub use crate::operation::create_safety_rule::_create_safety_rule_input::CreateSafetyRuleInputBuilder;
 
+impl CreateSafetyRuleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_safety_rule::CreateSafetyRuleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_safety_rule::CreateSafetyRuleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_safety_rule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateSafetyRule`.
 ///
 /// <p>Creates a safety rule in a control panel. Safety rules let you add safeguards around changing routing control states, and for enabling and disabling routing controls, to help prevent unexpected outcomes.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_firewall_rule_group::_delete_firewall_rule_grou
 
 pub use crate::operation::delete_firewall_rule_group::_delete_firewall_rule_group_input::DeleteFirewallRuleGroupInputBuilder;
 
+impl DeleteFirewallRuleGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_firewall_rule_group::DeleteFirewallRuleGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_firewall_rule_group::DeleteFirewallRuleGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_firewall_rule_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteFirewallRuleGroup`.
 ///
 /// <p>Deletes the specified firewall rule group. </p>

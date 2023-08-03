@@ -3,6 +3,23 @@ pub use crate::operation::list_tags_for_vault::_list_tags_for_vault_output::List
 
 pub use crate::operation::list_tags_for_vault::_list_tags_for_vault_input::ListTagsForVaultInputBuilder;
 
+impl ListTagsForVaultInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_tags_for_vault::ListTagsForVaultOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_tags_for_vault::ListTagsForVaultError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_tags_for_vault();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListTagsForVault`.
 ///
 /// <p>This operation lists all the tags attached to a vault. The operation returns an empty map if there are no tags. For more information about tags, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/tagging.html">Tagging Amazon S3 Glacier Resources</a>.</p>

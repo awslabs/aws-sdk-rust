@@ -3,6 +3,23 @@ pub use crate::operation::discover_input_schema::_discover_input_schema_output::
 
 pub use crate::operation::discover_input_schema::_discover_input_schema_input::DiscoverInputSchemaInputBuilder;
 
+impl DiscoverInputSchemaInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::discover_input_schema::DiscoverInputSchemaOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::discover_input_schema::DiscoverInputSchemaError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.discover_input_schema();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DiscoverInputSchema`.
 ///
 /// <note>

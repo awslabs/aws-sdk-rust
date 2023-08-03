@@ -3,6 +3,23 @@ pub use crate::operation::create_extended_source_server::_create_extended_source
 
 pub use crate::operation::create_extended_source_server::_create_extended_source_server_input::CreateExtendedSourceServerInputBuilder;
 
+impl CreateExtendedSourceServerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_extended_source_server::CreateExtendedSourceServerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_extended_source_server::CreateExtendedSourceServerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_extended_source_server();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateExtendedSourceServer`.
 ///
 /// <p>Create an extended source server in the target Account based on the source server in staging account.</p>

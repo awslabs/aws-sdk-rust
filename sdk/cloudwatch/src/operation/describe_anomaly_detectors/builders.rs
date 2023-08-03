@@ -3,6 +3,23 @@ pub use crate::operation::describe_anomaly_detectors::_describe_anomaly_detector
 
 pub use crate::operation::describe_anomaly_detectors::_describe_anomaly_detectors_input::DescribeAnomalyDetectorsInputBuilder;
 
+impl DescribeAnomalyDetectorsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_anomaly_detectors::DescribeAnomalyDetectorsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_anomaly_detectors::DescribeAnomalyDetectorsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_anomaly_detectors();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAnomalyDetectors`.
 ///
 /// <p>Lists the anomaly detection models that you have created in your account. For single metric anomaly detectors, you can list all of the models in your account or filter the results to only the models that are related to a certain namespace, metric name, or metric dimension. For metric math anomaly detectors, you can list them by adding <code>METRIC_MATH</code> to the <code>AnomalyDetectorTypes</code> array. This will return all metric math anomaly detectors in your account.</p>

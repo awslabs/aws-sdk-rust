@@ -3,6 +3,23 @@ pub use crate::operation::delete_certificate_authority::_delete_certificate_auth
 
 pub use crate::operation::delete_certificate_authority::_delete_certificate_authority_input::DeleteCertificateAuthorityInputBuilder;
 
+impl DeleteCertificateAuthorityInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_certificate_authority::DeleteCertificateAuthorityOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_certificate_authority::DeleteCertificateAuthorityError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_certificate_authority();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteCertificateAuthority`.
 ///
 /// <p>Deletes a private certificate authority (CA). You must provide the Amazon Resource Name (ARN) of the private CA that you want to delete. You can find the ARN by calling the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ListCertificateAuthorities.html">ListCertificateAuthorities</a> action. </p> <note>

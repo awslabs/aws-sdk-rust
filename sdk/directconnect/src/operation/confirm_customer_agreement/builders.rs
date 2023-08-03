@@ -3,6 +3,23 @@ pub use crate::operation::confirm_customer_agreement::_confirm_customer_agreemen
 
 pub use crate::operation::confirm_customer_agreement::_confirm_customer_agreement_input::ConfirmCustomerAgreementInputBuilder;
 
+impl ConfirmCustomerAgreementInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::confirm_customer_agreement::ConfirmCustomerAgreementOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::confirm_customer_agreement::ConfirmCustomerAgreementError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.confirm_customer_agreement();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ConfirmCustomerAgreement`.
 ///
 /// <p> The confirmation of the terms of agreement when creating the connection/link aggregation group (LAG). </p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_resources_for_tag_option::_list_resources_for_tag
 
 pub use crate::operation::list_resources_for_tag_option::_list_resources_for_tag_option_input::ListResourcesForTagOptionInputBuilder;
 
+impl ListResourcesForTagOptionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_resources_for_tag_option::ListResourcesForTagOptionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_resources_for_tag_option::ListResourcesForTagOptionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_resources_for_tag_option();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListResourcesForTagOption`.
 ///
 /// <p>Lists the resources associated with the specified TagOption.</p>

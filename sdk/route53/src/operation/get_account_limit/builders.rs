@@ -3,6 +3,23 @@ pub use crate::operation::get_account_limit::_get_account_limit_output::GetAccou
 
 pub use crate::operation::get_account_limit::_get_account_limit_input::GetAccountLimitInputBuilder;
 
+impl GetAccountLimitInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_account_limit::GetAccountLimitOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_account_limit::GetAccountLimitError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_account_limit();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetAccountLimit`.
 ///
 /// <p>Gets the specified limit for the current account, for example, the maximum number of health checks that you can create using the account.</p>

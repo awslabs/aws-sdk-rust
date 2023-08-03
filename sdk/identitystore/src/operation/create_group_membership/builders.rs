@@ -3,6 +3,23 @@ pub use crate::operation::create_group_membership::_create_group_membership_outp
 
 pub use crate::operation::create_group_membership::_create_group_membership_input::CreateGroupMembershipInputBuilder;
 
+impl CreateGroupMembershipInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_group_membership::CreateGroupMembershipOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_group_membership::CreateGroupMembershipError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_group_membership();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateGroupMembership`.
 ///
 /// <p>Creates a relationship between a member and a group. The following identifiers must be specified: <code>GroupId</code>, <code>IdentityStoreId</code>, and <code>MemberId</code>.</p>

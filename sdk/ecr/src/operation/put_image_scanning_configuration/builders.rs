@@ -3,6 +3,23 @@ pub use crate::operation::put_image_scanning_configuration::_put_image_scanning_
 
 pub use crate::operation::put_image_scanning_configuration::_put_image_scanning_configuration_input::PutImageScanningConfigurationInputBuilder;
 
+impl PutImageScanningConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_image_scanning_configuration::PutImageScanningConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_image_scanning_configuration::PutImageScanningConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_image_scanning_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutImageScanningConfiguration`.
 ///
 /// <important>

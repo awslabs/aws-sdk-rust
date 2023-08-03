@@ -3,6 +3,23 @@ pub use crate::operation::list_voice_profiles::_list_voice_profiles_output::List
 
 pub use crate::operation::list_voice_profiles::_list_voice_profiles_input::ListVoiceProfilesInputBuilder;
 
+impl ListVoiceProfilesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_voice_profiles::ListVoiceProfilesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_voice_profiles::ListVoiceProfilesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_voice_profiles();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListVoiceProfiles`.
 ///
 /// <p>Lists the voice profiles in a voice profile domain.</p>

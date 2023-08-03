@@ -3,6 +3,23 @@ pub use crate::operation::delete_business_report_schedule::_delete_business_repo
 
 pub use crate::operation::delete_business_report_schedule::_delete_business_report_schedule_input::DeleteBusinessReportScheduleInputBuilder;
 
+impl DeleteBusinessReportScheduleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_business_report_schedule::DeleteBusinessReportScheduleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_business_report_schedule::DeleteBusinessReportScheduleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_business_report_schedule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteBusinessReportSchedule`.
 ///
 /// <p>Deletes the recurring report delivery schedule with the specified schedule ARN.</p>

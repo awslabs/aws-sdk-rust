@@ -3,6 +3,23 @@ pub use crate::operation::increase_replica_count::_increase_replica_count_output
 
 pub use crate::operation::increase_replica_count::_increase_replica_count_input::IncreaseReplicaCountInputBuilder;
 
+impl IncreaseReplicaCountInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::increase_replica_count::IncreaseReplicaCountOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::increase_replica_count::IncreaseReplicaCountError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.increase_replica_count();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `IncreaseReplicaCount`.
 ///
 /// <p>Dynamically increases the number of replicas in a Redis (cluster mode disabled) replication group or the number of replica nodes in one or more node groups (shards) of a Redis (cluster mode enabled) replication group. This operation is performed with no cluster down time.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_user_pool::_create_user_pool_output::CreateUser
 
 pub use crate::operation::create_user_pool::_create_user_pool_input::CreateUserPoolInputBuilder;
 
+impl CreateUserPoolInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_user_pool::CreateUserPoolOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_user_pool::CreateUserPoolError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_user_pool();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateUserPool`.
 ///
 /// <p>Creates a new Amazon Cognito user pool and sets the password policy for the pool.</p> <note>

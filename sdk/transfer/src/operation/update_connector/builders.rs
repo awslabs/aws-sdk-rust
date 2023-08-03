@@ -3,6 +3,23 @@ pub use crate::operation::update_connector::_update_connector_output::UpdateConn
 
 pub use crate::operation::update_connector::_update_connector_input::UpdateConnectorInputBuilder;
 
+impl UpdateConnectorInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_connector::UpdateConnectorOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_connector::UpdateConnectorError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_connector();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateConnector`.
 ///
 /// <p>Updates some of the parameters for an existing connector. Provide the <code>ConnectorId</code> for the connector that you want to update, along with the new values for the parameters to update.</p>

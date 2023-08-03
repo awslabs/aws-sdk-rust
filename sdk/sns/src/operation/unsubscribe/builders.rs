@@ -3,6 +3,23 @@ pub use crate::operation::unsubscribe::_unsubscribe_output::UnsubscribeOutputBui
 
 pub use crate::operation::unsubscribe::_unsubscribe_input::UnsubscribeInputBuilder;
 
+impl UnsubscribeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::unsubscribe::UnsubscribeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::unsubscribe::UnsubscribeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.unsubscribe();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `Unsubscribe`.
 ///
 /// <p>Deletes a subscription. If the subscription requires authentication for deletion, only the owner of the subscription or the topic's owner can unsubscribe, and an Amazon Web Services signature is required. If the <code>Unsubscribe</code> call does not require authentication and the requester is not the subscription owner, a final cancellation message is delivered to the endpoint, so that the endpoint owner can easily resubscribe to the topic if the <code>Unsubscribe</code> request was unintended.</p> <note>

@@ -3,6 +3,17 @@ pub use crate::operation::update_data_repository_association::_update_data_repos
 
 pub use crate::operation::update_data_repository_association::_update_data_repository_association_input::UpdateDataRepositoryAssociationInputBuilder;
 
+impl UpdateDataRepositoryAssociationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::update_data_repository_association::UpdateDataRepositoryAssociationOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_data_repository_association::UpdateDataRepositoryAssociationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.update_data_repository_association();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateDataRepositoryAssociation`.
 ///
 /// <p>Updates the configuration of an existing data repository association on an Amazon FSx for Lustre file system. Data repository associations are supported on all FSx for Lustre 2.12 and newer file systems, excluding <code>scratch_1</code> deployment type.</p>

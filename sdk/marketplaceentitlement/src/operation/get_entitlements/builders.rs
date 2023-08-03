@@ -3,6 +3,23 @@ pub use crate::operation::get_entitlements::_get_entitlements_output::GetEntitle
 
 pub use crate::operation::get_entitlements::_get_entitlements_input::GetEntitlementsInputBuilder;
 
+impl GetEntitlementsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_entitlements::GetEntitlementsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_entitlements::GetEntitlementsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_entitlements();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetEntitlements`.
 ///
 /// <p>GetEntitlements retrieves entitlement values for a given product. The results can be filtered based on customer identifier or product dimensions.</p>

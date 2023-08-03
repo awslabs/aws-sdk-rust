@@ -3,6 +3,23 @@ pub use crate::operation::tag_meeting::_tag_meeting_output::TagMeetingOutputBuil
 
 pub use crate::operation::tag_meeting::_tag_meeting_input::TagMeetingInputBuilder;
 
+impl TagMeetingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::tag_meeting::TagMeetingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::tag_meeting::TagMeetingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.tag_meeting();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `TagMeeting`.
 ///
 /// <p>Applies the specified tags to the specified Amazon Chime SDK meeting.</p> <important>

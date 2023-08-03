@@ -3,6 +3,23 @@ pub use crate::operation::list_build_batches::_list_build_batches_output::ListBu
 
 pub use crate::operation::list_build_batches::_list_build_batches_input::ListBuildBatchesInputBuilder;
 
+impl ListBuildBatchesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_build_batches::ListBuildBatchesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_build_batches::ListBuildBatchesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_build_batches();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListBuildBatches`.
 ///
 /// <p>Retrieves the identifiers of your build batches in the current region.</p>

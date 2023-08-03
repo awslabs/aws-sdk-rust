@@ -3,6 +3,17 @@ pub use crate::operation::describe_app_version_app_component::_describe_app_vers
 
 pub use crate::operation::describe_app_version_app_component::_describe_app_version_app_component_input::DescribeAppVersionAppComponentInputBuilder;
 
+impl DescribeAppVersionAppComponentInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_app_version_app_component::DescribeAppVersionAppComponentOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_app_version_app_component::DescribeAppVersionAppComponentError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_app_version_app_component();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAppVersionAppComponent`.
 ///
 /// <p>Describes an Application Component in the Resilience Hub application.</p>

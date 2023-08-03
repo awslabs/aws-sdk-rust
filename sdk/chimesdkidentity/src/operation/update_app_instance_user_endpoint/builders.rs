@@ -3,6 +3,23 @@ pub use crate::operation::update_app_instance_user_endpoint::_update_app_instanc
 
 pub use crate::operation::update_app_instance_user_endpoint::_update_app_instance_user_endpoint_input::UpdateAppInstanceUserEndpointInputBuilder;
 
+impl UpdateAppInstanceUserEndpointInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_app_instance_user_endpoint::UpdateAppInstanceUserEndpointError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_app_instance_user_endpoint();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateAppInstanceUserEndpoint`.
 ///
 /// <p>Updates the details of an <code>AppInstanceUserEndpoint</code>. You can update the name and <code>AllowMessage</code> values.</p>

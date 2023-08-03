@@ -3,6 +3,23 @@ pub use crate::operation::list_prompts::_list_prompts_output::ListPromptsOutputB
 
 pub use crate::operation::list_prompts::_list_prompts_input::ListPromptsInputBuilder;
 
+impl ListPromptsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_prompts::ListPromptsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_prompts::ListPromptsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_prompts();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListPrompts`.
 ///
 /// <p>Provides information about the prompts for the specified Amazon Connect instance.</p>

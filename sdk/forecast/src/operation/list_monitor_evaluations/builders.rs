@@ -3,6 +3,23 @@ pub use crate::operation::list_monitor_evaluations::_list_monitor_evaluations_ou
 
 pub use crate::operation::list_monitor_evaluations::_list_monitor_evaluations_input::ListMonitorEvaluationsInputBuilder;
 
+impl ListMonitorEvaluationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_monitor_evaluations::ListMonitorEvaluationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_monitor_evaluations::ListMonitorEvaluationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_monitor_evaluations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListMonitorEvaluations`.
 ///
 /// <p>Returns a list of the monitoring evaluation results and predictor events collected by the monitor resource during different windows of time.</p>

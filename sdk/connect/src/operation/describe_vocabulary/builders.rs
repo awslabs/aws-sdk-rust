@@ -3,6 +3,23 @@ pub use crate::operation::describe_vocabulary::_describe_vocabulary_output::Desc
 
 pub use crate::operation::describe_vocabulary::_describe_vocabulary_input::DescribeVocabularyInputBuilder;
 
+impl DescribeVocabularyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_vocabulary::DescribeVocabularyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_vocabulary::DescribeVocabularyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_vocabulary();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeVocabulary`.
 ///
 /// <p>Describes the specified vocabulary.</p>

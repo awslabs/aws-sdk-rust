@@ -3,6 +3,23 @@ pub use crate::operation::list_streaming_images::_list_streaming_images_output::
 
 pub use crate::operation::list_streaming_images::_list_streaming_images_input::ListStreamingImagesInputBuilder;
 
+impl ListStreamingImagesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_streaming_images::ListStreamingImagesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_streaming_images::ListStreamingImagesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_streaming_images();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListStreamingImages`.
 ///
 /// <p>List the streaming image resources available to this studio.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::admin_reset_user_password::_admin_reset_user_password_
 
 pub use crate::operation::admin_reset_user_password::_admin_reset_user_password_input::AdminResetUserPasswordInputBuilder;
 
+impl AdminResetUserPasswordInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::admin_reset_user_password::AdminResetUserPasswordOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::admin_reset_user_password::AdminResetUserPasswordError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.admin_reset_user_password();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AdminResetUserPassword`.
 ///
 /// <p>Resets the specified user's password in a user pool as an administrator. Works on any user.</p>

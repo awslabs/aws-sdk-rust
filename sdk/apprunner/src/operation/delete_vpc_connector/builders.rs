@@ -3,6 +3,23 @@ pub use crate::operation::delete_vpc_connector::_delete_vpc_connector_output::De
 
 pub use crate::operation::delete_vpc_connector::_delete_vpc_connector_input::DeleteVpcConnectorInputBuilder;
 
+impl DeleteVpcConnectorInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_vpc_connector::DeleteVpcConnectorOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_vpc_connector::DeleteVpcConnectorError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_vpc_connector();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteVpcConnector`.
 ///
 /// <p>Delete an App Runner VPC connector resource. You can't delete a connector that's used by one or more App Runner services.</p>

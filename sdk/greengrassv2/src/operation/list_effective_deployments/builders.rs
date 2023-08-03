@@ -3,6 +3,23 @@ pub use crate::operation::list_effective_deployments::_list_effective_deployment
 
 pub use crate::operation::list_effective_deployments::_list_effective_deployments_input::ListEffectiveDeploymentsInputBuilder;
 
+impl ListEffectiveDeploymentsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_effective_deployments::ListEffectiveDeploymentsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_effective_deployments::ListEffectiveDeploymentsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_effective_deployments();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListEffectiveDeployments`.
 ///
 /// <p>Retrieves a paginated list of deployment jobs that IoT Greengrass sends to Greengrass core devices.</p>

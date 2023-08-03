@@ -3,6 +3,23 @@ pub use crate::operation::create_sample_findings::_create_sample_findings_output
 
 pub use crate::operation::create_sample_findings::_create_sample_findings_input::CreateSampleFindingsInputBuilder;
 
+impl CreateSampleFindingsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_sample_findings::CreateSampleFindingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_sample_findings::CreateSampleFindingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_sample_findings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateSampleFindings`.
 ///
 /// <p>Creates sample findings.</p>

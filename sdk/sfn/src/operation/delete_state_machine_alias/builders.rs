@@ -3,6 +3,23 @@ pub use crate::operation::delete_state_machine_alias::_delete_state_machine_alia
 
 pub use crate::operation::delete_state_machine_alias::_delete_state_machine_alias_input::DeleteStateMachineAliasInputBuilder;
 
+impl DeleteStateMachineAliasInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_state_machine_alias::DeleteStateMachineAliasOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_state_machine_alias::DeleteStateMachineAliasError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_state_machine_alias();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteStateMachineAlias`.
 ///
 /// <p>Deletes a state machine <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::update_ops_item::_update_ops_item_output::UpdateOpsIte
 
 pub use crate::operation::update_ops_item::_update_ops_item_input::UpdateOpsItemInputBuilder;
 
+impl UpdateOpsItemInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_ops_item::UpdateOpsItemOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_ops_item::UpdateOpsItemError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_ops_item();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateOpsItem`.
 ///
 /// <p>Edit or change an OpsItem. You must have permission in Identity and Access Management (IAM) to update an OpsItem. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-setup.html">Set up OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>

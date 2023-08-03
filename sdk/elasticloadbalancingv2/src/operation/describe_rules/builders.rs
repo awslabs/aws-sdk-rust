@@ -3,6 +3,23 @@ pub use crate::operation::describe_rules::_describe_rules_output::DescribeRulesO
 
 pub use crate::operation::describe_rules::_describe_rules_input::DescribeRulesInputBuilder;
 
+impl DescribeRulesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_rules::DescribeRulesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_rules::DescribeRulesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_rules();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeRules`.
 ///
 /// <p>Describes the specified rules or the rules for the specified listener. You must specify either a listener or one or more rules.</p>

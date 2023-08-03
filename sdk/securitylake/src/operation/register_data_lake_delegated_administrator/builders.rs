@@ -3,6 +3,17 @@ pub use crate::operation::register_data_lake_delegated_administrator::_register_
 
 pub use crate::operation::register_data_lake_delegated_administrator::_register_data_lake_delegated_administrator_input::RegisterDataLakeDelegatedAdministratorInputBuilder;
 
+impl RegisterDataLakeDelegatedAdministratorInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::register_data_lake_delegated_administrator::RegisterDataLakeDelegatedAdministratorOutput, ::aws_smithy_http::result::SdkError<crate::operation::register_data_lake_delegated_administrator::RegisterDataLakeDelegatedAdministratorError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.register_data_lake_delegated_administrator();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RegisterDataLakeDelegatedAdministrator`.
 ///
 /// <p>Designates the Amazon Security Lake delegated administrator account for the organization. This API can only be called by the organization management account. The organization management account cannot be the delegated administrator account.</p>

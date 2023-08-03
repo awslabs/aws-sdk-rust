@@ -3,6 +3,23 @@ pub use crate::operation::recognize_utterance::_recognize_utterance_output::Reco
 
 pub use crate::operation::recognize_utterance::_recognize_utterance_input::RecognizeUtteranceInputBuilder;
 
+impl RecognizeUtteranceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::recognize_utterance::RecognizeUtteranceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::recognize_utterance::RecognizeUtteranceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.recognize_utterance();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RecognizeUtterance`.
 ///
 /// <p>Sends user input to Amazon Lex V2. You can send text or speech. Clients use this API to send text and audio requests to Amazon Lex V2 at runtime. Amazon Lex V2 interprets the user input using the machine learning model built for the bot.</p>

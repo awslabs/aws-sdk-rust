@@ -3,6 +3,23 @@ pub use crate::operation::create_event_bus::_create_event_bus_output::CreateEven
 
 pub use crate::operation::create_event_bus::_create_event_bus_input::CreateEventBusInputBuilder;
 
+impl CreateEventBusInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_event_bus::CreateEventBusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_event_bus::CreateEventBusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_event_bus();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateEventBus`.
 ///
 /// <p>Creates a new event bus within your account. This can be a custom event bus which you can use to receive events from your custom applications and services, or it can be a partner event bus which can be matched to a partner event source.</p>

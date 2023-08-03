@@ -3,6 +3,23 @@ pub use crate::operation::list_deployment_groups::_list_deployment_groups_output
 
 pub use crate::operation::list_deployment_groups::_list_deployment_groups_input::ListDeploymentGroupsInputBuilder;
 
+impl ListDeploymentGroupsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_deployment_groups::ListDeploymentGroupsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_deployment_groups::ListDeploymentGroupsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_deployment_groups();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDeploymentGroups`.
 ///
 /// <p>Lists the deployment groups for an application registered with the IAM user or Amazon Web Services account.</p>

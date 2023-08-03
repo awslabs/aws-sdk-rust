@@ -3,6 +3,23 @@ pub use crate::operation::rescore::_rescore_output::RescoreOutputBuilder;
 
 pub use crate::operation::rescore::_rescore_input::RescoreInputBuilder;
 
+impl RescoreInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::rescore::RescoreOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::rescore::RescoreError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.rescore();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `Rescore`.
 ///
 /// <p>Rescores or re-ranks search results from a search service such as OpenSearch (self managed). You use the semantic search capabilities of Amazon Kendra Intelligent Ranking to improve the search service's results.</p>

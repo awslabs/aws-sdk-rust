@@ -3,6 +3,23 @@ pub use crate::operation::list_pipelines::_list_pipelines_output::ListPipelinesO
 
 pub use crate::operation::list_pipelines::_list_pipelines_input::ListPipelinesInputBuilder;
 
+impl ListPipelinesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_pipelines::ListPipelinesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_pipelines::ListPipelinesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_pipelines();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListPipelines`.
 ///
 /// <p>Lists all OpenSearch Ingestion pipelines in the current Amazon Web Services account and Region. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/list-pipeline.html">Viewing Amazon OpenSearch Ingestion pipelines</a>.</p>

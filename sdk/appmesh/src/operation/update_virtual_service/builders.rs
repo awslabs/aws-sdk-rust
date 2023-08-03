@@ -3,6 +3,23 @@ pub use crate::operation::update_virtual_service::_update_virtual_service_output
 
 pub use crate::operation::update_virtual_service::_update_virtual_service_input::UpdateVirtualServiceInputBuilder;
 
+impl UpdateVirtualServiceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_virtual_service::UpdateVirtualServiceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_virtual_service::UpdateVirtualServiceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_virtual_service();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateVirtualService`.
 ///
 /// <p>Updates an existing virtual service in a specified service mesh.</p>

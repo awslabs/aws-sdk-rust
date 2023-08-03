@@ -3,6 +3,23 @@ pub use crate::operation::delete_recovery_group::_delete_recovery_group_output::
 
 pub use crate::operation::delete_recovery_group::_delete_recovery_group_input::DeleteRecoveryGroupInputBuilder;
 
+impl DeleteRecoveryGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_recovery_group::DeleteRecoveryGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_recovery_group::DeleteRecoveryGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_recovery_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteRecoveryGroup`.
 ///
 /// <p>Deletes a recovery group.</p>

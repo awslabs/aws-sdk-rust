@@ -3,6 +3,23 @@ pub use crate::operation::list_deployment_configs::_list_deployment_configs_outp
 
 pub use crate::operation::list_deployment_configs::_list_deployment_configs_input::ListDeploymentConfigsInputBuilder;
 
+impl ListDeploymentConfigsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_deployment_configs::ListDeploymentConfigsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_deployment_configs::ListDeploymentConfigsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_deployment_configs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDeploymentConfigs`.
 ///
 /// <p>Lists the deployment configurations with the IAM user or Amazon Web Services account.</p>

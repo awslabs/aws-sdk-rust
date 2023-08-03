@@ -3,6 +3,23 @@ pub use crate::operation::update_location_smb::_update_location_smb_output::Upda
 
 pub use crate::operation::update_location_smb::_update_location_smb_input::UpdateLocationSmbInputBuilder;
 
+impl UpdateLocationSmbInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_location_smb::UpdateLocationSmbOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_location_smb::UpdateLocationSmbError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_location_smb();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateLocationSmb`.
 ///
 /// <p>Updates some of the parameters of a previously created location for Server Message Block (SMB) file system access. For information about creating an SMB location, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-smb-location.html">Creating a location for SMB</a>.</p>

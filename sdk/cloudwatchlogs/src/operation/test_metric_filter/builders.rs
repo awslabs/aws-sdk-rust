@@ -3,6 +3,23 @@ pub use crate::operation::test_metric_filter::_test_metric_filter_output::TestMe
 
 pub use crate::operation::test_metric_filter::_test_metric_filter_input::TestMetricFilterInputBuilder;
 
+impl TestMetricFilterInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::test_metric_filter::TestMetricFilterOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::test_metric_filter::TestMetricFilterError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.test_metric_filter();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `TestMetricFilter`.
 ///
 /// <p>Tests the filter pattern of a metric filter against a sample of log event messages. You can use this operation to validate the correctness of a metric filter pattern.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_workflow_step::_get_workflow_step_output::GetWorkf
 
 pub use crate::operation::get_workflow_step::_get_workflow_step_input::GetWorkflowStepInputBuilder;
 
+impl GetWorkflowStepInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_workflow_step::GetWorkflowStepOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_workflow_step::GetWorkflowStepError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_workflow_step();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetWorkflowStep`.
 ///
 /// <p>Get a step in the migration workflow.</p>

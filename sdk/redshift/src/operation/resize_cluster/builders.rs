@@ -3,6 +3,23 @@ pub use crate::operation::resize_cluster::_resize_cluster_output::ResizeClusterO
 
 pub use crate::operation::resize_cluster::_resize_cluster_input::ResizeClusterInputBuilder;
 
+impl ResizeClusterInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::resize_cluster::ResizeClusterOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::resize_cluster::ResizeClusterError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.resize_cluster();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ResizeCluster`.
 ///
 /// <p>Changes the size of the cluster. You can change the cluster's type, or change the number or type of nodes. The default behavior is to use the elastic resize method. With an elastic resize, your cluster is available for read and write operations more quickly than with the classic resize method. </p>

@@ -3,6 +3,17 @@ pub use crate::operation::associate_delegation_signer_to_domain::_associate_dele
 
 pub use crate::operation::associate_delegation_signer_to_domain::_associate_delegation_signer_to_domain_input::AssociateDelegationSignerToDomainInputBuilder;
 
+impl AssociateDelegationSignerToDomainInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::associate_delegation_signer_to_domain::AssociateDelegationSignerToDomainOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_delegation_signer_to_domain::AssociateDelegationSignerToDomainError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.associate_delegation_signer_to_domain();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateDelegationSignerToDomain`.
 ///
 /// <p> Creates a delegation signer (DS) record in the registry zone for this domain name.</p>

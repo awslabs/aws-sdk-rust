@@ -3,6 +3,23 @@ pub use crate::operation::update_source_api_association::_update_source_api_asso
 
 pub use crate::operation::update_source_api_association::_update_source_api_association_input::UpdateSourceApiAssociationInputBuilder;
 
+impl UpdateSourceApiAssociationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_source_api_association::UpdateSourceApiAssociationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_source_api_association::UpdateSourceApiAssociationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_source_api_association();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateSourceApiAssociation`.
 ///
 /// <p>Updates some of the configuration choices of a particular source API association.</p>

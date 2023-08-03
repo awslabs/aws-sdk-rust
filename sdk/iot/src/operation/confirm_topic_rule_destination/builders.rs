@@ -3,6 +3,23 @@ pub use crate::operation::confirm_topic_rule_destination::_confirm_topic_rule_de
 
 pub use crate::operation::confirm_topic_rule_destination::_confirm_topic_rule_destination_input::ConfirmTopicRuleDestinationInputBuilder;
 
+impl ConfirmTopicRuleDestinationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::confirm_topic_rule_destination::ConfirmTopicRuleDestinationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::confirm_topic_rule_destination::ConfirmTopicRuleDestinationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.confirm_topic_rule_destination();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ConfirmTopicRuleDestination`.
 ///
 /// <p>Confirms a topic rule destination. When you create a rule requiring a destination, IoT sends a confirmation message to the endpoint or base address you specify. The message includes a token which you pass back when calling <code>ConfirmTopicRuleDestination</code> to confirm that you own or have access to the endpoint.</p>

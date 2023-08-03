@@ -3,6 +3,23 @@ pub use crate::operation::delete_traffic_mirror_filter_rule::_delete_traffic_mir
 
 pub use crate::operation::delete_traffic_mirror_filter_rule::_delete_traffic_mirror_filter_rule_input::DeleteTrafficMirrorFilterRuleInputBuilder;
 
+impl DeleteTrafficMirrorFilterRuleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_traffic_mirror_filter_rule::DeleteTrafficMirrorFilterRuleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_traffic_mirror_filter_rule::DeleteTrafficMirrorFilterRuleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_traffic_mirror_filter_rule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteTrafficMirrorFilterRule`.
 ///
 /// <p>Deletes the specified Traffic Mirror rule.</p>

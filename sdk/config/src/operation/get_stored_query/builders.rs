@@ -3,6 +3,23 @@ pub use crate::operation::get_stored_query::_get_stored_query_output::GetStoredQ
 
 pub use crate::operation::get_stored_query::_get_stored_query_input::GetStoredQueryInputBuilder;
 
+impl GetStoredQueryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_stored_query::GetStoredQueryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_stored_query::GetStoredQueryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_stored_query();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetStoredQuery`.
 ///
 /// <p>Returns the details of a specific stored query.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_engine_versions::_list_engine_versions_output::Li
 
 pub use crate::operation::list_engine_versions::_list_engine_versions_input::ListEngineVersionsInputBuilder;
 
+impl ListEngineVersionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_engine_versions::ListEngineVersionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_engine_versions::ListEngineVersionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_engine_versions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListEngineVersions`.
 ///
 /// <p>Lists the available engine versions.</p>

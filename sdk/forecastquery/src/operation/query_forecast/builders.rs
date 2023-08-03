@@ -3,6 +3,23 @@ pub use crate::operation::query_forecast::_query_forecast_output::QueryForecastO
 
 pub use crate::operation::query_forecast::_query_forecast_input::QueryForecastInputBuilder;
 
+impl QueryForecastInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::query_forecast::QueryForecastOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::query_forecast::QueryForecastError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.query_forecast();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `QueryForecast`.
 ///
 /// <p>Retrieves a forecast for a single item, filtered by the supplied criteria.</p>

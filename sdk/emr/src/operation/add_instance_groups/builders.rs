@@ -3,6 +3,23 @@ pub use crate::operation::add_instance_groups::_add_instance_groups_output::AddI
 
 pub use crate::operation::add_instance_groups::_add_instance_groups_input::AddInstanceGroupsInputBuilder;
 
+impl AddInstanceGroupsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::add_instance_groups::AddInstanceGroupsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::add_instance_groups::AddInstanceGroupsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.add_instance_groups();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AddInstanceGroups`.
 ///
 /// <p>Adds one or more instance groups to a running cluster.</p>

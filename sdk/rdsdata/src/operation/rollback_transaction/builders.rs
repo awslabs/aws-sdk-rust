@@ -3,6 +3,23 @@ pub use crate::operation::rollback_transaction::_rollback_transaction_output::Ro
 
 pub use crate::operation::rollback_transaction::_rollback_transaction_input::RollbackTransactionInputBuilder;
 
+impl RollbackTransactionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::rollback_transaction::RollbackTransactionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::rollback_transaction::RollbackTransactionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.rollback_transaction();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RollbackTransaction`.
 ///
 /// <p>Performs a rollback of a transaction. Rolling back a transaction cancels its changes.</p>

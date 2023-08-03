@@ -3,6 +3,23 @@ pub use crate::operation::archive_findings::_archive_findings_output::ArchiveFin
 
 pub use crate::operation::archive_findings::_archive_findings_input::ArchiveFindingsInputBuilder;
 
+impl ArchiveFindingsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::archive_findings::ArchiveFindingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::archive_findings::ArchiveFindingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.archive_findings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ArchiveFindings`.
 ///
 /// <p>Archives GuardDuty findings that are specified by the list of finding IDs.</p> <note>

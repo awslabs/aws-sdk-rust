@@ -3,6 +3,17 @@ pub use crate::operation::put_bucket_lifecycle_configuration::_put_bucket_lifecy
 
 pub use crate::operation::put_bucket_lifecycle_configuration::_put_bucket_lifecycle_configuration_input::PutBucketLifecycleConfigurationInputBuilder;
 
+impl PutBucketLifecycleConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::put_bucket_lifecycle_configuration::PutBucketLifecycleConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_bucket_lifecycle_configuration::PutBucketLifecycleConfigurationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.put_bucket_lifecycle_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutBucketLifecycleConfiguration`.
 ///
 /// <note>

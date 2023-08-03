@@ -3,6 +3,23 @@ pub use crate::operation::list_stack_set_operations::_list_stack_set_operations_
 
 pub use crate::operation::list_stack_set_operations::_list_stack_set_operations_input::ListStackSetOperationsInputBuilder;
 
+impl ListStackSetOperationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_stack_set_operations::ListStackSetOperationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_stack_set_operations::ListStackSetOperationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_stack_set_operations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListStackSetOperations`.
 ///
 /// <p>Returns summary information about operations performed on a stack set.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::add_association::_add_association_output::AddAssociati
 
 pub use crate::operation::add_association::_add_association_input::AddAssociationInputBuilder;
 
+impl AddAssociationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::add_association::AddAssociationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::add_association::AddAssociationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.add_association();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AddAssociation`.
 ///
 /// <p>Creates an <i>association</i> between the source and the destination. A source can be associated with multiple destinations, and a destination can be associated with multiple sources. An association is a lineage tracking entity. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html">Amazon SageMaker ML Lineage Tracking</a>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_reserved_node_offerings::_describe_reserved_n
 
 pub use crate::operation::describe_reserved_node_offerings::_describe_reserved_node_offerings_input::DescribeReservedNodeOfferingsInputBuilder;
 
+impl DescribeReservedNodeOfferingsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_reserved_node_offerings::DescribeReservedNodeOfferingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_reserved_node_offerings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeReservedNodeOfferings`.
 ///
 /// <p>Returns a list of the available reserved node offerings by Amazon Redshift with their descriptions including the node type, the fixed and recurring costs of reserving the node and duration the node will be reserved for you. These descriptions help you determine which reserve node offering you want to purchase. You then use the unique offering ID in you call to <code>PurchaseReservedNodeOffering</code> to reserve one or more nodes for your Amazon Redshift cluster. </p>

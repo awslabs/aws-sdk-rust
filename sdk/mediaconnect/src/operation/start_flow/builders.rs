@@ -3,6 +3,23 @@ pub use crate::operation::start_flow::_start_flow_output::StartFlowOutputBuilder
 
 pub use crate::operation::start_flow::_start_flow_input::StartFlowInputBuilder;
 
+impl StartFlowInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_flow::StartFlowOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_flow::StartFlowError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_flow();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartFlow`.
 ///
 /// Starts a flow.

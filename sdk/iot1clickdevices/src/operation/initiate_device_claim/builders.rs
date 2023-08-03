@@ -3,6 +3,23 @@ pub use crate::operation::initiate_device_claim::_initiate_device_claim_output::
 
 pub use crate::operation::initiate_device_claim::_initiate_device_claim_input::InitiateDeviceClaimInputBuilder;
 
+impl InitiateDeviceClaimInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::initiate_device_claim::InitiateDeviceClaimOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::initiate_device_claim::InitiateDeviceClaimError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.initiate_device_claim();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `InitiateDeviceClaim`.
 ///
 /// <p>Given a device ID, initiates a claim request for the associated device.</p><note>

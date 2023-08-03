@@ -3,6 +3,23 @@ pub use crate::operation::remove_auto_scaling_policy::_remove_auto_scaling_polic
 
 pub use crate::operation::remove_auto_scaling_policy::_remove_auto_scaling_policy_input::RemoveAutoScalingPolicyInputBuilder;
 
+impl RemoveAutoScalingPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::remove_auto_scaling_policy::RemoveAutoScalingPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::remove_auto_scaling_policy::RemoveAutoScalingPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.remove_auto_scaling_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RemoveAutoScalingPolicy`.
 ///
 /// <p>Removes an automatic scaling policy from a specified instance group within an Amazon EMR cluster.</p>

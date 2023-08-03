@@ -3,6 +3,23 @@ pub use crate::operation::enter_standby::_enter_standby_output::EnterStandbyOutp
 
 pub use crate::operation::enter_standby::_enter_standby_input::EnterStandbyInputBuilder;
 
+impl EnterStandbyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::enter_standby::EnterStandbyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::enter_standby::EnterStandbyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.enter_standby();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `EnterStandby`.
 ///
 /// <p>Moves the specified instances into the standby state.</p>

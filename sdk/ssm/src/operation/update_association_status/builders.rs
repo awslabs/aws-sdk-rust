@@ -3,6 +3,23 @@ pub use crate::operation::update_association_status::_update_association_status_
 
 pub use crate::operation::update_association_status::_update_association_status_input::UpdateAssociationStatusInputBuilder;
 
+impl UpdateAssociationStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_association_status::UpdateAssociationStatusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_association_status::UpdateAssociationStatusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_association_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateAssociationStatus`.
 ///
 /// <p>Updates the status of the Amazon Web Services Systems Manager document (SSM document) associated with the specified managed node.</p>

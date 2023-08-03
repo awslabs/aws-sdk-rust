@@ -3,6 +3,23 @@ pub use crate::operation::get_insight_results::_get_insight_results_output::GetI
 
 pub use crate::operation::get_insight_results::_get_insight_results_input::GetInsightResultsInputBuilder;
 
+impl GetInsightResultsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_insight_results::GetInsightResultsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_insight_results::GetInsightResultsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_insight_results();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetInsightResults`.
 ///
 /// <p>Lists the results of the Security Hub insight specified by the insight ARN.</p>

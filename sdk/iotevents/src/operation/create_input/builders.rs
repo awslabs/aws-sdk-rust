@@ -3,6 +3,23 @@ pub use crate::operation::create_input::_create_input_output::CreateInputOutputB
 
 pub use crate::operation::create_input::_create_input_input::CreateInputInputBuilder;
 
+impl CreateInputInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_input::CreateInputOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_input::CreateInputError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_input();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateInput`.
 ///
 /// <p>Creates an input.</p>

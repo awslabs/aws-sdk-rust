@@ -3,6 +3,23 @@ pub use crate::operation::start_import_task::_start_import_task_output::StartImp
 
 pub use crate::operation::start_import_task::_start_import_task_input::StartImportTaskInputBuilder;
 
+impl StartImportTaskInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_import_task::StartImportTaskOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_import_task::StartImportTaskError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_import_task();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartImportTask`.
 ///
 /// <p>Starts an import task, which allows you to import details of your on-premises environment directly into Amazon Web Services Migration Hub without having to use the Amazon Web Services Application Discovery Service (Application Discovery Service) tools such as the Amazon Web Services Application Discovery Service Agentless Collector or Application Discovery Agent. This gives you the option to perform migration assessment and planning directly from your imported data, including the ability to group your devices as applications and track their migration status.</p>

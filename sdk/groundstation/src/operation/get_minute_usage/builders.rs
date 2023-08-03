@@ -3,6 +3,23 @@ pub use crate::operation::get_minute_usage::_get_minute_usage_output::GetMinuteU
 
 pub use crate::operation::get_minute_usage::_get_minute_usage_input::GetMinuteUsageInputBuilder;
 
+impl GetMinuteUsageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_minute_usage::GetMinuteUsageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_minute_usage::GetMinuteUsageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_minute_usage();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetMinuteUsage`.
 ///
 /// <p>Returns the number of reserved minutes used by account.</p>

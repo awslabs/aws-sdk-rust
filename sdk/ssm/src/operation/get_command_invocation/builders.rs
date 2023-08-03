@@ -3,6 +3,23 @@ pub use crate::operation::get_command_invocation::_get_command_invocation_output
 
 pub use crate::operation::get_command_invocation::_get_command_invocation_input::GetCommandInvocationInputBuilder;
 
+impl GetCommandInvocationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_command_invocation::GetCommandInvocationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_command_invocation::GetCommandInvocationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_command_invocation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetCommandInvocation`.
 ///
 /// <p>Returns detailed information about command execution for an invocation or plugin.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::update_http_namespace::_update_http_namespace_output::
 
 pub use crate::operation::update_http_namespace::_update_http_namespace_input::UpdateHttpNamespaceInputBuilder;
 
+impl UpdateHttpNamespaceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_http_namespace::UpdateHttpNamespaceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_http_namespace::UpdateHttpNamespaceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_http_namespace();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateHttpNamespace`.
 ///
 /// <p>Updates an HTTP namespace.</p>

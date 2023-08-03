@@ -3,6 +3,23 @@ pub use crate::operation::list_cidr_blocks::_list_cidr_blocks_output::ListCidrBl
 
 pub use crate::operation::list_cidr_blocks::_list_cidr_blocks_input::ListCidrBlocksInputBuilder;
 
+impl ListCidrBlocksInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_cidr_blocks::ListCidrBlocksOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_cidr_blocks::ListCidrBlocksError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_cidr_blocks();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListCidrBlocks`.
 ///
 /// <p>Returns a paginated list of location objects and their CIDR blocks.</p>

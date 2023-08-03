@@ -3,6 +3,23 @@ pub use crate::operation::update_anomaly_detector::_update_anomaly_detector_outp
 
 pub use crate::operation::update_anomaly_detector::_update_anomaly_detector_input::UpdateAnomalyDetectorInputBuilder;
 
+impl UpdateAnomalyDetectorInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_anomaly_detector::UpdateAnomalyDetectorOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_anomaly_detector::UpdateAnomalyDetectorError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_anomaly_detector();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateAnomalyDetector`.
 ///
 /// <p>Updates a detector. After activation, you can only change a detector's ingestion delay and description.</p>

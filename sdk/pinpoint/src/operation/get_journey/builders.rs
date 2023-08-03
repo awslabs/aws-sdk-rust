@@ -3,6 +3,23 @@ pub use crate::operation::get_journey::_get_journey_output::GetJourneyOutputBuil
 
 pub use crate::operation::get_journey::_get_journey_input::GetJourneyInputBuilder;
 
+impl GetJourneyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_journey::GetJourneyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_journey::GetJourneyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_journey();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetJourney`.
 ///
 /// <p>Retrieves information about the status, configuration, and other settings for a journey.</p>

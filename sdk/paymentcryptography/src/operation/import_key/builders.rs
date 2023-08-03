@@ -3,6 +3,23 @@ pub use crate::operation::import_key::_import_key_output::ImportKeyOutputBuilder
 
 pub use crate::operation::import_key::_import_key_input::ImportKeyInputBuilder;
 
+impl ImportKeyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::import_key::ImportKeyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::import_key::ImportKeyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.import_key();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ImportKey`.
 ///
 /// <p>Imports keys and public key certificates into Amazon Web Services Payment Cryptography.</p>

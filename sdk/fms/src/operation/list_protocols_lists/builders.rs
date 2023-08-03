@@ -3,6 +3,23 @@ pub use crate::operation::list_protocols_lists::_list_protocols_lists_output::Li
 
 pub use crate::operation::list_protocols_lists::_list_protocols_lists_input::ListProtocolsListsInputBuilder;
 
+impl ListProtocolsListsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_protocols_lists::ListProtocolsListsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_protocols_lists::ListProtocolsListsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_protocols_lists();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListProtocolsLists`.
 ///
 /// <p>Returns an array of <code>ProtocolsListDataSummary</code> objects.</p>

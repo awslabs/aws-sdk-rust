@@ -3,6 +3,23 @@ pub use crate::operation::issue_certificate::_issue_certificate_output::IssueCer
 
 pub use crate::operation::issue_certificate::_issue_certificate_input::IssueCertificateInputBuilder;
 
+impl IssueCertificateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::issue_certificate::IssueCertificateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::issue_certificate::IssueCertificateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.issue_certificate();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `IssueCertificate`.
 ///
 /// <p>Uses your private certificate authority (CA), or one that has been shared with you, to issue a client certificate. This action returns the Amazon Resource Name (ARN) of the certificate. You can retrieve the certificate by calling the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_GetCertificate.html">GetCertificate</a> action and specifying the ARN. </p> <note>

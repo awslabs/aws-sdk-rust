@@ -3,6 +3,23 @@ pub use crate::operation::update_pipeline_status::_update_pipeline_status_output
 
 pub use crate::operation::update_pipeline_status::_update_pipeline_status_input::UpdatePipelineStatusInputBuilder;
 
+impl UpdatePipelineStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_pipeline_status::UpdatePipelineStatusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_pipeline_status::UpdatePipelineStatusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_pipeline_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdatePipelineStatus`.
 ///
 /// <p>The UpdatePipelineStatus operation pauses or reactivates a pipeline, so that the pipeline stops or restarts the processing of jobs.</p>

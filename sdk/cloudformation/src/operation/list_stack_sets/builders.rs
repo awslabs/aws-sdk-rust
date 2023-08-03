@@ -3,6 +3,23 @@ pub use crate::operation::list_stack_sets::_list_stack_sets_output::ListStackSet
 
 pub use crate::operation::list_stack_sets::_list_stack_sets_input::ListStackSetsInputBuilder;
 
+impl ListStackSetsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_stack_sets::ListStackSetsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_stack_sets::ListStackSetsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_stack_sets();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListStackSets`.
 ///
 /// <p>Returns summary information about stack sets that are associated with the user.</p>

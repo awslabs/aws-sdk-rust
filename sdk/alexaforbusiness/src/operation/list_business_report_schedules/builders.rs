@@ -3,6 +3,23 @@ pub use crate::operation::list_business_report_schedules::_list_business_report_
 
 pub use crate::operation::list_business_report_schedules::_list_business_report_schedules_input::ListBusinessReportSchedulesInputBuilder;
 
+impl ListBusinessReportSchedulesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_business_report_schedules::ListBusinessReportSchedulesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_business_report_schedules::ListBusinessReportSchedulesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_business_report_schedules();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListBusinessReportSchedules`.
 ///
 /// <p>Lists the details of the schedules that a user configured. A download URL of the report associated with each schedule is returned every time this action is called. A new download URL is returned each time, and is valid for 24 hours.</p>

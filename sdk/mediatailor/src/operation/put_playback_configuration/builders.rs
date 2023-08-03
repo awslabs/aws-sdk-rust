@@ -3,6 +3,23 @@ pub use crate::operation::put_playback_configuration::_put_playback_configuratio
 
 pub use crate::operation::put_playback_configuration::_put_playback_configuration_input::PutPlaybackConfigurationInputBuilder;
 
+impl PutPlaybackConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_playback_configuration::PutPlaybackConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_playback_configuration::PutPlaybackConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_playback_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutPlaybackConfiguration`.
 ///
 /// <p>Creates a playback configuration. For information about MediaTailor configurations, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/configurations.html">Working with configurations in AWS Elemental MediaTailor</a>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_view::_get_view_output::GetViewOutputBuilder;
 
 pub use crate::operation::get_view::_get_view_input::GetViewInputBuilder;
 
+impl GetViewInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_view::GetViewOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_view::GetViewError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_view();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetView`.
 ///
 /// <p>Retrieves details of the specified view.</p>

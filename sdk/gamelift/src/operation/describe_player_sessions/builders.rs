@@ -3,6 +3,23 @@ pub use crate::operation::describe_player_sessions::_describe_player_sessions_ou
 
 pub use crate::operation::describe_player_sessions::_describe_player_sessions_input::DescribePlayerSessionsInputBuilder;
 
+impl DescribePlayerSessionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_player_sessions::DescribePlayerSessionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_player_sessions::DescribePlayerSessionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_player_sessions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribePlayerSessions`.
 ///
 /// <p>Retrieves properties for one or more player sessions. </p>

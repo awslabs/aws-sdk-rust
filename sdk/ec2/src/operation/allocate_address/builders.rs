@@ -3,6 +3,23 @@ pub use crate::operation::allocate_address::_allocate_address_output::AllocateAd
 
 pub use crate::operation::allocate_address::_allocate_address_input::AllocateAddressInputBuilder;
 
+impl AllocateAddressInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::allocate_address::AllocateAddressOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::allocate_address::AllocateAddressError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.allocate_address();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AllocateAddress`.
 ///
 /// <p>Allocates an Elastic IP address to your Amazon Web Services account. After you allocate the Elastic IP address you can associate it with an instance or network interface. After you release an Elastic IP address, it is released to the IP address pool and can be allocated to a different Amazon Web Services account.</p>

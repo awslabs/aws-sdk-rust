@@ -3,6 +3,23 @@ pub use crate::operation::stop_labeling_job::_stop_labeling_job_output::StopLabe
 
 pub use crate::operation::stop_labeling_job::_stop_labeling_job_input::StopLabelingJobInputBuilder;
 
+impl StopLabelingJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_labeling_job::StopLabelingJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_labeling_job::StopLabelingJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_labeling_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopLabelingJob`.
 ///
 /// <p>Stops a running labeling job. A job that is stopped cannot be restarted. Any results obtained before the job is stopped are placed in the Amazon S3 output bucket.</p>

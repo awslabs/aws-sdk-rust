@@ -3,6 +3,23 @@ pub use crate::operation::create_origin_access_control::_create_origin_access_co
 
 pub use crate::operation::create_origin_access_control::_create_origin_access_control_input::CreateOriginAccessControlInputBuilder;
 
+impl CreateOriginAccessControlInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_origin_access_control::CreateOriginAccessControlOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_origin_access_control::CreateOriginAccessControlError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_origin_access_control();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateOriginAccessControl`.
 ///
 /// <p>Creates a new origin access control in CloudFront. After you create an origin access control, you can add it to an origin in a CloudFront distribution so that CloudFront sends authenticated (signed) requests to the origin.</p>

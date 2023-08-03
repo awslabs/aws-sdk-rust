@@ -3,6 +3,23 @@ pub use crate::operation::get_default_retention_policy::_get_default_retention_p
 
 pub use crate::operation::get_default_retention_policy::_get_default_retention_policy_input::GetDefaultRetentionPolicyInputBuilder;
 
+impl GetDefaultRetentionPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_default_retention_policy::GetDefaultRetentionPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_default_retention_policy::GetDefaultRetentionPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_default_retention_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetDefaultRetentionPolicy`.
 ///
 /// <p>Gets the default retention policy details for the specified organization.</p>

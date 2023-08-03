@@ -3,6 +3,23 @@ pub use crate::operation::detect_anomalies::_detect_anomalies_output::DetectAnom
 
 pub use crate::operation::detect_anomalies::_detect_anomalies_input::DetectAnomaliesInputBuilder;
 
+impl DetectAnomaliesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::detect_anomalies::DetectAnomaliesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::detect_anomalies::DetectAnomaliesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.detect_anomalies();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DetectAnomalies`.
 ///
 /// <p>Detects anomalies in an image that you supply. </p>

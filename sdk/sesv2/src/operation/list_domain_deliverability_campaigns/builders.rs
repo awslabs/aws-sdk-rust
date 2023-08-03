@@ -3,6 +3,17 @@ pub use crate::operation::list_domain_deliverability_campaigns::_list_domain_del
 
 pub use crate::operation::list_domain_deliverability_campaigns::_list_domain_deliverability_campaigns_input::ListDomainDeliverabilityCampaignsInputBuilder;
 
+impl ListDomainDeliverabilityCampaignsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_domain_deliverability_campaigns::ListDomainDeliverabilityCampaignsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_domain_deliverability_campaigns::ListDomainDeliverabilityCampaignsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_domain_deliverability_campaigns();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDomainDeliverabilityCampaigns`.
 ///
 /// <p>Retrieve deliverability data for all the campaigns that used a specific domain to send email during a specified time range. This data is available for a domain only if you enabled the Deliverability dashboard for the domain.</p>

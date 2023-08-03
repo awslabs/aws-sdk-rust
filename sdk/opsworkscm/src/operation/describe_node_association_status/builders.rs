@@ -3,6 +3,23 @@ pub use crate::operation::describe_node_association_status::_describe_node_assoc
 
 pub use crate::operation::describe_node_association_status::_describe_node_association_status_input::DescribeNodeAssociationStatusInputBuilder;
 
+impl DescribeNodeAssociationStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_node_association_status::DescribeNodeAssociationStatusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_node_association_status::DescribeNodeAssociationStatusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_node_association_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeNodeAssociationStatus`.
 ///
 /// <p> Returns the current status of an existing association or disassociation request. </p>

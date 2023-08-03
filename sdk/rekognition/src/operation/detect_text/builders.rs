@@ -3,6 +3,23 @@ pub use crate::operation::detect_text::_detect_text_output::DetectTextOutputBuil
 
 pub use crate::operation::detect_text::_detect_text_input::DetectTextInputBuilder;
 
+impl DetectTextInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::detect_text::DetectTextOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::detect_text::DetectTextError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.detect_text();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DetectText`.
 ///
 /// <p>Detects text in the input image and converts it into machine-readable text.</p>

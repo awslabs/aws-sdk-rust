@@ -3,6 +3,23 @@ pub use crate::operation::get_calendar_state::_get_calendar_state_output::GetCal
 
 pub use crate::operation::get_calendar_state::_get_calendar_state_input::GetCalendarStateInputBuilder;
 
+impl GetCalendarStateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_calendar_state::GetCalendarStateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_calendar_state::GetCalendarStateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_calendar_state();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetCalendarState`.
 ///
 /// <p>Gets the state of a Amazon Web Services Systems Manager change calendar at the current time or a specified time. If you specify a time, <code>GetCalendarState</code> returns the state of the calendar at that specific time, and returns the next time that the change calendar state will transition. If you don't specify a time, <code>GetCalendarState</code> uses the current time. Change Calendar entries have two possible states: <code>OPEN</code> or <code>CLOSED</code>.</p>

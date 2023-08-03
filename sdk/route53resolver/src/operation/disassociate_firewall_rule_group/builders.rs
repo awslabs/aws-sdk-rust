@@ -3,6 +3,23 @@ pub use crate::operation::disassociate_firewall_rule_group::_disassociate_firewa
 
 pub use crate::operation::disassociate_firewall_rule_group::_disassociate_firewall_rule_group_input::DisassociateFirewallRuleGroupInputBuilder;
 
+impl DisassociateFirewallRuleGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_firewall_rule_group::DisassociateFirewallRuleGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_firewall_rule_group::DisassociateFirewallRuleGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disassociate_firewall_rule_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateFirewallRuleGroup`.
 ///
 /// <p>Disassociates a <code>FirewallRuleGroup</code> from a VPC, to remove DNS filtering from the VPC. </p>

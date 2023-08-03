@@ -3,6 +3,23 @@ pub use crate::operation::cancel_ml_task_run::_cancel_ml_task_run_output::Cancel
 
 pub use crate::operation::cancel_ml_task_run::_cancel_ml_task_run_input::CancelMlTaskRunInputBuilder;
 
+impl CancelMlTaskRunInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::cancel_ml_task_run::CancelMlTaskRunOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::cancel_ml_task_run::CancelMLTaskRunError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.cancel_ml_task_run();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CancelMLTaskRun`.
 ///
 /// <p>Cancels (stops) a task run. Machine learning task runs are asynchronous tasks that Glue runs on your behalf as part of various machine learning workflows. You can cancel a machine learning task run at any time by calling <code>CancelMLTaskRun</code> with a task run's parent transform's <code>TransformID</code> and the task run's <code>TaskRunId</code>. </p>

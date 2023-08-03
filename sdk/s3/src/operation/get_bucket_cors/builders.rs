@@ -3,6 +3,23 @@ pub use crate::operation::get_bucket_cors::_get_bucket_cors_output::GetBucketCor
 
 pub use crate::operation::get_bucket_cors::_get_bucket_cors_input::GetBucketCorsInputBuilder;
 
+impl GetBucketCorsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_bucket_cors::GetBucketCorsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_bucket_cors::GetBucketCorsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_bucket_cors();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetBucketCors`.
 ///
 /// <p>Returns the Cross-Origin Resource Sharing (CORS) configuration information set for the bucket.</p>

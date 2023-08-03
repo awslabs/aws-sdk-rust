@@ -3,6 +3,23 @@ pub use crate::operation::delete_resource_policy_statement::_delete_resource_pol
 
 pub use crate::operation::delete_resource_policy_statement::_delete_resource_policy_statement_input::DeleteResourcePolicyStatementInputBuilder;
 
+impl DeleteResourcePolicyStatementInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_resource_policy_statement::DeleteResourcePolicyStatementOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_resource_policy_statement::DeleteResourcePolicyStatementError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_resource_policy_statement();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteResourcePolicyStatement`.
 ///
 /// <p>Deletes a policy statement from a resource policy. If you delete the last statement from a policy, the policy is deleted. If you specify a statement ID that doesn't exist in the policy, or if the bot or bot alias doesn't have a policy attached, Amazon Lex returns an exception.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::put_raw_message_content::_put_raw_message_content_outp
 
 pub use crate::operation::put_raw_message_content::_put_raw_message_content_input::PutRawMessageContentInputBuilder;
 
+impl PutRawMessageContentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_raw_message_content::PutRawMessageContentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_raw_message_content::PutRawMessageContentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_raw_message_content();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutRawMessageContent`.
 ///
 /// <p>Updates the raw content of an in-transit email message, in MIME format.</p>

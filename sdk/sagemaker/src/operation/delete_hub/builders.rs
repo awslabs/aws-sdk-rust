@@ -3,6 +3,23 @@ pub use crate::operation::delete_hub::_delete_hub_output::DeleteHubOutputBuilder
 
 pub use crate::operation::delete_hub::_delete_hub_input::DeleteHubInputBuilder;
 
+impl DeleteHubInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_hub::DeleteHubOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_hub::DeleteHubError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_hub();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteHub`.
 ///
 /// <p>Delete a hub.</p> <note>

@@ -3,6 +3,23 @@ pub use crate::operation::modify_instance_attribute::_modify_instance_attribute_
 
 pub use crate::operation::modify_instance_attribute::_modify_instance_attribute_input::ModifyInstanceAttributeInputBuilder;
 
+impl ModifyInstanceAttributeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_instance_attribute::ModifyInstanceAttributeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_instance_attribute::ModifyInstanceAttributeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_instance_attribute();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyInstanceAttribute`.
 ///
 /// <p>Modifies the specified attribute of the specified instance. You can specify only one attribute at a time.</p>

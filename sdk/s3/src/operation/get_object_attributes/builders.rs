@@ -3,6 +3,23 @@ pub use crate::operation::get_object_attributes::_get_object_attributes_output::
 
 pub use crate::operation::get_object_attributes::_get_object_attributes_input::GetObjectAttributesInputBuilder;
 
+impl GetObjectAttributesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_object_attributes::GetObjectAttributesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_object_attributes::GetObjectAttributesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_object_attributes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetObjectAttributes`.
 ///
 /// <p>Retrieves all the metadata from an object without returning the object itself. This action is useful if you're interested only in an object's metadata. To use <code>GetObjectAttributes</code>, you must have READ access to the object.</p>

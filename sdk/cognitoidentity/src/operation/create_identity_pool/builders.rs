@@ -3,6 +3,23 @@ pub use crate::operation::create_identity_pool::_create_identity_pool_output::Cr
 
 pub use crate::operation::create_identity_pool::_create_identity_pool_input::CreateIdentityPoolInputBuilder;
 
+impl CreateIdentityPoolInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_identity_pool::CreateIdentityPoolOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_identity_pool::CreateIdentityPoolError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_identity_pool();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateIdentityPool`.
 ///
 /// <p>Creates a new identity pool. The identity pool is a store of user identity information that is specific to your AWS account. The keys for <code>SupportedLoginProviders</code> are as follows:</p>

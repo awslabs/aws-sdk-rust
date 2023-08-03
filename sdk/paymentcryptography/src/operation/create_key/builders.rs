@@ -3,6 +3,23 @@ pub use crate::operation::create_key::_create_key_output::CreateKeyOutputBuilder
 
 pub use crate::operation::create_key::_create_key_input::CreateKeyInputBuilder;
 
+impl CreateKeyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_key::CreateKeyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_key::CreateKeyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_key();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateKey`.
 ///
 /// <p>Creates an Amazon Web Services Payment Cryptography key, a logical representation of a cryptographic key, that is unique in your account and Amazon Web Services Region. You use keys for cryptographic functions such as encryption and decryption. </p>

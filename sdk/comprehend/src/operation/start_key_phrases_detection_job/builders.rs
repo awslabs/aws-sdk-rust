@@ -3,6 +3,23 @@ pub use crate::operation::start_key_phrases_detection_job::_start_key_phrases_de
 
 pub use crate::operation::start_key_phrases_detection_job::_start_key_phrases_detection_job_input::StartKeyPhrasesDetectionJobInputBuilder;
 
+impl StartKeyPhrasesDetectionJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_key_phrases_detection_job::StartKeyPhrasesDetectionJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_key_phrases_detection_job::StartKeyPhrasesDetectionJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_key_phrases_detection_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartKeyPhrasesDetectionJob`.
 ///
 /// <p>Starts an asynchronous key phrase detection job for a collection of documents. Use the operation to track the status of a job.</p>

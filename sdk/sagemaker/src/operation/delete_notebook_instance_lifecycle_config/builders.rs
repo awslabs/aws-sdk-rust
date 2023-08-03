@@ -3,6 +3,17 @@ pub use crate::operation::delete_notebook_instance_lifecycle_config::_delete_not
 
 pub use crate::operation::delete_notebook_instance_lifecycle_config::_delete_notebook_instance_lifecycle_config_input::DeleteNotebookInstanceLifecycleConfigInputBuilder;
 
+impl DeleteNotebookInstanceLifecycleConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_notebook_instance_lifecycle_config::DeleteNotebookInstanceLifecycleConfigOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_notebook_instance_lifecycle_config::DeleteNotebookInstanceLifecycleConfigError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.delete_notebook_instance_lifecycle_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteNotebookInstanceLifecycleConfig`.
 ///
 /// <p>Deletes a notebook instance lifecycle configuration.</p>

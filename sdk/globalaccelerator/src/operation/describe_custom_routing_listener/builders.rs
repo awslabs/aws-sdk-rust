@@ -3,6 +3,23 @@ pub use crate::operation::describe_custom_routing_listener::_describe_custom_rou
 
 pub use crate::operation::describe_custom_routing_listener::_describe_custom_routing_listener_input::DescribeCustomRoutingListenerInputBuilder;
 
+impl DescribeCustomRoutingListenerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_custom_routing_listener::DescribeCustomRoutingListenerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_custom_routing_listener::DescribeCustomRoutingListenerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_custom_routing_listener();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeCustomRoutingListener`.
 ///
 /// <p>The description of a listener for a custom routing accelerator.</p>

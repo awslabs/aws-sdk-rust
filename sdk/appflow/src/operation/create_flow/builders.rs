@@ -3,6 +3,23 @@ pub use crate::operation::create_flow::_create_flow_output::CreateFlowOutputBuil
 
 pub use crate::operation::create_flow::_create_flow_input::CreateFlowInputBuilder;
 
+impl CreateFlowInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_flow::CreateFlowOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_flow::CreateFlowError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_flow();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateFlow`.
 ///
 /// <p> Enables your application to create a new flow using Amazon AppFlow. You must create a connector profile before calling this API. Please note that the Request Syntax below shows syntax for multiple destinations, however, you can only transfer data to one item in this list at a time. Amazon AppFlow does not currently support flows to multiple destinations at once. </p>

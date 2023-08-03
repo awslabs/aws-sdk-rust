@@ -3,6 +3,23 @@ pub use crate::operation::register_schema_version::_register_schema_version_outp
 
 pub use crate::operation::register_schema_version::_register_schema_version_input::RegisterSchemaVersionInputBuilder;
 
+impl RegisterSchemaVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::register_schema_version::RegisterSchemaVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::register_schema_version::RegisterSchemaVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.register_schema_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RegisterSchemaVersion`.
 ///
 /// <p>Adds a new version to the existing schema. Returns an error if new version of schema does not meet the compatibility requirements of the schema set. This API will not create a new schema set and will return a 404 error if the schema set is not already present in the Schema Registry.</p>

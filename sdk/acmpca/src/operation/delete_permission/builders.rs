@@ -3,6 +3,23 @@ pub use crate::operation::delete_permission::_delete_permission_output::DeletePe
 
 pub use crate::operation::delete_permission::_delete_permission_input::DeletePermissionInputBuilder;
 
+impl DeletePermissionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_permission::DeletePermissionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_permission::DeletePermissionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_permission();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeletePermission`.
 ///
 /// <p>Revokes permissions on a private CA granted to the Certificate Manager (ACM) service principal (acm.amazonaws.com). </p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_latest_assessment_id::_get_latest_assessment_id_ou
 
 pub use crate::operation::get_latest_assessment_id::_get_latest_assessment_id_input::GetLatestAssessmentIdInputBuilder;
 
+impl GetLatestAssessmentIdInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_latest_assessment_id::GetLatestAssessmentIdOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_latest_assessment_id::GetLatestAssessmentIdError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_latest_assessment_id();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetLatestAssessmentId`.
 ///
 /// <p>Retrieve the latest ID of a specific assessment task.</p>

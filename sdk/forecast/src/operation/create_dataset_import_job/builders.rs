@@ -3,6 +3,23 @@ pub use crate::operation::create_dataset_import_job::_create_dataset_import_job_
 
 pub use crate::operation::create_dataset_import_job::_create_dataset_import_job_input::CreateDatasetImportJobInputBuilder;
 
+impl CreateDatasetImportJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_dataset_import_job::CreateDatasetImportJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_dataset_import_job::CreateDatasetImportJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_dataset_import_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateDatasetImportJob`.
 ///
 /// <p>Imports your training data to an Amazon Forecast dataset. You provide the location of your training data in an Amazon Simple Storage Service (Amazon S3) bucket and the Amazon Resource Name (ARN) of the dataset that you want to import the data to.</p>

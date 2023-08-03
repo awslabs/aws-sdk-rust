@@ -3,6 +3,23 @@ pub use crate::operation::describe_event_sources_config::_describe_event_sources
 
 pub use crate::operation::describe_event_sources_config::_describe_event_sources_config_input::DescribeEventSourcesConfigInputBuilder;
 
+impl DescribeEventSourcesConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_event_sources_config::DescribeEventSourcesConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_event_sources_config::DescribeEventSourcesConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_event_sources_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeEventSourcesConfig`.
 ///
 /// <p>Returns the integration status of services that are integrated with DevOps Guru as Consumer via EventBridge. The one service that can be integrated with DevOps Guru is Amazon CodeGuru Profiler, which can produce proactive recommendations which can be stored and viewed in DevOps Guru.</p>

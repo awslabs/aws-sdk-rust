@@ -3,6 +3,23 @@ pub use crate::operation::count_closed_workflow_executions::_count_closed_workfl
 
 pub use crate::operation::count_closed_workflow_executions::_count_closed_workflow_executions_input::CountClosedWorkflowExecutionsInputBuilder;
 
+impl CountClosedWorkflowExecutionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::count_closed_workflow_executions::CountClosedWorkflowExecutionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::count_closed_workflow_executions::CountClosedWorkflowExecutionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.count_closed_workflow_executions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CountClosedWorkflowExecutions`.
 ///
 /// <p>Returns the number of closed workflow executions within the given domain that meet the specified filtering criteria.</p> <note>

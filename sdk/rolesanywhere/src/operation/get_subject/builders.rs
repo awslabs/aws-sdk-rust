@@ -3,6 +3,23 @@ pub use crate::operation::get_subject::_get_subject_output::GetSubjectOutputBuil
 
 pub use crate::operation::get_subject::_get_subject_input::GetSubjectInputBuilder;
 
+impl GetSubjectInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_subject::GetSubjectOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_subject::GetSubjectError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_subject();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetSubject`.
 ///
 /// <p>Gets a <i>subject</i>, which associates a certificate identity with authentication attempts. The subject stores auditing information such as the status of the last authentication attempt, the certificate data used in the attempt, and the last time the associated identity attempted authentication. </p>

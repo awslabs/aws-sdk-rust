@@ -3,6 +3,23 @@ pub use crate::operation::attach_network_interface::_attach_network_interface_ou
 
 pub use crate::operation::attach_network_interface::_attach_network_interface_input::AttachNetworkInterfaceInputBuilder;
 
+impl AttachNetworkInterfaceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::attach_network_interface::AttachNetworkInterfaceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::attach_network_interface::AttachNetworkInterfaceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.attach_network_interface();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AttachNetworkInterface`.
 ///
 /// <p>Attaches a network interface to an instance.</p>

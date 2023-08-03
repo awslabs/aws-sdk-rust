@@ -3,6 +3,23 @@ pub use crate::operation::update_crl::_update_crl_output::UpdateCrlOutputBuilder
 
 pub use crate::operation::update_crl::_update_crl_input::UpdateCrlInputBuilder;
 
+impl UpdateCrlInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_crl::UpdateCrlOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_crl::UpdateCrlError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_crl();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateCrl`.
 ///
 /// <p>Updates the certificate revocation list (CRL). A CRL is a list of certificates that have been revoked by the issuing certificate authority (CA). IAM Roles Anywhere validates against the CRL before issuing credentials.</p>

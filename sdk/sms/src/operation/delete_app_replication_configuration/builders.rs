@@ -3,6 +3,17 @@ pub use crate::operation::delete_app_replication_configuration::_delete_app_repl
 
 pub use crate::operation::delete_app_replication_configuration::_delete_app_replication_configuration_input::DeleteAppReplicationConfigurationInputBuilder;
 
+impl DeleteAppReplicationConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_app_replication_configuration::DeleteAppReplicationConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_app_replication_configuration::DeleteAppReplicationConfigurationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.delete_app_replication_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteAppReplicationConfiguration`.
 ///
 /// <p>Deletes the replication configuration for the specified application.</p>

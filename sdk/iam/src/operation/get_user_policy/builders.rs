@@ -3,6 +3,23 @@ pub use crate::operation::get_user_policy::_get_user_policy_output::GetUserPolic
 
 pub use crate::operation::get_user_policy::_get_user_policy_input::GetUserPolicyInputBuilder;
 
+impl GetUserPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_user_policy::GetUserPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_user_policy::GetUserPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_user_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetUserPolicy`.
 ///
 /// <p>Retrieves the specified inline policy document that is embedded in the specified IAM user.</p> <note>

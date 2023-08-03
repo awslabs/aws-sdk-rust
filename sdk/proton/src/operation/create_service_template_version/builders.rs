@@ -3,6 +3,23 @@ pub use crate::operation::create_service_template_version::_create_service_templ
 
 pub use crate::operation::create_service_template_version::_create_service_template_version_input::CreateServiceTemplateVersionInputBuilder;
 
+impl CreateServiceTemplateVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_service_template_version::CreateServiceTemplateVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_service_template_version::CreateServiceTemplateVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_service_template_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateServiceTemplateVersion`.
 ///
 /// <p>Create a new major or minor version of a service template. A major version of a service template is a version that <i>isn't</i> backward compatible. A minor version of a service template is a version that's backward compatible within its major version.</p>

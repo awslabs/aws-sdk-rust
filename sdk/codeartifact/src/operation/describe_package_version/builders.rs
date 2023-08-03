@@ -3,6 +3,23 @@ pub use crate::operation::describe_package_version::_describe_package_version_ou
 
 pub use crate::operation::describe_package_version::_describe_package_version_input::DescribePackageVersionInputBuilder;
 
+impl DescribePackageVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_package_version::DescribePackageVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_package_version::DescribePackageVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_package_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribePackageVersion`.
 ///
 /// <p> Returns a <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageVersionDescription.html">PackageVersionDescription</a> object that contains information about the requested package version. </p>

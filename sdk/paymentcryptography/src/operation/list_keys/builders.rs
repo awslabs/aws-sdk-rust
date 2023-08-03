@@ -3,6 +3,23 @@ pub use crate::operation::list_keys::_list_keys_output::ListKeysOutputBuilder;
 
 pub use crate::operation::list_keys::_list_keys_input::ListKeysInputBuilder;
 
+impl ListKeysInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_keys::ListKeysOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_keys::ListKeysError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_keys();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListKeys`.
 ///
 /// <p>Lists the keys in the caller's Amazon Web Services account and Amazon Web Services Region. You can filter the list of keys.</p>

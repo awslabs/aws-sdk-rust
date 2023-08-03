@@ -3,6 +3,23 @@ pub use crate::operation::modify_user::_modify_user_output::ModifyUserOutputBuil
 
 pub use crate::operation::modify_user::_modify_user_input::ModifyUserInputBuilder;
 
+impl ModifyUserInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_user::ModifyUserOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_user::ModifyUserError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_user();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyUser`.
 ///
 /// <p>Changes user password(s) and/or access string.</p>

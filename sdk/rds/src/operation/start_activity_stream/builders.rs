@@ -3,6 +3,23 @@ pub use crate::operation::start_activity_stream::_start_activity_stream_output::
 
 pub use crate::operation::start_activity_stream::_start_activity_stream_input::StartActivityStreamInputBuilder;
 
+impl StartActivityStreamInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_activity_stream::StartActivityStreamOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_activity_stream::StartActivityStreamError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_activity_stream();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartActivityStream`.
 ///
 /// <p>Starts a database activity stream to monitor activity on the database. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/DBActivityStreams.html"> Monitoring Amazon Aurora with Database Activity Streams</a> in the <i>Amazon Aurora User Guide</i> or <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/DBActivityStreams.html"> Monitoring Amazon RDS with Database Activity Streams</a> in the <i>Amazon RDS User Guide</i>.</p>

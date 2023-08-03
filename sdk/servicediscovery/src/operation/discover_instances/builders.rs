@@ -3,6 +3,23 @@ pub use crate::operation::discover_instances::_discover_instances_output::Discov
 
 pub use crate::operation::discover_instances::_discover_instances_input::DiscoverInstancesInputBuilder;
 
+impl DiscoverInstancesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::discover_instances::DiscoverInstancesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::discover_instances::DiscoverInstancesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.discover_instances();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DiscoverInstances`.
 ///
 /// <p>Discovers registered instances for a specified namespace and service. You can use <code>DiscoverInstances</code> to discover instances for any type of namespace. For public and private DNS namespaces, you can also use DNS queries to discover instances.</p>

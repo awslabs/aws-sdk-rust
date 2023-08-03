@@ -3,6 +3,23 @@ pub use crate::operation::copy_image::_copy_image_output::CopyImageOutputBuilder
 
 pub use crate::operation::copy_image::_copy_image_input::CopyImageInputBuilder;
 
+impl CopyImageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::copy_image::CopyImageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::copy_image::CopyImageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.copy_image();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CopyImage`.
 ///
 /// <p>Initiates the copy of an AMI. You can copy an AMI from one Region to another, or from a Region to an Outpost. You can't copy an AMI from an Outpost to a Region, from one Outpost to another, or within the same Outpost. To copy an AMI to another partition, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateStoreImageTask.html">CreateStoreImageTask</a>.</p>

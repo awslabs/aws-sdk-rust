@@ -3,6 +3,23 @@ pub use crate::operation::get_schema_creation_status::_get_schema_creation_statu
 
 pub use crate::operation::get_schema_creation_status::_get_schema_creation_status_input::GetSchemaCreationStatusInputBuilder;
 
+impl GetSchemaCreationStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_schema_creation_status::GetSchemaCreationStatusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_schema_creation_status::GetSchemaCreationStatusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_schema_creation_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetSchemaCreationStatus`.
 ///
 /// <p>Retrieves the current status of a schema creation operation.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::scan_provisioned_products::_scan_provisioned_products_
 
 pub use crate::operation::scan_provisioned_products::_scan_provisioned_products_input::ScanProvisionedProductsInputBuilder;
 
+impl ScanProvisionedProductsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::scan_provisioned_products::ScanProvisionedProductsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::scan_provisioned_products::ScanProvisionedProductsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.scan_provisioned_products();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ScanProvisionedProducts`.
 ///
 /// <p>Lists the provisioned products that are available (not terminated).</p>

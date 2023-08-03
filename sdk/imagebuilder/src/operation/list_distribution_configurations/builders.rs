@@ -3,6 +3,23 @@ pub use crate::operation::list_distribution_configurations::_list_distribution_c
 
 pub use crate::operation::list_distribution_configurations::_list_distribution_configurations_input::ListDistributionConfigurationsInputBuilder;
 
+impl ListDistributionConfigurationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_distribution_configurations::ListDistributionConfigurationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_distribution_configurations::ListDistributionConfigurationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_distribution_configurations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDistributionConfigurations`.
 ///
 /// <p>Returns a list of distribution configurations.</p>

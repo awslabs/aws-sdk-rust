@@ -3,6 +3,23 @@ pub use crate::operation::generate_random::_generate_random_output::GenerateRand
 
 pub use crate::operation::generate_random::_generate_random_input::GenerateRandomInputBuilder;
 
+impl GenerateRandomInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::generate_random::GenerateRandomOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::generate_random::GenerateRandomError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.generate_random();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GenerateRandom`.
 ///
 /// <p>Returns a random byte string that is cryptographically secure.</p>

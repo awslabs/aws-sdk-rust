@@ -3,6 +3,23 @@ pub use crate::operation::describe_container::_describe_container_output::Descri
 
 pub use crate::operation::describe_container::_describe_container_input::DescribeContainerInputBuilder;
 
+impl DescribeContainerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_container::DescribeContainerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_container::DescribeContainerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_container();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeContainer`.
 ///
 /// <p>Retrieves the properties of the requested container. This request is commonly used to retrieve the endpoint of a container. An endpoint is a value assigned by the service when a new container is created. A container's endpoint does not change after it has been assigned. The <code>DescribeContainer</code> request returns a single <code>Container</code> object based on <code>ContainerName</code>. To return all <code>Container</code> objects that are associated with a specified AWS account, use <code>ListContainers</code>.</p>

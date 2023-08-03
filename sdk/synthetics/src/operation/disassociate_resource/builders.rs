@@ -3,6 +3,23 @@ pub use crate::operation::disassociate_resource::_disassociate_resource_output::
 
 pub use crate::operation::disassociate_resource::_disassociate_resource_input::DisassociateResourceInputBuilder;
 
+impl DisassociateResourceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_resource::DisassociateResourceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_resource::DisassociateResourceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disassociate_resource();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateResource`.
 ///
 /// <p>Removes a canary from a group. You must run this operation in the Region where the canary exists.</p>

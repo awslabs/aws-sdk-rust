@@ -3,6 +3,23 @@ pub use crate::operation::create_network_profile::_create_network_profile_output
 
 pub use crate::operation::create_network_profile::_create_network_profile_input::CreateNetworkProfileInputBuilder;
 
+impl CreateNetworkProfileInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_network_profile::CreateNetworkProfileOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_network_profile::CreateNetworkProfileError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_network_profile();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateNetworkProfile`.
 ///
 /// <p>Creates a network profile with the specified details.</p>

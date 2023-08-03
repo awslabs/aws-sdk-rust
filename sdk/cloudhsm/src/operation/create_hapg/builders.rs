@@ -3,6 +3,23 @@ pub use crate::operation::create_hapg::_create_hapg_output::CreateHapgOutputBuil
 
 pub use crate::operation::create_hapg::_create_hapg_input::CreateHapgInputBuilder;
 
+impl CreateHapgInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_hapg::CreateHapgOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_hapg::CreateHapgError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_hapg();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateHapg`.
 ///
 /// <p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.</p>

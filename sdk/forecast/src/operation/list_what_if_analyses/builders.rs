@@ -3,6 +3,23 @@ pub use crate::operation::list_what_if_analyses::_list_what_if_analyses_output::
 
 pub use crate::operation::list_what_if_analyses::_list_what_if_analyses_input::ListWhatIfAnalysesInputBuilder;
 
+impl ListWhatIfAnalysesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_what_if_analyses::ListWhatIfAnalysesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_what_if_analyses::ListWhatIfAnalysesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_what_if_analyses();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListWhatIfAnalyses`.
 ///
 /// <p>Returns a list of what-if analyses created using the <code>CreateWhatIfAnalysis</code> operation. For each what-if analysis, this operation returns a summary of its properties, including its Amazon Resource Name (ARN). You can retrieve the complete set of properties by using the what-if analysis ARN with the <code>DescribeWhatIfAnalysis</code> operation.</p>

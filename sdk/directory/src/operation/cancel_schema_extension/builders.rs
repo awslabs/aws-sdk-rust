@@ -3,6 +3,23 @@ pub use crate::operation::cancel_schema_extension::_cancel_schema_extension_outp
 
 pub use crate::operation::cancel_schema_extension::_cancel_schema_extension_input::CancelSchemaExtensionInputBuilder;
 
+impl CancelSchemaExtensionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::cancel_schema_extension::CancelSchemaExtensionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::cancel_schema_extension::CancelSchemaExtensionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.cancel_schema_extension();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CancelSchemaExtension`.
 ///
 /// <p>Cancels an in-progress schema extension to a Microsoft AD directory. Once a schema extension has started replicating to all domain controllers, the task can no longer be canceled. A schema extension can be canceled during any of the following states; <code>Initializing</code>, <code>CreatingSnapshot</code>, and <code>UpdatingSchema</code>.</p>

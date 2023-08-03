@@ -3,6 +3,23 @@ pub use crate::operation::get_wireless_device_statistics::_get_wireless_device_s
 
 pub use crate::operation::get_wireless_device_statistics::_get_wireless_device_statistics_input::GetWirelessDeviceStatisticsInputBuilder;
 
+impl GetWirelessDeviceStatisticsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_wireless_device_statistics::GetWirelessDeviceStatisticsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_wireless_device_statistics::GetWirelessDeviceStatisticsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_wireless_device_statistics();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetWirelessDeviceStatistics`.
 ///
 /// <p>Gets operating information about a wireless device.</p>

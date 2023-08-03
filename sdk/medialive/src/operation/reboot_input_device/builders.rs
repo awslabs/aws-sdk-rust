@@ -3,6 +3,23 @@ pub use crate::operation::reboot_input_device::_reboot_input_device_output::Rebo
 
 pub use crate::operation::reboot_input_device::_reboot_input_device_input::RebootInputDeviceInputBuilder;
 
+impl RebootInputDeviceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::reboot_input_device::RebootInputDeviceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::reboot_input_device::RebootInputDeviceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.reboot_input_device();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RebootInputDevice`.
 ///
 /// Send a reboot command to the specified input device. The device will begin rebooting within a few seconds of sending the command. When the reboot is complete, the device’s connection status will change to connected.

@@ -3,6 +3,23 @@ pub use crate::operation::delete_dev_endpoint::_delete_dev_endpoint_output::Dele
 
 pub use crate::operation::delete_dev_endpoint::_delete_dev_endpoint_input::DeleteDevEndpointInputBuilder;
 
+impl DeleteDevEndpointInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_dev_endpoint::DeleteDevEndpointOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_dev_endpoint::DeleteDevEndpointError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_dev_endpoint();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteDevEndpoint`.
 ///
 /// <p>Deletes a specified development endpoint.</p>

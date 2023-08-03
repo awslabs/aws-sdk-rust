@@ -3,6 +3,23 @@ pub use crate::operation::list_sync_resources::_list_sync_resources_output::List
 
 pub use crate::operation::list_sync_resources::_list_sync_resources_input::ListSyncResourcesInputBuilder;
 
+impl ListSyncResourcesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_sync_resources::ListSyncResourcesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_sync_resources::ListSyncResourcesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_sync_resources();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListSyncResources`.
 ///
 /// <p>Lists the sync resources.</p>

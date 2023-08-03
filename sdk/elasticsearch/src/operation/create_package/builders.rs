@@ -3,6 +3,23 @@ pub use crate::operation::create_package::_create_package_output::CreatePackageO
 
 pub use crate::operation::create_package::_create_package_input::CreatePackageInputBuilder;
 
+impl CreatePackageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_package::CreatePackageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_package::CreatePackageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_package();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreatePackage`.
 ///
 /// <p>Create a package for use with Amazon ES domains.</p>

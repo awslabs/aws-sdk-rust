@@ -3,6 +3,23 @@ pub use crate::operation::describe_audit_finding::_describe_audit_finding_output
 
 pub use crate::operation::describe_audit_finding::_describe_audit_finding_input::DescribeAuditFindingInputBuilder;
 
+impl DescribeAuditFindingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_audit_finding::DescribeAuditFindingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_audit_finding::DescribeAuditFindingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_audit_finding();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAuditFinding`.
 ///
 /// <p>Gets information about a single audit finding. Properties include the reason for noncompliance, the severity of the issue, and the start time when the audit that returned the finding.</p>

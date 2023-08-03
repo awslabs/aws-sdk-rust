@@ -3,6 +3,23 @@ pub use crate::operation::describe_delivery_channel_status::_describe_delivery_c
 
 pub use crate::operation::describe_delivery_channel_status::_describe_delivery_channel_status_input::DescribeDeliveryChannelStatusInputBuilder;
 
+impl DescribeDeliveryChannelStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_delivery_channel_status::DescribeDeliveryChannelStatusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_delivery_channel_status::DescribeDeliveryChannelStatusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_delivery_channel_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeDeliveryChannelStatus`.
 ///
 /// <p>Returns the current status of the specified delivery channel. If a delivery channel is not specified, this action returns the current status of all delivery channels associated with the account.</p> <note>

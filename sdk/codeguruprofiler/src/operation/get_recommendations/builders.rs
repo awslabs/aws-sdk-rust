@@ -3,6 +3,23 @@ pub use crate::operation::get_recommendations::_get_recommendations_output::GetR
 
 pub use crate::operation::get_recommendations::_get_recommendations_input::GetRecommendationsInputBuilder;
 
+impl GetRecommendationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_recommendations::GetRecommendationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_recommendations::GetRecommendationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_recommendations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetRecommendations`.
 ///
 /// <p> Returns a list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_Recommendation.html"> <code>Recommendation</code> </a> objects that contain recommendations for a profiling group for a given time period. A list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_Anomaly.html"> <code>Anomaly</code> </a> objects that contains details about anomalies detected in the profiling group for the same time period is also returned. </p>

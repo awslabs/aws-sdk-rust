@@ -3,6 +3,17 @@ pub use crate::operation::delete_repository_permissions_policy::_delete_reposito
 
 pub use crate::operation::delete_repository_permissions_policy::_delete_repository_permissions_policy_input::DeleteRepositoryPermissionsPolicyInputBuilder;
 
+impl DeleteRepositoryPermissionsPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_repository_permissions_policy::DeleteRepositoryPermissionsPolicyOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_repository_permissions_policy::DeleteRepositoryPermissionsPolicyError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.delete_repository_permissions_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteRepositoryPermissionsPolicy`.
 ///
 /// <p> Deletes the resource policy that is set on a repository. After a resource policy is deleted, the permissions allowed and denied by the deleted policy are removed. The effect of deleting a resource policy might not be immediate. </p> <important>

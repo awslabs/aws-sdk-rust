@@ -3,6 +3,23 @@ pub use crate::operation::batch_update_user::_batch_update_user_output::BatchUpd
 
 pub use crate::operation::batch_update_user::_batch_update_user_input::BatchUpdateUserInputBuilder;
 
+impl BatchUpdateUserInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_update_user::BatchUpdateUserOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_update_user::BatchUpdateUserError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_update_user();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchUpdateUser`.
 ///
 /// <p>Updates user details within the <code>UpdateUserRequestItem</code> object for up to 20 users for the specified Amazon Chime account. Currently, only <code>LicenseType</code> updates are supported for this action.</p>

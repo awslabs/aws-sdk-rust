@@ -3,6 +3,23 @@ pub use crate::operation::get_capacity_reservation_usage::_get_capacity_reservat
 
 pub use crate::operation::get_capacity_reservation_usage::_get_capacity_reservation_usage_input::GetCapacityReservationUsageInputBuilder;
 
+impl GetCapacityReservationUsageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_capacity_reservation_usage::GetCapacityReservationUsageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_capacity_reservation_usage::GetCapacityReservationUsageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_capacity_reservation_usage();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetCapacityReservationUsage`.
 ///
 /// <p>Gets usage information about a Capacity Reservation. If the Capacity Reservation is shared, it shows usage information for the Capacity Reservation owner and each Amazon Web Services account that is currently using the shared capacity. If the Capacity Reservation is not shared, it shows only the Capacity Reservation owner's usage.</p>

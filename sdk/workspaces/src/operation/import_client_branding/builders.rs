@@ -3,6 +3,23 @@ pub use crate::operation::import_client_branding::_import_client_branding_output
 
 pub use crate::operation::import_client_branding::_import_client_branding_input::ImportClientBrandingInputBuilder;
 
+impl ImportClientBrandingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::import_client_branding::ImportClientBrandingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::import_client_branding::ImportClientBrandingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.import_client_branding();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ImportClientBranding`.
 ///
 /// <p>Imports client branding. Client branding allows you to customize your WorkSpace's client login portal. You can tailor your login portal company logo, the support email address, support link, link to reset password, and a custom message for users trying to sign in.</p>

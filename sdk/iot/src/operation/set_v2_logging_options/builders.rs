@@ -3,6 +3,23 @@ pub use crate::operation::set_v2_logging_options::_set_v2_logging_options_output
 
 pub use crate::operation::set_v2_logging_options::_set_v2_logging_options_input::SetV2LoggingOptionsInputBuilder;
 
+impl SetV2LoggingOptionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::set_v2_logging_options::SetV2LoggingOptionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::set_v2_logging_options::SetV2LoggingOptionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.set_v2_logging_options();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SetV2LoggingOptions`.
 ///
 /// <p>Sets the logging options for the V2 logging service.</p>

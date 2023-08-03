@@ -3,6 +3,23 @@ pub use crate::operation::delete_approval_rule_template::_delete_approval_rule_t
 
 pub use crate::operation::delete_approval_rule_template::_delete_approval_rule_template_input::DeleteApprovalRuleTemplateInputBuilder;
 
+impl DeleteApprovalRuleTemplateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_approval_rule_template::DeleteApprovalRuleTemplateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_approval_rule_template::DeleteApprovalRuleTemplateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_approval_rule_template();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteApprovalRuleTemplate`.
 ///
 /// <p>Deletes a specified approval rule template. Deleting a template does not remove approval rules on pull requests already created with the template.</p>

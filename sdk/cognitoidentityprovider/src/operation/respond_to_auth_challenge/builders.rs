@@ -3,6 +3,23 @@ pub use crate::operation::respond_to_auth_challenge::_respond_to_auth_challenge_
 
 pub use crate::operation::respond_to_auth_challenge::_respond_to_auth_challenge_input::RespondToAuthChallengeInputBuilder;
 
+impl RespondToAuthChallengeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::respond_to_auth_challenge::RespondToAuthChallengeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::respond_to_auth_challenge::RespondToAuthChallengeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.respond_to_auth_challenge();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RespondToAuthChallenge`.
 ///
 /// <p>Responds to the authentication challenge.</p> <note>

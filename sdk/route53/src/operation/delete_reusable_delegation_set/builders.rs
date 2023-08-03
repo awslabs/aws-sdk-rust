@@ -3,6 +3,23 @@ pub use crate::operation::delete_reusable_delegation_set::_delete_reusable_deleg
 
 pub use crate::operation::delete_reusable_delegation_set::_delete_reusable_delegation_set_input::DeleteReusableDelegationSetInputBuilder;
 
+impl DeleteReusableDelegationSetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_reusable_delegation_set::DeleteReusableDelegationSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_reusable_delegation_set::DeleteReusableDelegationSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_reusable_delegation_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteReusableDelegationSet`.
 ///
 /// <p>Deletes a reusable delegation set.</p> <important>

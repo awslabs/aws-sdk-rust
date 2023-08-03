@@ -3,6 +3,23 @@ pub use crate::operation::update_container_instances_state::_update_container_in
 
 pub use crate::operation::update_container_instances_state::_update_container_instances_state_input::UpdateContainerInstancesStateInputBuilder;
 
+impl UpdateContainerInstancesStateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_container_instances_state::UpdateContainerInstancesStateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_container_instances_state::UpdateContainerInstancesStateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_container_instances_state();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateContainerInstancesState`.
 ///
 /// <p>Modifies the status of an Amazon ECS container instance.</p>

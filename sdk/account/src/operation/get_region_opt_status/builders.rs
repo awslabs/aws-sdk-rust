@@ -3,6 +3,23 @@ pub use crate::operation::get_region_opt_status::_get_region_opt_status_output::
 
 pub use crate::operation::get_region_opt_status::_get_region_opt_status_input::GetRegionOptStatusInputBuilder;
 
+impl GetRegionOptStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_region_opt_status::GetRegionOptStatusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_region_opt_status::GetRegionOptStatusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_region_opt_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetRegionOptStatus`.
 ///
 /// <p>Retrieves the opt-in status of a particular Region.</p>

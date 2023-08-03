@@ -3,6 +3,23 @@ pub use crate::operation::delete_account_setting::_delete_account_setting_output
 
 pub use crate::operation::delete_account_setting::_delete_account_setting_input::DeleteAccountSettingInputBuilder;
 
+impl DeleteAccountSettingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_account_setting::DeleteAccountSettingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_account_setting::DeleteAccountSettingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_account_setting();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteAccountSetting`.
 ///
 /// <p>Disables an account setting for a specified user, role, or the root user for an account.</p>

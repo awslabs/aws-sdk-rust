@@ -3,6 +3,23 @@ pub use crate::operation::generate_pin_data::_generate_pin_data_output::Generate
 
 pub use crate::operation::generate_pin_data::_generate_pin_data_input::GeneratePinDataInputBuilder;
 
+impl GeneratePinDataInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::generate_pin_data::GeneratePinDataOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::generate_pin_data::GeneratePinDataError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.generate_pin_data();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GeneratePinData`.
 ///
 /// <p>Generates pin-related data such as PIN, PIN Verification Value (PVV), PIN Block, and PIN Offset during new card issuance or reissuance. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/generate-pin-data.html">Generate PIN data</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.</p>

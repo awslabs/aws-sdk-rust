@@ -3,6 +3,23 @@ pub use crate::operation::get_access_point_policy_status::_get_access_point_poli
 
 pub use crate::operation::get_access_point_policy_status::_get_access_point_policy_status_input::GetAccessPointPolicyStatusInputBuilder;
 
+impl GetAccessPointPolicyStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_access_point_policy_status::GetAccessPointPolicyStatusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_access_point_policy_status::GetAccessPointPolicyStatusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_access_point_policy_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetAccessPointPolicyStatus`.
 ///
 /// <p>Indicates whether the specified access point currently has a policy that allows public access. For more information about public access through access points, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing Data Access with Amazon S3 access points</a> in the <i>Amazon S3 User Guide</i>.</p>

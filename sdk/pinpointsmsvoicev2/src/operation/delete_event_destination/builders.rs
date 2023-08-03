@@ -3,6 +3,23 @@ pub use crate::operation::delete_event_destination::_delete_event_destination_ou
 
 pub use crate::operation::delete_event_destination::_delete_event_destination_input::DeleteEventDestinationInputBuilder;
 
+impl DeleteEventDestinationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_event_destination::DeleteEventDestinationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_event_destination::DeleteEventDestinationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_event_destination();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteEventDestination`.
 ///
 /// <p>Deletes an existing event destination.</p>

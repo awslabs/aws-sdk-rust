@@ -3,6 +3,23 @@ pub use crate::operation::delete_app_authorization::_delete_app_authorization_ou
 
 pub use crate::operation::delete_app_authorization::_delete_app_authorization_input::DeleteAppAuthorizationInputBuilder;
 
+impl DeleteAppAuthorizationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_app_authorization::DeleteAppAuthorizationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_app_authorization::DeleteAppAuthorizationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_app_authorization();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteAppAuthorization`.
 ///
 /// <p>Deletes an app authorization. You must delete the associated ingestion before you can delete an app authorization.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_retirable_grants::_list_retirable_grants_output::
 
 pub use crate::operation::list_retirable_grants::_list_retirable_grants_input::ListRetirableGrantsInputBuilder;
 
+impl ListRetirableGrantsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_retirable_grants::ListRetirableGrantsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_retirable_grants::ListRetirableGrantsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_retirable_grants();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListRetirableGrants`.
 ///
 /// <p>Returns information about all grants in the Amazon Web Services account and Region that have the specified retiring principal. </p>

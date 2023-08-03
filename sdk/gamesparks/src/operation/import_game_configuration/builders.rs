@@ -3,6 +3,23 @@ pub use crate::operation::import_game_configuration::_import_game_configuration_
 
 pub use crate::operation::import_game_configuration::_import_game_configuration_input::ImportGameConfigurationInputBuilder;
 
+impl ImportGameConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::import_game_configuration::ImportGameConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::import_game_configuration::ImportGameConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.import_game_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ImportGameConfiguration`.
 ///
 /// <p>Imports a game configuration.</p>

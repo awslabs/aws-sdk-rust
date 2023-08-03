@@ -3,6 +3,23 @@ pub use crate::operation::modify_document_permission::_modify_document_permissio
 
 pub use crate::operation::modify_document_permission::_modify_document_permission_input::ModifyDocumentPermissionInputBuilder;
 
+impl ModifyDocumentPermissionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_document_permission::ModifyDocumentPermissionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_document_permission::ModifyDocumentPermissionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_document_permission();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyDocumentPermission`.
 ///
 /// <p>Shares a Amazon Web Services Systems Manager document (SSM document)publicly or privately. If you share a document privately, you must specify the Amazon Web Services user IDs for those people who can use the document. If you share a document publicly, you must specify <i>All</i> as the account ID.</p>

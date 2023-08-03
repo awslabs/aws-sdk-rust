@@ -3,6 +3,23 @@ pub use crate::operation::delete_ipam_scope::_delete_ipam_scope_output::DeleteIp
 
 pub use crate::operation::delete_ipam_scope::_delete_ipam_scope_input::DeleteIpamScopeInputBuilder;
 
+impl DeleteIpamScopeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_ipam_scope::DeleteIpamScopeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_ipam_scope::DeleteIpamScopeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_ipam_scope();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteIpamScope`.
 ///
 /// <p>Delete the scope for an IPAM. You cannot delete the default scopes.</p>

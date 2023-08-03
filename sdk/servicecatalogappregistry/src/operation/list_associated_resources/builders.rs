@@ -3,6 +3,23 @@ pub use crate::operation::list_associated_resources::_list_associated_resources_
 
 pub use crate::operation::list_associated_resources::_list_associated_resources_input::ListAssociatedResourcesInputBuilder;
 
+impl ListAssociatedResourcesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_associated_resources::ListAssociatedResourcesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_associated_resources::ListAssociatedResourcesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_associated_resources();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAssociatedResources`.
 ///
 /// <p> Lists all of the resources that are associated with the specified application. Results are paginated. </p> <note>

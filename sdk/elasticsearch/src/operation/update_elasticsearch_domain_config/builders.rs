@@ -3,6 +3,17 @@ pub use crate::operation::update_elasticsearch_domain_config::_update_elasticsea
 
 pub use crate::operation::update_elasticsearch_domain_config::_update_elasticsearch_domain_config_input::UpdateElasticsearchDomainConfigInputBuilder;
 
+impl UpdateElasticsearchDomainConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::update_elasticsearch_domain_config::UpdateElasticsearchDomainConfigOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_elasticsearch_domain_config::UpdateElasticsearchDomainConfigError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.update_elasticsearch_domain_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateElasticsearchDomainConfig`.
 ///
 /// <p>Modifies the cluster configuration of the specified Elasticsearch domain, setting as setting the instance type and the number of instances. </p>

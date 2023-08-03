@@ -3,6 +3,23 @@ pub use crate::operation::update_certificate_authority::_update_certificate_auth
 
 pub use crate::operation::update_certificate_authority::_update_certificate_authority_input::UpdateCertificateAuthorityInputBuilder;
 
+impl UpdateCertificateAuthorityInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_certificate_authority::UpdateCertificateAuthorityOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_certificate_authority::UpdateCertificateAuthorityError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_certificate_authority();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateCertificateAuthority`.
 ///
 /// <p>Updates the status or configuration of a private certificate authority (CA). Your private CA must be in the <code>ACTIVE</code> or <code>DISABLED</code> state before you can update it. You can disable a private CA that is in the <code>ACTIVE</code> state or make a CA that is in the <code>DISABLED</code> state active again.</p> <note>

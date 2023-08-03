@@ -3,6 +3,23 @@ pub use crate::operation::disable_hosted_zone_dnssec::_disable_hosted_zone_dnsse
 
 pub use crate::operation::disable_hosted_zone_dnssec::_disable_hosted_zone_dnssec_input::DisableHostedZoneDnssecInputBuilder;
 
+impl DisableHostedZoneDnssecInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disable_hosted_zone_dnssec::DisableHostedZoneDnssecOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disable_hosted_zone_dnssec::DisableHostedZoneDNSSECError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disable_hosted_zone_dnssec();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisableHostedZoneDNSSEC`.
 ///
 /// <p>Disables DNSSEC signing in a specific hosted zone. This action does not deactivate any key-signing keys (KSKs) that are active in the hosted zone.</p>

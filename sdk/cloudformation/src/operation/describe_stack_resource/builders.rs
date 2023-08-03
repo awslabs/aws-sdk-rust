@@ -3,6 +3,23 @@ pub use crate::operation::describe_stack_resource::_describe_stack_resource_outp
 
 pub use crate::operation::describe_stack_resource::_describe_stack_resource_input::DescribeStackResourceInputBuilder;
 
+impl DescribeStackResourceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_stack_resource::DescribeStackResourceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_stack_resource::DescribeStackResourceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_stack_resource();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeStackResource`.
 ///
 /// <p>Returns a description of the specified resource in the specified stack.</p>

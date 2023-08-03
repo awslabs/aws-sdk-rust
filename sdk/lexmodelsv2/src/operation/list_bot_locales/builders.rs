@@ -3,6 +3,23 @@ pub use crate::operation::list_bot_locales::_list_bot_locales_output::ListBotLoc
 
 pub use crate::operation::list_bot_locales::_list_bot_locales_input::ListBotLocalesInputBuilder;
 
+impl ListBotLocalesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_bot_locales::ListBotLocalesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_bot_locales::ListBotLocalesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_bot_locales();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListBotLocales`.
 ///
 /// <p>Gets a list of locales for the specified bot.</p>

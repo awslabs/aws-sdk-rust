@@ -3,6 +3,17 @@ pub use crate::operation::describe_data_set_refresh_properties::_describe_data_s
 
 pub use crate::operation::describe_data_set_refresh_properties::_describe_data_set_refresh_properties_input::DescribeDataSetRefreshPropertiesInputBuilder;
 
+impl DescribeDataSetRefreshPropertiesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_data_set_refresh_properties::DescribeDataSetRefreshPropertiesOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_data_set_refresh_properties::DescribeDataSetRefreshPropertiesError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_data_set_refresh_properties();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeDataSetRefreshProperties`.
 ///
 /// <p>Describes the refresh properties of a dataset.</p>

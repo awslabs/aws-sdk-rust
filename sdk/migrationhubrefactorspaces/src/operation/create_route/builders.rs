@@ -3,6 +3,23 @@ pub use crate::operation::create_route::_create_route_output::CreateRouteOutputB
 
 pub use crate::operation::create_route::_create_route_input::CreateRouteInputBuilder;
 
+impl CreateRouteInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_route::CreateRouteOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_route::CreateRouteError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_route();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateRoute`.
 ///
 /// <p>Creates an Amazon Web Services Migration Hub Refactor Spaces route. The account owner of the service resource is always the environment owner, regardless of which account creates the route. Routes target a service in the application. If an application does not have any routes, then the first route must be created as a <code>DEFAULT</code> <code>RouteType</code>.</p>

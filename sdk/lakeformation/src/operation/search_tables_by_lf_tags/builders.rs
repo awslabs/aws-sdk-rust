@@ -3,6 +3,23 @@ pub use crate::operation::search_tables_by_lf_tags::_search_tables_by_lf_tags_ou
 
 pub use crate::operation::search_tables_by_lf_tags::_search_tables_by_lf_tags_input::SearchTablesByLfTagsInputBuilder;
 
+impl SearchTablesByLfTagsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::search_tables_by_lf_tags::SearchTablesByLfTagsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::search_tables_by_lf_tags::SearchTablesByLFTagsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.search_tables_by_lf_tags();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SearchTablesByLFTags`.
 ///
 /// <p>This operation allows a search on <code>TABLE</code> resources by <code>LFTag</code>s. This will be used by admins who want to grant user permissions on certain LF-tags. Before making a grant, the admin can use <code>SearchTablesByLFTags</code> to find all resources where the given <code>LFTag</code>s are valid to verify whether the returned resources can be shared.</p>

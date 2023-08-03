@@ -3,6 +3,23 @@ pub use crate::operation::deregister_devices::_deregister_devices_output::Deregi
 
 pub use crate::operation::deregister_devices::_deregister_devices_input::DeregisterDevicesInputBuilder;
 
+impl DeregisterDevicesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::deregister_devices::DeregisterDevicesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::deregister_devices::DeregisterDevicesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.deregister_devices();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeregisterDevices`.
 ///
 /// <p>Deregisters the specified devices. After you deregister a device, you will need to re-register the devices.</p>

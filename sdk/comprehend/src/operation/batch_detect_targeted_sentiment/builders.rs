@@ -3,6 +3,23 @@ pub use crate::operation::batch_detect_targeted_sentiment::_batch_detect_targete
 
 pub use crate::operation::batch_detect_targeted_sentiment::_batch_detect_targeted_sentiment_input::BatchDetectTargetedSentimentInputBuilder;
 
+impl BatchDetectTargetedSentimentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_detect_targeted_sentiment::BatchDetectTargetedSentimentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_detect_targeted_sentiment::BatchDetectTargetedSentimentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_detect_targeted_sentiment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchDetectTargetedSentiment`.
 ///
 /// <p>Inspects a batch of documents and returns a sentiment analysis for each entity identified in the documents.</p>

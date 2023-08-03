@@ -3,6 +3,23 @@ pub use crate::operation::update_secret::_update_secret_output::UpdateSecretOutp
 
 pub use crate::operation::update_secret::_update_secret_input::UpdateSecretInputBuilder;
 
+impl UpdateSecretInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_secret::UpdateSecretOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_secret::UpdateSecretError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_secret();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateSecret`.
 ///
 /// <p>Modifies the details of a secret, including metadata and the secret value. To change the secret value, you can also use <code>PutSecretValue</code>.</p>

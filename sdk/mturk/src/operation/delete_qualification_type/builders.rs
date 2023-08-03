@@ -3,6 +3,23 @@ pub use crate::operation::delete_qualification_type::_delete_qualification_type_
 
 pub use crate::operation::delete_qualification_type::_delete_qualification_type_input::DeleteQualificationTypeInputBuilder;
 
+impl DeleteQualificationTypeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_qualification_type::DeleteQualificationTypeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_qualification_type::DeleteQualificationTypeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_qualification_type();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteQualificationType`.
 ///
 /// <p> The <code>DeleteQualificationType</code> deletes a Qualification type and deletes any HIT types that are associated with the Qualification type. </p>

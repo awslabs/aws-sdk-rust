@@ -3,6 +3,23 @@ pub use crate::operation::list_share_invitations::_list_share_invitations_output
 
 pub use crate::operation::list_share_invitations::_list_share_invitations_input::ListShareInvitationsInputBuilder;
 
+impl ListShareInvitationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_share_invitations::ListShareInvitationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_share_invitations::ListShareInvitationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_share_invitations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListShareInvitations`.
 ///
 /// <p>List the workload invitations.</p>

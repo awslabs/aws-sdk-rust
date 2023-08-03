@@ -3,6 +3,23 @@ pub use crate::operation::delete_partner_event_source::_delete_partner_event_sou
 
 pub use crate::operation::delete_partner_event_source::_delete_partner_event_source_input::DeletePartnerEventSourceInputBuilder;
 
+impl DeletePartnerEventSourceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_partner_event_source::DeletePartnerEventSourceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_partner_event_source::DeletePartnerEventSourceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_partner_event_source();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeletePartnerEventSource`.
 ///
 /// <p>This operation is used by SaaS partners to delete a partner event source. This operation is not used by Amazon Web Services customers.</p>

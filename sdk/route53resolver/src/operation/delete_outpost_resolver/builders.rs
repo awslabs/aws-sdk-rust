@@ -3,6 +3,23 @@ pub use crate::operation::delete_outpost_resolver::_delete_outpost_resolver_outp
 
 pub use crate::operation::delete_outpost_resolver::_delete_outpost_resolver_input::DeleteOutpostResolverInputBuilder;
 
+impl DeleteOutpostResolverInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_outpost_resolver::DeleteOutpostResolverOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_outpost_resolver::DeleteOutpostResolverError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_outpost_resolver();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteOutpostResolver`.
 ///
 /// <p>Deletes a Resolver on the Outpost.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_ipam_discovered_accounts::_get_ipam_discovered_acc
 
 pub use crate::operation::get_ipam_discovered_accounts::_get_ipam_discovered_accounts_input::GetIpamDiscoveredAccountsInputBuilder;
 
+impl GetIpamDiscoveredAccountsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_ipam_discovered_accounts::GetIpamDiscoveredAccountsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_ipam_discovered_accounts();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetIpamDiscoveredAccounts`.
 ///
 /// <p>Gets IPAM discovered accounts. A discovered account is an Amazon Web Services account that is monitored under a resource discovery. If you have integrated IPAM with Amazon Web Services Organizations, all accounts in the organization are discovered accounts. Only the IPAM account can get all discovered accounts in the organization.</p>

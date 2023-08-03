@@ -3,6 +3,23 @@ pub use crate::operation::get_spot_placement_scores::_get_spot_placement_scores_
 
 pub use crate::operation::get_spot_placement_scores::_get_spot_placement_scores_input::GetSpotPlacementScoresInputBuilder;
 
+impl GetSpotPlacementScoresInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_spot_placement_scores::GetSpotPlacementScoresOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_spot_placement_scores::GetSpotPlacementScoresError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_spot_placement_scores();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetSpotPlacementScores`.
 ///
 /// <p>Calculates the Spot placement score for a Region or Availability Zone based on the specified target capacity and compute requirements.</p>

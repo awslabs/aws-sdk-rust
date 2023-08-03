@@ -3,6 +3,23 @@ pub use crate::operation::batch_get_membership_datasources::_batch_get_membershi
 
 pub use crate::operation::batch_get_membership_datasources::_batch_get_membership_datasources_input::BatchGetMembershipDatasourcesInputBuilder;
 
+impl BatchGetMembershipDatasourcesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_membership_datasources::BatchGetMembershipDatasourcesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_get_membership_datasources::BatchGetMembershipDatasourcesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_get_membership_datasources();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchGetMembershipDatasources`.
 ///
 /// <p>Gets information on the data source package history for an account.</p>

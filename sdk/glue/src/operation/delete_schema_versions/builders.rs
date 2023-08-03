@@ -3,6 +3,23 @@ pub use crate::operation::delete_schema_versions::_delete_schema_versions_output
 
 pub use crate::operation::delete_schema_versions::_delete_schema_versions_input::DeleteSchemaVersionsInputBuilder;
 
+impl DeleteSchemaVersionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_schema_versions::DeleteSchemaVersionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_schema_versions::DeleteSchemaVersionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_schema_versions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteSchemaVersions`.
 ///
 /// <p>Remove versions from the specified schema. A version number or range may be supplied. If the compatibility mode forbids deleting of a version that is necessary, such as BACKWARDS_FULL, an error is returned. Calling the <code>GetSchemaVersions</code> API after this call will list the status of the deleted versions.</p>

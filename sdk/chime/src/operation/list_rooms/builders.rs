@@ -3,6 +3,23 @@ pub use crate::operation::list_rooms::_list_rooms_output::ListRoomsOutputBuilder
 
 pub use crate::operation::list_rooms::_list_rooms_input::ListRoomsInputBuilder;
 
+impl ListRoomsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_rooms::ListRoomsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_rooms::ListRoomsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_rooms();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListRooms`.
 ///
 /// <p>Lists the room details for the specified Amazon Chime Enterprise account. Optionally, filter the results by a member ID (user ID or bot ID) to see a list of rooms that the member belongs to.</p>

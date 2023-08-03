@@ -3,6 +3,23 @@ pub use crate::operation::describe_workspace_snapshots::_describe_workspace_snap
 
 pub use crate::operation::describe_workspace_snapshots::_describe_workspace_snapshots_input::DescribeWorkspaceSnapshotsInputBuilder;
 
+impl DescribeWorkspaceSnapshotsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_workspace_snapshots::DescribeWorkspaceSnapshotsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_workspace_snapshots::DescribeWorkspaceSnapshotsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_workspace_snapshots();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeWorkspaceSnapshots`.
 ///
 /// <p>Describes the snapshots for the specified WorkSpace.</p>

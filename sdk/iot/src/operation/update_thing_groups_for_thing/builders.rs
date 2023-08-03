@@ -3,6 +3,23 @@ pub use crate::operation::update_thing_groups_for_thing::_update_thing_groups_fo
 
 pub use crate::operation::update_thing_groups_for_thing::_update_thing_groups_for_thing_input::UpdateThingGroupsForThingInputBuilder;
 
+impl UpdateThingGroupsForThingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_thing_groups_for_thing::UpdateThingGroupsForThingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_thing_groups_for_thing::UpdateThingGroupsForThingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_thing_groups_for_thing();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateThingGroupsForThing`.
 ///
 /// <p>Updates the groups to which the thing belongs.</p>

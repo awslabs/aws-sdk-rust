@@ -3,6 +3,23 @@ pub use crate::operation::update_resource_collection::_update_resource_collectio
 
 pub use crate::operation::update_resource_collection::_update_resource_collection_input::UpdateResourceCollectionInputBuilder;
 
+impl UpdateResourceCollectionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_resource_collection::UpdateResourceCollectionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_resource_collection::UpdateResourceCollectionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_resource_collection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateResourceCollection`.
 ///
 /// <p> Updates the collection of resources that DevOps Guru analyzes. The two types of Amazon Web Services resource collections supported are Amazon Web Services CloudFormation stacks and Amazon Web Services resources that contain the same Amazon Web Services tag. DevOps Guru can be configured to analyze the Amazon Web Services resources that are defined in the stacks or that are tagged using the same tag <i>key</i>. You can specify up to 500 Amazon Web Services CloudFormation stacks. This method also creates the IAM role required for you to use DevOps Guru. </p>

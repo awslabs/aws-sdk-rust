@@ -3,6 +3,23 @@ pub use crate::operation::cancel_certificate_transfer::_cancel_certificate_trans
 
 pub use crate::operation::cancel_certificate_transfer::_cancel_certificate_transfer_input::CancelCertificateTransferInputBuilder;
 
+impl CancelCertificateTransferInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::cancel_certificate_transfer::CancelCertificateTransferOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::cancel_certificate_transfer::CancelCertificateTransferError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.cancel_certificate_transfer();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CancelCertificateTransfer`.
 ///
 /// <p>Cancels a pending transfer for the specified certificate.</p>

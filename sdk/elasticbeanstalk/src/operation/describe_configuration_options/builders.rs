@@ -3,6 +3,23 @@ pub use crate::operation::describe_configuration_options::_describe_configuratio
 
 pub use crate::operation::describe_configuration_options::_describe_configuration_options_input::DescribeConfigurationOptionsInputBuilder;
 
+impl DescribeConfigurationOptionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_configuration_options::DescribeConfigurationOptionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_configuration_options::DescribeConfigurationOptionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_configuration_options();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeConfigurationOptions`.
 ///
 /// <p>Describes the configuration options that are used in a particular configuration template or environment, or that a specified solution stack defines. The description includes the values the options, their default values, and an indication of the required action on a running environment if an option value is changed.</p>

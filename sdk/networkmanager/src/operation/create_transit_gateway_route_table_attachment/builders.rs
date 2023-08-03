@@ -3,6 +3,17 @@ pub use crate::operation::create_transit_gateway_route_table_attachment::_create
 
 pub use crate::operation::create_transit_gateway_route_table_attachment::_create_transit_gateway_route_table_attachment_input::CreateTransitGatewayRouteTableAttachmentInputBuilder;
 
+impl CreateTransitGatewayRouteTableAttachmentInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::create_transit_gateway_route_table_attachment::CreateTransitGatewayRouteTableAttachmentOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_transit_gateway_route_table_attachment::CreateTransitGatewayRouteTableAttachmentError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.create_transit_gateway_route_table_attachment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateTransitGatewayRouteTableAttachment`.
 ///
 /// <p>Creates a transit gateway route table attachment.</p>

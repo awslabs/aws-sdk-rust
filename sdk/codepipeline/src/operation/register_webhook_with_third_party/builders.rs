@@ -3,6 +3,23 @@ pub use crate::operation::register_webhook_with_third_party::_register_webhook_w
 
 pub use crate::operation::register_webhook_with_third_party::_register_webhook_with_third_party_input::RegisterWebhookWithThirdPartyInputBuilder;
 
+impl RegisterWebhookWithThirdPartyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::register_webhook_with_third_party::RegisterWebhookWithThirdPartyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::register_webhook_with_third_party::RegisterWebhookWithThirdPartyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.register_webhook_with_third_party();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RegisterWebhookWithThirdParty`.
 ///
 /// <p>Configures a connection between the webhook that was created and the external tool with events to be detected.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::put_retention_settings::_put_retention_settings_output
 
 pub use crate::operation::put_retention_settings::_put_retention_settings_input::PutRetentionSettingsInputBuilder;
 
+impl PutRetentionSettingsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_retention_settings::PutRetentionSettingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_retention_settings::PutRetentionSettingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_retention_settings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutRetentionSettings`.
 ///
 /// <p> Puts retention settings for the specified Amazon Chime Enterprise account. We recommend using AWS CloudTrail to monitor usage of this API for your account. For more information, see <a href="https://docs.aws.amazon.com/chime/latest/ag/cloudtrail.html">Logging Amazon Chime API Calls with AWS CloudTrail</a> in the <i>Amazon Chime Administration Guide</i>.</p>

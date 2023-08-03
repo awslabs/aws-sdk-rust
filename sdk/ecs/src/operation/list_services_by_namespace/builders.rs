@@ -3,6 +3,23 @@ pub use crate::operation::list_services_by_namespace::_list_services_by_namespac
 
 pub use crate::operation::list_services_by_namespace::_list_services_by_namespace_input::ListServicesByNamespaceInputBuilder;
 
+impl ListServicesByNamespaceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_services_by_namespace::ListServicesByNamespaceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_services_by_namespace::ListServicesByNamespaceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_services_by_namespace();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListServicesByNamespace`.
 ///
 /// <p>This operation lists all of the services that are associated with a Cloud Map namespace. This list might include services in different clusters. In contrast, <code>ListServices</code> can only list services in one cluster at a time. If you need to filter the list of services in a single cluster by various parameters, use <code>ListServices</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-connect.html">Service Connect</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>

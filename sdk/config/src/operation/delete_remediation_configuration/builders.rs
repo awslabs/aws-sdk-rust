@@ -3,6 +3,23 @@ pub use crate::operation::delete_remediation_configuration::_delete_remediation_
 
 pub use crate::operation::delete_remediation_configuration::_delete_remediation_configuration_input::DeleteRemediationConfigurationInputBuilder;
 
+impl DeleteRemediationConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_remediation_configuration::DeleteRemediationConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_remediation_configuration::DeleteRemediationConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_remediation_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteRemediationConfiguration`.
 ///
 /// <p>Deletes the remediation configuration.</p>

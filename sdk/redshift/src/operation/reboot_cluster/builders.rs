@@ -3,6 +3,23 @@ pub use crate::operation::reboot_cluster::_reboot_cluster_output::RebootClusterO
 
 pub use crate::operation::reboot_cluster::_reboot_cluster_input::RebootClusterInputBuilder;
 
+impl RebootClusterInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::reboot_cluster::RebootClusterOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::reboot_cluster::RebootClusterError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.reboot_cluster();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RebootCluster`.
 ///
 /// <p>Reboots a cluster. This action is taken as soon as possible. It results in a momentary outage to the cluster, during which the cluster status is set to <code>rebooting</code>. A cluster event is created when the reboot is completed. Any pending cluster modifications (see <code>ModifyCluster</code>) are applied at this reboot. For more information about managing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>. </p>

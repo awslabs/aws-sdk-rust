@@ -3,6 +3,23 @@ pub use crate::operation::enable_vgw_route_propagation::_enable_vgw_route_propag
 
 pub use crate::operation::enable_vgw_route_propagation::_enable_vgw_route_propagation_input::EnableVgwRoutePropagationInputBuilder;
 
+impl EnableVgwRoutePropagationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::enable_vgw_route_propagation::EnableVgwRoutePropagationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::enable_vgw_route_propagation::EnableVgwRoutePropagationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.enable_vgw_route_propagation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `EnableVgwRoutePropagation`.
 ///
 /// <p>Enables a virtual private gateway (VGW) to propagate routes to the specified route table of a VPC.</p>

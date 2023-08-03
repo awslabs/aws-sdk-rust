@@ -3,6 +3,23 @@ pub use crate::operation::create_upload::_create_upload_output::CreateUploadOutp
 
 pub use crate::operation::create_upload::_create_upload_input::CreateUploadInputBuilder;
 
+impl CreateUploadInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_upload::CreateUploadOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_upload::CreateUploadError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_upload();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateUpload`.
 ///
 /// <p>Uploads an app or test scripts.</p>

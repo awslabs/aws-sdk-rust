@@ -3,6 +3,23 @@ pub use crate::operation::list_graphs::_list_graphs_output::ListGraphsOutputBuil
 
 pub use crate::operation::list_graphs::_list_graphs_input::ListGraphsInputBuilder;
 
+impl ListGraphsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_graphs::ListGraphsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_graphs::ListGraphsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_graphs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListGraphs`.
 ///
 /// <p>Returns the list of behavior graphs that the calling account is an administrator account of. This operation can only be called by an administrator account.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_app_version_resource::_create_app_version_resou
 
 pub use crate::operation::create_app_version_resource::_create_app_version_resource_input::CreateAppVersionResourceInputBuilder;
 
+impl CreateAppVersionResourceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_app_version_resource::CreateAppVersionResourceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_app_version_resource::CreateAppVersionResourceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_app_version_resource();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateAppVersionResource`.
 ///
 /// <p>Adds a resource to the Resilience Hub application and assigns it to the specified Application Components. If you specify a new Application Component, Resilience Hub will automatically create the Application Component.</p> <note>

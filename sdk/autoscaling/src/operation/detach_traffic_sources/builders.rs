@@ -3,6 +3,23 @@ pub use crate::operation::detach_traffic_sources::_detach_traffic_sources_output
 
 pub use crate::operation::detach_traffic_sources::_detach_traffic_sources_input::DetachTrafficSourcesInputBuilder;
 
+impl DetachTrafficSourcesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::detach_traffic_sources::DetachTrafficSourcesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::detach_traffic_sources::DetachTrafficSourcesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.detach_traffic_sources();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DetachTrafficSources`.
 ///
 /// <p>Detaches one or more traffic sources from the specified Auto Scaling group.</p>

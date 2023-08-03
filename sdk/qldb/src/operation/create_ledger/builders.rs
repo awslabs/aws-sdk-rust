@@ -3,6 +3,23 @@ pub use crate::operation::create_ledger::_create_ledger_output::CreateLedgerOutp
 
 pub use crate::operation::create_ledger::_create_ledger_input::CreateLedgerInputBuilder;
 
+impl CreateLedgerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_ledger::CreateLedgerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_ledger::CreateLedgerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_ledger();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateLedger`.
 ///
 /// <p>Creates a new ledger in your Amazon Web Services account in the current Region.</p>

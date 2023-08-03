@@ -3,6 +3,23 @@ pub use crate::operation::get_token_balance::_get_token_balance_output::GetToken
 
 pub use crate::operation::get_token_balance::_get_token_balance_input::GetTokenBalanceInputBuilder;
 
+impl GetTokenBalanceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_token_balance::GetTokenBalanceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_token_balance::GetTokenBalanceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_token_balance();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetTokenBalance`.
 ///
 /// <p>Gets the balance of a specific token, including native tokens, for a given address (wallet or contract) on the blockchain.</p> <note>

@@ -3,6 +3,17 @@ pub use crate::operation::update_approval_rule_template_content::_update_approva
 
 pub use crate::operation::update_approval_rule_template_content::_update_approval_rule_template_content_input::UpdateApprovalRuleTemplateContentInputBuilder;
 
+impl UpdateApprovalRuleTemplateContentInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::update_approval_rule_template_content::UpdateApprovalRuleTemplateContentOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_approval_rule_template_content::UpdateApprovalRuleTemplateContentError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.update_approval_rule_template_content();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateApprovalRuleTemplateContent`.
 ///
 /// <p>Updates the content of an approval rule template. You can change the number of required approvals, the membership of the approval rule, and whether an approval pool is defined.</p>

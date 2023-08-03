@@ -3,6 +3,23 @@ pub use crate::operation::enable_key::_enable_key_output::EnableKeyOutputBuilder
 
 pub use crate::operation::enable_key::_enable_key_input::EnableKeyInputBuilder;
 
+impl EnableKeyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::enable_key::EnableKeyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::enable_key::EnableKeyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.enable_key();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `EnableKey`.
 ///
 /// <p>Sets the key state of a KMS key to enabled. This allows you to use the KMS key for <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#cryptographic-operations">cryptographic operations</a>. </p>

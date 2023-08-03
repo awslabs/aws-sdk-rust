@@ -3,6 +3,23 @@ pub use crate::operation::list_kx_users::_list_kx_users_output::ListKxUsersOutpu
 
 pub use crate::operation::list_kx_users::_list_kx_users_input::ListKxUsersInputBuilder;
 
+impl ListKxUsersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_kx_users::ListKxUsersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_kx_users::ListKxUsersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_kx_users();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListKxUsers`.
 ///
 /// <p>Lists all the users in a kdb environment.</p>

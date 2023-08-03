@@ -3,6 +3,23 @@ pub use crate::operation::get_dedicated_ip::_get_dedicated_ip_output::GetDedicat
 
 pub use crate::operation::get_dedicated_ip::_get_dedicated_ip_input::GetDedicatedIpInputBuilder;
 
+impl GetDedicatedIpInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_dedicated_ip::GetDedicatedIpOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_dedicated_ip::GetDedicatedIpError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_dedicated_ip();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetDedicatedIp`.
 ///
 /// <p>Get information about a dedicated IP address, including the name of the dedicated IP pool that it's associated with, as well information about the automatic warm-up process for the address.</p>

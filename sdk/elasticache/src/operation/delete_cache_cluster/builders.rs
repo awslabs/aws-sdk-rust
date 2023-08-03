@@ -3,6 +3,23 @@ pub use crate::operation::delete_cache_cluster::_delete_cache_cluster_output::De
 
 pub use crate::operation::delete_cache_cluster::_delete_cache_cluster_input::DeleteCacheClusterInputBuilder;
 
+impl DeleteCacheClusterInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_cache_cluster::DeleteCacheClusterOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_cache_cluster::DeleteCacheClusterError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_cache_cluster();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteCacheCluster`.
 ///
 /// <p>Deletes a previously provisioned cluster. <code>DeleteCacheCluster</code> deletes all associated cache nodes, node endpoints and the cluster itself. When you receive a successful response from this operation, Amazon ElastiCache immediately begins deleting the cluster; you cannot cancel or revert this operation.</p>

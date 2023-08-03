@@ -3,6 +3,23 @@ pub use crate::operation::associate_member::_associate_member_output::AssociateM
 
 pub use crate::operation::associate_member::_associate_member_input::AssociateMemberInputBuilder;
 
+impl AssociateMemberInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_member::AssociateMemberOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_member::AssociateMemberError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_member();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateMember`.
 ///
 /// <p>Associates an Amazon Web Services account with an Amazon Inspector delegated administrator. An HTTP 200 response indicates the association was successfully started, but doesn’t indicate whether it was completed. You can check if the association completed by using <a href="https://docs.aws.amazon.com/inspector/v2/APIReference/API_ListMembers.html">ListMembers</a> for multiple accounts or <a href="https://docs.aws.amazon.com/inspector/v2/APIReference/API_GetMember.html">GetMembers</a> for a single account.</p>

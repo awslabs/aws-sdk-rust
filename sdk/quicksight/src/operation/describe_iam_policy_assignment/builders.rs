@@ -3,6 +3,23 @@ pub use crate::operation::describe_iam_policy_assignment::_describe_iam_policy_a
 
 pub use crate::operation::describe_iam_policy_assignment::_describe_iam_policy_assignment_input::DescribeIamPolicyAssignmentInputBuilder;
 
+impl DescribeIamPolicyAssignmentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_iam_policy_assignment::DescribeIamPolicyAssignmentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_iam_policy_assignment::DescribeIAMPolicyAssignmentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_iam_policy_assignment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeIAMPolicyAssignment`.
 ///
 /// <p>Describes an existing IAM policy assignment, as specified by the assignment name.</p>

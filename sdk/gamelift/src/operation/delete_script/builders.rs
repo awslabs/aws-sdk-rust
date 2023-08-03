@@ -3,6 +3,23 @@ pub use crate::operation::delete_script::_delete_script_output::DeleteScriptOutp
 
 pub use crate::operation::delete_script::_delete_script_input::DeleteScriptInputBuilder;
 
+impl DeleteScriptInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_script::DeleteScriptOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_script::DeleteScriptError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_script();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteScript`.
 ///
 /// <p>Deletes a Realtime script. This operation permanently deletes the script record. If script files were uploaded, they are also deleted (files stored in an S3 bucket are not deleted). </p>

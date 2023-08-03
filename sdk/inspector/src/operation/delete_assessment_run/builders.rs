@@ -3,6 +3,23 @@ pub use crate::operation::delete_assessment_run::_delete_assessment_run_output::
 
 pub use crate::operation::delete_assessment_run::_delete_assessment_run_input::DeleteAssessmentRunInputBuilder;
 
+impl DeleteAssessmentRunInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_assessment_run::DeleteAssessmentRunOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_assessment_run::DeleteAssessmentRunError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_assessment_run();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteAssessmentRun`.
 ///
 /// <p>Deletes the assessment run that is specified by the ARN of the assessment run.</p>

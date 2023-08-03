@@ -3,6 +3,23 @@ pub use crate::operation::create_evaluation_form::_create_evaluation_form_output
 
 pub use crate::operation::create_evaluation_form::_create_evaluation_form_input::CreateEvaluationFormInputBuilder;
 
+impl CreateEvaluationFormInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_evaluation_form::CreateEvaluationFormOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_evaluation_form::CreateEvaluationFormError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_evaluation_form();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateEvaluationForm`.
 ///
 /// <p>Creates an evaluation form in the specified Amazon Connect instance. The form can be used to define questions related to agent performance, and create sections to organize such questions. Question and section identifiers cannot be duplicated within the same evaluation form.</p>

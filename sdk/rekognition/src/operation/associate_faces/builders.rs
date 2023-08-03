@@ -3,6 +3,23 @@ pub use crate::operation::associate_faces::_associate_faces_output::AssociateFac
 
 pub use crate::operation::associate_faces::_associate_faces_input::AssociateFacesInputBuilder;
 
+impl AssociateFacesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_faces::AssociateFacesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_faces::AssociateFacesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_faces();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateFaces`.
 ///
 /// <p>Associates one or more faces with an existing UserID. Takes an array of <code>FaceIds</code>. Each <code>FaceId</code> that are present in the <code>FaceIds</code> list is associated with the provided UserID. The maximum number of total <code>FaceIds</code> per UserID is 100. </p>

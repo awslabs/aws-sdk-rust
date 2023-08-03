@@ -3,6 +3,23 @@ pub use crate::operation::put_role_permissions_boundary::_put_role_permissions_b
 
 pub use crate::operation::put_role_permissions_boundary::_put_role_permissions_boundary_input::PutRolePermissionsBoundaryInputBuilder;
 
+impl PutRolePermissionsBoundaryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_role_permissions_boundary::PutRolePermissionsBoundaryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_role_permissions_boundary::PutRolePermissionsBoundaryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_role_permissions_boundary();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutRolePermissionsBoundary`.
 ///
 /// <p>Adds or updates the policy that is specified as the IAM role's permissions boundary. You can use an Amazon Web Services managed policy or a customer managed policy to set the boundary for a role. Use the boundary to control the maximum permissions that the role can have. Setting a permissions boundary is an advanced feature that can affect the permissions for the role.</p>

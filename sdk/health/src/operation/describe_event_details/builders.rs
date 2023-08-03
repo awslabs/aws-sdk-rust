@@ -3,6 +3,23 @@ pub use crate::operation::describe_event_details::_describe_event_details_output
 
 pub use crate::operation::describe_event_details::_describe_event_details_input::DescribeEventDetailsInputBuilder;
 
+impl DescribeEventDetailsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_event_details::DescribeEventDetailsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_event_details::DescribeEventDetailsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_event_details();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeEventDetails`.
 ///
 /// <p>Returns detailed information about one or more specified events. Information includes standard event data (Amazon Web Services Region, service, and so on, as returned by <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeEvents.html">DescribeEvents</a>), a detailed event description, and possible additional metadata that depends upon the nature of the event. Affected entities are not included. To retrieve the entities, use the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_DescribeAffectedEntities.html">DescribeAffectedEntities</a> operation.</p>

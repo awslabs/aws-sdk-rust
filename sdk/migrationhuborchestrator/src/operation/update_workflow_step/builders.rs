@@ -3,6 +3,23 @@ pub use crate::operation::update_workflow_step::_update_workflow_step_output::Up
 
 pub use crate::operation::update_workflow_step::_update_workflow_step_input::UpdateWorkflowStepInputBuilder;
 
+impl UpdateWorkflowStepInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_workflow_step::UpdateWorkflowStepOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_workflow_step::UpdateWorkflowStepError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_workflow_step();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateWorkflowStep`.
 ///
 /// <p>Update a step in a migration workflow.</p>

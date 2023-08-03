@@ -3,6 +3,23 @@ pub use crate::operation::get_base_path_mapping::_get_base_path_mapping_output::
 
 pub use crate::operation::get_base_path_mapping::_get_base_path_mapping_input::GetBasePathMappingInputBuilder;
 
+impl GetBasePathMappingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_base_path_mapping::GetBasePathMappingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_base_path_mapping::GetBasePathMappingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_base_path_mapping();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetBasePathMapping`.
 ///
 /// <p>Describe a BasePathMapping resource.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::exit_standby::_exit_standby_output::ExitStandbyOutputB
 
 pub use crate::operation::exit_standby::_exit_standby_input::ExitStandbyInputBuilder;
 
+impl ExitStandbyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::exit_standby::ExitStandbyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::exit_standby::ExitStandbyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.exit_standby();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ExitStandby`.
 ///
 /// <p>Moves the specified instances out of the standby state.</p>

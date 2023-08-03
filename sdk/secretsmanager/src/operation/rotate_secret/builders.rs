@@ -3,6 +3,23 @@ pub use crate::operation::rotate_secret::_rotate_secret_output::RotateSecretOutp
 
 pub use crate::operation::rotate_secret::_rotate_secret_input::RotateSecretInputBuilder;
 
+impl RotateSecretInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::rotate_secret::RotateSecretOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::rotate_secret::RotateSecretError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.rotate_secret();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RotateSecret`.
 ///
 /// <p>Configures and starts the asynchronous process of rotating the secret. For information about rotation, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/rotating-secrets.html">Rotate secrets</a> in the <i>Secrets Manager User Guide</i>. If you include the configuration parameters, the operation sets the values for the secret and then immediately starts a rotation. If you don't include the configuration parameters, the operation starts a rotation with the values already stored in the secret. </p>

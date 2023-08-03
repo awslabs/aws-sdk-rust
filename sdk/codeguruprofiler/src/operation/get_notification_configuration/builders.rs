@@ -3,6 +3,23 @@ pub use crate::operation::get_notification_configuration::_get_notification_conf
 
 pub use crate::operation::get_notification_configuration::_get_notification_configuration_input::GetNotificationConfigurationInputBuilder;
 
+impl GetNotificationConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_notification_configuration::GetNotificationConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_notification_configuration::GetNotificationConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_notification_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetNotificationConfiguration`.
 ///
 /// <p>Get the current configuration for anomaly notifications for a profiling group.</p>

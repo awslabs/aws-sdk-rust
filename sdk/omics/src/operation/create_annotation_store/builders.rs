@@ -3,6 +3,23 @@ pub use crate::operation::create_annotation_store::_create_annotation_store_outp
 
 pub use crate::operation::create_annotation_store::_create_annotation_store_input::CreateAnnotationStoreInputBuilder;
 
+impl CreateAnnotationStoreInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_annotation_store::CreateAnnotationStoreOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_annotation_store::CreateAnnotationStoreError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_annotation_store();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateAnnotationStore`.
 ///
 /// <p>Creates an annotation store.</p>

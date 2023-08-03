@@ -3,6 +3,23 @@ pub use crate::operation::modify_listener::_modify_listener_output::ModifyListen
 
 pub use crate::operation::modify_listener::_modify_listener_input::ModifyListenerInputBuilder;
 
+impl ModifyListenerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_listener::ModifyListenerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_listener::ModifyListenerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_listener();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyListener`.
 ///
 /// <p>Replaces the specified properties of the specified listener. Any properties that you do not specify remain unchanged.</p>

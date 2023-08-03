@@ -3,6 +3,23 @@ pub use crate::operation::get_match_id::_get_match_id_output::GetMatchIdOutputBu
 
 pub use crate::operation::get_match_id::_get_match_id_input::GetMatchIdInputBuilder;
 
+impl GetMatchIdInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_match_id::GetMatchIdOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_match_id::GetMatchIdError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_match_id();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetMatchId`.
 ///
 /// <p>Returns the corresponding Match ID of a customer record if the record has been processed.</p>

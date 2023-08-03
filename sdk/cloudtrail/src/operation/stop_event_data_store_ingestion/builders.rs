@@ -3,6 +3,23 @@ pub use crate::operation::stop_event_data_store_ingestion::_stop_event_data_stor
 
 pub use crate::operation::stop_event_data_store_ingestion::_stop_event_data_store_ingestion_input::StopEventDataStoreIngestionInputBuilder;
 
+impl StopEventDataStoreIngestionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_event_data_store_ingestion::StopEventDataStoreIngestionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_event_data_store_ingestion::StopEventDataStoreIngestionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_event_data_store_ingestion();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopEventDataStoreIngestion`.
 ///
 /// <p>Stops the ingestion of live events on an event data store specified as either an ARN or the ID portion of the ARN. To stop ingestion, the event data store <code>Status</code> must be <code>ENABLED</code> and the <code>eventCategory</code> must be <code>Management</code>, <code>Data</code>, or <code>ConfigurationItem</code>.</p>

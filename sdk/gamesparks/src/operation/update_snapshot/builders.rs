@@ -3,6 +3,23 @@ pub use crate::operation::update_snapshot::_update_snapshot_output::UpdateSnapsh
 
 pub use crate::operation::update_snapshot::_update_snapshot_input::UpdateSnapshotInputBuilder;
 
+impl UpdateSnapshotInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_snapshot::UpdateSnapshotOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_snapshot::UpdateSnapshotError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_snapshot();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateSnapshot`.
 ///
 /// <p>Updates the metadata of a GameSparks snapshot.</p>

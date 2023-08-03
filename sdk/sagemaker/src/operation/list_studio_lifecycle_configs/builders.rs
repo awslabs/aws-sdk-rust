@@ -3,6 +3,23 @@ pub use crate::operation::list_studio_lifecycle_configs::_list_studio_lifecycle_
 
 pub use crate::operation::list_studio_lifecycle_configs::_list_studio_lifecycle_configs_input::ListStudioLifecycleConfigsInputBuilder;
 
+impl ListStudioLifecycleConfigsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_studio_lifecycle_configs::ListStudioLifecycleConfigsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_studio_lifecycle_configs::ListStudioLifecycleConfigsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_studio_lifecycle_configs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListStudioLifecycleConfigs`.
 ///
 /// <p>Lists the Studio Lifecycle Configurations in your Amazon Web Services Account.</p>

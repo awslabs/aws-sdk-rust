@@ -3,6 +3,23 @@ pub use crate::operation::decline_handshake::_decline_handshake_output::DeclineH
 
 pub use crate::operation::decline_handshake::_decline_handshake_input::DeclineHandshakeInputBuilder;
 
+impl DeclineHandshakeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::decline_handshake::DeclineHandshakeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::decline_handshake::DeclineHandshakeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.decline_handshake();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeclineHandshake`.
 ///
 /// <p>Declines a handshake request. This sets the handshake state to <code>DECLINED</code> and effectively deactivates the request.</p>

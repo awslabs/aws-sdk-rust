@@ -3,6 +3,23 @@ pub use crate::operation::disable_gateway::_disable_gateway_output::DisableGatew
 
 pub use crate::operation::disable_gateway::_disable_gateway_input::DisableGatewayInputBuilder;
 
+impl DisableGatewayInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disable_gateway::DisableGatewayOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disable_gateway::DisableGatewayError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disable_gateway();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisableGateway`.
 ///
 /// <p>Disables a tape gateway when the gateway is no longer functioning. For example, if your gateway VM is damaged, you can disable the gateway so you can recover virtual tapes.</p>

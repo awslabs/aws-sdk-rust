@@ -3,6 +3,23 @@ pub use crate::operation::create_configuration_template::_create_configuration_t
 
 pub use crate::operation::create_configuration_template::_create_configuration_template_input::CreateConfigurationTemplateInputBuilder;
 
+impl CreateConfigurationTemplateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_configuration_template::CreateConfigurationTemplateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_configuration_template::CreateConfigurationTemplateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_configuration_template();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateConfigurationTemplate`.
 ///
 /// <p>Creates an AWS Elastic Beanstalk configuration template, associated with a specific Elastic Beanstalk application. You define application configuration settings in a configuration template. You can then use the configuration template to deploy different versions of the application with the same configuration settings.</p>

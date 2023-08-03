@@ -3,6 +3,23 @@ pub use crate::operation::set_identity_pool_roles::_set_identity_pool_roles_outp
 
 pub use crate::operation::set_identity_pool_roles::_set_identity_pool_roles_input::SetIdentityPoolRolesInputBuilder;
 
+impl SetIdentityPoolRolesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::set_identity_pool_roles::SetIdentityPoolRolesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::set_identity_pool_roles::SetIdentityPoolRolesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.set_identity_pool_roles();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SetIdentityPoolRoles`.
 ///
 /// <p>Sets the roles for an identity pool. These roles are used when making calls to <code>GetCredentialsForIdentity</code> action.</p>

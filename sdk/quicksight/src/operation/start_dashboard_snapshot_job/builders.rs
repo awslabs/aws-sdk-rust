@@ -3,6 +3,23 @@ pub use crate::operation::start_dashboard_snapshot_job::_start_dashboard_snapsho
 
 pub use crate::operation::start_dashboard_snapshot_job::_start_dashboard_snapshot_job_input::StartDashboardSnapshotJobInputBuilder;
 
+impl StartDashboardSnapshotJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_dashboard_snapshot_job::StartDashboardSnapshotJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_dashboard_snapshot_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartDashboardSnapshotJob`.
 ///
 /// <p>Starts an asynchronous job that generates a dashboard snapshot. You can request up to one paginated PDF and up to five CSVs per API call.</p>

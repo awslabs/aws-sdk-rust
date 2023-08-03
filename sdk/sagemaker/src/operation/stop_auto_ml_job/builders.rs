@@ -3,6 +3,23 @@ pub use crate::operation::stop_auto_ml_job::_stop_auto_ml_job_output::StopAutoMl
 
 pub use crate::operation::stop_auto_ml_job::_stop_auto_ml_job_input::StopAutoMlJobInputBuilder;
 
+impl StopAutoMlJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_auto_ml_job::StopAutoMlJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_auto_ml_job::StopAutoMLJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_auto_ml_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopAutoMLJob`.
 ///
 /// <p>A method for forcing a running job to shut down.</p>

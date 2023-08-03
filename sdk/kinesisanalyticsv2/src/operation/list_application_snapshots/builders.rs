@@ -3,6 +3,23 @@ pub use crate::operation::list_application_snapshots::_list_application_snapshot
 
 pub use crate::operation::list_application_snapshots::_list_application_snapshots_input::ListApplicationSnapshotsInputBuilder;
 
+impl ListApplicationSnapshotsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_application_snapshots::ListApplicationSnapshotsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_application_snapshots::ListApplicationSnapshotsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_application_snapshots();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListApplicationSnapshots`.
 ///
 /// <p>Lists information about the current application snapshots.</p>

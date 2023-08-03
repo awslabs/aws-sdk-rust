@@ -3,6 +3,23 @@ pub use crate::operation::get_logging_options::_get_logging_options_output::GetL
 
 pub use crate::operation::get_logging_options::_get_logging_options_input::GetLoggingOptionsInputBuilder;
 
+impl GetLoggingOptionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_logging_options::GetLoggingOptionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_logging_options::GetLoggingOptionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_logging_options();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetLoggingOptions`.
 ///
 /// <p>Retrieves the logging options.</p>

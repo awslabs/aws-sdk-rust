@@ -3,6 +3,23 @@ pub use crate::operation::delete_account_assignment::_delete_account_assignment_
 
 pub use crate::operation::delete_account_assignment::_delete_account_assignment_input::DeleteAccountAssignmentInputBuilder;
 
+impl DeleteAccountAssignmentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_account_assignment::DeleteAccountAssignmentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_account_assignment::DeleteAccountAssignmentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_account_assignment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteAccountAssignment`.
 ///
 /// <p>Deletes a principal's access from a specified AWS account using a specified permission set.</p> <note>

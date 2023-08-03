@@ -3,6 +3,23 @@ pub use crate::operation::delete_playback_configuration::_delete_playback_config
 
 pub use crate::operation::delete_playback_configuration::_delete_playback_configuration_input::DeletePlaybackConfigurationInputBuilder;
 
+impl DeletePlaybackConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_playback_configuration::DeletePlaybackConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_playback_configuration::DeletePlaybackConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_playback_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeletePlaybackConfiguration`.
 ///
 /// <p>Deletes a playback configuration. For information about MediaTailor configurations, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/configurations.html">Working with configurations in AWS Elemental MediaTailor</a>.</p>

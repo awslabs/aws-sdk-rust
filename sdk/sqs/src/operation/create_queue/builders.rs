@@ -3,6 +3,23 @@ pub use crate::operation::create_queue::_create_queue_output::CreateQueueOutputB
 
 pub use crate::operation::create_queue::_create_queue_input::CreateQueueInputBuilder;
 
+impl CreateQueueInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_queue::CreateQueueOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_queue::CreateQueueError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_queue();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateQueue`.
 ///
 /// <p>Creates a new standard or FIFO queue. You can pass one or more attributes in the request. Keep the following in mind:</p>

@@ -3,6 +3,23 @@ pub use crate::operation::modify_user_group::_modify_user_group_output::ModifyUs
 
 pub use crate::operation::modify_user_group::_modify_user_group_input::ModifyUserGroupInputBuilder;
 
+impl ModifyUserGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_user_group::ModifyUserGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_user_group::ModifyUserGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_user_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyUserGroup`.
 ///
 /// <p>Changes the list of users that belong to the user group.</p>

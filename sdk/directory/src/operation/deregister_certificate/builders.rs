@@ -3,6 +3,23 @@ pub use crate::operation::deregister_certificate::_deregister_certificate_output
 
 pub use crate::operation::deregister_certificate::_deregister_certificate_input::DeregisterCertificateInputBuilder;
 
+impl DeregisterCertificateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::deregister_certificate::DeregisterCertificateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::deregister_certificate::DeregisterCertificateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.deregister_certificate();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeregisterCertificate`.
 ///
 /// <p>Deletes from the system the certificate that was registered for secure LDAP or client certificate authentication.</p>

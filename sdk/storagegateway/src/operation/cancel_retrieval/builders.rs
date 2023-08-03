@@ -3,6 +3,23 @@ pub use crate::operation::cancel_retrieval::_cancel_retrieval_output::CancelRetr
 
 pub use crate::operation::cancel_retrieval::_cancel_retrieval_input::CancelRetrievalInputBuilder;
 
+impl CancelRetrievalInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::cancel_retrieval::CancelRetrievalOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::cancel_retrieval::CancelRetrievalError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.cancel_retrieval();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CancelRetrieval`.
 ///
 /// <p>Cancels retrieval of a virtual tape from the virtual tape shelf (VTS) to a gateway after the retrieval process is initiated. The virtual tape is returned to the VTS. This operation is only supported in the tape gateway type.</p>

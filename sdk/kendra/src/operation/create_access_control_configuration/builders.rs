@@ -3,6 +3,17 @@ pub use crate::operation::create_access_control_configuration::_create_access_co
 
 pub use crate::operation::create_access_control_configuration::_create_access_control_configuration_input::CreateAccessControlConfigurationInputBuilder;
 
+impl CreateAccessControlConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::create_access_control_configuration::CreateAccessControlConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_access_control_configuration::CreateAccessControlConfigurationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.create_access_control_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateAccessControlConfiguration`.
 ///
 /// <p>Creates an access configuration for your documents. This includes user and group access information for your documents. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>

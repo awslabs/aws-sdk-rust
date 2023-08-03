@@ -3,6 +3,23 @@ pub use crate::operation::restore_analysis::_restore_analysis_output::RestoreAna
 
 pub use crate::operation::restore_analysis::_restore_analysis_input::RestoreAnalysisInputBuilder;
 
+impl RestoreAnalysisInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::restore_analysis::RestoreAnalysisOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::restore_analysis::RestoreAnalysisError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.restore_analysis();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RestoreAnalysis`.
 ///
 /// <p>Restores an analysis.</p>

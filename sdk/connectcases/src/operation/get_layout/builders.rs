@@ -3,6 +3,23 @@ pub use crate::operation::get_layout::_get_layout_output::GetLayoutOutputBuilder
 
 pub use crate::operation::get_layout::_get_layout_input::GetLayoutInputBuilder;
 
+impl GetLayoutInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_layout::GetLayoutOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_layout::GetLayoutError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_layout();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetLayout`.
 ///
 /// <p>Returns the details for the requested layout.</p>

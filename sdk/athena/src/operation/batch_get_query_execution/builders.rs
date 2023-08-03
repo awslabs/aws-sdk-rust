@@ -3,6 +3,23 @@ pub use crate::operation::batch_get_query_execution::_batch_get_query_execution_
 
 pub use crate::operation::batch_get_query_execution::_batch_get_query_execution_input::BatchGetQueryExecutionInputBuilder;
 
+impl BatchGetQueryExecutionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_query_execution::BatchGetQueryExecutionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_get_query_execution::BatchGetQueryExecutionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_get_query_execution();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchGetQueryExecution`.
 ///
 /// <p>Returns the details of a single query execution or a list of up to 50 query executions, which you provide as an array of query execution ID strings. Requires you to have access to the workgroup in which the queries ran. To get a list of query execution IDs, use <code>ListQueryExecutionsInput$WorkGroup</code>. Query executions differ from named (saved) queries. Use <code>BatchGetNamedQueryInput</code> to get details about named queries.</p>

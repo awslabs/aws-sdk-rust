@@ -3,6 +3,23 @@ pub use crate::operation::describe_environments::_describe_environments_output::
 
 pub use crate::operation::describe_environments::_describe_environments_input::DescribeEnvironmentsInputBuilder;
 
+impl DescribeEnvironmentsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_environments::DescribeEnvironmentsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_environments::DescribeEnvironmentsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_environments();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeEnvironments`.
 ///
 /// <p>Gets information about Cloud9 development environments.</p>

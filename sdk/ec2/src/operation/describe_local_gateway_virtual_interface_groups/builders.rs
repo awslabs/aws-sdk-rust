@@ -3,6 +3,17 @@ pub use crate::operation::describe_local_gateway_virtual_interface_groups::_desc
 
 pub use crate::operation::describe_local_gateway_virtual_interface_groups::_describe_local_gateway_virtual_interface_groups_input::DescribeLocalGatewayVirtualInterfaceGroupsInputBuilder;
 
+impl DescribeLocalGatewayVirtualInterfaceGroupsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_local_gateway_virtual_interface_groups::DescribeLocalGatewayVirtualInterfaceGroupsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_local_gateway_virtual_interface_groups::DescribeLocalGatewayVirtualInterfaceGroupsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_local_gateway_virtual_interface_groups();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeLocalGatewayVirtualInterfaceGroups`.
 ///
 /// <p>Describes the specified local gateway virtual interface groups.</p>

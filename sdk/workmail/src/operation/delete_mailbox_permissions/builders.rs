@@ -3,6 +3,23 @@ pub use crate::operation::delete_mailbox_permissions::_delete_mailbox_permission
 
 pub use crate::operation::delete_mailbox_permissions::_delete_mailbox_permissions_input::DeleteMailboxPermissionsInputBuilder;
 
+impl DeleteMailboxPermissionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_mailbox_permissions::DeleteMailboxPermissionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_mailbox_permissions::DeleteMailboxPermissionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_mailbox_permissions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteMailboxPermissions`.
 ///
 /// <p>Deletes permissions granted to a member (user or group).</p>

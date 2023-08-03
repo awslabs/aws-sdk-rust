@@ -3,6 +3,23 @@ pub use crate::operation::delete_ip_set::_delete_ip_set_output::DeleteIpSetOutpu
 
 pub use crate::operation::delete_ip_set::_delete_ip_set_input::DeleteIpSetInputBuilder;
 
+impl DeleteIpSetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_ip_set::DeleteIpSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_ip_set::DeleteIPSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_ip_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteIPSet`.
 ///
 /// <p>Deletes the IPSet specified by the <code>ipSetId</code>. IPSets are called trusted IP lists in the console user interface.</p>

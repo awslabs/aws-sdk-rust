@@ -3,6 +3,23 @@ pub use crate::operation::delete_data_protection_policy::_delete_data_protection
 
 pub use crate::operation::delete_data_protection_policy::_delete_data_protection_policy_input::DeleteDataProtectionPolicyInputBuilder;
 
+impl DeleteDataProtectionPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_data_protection_policy::DeleteDataProtectionPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_data_protection_policy::DeleteDataProtectionPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_data_protection_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteDataProtectionPolicy`.
 ///
 /// <p>Deletes the data protection policy from the specified log group. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_hosted_zones_by_name::_list_hosted_zones_by_name_
 
 pub use crate::operation::list_hosted_zones_by_name::_list_hosted_zones_by_name_input::ListHostedZonesByNameInputBuilder;
 
+impl ListHostedZonesByNameInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_hosted_zones_by_name::ListHostedZonesByNameOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_hosted_zones_by_name::ListHostedZonesByNameError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_hosted_zones_by_name();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListHostedZonesByName`.
 ///
 /// <p>Retrieves a list of your hosted zones in lexicographic order. The response includes a <code>HostedZones</code> child element for each hosted zone created by the current Amazon Web Services account. </p>

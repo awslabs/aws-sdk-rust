@@ -3,6 +3,23 @@ pub use crate::operation::attach_elastic_load_balancer::_attach_elastic_load_bal
 
 pub use crate::operation::attach_elastic_load_balancer::_attach_elastic_load_balancer_input::AttachElasticLoadBalancerInputBuilder;
 
+impl AttachElasticLoadBalancerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::attach_elastic_load_balancer::AttachElasticLoadBalancerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::attach_elastic_load_balancer::AttachElasticLoadBalancerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.attach_elastic_load_balancer();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AttachElasticLoadBalancer`.
 ///
 /// <p>Attaches an Elastic Load Balancing load balancer to a specified layer. AWS OpsWorks Stacks does not support Application Load Balancer. You can only use Classic Load Balancer with AWS OpsWorks Stacks. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/layers-elb.html">Elastic Load Balancing</a>.</p> <note>

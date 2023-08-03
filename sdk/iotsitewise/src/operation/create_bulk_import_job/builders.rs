@@ -3,6 +3,23 @@ pub use crate::operation::create_bulk_import_job::_create_bulk_import_job_output
 
 pub use crate::operation::create_bulk_import_job::_create_bulk_import_job_input::CreateBulkImportJobInputBuilder;
 
+impl CreateBulkImportJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_bulk_import_job::CreateBulkImportJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_bulk_import_job::CreateBulkImportJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_bulk_import_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateBulkImportJob`.
 ///
 /// <p>Defines a job to ingest data to IoT SiteWise from Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/CreateBulkImportJob.html">Create a bulk import job (CLI)</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p> <important>

@@ -3,6 +3,23 @@ pub use crate::operation::update_access_policy::_update_access_policy_output::Up
 
 pub use crate::operation::update_access_policy::_update_access_policy_input::UpdateAccessPolicyInputBuilder;
 
+impl UpdateAccessPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_access_policy::UpdateAccessPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_access_policy::UpdateAccessPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_access_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateAccessPolicy`.
 ///
 /// <p>Updates an OpenSearch Serverless access policy. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-data-access.html">Data access control for Amazon OpenSearch Serverless</a>.</p>

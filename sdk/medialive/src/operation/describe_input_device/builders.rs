@@ -3,6 +3,23 @@ pub use crate::operation::describe_input_device::_describe_input_device_output::
 
 pub use crate::operation::describe_input_device::_describe_input_device_input::DescribeInputDeviceInputBuilder;
 
+impl DescribeInputDeviceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_input_device::DescribeInputDeviceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_input_device::DescribeInputDeviceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_input_device();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeInputDevice`.
 ///
 /// Gets the details for the input device

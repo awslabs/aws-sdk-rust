@@ -3,6 +3,23 @@ pub use crate::operation::delete_state_machine_version::_delete_state_machine_ve
 
 pub use crate::operation::delete_state_machine_version::_delete_state_machine_version_input::DeleteStateMachineVersionInputBuilder;
 
+impl DeleteStateMachineVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_state_machine_version::DeleteStateMachineVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_state_machine_version::DeleteStateMachineVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_state_machine_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteStateMachineVersion`.
 ///
 /// <p>Deletes a state machine <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">version</a>. After you delete a version, you can't call <code>StartExecution</code> using that version's ARN or use the version with a state machine <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a>.</p> <note>

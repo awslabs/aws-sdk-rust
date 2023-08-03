@@ -3,6 +3,23 @@ pub use crate::operation::export_components::_export_components_output::ExportCo
 
 pub use crate::operation::export_components::_export_components_input::ExportComponentsInputBuilder;
 
+impl ExportComponentsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::export_components::ExportComponentsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::export_components::ExportComponentsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.export_components();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ExportComponents`.
 ///
 /// <p>Exports component configurations to code that is ready to integrate into an Amplify app.</p>

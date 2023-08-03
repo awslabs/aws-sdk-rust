@@ -3,6 +3,17 @@ pub use crate::operation::delete_app_instance_streaming_configurations::_delete_
 
 pub use crate::operation::delete_app_instance_streaming_configurations::_delete_app_instance_streaming_configurations_input::DeleteAppInstanceStreamingConfigurationsInputBuilder;
 
+impl DeleteAppInstanceStreamingConfigurationsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_app_instance_streaming_configurations::DeleteAppInstanceStreamingConfigurationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_app_instance_streaming_configurations::DeleteAppInstanceStreamingConfigurationsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.delete_app_instance_streaming_configurations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteAppInstanceStreamingConfigurations`.
 ///
 /// <p>Deletes the streaming configurations of an <code>AppInstance</code>.</p> <important>

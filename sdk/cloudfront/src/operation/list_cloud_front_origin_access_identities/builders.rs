@@ -3,6 +3,17 @@ pub use crate::operation::list_cloud_front_origin_access_identities::_list_cloud
 
 pub use crate::operation::list_cloud_front_origin_access_identities::_list_cloud_front_origin_access_identities_input::ListCloudFrontOriginAccessIdentitiesInputBuilder;
 
+impl ListCloudFrontOriginAccessIdentitiesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_cloud_front_origin_access_identities::ListCloudFrontOriginAccessIdentitiesOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_cloud_front_origin_access_identities::ListCloudFrontOriginAccessIdentitiesError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_cloud_front_origin_access_identities();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListCloudFrontOriginAccessIdentities`.
 ///
 /// <p>Lists origin access identities.</p>

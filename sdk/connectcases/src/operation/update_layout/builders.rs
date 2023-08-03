@@ -3,6 +3,23 @@ pub use crate::operation::update_layout::_update_layout_output::UpdateLayoutOutp
 
 pub use crate::operation::update_layout::_update_layout_input::UpdateLayoutInputBuilder;
 
+impl UpdateLayoutInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_layout::UpdateLayoutOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_layout::UpdateLayoutError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_layout();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateLayout`.
 ///
 /// <p>Updates the attributes of an existing layout.</p>

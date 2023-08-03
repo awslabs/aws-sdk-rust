@@ -3,6 +3,23 @@ pub use crate::operation::move_replication_task::_move_replication_task_output::
 
 pub use crate::operation::move_replication_task::_move_replication_task_input::MoveReplicationTaskInputBuilder;
 
+impl MoveReplicationTaskInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::move_replication_task::MoveReplicationTaskOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::move_replication_task::MoveReplicationTaskError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.move_replication_task();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `MoveReplicationTask`.
 ///
 /// <p>Moves a replication task from its current replication instance to a different target replication instance using the specified parameters. The target replication instance must be created with the same or later DMS version as the current replication instance.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_object::_delete_object_output::DeleteObjectOutp
 
 pub use crate::operation::delete_object::_delete_object_input::DeleteObjectInputBuilder;
 
+impl DeleteObjectInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_object::DeleteObjectOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_object::DeleteObjectError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_object();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteObject`.
 ///
 /// <p>Removes the null version (if there is one) of an object and inserts a delete marker, which becomes the latest version of the object. If there isn't a null version, Amazon S3 does not remove any objects but will still respond that the command was successful.</p>

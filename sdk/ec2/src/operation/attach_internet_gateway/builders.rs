@@ -3,6 +3,23 @@ pub use crate::operation::attach_internet_gateway::_attach_internet_gateway_outp
 
 pub use crate::operation::attach_internet_gateway::_attach_internet_gateway_input::AttachInternetGatewayInputBuilder;
 
+impl AttachInternetGatewayInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::attach_internet_gateway::AttachInternetGatewayOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::attach_internet_gateway::AttachInternetGatewayError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.attach_internet_gateway();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AttachInternetGateway`.
 ///
 /// <p>Attaches an internet gateway or a virtual private gateway to a VPC, enabling connectivity between the internet and the VPC. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Internet_Gateway.html">Internet gateways</a> in the <i>Amazon VPC User Guide</i>.</p>

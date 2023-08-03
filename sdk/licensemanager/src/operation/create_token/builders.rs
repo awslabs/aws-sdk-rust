@@ -3,6 +3,23 @@ pub use crate::operation::create_token::_create_token_output::CreateTokenOutputB
 
 pub use crate::operation::create_token::_create_token_input::CreateTokenInputBuilder;
 
+impl CreateTokenInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_token::CreateTokenOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_token::CreateTokenError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_token();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateToken`.
 ///
 /// <p>Creates a long-lived token.</p>

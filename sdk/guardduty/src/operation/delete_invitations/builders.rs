@@ -3,6 +3,23 @@ pub use crate::operation::delete_invitations::_delete_invitations_output::Delete
 
 pub use crate::operation::delete_invitations::_delete_invitations_input::DeleteInvitationsInputBuilder;
 
+impl DeleteInvitationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_invitations::DeleteInvitationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_invitations::DeleteInvitationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_invitations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteInvitations`.
 ///
 /// <p>Deletes invitations sent to the current member account by Amazon Web Services accounts specified by their account IDs.</p>

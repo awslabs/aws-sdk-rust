@@ -3,6 +3,23 @@ pub use crate::operation::delete_app_instance_user::_delete_app_instance_user_ou
 
 pub use crate::operation::delete_app_instance_user::_delete_app_instance_user_input::DeleteAppInstanceUserInputBuilder;
 
+impl DeleteAppInstanceUserInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_app_instance_user::DeleteAppInstanceUserOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_app_instance_user::DeleteAppInstanceUserError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_app_instance_user();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteAppInstanceUser`.
 ///
 /// <p>Deletes an <code>AppInstanceUser</code>.</p>

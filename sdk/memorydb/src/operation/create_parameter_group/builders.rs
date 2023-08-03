@@ -3,6 +3,23 @@ pub use crate::operation::create_parameter_group::_create_parameter_group_output
 
 pub use crate::operation::create_parameter_group::_create_parameter_group_input::CreateParameterGroupInputBuilder;
 
+impl CreateParameterGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_parameter_group::CreateParameterGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_parameter_group::CreateParameterGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_parameter_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateParameterGroup`.
 ///
 /// <p>Creates a new MemoryDB parameter group. A parameter group is a collection of parameters and their values that are applied to all of the nodes in any cluster. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/parametergroups.html">Configuring engine parameters using parameter groups</a>. </p>

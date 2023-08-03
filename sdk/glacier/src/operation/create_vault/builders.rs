@@ -3,6 +3,23 @@ pub use crate::operation::create_vault::_create_vault_output::CreateVaultOutputB
 
 pub use crate::operation::create_vault::_create_vault_input::CreateVaultInputBuilder;
 
+impl CreateVaultInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_vault::CreateVaultOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_vault::CreateVaultError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_vault();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateVault`.
 ///
 /// <p>This operation creates a new vault with the specified name. The name of the vault must be unique within a region for an AWS account. You can create up to 1,000 vaults per account. If you need to create more vaults, contact Amazon S3 Glacier.</p>

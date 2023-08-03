@@ -3,6 +3,23 @@ pub use crate::operation::describe_packaging_configuration::_describe_packaging_
 
 pub use crate::operation::describe_packaging_configuration::_describe_packaging_configuration_input::DescribePackagingConfigurationInputBuilder;
 
+impl DescribePackagingConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_packaging_configuration::DescribePackagingConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_packaging_configuration::DescribePackagingConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_packaging_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribePackagingConfiguration`.
 ///
 /// Returns a description of a MediaPackage VOD PackagingConfiguration resource.

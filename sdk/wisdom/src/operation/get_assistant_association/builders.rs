@@ -3,6 +3,23 @@ pub use crate::operation::get_assistant_association::_get_assistant_association_
 
 pub use crate::operation::get_assistant_association::_get_assistant_association_input::GetAssistantAssociationInputBuilder;
 
+impl GetAssistantAssociationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_assistant_association::GetAssistantAssociationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_assistant_association::GetAssistantAssociationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_assistant_association();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetAssistantAssociation`.
 ///
 /// <p>Retrieves information about an assistant association.</p>

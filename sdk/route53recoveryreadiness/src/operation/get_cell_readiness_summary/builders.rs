@@ -3,6 +3,23 @@ pub use crate::operation::get_cell_readiness_summary::_get_cell_readiness_summar
 
 pub use crate::operation::get_cell_readiness_summary::_get_cell_readiness_summary_input::GetCellReadinessSummaryInputBuilder;
 
+impl GetCellReadinessSummaryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_cell_readiness_summary::GetCellReadinessSummaryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_cell_readiness_summary::GetCellReadinessSummaryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_cell_readiness_summary();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetCellReadinessSummary`.
 ///
 /// <p>Gets readiness for a cell. Aggregates the readiness of all the resources that are associated with the cell into a single value.</p>

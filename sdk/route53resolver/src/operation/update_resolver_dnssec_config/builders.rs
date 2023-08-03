@@ -3,6 +3,23 @@ pub use crate::operation::update_resolver_dnssec_config::_update_resolver_dnssec
 
 pub use crate::operation::update_resolver_dnssec_config::_update_resolver_dnssec_config_input::UpdateResolverDnssecConfigInputBuilder;
 
+impl UpdateResolverDnssecConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_resolver_dnssec_config::UpdateResolverDnssecConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_resolver_dnssec_config::UpdateResolverDnssecConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_resolver_dnssec_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateResolverDnssecConfig`.
 ///
 /// <p>Updates an existing DNSSEC validation configuration. If there is no existing DNSSEC validation configuration, one is created.</p>

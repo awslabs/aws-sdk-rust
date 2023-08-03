@@ -3,6 +3,23 @@ pub use crate::operation::list_target_groups::_list_target_groups_output::ListTa
 
 pub use crate::operation::list_target_groups::_list_target_groups_input::ListTargetGroupsInputBuilder;
 
+impl ListTargetGroupsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_target_groups::ListTargetGroupsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_target_groups::ListTargetGroupsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_target_groups();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListTargetGroups`.
 ///
 /// <p>Lists your target groups. You can narrow your search by using the filters below in your request.</p>

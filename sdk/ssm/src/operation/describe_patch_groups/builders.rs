@@ -3,6 +3,23 @@ pub use crate::operation::describe_patch_groups::_describe_patch_groups_output::
 
 pub use crate::operation::describe_patch_groups::_describe_patch_groups_input::DescribePatchGroupsInputBuilder;
 
+impl DescribePatchGroupsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_patch_groups::DescribePatchGroupsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_patch_groups::DescribePatchGroupsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_patch_groups();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribePatchGroups`.
 ///
 /// <p>Lists all patch groups that have been registered with patch baselines.</p>

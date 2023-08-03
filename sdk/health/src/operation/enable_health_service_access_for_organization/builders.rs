@@ -3,6 +3,17 @@ pub use crate::operation::enable_health_service_access_for_organization::_enable
 
 pub use crate::operation::enable_health_service_access_for_organization::_enable_health_service_access_for_organization_input::EnableHealthServiceAccessForOrganizationInputBuilder;
 
+impl EnableHealthServiceAccessForOrganizationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::enable_health_service_access_for_organization::EnableHealthServiceAccessForOrganizationOutput, ::aws_smithy_http::result::SdkError<crate::operation::enable_health_service_access_for_organization::EnableHealthServiceAccessForOrganizationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.enable_health_service_access_for_organization();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `EnableHealthServiceAccessForOrganization`.
 ///
 /// <p>Enables Health to work with Organizations. You can use the organizational view feature to aggregate events from all Amazon Web Services accounts in your organization in a centralized location. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_keyspace::_create_keyspace_output::CreateKeyspa
 
 pub use crate::operation::create_keyspace::_create_keyspace_input::CreateKeyspaceInputBuilder;
 
+impl CreateKeyspaceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_keyspace::CreateKeyspaceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_keyspace::CreateKeyspaceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_keyspace();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateKeyspace`.
 ///
 /// <p>The <code>CreateKeyspace</code> operation adds a new keyspace to your account. In an Amazon Web Services account, keyspace names must be unique within each Region.</p>

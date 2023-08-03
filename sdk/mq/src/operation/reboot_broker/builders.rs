@@ -3,6 +3,23 @@ pub use crate::operation::reboot_broker::_reboot_broker_output::RebootBrokerOutp
 
 pub use crate::operation::reboot_broker::_reboot_broker_input::RebootBrokerInputBuilder;
 
+impl RebootBrokerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::reboot_broker::RebootBrokerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::reboot_broker::RebootBrokerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.reboot_broker();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RebootBroker`.
 ///
 /// <p>Reboots a broker. Note: This API is asynchronous.</p>

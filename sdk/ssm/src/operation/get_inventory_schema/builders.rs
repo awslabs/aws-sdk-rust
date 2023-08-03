@@ -3,6 +3,23 @@ pub use crate::operation::get_inventory_schema::_get_inventory_schema_output::Ge
 
 pub use crate::operation::get_inventory_schema::_get_inventory_schema_input::GetInventorySchemaInputBuilder;
 
+impl GetInventorySchemaInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_inventory_schema::GetInventorySchemaOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_inventory_schema::GetInventorySchemaError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_inventory_schema();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetInventorySchema`.
 ///
 /// <p>Return a list of inventory type names for the account, or return a list of attribute names for a specific Inventory item type.</p>

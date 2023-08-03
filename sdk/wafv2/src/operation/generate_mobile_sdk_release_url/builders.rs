@@ -3,6 +3,23 @@ pub use crate::operation::generate_mobile_sdk_release_url::_generate_mobile_sdk_
 
 pub use crate::operation::generate_mobile_sdk_release_url::_generate_mobile_sdk_release_url_input::GenerateMobileSdkReleaseUrlInputBuilder;
 
+impl GenerateMobileSdkReleaseUrlInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::generate_mobile_sdk_release_url::GenerateMobileSdkReleaseUrlOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::generate_mobile_sdk_release_url::GenerateMobileSdkReleaseUrlError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.generate_mobile_sdk_release_url();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GenerateMobileSdkReleaseUrl`.
 ///
 /// <p>Generates a presigned download URL for the specified release of the mobile SDK.</p>

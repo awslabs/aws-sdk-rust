@@ -3,6 +3,23 @@ pub use crate::operation::batch_describe_merge_conflicts::_batch_describe_merge_
 
 pub use crate::operation::batch_describe_merge_conflicts::_batch_describe_merge_conflicts_input::BatchDescribeMergeConflictsInputBuilder;
 
+impl BatchDescribeMergeConflictsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_describe_merge_conflicts::BatchDescribeMergeConflictsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_describe_merge_conflicts::BatchDescribeMergeConflictsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_describe_merge_conflicts();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchDescribeMergeConflicts`.
 ///
 /// <p>Returns information about one or more merge conflicts in the attempted merge of two commit specifiers using the squash or three-way merge strategy.</p>

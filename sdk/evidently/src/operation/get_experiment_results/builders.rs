@@ -3,6 +3,23 @@ pub use crate::operation::get_experiment_results::_get_experiment_results_output
 
 pub use crate::operation::get_experiment_results::_get_experiment_results_input::GetExperimentResultsInputBuilder;
 
+impl GetExperimentResultsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_experiment_results::GetExperimentResultsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_experiment_results::GetExperimentResultsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_experiment_results();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetExperimentResults`.
 ///
 /// <p>Retrieves the results of a running or completed experiment. No results are available until there have been 100 events for each variation and at least 10 minutes have passed since the start of the experiment. To increase the statistical power, Evidently performs an additional offline p-value analysis at the end of the experiment. Offline p-value analysis can detect statistical significance in some cases where the anytime p-values used during the experiment do not find statistical significance.</p>

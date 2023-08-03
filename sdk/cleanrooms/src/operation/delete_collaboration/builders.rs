@@ -3,6 +3,23 @@ pub use crate::operation::delete_collaboration::_delete_collaboration_output::De
 
 pub use crate::operation::delete_collaboration::_delete_collaboration_input::DeleteCollaborationInputBuilder;
 
+impl DeleteCollaborationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_collaboration::DeleteCollaborationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_collaboration::DeleteCollaborationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_collaboration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteCollaboration`.
 ///
 /// <p>Deletes a collaboration. It can only be called by the collaboration owner.</p>

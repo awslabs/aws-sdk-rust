@@ -3,6 +3,23 @@ pub use crate::operation::create_global_replication_group::_create_global_replic
 
 pub use crate::operation::create_global_replication_group::_create_global_replication_group_input::CreateGlobalReplicationGroupInputBuilder;
 
+impl CreateGlobalReplicationGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_global_replication_group::CreateGlobalReplicationGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_global_replication_group::CreateGlobalReplicationGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_global_replication_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateGlobalReplicationGroup`.
 ///
 /// <p>Global Datastore for Redis offers fully managed, fast, reliable and secure cross-region replication. Using Global Datastore for Redis, you can create cross-region read replica clusters for ElastiCache for Redis to enable low-latency reads and disaster recovery across regions. For more information, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Redis-Global-Datastore.html">Replication Across Regions Using Global Datastore</a>. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_tracker::_delete_tracker_output::DeleteTrackerO
 
 pub use crate::operation::delete_tracker::_delete_tracker_input::DeleteTrackerInputBuilder;
 
+impl DeleteTrackerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_tracker::DeleteTrackerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_tracker::DeleteTrackerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_tracker();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteTracker`.
 ///
 /// <p>Deletes a tracker resource from your Amazon Web Services account.</p> <note>

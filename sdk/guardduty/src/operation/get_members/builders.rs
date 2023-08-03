@@ -3,6 +3,23 @@ pub use crate::operation::get_members::_get_members_output::GetMembersOutputBuil
 
 pub use crate::operation::get_members::_get_members_input::GetMembersInputBuilder;
 
+impl GetMembersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_members::GetMembersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_members::GetMembersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_members();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetMembers`.
 ///
 /// <p>Retrieves GuardDuty member accounts (of the current GuardDuty administrator account) specified by the account IDs.</p>

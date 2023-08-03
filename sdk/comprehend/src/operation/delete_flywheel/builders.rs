@@ -3,6 +3,23 @@ pub use crate::operation::delete_flywheel::_delete_flywheel_output::DeleteFlywhe
 
 pub use crate::operation::delete_flywheel::_delete_flywheel_input::DeleteFlywheelInputBuilder;
 
+impl DeleteFlywheelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_flywheel::DeleteFlywheelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_flywheel::DeleteFlywheelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_flywheel();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteFlywheel`.
 ///
 /// <p>Deletes a flywheel. When you delete the flywheel, Amazon Comprehend does not delete the data lake or the model associated with the flywheel.</p>

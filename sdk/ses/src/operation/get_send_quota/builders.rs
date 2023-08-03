@@ -3,6 +3,23 @@ pub use crate::operation::get_send_quota::_get_send_quota_output::GetSendQuotaOu
 
 pub use crate::operation::get_send_quota::_get_send_quota_input::GetSendQuotaInputBuilder;
 
+impl GetSendQuotaInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_send_quota::GetSendQuotaOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_send_quota::GetSendQuotaError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_send_quota();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetSendQuota`.
 ///
 /// <p>Provides the sending limits for the Amazon SES account. </p>

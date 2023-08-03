@@ -3,6 +3,23 @@ pub use crate::operation::describe_access::_describe_access_output::DescribeAcce
 
 pub use crate::operation::describe_access::_describe_access_input::DescribeAccessInputBuilder;
 
+impl DescribeAccessInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_access::DescribeAccessOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_access::DescribeAccessError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_access();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAccess`.
 ///
 /// <p>Describes the access that is assigned to the specific file transfer protocol-enabled server, as identified by its <code>ServerId</code> property and its <code>ExternalId</code>.</p>

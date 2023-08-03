@@ -3,6 +3,23 @@ pub use crate::operation::delete_client_vpn_route::_delete_client_vpn_route_outp
 
 pub use crate::operation::delete_client_vpn_route::_delete_client_vpn_route_input::DeleteClientVpnRouteInputBuilder;
 
+impl DeleteClientVpnRouteInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_client_vpn_route::DeleteClientVpnRouteOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_client_vpn_route::DeleteClientVpnRouteError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_client_vpn_route();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteClientVpnRoute`.
 ///
 /// <p>Deletes a route from a Client VPN endpoint. You can only delete routes that you manually added using the <b>CreateClientVpnRoute</b> action. You cannot delete routes that were automatically added when associating a subnet. To remove routes that have been automatically added, disassociate the target subnet from the Client VPN endpoint.</p>

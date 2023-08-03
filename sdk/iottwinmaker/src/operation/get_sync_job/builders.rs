@@ -3,6 +3,23 @@ pub use crate::operation::get_sync_job::_get_sync_job_output::GetSyncJobOutputBu
 
 pub use crate::operation::get_sync_job::_get_sync_job_input::GetSyncJobInputBuilder;
 
+impl GetSyncJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_sync_job::GetSyncJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_sync_job::GetSyncJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_sync_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetSyncJob`.
 ///
 /// <p>Gets the SyncJob.</p>

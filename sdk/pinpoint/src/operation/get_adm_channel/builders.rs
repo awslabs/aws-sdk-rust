@@ -3,6 +3,23 @@ pub use crate::operation::get_adm_channel::_get_adm_channel_output::GetAdmChanne
 
 pub use crate::operation::get_adm_channel::_get_adm_channel_input::GetAdmChannelInputBuilder;
 
+impl GetAdmChannelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_adm_channel::GetAdmChannelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_adm_channel::GetAdmChannelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_adm_channel();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetAdmChannel`.
 ///
 /// <p>Retrieves information about the status and settings of the ADM channel for an application.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_workspace::_get_workspace_output::GetWorkspaceOutp
 
 pub use crate::operation::get_workspace::_get_workspace_input::GetWorkspaceInputBuilder;
 
+impl GetWorkspaceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_workspace::GetWorkspaceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_workspace::GetWorkspaceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_workspace();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetWorkspace`.
 ///
 /// <p>Retrieves information about a workspace.</p>

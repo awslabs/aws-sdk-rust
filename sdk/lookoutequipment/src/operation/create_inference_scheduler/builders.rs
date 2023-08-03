@@ -3,6 +3,23 @@ pub use crate::operation::create_inference_scheduler::_create_inference_schedule
 
 pub use crate::operation::create_inference_scheduler::_create_inference_scheduler_input::CreateInferenceSchedulerInputBuilder;
 
+impl CreateInferenceSchedulerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_inference_scheduler::CreateInferenceSchedulerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_inference_scheduler::CreateInferenceSchedulerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_inference_scheduler();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateInferenceScheduler`.
 ///
 /// <p> Creates a scheduled inference. Scheduling an inference is setting up a continuous real-time inference plan to analyze new measurement data. When setting up the schedule, you provide an S3 bucket location for the input data, assign it a delimiter between separate entries in the data, set an offset delay if desired, and set the frequency of inferencing. You must also provide an S3 bucket location for the output data. </p>

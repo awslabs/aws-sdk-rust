@@ -3,6 +3,23 @@ pub use crate::operation::get_folder_path::_get_folder_path_output::GetFolderPat
 
 pub use crate::operation::get_folder_path::_get_folder_path_input::GetFolderPathInputBuilder;
 
+impl GetFolderPathInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_folder_path::GetFolderPathOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_folder_path::GetFolderPathError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_folder_path();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetFolderPath`.
 ///
 /// <p>Retrieves the path information (the hierarchy from the root folder) for the specified folder.</p>

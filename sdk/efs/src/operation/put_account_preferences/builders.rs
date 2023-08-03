@@ -3,6 +3,23 @@ pub use crate::operation::put_account_preferences::_put_account_preferences_outp
 
 pub use crate::operation::put_account_preferences::_put_account_preferences_input::PutAccountPreferencesInputBuilder;
 
+impl PutAccountPreferencesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_account_preferences::PutAccountPreferencesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_account_preferences::PutAccountPreferencesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_account_preferences();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutAccountPreferences`.
 ///
 /// <p>Use this operation to set the account preference in the current Amazon Web Services Region to use long 17 character (63 bit) or short 8 character (32 bit) resource IDs for new EFS file system and mount target resources. All existing resource IDs are not affected by any changes you make. You can set the ID preference during the opt-in period as EFS transitions to long resource IDs. For more information, see <a href="https://docs.aws.amazon.com/efs/latest/ug/manage-efs-resource-ids.html">Managing Amazon EFS resource IDs</a>.</p> <note>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_bundle::_describe_bundle_output::DescribeBund
 
 pub use crate::operation::describe_bundle::_describe_bundle_input::DescribeBundleInputBuilder;
 
+impl DescribeBundleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_bundle::DescribeBundleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_bundle::DescribeBundleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_bundle();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeBundle`.
 ///
 /// <p> Get the bundle details for the requested bundle id. </p>

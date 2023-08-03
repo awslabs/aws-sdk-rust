@@ -3,6 +3,23 @@ pub use crate::operation::create_anomaly_subscription::_create_anomaly_subscript
 
 pub use crate::operation::create_anomaly_subscription::_create_anomaly_subscription_input::CreateAnomalySubscriptionInputBuilder;
 
+impl CreateAnomalySubscriptionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_anomaly_subscription::CreateAnomalySubscriptionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_anomaly_subscription::CreateAnomalySubscriptionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_anomaly_subscription();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateAnomalySubscription`.
 ///
 /// <p>Adds an alert subscription to a cost anomaly detection monitor. You can use each subscription to define subscribers with email or SNS notifications. Email subscribers can set an absolute or percentage threshold and a time frequency for receiving notifications. </p>

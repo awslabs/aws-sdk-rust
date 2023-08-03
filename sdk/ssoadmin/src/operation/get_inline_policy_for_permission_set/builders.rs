@@ -3,6 +3,17 @@ pub use crate::operation::get_inline_policy_for_permission_set::_get_inline_poli
 
 pub use crate::operation::get_inline_policy_for_permission_set::_get_inline_policy_for_permission_set_input::GetInlinePolicyForPermissionSetInputBuilder;
 
+impl GetInlinePolicyForPermissionSetInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_inline_policy_for_permission_set::GetInlinePolicyForPermissionSetOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_inline_policy_for_permission_set::GetInlinePolicyForPermissionSetError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_inline_policy_for_permission_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetInlinePolicyForPermissionSet`.
 ///
 /// <p>Obtains the inline policy assigned to the permission set.</p>

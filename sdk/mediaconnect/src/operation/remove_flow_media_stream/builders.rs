@@ -3,6 +3,23 @@ pub use crate::operation::remove_flow_media_stream::_remove_flow_media_stream_ou
 
 pub use crate::operation::remove_flow_media_stream::_remove_flow_media_stream_input::RemoveFlowMediaStreamInputBuilder;
 
+impl RemoveFlowMediaStreamInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::remove_flow_media_stream::RemoveFlowMediaStreamOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::remove_flow_media_stream::RemoveFlowMediaStreamError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.remove_flow_media_stream();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RemoveFlowMediaStream`.
 ///
 /// Removes a media stream from a flow. This action is only available if the media stream is not associated with a source or output.

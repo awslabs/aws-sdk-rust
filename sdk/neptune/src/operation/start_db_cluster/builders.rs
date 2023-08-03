@@ -3,6 +3,23 @@ pub use crate::operation::start_db_cluster::_start_db_cluster_output::StartDbClu
 
 pub use crate::operation::start_db_cluster::_start_db_cluster_input::StartDbClusterInputBuilder;
 
+impl StartDbClusterInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_db_cluster::StartDbClusterOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_db_cluster::StartDBClusterError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_db_cluster();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartDBCluster`.
 ///
 /// <p>Starts an Amazon Neptune DB cluster that was stopped using the Amazon console, the Amazon CLI stop-db-cluster command, or the StopDBCluster API.</p>

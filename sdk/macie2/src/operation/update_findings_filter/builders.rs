@@ -3,6 +3,23 @@ pub use crate::operation::update_findings_filter::_update_findings_filter_output
 
 pub use crate::operation::update_findings_filter::_update_findings_filter_input::UpdateFindingsFilterInputBuilder;
 
+impl UpdateFindingsFilterInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_findings_filter::UpdateFindingsFilterOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_findings_filter::UpdateFindingsFilterError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_findings_filter();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateFindingsFilter`.
 ///
 /// <p>Updates the criteria and other settings for a findings filter.</p>

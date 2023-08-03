@@ -3,6 +3,23 @@ pub use crate::operation::update_subscription::_update_subscription_output::Upda
 
 pub use crate::operation::update_subscription::_update_subscription_input::UpdateSubscriptionInputBuilder;
 
+impl UpdateSubscriptionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_subscription::UpdateSubscriptionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_subscription::UpdateSubscriptionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_subscription();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateSubscription`.
 ///
 /// <p>Updates the details of an existing subscription. Only enter values for parameters you want to change. Empty parameters are not updated.</p> <note>

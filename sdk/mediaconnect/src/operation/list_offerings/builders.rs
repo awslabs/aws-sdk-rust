@@ -3,6 +3,23 @@ pub use crate::operation::list_offerings::_list_offerings_output::ListOfferingsO
 
 pub use crate::operation::list_offerings::_list_offerings_input::ListOfferingsInputBuilder;
 
+impl ListOfferingsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_offerings::ListOfferingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_offerings::ListOfferingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_offerings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListOfferings`.
 ///
 /// Displays a list of all offerings that are available to this account in the current AWS Region. If you have an active reservation (which means you've purchased an offering that has already started and hasn't expired yet), your account isn't eligible for other offerings.

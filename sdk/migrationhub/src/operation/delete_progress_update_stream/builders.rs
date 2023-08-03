@@ -3,6 +3,23 @@ pub use crate::operation::delete_progress_update_stream::_delete_progress_update
 
 pub use crate::operation::delete_progress_update_stream::_delete_progress_update_stream_input::DeleteProgressUpdateStreamInputBuilder;
 
+impl DeleteProgressUpdateStreamInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_progress_update_stream::DeleteProgressUpdateStreamOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_progress_update_stream::DeleteProgressUpdateStreamError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_progress_update_stream();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteProgressUpdateStream`.
 ///
 /// <p>Deletes a progress update stream, including all of its tasks, which was previously created as an AWS resource used for access control. This API has the following traits:</p>

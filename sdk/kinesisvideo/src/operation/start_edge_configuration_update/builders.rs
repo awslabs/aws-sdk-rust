@@ -3,6 +3,23 @@ pub use crate::operation::start_edge_configuration_update::_start_edge_configura
 
 pub use crate::operation::start_edge_configuration_update::_start_edge_configuration_update_input::StartEdgeConfigurationUpdateInputBuilder;
 
+impl StartEdgeConfigurationUpdateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_edge_configuration_update::StartEdgeConfigurationUpdateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_edge_configuration_update::StartEdgeConfigurationUpdateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_edge_configuration_update();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartEdgeConfigurationUpdate`.
 ///
 /// <p>An asynchronous API that updates a stream’s existing edge configuration. The Kinesis Video Stream will sync the stream’s edge configuration with the Edge Agent IoT Greengrass component that runs on an IoT Hub Device, setup at your premise. The time to sync can vary and depends on the connectivity of the Hub Device. The <code>SyncStatus</code> will be updated as the edge configuration is acknowledged, and synced with the Edge Agent. </p>

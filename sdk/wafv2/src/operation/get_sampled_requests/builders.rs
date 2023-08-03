@@ -3,6 +3,23 @@ pub use crate::operation::get_sampled_requests::_get_sampled_requests_output::Ge
 
 pub use crate::operation::get_sampled_requests::_get_sampled_requests_input::GetSampledRequestsInputBuilder;
 
+impl GetSampledRequestsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_sampled_requests::GetSampledRequestsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_sampled_requests::GetSampledRequestsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_sampled_requests();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetSampledRequests`.
 ///
 /// <p>Gets detailed information about a specified number of requests--a sample--that WAF randomly selects from among the first 5,000 requests that your Amazon Web Services resource received during a time range that you choose. You can specify a sample size of up to 500 requests, and you can specify any time range in the previous three hours.</p>

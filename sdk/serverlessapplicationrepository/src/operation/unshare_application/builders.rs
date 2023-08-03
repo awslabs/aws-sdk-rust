@@ -3,6 +3,23 @@ pub use crate::operation::unshare_application::_unshare_application_output::Unsh
 
 pub use crate::operation::unshare_application::_unshare_application_input::UnshareApplicationInputBuilder;
 
+impl UnshareApplicationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::unshare_application::UnshareApplicationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::unshare_application::UnshareApplicationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.unshare_application();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UnshareApplication`.
 ///
 /// <p>Unshares an application from an AWS Organization.</p>

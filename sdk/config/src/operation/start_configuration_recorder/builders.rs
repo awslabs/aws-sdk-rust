@@ -3,6 +3,23 @@ pub use crate::operation::start_configuration_recorder::_start_configuration_rec
 
 pub use crate::operation::start_configuration_recorder::_start_configuration_recorder_input::StartConfigurationRecorderInputBuilder;
 
+impl StartConfigurationRecorderInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_configuration_recorder::StartConfigurationRecorderOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_configuration_recorder::StartConfigurationRecorderError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_configuration_recorder();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartConfigurationRecorder`.
 ///
 /// <p>Starts recording configurations of the Amazon Web Services resources you have selected to record in your Amazon Web Services account.</p>

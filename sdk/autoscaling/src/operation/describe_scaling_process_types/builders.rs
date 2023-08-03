@@ -3,6 +3,23 @@ pub use crate::operation::describe_scaling_process_types::_describe_scaling_proc
 
 pub use crate::operation::describe_scaling_process_types::_describe_scaling_process_types_input::DescribeScalingProcessTypesInputBuilder;
 
+impl DescribeScalingProcessTypesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_scaling_process_types::DescribeScalingProcessTypesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_scaling_process_types::DescribeScalingProcessTypesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_scaling_process_types();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeScalingProcessTypes`.
 ///
 /// <p>Describes the scaling process types for use with the <code>ResumeProcesses</code> and <code>SuspendProcesses</code> APIs.</p>

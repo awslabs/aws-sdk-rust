@@ -3,6 +3,17 @@ pub use crate::operation::generate_organizations_access_report::_generate_organi
 
 pub use crate::operation::generate_organizations_access_report::_generate_organizations_access_report_input::GenerateOrganizationsAccessReportInputBuilder;
 
+impl GenerateOrganizationsAccessReportInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::generate_organizations_access_report::GenerateOrganizationsAccessReportOutput, ::aws_smithy_http::result::SdkError<crate::operation::generate_organizations_access_report::GenerateOrganizationsAccessReportError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.generate_organizations_access_report();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GenerateOrganizationsAccessReport`.
 ///
 /// <p>Generates a report for service last accessed data for Organizations. You can generate a report for any entities (organization root, organizational unit, or account) or policies in your organization.</p>

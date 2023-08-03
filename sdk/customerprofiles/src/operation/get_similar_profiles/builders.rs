@@ -3,6 +3,23 @@ pub use crate::operation::get_similar_profiles::_get_similar_profiles_output::Ge
 
 pub use crate::operation::get_similar_profiles::_get_similar_profiles_input::GetSimilarProfilesInputBuilder;
 
+impl GetSimilarProfilesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_similar_profiles::GetSimilarProfilesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_similar_profiles::GetSimilarProfilesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_similar_profiles();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetSimilarProfiles`.
 ///
 /// <p>Returns a set of profiles that belong to the same matching group using the <code>matchId</code> or <code>profileId</code>. You can also specify the type of matching that you want for finding similar profiles using either <code>RULE_BASED_MATCHING</code> or <code>ML_BASED_MATCHING</code>.</p>

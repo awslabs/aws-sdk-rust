@@ -3,6 +3,23 @@ pub use crate::operation::delete_events_configuration::_delete_events_configurat
 
 pub use crate::operation::delete_events_configuration::_delete_events_configuration_input::DeleteEventsConfigurationInputBuilder;
 
+impl DeleteEventsConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_events_configuration::DeleteEventsConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_events_configuration::DeleteEventsConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_events_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteEventsConfiguration`.
 ///
 /// <p>Deletes the events configuration that allows a bot to receive outgoing events.</p>

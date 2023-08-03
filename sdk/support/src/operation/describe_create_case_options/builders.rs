@@ -3,6 +3,23 @@ pub use crate::operation::describe_create_case_options::_describe_create_case_op
 
 pub use crate::operation::describe_create_case_options::_describe_create_case_options_input::DescribeCreateCaseOptionsInputBuilder;
 
+impl DescribeCreateCaseOptionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_create_case_options::DescribeCreateCaseOptionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_create_case_options::DescribeCreateCaseOptionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_create_case_options();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeCreateCaseOptions`.
 ///
 /// <p>Returns a list of CreateCaseOption types along with the corresponding supported hours and language availability. You can specify the <code>language</code> <code>categoryCode</code>, <code>issueType</code> and <code>serviceCode</code> used to retrieve the CreateCaseOptions.</p> <note>

@@ -3,6 +3,23 @@ pub use crate::operation::get_document_analysis::_get_document_analysis_output::
 
 pub use crate::operation::get_document_analysis::_get_document_analysis_input::GetDocumentAnalysisInputBuilder;
 
+impl GetDocumentAnalysisInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_document_analysis::GetDocumentAnalysisOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_document_analysis::GetDocumentAnalysisError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_document_analysis();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetDocumentAnalysis`.
 ///
 /// <p>Gets the results for an Amazon Textract asynchronous operation that analyzes text in a document.</p>

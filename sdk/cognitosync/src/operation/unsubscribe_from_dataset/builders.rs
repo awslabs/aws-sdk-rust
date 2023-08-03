@@ -3,6 +3,23 @@ pub use crate::operation::unsubscribe_from_dataset::_unsubscribe_from_dataset_ou
 
 pub use crate::operation::unsubscribe_from_dataset::_unsubscribe_from_dataset_input::UnsubscribeFromDatasetInputBuilder;
 
+impl UnsubscribeFromDatasetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::unsubscribe_from_dataset::UnsubscribeFromDatasetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::unsubscribe_from_dataset::UnsubscribeFromDatasetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.unsubscribe_from_dataset();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UnsubscribeFromDataset`.
 ///
 /// <p>Unsubscribes from receiving notifications when a dataset is modified by another device.</p>

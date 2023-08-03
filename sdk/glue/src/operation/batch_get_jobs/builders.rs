@@ -3,6 +3,23 @@ pub use crate::operation::batch_get_jobs::_batch_get_jobs_output::BatchGetJobsOu
 
 pub use crate::operation::batch_get_jobs::_batch_get_jobs_input::BatchGetJobsInputBuilder;
 
+impl BatchGetJobsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_jobs::BatchGetJobsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_get_jobs::BatchGetJobsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_get_jobs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchGetJobs`.
 ///
 /// <p>Returns a list of resource metadata for a given list of job names. After calling the <code>ListJobs</code> operation, you can call this operation to access the data to which you have been granted permissions. This operation supports all IAM permissions, including permission conditions that uses tags. </p>

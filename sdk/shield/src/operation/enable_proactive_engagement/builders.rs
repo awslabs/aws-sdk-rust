@@ -3,6 +3,23 @@ pub use crate::operation::enable_proactive_engagement::_enable_proactive_engagem
 
 pub use crate::operation::enable_proactive_engagement::_enable_proactive_engagement_input::EnableProactiveEngagementInputBuilder;
 
+impl EnableProactiveEngagementInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::enable_proactive_engagement::EnableProactiveEngagementOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::enable_proactive_engagement::EnableProactiveEngagementError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.enable_proactive_engagement();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `EnableProactiveEngagement`.
 ///
 /// <p>Authorizes the Shield Response Team (SRT) to use email and phone to notify contacts about escalations to the SRT and to initiate proactive customer support.</p>

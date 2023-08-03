@@ -3,6 +3,23 @@ pub use crate::operation::get_launch_profile_member::_get_launch_profile_member_
 
 pub use crate::operation::get_launch_profile_member::_get_launch_profile_member_input::GetLaunchProfileMemberInputBuilder;
 
+impl GetLaunchProfileMemberInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_launch_profile_member::GetLaunchProfileMemberOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_launch_profile_member::GetLaunchProfileMemberError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_launch_profile_member();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetLaunchProfileMember`.
 ///
 /// <p>Get a user persona in launch profile membership.</p>

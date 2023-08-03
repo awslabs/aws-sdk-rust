@@ -3,6 +3,23 @@ pub use crate::operation::list_smart_home_appliances::_list_smart_home_appliance
 
 pub use crate::operation::list_smart_home_appliances::_list_smart_home_appliances_input::ListSmartHomeAppliancesInputBuilder;
 
+impl ListSmartHomeAppliancesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_smart_home_appliances::ListSmartHomeAppliancesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_smart_home_appliances::ListSmartHomeAppliancesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_smart_home_appliances();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListSmartHomeAppliances`.
 ///
 /// <p>Lists all of the smart home appliances associated with a room.</p>

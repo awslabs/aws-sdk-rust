@@ -3,6 +3,23 @@ pub use crate::operation::get_health_check::_get_health_check_output::GetHealthC
 
 pub use crate::operation::get_health_check::_get_health_check_input::GetHealthCheckInputBuilder;
 
+impl GetHealthCheckInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_health_check::GetHealthCheckOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_health_check::GetHealthCheckError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_health_check();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetHealthCheck`.
 ///
 /// <p>Gets information about a specified health check.</p>

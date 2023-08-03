@@ -3,6 +3,23 @@ pub use crate::operation::update_distribution::_update_distribution_output::Upda
 
 pub use crate::operation::update_distribution::_update_distribution_input::UpdateDistributionInputBuilder;
 
+impl UpdateDistributionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_distribution::UpdateDistributionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_distribution::UpdateDistributionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_distribution();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateDistribution`.
 ///
 /// <p>Updates the configuration for a CloudFront distribution.</p>

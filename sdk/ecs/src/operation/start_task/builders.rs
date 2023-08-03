@@ -3,6 +3,23 @@ pub use crate::operation::start_task::_start_task_output::StartTaskOutputBuilder
 
 pub use crate::operation::start_task::_start_task_input::StartTaskInputBuilder;
 
+impl StartTaskInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_task::StartTaskOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_task::StartTaskError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_task();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartTask`.
 ///
 /// <p>Starts a new task from the specified task definition on the specified container instance or instances.</p> <note>

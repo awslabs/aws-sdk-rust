@@ -3,6 +3,23 @@ pub use crate::operation::list_custom_data_identifiers::_list_custom_data_identi
 
 pub use crate::operation::list_custom_data_identifiers::_list_custom_data_identifiers_input::ListCustomDataIdentifiersInputBuilder;
 
+impl ListCustomDataIdentifiersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_custom_data_identifiers::ListCustomDataIdentifiersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_custom_data_identifiers::ListCustomDataIdentifiersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_custom_data_identifiers();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListCustomDataIdentifiers`.
 ///
 /// <p>Retrieves a subset of information about all the custom data identifiers for an account.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::assume_decorated_role_with_saml::_assume_decorated_rol
 
 pub use crate::operation::assume_decorated_role_with_saml::_assume_decorated_role_with_saml_input::AssumeDecoratedRoleWithSamlInputBuilder;
 
+impl AssumeDecoratedRoleWithSamlInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::assume_decorated_role_with_saml::AssumeDecoratedRoleWithSamlOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::assume_decorated_role_with_saml::AssumeDecoratedRoleWithSAMLError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.assume_decorated_role_with_saml();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssumeDecoratedRoleWithSAML`.
 ///
 /// <p>Allows a caller to assume an IAM role decorated as the SAML user specified in the SAML assertion included in the request. This decoration allows Lake Formation to enforce access policies against the SAML users and groups. This API operation requires SAML federation setup in the caller’s account as it can only be called with valid SAML assertions. Lake Formation does not scope down the permission of the assumed role. All permissions attached to the role via the SAML federation setup will be included in the role session. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::terminate_recovery_instances::_terminate_recovery_inst
 
 pub use crate::operation::terminate_recovery_instances::_terminate_recovery_instances_input::TerminateRecoveryInstancesInputBuilder;
 
+impl TerminateRecoveryInstancesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::terminate_recovery_instances::TerminateRecoveryInstancesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::terminate_recovery_instances::TerminateRecoveryInstancesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.terminate_recovery_instances();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `TerminateRecoveryInstances`.
 ///
 /// <p>Initiates a Job for terminating the EC2 resources associated with the specified Recovery Instances, and then will delete the Recovery Instances from the Elastic Disaster Recovery service.</p>

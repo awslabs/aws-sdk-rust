@@ -3,6 +3,23 @@ pub use crate::operation::get_data_endpoint::_get_data_endpoint_output::GetDataE
 
 pub use crate::operation::get_data_endpoint::_get_data_endpoint_input::GetDataEndpointInputBuilder;
 
+impl GetDataEndpointInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_data_endpoint::GetDataEndpointOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_data_endpoint::GetDataEndpointError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_data_endpoint();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetDataEndpoint`.
 ///
 /// <p>Gets an endpoint for a specified stream for either reading or writing. Use this endpoint in your application to read from the specified stream (using the <code>GetMedia</code> or <code>GetMediaForFragmentList</code> operations) or write to it (using the <code>PutMedia</code> operation). </p> <note>

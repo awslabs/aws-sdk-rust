@@ -3,6 +3,23 @@ pub use crate::operation::update_bridge_output::_update_bridge_output_output::Up
 
 pub use crate::operation::update_bridge_output::_update_bridge_output_input::UpdateBridgeOutputInputBuilder;
 
+impl UpdateBridgeOutputInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_bridge_output::UpdateBridgeOutputOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_bridge_output::UpdateBridgeOutputError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_bridge_output();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateBridgeOutput`.
 ///
 /// Updates an existing bridge output.

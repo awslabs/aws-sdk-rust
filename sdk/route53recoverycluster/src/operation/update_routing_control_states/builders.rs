@@ -3,6 +3,23 @@ pub use crate::operation::update_routing_control_states::_update_routing_control
 
 pub use crate::operation::update_routing_control_states::_update_routing_control_states_input::UpdateRoutingControlStatesInputBuilder;
 
+impl UpdateRoutingControlStatesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_routing_control_states::UpdateRoutingControlStatesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_routing_control_states::UpdateRoutingControlStatesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_routing_control_states();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateRoutingControlStates`.
 ///
 /// <p>Set multiple routing control states. You can set the value for each state to be On or Off. When the state is On, traffic flows to a cell. When it's Off, traffic does not flow.</p>

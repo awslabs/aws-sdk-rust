@@ -3,6 +3,23 @@ pub use crate::operation::list_sinks::_list_sinks_output::ListSinksOutputBuilder
 
 pub use crate::operation::list_sinks::_list_sinks_input::ListSinksInputBuilder;
 
+impl ListSinksInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_sinks::ListSinksOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_sinks::ListSinksError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_sinks();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListSinks`.
 ///
 /// <p>Use this operation in a monitoring account to return the list of sinks created in that account.</p>

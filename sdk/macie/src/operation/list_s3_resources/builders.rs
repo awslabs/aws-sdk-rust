@@ -3,6 +3,23 @@ pub use crate::operation::list_s3_resources::_list_s3_resources_output::ListS3Re
 
 pub use crate::operation::list_s3_resources::_list_s3_resources_input::ListS3ResourcesInputBuilder;
 
+impl ListS3ResourcesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_s3_resources::ListS3ResourcesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_s3_resources::ListS3ResourcesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_s3_resources();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListS3Resources`.
 ///
 /// <p>(Discontinued) Lists all the S3 resources associated with Amazon Macie Classic. If <code>memberAccountId</code> isn't specified, the action lists the S3 resources associated with Macie Classic for the current Macie Classic administrator account. If <code>memberAccountId</code> is specified, the action lists the S3 resources associated with Macie Classic for the specified member account. </p>

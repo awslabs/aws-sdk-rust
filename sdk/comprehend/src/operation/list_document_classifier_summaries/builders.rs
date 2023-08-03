@@ -3,6 +3,17 @@ pub use crate::operation::list_document_classifier_summaries::_list_document_cla
 
 pub use crate::operation::list_document_classifier_summaries::_list_document_classifier_summaries_input::ListDocumentClassifierSummariesInputBuilder;
 
+impl ListDocumentClassifierSummariesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_document_classifier_summaries::ListDocumentClassifierSummariesOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_document_classifier_summaries::ListDocumentClassifierSummariesError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_document_classifier_summaries();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDocumentClassifierSummaries`.
 ///
 /// <p>Gets a list of summaries of the document classifiers that you have created</p>

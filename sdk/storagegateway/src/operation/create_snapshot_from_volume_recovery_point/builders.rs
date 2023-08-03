@@ -3,6 +3,17 @@ pub use crate::operation::create_snapshot_from_volume_recovery_point::_create_sn
 
 pub use crate::operation::create_snapshot_from_volume_recovery_point::_create_snapshot_from_volume_recovery_point_input::CreateSnapshotFromVolumeRecoveryPointInputBuilder;
 
+impl CreateSnapshotFromVolumeRecoveryPointInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::create_snapshot_from_volume_recovery_point::CreateSnapshotFromVolumeRecoveryPointOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_snapshot_from_volume_recovery_point::CreateSnapshotFromVolumeRecoveryPointError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.create_snapshot_from_volume_recovery_point();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateSnapshotFromVolumeRecoveryPoint`.
 ///
 /// <p>Initiates a snapshot of a gateway from a volume recovery point. This operation is only supported in the cached volume gateway type.</p>

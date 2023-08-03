@@ -3,6 +3,23 @@ pub use crate::operation::put_metadata::_put_metadata_output::PutMetadataOutputB
 
 pub use crate::operation::put_metadata::_put_metadata_input::PutMetadataInputBuilder;
 
+impl PutMetadataInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_metadata::PutMetadataOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_metadata::PutMetadataError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_metadata();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutMetadata`.
 ///
 /// <p>Inserts metadata into the active stream of the specified channel. At most 5 requests per second per channel are allowed, each with a maximum 1 KB payload. (If 5 TPS is not sufficient for your needs, we recommend batching your data into a single PutMetadata call.) At most 155 requests per second per account are allowed. Also see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/metadata.html">Embedding Metadata within a Video Stream</a> in the <i>Amazon IVS User Guide</i>.</p>

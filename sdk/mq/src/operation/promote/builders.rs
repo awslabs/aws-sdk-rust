@@ -3,6 +3,23 @@ pub use crate::operation::promote::_promote_output::PromoteOutputBuilder;
 
 pub use crate::operation::promote::_promote_input::PromoteInputBuilder;
 
+impl PromoteInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::promote::PromoteOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::promote::PromoteError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.promote();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `Promote`.
 ///
 /// <p>Promotes a data replication replica broker to the primary broker role.</p>

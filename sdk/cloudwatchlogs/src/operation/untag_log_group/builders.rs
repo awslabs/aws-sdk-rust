@@ -3,6 +3,23 @@ pub use crate::operation::untag_log_group::_untag_log_group_output::UntagLogGrou
 
 pub use crate::operation::untag_log_group::_untag_log_group_input::UntagLogGroupInputBuilder;
 
+impl UntagLogGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::untag_log_group::UntagLogGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::untag_log_group::UntagLogGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.untag_log_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UntagLogGroup`.
 ///
 /// <important>

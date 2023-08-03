@@ -3,6 +3,23 @@ pub use crate::operation::create_streaming_distribution::_create_streaming_distr
 
 pub use crate::operation::create_streaming_distribution::_create_streaming_distribution_input::CreateStreamingDistributionInputBuilder;
 
+impl CreateStreamingDistributionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_streaming_distribution::CreateStreamingDistributionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_streaming_distribution::CreateStreamingDistributionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_streaming_distribution();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateStreamingDistribution`.
 ///
 /// <p>This API is deprecated. Amazon CloudFront is deprecating real-time messaging protocol (RTMP) distributions on December 31, 2020. For more information, <a href="http://forums.aws.amazon.com/ann.jspa?annID=7356">read the announcement</a> on the Amazon CloudFront discussion forum.</p>

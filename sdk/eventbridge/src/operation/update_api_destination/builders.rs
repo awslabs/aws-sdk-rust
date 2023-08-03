@@ -3,6 +3,23 @@ pub use crate::operation::update_api_destination::_update_api_destination_output
 
 pub use crate::operation::update_api_destination::_update_api_destination_input::UpdateApiDestinationInputBuilder;
 
+impl UpdateApiDestinationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_api_destination::UpdateApiDestinationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_api_destination::UpdateApiDestinationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_api_destination();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateApiDestination`.
 ///
 /// <p>Updates an API destination.</p>

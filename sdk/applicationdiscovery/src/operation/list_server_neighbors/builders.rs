@@ -3,6 +3,23 @@ pub use crate::operation::list_server_neighbors::_list_server_neighbors_output::
 
 pub use crate::operation::list_server_neighbors::_list_server_neighbors_input::ListServerNeighborsInputBuilder;
 
+impl ListServerNeighborsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_server_neighbors::ListServerNeighborsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_server_neighbors::ListServerNeighborsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_server_neighbors();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListServerNeighbors`.
 ///
 /// <p>Retrieves a list of servers that are one network hop away from a specified server.</p>

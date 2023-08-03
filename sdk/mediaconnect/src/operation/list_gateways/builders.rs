@@ -3,6 +3,23 @@ pub use crate::operation::list_gateways::_list_gateways_output::ListGatewaysOutp
 
 pub use crate::operation::list_gateways::_list_gateways_input::ListGatewaysInputBuilder;
 
+impl ListGatewaysInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_gateways::ListGatewaysOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_gateways::ListGatewaysError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_gateways();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListGateways`.
 ///
 /// Displays a list of gateways that are associated with this account. This request returns a paginated result.

@@ -3,6 +3,23 @@ pub use crate::operation::put_remediation_configurations::_put_remediation_confi
 
 pub use crate::operation::put_remediation_configurations::_put_remediation_configurations_input::PutRemediationConfigurationsInputBuilder;
 
+impl PutRemediationConfigurationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_remediation_configurations::PutRemediationConfigurationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_remediation_configurations::PutRemediationConfigurationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_remediation_configurations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutRemediationConfigurations`.
 ///
 /// <p>Adds or updates the remediation configuration with a specific Config rule with the selected target or action. The API creates the <code>RemediationConfiguration</code> object for the Config rule. The Config rule must already exist for you to add a remediation configuration. The target (SSM document) must exist and have permissions to use the target. </p> <note>

@@ -3,6 +3,23 @@ pub use crate::operation::create_service_network::_create_service_network_output
 
 pub use crate::operation::create_service_network::_create_service_network_input::CreateServiceNetworkInputBuilder;
 
+impl CreateServiceNetworkInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_service_network::CreateServiceNetworkOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_service_network::CreateServiceNetworkError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_service_network();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateServiceNetwork`.
 ///
 /// <p>Creates a service network. A service network is a logical boundary for a collection of services. You can associate services and VPCs with a service network.</p>

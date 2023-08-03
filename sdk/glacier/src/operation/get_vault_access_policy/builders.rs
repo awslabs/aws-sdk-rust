@@ -3,6 +3,23 @@ pub use crate::operation::get_vault_access_policy::_get_vault_access_policy_outp
 
 pub use crate::operation::get_vault_access_policy::_get_vault_access_policy_input::GetVaultAccessPolicyInputBuilder;
 
+impl GetVaultAccessPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_vault_access_policy::GetVaultAccessPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_vault_access_policy::GetVaultAccessPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_vault_access_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetVaultAccessPolicy`.
 ///
 /// <p>This operation retrieves the <code>access-policy</code> subresource set on the vault; for more information on setting this subresource, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-SetVaultAccessPolicy.html">Set Vault Access Policy (PUT access-policy)</a>. If there is no access policy set on the vault, the operation returns a <code>404 Not found</code> error. For more information about vault access policies, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/vault-access-policy.html">Amazon Glacier Access Control with Vault Access Policies</a>.</p>

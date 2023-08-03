@@ -3,6 +3,23 @@ pub use crate::operation::list_jobs::_list_jobs_output::ListJobsOutputBuilder;
 
 pub use crate::operation::list_jobs::_list_jobs_input::ListJobsInputBuilder;
 
+impl ListJobsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_jobs::ListJobsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_jobs::ListJobsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_jobs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListJobs`.
 ///
 /// <p>Returns an array of <code>JobListEntry</code> objects of the specified length. Each <code>JobListEntry</code> object contains a job's state, a job's ID, and a value that indicates whether the job is a job part, in the case of export jobs. Calling this API action in one of the US regions will return jobs from the list of all jobs associated with this account in all US regions.</p>

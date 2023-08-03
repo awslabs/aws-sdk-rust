@@ -3,6 +3,23 @@ pub use crate::operation::list_session_analytics_data::_list_session_analytics_d
 
 pub use crate::operation::list_session_analytics_data::_list_session_analytics_data_input::ListSessionAnalyticsDataInputBuilder;
 
+impl ListSessionAnalyticsDataInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_session_analytics_data::ListSessionAnalyticsDataOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_session_analytics_data::ListSessionAnalyticsDataError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_session_analytics_data();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListSessionAnalyticsData`.
 ///
 /// <p>Retrieves a list of metadata for individual user sessions with your bot. The <code>startDateTime</code> and <code>endDateTime</code> fields are required. These fields define a time range for which you want to retrieve results. Of the optional fields, you can organize the results in the following ways:</p>

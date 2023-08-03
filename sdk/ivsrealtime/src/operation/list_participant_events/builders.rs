@@ -3,6 +3,23 @@ pub use crate::operation::list_participant_events::_list_participant_events_outp
 
 pub use crate::operation::list_participant_events::_list_participant_events_input::ListParticipantEventsInputBuilder;
 
+impl ListParticipantEventsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_participant_events::ListParticipantEventsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_participant_events::ListParticipantEventsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_participant_events();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListParticipantEvents`.
 ///
 /// <p>Lists events for a specified participant that occurred during a specified stage session.</p>

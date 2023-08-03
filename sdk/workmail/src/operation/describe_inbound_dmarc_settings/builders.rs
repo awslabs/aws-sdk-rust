@@ -3,6 +3,23 @@ pub use crate::operation::describe_inbound_dmarc_settings::_describe_inbound_dma
 
 pub use crate::operation::describe_inbound_dmarc_settings::_describe_inbound_dmarc_settings_input::DescribeInboundDmarcSettingsInputBuilder;
 
+impl DescribeInboundDmarcSettingsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_inbound_dmarc_settings::DescribeInboundDmarcSettingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_inbound_dmarc_settings::DescribeInboundDmarcSettingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_inbound_dmarc_settings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeInboundDmarcSettings`.
 ///
 /// <p>Lists the settings in a DMARC policy for a specified organization.</p>

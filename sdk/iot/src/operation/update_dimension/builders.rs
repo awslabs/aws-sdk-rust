@@ -3,6 +3,23 @@ pub use crate::operation::update_dimension::_update_dimension_output::UpdateDime
 
 pub use crate::operation::update_dimension::_update_dimension_input::UpdateDimensionInputBuilder;
 
+impl UpdateDimensionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_dimension::UpdateDimensionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_dimension::UpdateDimensionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_dimension();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateDimension`.
 ///
 /// <p>Updates the definition for a dimension. You cannot change the type of a dimension after it is created (you can delete it and recreate it).</p>

@@ -3,6 +3,17 @@ pub use crate::operation::convert_recovery_point_to_snapshot::_convert_recovery_
 
 pub use crate::operation::convert_recovery_point_to_snapshot::_convert_recovery_point_to_snapshot_input::ConvertRecoveryPointToSnapshotInputBuilder;
 
+impl ConvertRecoveryPointToSnapshotInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::convert_recovery_point_to_snapshot::ConvertRecoveryPointToSnapshotOutput, ::aws_smithy_http::result::SdkError<crate::operation::convert_recovery_point_to_snapshot::ConvertRecoveryPointToSnapshotError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.convert_recovery_point_to_snapshot();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ConvertRecoveryPointToSnapshot`.
 ///
 /// <p>Converts a recovery point to a snapshot. For more information about recovery points and snapshots, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/serverless-snapshots-recovery.html">Working with snapshots and recovery points</a>.</p>

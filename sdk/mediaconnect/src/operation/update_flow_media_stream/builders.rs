@@ -3,6 +3,23 @@ pub use crate::operation::update_flow_media_stream::_update_flow_media_stream_ou
 
 pub use crate::operation::update_flow_media_stream::_update_flow_media_stream_input::UpdateFlowMediaStreamInputBuilder;
 
+impl UpdateFlowMediaStreamInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_flow_media_stream::UpdateFlowMediaStreamOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_flow_media_stream::UpdateFlowMediaStreamError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_flow_media_stream();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateFlowMediaStream`.
 ///
 /// Updates an existing media stream.

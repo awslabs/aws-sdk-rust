@@ -3,6 +3,23 @@ pub use crate::operation::enable_directory::_enable_directory_output::EnableDire
 
 pub use crate::operation::enable_directory::_enable_directory_input::EnableDirectoryInputBuilder;
 
+impl EnableDirectoryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::enable_directory::EnableDirectoryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::enable_directory::EnableDirectoryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.enable_directory();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `EnableDirectory`.
 ///
 /// <p>Enables the specified directory. Only disabled directories can be enabled. Once enabled, the directory can then be read and written to.</p>

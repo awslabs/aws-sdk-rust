@@ -3,6 +3,23 @@ pub use crate::operation::get_trace_summaries::_get_trace_summaries_output::GetT
 
 pub use crate::operation::get_trace_summaries::_get_trace_summaries_input::GetTraceSummariesInputBuilder;
 
+impl GetTraceSummariesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_trace_summaries::GetTraceSummariesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_trace_summaries::GetTraceSummariesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_trace_summaries();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetTraceSummaries`.
 ///
 /// <p>Retrieves IDs and annotations for traces available for a specified time frame using an optional filter. To get the full traces, pass the trace IDs to <code>BatchGetTraces</code>.</p>

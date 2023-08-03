@@ -3,6 +3,23 @@ pub use crate::operation::associate_resolver_rule::_associate_resolver_rule_outp
 
 pub use crate::operation::associate_resolver_rule::_associate_resolver_rule_input::AssociateResolverRuleInputBuilder;
 
+impl AssociateResolverRuleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_resolver_rule::AssociateResolverRuleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_resolver_rule::AssociateResolverRuleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_resolver_rule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateResolverRule`.
 ///
 /// <p>Associates a Resolver rule with a VPC. When you associate a rule with a VPC, Resolver forwards all DNS queries for the domain name that is specified in the rule and that originate in the VPC. The queries are forwarded to the IP addresses for the DNS resolvers that are specified in the rule. For more information about rules, see <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_route53resolver_CreateResolverRule.html">CreateResolverRule</a>. </p>

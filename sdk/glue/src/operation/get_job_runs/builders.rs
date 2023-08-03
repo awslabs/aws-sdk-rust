@@ -3,6 +3,23 @@ pub use crate::operation::get_job_runs::_get_job_runs_output::GetJobRunsOutputBu
 
 pub use crate::operation::get_job_runs::_get_job_runs_input::GetJobRunsInputBuilder;
 
+impl GetJobRunsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_job_runs::GetJobRunsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_job_runs::GetJobRunsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_job_runs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetJobRuns`.
 ///
 /// <p>Retrieves metadata for all runs of a given job definition.</p>

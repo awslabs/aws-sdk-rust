@@ -167,7 +167,7 @@ mod head_bucket_request_test {
     #[allow(unused_mut)]
     async fn head_object_empty_body_response() {
         let expected_output = crate::types::error::NotFound::builder().build();
-        let http_response = ::http::response::Builder::new()
+        let mut http_response = ::http::response::Builder::new()
             .header("content-type", "application/xml")
             .header("date", "Thu, 03 Jun 2021 04:05:52 GMT")
             .header("server", "AmazonS3")

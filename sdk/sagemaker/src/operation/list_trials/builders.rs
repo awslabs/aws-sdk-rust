@@ -3,6 +3,23 @@ pub use crate::operation::list_trials::_list_trials_output::ListTrialsOutputBuil
 
 pub use crate::operation::list_trials::_list_trials_input::ListTrialsInputBuilder;
 
+impl ListTrialsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_trials::ListTrialsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_trials::ListTrialsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_trials();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListTrials`.
 ///
 /// <p>Lists the trials in your account. Specify an experiment name to limit the list to the trials that are part of that experiment. Specify a trial component name to limit the list to the trials that associated with that trial component. The list can be filtered to show only trials that were created in a specific time range. The list can be sorted by trial name or creation time.</p>

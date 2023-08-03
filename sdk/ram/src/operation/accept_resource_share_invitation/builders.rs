@@ -3,6 +3,23 @@ pub use crate::operation::accept_resource_share_invitation::_accept_resource_sha
 
 pub use crate::operation::accept_resource_share_invitation::_accept_resource_share_invitation_input::AcceptResourceShareInvitationInputBuilder;
 
+impl AcceptResourceShareInvitationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::accept_resource_share_invitation::AcceptResourceShareInvitationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::accept_resource_share_invitation::AcceptResourceShareInvitationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.accept_resource_share_invitation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AcceptResourceShareInvitation`.
 ///
 /// <p>Accepts an invitation to a resource share from another Amazon Web Services account. After you accept the invitation, the resources included in the resource share are available to interact with in the relevant Amazon Web Services Management Consoles and tools.</p>

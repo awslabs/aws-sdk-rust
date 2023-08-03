@@ -3,6 +3,23 @@ pub use crate::operation::cancel_signing_profile::_cancel_signing_profile_output
 
 pub use crate::operation::cancel_signing_profile::_cancel_signing_profile_input::CancelSigningProfileInputBuilder;
 
+impl CancelSigningProfileInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::cancel_signing_profile::CancelSigningProfileOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::cancel_signing_profile::CancelSigningProfileError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.cancel_signing_profile();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CancelSigningProfile`.
 ///
 /// <p>Changes the state of an <code>ACTIVE</code> signing profile to <code>CANCELED</code>. A canceled profile is still viewable with the <code>ListSigningProfiles</code> operation, but it cannot perform new signing jobs, and is deleted two years after cancelation.</p>

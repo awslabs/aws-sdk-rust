@@ -3,6 +3,23 @@ pub use crate::operation::create_group::_create_group_output::CreateGroupOutputB
 
 pub use crate::operation::create_group::_create_group_input::CreateGroupInputBuilder;
 
+impl CreateGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_group::CreateGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_group::CreateGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateGroup`.
 ///
 /// <p>Creates a group which you can use to associate canaries with each other, including cross-Region canaries. Using groups can help you with managing and automating your canaries, and you can also view aggregated run results and statistics for all canaries in a group. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_dataset::_delete_dataset_output::DeleteDatasetO
 
 pub use crate::operation::delete_dataset::_delete_dataset_input::DeleteDatasetInputBuilder;
 
+impl DeleteDatasetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_dataset::DeleteDatasetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_dataset::DeleteDatasetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_dataset();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteDataset`.
 ///
 /// <p>Deletes the specific dataset. The dataset will be deleted permanently, and the action can't be undone. Datasets that this dataset was merged with will no longer report the merge. Any subsequent operation on this dataset will result in a ResourceNotFoundException.</p>

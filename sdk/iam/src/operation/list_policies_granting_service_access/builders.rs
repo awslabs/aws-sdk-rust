@@ -3,6 +3,17 @@ pub use crate::operation::list_policies_granting_service_access::_list_policies_
 
 pub use crate::operation::list_policies_granting_service_access::_list_policies_granting_service_access_input::ListPoliciesGrantingServiceAccessInputBuilder;
 
+impl ListPoliciesGrantingServiceAccessInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_policies_granting_service_access::ListPoliciesGrantingServiceAccessOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_policies_granting_service_access::ListPoliciesGrantingServiceAccessError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_policies_granting_service_access();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListPoliciesGrantingServiceAccess`.
 ///
 /// <p>Retrieves a list of policies that the IAM identity (user, group, or role) can use to access each specified service.</p> <note>

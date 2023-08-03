@@ -3,6 +3,23 @@ pub use crate::operation::create_portfolio::_create_portfolio_output::CreatePort
 
 pub use crate::operation::create_portfolio::_create_portfolio_input::CreatePortfolioInputBuilder;
 
+impl CreatePortfolioInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_portfolio::CreatePortfolioOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_portfolio::CreatePortfolioError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_portfolio();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreatePortfolio`.
 ///
 /// <p>Creates a portfolio.</p>

@@ -3,6 +3,17 @@ pub use crate::operation::delete_slack_channel_configuration::_delete_slack_chan
 
 pub use crate::operation::delete_slack_channel_configuration::_delete_slack_channel_configuration_input::DeleteSlackChannelConfigurationInputBuilder;
 
+impl DeleteSlackChannelConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_slack_channel_configuration::DeleteSlackChannelConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_slack_channel_configuration::DeleteSlackChannelConfigurationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.delete_slack_channel_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteSlackChannelConfiguration`.
 ///
 /// <p>Deletes a Slack channel configuration from your Amazon Web Services account. This operation doesn't delete your Slack channel.</p>

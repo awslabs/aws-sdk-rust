@@ -3,6 +3,23 @@ pub use crate::operation::create_user_settings::_create_user_settings_output::Cr
 
 pub use crate::operation::create_user_settings::_create_user_settings_input::CreateUserSettingsInputBuilder;
 
+impl CreateUserSettingsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_user_settings::CreateUserSettingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_user_settings::CreateUserSettingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_user_settings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateUserSettings`.
 ///
 /// <p>Creates a user settings resource that can be associated with a web portal. Once associated with a web portal, user settings control how users can transfer data between a streaming session and the their local devices. </p>

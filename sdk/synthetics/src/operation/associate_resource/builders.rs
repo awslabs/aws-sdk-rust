@@ -3,6 +3,23 @@ pub use crate::operation::associate_resource::_associate_resource_output::Associ
 
 pub use crate::operation::associate_resource::_associate_resource_input::AssociateResourceInputBuilder;
 
+impl AssociateResourceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_resource::AssociateResourceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_resource::AssociateResourceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_resource();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateResource`.
 ///
 /// <p>Associates a canary with a group. Using groups can help you with managing and automating your canaries, and you can also view aggregated run results and statistics for all canaries in a group. </p>

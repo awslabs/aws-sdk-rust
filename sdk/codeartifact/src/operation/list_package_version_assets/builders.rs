@@ -3,6 +3,23 @@ pub use crate::operation::list_package_version_assets::_list_package_version_ass
 
 pub use crate::operation::list_package_version_assets::_list_package_version_assets_input::ListPackageVersionAssetsInputBuilder;
 
+impl ListPackageVersionAssetsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_package_version_assets::ListPackageVersionAssetsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_package_version_assets::ListPackageVersionAssetsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_package_version_assets();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListPackageVersionAssets`.
 ///
 /// <p> Returns a list of <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_AssetSummary.html">AssetSummary</a> objects for assets in a package version. </p>

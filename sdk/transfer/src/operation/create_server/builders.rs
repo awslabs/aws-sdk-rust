@@ -3,6 +3,23 @@ pub use crate::operation::create_server::_create_server_output::CreateServerOutp
 
 pub use crate::operation::create_server::_create_server_input::CreateServerInputBuilder;
 
+impl CreateServerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_server::CreateServerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_server::CreateServerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_server();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateServer`.
 ///
 /// <p>Instantiates an auto-scaling virtual server based on the selected file transfer protocol in Amazon Web Services. When you make updates to your file transfer protocol-enabled server or when you work with users, use the service-generated <code>ServerId</code> property that is assigned to the newly created server.</p>

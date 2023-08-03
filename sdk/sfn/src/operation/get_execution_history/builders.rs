@@ -3,6 +3,23 @@ pub use crate::operation::get_execution_history::_get_execution_history_output::
 
 pub use crate::operation::get_execution_history::_get_execution_history_input::GetExecutionHistoryInputBuilder;
 
+impl GetExecutionHistoryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_execution_history::GetExecutionHistoryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_execution_history::GetExecutionHistoryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_execution_history();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetExecutionHistory`.
 ///
 /// <p>Returns the history of the specified execution as a list of events. By default, the results are returned in ascending order of the <code>timeStamp</code> of the events. Use the <code>reverseOrder</code> parameter to get the latest events first.</p>

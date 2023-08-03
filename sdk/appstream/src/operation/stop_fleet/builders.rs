@@ -3,6 +3,23 @@ pub use crate::operation::stop_fleet::_stop_fleet_output::StopFleetOutputBuilder
 
 pub use crate::operation::stop_fleet::_stop_fleet_input::StopFleetInputBuilder;
 
+impl StopFleetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_fleet::StopFleetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_fleet::StopFleetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_fleet();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopFleet`.
 ///
 /// <p>Stops the specified fleet.</p>

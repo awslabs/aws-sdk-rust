@@ -3,6 +3,23 @@ pub use crate::operation::create_instances_from_snapshot::_create_instances_from
 
 pub use crate::operation::create_instances_from_snapshot::_create_instances_from_snapshot_input::CreateInstancesFromSnapshotInputBuilder;
 
+impl CreateInstancesFromSnapshotInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_instances_from_snapshot::CreateInstancesFromSnapshotOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_instances_from_snapshot::CreateInstancesFromSnapshotError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_instances_from_snapshot();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateInstancesFromSnapshot`.
 ///
 /// <p>Creates one or more new instances from a manual or automatic snapshot of an instance.</p>

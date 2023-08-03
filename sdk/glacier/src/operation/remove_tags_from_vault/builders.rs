@@ -3,6 +3,23 @@ pub use crate::operation::remove_tags_from_vault::_remove_tags_from_vault_output
 
 pub use crate::operation::remove_tags_from_vault::_remove_tags_from_vault_input::RemoveTagsFromVaultInputBuilder;
 
+impl RemoveTagsFromVaultInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::remove_tags_from_vault::RemoveTagsFromVaultOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::remove_tags_from_vault::RemoveTagsFromVaultError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.remove_tags_from_vault();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RemoveTagsFromVault`.
 ///
 /// <p>This operation removes one or more tags from the set of tags attached to a vault. For more information about tags, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/tagging.html">Tagging Amazon S3 Glacier Resources</a>. This operation is idempotent. The operation will be successful, even if there are no tags attached to the vault. </p>

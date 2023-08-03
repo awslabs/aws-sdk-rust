@@ -3,6 +3,23 @@ pub use crate::operation::update_public_sharing_settings::_update_public_sharing
 
 pub use crate::operation::update_public_sharing_settings::_update_public_sharing_settings_input::UpdatePublicSharingSettingsInputBuilder;
 
+impl UpdatePublicSharingSettingsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_public_sharing_settings::UpdatePublicSharingSettingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_public_sharing_settings::UpdatePublicSharingSettingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_public_sharing_settings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdatePublicSharingSettings`.
 ///
 /// <p>Use the <code>UpdatePublicSharingSettings</code> operation to turn on or turn off the public sharing settings of an Amazon QuickSight dashboard.</p>

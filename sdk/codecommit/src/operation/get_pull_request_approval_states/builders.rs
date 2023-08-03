@@ -3,6 +3,23 @@ pub use crate::operation::get_pull_request_approval_states::_get_pull_request_ap
 
 pub use crate::operation::get_pull_request_approval_states::_get_pull_request_approval_states_input::GetPullRequestApprovalStatesInputBuilder;
 
+impl GetPullRequestApprovalStatesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_pull_request_approval_states::GetPullRequestApprovalStatesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_pull_request_approval_states::GetPullRequestApprovalStatesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_pull_request_approval_states();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetPullRequestApprovalStates`.
 ///
 /// <p>Gets information about the approval states for a specified pull request. Approval states only apply to pull requests that have one or more approval rules applied to them.</p>

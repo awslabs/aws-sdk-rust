@@ -3,6 +3,23 @@ pub use crate::operation::add_facet_to_object::_add_facet_to_object_output::AddF
 
 pub use crate::operation::add_facet_to_object::_add_facet_to_object_input::AddFacetToObjectInputBuilder;
 
+impl AddFacetToObjectInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::add_facet_to_object::AddFacetToObjectOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::add_facet_to_object::AddFacetToObjectError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.add_facet_to_object();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AddFacetToObject`.
 ///
 /// <p>Adds a new <code>Facet</code> to an object. An object can have more than one facet applied on it.</p>

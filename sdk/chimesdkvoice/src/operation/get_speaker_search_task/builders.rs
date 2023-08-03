@@ -3,6 +3,23 @@ pub use crate::operation::get_speaker_search_task::_get_speaker_search_task_outp
 
 pub use crate::operation::get_speaker_search_task::_get_speaker_search_task_input::GetSpeakerSearchTaskInputBuilder;
 
+impl GetSpeakerSearchTaskInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_speaker_search_task::GetSpeakerSearchTaskOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_speaker_search_task::GetSpeakerSearchTaskError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_speaker_search_task();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetSpeakerSearchTask`.
 ///
 /// <p>Retrieves the details of the specified speaker search task.</p>

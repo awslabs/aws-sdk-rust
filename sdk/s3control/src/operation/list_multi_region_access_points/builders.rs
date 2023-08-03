@@ -3,6 +3,23 @@ pub use crate::operation::list_multi_region_access_points::_list_multi_region_ac
 
 pub use crate::operation::list_multi_region_access_points::_list_multi_region_access_points_input::ListMultiRegionAccessPointsInputBuilder;
 
+impl ListMultiRegionAccessPointsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_multi_region_access_points::ListMultiRegionAccessPointsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_multi_region_access_points::ListMultiRegionAccessPointsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_multi_region_access_points();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListMultiRegionAccessPoints`.
 ///
 /// <p>Returns a list of the Multi-Region Access Points currently associated with the specified Amazon Web Services account. Each call can return up to 100 Multi-Region Access Points, the maximum number of Multi-Region Access Points that can be associated with a single account.</p>

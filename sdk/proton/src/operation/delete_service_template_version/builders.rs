@@ -3,6 +3,23 @@ pub use crate::operation::delete_service_template_version::_delete_service_templ
 
 pub use crate::operation::delete_service_template_version::_delete_service_template_version_input::DeleteServiceTemplateVersionInputBuilder;
 
+impl DeleteServiceTemplateVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_service_template_version::DeleteServiceTemplateVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_service_template_version::DeleteServiceTemplateVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_service_template_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteServiceTemplateVersion`.
 ///
 /// <p>If no other minor versions of a service template exist, delete a major version of the service template if it's not the <code>Recommended</code> version. Delete the <code>Recommended</code> version of the service template if no other major versions or minor versions of the service template exist. A major version of a service template is a version that <i>isn't</i> backwards compatible.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::remove_endpoints::_remove_endpoints_output::RemoveEndp
 
 pub use crate::operation::remove_endpoints::_remove_endpoints_input::RemoveEndpointsInputBuilder;
 
+impl RemoveEndpointsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::remove_endpoints::RemoveEndpointsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::remove_endpoints::RemoveEndpointsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.remove_endpoints();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RemoveEndpoints`.
 ///
 /// <p>Remove endpoints from an endpoint group. </p>

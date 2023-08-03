@@ -3,6 +3,23 @@ pub use crate::operation::delete_access_point::_delete_access_point_output::Dele
 
 pub use crate::operation::delete_access_point::_delete_access_point_input::DeleteAccessPointInputBuilder;
 
+impl DeleteAccessPointInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_access_point::DeleteAccessPointOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_access_point::DeleteAccessPointError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_access_point();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteAccessPoint`.
 ///
 /// <p>Deletes the specified access point.</p>

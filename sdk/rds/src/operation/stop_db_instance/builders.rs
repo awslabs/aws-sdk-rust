@@ -3,6 +3,23 @@ pub use crate::operation::stop_db_instance::_stop_db_instance_output::StopDbInst
 
 pub use crate::operation::stop_db_instance::_stop_db_instance_input::StopDbInstanceInputBuilder;
 
+impl StopDbInstanceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_db_instance::StopDbInstanceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_db_instance::StopDBInstanceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_db_instance();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopDBInstance`.
 ///
 /// <p>Stops an Amazon RDS DB instance. When you stop a DB instance, Amazon RDS retains the DB instance's metadata, including its endpoint, DB parameter group, and option group membership. Amazon RDS also retains the transaction logs so you can do a point-in-time restore if necessary.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::update_organizational_unit::_update_organizational_uni
 
 pub use crate::operation::update_organizational_unit::_update_organizational_unit_input::UpdateOrganizationalUnitInputBuilder;
 
+impl UpdateOrganizationalUnitInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_organizational_unit::UpdateOrganizationalUnitOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_organizational_unit::UpdateOrganizationalUnitError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_organizational_unit();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateOrganizationalUnit`.
 ///
 /// <p>Renames the specified organizational unit (OU). The ID and ARN don't change. The child OUs and accounts remain in place, and any attached policies of the OU remain attached.</p>

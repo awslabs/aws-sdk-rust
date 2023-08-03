@@ -3,6 +3,23 @@ pub use crate::operation::associate_mac_sec_key::_associate_mac_sec_key_output::
 
 pub use crate::operation::associate_mac_sec_key::_associate_mac_sec_key_input::AssociateMacSecKeyInputBuilder;
 
+impl AssociateMacSecKeyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_mac_sec_key::AssociateMacSecKeyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_mac_sec_key::AssociateMacSecKeyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_mac_sec_key();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateMacSecKey`.
 ///
 /// <p>Associates a MAC Security (MACsec) Connection Key Name (CKN)/ Connectivity Association Key (CAK) pair with an Direct Connect dedicated connection.</p>

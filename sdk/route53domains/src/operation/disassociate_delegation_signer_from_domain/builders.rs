@@ -3,6 +3,17 @@ pub use crate::operation::disassociate_delegation_signer_from_domain::_disassoci
 
 pub use crate::operation::disassociate_delegation_signer_from_domain::_disassociate_delegation_signer_from_domain_input::DisassociateDelegationSignerFromDomainInputBuilder;
 
+impl DisassociateDelegationSignerFromDomainInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::disassociate_delegation_signer_from_domain::DisassociateDelegationSignerFromDomainOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_delegation_signer_from_domain::DisassociateDelegationSignerFromDomainError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.disassociate_delegation_signer_from_domain();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateDelegationSignerFromDomain`.
 ///
 /// <p>Deletes a delegation signer (DS) record in the registry zone for this domain name.</p>

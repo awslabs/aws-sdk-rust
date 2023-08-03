@@ -3,6 +3,23 @@ pub use crate::operation::list_app_assessments::_list_app_assessments_output::Li
 
 pub use crate::operation::list_app_assessments::_list_app_assessments_input::ListAppAssessmentsInputBuilder;
 
+impl ListAppAssessmentsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_app_assessments::ListAppAssessmentsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_app_assessments::ListAppAssessmentsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_app_assessments();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAppAssessments`.
 ///
 /// <p>Lists the assessments for an Resilience Hub application. You can use request parameters to refine the results for the response object.</p>

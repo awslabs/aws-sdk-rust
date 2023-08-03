@@ -3,6 +3,23 @@ pub use crate::operation::send_invitation::_send_invitation_output::SendInvitati
 
 pub use crate::operation::send_invitation::_send_invitation_input::SendInvitationInputBuilder;
 
+impl SendInvitationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::send_invitation::SendInvitationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::send_invitation::SendInvitationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.send_invitation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SendInvitation`.
 ///
 /// <p>Sends an enrollment invitation email with a URL to a user. The URL is valid for 30 days or until you call this operation again, whichever comes first. </p>

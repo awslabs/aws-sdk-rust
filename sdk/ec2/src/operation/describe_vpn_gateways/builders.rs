@@ -3,6 +3,23 @@ pub use crate::operation::describe_vpn_gateways::_describe_vpn_gateways_output::
 
 pub use crate::operation::describe_vpn_gateways::_describe_vpn_gateways_input::DescribeVpnGatewaysInputBuilder;
 
+impl DescribeVpnGatewaysInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_vpn_gateways::DescribeVpnGatewaysOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_vpn_gateways::DescribeVpnGatewaysError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_vpn_gateways();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeVpnGateways`.
 ///
 /// <p>Describes one or more of your virtual private gateways.</p>

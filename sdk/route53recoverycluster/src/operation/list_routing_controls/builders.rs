@@ -3,6 +3,23 @@ pub use crate::operation::list_routing_controls::_list_routing_controls_output::
 
 pub use crate::operation::list_routing_controls::_list_routing_controls_input::ListRoutingControlsInputBuilder;
 
+impl ListRoutingControlsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_routing_controls::ListRoutingControlsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_routing_controls::ListRoutingControlsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_routing_controls();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListRoutingControls`.
 ///
 /// <p>List routing control names and Amazon Resource Names (ARNs), as well as the routing control state for each routing control, along with the control panel name and control panel ARN for the routing controls. If you specify a control panel ARN, this call lists the routing controls in the control panel. Otherwise, it lists all the routing controls in the cluster.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_domain::_create_domain_output::CreateDomainOutp
 
 pub use crate::operation::create_domain::_create_domain_input::CreateDomainInputBuilder;
 
+impl CreateDomainInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_domain::CreateDomainOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_domain::CreateDomainError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_domain();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateDomain`.
 ///
 /// <p> Creates a domain. CodeArtifact <i>domains</i> make it easier to manage multiple repositories across an organization. You can use a domain to apply permissions across many repositories owned by different Amazon Web Services accounts. An asset is stored only once in a domain, even if it's in multiple repositories. </p>

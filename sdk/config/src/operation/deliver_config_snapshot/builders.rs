@@ -3,6 +3,23 @@ pub use crate::operation::deliver_config_snapshot::_deliver_config_snapshot_outp
 
 pub use crate::operation::deliver_config_snapshot::_deliver_config_snapshot_input::DeliverConfigSnapshotInputBuilder;
 
+impl DeliverConfigSnapshotInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::deliver_config_snapshot::DeliverConfigSnapshotOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::deliver_config_snapshot::DeliverConfigSnapshotError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.deliver_config_snapshot();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeliverConfigSnapshot`.
 ///
 /// <p>Schedules delivery of a configuration snapshot to the Amazon S3 bucket in the specified delivery channel. After the delivery has started, Config sends the following notifications using an Amazon SNS topic that you have specified.</p>

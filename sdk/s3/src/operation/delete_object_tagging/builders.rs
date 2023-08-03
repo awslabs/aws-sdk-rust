@@ -3,6 +3,23 @@ pub use crate::operation::delete_object_tagging::_delete_object_tagging_output::
 
 pub use crate::operation::delete_object_tagging::_delete_object_tagging_input::DeleteObjectTaggingInputBuilder;
 
+impl DeleteObjectTaggingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_object_tagging::DeleteObjectTaggingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_object_tagging::DeleteObjectTaggingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_object_tagging();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteObjectTagging`.
 ///
 /// <p>Removes the entire tag set from the specified object. For more information about managing object tags, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-tagging.html"> Object Tagging</a>.</p>

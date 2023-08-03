@@ -3,6 +3,23 @@ pub use crate::operation::register_elastic_ip::_register_elastic_ip_output::Regi
 
 pub use crate::operation::register_elastic_ip::_register_elastic_ip_input::RegisterElasticIpInputBuilder;
 
+impl RegisterElasticIpInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::register_elastic_ip::RegisterElasticIpOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::register_elastic_ip::RegisterElasticIpError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.register_elastic_ip();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RegisterElasticIp`.
 ///
 /// <p>Registers an Elastic IP address with a specified stack. An address can be registered with only one stack at a time. If the address is already registered, you must first deregister it by calling <code>DeregisterElasticIp</code>. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_network::_create_network_output::CreateNetworkO
 
 pub use crate::operation::create_network::_create_network_input::CreateNetworkInputBuilder;
 
+impl CreateNetworkInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_network::CreateNetworkOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_network::CreateNetworkError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_network();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateNetwork`.
 ///
 /// <p>Creates a network.</p>

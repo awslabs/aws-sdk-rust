@@ -3,6 +3,23 @@ pub use crate::operation::put_schema_from_json::_put_schema_from_json_output::Pu
 
 pub use crate::operation::put_schema_from_json::_put_schema_from_json_input::PutSchemaFromJsonInputBuilder;
 
+impl PutSchemaFromJsonInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_schema_from_json::PutSchemaFromJsonOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_schema_from_json::PutSchemaFromJsonError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_schema_from_json();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutSchemaFromJson`.
 ///
 /// <p>Allows a schema to be updated using JSON upload. Only available for development schemas. See <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_jsonformat.html#schemas_json">JSON Schema Format</a> for more information.</p>

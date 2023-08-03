@@ -3,6 +3,23 @@ pub use crate::operation::start_thing_registration_task::_start_thing_registrati
 
 pub use crate::operation::start_thing_registration_task::_start_thing_registration_task_input::StartThingRegistrationTaskInputBuilder;
 
+impl StartThingRegistrationTaskInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_thing_registration_task::StartThingRegistrationTaskOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_thing_registration_task::StartThingRegistrationTaskError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_thing_registration_task();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartThingRegistrationTask`.
 ///
 /// <p>Creates a bulk thing provisioning task.</p>

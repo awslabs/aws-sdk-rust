@@ -3,6 +3,23 @@ pub use crate::operation::confirm_forgot_password::_confirm_forgot_password_outp
 
 pub use crate::operation::confirm_forgot_password::_confirm_forgot_password_input::ConfirmForgotPasswordInputBuilder;
 
+impl ConfirmForgotPasswordInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::confirm_forgot_password::ConfirmForgotPasswordOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::confirm_forgot_password::ConfirmForgotPasswordError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.confirm_forgot_password();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ConfirmForgotPassword`.
 ///
 /// <p>Allows a user to enter a confirmation code to reset a forgotten password.</p>

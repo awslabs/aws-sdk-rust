@@ -3,6 +3,23 @@ pub use crate::operation::generate_card_validation_data::_generate_card_validati
 
 pub use crate::operation::generate_card_validation_data::_generate_card_validation_data_input::GenerateCardValidationDataInputBuilder;
 
+impl GenerateCardValidationDataInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::generate_card_validation_data::GenerateCardValidationDataOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::generate_card_validation_data::GenerateCardValidationDataError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.generate_card_validation_data();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GenerateCardValidationData`.
 ///
 /// <p>Generates card-related validation data using algorithms such as Card Verification Values (CVV/CVV2), Dynamic Card Verification Values (dCVV/dCVV2), or Card Security Codes (CSC). For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/generate-card-data.html">Generate card data</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::rotate_channel_credentials::_rotate_channel_credential
 
 pub use crate::operation::rotate_channel_credentials::_rotate_channel_credentials_input::RotateChannelCredentialsInputBuilder;
 
+impl RotateChannelCredentialsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::rotate_channel_credentials::RotateChannelCredentialsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::rotate_channel_credentials::RotateChannelCredentialsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.rotate_channel_credentials();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RotateChannelCredentials`.
 ///
 /// Changes the Channel's first IngestEndpoint's username and password. WARNING - This API is deprecated. Please use RotateIngestEndpointCredentials instead

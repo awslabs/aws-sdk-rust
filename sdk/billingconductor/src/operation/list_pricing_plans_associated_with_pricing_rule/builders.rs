@@ -3,6 +3,17 @@ pub use crate::operation::list_pricing_plans_associated_with_pricing_rule::_list
 
 pub use crate::operation::list_pricing_plans_associated_with_pricing_rule::_list_pricing_plans_associated_with_pricing_rule_input::ListPricingPlansAssociatedWithPricingRuleInputBuilder;
 
+impl ListPricingPlansAssociatedWithPricingRuleInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_pricing_plans_associated_with_pricing_rule::ListPricingPlansAssociatedWithPricingRuleOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_pricing_plans_associated_with_pricing_rule::ListPricingPlansAssociatedWithPricingRuleError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_pricing_plans_associated_with_pricing_rule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListPricingPlansAssociatedWithPricingRule`.
 ///
 /// <p> A list of the pricing plans that are associated with a pricing rule. </p>

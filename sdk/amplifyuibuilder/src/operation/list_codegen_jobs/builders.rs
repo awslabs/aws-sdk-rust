@@ -3,6 +3,23 @@ pub use crate::operation::list_codegen_jobs::_list_codegen_jobs_output::ListCode
 
 pub use crate::operation::list_codegen_jobs::_list_codegen_jobs_input::ListCodegenJobsInputBuilder;
 
+impl ListCodegenJobsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_codegen_jobs::ListCodegenJobsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_codegen_jobs::ListCodegenJobsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_codegen_jobs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListCodegenJobs`.
 ///
 /// <p>Retrieves a list of code generation jobs for a specified Amplify app and backend environment.</p>

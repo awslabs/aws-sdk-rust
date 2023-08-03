@@ -3,6 +3,23 @@ pub use crate::operation::put_events_configuration::_put_events_configuration_ou
 
 pub use crate::operation::put_events_configuration::_put_events_configuration_input::PutEventsConfigurationInputBuilder;
 
+impl PutEventsConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_events_configuration::PutEventsConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_events_configuration::PutEventsConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_events_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutEventsConfiguration`.
 ///
 /// <p>Creates an events configuration that allows a bot to receive outgoing events sent by Amazon Chime. Choose either an HTTPS endpoint or a Lambda function ARN. For more information, see <code>Bot</code>.</p>

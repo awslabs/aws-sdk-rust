@@ -3,6 +3,23 @@ pub use crate::operation::create_predictor::_create_predictor_output::CreatePred
 
 pub use crate::operation::create_predictor::_create_predictor_input::CreatePredictorInputBuilder;
 
+impl CreatePredictorInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_predictor::CreatePredictorOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_predictor::CreatePredictorError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_predictor();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreatePredictor`.
 ///
 /// <note>

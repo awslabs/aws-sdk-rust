@@ -3,6 +3,23 @@ pub use crate::operation::start_viewer_session_revocation::_start_viewer_session
 
 pub use crate::operation::start_viewer_session_revocation::_start_viewer_session_revocation_input::StartViewerSessionRevocationInputBuilder;
 
+impl StartViewerSessionRevocationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_viewer_session_revocation::StartViewerSessionRevocationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_viewer_session_revocation::StartViewerSessionRevocationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_viewer_session_revocation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartViewerSessionRevocation`.
 ///
 /// <p>Starts the process of revoking the viewer session associated with a specified channel ARN and viewer ID. Optionally, you can provide a version to revoke viewer sessions less than and including that version. For instructions on associating a viewer ID with a viewer session, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html">Setting Up Private Channels</a>.</p>

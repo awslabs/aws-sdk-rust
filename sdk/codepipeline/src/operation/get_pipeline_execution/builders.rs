@@ -3,6 +3,23 @@ pub use crate::operation::get_pipeline_execution::_get_pipeline_execution_output
 
 pub use crate::operation::get_pipeline_execution::_get_pipeline_execution_input::GetPipelineExecutionInputBuilder;
 
+impl GetPipelineExecutionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_pipeline_execution::GetPipelineExecutionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_pipeline_execution::GetPipelineExecutionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_pipeline_execution();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetPipelineExecution`.
 ///
 /// <p>Returns information about an execution of a pipeline, including details about artifacts, the pipeline execution ID, and the name, version, and status of the pipeline.</p>

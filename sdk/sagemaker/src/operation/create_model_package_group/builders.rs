@@ -3,6 +3,23 @@ pub use crate::operation::create_model_package_group::_create_model_package_grou
 
 pub use crate::operation::create_model_package_group::_create_model_package_group_input::CreateModelPackageGroupInputBuilder;
 
+impl CreateModelPackageGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_model_package_group::CreateModelPackageGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_model_package_group::CreateModelPackageGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_model_package_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateModelPackageGroup`.
 ///
 /// <p>Creates a model group. A model group contains a group of model versions.</p>

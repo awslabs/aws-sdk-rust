@@ -3,6 +3,23 @@ pub use crate::operation::cancel_world_export_job::_cancel_world_export_job_outp
 
 pub use crate::operation::cancel_world_export_job::_cancel_world_export_job_input::CancelWorldExportJobInputBuilder;
 
+impl CancelWorldExportJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::cancel_world_export_job::CancelWorldExportJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::cancel_world_export_job::CancelWorldExportJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.cancel_world_export_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CancelWorldExportJob`.
 ///
 /// <p>Cancels the specified export job.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_event_subscriptions::_list_event_subscriptions_ou
 
 pub use crate::operation::list_event_subscriptions::_list_event_subscriptions_input::ListEventSubscriptionsInputBuilder;
 
+impl ListEventSubscriptionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_event_subscriptions::ListEventSubscriptionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_event_subscriptions::ListEventSubscriptionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_event_subscriptions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListEventSubscriptions`.
 ///
 /// <p>Lists all the event subscriptions for the assessment template that is specified by the ARN of the assessment template. For more information, see <code>SubscribeToEvent</code> and <code>UnsubscribeFromEvent</code>.</p>

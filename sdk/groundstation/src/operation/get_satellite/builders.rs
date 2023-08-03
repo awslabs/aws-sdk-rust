@@ -3,6 +3,23 @@ pub use crate::operation::get_satellite::_get_satellite_output::GetSatelliteOutp
 
 pub use crate::operation::get_satellite::_get_satellite_input::GetSatelliteInputBuilder;
 
+impl GetSatelliteInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_satellite::GetSatelliteOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_satellite::GetSatelliteError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_satellite();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetSatellite`.
 ///
 /// <p>Returns a satellite.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_detector_model_versions::_list_detector_model_ver
 
 pub use crate::operation::list_detector_model_versions::_list_detector_model_versions_input::ListDetectorModelVersionsInputBuilder;
 
+impl ListDetectorModelVersionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_detector_model_versions::ListDetectorModelVersionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_detector_model_versions::ListDetectorModelVersionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_detector_model_versions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDetectorModelVersions`.
 ///
 /// <p>Lists all the versions of a detector model. Only the metadata associated with each detector model version is returned.</p>

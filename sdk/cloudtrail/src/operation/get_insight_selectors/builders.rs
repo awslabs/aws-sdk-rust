@@ -3,6 +3,23 @@ pub use crate::operation::get_insight_selectors::_get_insight_selectors_output::
 
 pub use crate::operation::get_insight_selectors::_get_insight_selectors_input::GetInsightSelectorsInputBuilder;
 
+impl GetInsightSelectorsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_insight_selectors::GetInsightSelectorsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_insight_selectors::GetInsightSelectorsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_insight_selectors();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetInsightSelectors`.
 ///
 /// <p>Describes the settings for the Insights event selectors that you configured for your trail. <code>GetInsightSelectors</code> shows if CloudTrail Insights event logging is enabled on the trail, and if it is, which insight types are enabled. If you run <code>GetInsightSelectors</code> on a trail that does not have Insights events enabled, the operation throws the exception <code>InsightNotEnabledException</code> </p>

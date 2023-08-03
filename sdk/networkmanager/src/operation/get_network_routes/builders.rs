@@ -3,6 +3,23 @@ pub use crate::operation::get_network_routes::_get_network_routes_output::GetNet
 
 pub use crate::operation::get_network_routes::_get_network_routes_input::GetNetworkRoutesInputBuilder;
 
+impl GetNetworkRoutesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_network_routes::GetNetworkRoutesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_network_routes::GetNetworkRoutesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_network_routes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetNetworkRoutes`.
 ///
 /// <p>Gets the network routes of the specified global network.</p>

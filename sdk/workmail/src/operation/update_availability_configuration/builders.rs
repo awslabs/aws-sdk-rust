@@ -3,6 +3,17 @@ pub use crate::operation::update_availability_configuration::_update_availabilit
 
 pub use crate::operation::update_availability_configuration::_update_availability_configuration_input::UpdateAvailabilityConfigurationInputBuilder;
 
+impl UpdateAvailabilityConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::update_availability_configuration::UpdateAvailabilityConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_availability_configuration::UpdateAvailabilityConfigurationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.update_availability_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateAvailabilityConfiguration`.
 ///
 /// <p>Updates an existing <code>AvailabilityConfiguration</code> for the given WorkMail organization and domain.</p>

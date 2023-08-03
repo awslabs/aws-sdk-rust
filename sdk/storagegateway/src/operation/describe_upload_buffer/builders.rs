@@ -3,6 +3,23 @@ pub use crate::operation::describe_upload_buffer::_describe_upload_buffer_output
 
 pub use crate::operation::describe_upload_buffer::_describe_upload_buffer_input::DescribeUploadBufferInputBuilder;
 
+impl DescribeUploadBufferInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_upload_buffer::DescribeUploadBufferOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_upload_buffer::DescribeUploadBufferError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_upload_buffer();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeUploadBuffer`.
 ///
 /// <p>Returns information about the upload buffer of a gateway. This operation is supported for the stored volume, cached volume, and tape gateway types.</p>

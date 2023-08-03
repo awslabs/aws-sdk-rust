@@ -3,6 +3,17 @@ pub use crate::operation::disassociate_phone_number_contact_flow::_disassociate_
 
 pub use crate::operation::disassociate_phone_number_contact_flow::_disassociate_phone_number_contact_flow_input::DisassociatePhoneNumberContactFlowInputBuilder;
 
+impl DisassociatePhoneNumberContactFlowInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::disassociate_phone_number_contact_flow::DisassociatePhoneNumberContactFlowOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_phone_number_contact_flow::DisassociatePhoneNumberContactFlowError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.disassociate_phone_number_contact_flow();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociatePhoneNumberContactFlow`.
 ///
 /// <p>Removes the flow association from a phone number claimed to your Amazon Connect instance.</p> <important>

@@ -3,6 +3,23 @@ pub use crate::operation::tag_resource::_tag_resource_output::TagResourceOutputB
 
 pub use crate::operation::tag_resource::_tag_resource_input::TagResourceInputBuilder;
 
+impl TagResourceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::tag_resource::TagResourceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::tag_resource::TagResourceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.tag_resource();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `TagResource`.
 ///
 /// <p>Adds a specified tag to a specified rescore execution plan. A rescore execution plan is an Amazon Kendra Intelligent Ranking resource used for provisioning the <code>Rescore</code> API. If the tag already exists, the existing value is replaced with the new value.</p>

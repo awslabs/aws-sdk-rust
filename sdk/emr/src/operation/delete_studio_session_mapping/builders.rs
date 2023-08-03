@@ -3,6 +3,23 @@ pub use crate::operation::delete_studio_session_mapping::_delete_studio_session_
 
 pub use crate::operation::delete_studio_session_mapping::_delete_studio_session_mapping_input::DeleteStudioSessionMappingInputBuilder;
 
+impl DeleteStudioSessionMappingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_studio_session_mapping::DeleteStudioSessionMappingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_studio_session_mapping::DeleteStudioSessionMappingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_studio_session_mapping();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteStudioSessionMapping`.
 ///
 /// <p>Removes a user or group from an Amazon EMR Studio.</p>

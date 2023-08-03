@@ -3,6 +3,23 @@ pub use crate::operation::reset_ebs_default_kms_key_id::_reset_ebs_default_kms_k
 
 pub use crate::operation::reset_ebs_default_kms_key_id::_reset_ebs_default_kms_key_id_input::ResetEbsDefaultKmsKeyIdInputBuilder;
 
+impl ResetEbsDefaultKmsKeyIdInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::reset_ebs_default_kms_key_id::ResetEbsDefaultKmsKeyIdOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::reset_ebs_default_kms_key_id::ResetEbsDefaultKmsKeyIdError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.reset_ebs_default_kms_key_id();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ResetEbsDefaultKmsKeyId`.
 ///
 /// <p>Resets the default KMS key for EBS encryption for your account in this Region to the Amazon Web Services managed KMS key for EBS.</p>

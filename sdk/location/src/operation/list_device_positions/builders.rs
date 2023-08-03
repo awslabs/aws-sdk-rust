@@ -3,6 +3,23 @@ pub use crate::operation::list_device_positions::_list_device_positions_output::
 
 pub use crate::operation::list_device_positions::_list_device_positions_input::ListDevicePositionsInputBuilder;
 
+impl ListDevicePositionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_device_positions::ListDevicePositionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_device_positions::ListDevicePositionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_device_positions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDevicePositions`.
 ///
 /// <p>A batch request to retrieve all device positions.</p>

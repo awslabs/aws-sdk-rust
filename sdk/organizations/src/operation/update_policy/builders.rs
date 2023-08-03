@@ -3,6 +3,23 @@ pub use crate::operation::update_policy::_update_policy_output::UpdatePolicyOutp
 
 pub use crate::operation::update_policy::_update_policy_input::UpdatePolicyInputBuilder;
 
+impl UpdatePolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_policy::UpdatePolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_policy::UpdatePolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdatePolicy`.
 ///
 /// <p>Updates an existing policy with a new name, description, or content. If you don't supply any parameter, that value remains unchanged. You can't change a policy's type.</p>

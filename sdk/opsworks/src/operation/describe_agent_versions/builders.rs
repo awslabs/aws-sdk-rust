@@ -3,6 +3,23 @@ pub use crate::operation::describe_agent_versions::_describe_agent_versions_outp
 
 pub use crate::operation::describe_agent_versions::_describe_agent_versions_input::DescribeAgentVersionsInputBuilder;
 
+impl DescribeAgentVersionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_agent_versions::DescribeAgentVersionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_agent_versions::DescribeAgentVersionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_agent_versions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAgentVersions`.
 ///
 /// <p>Describes the available AWS OpsWorks Stacks agent versions. You must specify a stack ID or a configuration manager. <code>DescribeAgentVersions</code> returns a list of available agent versions for the specified stack or configuration manager.</p>

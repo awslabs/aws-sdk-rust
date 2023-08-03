@@ -3,6 +3,23 @@ pub use crate::operation::get_workflow_step_group::_get_workflow_step_group_outp
 
 pub use crate::operation::get_workflow_step_group::_get_workflow_step_group_input::GetWorkflowStepGroupInputBuilder;
 
+impl GetWorkflowStepGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_workflow_step_group::GetWorkflowStepGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_workflow_step_group::GetWorkflowStepGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_workflow_step_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetWorkflowStepGroup`.
 ///
 /// <p>Get the step group of a migration workflow.</p>

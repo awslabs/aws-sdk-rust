@@ -3,6 +3,23 @@ pub use crate::operation::update_extension::_update_extension_output::UpdateExte
 
 pub use crate::operation::update_extension::_update_extension_input::UpdateExtensionInputBuilder;
 
+impl UpdateExtensionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_extension::UpdateExtensionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_extension::UpdateExtensionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_extension();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateExtension`.
 ///
 /// <p>Updates an AppConfig extension. For more information about extensions, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.</p>

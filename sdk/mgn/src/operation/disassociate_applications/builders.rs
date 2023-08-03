@@ -3,6 +3,23 @@ pub use crate::operation::disassociate_applications::_disassociate_applications_
 
 pub use crate::operation::disassociate_applications::_disassociate_applications_input::DisassociateApplicationsInputBuilder;
 
+impl DisassociateApplicationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_applications::DisassociateApplicationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_applications::DisassociateApplicationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disassociate_applications();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateApplications`.
 ///
 /// <p>Disassociate applications from wave.</p>

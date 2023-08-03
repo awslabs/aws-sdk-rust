@@ -3,6 +3,23 @@ pub use crate::operation::delete_acl::_delete_acl_output::DeleteAclOutputBuilder
 
 pub use crate::operation::delete_acl::_delete_acl_input::DeleteAclInputBuilder;
 
+impl DeleteAclInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_acl::DeleteAclOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_acl::DeleteACLError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_acl();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteACL`.
 ///
 /// <p>Deletes an Access Control List. The ACL must first be disassociated from the cluster before it can be deleted. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/clusters.acls.html">Authenticating users with Access Contol Lists (ACLs)</a>.</p>

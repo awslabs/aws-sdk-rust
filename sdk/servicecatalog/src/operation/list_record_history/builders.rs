@@ -3,6 +3,23 @@ pub use crate::operation::list_record_history::_list_record_history_output::List
 
 pub use crate::operation::list_record_history::_list_record_history_input::ListRecordHistoryInputBuilder;
 
+impl ListRecordHistoryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_record_history::ListRecordHistoryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_record_history::ListRecordHistoryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_record_history();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListRecordHistory`.
 ///
 /// <p>Lists the specified requests or all performed requests.</p>

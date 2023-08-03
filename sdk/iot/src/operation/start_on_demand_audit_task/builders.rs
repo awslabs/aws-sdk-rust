@@ -3,6 +3,23 @@ pub use crate::operation::start_on_demand_audit_task::_start_on_demand_audit_tas
 
 pub use crate::operation::start_on_demand_audit_task::_start_on_demand_audit_task_input::StartOnDemandAuditTaskInputBuilder;
 
+impl StartOnDemandAuditTaskInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_on_demand_audit_task::StartOnDemandAuditTaskOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_on_demand_audit_task::StartOnDemandAuditTaskError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_on_demand_audit_task();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartOnDemandAuditTask`.
 ///
 /// <p>Starts an on-demand Device Defender audit.</p>

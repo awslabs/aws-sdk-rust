@@ -3,6 +3,23 @@ pub use crate::operation::create_log_subscription::_create_log_subscription_outp
 
 pub use crate::operation::create_log_subscription::_create_log_subscription_input::CreateLogSubscriptionInputBuilder;
 
+impl CreateLogSubscriptionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_log_subscription::CreateLogSubscriptionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_log_subscription::CreateLogSubscriptionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_log_subscription();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateLogSubscription`.
 ///
 /// <p>Creates a subscription to forward real-time Directory Service domain controller security logs to the specified Amazon CloudWatch log group in your Amazon Web Services account.</p>

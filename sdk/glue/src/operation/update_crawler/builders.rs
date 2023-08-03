@@ -3,6 +3,23 @@ pub use crate::operation::update_crawler::_update_crawler_output::UpdateCrawlerO
 
 pub use crate::operation::update_crawler::_update_crawler_input::UpdateCrawlerInputBuilder;
 
+impl UpdateCrawlerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_crawler::UpdateCrawlerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_crawler::UpdateCrawlerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_crawler();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateCrawler`.
 ///
 /// <p>Updates a crawler. If a crawler is running, you must stop it using <code>StopCrawler</code> before updating it.</p>

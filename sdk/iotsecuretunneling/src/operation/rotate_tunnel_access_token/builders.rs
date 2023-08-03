@@ -3,6 +3,23 @@ pub use crate::operation::rotate_tunnel_access_token::_rotate_tunnel_access_toke
 
 pub use crate::operation::rotate_tunnel_access_token::_rotate_tunnel_access_token_input::RotateTunnelAccessTokenInputBuilder;
 
+impl RotateTunnelAccessTokenInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::rotate_tunnel_access_token::RotateTunnelAccessTokenOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::rotate_tunnel_access_token::RotateTunnelAccessTokenError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.rotate_tunnel_access_token();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RotateTunnelAccessToken`.
 ///
 /// <p>Revokes the current client access token (CAT) and returns new CAT for clients to use when reconnecting to secure tunneling to access the same tunnel.</p>

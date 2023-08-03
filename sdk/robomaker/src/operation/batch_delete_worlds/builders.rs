@@ -3,6 +3,23 @@ pub use crate::operation::batch_delete_worlds::_batch_delete_worlds_output::Batc
 
 pub use crate::operation::batch_delete_worlds::_batch_delete_worlds_input::BatchDeleteWorldsInputBuilder;
 
+impl BatchDeleteWorldsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_delete_worlds::BatchDeleteWorldsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_delete_worlds::BatchDeleteWorldsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_delete_worlds();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchDeleteWorlds`.
 ///
 /// <p>Deletes one or more worlds in a batch operation.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_request_validator::_delete_request_validator_ou
 
 pub use crate::operation::delete_request_validator::_delete_request_validator_input::DeleteRequestValidatorInputBuilder;
 
+impl DeleteRequestValidatorInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_request_validator::DeleteRequestValidatorOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_request_validator::DeleteRequestValidatorError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_request_validator();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteRequestValidator`.
 ///
 /// <p>Deletes a RequestValidator of a given RestApi.</p>

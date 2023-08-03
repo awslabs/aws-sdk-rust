@@ -3,6 +3,23 @@ pub use crate::operation::logout_user::_logout_user_output::LogoutUserOutputBuil
 
 pub use crate::operation::logout_user::_logout_user_input::LogoutUserInputBuilder;
 
+impl LogoutUserInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::logout_user::LogoutUserOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::logout_user::LogoutUserError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.logout_user();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `LogoutUser`.
 ///
 /// <p>Logs out the specified user from all of the devices they are currently logged into.</p>

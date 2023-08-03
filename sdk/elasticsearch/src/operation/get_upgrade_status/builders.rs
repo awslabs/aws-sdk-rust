@@ -3,6 +3,23 @@ pub use crate::operation::get_upgrade_status::_get_upgrade_status_output::GetUpg
 
 pub use crate::operation::get_upgrade_status::_get_upgrade_status_input::GetUpgradeStatusInputBuilder;
 
+impl GetUpgradeStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_upgrade_status::GetUpgradeStatusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_upgrade_status::GetUpgradeStatusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_upgrade_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetUpgradeStatus`.
 ///
 /// <p>Retrieves the latest status of the last upgrade or upgrade eligibility check that was performed on the domain.</p>

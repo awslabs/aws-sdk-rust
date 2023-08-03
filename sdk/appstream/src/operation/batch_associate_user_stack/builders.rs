@@ -3,6 +3,23 @@ pub use crate::operation::batch_associate_user_stack::_batch_associate_user_stac
 
 pub use crate::operation::batch_associate_user_stack::_batch_associate_user_stack_input::BatchAssociateUserStackInputBuilder;
 
+impl BatchAssociateUserStackInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_associate_user_stack::BatchAssociateUserStackOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_associate_user_stack::BatchAssociateUserStackError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_associate_user_stack();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchAssociateUserStack`.
 ///
 /// <p>Associates the specified users with the specified stacks. Users in a user pool cannot be assigned to stacks with fleets that are joined to an Active Directory domain.</p>

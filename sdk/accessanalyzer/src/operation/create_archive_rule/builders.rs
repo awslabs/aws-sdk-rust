@@ -3,6 +3,23 @@ pub use crate::operation::create_archive_rule::_create_archive_rule_output::Crea
 
 pub use crate::operation::create_archive_rule::_create_archive_rule_input::CreateArchiveRuleInputBuilder;
 
+impl CreateArchiveRuleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_archive_rule::CreateArchiveRuleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_archive_rule::CreateArchiveRuleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_archive_rule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateArchiveRule`.
 ///
 /// <p>Creates an archive rule for the specified analyzer. Archive rules automatically archive new findings that meet the criteria you define when you create the rule.</p>

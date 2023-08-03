@@ -3,6 +3,23 @@ pub use crate::operation::list_storage_systems::_list_storage_systems_output::Li
 
 pub use crate::operation::list_storage_systems::_list_storage_systems_input::ListStorageSystemsInputBuilder;
 
+impl ListStorageSystemsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_storage_systems::ListStorageSystemsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_storage_systems::ListStorageSystemsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_storage_systems();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListStorageSystems`.
 ///
 /// <p>Lists the on-premises storage systems that you're using with DataSync Discovery.</p>

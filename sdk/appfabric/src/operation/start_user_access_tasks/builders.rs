@@ -3,6 +3,23 @@ pub use crate::operation::start_user_access_tasks::_start_user_access_tasks_outp
 
 pub use crate::operation::start_user_access_tasks::_start_user_access_tasks_input::StartUserAccessTasksInputBuilder;
 
+impl StartUserAccessTasksInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_user_access_tasks::StartUserAccessTasksOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_user_access_tasks::StartUserAccessTasksError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_user_access_tasks();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartUserAccessTasks`.
 ///
 /// <p>Starts the tasks to search user access status for a specific email address.</p>

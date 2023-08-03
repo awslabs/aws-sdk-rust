@@ -3,6 +3,23 @@ pub use crate::operation::get_assignment::_get_assignment_output::GetAssignmentO
 
 pub use crate::operation::get_assignment::_get_assignment_input::GetAssignmentInputBuilder;
 
+impl GetAssignmentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_assignment::GetAssignmentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_assignment::GetAssignmentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_assignment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetAssignment`.
 ///
 /// <p> The <code>GetAssignment</code> operation retrieves the details of the specified Assignment. </p>

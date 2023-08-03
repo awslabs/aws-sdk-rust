@@ -3,6 +3,23 @@ pub use crate::operation::list_directories::_list_directories_output::ListDirect
 
 pub use crate::operation::list_directories::_list_directories_input::ListDirectoriesInputBuilder;
 
+impl ListDirectoriesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_directories::ListDirectoriesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_directories::ListDirectoriesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_directories();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDirectories`.
 ///
 /// <p>Lists directories created within an account.</p>

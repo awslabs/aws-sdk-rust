@@ -3,6 +3,17 @@ pub use crate::operation::get_interpolated_asset_property_values::_get_interpola
 
 pub use crate::operation::get_interpolated_asset_property_values::_get_interpolated_asset_property_values_input::GetInterpolatedAssetPropertyValuesInputBuilder;
 
+impl GetInterpolatedAssetPropertyValuesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_interpolated_asset_property_values::GetInterpolatedAssetPropertyValuesOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_interpolated_asset_property_values::GetInterpolatedAssetPropertyValuesError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_interpolated_asset_property_values();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetInterpolatedAssetPropertyValues`.
 ///
 /// <p>Get interpolated values for an asset property for a specified time interval, during a period of time. If your time series is missing data points during the specified time interval, you can use interpolation to estimate the missing data.</p>

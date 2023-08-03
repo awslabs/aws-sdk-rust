@@ -3,6 +3,23 @@ pub use crate::operation::list_backup_plan_templates::_list_backup_plan_template
 
 pub use crate::operation::list_backup_plan_templates::_list_backup_plan_templates_input::ListBackupPlanTemplatesInputBuilder;
 
+impl ListBackupPlanTemplatesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_backup_plan_templates::ListBackupPlanTemplatesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_backup_plan_templates::ListBackupPlanTemplatesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_backup_plan_templates();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListBackupPlanTemplates`.
 ///
 /// <p>Returns metadata of your saved backup plan templates, including the template ID, name, and the creation and deletion dates.</p>

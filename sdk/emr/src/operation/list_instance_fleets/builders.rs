@@ -3,6 +3,23 @@ pub use crate::operation::list_instance_fleets::_list_instance_fleets_output::Li
 
 pub use crate::operation::list_instance_fleets::_list_instance_fleets_input::ListInstanceFleetsInputBuilder;
 
+impl ListInstanceFleetsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_instance_fleets::ListInstanceFleetsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_instance_fleets::ListInstanceFleetsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_instance_fleets();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListInstanceFleets`.
 ///
 /// <p>Lists all available details about the instance fleets in a cluster.</p> <note>

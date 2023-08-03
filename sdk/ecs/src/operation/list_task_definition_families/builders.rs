@@ -3,6 +3,23 @@ pub use crate::operation::list_task_definition_families::_list_task_definition_f
 
 pub use crate::operation::list_task_definition_families::_list_task_definition_families_input::ListTaskDefinitionFamiliesInputBuilder;
 
+impl ListTaskDefinitionFamiliesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_task_definition_families::ListTaskDefinitionFamiliesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_task_definition_families::ListTaskDefinitionFamiliesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_task_definition_families();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListTaskDefinitionFamilies`.
 ///
 /// <p>Returns a list of task definition families that are registered to your account. This list includes task definition families that no longer have any <code>ACTIVE</code> task definition revisions.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::update_notification_rule::_update_notification_rule_ou
 
 pub use crate::operation::update_notification_rule::_update_notification_rule_input::UpdateNotificationRuleInputBuilder;
 
+impl UpdateNotificationRuleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_notification_rule::UpdateNotificationRuleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_notification_rule::UpdateNotificationRuleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_notification_rule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateNotificationRule`.
 ///
 /// <p>Updates a notification rule for a resource. You can change the events that trigger the notification rule, the status of the rule, and the targets that receive the notifications.</p> <note>

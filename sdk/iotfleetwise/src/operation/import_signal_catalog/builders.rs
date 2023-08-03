@@ -3,6 +3,23 @@ pub use crate::operation::import_signal_catalog::_import_signal_catalog_output::
 
 pub use crate::operation::import_signal_catalog::_import_signal_catalog_input::ImportSignalCatalogInputBuilder;
 
+impl ImportSignalCatalogInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::import_signal_catalog::ImportSignalCatalogOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::import_signal_catalog::ImportSignalCatalogError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.import_signal_catalog();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ImportSignalCatalog`.
 ///
 /// <p> Creates a signal catalog using your existing VSS formatted content from your local device. </p>

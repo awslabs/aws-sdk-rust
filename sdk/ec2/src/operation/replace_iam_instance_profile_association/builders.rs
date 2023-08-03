@@ -3,6 +3,17 @@ pub use crate::operation::replace_iam_instance_profile_association::_replace_iam
 
 pub use crate::operation::replace_iam_instance_profile_association::_replace_iam_instance_profile_association_input::ReplaceIamInstanceProfileAssociationInputBuilder;
 
+impl ReplaceIamInstanceProfileAssociationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::replace_iam_instance_profile_association::ReplaceIamInstanceProfileAssociationOutput, ::aws_smithy_http::result::SdkError<crate::operation::replace_iam_instance_profile_association::ReplaceIamInstanceProfileAssociationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.replace_iam_instance_profile_association();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ReplaceIamInstanceProfileAssociation`.
 ///
 /// <p>Replaces an IAM instance profile for the specified running instance. You can use this action to change the IAM instance profile that's associated with an instance without having to disassociate the existing IAM instance profile first.</p>

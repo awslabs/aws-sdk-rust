@@ -3,6 +3,17 @@ pub use crate::operation::accept_transit_gateway_peering_attachment::_accept_tra
 
 pub use crate::operation::accept_transit_gateway_peering_attachment::_accept_transit_gateway_peering_attachment_input::AcceptTransitGatewayPeeringAttachmentInputBuilder;
 
+impl AcceptTransitGatewayPeeringAttachmentInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::accept_transit_gateway_peering_attachment::AcceptTransitGatewayPeeringAttachmentOutput, ::aws_smithy_http::result::SdkError<crate::operation::accept_transit_gateway_peering_attachment::AcceptTransitGatewayPeeringAttachmentError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.accept_transit_gateway_peering_attachment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AcceptTransitGatewayPeeringAttachment`.
 ///
 /// <p>Accepts a transit gateway peering attachment request. The peering attachment must be in the <code>pendingAcceptance</code> state.</p>

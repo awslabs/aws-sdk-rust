@@ -3,6 +3,23 @@ pub use crate::operation::stop_contact::_stop_contact_output::StopContactOutputB
 
 pub use crate::operation::stop_contact::_stop_contact_input::StopContactInputBuilder;
 
+impl StopContactInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_contact::StopContactOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_contact::StopContactError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_contact();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopContact`.
 ///
 /// <p>Ends the specified contact. This call does not work for the following initiation methods:</p>

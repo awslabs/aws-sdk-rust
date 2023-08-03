@@ -3,6 +3,23 @@ pub use crate::operation::start_export_task::_start_export_task_output::StartExp
 
 pub use crate::operation::start_export_task::_start_export_task_input::StartExportTaskInputBuilder;
 
+impl StartExportTaskInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_export_task::StartExportTaskOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_export_task::StartExportTaskError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_export_task();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartExportTask`.
 ///
 /// <p>Starts an export of DB snapshot or DB cluster data to Amazon S3. The provided IAM role must have access to the S3 bucket.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::unregister_connector::_unregister_connector_output::Un
 
 pub use crate::operation::unregister_connector::_unregister_connector_input::UnregisterConnectorInputBuilder;
 
+impl UnregisterConnectorInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::unregister_connector::UnregisterConnectorOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::unregister_connector::UnregisterConnectorError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.unregister_connector();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UnregisterConnector`.
 ///
 /// <p>Unregisters the custom connector registered in your account that matches the connector label provided in the request.</p>

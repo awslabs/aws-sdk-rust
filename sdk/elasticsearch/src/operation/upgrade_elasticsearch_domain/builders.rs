@@ -3,6 +3,23 @@ pub use crate::operation::upgrade_elasticsearch_domain::_upgrade_elasticsearch_d
 
 pub use crate::operation::upgrade_elasticsearch_domain::_upgrade_elasticsearch_domain_input::UpgradeElasticsearchDomainInputBuilder;
 
+impl UpgradeElasticsearchDomainInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::upgrade_elasticsearch_domain::UpgradeElasticsearchDomainOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::upgrade_elasticsearch_domain::UpgradeElasticsearchDomainError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.upgrade_elasticsearch_domain();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpgradeElasticsearchDomain`.
 ///
 /// <p>Allows you to either upgrade your domain or perform an Upgrade eligibility check to a compatible Elasticsearch version.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_wave::_delete_wave_output::DeleteWaveOutputBuil
 
 pub use crate::operation::delete_wave::_delete_wave_input::DeleteWaveInputBuilder;
 
+impl DeleteWaveInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_wave::DeleteWaveOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_wave::DeleteWaveError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_wave();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteWave`.
 ///
 /// <p>Delete wave.</p>

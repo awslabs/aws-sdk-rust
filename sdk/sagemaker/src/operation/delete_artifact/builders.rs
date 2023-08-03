@@ -3,6 +3,23 @@ pub use crate::operation::delete_artifact::_delete_artifact_output::DeleteArtifa
 
 pub use crate::operation::delete_artifact::_delete_artifact_input::DeleteArtifactInputBuilder;
 
+impl DeleteArtifactInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_artifact::DeleteArtifactOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_artifact::DeleteArtifactError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_artifact();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteArtifact`.
 ///
 /// <p>Deletes an artifact. Either <code>ArtifactArn</code> or <code>Source</code> must be specified.</p>

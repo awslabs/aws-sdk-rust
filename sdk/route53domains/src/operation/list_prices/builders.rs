@@ -3,6 +3,23 @@ pub use crate::operation::list_prices::_list_prices_output::ListPricesOutputBuil
 
 pub use crate::operation::list_prices::_list_prices_input::ListPricesInputBuilder;
 
+impl ListPricesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_prices::ListPricesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_prices::ListPricesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_prices();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListPrices`.
 ///
 /// <p>Lists the following prices for either all the TLDs supported by Route&nbsp;53, or the specified TLD:</p>

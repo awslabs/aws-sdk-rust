@@ -3,6 +3,23 @@ pub use crate::operation::list_worker_blocks::_list_worker_blocks_output::ListWo
 
 pub use crate::operation::list_worker_blocks::_list_worker_blocks_input::ListWorkerBlocksInputBuilder;
 
+impl ListWorkerBlocksInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_worker_blocks::ListWorkerBlocksOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_worker_blocks::ListWorkerBlocksError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_worker_blocks();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListWorkerBlocks`.
 ///
 /// <p>The <code>ListWorkersBlocks</code> operation retrieves a list of Workers who are blocked from working on your HITs.</p>

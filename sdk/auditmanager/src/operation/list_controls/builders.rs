@@ -3,6 +3,23 @@ pub use crate::operation::list_controls::_list_controls_output::ListControlsOutp
 
 pub use crate::operation::list_controls::_list_controls_input::ListControlsInputBuilder;
 
+impl ListControlsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_controls::ListControlsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_controls::ListControlsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_controls();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListControls`.
 ///
 /// <p> Returns a list of controls from Audit Manager. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_billing_group_cost_reports::_list_billing_group_c
 
 pub use crate::operation::list_billing_group_cost_reports::_list_billing_group_cost_reports_input::ListBillingGroupCostReportsInputBuilder;
 
+impl ListBillingGroupCostReportsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_billing_group_cost_reports::ListBillingGroupCostReportsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_billing_group_cost_reports::ListBillingGroupCostReportsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_billing_group_cost_reports();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListBillingGroupCostReports`.
 ///
 /// <p>A paginated call to retrieve a summary report of actual Amazon Web Services charges and the calculated Amazon Web Services charges based on the associated pricing plan of a billing group.</p>

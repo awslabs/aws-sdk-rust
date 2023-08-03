@@ -3,6 +3,23 @@ pub use crate::operation::describe_table::_describe_table_output::DescribeTableO
 
 pub use crate::operation::describe_table::_describe_table_input::DescribeTableInputBuilder;
 
+impl DescribeTableInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_table::DescribeTableOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_table::DescribeTableError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_table();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeTable`.
 ///
 /// <p>Returns information about the table, including the current status of the table, when it was created, the primary key schema, and any indexes on the table.</p> <important>

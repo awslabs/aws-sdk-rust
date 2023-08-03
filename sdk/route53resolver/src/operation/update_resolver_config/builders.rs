@@ -3,6 +3,23 @@ pub use crate::operation::update_resolver_config::_update_resolver_config_output
 
 pub use crate::operation::update_resolver_config::_update_resolver_config_input::UpdateResolverConfigInputBuilder;
 
+impl UpdateResolverConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_resolver_config::UpdateResolverConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_resolver_config::UpdateResolverConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_resolver_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateResolverConfig`.
 ///
 /// <p>Updates the behavior configuration of Route&nbsp;53 Resolver behavior for a single VPC from Amazon Virtual Private Cloud.</p>

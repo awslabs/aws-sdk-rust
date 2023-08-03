@@ -3,6 +3,23 @@ pub use crate::operation::list_domain_associations::_list_domain_associations_ou
 
 pub use crate::operation::list_domain_associations::_list_domain_associations_input::ListDomainAssociationsInputBuilder;
 
+impl ListDomainAssociationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_domain_associations::ListDomainAssociationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_domain_associations::ListDomainAssociationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_domain_associations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDomainAssociations`.
 ///
 /// <p> Returns the domain associations for an Amplify app. </p>

@@ -3,6 +3,17 @@ pub use crate::operation::describe_data_repository_associations::_describe_data_
 
 pub use crate::operation::describe_data_repository_associations::_describe_data_repository_associations_input::DescribeDataRepositoryAssociationsInputBuilder;
 
+impl DescribeDataRepositoryAssociationsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_data_repository_associations::DescribeDataRepositoryAssociationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_data_repository_associations::DescribeDataRepositoryAssociationsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_data_repository_associations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeDataRepositoryAssociations`.
 ///
 /// <p>Returns the description of specific Amazon FSx for Lustre or Amazon File Cache data repository associations, if one or more <code>AssociationIds</code> values are provided in the request, or if filters are used in the request. Data repository associations are supported on Amazon File Cache resources and all FSx for Lustre 2.12 and newer file systems, excluding <code>scratch_1</code> deployment type.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::disassociate_subnet_cidr_block::_disassociate_subnet_c
 
 pub use crate::operation::disassociate_subnet_cidr_block::_disassociate_subnet_cidr_block_input::DisassociateSubnetCidrBlockInputBuilder;
 
+impl DisassociateSubnetCidrBlockInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_subnet_cidr_block::DisassociateSubnetCidrBlockOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_subnet_cidr_block::DisassociateSubnetCidrBlockError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disassociate_subnet_cidr_block();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateSubnetCidrBlock`.
 ///
 /// <p>Disassociates a CIDR block from a subnet. Currently, you can disassociate an IPv6 CIDR block only. You must detach or delete all gateways and resources that are associated with the CIDR block before you can disassociate it. </p>

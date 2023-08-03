@@ -3,6 +3,23 @@ pub use crate::operation::update_document_metadata::_update_document_metadata_ou
 
 pub use crate::operation::update_document_metadata::_update_document_metadata_input::UpdateDocumentMetadataInputBuilder;
 
+impl UpdateDocumentMetadataInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_document_metadata::UpdateDocumentMetadataOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_document_metadata::UpdateDocumentMetadataError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_document_metadata();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateDocumentMetadata`.
 ///
 /// <p>Updates information related to approval reviews for a specific version of a change template in Change Manager.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_branch::_create_branch_output::CreateBranchOutp
 
 pub use crate::operation::create_branch::_create_branch_input::CreateBranchInputBuilder;
 
+impl CreateBranchInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_branch::CreateBranchOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_branch::CreateBranchError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_branch();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateBranch`.
 ///
 /// <p>Creates a branch in a repository and points the branch to a commit.</p> <note>

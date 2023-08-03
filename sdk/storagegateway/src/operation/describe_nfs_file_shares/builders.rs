@@ -3,6 +3,23 @@ pub use crate::operation::describe_nfs_file_shares::_describe_nfs_file_shares_ou
 
 pub use crate::operation::describe_nfs_file_shares::_describe_nfs_file_shares_input::DescribeNfsFileSharesInputBuilder;
 
+impl DescribeNfsFileSharesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_nfs_file_shares::DescribeNfsFileSharesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_nfs_file_shares::DescribeNFSFileSharesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_nfs_file_shares();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeNFSFileShares`.
 ///
 /// <p>Gets a description for one or more Network File System (NFS) file shares from an S3 File Gateway. This operation is only supported for S3 File Gateways.</p>

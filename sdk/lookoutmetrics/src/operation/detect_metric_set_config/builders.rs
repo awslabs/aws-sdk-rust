@@ -3,6 +3,23 @@ pub use crate::operation::detect_metric_set_config::_detect_metric_set_config_ou
 
 pub use crate::operation::detect_metric_set_config::_detect_metric_set_config_input::DetectMetricSetConfigInputBuilder;
 
+impl DetectMetricSetConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::detect_metric_set_config::DetectMetricSetConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::detect_metric_set_config::DetectMetricSetConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.detect_metric_set_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DetectMetricSetConfig`.
 ///
 /// <p>Detects an Amazon S3 dataset's file format, interval, and offset.</p>

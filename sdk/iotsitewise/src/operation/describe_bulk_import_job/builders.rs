@@ -3,6 +3,23 @@ pub use crate::operation::describe_bulk_import_job::_describe_bulk_import_job_ou
 
 pub use crate::operation::describe_bulk_import_job::_describe_bulk_import_job_input::DescribeBulkImportJobInputBuilder;
 
+impl DescribeBulkImportJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_bulk_import_job::DescribeBulkImportJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_bulk_import_job::DescribeBulkImportJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_bulk_import_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeBulkImportJob`.
 ///
 /// <p>Retrieves information about a bulk import job request. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/DescribeBulkImportJob.html">Describe a bulk import job (CLI)</a> in the <i>Amazon Simple Storage Service User Guide</i>.</p>

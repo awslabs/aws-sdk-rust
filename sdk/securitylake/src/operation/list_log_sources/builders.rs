@@ -3,6 +3,23 @@ pub use crate::operation::list_log_sources::_list_log_sources_output::ListLogSou
 
 pub use crate::operation::list_log_sources::_list_log_sources_input::ListLogSourcesInputBuilder;
 
+impl ListLogSourcesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_log_sources::ListLogSourcesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_log_sources::ListLogSourcesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_log_sources();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListLogSources`.
 ///
 /// <p>Retrieves the log sources in the current Amazon Web Services Region.</p>

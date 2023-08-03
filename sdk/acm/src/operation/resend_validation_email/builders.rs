@@ -3,6 +3,23 @@ pub use crate::operation::resend_validation_email::_resend_validation_email_outp
 
 pub use crate::operation::resend_validation_email::_resend_validation_email_input::ResendValidationEmailInputBuilder;
 
+impl ResendValidationEmailInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::resend_validation_email::ResendValidationEmailOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::resend_validation_email::ResendValidationEmailError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.resend_validation_email();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ResendValidationEmail`.
 ///
 /// <p>Resends the email that requests domain ownership validation. The domain owner or an authorized representative must approve the ACM certificate before it can be issued. The certificate can be approved by clicking a link in the mail to navigate to the Amazon certificate approval website and then clicking <b>I Approve</b>. However, the validation email can be blocked by spam filters. Therefore, if you do not receive the original mail, you can request that the mail be resent within 72 hours of requesting the ACM certificate. If more than 72 hours have elapsed since your original request or since your last attempt to resend validation mail, you must request a new certificate. For more information about setting up your contact email addresses, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/setup-email.html">Configure Email for your Domain</a>. </p>

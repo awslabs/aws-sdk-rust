@@ -3,6 +3,23 @@ pub use crate::operation::get_bucket_location::_get_bucket_location_output::GetB
 
 pub use crate::operation::get_bucket_location::_get_bucket_location_input::GetBucketLocationInputBuilder;
 
+impl GetBucketLocationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_bucket_location::GetBucketLocationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_bucket_location::GetBucketLocationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_bucket_location();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetBucketLocation`.
 ///
 /// <p>Returns the Region the bucket resides in. You set the bucket's Region using the <code>LocationConstraint</code> request parameter in a <code>CreateBucket</code> request. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_CreateBucket.html">CreateBucket</a>.</p>

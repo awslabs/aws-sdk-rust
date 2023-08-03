@@ -3,6 +3,23 @@ pub use crate::operation::get_consolidated_report::_get_consolidated_report_outp
 
 pub use crate::operation::get_consolidated_report::_get_consolidated_report_input::GetConsolidatedReportInputBuilder;
 
+impl GetConsolidatedReportInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_consolidated_report::GetConsolidatedReportOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_consolidated_report::GetConsolidatedReportError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_consolidated_report();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetConsolidatedReport`.
 ///
 /// <p>Get a consolidated report of your workloads.</p>

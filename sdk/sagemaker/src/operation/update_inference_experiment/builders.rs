@@ -3,6 +3,23 @@ pub use crate::operation::update_inference_experiment::_update_inference_experim
 
 pub use crate::operation::update_inference_experiment::_update_inference_experiment_input::UpdateInferenceExperimentInputBuilder;
 
+impl UpdateInferenceExperimentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_inference_experiment::UpdateInferenceExperimentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_inference_experiment::UpdateInferenceExperimentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_inference_experiment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateInferenceExperiment`.
 ///
 /// <p> Updates an inference experiment that you created. The status of the inference experiment has to be either <code>Created</code>, <code>Running</code>. For more information on the status of an inference experiment, see <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeInferenceExperiment.html">DescribeInferenceExperiment</a>. </p>

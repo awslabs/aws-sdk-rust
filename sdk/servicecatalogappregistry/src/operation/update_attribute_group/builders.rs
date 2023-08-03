@@ -3,6 +3,23 @@ pub use crate::operation::update_attribute_group::_update_attribute_group_output
 
 pub use crate::operation::update_attribute_group::_update_attribute_group_input::UpdateAttributeGroupInputBuilder;
 
+impl UpdateAttributeGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_attribute_group::UpdateAttributeGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_attribute_group::UpdateAttributeGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_attribute_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateAttributeGroup`.
 ///
 /// <p>Updates an existing attribute group with new details. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::put_mobile_device_access_override::_put_mobile_device_
 
 pub use crate::operation::put_mobile_device_access_override::_put_mobile_device_access_override_input::PutMobileDeviceAccessOverrideInputBuilder;
 
+impl PutMobileDeviceAccessOverrideInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_mobile_device_access_override::PutMobileDeviceAccessOverrideError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_mobile_device_access_override();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutMobileDeviceAccessOverride`.
 ///
 /// <p>Creates or updates a mobile device access override for the given WorkMail organization, user, and device.</p>

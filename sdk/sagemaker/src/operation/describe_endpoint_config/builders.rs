@@ -3,6 +3,23 @@ pub use crate::operation::describe_endpoint_config::_describe_endpoint_config_ou
 
 pub use crate::operation::describe_endpoint_config::_describe_endpoint_config_input::DescribeEndpointConfigInputBuilder;
 
+impl DescribeEndpointConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_endpoint_config::DescribeEndpointConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_endpoint_config::DescribeEndpointConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_endpoint_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeEndpointConfig`.
 ///
 /// <p>Returns the description of an endpoint configuration created using the <code>CreateEndpointConfig</code> API.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_pool::_delete_pool_output::DeletePoolOutputBuil
 
 pub use crate::operation::delete_pool::_delete_pool_input::DeletePoolInputBuilder;
 
+impl DeletePoolInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_pool::DeletePoolOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_pool::DeletePoolError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_pool();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeletePool`.
 ///
 /// <p>Deletes an existing pool. Deleting a pool disassociates all origination identities from that pool.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::start_multiplex::_start_multiplex_output::StartMultipl
 
 pub use crate::operation::start_multiplex::_start_multiplex_input::StartMultiplexInputBuilder;
 
+impl StartMultiplexInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_multiplex::StartMultiplexOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_multiplex::StartMultiplexError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_multiplex();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartMultiplex`.
 ///
 /// Start (run) the multiplex. Starting the multiplex does not start the channels. You must explicitly start each channel.

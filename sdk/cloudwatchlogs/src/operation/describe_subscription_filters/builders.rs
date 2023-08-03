@@ -3,6 +3,23 @@ pub use crate::operation::describe_subscription_filters::_describe_subscription_
 
 pub use crate::operation::describe_subscription_filters::_describe_subscription_filters_input::DescribeSubscriptionFiltersInputBuilder;
 
+impl DescribeSubscriptionFiltersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_subscription_filters::DescribeSubscriptionFiltersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_subscription_filters::DescribeSubscriptionFiltersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_subscription_filters();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeSubscriptionFilters`.
 ///
 /// <p>Lists the subscription filters for the specified log group. You can list all the subscription filters or filter the results by prefix. The results are ASCII-sorted by filter name.</p>

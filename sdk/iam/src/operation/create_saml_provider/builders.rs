@@ -3,6 +3,23 @@ pub use crate::operation::create_saml_provider::_create_saml_provider_output::Cr
 
 pub use crate::operation::create_saml_provider::_create_saml_provider_input::CreateSamlProviderInputBuilder;
 
+impl CreateSamlProviderInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_saml_provider::CreateSamlProviderOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_saml_provider::CreateSAMLProviderError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_saml_provider();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateSAMLProvider`.
 ///
 /// <p>Creates an IAM resource that describes an identity provider (IdP) that supports SAML 2.0.</p>

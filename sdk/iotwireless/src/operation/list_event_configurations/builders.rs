@@ -3,6 +3,23 @@ pub use crate::operation::list_event_configurations::_list_event_configurations_
 
 pub use crate::operation::list_event_configurations::_list_event_configurations_input::ListEventConfigurationsInputBuilder;
 
+impl ListEventConfigurationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_event_configurations::ListEventConfigurationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_event_configurations::ListEventConfigurationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_event_configurations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListEventConfigurations`.
 ///
 /// <p>List event configurations where at least one event topic has been enabled.</p>

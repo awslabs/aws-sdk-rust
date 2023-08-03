@@ -3,6 +3,23 @@ pub use crate::operation::create_custom_metadata::_create_custom_metadata_output
 
 pub use crate::operation::create_custom_metadata::_create_custom_metadata_input::CreateCustomMetadataInputBuilder;
 
+impl CreateCustomMetadataInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_custom_metadata::CreateCustomMetadataOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_custom_metadata::CreateCustomMetadataError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_custom_metadata();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateCustomMetadata`.
 ///
 /// <p>Adds one or more custom properties to the specified resource (a folder, document, or version).</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_schedule::_delete_schedule_output::DeleteSchedu
 
 pub use crate::operation::delete_schedule::_delete_schedule_input::DeleteScheduleInputBuilder;
 
+impl DeleteScheduleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_schedule::DeleteScheduleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_schedule::DeleteScheduleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_schedule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteSchedule`.
 ///
 /// Delete all schedule actions on a channel.

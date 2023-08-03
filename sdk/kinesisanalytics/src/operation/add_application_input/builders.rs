@@ -3,6 +3,23 @@ pub use crate::operation::add_application_input::_add_application_input_output::
 
 pub use crate::operation::add_application_input::_add_application_input_input::AddApplicationInputInputBuilder;
 
+impl AddApplicationInputInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::add_application_input::AddApplicationInputOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::add_application_input::AddApplicationInputError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.add_application_input();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AddApplicationInput`.
 ///
 /// <note>

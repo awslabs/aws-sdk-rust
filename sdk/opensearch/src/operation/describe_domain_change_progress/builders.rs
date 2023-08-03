@@ -3,6 +3,23 @@ pub use crate::operation::describe_domain_change_progress::_describe_domain_chan
 
 pub use crate::operation::describe_domain_change_progress::_describe_domain_change_progress_input::DescribeDomainChangeProgressInputBuilder;
 
+impl DescribeDomainChangeProgressInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_domain_change_progress::DescribeDomainChangeProgressOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_domain_change_progress::DescribeDomainChangeProgressError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_domain_change_progress();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeDomainChangeProgress`.
 ///
 /// <p>Returns information about the current blue/green deployment happening on an Amazon OpenSearch Service domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-configuration-changes.html">Making configuration changes in Amazon OpenSearch Service</a>.</p>

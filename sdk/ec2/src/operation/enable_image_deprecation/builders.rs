@@ -3,6 +3,23 @@ pub use crate::operation::enable_image_deprecation::_enable_image_deprecation_ou
 
 pub use crate::operation::enable_image_deprecation::_enable_image_deprecation_input::EnableImageDeprecationInputBuilder;
 
+impl EnableImageDeprecationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::enable_image_deprecation::EnableImageDeprecationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::enable_image_deprecation::EnableImageDeprecationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.enable_image_deprecation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `EnableImageDeprecation`.
 ///
 /// <p>Enables deprecation of the specified AMI at the specified date and time.</p>

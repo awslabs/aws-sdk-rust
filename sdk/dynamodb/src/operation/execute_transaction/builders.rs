@@ -3,6 +3,23 @@ pub use crate::operation::execute_transaction::_execute_transaction_output::Exec
 
 pub use crate::operation::execute_transaction::_execute_transaction_input::ExecuteTransactionInputBuilder;
 
+impl ExecuteTransactionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::execute_transaction::ExecuteTransactionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::execute_transaction::ExecuteTransactionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.execute_transaction();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ExecuteTransaction`.
 ///
 /// <p>This operation allows you to perform transactional reads or writes on data stored in DynamoDB, using PartiQL.</p> <note>

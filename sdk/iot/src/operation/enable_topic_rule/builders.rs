@@ -3,6 +3,23 @@ pub use crate::operation::enable_topic_rule::_enable_topic_rule_output::EnableTo
 
 pub use crate::operation::enable_topic_rule::_enable_topic_rule_input::EnableTopicRuleInputBuilder;
 
+impl EnableTopicRuleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::enable_topic_rule::EnableTopicRuleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::enable_topic_rule::EnableTopicRuleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.enable_topic_rule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `EnableTopicRule`.
 ///
 /// <p>Enables the rule.</p>

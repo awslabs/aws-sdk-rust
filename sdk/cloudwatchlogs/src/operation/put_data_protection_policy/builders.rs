@@ -3,6 +3,23 @@ pub use crate::operation::put_data_protection_policy::_put_data_protection_polic
 
 pub use crate::operation::put_data_protection_policy::_put_data_protection_policy_input::PutDataProtectionPolicyInputBuilder;
 
+impl PutDataProtectionPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_data_protection_policy::PutDataProtectionPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_data_protection_policy::PutDataProtectionPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_data_protection_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutDataProtectionPolicy`.
 ///
 /// <p>Creates a data protection policy for the specified log group. A data protection policy can help safeguard sensitive data that's ingested by the log group by auditing and masking the sensitive log data.</p> <important>

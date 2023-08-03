@@ -3,6 +3,23 @@ pub use crate::operation::update_flow_output::_update_flow_output_output::Update
 
 pub use crate::operation::update_flow_output::_update_flow_output_input::UpdateFlowOutputInputBuilder;
 
+impl UpdateFlowOutputInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_flow_output::UpdateFlowOutputOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_flow_output::UpdateFlowOutputError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_flow_output();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateFlowOutput`.
 ///
 /// Updates an existing flow output.

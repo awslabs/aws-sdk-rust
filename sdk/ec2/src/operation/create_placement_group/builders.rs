@@ -3,6 +3,23 @@ pub use crate::operation::create_placement_group::_create_placement_group_output
 
 pub use crate::operation::create_placement_group::_create_placement_group_input::CreatePlacementGroupInputBuilder;
 
+impl CreatePlacementGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_placement_group::CreatePlacementGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_placement_group::CreatePlacementGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_placement_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreatePlacementGroup`.
 ///
 /// <p>Creates a placement group in which to launch instances. The strategy of the placement group determines how the instances are organized within the group. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_operating_systems::_describe_operating_system
 
 pub use crate::operation::describe_operating_systems::_describe_operating_systems_input::DescribeOperatingSystemsInputBuilder;
 
+impl DescribeOperatingSystemsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_operating_systems::DescribeOperatingSystemsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_operating_systems::DescribeOperatingSystemsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_operating_systems();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeOperatingSystems`.
 ///
 /// <p>Describes the operating systems that are supported by AWS OpsWorks Stacks.</p>

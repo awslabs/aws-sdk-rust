@@ -3,6 +3,23 @@ pub use crate::operation::start_migration::_start_migration_output::StartMigrati
 
 pub use crate::operation::start_migration::_start_migration_input::StartMigrationInputBuilder;
 
+impl StartMigrationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_migration::StartMigrationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_migration::StartMigrationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_migration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartMigration`.
 ///
 /// <p>Starts migrating a bot from Amazon Lex V1 to Amazon Lex V2. Migrate your bot when you want to take advantage of the new features of Amazon Lex V2.</p>

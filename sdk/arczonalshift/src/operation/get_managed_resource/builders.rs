@@ -3,6 +3,23 @@ pub use crate::operation::get_managed_resource::_get_managed_resource_output::Ge
 
 pub use crate::operation::get_managed_resource::_get_managed_resource_input::GetManagedResourceInputBuilder;
 
+impl GetManagedResourceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_managed_resource::GetManagedResourceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_managed_resource::GetManagedResourceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_managed_resource();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetManagedResource`.
 ///
 /// <p>Get information about a resource that's been registered for zonal shifts with Amazon Route 53 Application Recovery Controller in this AWS Region. Resources that are registered for zonal shifts are managed resources in Route 53 ARC.</p>

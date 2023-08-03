@@ -3,6 +3,17 @@ pub use crate::operation::disassociate_personas_from_entities::_disassociate_per
 
 pub use crate::operation::disassociate_personas_from_entities::_disassociate_personas_from_entities_input::DisassociatePersonasFromEntitiesInputBuilder;
 
+impl DisassociatePersonasFromEntitiesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::disassociate_personas_from_entities::DisassociatePersonasFromEntitiesOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_personas_from_entities::DisassociatePersonasFromEntitiesError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.disassociate_personas_from_entities();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociatePersonasFromEntities`.
 ///
 /// <p>Removes the specific permissions of users or groups in your IAM Identity Center identity source with access to your Amazon Kendra experience. You can create an Amazon Kendra experience such as a search application. For more information on creating a search application experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building a search experience with no code</a>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_app_monitor_data::_get_app_monitor_data_output::Ge
 
 pub use crate::operation::get_app_monitor_data::_get_app_monitor_data_input::GetAppMonitorDataInputBuilder;
 
+impl GetAppMonitorDataInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_app_monitor_data::GetAppMonitorDataOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_app_monitor_data::GetAppMonitorDataError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_app_monitor_data();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetAppMonitorData`.
 ///
 /// <p>Retrieves the raw performance events that RUM has collected from your web application, so that you can do your own processing or analysis of this data.</p>

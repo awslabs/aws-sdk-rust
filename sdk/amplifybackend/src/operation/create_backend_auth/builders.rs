@@ -3,6 +3,23 @@ pub use crate::operation::create_backend_auth::_create_backend_auth_output::Crea
 
 pub use crate::operation::create_backend_auth::_create_backend_auth_input::CreateBackendAuthInputBuilder;
 
+impl CreateBackendAuthInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_backend_auth::CreateBackendAuthOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_backend_auth::CreateBackendAuthError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_backend_auth();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateBackendAuth`.
 ///
 /// <p>Creates a new backend authentication resource.</p>

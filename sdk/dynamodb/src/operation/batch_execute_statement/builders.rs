@@ -3,6 +3,23 @@ pub use crate::operation::batch_execute_statement::_batch_execute_statement_outp
 
 pub use crate::operation::batch_execute_statement::_batch_execute_statement_input::BatchExecuteStatementInputBuilder;
 
+impl BatchExecuteStatementInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_execute_statement::BatchExecuteStatementOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_execute_statement::BatchExecuteStatementError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_execute_statement();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchExecuteStatement`.
 ///
 /// <p>This operation allows you to perform batch reads or writes on data stored in DynamoDB, using PartiQL. Each read statement in a <code>BatchExecuteStatement</code> must specify an equality condition on all key attributes. This enforces that each <code>SELECT</code> statement in a batch returns at most a single item.</p> <note>

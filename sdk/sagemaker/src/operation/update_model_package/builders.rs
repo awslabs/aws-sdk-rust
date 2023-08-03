@@ -3,6 +3,23 @@ pub use crate::operation::update_model_package::_update_model_package_output::Up
 
 pub use crate::operation::update_model_package::_update_model_package_input::UpdateModelPackageInputBuilder;
 
+impl UpdateModelPackageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_model_package::UpdateModelPackageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_model_package::UpdateModelPackageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_model_package();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateModelPackage`.
 ///
 /// <p>Updates a versioned model.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_server::_create_server_output::CreateServerOutp
 
 pub use crate::operation::create_server::_create_server_input::CreateServerInputBuilder;
 
+impl CreateServerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_server::CreateServerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_server::CreateServerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_server();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateServer`.
 ///
 /// <p> Creates and immedately starts a new server. The server is ready to use when it is in the <code>HEALTHY</code> state. By default, you can create a maximum of 10 servers. </p>

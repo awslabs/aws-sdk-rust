@@ -3,6 +3,23 @@ pub use crate::operation::create_network_insights_path::_create_network_insights
 
 pub use crate::operation::create_network_insights_path::_create_network_insights_path_input::CreateNetworkInsightsPathInputBuilder;
 
+impl CreateNetworkInsightsPathInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_network_insights_path::CreateNetworkInsightsPathOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_network_insights_path::CreateNetworkInsightsPathError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_network_insights_path();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateNetworkInsightsPath`.
 ///
 /// <p>Creates a path to analyze for reachability.</p>

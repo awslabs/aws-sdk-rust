@@ -3,6 +3,23 @@ pub use crate::operation::update_backend_auth::_update_backend_auth_output::Upda
 
 pub use crate::operation::update_backend_auth::_update_backend_auth_input::UpdateBackendAuthInputBuilder;
 
+impl UpdateBackendAuthInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_backend_auth::UpdateBackendAuthOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_backend_auth::UpdateBackendAuthError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_backend_auth();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateBackendAuth`.
 ///
 /// <p>Updates an existing backend authentication resource.</p>

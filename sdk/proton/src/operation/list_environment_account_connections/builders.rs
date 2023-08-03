@@ -3,6 +3,17 @@ pub use crate::operation::list_environment_account_connections::_list_environmen
 
 pub use crate::operation::list_environment_account_connections::_list_environment_account_connections_input::ListEnvironmentAccountConnectionsInputBuilder;
 
+impl ListEnvironmentAccountConnectionsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_environment_account_connections::ListEnvironmentAccountConnectionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_environment_account_connections::ListEnvironmentAccountConnectionsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_environment_account_connections();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListEnvironmentAccountConnections`.
 ///
 /// <p>View a list of environment account connections.</p>

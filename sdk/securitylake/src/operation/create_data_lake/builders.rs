@@ -3,6 +3,23 @@ pub use crate::operation::create_data_lake::_create_data_lake_output::CreateData
 
 pub use crate::operation::create_data_lake::_create_data_lake_input::CreateDataLakeInputBuilder;
 
+impl CreateDataLakeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_data_lake::CreateDataLakeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_data_lake::CreateDataLakeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_data_lake();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateDataLake`.
 ///
 /// <p>Initializes an Amazon Security Lake instance with the provided (or default) configuration. You can enable Security Lake in Amazon Web Services Regions with customized settings before enabling log collection in Regions. To specify particular Regions, configure these Regions using the <code>configurations</code> parameter. If you have already enabled Security Lake in a Region when you call this command, the command will update the Region if you provide new configuration parameters. If you have not already enabled Security Lake in the Region when you call this API, it will set up the data lake in the Region with the specified configurations.</p>

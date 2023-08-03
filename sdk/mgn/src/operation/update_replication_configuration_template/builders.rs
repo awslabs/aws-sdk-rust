@@ -3,6 +3,17 @@ pub use crate::operation::update_replication_configuration_template::_update_rep
 
 pub use crate::operation::update_replication_configuration_template::_update_replication_configuration_template_input::UpdateReplicationConfigurationTemplateInputBuilder;
 
+impl UpdateReplicationConfigurationTemplateInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::update_replication_configuration_template::UpdateReplicationConfigurationTemplateOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_replication_configuration_template::UpdateReplicationConfigurationTemplateError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.update_replication_configuration_template();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateReplicationConfigurationTemplate`.
 ///
 /// <p>Updates multiple ReplicationConfigurationTemplates by ID.</p>

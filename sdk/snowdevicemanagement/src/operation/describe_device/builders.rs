@@ -3,6 +3,23 @@ pub use crate::operation::describe_device::_describe_device_output::DescribeDevi
 
 pub use crate::operation::describe_device::_describe_device_input::DescribeDeviceInputBuilder;
 
+impl DescribeDeviceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_device::DescribeDeviceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_device::DescribeDeviceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_device();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeDevice`.
 ///
 /// <p>Checks device-specific information, such as the device type, software version, IP addresses, and lock status.</p>

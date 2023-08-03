@@ -3,6 +3,23 @@ pub use crate::operation::add_role_to_db_instance::_add_role_to_db_instance_outp
 
 pub use crate::operation::add_role_to_db_instance::_add_role_to_db_instance_input::AddRoleToDbInstanceInputBuilder;
 
+impl AddRoleToDbInstanceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::add_role_to_db_instance::AddRoleToDbInstanceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::add_role_to_db_instance::AddRoleToDBInstanceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.add_role_to_db_instance();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AddRoleToDBInstance`.
 ///
 /// <p>Associates an Amazon Web Services Identity and Access Management (IAM) role with a DB instance.</p> <note>

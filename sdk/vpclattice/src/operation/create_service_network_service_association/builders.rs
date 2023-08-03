@@ -3,6 +3,17 @@ pub use crate::operation::create_service_network_service_association::_create_se
 
 pub use crate::operation::create_service_network_service_association::_create_service_network_service_association_input::CreateServiceNetworkServiceAssociationInputBuilder;
 
+impl CreateServiceNetworkServiceAssociationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::create_service_network_service_association::CreateServiceNetworkServiceAssociationOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_service_network_service_association::CreateServiceNetworkServiceAssociationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.create_service_network_service_association();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateServiceNetworkServiceAssociation`.
 ///
 /// <p>Associates a service with a service network.</p>

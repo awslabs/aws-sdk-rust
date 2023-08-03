@@ -3,6 +3,23 @@ pub use crate::operation::detach_load_balancers::_detach_load_balancers_output::
 
 pub use crate::operation::detach_load_balancers::_detach_load_balancers_input::DetachLoadBalancersInputBuilder;
 
+impl DetachLoadBalancersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::detach_load_balancers::DetachLoadBalancersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::detach_load_balancers::DetachLoadBalancersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.detach_load_balancers();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DetachLoadBalancers`.
 ///
 /// <note>

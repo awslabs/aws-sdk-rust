@@ -3,6 +3,23 @@ pub use crate::operation::delete_feature::_delete_feature_output::DeleteFeatureO
 
 pub use crate::operation::delete_feature::_delete_feature_input::DeleteFeatureInputBuilder;
 
+impl DeleteFeatureInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_feature::DeleteFeatureOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_feature::DeleteFeatureError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_feature();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteFeature`.
 ///
 /// <p>Deletes an Evidently feature.</p>

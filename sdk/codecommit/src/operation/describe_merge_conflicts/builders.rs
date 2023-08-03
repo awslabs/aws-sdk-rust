@@ -3,6 +3,23 @@ pub use crate::operation::describe_merge_conflicts::_describe_merge_conflicts_ou
 
 pub use crate::operation::describe_merge_conflicts::_describe_merge_conflicts_input::DescribeMergeConflictsInputBuilder;
 
+impl DescribeMergeConflictsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_merge_conflicts::DescribeMergeConflictsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_merge_conflicts::DescribeMergeConflictsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_merge_conflicts();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeMergeConflicts`.
 ///
 /// <p>Returns information about one or more merge conflicts in the attempted merge of two commit specifiers using the squash or three-way merge strategy. If the merge option for the attempted merge is specified as FAST_FORWARD_MERGE, an exception is thrown.</p>

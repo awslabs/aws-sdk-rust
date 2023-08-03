@@ -3,6 +3,23 @@ pub use crate::operation::delete_remediation_exceptions::_delete_remediation_exc
 
 pub use crate::operation::delete_remediation_exceptions::_delete_remediation_exceptions_input::DeleteRemediationExceptionsInputBuilder;
 
+impl DeleteRemediationExceptionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_remediation_exceptions::DeleteRemediationExceptionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_remediation_exceptions::DeleteRemediationExceptionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_remediation_exceptions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteRemediationExceptions`.
 ///
 /// <p>Deletes one or more remediation exceptions mentioned in the resource keys.</p> <note>

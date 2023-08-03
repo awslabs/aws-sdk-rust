@@ -3,6 +3,23 @@ pub use crate::operation::list_studios::_list_studios_output::ListStudiosOutputB
 
 pub use crate::operation::list_studios::_list_studios_input::ListStudiosInputBuilder;
 
+impl ListStudiosInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_studios::ListStudiosOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_studios::ListStudiosError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_studios();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListStudios`.
 ///
 /// <p>List studios in your Amazon Web Services accounts in the requested Amazon Web Services Region.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::associate_network_settings::_associate_network_setting
 
 pub use crate::operation::associate_network_settings::_associate_network_settings_input::AssociateNetworkSettingsInputBuilder;
 
+impl AssociateNetworkSettingsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_network_settings::AssociateNetworkSettingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_network_settings::AssociateNetworkSettingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_network_settings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateNetworkSettings`.
 ///
 /// <p>Associates a network settings resource with a web portal.</p>

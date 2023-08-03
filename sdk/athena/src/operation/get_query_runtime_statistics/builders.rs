@@ -3,6 +3,23 @@ pub use crate::operation::get_query_runtime_statistics::_get_query_runtime_stati
 
 pub use crate::operation::get_query_runtime_statistics::_get_query_runtime_statistics_input::GetQueryRuntimeStatisticsInputBuilder;
 
+impl GetQueryRuntimeStatisticsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_query_runtime_statistics::GetQueryRuntimeStatisticsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_query_runtime_statistics::GetQueryRuntimeStatisticsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_query_runtime_statistics();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetQueryRuntimeStatistics`.
 ///
 /// <p>Returns query execution runtime statistics related to a single execution of a query if you have access to the workgroup in which the query ran. Query execution runtime statistics are returned only when <code>QueryExecutionStatus$State</code> is in a SUCCEEDED or FAILED state. Stage-level input and output row count and data size statistics are not shown when a query has row-level filters defined in Lake Formation.</p>

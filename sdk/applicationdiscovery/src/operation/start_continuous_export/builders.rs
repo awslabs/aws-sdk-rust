@@ -3,6 +3,23 @@ pub use crate::operation::start_continuous_export::_start_continuous_export_outp
 
 pub use crate::operation::start_continuous_export::_start_continuous_export_input::StartContinuousExportInputBuilder;
 
+impl StartContinuousExportInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_continuous_export::StartContinuousExportOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_continuous_export::StartContinuousExportError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_continuous_export();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartContinuousExport`.
 ///
 /// <p>Start the continuous flow of agent's discovered data into Amazon Athena.</p>

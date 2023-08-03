@@ -3,6 +3,23 @@ pub use crate::operation::create_web_login_token::_create_web_login_token_output
 
 pub use crate::operation::create_web_login_token::_create_web_login_token_input::CreateWebLoginTokenInputBuilder;
 
+impl CreateWebLoginTokenInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_web_login_token::CreateWebLoginTokenOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_web_login_token::CreateWebLoginTokenError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_web_login_token();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateWebLoginToken`.
 ///
 /// <p>Creates a web login token for the Airflow Web UI. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/call-mwaa-apis-web.html">Creating an Apache Airflow web login token</a>.</p>

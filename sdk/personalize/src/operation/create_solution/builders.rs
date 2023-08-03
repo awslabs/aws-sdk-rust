@@ -3,6 +3,23 @@ pub use crate::operation::create_solution::_create_solution_output::CreateSoluti
 
 pub use crate::operation::create_solution::_create_solution_input::CreateSolutionInputBuilder;
 
+impl CreateSolutionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_solution::CreateSolutionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_solution::CreateSolutionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_solution();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateSolution`.
 ///
 /// <p>Creates the configuration for training a model. A trained model is known as a solution version. After the configuration is created, you train the model (create a solution version) by calling the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolutionVersion.html">CreateSolutionVersion</a> operation. Every time you call <code>CreateSolutionVersion</code>, a new version of the solution is created.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_alarm_model::_delete_alarm_model_output::Delete
 
 pub use crate::operation::delete_alarm_model::_delete_alarm_model_input::DeleteAlarmModelInputBuilder;
 
+impl DeleteAlarmModelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_alarm_model::DeleteAlarmModelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_alarm_model::DeleteAlarmModelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_alarm_model();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteAlarmModel`.
 ///
 /// <p>Deletes an alarm model. Any alarm instances that were created based on this alarm model are also deleted. This action can't be undone.</p>

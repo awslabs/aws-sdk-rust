@@ -3,6 +3,23 @@ pub use crate::operation::provide_anomaly_feedback::_provide_anomaly_feedback_ou
 
 pub use crate::operation::provide_anomaly_feedback::_provide_anomaly_feedback_input::ProvideAnomalyFeedbackInputBuilder;
 
+impl ProvideAnomalyFeedbackInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::provide_anomaly_feedback::ProvideAnomalyFeedbackOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::provide_anomaly_feedback::ProvideAnomalyFeedbackError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.provide_anomaly_feedback();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ProvideAnomalyFeedback`.
 ///
 /// <p>Modifies the feedback property of a given cost anomaly. </p>

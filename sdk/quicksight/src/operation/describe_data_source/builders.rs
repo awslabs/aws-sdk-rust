@@ -3,6 +3,23 @@ pub use crate::operation::describe_data_source::_describe_data_source_output::De
 
 pub use crate::operation::describe_data_source::_describe_data_source_input::DescribeDataSourceInputBuilder;
 
+impl DescribeDataSourceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_data_source::DescribeDataSourceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_data_source::DescribeDataSourceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_data_source();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeDataSource`.
 ///
 /// <p>Describes a data source.</p>

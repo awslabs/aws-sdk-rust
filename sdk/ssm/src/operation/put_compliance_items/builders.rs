@@ -3,6 +3,23 @@ pub use crate::operation::put_compliance_items::_put_compliance_items_output::Pu
 
 pub use crate::operation::put_compliance_items::_put_compliance_items_input::PutComplianceItemsInputBuilder;
 
+impl PutComplianceItemsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_compliance_items::PutComplianceItemsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_compliance_items::PutComplianceItemsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_compliance_items();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutComplianceItems`.
 ///
 /// <p>Registers a compliance type and other compliance details on a designated resource. This operation lets you register custom compliance details with a resource. This call overwrites existing compliance information on the resource, so you must provide a full list of compliance items each time that you send the request.</p>

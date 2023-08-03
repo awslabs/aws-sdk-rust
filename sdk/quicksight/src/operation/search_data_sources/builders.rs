@@ -3,6 +3,23 @@ pub use crate::operation::search_data_sources::_search_data_sources_output::Sear
 
 pub use crate::operation::search_data_sources::_search_data_sources_input::SearchDataSourcesInputBuilder;
 
+impl SearchDataSourcesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::search_data_sources::SearchDataSourcesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::search_data_sources::SearchDataSourcesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.search_data_sources();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SearchDataSources`.
 ///
 /// <p>Use the <code>SearchDataSources</code> operation to search for data sources that belong to an account.</p>

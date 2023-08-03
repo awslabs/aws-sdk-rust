@@ -3,6 +3,23 @@ pub use crate::operation::list_portals::_list_portals_output::ListPortalsOutputB
 
 pub use crate::operation::list_portals::_list_portals_input::ListPortalsInputBuilder;
 
+impl ListPortalsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_portals::ListPortalsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_portals::ListPortalsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_portals();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListPortals`.
 ///
 /// <p>Retrieves a list or web portals.</p>

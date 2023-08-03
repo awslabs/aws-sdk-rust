@@ -3,6 +3,23 @@ pub use crate::operation::list_event_types::_list_event_types_output::ListEventT
 
 pub use crate::operation::list_event_types::_list_event_types_input::ListEventTypesInputBuilder;
 
+impl ListEventTypesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_event_types::ListEventTypesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_event_types::ListEventTypesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_event_types();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListEventTypes`.
 ///
 /// <p>Returns information about the event types available for configuring notifications.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_input_device_transfers::_list_input_device_transf
 
 pub use crate::operation::list_input_device_transfers::_list_input_device_transfers_input::ListInputDeviceTransfersInputBuilder;
 
+impl ListInputDeviceTransfersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_input_device_transfers::ListInputDeviceTransfersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_input_device_transfers::ListInputDeviceTransfersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_input_device_transfers();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListInputDeviceTransfers`.
 ///
 /// List input devices that are currently being transferred. List input devices that you are transferring from your AWS account or input devices that another AWS account is transferring to you.

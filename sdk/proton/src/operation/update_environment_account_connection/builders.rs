@@ -3,6 +3,17 @@ pub use crate::operation::update_environment_account_connection::_update_environ
 
 pub use crate::operation::update_environment_account_connection::_update_environment_account_connection_input::UpdateEnvironmentAccountConnectionInputBuilder;
 
+impl UpdateEnvironmentAccountConnectionInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::update_environment_account_connection::UpdateEnvironmentAccountConnectionOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_environment_account_connection::UpdateEnvironmentAccountConnectionError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.update_environment_account_connection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateEnvironmentAccountConnection`.
 ///
 /// <p>In an environment account, update an environment account connection to use a new IAM role.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_game_session_placement::_describe_game_sessio
 
 pub use crate::operation::describe_game_session_placement::_describe_game_session_placement_input::DescribeGameSessionPlacementInputBuilder;
 
+impl DescribeGameSessionPlacementInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_game_session_placement::DescribeGameSessionPlacementOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_game_session_placement::DescribeGameSessionPlacementError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_game_session_placement();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeGameSessionPlacement`.
 ///
 /// <p>Retrieves information, including current status, about a game session placement request. </p>

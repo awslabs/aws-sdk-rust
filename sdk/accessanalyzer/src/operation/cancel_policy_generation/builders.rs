@@ -3,6 +3,23 @@ pub use crate::operation::cancel_policy_generation::_cancel_policy_generation_ou
 
 pub use crate::operation::cancel_policy_generation::_cancel_policy_generation_input::CancelPolicyGenerationInputBuilder;
 
+impl CancelPolicyGenerationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::cancel_policy_generation::CancelPolicyGenerationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::cancel_policy_generation::CancelPolicyGenerationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.cancel_policy_generation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CancelPolicyGeneration`.
 ///
 /// <p>Cancels the requested policy generation.</p>

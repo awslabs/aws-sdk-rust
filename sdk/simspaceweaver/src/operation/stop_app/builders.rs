@@ -3,6 +3,23 @@ pub use crate::operation::stop_app::_stop_app_output::StopAppOutputBuilder;
 
 pub use crate::operation::stop_app::_stop_app_input::StopAppInputBuilder;
 
+impl StopAppInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_app::StopAppOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_app::StopAppError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_app();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopApp`.
 ///
 /// <p>Stops the given custom app and shuts down all of its allocated compute resources.</p>

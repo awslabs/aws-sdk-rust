@@ -3,6 +3,17 @@ pub use crate::operation::get_vpn_connection_device_sample_configuration::_get_v
 
 pub use crate::operation::get_vpn_connection_device_sample_configuration::_get_vpn_connection_device_sample_configuration_input::GetVpnConnectionDeviceSampleConfigurationInputBuilder;
 
+impl GetVpnConnectionDeviceSampleConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_vpn_connection_device_sample_configuration::GetVpnConnectionDeviceSampleConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_vpn_connection_device_sample_configuration::GetVpnConnectionDeviceSampleConfigurationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_vpn_connection_device_sample_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetVpnConnectionDeviceSampleConfiguration`.
 ///
 /// <p>Download an Amazon Web Services-provided sample configuration file to be used with the customer gateway device specified for your Site-to-Site VPN connection.</p>

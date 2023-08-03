@@ -3,6 +3,23 @@ pub use crate::operation::describe_buckets::_describe_buckets_output::DescribeBu
 
 pub use crate::operation::describe_buckets::_describe_buckets_input::DescribeBucketsInputBuilder;
 
+impl DescribeBucketsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_buckets::DescribeBucketsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_buckets::DescribeBucketsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_buckets();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeBuckets`.
 ///
 /// <p>Retrieves (queries) statistical data and other information about one or more S3 buckets that Amazon Macie monitors and analyzes for an account.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::start_pipe::_start_pipe_output::StartPipeOutputBuilder
 
 pub use crate::operation::start_pipe::_start_pipe_input::StartPipeInputBuilder;
 
+impl StartPipeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_pipe::StartPipeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_pipe::StartPipeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_pipe();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartPipe`.
 ///
 /// <p>Start an existing pipe.</p>

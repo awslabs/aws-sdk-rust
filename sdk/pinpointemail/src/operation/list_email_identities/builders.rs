@@ -3,6 +3,23 @@ pub use crate::operation::list_email_identities::_list_email_identities_output::
 
 pub use crate::operation::list_email_identities::_list_email_identities_input::ListEmailIdentitiesInputBuilder;
 
+impl ListEmailIdentitiesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_email_identities::ListEmailIdentitiesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_email_identities::ListEmailIdentitiesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_email_identities();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListEmailIdentities`.
 ///
 /// <p>Returns a list of all of the email identities that are associated with your Amazon Pinpoint account. An identity can be either an email address or a domain. This operation returns identities that are verified as well as those that aren't.</p>

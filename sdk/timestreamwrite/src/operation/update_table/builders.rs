@@ -3,6 +3,23 @@ pub use crate::operation::update_table::_update_table_output::UpdateTableOutputB
 
 pub use crate::operation::update_table::_update_table_input::UpdateTableInputBuilder;
 
+impl UpdateTableInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_table::UpdateTableOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_table::UpdateTableError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_table();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateTable`.
 ///
 /// <p>Modifies the retention duration of the memory store and magnetic store for your Timestream table. Note that the change in retention duration takes effect immediately. For example, if the retention period of the memory store was initially set to 2 hours and then changed to 24 hours, the memory store will be capable of holding 24 hours of data, but will be populated with 24 hours of data 22 hours after this change was made. Timestream does not retrieve data from the magnetic store to populate the memory store. </p>

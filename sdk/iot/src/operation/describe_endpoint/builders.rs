@@ -3,6 +3,23 @@ pub use crate::operation::describe_endpoint::_describe_endpoint_output::Describe
 
 pub use crate::operation::describe_endpoint::_describe_endpoint_input::DescribeEndpointInputBuilder;
 
+impl DescribeEndpointInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_endpoint::DescribeEndpointOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_endpoint::DescribeEndpointError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_endpoint();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeEndpoint`.
 ///
 /// <p>Returns a unique endpoint specific to the Amazon Web Services account making the call.</p>

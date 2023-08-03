@@ -3,6 +3,23 @@ pub use crate::operation::list_mission_profiles::_list_mission_profiles_output::
 
 pub use crate::operation::list_mission_profiles::_list_mission_profiles_input::ListMissionProfilesInputBuilder;
 
+impl ListMissionProfilesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_mission_profiles::ListMissionProfilesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_mission_profiles::ListMissionProfilesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_mission_profiles();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListMissionProfiles`.
 ///
 /// <p>Returns a list of mission profiles.</p>

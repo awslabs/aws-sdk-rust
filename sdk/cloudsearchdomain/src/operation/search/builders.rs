@@ -3,6 +3,23 @@ pub use crate::operation::search::_search_output::SearchOutputBuilder;
 
 pub use crate::operation::search::_search_input::SearchInputBuilder;
 
+impl SearchInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::search::SearchOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::search::SearchError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.search();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `Search`.
 ///
 /// <p>Retrieves a list of documents that match the specified search criteria. How you specify the search criteria depends on which query parser you use. Amazon CloudSearch supports four query parsers:</p>

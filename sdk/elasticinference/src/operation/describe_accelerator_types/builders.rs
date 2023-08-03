@@ -3,6 +3,23 @@ pub use crate::operation::describe_accelerator_types::_describe_accelerator_type
 
 pub use crate::operation::describe_accelerator_types::_describe_accelerator_types_input::DescribeAcceleratorTypesInputBuilder;
 
+impl DescribeAcceleratorTypesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_accelerator_types::DescribeAcceleratorTypesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_accelerator_types::DescribeAcceleratorTypesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_accelerator_types();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAcceleratorTypes`.
 ///
 /// <p> Describes the accelerator types available in a given region, as well as their characteristics, such as memory and throughput. </p>

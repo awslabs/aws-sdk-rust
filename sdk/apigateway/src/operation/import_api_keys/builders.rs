@@ -3,6 +3,23 @@ pub use crate::operation::import_api_keys::_import_api_keys_output::ImportApiKey
 
 pub use crate::operation::import_api_keys::_import_api_keys_input::ImportApiKeysInputBuilder;
 
+impl ImportApiKeysInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::import_api_keys::ImportApiKeysOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::import_api_keys::ImportApiKeysError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.import_api_keys();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ImportApiKeys`.
 ///
 /// <p>Import API keys from an external source, such as a CSV-formatted file.</p>

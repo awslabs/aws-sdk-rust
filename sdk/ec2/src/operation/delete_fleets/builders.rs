@@ -3,6 +3,23 @@ pub use crate::operation::delete_fleets::_delete_fleets_output::DeleteFleetsOutp
 
 pub use crate::operation::delete_fleets::_delete_fleets_input::DeleteFleetsInputBuilder;
 
+impl DeleteFleetsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_fleets::DeleteFleetsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_fleets::DeleteFleetsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_fleets();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteFleets`.
 ///
 /// <p>Deletes the specified EC2 Fleets.</p>

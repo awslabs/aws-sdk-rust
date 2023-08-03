@@ -3,6 +3,23 @@ pub use crate::operation::get_table_objects::_get_table_objects_output::GetTable
 
 pub use crate::operation::get_table_objects::_get_table_objects_input::GetTableObjectsInputBuilder;
 
+impl GetTableObjectsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_table_objects::GetTableObjectsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_table_objects::GetTableObjectsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_table_objects();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetTableObjects`.
 ///
 /// <p>Returns the set of Amazon S3 objects that make up the specified governed table. A transaction ID or timestamp can be specified for time-travel queries.</p>

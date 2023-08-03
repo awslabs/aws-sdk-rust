@@ -3,6 +3,17 @@ pub use crate::operation::describe_managed_products_by_vendor::_describe_managed
 
 pub use crate::operation::describe_managed_products_by_vendor::_describe_managed_products_by_vendor_input::DescribeManagedProductsByVendorInputBuilder;
 
+impl DescribeManagedProductsByVendorInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_managed_products_by_vendor::DescribeManagedProductsByVendorOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_managed_products_by_vendor::DescribeManagedProductsByVendorError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_managed_products_by_vendor();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeManagedProductsByVendor`.
 ///
 /// <p>Provides high-level information for the managed rule groups owned by a specific vendor. </p>

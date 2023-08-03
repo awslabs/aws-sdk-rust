@@ -3,6 +3,17 @@ pub use crate::operation::associate_phone_numbers_with_voice_connector::_associa
 
 pub use crate::operation::associate_phone_numbers_with_voice_connector::_associate_phone_numbers_with_voice_connector_input::AssociatePhoneNumbersWithVoiceConnectorInputBuilder;
 
+impl AssociatePhoneNumbersWithVoiceConnectorInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::associate_phone_numbers_with_voice_connector::AssociatePhoneNumbersWithVoiceConnectorOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_phone_numbers_with_voice_connector::AssociatePhoneNumbersWithVoiceConnectorError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.associate_phone_numbers_with_voice_connector();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociatePhoneNumbersWithVoiceConnector`.
 ///
 /// <p>Associates phone numbers with the specified Amazon Chime Voice Connector.</p> <important>

@@ -3,6 +3,17 @@ pub use crate::operation::delete_observability_configuration::_delete_observabil
 
 pub use crate::operation::delete_observability_configuration::_delete_observability_configuration_input::DeleteObservabilityConfigurationInputBuilder;
 
+impl DeleteObservabilityConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_observability_configuration::DeleteObservabilityConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_observability_configuration::DeleteObservabilityConfigurationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.delete_observability_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteObservabilityConfiguration`.
 ///
 /// <p>Delete an App Runner observability configuration resource. You can delete a specific revision or the latest active revision. You can't delete a configuration that's used by one or more App Runner services.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_resource::_delete_resource_output::DeleteResour
 
 pub use crate::operation::delete_resource::_delete_resource_input::DeleteResourceInputBuilder;
 
+impl DeleteResourceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_resource::DeleteResourceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_resource::DeleteResourceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_resource();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteResource`.
 ///
 /// <p>Deletes the specified resource. For details, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-delete.html">Deleting a resource</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>

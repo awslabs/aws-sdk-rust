@@ -3,6 +3,23 @@ pub use crate::operation::delete_v2_logging_level::_delete_v2_logging_level_outp
 
 pub use crate::operation::delete_v2_logging_level::_delete_v2_logging_level_input::DeleteV2LoggingLevelInputBuilder;
 
+impl DeleteV2LoggingLevelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_v2_logging_level::DeleteV2LoggingLevelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_v2_logging_level::DeleteV2LoggingLevelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_v2_logging_level();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteV2LoggingLevel`.
 ///
 /// <p>Deletes a logging level.</p>

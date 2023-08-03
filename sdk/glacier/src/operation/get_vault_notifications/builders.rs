@@ -3,6 +3,23 @@ pub use crate::operation::get_vault_notifications::_get_vault_notifications_outp
 
 pub use crate::operation::get_vault_notifications::_get_vault_notifications_input::GetVaultNotificationsInputBuilder;
 
+impl GetVaultNotificationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_vault_notifications::GetVaultNotificationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_vault_notifications::GetVaultNotificationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_vault_notifications();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetVaultNotifications`.
 ///
 /// <p>This operation retrieves the <code>notification-configuration</code> subresource of the specified vault.</p>

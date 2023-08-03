@@ -3,6 +3,23 @@ pub use crate::operation::failover_global_cluster::_failover_global_cluster_outp
 
 pub use crate::operation::failover_global_cluster::_failover_global_cluster_input::FailoverGlobalClusterInputBuilder;
 
+impl FailoverGlobalClusterInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::failover_global_cluster::FailoverGlobalClusterOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::failover_global_cluster::FailoverGlobalClusterError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.failover_global_cluster();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `FailoverGlobalCluster`.
 ///
 /// <p>Initiates the failover process for an Aurora global database (<code>GlobalCluster</code>).</p>

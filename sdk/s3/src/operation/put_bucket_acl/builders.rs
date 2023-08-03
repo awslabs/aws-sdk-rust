@@ -3,6 +3,23 @@ pub use crate::operation::put_bucket_acl::_put_bucket_acl_output::PutBucketAclOu
 
 pub use crate::operation::put_bucket_acl::_put_bucket_acl_input::PutBucketAclInputBuilder;
 
+impl PutBucketAclInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_bucket_acl::PutBucketAclOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_bucket_acl::PutBucketAclError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_bucket_acl();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutBucketAcl`.
 ///
 /// <p>Sets the permissions on an existing bucket using access control lists (ACL). For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/S3_ACLs_UsingACLs.html">Using ACLs</a>. To set the ACL of a bucket, you must have <code>WRITE_ACP</code> permission.</p>

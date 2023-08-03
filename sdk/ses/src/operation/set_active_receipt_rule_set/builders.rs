@@ -3,6 +3,23 @@ pub use crate::operation::set_active_receipt_rule_set::_set_active_receipt_rule_
 
 pub use crate::operation::set_active_receipt_rule_set::_set_active_receipt_rule_set_input::SetActiveReceiptRuleSetInputBuilder;
 
+impl SetActiveReceiptRuleSetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::set_active_receipt_rule_set::SetActiveReceiptRuleSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::set_active_receipt_rule_set::SetActiveReceiptRuleSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.set_active_receipt_rule_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SetActiveReceiptRuleSet`.
 ///
 /// <p>Sets the specified receipt rule set as the active receipt rule set.</p> <note>

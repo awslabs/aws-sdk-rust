@@ -3,6 +3,23 @@ pub use crate::operation::list_aggregated_utterances::_list_aggregated_utterance
 
 pub use crate::operation::list_aggregated_utterances::_list_aggregated_utterances_input::ListAggregatedUtterancesInputBuilder;
 
+impl ListAggregatedUtterancesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_aggregated_utterances::ListAggregatedUtterancesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_aggregated_utterances::ListAggregatedUtterancesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_aggregated_utterances();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAggregatedUtterances`.
 ///
 /// <p>Provides a list of utterances that users have sent to the bot.</p>

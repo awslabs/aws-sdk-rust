@@ -3,6 +3,23 @@ pub use crate::operation::get_celebrity_info::_get_celebrity_info_output::GetCel
 
 pub use crate::operation::get_celebrity_info::_get_celebrity_info_input::GetCelebrityInfoInputBuilder;
 
+impl GetCelebrityInfoInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_celebrity_info::GetCelebrityInfoOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_celebrity_info::GetCelebrityInfoError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_celebrity_info();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetCelebrityInfo`.
 ///
 /// <p>Gets the name and additional information about a celebrity based on their Amazon Rekognition ID. The additional information is returned as an array of URLs. If there is no additional information about the celebrity, this list is empty.</p>

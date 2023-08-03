@@ -3,6 +3,23 @@ pub use crate::operation::stop_configuration_recorder::_stop_configuration_recor
 
 pub use crate::operation::stop_configuration_recorder::_stop_configuration_recorder_input::StopConfigurationRecorderInputBuilder;
 
+impl StopConfigurationRecorderInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_configuration_recorder::StopConfigurationRecorderOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_configuration_recorder::StopConfigurationRecorderError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_configuration_recorder();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopConfigurationRecorder`.
 ///
 /// <p>Stops recording configurations of the Amazon Web Services resources you have selected to record in your Amazon Web Services account.</p>

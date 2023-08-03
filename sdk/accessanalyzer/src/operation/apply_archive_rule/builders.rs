@@ -3,6 +3,23 @@ pub use crate::operation::apply_archive_rule::_apply_archive_rule_output::ApplyA
 
 pub use crate::operation::apply_archive_rule::_apply_archive_rule_input::ApplyArchiveRuleInputBuilder;
 
+impl ApplyArchiveRuleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::apply_archive_rule::ApplyArchiveRuleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::apply_archive_rule::ApplyArchiveRuleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.apply_archive_rule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ApplyArchiveRule`.
 ///
 /// <p>Retroactively applies the archive rule to existing findings that meet the archive rule criteria.</p>

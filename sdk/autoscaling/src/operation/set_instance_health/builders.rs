@@ -3,6 +3,23 @@ pub use crate::operation::set_instance_health::_set_instance_health_output::SetI
 
 pub use crate::operation::set_instance_health::_set_instance_health_input::SetInstanceHealthInputBuilder;
 
+impl SetInstanceHealthInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::set_instance_health::SetInstanceHealthOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::set_instance_health::SetInstanceHealthError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.set_instance_health();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SetInstanceHealth`.
 ///
 /// <p>Sets the health status of the specified instance.</p>

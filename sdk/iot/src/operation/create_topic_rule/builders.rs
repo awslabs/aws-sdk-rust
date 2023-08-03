@@ -3,6 +3,23 @@ pub use crate::operation::create_topic_rule::_create_topic_rule_output::CreateTo
 
 pub use crate::operation::create_topic_rule::_create_topic_rule_input::CreateTopicRuleInputBuilder;
 
+impl CreateTopicRuleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_topic_rule::CreateTopicRuleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_topic_rule::CreateTopicRuleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_topic_rule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateTopicRule`.
 ///
 /// <p>Creates a rule. Creating rules is an administrator-level action. Any user who has permission to create rules will be able to access data processed by the rule.</p>

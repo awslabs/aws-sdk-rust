@@ -3,6 +3,23 @@ pub use crate::operation::get_evaluation::_get_evaluation_output::GetEvaluationO
 
 pub use crate::operation::get_evaluation::_get_evaluation_input::GetEvaluationInputBuilder;
 
+impl GetEvaluationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_evaluation::GetEvaluationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_evaluation::GetEvaluationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_evaluation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetEvaluation`.
 ///
 /// <p>Returns an <code>Evaluation</code> that includes metadata as well as the current status of the <code>Evaluation</code>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_ml_task_run::_get_ml_task_run_output::GetMlTaskRun
 
 pub use crate::operation::get_ml_task_run::_get_ml_task_run_input::GetMlTaskRunInputBuilder;
 
+impl GetMlTaskRunInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_ml_task_run::GetMlTaskRunOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_ml_task_run::GetMLTaskRunError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_ml_task_run();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetMLTaskRun`.
 ///
 /// <p>Gets details for a specific task run on a machine learning transform. Machine learning task runs are asynchronous tasks that Glue runs on your behalf as part of various machine learning workflows. You can check the stats of any task run by calling <code>GetMLTaskRun</code> with the <code>TaskRunID</code> and its parent transform's <code>TransformID</code>.</p>

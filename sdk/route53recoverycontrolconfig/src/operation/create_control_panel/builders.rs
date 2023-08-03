@@ -3,6 +3,23 @@ pub use crate::operation::create_control_panel::_create_control_panel_output::Cr
 
 pub use crate::operation::create_control_panel::_create_control_panel_input::CreateControlPanelInputBuilder;
 
+impl CreateControlPanelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_control_panel::CreateControlPanelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_control_panel::CreateControlPanelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_control_panel();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateControlPanel`.
 ///
 /// <p>Creates a new control panel. A control panel represents a group of routing controls that can be changed together in a single transaction. You can use a control panel to centrally view the operational status of applications across your organization, and trigger multi-app failovers in a single transaction, for example, to fail over an Availability Zone or Amazon Web Services Region.</p>

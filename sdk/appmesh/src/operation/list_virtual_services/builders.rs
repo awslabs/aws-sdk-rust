@@ -3,6 +3,23 @@ pub use crate::operation::list_virtual_services::_list_virtual_services_output::
 
 pub use crate::operation::list_virtual_services::_list_virtual_services_input::ListVirtualServicesInputBuilder;
 
+impl ListVirtualServicesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_virtual_services::ListVirtualServicesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_virtual_services::ListVirtualServicesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_virtual_services();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListVirtualServices`.
 ///
 /// <p>Returns a list of existing virtual services in a service mesh.</p>

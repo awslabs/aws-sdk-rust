@@ -3,6 +3,23 @@ pub use crate::operation::update_fleet_capacity::_update_fleet_capacity_output::
 
 pub use crate::operation::update_fleet_capacity::_update_fleet_capacity_input::UpdateFleetCapacityInputBuilder;
 
+impl UpdateFleetCapacityInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_fleet_capacity::UpdateFleetCapacityOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_fleet_capacity::UpdateFleetCapacityError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_fleet_capacity();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateFleetCapacity`.
 ///
 /// <p>Updates capacity settings for a fleet. For fleets with multiple locations, use this operation to manage capacity settings in each location individually. Fleet capacity determines the number of game sessions and players that can be hosted based on the fleet configuration. Use this operation to set the following fleet capacity properties: </p>

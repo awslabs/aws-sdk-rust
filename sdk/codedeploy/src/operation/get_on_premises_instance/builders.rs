@@ -3,6 +3,23 @@ pub use crate::operation::get_on_premises_instance::_get_on_premises_instance_ou
 
 pub use crate::operation::get_on_premises_instance::_get_on_premises_instance_input::GetOnPremisesInstanceInputBuilder;
 
+impl GetOnPremisesInstanceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_on_premises_instance::GetOnPremisesInstanceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_on_premises_instance::GetOnPremisesInstanceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_on_premises_instance();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetOnPremisesInstance`.
 ///
 /// <p> Gets information about an on-premises instance. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_bot::_create_bot_output::CreateBotOutputBuilder
 
 pub use crate::operation::create_bot::_create_bot_input::CreateBotInputBuilder;
 
+impl CreateBotInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_bot::CreateBotOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_bot::CreateBotError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_bot();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateBot`.
 ///
 /// <p>Creates a bot for an Amazon Chime Enterprise account.</p>

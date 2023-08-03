@@ -3,6 +3,23 @@ pub use crate::operation::delete_retention_configuration::_delete_retention_conf
 
 pub use crate::operation::delete_retention_configuration::_delete_retention_configuration_input::DeleteRetentionConfigurationInputBuilder;
 
+impl DeleteRetentionConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_retention_configuration::DeleteRetentionConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_retention_configuration::DeleteRetentionConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_retention_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteRetentionConfiguration`.
 ///
 /// <p>Deletes the retention configuration.</p>

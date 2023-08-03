@@ -3,6 +3,23 @@ pub use crate::operation::get_namespace_deletion_status::_get_namespace_deletion
 
 pub use crate::operation::get_namespace_deletion_status::_get_namespace_deletion_status_input::GetNamespaceDeletionStatusInputBuilder;
 
+impl GetNamespaceDeletionStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_namespace_deletion_status::GetNamespaceDeletionStatusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_namespace_deletion_status::GetNamespaceDeletionStatusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_namespace_deletion_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetNamespaceDeletionStatus`.
 ///
 /// <p>Gets the status of a namespace deletion task.</p>

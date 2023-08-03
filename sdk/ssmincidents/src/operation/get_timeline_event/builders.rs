@@ -3,6 +3,23 @@ pub use crate::operation::get_timeline_event::_get_timeline_event_output::GetTim
 
 pub use crate::operation::get_timeline_event::_get_timeline_event_input::GetTimelineEventInputBuilder;
 
+impl GetTimelineEventInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_timeline_event::GetTimelineEventOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_timeline_event::GetTimelineEventError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_timeline_event();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetTimelineEvent`.
 ///
 /// <p>Retrieves a timeline event based on its ID and incident record.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::batch_get_image::_batch_get_image_output::BatchGetImag
 
 pub use crate::operation::batch_get_image::_batch_get_image_input::BatchGetImageInputBuilder;
 
+impl BatchGetImageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_image::BatchGetImageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_get_image::BatchGetImageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_get_image();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchGetImage`.
 ///
 /// <p>Gets detailed information for an image. Images are specified with either an <code>imageTag</code> or <code>imageDigest</code>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_acl::_create_acl_output::CreateAclOutputBuilder
 
 pub use crate::operation::create_acl::_create_acl_input::CreateAclInputBuilder;
 
+impl CreateAclInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_acl::CreateAclOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_acl::CreateACLError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_acl();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateACL`.
 ///
 /// <p>Creates an Access Control List. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/clusters.acls.html">Authenticating users with Access Contol Lists (ACLs)</a>.</p>

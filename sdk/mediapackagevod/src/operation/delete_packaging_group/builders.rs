@@ -3,6 +3,23 @@ pub use crate::operation::delete_packaging_group::_delete_packaging_group_output
 
 pub use crate::operation::delete_packaging_group::_delete_packaging_group_input::DeletePackagingGroupInputBuilder;
 
+impl DeletePackagingGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_packaging_group::DeletePackagingGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_packaging_group::DeletePackagingGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_packaging_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeletePackagingGroup`.
 ///
 /// Deletes a MediaPackage VOD PackagingGroup resource.

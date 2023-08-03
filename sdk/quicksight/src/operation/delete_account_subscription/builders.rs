@@ -3,6 +3,23 @@ pub use crate::operation::delete_account_subscription::_delete_account_subscript
 
 pub use crate::operation::delete_account_subscription::_delete_account_subscription_input::DeleteAccountSubscriptionInputBuilder;
 
+impl DeleteAccountSubscriptionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_account_subscription::DeleteAccountSubscriptionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_account_subscription::DeleteAccountSubscriptionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_account_subscription();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteAccountSubscription`.
 ///
 /// <p>Use the <code>DeleteAccountSubscription</code> operation to delete an Amazon QuickSight account. This operation will result in an error message if you have configured your account termination protection settings to <code>True</code>. To change this setting and delete your account, call the <code>UpdateAccountSettings</code> API and set the value of the <code>TerminationProtectionEnabled</code> parameter to <code>False</code>, then make another call to the <code>DeleteAccountSubscription</code> API.</p>

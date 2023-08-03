@@ -3,6 +3,23 @@ pub use crate::operation::create_service_linked_role::_create_service_linked_rol
 
 pub use crate::operation::create_service_linked_role::_create_service_linked_role_input::CreateServiceLinkedRoleInputBuilder;
 
+impl CreateServiceLinkedRoleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_service_linked_role::CreateServiceLinkedRoleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_service_linked_role::CreateServiceLinkedRoleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_service_linked_role();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateServiceLinkedRole`.
 ///
 /// <p>Creates an IAM role that is linked to a specific Amazon Web Services service. The service controls the attached policies and when the role can be deleted. This helps ensure that the service is not broken by an unexpectedly changed or deleted role, which could put your Amazon Web Services resources into an unknown state. Allowing the service to control the role helps improve service stability and proper cleanup when a service and its role are no longer needed. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html">Using service-linked roles</a> in the <i>IAM User Guide</i>. </p>

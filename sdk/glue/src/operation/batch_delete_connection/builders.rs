@@ -3,6 +3,23 @@ pub use crate::operation::batch_delete_connection::_batch_delete_connection_outp
 
 pub use crate::operation::batch_delete_connection::_batch_delete_connection_input::BatchDeleteConnectionInputBuilder;
 
+impl BatchDeleteConnectionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_delete_connection::BatchDeleteConnectionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_delete_connection::BatchDeleteConnectionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_delete_connection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchDeleteConnection`.
 ///
 /// <p>Deletes a list of connection definitions from the Data Catalog.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_parallel_data::_create_parallel_data_output::Cr
 
 pub use crate::operation::create_parallel_data::_create_parallel_data_input::CreateParallelDataInputBuilder;
 
+impl CreateParallelDataInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_parallel_data::CreateParallelDataOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_parallel_data::CreateParallelDataError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_parallel_data();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateParallelData`.
 ///
 /// <p>Creates a parallel data resource in Amazon Translate by importing an input file from Amazon S3. Parallel data files contain examples that show how you want segments of text to be translated. By adding parallel data, you can influence the style, tone, and word choice in your translation output.</p>

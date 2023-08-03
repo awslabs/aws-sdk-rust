@@ -3,6 +3,23 @@ pub use crate::operation::describe_job_execution::_describe_job_execution_output
 
 pub use crate::operation::describe_job_execution::_describe_job_execution_input::DescribeJobExecutionInputBuilder;
 
+impl DescribeJobExecutionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_job_execution::DescribeJobExecutionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_job_execution::DescribeJobExecutionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_job_execution();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeJobExecution`.
 ///
 /// <p>Gets details of a job execution.</p>

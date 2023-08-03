@@ -3,6 +3,23 @@ pub use crate::operation::get_multi_region_access_point::_get_multi_region_acces
 
 pub use crate::operation::get_multi_region_access_point::_get_multi_region_access_point_input::GetMultiRegionAccessPointInputBuilder;
 
+impl GetMultiRegionAccessPointInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_multi_region_access_point::GetMultiRegionAccessPointOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_multi_region_access_point::GetMultiRegionAccessPointError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_multi_region_access_point();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetMultiRegionAccessPoint`.
 ///
 /// <p>Returns configuration information about the specified Multi-Region Access Point.</p>

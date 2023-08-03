@@ -3,6 +3,23 @@ pub use crate::operation::batch_create_room_membership::_batch_create_room_membe
 
 pub use crate::operation::batch_create_room_membership::_batch_create_room_membership_input::BatchCreateRoomMembershipInputBuilder;
 
+impl BatchCreateRoomMembershipInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_create_room_membership::BatchCreateRoomMembershipOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_create_room_membership::BatchCreateRoomMembershipError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_create_room_membership();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchCreateRoomMembership`.
 ///
 /// <p>Adds up to 50 members to a chat room in an Amazon Chime Enterprise account. Members can be users or bots. The member role designates whether the member is a chat room administrator or a general chat room member.</p>

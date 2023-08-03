@@ -3,6 +3,23 @@ pub use crate::operation::get_disk_snapshot::_get_disk_snapshot_output::GetDiskS
 
 pub use crate::operation::get_disk_snapshot::_get_disk_snapshot_input::GetDiskSnapshotInputBuilder;
 
+impl GetDiskSnapshotInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_disk_snapshot::GetDiskSnapshotOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_disk_snapshot::GetDiskSnapshotError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_disk_snapshot();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetDiskSnapshot`.
 ///
 /// <p>Returns information about a specific block storage disk snapshot.</p>

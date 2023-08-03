@@ -3,6 +3,23 @@ pub use crate::operation::start_job::_start_job_output::StartJobOutputBuilder;
 
 pub use crate::operation::start_job::_start_job_input::StartJobInputBuilder;
 
+impl StartJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_job::StartJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_job::StartJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartJob`.
 ///
 /// <p> Starts a new job for a branch of an Amplify app. </p>

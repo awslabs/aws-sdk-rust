@@ -3,6 +3,23 @@ pub use crate::operation::create_access_preview::_create_access_preview_output::
 
 pub use crate::operation::create_access_preview::_create_access_preview_input::CreateAccessPreviewInputBuilder;
 
+impl CreateAccessPreviewInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_access_preview::CreateAccessPreviewOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_access_preview::CreateAccessPreviewError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_access_preview();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateAccessPreview`.
 ///
 /// <p>Creates an access preview that allows you to preview IAM Access Analyzer findings for your resource before deploying resource permissions.</p>

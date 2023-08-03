@@ -3,6 +3,23 @@ pub use crate::operation::delete_trail::_delete_trail_output::DeleteTrailOutputB
 
 pub use crate::operation::delete_trail::_delete_trail_input::DeleteTrailInputBuilder;
 
+impl DeleteTrailInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_trail::DeleteTrailOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_trail::DeleteTrailError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_trail();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteTrail`.
 ///
 /// <p>Deletes a trail. This operation must be called from the Region in which the trail was created. <code>DeleteTrail</code> cannot be called on the shadow trails (replicated trails in other Regions) of a trail that is enabled in all Regions.</p>

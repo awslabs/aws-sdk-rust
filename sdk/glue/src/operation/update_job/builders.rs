@@ -3,6 +3,23 @@ pub use crate::operation::update_job::_update_job_output::UpdateJobOutputBuilder
 
 pub use crate::operation::update_job::_update_job_input::UpdateJobInputBuilder;
 
+impl UpdateJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_job::UpdateJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_job::UpdateJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateJob`.
 ///
 /// <p>Updates an existing job definition. The previous job definition is completely overwritten by this information.</p>

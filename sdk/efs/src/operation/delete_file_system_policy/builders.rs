@@ -3,6 +3,23 @@ pub use crate::operation::delete_file_system_policy::_delete_file_system_policy_
 
 pub use crate::operation::delete_file_system_policy::_delete_file_system_policy_input::DeleteFileSystemPolicyInputBuilder;
 
+impl DeleteFileSystemPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_file_system_policy::DeleteFileSystemPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_file_system_policy::DeleteFileSystemPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_file_system_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteFileSystemPolicy`.
 ///
 /// <p>Deletes the <code>FileSystemPolicy</code> for the specified file system. The default <code>FileSystemPolicy</code> goes into effect once the existing policy is deleted. For more information about the default file system policy, see <a href="https://docs.aws.amazon.com/efs/latest/ug/res-based-policies-efs.html">Using Resource-based Policies with EFS</a>.</p>

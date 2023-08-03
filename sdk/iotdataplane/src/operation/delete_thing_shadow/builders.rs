@@ -3,6 +3,23 @@ pub use crate::operation::delete_thing_shadow::_delete_thing_shadow_output::Dele
 
 pub use crate::operation::delete_thing_shadow::_delete_thing_shadow_input::DeleteThingShadowInputBuilder;
 
+impl DeleteThingShadowInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_thing_shadow::DeleteThingShadowOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_thing_shadow::DeleteThingShadowError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_thing_shadow();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteThingShadow`.
 ///
 /// <p>Deletes the shadow for the specified thing.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::start_simulation_job_batch::_start_simulation_job_batc
 
 pub use crate::operation::start_simulation_job_batch::_start_simulation_job_batch_input::StartSimulationJobBatchInputBuilder;
 
+impl StartSimulationJobBatchInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_simulation_job_batch::StartSimulationJobBatchOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_simulation_job_batch::StartSimulationJobBatchError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_simulation_job_batch();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartSimulationJobBatch`.
 ///
 /// <p>Starts a new simulation job batch. The batch is defined using one or more <code>SimulationJobRequest</code> objects. </p>

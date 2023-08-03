@@ -3,6 +3,23 @@ pub use crate::operation::revoke_revision::_revoke_revision_output::RevokeRevisi
 
 pub use crate::operation::revoke_revision::_revoke_revision_input::RevokeRevisionInputBuilder;
 
+impl RevokeRevisionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::revoke_revision::RevokeRevisionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::revoke_revision::RevokeRevisionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.revoke_revision();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RevokeRevision`.
 ///
 /// <p>This operation revokes subscribers' access to a revision.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::put_contact_policy::_put_contact_policy_output::PutCon
 
 pub use crate::operation::put_contact_policy::_put_contact_policy_input::PutContactPolicyInputBuilder;
 
+impl PutContactPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_contact_policy::PutContactPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_contact_policy::PutContactPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_contact_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutContactPolicy`.
 ///
 /// <p>Adds a resource policy to the specified contact or escalation plan. The resource policy is used to share the contact or escalation plan using Resource Access Manager (RAM). For more information about cross-account sharing, see <a href="https://docs.aws.amazon.com/incident-manager/latest/userguide/xa.html">Setting up cross-account functionality</a>.</p>

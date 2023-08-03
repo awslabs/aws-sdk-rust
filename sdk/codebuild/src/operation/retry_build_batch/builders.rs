@@ -3,6 +3,23 @@ pub use crate::operation::retry_build_batch::_retry_build_batch_output::RetryBui
 
 pub use crate::operation::retry_build_batch::_retry_build_batch_input::RetryBuildBatchInputBuilder;
 
+impl RetryBuildBatchInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::retry_build_batch::RetryBuildBatchOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::retry_build_batch::RetryBuildBatchError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.retry_build_batch();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RetryBuildBatch`.
 ///
 /// <p>Restarts a failed batch build. Only batch builds that have failed can be retried.</p>

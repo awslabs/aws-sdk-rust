@@ -3,6 +3,23 @@ pub use crate::operation::create_channel_membership::_create_channel_membership_
 
 pub use crate::operation::create_channel_membership::_create_channel_membership_input::CreateChannelMembershipInputBuilder;
 
+impl CreateChannelMembershipInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_channel_membership::CreateChannelMembershipOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_channel_membership::CreateChannelMembershipError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_channel_membership();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateChannelMembership`.
 ///
 /// <p>Adds a user to a channel. The <code>InvitedBy</code> response field is derived from the request header. A channel member can:</p>

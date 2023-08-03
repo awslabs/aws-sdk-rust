@@ -3,6 +3,23 @@ pub use crate::operation::put_method::_put_method_output::PutMethodOutputBuilder
 
 pub use crate::operation::put_method::_put_method_input::PutMethodInputBuilder;
 
+impl PutMethodInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_method::PutMethodOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_method::PutMethodError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_method();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutMethod`.
 ///
 /// <p>Add a method to an existing Resource resource.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_lens_shares::_list_lens_shares_output::ListLensSh
 
 pub use crate::operation::list_lens_shares::_list_lens_shares_input::ListLensSharesInputBuilder;
 
+impl ListLensSharesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_lens_shares::ListLensSharesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_lens_shares::ListLensSharesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_lens_shares();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListLensShares`.
 ///
 /// <p>List the lens shares associated with the lens.</p>

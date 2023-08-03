@@ -3,6 +3,23 @@ pub use crate::operation::create_security_policy::_create_security_policy_output
 
 pub use crate::operation::create_security_policy::_create_security_policy_input::CreateSecurityPolicyInputBuilder;
 
+impl CreateSecurityPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_security_policy::CreateSecurityPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_security_policy::CreateSecurityPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_security_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateSecurityPolicy`.
 ///
 /// <p>Creates a security policy to be used by one or more OpenSearch Serverless collections. Security policies provide access to a collection and its OpenSearch Dashboards endpoint from public networks or specific VPC endpoints. They also allow you to secure a collection with a KMS encryption key. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-network.html">Network access for Amazon OpenSearch Serverless</a> and <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-encryption.html">Encryption at rest for Amazon OpenSearch Serverless</a>.</p>

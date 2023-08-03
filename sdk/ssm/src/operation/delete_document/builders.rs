@@ -3,6 +3,23 @@ pub use crate::operation::delete_document::_delete_document_output::DeleteDocume
 
 pub use crate::operation::delete_document::_delete_document_input::DeleteDocumentInputBuilder;
 
+impl DeleteDocumentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_document::DeleteDocumentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_document::DeleteDocumentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_document();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteDocument`.
 ///
 /// <p>Deletes the Amazon Web Services Systems Manager document (SSM document) and all managed node associations to the document.</p>

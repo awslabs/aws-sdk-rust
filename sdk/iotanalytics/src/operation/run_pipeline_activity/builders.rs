@@ -3,6 +3,23 @@ pub use crate::operation::run_pipeline_activity::_run_pipeline_activity_output::
 
 pub use crate::operation::run_pipeline_activity::_run_pipeline_activity_input::RunPipelineActivityInputBuilder;
 
+impl RunPipelineActivityInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::run_pipeline_activity::RunPipelineActivityOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::run_pipeline_activity::RunPipelineActivityError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.run_pipeline_activity();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RunPipelineActivity`.
 ///
 /// <p>Simulates the results of running a pipeline activity on a message payload.</p>

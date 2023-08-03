@@ -3,6 +3,23 @@ pub use crate::operation::list_monitoring_alert_history::_list_monitoring_alert_
 
 pub use crate::operation::list_monitoring_alert_history::_list_monitoring_alert_history_input::ListMonitoringAlertHistoryInputBuilder;
 
+impl ListMonitoringAlertHistoryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_monitoring_alert_history::ListMonitoringAlertHistoryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_monitoring_alert_history::ListMonitoringAlertHistoryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_monitoring_alert_history();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListMonitoringAlertHistory`.
 ///
 /// <p>Gets a list of past alerts in a model monitoring schedule.</p>

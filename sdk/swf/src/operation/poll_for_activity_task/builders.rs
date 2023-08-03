@@ -3,6 +3,23 @@ pub use crate::operation::poll_for_activity_task::_poll_for_activity_task_output
 
 pub use crate::operation::poll_for_activity_task::_poll_for_activity_task_input::PollForActivityTaskInputBuilder;
 
+impl PollForActivityTaskInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::poll_for_activity_task::PollForActivityTaskOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::poll_for_activity_task::PollForActivityTaskError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.poll_for_activity_task();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PollForActivityTask`.
 ///
 /// <p>Used by workers to get an <code>ActivityTask</code> from the specified activity <code>taskList</code>. This initiates a long poll, where the service holds the HTTP connection open and responds as soon as a task becomes available. The maximum time the service holds on to the request before responding is 60 seconds. If no task is available within 60 seconds, the poll returns an empty result. An empty result, in this context, means that an ActivityTask is returned, but that the value of taskToken is an empty string. If a task is returned, the worker should use its type to identify and process it correctly.</p> <important>

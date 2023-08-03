@@ -3,6 +3,23 @@ pub use crate::operation::describe_model_package::_describe_model_package_output
 
 pub use crate::operation::describe_model_package::_describe_model_package_input::DescribeModelPackageInputBuilder;
 
+impl DescribeModelPackageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_model_package::DescribeModelPackageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_model_package::DescribeModelPackageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_model_package();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeModelPackage`.
 ///
 /// <p>Returns a description of the specified model package, which is used to create SageMaker models or list them on Amazon Web Services Marketplace.</p>

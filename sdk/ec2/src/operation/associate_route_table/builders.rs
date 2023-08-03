@@ -3,6 +3,23 @@ pub use crate::operation::associate_route_table::_associate_route_table_output::
 
 pub use crate::operation::associate_route_table::_associate_route_table_input::AssociateRouteTableInputBuilder;
 
+impl AssociateRouteTableInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_route_table::AssociateRouteTableOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_route_table::AssociateRouteTableError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_route_table();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateRouteTable`.
 ///
 /// <p>Associates a subnet in your VPC or an internet gateway or virtual private gateway attached to your VPC with a route table in your VPC. This association causes traffic from the subnet or gateway to be routed according to the routes in the route table. The action returns an association ID, which you need in order to disassociate the route table later. A route table can be associated with multiple subnets.</p>

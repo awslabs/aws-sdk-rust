@@ -3,6 +3,23 @@ pub use crate::operation::upload_archive::_upload_archive_output::UploadArchiveO
 
 pub use crate::operation::upload_archive::_upload_archive_input::UploadArchiveInputBuilder;
 
+impl UploadArchiveInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::upload_archive::UploadArchiveOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::upload_archive::UploadArchiveError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.upload_archive();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UploadArchive`.
 ///
 /// <p>This operation adds an archive to a vault. This is a synchronous operation, and for a successful upload, your data is durably persisted. Amazon S3 Glacier returns the archive ID in the <code>x-amz-archive-id</code> header of the response. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::upload_layer_part::_upload_layer_part_output::UploadLa
 
 pub use crate::operation::upload_layer_part::_upload_layer_part_input::UploadLayerPartInputBuilder;
 
+impl UploadLayerPartInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::upload_layer_part::UploadLayerPartOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::upload_layer_part::UploadLayerPartError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.upload_layer_part();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UploadLayerPart`.
 ///
 /// <p>Uploads an image layer part to Amazon ECR.</p>

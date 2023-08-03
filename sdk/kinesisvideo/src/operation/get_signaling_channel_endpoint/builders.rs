@@ -3,6 +3,23 @@ pub use crate::operation::get_signaling_channel_endpoint::_get_signaling_channel
 
 pub use crate::operation::get_signaling_channel_endpoint::_get_signaling_channel_endpoint_input::GetSignalingChannelEndpointInputBuilder;
 
+impl GetSignalingChannelEndpointInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_signaling_channel_endpoint::GetSignalingChannelEndpointError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_signaling_channel_endpoint();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetSignalingChannelEndpoint`.
 ///
 /// <p>Provides an endpoint for the specified signaling channel to send and receive messages. This API uses the <code>SingleMasterChannelEndpointConfiguration</code> input parameter, which consists of the <code>Protocols</code> and <code>Role</code> properties.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::replicate_key::_replicate_key_output::ReplicateKeyOutp
 
 pub use crate::operation::replicate_key::_replicate_key_input::ReplicateKeyInputBuilder;
 
+impl ReplicateKeyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::replicate_key::ReplicateKeyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::replicate_key::ReplicateKeyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.replicate_key();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ReplicateKey`.
 ///
 /// <p>Replicates a multi-Region key into the specified Region. This operation creates a multi-Region replica key based on a multi-Region primary key in a different Region of the same Amazon Web Services partition. You can create multiple replicas of a primary key, but each must be in a different Region. To create a multi-Region primary key, use the <code>CreateKey</code> operation.</p>

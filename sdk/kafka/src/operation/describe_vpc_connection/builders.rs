@@ -3,6 +3,23 @@ pub use crate::operation::describe_vpc_connection::_describe_vpc_connection_outp
 
 pub use crate::operation::describe_vpc_connection::_describe_vpc_connection_input::DescribeVpcConnectionInputBuilder;
 
+impl DescribeVpcConnectionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_vpc_connection::DescribeVpcConnectionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_vpc_connection::DescribeVpcConnectionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_vpc_connection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeVpcConnection`.
 ///
 /// <p>Returns a description of this MSK VPC connection.</p>

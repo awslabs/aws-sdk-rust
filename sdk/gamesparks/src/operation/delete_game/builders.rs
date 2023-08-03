@@ -3,6 +3,23 @@ pub use crate::operation::delete_game::_delete_game_output::DeleteGameOutputBuil
 
 pub use crate::operation::delete_game::_delete_game_input::DeleteGameInputBuilder;
 
+impl DeleteGameInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_game::DeleteGameOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_game::DeleteGameError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_game();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteGame`.
 ///
 /// <p>Deletes a game.</p>

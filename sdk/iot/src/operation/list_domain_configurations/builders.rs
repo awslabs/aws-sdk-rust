@@ -3,6 +3,23 @@ pub use crate::operation::list_domain_configurations::_list_domain_configuration
 
 pub use crate::operation::list_domain_configurations::_list_domain_configurations_input::ListDomainConfigurationsInputBuilder;
 
+impl ListDomainConfigurationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_domain_configurations::ListDomainConfigurationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_domain_configurations::ListDomainConfigurationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_domain_configurations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDomainConfigurations`.
 ///
 /// <p>Gets a list of domain configurations for the user. This list is sorted alphabetically by domain configuration name.</p>

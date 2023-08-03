@@ -3,6 +3,23 @@ pub use crate::operation::batch_get_variable::_batch_get_variable_output::BatchG
 
 pub use crate::operation::batch_get_variable::_batch_get_variable_input::BatchGetVariableInputBuilder;
 
+impl BatchGetVariableInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_variable::BatchGetVariableOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_get_variable::BatchGetVariableError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_get_variable();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchGetVariable`.
 ///
 /// <p>Gets a batch of variables.</p>

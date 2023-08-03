@@ -3,6 +3,23 @@ pub use crate::operation::list_available_resource_metrics::_list_available_resou
 
 pub use crate::operation::list_available_resource_metrics::_list_available_resource_metrics_input::ListAvailableResourceMetricsInputBuilder;
 
+impl ListAvailableResourceMetricsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_available_resource_metrics::ListAvailableResourceMetricsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_available_resource_metrics::ListAvailableResourceMetricsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_available_resource_metrics();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAvailableResourceMetrics`.
 ///
 /// <p>Retrieve metrics of the specified types that can be queried for a specified DB instance. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::stop_pipeline::_stop_pipeline_output::StopPipelineOutp
 
 pub use crate::operation::stop_pipeline::_stop_pipeline_input::StopPipelineInputBuilder;
 
+impl StopPipelineInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_pipeline::StopPipelineOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_pipeline::StopPipelineError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_pipeline();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopPipeline`.
 ///
 /// <p>Stops an OpenSearch Ingestion pipeline. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/pipeline--stop-start.html#pipeline--stop">Stopping an OpenSearch Ingestion pipeline</a>.</p>

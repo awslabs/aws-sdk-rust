@@ -3,6 +3,23 @@ pub use crate::operation::detach_vpn_gateway::_detach_vpn_gateway_output::Detach
 
 pub use crate::operation::detach_vpn_gateway::_detach_vpn_gateway_input::DetachVpnGatewayInputBuilder;
 
+impl DetachVpnGatewayInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::detach_vpn_gateway::DetachVpnGatewayOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::detach_vpn_gateway::DetachVpnGatewayError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.detach_vpn_gateway();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DetachVpnGateway`.
 ///
 /// <p>Detaches a virtual private gateway from a VPC. You do this if you're planning to turn off the VPC and not use it anymore. You can confirm a virtual private gateway has been completely detached from a VPC by describing the virtual private gateway (any attachments to the virtual private gateway are also described).</p>

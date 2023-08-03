@@ -3,6 +3,23 @@ pub use crate::operation::list_stacks::_list_stacks_output::ListStacksOutputBuil
 
 pub use crate::operation::list_stacks::_list_stacks_input::ListStacksInputBuilder;
 
+impl ListStacksInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_stacks::ListStacksOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_stacks::ListStacksError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_stacks();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListStacks`.
 ///
 /// <p>Returns the summary information for stacks whose status matches the specified StackStatusFilter. Summary information for stacks that have been deleted is kept for 90 days after the stack is deleted. If no StackStatusFilter is specified, summary information for all stacks is returned (including existing stacks and stacks that have been deleted).</p>

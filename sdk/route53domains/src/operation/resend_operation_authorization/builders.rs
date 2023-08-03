@@ -3,6 +3,23 @@ pub use crate::operation::resend_operation_authorization::_resend_operation_auth
 
 pub use crate::operation::resend_operation_authorization::_resend_operation_authorization_input::ResendOperationAuthorizationInputBuilder;
 
+impl ResendOperationAuthorizationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::resend_operation_authorization::ResendOperationAuthorizationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::resend_operation_authorization::ResendOperationAuthorizationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.resend_operation_authorization();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ResendOperationAuthorization`.
 ///
 /// <p> Resend the form of authorization email for this operation. </p>

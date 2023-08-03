@@ -3,6 +3,23 @@ pub use crate::operation::create_phone_number_order::_create_phone_number_order_
 
 pub use crate::operation::create_phone_number_order::_create_phone_number_order_input::CreatePhoneNumberOrderInputBuilder;
 
+impl CreatePhoneNumberOrderInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_phone_number_order::CreatePhoneNumberOrderOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_phone_number_order::CreatePhoneNumberOrderError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_phone_number_order();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreatePhoneNumberOrder`.
 ///
 /// <p>Creates an order for phone numbers to be provisioned. For numbers outside the U.S., you must use the Amazon Chime SDK SIP media application dial-in product type.</p>

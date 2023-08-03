@@ -3,6 +3,23 @@ pub use crate::operation::get_device_position::_get_device_position_output::GetD
 
 pub use crate::operation::get_device_position::_get_device_position_input::GetDevicePositionInputBuilder;
 
+impl GetDevicePositionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_device_position::GetDevicePositionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_device_position::GetDevicePositionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_device_position();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetDevicePosition`.
 ///
 /// <p>Retrieves a device's most recent position according to its sample time.</p> <note>

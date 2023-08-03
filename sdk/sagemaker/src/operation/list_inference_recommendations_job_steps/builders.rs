@@ -3,6 +3,17 @@ pub use crate::operation::list_inference_recommendations_job_steps::_list_infere
 
 pub use crate::operation::list_inference_recommendations_job_steps::_list_inference_recommendations_job_steps_input::ListInferenceRecommendationsJobStepsInputBuilder;
 
+impl ListInferenceRecommendationsJobStepsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_inference_recommendations_job_steps::ListInferenceRecommendationsJobStepsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_inference_recommendations_job_steps::ListInferenceRecommendationsJobStepsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_inference_recommendations_job_steps();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListInferenceRecommendationsJobSteps`.
 ///
 /// <p>Returns a list of the subtasks for an Inference Recommender job.</p>

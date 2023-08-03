@@ -3,6 +3,23 @@ pub use crate::operation::get_vpn_tunnel_replacement_status::_get_vpn_tunnel_rep
 
 pub use crate::operation::get_vpn_tunnel_replacement_status::_get_vpn_tunnel_replacement_status_input::GetVpnTunnelReplacementStatusInputBuilder;
 
+impl GetVpnTunnelReplacementStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_vpn_tunnel_replacement_status::GetVpnTunnelReplacementStatusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_vpn_tunnel_replacement_status::GetVpnTunnelReplacementStatusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_vpn_tunnel_replacement_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetVpnTunnelReplacementStatus`.
 ///
 /// <p>Get details of available tunnel endpoint maintenance.</p>

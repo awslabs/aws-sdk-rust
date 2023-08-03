@@ -3,6 +3,23 @@ pub use crate::operation::update_endpoint_access::_update_endpoint_access_output
 
 pub use crate::operation::update_endpoint_access::_update_endpoint_access_input::UpdateEndpointAccessInputBuilder;
 
+impl UpdateEndpointAccessInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_endpoint_access::UpdateEndpointAccessOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_endpoint_access::UpdateEndpointAccessError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_endpoint_access();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateEndpointAccess`.
 ///
 /// <p>Updates an Amazon Redshift Serverless managed endpoint.</p>

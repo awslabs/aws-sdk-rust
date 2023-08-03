@@ -3,6 +3,23 @@ pub use crate::operation::list_deployment_jobs::_list_deployment_jobs_output::Li
 
 pub use crate::operation::list_deployment_jobs::_list_deployment_jobs_input::ListDeploymentJobsInputBuilder;
 
+impl ListDeploymentJobsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_deployment_jobs::ListDeploymentJobsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_deployment_jobs::ListDeploymentJobsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_deployment_jobs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDeploymentJobs`.
 ///
 /// <p>Returns a list of deployment jobs for a fleet. You can optionally provide filters to retrieve specific deployment jobs.</p> <important>

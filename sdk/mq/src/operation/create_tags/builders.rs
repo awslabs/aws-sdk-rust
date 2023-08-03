@@ -3,6 +3,23 @@ pub use crate::operation::create_tags::_create_tags_output::CreateTagsOutputBuil
 
 pub use crate::operation::create_tags::_create_tags_input::CreateTagsInputBuilder;
 
+impl CreateTagsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_tags::CreateTagsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_tags::CreateTagsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_tags();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateTags`.
 ///
 /// <p>Add a tag to a resource.</p>

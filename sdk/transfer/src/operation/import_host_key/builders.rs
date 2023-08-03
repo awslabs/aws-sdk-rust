@@ -3,6 +3,23 @@ pub use crate::operation::import_host_key::_import_host_key_output::ImportHostKe
 
 pub use crate::operation::import_host_key::_import_host_key_input::ImportHostKeyInputBuilder;
 
+impl ImportHostKeyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::import_host_key::ImportHostKeyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::import_host_key::ImportHostKeyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.import_host_key();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ImportHostKey`.
 ///
 /// <p>Adds a host key to the server that's specified by the <code>ServerId</code> parameter.</p>

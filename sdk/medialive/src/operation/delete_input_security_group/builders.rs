@@ -3,6 +3,23 @@ pub use crate::operation::delete_input_security_group::_delete_input_security_gr
 
 pub use crate::operation::delete_input_security_group::_delete_input_security_group_input::DeleteInputSecurityGroupInputBuilder;
 
+impl DeleteInputSecurityGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_input_security_group::DeleteInputSecurityGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_input_security_group::DeleteInputSecurityGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_input_security_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteInputSecurityGroup`.
 ///
 /// Deletes an Input Security Group

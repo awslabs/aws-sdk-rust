@@ -3,6 +3,23 @@ pub use crate::operation::modify_instance_event_start_time::_modify_instance_eve
 
 pub use crate::operation::modify_instance_event_start_time::_modify_instance_event_start_time_input::ModifyInstanceEventStartTimeInputBuilder;
 
+impl ModifyInstanceEventStartTimeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_instance_event_start_time::ModifyInstanceEventStartTimeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_instance_event_start_time::ModifyInstanceEventStartTimeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_instance_event_start_time();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyInstanceEventStartTime`.
 ///
 /// <p>Modifies the start time for a scheduled Amazon EC2 instance event.</p>

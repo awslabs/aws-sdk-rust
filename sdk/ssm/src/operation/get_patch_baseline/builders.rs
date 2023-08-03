@@ -3,6 +3,23 @@ pub use crate::operation::get_patch_baseline::_get_patch_baseline_output::GetPat
 
 pub use crate::operation::get_patch_baseline::_get_patch_baseline_input::GetPatchBaselineInputBuilder;
 
+impl GetPatchBaselineInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_patch_baseline::GetPatchBaselineOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_patch_baseline::GetPatchBaselineError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_patch_baseline();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetPatchBaseline`.
 ///
 /// <p>Retrieves information about a patch baseline.</p>

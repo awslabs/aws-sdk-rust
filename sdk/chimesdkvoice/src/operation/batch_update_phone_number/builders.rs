@@ -3,6 +3,23 @@ pub use crate::operation::batch_update_phone_number::_batch_update_phone_number_
 
 pub use crate::operation::batch_update_phone_number::_batch_update_phone_number_input::BatchUpdatePhoneNumberInputBuilder;
 
+impl BatchUpdatePhoneNumberInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_update_phone_number::BatchUpdatePhoneNumberOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_update_phone_number::BatchUpdatePhoneNumberError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_update_phone_number();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchUpdatePhoneNumber`.
 ///
 /// <p>Updates one or more phone numbers.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::modify_cluster_maintenance::_modify_cluster_maintenanc
 
 pub use crate::operation::modify_cluster_maintenance::_modify_cluster_maintenance_input::ModifyClusterMaintenanceInputBuilder;
 
+impl ModifyClusterMaintenanceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_cluster_maintenance::ModifyClusterMaintenanceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_cluster_maintenance::ModifyClusterMaintenanceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_cluster_maintenance();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyClusterMaintenance`.
 ///
 /// <p>Modifies the maintenance settings of a cluster.</p>

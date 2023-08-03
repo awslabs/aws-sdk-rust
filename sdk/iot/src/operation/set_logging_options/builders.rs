@@ -3,6 +3,23 @@ pub use crate::operation::set_logging_options::_set_logging_options_output::SetL
 
 pub use crate::operation::set_logging_options::_set_logging_options_input::SetLoggingOptionsInputBuilder;
 
+impl SetLoggingOptionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::set_logging_options::SetLoggingOptionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::set_logging_options::SetLoggingOptionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.set_logging_options();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SetLoggingOptions`.
 ///
 /// <p>Sets the logging options.</p>

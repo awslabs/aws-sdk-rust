@@ -3,6 +3,23 @@ pub use crate::operation::delete_broker::_delete_broker_output::DeleteBrokerOutp
 
 pub use crate::operation::delete_broker::_delete_broker_input::DeleteBrokerInputBuilder;
 
+impl DeleteBrokerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_broker::DeleteBrokerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_broker::DeleteBrokerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_broker();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteBroker`.
 ///
 /// <p>Deletes a broker. Note: This API is asynchronous.</p>

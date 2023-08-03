@@ -3,6 +3,23 @@ pub use crate::operation::delete_deployment_group::_delete_deployment_group_outp
 
 pub use crate::operation::delete_deployment_group::_delete_deployment_group_input::DeleteDeploymentGroupInputBuilder;
 
+impl DeleteDeploymentGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_deployment_group::DeleteDeploymentGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_deployment_group::DeleteDeploymentGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_deployment_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteDeploymentGroup`.
 ///
 /// <p>Deletes a deployment group.</p>

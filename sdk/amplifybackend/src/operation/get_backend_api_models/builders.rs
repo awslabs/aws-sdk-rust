@@ -3,6 +3,23 @@ pub use crate::operation::get_backend_api_models::_get_backend_api_models_output
 
 pub use crate::operation::get_backend_api_models::_get_backend_api_models_input::GetBackendApiModelsInputBuilder;
 
+impl GetBackendApiModelsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_backend_api_models::GetBackendApiModelsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_backend_api_models::GetBackendAPIModelsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_backend_api_models();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetBackendAPIModels`.
 ///
 /// <p>Gets a model introspection schema for an existing backend API resource.</p>

@@ -178,7 +178,7 @@ mod get_bucket_location_request_test {
                     crate::types::BucketLocationConstraint::from("us-west-2"),
                 ))
                 .build();
-        let http_response = ::http::response::Builder::new()
+        let mut http_response = ::http::response::Builder::new()
         .status(200)
                     .body(::aws_smithy_http::body::SdkBody::from("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n<LocationConstraint xmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\">us-west-2</LocationConstraint>"))
                     .unwrap();

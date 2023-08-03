@@ -3,6 +3,23 @@ pub use crate::operation::associate_bot::_associate_bot_output::AssociateBotOutp
 
 pub use crate::operation::associate_bot::_associate_bot_input::AssociateBotInputBuilder;
 
+impl AssociateBotInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_bot::AssociateBotOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_bot::AssociateBotError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_bot();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateBot`.
 ///
 /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>

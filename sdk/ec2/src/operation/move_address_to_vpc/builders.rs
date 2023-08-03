@@ -3,6 +3,23 @@ pub use crate::operation::move_address_to_vpc::_move_address_to_vpc_output::Move
 
 pub use crate::operation::move_address_to_vpc::_move_address_to_vpc_input::MoveAddressToVpcInputBuilder;
 
+impl MoveAddressToVpcInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::move_address_to_vpc::MoveAddressToVpcOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::move_address_to_vpc::MoveAddressToVpcError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.move_address_to_vpc();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `MoveAddressToVpc`.
 ///
 /// <note>

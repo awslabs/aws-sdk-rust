@@ -3,6 +3,23 @@ pub use crate::operation::get_service_quota::_get_service_quota_output::GetServi
 
 pub use crate::operation::get_service_quota::_get_service_quota_input::GetServiceQuotaInputBuilder;
 
+impl GetServiceQuotaInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_service_quota::GetServiceQuotaOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_service_quota::GetServiceQuotaError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_service_quota();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetServiceQuota`.
 ///
 /// <p>Retrieves the applied quota value for the specified quota. For some quotas, only the default values are available. If the applied quota value is not available for a quota, the quota is not retrieved.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::disassociate_drt_log_bucket::_disassociate_drt_log_buc
 
 pub use crate::operation::disassociate_drt_log_bucket::_disassociate_drt_log_bucket_input::DisassociateDrtLogBucketInputBuilder;
 
+impl DisassociateDrtLogBucketInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_drt_log_bucket::DisassociateDrtLogBucketOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_drt_log_bucket::DisassociateDRTLogBucketError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disassociate_drt_log_bucket();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateDRTLogBucket`.
 ///
 /// <p>Removes the Shield Response Team's (SRT) access to the specified Amazon S3 bucket containing the logs that you shared previously.</p>

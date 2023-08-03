@@ -3,6 +3,23 @@ pub use crate::operation::copy_project_version::_copy_project_version_output::Co
 
 pub use crate::operation::copy_project_version::_copy_project_version_input::CopyProjectVersionInputBuilder;
 
+impl CopyProjectVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::copy_project_version::CopyProjectVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::copy_project_version::CopyProjectVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.copy_project_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CopyProjectVersion`.
 ///
 /// <p>Copies a version of an Amazon Rekognition Custom Labels model from a source project to a destination project. The source and destination projects can be in different AWS accounts but must be in the same AWS Region. You can't copy a model to another AWS service. </p>

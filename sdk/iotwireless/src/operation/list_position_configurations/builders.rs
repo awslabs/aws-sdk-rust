@@ -3,6 +3,23 @@ pub use crate::operation::list_position_configurations::_list_position_configura
 
 pub use crate::operation::list_position_configurations::_list_position_configurations_input::ListPositionConfigurationsInputBuilder;
 
+impl ListPositionConfigurationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_position_configurations::ListPositionConfigurationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_position_configurations::ListPositionConfigurationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_position_configurations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListPositionConfigurations`.
 ///
 /// <p>List position configurations for a given resource, such as positioning solvers.</p> <important>

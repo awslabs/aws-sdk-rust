@@ -3,6 +3,23 @@ pub use crate::operation::stop_deployment::_stop_deployment_output::StopDeployme
 
 pub use crate::operation::stop_deployment::_stop_deployment_input::StopDeploymentInputBuilder;
 
+impl StopDeploymentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_deployment::StopDeploymentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_deployment::StopDeploymentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_deployment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopDeployment`.
 ///
 /// <p>Attempts to stop an ongoing deployment.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_event_subscriptions::_describe_event_subscrip
 
 pub use crate::operation::describe_event_subscriptions::_describe_event_subscriptions_input::DescribeEventSubscriptionsInputBuilder;
 
+impl DescribeEventSubscriptionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_event_subscriptions::DescribeEventSubscriptionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_event_subscriptions::DescribeEventSubscriptionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_event_subscriptions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeEventSubscriptions`.
 ///
 /// <p>Lists descriptions of all the Amazon Redshift event notification subscriptions for a customer account. If you specify a subscription name, lists the description for that subscription.</p>

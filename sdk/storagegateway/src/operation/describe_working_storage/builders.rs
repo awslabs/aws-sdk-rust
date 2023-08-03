@@ -3,6 +3,23 @@ pub use crate::operation::describe_working_storage::_describe_working_storage_ou
 
 pub use crate::operation::describe_working_storage::_describe_working_storage_input::DescribeWorkingStorageInputBuilder;
 
+impl DescribeWorkingStorageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_working_storage::DescribeWorkingStorageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_working_storage::DescribeWorkingStorageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_working_storage();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeWorkingStorage`.
 ///
 /// <p>Returns information about the working storage of a gateway. This operation is only supported in the stored volumes gateway type. This operation is deprecated in cached volumes API version (20120630). Use DescribeUploadBuffer instead.</p> <note>

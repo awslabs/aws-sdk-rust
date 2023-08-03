@@ -3,6 +3,23 @@ pub use crate::operation::export_bundle::_export_bundle_output::ExportBundleOutp
 
 pub use crate::operation::export_bundle::_export_bundle_input::ExportBundleInputBuilder;
 
+impl ExportBundleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::export_bundle::ExportBundleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::export_bundle::ExportBundleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.export_bundle();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ExportBundle`.
 ///
 /// <p> Generates customized software development kit (SDK) and or tool packages used to integrate mobile web or mobile app clients with backend AWS resources. </p>

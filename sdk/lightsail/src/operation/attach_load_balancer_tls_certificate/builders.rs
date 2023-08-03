@@ -3,6 +3,17 @@ pub use crate::operation::attach_load_balancer_tls_certificate::_attach_load_bal
 
 pub use crate::operation::attach_load_balancer_tls_certificate::_attach_load_balancer_tls_certificate_input::AttachLoadBalancerTlsCertificateInputBuilder;
 
+impl AttachLoadBalancerTlsCertificateInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::attach_load_balancer_tls_certificate::AttachLoadBalancerTlsCertificateOutput, ::aws_smithy_http::result::SdkError<crate::operation::attach_load_balancer_tls_certificate::AttachLoadBalancerTlsCertificateError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.attach_load_balancer_tls_certificate();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AttachLoadBalancerTlsCertificate`.
 ///
 /// <p>Attaches a Transport Layer Security (TLS) certificate to your load balancer. TLS is just an updated, more secure version of Secure Socket Layer (SSL).</p>

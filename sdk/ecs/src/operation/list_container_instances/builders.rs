@@ -3,6 +3,23 @@ pub use crate::operation::list_container_instances::_list_container_instances_ou
 
 pub use crate::operation::list_container_instances::_list_container_instances_input::ListContainerInstancesInputBuilder;
 
+impl ListContainerInstancesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_container_instances::ListContainerInstancesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_container_instances::ListContainerInstancesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_container_instances();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListContainerInstances`.
 ///
 /// <p>Returns a list of container instances in a specified cluster. You can filter the results of a <code>ListContainerInstances</code> operation with cluster query language statements inside the <code>filter</code> parameter. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster Query Language</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>

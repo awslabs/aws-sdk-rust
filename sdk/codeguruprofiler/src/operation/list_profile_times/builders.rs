@@ -3,6 +3,23 @@ pub use crate::operation::list_profile_times::_list_profile_times_output::ListPr
 
 pub use crate::operation::list_profile_times::_list_profile_times_input::ListProfileTimesInputBuilder;
 
+impl ListProfileTimesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_profile_times::ListProfileTimesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_profile_times::ListProfileTimesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_profile_times();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListProfileTimes`.
 ///
 /// <p>Lists the start times of the available aggregated profiles of a profiling group for an aggregation period within the specified time range.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_trust_anchor::_delete_trust_anchor_output::Dele
 
 pub use crate::operation::delete_trust_anchor::_delete_trust_anchor_input::DeleteTrustAnchorInputBuilder;
 
+impl DeleteTrustAnchorInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_trust_anchor::DeleteTrustAnchorOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_trust_anchor::DeleteTrustAnchorError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_trust_anchor();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteTrustAnchor`.
 ///
 /// <p>Deletes a trust anchor.</p>

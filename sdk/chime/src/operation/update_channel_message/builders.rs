@@ -3,6 +3,23 @@ pub use crate::operation::update_channel_message::_update_channel_message_output
 
 pub use crate::operation::update_channel_message::_update_channel_message_input::UpdateChannelMessageInputBuilder;
 
+impl UpdateChannelMessageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_channel_message::UpdateChannelMessageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_channel_message::UpdateChannelMessageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_channel_message();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateChannelMessage`.
 ///
 /// <p>Updates the content of a message.</p> <note>

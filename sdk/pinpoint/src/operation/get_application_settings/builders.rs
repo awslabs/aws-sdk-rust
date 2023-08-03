@@ -3,6 +3,23 @@ pub use crate::operation::get_application_settings::_get_application_settings_ou
 
 pub use crate::operation::get_application_settings::_get_application_settings_input::GetApplicationSettingsInputBuilder;
 
+impl GetApplicationSettingsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_application_settings::GetApplicationSettingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_application_settings::GetApplicationSettingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_application_settings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetApplicationSettings`.
 ///
 /// <p>Retrieves information about the settings for an application.</p>

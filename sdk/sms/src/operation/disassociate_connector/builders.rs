@@ -3,6 +3,23 @@ pub use crate::operation::disassociate_connector::_disassociate_connector_output
 
 pub use crate::operation::disassociate_connector::_disassociate_connector_input::DisassociateConnectorInputBuilder;
 
+impl DisassociateConnectorInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_connector::DisassociateConnectorOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_connector::DisassociateConnectorError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disassociate_connector();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateConnector`.
 ///
 /// <p>Disassociates the specified connector from Server Migration Service.</p>

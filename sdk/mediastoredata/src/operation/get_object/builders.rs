@@ -3,6 +3,23 @@ pub use crate::operation::get_object::_get_object_output::GetObjectOutputBuilder
 
 pub use crate::operation::get_object::_get_object_input::GetObjectInputBuilder;
 
+impl GetObjectInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_object::GetObjectOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_object::GetObjectError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_object();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetObject`.
 ///
 /// <p>Downloads the object at the specified path. If the object’s upload availability is set to <code>streaming</code>, AWS Elemental MediaStore downloads the object even if it’s still uploading the object.</p>

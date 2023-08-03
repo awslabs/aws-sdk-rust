@@ -3,6 +3,23 @@ pub use crate::operation::delete_skill_authorization::_delete_skill_authorizatio
 
 pub use crate::operation::delete_skill_authorization::_delete_skill_authorization_input::DeleteSkillAuthorizationInputBuilder;
 
+impl DeleteSkillAuthorizationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_skill_authorization::DeleteSkillAuthorizationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_skill_authorization::DeleteSkillAuthorizationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_skill_authorization();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteSkillAuthorization`.
 ///
 /// <p>Unlinks a third-party account from a skill.</p>

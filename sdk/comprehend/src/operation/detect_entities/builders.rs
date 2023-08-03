@@ -3,6 +3,23 @@ pub use crate::operation::detect_entities::_detect_entities_output::DetectEntiti
 
 pub use crate::operation::detect_entities::_detect_entities_input::DetectEntitiesInputBuilder;
 
+impl DetectEntitiesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::detect_entities::DetectEntitiesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::detect_entities::DetectEntitiesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.detect_entities();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DetectEntities`.
 ///
 /// <p>Detects named entities in input text when you use the pre-trained model. Detects custom entities if you have a custom entity recognition model. </p>

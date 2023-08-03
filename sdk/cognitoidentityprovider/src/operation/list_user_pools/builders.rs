@@ -3,6 +3,23 @@ pub use crate::operation::list_user_pools::_list_user_pools_output::ListUserPool
 
 pub use crate::operation::list_user_pools::_list_user_pools_input::ListUserPoolsInputBuilder;
 
+impl ListUserPoolsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_user_pools::ListUserPoolsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_user_pools::ListUserPoolsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_user_pools();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListUserPools`.
 ///
 /// <p>Lists the user pools associated with an Amazon Web Services account.</p>

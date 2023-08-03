@@ -3,6 +3,23 @@ pub use crate::operation::delete_user_settings::_delete_user_settings_output::De
 
 pub use crate::operation::delete_user_settings::_delete_user_settings_input::DeleteUserSettingsInputBuilder;
 
+impl DeleteUserSettingsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_user_settings::DeleteUserSettingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_user_settings::DeleteUserSettingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_user_settings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteUserSettings`.
 ///
 /// <p>Deletes user settings.</p>

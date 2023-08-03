@@ -3,6 +3,23 @@ pub use crate::operation::update_portal::_update_portal_output::UpdatePortalOutp
 
 pub use crate::operation::update_portal::_update_portal_input::UpdatePortalInputBuilder;
 
+impl UpdatePortalInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_portal::UpdatePortalOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_portal::UpdatePortalError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_portal();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdatePortal`.
 ///
 /// <p>Updates a web portal.</p>

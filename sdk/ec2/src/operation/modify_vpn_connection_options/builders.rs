@@ -3,6 +3,23 @@ pub use crate::operation::modify_vpn_connection_options::_modify_vpn_connection_
 
 pub use crate::operation::modify_vpn_connection_options::_modify_vpn_connection_options_input::ModifyVpnConnectionOptionsInputBuilder;
 
+impl ModifyVpnConnectionOptionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_vpn_connection_options::ModifyVpnConnectionOptionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_vpn_connection_options::ModifyVpnConnectionOptionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_vpn_connection_options();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyVpnConnectionOptions`.
 ///
 /// <p>Modifies the connection options for your Site-to-Site VPN connection.</p>

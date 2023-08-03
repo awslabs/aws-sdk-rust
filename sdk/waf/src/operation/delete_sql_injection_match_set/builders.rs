@@ -3,6 +3,23 @@ pub use crate::operation::delete_sql_injection_match_set::_delete_sql_injection_
 
 pub use crate::operation::delete_sql_injection_match_set::_delete_sql_injection_match_set_input::DeleteSqlInjectionMatchSetInputBuilder;
 
+impl DeleteSqlInjectionMatchSetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_sql_injection_match_set::DeleteSqlInjectionMatchSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_sql_injection_match_set::DeleteSqlInjectionMatchSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_sql_injection_match_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteSqlInjectionMatchSet`.
 ///
 /// <note>

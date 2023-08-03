@@ -3,6 +3,23 @@ pub use crate::operation::change_message_visibility_batch::_change_message_visib
 
 pub use crate::operation::change_message_visibility_batch::_change_message_visibility_batch_input::ChangeMessageVisibilityBatchInputBuilder;
 
+impl ChangeMessageVisibilityBatchInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::change_message_visibility_batch::ChangeMessageVisibilityBatchError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.change_message_visibility_batch();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ChangeMessageVisibilityBatch`.
 ///
 /// <p>Changes the visibility timeout of multiple messages. This is a batch version of <code> <code>ChangeMessageVisibility</code>.</code> The result of the action on each message is reported individually in the response. You can send up to 10 <code> <code>ChangeMessageVisibility</code> </code> requests with each <code>ChangeMessageVisibilityBatch</code> action.</p> <important>

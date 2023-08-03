@@ -3,6 +3,23 @@ pub use crate::operation::list_targets_by_rule::_list_targets_by_rule_output::Li
 
 pub use crate::operation::list_targets_by_rule::_list_targets_by_rule_input::ListTargetsByRuleInputBuilder;
 
+impl ListTargetsByRuleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_targets_by_rule::ListTargetsByRuleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_targets_by_rule::ListTargetsByRuleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_targets_by_rule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListTargetsByRule`.
 ///
 /// <p>Lists the targets assigned to the specified rule.</p>

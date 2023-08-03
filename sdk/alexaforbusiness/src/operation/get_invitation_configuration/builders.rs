@@ -3,6 +3,23 @@ pub use crate::operation::get_invitation_configuration::_get_invitation_configur
 
 pub use crate::operation::get_invitation_configuration::_get_invitation_configuration_input::GetInvitationConfigurationInputBuilder;
 
+impl GetInvitationConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_invitation_configuration::GetInvitationConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_invitation_configuration::GetInvitationConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_invitation_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetInvitationConfiguration`.
 ///
 /// <p>Retrieves the configured values for the user enrollment invitation email template.</p>

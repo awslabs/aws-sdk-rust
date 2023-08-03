@@ -3,6 +3,23 @@ pub use crate::operation::list_sequence_stores::_list_sequence_stores_output::Li
 
 pub use crate::operation::list_sequence_stores::_list_sequence_stores_input::ListSequenceStoresInputBuilder;
 
+impl ListSequenceStoresInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_sequence_stores::ListSequenceStoresOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_sequence_stores::ListSequenceStoresError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_sequence_stores();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListSequenceStores`.
 ///
 /// <p>Retrieves a list of sequence stores.</p>

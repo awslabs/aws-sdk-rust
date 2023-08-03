@@ -3,6 +3,23 @@ pub use crate::operation::get_notification_channel::_get_notification_channel_ou
 
 pub use crate::operation::get_notification_channel::_get_notification_channel_input::GetNotificationChannelInputBuilder;
 
+impl GetNotificationChannelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_notification_channel::GetNotificationChannelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_notification_channel::GetNotificationChannelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_notification_channel();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetNotificationChannel`.
 ///
 /// <p>Information about the Amazon Simple Notification Service (SNS) topic that is used to record Firewall Manager SNS logs.</p>

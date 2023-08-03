@@ -3,6 +3,23 @@ pub use crate::operation::update_access_log_subscription::_update_access_log_sub
 
 pub use crate::operation::update_access_log_subscription::_update_access_log_subscription_input::UpdateAccessLogSubscriptionInputBuilder;
 
+impl UpdateAccessLogSubscriptionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_access_log_subscription::UpdateAccessLogSubscriptionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_access_log_subscription::UpdateAccessLogSubscriptionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_access_log_subscription();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateAccessLogSubscription`.
 ///
 /// <p>Updates the specified access log subscription.</p>

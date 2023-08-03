@@ -3,6 +3,23 @@ pub use crate::operation::get_component_version_artifact::_get_component_version
 
 pub use crate::operation::get_component_version_artifact::_get_component_version_artifact_input::GetComponentVersionArtifactInputBuilder;
 
+impl GetComponentVersionArtifactInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_component_version_artifact::GetComponentVersionArtifactOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_component_version_artifact::GetComponentVersionArtifactError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_component_version_artifact();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetComponentVersionArtifact`.
 ///
 /// <p>Gets the pre-signed URL to download a public or a Lambda component artifact. Core devices call this operation to identify the URL that they can use to download an artifact to install.</p>

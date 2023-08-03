@@ -3,6 +3,23 @@ pub use crate::operation::delete_cluster_parameter_group::_delete_cluster_parame
 
 pub use crate::operation::delete_cluster_parameter_group::_delete_cluster_parameter_group_input::DeleteClusterParameterGroupInputBuilder;
 
+impl DeleteClusterParameterGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_cluster_parameter_group::DeleteClusterParameterGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_cluster_parameter_group::DeleteClusterParameterGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_cluster_parameter_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteClusterParameterGroup`.
 ///
 /// <p>Deletes a specified Amazon Redshift parameter group.</p> <note>

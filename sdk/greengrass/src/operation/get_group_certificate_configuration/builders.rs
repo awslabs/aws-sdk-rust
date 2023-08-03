@@ -3,6 +3,17 @@ pub use crate::operation::get_group_certificate_configuration::_get_group_certif
 
 pub use crate::operation::get_group_certificate_configuration::_get_group_certificate_configuration_input::GetGroupCertificateConfigurationInputBuilder;
 
+impl GetGroupCertificateConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_group_certificate_configuration::GetGroupCertificateConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_group_certificate_configuration::GetGroupCertificateConfigurationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_group_certificate_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetGroupCertificateConfiguration`.
 ///
 /// Retrieves the current configuration for the CA used by the group.

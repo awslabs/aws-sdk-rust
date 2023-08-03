@@ -3,6 +3,23 @@ pub use crate::operation::create_campaign::_create_campaign_output::CreateCampai
 
 pub use crate::operation::create_campaign::_create_campaign_input::CreateCampaignInputBuilder;
 
+impl CreateCampaignInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_campaign::CreateCampaignOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_campaign::CreateCampaignError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_campaign();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateCampaign`.
 ///
 /// <p>Creates an orchestration of data collection rules. The Amazon Web Services IoT FleetWise Edge Agent software running in vehicles uses campaigns to decide how to collect and transfer data to the cloud. You create campaigns in the cloud. After you or your team approve campaigns, Amazon Web Services IoT FleetWise automatically deploys them to vehicles. </p>

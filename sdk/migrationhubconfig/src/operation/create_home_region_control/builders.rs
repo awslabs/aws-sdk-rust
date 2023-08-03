@@ -3,6 +3,23 @@ pub use crate::operation::create_home_region_control::_create_home_region_contro
 
 pub use crate::operation::create_home_region_control::_create_home_region_control_input::CreateHomeRegionControlInputBuilder;
 
+impl CreateHomeRegionControlInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_home_region_control::CreateHomeRegionControlOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_home_region_control::CreateHomeRegionControlError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_home_region_control();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateHomeRegionControl`.
 ///
 /// <p>This API sets up the home region for the calling account only.</p>

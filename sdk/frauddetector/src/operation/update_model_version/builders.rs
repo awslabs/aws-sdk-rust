@@ -3,6 +3,23 @@ pub use crate::operation::update_model_version::_update_model_version_output::Up
 
 pub use crate::operation::update_model_version::_update_model_version_input::UpdateModelVersionInputBuilder;
 
+impl UpdateModelVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_model_version::UpdateModelVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_model_version::UpdateModelVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_model_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateModelVersion`.
 ///
 /// <p>Updates a model version. Updating a model version retrains an existing model version using updated training data and produces a new minor version of the model. You can update the training data set location and data access role attributes using this action. This action creates and trains a new minor version of the model, for example version 1.01, 1.02, 1.03.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::batch_associate_project_assets::_batch_associate_proje
 
 pub use crate::operation::batch_associate_project_assets::_batch_associate_project_assets_input::BatchAssociateProjectAssetsInputBuilder;
 
+impl BatchAssociateProjectAssetsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_associate_project_assets::BatchAssociateProjectAssetsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_associate_project_assets::BatchAssociateProjectAssetsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_associate_project_assets();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchAssociateProjectAssets`.
 ///
 /// <p>Associates a group (batch) of assets with an IoT SiteWise Monitor project.</p>

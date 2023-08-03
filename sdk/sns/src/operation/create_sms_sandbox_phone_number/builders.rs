@@ -3,6 +3,23 @@ pub use crate::operation::create_sms_sandbox_phone_number::_create_sms_sandbox_p
 
 pub use crate::operation::create_sms_sandbox_phone_number::_create_sms_sandbox_phone_number_input::CreateSmsSandboxPhoneNumberInputBuilder;
 
+impl CreateSmsSandboxPhoneNumberInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_sms_sandbox_phone_number::CreateSmsSandboxPhoneNumberOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_sms_sandbox_phone_number::CreateSMSSandboxPhoneNumberError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_sms_sandbox_phone_number();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateSMSSandboxPhoneNumber`.
 ///
 /// <p>Adds a destination phone number to an Amazon Web Services account in the SMS sandbox and sends a one-time password (OTP) to that phone number.</p>

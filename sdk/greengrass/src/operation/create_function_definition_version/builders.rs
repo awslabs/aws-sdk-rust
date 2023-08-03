@@ -3,6 +3,17 @@ pub use crate::operation::create_function_definition_version::_create_function_d
 
 pub use crate::operation::create_function_definition_version::_create_function_definition_version_input::CreateFunctionDefinitionVersionInputBuilder;
 
+impl CreateFunctionDefinitionVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::create_function_definition_version::CreateFunctionDefinitionVersionOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_function_definition_version::CreateFunctionDefinitionVersionError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.create_function_definition_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateFunctionDefinitionVersion`.
 ///
 /// Creates a version of a Lambda function definition that has already been defined.

@@ -3,6 +3,23 @@ pub use crate::operation::get_system_instance::_get_system_instance_output::GetS
 
 pub use crate::operation::get_system_instance::_get_system_instance_input::GetSystemInstanceInputBuilder;
 
+impl GetSystemInstanceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_system_instance::GetSystemInstanceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_system_instance::GetSystemInstanceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_system_instance();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetSystemInstance`.
 ///
 /// <p>Gets a system instance.</p>

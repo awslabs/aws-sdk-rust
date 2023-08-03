@@ -3,6 +3,17 @@ pub use crate::operation::list_environment_template_versions::_list_environment_
 
 pub use crate::operation::list_environment_template_versions::_list_environment_template_versions_input::ListEnvironmentTemplateVersionsInputBuilder;
 
+impl ListEnvironmentTemplateVersionsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_environment_template_versions::ListEnvironmentTemplateVersionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_environment_template_versions::ListEnvironmentTemplateVersionsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_environment_template_versions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListEnvironmentTemplateVersions`.
 ///
 /// <p>List major or minor versions of an environment template with detail data.</p>

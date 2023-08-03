@@ -3,6 +3,23 @@ pub use crate::operation::create_image_version::_create_image_version_output::Cr
 
 pub use crate::operation::create_image_version::_create_image_version_input::CreateImageVersionInputBuilder;
 
+impl CreateImageVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_image_version::CreateImageVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_image_version::CreateImageVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_image_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateImageVersion`.
 ///
 /// <p>Creates a version of the SageMaker image specified by <code>ImageName</code>. The version represents the Amazon Elastic Container Registry (ECR) container image specified by <code>BaseImage</code>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::update_identity_source::_update_identity_source_output
 
 pub use crate::operation::update_identity_source::_update_identity_source_input::UpdateIdentitySourceInputBuilder;
 
+impl UpdateIdentitySourceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_identity_source::UpdateIdentitySourceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_identity_source::UpdateIdentitySourceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_identity_source();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateIdentitySource`.
 ///
 /// <p>Updates the specified identity source to use a new identity provider (IdP) source, or to change the mapping of identities from the IdP to a different principal entity type.</p>

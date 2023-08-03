@@ -3,6 +3,23 @@ pub use crate::operation::remove_resource_permission::_remove_resource_permissio
 
 pub use crate::operation::remove_resource_permission::_remove_resource_permission_input::RemoveResourcePermissionInputBuilder;
 
+impl RemoveResourcePermissionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::remove_resource_permission::RemoveResourcePermissionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::remove_resource_permission::RemoveResourcePermissionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.remove_resource_permission();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RemoveResourcePermission`.
 ///
 /// <p>Removes the permission for the specified principal from the specified resource.</p>

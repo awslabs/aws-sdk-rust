@@ -3,6 +3,23 @@ pub use crate::operation::share_directory::_share_directory_output::ShareDirecto
 
 pub use crate::operation::share_directory::_share_directory_input::ShareDirectoryInputBuilder;
 
+impl ShareDirectoryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::share_directory::ShareDirectoryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::share_directory::ShareDirectoryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.share_directory();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ShareDirectory`.
 ///
 /// <p>Shares a specified directory (<code>DirectoryId</code>) in your Amazon Web Services account (directory owner) with another Amazon Web Services account (directory consumer). With this operation you can use your directory from any Amazon Web Services account and from any Amazon VPC within an Amazon Web Services Region.</p>

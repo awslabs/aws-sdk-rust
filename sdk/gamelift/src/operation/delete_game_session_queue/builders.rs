@@ -3,6 +3,23 @@ pub use crate::operation::delete_game_session_queue::_delete_game_session_queue_
 
 pub use crate::operation::delete_game_session_queue::_delete_game_session_queue_input::DeleteGameSessionQueueInputBuilder;
 
+impl DeleteGameSessionQueueInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_game_session_queue::DeleteGameSessionQueueOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_game_session_queue::DeleteGameSessionQueueError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_game_session_queue();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteGameSessionQueue`.
 ///
 /// <p>Deletes a game session queue. Once a queue is successfully deleted, unfulfilled <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartGameSessionPlacement.html">StartGameSessionPlacement</a> requests that reference the queue will fail. To delete a queue, specify the queue name.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_stream_sessions::_list_stream_sessions_output::Li
 
 pub use crate::operation::list_stream_sessions::_list_stream_sessions_input::ListStreamSessionsInputBuilder;
 
+impl ListStreamSessionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_stream_sessions::ListStreamSessionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_stream_sessions::ListStreamSessionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_stream_sessions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListStreamSessions`.
 ///
 /// <p>Gets a summary of current and previous streams for a specified channel in your account, in the AWS region where the API request is processed.</p>

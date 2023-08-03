@@ -3,6 +3,23 @@ pub use crate::operation::authorize_client_vpn_ingress::_authorize_client_vpn_in
 
 pub use crate::operation::authorize_client_vpn_ingress::_authorize_client_vpn_ingress_input::AuthorizeClientVpnIngressInputBuilder;
 
+impl AuthorizeClientVpnIngressInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::authorize_client_vpn_ingress::AuthorizeClientVpnIngressOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::authorize_client_vpn_ingress::AuthorizeClientVpnIngressError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.authorize_client_vpn_ingress();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AuthorizeClientVpnIngress`.
 ///
 /// <p>Adds an ingress authorization rule to a Client VPN endpoint. Ingress authorization rules act as firewall rules that grant access to networks. You must configure ingress authorization rules to enable clients to access resources in Amazon Web Services or on-premises networks.</p>

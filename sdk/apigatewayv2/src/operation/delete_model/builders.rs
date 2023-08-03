@@ -3,6 +3,23 @@ pub use crate::operation::delete_model::_delete_model_output::DeleteModelOutputB
 
 pub use crate::operation::delete_model::_delete_model_input::DeleteModelInputBuilder;
 
+impl DeleteModelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_model::DeleteModelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_model::DeleteModelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_model();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteModel`.
 ///
 /// <p>Deletes a Model.</p>

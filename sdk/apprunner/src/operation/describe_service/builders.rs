@@ -3,6 +3,23 @@ pub use crate::operation::describe_service::_describe_service_output::DescribeSe
 
 pub use crate::operation::describe_service::_describe_service_input::DescribeServiceInputBuilder;
 
+impl DescribeServiceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_service::DescribeServiceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_service::DescribeServiceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_service();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeService`.
 ///
 /// <p>Return a full description of an App Runner service.</p>

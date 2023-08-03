@@ -3,6 +3,23 @@ pub use crate::operation::resume_cluster::_resume_cluster_output::ResumeClusterO
 
 pub use crate::operation::resume_cluster::_resume_cluster_input::ResumeClusterInputBuilder;
 
+impl ResumeClusterInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::resume_cluster::ResumeClusterOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::resume_cluster::ResumeClusterError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.resume_cluster();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ResumeCluster`.
 ///
 /// <p>Resumes a paused cluster.</p>

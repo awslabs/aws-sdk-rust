@@ -3,6 +3,23 @@ pub use crate::operation::update_resolver::_update_resolver_output::UpdateResolv
 
 pub use crate::operation::update_resolver::_update_resolver_input::UpdateResolverInputBuilder;
 
+impl UpdateResolverInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_resolver::UpdateResolverOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_resolver::UpdateResolverError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_resolver();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateResolver`.
 ///
 /// <p>Updates a <code>Resolver</code> object.</p>

@@ -3,6 +3,17 @@ pub use crate::operation::get_aggregate_conformance_pack_compliance_summary::_ge
 
 pub use crate::operation::get_aggregate_conformance_pack_compliance_summary::_get_aggregate_conformance_pack_compliance_summary_input::GetAggregateConformancePackComplianceSummaryInputBuilder;
 
+impl GetAggregateConformancePackComplianceSummaryInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_aggregate_conformance_pack_compliance_summary::GetAggregateConformancePackComplianceSummaryOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_aggregate_conformance_pack_compliance_summary::GetAggregateConformancePackComplianceSummaryError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_aggregate_conformance_pack_compliance_summary();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetAggregateConformancePackComplianceSummary`.
 ///
 /// <p>Returns the count of compliant and noncompliant conformance packs across all Amazon Web Services accounts and Amazon Web Services Regions in an aggregator. You can filter based on Amazon Web Services account ID or Amazon Web Services Region.</p> <note>

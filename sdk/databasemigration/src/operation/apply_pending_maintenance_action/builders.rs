@@ -3,6 +3,23 @@ pub use crate::operation::apply_pending_maintenance_action::_apply_pending_maint
 
 pub use crate::operation::apply_pending_maintenance_action::_apply_pending_maintenance_action_input::ApplyPendingMaintenanceActionInputBuilder;
 
+impl ApplyPendingMaintenanceActionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::apply_pending_maintenance_action::ApplyPendingMaintenanceActionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::apply_pending_maintenance_action::ApplyPendingMaintenanceActionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.apply_pending_maintenance_action();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ApplyPendingMaintenanceAction`.
 ///
 /// <p>Applies a pending maintenance action to a resource (for example, to a replication instance).</p>

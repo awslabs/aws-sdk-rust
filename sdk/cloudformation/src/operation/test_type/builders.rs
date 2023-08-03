@@ -3,6 +3,23 @@ pub use crate::operation::test_type::_test_type_output::TestTypeOutputBuilder;
 
 pub use crate::operation::test_type::_test_type_input::TestTypeInputBuilder;
 
+impl TestTypeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::test_type::TestTypeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::test_type::TestTypeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.test_type();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `TestType`.
 ///
 /// <p>Tests a registered extension to make sure it meets all necessary requirements for being published in the CloudFormation registry.</p>

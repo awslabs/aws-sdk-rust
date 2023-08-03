@@ -3,6 +3,23 @@ pub use crate::operation::list_installed_components::_list_installed_components_
 
 pub use crate::operation::list_installed_components::_list_installed_components_input::ListInstalledComponentsInputBuilder;
 
+impl ListInstalledComponentsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_installed_components::ListInstalledComponentsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_installed_components::ListInstalledComponentsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_installed_components();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListInstalledComponents`.
 ///
 /// <p>Retrieves a paginated list of the components that a Greengrass core device runs. By default, this list doesn't include components that are deployed as dependencies of other components. To include dependencies in the response, set the <code>topologyFilter</code> parameter to <code>ALL</code>.</p> <note>

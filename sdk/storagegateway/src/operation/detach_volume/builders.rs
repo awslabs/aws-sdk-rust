@@ -3,6 +3,23 @@ pub use crate::operation::detach_volume::_detach_volume_output::DetachVolumeOutp
 
 pub use crate::operation::detach_volume::_detach_volume_input::DetachVolumeInputBuilder;
 
+impl DetachVolumeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::detach_volume::DetachVolumeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::detach_volume::DetachVolumeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.detach_volume();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DetachVolume`.
 ///
 /// <p>Disconnects a volume from an iSCSI connection and then detaches the volume from the specified gateway. Detaching and attaching a volume enables you to recover your data from one gateway to a different gateway without creating a snapshot. It also makes it easier to move your volumes from an on-premises gateway to a gateway hosted on an Amazon EC2 instance. This operation is only supported in the volume gateway type.</p>

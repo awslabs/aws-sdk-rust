@@ -3,6 +3,23 @@ pub use crate::operation::describe_index_fields::_describe_index_fields_output::
 
 pub use crate::operation::describe_index_fields::_describe_index_fields_input::DescribeIndexFieldsInputBuilder;
 
+impl DescribeIndexFieldsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_index_fields::DescribeIndexFieldsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_index_fields::DescribeIndexFieldsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_index_fields();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeIndexFields`.
 ///
 /// <p>Gets information about the index fields configured for the search domain. Can be limited to specific fields by name. By default, shows all fields and includes any pending changes to the configuration. Set the <code>Deployed</code> option to <code>true</code> to show the active configuration and exclude pending changes. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-domain-info.html" target="_blank">Getting Domain Information</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>

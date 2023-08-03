@@ -3,6 +3,23 @@ pub use crate::operation::add_flow_sources::_add_flow_sources_output::AddFlowSou
 
 pub use crate::operation::add_flow_sources::_add_flow_sources_input::AddFlowSourcesInputBuilder;
 
+impl AddFlowSourcesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::add_flow_sources::AddFlowSourcesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::add_flow_sources::AddFlowSourcesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.add_flow_sources();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AddFlowSources`.
 ///
 /// Adds Sources to flow

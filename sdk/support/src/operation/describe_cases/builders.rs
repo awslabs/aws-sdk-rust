@@ -3,6 +3,23 @@ pub use crate::operation::describe_cases::_describe_cases_output::DescribeCasesO
 
 pub use crate::operation::describe_cases::_describe_cases_input::DescribeCasesInputBuilder;
 
+impl DescribeCasesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_cases::DescribeCasesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_cases::DescribeCasesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_cases();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeCases`.
 ///
 /// <p>Returns a list of cases that you specify by passing one or more case IDs. You can use the <code>afterTime</code> and <code>beforeTime</code> parameters to filter the cases by date. You can set values for the <code>includeResolvedCases</code> and <code>includeCommunications</code> parameters to specify how much information to return.</p>

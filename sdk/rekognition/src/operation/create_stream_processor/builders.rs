@@ -3,6 +3,23 @@ pub use crate::operation::create_stream_processor::_create_stream_processor_outp
 
 pub use crate::operation::create_stream_processor::_create_stream_processor_input::CreateStreamProcessorInputBuilder;
 
+impl CreateStreamProcessorInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_stream_processor::CreateStreamProcessorOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_stream_processor::CreateStreamProcessorError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_stream_processor();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateStreamProcessor`.
 ///
 /// <p>Creates an Amazon Rekognition stream processor that you can use to detect and recognize faces or to detect labels in a streaming video.</p>

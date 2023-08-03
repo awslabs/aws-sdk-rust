@@ -3,6 +3,23 @@ pub use crate::operation::create_game_session::_create_game_session_output::Crea
 
 pub use crate::operation::create_game_session::_create_game_session_input::CreateGameSessionInputBuilder;
 
+impl CreateGameSessionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_game_session::CreateGameSessionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_game_session::CreateGameSessionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_game_session();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateGameSession`.
 ///
 /// <p>Creates a multiplayer game session for players in a specific fleet location. This operation prompts an available server process to start a game session and retrieves connection information for the new game session. As an alternative, consider using the Amazon GameLift game session placement feature with <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_StartGameSessionPlacement.html">StartGameSessionPlacement</a> , which uses FleetIQ algorithms and queues to optimize the placement process.</p>

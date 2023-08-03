@@ -3,6 +3,23 @@ pub use crate::operation::transfer_input_device::_transfer_input_device_output::
 
 pub use crate::operation::transfer_input_device::_transfer_input_device_input::TransferInputDeviceInputBuilder;
 
+impl TransferInputDeviceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::transfer_input_device::TransferInputDeviceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::transfer_input_device::TransferInputDeviceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.transfer_input_device();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `TransferInputDevice`.
 ///
 /// Start an input device transfer to another AWS account. After you make the request, the other account must accept or reject the transfer.

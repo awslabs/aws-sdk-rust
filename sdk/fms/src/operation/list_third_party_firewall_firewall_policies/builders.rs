@@ -3,6 +3,17 @@ pub use crate::operation::list_third_party_firewall_firewall_policies::_list_thi
 
 pub use crate::operation::list_third_party_firewall_firewall_policies::_list_third_party_firewall_firewall_policies_input::ListThirdPartyFirewallFirewallPoliciesInputBuilder;
 
+impl ListThirdPartyFirewallFirewallPoliciesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_third_party_firewall_firewall_policies::ListThirdPartyFirewallFirewallPoliciesOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_third_party_firewall_firewall_policies::ListThirdPartyFirewallFirewallPoliciesError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_third_party_firewall_firewall_policies();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListThirdPartyFirewallFirewallPolicies`.
 ///
 /// <p>Retrieves a list of all of the third-party firewall policies that are associated with the third-party firewall administrator's account.</p>

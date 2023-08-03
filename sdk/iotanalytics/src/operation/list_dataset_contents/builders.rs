@@ -3,6 +3,23 @@ pub use crate::operation::list_dataset_contents::_list_dataset_contents_output::
 
 pub use crate::operation::list_dataset_contents::_list_dataset_contents_input::ListDatasetContentsInputBuilder;
 
+impl ListDatasetContentsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_dataset_contents::ListDatasetContentsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_dataset_contents::ListDatasetContentsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_dataset_contents();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDatasetContents`.
 ///
 /// <p>Lists information about dataset contents that have been created.</p>

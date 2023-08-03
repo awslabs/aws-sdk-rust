@@ -3,6 +3,23 @@ pub use crate::operation::describe_dimension_keys::_describe_dimension_keys_outp
 
 pub use crate::operation::describe_dimension_keys::_describe_dimension_keys_input::DescribeDimensionKeysInputBuilder;
 
+impl DescribeDimensionKeysInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_dimension_keys::DescribeDimensionKeysOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_dimension_keys::DescribeDimensionKeysError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_dimension_keys();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeDimensionKeys`.
 ///
 /// <p>For a specific time period, retrieve the top <code>N</code> dimension keys for a metric. </p> <note>

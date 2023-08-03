@@ -3,6 +3,23 @@ pub use crate::operation::get_in_app_template::_get_in_app_template_output::GetI
 
 pub use crate::operation::get_in_app_template::_get_in_app_template_input::GetInAppTemplateInputBuilder;
 
+impl GetInAppTemplateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_in_app_template::GetInAppTemplateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_in_app_template::GetInAppTemplateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_in_app_template();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetInAppTemplate`.
 ///
 /// <p>Retrieves the content and settings of a message template for messages sent through the in-app channel.</p>

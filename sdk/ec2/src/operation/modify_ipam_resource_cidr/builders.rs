@@ -3,6 +3,23 @@ pub use crate::operation::modify_ipam_resource_cidr::_modify_ipam_resource_cidr_
 
 pub use crate::operation::modify_ipam_resource_cidr::_modify_ipam_resource_cidr_input::ModifyIpamResourceCidrInputBuilder;
 
+impl ModifyIpamResourceCidrInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_ipam_resource_cidr::ModifyIpamResourceCidrOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_ipam_resource_cidr::ModifyIpamResourceCidrError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_ipam_resource_cidr();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyIpamResourceCidr`.
 ///
 /// <p>Modify a resource CIDR. You can use this action to transfer resource CIDRs between scopes and ignore resource CIDRs that you do not want to manage. If set to false, the resource will not be tracked for overlap, it cannot be auto-imported into a pool, and it will be removed from any pool it has an allocation in.</p>

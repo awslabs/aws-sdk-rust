@@ -3,6 +3,23 @@ pub use crate::operation::switchover_read_replica::_switchover_read_replica_outp
 
 pub use crate::operation::switchover_read_replica::_switchover_read_replica_input::SwitchoverReadReplicaInputBuilder;
 
+impl SwitchoverReadReplicaInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::switchover_read_replica::SwitchoverReadReplicaOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::switchover_read_replica::SwitchoverReadReplicaError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.switchover_read_replica();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SwitchoverReadReplica`.
 ///
 /// <p>Switches over an Oracle standby database in an Oracle Data Guard environment, making it the new primary database. Issue this command in the Region that hosts the current standby database.</p>

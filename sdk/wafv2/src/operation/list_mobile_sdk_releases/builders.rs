@@ -3,6 +3,23 @@ pub use crate::operation::list_mobile_sdk_releases::_list_mobile_sdk_releases_ou
 
 pub use crate::operation::list_mobile_sdk_releases::_list_mobile_sdk_releases_input::ListMobileSdkReleasesInputBuilder;
 
+impl ListMobileSdkReleasesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_mobile_sdk_releases::ListMobileSdkReleasesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_mobile_sdk_releases::ListMobileSdkReleasesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_mobile_sdk_releases();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListMobileSdkReleases`.
 ///
 /// <p>Retrieves a list of the available releases for the mobile SDK and the specified device platform. </p>

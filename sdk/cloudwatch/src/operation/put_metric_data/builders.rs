@@ -3,6 +3,23 @@ pub use crate::operation::put_metric_data::_put_metric_data_output::PutMetricDat
 
 pub use crate::operation::put_metric_data::_put_metric_data_input::PutMetricDataInputBuilder;
 
+impl PutMetricDataInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_metric_data::PutMetricDataOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_metric_data::PutMetricDataError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_metric_data();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutMetricData`.
 ///
 /// <p>Publishes metric data points to Amazon CloudWatch. CloudWatch associates the data points with the specified metric. If the specified metric does not exist, CloudWatch creates the metric. When CloudWatch creates a metric, it can take up to fifteen minutes for the metric to appear in calls to <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_ListMetrics.html">ListMetrics</a>.</p>

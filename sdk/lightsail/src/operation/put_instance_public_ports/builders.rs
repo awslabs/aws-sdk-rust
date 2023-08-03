@@ -3,6 +3,23 @@ pub use crate::operation::put_instance_public_ports::_put_instance_public_ports_
 
 pub use crate::operation::put_instance_public_ports::_put_instance_public_ports_input::PutInstancePublicPortsInputBuilder;
 
+impl PutInstancePublicPortsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_instance_public_ports::PutInstancePublicPortsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_instance_public_ports::PutInstancePublicPortsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_instance_public_ports();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutInstancePublicPorts`.
 ///
 /// <p>Opens ports for a specific Amazon Lightsail instance, and specifies the IP addresses allowed to connect to the instance through the ports, and the protocol. This action also closes all currently open ports that are not included in the request. Include all of the ports and the protocols you want to open in your <code>PutInstancePublicPorts</code>request. Or use the <code>OpenInstancePublicPorts</code> action to open ports without closing currently open ports.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_custom_line_item::_delete_custom_line_item_outp
 
 pub use crate::operation::delete_custom_line_item::_delete_custom_line_item_input::DeleteCustomLineItemInputBuilder;
 
+impl DeleteCustomLineItemInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_custom_line_item::DeleteCustomLineItemOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_custom_line_item::DeleteCustomLineItemError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_custom_line_item();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteCustomLineItem`.
 ///
 /// <p> Deletes the custom line item identified by the given ARN in the current, or previous billing period. </p>

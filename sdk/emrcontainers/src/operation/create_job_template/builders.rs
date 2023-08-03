@@ -3,6 +3,23 @@ pub use crate::operation::create_job_template::_create_job_template_output::Crea
 
 pub use crate::operation::create_job_template::_create_job_template_input::CreateJobTemplateInputBuilder;
 
+impl CreateJobTemplateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_job_template::CreateJobTemplateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_job_template::CreateJobTemplateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_job_template();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateJobTemplate`.
 ///
 /// <p>Creates a job template. Job template stores values of StartJobRun API request in a template and can be used to start a job run. Job template allows two use cases: avoid repeating recurring StartJobRun API request values, enforcing certain values in StartJobRun API request.</p>

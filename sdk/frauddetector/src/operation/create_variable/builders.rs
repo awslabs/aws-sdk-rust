@@ -3,6 +3,23 @@ pub use crate::operation::create_variable::_create_variable_output::CreateVariab
 
 pub use crate::operation::create_variable::_create_variable_input::CreateVariableInputBuilder;
 
+impl CreateVariableInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_variable::CreateVariableOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_variable::CreateVariableError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_variable();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateVariable`.
 ///
 /// <p>Creates a variable.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::send_custom_verification_email::_send_custom_verificat
 
 pub use crate::operation::send_custom_verification_email::_send_custom_verification_email_input::SendCustomVerificationEmailInputBuilder;
 
+impl SendCustomVerificationEmailInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::send_custom_verification_email::SendCustomVerificationEmailOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::send_custom_verification_email::SendCustomVerificationEmailError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.send_custom_verification_email();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SendCustomVerificationEmail`.
 ///
 /// <p>Adds an email address to the list of identities for your Amazon SES account in the current AWS Region and attempts to verify it. As a result of executing this operation, a customized verification email is sent to the specified address.</p>

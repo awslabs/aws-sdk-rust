@@ -3,6 +3,23 @@ pub use crate::operation::get_readiness_check_status::_get_readiness_check_statu
 
 pub use crate::operation::get_readiness_check_status::_get_readiness_check_status_input::GetReadinessCheckStatusInputBuilder;
 
+impl GetReadinessCheckStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_readiness_check_status::GetReadinessCheckStatusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_readiness_check_status::GetReadinessCheckStatusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_readiness_check_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetReadinessCheckStatus`.
 ///
 /// <p>Gets the readiness status for an individual readiness check. To see the overall readiness status for a recovery group, that considers the readiness status for all the readiness checks in a recovery group, use GetRecoveryGroupReadinessSummary.</p>

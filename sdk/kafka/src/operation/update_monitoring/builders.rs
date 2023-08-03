@@ -3,6 +3,23 @@ pub use crate::operation::update_monitoring::_update_monitoring_output::UpdateMo
 
 pub use crate::operation::update_monitoring::_update_monitoring_input::UpdateMonitoringInputBuilder;
 
+impl UpdateMonitoringInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_monitoring::UpdateMonitoringOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_monitoring::UpdateMonitoringError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_monitoring();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateMonitoring`.
 ///
 /// <p>Updates the monitoring settings for the cluster. You can use this operation to specify which Apache Kafka metrics you want Amazon MSK to send to Amazon CloudWatch. You can also specify settings for open monitoring with Prometheus.</p>

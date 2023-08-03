@@ -3,6 +3,23 @@ pub use crate::operation::sign_out_user::_sign_out_user_output::SignOutUserOutpu
 
 pub use crate::operation::sign_out_user::_sign_out_user_input::SignOutUserInputBuilder;
 
+impl SignOutUserInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::sign_out_user::SignOutUserOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::sign_out_user::SignOutUserError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.sign_out_user();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SignOutUser`.
 ///
 /// <p>Signs the user out from all of their devices. The user can sign in again if they have valid credentials.</p>

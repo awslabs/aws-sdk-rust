@@ -3,6 +3,17 @@ pub use crate::operation::get_user_attribute_verification_code::_get_user_attrib
 
 pub use crate::operation::get_user_attribute_verification_code::_get_user_attribute_verification_code_input::GetUserAttributeVerificationCodeInputBuilder;
 
+impl GetUserAttributeVerificationCodeInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCodeOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_user_attribute_verification_code::GetUserAttributeVerificationCodeError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_user_attribute_verification_code();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetUserAttributeVerificationCode`.
 ///
 /// <p>Generates a user attribute verification code for the specified attribute name. Sends a message to a user with a code that they must return in a VerifyUserAttribute request.</p> <note>

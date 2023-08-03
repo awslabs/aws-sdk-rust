@@ -3,6 +3,23 @@ pub use crate::operation::shutdown_gateway::_shutdown_gateway_output::ShutdownGa
 
 pub use crate::operation::shutdown_gateway::_shutdown_gateway_input::ShutdownGatewayInputBuilder;
 
+impl ShutdownGatewayInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::shutdown_gateway::ShutdownGatewayOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::shutdown_gateway::ShutdownGatewayError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.shutdown_gateway();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ShutdownGateway`.
 ///
 /// <p>Shuts down a gateway. To specify which gateway to shut down, use the Amazon Resource Name (ARN) of the gateway in the body of your request.</p>

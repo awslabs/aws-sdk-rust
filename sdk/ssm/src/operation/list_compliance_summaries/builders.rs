@@ -3,6 +3,23 @@ pub use crate::operation::list_compliance_summaries::_list_compliance_summaries_
 
 pub use crate::operation::list_compliance_summaries::_list_compliance_summaries_input::ListComplianceSummariesInputBuilder;
 
+impl ListComplianceSummariesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_compliance_summaries::ListComplianceSummariesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_compliance_summaries::ListComplianceSummariesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_compliance_summaries();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListComplianceSummaries`.
 ///
 /// <p>Returns a summary count of compliant and non-compliant resources for a compliance type. For example, this call can return State Manager associations, patches, or custom compliance types according to the filter criteria that you specify.</p>

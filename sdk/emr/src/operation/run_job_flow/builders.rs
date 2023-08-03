@@ -3,6 +3,23 @@ pub use crate::operation::run_job_flow::_run_job_flow_output::RunJobFlowOutputBu
 
 pub use crate::operation::run_job_flow::_run_job_flow_input::RunJobFlowInputBuilder;
 
+impl RunJobFlowInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::run_job_flow::RunJobFlowOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::run_job_flow::RunJobFlowError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.run_job_flow();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RunJobFlow`.
 ///
 /// <p>RunJobFlow creates and starts running a new cluster (job flow). The cluster runs the steps specified. After the steps complete, the cluster stops and the HDFS partition is lost. To prevent loss of data, configure the last step of the job flow to store results in Amazon S3. If the <code>JobFlowInstancesConfig</code> <code>KeepJobFlowAliveWhenNoSteps</code> parameter is set to <code>TRUE</code>, the cluster transitions to the WAITING state rather than shutting down after the steps have completed. </p>

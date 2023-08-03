@@ -3,6 +3,23 @@ pub use crate::operation::update_user_routing_profile::_update_user_routing_prof
 
 pub use crate::operation::update_user_routing_profile::_update_user_routing_profile_input::UpdateUserRoutingProfileInputBuilder;
 
+impl UpdateUserRoutingProfileInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_user_routing_profile::UpdateUserRoutingProfileOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_user_routing_profile::UpdateUserRoutingProfileError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_user_routing_profile();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateUserRoutingProfile`.
 ///
 /// <p>Assigns the specified routing profile to the specified user.</p>

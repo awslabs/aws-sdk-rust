@@ -3,6 +3,17 @@ pub use crate::operation::update_continuous_deployment_policy::_update_continuou
 
 pub use crate::operation::update_continuous_deployment_policy::_update_continuous_deployment_policy_input::UpdateContinuousDeploymentPolicyInputBuilder;
 
+impl UpdateContinuousDeploymentPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::update_continuous_deployment_policy::UpdateContinuousDeploymentPolicyOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_continuous_deployment_policy::UpdateContinuousDeploymentPolicyError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.update_continuous_deployment_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateContinuousDeploymentPolicy`.
 ///
 /// <p>Updates a continuous deployment policy. You can update a continuous deployment policy to enable or disable it, to change the percentage of traffic that it sends to the staging distribution, or to change the staging distribution that it sends traffic to.</p>

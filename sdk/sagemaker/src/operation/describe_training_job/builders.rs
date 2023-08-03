@@ -3,6 +3,23 @@ pub use crate::operation::describe_training_job::_describe_training_job_output::
 
 pub use crate::operation::describe_training_job::_describe_training_job_input::DescribeTrainingJobInputBuilder;
 
+impl DescribeTrainingJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_training_job::DescribeTrainingJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_training_job::DescribeTrainingJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_training_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeTrainingJob`.
 ///
 /// <p>Returns information about a training job. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_index::_describe_index_output::DescribeIndexO
 
 pub use crate::operation::describe_index::_describe_index_input::DescribeIndexInputBuilder;
 
+impl DescribeIndexInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_index::DescribeIndexOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_index::DescribeIndexError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_index();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeIndex`.
 ///
 /// <p>Gets information about an existing Amazon Kendra index.</p>

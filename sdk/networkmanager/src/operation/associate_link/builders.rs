@@ -3,6 +3,23 @@ pub use crate::operation::associate_link::_associate_link_output::AssociateLinkO
 
 pub use crate::operation::associate_link::_associate_link_input::AssociateLinkInputBuilder;
 
+impl AssociateLinkInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_link::AssociateLinkOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_link::AssociateLinkError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_link();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateLink`.
 ///
 /// <p>Associates a link to a device. A device can be associated to multiple links and a link can be associated to multiple devices. The device and link must be in the same global network and the same site.</p>

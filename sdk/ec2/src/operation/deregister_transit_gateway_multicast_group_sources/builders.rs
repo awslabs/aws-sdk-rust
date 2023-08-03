@@ -3,6 +3,17 @@ pub use crate::operation::deregister_transit_gateway_multicast_group_sources::_d
 
 pub use crate::operation::deregister_transit_gateway_multicast_group_sources::_deregister_transit_gateway_multicast_group_sources_input::DeregisterTransitGatewayMulticastGroupSourcesInputBuilder;
 
+impl DeregisterTransitGatewayMulticastGroupSourcesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::deregister_transit_gateway_multicast_group_sources::DeregisterTransitGatewayMulticastGroupSourcesOutput, ::aws_smithy_http::result::SdkError<crate::operation::deregister_transit_gateway_multicast_group_sources::DeregisterTransitGatewayMulticastGroupSourcesError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.deregister_transit_gateway_multicast_group_sources();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeregisterTransitGatewayMulticastGroupSources`.
 ///
 /// <p>Deregisters the specified sources (network interfaces) from the transit gateway multicast group.</p>

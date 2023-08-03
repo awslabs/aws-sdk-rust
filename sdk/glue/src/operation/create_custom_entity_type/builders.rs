@@ -3,6 +3,23 @@ pub use crate::operation::create_custom_entity_type::_create_custom_entity_type_
 
 pub use crate::operation::create_custom_entity_type::_create_custom_entity_type_input::CreateCustomEntityTypeInputBuilder;
 
+impl CreateCustomEntityTypeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_custom_entity_type::CreateCustomEntityTypeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_custom_entity_type::CreateCustomEntityTypeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_custom_entity_type();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateCustomEntityType`.
 ///
 /// <p>Creates a custom pattern that is used to detect sensitive data across the columns and rows of your structured data.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_outpost_resolvers::_list_outpost_resolvers_output
 
 pub use crate::operation::list_outpost_resolvers::_list_outpost_resolvers_input::ListOutpostResolversInputBuilder;
 
+impl ListOutpostResolversInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_outpost_resolvers::ListOutpostResolversOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_outpost_resolvers::ListOutpostResolversError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_outpost_resolvers();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListOutpostResolvers`.
 ///
 /// <p>Lists all the Resolvers on Outposts that were created using the current Amazon Web Services account.</p>

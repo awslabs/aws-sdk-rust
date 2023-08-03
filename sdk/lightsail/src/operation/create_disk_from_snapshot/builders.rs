@@ -3,6 +3,23 @@ pub use crate::operation::create_disk_from_snapshot::_create_disk_from_snapshot_
 
 pub use crate::operation::create_disk_from_snapshot::_create_disk_from_snapshot_input::CreateDiskFromSnapshotInputBuilder;
 
+impl CreateDiskFromSnapshotInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_disk_from_snapshot::CreateDiskFromSnapshotOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_disk_from_snapshot::CreateDiskFromSnapshotError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_disk_from_snapshot();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateDiskFromSnapshot`.
 ///
 /// <p>Creates a block storage disk from a manual or automatic snapshot of a disk. The resulting disk can be attached to an Amazon Lightsail instance in the same Availability Zone (e.g., <code>us-east-2a</code>).</p>

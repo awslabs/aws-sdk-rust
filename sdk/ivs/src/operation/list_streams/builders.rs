@@ -3,6 +3,23 @@ pub use crate::operation::list_streams::_list_streams_output::ListStreamsOutputB
 
 pub use crate::operation::list_streams::_list_streams_input::ListStreamsInputBuilder;
 
+impl ListStreamsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_streams::ListStreamsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_streams::ListStreamsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_streams();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListStreams`.
 ///
 /// <p>Gets summary information about live streams in your account, in the Amazon Web Services region where the API request is processed.</p>

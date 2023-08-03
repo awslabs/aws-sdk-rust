@@ -3,6 +3,23 @@ pub use crate::operation::delete_local_gateway_route::_delete_local_gateway_rout
 
 pub use crate::operation::delete_local_gateway_route::_delete_local_gateway_route_input::DeleteLocalGatewayRouteInputBuilder;
 
+impl DeleteLocalGatewayRouteInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_local_gateway_route::DeleteLocalGatewayRouteOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_local_gateway_route::DeleteLocalGatewayRouteError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_local_gateway_route();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteLocalGatewayRoute`.
 ///
 /// <p>Deletes the specified route from the specified local gateway route table.</p>

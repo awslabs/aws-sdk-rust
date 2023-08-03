@@ -3,6 +3,23 @@ pub use crate::operation::create_queue::_create_queue_output::CreateQueueOutputB
 
 pub use crate::operation::create_queue::_create_queue_input::CreateQueueInputBuilder;
 
+impl CreateQueueInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_queue::CreateQueueOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_queue::CreateQueueError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_queue();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateQueue`.
 ///
 /// Create a new transcoding queue. For information about queues, see Working With Queues in the User Guide at https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html

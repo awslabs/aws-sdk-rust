@@ -3,6 +3,17 @@ pub use crate::operation::get_platform_application_attributes::_get_platform_app
 
 pub use crate::operation::get_platform_application_attributes::_get_platform_application_attributes_input::GetPlatformApplicationAttributesInputBuilder;
 
+impl GetPlatformApplicationAttributesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_platform_application_attributes::GetPlatformApplicationAttributesOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_platform_application_attributes::GetPlatformApplicationAttributesError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_platform_application_attributes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetPlatformApplicationAttributes`.
 ///
 /// <p>Retrieves the attributes of the platform application object for the supported push notification services, such as APNS and GCM (Firebase Cloud Messaging). For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/SNSMobilePush.html">Using Amazon SNS Mobile Push Notifications</a>. </p>

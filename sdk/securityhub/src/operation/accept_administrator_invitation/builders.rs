@@ -3,6 +3,23 @@ pub use crate::operation::accept_administrator_invitation::_accept_administrator
 
 pub use crate::operation::accept_administrator_invitation::_accept_administrator_invitation_input::AcceptAdministratorInvitationInputBuilder;
 
+impl AcceptAdministratorInvitationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::accept_administrator_invitation::AcceptAdministratorInvitationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::accept_administrator_invitation::AcceptAdministratorInvitationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.accept_administrator_invitation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AcceptAdministratorInvitation`.
 ///
 /// <p>Accepts the invitation to be a member account and be monitored by the Security Hub administrator account that the invitation was sent from.</p>

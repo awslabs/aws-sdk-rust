@@ -3,6 +3,23 @@ pub use crate::operation::list_outposts_with_s3::_list_outposts_with_s3_output::
 
 pub use crate::operation::list_outposts_with_s3::_list_outposts_with_s3_input::ListOutpostsWithS3InputBuilder;
 
+impl ListOutpostsWithS3InputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_outposts_with_s3::ListOutpostsWithS3Output,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_outposts_with_s3::ListOutpostsWithS3Error,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_outposts_with_s3();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListOutpostsWithS3`.
 ///
 /// <p>Lists the Outposts with S3 on Outposts capacity for your Amazon Web Services account. Includes S3 on Outposts that you have access to as the Outposts owner, or as a shared user from Resource Access Manager (RAM). </p>

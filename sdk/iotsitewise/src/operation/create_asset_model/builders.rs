@@ -3,6 +3,23 @@ pub use crate::operation::create_asset_model::_create_asset_model_output::Create
 
 pub use crate::operation::create_asset_model::_create_asset_model_input::CreateAssetModelInputBuilder;
 
+impl CreateAssetModelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_asset_model::CreateAssetModelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_asset_model::CreateAssetModelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_asset_model();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateAssetModel`.
 ///
 /// <p>Creates an asset model from specified property and hierarchy definitions. You create assets from asset models. With asset models, you can easily create assets of the same type that have standardized definitions. Each asset created from a model inherits the asset model's property and hierarchy definitions. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/define-models.html">Defining asset models</a> in the <i>IoT SiteWise User Guide</i>.</p>

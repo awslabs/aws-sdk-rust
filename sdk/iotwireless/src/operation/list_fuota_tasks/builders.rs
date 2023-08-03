@@ -3,6 +3,23 @@ pub use crate::operation::list_fuota_tasks::_list_fuota_tasks_output::ListFuotaT
 
 pub use crate::operation::list_fuota_tasks::_list_fuota_tasks_input::ListFuotaTasksInputBuilder;
 
+impl ListFuotaTasksInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_fuota_tasks::ListFuotaTasksOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_fuota_tasks::ListFuotaTasksError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_fuota_tasks();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListFuotaTasks`.
 ///
 /// <p>Lists the FUOTA tasks registered to your AWS account.</p>

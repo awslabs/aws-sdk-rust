@@ -3,6 +3,23 @@ pub use crate::operation::describe_prompt::_describe_prompt_output::DescribeProm
 
 pub use crate::operation::describe_prompt::_describe_prompt_input::DescribePromptInputBuilder;
 
+impl DescribePromptInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_prompt::DescribePromptOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_prompt::DescribePromptError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_prompt();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribePrompt`.
 ///
 /// <p>Describes the prompt.</p>

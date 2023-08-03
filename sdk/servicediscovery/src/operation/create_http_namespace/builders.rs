@@ -3,6 +3,23 @@ pub use crate::operation::create_http_namespace::_create_http_namespace_output::
 
 pub use crate::operation::create_http_namespace::_create_http_namespace_input::CreateHttpNamespaceInputBuilder;
 
+impl CreateHttpNamespaceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_http_namespace::CreateHttpNamespaceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_http_namespace::CreateHttpNamespaceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_http_namespace();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateHttpNamespace`.
 ///
 /// <p>Creates an HTTP namespace. Service instances registered using an HTTP namespace can be discovered using a <code>DiscoverInstances</code> request but can't be discovered using DNS.</p>

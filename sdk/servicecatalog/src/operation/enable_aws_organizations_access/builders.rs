@@ -3,6 +3,23 @@ pub use crate::operation::enable_aws_organizations_access::_enable_aws_organizat
 
 pub use crate::operation::enable_aws_organizations_access::_enable_aws_organizations_access_input::EnableAwsOrganizationsAccessInputBuilder;
 
+impl EnableAwsOrganizationsAccessInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::enable_aws_organizations_access::EnableAwsOrganizationsAccessOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::enable_aws_organizations_access::EnableAWSOrganizationsAccessError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.enable_aws_organizations_access();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `EnableAWSOrganizationsAccess`.
 ///
 /// <p>Enable portfolio sharing feature through Organizations. This API will allow Service Catalog to receive updates on your organization in order to sync your shares with the current structure. This API can only be called by the management account in the organization.</p>

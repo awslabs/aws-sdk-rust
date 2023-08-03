@@ -3,6 +3,23 @@ pub use crate::operation::describe_projects::_describe_projects_output::Describe
 
 pub use crate::operation::describe_projects::_describe_projects_input::DescribeProjectsInputBuilder;
 
+impl DescribeProjectsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_projects::DescribeProjectsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_projects::DescribeProjectsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_projects();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeProjects`.
 ///
 /// <p>Gets information about your Amazon Rekognition Custom Labels projects. </p>

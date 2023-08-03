@@ -3,6 +3,23 @@ pub use crate::operation::resend_confirmation_code::_resend_confirmation_code_ou
 
 pub use crate::operation::resend_confirmation_code::_resend_confirmation_code_input::ResendConfirmationCodeInputBuilder;
 
+impl ResendConfirmationCodeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::resend_confirmation_code::ResendConfirmationCodeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::resend_confirmation_code::ResendConfirmationCodeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.resend_confirmation_code();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ResendConfirmationCode`.
 ///
 /// <p>Resends the confirmation (for confirmation of registration) to a specific user in the user pool.</p> <note>

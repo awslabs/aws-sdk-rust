@@ -3,6 +3,23 @@ pub use crate::operation::describe_patch_properties::_describe_patch_properties_
 
 pub use crate::operation::describe_patch_properties::_describe_patch_properties_input::DescribePatchPropertiesInputBuilder;
 
+impl DescribePatchPropertiesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_patch_properties::DescribePatchPropertiesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_patch_properties::DescribePatchPropertiesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_patch_properties();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribePatchProperties`.
 ///
 /// <p>Lists the properties of available patches organized by product, product family, classification, severity, and other properties of available patches. You can use the reported properties in the filters you specify in requests for operations such as <code>CreatePatchBaseline</code>, <code>UpdatePatchBaseline</code>, <code>DescribeAvailablePatches</code>, and <code>DescribePatchBaselines</code>.</p>

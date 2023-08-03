@@ -3,6 +3,17 @@ pub use crate::operation::describe_affected_entities_for_organization::_describe
 
 pub use crate::operation::describe_affected_entities_for_organization::_describe_affected_entities_for_organization_input::DescribeAffectedEntitiesForOrganizationInputBuilder;
 
+impl DescribeAffectedEntitiesForOrganizationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_affected_entities_for_organization::DescribeAffectedEntitiesForOrganizationOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_affected_entities_for_organization::DescribeAffectedEntitiesForOrganizationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_affected_entities_for_organization();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAffectedEntitiesForOrganization`.
 ///
 /// <p>Returns a list of entities that have been affected by one or more events for one or more accounts in your organization in Organizations, based on the filter criteria. Entities can refer to individual customer resources, groups of customer resources, or any other construct, depending on the Amazon Web Service.</p>

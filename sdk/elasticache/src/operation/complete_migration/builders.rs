@@ -3,6 +3,23 @@ pub use crate::operation::complete_migration::_complete_migration_output::Comple
 
 pub use crate::operation::complete_migration::_complete_migration_input::CompleteMigrationInputBuilder;
 
+impl CompleteMigrationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::complete_migration::CompleteMigrationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::complete_migration::CompleteMigrationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.complete_migration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CompleteMigration`.
 ///
 /// <p>Complete the migration of data.</p>

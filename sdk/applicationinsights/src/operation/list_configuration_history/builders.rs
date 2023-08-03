@@ -3,6 +3,23 @@ pub use crate::operation::list_configuration_history::_list_configuration_histor
 
 pub use crate::operation::list_configuration_history::_list_configuration_history_input::ListConfigurationHistoryInputBuilder;
 
+impl ListConfigurationHistoryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_configuration_history::ListConfigurationHistoryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_configuration_history::ListConfigurationHistoryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_configuration_history();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListConfigurationHistory`.
 ///
 /// <p> Lists the INFO, WARN, and ERROR events for periodic configuration updates performed by Application Insights. Examples of events represented are: </p>

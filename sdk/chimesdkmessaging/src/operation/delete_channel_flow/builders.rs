@@ -3,6 +3,23 @@ pub use crate::operation::delete_channel_flow::_delete_channel_flow_output::Dele
 
 pub use crate::operation::delete_channel_flow::_delete_channel_flow_input::DeleteChannelFlowInputBuilder;
 
+impl DeleteChannelFlowInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_channel_flow::DeleteChannelFlowOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_channel_flow::DeleteChannelFlowError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_channel_flow();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteChannelFlow`.
 ///
 /// <p>Deletes a channel flow, an irreversible process. This is a developer API.</p> <note>

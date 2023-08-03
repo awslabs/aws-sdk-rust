@@ -3,6 +3,23 @@ pub use crate::operation::batch_get_custom_entity_types::_batch_get_custom_entit
 
 pub use crate::operation::batch_get_custom_entity_types::_batch_get_custom_entity_types_input::BatchGetCustomEntityTypesInputBuilder;
 
+impl BatchGetCustomEntityTypesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_custom_entity_types::BatchGetCustomEntityTypesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_get_custom_entity_types::BatchGetCustomEntityTypesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_get_custom_entity_types();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchGetCustomEntityTypes`.
 ///
 /// <p>Retrieves the details for the custom patterns specified by a list of names.</p>

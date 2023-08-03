@@ -3,6 +3,23 @@ pub use crate::operation::describe_lifecycle_configuration::_describe_lifecycle_
 
 pub use crate::operation::describe_lifecycle_configuration::_describe_lifecycle_configuration_input::DescribeLifecycleConfigurationInputBuilder;
 
+impl DescribeLifecycleConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_lifecycle_configuration::DescribeLifecycleConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_lifecycle_configuration::DescribeLifecycleConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_lifecycle_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeLifecycleConfiguration`.
 ///
 /// <p>Returns the current <code>LifecycleConfiguration</code> object for the specified Amazon EFS file system. EFS lifecycle management uses the <code>LifecycleConfiguration</code> object to identify which files to move to the EFS Infrequent Access (IA) storage class. For a file system without a <code>LifecycleConfiguration</code> object, the call returns an empty array in the response.</p>

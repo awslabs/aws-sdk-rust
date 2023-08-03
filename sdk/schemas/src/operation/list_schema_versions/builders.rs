@@ -3,6 +3,23 @@ pub use crate::operation::list_schema_versions::_list_schema_versions_output::Li
 
 pub use crate::operation::list_schema_versions::_list_schema_versions_input::ListSchemaVersionsInputBuilder;
 
+impl ListSchemaVersionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_schema_versions::ListSchemaVersionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_schema_versions::ListSchemaVersionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_schema_versions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListSchemaVersions`.
 ///
 /// <p>Provides a list of the schema versions and related information.</p>

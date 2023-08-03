@@ -3,6 +3,23 @@ pub use crate::operation::list_notifications::_list_notifications_output::ListNo
 
 pub use crate::operation::list_notifications::_list_notifications_input::ListNotificationsInputBuilder;
 
+impl ListNotificationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_notifications::ListNotificationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_notifications::ListNotificationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_notifications();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListNotifications`.
 ///
 /// <p> Returns a list of all Audit Manager notifications. </p>

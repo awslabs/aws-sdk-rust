@@ -3,6 +3,23 @@ pub use crate::operation::describe_account_preferences::_describe_account_prefer
 
 pub use crate::operation::describe_account_preferences::_describe_account_preferences_input::DescribeAccountPreferencesInputBuilder;
 
+impl DescribeAccountPreferencesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_account_preferences::DescribeAccountPreferencesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_account_preferences::DescribeAccountPreferencesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_account_preferences();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAccountPreferences`.
 ///
 /// <p>Returns the account preferences settings for the Amazon Web Services account associated with the user making the request, in the current Amazon Web Services Region. For more information, see <a href="efs/latest/ug/manage-efs-resource-ids.html">Managing Amazon EFS resource IDs</a>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_firewall_policy::_create_firewall_policy_output
 
 pub use crate::operation::create_firewall_policy::_create_firewall_policy_input::CreateFirewallPolicyInputBuilder;
 
+impl CreateFirewallPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_firewall_policy::CreateFirewallPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_firewall_policy::CreateFirewallPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_firewall_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateFirewallPolicy`.
 ///
 /// <p>Creates the firewall policy for the firewall according to the specifications. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_reusable_delegation_set::_create_reusable_deleg
 
 pub use crate::operation::create_reusable_delegation_set::_create_reusable_delegation_set_input::CreateReusableDelegationSetInputBuilder;
 
+impl CreateReusableDelegationSetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_reusable_delegation_set::CreateReusableDelegationSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_reusable_delegation_set::CreateReusableDelegationSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_reusable_delegation_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateReusableDelegationSet`.
 ///
 /// <p>Creates a delegation set (a group of four name servers) that can be reused by multiple hosted zones that were created by the same Amazon Web Services account. </p>

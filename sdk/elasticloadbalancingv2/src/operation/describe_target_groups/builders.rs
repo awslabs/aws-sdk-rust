@@ -3,6 +3,23 @@ pub use crate::operation::describe_target_groups::_describe_target_groups_output
 
 pub use crate::operation::describe_target_groups::_describe_target_groups_input::DescribeTargetGroupsInputBuilder;
 
+impl DescribeTargetGroupsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_target_groups::DescribeTargetGroupsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_target_groups::DescribeTargetGroupsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_target_groups();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeTargetGroups`.
 ///
 /// <p>Describes the specified target groups or all of your target groups. By default, all target groups are described. Alternatively, you can specify one of the following to filter the results: the ARN of the load balancer, the names of one or more target groups, or the ARNs of one or more target groups.</p>

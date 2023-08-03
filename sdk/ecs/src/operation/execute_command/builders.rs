@@ -3,6 +3,23 @@ pub use crate::operation::execute_command::_execute_command_output::ExecuteComma
 
 pub use crate::operation::execute_command::_execute_command_input::ExecuteCommandInputBuilder;
 
+impl ExecuteCommandInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::execute_command::ExecuteCommandOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::execute_command::ExecuteCommandError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.execute_command();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ExecuteCommand`.
 ///
 /// <p>Runs a command remotely on a container within a task.</p>

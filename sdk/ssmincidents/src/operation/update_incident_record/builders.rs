@@ -3,6 +3,23 @@ pub use crate::operation::update_incident_record::_update_incident_record_output
 
 pub use crate::operation::update_incident_record::_update_incident_record_input::UpdateIncidentRecordInputBuilder;
 
+impl UpdateIncidentRecordInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_incident_record::UpdateIncidentRecordOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_incident_record::UpdateIncidentRecordError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_incident_record();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateIncidentRecord`.
 ///
 /// <p>Update the details of an incident record. You can use this operation to update an incident record from the defined chat channel. For more information about using actions in chat channels, see <a href="https://docs.aws.amazon.com/incident-manager/latest/userguide/chat.html#chat-interact">Interacting through chat</a>.</p>

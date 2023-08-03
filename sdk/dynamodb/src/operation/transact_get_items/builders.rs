@@ -3,6 +3,23 @@ pub use crate::operation::transact_get_items::_transact_get_items_output::Transa
 
 pub use crate::operation::transact_get_items::_transact_get_items_input::TransactGetItemsInputBuilder;
 
+impl TransactGetItemsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::transact_get_items::TransactGetItemsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::transact_get_items::TransactGetItemsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.transact_get_items();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `TransactGetItems`.
 ///
 /// <p> <code>TransactGetItems</code> is a synchronous operation that atomically retrieves multiple items from one or more tables (but not from indexes) in a single account and Region. A <code>TransactGetItems</code> call can contain up to 100 <code>TransactGetItem</code> objects, each of which contains a <code>Get</code> structure that specifies an item to retrieve from a table in the account and Region. A call to <code>TransactGetItems</code> cannot retrieve items from tables in more than one Amazon Web Services account or Region. The aggregate size of the items in the transaction cannot exceed 4 MB.</p>

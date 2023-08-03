@@ -3,6 +3,23 @@ pub use crate::operation::delete_datastore::_delete_datastore_output::DeleteData
 
 pub use crate::operation::delete_datastore::_delete_datastore_input::DeleteDatastoreInputBuilder;
 
+impl DeleteDatastoreInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_datastore::DeleteDatastoreOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_datastore::DeleteDatastoreError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_datastore();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteDatastore`.
 ///
 /// <p>Deletes the specified data store.</p>

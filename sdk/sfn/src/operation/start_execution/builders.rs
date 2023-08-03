@@ -3,6 +3,23 @@ pub use crate::operation::start_execution::_start_execution_output::StartExecuti
 
 pub use crate::operation::start_execution::_start_execution_input::StartExecutionInputBuilder;
 
+impl StartExecutionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_execution::StartExecutionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_execution::StartExecutionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_execution();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartExecution`.
 ///
 /// <p>Starts a state machine execution.</p>

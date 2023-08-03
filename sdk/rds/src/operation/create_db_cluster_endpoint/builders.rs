@@ -3,6 +3,23 @@ pub use crate::operation::create_db_cluster_endpoint::_create_db_cluster_endpoin
 
 pub use crate::operation::create_db_cluster_endpoint::_create_db_cluster_endpoint_input::CreateDbClusterEndpointInputBuilder;
 
+impl CreateDbClusterEndpointInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_db_cluster_endpoint::CreateDbClusterEndpointOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_db_cluster_endpoint::CreateDBClusterEndpointError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_db_cluster_endpoint();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateDBClusterEndpoint`.
 ///
 /// <p>Creates a new custom endpoint and associates it with an Amazon Aurora DB cluster.</p> <note>

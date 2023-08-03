@@ -3,6 +3,23 @@ pub use crate::operation::describe_template_definition::_describe_template_defin
 
 pub use crate::operation::describe_template_definition::_describe_template_definition_input::DescribeTemplateDefinitionInputBuilder;
 
+impl DescribeTemplateDefinitionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_template_definition::DescribeTemplateDefinitionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_template_definition::DescribeTemplateDefinitionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_template_definition();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeTemplateDefinition`.
 ///
 /// <p>Provides a detailed description of the definition of a template.</p> <note>

@@ -3,6 +3,23 @@ pub use crate::operation::create_tag_option::_create_tag_option_output::CreateTa
 
 pub use crate::operation::create_tag_option::_create_tag_option_input::CreateTagOptionInputBuilder;
 
+impl CreateTagOptionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_tag_option::CreateTagOptionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_tag_option::CreateTagOptionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_tag_option();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateTagOption`.
 ///
 /// <p>Creates a TagOption.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::lookup_developer_identity::_lookup_developer_identity_
 
 pub use crate::operation::lookup_developer_identity::_lookup_developer_identity_input::LookupDeveloperIdentityInputBuilder;
 
+impl LookupDeveloperIdentityInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::lookup_developer_identity::LookupDeveloperIdentityOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::lookup_developer_identity::LookupDeveloperIdentityError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.lookup_developer_identity();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `LookupDeveloperIdentity`.
 ///
 /// <p>Retrieves the <code>IdentityID</code> associated with a <code>DeveloperUserIdentifier</code> or the list of <code>DeveloperUserIdentifier</code> values associated with an <code>IdentityId</code> for an existing identity. Either <code>IdentityID</code> or <code>DeveloperUserIdentifier</code> must not be null. If you supply only one of these values, the other value will be searched in the database and returned as a part of the response. If you supply both, <code>DeveloperUserIdentifier</code> will be matched against <code>IdentityID</code>. If the values are verified against the database, the response returns both values and is the same as the request. Otherwise a <code>ResourceConflictException</code> is thrown.</p>

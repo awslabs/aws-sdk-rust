@@ -3,6 +3,23 @@ pub use crate::operation::describe_change_set::_describe_change_set_output::Desc
 
 pub use crate::operation::describe_change_set::_describe_change_set_input::DescribeChangeSetInputBuilder;
 
+impl DescribeChangeSetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_change_set::DescribeChangeSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_change_set::DescribeChangeSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_change_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeChangeSet`.
 ///
 /// <p>Returns the inputs for the change set and a list of changes that CloudFormation will make if you execute the change set. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-updating-stacks-changesets.html">Updating Stacks Using Change Sets</a> in the CloudFormation User Guide.</p>

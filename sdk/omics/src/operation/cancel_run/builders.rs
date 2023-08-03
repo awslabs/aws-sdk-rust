@@ -3,6 +3,23 @@ pub use crate::operation::cancel_run::_cancel_run_output::CancelRunOutputBuilder
 
 pub use crate::operation::cancel_run::_cancel_run_input::CancelRunInputBuilder;
 
+impl CancelRunInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::cancel_run::CancelRunOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::cancel_run::CancelRunError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.cancel_run();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CancelRun`.
 ///
 /// <p>Cancels a run.</p>

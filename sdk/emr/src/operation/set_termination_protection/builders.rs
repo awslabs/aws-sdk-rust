@@ -3,6 +3,23 @@ pub use crate::operation::set_termination_protection::_set_termination_protectio
 
 pub use crate::operation::set_termination_protection::_set_termination_protection_input::SetTerminationProtectionInputBuilder;
 
+impl SetTerminationProtectionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::set_termination_protection::SetTerminationProtectionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::set_termination_protection::SetTerminationProtectionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.set_termination_protection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SetTerminationProtection`.
 ///
 /// <p>SetTerminationProtection locks a cluster (job flow) so the Amazon EC2 instances in the cluster cannot be terminated by user intervention, an API call, or in the event of a job-flow error. The cluster still terminates upon successful completion of the job flow. Calling <code>SetTerminationProtection</code> on a cluster is similar to calling the Amazon EC2 <code>DisableAPITermination</code> API on all Amazon EC2 instances in a cluster.</p>

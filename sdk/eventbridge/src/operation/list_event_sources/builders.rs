@@ -3,6 +3,23 @@ pub use crate::operation::list_event_sources::_list_event_sources_output::ListEv
 
 pub use crate::operation::list_event_sources::_list_event_sources_input::ListEventSourcesInputBuilder;
 
+impl ListEventSourcesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_event_sources::ListEventSourcesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_event_sources::ListEventSourcesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_event_sources();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListEventSources`.
 ///
 /// <p>You can use this to see all the partner event sources that have been shared with your Amazon Web Services account. For more information about partner event sources, see <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_CreateEventBus.html">CreateEventBus</a>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_address_book::_get_address_book_output::GetAddress
 
 pub use crate::operation::get_address_book::_get_address_book_input::GetAddressBookInputBuilder;
 
+impl GetAddressBookInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_address_book::GetAddressBookOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_address_book::GetAddressBookError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_address_book();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetAddressBook`.
 ///
 /// <p>Gets address the book details by the address book ARN.</p>

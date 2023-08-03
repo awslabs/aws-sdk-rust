@@ -3,6 +3,23 @@ pub use crate::operation::update_notification::_update_notification_output::Upda
 
 pub use crate::operation::update_notification::_update_notification_input::UpdateNotificationInputBuilder;
 
+impl UpdateNotificationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_notification::UpdateNotificationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_notification::UpdateNotificationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_notification();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateNotification`.
 ///
 /// <p>Updates a notification.</p>

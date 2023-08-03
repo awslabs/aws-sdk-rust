@@ -3,6 +3,23 @@ pub use crate::operation::start_export::_start_export_output::StartExportOutputB
 
 pub use crate::operation::start_export::_start_export_input::StartExportInputBuilder;
 
+impl StartExportInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_export::StartExportOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_export::StartExportError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_export();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartExport`.
 ///
 /// <p>Start export.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::update_test_set::_update_test_set_output::UpdateTestSe
 
 pub use crate::operation::update_test_set::_update_test_set_input::UpdateTestSetInputBuilder;
 
+impl UpdateTestSetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_test_set::UpdateTestSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_test_set::UpdateTestSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_test_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateTestSet`.
 ///
 /// <p>The action to update the test set.</p>

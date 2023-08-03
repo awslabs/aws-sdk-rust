@@ -3,6 +3,23 @@ pub use crate::operation::start_call_analytics_job::_start_call_analytics_job_ou
 
 pub use crate::operation::start_call_analytics_job::_start_call_analytics_job_input::StartCallAnalyticsJobInputBuilder;
 
+impl StartCallAnalyticsJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_call_analytics_job::StartCallAnalyticsJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_call_analytics_job::StartCallAnalyticsJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_call_analytics_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartCallAnalyticsJob`.
 ///
 /// <p>Transcribes the audio from a customer service call and applies any additional Request Parameters you choose to include in your request.</p>

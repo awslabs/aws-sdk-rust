@@ -3,6 +3,23 @@ pub use crate::operation::get_subscription_attributes::_get_subscription_attribu
 
 pub use crate::operation::get_subscription_attributes::_get_subscription_attributes_input::GetSubscriptionAttributesInputBuilder;
 
+impl GetSubscriptionAttributesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_subscription_attributes::GetSubscriptionAttributesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_subscription_attributes::GetSubscriptionAttributesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_subscription_attributes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetSubscriptionAttributes`.
 ///
 /// <p>Returns all of the properties of a subscription.</p>

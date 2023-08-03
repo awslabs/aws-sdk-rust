@@ -3,6 +3,23 @@ pub use crate::operation::list_allowed_node_type_updates::_list_allowed_node_typ
 
 pub use crate::operation::list_allowed_node_type_updates::_list_allowed_node_type_updates_input::ListAllowedNodeTypeUpdatesInputBuilder;
 
+impl ListAllowedNodeTypeUpdatesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_allowed_node_type_updates::ListAllowedNodeTypeUpdatesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_allowed_node_type_updates::ListAllowedNodeTypeUpdatesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_allowed_node_type_updates();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAllowedNodeTypeUpdates`.
 ///
 /// <p>Lists all available node types that you can scale to from your cluster's current node type. When you use the UpdateCluster operation to scale your cluster, the value of the NodeType parameter must be one of the node types returned by this operation.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_clusters::_describe_clusters_output::Describe
 
 pub use crate::operation::describe_clusters::_describe_clusters_input::DescribeClustersInputBuilder;
 
+impl DescribeClustersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_clusters::DescribeClustersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_clusters::DescribeClustersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_clusters();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeClusters`.
 ///
 /// <p>Returns properties of provisioned clusters including general cluster properties, cluster database properties, maintenance and backup properties, and security and access properties. This operation supports pagination. For more information about managing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>

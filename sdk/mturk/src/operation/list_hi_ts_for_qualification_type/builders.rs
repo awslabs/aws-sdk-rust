@@ -3,6 +3,23 @@ pub use crate::operation::list_hi_ts_for_qualification_type::_list_hi_ts_for_qua
 
 pub use crate::operation::list_hi_ts_for_qualification_type::_list_hi_ts_for_qualification_type_input::ListHiTsForQualificationTypeInputBuilder;
 
+impl ListHiTsForQualificationTypeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_hi_ts_for_qualification_type::ListHiTsForQualificationTypeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_hi_ts_for_qualification_type::ListHITsForQualificationTypeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_hi_ts_for_qualification_type();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListHITsForQualificationType`.
 ///
 /// <p> The <code>ListHITsForQualificationType</code> operation returns the HITs that use the given Qualification type for a Qualification requirement. The operation returns HITs of any status, except for HITs that have been deleted with the <code>DeleteHIT</code> operation or that have been auto-deleted. </p>

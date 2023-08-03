@@ -3,6 +3,23 @@ pub use crate::operation::get_report_definition::_get_report_definition_output::
 
 pub use crate::operation::get_report_definition::_get_report_definition_input::GetReportDefinitionInputBuilder;
 
+impl GetReportDefinitionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_report_definition::GetReportDefinitionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_report_definition::GetReportDefinitionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_report_definition();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetReportDefinition`.
 ///
 /// <p>Retrieves the definition of a report already configured in AWS Application Cost Profiler.</p>

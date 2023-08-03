@@ -3,6 +3,23 @@ pub use crate::operation::start_wireless_device_import_task::_start_wireless_dev
 
 pub use crate::operation::start_wireless_device_import_task::_start_wireless_device_import_task_input::StartWirelessDeviceImportTaskInputBuilder;
 
+impl StartWirelessDeviceImportTaskInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_wireless_device_import_task::StartWirelessDeviceImportTaskOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_wireless_device_import_task::StartWirelessDeviceImportTaskError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_wireless_device_import_task();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartWirelessDeviceImportTask`.
 ///
 /// <p>Start import task for provisioning Sidewalk devices in bulk using an S3 CSV file.</p>

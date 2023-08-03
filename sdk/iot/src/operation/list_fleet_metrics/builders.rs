@@ -3,6 +3,23 @@ pub use crate::operation::list_fleet_metrics::_list_fleet_metrics_output::ListFl
 
 pub use crate::operation::list_fleet_metrics::_list_fleet_metrics_input::ListFleetMetricsInputBuilder;
 
+impl ListFleetMetricsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_fleet_metrics::ListFleetMetricsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_fleet_metrics::ListFleetMetricsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_fleet_metrics();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListFleetMetrics`.
 ///
 /// <p>Lists all your fleet metrics. </p>

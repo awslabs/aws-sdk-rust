@@ -3,6 +3,23 @@ pub use crate::operation::request_phone_number::_request_phone_number_output::Re
 
 pub use crate::operation::request_phone_number::_request_phone_number_input::RequestPhoneNumberInputBuilder;
 
+impl RequestPhoneNumberInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::request_phone_number::RequestPhoneNumberOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::request_phone_number::RequestPhoneNumberError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.request_phone_number();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RequestPhoneNumber`.
 ///
 /// <p>Request an origination phone number for use in your account. For more information on phone number request see <a href="https://docs.aws.amazon.com/pinpoint/latest/userguide/settings-sms-request-number.html"> Requesting a number </a> in the <i>Amazon Pinpoint User Guide</i>.</p>

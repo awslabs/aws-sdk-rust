@@ -3,6 +3,23 @@ pub use crate::operation::delete_message::_delete_message_output::DeleteMessageO
 
 pub use crate::operation::delete_message::_delete_message_input::DeleteMessageInputBuilder;
 
+impl DeleteMessageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_message::DeleteMessageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_message::DeleteMessageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_message();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteMessage`.
 ///
 /// <p>Sends an event to a specific room which directs clients to delete a specific message; that is, unrender it from view and delete it from the client’s chat history. This event’s <code>EventName</code> is <code>aws:DELETE_MESSAGE</code>. This replicates the <a href="https://docs.aws.amazon.com/ivs/latest/chatmsgapireference/actions-deletemessage-publish.html"> DeleteMessage</a> WebSocket operation in the Amazon IVS Chat Messaging API.</p>

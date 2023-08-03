@@ -3,6 +3,23 @@ pub use crate::operation::delete_cache_parameter_group::_delete_cache_parameter_
 
 pub use crate::operation::delete_cache_parameter_group::_delete_cache_parameter_group_input::DeleteCacheParameterGroupInputBuilder;
 
+impl DeleteCacheParameterGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_cache_parameter_group::DeleteCacheParameterGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_cache_parameter_group::DeleteCacheParameterGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_cache_parameter_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteCacheParameterGroup`.
 ///
 /// <p>Deletes the specified cache parameter group. You cannot delete a cache parameter group if it is associated with any cache clusters. You cannot delete the default cache parameter groups in your account.</p>

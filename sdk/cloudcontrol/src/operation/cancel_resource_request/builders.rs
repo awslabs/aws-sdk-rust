@@ -3,6 +3,23 @@ pub use crate::operation::cancel_resource_request::_cancel_resource_request_outp
 
 pub use crate::operation::cancel_resource_request::_cancel_resource_request_input::CancelResourceRequestInputBuilder;
 
+impl CancelResourceRequestInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::cancel_resource_request::CancelResourceRequestOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::cancel_resource_request::CancelResourceRequestError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.cancel_resource_request();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CancelResourceRequest`.
 ///
 /// <p>Cancels the specified resource operation request. For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-manage-requests.html#resource-operations-manage-requests-cancel">Canceling resource operation requests</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>

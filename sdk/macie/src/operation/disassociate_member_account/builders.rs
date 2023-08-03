@@ -3,6 +3,23 @@ pub use crate::operation::disassociate_member_account::_disassociate_member_acco
 
 pub use crate::operation::disassociate_member_account::_disassociate_member_account_input::DisassociateMemberAccountInputBuilder;
 
+impl DisassociateMemberAccountInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_member_account::DisassociateMemberAccountOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_member_account::DisassociateMemberAccountError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disassociate_member_account();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateMemberAccount`.
 ///
 /// <p>(Discontinued) Removes the specified member account from Amazon Macie Classic.</p>

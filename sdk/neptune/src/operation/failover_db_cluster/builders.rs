@@ -3,6 +3,23 @@ pub use crate::operation::failover_db_cluster::_failover_db_cluster_output::Fail
 
 pub use crate::operation::failover_db_cluster::_failover_db_cluster_input::FailoverDbClusterInputBuilder;
 
+impl FailoverDbClusterInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::failover_db_cluster::FailoverDbClusterOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::failover_db_cluster::FailoverDBClusterError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.failover_db_cluster();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `FailoverDBCluster`.
 ///
 /// <p>Forces a failover for a DB cluster.</p>

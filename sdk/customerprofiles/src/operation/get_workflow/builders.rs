@@ -3,6 +3,23 @@ pub use crate::operation::get_workflow::_get_workflow_output::GetWorkflowOutputB
 
 pub use crate::operation::get_workflow::_get_workflow_input::GetWorkflowInputBuilder;
 
+impl GetWorkflowInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_workflow::GetWorkflowOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_workflow::GetWorkflowError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_workflow();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetWorkflow`.
 ///
 /// <p>Get details of specified workflow.</p>

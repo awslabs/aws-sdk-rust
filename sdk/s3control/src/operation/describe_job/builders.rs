@@ -3,6 +3,23 @@ pub use crate::operation::describe_job::_describe_job_output::DescribeJobOutputB
 
 pub use crate::operation::describe_job::_describe_job_input::DescribeJobInputBuilder;
 
+impl DescribeJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_job::DescribeJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_job::DescribeJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeJob`.
 ///
 /// <p>Retrieves the configuration parameters and status for a Batch Operations job. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops.html">S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.</p>

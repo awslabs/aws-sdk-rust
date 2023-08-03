@@ -3,6 +3,23 @@ pub use crate::operation::create_vpc_peering_authorization::_create_vpc_peering_
 
 pub use crate::operation::create_vpc_peering_authorization::_create_vpc_peering_authorization_input::CreateVpcPeeringAuthorizationInputBuilder;
 
+impl CreateVpcPeeringAuthorizationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_vpc_peering_authorization::CreateVpcPeeringAuthorizationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_vpc_peering_authorization::CreateVpcPeeringAuthorizationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_vpc_peering_authorization();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateVpcPeeringAuthorization`.
 ///
 /// <p>Requests authorization to create or delete a peer connection between the VPC for your Amazon GameLift fleet and a virtual private cloud (VPC) in your Amazon Web Services account. VPC peering enables the game servers on your fleet to communicate directly with other Amazon Web Services resources. After you've received authorization, use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateVpcPeeringConnection.html">CreateVpcPeeringConnection</a> to establish the peering connection. For more information, see <a href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC Peering with Amazon GameLift Fleets</a>.</p>

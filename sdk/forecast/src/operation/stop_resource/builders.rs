@@ -3,6 +3,23 @@ pub use crate::operation::stop_resource::_stop_resource_output::StopResourceOutp
 
 pub use crate::operation::stop_resource::_stop_resource_input::StopResourceInputBuilder;
 
+impl StopResourceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_resource::StopResourceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_resource::StopResourceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_resource();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopResource`.
 ///
 /// <p>Stops a resource.</p>

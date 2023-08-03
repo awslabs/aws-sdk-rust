@@ -3,6 +3,23 @@ pub use crate::operation::create_instance_export_task::_create_instance_export_t
 
 pub use crate::operation::create_instance_export_task::_create_instance_export_task_input::CreateInstanceExportTaskInputBuilder;
 
+impl CreateInstanceExportTaskInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_instance_export_task::CreateInstanceExportTaskOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_instance_export_task::CreateInstanceExportTaskError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_instance_export_task();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateInstanceExportTask`.
 ///
 /// <p>Exports a running or stopped instance to an Amazon S3 bucket.</p>

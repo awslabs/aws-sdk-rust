@@ -3,6 +3,23 @@ pub use crate::operation::change_cidr_collection::_change_cidr_collection_output
 
 pub use crate::operation::change_cidr_collection::_change_cidr_collection_input::ChangeCidrCollectionInputBuilder;
 
+impl ChangeCidrCollectionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::change_cidr_collection::ChangeCidrCollectionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::change_cidr_collection::ChangeCidrCollectionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.change_cidr_collection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ChangeCidrCollection`.
 ///
 /// <p>Creates, changes, or deletes CIDR blocks within a collection. Contains authoritative IP information mapping blocks to one or multiple locations.</p>

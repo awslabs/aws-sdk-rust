@@ -3,6 +3,23 @@ pub use crate::operation::list_ops_item_related_items::_list_ops_item_related_it
 
 pub use crate::operation::list_ops_item_related_items::_list_ops_item_related_items_input::ListOpsItemRelatedItemsInputBuilder;
 
+impl ListOpsItemRelatedItemsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_ops_item_related_items::ListOpsItemRelatedItemsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_ops_item_related_items::ListOpsItemRelatedItemsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_ops_item_related_items();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListOpsItemRelatedItems`.
 ///
 /// <p>Lists all related-item resources associated with a Systems Manager OpsCenter OpsItem. OpsCenter is a capability of Amazon Web Services Systems Manager.</p>

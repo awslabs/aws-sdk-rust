@@ -3,6 +3,23 @@ pub use crate::operation::list_resources::_list_resources_output::ListResourcesO
 
 pub use crate::operation::list_resources::_list_resources_input::ListResourcesInputBuilder;
 
+impl ListResourcesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_resources::ListResourcesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_resources::ListResourcesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_resources();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListResources`.
 ///
 /// <p>Lists the resources that you added to a resource share or the resources that are shared with you.</p>

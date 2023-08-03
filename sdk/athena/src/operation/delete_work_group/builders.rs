@@ -3,6 +3,23 @@ pub use crate::operation::delete_work_group::_delete_work_group_output::DeleteWo
 
 pub use crate::operation::delete_work_group::_delete_work_group_input::DeleteWorkGroupInputBuilder;
 
+impl DeleteWorkGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_work_group::DeleteWorkGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_work_group::DeleteWorkGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_work_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteWorkGroup`.
 ///
 /// <p>Deletes the workgroup with the specified name. The primary workgroup cannot be deleted.</p>

@@ -3,6 +3,17 @@ pub use crate::operation::modify_instance_capacity_reservation_attributes::_modi
 
 pub use crate::operation::modify_instance_capacity_reservation_attributes::_modify_instance_capacity_reservation_attributes_input::ModifyInstanceCapacityReservationAttributesInputBuilder;
 
+impl ModifyInstanceCapacityReservationAttributesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::modify_instance_capacity_reservation_attributes::ModifyInstanceCapacityReservationAttributesOutput, ::aws_smithy_http::result::SdkError<crate::operation::modify_instance_capacity_reservation_attributes::ModifyInstanceCapacityReservationAttributesError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.modify_instance_capacity_reservation_attributes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyInstanceCapacityReservationAttributes`.
 ///
 /// <p>Modifies the Capacity Reservation settings for a stopped instance. Use this action to configure an instance to target a specific Capacity Reservation, run in any <code>open</code> Capacity Reservation with matching attributes, or run On-Demand Instance capacity.</p>

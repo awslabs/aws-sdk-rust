@@ -3,6 +3,23 @@ pub use crate::operation::create_logger_definition_version::_create_logger_defin
 
 pub use crate::operation::create_logger_definition_version::_create_logger_definition_version_input::CreateLoggerDefinitionVersionInputBuilder;
 
+impl CreateLoggerDefinitionVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_logger_definition_version::CreateLoggerDefinitionVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_logger_definition_version::CreateLoggerDefinitionVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_logger_definition_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateLoggerDefinitionVersion`.
 ///
 /// Creates a version of a logger definition that has already been defined.

@@ -3,6 +3,23 @@ pub use crate::operation::set_data_retrieval_policy::_set_data_retrieval_policy_
 
 pub use crate::operation::set_data_retrieval_policy::_set_data_retrieval_policy_input::SetDataRetrievalPolicyInputBuilder;
 
+impl SetDataRetrievalPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::set_data_retrieval_policy::SetDataRetrievalPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::set_data_retrieval_policy::SetDataRetrievalPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.set_data_retrieval_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SetDataRetrievalPolicy`.
 ///
 /// <p>This operation sets and then enacts a data retrieval policy in the region specified in the PUT request. You can set one policy per region for an AWS account. The policy is enacted within a few minutes of a successful PUT operation.</p>

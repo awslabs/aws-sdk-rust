@@ -3,6 +3,23 @@ pub use crate::operation::create_game::_create_game_output::CreateGameOutputBuil
 
 pub use crate::operation::create_game::_create_game_input::CreateGameInputBuilder;
 
+impl CreateGameInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_game::CreateGameOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_game::CreateGameError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_game();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateGame`.
 ///
 /// <p> Creates a new game with an empty configuration. After creating your game, you can update the configuration using <code>UpdateGameConfiguration</code> or <code>ImportGameConfiguration</code>. </p>

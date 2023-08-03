@@ -3,6 +3,23 @@ pub use crate::operation::activate_event_source::_activate_event_source_output::
 
 pub use crate::operation::activate_event_source::_activate_event_source_input::ActivateEventSourceInputBuilder;
 
+impl ActivateEventSourceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::activate_event_source::ActivateEventSourceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::activate_event_source::ActivateEventSourceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.activate_event_source();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ActivateEventSource`.
 ///
 /// <p>Activates a partner event source that has been deactivated. Once activated, your matching event bus will start receiving events from the event source.</p>

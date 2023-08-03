@@ -3,6 +3,23 @@ pub use crate::operation::restore_workspace::_restore_workspace_output::RestoreW
 
 pub use crate::operation::restore_workspace::_restore_workspace_input::RestoreWorkspaceInputBuilder;
 
+impl RestoreWorkspaceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::restore_workspace::RestoreWorkspaceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::restore_workspace::RestoreWorkspaceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.restore_workspace();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RestoreWorkspace`.
 ///
 /// <p>Restores the specified WorkSpace to its last known healthy state.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_environment_vpcs::_list_environment_vpcs_output::
 
 pub use crate::operation::list_environment_vpcs::_list_environment_vpcs_input::ListEnvironmentVpcsInputBuilder;
 
+impl ListEnvironmentVpcsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_environment_vpcs::ListEnvironmentVpcsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_environment_vpcs::ListEnvironmentVpcsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_environment_vpcs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListEnvironmentVpcs`.
 ///
 /// <p>Lists all Amazon Web Services Migration Hub Refactor Spaces service virtual private clouds (VPCs) that are part of the environment. </p>

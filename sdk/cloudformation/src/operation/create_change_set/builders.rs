@@ -3,6 +3,23 @@ pub use crate::operation::create_change_set::_create_change_set_output::CreateCh
 
 pub use crate::operation::create_change_set::_create_change_set_input::CreateChangeSetInputBuilder;
 
+impl CreateChangeSetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_change_set::CreateChangeSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_change_set::CreateChangeSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_change_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateChangeSet`.
 ///
 /// <p>Creates a list of changes that will be applied to a stack so that you can review the changes before executing them. You can create a change set for a stack that doesn't exist or an existing stack. If you create a change set for a stack that doesn't exist, the change set shows all of the resources that CloudFormation will create. If you create a change set for an existing stack, CloudFormation compares the stack's information with the information that you submit in the change set and lists the differences. Use change sets to understand which resources CloudFormation will create or change, and how it will change resources in an existing stack, before you create or update a stack.</p>

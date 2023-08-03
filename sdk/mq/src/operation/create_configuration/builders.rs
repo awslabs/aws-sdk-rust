@@ -3,6 +3,23 @@ pub use crate::operation::create_configuration::_create_configuration_output::Cr
 
 pub use crate::operation::create_configuration::_create_configuration_input::CreateConfigurationInputBuilder;
 
+impl CreateConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_configuration::CreateConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_configuration::CreateConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateConfiguration`.
 ///
 /// <p>Creates a new configuration for the specified configuration name. Amazon MQ uses the default configuration (the engine type and version).</p>

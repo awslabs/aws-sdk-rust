@@ -3,6 +3,23 @@ pub use crate::operation::translate_document::_translate_document_output::Transl
 
 pub use crate::operation::translate_document::_translate_document_input::TranslateDocumentInputBuilder;
 
+impl TranslateDocumentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::translate_document::TranslateDocumentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::translate_document::TranslateDocumentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.translate_document();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `TranslateDocument`.
 ///
 /// <p>Translates the input document from the source language to the target language. This synchronous operation supports plain text or HTML for the input document. <code>TranslateDocument</code> supports translations from English to any supported language, and from any supported language to English. Therefore, specify either the source language code or the target language code as “en” (English). </p>

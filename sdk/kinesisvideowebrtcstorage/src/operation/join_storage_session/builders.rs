@@ -3,6 +3,23 @@ pub use crate::operation::join_storage_session::_join_storage_session_output::Jo
 
 pub use crate::operation::join_storage_session::_join_storage_session_input::JoinStorageSessionInputBuilder;
 
+impl JoinStorageSessionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::join_storage_session::JoinStorageSessionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::join_storage_session::JoinStorageSessionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.join_storage_session();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `JoinStorageSession`.
 ///
 /// <p> Join the ongoing one way-video and/or multi-way audio WebRTC session as a video producing device for an input channel. If there’s no existing session for the channel, a new streaming session needs to be created, and the Amazon Resource Name (ARN) of the signaling channel must be provided. </p>

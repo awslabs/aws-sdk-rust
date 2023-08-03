@@ -3,6 +3,23 @@ pub use crate::operation::list_targets_for_policy::_list_targets_for_policy_outp
 
 pub use crate::operation::list_targets_for_policy::_list_targets_for_policy_input::ListTargetsForPolicyInputBuilder;
 
+impl ListTargetsForPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_targets_for_policy::ListTargetsForPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_targets_for_policy::ListTargetsForPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_targets_for_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListTargetsForPolicy`.
 ///
 /// <p>List targets for the specified policy.</p>

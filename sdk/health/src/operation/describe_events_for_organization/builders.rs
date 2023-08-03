@@ -3,6 +3,23 @@ pub use crate::operation::describe_events_for_organization::_describe_events_for
 
 pub use crate::operation::describe_events_for_organization::_describe_events_for_organization_input::DescribeEventsForOrganizationInputBuilder;
 
+impl DescribeEventsForOrganizationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_events_for_organization::DescribeEventsForOrganizationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_events_for_organization::DescribeEventsForOrganizationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_events_for_organization();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeEventsForOrganization`.
 ///
 /// <p>Returns information about events across your organization in Organizations. You can use the<code>filters</code> parameter to specify the events that you want to return. Events are returned in a summary form and don't include the affected accounts, detailed description, any additional metadata that depends on the event type, or any affected resources. To retrieve that information, use the following operations:</p>

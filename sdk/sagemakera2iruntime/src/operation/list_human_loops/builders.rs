@@ -3,6 +3,23 @@ pub use crate::operation::list_human_loops::_list_human_loops_output::ListHumanL
 
 pub use crate::operation::list_human_loops::_list_human_loops_input::ListHumanLoopsInputBuilder;
 
+impl ListHumanLoopsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_human_loops::ListHumanLoopsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_human_loops::ListHumanLoopsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_human_loops();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListHumanLoops`.
 ///
 /// <p>Returns information about human loops, given the specified parameters. If a human loop was deleted, it will not be included.</p>

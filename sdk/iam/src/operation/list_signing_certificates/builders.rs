@@ -3,6 +3,23 @@ pub use crate::operation::list_signing_certificates::_list_signing_certificates_
 
 pub use crate::operation::list_signing_certificates::_list_signing_certificates_input::ListSigningCertificatesInputBuilder;
 
+impl ListSigningCertificatesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_signing_certificates::ListSigningCertificatesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_signing_certificates::ListSigningCertificatesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_signing_certificates();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListSigningCertificates`.
 ///
 /// <p>Returns information about the signing certificates associated with the specified IAM user. If none exists, the operation returns an empty list.</p>

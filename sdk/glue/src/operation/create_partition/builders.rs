@@ -3,6 +3,23 @@ pub use crate::operation::create_partition::_create_partition_output::CreatePart
 
 pub use crate::operation::create_partition::_create_partition_input::CreatePartitionInputBuilder;
 
+impl CreatePartitionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_partition::CreatePartitionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_partition::CreatePartitionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_partition();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreatePartition`.
 ///
 /// <p>Creates a new partition.</p>

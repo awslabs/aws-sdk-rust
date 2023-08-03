@@ -3,6 +3,17 @@ pub use crate::operation::get_time_series_service_statistics::_get_time_series_s
 
 pub use crate::operation::get_time_series_service_statistics::_get_time_series_service_statistics_input::GetTimeSeriesServiceStatisticsInputBuilder;
 
+impl GetTimeSeriesServiceStatisticsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_time_series_service_statistics::GetTimeSeriesServiceStatisticsOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_time_series_service_statistics::GetTimeSeriesServiceStatisticsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_time_series_service_statistics();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetTimeSeriesServiceStatistics`.
 ///
 /// <p>Get an aggregation of service statistics defined by a specific time range.</p>

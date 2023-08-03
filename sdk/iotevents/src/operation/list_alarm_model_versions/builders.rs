@@ -3,6 +3,23 @@ pub use crate::operation::list_alarm_model_versions::_list_alarm_model_versions_
 
 pub use crate::operation::list_alarm_model_versions::_list_alarm_model_versions_input::ListAlarmModelVersionsInputBuilder;
 
+impl ListAlarmModelVersionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_alarm_model_versions::ListAlarmModelVersionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_alarm_model_versions::ListAlarmModelVersionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_alarm_model_versions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAlarmModelVersions`.
 ///
 /// <p>Lists all the versions of an alarm model. The operation returns only the metadata associated with each alarm model version.</p>

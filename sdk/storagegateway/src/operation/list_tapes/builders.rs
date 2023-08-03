@@ -3,6 +3,23 @@ pub use crate::operation::list_tapes::_list_tapes_output::ListTapesOutputBuilder
 
 pub use crate::operation::list_tapes::_list_tapes_input::ListTapesInputBuilder;
 
+impl ListTapesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_tapes::ListTapesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_tapes::ListTapesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_tapes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListTapes`.
 ///
 /// <p>Lists virtual tapes in your virtual tape library (VTL) and your virtual tape shelf (VTS). You specify the tapes to list by specifying one or more tape Amazon Resource Names (ARNs). If you don't specify a tape ARN, the operation lists all virtual tapes in both your VTL and VTS.</p>

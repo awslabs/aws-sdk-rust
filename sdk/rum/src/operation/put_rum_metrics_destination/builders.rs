@@ -3,6 +3,23 @@ pub use crate::operation::put_rum_metrics_destination::_put_rum_metrics_destinat
 
 pub use crate::operation::put_rum_metrics_destination::_put_rum_metrics_destination_input::PutRumMetricsDestinationInputBuilder;
 
+impl PutRumMetricsDestinationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_rum_metrics_destination::PutRumMetricsDestinationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_rum_metrics_destination::PutRumMetricsDestinationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_rum_metrics_destination();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutRumMetricsDestination`.
 ///
 /// <p>Creates or updates a destination to receive extended metrics from CloudWatch RUM. You can send extended metrics to CloudWatch or to a CloudWatch Evidently experiment.</p>

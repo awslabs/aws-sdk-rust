@@ -3,6 +3,23 @@ pub use crate::operation::admin_delete_user_attributes::_admin_delete_user_attri
 
 pub use crate::operation::admin_delete_user_attributes::_admin_delete_user_attributes_input::AdminDeleteUserAttributesInputBuilder;
 
+impl AdminDeleteUserAttributesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::admin_delete_user_attributes::AdminDeleteUserAttributesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::admin_delete_user_attributes::AdminDeleteUserAttributesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.admin_delete_user_attributes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AdminDeleteUserAttributes`.
 ///
 /// <p>Deletes the user attributes in a user pool as an administrator. Works on any user.</p>

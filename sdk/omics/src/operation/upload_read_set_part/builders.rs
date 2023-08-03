@@ -3,6 +3,23 @@ pub use crate::operation::upload_read_set_part::_upload_read_set_part_output::Up
 
 pub use crate::operation::upload_read_set_part::_upload_read_set_part_input::UploadReadSetPartInputBuilder;
 
+impl UploadReadSetPartInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::upload_read_set_part::UploadReadSetPartOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::upload_read_set_part::UploadReadSetPartError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.upload_read_set_part();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UploadReadSetPart`.
 ///
 /// <p> This operation uploads a specific part of a read set. If you upload a new part using a previously used part number, the previously uploaded part will be overwritten. </p>

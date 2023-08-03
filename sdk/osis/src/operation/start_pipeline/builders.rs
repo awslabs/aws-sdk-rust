@@ -3,6 +3,23 @@ pub use crate::operation::start_pipeline::_start_pipeline_output::StartPipelineO
 
 pub use crate::operation::start_pipeline::_start_pipeline_input::StartPipelineInputBuilder;
 
+impl StartPipelineInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_pipeline::StartPipelineOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_pipeline::StartPipelineError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_pipeline();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartPipeline`.
 ///
 /// <p>Starts an OpenSearch Ingestion pipeline. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/pipeline--stop-start.html#pipeline--start">Starting an OpenSearch Ingestion pipeline</a>.</p>

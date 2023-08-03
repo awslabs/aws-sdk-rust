@@ -3,6 +3,23 @@ pub use crate::operation::create_template::_create_template_output::CreateTempla
 
 pub use crate::operation::create_template::_create_template_input::CreateTemplateInputBuilder;
 
+impl CreateTemplateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_template::CreateTemplateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_template::CreateTemplateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_template();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateTemplate`.
 ///
 /// <p>Creates an email template. Email templates enable you to send personalized email to one or more destinations in a single API operation. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer Guide</a>.</p>

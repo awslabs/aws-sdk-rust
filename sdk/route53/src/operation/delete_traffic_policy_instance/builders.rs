@@ -3,6 +3,23 @@ pub use crate::operation::delete_traffic_policy_instance::_delete_traffic_policy
 
 pub use crate::operation::delete_traffic_policy_instance::_delete_traffic_policy_instance_input::DeleteTrafficPolicyInstanceInputBuilder;
 
+impl DeleteTrafficPolicyInstanceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_traffic_policy_instance::DeleteTrafficPolicyInstanceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_traffic_policy_instance::DeleteTrafficPolicyInstanceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_traffic_policy_instance();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteTrafficPolicyInstance`.
 ///
 /// <p>Deletes a traffic policy instance and all of the resource record sets that Amazon Route 53 created when you created the instance.</p> <note>

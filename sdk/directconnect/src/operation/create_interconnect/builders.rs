@@ -3,6 +3,23 @@ pub use crate::operation::create_interconnect::_create_interconnect_output::Crea
 
 pub use crate::operation::create_interconnect::_create_interconnect_input::CreateInterconnectInputBuilder;
 
+impl CreateInterconnectInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_interconnect::CreateInterconnectOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_interconnect::CreateInterconnectError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_interconnect();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateInterconnect`.
 ///
 /// <p>Creates an interconnect between an Direct Connect Partner's network and a specific Direct Connect location.</p>

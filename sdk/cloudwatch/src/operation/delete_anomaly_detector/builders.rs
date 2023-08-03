@@ -3,6 +3,23 @@ pub use crate::operation::delete_anomaly_detector::_delete_anomaly_detector_outp
 
 pub use crate::operation::delete_anomaly_detector::_delete_anomaly_detector_input::DeleteAnomalyDetectorInputBuilder;
 
+impl DeleteAnomalyDetectorInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_anomaly_detector::DeleteAnomalyDetectorError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_anomaly_detector();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteAnomalyDetector`.
 ///
 /// <p> Deletes the specified anomaly detection model from your account. For more information about how to delete an anomaly detection model, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Create_Anomaly_Detection_Alarm.html#Delete_Anomaly_Detection_Model">Deleting an anomaly detection model</a> in the <i>CloudWatch User Guide</i>. </p>

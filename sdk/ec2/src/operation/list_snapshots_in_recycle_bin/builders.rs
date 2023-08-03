@@ -3,6 +3,23 @@ pub use crate::operation::list_snapshots_in_recycle_bin::_list_snapshots_in_recy
 
 pub use crate::operation::list_snapshots_in_recycle_bin::_list_snapshots_in_recycle_bin_input::ListSnapshotsInRecycleBinInputBuilder;
 
+impl ListSnapshotsInRecycleBinInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_snapshots_in_recycle_bin::ListSnapshotsInRecycleBinOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_snapshots_in_recycle_bin::ListSnapshotsInRecycleBinError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_snapshots_in_recycle_bin();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListSnapshotsInRecycleBin`.
 ///
 /// <p>Lists one or more snapshots that are currently in the Recycle Bin.</p>

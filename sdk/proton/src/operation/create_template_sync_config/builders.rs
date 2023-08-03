@@ -3,6 +3,23 @@ pub use crate::operation::create_template_sync_config::_create_template_sync_con
 
 pub use crate::operation::create_template_sync_config::_create_template_sync_config_input::CreateTemplateSyncConfigInputBuilder;
 
+impl CreateTemplateSyncConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_template_sync_config::CreateTemplateSyncConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_template_sync_config::CreateTemplateSyncConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_template_sync_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateTemplateSyncConfig`.
 ///
 /// <p>Set up a template to create new template versions automatically by tracking a linked repository. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>

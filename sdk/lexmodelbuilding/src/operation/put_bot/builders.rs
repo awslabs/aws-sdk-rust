@@ -3,6 +3,23 @@ pub use crate::operation::put_bot::_put_bot_output::PutBotOutputBuilder;
 
 pub use crate::operation::put_bot::_put_bot_input::PutBotInputBuilder;
 
+impl PutBotInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_bot::PutBotOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_bot::PutBotError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_bot();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutBot`.
 ///
 /// <p>Creates an Amazon Lex conversational bot or replaces an existing bot. When you create or update a bot you are only required to specify a name, a locale, and whether the bot is directed toward children under age 13. You can use this to add intents later, or to remove intents from an existing bot. When you create a bot with the minimum information, the bot is created or updated but Amazon Lex returns the <code></code> response <code>FAILED</code>. You can build the bot after you add one or more intents. For more information about Amazon Lex bots, see <code>how-it-works</code>. </p>

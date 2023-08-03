@@ -3,6 +3,17 @@ pub use crate::operation::modify_transit_gateway_vpc_attachment::_modify_transit
 
 pub use crate::operation::modify_transit_gateway_vpc_attachment::_modify_transit_gateway_vpc_attachment_input::ModifyTransitGatewayVpcAttachmentInputBuilder;
 
+impl ModifyTransitGatewayVpcAttachmentInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::modify_transit_gateway_vpc_attachment::ModifyTransitGatewayVpcAttachmentOutput, ::aws_smithy_http::result::SdkError<crate::operation::modify_transit_gateway_vpc_attachment::ModifyTransitGatewayVpcAttachmentError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.modify_transit_gateway_vpc_attachment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyTransitGatewayVpcAttachment`.
 ///
 /// <p>Modifies the specified VPC attachment.</p>

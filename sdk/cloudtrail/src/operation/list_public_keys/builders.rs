@@ -3,6 +3,23 @@ pub use crate::operation::list_public_keys::_list_public_keys_output::ListPublic
 
 pub use crate::operation::list_public_keys::_list_public_keys_input::ListPublicKeysInputBuilder;
 
+impl ListPublicKeysInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_public_keys::ListPublicKeysOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_public_keys::ListPublicKeysError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_public_keys();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListPublicKeys`.
 ///
 /// <p>Returns all public keys whose private keys were used to sign the digest files within the specified time range. The public key is needed to validate digest files that were signed with its corresponding private key.</p> <note>

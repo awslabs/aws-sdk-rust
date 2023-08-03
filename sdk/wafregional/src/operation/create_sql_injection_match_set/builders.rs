@@ -3,6 +3,23 @@ pub use crate::operation::create_sql_injection_match_set::_create_sql_injection_
 
 pub use crate::operation::create_sql_injection_match_set::_create_sql_injection_match_set_input::CreateSqlInjectionMatchSetInputBuilder;
 
+impl CreateSqlInjectionMatchSetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_sql_injection_match_set::CreateSqlInjectionMatchSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_sql_injection_match_set::CreateSqlInjectionMatchSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_sql_injection_match_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateSqlInjectionMatchSet`.
 ///
 /// <note>

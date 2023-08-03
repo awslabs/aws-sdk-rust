@@ -3,6 +3,23 @@ pub use crate::operation::get_container_services::_get_container_services_output
 
 pub use crate::operation::get_container_services::_get_container_services_input::GetContainerServicesInputBuilder;
 
+impl GetContainerServicesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_container_services::GetContainerServicesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_container_services::GetContainerServicesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_container_services();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetContainerServices`.
 ///
 /// <p>Returns information about one or more of your Amazon Lightsail container services.</p>

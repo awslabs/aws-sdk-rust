@@ -3,6 +3,17 @@ pub use crate::operation::get_rate_based_statement_managed_keys::_get_rate_based
 
 pub use crate::operation::get_rate_based_statement_managed_keys::_get_rate_based_statement_managed_keys_input::GetRateBasedStatementManagedKeysInputBuilder;
 
+impl GetRateBasedStatementManagedKeysInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_rate_based_statement_managed_keys::GetRateBasedStatementManagedKeysOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_rate_based_statement_managed_keys::GetRateBasedStatementManagedKeysError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_rate_based_statement_managed_keys();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetRateBasedStatementManagedKeys`.
 ///
 /// <p>Retrieves the IP addresses that are currently blocked by a rate-based rule instance. This is only available for rate-based rules that aggregate solely on the IP address or on the forwarded IP address. </p>

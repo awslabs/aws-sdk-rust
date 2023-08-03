@@ -3,6 +3,23 @@ pub use crate::operation::update_contact_schedule::_update_contact_schedule_outp
 
 pub use crate::operation::update_contact_schedule::_update_contact_schedule_input::UpdateContactScheduleInputBuilder;
 
+impl UpdateContactScheduleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_contact_schedule::UpdateContactScheduleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_contact_schedule::UpdateContactScheduleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_contact_schedule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateContactSchedule`.
 ///
 /// <p>Updates the scheduled time of a task contact that is already scheduled.</p>

@@ -3,6 +3,17 @@ pub use crate::operation::describe_elasticsearch_instance_type_limits::_describe
 
 pub use crate::operation::describe_elasticsearch_instance_type_limits::_describe_elasticsearch_instance_type_limits_input::DescribeElasticsearchInstanceTypeLimitsInputBuilder;
 
+impl DescribeElasticsearchInstanceTypeLimitsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_elasticsearch_instance_type_limits::DescribeElasticsearchInstanceTypeLimitsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_elasticsearch_instance_type_limits::DescribeElasticsearchInstanceTypeLimitsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_elasticsearch_instance_type_limits();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeElasticsearchInstanceTypeLimits`.
 ///
 /// <p> Describe Elasticsearch Limits for a given InstanceType and ElasticsearchVersion. When modifying existing Domain, specify the <code> <code>DomainName</code> </code> to know what Limits are supported for modifying. </p>

@@ -3,6 +3,17 @@ pub use crate::operation::update_column_statistics_for_table::_update_column_sta
 
 pub use crate::operation::update_column_statistics_for_table::_update_column_statistics_for_table_input::UpdateColumnStatisticsForTableInputBuilder;
 
+impl UpdateColumnStatisticsForTableInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::update_column_statistics_for_table::UpdateColumnStatisticsForTableOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_column_statistics_for_table::UpdateColumnStatisticsForTableError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.update_column_statistics_for_table();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateColumnStatisticsForTable`.
 ///
 /// <p>Creates or updates table statistics of columns.</p>

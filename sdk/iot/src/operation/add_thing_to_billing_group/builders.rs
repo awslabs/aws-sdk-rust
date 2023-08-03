@@ -3,6 +3,23 @@ pub use crate::operation::add_thing_to_billing_group::_add_thing_to_billing_grou
 
 pub use crate::operation::add_thing_to_billing_group::_add_thing_to_billing_group_input::AddThingToBillingGroupInputBuilder;
 
+impl AddThingToBillingGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::add_thing_to_billing_group::AddThingToBillingGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::add_thing_to_billing_group::AddThingToBillingGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.add_thing_to_billing_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AddThingToBillingGroup`.
 ///
 /// <p>Adds a thing to a billing group.</p>

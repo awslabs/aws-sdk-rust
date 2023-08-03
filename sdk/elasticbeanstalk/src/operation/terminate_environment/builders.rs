@@ -3,6 +3,23 @@ pub use crate::operation::terminate_environment::_terminate_environment_output::
 
 pub use crate::operation::terminate_environment::_terminate_environment_input::TerminateEnvironmentInputBuilder;
 
+impl TerminateEnvironmentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::terminate_environment::TerminateEnvironmentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::terminate_environment::TerminateEnvironmentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.terminate_environment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `TerminateEnvironment`.
 ///
 /// <p>Terminates the specified environment.</p>

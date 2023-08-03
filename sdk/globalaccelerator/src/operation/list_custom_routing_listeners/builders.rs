@@ -3,6 +3,23 @@ pub use crate::operation::list_custom_routing_listeners::_list_custom_routing_li
 
 pub use crate::operation::list_custom_routing_listeners::_list_custom_routing_listeners_input::ListCustomRoutingListenersInputBuilder;
 
+impl ListCustomRoutingListenersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_custom_routing_listeners::ListCustomRoutingListenersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_custom_routing_listeners::ListCustomRoutingListenersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_custom_routing_listeners();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListCustomRoutingListeners`.
 ///
 /// <p>List the listeners for a custom routing accelerator. </p>

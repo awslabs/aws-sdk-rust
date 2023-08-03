@@ -3,6 +3,17 @@ pub use crate::operation::get_relational_database_parameters::_get_relational_da
 
 pub use crate::operation::get_relational_database_parameters::_get_relational_database_parameters_input::GetRelationalDatabaseParametersInputBuilder;
 
+impl GetRelationalDatabaseParametersInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_relational_database_parameters::GetRelationalDatabaseParametersOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_relational_database_parameters::GetRelationalDatabaseParametersError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_relational_database_parameters();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetRelationalDatabaseParameters`.
 ///
 /// <p>Returns all of the runtime parameters offered by the underlying database software, or engine, for a specific database in Amazon Lightsail.</p>

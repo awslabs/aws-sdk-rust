@@ -3,6 +3,23 @@ pub use crate::operation::delete_launch_template::_delete_launch_template_output
 
 pub use crate::operation::delete_launch_template::_delete_launch_template_input::DeleteLaunchTemplateInputBuilder;
 
+impl DeleteLaunchTemplateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_launch_template::DeleteLaunchTemplateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_launch_template::DeleteLaunchTemplateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_launch_template();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteLaunchTemplate`.
 ///
 /// <p>Deletes a launch template. Deleting a launch template deletes all of its versions.</p>

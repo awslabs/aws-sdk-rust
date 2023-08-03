@@ -3,6 +3,23 @@ pub use crate::operation::get_impersonation_role_effect::_get_impersonation_role
 
 pub use crate::operation::get_impersonation_role_effect::_get_impersonation_role_effect_input::GetImpersonationRoleEffectInputBuilder;
 
+impl GetImpersonationRoleEffectInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_impersonation_role_effect::GetImpersonationRoleEffectOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_impersonation_role_effect::GetImpersonationRoleEffectError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_impersonation_role_effect();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetImpersonationRoleEffect`.
 ///
 /// <p>Tests whether the given impersonation role can impersonate a target user.</p>

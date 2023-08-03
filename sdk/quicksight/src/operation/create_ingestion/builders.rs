@@ -3,6 +3,23 @@ pub use crate::operation::create_ingestion::_create_ingestion_output::CreateInge
 
 pub use crate::operation::create_ingestion::_create_ingestion_input::CreateIngestionInputBuilder;
 
+impl CreateIngestionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_ingestion::CreateIngestionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_ingestion::CreateIngestionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_ingestion();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateIngestion`.
 ///
 /// <p>Creates and starts a new SPICE ingestion for a dataset. You can manually refresh datasets in an Enterprise edition account 32 times in a 24-hour period. You can manually refresh datasets in a Standard edition account 8 times in a 24-hour period. Each 24-hour period is measured starting 24 hours before the current date and time.</p>

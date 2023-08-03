@@ -3,6 +3,23 @@ pub use crate::operation::invite_members::_invite_members_output::InviteMembersO
 
 pub use crate::operation::invite_members::_invite_members_input::InviteMembersInputBuilder;
 
+impl InviteMembersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::invite_members::InviteMembersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::invite_members::InviteMembersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.invite_members();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `InviteMembers`.
 ///
 /// <p>Invites Amazon Web Services accounts to become members of an organization administered by the Amazon Web Services account that invokes this API. If you are using Amazon Web Services Organizations to manager your GuardDuty environment, this step is not needed. For more information, see <a href="https://docs.aws.amazon.com/guardduty/latest/ug/guardduty_organizations.html">Managing accounts with Amazon Web Services Organizations</a>.</p>

@@ -3,6 +3,17 @@ pub use crate::operation::list_delegated_services_for_account::_list_delegated_s
 
 pub use crate::operation::list_delegated_services_for_account::_list_delegated_services_for_account_input::ListDelegatedServicesForAccountInputBuilder;
 
+impl ListDelegatedServicesForAccountInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_delegated_services_for_account::ListDelegatedServicesForAccountOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_delegated_services_for_account::ListDelegatedServicesForAccountError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_delegated_services_for_account();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDelegatedServicesForAccount`.
 ///
 /// <p>List the Amazon Web Services services for which the specified account is a delegated administrator.</p>

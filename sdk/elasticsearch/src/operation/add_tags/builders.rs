@@ -3,6 +3,23 @@ pub use crate::operation::add_tags::_add_tags_output::AddTagsOutputBuilder;
 
 pub use crate::operation::add_tags::_add_tags_input::AddTagsInputBuilder;
 
+impl AddTagsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::add_tags::AddTagsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::add_tags::AddTagsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.add_tags();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AddTags`.
 ///
 /// <p>Attaches tags to an existing Elasticsearch domain. Tags are a set of case-sensitive key value pairs. An Elasticsearch domain may have up to 10 tags. See <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-managedomains.html#es-managedomains-awsresorcetagging" target="_blank"> Tagging Amazon Elasticsearch Service Domains for more information.</a></p>

@@ -3,6 +3,23 @@ pub use crate::operation::detach_principal_policy::_detach_principal_policy_outp
 
 pub use crate::operation::detach_principal_policy::_detach_principal_policy_input::DetachPrincipalPolicyInputBuilder;
 
+impl DetachPrincipalPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::detach_principal_policy::DetachPrincipalPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::detach_principal_policy::DetachPrincipalPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.detach_principal_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DetachPrincipalPolicy`.
 ///
 /// <p>Removes the specified policy from the specified certificate.</p>

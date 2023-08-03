@@ -3,6 +3,23 @@ pub use crate::operation::describe_connector::_describe_connector_output::Descri
 
 pub use crate::operation::describe_connector::_describe_connector_input::DescribeConnectorInputBuilder;
 
+impl DescribeConnectorInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_connector::DescribeConnectorOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_connector::DescribeConnectorError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_connector();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeConnector`.
 ///
 /// <p>Describes the given custom connector registered in your Amazon Web Services account. This API can be used for custom connectors that are registered in your account and also for Amazon authored connectors.</p>

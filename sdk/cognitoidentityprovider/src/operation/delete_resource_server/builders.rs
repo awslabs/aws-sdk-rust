@@ -3,6 +3,23 @@ pub use crate::operation::delete_resource_server::_delete_resource_server_output
 
 pub use crate::operation::delete_resource_server::_delete_resource_server_input::DeleteResourceServerInputBuilder;
 
+impl DeleteResourceServerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_resource_server::DeleteResourceServerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_resource_server::DeleteResourceServerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_resource_server();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteResourceServer`.
 ///
 /// <p>Deletes a resource server.</p>

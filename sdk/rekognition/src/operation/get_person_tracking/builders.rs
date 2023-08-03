@@ -3,6 +3,23 @@ pub use crate::operation::get_person_tracking::_get_person_tracking_output::GetP
 
 pub use crate::operation::get_person_tracking::_get_person_tracking_input::GetPersonTrackingInputBuilder;
 
+impl GetPersonTrackingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_person_tracking::GetPersonTrackingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_person_tracking::GetPersonTrackingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_person_tracking();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetPersonTracking`.
 ///
 /// <p>Gets the path tracking results of a Amazon Rekognition Video analysis started by <code>StartPersonTracking</code>.</p>

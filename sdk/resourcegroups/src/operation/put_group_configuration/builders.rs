@@ -3,6 +3,23 @@ pub use crate::operation::put_group_configuration::_put_group_configuration_outp
 
 pub use crate::operation::put_group_configuration::_put_group_configuration_input::PutGroupConfigurationInputBuilder;
 
+impl PutGroupConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_group_configuration::PutGroupConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_group_configuration::PutGroupConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_group_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutGroupConfiguration`.
 ///
 /// <p>Attaches a service configuration to the specified group. This occurs asynchronously, and can take time to complete. You can use <code>GetGroupConfiguration</code> to check the status of the update.</p>

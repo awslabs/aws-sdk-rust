@@ -3,6 +3,23 @@ pub use crate::operation::disconnect_recovery_instance::_disconnect_recovery_ins
 
 pub use crate::operation::disconnect_recovery_instance::_disconnect_recovery_instance_input::DisconnectRecoveryInstanceInputBuilder;
 
+impl DisconnectRecoveryInstanceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disconnect_recovery_instance::DisconnectRecoveryInstanceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disconnect_recovery_instance::DisconnectRecoveryInstanceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disconnect_recovery_instance();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisconnectRecoveryInstance`.
 ///
 /// <p>Disconnect a Recovery Instance from Elastic Disaster Recovery. Data replication is stopped immediately. All AWS resources created by Elastic Disaster Recovery for enabling the replication of the Recovery Instance will be terminated / deleted within 90 minutes. If the agent on the Recovery Instance has not been prevented from communicating with the Elastic Disaster Recovery service, then it will receive a command to uninstall itself (within approximately 10 minutes). The following properties of the Recovery Instance will be changed immediately: dataReplicationInfo.dataReplicationState will be set to DISCONNECTED; The totalStorageBytes property for each of dataReplicationInfo.replicatedDisks will be set to zero; dataReplicationInfo.lagDuration and dataReplicationInfo.lagDuration will be nullified.</p>

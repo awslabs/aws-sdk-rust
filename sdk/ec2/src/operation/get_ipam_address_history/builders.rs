@@ -3,6 +3,23 @@ pub use crate::operation::get_ipam_address_history::_get_ipam_address_history_ou
 
 pub use crate::operation::get_ipam_address_history::_get_ipam_address_history_input::GetIpamAddressHistoryInputBuilder;
 
+impl GetIpamAddressHistoryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_ipam_address_history::GetIpamAddressHistoryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_ipam_address_history::GetIpamAddressHistoryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_ipam_address_history();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetIpamAddressHistory`.
 ///
 /// <p>Retrieve historical information about a CIDR within an IPAM scope. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/view-history-cidr-ipam.html">View the history of IP addresses</a> in the <i>Amazon VPC IPAM User Guide</i>.</p>

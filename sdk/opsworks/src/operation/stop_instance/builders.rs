@@ -3,6 +3,23 @@ pub use crate::operation::stop_instance::_stop_instance_output::StopInstanceOutp
 
 pub use crate::operation::stop_instance::_stop_instance_input::StopInstanceInputBuilder;
 
+impl StopInstanceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_instance::StopInstanceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_instance::StopInstanceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_instance();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopInstance`.
 ///
 /// <p>Stops a specified instance. When you stop a standard instance, the data disappears and must be reinstalled when you restart the instance. You can stop an Amazon EBS-backed instance without losing data. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-starting.html">Starting, Stopping, and Rebooting Instances</a>.</p>

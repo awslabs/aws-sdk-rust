@@ -3,6 +3,23 @@ pub use crate::operation::set_identity_mail_from_domain::_set_identity_mail_from
 
 pub use crate::operation::set_identity_mail_from_domain::_set_identity_mail_from_domain_input::SetIdentityMailFromDomainInputBuilder;
 
+impl SetIdentityMailFromDomainInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::set_identity_mail_from_domain::SetIdentityMailFromDomainOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::set_identity_mail_from_domain::SetIdentityMailFromDomainError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.set_identity_mail_from_domain();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SetIdentityMailFromDomain`.
 ///
 /// <p>Enables or disables the custom MAIL FROM domain setup for a verified identity (an email address or a domain).</p> <important>

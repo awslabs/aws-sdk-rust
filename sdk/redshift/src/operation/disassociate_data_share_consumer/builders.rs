@@ -3,6 +3,23 @@ pub use crate::operation::disassociate_data_share_consumer::_disassociate_data_s
 
 pub use crate::operation::disassociate_data_share_consumer::_disassociate_data_share_consumer_input::DisassociateDataShareConsumerInputBuilder;
 
+impl DisassociateDataShareConsumerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_data_share_consumer::DisassociateDataShareConsumerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_data_share_consumer::DisassociateDataShareConsumerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disassociate_data_share_consumer();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateDataShareConsumer`.
 ///
 /// <p>From a datashare consumer account, remove association for the specified datashare. </p>

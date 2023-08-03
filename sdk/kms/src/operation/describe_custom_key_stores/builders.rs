@@ -3,6 +3,23 @@ pub use crate::operation::describe_custom_key_stores::_describe_custom_key_store
 
 pub use crate::operation::describe_custom_key_stores::_describe_custom_key_stores_input::DescribeCustomKeyStoresInputBuilder;
 
+impl DescribeCustomKeyStoresInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_custom_key_stores::DescribeCustomKeyStoresOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_custom_key_stores::DescribeCustomKeyStoresError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_custom_key_stores();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeCustomKeyStores`.
 ///
 /// <p>Gets information about <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key stores</a> in the account and Region.</p>

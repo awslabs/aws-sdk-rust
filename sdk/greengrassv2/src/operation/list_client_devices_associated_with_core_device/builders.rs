@@ -3,6 +3,17 @@ pub use crate::operation::list_client_devices_associated_with_core_device::_list
 
 pub use crate::operation::list_client_devices_associated_with_core_device::_list_client_devices_associated_with_core_device_input::ListClientDevicesAssociatedWithCoreDeviceInputBuilder;
 
+impl ListClientDevicesAssociatedWithCoreDeviceInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_client_devices_associated_with_core_device::ListClientDevicesAssociatedWithCoreDeviceOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_client_devices_associated_with_core_device::ListClientDevicesAssociatedWithCoreDeviceError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_client_devices_associated_with_core_device();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListClientDevicesAssociatedWithCoreDevice`.
 ///
 /// <p>Retrieves a paginated list of client devices that are associated with a core device.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_backup_vault_notifications::_get_backup_vault_noti
 
 pub use crate::operation::get_backup_vault_notifications::_get_backup_vault_notifications_input::GetBackupVaultNotificationsInputBuilder;
 
+impl GetBackupVaultNotificationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_backup_vault_notifications::GetBackupVaultNotificationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_backup_vault_notifications::GetBackupVaultNotificationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_backup_vault_notifications();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetBackupVaultNotifications`.
 ///
 /// <p>Returns event notifications for the specified backup vault.</p>

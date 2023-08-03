@@ -3,6 +3,23 @@ pub use crate::operation::create_graph::_create_graph_output::CreateGraphOutputB
 
 pub use crate::operation::create_graph::_create_graph_input::CreateGraphInputBuilder;
 
+impl CreateGraphInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_graph::CreateGraphOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_graph::CreateGraphError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_graph();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateGraph`.
 ///
 /// <p>Creates a new behavior graph for the calling account, and sets that account as the administrator account. This operation is called by the account that is enabling Detective.</p>

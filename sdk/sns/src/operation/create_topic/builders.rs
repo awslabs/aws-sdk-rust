@@ -3,6 +3,23 @@ pub use crate::operation::create_topic::_create_topic_output::CreateTopicOutputB
 
 pub use crate::operation::create_topic::_create_topic_input::CreateTopicInputBuilder;
 
+impl CreateTopicInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_topic::CreateTopicOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_topic::CreateTopicError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_topic();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateTopic`.
 ///
 /// <p>Creates a topic to which notifications can be published. Users can create at most 100,000 standard topics (at most 1,000 FIFO topics). For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/sns-create-topic.html">Creating an Amazon SNS topic</a> in the <i>Amazon SNS Developer Guide</i>. This action is idempotent, so if the requester already owns a topic with the specified name, that topic's ARN is returned without creating a new topic.</p>

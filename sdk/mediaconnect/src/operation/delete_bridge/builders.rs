@@ -3,6 +3,23 @@ pub use crate::operation::delete_bridge::_delete_bridge_output::DeleteBridgeOutp
 
 pub use crate::operation::delete_bridge::_delete_bridge_input::DeleteBridgeInputBuilder;
 
+impl DeleteBridgeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_bridge::DeleteBridgeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_bridge::DeleteBridgeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_bridge();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteBridge`.
 ///
 /// Deletes a bridge. Before you can delete a bridge, you must stop the bridge.

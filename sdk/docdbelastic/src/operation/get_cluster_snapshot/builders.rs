@@ -3,6 +3,23 @@ pub use crate::operation::get_cluster_snapshot::_get_cluster_snapshot_output::Ge
 
 pub use crate::operation::get_cluster_snapshot::_get_cluster_snapshot_input::GetClusterSnapshotInputBuilder;
 
+impl GetClusterSnapshotInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_cluster_snapshot::GetClusterSnapshotOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_cluster_snapshot::GetClusterSnapshotError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_cluster_snapshot();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetClusterSnapshot`.
 ///
 /// <p>Returns information about a specific Elastic DocumentDB snapshot</p>

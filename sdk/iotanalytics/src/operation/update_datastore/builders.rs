@@ -3,6 +3,23 @@ pub use crate::operation::update_datastore::_update_datastore_output::UpdateData
 
 pub use crate::operation::update_datastore::_update_datastore_input::UpdateDatastoreInputBuilder;
 
+impl UpdateDatastoreInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_datastore::UpdateDatastoreOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_datastore::UpdateDatastoreError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_datastore();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateDatastore`.
 ///
 /// <p>Used to update the settings of a data store.</p>

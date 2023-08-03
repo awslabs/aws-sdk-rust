@@ -3,6 +3,23 @@ pub use crate::operation::list_host_keys::_list_host_keys_output::ListHostKeysOu
 
 pub use crate::operation::list_host_keys::_list_host_keys_input::ListHostKeysInputBuilder;
 
+impl ListHostKeysInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_host_keys::ListHostKeysOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_host_keys::ListHostKeysError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_host_keys();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListHostKeys`.
 ///
 /// <p>Returns a list of host keys for the server that's specified by the <code>ServerId</code> parameter.</p>

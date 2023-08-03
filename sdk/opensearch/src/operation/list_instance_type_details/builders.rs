@@ -3,6 +3,23 @@ pub use crate::operation::list_instance_type_details::_list_instance_type_detail
 
 pub use crate::operation::list_instance_type_details::_list_instance_type_details_input::ListInstanceTypeDetailsInputBuilder;
 
+impl ListInstanceTypeDetailsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_instance_type_details::ListInstanceTypeDetailsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_instance_type_details::ListInstanceTypeDetailsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_instance_type_details();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListInstanceTypeDetails`.
 ///
 /// <p>Lists all instance types and available features for a given OpenSearch or Elasticsearch version.</p>

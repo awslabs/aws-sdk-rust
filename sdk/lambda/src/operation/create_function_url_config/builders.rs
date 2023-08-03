@@ -3,6 +3,23 @@ pub use crate::operation::create_function_url_config::_create_function_url_confi
 
 pub use crate::operation::create_function_url_config::_create_function_url_config_input::CreateFunctionUrlConfigInputBuilder;
 
+impl CreateFunctionUrlConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_function_url_config::CreateFunctionUrlConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_function_url_config::CreateFunctionUrlConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_function_url_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateFunctionUrlConfig`.
 ///
 /// <p>Creates a Lambda function URL with the specified configuration parameters. A function URL is a dedicated HTTP(S) endpoint that you can use to invoke your function.</p>

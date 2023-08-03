@@ -3,6 +3,23 @@ pub use crate::operation::delete_channel_membership::_delete_channel_membership_
 
 pub use crate::operation::delete_channel_membership::_delete_channel_membership_input::DeleteChannelMembershipInputBuilder;
 
+impl DeleteChannelMembershipInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_channel_membership::DeleteChannelMembershipOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_channel_membership::DeleteChannelMembershipError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_channel_membership();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteChannelMembership`.
 ///
 /// <p>Removes a member from a channel.</p> <note>

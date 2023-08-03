@@ -3,6 +3,23 @@ pub use crate::operation::query::_query_output::QueryOutputBuilder;
 
 pub use crate::operation::query::_query_input::QueryInputBuilder;
 
+impl QueryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::query::QueryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::query::QueryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.query();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `Query`.
 ///
 /// <p>Searches an index given an input query.</p>

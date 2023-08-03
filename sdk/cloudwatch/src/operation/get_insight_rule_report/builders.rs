@@ -3,6 +3,23 @@ pub use crate::operation::get_insight_rule_report::_get_insight_rule_report_outp
 
 pub use crate::operation::get_insight_rule_report::_get_insight_rule_report_input::GetInsightRuleReportInputBuilder;
 
+impl GetInsightRuleReportInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_insight_rule_report::GetInsightRuleReportOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_insight_rule_report::GetInsightRuleReportError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_insight_rule_report();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetInsightRuleReport`.
 ///
 /// <p>This operation returns the time series data collected by a Contributor Insights rule. The data includes the identity and number of contributors to the log group.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_listener::_create_listener_output::CreateListen
 
 pub use crate::operation::create_listener::_create_listener_input::CreateListenerInputBuilder;
 
+impl CreateListenerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_listener::CreateListenerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_listener::CreateListenerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_listener();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateListener`.
 ///
 /// <p>Creates a listener for a service. Before you start using your Amazon VPC Lattice service, you must add one or more listeners. A listener is a process that checks for connection requests to your services. For more information, see <a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/listeners.html">Listeners</a> in the <i>Amazon VPC Lattice User Guide</i>.</p>

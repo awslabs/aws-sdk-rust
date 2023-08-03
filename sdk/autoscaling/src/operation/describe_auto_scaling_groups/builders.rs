@@ -3,6 +3,23 @@ pub use crate::operation::describe_auto_scaling_groups::_describe_auto_scaling_g
 
 pub use crate::operation::describe_auto_scaling_groups::_describe_auto_scaling_groups_input::DescribeAutoScalingGroupsInputBuilder;
 
+impl DescribeAutoScalingGroupsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_auto_scaling_groups::DescribeAutoScalingGroupsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_auto_scaling_groups::DescribeAutoScalingGroupsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_auto_scaling_groups();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAutoScalingGroups`.
 ///
 /// <p>Gets information about the Auto Scaling groups in the account and Region.</p>

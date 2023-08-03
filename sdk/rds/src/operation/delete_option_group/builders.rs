@@ -3,6 +3,23 @@ pub use crate::operation::delete_option_group::_delete_option_group_output::Dele
 
 pub use crate::operation::delete_option_group::_delete_option_group_input::DeleteOptionGroupInputBuilder;
 
+impl DeleteOptionGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_option_group::DeleteOptionGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_option_group::DeleteOptionGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_option_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteOptionGroup`.
 ///
 /// <p>Deletes an existing option group.</p>

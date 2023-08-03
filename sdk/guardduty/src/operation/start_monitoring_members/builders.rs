@@ -3,6 +3,23 @@ pub use crate::operation::start_monitoring_members::_start_monitoring_members_ou
 
 pub use crate::operation::start_monitoring_members::_start_monitoring_members_input::StartMonitoringMembersInputBuilder;
 
+impl StartMonitoringMembersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_monitoring_members::StartMonitoringMembersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_monitoring_members::StartMonitoringMembersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_monitoring_members();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartMonitoringMembers`.
 ///
 /// <p>Turns on GuardDuty monitoring of the specified member accounts. Use this operation to restart monitoring of accounts that you stopped monitoring with the <a href="https://docs.aws.amazon.com/guardduty/latest/APIReference/API_StopMonitoringMembers.html">StopMonitoringMembers</a> operation.</p>

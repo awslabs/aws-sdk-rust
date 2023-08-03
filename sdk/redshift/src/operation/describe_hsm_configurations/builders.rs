@@ -3,6 +3,23 @@ pub use crate::operation::describe_hsm_configurations::_describe_hsm_configurati
 
 pub use crate::operation::describe_hsm_configurations::_describe_hsm_configurations_input::DescribeHsmConfigurationsInputBuilder;
 
+impl DescribeHsmConfigurationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_hsm_configurations::DescribeHsmConfigurationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_hsm_configurations::DescribeHsmConfigurationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_hsm_configurations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeHsmConfigurations`.
 ///
 /// <p>Returns information about the specified Amazon Redshift HSM configuration. If no configuration ID is specified, returns information about all the HSM configurations owned by your Amazon Web Services account.</p>

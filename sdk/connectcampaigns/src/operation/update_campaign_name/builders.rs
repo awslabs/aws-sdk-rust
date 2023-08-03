@@ -3,6 +3,23 @@ pub use crate::operation::update_campaign_name::_update_campaign_name_output::Up
 
 pub use crate::operation::update_campaign_name::_update_campaign_name_input::UpdateCampaignNameInputBuilder;
 
+impl UpdateCampaignNameInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_campaign_name::UpdateCampaignNameOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_campaign_name::UpdateCampaignNameError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_campaign_name();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateCampaignName`.
 ///
 /// Updates the name of a campaign. This API is idempotent.

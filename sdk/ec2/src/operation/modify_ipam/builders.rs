@@ -3,6 +3,23 @@ pub use crate::operation::modify_ipam::_modify_ipam_output::ModifyIpamOutputBuil
 
 pub use crate::operation::modify_ipam::_modify_ipam_input::ModifyIpamInputBuilder;
 
+impl ModifyIpamInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_ipam::ModifyIpamOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_ipam::ModifyIpamError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_ipam();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyIpam`.
 ///
 /// <p>Modify the configurations of an IPAM. </p>

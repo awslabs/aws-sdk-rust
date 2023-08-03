@@ -3,6 +3,23 @@ pub use crate::operation::create_nodegroup::_create_nodegroup_output::CreateNode
 
 pub use crate::operation::create_nodegroup::_create_nodegroup_input::CreateNodegroupInputBuilder;
 
+impl CreateNodegroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_nodegroup::CreateNodegroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_nodegroup::CreateNodegroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_nodegroup();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateNodegroup`.
 ///
 /// <p>Creates a managed node group for an Amazon EKS cluster. You can only create a node group for your cluster that is equal to the current Kubernetes version for the cluster. All node groups are created with the latest AMI release version for the respective minor Kubernetes version of the cluster, unless you deploy a custom AMI using a launch template. For more information about using launch templates, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a>.</p>

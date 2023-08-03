@@ -3,6 +3,23 @@ pub use crate::operation::create_patch_baseline::_create_patch_baseline_output::
 
 pub use crate::operation::create_patch_baseline::_create_patch_baseline_input::CreatePatchBaselineInputBuilder;
 
+impl CreatePatchBaselineInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_patch_baseline::CreatePatchBaselineOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_patch_baseline::CreatePatchBaselineError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_patch_baseline();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreatePatchBaseline`.
 ///
 /// <p>Creates a patch baseline.</p> <note>

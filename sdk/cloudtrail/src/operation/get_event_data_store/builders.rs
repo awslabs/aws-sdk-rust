@@ -3,6 +3,23 @@ pub use crate::operation::get_event_data_store::_get_event_data_store_output::Ge
 
 pub use crate::operation::get_event_data_store::_get_event_data_store_input::GetEventDataStoreInputBuilder;
 
+impl GetEventDataStoreInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_event_data_store::GetEventDataStoreOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_event_data_store::GetEventDataStoreError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_event_data_store();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetEventDataStore`.
 ///
 /// <p>Returns information about an event data store specified as either an ARN or the ID portion of the ARN.</p>

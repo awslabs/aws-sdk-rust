@@ -3,6 +3,23 @@ pub use crate::operation::reset_encryption_key::_reset_encryption_key_output::Re
 
 pub use crate::operation::reset_encryption_key::_reset_encryption_key_input::ResetEncryptionKeyInputBuilder;
 
+impl ResetEncryptionKeyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::reset_encryption_key::ResetEncryptionKeyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::reset_encryption_key::ResetEncryptionKeyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.reset_encryption_key();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ResetEncryptionKey`.
 ///
 /// <p>Resets an encryption key. After the key is reset your resources will be encrypted by an Amazon Web Services owned key.</p>

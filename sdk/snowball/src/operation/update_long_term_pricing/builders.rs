@@ -3,6 +3,23 @@ pub use crate::operation::update_long_term_pricing::_update_long_term_pricing_ou
 
 pub use crate::operation::update_long_term_pricing::_update_long_term_pricing_input::UpdateLongTermPricingInputBuilder;
 
+impl UpdateLongTermPricingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_long_term_pricing::UpdateLongTermPricingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_long_term_pricing::UpdateLongTermPricingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_long_term_pricing();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateLongTermPricing`.
 ///
 /// <p>Updates the long-term pricing type.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::remove_targets::_remove_targets_output::RemoveTargetsO
 
 pub use crate::operation::remove_targets::_remove_targets_input::RemoveTargetsInputBuilder;
 
+impl RemoveTargetsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::remove_targets::RemoveTargetsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::remove_targets::RemoveTargetsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.remove_targets();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RemoveTargets`.
 ///
 /// <p>Removes the specified targets from the specified rule. When the rule is triggered, those targets are no longer be invoked.</p> <note>

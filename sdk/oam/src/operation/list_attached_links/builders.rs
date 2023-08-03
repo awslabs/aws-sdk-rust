@@ -3,6 +3,23 @@ pub use crate::operation::list_attached_links::_list_attached_links_output::List
 
 pub use crate::operation::list_attached_links::_list_attached_links_input::ListAttachedLinksInputBuilder;
 
+impl ListAttachedLinksInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_attached_links::ListAttachedLinksOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_attached_links::ListAttachedLinksError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_attached_links();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAttachedLinks`.
 ///
 /// <p>Returns a list of source account links that are linked to this monitoring account sink.</p>

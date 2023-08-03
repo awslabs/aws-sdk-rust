@@ -3,6 +3,23 @@ pub use crate::operation::get_lifecycle_policy_preview::_get_lifecycle_policy_pr
 
 pub use crate::operation::get_lifecycle_policy_preview::_get_lifecycle_policy_preview_input::GetLifecyclePolicyPreviewInputBuilder;
 
+impl GetLifecyclePolicyPreviewInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_lifecycle_policy_preview::GetLifecyclePolicyPreviewOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_lifecycle_policy_preview::GetLifecyclePolicyPreviewError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_lifecycle_policy_preview();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetLifecyclePolicyPreview`.
 ///
 /// <p>Retrieves the results of the lifecycle policy preview request for the specified repository.</p>

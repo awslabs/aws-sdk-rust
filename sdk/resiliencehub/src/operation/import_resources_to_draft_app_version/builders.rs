@@ -3,6 +3,17 @@ pub use crate::operation::import_resources_to_draft_app_version::_import_resourc
 
 pub use crate::operation::import_resources_to_draft_app_version::_import_resources_to_draft_app_version_input::ImportResourcesToDraftAppVersionInputBuilder;
 
+impl ImportResourcesToDraftAppVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::import_resources_to_draft_app_version::ImportResourcesToDraftAppVersionOutput, ::aws_smithy_http::result::SdkError<crate::operation::import_resources_to_draft_app_version::ImportResourcesToDraftAppVersionError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.import_resources_to_draft_app_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ImportResourcesToDraftAppVersion`.
 ///
 /// <p>Imports resources to Resilience Hub application draft version from different input sources. For more information about the input sources supported by Resilience Hub, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/discover-structure.html">Discover the structure and describe your Resilience Hub application</a>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::ping::_ping_output::PingOutputBuilder;
 
 pub use crate::operation::ping::_ping_input::PingInputBuilder;
 
+impl PingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::ping::PingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::ping::PingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.ping();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `Ping`.
 ///
 /// <p>Checks the health of the service.</p>

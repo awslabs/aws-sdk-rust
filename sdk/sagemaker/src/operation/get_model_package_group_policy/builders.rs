@@ -3,6 +3,23 @@ pub use crate::operation::get_model_package_group_policy::_get_model_package_gro
 
 pub use crate::operation::get_model_package_group_policy::_get_model_package_group_policy_input::GetModelPackageGroupPolicyInputBuilder;
 
+impl GetModelPackageGroupPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_model_package_group_policy::GetModelPackageGroupPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_model_package_group_policy::GetModelPackageGroupPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_model_package_group_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetModelPackageGroupPolicy`.
 ///
 /// <p>Gets a resource policy that manages access for a model group. For information about resource policies, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/access_policies_identity-vs-resource.html">Identity-based policies and resource-based policies</a> in the <i>Amazon Web Services Identity and Access Management User Guide.</i>.</p>

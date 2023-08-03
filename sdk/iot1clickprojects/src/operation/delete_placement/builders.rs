@@ -3,6 +3,23 @@ pub use crate::operation::delete_placement::_delete_placement_output::DeletePlac
 
 pub use crate::operation::delete_placement::_delete_placement_input::DeletePlacementInputBuilder;
 
+impl DeletePlacementInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_placement::DeletePlacementOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_placement::DeletePlacementError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_placement();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeletePlacement`.
 ///
 /// <p>Deletes a placement. To delete a placement, it must not have any devices associated with it.</p> <note>

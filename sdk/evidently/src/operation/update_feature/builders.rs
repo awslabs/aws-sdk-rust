@@ -3,6 +3,23 @@ pub use crate::operation::update_feature::_update_feature_output::UpdateFeatureO
 
 pub use crate::operation::update_feature::_update_feature_input::UpdateFeatureInputBuilder;
 
+impl UpdateFeatureInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_feature::UpdateFeatureOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_feature::UpdateFeatureError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_feature();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateFeature`.
 ///
 /// <p>Updates an existing feature.</p>

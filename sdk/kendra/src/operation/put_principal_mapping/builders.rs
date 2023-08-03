@@ -3,6 +3,23 @@ pub use crate::operation::put_principal_mapping::_put_principal_mapping_output::
 
 pub use crate::operation::put_principal_mapping::_put_principal_mapping_input::PutPrincipalMappingInputBuilder;
 
+impl PutPrincipalMappingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_principal_mapping::PutPrincipalMappingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_principal_mapping::PutPrincipalMappingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_principal_mapping();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutPrincipalMapping`.
 ///
 /// <p>Maps users to their groups so that you only need to provide the user ID when you issue the query.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_journal_s3_export::_describe_journal_s3_expor
 
 pub use crate::operation::describe_journal_s3_export::_describe_journal_s3_export_input::DescribeJournalS3ExportInputBuilder;
 
+impl DescribeJournalS3ExportInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_journal_s3_export::DescribeJournalS3ExportOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_journal_s3_export::DescribeJournalS3ExportError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_journal_s3_export();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeJournalS3Export`.
 ///
 /// <p>Returns information about a journal export job, including the ledger name, export ID, creation time, current status, and the parameters of the original export creation request.</p>

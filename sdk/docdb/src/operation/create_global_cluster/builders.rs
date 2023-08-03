@@ -3,6 +3,23 @@ pub use crate::operation::create_global_cluster::_create_global_cluster_output::
 
 pub use crate::operation::create_global_cluster::_create_global_cluster_input::CreateGlobalClusterInputBuilder;
 
+impl CreateGlobalClusterInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_global_cluster::CreateGlobalClusterOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_global_cluster::CreateGlobalClusterError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_global_cluster();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateGlobalCluster`.
 ///
 /// <p>Creates an Amazon DocumentDB global cluster that can span multiple multiple Amazon Web Services Regions. The global cluster contains one primary cluster with read-write capability, and up-to give read-only secondary clusters. Global clusters uses storage-based fast replication across regions with latencies less than one second, using dedicated infrastructure with no impact to your workload’s performance.</p>

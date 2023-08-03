@@ -3,6 +3,23 @@ pub use crate::operation::create_subnet_cidr_reservation::_create_subnet_cidr_re
 
 pub use crate::operation::create_subnet_cidr_reservation::_create_subnet_cidr_reservation_input::CreateSubnetCidrReservationInputBuilder;
 
+impl CreateSubnetCidrReservationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_subnet_cidr_reservation::CreateSubnetCidrReservationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_subnet_cidr_reservation::CreateSubnetCidrReservationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_subnet_cidr_reservation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateSubnetCidrReservation`.
 ///
 /// <p>Creates a subnet CIDR reservation. For information about subnet CIDR reservations, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/subnet-cidr-reservation.html">Subnet CIDR reservations</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>

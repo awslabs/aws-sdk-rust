@@ -3,6 +3,17 @@ pub use crate::operation::disassociate_ipam_resource_discovery::_disassociate_ip
 
 pub use crate::operation::disassociate_ipam_resource_discovery::_disassociate_ipam_resource_discovery_input::DisassociateIpamResourceDiscoveryInputBuilder;
 
+impl DisassociateIpamResourceDiscoveryInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::disassociate_ipam_resource_discovery::DisassociateIpamResourceDiscoveryOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_ipam_resource_discovery::DisassociateIpamResourceDiscoveryError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.disassociate_ipam_resource_discovery();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateIpamResourceDiscovery`.
 ///
 /// <p>Disassociates a resource discovery from an Amazon VPC IPAM. A resource discovery is an IPAM component that enables IPAM to manage and monitor resources that belong to the owning account.</p>

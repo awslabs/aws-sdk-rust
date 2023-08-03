@@ -3,6 +3,23 @@ pub use crate::operation::describe_settings::_describe_settings_output::Describe
 
 pub use crate::operation::describe_settings::_describe_settings_input::DescribeSettingsInputBuilder;
 
+impl DescribeSettingsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_settings::DescribeSettingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_settings::DescribeSettingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_settings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeSettings`.
 ///
 /// <p>Retrieves information about the configurable settings for the specified directory.</p>

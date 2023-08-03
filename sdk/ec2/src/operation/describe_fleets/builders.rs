@@ -3,6 +3,23 @@ pub use crate::operation::describe_fleets::_describe_fleets_output::DescribeFlee
 
 pub use crate::operation::describe_fleets::_describe_fleets_input::DescribeFleetsInputBuilder;
 
+impl DescribeFleetsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_fleets::DescribeFleetsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_fleets::DescribeFleetsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_fleets();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeFleets`.
 ///
 /// <p>Describes the specified EC2 Fleets or all of your EC2 Fleets.</p>

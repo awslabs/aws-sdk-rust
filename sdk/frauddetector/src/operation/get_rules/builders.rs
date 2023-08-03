@@ -3,6 +3,23 @@ pub use crate::operation::get_rules::_get_rules_output::GetRulesOutputBuilder;
 
 pub use crate::operation::get_rules::_get_rules_input::GetRulesInputBuilder;
 
+impl GetRulesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_rules::GetRulesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_rules::GetRulesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_rules();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetRules`.
 ///
 /// <p>Get all rules for a detector (paginated) if <code>ruleId</code> and <code>ruleVersion</code> are not specified. Gets all rules for the detector and the <code>ruleId</code> if present (paginated). Gets a specific rule if both the <code>ruleId</code> and the <code>ruleVersion</code> are specified.</p>

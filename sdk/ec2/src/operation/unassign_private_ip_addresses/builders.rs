@@ -3,6 +3,23 @@ pub use crate::operation::unassign_private_ip_addresses::_unassign_private_ip_ad
 
 pub use crate::operation::unassign_private_ip_addresses::_unassign_private_ip_addresses_input::UnassignPrivateIpAddressesInputBuilder;
 
+impl UnassignPrivateIpAddressesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::unassign_private_ip_addresses::UnassignPrivateIpAddressesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::unassign_private_ip_addresses::UnassignPrivateIpAddressesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.unassign_private_ip_addresses();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UnassignPrivateIpAddresses`.
 ///
 /// <p>Unassigns one or more secondary private IP addresses, or IPv4 Prefix Delegation prefixes from a network interface.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_fleet_metadata::_describe_fleet_metadata_outp
 
 pub use crate::operation::describe_fleet_metadata::_describe_fleet_metadata_input::DescribeFleetMetadataInputBuilder;
 
+impl DescribeFleetMetadataInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_fleet_metadata::DescribeFleetMetadataOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_fleet_metadata::DescribeFleetMetadataError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_fleet_metadata();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeFleetMetadata`.
 ///
 /// <p>Provides basic information for the specified fleet, excluding identity provider, networking, and device configuration details.</p>

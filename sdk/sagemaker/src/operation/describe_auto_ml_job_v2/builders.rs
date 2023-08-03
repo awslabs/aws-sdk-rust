@@ -3,6 +3,23 @@ pub use crate::operation::describe_auto_ml_job_v2::_describe_auto_ml_job_v2_outp
 
 pub use crate::operation::describe_auto_ml_job_v2::_describe_auto_ml_job_v2_input::DescribeAutoMlJobV2InputBuilder;
 
+impl DescribeAutoMlJobV2InputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_auto_ml_job_v2::DescribeAutoMlJobV2Output,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_auto_ml_job_v2::DescribeAutoMLJobV2Error,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_auto_ml_job_v2();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAutoMLJobV2`.
 ///
 /// <p>Returns information about an AutoML job created by calling <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJobV2.html">CreateAutoMLJobV2</a> or <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateAutoMLJob.html">CreateAutoMLJob</a>.</p>

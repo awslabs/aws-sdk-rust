@@ -3,6 +3,17 @@ pub use crate::operation::disassociate_website_certificate_authority::_disassoci
 
 pub use crate::operation::disassociate_website_certificate_authority::_disassociate_website_certificate_authority_input::DisassociateWebsiteCertificateAuthorityInputBuilder;
 
+impl DisassociateWebsiteCertificateAuthorityInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::disassociate_website_certificate_authority::DisassociateWebsiteCertificateAuthorityOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_website_certificate_authority::DisassociateWebsiteCertificateAuthorityError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.disassociate_website_certificate_authority();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateWebsiteCertificateAuthority`.
 ///
 /// <p>Removes a certificate authority (CA).</p>

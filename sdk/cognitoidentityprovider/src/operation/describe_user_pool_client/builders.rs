@@ -3,6 +3,23 @@ pub use crate::operation::describe_user_pool_client::_describe_user_pool_client_
 
 pub use crate::operation::describe_user_pool_client::_describe_user_pool_client_input::DescribeUserPoolClientInputBuilder;
 
+impl DescribeUserPoolClientInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_user_pool_client::DescribeUserPoolClientOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_user_pool_client::DescribeUserPoolClientError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_user_pool_client();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeUserPoolClient`.
 ///
 /// <p>Client method for returning the configuration information and metadata of the specified user pool app client.</p>

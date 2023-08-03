@@ -3,6 +3,23 @@ pub use crate::operation::start_outbound_voice_contact::_start_outbound_voice_co
 
 pub use crate::operation::start_outbound_voice_contact::_start_outbound_voice_contact_input::StartOutboundVoiceContactInputBuilder;
 
+impl StartOutboundVoiceContactInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_outbound_voice_contact::StartOutboundVoiceContactOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_outbound_voice_contact::StartOutboundVoiceContactError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_outbound_voice_contact();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartOutboundVoiceContact`.
 ///
 /// <p>Places an outbound call to a contact, and then initiates the flow. It performs the actions in the flow that's specified (in <code>ContactFlowId</code>).</p>

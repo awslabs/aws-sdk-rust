@@ -3,6 +3,23 @@ pub use crate::operation::describe_domain_nodes::_describe_domain_nodes_output::
 
 pub use crate::operation::describe_domain_nodes::_describe_domain_nodes_input::DescribeDomainNodesInputBuilder;
 
+impl DescribeDomainNodesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_domain_nodes::DescribeDomainNodesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_domain_nodes::DescribeDomainNodesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_domain_nodes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeDomainNodes`.
 ///
 /// <p>Returns information about domain and nodes, including data nodes, master nodes, ultrawarm nodes, Availability Zone(s), standby nodes, node configurations, and node states.</p>

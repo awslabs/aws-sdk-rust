@@ -3,6 +3,23 @@ pub use crate::operation::get_template_summary::_get_template_summary_output::Ge
 
 pub use crate::operation::get_template_summary::_get_template_summary_input::GetTemplateSummaryInputBuilder;
 
+impl GetTemplateSummaryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_template_summary::GetTemplateSummaryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_template_summary::GetTemplateSummaryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_template_summary();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetTemplateSummary`.
 ///
 /// <p>Returns information about a new or existing template. The <code>GetTemplateSummary</code> action is useful for viewing parameter information, such as default parameter values and parameter types, before you create or update a stack or stack set.</p>

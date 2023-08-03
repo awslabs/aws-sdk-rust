@@ -3,6 +3,23 @@ pub use crate::operation::delete_bgp_peer::_delete_bgp_peer_output::DeleteBgpPee
 
 pub use crate::operation::delete_bgp_peer::_delete_bgp_peer_input::DeleteBgpPeerInputBuilder;
 
+impl DeleteBgpPeerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_bgp_peer::DeleteBgpPeerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_bgp_peer::DeleteBGPPeerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_bgp_peer();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteBGPPeer`.
 ///
 /// <p>Deletes the specified BGP peer on the specified virtual interface with the specified customer address and ASN.</p>

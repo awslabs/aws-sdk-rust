@@ -3,6 +3,23 @@ pub use crate::operation::update_folder::_update_folder_output::UpdateFolderOutp
 
 pub use crate::operation::update_folder::_update_folder_input::UpdateFolderInputBuilder;
 
+impl UpdateFolderInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_folder::UpdateFolderOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_folder::UpdateFolderError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_folder();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateFolder`.
 ///
 /// <p>Updates the specified attributes of the specified folder. The user must have access to both the folder and its parent folder, if applicable.</p>

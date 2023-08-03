@@ -3,6 +3,23 @@ pub use crate::operation::attach_object::_attach_object_output::AttachObjectOutp
 
 pub use crate::operation::attach_object::_attach_object_input::AttachObjectInputBuilder;
 
+impl AttachObjectInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::attach_object::AttachObjectOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::attach_object::AttachObjectError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.attach_object();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AttachObject`.
 ///
 /// <p>Attaches an existing object to another object. An object can be accessed in two ways:</p>

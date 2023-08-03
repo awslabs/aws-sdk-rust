@@ -3,6 +3,17 @@ pub use crate::operation::update_contact_flow_module_content::_update_contact_fl
 
 pub use crate::operation::update_contact_flow_module_content::_update_contact_flow_module_content_input::UpdateContactFlowModuleContentInputBuilder;
 
+impl UpdateContactFlowModuleContentInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::update_contact_flow_module_content::UpdateContactFlowModuleContentOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_contact_flow_module_content::UpdateContactFlowModuleContentError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.update_contact_flow_module_content();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateContactFlowModuleContent`.
 ///
 /// <p>Updates specified flow module for the specified Amazon Connect instance. </p>

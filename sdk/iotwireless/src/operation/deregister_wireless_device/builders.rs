@@ -3,6 +3,23 @@ pub use crate::operation::deregister_wireless_device::_deregister_wireless_devic
 
 pub use crate::operation::deregister_wireless_device::_deregister_wireless_device_input::DeregisterWirelessDeviceInputBuilder;
 
+impl DeregisterWirelessDeviceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::deregister_wireless_device::DeregisterWirelessDeviceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::deregister_wireless_device::DeregisterWirelessDeviceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.deregister_wireless_device();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeregisterWirelessDevice`.
 ///
 /// <p>Deregister a wireless device from AWS IoT Wireless.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_fleet_port_settings::_describe_fleet_port_set
 
 pub use crate::operation::describe_fleet_port_settings::_describe_fleet_port_settings_input::DescribeFleetPortSettingsInputBuilder;
 
+impl DescribeFleetPortSettingsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_fleet_port_settings::DescribeFleetPortSettingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_fleet_port_settings::DescribeFleetPortSettingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_fleet_port_settings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeFleetPortSettings`.
 ///
 /// <p>Retrieves a fleet's inbound connection permissions. Connection permissions specify the range of IP addresses and port settings that incoming traffic can use to access server processes in the fleet. Game sessions that are running on instances in the fleet must use connections that fall in this range.</p>

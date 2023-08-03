@@ -3,6 +3,23 @@ pub use crate::operation::list_rotation_overrides::_list_rotation_overrides_outp
 
 pub use crate::operation::list_rotation_overrides::_list_rotation_overrides_input::ListRotationOverridesInputBuilder;
 
+impl ListRotationOverridesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_rotation_overrides::ListRotationOverridesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_rotation_overrides::ListRotationOverridesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_rotation_overrides();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListRotationOverrides`.
 ///
 /// <p>Retrieves a list of overrides currently specified for an on-call rotation.</p>

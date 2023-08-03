@@ -3,6 +3,23 @@ pub use crate::operation::join_domain::_join_domain_output::JoinDomainOutputBuil
 
 pub use crate::operation::join_domain::_join_domain_input::JoinDomainInputBuilder;
 
+impl JoinDomainInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::join_domain::JoinDomainOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::join_domain::JoinDomainError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.join_domain();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `JoinDomain`.
 ///
 /// <p>Adds a file gateway to an Active Directory domain. This operation is only supported for file gateways that support the SMB file protocol.</p>

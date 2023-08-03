@@ -3,6 +3,23 @@ pub use crate::operation::list_eulas::_list_eulas_output::ListEulasOutputBuilder
 
 pub use crate::operation::list_eulas::_list_eulas_input::ListEulasInputBuilder;
 
+impl ListEulasInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_eulas::ListEulasOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_eulas::ListEulasError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_eulas();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListEulas`.
 ///
 /// <p>List EULAs.</p>

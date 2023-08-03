@@ -3,6 +3,23 @@ pub use crate::operation::delete_threat_intel_set::_delete_threat_intel_set_outp
 
 pub use crate::operation::delete_threat_intel_set::_delete_threat_intel_set_input::DeleteThreatIntelSetInputBuilder;
 
+impl DeleteThreatIntelSetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_threat_intel_set::DeleteThreatIntelSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_threat_intel_set::DeleteThreatIntelSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_threat_intel_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteThreatIntelSet`.
 ///
 /// <p>Deletes the ThreatIntelSet specified by the ThreatIntelSet ID.</p>

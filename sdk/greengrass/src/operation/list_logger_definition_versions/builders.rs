@@ -3,6 +3,23 @@ pub use crate::operation::list_logger_definition_versions::_list_logger_definiti
 
 pub use crate::operation::list_logger_definition_versions::_list_logger_definition_versions_input::ListLoggerDefinitionVersionsInputBuilder;
 
+impl ListLoggerDefinitionVersionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_logger_definition_versions::ListLoggerDefinitionVersionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_logger_definition_versions::ListLoggerDefinitionVersionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_logger_definition_versions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListLoggerDefinitionVersions`.
 ///
 /// Lists the versions of a logger definition.

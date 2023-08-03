@@ -3,6 +3,23 @@ pub use crate::operation::list_apps_lists::_list_apps_lists_output::ListAppsList
 
 pub use crate::operation::list_apps_lists::_list_apps_lists_input::ListAppsListsInputBuilder;
 
+impl ListAppsListsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_apps_lists::ListAppsListsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_apps_lists::ListAppsListsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_apps_lists();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAppsLists`.
 ///
 /// <p>Returns an array of <code>AppsListDataSummary</code> objects.</p>

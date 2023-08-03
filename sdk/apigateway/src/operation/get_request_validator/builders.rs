@@ -3,6 +3,23 @@ pub use crate::operation::get_request_validator::_get_request_validator_output::
 
 pub use crate::operation::get_request_validator::_get_request_validator_input::GetRequestValidatorInputBuilder;
 
+impl GetRequestValidatorInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_request_validator::GetRequestValidatorOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_request_validator::GetRequestValidatorError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_request_validator();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetRequestValidator`.
 ///
 /// <p>Gets a RequestValidator of a given RestApi.</p>

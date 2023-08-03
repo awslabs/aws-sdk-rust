@@ -3,6 +3,23 @@ pub use crate::operation::put_account_sending_attributes::_put_account_sending_a
 
 pub use crate::operation::put_account_sending_attributes::_put_account_sending_attributes_input::PutAccountSendingAttributesInputBuilder;
 
+impl PutAccountSendingAttributesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_account_sending_attributes::PutAccountSendingAttributesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_account_sending_attributes::PutAccountSendingAttributesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_account_sending_attributes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutAccountSendingAttributes`.
 ///
 /// <p>Enable or disable the ability of your account to send email.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_login_profile::_delete_login_profile_output::De
 
 pub use crate::operation::delete_login_profile::_delete_login_profile_input::DeleteLoginProfileInputBuilder;
 
+impl DeleteLoginProfileInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_login_profile::DeleteLoginProfileOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_login_profile::DeleteLoginProfileError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_login_profile();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteLoginProfile`.
 ///
 /// <p>Deletes the password for the specified IAM user, For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_passwords_admin-change-user.html">Managing passwords for IAM users</a>.</p>

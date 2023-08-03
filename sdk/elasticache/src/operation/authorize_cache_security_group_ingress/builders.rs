@@ -3,6 +3,17 @@ pub use crate::operation::authorize_cache_security_group_ingress::_authorize_cac
 
 pub use crate::operation::authorize_cache_security_group_ingress::_authorize_cache_security_group_ingress_input::AuthorizeCacheSecurityGroupIngressInputBuilder;
 
+impl AuthorizeCacheSecurityGroupIngressInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::authorize_cache_security_group_ingress::AuthorizeCacheSecurityGroupIngressOutput, ::aws_smithy_http::result::SdkError<crate::operation::authorize_cache_security_group_ingress::AuthorizeCacheSecurityGroupIngressError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.authorize_cache_security_group_ingress();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AuthorizeCacheSecurityGroupIngress`.
 ///
 /// <p>Allows network ingress to a cache security group. Applications using ElastiCache must be running on Amazon EC2, and Amazon EC2 security groups are used as the authorization mechanism.</p> <note>

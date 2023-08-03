@@ -3,6 +3,23 @@ pub use crate::operation::update_browser_settings::_update_browser_settings_outp
 
 pub use crate::operation::update_browser_settings::_update_browser_settings_input::UpdateBrowserSettingsInputBuilder;
 
+impl UpdateBrowserSettingsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_browser_settings::UpdateBrowserSettingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_browser_settings::UpdateBrowserSettingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_browser_settings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateBrowserSettings`.
 ///
 /// <p>Updates browser settings.</p>

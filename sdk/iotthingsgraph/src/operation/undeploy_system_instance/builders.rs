@@ -3,6 +3,23 @@ pub use crate::operation::undeploy_system_instance::_undeploy_system_instance_ou
 
 pub use crate::operation::undeploy_system_instance::_undeploy_system_instance_input::UndeploySystemInstanceInputBuilder;
 
+impl UndeploySystemInstanceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::undeploy_system_instance::UndeploySystemInstanceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::undeploy_system_instance::UndeploySystemInstanceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.undeploy_system_instance();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UndeploySystemInstance`.
 ///
 /// <p>Removes a system instance from its target (Cloud or Greengrass).</p>

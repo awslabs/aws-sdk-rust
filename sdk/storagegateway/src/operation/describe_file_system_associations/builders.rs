@@ -3,6 +3,17 @@ pub use crate::operation::describe_file_system_associations::_describe_file_syst
 
 pub use crate::operation::describe_file_system_associations::_describe_file_system_associations_input::DescribeFileSystemAssociationsInputBuilder;
 
+impl DescribeFileSystemAssociationsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_file_system_associations::DescribeFileSystemAssociationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_file_system_associations::DescribeFileSystemAssociationsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_file_system_associations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeFileSystemAssociations`.
 ///
 /// <p>Gets the file system association information. This operation is only supported for FSx File Gateways.</p>

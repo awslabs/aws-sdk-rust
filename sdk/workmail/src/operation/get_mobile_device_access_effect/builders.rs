@@ -3,6 +3,23 @@ pub use crate::operation::get_mobile_device_access_effect::_get_mobile_device_ac
 
 pub use crate::operation::get_mobile_device_access_effect::_get_mobile_device_access_effect_input::GetMobileDeviceAccessEffectInputBuilder;
 
+impl GetMobileDeviceAccessEffectInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_mobile_device_access_effect::GetMobileDeviceAccessEffectOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_mobile_device_access_effect::GetMobileDeviceAccessEffectError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_mobile_device_access_effect();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetMobileDeviceAccessEffect`.
 ///
 /// <p>Simulates the effect of the mobile device access rules for the given attributes of a sample access event. Use this method to test the effects of the current set of mobile device access rules for the WorkMail organization for a particular user's attributes.</p>

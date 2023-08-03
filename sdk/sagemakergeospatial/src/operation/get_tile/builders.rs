@@ -3,6 +3,23 @@ pub use crate::operation::get_tile::_get_tile_output::GetTileOutputBuilder;
 
 pub use crate::operation::get_tile::_get_tile_input::GetTileInputBuilder;
 
+impl GetTileInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_tile::GetTileOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_tile::GetTileError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_tile();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetTile`.
 ///
 /// <p>Gets a web mercator tile for the given Earth Observation job.</p>

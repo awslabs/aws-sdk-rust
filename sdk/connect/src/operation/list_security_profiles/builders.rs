@@ -3,6 +3,23 @@ pub use crate::operation::list_security_profiles::_list_security_profiles_output
 
 pub use crate::operation::list_security_profiles::_list_security_profiles_input::ListSecurityProfilesInputBuilder;
 
+impl ListSecurityProfilesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_security_profiles::ListSecurityProfilesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_security_profiles::ListSecurityProfilesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_security_profiles();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListSecurityProfiles`.
 ///
 /// <p>Provides summary information about the security profiles for the specified Amazon Connect instance.</p>

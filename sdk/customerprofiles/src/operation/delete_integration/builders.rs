@@ -3,6 +3,23 @@ pub use crate::operation::delete_integration::_delete_integration_output::Delete
 
 pub use crate::operation::delete_integration::_delete_integration_input::DeleteIntegrationInputBuilder;
 
+impl DeleteIntegrationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_integration::DeleteIntegrationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_integration::DeleteIntegrationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_integration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteIntegration`.
 ///
 /// <p>Removes an integration from a specific domain.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::stop_stream::_stop_stream_output::StopStreamOutputBuil
 
 pub use crate::operation::stop_stream::_stop_stream_input::StopStreamInputBuilder;
 
+impl StopStreamInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_stream::StopStreamOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_stream::StopStreamError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_stream();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopStream`.
 ///
 /// <p>Disconnects the incoming RTMPS stream for the specified channel. Can be used in conjunction with <code>DeleteStreamKey</code> to prevent further streaming to a channel.</p> <note>

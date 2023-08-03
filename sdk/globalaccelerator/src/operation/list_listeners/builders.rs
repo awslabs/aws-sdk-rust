@@ -3,6 +3,23 @@ pub use crate::operation::list_listeners::_list_listeners_output::ListListenersO
 
 pub use crate::operation::list_listeners::_list_listeners_input::ListListenersInputBuilder;
 
+impl ListListenersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_listeners::ListListenersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_listeners::ListListenersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_listeners();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListListeners`.
 ///
 /// <p>List the listeners for an accelerator. </p>

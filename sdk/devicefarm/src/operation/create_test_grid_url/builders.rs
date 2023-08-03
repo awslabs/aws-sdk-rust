@@ -3,6 +3,23 @@ pub use crate::operation::create_test_grid_url::_create_test_grid_url_output::Cr
 
 pub use crate::operation::create_test_grid_url::_create_test_grid_url_input::CreateTestGridUrlInputBuilder;
 
+impl CreateTestGridUrlInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_test_grid_url::CreateTestGridUrlOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_test_grid_url::CreateTestGridUrlError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_test_grid_url();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateTestGridUrl`.
 ///
 /// <p>Creates a signed, short-term URL that can be passed to a Selenium <code>RemoteWebDriver</code> constructor.</p>

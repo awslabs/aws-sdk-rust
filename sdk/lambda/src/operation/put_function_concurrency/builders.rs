@@ -3,6 +3,23 @@ pub use crate::operation::put_function_concurrency::_put_function_concurrency_ou
 
 pub use crate::operation::put_function_concurrency::_put_function_concurrency_input::PutFunctionConcurrencyInputBuilder;
 
+impl PutFunctionConcurrencyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_function_concurrency::PutFunctionConcurrencyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_function_concurrency::PutFunctionConcurrencyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_function_concurrency();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutFunctionConcurrency`.
 ///
 /// <p>Sets the maximum number of simultaneous executions for a function, and reserves capacity for that concurrency level.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_apns_sandbox_channel::_get_apns_sandbox_channel_ou
 
 pub use crate::operation::get_apns_sandbox_channel::_get_apns_sandbox_channel_input::GetApnsSandboxChannelInputBuilder;
 
+impl GetApnsSandboxChannelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_apns_sandbox_channel::GetApnsSandboxChannelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_apns_sandbox_channel::GetApnsSandboxChannelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_apns_sandbox_channel();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetApnsSandboxChannel`.
 ///
 /// <p>Retrieves information about the status and settings of the APNs sandbox channel for an application.</p>

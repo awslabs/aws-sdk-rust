@@ -3,6 +3,23 @@ pub use crate::operation::modify_cluster_iam_roles::_modify_cluster_iam_roles_ou
 
 pub use crate::operation::modify_cluster_iam_roles::_modify_cluster_iam_roles_input::ModifyClusterIamRolesInputBuilder;
 
+impl ModifyClusterIamRolesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_cluster_iam_roles::ModifyClusterIamRolesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_cluster_iam_roles::ModifyClusterIamRolesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_cluster_iam_roles();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyClusterIamRoles`.
 ///
 /// <p>Modifies the list of Identity and Access Management (IAM) roles that can be used by the cluster to access other Amazon Web Services services.</p>

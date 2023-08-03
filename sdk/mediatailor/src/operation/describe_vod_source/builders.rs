@@ -3,6 +3,23 @@ pub use crate::operation::describe_vod_source::_describe_vod_source_output::Desc
 
 pub use crate::operation::describe_vod_source::_describe_vod_source_input::DescribeVodSourceInputBuilder;
 
+impl DescribeVodSourceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_vod_source::DescribeVodSourceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_vod_source::DescribeVodSourceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_vod_source();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeVodSource`.
 ///
 /// <p>Provides details about a specific video on demand (VOD) source in a specific source location.</p>

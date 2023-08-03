@@ -3,6 +3,23 @@ pub use crate::operation::reset_authorizers_cache::_reset_authorizers_cache_outp
 
 pub use crate::operation::reset_authorizers_cache::_reset_authorizers_cache_input::ResetAuthorizersCacheInputBuilder;
 
+impl ResetAuthorizersCacheInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::reset_authorizers_cache::ResetAuthorizersCacheOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::reset_authorizers_cache::ResetAuthorizersCacheError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.reset_authorizers_cache();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ResetAuthorizersCache`.
 ///
 /// <p>Resets all authorizer cache entries on a stage. Supported only for HTTP APIs.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_transaction_events::_list_transaction_events_outp
 
 pub use crate::operation::list_transaction_events::_list_transaction_events_input::ListTransactionEventsInputBuilder;
 
+impl ListTransactionEventsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_transaction_events::ListTransactionEventsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_transaction_events::ListTransactionEventsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_transaction_events();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListTransactionEvents`.
 ///
 /// <p>An array of <code>TransactionEvent</code> objects. Each object contains details about the transaction event.</p>

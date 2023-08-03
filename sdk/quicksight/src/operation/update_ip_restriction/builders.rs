@@ -3,6 +3,23 @@ pub use crate::operation::update_ip_restriction::_update_ip_restriction_output::
 
 pub use crate::operation::update_ip_restriction::_update_ip_restriction_input::UpdateIpRestrictionInputBuilder;
 
+impl UpdateIpRestrictionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_ip_restriction::UpdateIpRestrictionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_ip_restriction::UpdateIpRestrictionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_ip_restriction();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateIpRestriction`.
 ///
 /// <p>Updates the content and status of IP rules. To use this operation, you must provide the entire map of rules. You can use the <code>DescribeIpRestriction</code> operation to get the current rule map.</p>

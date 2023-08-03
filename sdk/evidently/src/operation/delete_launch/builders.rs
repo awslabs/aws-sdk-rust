@@ -3,6 +3,23 @@ pub use crate::operation::delete_launch::_delete_launch_output::DeleteLaunchOutp
 
 pub use crate::operation::delete_launch::_delete_launch_input::DeleteLaunchInputBuilder;
 
+impl DeleteLaunchInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_launch::DeleteLaunchOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_launch::DeleteLaunchError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_launch();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteLaunch`.
 ///
 /// <p>Deletes an Evidently launch. The feature used for the launch is not deleted.</p>

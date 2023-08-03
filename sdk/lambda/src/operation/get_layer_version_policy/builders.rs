@@ -3,6 +3,23 @@ pub use crate::operation::get_layer_version_policy::_get_layer_version_policy_ou
 
 pub use crate::operation::get_layer_version_policy::_get_layer_version_policy_input::GetLayerVersionPolicyInputBuilder;
 
+impl GetLayerVersionPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_layer_version_policy::GetLayerVersionPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_layer_version_policy::GetLayerVersionPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_layer_version_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetLayerVersionPolicy`.
 ///
 /// <p>Returns the permission policy for a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda layer</a>. For more information, see <code>AddLayerVersionPermission</code>.</p>

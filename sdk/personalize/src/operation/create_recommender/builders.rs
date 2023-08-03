@@ -3,6 +3,23 @@ pub use crate::operation::create_recommender::_create_recommender_output::Create
 
 pub use crate::operation::create_recommender::_create_recommender_input::CreateRecommenderInputBuilder;
 
+impl CreateRecommenderInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_recommender::CreateRecommenderOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_recommender::CreateRecommenderError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_recommender();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateRecommender`.
 ///
 /// <p>Creates a recommender with the recipe (a Domain dataset group use case) you specify. You create recommenders for a Domain dataset group and specify the recommender's Amazon Resource Name (ARN) when you make a <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a> request. </p>

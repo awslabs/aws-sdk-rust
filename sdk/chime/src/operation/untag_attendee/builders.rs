@@ -3,6 +3,23 @@ pub use crate::operation::untag_attendee::_untag_attendee_output::UntagAttendeeO
 
 pub use crate::operation::untag_attendee::_untag_attendee_input::UntagAttendeeInputBuilder;
 
+impl UntagAttendeeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::untag_attendee::UntagAttendeeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::untag_attendee::UntagAttendeeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.untag_attendee();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UntagAttendee`.
 ///
 /// <p>Untags the specified tags from the specified Amazon Chime SDK attendee.</p> <important>

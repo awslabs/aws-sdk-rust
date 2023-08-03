@@ -3,6 +3,23 @@ pub use crate::operation::deregister_compute::_deregister_compute_output::Deregi
 
 pub use crate::operation::deregister_compute::_deregister_compute_input::DeregisterComputeInputBuilder;
 
+impl DeregisterComputeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::deregister_compute::DeregisterComputeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::deregister_compute::DeregisterComputeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.deregister_compute();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeregisterCompute`.
 ///
 /// <p>Removes a compute resource from the specified fleet. Deregister your compute resources before you delete the compute.</p>

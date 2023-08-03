@@ -3,6 +3,23 @@ pub use crate::operation::delete_transit_gateway_connect::_delete_transit_gatewa
 
 pub use crate::operation::delete_transit_gateway_connect::_delete_transit_gateway_connect_input::DeleteTransitGatewayConnectInputBuilder;
 
+impl DeleteTransitGatewayConnectInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_transit_gateway_connect::DeleteTransitGatewayConnectOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_transit_gateway_connect::DeleteTransitGatewayConnectError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_transit_gateway_connect();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteTransitGatewayConnect`.
 ///
 /// <p>Deletes the specified Connect attachment. You must first delete any Connect peers for the attachment.</p>

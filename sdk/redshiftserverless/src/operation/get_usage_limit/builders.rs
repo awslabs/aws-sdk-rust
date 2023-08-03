@@ -3,6 +3,23 @@ pub use crate::operation::get_usage_limit::_get_usage_limit_output::GetUsageLimi
 
 pub use crate::operation::get_usage_limit::_get_usage_limit_input::GetUsageLimitInputBuilder;
 
+impl GetUsageLimitInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_usage_limit::GetUsageLimitOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_usage_limit::GetUsageLimitError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_usage_limit();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetUsageLimit`.
 ///
 /// <p>Returns information about a usage limit.</p>

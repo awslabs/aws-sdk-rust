@@ -3,6 +3,23 @@ pub use crate::operation::describe_import_tasks::_describe_import_tasks_output::
 
 pub use crate::operation::describe_import_tasks::_describe_import_tasks_input::DescribeImportTasksInputBuilder;
 
+impl DescribeImportTasksInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_import_tasks::DescribeImportTasksOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_import_tasks::DescribeImportTasksError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_import_tasks();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeImportTasks`.
 ///
 /// <p>Returns an array of import tasks for your account, including status information, times, IDs, the Amazon S3 Object URL for the import file, and more.</p>

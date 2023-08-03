@@ -3,6 +3,23 @@ pub use crate::operation::update_maintenance_window_target::_update_maintenance_
 
 pub use crate::operation::update_maintenance_window_target::_update_maintenance_window_target_input::UpdateMaintenanceWindowTargetInputBuilder;
 
+impl UpdateMaintenanceWindowTargetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_maintenance_window_target::UpdateMaintenanceWindowTargetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_maintenance_window_target::UpdateMaintenanceWindowTargetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_maintenance_window_target();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateMaintenanceWindowTarget`.
 ///
 /// <p>Modifies the target of an existing maintenance window. You can change the following:</p>

@@ -3,6 +3,23 @@ pub use crate::operation::subscribe::_subscribe_output::SubscribeOutputBuilder;
 
 pub use crate::operation::subscribe::_subscribe_input::SubscribeInputBuilder;
 
+impl SubscribeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::subscribe::SubscribeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::subscribe::SubscribeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.subscribe();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `Subscribe`.
 ///
 /// <p>Subscribes an endpoint to an Amazon SNS topic. If the endpoint type is HTTP/S or email, or if the endpoint and the topic are not in the same Amazon Web Services account, the endpoint owner must run the <code>ConfirmSubscription</code> action to confirm the subscription.</p>

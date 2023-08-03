@@ -3,6 +3,23 @@ pub use crate::operation::get_access_policy::_get_access_policy_output::GetAcces
 
 pub use crate::operation::get_access_policy::_get_access_policy_input::GetAccessPolicyInputBuilder;
 
+impl GetAccessPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_access_policy::GetAccessPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_access_policy::GetAccessPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_access_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetAccessPolicy`.
 ///
 /// <p>Returns an OpenSearch Serverless access policy. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-data-access.html">Data access control for Amazon OpenSearch Serverless</a>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_alias::_describe_alias_output::DescribeAliasO
 
 pub use crate::operation::describe_alias::_describe_alias_input::DescribeAliasInputBuilder;
 
+impl DescribeAliasInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_alias::DescribeAliasOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_alias::DescribeAliasError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_alias();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAlias`.
 ///
 /// <p>Retrieves properties for an alias. This operation returns all alias metadata and settings. To get an alias's target fleet ID only, use <code>ResolveAlias</code>. </p>

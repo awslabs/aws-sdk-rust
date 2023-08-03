@@ -3,6 +3,23 @@ pub use crate::operation::import_server_catalog::_import_server_catalog_output::
 
 pub use crate::operation::import_server_catalog::_import_server_catalog_input::ImportServerCatalogInputBuilder;
 
+impl ImportServerCatalogInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::import_server_catalog::ImportServerCatalogOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::import_server_catalog::ImportServerCatalogError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.import_server_catalog();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ImportServerCatalog`.
 ///
 /// <p>Gathers a complete list of on-premises servers. Connectors must be installed and monitoring all servers to import.</p>

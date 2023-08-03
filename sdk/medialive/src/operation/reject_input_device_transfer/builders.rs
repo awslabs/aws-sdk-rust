@@ -3,6 +3,23 @@ pub use crate::operation::reject_input_device_transfer::_reject_input_device_tra
 
 pub use crate::operation::reject_input_device_transfer::_reject_input_device_transfer_input::RejectInputDeviceTransferInputBuilder;
 
+impl RejectInputDeviceTransferInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::reject_input_device_transfer::RejectInputDeviceTransferOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::reject_input_device_transfer::RejectInputDeviceTransferError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.reject_input_device_transfer();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RejectInputDeviceTransfer`.
 ///
 /// Reject the transfer of the specified input device to your AWS account.

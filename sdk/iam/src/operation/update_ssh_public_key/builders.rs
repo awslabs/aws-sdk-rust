@@ -3,6 +3,23 @@ pub use crate::operation::update_ssh_public_key::_update_ssh_public_key_output::
 
 pub use crate::operation::update_ssh_public_key::_update_ssh_public_key_input::UpdateSshPublicKeyInputBuilder;
 
+impl UpdateSshPublicKeyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_ssh_public_key::UpdateSshPublicKeyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_ssh_public_key::UpdateSSHPublicKeyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_ssh_public_key();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateSSHPublicKey`.
 ///
 /// <p>Sets the status of an IAM user's SSH public key to active or inactive. SSH public keys that are inactive cannot be used for authentication. This operation can be used to disable a user's SSH public key as part of a key rotation work flow.</p>

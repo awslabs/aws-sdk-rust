@@ -3,6 +3,17 @@ pub use crate::operation::describe_load_balancer_attributes::_describe_load_bala
 
 pub use crate::operation::describe_load_balancer_attributes::_describe_load_balancer_attributes_input::DescribeLoadBalancerAttributesInputBuilder;
 
+impl DescribeLoadBalancerAttributesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_load_balancer_attributes::DescribeLoadBalancerAttributesOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_load_balancer_attributes::DescribeLoadBalancerAttributesError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_load_balancer_attributes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeLoadBalancerAttributes`.
 ///
 /// <p>Describes the attributes for the specified Application Load Balancer, Network Load Balancer, or Gateway Load Balancer.</p>

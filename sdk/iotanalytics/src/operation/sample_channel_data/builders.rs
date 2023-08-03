@@ -3,6 +3,23 @@ pub use crate::operation::sample_channel_data::_sample_channel_data_output::Samp
 
 pub use crate::operation::sample_channel_data::_sample_channel_data_input::SampleChannelDataInputBuilder;
 
+impl SampleChannelDataInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::sample_channel_data::SampleChannelDataOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::sample_channel_data::SampleChannelDataError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.sample_channel_data();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SampleChannelData`.
 ///
 /// <p>Retrieves a sample of messages from the specified channel ingested during the specified timeframe. Up to 10 messages can be retrieved.</p>

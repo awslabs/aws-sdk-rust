@@ -3,6 +3,23 @@ pub use crate::operation::view_billing::_view_billing_output::ViewBillingOutputB
 
 pub use crate::operation::view_billing::_view_billing_input::ViewBillingInputBuilder;
 
+impl ViewBillingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::view_billing::ViewBillingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::view_billing::ViewBillingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.view_billing();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ViewBilling`.
 ///
 /// <p>Returns all the domain-related billing records for the current Amazon Web Services account for a specified period</p>

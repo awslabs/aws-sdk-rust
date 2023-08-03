@@ -3,6 +3,23 @@ pub use crate::operation::set_stack_policy::_set_stack_policy_output::SetStackPo
 
 pub use crate::operation::set_stack_policy::_set_stack_policy_input::SetStackPolicyInputBuilder;
 
+impl SetStackPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::set_stack_policy::SetStackPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::set_stack_policy::SetStackPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.set_stack_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SetStackPolicy`.
 ///
 /// <p>Sets a stack policy for a specified stack.</p>

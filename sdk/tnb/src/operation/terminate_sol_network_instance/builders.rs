@@ -3,6 +3,23 @@ pub use crate::operation::terminate_sol_network_instance::_terminate_sol_network
 
 pub use crate::operation::terminate_sol_network_instance::_terminate_sol_network_instance_input::TerminateSolNetworkInstanceInputBuilder;
 
+impl TerminateSolNetworkInstanceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::terminate_sol_network_instance::TerminateSolNetworkInstanceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::terminate_sol_network_instance::TerminateSolNetworkInstanceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.terminate_sol_network_instance();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `TerminateSolNetworkInstance`.
 ///
 /// <p>Terminates a network instance.</p>

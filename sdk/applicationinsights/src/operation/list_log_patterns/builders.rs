@@ -3,6 +3,23 @@ pub use crate::operation::list_log_patterns::_list_log_patterns_output::ListLogP
 
 pub use crate::operation::list_log_patterns::_list_log_patterns_input::ListLogPatternsInputBuilder;
 
+impl ListLogPatternsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_log_patterns::ListLogPatternsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_log_patterns::ListLogPatternsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_log_patterns();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListLogPatterns`.
 ///
 /// <p>Lists the log patterns in the specific log <code>LogPatternSet</code>.</p>

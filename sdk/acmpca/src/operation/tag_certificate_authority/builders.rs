@@ -3,6 +3,23 @@ pub use crate::operation::tag_certificate_authority::_tag_certificate_authority_
 
 pub use crate::operation::tag_certificate_authority::_tag_certificate_authority_input::TagCertificateAuthorityInputBuilder;
 
+impl TagCertificateAuthorityInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::tag_certificate_authority::TagCertificateAuthorityOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::tag_certificate_authority::TagCertificateAuthorityError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.tag_certificate_authority();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `TagCertificateAuthority`.
 ///
 /// <p>Adds one or more tags to your private CA. Tags are labels that you can use to identify and organize your Amazon Web Services resources. Each tag consists of a key and an optional value. You specify the private CA on input by its Amazon Resource Name (ARN). You specify the tag by using a key-value pair. You can apply a tag to just one private CA if you want to identify a specific characteristic of that CA, or you can apply the same tag to multiple private CAs if you want to filter for a common relationship among those CAs. To remove one or more tags, use the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_UntagCertificateAuthority.html">UntagCertificateAuthority</a> action. Call the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ListTags.html">ListTags</a> action to see what tags are associated with your CA. </p> <note>

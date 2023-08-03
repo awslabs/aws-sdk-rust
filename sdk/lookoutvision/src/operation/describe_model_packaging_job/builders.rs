@@ -3,6 +3,23 @@ pub use crate::operation::describe_model_packaging_job::_describe_model_packagin
 
 pub use crate::operation::describe_model_packaging_job::_describe_model_packaging_job_input::DescribeModelPackagingJobInputBuilder;
 
+impl DescribeModelPackagingJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_model_packaging_job::DescribeModelPackagingJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_model_packaging_job::DescribeModelPackagingJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_model_packaging_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeModelPackagingJob`.
 ///
 /// <p>Describes an Amazon Lookout for Vision model packaging job. </p>

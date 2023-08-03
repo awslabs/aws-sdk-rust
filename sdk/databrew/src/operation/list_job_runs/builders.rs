@@ -3,6 +3,23 @@ pub use crate::operation::list_job_runs::_list_job_runs_output::ListJobRunsOutpu
 
 pub use crate::operation::list_job_runs::_list_job_runs_input::ListJobRunsInputBuilder;
 
+impl ListJobRunsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_job_runs::ListJobRunsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_job_runs::ListJobRunsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_job_runs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListJobRuns`.
 ///
 /// <p>Lists all of the previous runs of a particular DataBrew job.</p>

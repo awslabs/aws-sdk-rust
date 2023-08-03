@@ -3,6 +3,23 @@ pub use crate::operation::describe_event_categories::_describe_event_categories_
 
 pub use crate::operation::describe_event_categories::_describe_event_categories_input::DescribeEventCategoriesInputBuilder;
 
+impl DescribeEventCategoriesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_event_categories::DescribeEventCategoriesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_event_categories::DescribeEventCategoriesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_event_categories();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeEventCategories`.
 ///
 /// <p>Lists categories for all event source types, or, if specified, for a specified source type. You can see a list of the event categories and source types in <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and Notifications</a> in the <i>Database Migration Service User Guide.</i> </p>

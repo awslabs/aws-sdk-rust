@@ -3,6 +3,23 @@ pub use crate::operation::describe_stack_instance::_describe_stack_instance_outp
 
 pub use crate::operation::describe_stack_instance::_describe_stack_instance_input::DescribeStackInstanceInputBuilder;
 
+impl DescribeStackInstanceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_stack_instance::DescribeStackInstanceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_stack_instance::DescribeStackInstanceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_stack_instance();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeStackInstance`.
 ///
 /// <p>Returns the stack instance that's associated with the specified StackSet, Amazon Web Services account, and Amazon Web Services Region.</p>

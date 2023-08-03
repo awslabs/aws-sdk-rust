@@ -3,6 +3,23 @@ pub use crate::operation::put_signing_profile::_put_signing_profile_output::PutS
 
 pub use crate::operation::put_signing_profile::_put_signing_profile_input::PutSigningProfileInputBuilder;
 
+impl PutSigningProfileInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_signing_profile::PutSigningProfileOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_signing_profile::PutSigningProfileError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_signing_profile();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutSigningProfile`.
 ///
 /// <p>Creates a signing profile. A signing profile is a code signing template that can be used to carry out a pre-defined signing job. </p>

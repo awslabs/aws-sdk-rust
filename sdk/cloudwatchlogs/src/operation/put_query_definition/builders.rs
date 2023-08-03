@@ -3,6 +3,23 @@ pub use crate::operation::put_query_definition::_put_query_definition_output::Pu
 
 pub use crate::operation::put_query_definition::_put_query_definition_input::PutQueryDefinitionInputBuilder;
 
+impl PutQueryDefinitionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_query_definition::PutQueryDefinitionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_query_definition::PutQueryDefinitionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_query_definition();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutQueryDefinition`.
 ///
 /// <p>Creates or updates a query definition for CloudWatch Logs Insights. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/AnalyzingLogData.html">Analyzing Log Data with CloudWatch Logs Insights</a>.</p>

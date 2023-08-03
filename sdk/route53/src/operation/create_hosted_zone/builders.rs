@@ -3,6 +3,23 @@ pub use crate::operation::create_hosted_zone::_create_hosted_zone_output::Create
 
 pub use crate::operation::create_hosted_zone::_create_hosted_zone_input::CreateHostedZoneInputBuilder;
 
+impl CreateHostedZoneInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_hosted_zone::CreateHostedZoneOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_hosted_zone::CreateHostedZoneError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_hosted_zone();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateHostedZone`.
 ///
 /// <p>Creates a new public or private hosted zone. You create records in a public hosted zone to define how you want to route traffic on the internet for a domain, such as example.com, and its subdomains (apex.example.com, acme.example.com). You create records in a private hosted zone to define how you want to route traffic for a domain and its subdomains within one or more Amazon Virtual Private Clouds (Amazon VPCs). </p> <important>

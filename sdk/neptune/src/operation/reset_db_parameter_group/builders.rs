@@ -3,6 +3,23 @@ pub use crate::operation::reset_db_parameter_group::_reset_db_parameter_group_ou
 
 pub use crate::operation::reset_db_parameter_group::_reset_db_parameter_group_input::ResetDbParameterGroupInputBuilder;
 
+impl ResetDbParameterGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::reset_db_parameter_group::ResetDbParameterGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::reset_db_parameter_group::ResetDBParameterGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.reset_db_parameter_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ResetDBParameterGroup`.
 ///
 /// <p>Modifies the parameters of a DB parameter group to the engine/system default value. To reset specific parameters, provide a list of the following: <code>ParameterName</code> and <code>ApplyMethod</code>. To reset the entire DB parameter group, specify the <code>DBParameterGroup</code> name and <code>ResetAllParameters</code> parameters. When resetting the entire group, dynamic parameters are updated immediately and static parameters are set to <code>pending-reboot</code> to take effect on the next DB instance restart or <code>RebootDBInstance</code> request.</p>

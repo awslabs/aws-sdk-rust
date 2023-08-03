@@ -3,6 +3,23 @@ pub use crate::operation::get_resource_evaluation_summary::_get_resource_evaluat
 
 pub use crate::operation::get_resource_evaluation_summary::_get_resource_evaluation_summary_input::GetResourceEvaluationSummaryInputBuilder;
 
+impl GetResourceEvaluationSummaryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_resource_evaluation_summary::GetResourceEvaluationSummaryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_resource_evaluation_summary::GetResourceEvaluationSummaryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_resource_evaluation_summary();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetResourceEvaluationSummary`.
 ///
 /// <p>Returns a summary of resource evaluation for the specified resource evaluation ID from the proactive rules that were run. The results indicate which evaluation context was used to evaluate the rules, which resource details were evaluated, the evaluation mode that was run, and whether the resource details comply with the configuration of the proactive rules. </p> <note>

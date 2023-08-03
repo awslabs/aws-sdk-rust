@@ -3,6 +3,23 @@ pub use crate::operation::delete_internet_gateway::_delete_internet_gateway_outp
 
 pub use crate::operation::delete_internet_gateway::_delete_internet_gateway_input::DeleteInternetGatewayInputBuilder;
 
+impl DeleteInternetGatewayInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_internet_gateway::DeleteInternetGatewayOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_internet_gateway::DeleteInternetGatewayError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_internet_gateway();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteInternetGateway`.
 ///
 /// <p>Deletes the specified internet gateway. You must detach the internet gateway from the VPC before you can delete it.</p>

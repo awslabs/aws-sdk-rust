@@ -3,6 +3,23 @@ pub use crate::operation::start_resource_evaluation::_start_resource_evaluation_
 
 pub use crate::operation::start_resource_evaluation::_start_resource_evaluation_input::StartResourceEvaluationInputBuilder;
 
+impl StartResourceEvaluationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_resource_evaluation::StartResourceEvaluationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_resource_evaluation::StartResourceEvaluationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_resource_evaluation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartResourceEvaluation`.
 ///
 /// <p>Runs an on-demand evaluation for the specified resource to determine whether the resource details will comply with configured Config rules. You can also use it for evaluation purposes. Config recommends using an evaluation context. It runs an execution against the resource details with all of the Config rules in your account that match with the specified proactive mode and resource type.</p> <note>

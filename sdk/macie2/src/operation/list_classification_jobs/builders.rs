@@ -3,6 +3,23 @@ pub use crate::operation::list_classification_jobs::_list_classification_jobs_ou
 
 pub use crate::operation::list_classification_jobs::_list_classification_jobs_input::ListClassificationJobsInputBuilder;
 
+impl ListClassificationJobsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_classification_jobs::ListClassificationJobsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_classification_jobs::ListClassificationJobsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_classification_jobs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListClassificationJobs`.
 ///
 /// <p>Retrieves a subset of information about one or more classification jobs.</p>

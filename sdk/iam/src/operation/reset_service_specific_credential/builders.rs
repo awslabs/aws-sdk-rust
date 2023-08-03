@@ -3,6 +3,17 @@ pub use crate::operation::reset_service_specific_credential::_reset_service_spec
 
 pub use crate::operation::reset_service_specific_credential::_reset_service_specific_credential_input::ResetServiceSpecificCredentialInputBuilder;
 
+impl ResetServiceSpecificCredentialInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::reset_service_specific_credential::ResetServiceSpecificCredentialOutput, ::aws_smithy_http::result::SdkError<crate::operation::reset_service_specific_credential::ResetServiceSpecificCredentialError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.reset_service_specific_credential();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ResetServiceSpecificCredential`.
 ///
 /// <p>Resets the password for a service-specific credential. The new password is Amazon Web Services generated and cryptographically strong. It cannot be configured by the user. Resetting the password immediately invalidates the previous password associated with this user.</p>

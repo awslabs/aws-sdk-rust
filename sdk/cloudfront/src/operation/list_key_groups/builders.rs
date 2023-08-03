@@ -3,6 +3,23 @@ pub use crate::operation::list_key_groups::_list_key_groups_output::ListKeyGroup
 
 pub use crate::operation::list_key_groups::_list_key_groups_input::ListKeyGroupsInputBuilder;
 
+impl ListKeyGroupsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_key_groups::ListKeyGroupsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_key_groups::ListKeyGroupsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_key_groups();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListKeyGroups`.
 ///
 /// <p>Gets a list of key groups.</p>

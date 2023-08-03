@@ -3,6 +3,23 @@ pub use crate::operation::update_dataset_entries::_update_dataset_entries_output
 
 pub use crate::operation::update_dataset_entries::_update_dataset_entries_input::UpdateDatasetEntriesInputBuilder;
 
+impl UpdateDatasetEntriesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_dataset_entries::UpdateDatasetEntriesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_dataset_entries::UpdateDatasetEntriesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_dataset_entries();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateDatasetEntries`.
 ///
 /// <p>Adds or updates one or more JSON Line entries in a dataset. A JSON Line includes information about an image used for training or testing an Amazon Lookout for Vision model.</p>

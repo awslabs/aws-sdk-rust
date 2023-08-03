@@ -3,6 +3,23 @@ pub use crate::operation::create_object::_create_object_output::CreateObjectOutp
 
 pub use crate::operation::create_object::_create_object_input::CreateObjectInputBuilder;
 
+impl CreateObjectInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_object::CreateObjectOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_object::CreateObjectError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_object();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateObject`.
 ///
 /// <p>Creates an object in a <code>Directory</code>. Additionally attaches the object to a parent, if a parent reference and <code>LinkName</code> is specified. An object is simply a collection of <code>Facet</code> attributes. You can also use this API call to create a policy object, if the facet from which you create the object is a policy facet. </p>

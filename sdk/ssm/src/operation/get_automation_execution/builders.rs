@@ -3,6 +3,23 @@ pub use crate::operation::get_automation_execution::_get_automation_execution_ou
 
 pub use crate::operation::get_automation_execution::_get_automation_execution_input::GetAutomationExecutionInputBuilder;
 
+impl GetAutomationExecutionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_automation_execution::GetAutomationExecutionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_automation_execution::GetAutomationExecutionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_automation_execution();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetAutomationExecution`.
 ///
 /// <p>Get detailed information about a particular Automation execution.</p>

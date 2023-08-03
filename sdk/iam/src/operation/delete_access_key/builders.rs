@@ -3,6 +3,23 @@ pub use crate::operation::delete_access_key::_delete_access_key_output::DeleteAc
 
 pub use crate::operation::delete_access_key::_delete_access_key_input::DeleteAccessKeyInputBuilder;
 
+impl DeleteAccessKeyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_access_key::DeleteAccessKeyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_access_key::DeleteAccessKeyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_access_key();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteAccessKey`.
 ///
 /// <p>Deletes the access key pair associated with the specified IAM user.</p>

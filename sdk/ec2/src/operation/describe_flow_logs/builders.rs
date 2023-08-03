@@ -3,6 +3,23 @@ pub use crate::operation::describe_flow_logs::_describe_flow_logs_output::Descri
 
 pub use crate::operation::describe_flow_logs::_describe_flow_logs_input::DescribeFlowLogsInputBuilder;
 
+impl DescribeFlowLogsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_flow_logs::DescribeFlowLogsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_flow_logs::DescribeFlowLogsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_flow_logs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeFlowLogs`.
 ///
 /// <p>Describes one or more flow logs.</p>

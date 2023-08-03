@@ -3,6 +3,23 @@ pub use crate::operation::list_resource_profile_detections::_list_resource_profi
 
 pub use crate::operation::list_resource_profile_detections::_list_resource_profile_detections_input::ListResourceProfileDetectionsInputBuilder;
 
+impl ListResourceProfileDetectionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_resource_profile_detections::ListResourceProfileDetectionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_resource_profile_detections::ListResourceProfileDetectionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_resource_profile_detections();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListResourceProfileDetections`.
 ///
 /// <p>Retrieves information about the types and amount of sensitive data that Amazon Macie found in an S3 bucket.</p>

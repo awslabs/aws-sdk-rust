@@ -3,6 +3,23 @@ pub use crate::operation::create_scheduled_action::_create_scheduled_action_outp
 
 pub use crate::operation::create_scheduled_action::_create_scheduled_action_input::CreateScheduledActionInputBuilder;
 
+impl CreateScheduledActionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_scheduled_action::CreateScheduledActionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_scheduled_action::CreateScheduledActionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_scheduled_action();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateScheduledAction`.
 ///
 /// <p>Creates a scheduled action. A scheduled action contains a schedule and an Amazon Redshift API action. For example, you can create a schedule of when to run the <code>ResizeCluster</code> API operation. </p>

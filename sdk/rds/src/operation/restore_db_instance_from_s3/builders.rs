@@ -3,6 +3,23 @@ pub use crate::operation::restore_db_instance_from_s3::_restore_db_instance_from
 
 pub use crate::operation::restore_db_instance_from_s3::_restore_db_instance_from_s3_input::RestoreDbInstanceFromS3InputBuilder;
 
+impl RestoreDbInstanceFromS3InputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::restore_db_instance_from_s3::RestoreDbInstanceFromS3Output,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::restore_db_instance_from_s3::RestoreDBInstanceFromS3Error,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.restore_db_instance_from_s3();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RestoreDBInstanceFromS3`.
 ///
 /// <p>Amazon Relational Database Service (Amazon RDS) supports importing MySQL databases by using backup files. You can create a backup of your on-premises database, store it on Amazon Simple Storage Service (Amazon S3), and then restore the backup file onto a new Amazon RDS DB instance running MySQL. For more information, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/MySQL.Procedural.Importing.html">Importing Data into an Amazon RDS MySQL DB Instance</a> in the <i>Amazon RDS User Guide.</i> </p>

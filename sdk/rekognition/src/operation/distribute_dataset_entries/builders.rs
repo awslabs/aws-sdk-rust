@@ -3,6 +3,23 @@ pub use crate::operation::distribute_dataset_entries::_distribute_dataset_entrie
 
 pub use crate::operation::distribute_dataset_entries::_distribute_dataset_entries_input::DistributeDatasetEntriesInputBuilder;
 
+impl DistributeDatasetEntriesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::distribute_dataset_entries::DistributeDatasetEntriesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::distribute_dataset_entries::DistributeDatasetEntriesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.distribute_dataset_entries();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DistributeDatasetEntries`.
 ///
 /// <p>Distributes the entries (images) in a training dataset across the training dataset and the test dataset for a project. <code>DistributeDatasetEntries</code> moves 20% of the training dataset images to the test dataset. An entry is a JSON Line that describes an image. </p>

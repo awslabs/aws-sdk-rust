@@ -3,6 +3,23 @@ pub use crate::operation::describe_interconnects::_describe_interconnects_output
 
 pub use crate::operation::describe_interconnects::_describe_interconnects_input::DescribeInterconnectsInputBuilder;
 
+impl DescribeInterconnectsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_interconnects::DescribeInterconnectsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_interconnects::DescribeInterconnectsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_interconnects();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeInterconnects`.
 ///
 /// <p>Lists the interconnects owned by the Amazon Web Services account or only the specified interconnect.</p>

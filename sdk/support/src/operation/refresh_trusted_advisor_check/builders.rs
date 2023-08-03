@@ -3,6 +3,23 @@ pub use crate::operation::refresh_trusted_advisor_check::_refresh_trusted_adviso
 
 pub use crate::operation::refresh_trusted_advisor_check::_refresh_trusted_advisor_check_input::RefreshTrustedAdvisorCheckInputBuilder;
 
+impl RefreshTrustedAdvisorCheckInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::refresh_trusted_advisor_check::RefreshTrustedAdvisorCheckOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::refresh_trusted_advisor_check::RefreshTrustedAdvisorCheckError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.refresh_trusted_advisor_check();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RefreshTrustedAdvisorCheck`.
 ///
 /// <p>Refreshes the Trusted Advisor check that you specify using the check ID. You can get the check IDs by calling the <code>DescribeTrustedAdvisorChecks</code> operation.</p>

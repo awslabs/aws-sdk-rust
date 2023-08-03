@@ -3,6 +3,23 @@ pub use crate::operation::update_security::_update_security_output::UpdateSecuri
 
 pub use crate::operation::update_security::_update_security_input::UpdateSecurityInputBuilder;
 
+impl UpdateSecurityInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_security::UpdateSecurityOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_security::UpdateSecurityError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_security();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateSecurity`.
 ///
 /// <p>Updates the security settings for the cluster. You can use this operation to specify encryption and authentication on existing clusters.</p>

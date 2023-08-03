@@ -3,6 +3,17 @@ pub use crate::operation::create_transit_gateway_connect_peer::_create_transit_g
 
 pub use crate::operation::create_transit_gateway_connect_peer::_create_transit_gateway_connect_peer_input::CreateTransitGatewayConnectPeerInputBuilder;
 
+impl CreateTransitGatewayConnectPeerInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::create_transit_gateway_connect_peer::CreateTransitGatewayConnectPeerOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_transit_gateway_connect_peer::CreateTransitGatewayConnectPeerError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.create_transit_gateway_connect_peer();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateTransitGatewayConnectPeer`.
 ///
 /// <p>Creates a Connect peer for a specified transit gateway Connect attachment between a transit gateway and an appliance.</p>

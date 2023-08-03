@@ -3,6 +3,23 @@ pub use crate::operation::update_event_action::_update_event_action_output::Upda
 
 pub use crate::operation::update_event_action::_update_event_action_input::UpdateEventActionInputBuilder;
 
+impl UpdateEventActionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_event_action::UpdateEventActionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_event_action::UpdateEventActionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_event_action();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateEventAction`.
 ///
 /// <p>This operation updates the event action.</p>

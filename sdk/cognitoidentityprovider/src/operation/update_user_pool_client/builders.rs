@@ -3,6 +3,23 @@ pub use crate::operation::update_user_pool_client::_update_user_pool_client_outp
 
 pub use crate::operation::update_user_pool_client::_update_user_pool_client_input::UpdateUserPoolClientInputBuilder;
 
+impl UpdateUserPoolClientInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_user_pool_client::UpdateUserPoolClientOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_user_pool_client::UpdateUserPoolClientError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_user_pool_client();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateUserPoolClient`.
 ///
 /// <p>Updates the specified user pool app client with the specified attributes. You can get a list of the current user pool app client settings using <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPoolClient.html">DescribeUserPoolClient</a>.</p> <important>

@@ -3,6 +3,23 @@ pub use crate::operation::create_lag::_create_lag_output::CreateLagOutputBuilder
 
 pub use crate::operation::create_lag::_create_lag_input::CreateLagInputBuilder;
 
+impl CreateLagInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_lag::CreateLagOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_lag::CreateLagError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_lag();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateLag`.
 ///
 /// <p>Creates a link aggregation group (LAG) with the specified number of bundled physical dedicated connections between the customer network and a specific Direct Connect location. A LAG is a logical interface that uses the Link Aggregation Control Protocol (LACP) to aggregate multiple interfaces, enabling you to treat them as a single interface.</p>

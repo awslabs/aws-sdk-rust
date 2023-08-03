@@ -3,6 +3,17 @@ pub use crate::operation::update_firewall_delete_protection::_update_firewall_de
 
 pub use crate::operation::update_firewall_delete_protection::_update_firewall_delete_protection_input::UpdateFirewallDeleteProtectionInputBuilder;
 
+impl UpdateFirewallDeleteProtectionInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::update_firewall_delete_protection::UpdateFirewallDeleteProtectionOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_firewall_delete_protection::UpdateFirewallDeleteProtectionError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.update_firewall_delete_protection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateFirewallDeleteProtection`.
 ///
 /// <p>Modifies the flag, <code>DeleteProtection</code>, which indicates whether it is possible to delete the firewall. If the flag is set to <code>TRUE</code>, the firewall is protected against deletion. This setting helps protect against accidentally deleting a firewall that's in use. </p>

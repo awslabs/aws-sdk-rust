@@ -3,6 +3,23 @@ pub use crate::operation::batch_write::_batch_write_output::BatchWriteOutputBuil
 
 pub use crate::operation::batch_write::_batch_write_input::BatchWriteInputBuilder;
 
+impl BatchWriteInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_write::BatchWriteOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_write::BatchWriteError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_write();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchWrite`.
 ///
 /// <p>Performs all the write operations in a batch. Either all the operations succeed or none.</p>

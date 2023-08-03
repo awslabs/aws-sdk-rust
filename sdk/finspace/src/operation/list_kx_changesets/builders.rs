@@ -3,6 +3,23 @@ pub use crate::operation::list_kx_changesets::_list_kx_changesets_output::ListKx
 
 pub use crate::operation::list_kx_changesets::_list_kx_changesets_input::ListKxChangesetsInputBuilder;
 
+impl ListKxChangesetsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_kx_changesets::ListKxChangesetsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_kx_changesets::ListKxChangesetsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_kx_changesets();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListKxChangesets`.
 ///
 /// <p>Returns a list of all the changesets for a database.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_registry_catalog_data::_get_registry_catalog_data_
 
 pub use crate::operation::get_registry_catalog_data::_get_registry_catalog_data_input::GetRegistryCatalogDataInputBuilder;
 
+impl GetRegistryCatalogDataInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_registry_catalog_data::GetRegistryCatalogDataOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_registry_catalog_data::GetRegistryCatalogDataError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_registry_catalog_data();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetRegistryCatalogData`.
 ///
 /// <p>Retrieves catalog metadata for a public registry.</p>

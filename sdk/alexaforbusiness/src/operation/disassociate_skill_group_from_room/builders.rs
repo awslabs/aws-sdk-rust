@@ -3,6 +3,17 @@ pub use crate::operation::disassociate_skill_group_from_room::_disassociate_skil
 
 pub use crate::operation::disassociate_skill_group_from_room::_disassociate_skill_group_from_room_input::DisassociateSkillGroupFromRoomInputBuilder;
 
+impl DisassociateSkillGroupFromRoomInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::disassociate_skill_group_from_room::DisassociateSkillGroupFromRoomOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_skill_group_from_room::DisassociateSkillGroupFromRoomError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.disassociate_skill_group_from_room();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateSkillGroupFromRoom`.
 ///
 /// <p>Disassociates a skill group from a specified room. This disables all skills in the skill group on all devices in the room.</p>

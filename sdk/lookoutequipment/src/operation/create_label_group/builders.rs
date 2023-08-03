@@ -3,6 +3,23 @@ pub use crate::operation::create_label_group::_create_label_group_output::Create
 
 pub use crate::operation::create_label_group::_create_label_group_input::CreateLabelGroupInputBuilder;
 
+impl CreateLabelGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_label_group::CreateLabelGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_label_group::CreateLabelGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_label_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateLabelGroup`.
 ///
 /// <p> Creates a group of labels. </p>

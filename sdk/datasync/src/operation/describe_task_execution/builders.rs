@@ -3,6 +3,23 @@ pub use crate::operation::describe_task_execution::_describe_task_execution_outp
 
 pub use crate::operation::describe_task_execution::_describe_task_execution_input::DescribeTaskExecutionInputBuilder;
 
+impl DescribeTaskExecutionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_task_execution::DescribeTaskExecutionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_task_execution::DescribeTaskExecutionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_task_execution();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeTaskExecution`.
 ///
 /// <p>Provides information about an DataSync transfer task that's running.</p>

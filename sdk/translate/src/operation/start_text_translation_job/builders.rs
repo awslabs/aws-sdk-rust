@@ -3,6 +3,23 @@ pub use crate::operation::start_text_translation_job::_start_text_translation_jo
 
 pub use crate::operation::start_text_translation_job::_start_text_translation_job_input::StartTextTranslationJobInputBuilder;
 
+impl StartTextTranslationJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_text_translation_job::StartTextTranslationJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_text_translation_job::StartTextTranslationJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_text_translation_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartTextTranslationJob`.
 ///
 /// <p>Starts an asynchronous batch translation job. Use batch translation jobs to translate large volumes of text across multiple documents at once. For batch translation, you can input documents with different source languages (specify <code>auto</code> as the source language). You can specify one or more target languages. Batch translation translates each input document into each of the target languages. For more information, see <a href="https://docs.aws.amazon.com/translate/latest/dg/async.html">Asynchronous batch processing</a>.</p>

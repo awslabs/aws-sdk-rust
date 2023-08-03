@@ -3,6 +3,17 @@ pub use crate::operation::list_available_management_cidr_ranges::_list_available
 
 pub use crate::operation::list_available_management_cidr_ranges::_list_available_management_cidr_ranges_input::ListAvailableManagementCidrRangesInputBuilder;
 
+impl ListAvailableManagementCidrRangesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_available_management_cidr_ranges::ListAvailableManagementCidrRangesOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_available_management_cidr_ranges::ListAvailableManagementCidrRangesError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_available_management_cidr_ranges();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAvailableManagementCidrRanges`.
 ///
 /// <p>Retrieves a list of IP address ranges, specified as IPv4 CIDR blocks, that you can use for the network management interface when you enable Bring Your Own License (BYOL). </p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_tag_option::_describe_tag_option_output::Desc
 
 pub use crate::operation::describe_tag_option::_describe_tag_option_input::DescribeTagOptionInputBuilder;
 
+impl DescribeTagOptionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_tag_option::DescribeTagOptionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_tag_option::DescribeTagOptionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_tag_option();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeTagOption`.
 ///
 /// <p>Gets information about the specified TagOption.</p>

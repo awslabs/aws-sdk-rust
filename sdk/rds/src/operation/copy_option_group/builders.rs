@@ -3,6 +3,23 @@ pub use crate::operation::copy_option_group::_copy_option_group_output::CopyOpti
 
 pub use crate::operation::copy_option_group::_copy_option_group_input::CopyOptionGroupInputBuilder;
 
+impl CopyOptionGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::copy_option_group::CopyOptionGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::copy_option_group::CopyOptionGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.copy_option_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CopyOptionGroup`.
 ///
 /// <p>Copies the specified option group.</p>

@@ -3,6 +3,17 @@ pub use crate::operation::describe_engine_default_cluster_parameters::_describe_
 
 pub use crate::operation::describe_engine_default_cluster_parameters::_describe_engine_default_cluster_parameters_input::DescribeEngineDefaultClusterParametersInputBuilder;
 
+impl DescribeEngineDefaultClusterParametersInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_engine_default_cluster_parameters::DescribeEngineDefaultClusterParametersOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_engine_default_cluster_parameters::DescribeEngineDefaultClusterParametersError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_engine_default_cluster_parameters();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeEngineDefaultClusterParameters`.
 ///
 /// <p>Returns the default engine and system parameter information for the cluster database engine.</p>

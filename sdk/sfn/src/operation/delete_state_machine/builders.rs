@@ -3,6 +3,23 @@ pub use crate::operation::delete_state_machine::_delete_state_machine_output::De
 
 pub use crate::operation::delete_state_machine::_delete_state_machine_input::DeleteStateMachineInputBuilder;
 
+impl DeleteStateMachineInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_state_machine::DeleteStateMachineOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_state_machine::DeleteStateMachineError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_state_machine();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteStateMachine`.
 ///
 /// <p>Deletes a state machine. This is an asynchronous operation: It sets the state machine's status to <code>DELETING</code> and begins the deletion process. </p>

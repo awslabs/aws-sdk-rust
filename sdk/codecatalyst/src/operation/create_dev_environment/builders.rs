@@ -3,6 +3,23 @@ pub use crate::operation::create_dev_environment::_create_dev_environment_output
 
 pub use crate::operation::create_dev_environment::_create_dev_environment_input::CreateDevEnvironmentInputBuilder;
 
+impl CreateDevEnvironmentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_dev_environment::CreateDevEnvironmentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_dev_environment::CreateDevEnvironmentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_dev_environment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateDevEnvironment`.
 ///
 /// <p>Creates a Dev Environment in Amazon CodeCatalyst, a cloud-based development environment that you can use to quickly work on the code stored in the source repositories of your project. </p> <note>

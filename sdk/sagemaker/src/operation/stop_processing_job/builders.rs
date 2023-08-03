@@ -3,6 +3,23 @@ pub use crate::operation::stop_processing_job::_stop_processing_job_output::Stop
 
 pub use crate::operation::stop_processing_job::_stop_processing_job_input::StopProcessingJobInputBuilder;
 
+impl StopProcessingJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_processing_job::StopProcessingJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_processing_job::StopProcessingJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_processing_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopProcessingJob`.
 ///
 /// <p>Stops a processing job.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_reusable_delegation_set::_get_reusable_delegation_
 
 pub use crate::operation::get_reusable_delegation_set::_get_reusable_delegation_set_input::GetReusableDelegationSetInputBuilder;
 
+impl GetReusableDelegationSetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_reusable_delegation_set::GetReusableDelegationSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_reusable_delegation_set::GetReusableDelegationSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_reusable_delegation_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetReusableDelegationSet`.
 ///
 /// <p>Retrieves information about a specified reusable delegation set, including the four name servers that are assigned to the delegation set.</p>

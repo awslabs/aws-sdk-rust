@@ -3,6 +3,23 @@ pub use crate::operation::put_component_policy::_put_component_policy_output::Pu
 
 pub use crate::operation::put_component_policy::_put_component_policy_input::PutComponentPolicyInputBuilder;
 
+impl PutComponentPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_component_policy::PutComponentPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_component_policy::PutComponentPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_component_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutComponentPolicy`.
 ///
 /// <p>Applies a policy to a component. We recommend that you call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_CreateResourceShare.html">CreateResourceShare</a> to share resources. If you call the Image Builder API <code>PutComponentPolicy</code>, you must also call the RAM API <a href="https://docs.aws.amazon.com/ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html">PromoteResourceShareCreatedFromPolicy</a> in order for the resource to be visible to all principals with whom the resource is shared.</p>

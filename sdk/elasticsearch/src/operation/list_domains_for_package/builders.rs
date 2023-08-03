@@ -3,6 +3,23 @@ pub use crate::operation::list_domains_for_package::_list_domains_for_package_ou
 
 pub use crate::operation::list_domains_for_package::_list_domains_for_package_input::ListDomainsForPackageInputBuilder;
 
+impl ListDomainsForPackageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_domains_for_package::ListDomainsForPackageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_domains_for_package::ListDomainsForPackageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_domains_for_package();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDomainsForPackage`.
 ///
 /// <p>Lists all Amazon ES domains associated with the package.</p>

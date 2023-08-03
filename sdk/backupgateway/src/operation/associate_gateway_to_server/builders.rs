@@ -3,6 +3,23 @@ pub use crate::operation::associate_gateway_to_server::_associate_gateway_to_ser
 
 pub use crate::operation::associate_gateway_to_server::_associate_gateway_to_server_input::AssociateGatewayToServerInputBuilder;
 
+impl AssociateGatewayToServerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_gateway_to_server::AssociateGatewayToServerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_gateway_to_server::AssociateGatewayToServerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_gateway_to_server();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateGatewayToServer`.
 ///
 /// <p>Associates a backup gateway with your server. After you complete the association process, you can back up and restore your VMs through the gateway.</p>

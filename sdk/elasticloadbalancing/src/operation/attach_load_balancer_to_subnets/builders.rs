@@ -3,6 +3,23 @@ pub use crate::operation::attach_load_balancer_to_subnets::_attach_load_balancer
 
 pub use crate::operation::attach_load_balancer_to_subnets::_attach_load_balancer_to_subnets_input::AttachLoadBalancerToSubnetsInputBuilder;
 
+impl AttachLoadBalancerToSubnetsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::attach_load_balancer_to_subnets::AttachLoadBalancerToSubnetsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::attach_load_balancer_to_subnets::AttachLoadBalancerToSubnetsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.attach_load_balancer_to_subnets();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AttachLoadBalancerToSubnets`.
 ///
 /// <p>Adds one or more subnets to the set of configured subnets for the specified load balancer.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_prepared_statement::_delete_prepared_statement_
 
 pub use crate::operation::delete_prepared_statement::_delete_prepared_statement_input::DeletePreparedStatementInputBuilder;
 
+impl DeletePreparedStatementInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_prepared_statement::DeletePreparedStatementOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_prepared_statement::DeletePreparedStatementError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_prepared_statement();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeletePreparedStatement`.
 ///
 /// <p>Deletes the prepared statement with the specified name from the specified workgroup.</p>

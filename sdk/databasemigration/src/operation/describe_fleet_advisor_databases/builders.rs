@@ -3,6 +3,23 @@ pub use crate::operation::describe_fleet_advisor_databases::_describe_fleet_advi
 
 pub use crate::operation::describe_fleet_advisor_databases::_describe_fleet_advisor_databases_input::DescribeFleetAdvisorDatabasesInputBuilder;
 
+impl DescribeFleetAdvisorDatabasesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_fleet_advisor_databases::DescribeFleetAdvisorDatabasesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_fleet_advisor_databases::DescribeFleetAdvisorDatabasesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_fleet_advisor_databases();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeFleetAdvisorDatabases`.
 ///
 /// <p>Returns a list of Fleet Advisor databases in your account.</p>

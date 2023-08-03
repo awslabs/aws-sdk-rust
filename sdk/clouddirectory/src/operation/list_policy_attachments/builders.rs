@@ -3,6 +3,23 @@ pub use crate::operation::list_policy_attachments::_list_policy_attachments_outp
 
 pub use crate::operation::list_policy_attachments::_list_policy_attachments_input::ListPolicyAttachmentsInputBuilder;
 
+impl ListPolicyAttachmentsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_policy_attachments::ListPolicyAttachmentsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_policy_attachments::ListPolicyAttachmentsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_policy_attachments();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListPolicyAttachments`.
 ///
 /// <p>Returns all of the <code>ObjectIdentifiers</code> to which a given policy is attached.</p>

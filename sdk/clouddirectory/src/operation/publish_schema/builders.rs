@@ -3,6 +3,23 @@ pub use crate::operation::publish_schema::_publish_schema_output::PublishSchemaO
 
 pub use crate::operation::publish_schema::_publish_schema_input::PublishSchemaInputBuilder;
 
+impl PublishSchemaInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::publish_schema::PublishSchemaOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::publish_schema::PublishSchemaError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.publish_schema();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PublishSchema`.
 ///
 /// <p>Publishes a development schema with a major version and a recommended minor version.</p>

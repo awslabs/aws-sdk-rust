@@ -3,6 +3,23 @@ pub use crate::operation::get_meeting::_get_meeting_output::GetMeetingOutputBuil
 
 pub use crate::operation::get_meeting::_get_meeting_input::GetMeetingInputBuilder;
 
+impl GetMeetingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_meeting::GetMeetingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_meeting::GetMeetingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_meeting();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetMeeting`.
 ///
 /// <p>Gets the Amazon Chime SDK meeting details for the specified meeting ID. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::batch_detect_syntax::_batch_detect_syntax_output::Batc
 
 pub use crate::operation::batch_detect_syntax::_batch_detect_syntax_input::BatchDetectSyntaxInputBuilder;
 
+impl BatchDetectSyntaxInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_detect_syntax::BatchDetectSyntaxOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_detect_syntax::BatchDetectSyntaxError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_detect_syntax();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchDetectSyntax`.
 ///
 /// <p>Inspects the text of a batch of documents for the syntax and part of speech of the words in the document and returns information about them. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer Guide. </p>

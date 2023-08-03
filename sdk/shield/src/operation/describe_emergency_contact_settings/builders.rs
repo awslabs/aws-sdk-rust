@@ -3,6 +3,17 @@ pub use crate::operation::describe_emergency_contact_settings::_describe_emergen
 
 pub use crate::operation::describe_emergency_contact_settings::_describe_emergency_contact_settings_input::DescribeEmergencyContactSettingsInputBuilder;
 
+impl DescribeEmergencyContactSettingsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_emergency_contact_settings::DescribeEmergencyContactSettingsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_emergency_contact_settings::DescribeEmergencyContactSettingsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_emergency_contact_settings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeEmergencyContactSettings`.
 ///
 /// <p>A list of email addresses and phone numbers that the Shield Response Team (SRT) can use to contact you if you have proactive engagement enabled, for escalations to the SRT and to initiate proactive customer support.</p>

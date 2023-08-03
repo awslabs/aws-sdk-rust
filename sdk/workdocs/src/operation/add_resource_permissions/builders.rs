@@ -3,6 +3,23 @@ pub use crate::operation::add_resource_permissions::_add_resource_permissions_ou
 
 pub use crate::operation::add_resource_permissions::_add_resource_permissions_input::AddResourcePermissionsInputBuilder;
 
+impl AddResourcePermissionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::add_resource_permissions::AddResourcePermissionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::add_resource_permissions::AddResourcePermissionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.add_resource_permissions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AddResourcePermissions`.
 ///
 /// <p>Creates a set of permissions for the specified folder or document. The resource permissions are overwritten if the principals already have different permissions.</p>

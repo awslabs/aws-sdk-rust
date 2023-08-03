@@ -3,6 +3,23 @@ pub use crate::operation::list_curated_environment_images::_list_curated_environ
 
 pub use crate::operation::list_curated_environment_images::_list_curated_environment_images_input::ListCuratedEnvironmentImagesInputBuilder;
 
+impl ListCuratedEnvironmentImagesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_curated_environment_images::ListCuratedEnvironmentImagesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_curated_environment_images::ListCuratedEnvironmentImagesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_curated_environment_images();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListCuratedEnvironmentImages`.
 ///
 /// <p>Gets information about Docker images that are managed by CodeBuild.</p>

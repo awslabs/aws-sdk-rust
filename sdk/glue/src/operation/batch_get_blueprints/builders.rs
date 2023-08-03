@@ -3,6 +3,23 @@ pub use crate::operation::batch_get_blueprints::_batch_get_blueprints_output::Ba
 
 pub use crate::operation::batch_get_blueprints::_batch_get_blueprints_input::BatchGetBlueprintsInputBuilder;
 
+impl BatchGetBlueprintsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_blueprints::BatchGetBlueprintsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_get_blueprints::BatchGetBlueprintsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_get_blueprints();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchGetBlueprints`.
 ///
 /// <p>Retrieves information about a list of blueprints.</p>

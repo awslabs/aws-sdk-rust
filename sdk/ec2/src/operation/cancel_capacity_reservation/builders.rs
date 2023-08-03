@@ -3,6 +3,23 @@ pub use crate::operation::cancel_capacity_reservation::_cancel_capacity_reservat
 
 pub use crate::operation::cancel_capacity_reservation::_cancel_capacity_reservation_input::CancelCapacityReservationInputBuilder;
 
+impl CancelCapacityReservationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::cancel_capacity_reservation::CancelCapacityReservationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::cancel_capacity_reservation::CancelCapacityReservationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.cancel_capacity_reservation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CancelCapacityReservation`.
 ///
 /// <p>Cancels the specified Capacity Reservation, releases the reserved capacity, and changes the Capacity Reservation's state to <code>cancelled</code>.</p>

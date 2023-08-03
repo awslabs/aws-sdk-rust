@@ -3,6 +3,23 @@ pub use crate::operation::create_ip_access_settings::_create_ip_access_settings_
 
 pub use crate::operation::create_ip_access_settings::_create_ip_access_settings_input::CreateIpAccessSettingsInputBuilder;
 
+impl CreateIpAccessSettingsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_ip_access_settings::CreateIpAccessSettingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_ip_access_settings::CreateIpAccessSettingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_ip_access_settings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateIpAccessSettings`.
 ///
 /// <p>Creates an IP access settings resource that can be associated with a web portal.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_pipeline::_delete_pipeline_output::DeletePipeli
 
 pub use crate::operation::delete_pipeline::_delete_pipeline_input::DeletePipelineInputBuilder;
 
+impl DeletePipelineInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_pipeline::DeletePipelineOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_pipeline::DeletePipelineError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_pipeline();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeletePipeline`.
 ///
 /// <p>Deletes a pipeline if there are no running instances of the pipeline. To delete a pipeline, you must stop all running instances of the pipeline using the <code>StopPipelineExecution</code> API. When you delete a pipeline, all instances of the pipeline are deleted.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_scheduled_actions::_list_scheduled_actions_output
 
 pub use crate::operation::list_scheduled_actions::_list_scheduled_actions_input::ListScheduledActionsInputBuilder;
 
+impl ListScheduledActionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_scheduled_actions::ListScheduledActionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_scheduled_actions::ListScheduledActionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_scheduled_actions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListScheduledActions`.
 ///
 /// <p>Retrieves a list of configuration changes that are scheduled for a domain. These changes can be <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/service-software.html">service software updates</a> or <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html#auto-tune-types">blue/green Auto-Tune enhancements</a>.</p>

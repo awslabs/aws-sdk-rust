@@ -3,6 +3,23 @@ pub use crate::operation::import_component::_import_component_output::ImportComp
 
 pub use crate::operation::import_component::_import_component_input::ImportComponentInputBuilder;
 
+impl ImportComponentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::import_component::ImportComponentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::import_component::ImportComponentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.import_component();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ImportComponent`.
 ///
 /// <p>Imports a component and transforms its data into a component document.</p>

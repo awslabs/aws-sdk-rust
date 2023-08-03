@@ -3,6 +3,23 @@ pub use crate::operation::update_server_config::_update_server_config_output::Up
 
 pub use crate::operation::update_server_config::_update_server_config_input::UpdateServerConfigInputBuilder;
 
+impl UpdateServerConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_server_config::UpdateServerConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_server_config::UpdateServerConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_server_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateServerConfig`.
 ///
 /// <p> Updates the configuration of the specified server. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::change_message_visibility::_change_message_visibility_
 
 pub use crate::operation::change_message_visibility::_change_message_visibility_input::ChangeMessageVisibilityInputBuilder;
 
+impl ChangeMessageVisibilityInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::change_message_visibility::ChangeMessageVisibilityOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::change_message_visibility::ChangeMessageVisibilityError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.change_message_visibility();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ChangeMessageVisibility`.
 ///
 /// <p>Changes the visibility timeout of a specified message in a queue to a new value. The default visibility timeout for a message is 30 seconds. The minimum is 0 seconds. The maximum is 12 hours. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-visibility-timeout.html">Visibility Timeout</a> in the <i>Amazon SQS Developer Guide</i>.</p>

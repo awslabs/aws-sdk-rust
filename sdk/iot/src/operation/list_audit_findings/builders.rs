@@ -3,6 +3,23 @@ pub use crate::operation::list_audit_findings::_list_audit_findings_output::List
 
 pub use crate::operation::list_audit_findings::_list_audit_findings_input::ListAuditFindingsInputBuilder;
 
+impl ListAuditFindingsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_audit_findings::ListAuditFindingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_audit_findings::ListAuditFindingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_audit_findings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAuditFindings`.
 ///
 /// <p>Lists the findings (results) of a Device Defender audit or of the audits performed during a specified time period. (Findings are retained for 90 days.)</p>

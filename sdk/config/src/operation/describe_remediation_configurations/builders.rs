@@ -3,6 +3,17 @@ pub use crate::operation::describe_remediation_configurations::_describe_remedia
 
 pub use crate::operation::describe_remediation_configurations::_describe_remediation_configurations_input::DescribeRemediationConfigurationsInputBuilder;
 
+impl DescribeRemediationConfigurationsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_remediation_configurations::DescribeRemediationConfigurationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_remediation_configurations::DescribeRemediationConfigurationsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_remediation_configurations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeRemediationConfigurations`.
 ///
 /// <p>Returns the details of one or more remediation configurations.</p>

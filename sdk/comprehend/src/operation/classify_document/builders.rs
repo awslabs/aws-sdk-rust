@@ -3,6 +3,23 @@ pub use crate::operation::classify_document::_classify_document_output::Classify
 
 pub use crate::operation::classify_document::_classify_document_input::ClassifyDocumentInputBuilder;
 
+impl ClassifyDocumentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::classify_document::ClassifyDocumentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::classify_document::ClassifyDocumentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.classify_document();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ClassifyDocument`.
 ///
 /// <p>Creates a new document classification request to analyze a single document in real-time, using a previously created and trained custom model and an endpoint.</p>

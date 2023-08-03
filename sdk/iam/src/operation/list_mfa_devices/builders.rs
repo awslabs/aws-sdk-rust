@@ -3,6 +3,23 @@ pub use crate::operation::list_mfa_devices::_list_mfa_devices_output::ListMfaDev
 
 pub use crate::operation::list_mfa_devices::_list_mfa_devices_input::ListMfaDevicesInputBuilder;
 
+impl ListMfaDevicesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_mfa_devices::ListMfaDevicesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_mfa_devices::ListMFADevicesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_mfa_devices();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListMFADevices`.
 ///
 /// <p>Lists the MFA devices for an IAM user. If the request includes a IAM user name, then this operation lists all the MFA devices associated with the specified user. If you do not specify a user name, IAM determines the user name implicitly based on the Amazon Web Services access key ID signing the request for this operation.</p>

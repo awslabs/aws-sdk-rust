@@ -3,6 +3,23 @@ pub use crate::operation::update_s3_resources::_update_s3_resources_output::Upda
 
 pub use crate::operation::update_s3_resources::_update_s3_resources_input::UpdateS3ResourcesInputBuilder;
 
+impl UpdateS3ResourcesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_s3_resources::UpdateS3ResourcesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_s3_resources::UpdateS3ResourcesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_s3_resources();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateS3Resources`.
 ///
 /// <p>(Discontinued) Updates the classification types for the specified S3 resources. If <code>memberAccountId</code> isn't specified, the action updates the classification types of the S3 resources associated with Amazon Macie Classic for the current Macie Classic administrator account. If <code>memberAccountId</code> is specified, the action updates the classification types of the S3 resources associated with Macie Classic for the specified member account.</p>

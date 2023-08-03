@@ -3,6 +3,23 @@ pub use crate::operation::create_resolver_endpoint::_create_resolver_endpoint_ou
 
 pub use crate::operation::create_resolver_endpoint::_create_resolver_endpoint_input::CreateResolverEndpointInputBuilder;
 
+impl CreateResolverEndpointInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_resolver_endpoint::CreateResolverEndpointOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_resolver_endpoint::CreateResolverEndpointError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_resolver_endpoint();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateResolverEndpoint`.
 ///
 /// <p>Creates a Resolver endpoint. There are two types of Resolver endpoints, inbound and outbound:</p>

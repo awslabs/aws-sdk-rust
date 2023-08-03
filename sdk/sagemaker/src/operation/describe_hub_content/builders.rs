@@ -3,6 +3,23 @@ pub use crate::operation::describe_hub_content::_describe_hub_content_output::De
 
 pub use crate::operation::describe_hub_content::_describe_hub_content_input::DescribeHubContentInputBuilder;
 
+impl DescribeHubContentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_hub_content::DescribeHubContentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_hub_content::DescribeHubContentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_hub_content();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeHubContent`.
 ///
 /// <p>Describe the content of a hub.</p> <note>

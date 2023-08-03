@@ -3,6 +3,23 @@ pub use crate::operation::get_keyspace::_get_keyspace_output::GetKeyspaceOutputB
 
 pub use crate::operation::get_keyspace::_get_keyspace_input::GetKeyspaceInputBuilder;
 
+impl GetKeyspaceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_keyspace::GetKeyspaceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_keyspace::GetKeyspaceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_keyspace();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetKeyspace`.
 ///
 /// <p>Returns the name and the Amazon Resource Name (ARN) of the specified table.</p>

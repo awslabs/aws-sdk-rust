@@ -3,6 +3,23 @@ pub use crate::operation::list_accessors::_list_accessors_output::ListAccessorsO
 
 pub use crate::operation::list_accessors::_list_accessors_input::ListAccessorsInputBuilder;
 
+impl ListAccessorsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_accessors::ListAccessorsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_accessors::ListAccessorsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_accessors();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAccessors`.
 ///
 /// <p>Returns a list of the accessors and their properties. Accessor objects are containers that have the information required for token based access to your Ethereum nodes.</p>

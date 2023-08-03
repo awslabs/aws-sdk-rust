@@ -3,6 +3,23 @@ pub use crate::operation::get_federation_token::_get_federation_token_output::Ge
 
 pub use crate::operation::get_federation_token::_get_federation_token_input::GetFederationTokenInputBuilder;
 
+impl GetFederationTokenInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_federation_token::GetFederationTokenOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_federation_token::GetFederationTokenError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_federation_token();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetFederationToken`.
 ///
 /// <p>Returns a set of temporary security credentials (consisting of an access key ID, a secret access key, and a security token) for a user. A typical use is in a proxy application that gets temporary security credentials on behalf of distributed applications inside a corporate network.</p>

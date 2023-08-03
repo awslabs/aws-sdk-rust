@@ -3,6 +3,23 @@ pub use crate::operation::get_compatible_versions::_get_compatible_versions_outp
 
 pub use crate::operation::get_compatible_versions::_get_compatible_versions_input::GetCompatibleVersionsInputBuilder;
 
+impl GetCompatibleVersionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_compatible_versions::GetCompatibleVersionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_compatible_versions::GetCompatibleVersionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_compatible_versions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetCompatibleVersions`.
 ///
 /// <p>Returns a map of OpenSearch or Elasticsearch versions and the versions you can upgrade them to.</p>

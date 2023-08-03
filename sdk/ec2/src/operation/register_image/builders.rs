@@ -3,6 +3,23 @@ pub use crate::operation::register_image::_register_image_output::RegisterImageO
 
 pub use crate::operation::register_image::_register_image_input::RegisterImageInputBuilder;
 
+impl RegisterImageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::register_image::RegisterImageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::register_image::RegisterImageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.register_image();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RegisterImage`.
 ///
 /// <p>Registers an AMI. When you're creating an AMI, this is the final step you must complete before you can launch an instance from the AMI. For more information about creating AMIs, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami.html">Create your own AMI</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p> <note>

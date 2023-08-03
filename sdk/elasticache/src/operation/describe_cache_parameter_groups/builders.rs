@@ -3,6 +3,23 @@ pub use crate::operation::describe_cache_parameter_groups::_describe_cache_param
 
 pub use crate::operation::describe_cache_parameter_groups::_describe_cache_parameter_groups_input::DescribeCacheParameterGroupsInputBuilder;
 
+impl DescribeCacheParameterGroupsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_cache_parameter_groups::DescribeCacheParameterGroupsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_cache_parameter_groups::DescribeCacheParameterGroupsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_cache_parameter_groups();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeCacheParameterGroups`.
 ///
 /// <p>Returns a list of cache parameter group descriptions. If a cache parameter group name is specified, the list contains only the descriptions for that group.</p>

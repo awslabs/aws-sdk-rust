@@ -3,6 +3,23 @@ pub use crate::operation::start_task_contact::_start_task_contact_output::StartT
 
 pub use crate::operation::start_task_contact::_start_task_contact_input::StartTaskContactInputBuilder;
 
+impl StartTaskContactInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_task_contact::StartTaskContactOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_task_contact::StartTaskContactError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_task_contact();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartTaskContact`.
 ///
 /// <p>Initiates a flow to start a new task.</p>

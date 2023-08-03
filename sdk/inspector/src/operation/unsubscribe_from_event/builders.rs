@@ -3,6 +3,23 @@ pub use crate::operation::unsubscribe_from_event::_unsubscribe_from_event_output
 
 pub use crate::operation::unsubscribe_from_event::_unsubscribe_from_event_input::UnsubscribeFromEventInputBuilder;
 
+impl UnsubscribeFromEventInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::unsubscribe_from_event::UnsubscribeFromEventOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::unsubscribe_from_event::UnsubscribeFromEventError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.unsubscribe_from_event();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UnsubscribeFromEvent`.
 ///
 /// <p>Disables the process of sending Amazon Simple Notification Service (SNS) notifications about a specified event to a specified SNS topic.</p>

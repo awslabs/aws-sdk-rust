@@ -3,6 +3,23 @@ pub use crate::operation::suspend_game_server_group::_suspend_game_server_group_
 
 pub use crate::operation::suspend_game_server_group::_suspend_game_server_group_input::SuspendGameServerGroupInputBuilder;
 
+impl SuspendGameServerGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::suspend_game_server_group::SuspendGameServerGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::suspend_game_server_group::SuspendGameServerGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.suspend_game_server_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SuspendGameServerGroup`.
 ///
 /// <p> <b>This operation is used with the Amazon GameLift FleetIQ solution and game server groups.</b> </p>

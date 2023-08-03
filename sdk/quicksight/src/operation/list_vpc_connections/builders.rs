@@ -3,6 +3,23 @@ pub use crate::operation::list_vpc_connections::_list_vpc_connections_output::Li
 
 pub use crate::operation::list_vpc_connections::_list_vpc_connections_input::ListVpcConnectionsInputBuilder;
 
+impl ListVpcConnectionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_vpc_connections::ListVpcConnectionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_vpc_connections::ListVPCConnectionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_vpc_connections();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListVPCConnections`.
 ///
 /// <p>Lists all of the VPC connections in the current set Amazon Web Services Region of an Amazon Web Services account.</p>

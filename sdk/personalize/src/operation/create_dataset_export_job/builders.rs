@@ -3,6 +3,23 @@ pub use crate::operation::create_dataset_export_job::_create_dataset_export_job_
 
 pub use crate::operation::create_dataset_export_job::_create_dataset_export_job_input::CreateDatasetExportJobInputBuilder;
 
+impl CreateDatasetExportJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_dataset_export_job::CreateDatasetExportJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_dataset_export_job::CreateDatasetExportJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_dataset_export_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateDatasetExportJob`.
 ///
 /// <p> Creates a job that exports data from your dataset to an Amazon S3 bucket. To allow Amazon Personalize to export the training data, you must specify an service-linked IAM role that gives Amazon Personalize <code>PutObject</code> permissions for your Amazon S3 bucket. For information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/export-data.html">Exporting a dataset</a> in the Amazon Personalize developer guide. </p>

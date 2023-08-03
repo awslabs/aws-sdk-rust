@@ -3,6 +3,23 @@ pub use crate::operation::list_event_logs::_list_event_logs_output::ListEventLog
 
 pub use crate::operation::list_event_logs::_list_event_logs_input::ListEventLogsInputBuilder;
 
+impl ListEventLogsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_event_logs::ListEventLogsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_event_logs::ListEventLogsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_event_logs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListEventLogs`.
 ///
 /// <p>Retrieves a list of events that occurred during a specified time period in a space. You can use these events to audit user and system activity in a space.</p>

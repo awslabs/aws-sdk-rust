@@ -3,6 +3,23 @@ pub use crate::operation::list_documents::_list_documents_output::ListDocumentsO
 
 pub use crate::operation::list_documents::_list_documents_input::ListDocumentsInputBuilder;
 
+impl ListDocumentsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_documents::ListDocumentsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_documents::ListDocumentsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_documents();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDocuments`.
 ///
 /// <p>Returns all Systems Manager (SSM) documents in the current Amazon Web Services account and Amazon Web Services Region. You can limit the results of this request by using a filter.</p>

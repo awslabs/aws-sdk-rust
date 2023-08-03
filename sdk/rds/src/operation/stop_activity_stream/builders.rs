@@ -3,6 +3,23 @@ pub use crate::operation::stop_activity_stream::_stop_activity_stream_output::St
 
 pub use crate::operation::stop_activity_stream::_stop_activity_stream_input::StopActivityStreamInputBuilder;
 
+impl StopActivityStreamInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_activity_stream::StopActivityStreamOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_activity_stream::StopActivityStreamError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_activity_stream();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopActivityStream`.
 ///
 /// <p>Stops a database activity stream that was started using the Amazon Web Services console, the <code>start-activity-stream</code> CLI command, or the <code>StartActivityStream</code> action.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_protection::_create_protection_output::CreatePr
 
 pub use crate::operation::create_protection::_create_protection_input::CreateProtectionInputBuilder;
 
+impl CreateProtectionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_protection::CreateProtectionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_protection::CreateProtectionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_protection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateProtection`.
 ///
 /// <p>Enables Shield Advanced for a specific Amazon Web Services resource. The resource can be an Amazon CloudFront distribution, Amazon Route&nbsp;53 hosted zone, Global Accelerator standard accelerator, Elastic IP Address, Application Load Balancer, or a Classic Load Balancer. You can protect Amazon EC2 instances and Network Load Balancers by association with protected Amazon EC2 Elastic IP addresses.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::register_client::_register_client_output::RegisterClie
 
 pub use crate::operation::register_client::_register_client_input::RegisterClientInputBuilder;
 
+impl RegisterClientInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::register_client::RegisterClientOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::register_client::RegisterClientError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.register_client();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RegisterClient`.
 ///
 /// <p>Registers a client with IAM Identity Center. This allows clients to initiate device authorization. The output should be persisted for reuse through many authentication requests.</p>

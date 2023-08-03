@@ -3,6 +3,23 @@ pub use crate::operation::get_rule::_get_rule_output::GetRuleOutputBuilder;
 
 pub use crate::operation::get_rule::_get_rule_input::GetRuleInputBuilder;
 
+impl GetRuleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_rule::GetRuleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_rule::GetRuleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_rule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetRule`.
 ///
 /// <p>Retrieves information about listener rules. You can also retrieve information about the default listener rule. For more information, see <a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/listeners.html#listener-rules">Listener rules</a> in the <i>Amazon VPC Lattice User Guide</i>.</p>

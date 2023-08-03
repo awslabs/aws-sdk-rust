@@ -3,6 +3,23 @@ pub use crate::operation::cancel_instance_refresh::_cancel_instance_refresh_outp
 
 pub use crate::operation::cancel_instance_refresh::_cancel_instance_refresh_input::CancelInstanceRefreshInputBuilder;
 
+impl CancelInstanceRefreshInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::cancel_instance_refresh::CancelInstanceRefreshOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::cancel_instance_refresh::CancelInstanceRefreshError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.cancel_instance_refresh();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CancelInstanceRefresh`.
 ///
 /// <p>Cancels an instance refresh or rollback that is in progress. If an instance refresh or rollback is not in progress, an <code>ActiveInstanceRefreshNotFound</code> error occurs.</p>

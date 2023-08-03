@@ -3,6 +3,23 @@ pub use crate::operation::create_legal_hold::_create_legal_hold_output::CreateLe
 
 pub use crate::operation::create_legal_hold::_create_legal_hold_input::CreateLegalHoldInputBuilder;
 
+impl CreateLegalHoldInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_legal_hold::CreateLegalHoldOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_legal_hold::CreateLegalHoldError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_legal_hold();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateLegalHold`.
 ///
 /// <p>This action creates a legal hold on a recovery point (backup). A legal hold is a restraint on altering or deleting a backup until an authorized user cancels the legal hold. Any actions to delete or disassociate a recovery point will fail with an error if one or more active legal holds are on the recovery point.</p>

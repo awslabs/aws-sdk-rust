@@ -3,6 +3,23 @@ pub use crate::operation::list_multicast_groups::_list_multicast_groups_output::
 
 pub use crate::operation::list_multicast_groups::_list_multicast_groups_input::ListMulticastGroupsInputBuilder;
 
+impl ListMulticastGroupsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_multicast_groups::ListMulticastGroupsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_multicast_groups::ListMulticastGroupsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_multicast_groups();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListMulticastGroups`.
 ///
 /// <p>Lists the multicast groups registered to your AWS account.</p>

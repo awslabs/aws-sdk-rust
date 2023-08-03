@@ -3,6 +3,23 @@ pub use crate::operation::terminate_job::_terminate_job_output::TerminateJobOutp
 
 pub use crate::operation::terminate_job::_terminate_job_input::TerminateJobInputBuilder;
 
+impl TerminateJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::terminate_job::TerminateJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::terminate_job::TerminateJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.terminate_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `TerminateJob`.
 ///
 /// <p>Terminates a job in a job queue. Jobs that are in the <code>STARTING</code> or <code>RUNNING</code> state are terminated, which causes them to transition to <code>FAILED</code>. Jobs that have not progressed to the <code>STARTING</code> state are cancelled.</p>

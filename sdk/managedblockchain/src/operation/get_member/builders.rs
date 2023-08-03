@@ -3,6 +3,23 @@ pub use crate::operation::get_member::_get_member_output::GetMemberOutputBuilder
 
 pub use crate::operation::get_member::_get_member_input::GetMemberInputBuilder;
 
+impl GetMemberInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_member::GetMemberOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_member::GetMemberError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_member();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetMember`.
 ///
 /// <p>Returns detailed information about a member.</p>

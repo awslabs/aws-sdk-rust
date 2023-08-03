@@ -3,6 +3,23 @@ pub use crate::operation::index_faces::_index_faces_output::IndexFacesOutputBuil
 
 pub use crate::operation::index_faces::_index_faces_input::IndexFacesInputBuilder;
 
+impl IndexFacesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::index_faces::IndexFacesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::index_faces::IndexFacesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.index_faces();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `IndexFaces`.
 ///
 /// <p>Detects faces in the input image and adds them to the specified collection. </p>

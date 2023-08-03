@@ -3,6 +3,23 @@ pub use crate::operation::infer_icd10_cm::_infer_icd10_cm_output::InferIcd10CmOu
 
 pub use crate::operation::infer_icd10_cm::_infer_icd10_cm_input::InferIcd10CmInputBuilder;
 
+impl InferIcd10CmInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::infer_icd10_cm::InferIcd10CmOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::infer_icd10_cm::InferICD10CMError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.infer_icd10_cm();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `InferICD10CM`.
 ///
 /// <p>InferICD10CM detects medical conditions as entities listed in a patient record and links those entities to normalized concept identifiers in the ICD-10-CM knowledge base from the Centers for Disease Control. Amazon Comprehend Medical only detects medical entities in English language texts. </p>

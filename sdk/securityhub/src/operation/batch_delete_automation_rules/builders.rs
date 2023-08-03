@@ -3,6 +3,23 @@ pub use crate::operation::batch_delete_automation_rules::_batch_delete_automatio
 
 pub use crate::operation::batch_delete_automation_rules::_batch_delete_automation_rules_input::BatchDeleteAutomationRulesInputBuilder;
 
+impl BatchDeleteAutomationRulesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_delete_automation_rules::BatchDeleteAutomationRulesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_delete_automation_rules::BatchDeleteAutomationRulesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_delete_automation_rules();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchDeleteAutomationRules`.
 ///
 /// <p> Deletes one or more automation rules. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_network_acl_entry::_create_network_acl_entry_ou
 
 pub use crate::operation::create_network_acl_entry::_create_network_acl_entry_input::CreateNetworkAclEntryInputBuilder;
 
+impl CreateNetworkAclEntryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_network_acl_entry::CreateNetworkAclEntryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_network_acl_entry::CreateNetworkAclEntryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_network_acl_entry();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateNetworkAclEntry`.
 ///
 /// <p>Creates an entry (a rule) in a network ACL with the specified rule number. Each network ACL has a set of numbered ingress rules and a separate set of numbered egress rules. When determining whether a packet should be allowed in or out of a subnet associated with the ACL, we process the entries in the ACL according to the rule numbers, in ascending order. Each network ACL has a set of ingress rules and a separate set of egress rules.</p>

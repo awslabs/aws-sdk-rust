@@ -3,6 +3,23 @@ pub use crate::operation::terminate_session::_terminate_session_output::Terminat
 
 pub use crate::operation::terminate_session::_terminate_session_input::TerminateSessionInputBuilder;
 
+impl TerminateSessionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::terminate_session::TerminateSessionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::terminate_session::TerminateSessionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.terminate_session();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `TerminateSession`.
 ///
 /// <p>Permanently ends a session and closes the data connection between the Session Manager client and SSM Agent on the managed node. A terminated session can't be resumed.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_account::_create_account_output::CreateAccountO
 
 pub use crate::operation::create_account::_create_account_input::CreateAccountInputBuilder;
 
+impl CreateAccountInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_account::CreateAccountOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_account::CreateAccountError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_account();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateAccount`.
 ///
 /// <p>Creates an Amazon Web Services account that is automatically a member of the organization whose credentials made the request. This is an asynchronous request that Amazon Web Services performs in the background. Because <code>CreateAccount</code> operates asynchronously, it can return a successful completion message even though account initialization might still be in progress. You might need to wait a few minutes before you can successfully access the account. To check the status of the request, do one of the following:</p>

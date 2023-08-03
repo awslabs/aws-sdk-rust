@@ -3,6 +3,17 @@ pub use crate::operation::put_voice_connector_termination_credentials::_put_voic
 
 pub use crate::operation::put_voice_connector_termination_credentials::_put_voice_connector_termination_credentials_input::PutVoiceConnectorTerminationCredentialsInputBuilder;
 
+impl PutVoiceConnectorTerminationCredentialsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::put_voice_connector_termination_credentials::PutVoiceConnectorTerminationCredentialsOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_voice_connector_termination_credentials::PutVoiceConnectorTerminationCredentialsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.put_voice_connector_termination_credentials();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutVoiceConnectorTerminationCredentials`.
 ///
 /// <p>Updates a Voice Connector's termination credentials.</p>

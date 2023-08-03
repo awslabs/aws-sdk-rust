@@ -3,6 +3,23 @@ pub use crate::operation::create_destination::_create_destination_output::Create
 
 pub use crate::operation::create_destination::_create_destination_input::CreateDestinationInputBuilder;
 
+impl CreateDestinationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_destination::CreateDestinationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_destination::CreateDestinationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_destination();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateDestination`.
 ///
 /// Grants permission to create a destination

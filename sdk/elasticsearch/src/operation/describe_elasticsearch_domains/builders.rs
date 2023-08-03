@@ -3,6 +3,23 @@ pub use crate::operation::describe_elasticsearch_domains::_describe_elasticsearc
 
 pub use crate::operation::describe_elasticsearch_domains::_describe_elasticsearch_domains_input::DescribeElasticsearchDomainsInputBuilder;
 
+impl DescribeElasticsearchDomainsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_elasticsearch_domains::DescribeElasticsearchDomainsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_elasticsearch_domains::DescribeElasticsearchDomainsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_elasticsearch_domains();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeElasticsearchDomains`.
 ///
 /// <p>Returns domain configuration information about the specified Elasticsearch domains, including the domain ID, domain endpoint, and domain ARN.</p>

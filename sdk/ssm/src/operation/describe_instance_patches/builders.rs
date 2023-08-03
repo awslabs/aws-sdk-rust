@@ -3,6 +3,23 @@ pub use crate::operation::describe_instance_patches::_describe_instance_patches_
 
 pub use crate::operation::describe_instance_patches::_describe_instance_patches_input::DescribeInstancePatchesInputBuilder;
 
+impl DescribeInstancePatchesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_instance_patches::DescribeInstancePatchesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_instance_patches::DescribeInstancePatchesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_instance_patches();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeInstancePatches`.
 ///
 /// <p>Retrieves information about the patches on the specified managed node and their state relative to the patch baseline being used for the node.</p>

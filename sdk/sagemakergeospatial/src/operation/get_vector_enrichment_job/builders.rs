@@ -3,6 +3,23 @@ pub use crate::operation::get_vector_enrichment_job::_get_vector_enrichment_job_
 
 pub use crate::operation::get_vector_enrichment_job::_get_vector_enrichment_job_input::GetVectorEnrichmentJobInputBuilder;
 
+impl GetVectorEnrichmentJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_vector_enrichment_job::GetVectorEnrichmentJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_vector_enrichment_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetVectorEnrichmentJob`.
 ///
 /// <p>Retrieves details of a Vector Enrichment Job for a given job Amazon Resource Name (ARN).</p>

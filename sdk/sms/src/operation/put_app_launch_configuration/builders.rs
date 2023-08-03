@@ -3,6 +3,23 @@ pub use crate::operation::put_app_launch_configuration::_put_app_launch_configur
 
 pub use crate::operation::put_app_launch_configuration::_put_app_launch_configuration_input::PutAppLaunchConfigurationInputBuilder;
 
+impl PutAppLaunchConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_app_launch_configuration::PutAppLaunchConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_app_launch_configuration::PutAppLaunchConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_app_launch_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutAppLaunchConfiguration`.
 ///
 /// <p>Creates or updates the launch configuration for the specified application.</p>

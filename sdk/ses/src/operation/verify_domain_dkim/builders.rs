@@ -3,6 +3,23 @@ pub use crate::operation::verify_domain_dkim::_verify_domain_dkim_output::Verify
 
 pub use crate::operation::verify_domain_dkim::_verify_domain_dkim_input::VerifyDomainDkimInputBuilder;
 
+impl VerifyDomainDkimInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::verify_domain_dkim::VerifyDomainDkimOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::verify_domain_dkim::VerifyDomainDkimError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.verify_domain_dkim();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `VerifyDomainDkim`.
 ///
 /// <p>Returns a set of DKIM tokens for a domain identity.</p> <important>

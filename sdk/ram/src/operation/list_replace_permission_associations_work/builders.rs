@@ -3,6 +3,17 @@ pub use crate::operation::list_replace_permission_associations_work::_list_repla
 
 pub use crate::operation::list_replace_permission_associations_work::_list_replace_permission_associations_work_input::ListReplacePermissionAssociationsWorkInputBuilder;
 
+impl ListReplacePermissionAssociationsWorkInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_replace_permission_associations_work::ListReplacePermissionAssociationsWorkOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_replace_permission_associations_work::ListReplacePermissionAssociationsWorkError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_replace_permission_associations_work();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListReplacePermissionAssociationsWork`.
 ///
 /// <p>Retrieves the current status of the asynchronous tasks performed by RAM when you perform the <code>ReplacePermissionAssociationsWork</code> operation.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::advertise_byoip_cidr::_advertise_byoip_cidr_output::Ad
 
 pub use crate::operation::advertise_byoip_cidr::_advertise_byoip_cidr_input::AdvertiseByoipCidrInputBuilder;
 
+impl AdvertiseByoipCidrInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::advertise_byoip_cidr::AdvertiseByoipCidrOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::advertise_byoip_cidr::AdvertiseByoipCidrError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.advertise_byoip_cidr();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AdvertiseByoipCidr`.
 ///
 /// <p>Advertises an IPv4 or IPv6 address range that is provisioned for use with your Amazon Web Services resources through bring your own IP addresses (BYOIP).</p>

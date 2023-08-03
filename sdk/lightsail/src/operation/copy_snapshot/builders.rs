@@ -3,6 +3,23 @@ pub use crate::operation::copy_snapshot::_copy_snapshot_output::CopySnapshotOutp
 
 pub use crate::operation::copy_snapshot::_copy_snapshot_input::CopySnapshotInputBuilder;
 
+impl CopySnapshotInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::copy_snapshot::CopySnapshotOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::copy_snapshot::CopySnapshotError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.copy_snapshot();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CopySnapshot`.
 ///
 /// <p>Copies a manual snapshot of an instance or disk as another manual snapshot, or copies an automatic snapshot of an instance or disk as a manual snapshot. This operation can also be used to copy a manual or automatic snapshot of an instance or a disk from one Amazon Web Services Region to another in Amazon Lightsail.</p>

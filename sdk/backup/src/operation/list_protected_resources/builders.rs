@@ -3,6 +3,23 @@ pub use crate::operation::list_protected_resources::_list_protected_resources_ou
 
 pub use crate::operation::list_protected_resources::_list_protected_resources_input::ListProtectedResourcesInputBuilder;
 
+impl ListProtectedResourcesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_protected_resources::ListProtectedResourcesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_protected_resources::ListProtectedResourcesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_protected_resources();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListProtectedResources`.
 ///
 /// <p>Returns an array of resources successfully backed up by Backup, including the time the resource was saved, an Amazon Resource Name (ARN) of the resource, and a resource type.</p>

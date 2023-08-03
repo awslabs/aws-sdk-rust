@@ -3,6 +3,23 @@ pub use crate::operation::describe_servers::_describe_servers_output::DescribeSe
 
 pub use crate::operation::describe_servers::_describe_servers_input::DescribeServersInputBuilder;
 
+impl DescribeServersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_servers::DescribeServersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_servers::DescribeServersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_servers();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeServers`.
 ///
 /// <p> Lists all configuration management servers that are identified with your account. Only the stored results from Amazon DynamoDB are returned. AWS OpsWorks CM does not query other services. </p>

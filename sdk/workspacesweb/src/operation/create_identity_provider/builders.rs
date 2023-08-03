@@ -3,6 +3,23 @@ pub use crate::operation::create_identity_provider::_create_identity_provider_ou
 
 pub use crate::operation::create_identity_provider::_create_identity_provider_input::CreateIdentityProviderInputBuilder;
 
+impl CreateIdentityProviderInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_identity_provider::CreateIdentityProviderOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_identity_provider::CreateIdentityProviderError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_identity_provider();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateIdentityProvider`.
 ///
 /// <p>Creates an identity provider resource that is then associated with a web portal.</p>

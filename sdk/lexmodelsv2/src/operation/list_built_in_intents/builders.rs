@@ -3,6 +3,23 @@ pub use crate::operation::list_built_in_intents::_list_built_in_intents_output::
 
 pub use crate::operation::list_built_in_intents::_list_built_in_intents_input::ListBuiltInIntentsInputBuilder;
 
+impl ListBuiltInIntentsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_built_in_intents::ListBuiltInIntentsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_built_in_intents::ListBuiltInIntentsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_built_in_intents();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListBuiltInIntents`.
 ///
 /// <p>Gets a list of built-in intents provided by Amazon Lex that you can use in your bot. </p>

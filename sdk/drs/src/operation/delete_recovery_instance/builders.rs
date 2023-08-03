@@ -3,6 +3,23 @@ pub use crate::operation::delete_recovery_instance::_delete_recovery_instance_ou
 
 pub use crate::operation::delete_recovery_instance::_delete_recovery_instance_input::DeleteRecoveryInstanceInputBuilder;
 
+impl DeleteRecoveryInstanceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_recovery_instance::DeleteRecoveryInstanceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_recovery_instance::DeleteRecoveryInstanceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_recovery_instance();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteRecoveryInstance`.
 ///
 /// <p>Deletes a single Recovery Instance by ID. This deletes the Recovery Instance resource from Elastic Disaster Recovery. The Recovery Instance must be disconnected first in order to delete it.</p>

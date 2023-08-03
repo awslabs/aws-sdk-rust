@@ -3,6 +3,23 @@ pub use crate::operation::list_table_columns::_list_table_columns_output::ListTa
 
 pub use crate::operation::list_table_columns::_list_table_columns_input::ListTableColumnsInputBuilder;
 
+impl ListTableColumnsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_table_columns::ListTableColumnsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_table_columns::ListTableColumnsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_table_columns();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListTableColumns`.
 ///
 /// <p> The ListTableColumns API allows you to retrieve a list of all the columns in a table in a workbook. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::batch_write_item::_batch_write_item_output::BatchWrite
 
 pub use crate::operation::batch_write_item::_batch_write_item_input::BatchWriteItemInputBuilder;
 
+impl BatchWriteItemInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_write_item::BatchWriteItemOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_write_item::BatchWriteItemError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_write_item();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchWriteItem`.
 ///
 /// <p>The <code>BatchWriteItem</code> operation puts or deletes multiple items in one or more tables. A single call to <code>BatchWriteItem</code> can transmit up to 16MB of data over the network, consisting of up to 25 item put or delete operations. While individual items can be up to 400 KB once stored, it's important to note that an item's representation might be greater than 400KB while being sent in DynamoDB's JSON format for the API call. For more details on this distinction, see <a href="https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/HowItWorks.NamingRulesDataTypes.html">Naming Rules and Data Types</a>.</p> <note>

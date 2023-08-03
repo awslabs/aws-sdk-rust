@@ -3,6 +3,23 @@ pub use crate::operation::list_signaling_channels::_list_signaling_channels_outp
 
 pub use crate::operation::list_signaling_channels::_list_signaling_channels_input::ListSignalingChannelsInputBuilder;
 
+impl ListSignalingChannelsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_signaling_channels::ListSignalingChannelsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_signaling_channels::ListSignalingChannelsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_signaling_channels();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListSignalingChannels`.
 ///
 /// <p>Returns an array of <code>ChannelInfo</code> objects. Each object describes a signaling channel. To retrieve only those channels that satisfy a specific condition, you can specify a <code>ChannelNameCondition</code>.</p>

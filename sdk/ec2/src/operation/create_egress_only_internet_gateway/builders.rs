@@ -3,6 +3,17 @@ pub use crate::operation::create_egress_only_internet_gateway::_create_egress_on
 
 pub use crate::operation::create_egress_only_internet_gateway::_create_egress_only_internet_gateway_input::CreateEgressOnlyInternetGatewayInputBuilder;
 
+impl CreateEgressOnlyInternetGatewayInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::create_egress_only_internet_gateway::CreateEgressOnlyInternetGatewayOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_egress_only_internet_gateway::CreateEgressOnlyInternetGatewayError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.create_egress_only_internet_gateway();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateEgressOnlyInternetGateway`.
 ///
 /// <p>[IPv6 only] Creates an egress-only internet gateway for your VPC. An egress-only internet gateway is used to enable outbound communication over IPv6 from instances in your VPC to the internet, and prevents hosts outside of your VPC from initiating an IPv6 connection with your instance.</p>

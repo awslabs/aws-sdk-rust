@@ -3,6 +3,23 @@ pub use crate::operation::update_deployment_group::_update_deployment_group_outp
 
 pub use crate::operation::update_deployment_group::_update_deployment_group_input::UpdateDeploymentGroupInputBuilder;
 
+impl UpdateDeploymentGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_deployment_group::UpdateDeploymentGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_deployment_group::UpdateDeploymentGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_deployment_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateDeploymentGroup`.
 ///
 /// <p>Changes information about a deployment group.</p>

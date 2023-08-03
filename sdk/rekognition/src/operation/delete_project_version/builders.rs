@@ -3,6 +3,23 @@ pub use crate::operation::delete_project_version::_delete_project_version_output
 
 pub use crate::operation::delete_project_version::_delete_project_version_input::DeleteProjectVersionInputBuilder;
 
+impl DeleteProjectVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_project_version::DeleteProjectVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_project_version::DeleteProjectVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_project_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteProjectVersion`.
 ///
 /// <p>Deletes an Amazon Rekognition Custom Labels model. </p>

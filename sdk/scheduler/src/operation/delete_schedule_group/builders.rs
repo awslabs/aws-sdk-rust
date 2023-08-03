@@ -3,6 +3,23 @@ pub use crate::operation::delete_schedule_group::_delete_schedule_group_output::
 
 pub use crate::operation::delete_schedule_group::_delete_schedule_group_input::DeleteScheduleGroupInputBuilder;
 
+impl DeleteScheduleGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_schedule_group::DeleteScheduleGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_schedule_group::DeleteScheduleGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_schedule_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteScheduleGroup`.
 ///
 /// <p>Deletes the specified schedule group. Deleting a schedule group results in EventBridge Scheduler deleting all schedules associated with the group. When you delete a group, it remains in a <code>DELETING</code> state until all of its associated schedules are deleted. Schedules associated with the group that are set to run while the schedule group is in the process of being deleted might continue to invoke their targets until the schedule group and its associated schedules are deleted.</p> <note>

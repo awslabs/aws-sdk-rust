@@ -3,6 +3,23 @@ pub use crate::operation::deactivate_evaluation_form::_deactivate_evaluation_for
 
 pub use crate::operation::deactivate_evaluation_form::_deactivate_evaluation_form_input::DeactivateEvaluationFormInputBuilder;
 
+impl DeactivateEvaluationFormInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::deactivate_evaluation_form::DeactivateEvaluationFormOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::deactivate_evaluation_form::DeactivateEvaluationFormError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.deactivate_evaluation_form();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeactivateEvaluationForm`.
 ///
 /// <p>Deactivates an evaluation form in the specified Amazon Connect instance. After a form is deactivated, it is no longer available for users to start new evaluations based on the form. </p>

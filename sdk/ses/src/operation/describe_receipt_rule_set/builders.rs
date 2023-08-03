@@ -3,6 +3,23 @@ pub use crate::operation::describe_receipt_rule_set::_describe_receipt_rule_set_
 
 pub use crate::operation::describe_receipt_rule_set::_describe_receipt_rule_set_input::DescribeReceiptRuleSetInputBuilder;
 
+impl DescribeReceiptRuleSetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_receipt_rule_set::DescribeReceiptRuleSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_receipt_rule_set::DescribeReceiptRuleSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_receipt_rule_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeReceiptRuleSet`.
 ///
 /// <p>Returns the details of the specified receipt rule set.</p>

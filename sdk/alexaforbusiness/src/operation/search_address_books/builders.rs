@@ -3,6 +3,23 @@ pub use crate::operation::search_address_books::_search_address_books_output::Se
 
 pub use crate::operation::search_address_books::_search_address_books_input::SearchAddressBooksInputBuilder;
 
+impl SearchAddressBooksInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::search_address_books::SearchAddressBooksOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::search_address_books::SearchAddressBooksError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.search_address_books();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SearchAddressBooks`.
 ///
 /// <p>Searches address books and lists the ones that meet a set of filter and sort criteria.</p>

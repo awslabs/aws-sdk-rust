@@ -3,6 +3,17 @@ pub use crate::operation::associate_multicast_group_with_fuota_task::_associate_
 
 pub use crate::operation::associate_multicast_group_with_fuota_task::_associate_multicast_group_with_fuota_task_input::AssociateMulticastGroupWithFuotaTaskInputBuilder;
 
+impl AssociateMulticastGroupWithFuotaTaskInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::associate_multicast_group_with_fuota_task::AssociateMulticastGroupWithFuotaTaskOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_multicast_group_with_fuota_task::AssociateMulticastGroupWithFuotaTaskError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.associate_multicast_group_with_fuota_task();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateMulticastGroupWithFuotaTask`.
 ///
 /// <p>Associate a multicast group with a FUOTA task.</p>

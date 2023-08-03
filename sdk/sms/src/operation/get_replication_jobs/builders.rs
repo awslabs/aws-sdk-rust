@@ -3,6 +3,23 @@ pub use crate::operation::get_replication_jobs::_get_replication_jobs_output::Ge
 
 pub use crate::operation::get_replication_jobs::_get_replication_jobs_input::GetReplicationJobsInputBuilder;
 
+impl GetReplicationJobsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_replication_jobs::GetReplicationJobsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_replication_jobs::GetReplicationJobsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_replication_jobs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetReplicationJobs`.
 ///
 /// <p>Describes the specified replication job or all of your replication jobs.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::associate_web_acl::_associate_web_acl_output::Associat
 
 pub use crate::operation::associate_web_acl::_associate_web_acl_input::AssociateWebAclInputBuilder;
 
+impl AssociateWebAclInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_web_acl::AssociateWebAclOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_web_acl::AssociateWebACLError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_web_acl();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateWebACL`.
 ///
 /// <p>Associates a web ACL with a regional application resource, to protect the resource. A regional application can be an Application Load Balancer (ALB), an Amazon API Gateway REST API, an AppSync GraphQL API, an Amazon Cognito user pool, an App Runner service, or an Amazon Web Services Verified Access instance. </p>

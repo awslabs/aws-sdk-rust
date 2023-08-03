@@ -3,6 +3,23 @@ pub use crate::operation::reset_resource_log_level::_reset_resource_log_level_ou
 
 pub use crate::operation::reset_resource_log_level::_reset_resource_log_level_input::ResetResourceLogLevelInputBuilder;
 
+impl ResetResourceLogLevelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::reset_resource_log_level::ResetResourceLogLevelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::reset_resource_log_level::ResetResourceLogLevelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.reset_resource_log_level();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ResetResourceLogLevel`.
 ///
 /// <p>Removes the log-level override, if any, for a specific resource-ID and resource-type. It can be used for a wireless device or a wireless gateway.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_service_networks::_list_service_networks_output::
 
 pub use crate::operation::list_service_networks::_list_service_networks_input::ListServiceNetworksInputBuilder;
 
+impl ListServiceNetworksInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_service_networks::ListServiceNetworksOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_service_networks::ListServiceNetworksError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_service_networks();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListServiceNetworks`.
 ///
 /// <p>Lists the service networks owned by the caller account or shared with the caller account. Also includes the account ID in the ARN to show which account owns the service network.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_backup_jobs::_list_backup_jobs_output::ListBackup
 
 pub use crate::operation::list_backup_jobs::_list_backup_jobs_input::ListBackupJobsInputBuilder;
 
+impl ListBackupJobsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_backup_jobs::ListBackupJobsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_backup_jobs::ListBackupJobsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_backup_jobs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListBackupJobs`.
 ///
 /// <p>Returns a list of existing backup jobs for an authenticated account for the last 30 days. For a longer period of time, consider using these <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/monitoring.html">monitoring tools</a>.</p>

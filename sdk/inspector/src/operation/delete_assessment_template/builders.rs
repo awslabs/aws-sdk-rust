@@ -3,6 +3,23 @@ pub use crate::operation::delete_assessment_template::_delete_assessment_templat
 
 pub use crate::operation::delete_assessment_template::_delete_assessment_template_input::DeleteAssessmentTemplateInputBuilder;
 
+impl DeleteAssessmentTemplateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_assessment_template::DeleteAssessmentTemplateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_assessment_template::DeleteAssessmentTemplateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_assessment_template();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteAssessmentTemplate`.
 ///
 /// <p>Deletes the assessment template that is specified by the ARN of the assessment template.</p>

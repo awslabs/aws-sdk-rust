@@ -3,6 +3,23 @@ pub use crate::operation::get_bucket_metrics_configuration::_get_bucket_metrics_
 
 pub use crate::operation::get_bucket_metrics_configuration::_get_bucket_metrics_configuration_input::GetBucketMetricsConfigurationInputBuilder;
 
+impl GetBucketMetricsConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_bucket_metrics_configuration::GetBucketMetricsConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_bucket_metrics_configuration::GetBucketMetricsConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_bucket_metrics_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetBucketMetricsConfiguration`.
 ///
 /// <p>Gets a metrics configuration (specified by the metrics configuration ID) from the bucket. Note that this doesn't include the daily storage metrics.</p>

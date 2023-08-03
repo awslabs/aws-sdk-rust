@@ -3,6 +3,23 @@ pub use crate::operation::get_upload::_get_upload_output::GetUploadOutputBuilder
 
 pub use crate::operation::get_upload::_get_upload_input::GetUploadInputBuilder;
 
+impl GetUploadInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_upload::GetUploadOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_upload::GetUploadError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_upload();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetUpload`.
 ///
 /// <p>Gets information about an upload.</p>

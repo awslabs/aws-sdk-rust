@@ -3,6 +3,23 @@ pub use crate::operation::get_bucket_request_payment::_get_bucket_request_paymen
 
 pub use crate::operation::get_bucket_request_payment::_get_bucket_request_payment_input::GetBucketRequestPaymentInputBuilder;
 
+impl GetBucketRequestPaymentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_bucket_request_payment::GetBucketRequestPaymentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_bucket_request_payment::GetBucketRequestPaymentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_bucket_request_payment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetBucketRequestPayment`.
 ///
 /// <p>Returns the request payment configuration of a bucket. To use this version of the operation, you must be the bucket owner. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/RequesterPaysBuckets.html">Requester Pays Buckets</a>.</p>

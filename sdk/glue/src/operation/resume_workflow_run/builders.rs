@@ -3,6 +3,23 @@ pub use crate::operation::resume_workflow_run::_resume_workflow_run_output::Resu
 
 pub use crate::operation::resume_workflow_run::_resume_workflow_run_input::ResumeWorkflowRunInputBuilder;
 
+impl ResumeWorkflowRunInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::resume_workflow_run::ResumeWorkflowRunOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::resume_workflow_run::ResumeWorkflowRunError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.resume_workflow_run();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ResumeWorkflowRun`.
 ///
 /// <p>Restarts selected nodes of a previous partially completed workflow run and resumes the workflow run. The selected nodes and all nodes that are downstream from the selected nodes are run.</p>

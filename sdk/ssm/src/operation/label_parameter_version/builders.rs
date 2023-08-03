@@ -3,6 +3,23 @@ pub use crate::operation::label_parameter_version::_label_parameter_version_outp
 
 pub use crate::operation::label_parameter_version::_label_parameter_version_input::LabelParameterVersionInputBuilder;
 
+impl LabelParameterVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::label_parameter_version::LabelParameterVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::label_parameter_version::LabelParameterVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.label_parameter_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `LabelParameterVersion`.
 ///
 /// <p>A parameter label is a user-defined alias to help you manage different versions of a parameter. When you modify a parameter, Amazon Web Services Systems Manager automatically saves a new version and increments the version number by one. A label can help you remember the purpose of a parameter when there are multiple versions. </p>

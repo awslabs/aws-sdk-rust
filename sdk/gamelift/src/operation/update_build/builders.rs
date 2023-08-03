@@ -3,6 +3,23 @@ pub use crate::operation::update_build::_update_build_output::UpdateBuildOutputB
 
 pub use crate::operation::update_build::_update_build_input::UpdateBuildInputBuilder;
 
+impl UpdateBuildInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_build::UpdateBuildOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_build::UpdateBuildError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_build();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateBuild`.
 ///
 /// <p>Updates metadata in a build resource, including the build name and version. To update the metadata, specify the build ID to update and provide the new values. If successful, a build object containing the updated metadata is returned.</p>

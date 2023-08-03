@@ -3,6 +3,17 @@ pub use crate::operation::enable_import_findings_for_product::_enable_import_fin
 
 pub use crate::operation::enable_import_findings_for_product::_enable_import_findings_for_product_input::EnableImportFindingsForProductInputBuilder;
 
+impl EnableImportFindingsForProductInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::enable_import_findings_for_product::EnableImportFindingsForProductOutput, ::aws_smithy_http::result::SdkError<crate::operation::enable_import_findings_for_product::EnableImportFindingsForProductError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.enable_import_findings_for_product();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `EnableImportFindingsForProduct`.
 ///
 /// <p>Enables the integration of a partner product with Security Hub. Integrated products send findings to Security Hub.</p>

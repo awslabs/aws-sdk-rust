@@ -3,6 +3,23 @@ pub use crate::operation::get_sink_policy::_get_sink_policy_output::GetSinkPolic
 
 pub use crate::operation::get_sink_policy::_get_sink_policy_input::GetSinkPolicyInputBuilder;
 
+impl GetSinkPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_sink_policy::GetSinkPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_sink_policy::GetSinkPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_sink_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetSinkPolicy`.
 ///
 /// <p>Returns the current sink policy attached to this sink. The sink policy specifies what accounts can attach to this sink as source accounts, and what types of data they can share.</p>

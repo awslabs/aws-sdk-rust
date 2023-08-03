@@ -3,6 +3,23 @@ pub use crate::operation::verify_otp_message::_verify_otp_message_output::Verify
 
 pub use crate::operation::verify_otp_message::_verify_otp_message_input::VerifyOtpMessageInputBuilder;
 
+impl VerifyOtpMessageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::verify_otp_message::VerifyOtpMessageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::verify_otp_message::VerifyOTPMessageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.verify_otp_message();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `VerifyOTPMessage`.
 ///
 /// <p>Verify an OTP</p>

@@ -3,6 +3,17 @@ pub use crate::operation::describe_db_cluster_parameter_groups::_describe_db_clu
 
 pub use crate::operation::describe_db_cluster_parameter_groups::_describe_db_cluster_parameter_groups_input::DescribeDbClusterParameterGroupsInputBuilder;
 
+impl DescribeDbClusterParameterGroupsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_db_cluster_parameter_groups::DescribeDbClusterParameterGroupsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_db_cluster_parameter_groups::DescribeDBClusterParameterGroupsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_db_cluster_parameter_groups();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeDBClusterParameterGroups`.
 ///
 /// <p>Returns a list of <code>DBClusterParameterGroup</code> descriptions. If a <code>DBClusterParameterGroupName</code> parameter is specified, the list contains only the description of the specified cluster parameter group. </p>

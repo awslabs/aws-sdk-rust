@@ -3,6 +3,23 @@ pub use crate::operation::list_packaging_configurations::_list_packaging_configu
 
 pub use crate::operation::list_packaging_configurations::_list_packaging_configurations_input::ListPackagingConfigurationsInputBuilder;
 
+impl ListPackagingConfigurationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_packaging_configurations::ListPackagingConfigurationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_packaging_configurations::ListPackagingConfigurationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_packaging_configurations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListPackagingConfigurations`.
 ///
 /// Returns a collection of MediaPackage VOD PackagingConfiguration resources.

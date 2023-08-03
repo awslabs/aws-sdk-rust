@@ -3,6 +3,17 @@ pub use crate::operation::generate_embed_url_for_registered_user::_generate_embe
 
 pub use crate::operation::generate_embed_url_for_registered_user::_generate_embed_url_for_registered_user_input::GenerateEmbedUrlForRegisteredUserInputBuilder;
 
+impl GenerateEmbedUrlForRegisteredUserInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::generate_embed_url_for_registered_user::GenerateEmbedUrlForRegisteredUserOutput, ::aws_smithy_http::result::SdkError<crate::operation::generate_embed_url_for_registered_user::GenerateEmbedUrlForRegisteredUserError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.generate_embed_url_for_registered_user();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GenerateEmbedUrlForRegisteredUser`.
 ///
 /// <p>Generates an embed URL that you can use to embed an Amazon QuickSight experience in your website. This action can be used for any type of user registered in an Amazon QuickSight account. Before you use this action, make sure that you have configured the relevant Amazon QuickSight resource and permissions.</p>

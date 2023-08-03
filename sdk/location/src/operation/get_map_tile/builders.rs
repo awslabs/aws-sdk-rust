@@ -3,6 +3,23 @@ pub use crate::operation::get_map_tile::_get_map_tile_output::GetMapTileOutputBu
 
 pub use crate::operation::get_map_tile::_get_map_tile_input::GetMapTileInputBuilder;
 
+impl GetMapTileInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_map_tile::GetMapTileOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_map_tile::GetMapTileError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_map_tile();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetMapTile`.
 ///
 /// <p>Retrieves a vector data tile from the map resource. Map tiles are used by clients to render a map. they're addressed using a grid arrangement with an X coordinate, Y coordinate, and Z (zoom) level. </p>

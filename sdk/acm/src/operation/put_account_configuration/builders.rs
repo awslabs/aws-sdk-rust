@@ -3,6 +3,23 @@ pub use crate::operation::put_account_configuration::_put_account_configuration_
 
 pub use crate::operation::put_account_configuration::_put_account_configuration_input::PutAccountConfigurationInputBuilder;
 
+impl PutAccountConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_account_configuration::PutAccountConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_account_configuration::PutAccountConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_account_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutAccountConfiguration`.
 ///
 /// <p>Adds or modifies account-level configurations in ACM. </p>

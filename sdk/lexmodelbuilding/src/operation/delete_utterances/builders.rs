@@ -3,6 +3,23 @@ pub use crate::operation::delete_utterances::_delete_utterances_output::DeleteUt
 
 pub use crate::operation::delete_utterances::_delete_utterances_input::DeleteUtterancesInputBuilder;
 
+impl DeleteUtterancesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_utterances::DeleteUtterancesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_utterances::DeleteUtterancesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_utterances();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteUtterances`.
 ///
 /// <p>Deletes stored utterances.</p>

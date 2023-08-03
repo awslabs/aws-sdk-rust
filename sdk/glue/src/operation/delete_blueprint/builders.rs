@@ -3,6 +3,23 @@ pub use crate::operation::delete_blueprint::_delete_blueprint_output::DeleteBlue
 
 pub use crate::operation::delete_blueprint::_delete_blueprint_input::DeleteBlueprintInputBuilder;
 
+impl DeleteBlueprintInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_blueprint::DeleteBlueprintOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_blueprint::DeleteBlueprintError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_blueprint();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteBlueprint`.
 ///
 /// <p>Deletes an existing blueprint.</p>

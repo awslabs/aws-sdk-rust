@@ -3,6 +3,23 @@ pub use crate::operation::delete_vpc::_delete_vpc_output::DeleteVpcOutputBuilder
 
 pub use crate::operation::delete_vpc::_delete_vpc_input::DeleteVpcInputBuilder;
 
+impl DeleteVpcInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_vpc::DeleteVpcOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_vpc::DeleteVpcError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_vpc();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteVpc`.
 ///
 /// <p>Deletes the specified VPC. You must detach or delete all gateways and resources that are associated with the VPC before you can delete it. For example, you must terminate all instances running in the VPC, delete all security groups associated with the VPC (except the default one), delete all route tables associated with the VPC (except the default one), and so on.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_user_details::_get_user_details_output::GetUserDet
 
 pub use crate::operation::get_user_details::_get_user_details_input::GetUserDetailsInputBuilder;
 
+impl GetUserDetailsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_user_details::GetUserDetailsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_user_details::GetUserDetailsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_user_details();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetUserDetails`.
 ///
 /// <p>Returns information about a user. </p>

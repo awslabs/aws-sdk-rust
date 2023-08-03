@@ -3,6 +3,23 @@ pub use crate::operation::start_snomedct_inference_job::_start_snomedct_inferenc
 
 pub use crate::operation::start_snomedct_inference_job::_start_snomedct_inference_job_input::StartSnomedctInferenceJobInputBuilder;
 
+impl StartSnomedctInferenceJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_snomedct_inference_job::StartSnomedctInferenceJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_snomedct_inference_job::StartSNOMEDCTInferenceJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_snomedct_inference_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartSNOMEDCTInferenceJob`.
 ///
 /// <p> Starts an asynchronous job to detect medical concepts and link them to the SNOMED-CT ontology. Use the DescribeSNOMEDCTInferenceJob operation to track the status of a job. </p>

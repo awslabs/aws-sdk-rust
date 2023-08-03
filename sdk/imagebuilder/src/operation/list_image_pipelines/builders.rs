@@ -3,6 +3,23 @@ pub use crate::operation::list_image_pipelines::_list_image_pipelines_output::Li
 
 pub use crate::operation::list_image_pipelines::_list_image_pipelines_input::ListImagePipelinesInputBuilder;
 
+impl ListImagePipelinesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_image_pipelines::ListImagePipelinesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_image_pipelines::ListImagePipelinesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_image_pipelines();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListImagePipelines`.
 ///
 /// <p>Returns a list of image pipelines.</p>

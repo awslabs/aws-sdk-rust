@@ -3,6 +3,23 @@ pub use crate::operation::delete_access::_delete_access_output::DeleteAccessOutp
 
 pub use crate::operation::delete_access::_delete_access_input::DeleteAccessInputBuilder;
 
+impl DeleteAccessInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_access::DeleteAccessOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_access::DeleteAccessError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_access();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteAccess`.
 ///
 /// <p>Allows you to delete the access specified in the <code>ServerID</code> and <code>ExternalID</code> parameters.</p>

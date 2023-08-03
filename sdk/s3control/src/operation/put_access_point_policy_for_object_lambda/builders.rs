@@ -3,6 +3,17 @@ pub use crate::operation::put_access_point_policy_for_object_lambda::_put_access
 
 pub use crate::operation::put_access_point_policy_for_object_lambda::_put_access_point_policy_for_object_lambda_input::PutAccessPointPolicyForObjectLambdaInputBuilder;
 
+impl PutAccessPointPolicyForObjectLambdaInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::put_access_point_policy_for_object_lambda::PutAccessPointPolicyForObjectLambdaOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_access_point_policy_for_object_lambda::PutAccessPointPolicyForObjectLambdaError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.put_access_point_policy_for_object_lambda();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutAccessPointPolicyForObjectLambda`.
 ///
 /// <p>Creates or replaces resource policy for an Object Lambda Access Point. For an example policy, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/olap-create.html#olap-create-cli">Creating Object Lambda Access Points</a> in the <i>Amazon S3 User Guide</i>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::reboot_db_cluster::_reboot_db_cluster_output::RebootDb
 
 pub use crate::operation::reboot_db_cluster::_reboot_db_cluster_input::RebootDbClusterInputBuilder;
 
+impl RebootDbClusterInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::reboot_db_cluster::RebootDbClusterOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::reboot_db_cluster::RebootDBClusterError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.reboot_db_cluster();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RebootDBCluster`.
 ///
 /// <p>You might need to reboot your DB cluster, usually for maintenance reasons. For example, if you make certain modifications, or if you change the DB cluster parameter group associated with the DB cluster, reboot the DB cluster for the changes to take effect.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_policy::_describe_policy_output::DescribePoli
 
 pub use crate::operation::describe_policy::_describe_policy_input::DescribePolicyInputBuilder;
 
+impl DescribePolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_policy::DescribePolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_policy::DescribePolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribePolicy`.
 ///
 /// <p>Retrieves information about a policy.</p>

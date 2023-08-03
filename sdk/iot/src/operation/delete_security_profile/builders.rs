@@ -3,6 +3,23 @@ pub use crate::operation::delete_security_profile::_delete_security_profile_outp
 
 pub use crate::operation::delete_security_profile::_delete_security_profile_input::DeleteSecurityProfileInputBuilder;
 
+impl DeleteSecurityProfileInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_security_profile::DeleteSecurityProfileOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_security_profile::DeleteSecurityProfileError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_security_profile();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteSecurityProfile`.
 ///
 /// <p>Deletes a Device Defender security profile.</p>

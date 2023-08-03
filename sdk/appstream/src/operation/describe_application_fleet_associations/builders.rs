@@ -3,6 +3,17 @@ pub use crate::operation::describe_application_fleet_associations::_describe_app
 
 pub use crate::operation::describe_application_fleet_associations::_describe_application_fleet_associations_input::DescribeApplicationFleetAssociationsInputBuilder;
 
+impl DescribeApplicationFleetAssociationsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_application_fleet_associations::DescribeApplicationFleetAssociationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_application_fleet_associations::DescribeApplicationFleetAssociationsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_application_fleet_associations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeApplicationFleetAssociations`.
 ///
 /// <p>Retrieves a list that describes one or more application fleet associations. Either ApplicationArn or FleetName must be specified.</p>

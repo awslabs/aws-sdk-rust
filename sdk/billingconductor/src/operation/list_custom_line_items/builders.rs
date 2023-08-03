@@ -3,6 +3,23 @@ pub use crate::operation::list_custom_line_items::_list_custom_line_items_output
 
 pub use crate::operation::list_custom_line_items::_list_custom_line_items_input::ListCustomLineItemsInputBuilder;
 
+impl ListCustomLineItemsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_custom_line_items::ListCustomLineItemsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_custom_line_items::ListCustomLineItemsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_custom_line_items();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListCustomLineItems`.
 ///
 /// <p> A paginated call to get a list of all custom line items (FFLIs) for the given billing period. If you don't provide a billing period, the current billing period is used. </p>

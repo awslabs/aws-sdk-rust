@@ -3,6 +3,23 @@ pub use crate::operation::update_service_sync_config::_update_service_sync_confi
 
 pub use crate::operation::update_service_sync_config::_update_service_sync_config_input::UpdateServiceSyncConfigInputBuilder;
 
+impl UpdateServiceSyncConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_service_sync_config::UpdateServiceSyncConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_service_sync_config::UpdateServiceSyncConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_service_sync_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateServiceSyncConfig`.
 ///
 /// <p>Update the Proton Ops config file.</p>

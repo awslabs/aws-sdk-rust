@@ -3,6 +3,23 @@ pub use crate::operation::modify_aqua_configuration::_modify_aqua_configuration_
 
 pub use crate::operation::modify_aqua_configuration::_modify_aqua_configuration_input::ModifyAquaConfigurationInputBuilder;
 
+impl ModifyAquaConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_aqua_configuration::ModifyAquaConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_aqua_configuration::ModifyAquaConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_aqua_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyAquaConfiguration`.
 ///
 /// <p>This operation is retired. Calling this operation does not change AQUA configuration. Amazon Redshift automatically determines whether to use AQUA (Advanced Query Accelerator). </p>

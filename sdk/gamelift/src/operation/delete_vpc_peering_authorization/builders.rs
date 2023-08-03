@@ -3,6 +3,23 @@ pub use crate::operation::delete_vpc_peering_authorization::_delete_vpc_peering_
 
 pub use crate::operation::delete_vpc_peering_authorization::_delete_vpc_peering_authorization_input::DeleteVpcPeeringAuthorizationInputBuilder;
 
+impl DeleteVpcPeeringAuthorizationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_vpc_peering_authorization::DeleteVpcPeeringAuthorizationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_vpc_peering_authorization::DeleteVpcPeeringAuthorizationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_vpc_peering_authorization();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteVpcPeeringAuthorization`.
 ///
 /// <p>Cancels a pending VPC peering authorization for the specified VPC. If you need to delete an existing VPC peering connection, use <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DeleteVpcPeeringConnection.html">DeleteVpcPeeringConnection</a>.</p>

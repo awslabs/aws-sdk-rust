@@ -3,6 +3,23 @@ pub use crate::operation::get_ingestion_destination::_get_ingestion_destination_
 
 pub use crate::operation::get_ingestion_destination::_get_ingestion_destination_input::GetIngestionDestinationInputBuilder;
 
+impl GetIngestionDestinationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_ingestion_destination::GetIngestionDestinationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_ingestion_destination::GetIngestionDestinationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_ingestion_destination();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetIngestionDestination`.
 ///
 /// <p>Returns information about an ingestion destination.</p>

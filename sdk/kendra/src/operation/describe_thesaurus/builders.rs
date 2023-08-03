@@ -3,6 +3,23 @@ pub use crate::operation::describe_thesaurus::_describe_thesaurus_output::Descri
 
 pub use crate::operation::describe_thesaurus::_describe_thesaurus_input::DescribeThesaurusInputBuilder;
 
+impl DescribeThesaurusInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_thesaurus::DescribeThesaurusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_thesaurus::DescribeThesaurusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_thesaurus();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeThesaurus`.
 ///
 /// <p>Gets information about an existing Amazon Kendra thesaurus.</p>

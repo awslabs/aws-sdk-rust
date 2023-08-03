@@ -3,6 +3,23 @@ pub use crate::operation::list_studio_session_mappings::_list_studio_session_map
 
 pub use crate::operation::list_studio_session_mappings::_list_studio_session_mappings_input::ListStudioSessionMappingsInputBuilder;
 
+impl ListStudioSessionMappingsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_studio_session_mappings::ListStudioSessionMappingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_studio_session_mappings::ListStudioSessionMappingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_studio_session_mappings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListStudioSessionMappings`.
 ///
 /// <p>Returns a list of all user or group session mappings for the Amazon EMR Studio specified by <code>StudioId</code>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_application_presigned_url::_create_application_
 
 pub use crate::operation::create_application_presigned_url::_create_application_presigned_url_input::CreateApplicationPresignedUrlInputBuilder;
 
+impl CreateApplicationPresignedUrlInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_application_presigned_url::CreateApplicationPresignedUrlOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_application_presigned_url::CreateApplicationPresignedUrlError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_application_presigned_url();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateApplicationPresignedUrl`.
 ///
 /// <p>Creates and returns a URL that you can use to connect to an application's extension.</p>

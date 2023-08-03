@@ -3,6 +3,23 @@ pub use crate::operation::describe_voices::_describe_voices_output::DescribeVoic
 
 pub use crate::operation::describe_voices::_describe_voices_input::DescribeVoicesInputBuilder;
 
+impl DescribeVoicesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_voices::DescribeVoicesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_voices::DescribeVoicesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_voices();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeVoices`.
 ///
 /// <p>Returns the list of voices that are available for use when requesting speech synthesis. Each voice speaks a specified language, is either male or female, and is identified by an ID, which is the ASCII version of the voice name. </p>

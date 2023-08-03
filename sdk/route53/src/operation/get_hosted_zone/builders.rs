@@ -3,6 +3,23 @@ pub use crate::operation::get_hosted_zone::_get_hosted_zone_output::GetHostedZon
 
 pub use crate::operation::get_hosted_zone::_get_hosted_zone_input::GetHostedZoneInputBuilder;
 
+impl GetHostedZoneInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_hosted_zone::GetHostedZoneOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_hosted_zone::GetHostedZoneError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_hosted_zone();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetHostedZone`.
 ///
 /// <p>Gets information about a specified hosted zone including the four name servers assigned to the hosted zone.</p>

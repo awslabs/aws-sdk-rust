@@ -3,6 +3,23 @@ pub use crate::operation::get_health_event::_get_health_event_output::GetHealthE
 
 pub use crate::operation::get_health_event::_get_health_event_input::GetHealthEventInputBuilder;
 
+impl GetHealthEventInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_health_event::GetHealthEventOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_health_event::GetHealthEventError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_health_event();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetHealthEvent`.
 ///
 /// <p>Gets information the Amazon CloudWatch Internet Monitor has created and stored about a health event for a specified monitor. This information includes the impacted locations, and all of the information related to the event by location.</p>

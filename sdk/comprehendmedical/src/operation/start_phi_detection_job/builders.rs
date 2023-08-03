@@ -3,6 +3,23 @@ pub use crate::operation::start_phi_detection_job::_start_phi_detection_job_outp
 
 pub use crate::operation::start_phi_detection_job::_start_phi_detection_job_input::StartPhiDetectionJobInputBuilder;
 
+impl StartPhiDetectionJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_phi_detection_job::StartPhiDetectionJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_phi_detection_job::StartPHIDetectionJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_phi_detection_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartPHIDetectionJob`.
 ///
 /// <p>Starts an asynchronous job to detect protected health information (PHI). Use the <code>DescribePHIDetectionJob</code> operation to track the status of a job.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_report_definitions::_describe_report_definiti
 
 pub use crate::operation::describe_report_definitions::_describe_report_definitions_input::DescribeReportDefinitionsInputBuilder;
 
+impl DescribeReportDefinitionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_report_definitions::DescribeReportDefinitionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_report_definitions::DescribeReportDefinitionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_report_definitions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeReportDefinitions`.
 ///
 /// <p>Lists the AWS Cost and Usage reports available to this account.</p>

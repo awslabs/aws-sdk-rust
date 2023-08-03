@@ -3,6 +3,23 @@ pub use crate::operation::get_table_version::_get_table_version_output::GetTable
 
 pub use crate::operation::get_table_version::_get_table_version_input::GetTableVersionInputBuilder;
 
+impl GetTableVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_table_version::GetTableVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_table_version::GetTableVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_table_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetTableVersion`.
 ///
 /// <p>Retrieves a specified version of a table.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_coip_cidr::_delete_coip_cidr_output::DeleteCoip
 
 pub use crate::operation::delete_coip_cidr::_delete_coip_cidr_input::DeleteCoipCidrInputBuilder;
 
+impl DeleteCoipCidrInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_coip_cidr::DeleteCoipCidrOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_coip_cidr::DeleteCoipCidrError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_coip_cidr();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteCoipCidr`.
 ///
 /// <p> Deletes a range of customer-owned IP addresses. </p>

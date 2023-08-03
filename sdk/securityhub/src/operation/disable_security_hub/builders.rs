@@ -3,6 +3,23 @@ pub use crate::operation::disable_security_hub::_disable_security_hub_output::Di
 
 pub use crate::operation::disable_security_hub::_disable_security_hub_input::DisableSecurityHubInputBuilder;
 
+impl DisableSecurityHubInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disable_security_hub::DisableSecurityHubOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disable_security_hub::DisableSecurityHubError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disable_security_hub();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisableSecurityHub`.
 ///
 /// <p>Disables Security Hub in your account only in the current Region. To disable Security Hub in all Regions, you must submit one request per Region where you have enabled Security Hub.</p>

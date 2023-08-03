@@ -3,6 +3,23 @@ pub use crate::operation::assign_tape_pool::_assign_tape_pool_output::AssignTape
 
 pub use crate::operation::assign_tape_pool::_assign_tape_pool_input::AssignTapePoolInputBuilder;
 
+impl AssignTapePoolInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::assign_tape_pool::AssignTapePoolOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::assign_tape_pool::AssignTapePoolError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.assign_tape_pool();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssignTapePool`.
 ///
 /// <p>Assigns a tape to a tape pool for archiving. The tape assigned to a pool is archived in the S3 storage class that is associated with the pool. When you use your backup application to eject the tape, the tape is archived directly into the S3 storage class (S3 Glacier or S3 Glacier Deep Archive) that corresponds to the pool.</p>

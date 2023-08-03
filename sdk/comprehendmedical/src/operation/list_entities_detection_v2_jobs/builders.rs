@@ -3,6 +3,23 @@ pub use crate::operation::list_entities_detection_v2_jobs::_list_entities_detect
 
 pub use crate::operation::list_entities_detection_v2_jobs::_list_entities_detection_v2_jobs_input::ListEntitiesDetectionV2JobsInputBuilder;
 
+impl ListEntitiesDetectionV2JobsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_entities_detection_v2_jobs::ListEntitiesDetectionV2JobsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_entities_detection_v2_jobs::ListEntitiesDetectionV2JobsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_entities_detection_v2_jobs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListEntitiesDetectionV2Jobs`.
 ///
 /// <p>Gets a list of medical entity detection jobs that you have submitted.</p>

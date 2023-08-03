@@ -3,6 +3,23 @@ pub use crate::operation::describe_ec2_instance_limits::_describe_ec2_instance_l
 
 pub use crate::operation::describe_ec2_instance_limits::_describe_ec2_instance_limits_input::DescribeEc2InstanceLimitsInputBuilder;
 
+impl DescribeEc2InstanceLimitsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_ec2_instance_limits::DescribeEc2InstanceLimitsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_ec2_instance_limits::DescribeEC2InstanceLimitsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_ec2_instance_limits();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeEC2InstanceLimits`.
 ///
 /// <p>Retrieves the instance limits and current utilization for an Amazon Web Services Region or location. Instance limits control the number of instances, per instance type, per location, that your Amazon Web Services account can use. Learn more at <a href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>. The information returned includes the maximum number of instances allowed and your account's current usage across all fleets. This information can affect your ability to scale your Amazon GameLift fleets. You can request a limit increase for your account by using the <b>Service limits</b> page in the Amazon GameLift console.</p>

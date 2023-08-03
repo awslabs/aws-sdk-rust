@@ -3,6 +3,17 @@ pub use crate::operation::set_text_message_spend_limit_override::_set_text_messa
 
 pub use crate::operation::set_text_message_spend_limit_override::_set_text_message_spend_limit_override_input::SetTextMessageSpendLimitOverrideInputBuilder;
 
+impl SetTextMessageSpendLimitOverrideInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::set_text_message_spend_limit_override::SetTextMessageSpendLimitOverrideOutput, ::aws_smithy_http::result::SdkError<crate::operation::set_text_message_spend_limit_override::SetTextMessageSpendLimitOverrideError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.set_text_message_spend_limit_override();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SetTextMessageSpendLimitOverride`.
 ///
 /// <p>Sets an account level monthly spend limit override for sending text messages. The requested spend limit must be less than or equal to the <code>MaxLimit</code>, which is set by Amazon Web Services. </p>

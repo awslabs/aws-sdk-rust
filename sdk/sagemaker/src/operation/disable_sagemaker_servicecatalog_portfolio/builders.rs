@@ -3,6 +3,17 @@ pub use crate::operation::disable_sagemaker_servicecatalog_portfolio::_disable_s
 
 pub use crate::operation::disable_sagemaker_servicecatalog_portfolio::_disable_sagemaker_servicecatalog_portfolio_input::DisableSagemakerServicecatalogPortfolioInputBuilder;
 
+impl DisableSagemakerServicecatalogPortfolioInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::disable_sagemaker_servicecatalog_portfolio::DisableSagemakerServicecatalogPortfolioOutput, ::aws_smithy_http::result::SdkError<crate::operation::disable_sagemaker_servicecatalog_portfolio::DisableSagemakerServicecatalogPortfolioError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.disable_sagemaker_servicecatalog_portfolio();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisableSagemakerServicecatalogPortfolio`.
 ///
 /// <p>Disables using Service Catalog in SageMaker. Service Catalog is used to create SageMaker projects.</p>

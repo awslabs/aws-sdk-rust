@@ -3,6 +3,23 @@ pub use crate::operation::create_resource::_create_resource_output::CreateResour
 
 pub use crate::operation::create_resource::_create_resource_input::CreateResourceInputBuilder;
 
+impl CreateResourceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_resource::CreateResourceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_resource::CreateResourceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_resource();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateResource`.
 ///
 /// <p>Creates a new WorkMail resource.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::modify_launch_template::_modify_launch_template_output
 
 pub use crate::operation::modify_launch_template::_modify_launch_template_input::ModifyLaunchTemplateInputBuilder;
 
+impl ModifyLaunchTemplateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_launch_template::ModifyLaunchTemplateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_launch_template::ModifyLaunchTemplateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_launch_template();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyLaunchTemplate`.
 ///
 /// <p>Modifies a launch template. You can specify which version of the launch template to set as the default version. When launching an instance, the default version applies when a launch template version is not specified.</p>

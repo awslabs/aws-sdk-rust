@@ -3,6 +3,23 @@ pub use crate::operation::get_segments::_get_segments_output::GetSegmentsOutputB
 
 pub use crate::operation::get_segments::_get_segments_input::GetSegmentsInputBuilder;
 
+impl GetSegmentsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_segments::GetSegmentsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_segments::GetSegmentsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_segments();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetSegments`.
 ///
 /// <p>Retrieves information about the configuration, dimension, and other settings for all the segments that are associated with an application.</p>

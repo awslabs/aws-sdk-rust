@@ -3,6 +3,23 @@ pub use crate::operation::disable_snapshot_copy::_disable_snapshot_copy_output::
 
 pub use crate::operation::disable_snapshot_copy::_disable_snapshot_copy_input::DisableSnapshotCopyInputBuilder;
 
+impl DisableSnapshotCopyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disable_snapshot_copy::DisableSnapshotCopyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disable_snapshot_copy::DisableSnapshotCopyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disable_snapshot_copy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisableSnapshotCopy`.
 ///
 /// <p>Disables the automatic copying of snapshots from one region to another region for a specified cluster.</p>

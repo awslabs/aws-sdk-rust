@@ -3,6 +3,23 @@ pub use crate::operation::list_finding_aggregations::_list_finding_aggregations_
 
 pub use crate::operation::list_finding_aggregations::_list_finding_aggregations_input::ListFindingAggregationsInputBuilder;
 
+impl ListFindingAggregationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_finding_aggregations::ListFindingAggregationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_finding_aggregations::ListFindingAggregationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_finding_aggregations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListFindingAggregations`.
 ///
 /// <p>Lists aggregated finding data for your environment based on specific criteria.</p>

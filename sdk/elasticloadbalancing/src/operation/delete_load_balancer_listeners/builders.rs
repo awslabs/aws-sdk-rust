@@ -3,6 +3,23 @@ pub use crate::operation::delete_load_balancer_listeners::_delete_load_balancer_
 
 pub use crate::operation::delete_load_balancer_listeners::_delete_load_balancer_listeners_input::DeleteLoadBalancerListenersInputBuilder;
 
+impl DeleteLoadBalancerListenersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_load_balancer_listeners::DeleteLoadBalancerListenersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_load_balancer_listeners::DeleteLoadBalancerListenersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_load_balancer_listeners();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteLoadBalancerListeners`.
 ///
 /// <p>Deletes the specified listeners from the specified load balancer.</p>

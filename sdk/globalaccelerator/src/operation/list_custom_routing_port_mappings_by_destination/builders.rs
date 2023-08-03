@@ -3,6 +3,17 @@ pub use crate::operation::list_custom_routing_port_mappings_by_destination::_lis
 
 pub use crate::operation::list_custom_routing_port_mappings_by_destination::_list_custom_routing_port_mappings_by_destination_input::ListCustomRoutingPortMappingsByDestinationInputBuilder;
 
+impl ListCustomRoutingPortMappingsByDestinationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_custom_routing_port_mappings_by_destination::ListCustomRoutingPortMappingsByDestinationOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_custom_routing_port_mappings_by_destination::ListCustomRoutingPortMappingsByDestinationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_custom_routing_port_mappings_by_destination();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListCustomRoutingPortMappingsByDestination`.
 ///
 /// <p>List the port mappings for a specific EC2 instance (destination) in a VPC subnet endpoint. The response is the mappings for one destination IP address. This is useful when your subnet endpoint has mappings that span multiple custom routing accelerators in your account, or for scenarios where you only want to list the port mappings for a specific destination instance.</p>

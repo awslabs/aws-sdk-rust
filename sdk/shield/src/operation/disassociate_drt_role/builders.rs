@@ -3,6 +3,23 @@ pub use crate::operation::disassociate_drt_role::_disassociate_drt_role_output::
 
 pub use crate::operation::disassociate_drt_role::_disassociate_drt_role_input::DisassociateDrtRoleInputBuilder;
 
+impl DisassociateDrtRoleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_drt_role::DisassociateDrtRoleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_drt_role::DisassociateDRTRoleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disassociate_drt_role();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateDRTRole`.
 ///
 /// <p>Removes the Shield Response Team's (SRT) access to your Amazon Web Services account.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::modify_fpga_image_attribute::_modify_fpga_image_attrib
 
 pub use crate::operation::modify_fpga_image_attribute::_modify_fpga_image_attribute_input::ModifyFpgaImageAttributeInputBuilder;
 
+impl ModifyFpgaImageAttributeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_fpga_image_attribute::ModifyFpgaImageAttributeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_fpga_image_attribute::ModifyFpgaImageAttributeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_fpga_image_attribute();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyFpgaImageAttribute`.
 ///
 /// <p>Modifies the specified attribute of the specified Amazon FPGA Image (AFI).</p>

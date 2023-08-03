@@ -3,6 +3,23 @@ pub use crate::operation::start_product_subscription::_start_product_subscriptio
 
 pub use crate::operation::start_product_subscription::_start_product_subscription_input::StartProductSubscriptionInputBuilder;
 
+impl StartProductSubscriptionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_product_subscription::StartProductSubscriptionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_product_subscription::StartProductSubscriptionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_product_subscription();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartProductSubscription`.
 ///
 /// <p>Starts a product subscription for a user with the specified identity provider.</p> <note>

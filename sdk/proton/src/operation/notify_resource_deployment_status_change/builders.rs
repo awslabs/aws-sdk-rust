@@ -3,6 +3,17 @@ pub use crate::operation::notify_resource_deployment_status_change::_notify_reso
 
 pub use crate::operation::notify_resource_deployment_status_change::_notify_resource_deployment_status_change_input::NotifyResourceDeploymentStatusChangeInputBuilder;
 
+impl NotifyResourceDeploymentStatusChangeInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::notify_resource_deployment_status_change::NotifyResourceDeploymentStatusChangeOutput, ::aws_smithy_http::result::SdkError<crate::operation::notify_resource_deployment_status_change::NotifyResourceDeploymentStatusChangeError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.notify_resource_deployment_status_change();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `NotifyResourceDeploymentStatusChange`.
 ///
 /// <p>Notify Proton of status changes to a provisioned resource when you use self-managed provisioning.</p>

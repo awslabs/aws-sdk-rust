@@ -3,6 +3,23 @@ pub use crate::operation::batch_read::_batch_read_output::BatchReadOutputBuilder
 
 pub use crate::operation::batch_read::_batch_read_input::BatchReadInputBuilder;
 
+impl BatchReadInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_read::BatchReadOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_read::BatchReadError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_read();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchRead`.
 ///
 /// <p>Performs all the read operations in a batch. </p>

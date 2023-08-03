@@ -3,6 +3,23 @@ pub use crate::operation::create_backup_plan::_create_backup_plan_output::Create
 
 pub use crate::operation::create_backup_plan::_create_backup_plan_input::CreateBackupPlanInputBuilder;
 
+impl CreateBackupPlanInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_backup_plan::CreateBackupPlanOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_backup_plan::CreateBackupPlanError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_backup_plan();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateBackupPlan`.
 ///
 /// <p>Creates a backup plan using a backup plan name and backup rules. A backup plan is a document that contains information that Backup uses to schedule tasks that create recovery points for resources.</p>

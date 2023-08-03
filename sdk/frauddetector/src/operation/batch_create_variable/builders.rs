@@ -3,6 +3,23 @@ pub use crate::operation::batch_create_variable::_batch_create_variable_output::
 
 pub use crate::operation::batch_create_variable::_batch_create_variable_input::BatchCreateVariableInputBuilder;
 
+impl BatchCreateVariableInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_create_variable::BatchCreateVariableOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_create_variable::BatchCreateVariableError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_create_variable();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchCreateVariable`.
 ///
 /// <p>Creates a batch of variables.</p>

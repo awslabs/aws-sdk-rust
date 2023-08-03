@@ -3,6 +3,23 @@ pub use crate::operation::get_route::_get_route_output::GetRouteOutputBuilder;
 
 pub use crate::operation::get_route::_get_route_input::GetRouteInputBuilder;
 
+impl GetRouteInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_route::GetRouteOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_route::GetRouteError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_route();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetRoute`.
 ///
 /// <p>Gets an Amazon Web Services Migration Hub Refactor Spaces route.</p>

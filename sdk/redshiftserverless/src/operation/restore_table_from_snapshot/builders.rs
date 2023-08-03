@@ -3,6 +3,23 @@ pub use crate::operation::restore_table_from_snapshot::_restore_table_from_snaps
 
 pub use crate::operation::restore_table_from_snapshot::_restore_table_from_snapshot_input::RestoreTableFromSnapshotInputBuilder;
 
+impl RestoreTableFromSnapshotInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::restore_table_from_snapshot::RestoreTableFromSnapshotOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::restore_table_from_snapshot::RestoreTableFromSnapshotError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.restore_table_from_snapshot();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RestoreTableFromSnapshot`.
 ///
 /// <p>Restores a table from a snapshot to your Amazon Redshift Serverless instance. You can't use this operation to restore tables with <a href="https://docs.aws.amazon.com/redshift/latest/dg/t_Sorting_data.html#t_Sorting_data-interleaved">interleaved sort keys</a>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_instance_profiles_for_role::_list_instance_profil
 
 pub use crate::operation::list_instance_profiles_for_role::_list_instance_profiles_for_role_input::ListInstanceProfilesForRoleInputBuilder;
 
+impl ListInstanceProfilesForRoleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_instance_profiles_for_role::ListInstanceProfilesForRoleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_instance_profiles_for_role::ListInstanceProfilesForRoleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_instance_profiles_for_role();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListInstanceProfilesForRole`.
 ///
 /// <p>Lists the instance profiles that have the specified associated IAM role. If there are none, the operation returns an empty list. For more information about instance profiles, go to <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2_instance-profiles.html">Using instance profiles</a> in the <i>IAM User Guide</i>.</p>

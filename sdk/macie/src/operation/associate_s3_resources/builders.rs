@@ -3,6 +3,23 @@ pub use crate::operation::associate_s3_resources::_associate_s3_resources_output
 
 pub use crate::operation::associate_s3_resources::_associate_s3_resources_input::AssociateS3ResourcesInputBuilder;
 
+impl AssociateS3ResourcesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_s3_resources::AssociateS3ResourcesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_s3_resources::AssociateS3ResourcesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_s3_resources();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateS3Resources`.
 ///
 /// <p>(Discontinued) Associates specified S3 resources with Amazon Macie Classic for monitoring and data classification. If <code>memberAccountId</code> isn't specified, the action associates specified S3 resources with Macie Classic for the current Macie Classic administrator account. If <code>memberAccountId</code> is specified, the action associates specified S3 resources with Macie Classic for the specified member account.</p>

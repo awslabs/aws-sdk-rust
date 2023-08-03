@@ -3,6 +3,23 @@ pub use crate::operation::list_endpoints::_list_endpoints_output::ListEndpointsO
 
 pub use crate::operation::list_endpoints::_list_endpoints_input::ListEndpointsInputBuilder;
 
+impl ListEndpointsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_endpoints::ListEndpointsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_endpoints::ListEndpointsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_endpoints();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListEndpoints`.
 ///
 /// <p>Lists endpoints associated with the specified Outpost. </p>

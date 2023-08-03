@@ -3,6 +3,23 @@ pub use crate::operation::list_browser_settings::_list_browser_settings_output::
 
 pub use crate::operation::list_browser_settings::_list_browser_settings_input::ListBrowserSettingsInputBuilder;
 
+impl ListBrowserSettingsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_browser_settings::ListBrowserSettingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_browser_settings::ListBrowserSettingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_browser_settings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListBrowserSettings`.
 ///
 /// <p>Retrieves a list of browser settings.</p>

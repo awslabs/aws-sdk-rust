@@ -3,6 +3,23 @@ pub use crate::operation::describe_ecs_clusters::_describe_ecs_clusters_output::
 
 pub use crate::operation::describe_ecs_clusters::_describe_ecs_clusters_input::DescribeEcsClustersInputBuilder;
 
+impl DescribeEcsClustersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_ecs_clusters::DescribeEcsClustersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_ecs_clusters::DescribeEcsClustersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_ecs_clusters();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeEcsClusters`.
 ///
 /// <p>Describes Amazon ECS clusters that are registered with a stack. If you specify only a stack ID, you can use the <code>MaxResults</code> and <code>NextToken</code> parameters to paginate the response. However, AWS OpsWorks Stacks currently supports only one cluster per layer, so the result set has a maximum of one element.</p>

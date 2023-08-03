@@ -3,6 +3,23 @@ pub use crate::operation::get_merge_options::_get_merge_options_output::GetMerge
 
 pub use crate::operation::get_merge_options::_get_merge_options_input::GetMergeOptionsInputBuilder;
 
+impl GetMergeOptionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_merge_options::GetMergeOptionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_merge_options::GetMergeOptionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_merge_options();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetMergeOptions`.
 ///
 /// <p>Returns information about the merge options available for merging two specified branches. For details about why a merge option is not available, use GetMergeConflicts or DescribeMergeConflicts.</p>

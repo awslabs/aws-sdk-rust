@@ -3,6 +3,23 @@ pub use crate::operation::enable_policy_type::_enable_policy_type_output::Enable
 
 pub use crate::operation::enable_policy_type::_enable_policy_type_input::EnablePolicyTypeInputBuilder;
 
+impl EnablePolicyTypeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::enable_policy_type::EnablePolicyTypeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::enable_policy_type::EnablePolicyTypeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.enable_policy_type();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `EnablePolicyType`.
 ///
 /// <p>Enables a policy type in a root. After you enable a policy type in a root, you can attach policies of that type to the root, any organizational unit (OU), or account in that root. You can undo this by using the <code>DisablePolicyType</code> operation.</p>

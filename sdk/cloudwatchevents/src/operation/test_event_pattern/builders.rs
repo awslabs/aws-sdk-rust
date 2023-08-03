@@ -3,6 +3,23 @@ pub use crate::operation::test_event_pattern::_test_event_pattern_output::TestEv
 
 pub use crate::operation::test_event_pattern::_test_event_pattern_input::TestEventPatternInputBuilder;
 
+impl TestEventPatternInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::test_event_pattern::TestEventPatternOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::test_event_pattern::TestEventPatternError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.test_event_pattern();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `TestEventPattern`.
 ///
 /// <p>Tests whether the specified event pattern matches the provided event.</p>

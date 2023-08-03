@@ -3,6 +3,23 @@ pub use crate::operation::update_trust_store::_update_trust_store_output::Update
 
 pub use crate::operation::update_trust_store::_update_trust_store_input::UpdateTrustStoreInputBuilder;
 
+impl UpdateTrustStoreInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_trust_store::UpdateTrustStoreOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_trust_store::UpdateTrustStoreError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_trust_store();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateTrustStore`.
 ///
 /// <p>Updates the trust store.</p>

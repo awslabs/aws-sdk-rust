@@ -3,6 +3,17 @@ pub use crate::operation::associate_signin_delegate_groups_with_account::_associ
 
 pub use crate::operation::associate_signin_delegate_groups_with_account::_associate_signin_delegate_groups_with_account_input::AssociateSigninDelegateGroupsWithAccountInputBuilder;
 
+impl AssociateSigninDelegateGroupsWithAccountInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::associate_signin_delegate_groups_with_account::AssociateSigninDelegateGroupsWithAccountOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_signin_delegate_groups_with_account::AssociateSigninDelegateGroupsWithAccountError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.associate_signin_delegate_groups_with_account();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateSigninDelegateGroupsWithAccount`.
 ///
 /// <p>Associates the specified sign-in delegate groups with the specified Amazon Chime account.</p>

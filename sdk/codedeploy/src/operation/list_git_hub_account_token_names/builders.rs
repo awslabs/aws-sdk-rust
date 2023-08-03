@@ -3,6 +3,23 @@ pub use crate::operation::list_git_hub_account_token_names::_list_git_hub_accoun
 
 pub use crate::operation::list_git_hub_account_token_names::_list_git_hub_account_token_names_input::ListGitHubAccountTokenNamesInputBuilder;
 
+impl ListGitHubAccountTokenNamesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_git_hub_account_token_names::ListGitHubAccountTokenNamesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_git_hub_account_token_names::ListGitHubAccountTokenNamesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_git_hub_account_token_names();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListGitHubAccountTokenNames`.
 ///
 /// <p>Lists the names of stored connections to GitHub accounts.</p>

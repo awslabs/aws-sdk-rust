@@ -3,6 +3,23 @@ pub use crate::operation::publish_metrics::_publish_metrics_output::PublishMetri
 
 pub use crate::operation::publish_metrics::_publish_metrics_input::PublishMetricsInputBuilder;
 
+impl PublishMetricsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::publish_metrics::PublishMetricsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::publish_metrics::PublishMetricsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.publish_metrics();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PublishMetrics`.
 ///
 /// <p> <b>Internal only</b>. Publishes environment health metrics to Amazon CloudWatch.</p>

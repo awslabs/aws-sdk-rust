@@ -3,6 +3,23 @@ pub use crate::operation::delete_domain::_delete_domain_output::DeleteDomainOutp
 
 pub use crate::operation::delete_domain::_delete_domain_input::DeleteDomainInputBuilder;
 
+impl DeleteDomainInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_domain::DeleteDomainOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_domain::DeleteDomainError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_domain();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteDomain`.
 ///
 /// <p> Deletes a domain. You cannot delete a domain that contains repositories. If you want to delete a domain with repositories, first delete its repositories. </p>

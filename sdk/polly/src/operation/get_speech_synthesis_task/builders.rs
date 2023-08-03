@@ -3,6 +3,23 @@ pub use crate::operation::get_speech_synthesis_task::_get_speech_synthesis_task_
 
 pub use crate::operation::get_speech_synthesis_task::_get_speech_synthesis_task_input::GetSpeechSynthesisTaskInputBuilder;
 
+impl GetSpeechSynthesisTaskInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_speech_synthesis_task::GetSpeechSynthesisTaskOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_speech_synthesis_task::GetSpeechSynthesisTaskError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_speech_synthesis_task();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetSpeechSynthesisTask`.
 ///
 /// <p>Retrieves a specific SpeechSynthesisTask object based on its TaskID. This object contains information about the given speech synthesis task, including the status of the task, and a link to the S3 bucket containing the output of the task.</p>

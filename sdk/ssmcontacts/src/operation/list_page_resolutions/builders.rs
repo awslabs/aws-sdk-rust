@@ -3,6 +3,23 @@ pub use crate::operation::list_page_resolutions::_list_page_resolutions_output::
 
 pub use crate::operation::list_page_resolutions::_list_page_resolutions_input::ListPageResolutionsInputBuilder;
 
+impl ListPageResolutionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_page_resolutions::ListPageResolutionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_page_resolutions::ListPageResolutionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_page_resolutions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListPageResolutions`.
 ///
 /// <p>Returns the resolution path of an engagement. For example, the escalation plan engaged in an incident might target an on-call schedule that includes several contacts in a rotation, but just one contact on-call when the incident starts. The resolution path indicates the hierarchy of <i>escalation plan &gt; on-call schedule &gt; contact</i>.</p>

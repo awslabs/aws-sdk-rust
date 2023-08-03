@@ -3,6 +3,23 @@ pub use crate::operation::cancel_archival::_cancel_archival_output::CancelArchiv
 
 pub use crate::operation::cancel_archival::_cancel_archival_input::CancelArchivalInputBuilder;
 
+impl CancelArchivalInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::cancel_archival::CancelArchivalOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::cancel_archival::CancelArchivalError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.cancel_archival();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CancelArchival`.
 ///
 /// <p>Cancels archiving of a virtual tape to the virtual tape shelf (VTS) after the archiving process is initiated. This operation is only supported in the tape gateway type.</p>

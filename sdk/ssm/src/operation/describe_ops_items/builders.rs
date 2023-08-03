@@ -3,6 +3,23 @@ pub use crate::operation::describe_ops_items::_describe_ops_items_output::Descri
 
 pub use crate::operation::describe_ops_items::_describe_ops_items_input::DescribeOpsItemsInputBuilder;
 
+impl DescribeOpsItemsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_ops_items::DescribeOpsItemsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_ops_items::DescribeOpsItemsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_ops_items();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeOpsItems`.
 ///
 /// <p>Query a set of OpsItems. You must have permission in Identity and Access Management (IAM) to query a list of OpsItems. For more information, see <a href="https://docs.aws.amazon.com/systems-manager/latest/userguide/OpsCenter-setup.html">Set up OpsCenter</a> in the <i>Amazon Web Services Systems Manager User Guide</i>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_event_streams::_list_event_streams_output::ListEv
 
 pub use crate::operation::list_event_streams::_list_event_streams_input::ListEventStreamsInputBuilder;
 
+impl ListEventStreamsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_event_streams::ListEventStreamsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_event_streams::ListEventStreamsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_event_streams();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListEventStreams`.
 ///
 /// <p>Returns a list of all the event streams in a specific domain.</p>

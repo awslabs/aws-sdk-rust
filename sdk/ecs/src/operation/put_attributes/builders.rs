@@ -3,6 +3,23 @@ pub use crate::operation::put_attributes::_put_attributes_output::PutAttributesO
 
 pub use crate::operation::put_attributes::_put_attributes_input::PutAttributesInputBuilder;
 
+impl PutAttributesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_attributes::PutAttributesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_attributes::PutAttributesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_attributes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutAttributes`.
 ///
 /// <p>Create or update an attribute on an Amazon ECS resource. If the attribute doesn't exist, it's created. If the attribute exists, its value is replaced with the specified value. To delete an attribute, use <code>DeleteAttributes</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>

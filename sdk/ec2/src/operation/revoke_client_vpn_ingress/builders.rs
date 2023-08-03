@@ -3,6 +3,23 @@ pub use crate::operation::revoke_client_vpn_ingress::_revoke_client_vpn_ingress_
 
 pub use crate::operation::revoke_client_vpn_ingress::_revoke_client_vpn_ingress_input::RevokeClientVpnIngressInputBuilder;
 
+impl RevokeClientVpnIngressInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::revoke_client_vpn_ingress::RevokeClientVpnIngressOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::revoke_client_vpn_ingress::RevokeClientVpnIngressError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.revoke_client_vpn_ingress();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RevokeClientVpnIngress`.
 ///
 /// <p>Removes an ingress authorization rule from a Client VPN endpoint. </p>

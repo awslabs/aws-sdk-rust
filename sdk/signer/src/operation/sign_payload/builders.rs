@@ -3,6 +3,23 @@ pub use crate::operation::sign_payload::_sign_payload_output::SignPayloadOutputB
 
 pub use crate::operation::sign_payload::_sign_payload_input::SignPayloadInputBuilder;
 
+impl SignPayloadInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::sign_payload::SignPayloadOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::sign_payload::SignPayloadError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.sign_payload();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SignPayload`.
 ///
 /// <p>Signs a binary payload and returns a signature envelope.</p>

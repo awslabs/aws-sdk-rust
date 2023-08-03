@@ -3,6 +3,23 @@ pub use crate::operation::list_discovery_jobs::_list_discovery_jobs_output::List
 
 pub use crate::operation::list_discovery_jobs::_list_discovery_jobs_input::ListDiscoveryJobsInputBuilder;
 
+impl ListDiscoveryJobsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_discovery_jobs::ListDiscoveryJobsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_discovery_jobs::ListDiscoveryJobsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_discovery_jobs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDiscoveryJobs`.
 ///
 /// <p>Provides a list of the existing discovery jobs in the Amazon Web Services Region and Amazon Web Services account where you're using DataSync Discovery.</p>

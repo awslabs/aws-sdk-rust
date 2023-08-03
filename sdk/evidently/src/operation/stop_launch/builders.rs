@@ -3,6 +3,23 @@ pub use crate::operation::stop_launch::_stop_launch_output::StopLaunchOutputBuil
 
 pub use crate::operation::stop_launch::_stop_launch_input::StopLaunchInputBuilder;
 
+impl StopLaunchInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_launch::StopLaunchOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_launch::StopLaunchError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_launch();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopLaunch`.
 ///
 /// <p>Stops a launch that is currently running. After you stop a launch, you will not be able to resume it or restart it. Also, it will not be evaluated as a rule for traffic allocation, and the traffic that was allocated to the launch will instead be available to the feature's experiment, if there is one. Otherwise, all traffic will be served the default variation after the launch is stopped.</p>

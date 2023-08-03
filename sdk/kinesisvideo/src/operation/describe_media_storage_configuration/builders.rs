@@ -3,6 +3,17 @@ pub use crate::operation::describe_media_storage_configuration::_describe_media_
 
 pub use crate::operation::describe_media_storage_configuration::_describe_media_storage_configuration_input::DescribeMediaStorageConfigurationInputBuilder;
 
+impl DescribeMediaStorageConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_media_storage_configuration::DescribeMediaStorageConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_media_storage_configuration::DescribeMediaStorageConfigurationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_media_storage_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeMediaStorageConfiguration`.
 ///
 /// <p>Returns the most current information about the channel. Specify the <code>ChannelName</code> or <code>ChannelARN</code> in the input.</p>

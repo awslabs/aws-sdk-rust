@@ -3,6 +3,23 @@ pub use crate::operation::list_assessment_targets::_list_assessment_targets_outp
 
 pub use crate::operation::list_assessment_targets::_list_assessment_targets_input::ListAssessmentTargetsInputBuilder;
 
+impl ListAssessmentTargetsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_assessment_targets::ListAssessmentTargetsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_assessment_targets::ListAssessmentTargetsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_assessment_targets();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAssessmentTargets`.
 ///
 /// <p>Lists the ARNs of the assessment targets within this AWS account. For more information about assessment targets, see <a href="https://docs.aws.amazon.com/inspector/latest/userguide/inspector_applications.html">Amazon Inspector Assessment Targets</a>.</p>

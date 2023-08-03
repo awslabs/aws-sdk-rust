@@ -3,6 +3,23 @@ pub use crate::operation::create_connection::_create_connection_output::CreateCo
 
 pub use crate::operation::create_connection::_create_connection_input::CreateConnectionInputBuilder;
 
+impl CreateConnectionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_connection::CreateConnectionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_connection::CreateConnectionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_connection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateConnection`.
 ///
 /// <p>Creates a connection that can then be given to other AWS services like CodePipeline so that it can access third-party code repositories. The connection is in pending status until the third-party connection handshake is completed from the console.</p>

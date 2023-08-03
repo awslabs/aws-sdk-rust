@@ -3,6 +3,23 @@ pub use crate::operation::create_deployment_config::_create_deployment_config_ou
 
 pub use crate::operation::create_deployment_config::_create_deployment_config_input::CreateDeploymentConfigInputBuilder;
 
+impl CreateDeploymentConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_deployment_config::CreateDeploymentConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_deployment_config::CreateDeploymentConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_deployment_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateDeploymentConfig`.
 ///
 /// <p> Creates a deployment configuration. </p>

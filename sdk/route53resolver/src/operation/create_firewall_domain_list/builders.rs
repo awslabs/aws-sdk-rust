@@ -3,6 +3,23 @@ pub use crate::operation::create_firewall_domain_list::_create_firewall_domain_l
 
 pub use crate::operation::create_firewall_domain_list::_create_firewall_domain_list_input::CreateFirewallDomainListInputBuilder;
 
+impl CreateFirewallDomainListInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_firewall_domain_list::CreateFirewallDomainListOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_firewall_domain_list::CreateFirewallDomainListError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_firewall_domain_list();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateFirewallDomainList`.
 ///
 /// <p>Creates an empty firewall domain list for use in DNS Firewall rules. You can populate the domains for the new list with a file, using <code>ImportFirewallDomains</code>, or with domain strings, using <code>UpdateFirewallDomains</code>. </p>

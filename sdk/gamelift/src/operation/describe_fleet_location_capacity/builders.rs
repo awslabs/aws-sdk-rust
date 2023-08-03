@@ -3,6 +3,23 @@ pub use crate::operation::describe_fleet_location_capacity::_describe_fleet_loca
 
 pub use crate::operation::describe_fleet_location_capacity::_describe_fleet_location_capacity_input::DescribeFleetLocationCapacityInputBuilder;
 
+impl DescribeFleetLocationCapacityInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_fleet_location_capacity::DescribeFleetLocationCapacityOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_fleet_location_capacity::DescribeFleetLocationCapacityError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_fleet_location_capacity();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeFleetLocationCapacity`.
 ///
 /// <p>Retrieves the resource capacity settings for a fleet location. The data returned includes the current capacity (number of EC2 instances) and some scaling settings for the requested fleet location. Use this operation to retrieve capacity information for a fleet's remote location or home Region (you can also retrieve home Region capacity by calling <code>DescribeFleetCapacity</code>).</p>

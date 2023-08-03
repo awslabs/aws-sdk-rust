@@ -3,6 +3,23 @@ pub use crate::operation::test_role::_test_role_output::TestRoleOutputBuilder;
 
 pub use crate::operation::test_role::_test_role_input::TestRoleInputBuilder;
 
+impl TestRoleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::test_role::TestRoleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::test_role::TestRoleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.test_role();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `TestRole`.
 ///
 /// <p>The TestRole operation tests the IAM role used to create the pipeline.</p>

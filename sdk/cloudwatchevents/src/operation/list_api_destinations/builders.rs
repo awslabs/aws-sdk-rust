@@ -3,6 +3,23 @@ pub use crate::operation::list_api_destinations::_list_api_destinations_output::
 
 pub use crate::operation::list_api_destinations::_list_api_destinations_input::ListApiDestinationsInputBuilder;
 
+impl ListApiDestinationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_api_destinations::ListApiDestinationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_api_destinations::ListApiDestinationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_api_destinations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListApiDestinations`.
 ///
 /// <p>Retrieves a list of API destination in the account in the current Region.</p>

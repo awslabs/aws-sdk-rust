@@ -3,6 +3,23 @@ pub use crate::operation::put_bucket_website::_put_bucket_website_output::PutBuc
 
 pub use crate::operation::put_bucket_website::_put_bucket_website_input::PutBucketWebsiteInputBuilder;
 
+impl PutBucketWebsiteInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_bucket_website::PutBucketWebsiteOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_bucket_website::PutBucketWebsiteError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_bucket_website();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutBucketWebsite`.
 ///
 /// <p>Sets the configuration of the website that is specified in the <code>website</code> subresource. To configure a bucket as a website, you can add this subresource on the bucket with website configuration information such as the file name of the index document and any redirect rules. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">Hosting Websites on Amazon S3</a>.</p>

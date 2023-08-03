@@ -3,6 +3,23 @@ pub use crate::operation::get_device_position_history::_get_device_position_hist
 
 pub use crate::operation::get_device_position_history::_get_device_position_history_input::GetDevicePositionHistoryInputBuilder;
 
+impl GetDevicePositionHistoryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_device_position_history::GetDevicePositionHistoryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_device_position_history::GetDevicePositionHistoryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_device_position_history();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetDevicePositionHistory`.
 ///
 /// <p>Retrieves the device position history from a tracker resource within a specified range of time.</p> <note>

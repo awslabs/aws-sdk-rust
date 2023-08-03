@@ -3,6 +3,23 @@ pub use crate::operation::create_cache_parameter_group::_create_cache_parameter_
 
 pub use crate::operation::create_cache_parameter_group::_create_cache_parameter_group_input::CreateCacheParameterGroupInputBuilder;
 
+impl CreateCacheParameterGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_cache_parameter_group::CreateCacheParameterGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_cache_parameter_group::CreateCacheParameterGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_cache_parameter_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateCacheParameterGroup`.
 ///
 /// <p>Creates a new Amazon ElastiCache cache parameter group. An ElastiCache cache parameter group is a collection of parameters and their values that are applied to all of the nodes in any cluster or replication group using the CacheParameterGroup.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_sampling_statistic_summaries::_get_sampling_statis
 
 pub use crate::operation::get_sampling_statistic_summaries::_get_sampling_statistic_summaries_input::GetSamplingStatisticSummariesInputBuilder;
 
+impl GetSamplingStatisticSummariesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_sampling_statistic_summaries::GetSamplingStatisticSummariesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_sampling_statistic_summaries::GetSamplingStatisticSummariesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_sampling_statistic_summaries();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetSamplingStatisticSummaries`.
 ///
 /// <p>Retrieves information about recent sampling results for all sampling rules.</p>

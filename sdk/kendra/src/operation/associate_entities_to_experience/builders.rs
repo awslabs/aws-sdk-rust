@@ -3,6 +3,23 @@ pub use crate::operation::associate_entities_to_experience::_associate_entities_
 
 pub use crate::operation::associate_entities_to_experience::_associate_entities_to_experience_input::AssociateEntitiesToExperienceInputBuilder;
 
+impl AssociateEntitiesToExperienceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_entities_to_experience::AssociateEntitiesToExperienceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_entities_to_experience::AssociateEntitiesToExperienceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_entities_to_experience();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateEntitiesToExperience`.
 ///
 /// <p>Grants users or groups in your IAM Identity Center identity source access to your Amazon Kendra experience. You can create an Amazon Kendra experience such as a search application. For more information on creating a search application experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building a search experience with no code</a>.</p>

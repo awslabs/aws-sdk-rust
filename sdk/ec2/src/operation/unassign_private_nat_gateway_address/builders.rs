@@ -3,6 +3,17 @@ pub use crate::operation::unassign_private_nat_gateway_address::_unassign_privat
 
 pub use crate::operation::unassign_private_nat_gateway_address::_unassign_private_nat_gateway_address_input::UnassignPrivateNatGatewayAddressInputBuilder;
 
+impl UnassignPrivateNatGatewayAddressInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressOutput, ::aws_smithy_http::result::SdkError<crate::operation::unassign_private_nat_gateway_address::UnassignPrivateNatGatewayAddressError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.unassign_private_nat_gateway_address();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UnassignPrivateNatGatewayAddress`.
 ///
 /// <p>Unassigns secondary private IPv4 addresses from a private NAT gateway. You cannot unassign your primary private IP. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-edit-secondary">Edit secondary IP address associations</a> in the <i>Amazon VPC User Guide</i>.</p>

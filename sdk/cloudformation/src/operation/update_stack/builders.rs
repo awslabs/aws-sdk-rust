@@ -3,6 +3,23 @@ pub use crate::operation::update_stack::_update_stack_output::UpdateStackOutputB
 
 pub use crate::operation::update_stack::_update_stack_input::UpdateStackInputBuilder;
 
+impl UpdateStackInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_stack::UpdateStackOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_stack::UpdateStackError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_stack();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateStack`.
 ///
 /// <p>Updates a stack as specified in the template. After the call completes successfully, the stack update starts. You can check the status of the stack through the <code>DescribeStacks</code> action.</p>

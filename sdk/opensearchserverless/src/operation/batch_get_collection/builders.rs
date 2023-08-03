@@ -3,6 +3,23 @@ pub use crate::operation::batch_get_collection::_batch_get_collection_output::Ba
 
 pub use crate::operation::batch_get_collection::_batch_get_collection_input::BatchGetCollectionInputBuilder;
 
+impl BatchGetCollectionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_collection::BatchGetCollectionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_get_collection::BatchGetCollectionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_get_collection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchGetCollection`.
 ///
 /// <p>Returns attributes for one or more collections, including the collection endpoint and the OpenSearch Dashboards endpoint. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html">Creating and managing Amazon OpenSearch Serverless collections</a>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_email_identity_policy::_delete_email_identity_p
 
 pub use crate::operation::delete_email_identity_policy::_delete_email_identity_policy_input::DeleteEmailIdentityPolicyInputBuilder;
 
+impl DeleteEmailIdentityPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_email_identity_policy::DeleteEmailIdentityPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_email_identity_policy::DeleteEmailIdentityPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_email_identity_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteEmailIdentityPolicy`.
 ///
 /// <p>Deletes the specified sending authorization policy for the given identity (an email address or a domain). This API returns successfully even if a policy with the specified name does not exist.</p> <note>

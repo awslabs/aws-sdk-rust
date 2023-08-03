@@ -3,6 +3,23 @@ pub use crate::operation::set_subscription_attributes::_set_subscription_attribu
 
 pub use crate::operation::set_subscription_attributes::_set_subscription_attributes_input::SetSubscriptionAttributesInputBuilder;
 
+impl SetSubscriptionAttributesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::set_subscription_attributes::SetSubscriptionAttributesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::set_subscription_attributes::SetSubscriptionAttributesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.set_subscription_attributes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SetSubscriptionAttributes`.
 ///
 /// <p>Allows a subscription owner to set an attribute of the subscription to a new value.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::modify_cache_cluster::_modify_cache_cluster_output::Mo
 
 pub use crate::operation::modify_cache_cluster::_modify_cache_cluster_input::ModifyCacheClusterInputBuilder;
 
+impl ModifyCacheClusterInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_cache_cluster::ModifyCacheClusterOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_cache_cluster::ModifyCacheClusterError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_cache_cluster();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyCacheCluster`.
 ///
 /// <p>Modifies the settings for a cluster. You can use this operation to change one or more cluster configuration parameters by specifying the parameters and the new values.</p>

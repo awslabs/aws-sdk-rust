@@ -3,6 +3,23 @@ pub use crate::operation::deprecate_thing_type::_deprecate_thing_type_output::De
 
 pub use crate::operation::deprecate_thing_type::_deprecate_thing_type_input::DeprecateThingTypeInputBuilder;
 
+impl DeprecateThingTypeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::deprecate_thing_type::DeprecateThingTypeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::deprecate_thing_type::DeprecateThingTypeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.deprecate_thing_type();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeprecateThingType`.
 ///
 /// <p>Deprecates a thing type. You can not associate new things with deprecated thing type.</p>

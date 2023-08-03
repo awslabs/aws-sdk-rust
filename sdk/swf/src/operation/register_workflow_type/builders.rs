@@ -3,6 +3,23 @@ pub use crate::operation::register_workflow_type::_register_workflow_type_output
 
 pub use crate::operation::register_workflow_type::_register_workflow_type_input::RegisterWorkflowTypeInputBuilder;
 
+impl RegisterWorkflowTypeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::register_workflow_type::RegisterWorkflowTypeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::register_workflow_type::RegisterWorkflowTypeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.register_workflow_type();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RegisterWorkflowType`.
 ///
 /// <p>Registers a new <i>workflow type</i> and its configuration settings in the specified domain.</p>

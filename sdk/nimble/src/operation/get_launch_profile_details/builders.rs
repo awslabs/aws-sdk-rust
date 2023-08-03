@@ -3,6 +3,23 @@ pub use crate::operation::get_launch_profile_details::_get_launch_profile_detail
 
 pub use crate::operation::get_launch_profile_details::_get_launch_profile_details_input::GetLaunchProfileDetailsInputBuilder;
 
+impl GetLaunchProfileDetailsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_launch_profile_details::GetLaunchProfileDetailsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_launch_profile_details::GetLaunchProfileDetailsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_launch_profile_details();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetLaunchProfileDetails`.
 ///
 /// <p>Launch profile details include the launch profile resource and summary information of resources that are used by, or available to, the launch profile. This includes the name and description of all studio components used by the launch profiles, and the name and description of streaming images that can be used with this launch profile.</p>

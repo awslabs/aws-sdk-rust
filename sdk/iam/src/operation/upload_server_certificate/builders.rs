@@ -3,6 +3,23 @@ pub use crate::operation::upload_server_certificate::_upload_server_certificate_
 
 pub use crate::operation::upload_server_certificate::_upload_server_certificate_input::UploadServerCertificateInputBuilder;
 
+impl UploadServerCertificateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::upload_server_certificate::UploadServerCertificateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::upload_server_certificate::UploadServerCertificateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.upload_server_certificate();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UploadServerCertificate`.
 ///
 /// <p>Uploads a server certificate entity for the Amazon Web Services account. The server certificate entity includes a public key certificate, a private key, and an optional certificate chain, which should all be PEM-encoded.</p>

@@ -3,6 +3,17 @@ pub use crate::operation::update_identity_provider_settings::_update_identity_pr
 
 pub use crate::operation::update_identity_provider_settings::_update_identity_provider_settings_input::UpdateIdentityProviderSettingsInputBuilder;
 
+impl UpdateIdentityProviderSettingsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_identity_provider_settings::UpdateIdentityProviderSettingsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.update_identity_provider_settings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateIdentityProviderSettings`.
 ///
 /// <p>Updates additional product configuration settings for the registered identity provider.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_scram_secrets::_list_scram_secrets_output::ListSc
 
 pub use crate::operation::list_scram_secrets::_list_scram_secrets_input::ListScramSecretsInputBuilder;
 
+impl ListScramSecretsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_scram_secrets::ListScramSecretsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_scram_secrets::ListScramSecretsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_scram_secrets();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListScramSecrets`.
 ///
 /// <p>Returns a list of the Scram Secrets associated with an Amazon MSK cluster.</p>

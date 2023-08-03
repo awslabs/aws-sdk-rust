@@ -3,6 +3,23 @@ pub use crate::operation::associate_default_view::_associate_default_view_output
 
 pub use crate::operation::associate_default_view::_associate_default_view_input::AssociateDefaultViewInputBuilder;
 
+impl AssociateDefaultViewInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_default_view::AssociateDefaultViewOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_default_view::AssociateDefaultViewError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_default_view();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateDefaultView`.
 ///
 /// <p>Sets the specified view as the default for the Amazon Web Services Region in which you call this operation. When a user performs a <code>Search</code> that doesn't explicitly specify which view to use, then Amazon Web Services Resource Explorer automatically chooses this default view for searches performed in this Amazon Web Services Region.</p>

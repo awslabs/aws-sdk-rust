@@ -3,6 +3,17 @@ pub use crate::operation::list_tls_inspection_configurations::_list_tls_inspecti
 
 pub use crate::operation::list_tls_inspection_configurations::_list_tls_inspection_configurations_input::ListTlsInspectionConfigurationsInputBuilder;
 
+impl ListTlsInspectionConfigurationsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_tls_inspection_configurations::ListTlsInspectionConfigurationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_tls_inspection_configurations::ListTLSInspectionConfigurationsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_tls_inspection_configurations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListTLSInspectionConfigurations`.
 ///
 /// <p>Retrieves the metadata for the TLS inspection configurations that you have defined. Depending on your setting for max results and the number of TLS inspection configurations, a single call might not return the full list.</p>

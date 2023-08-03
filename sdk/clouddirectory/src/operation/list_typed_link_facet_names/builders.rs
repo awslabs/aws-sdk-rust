@@ -3,6 +3,23 @@ pub use crate::operation::list_typed_link_facet_names::_list_typed_link_facet_na
 
 pub use crate::operation::list_typed_link_facet_names::_list_typed_link_facet_names_input::ListTypedLinkFacetNamesInputBuilder;
 
+impl ListTypedLinkFacetNamesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_typed_link_facet_names::ListTypedLinkFacetNamesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_typed_link_facet_names::ListTypedLinkFacetNamesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_typed_link_facet_names();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListTypedLinkFacetNames`.
 ///
 /// <p>Returns a paginated list of <code>TypedLink</code> facet names for a particular schema. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>

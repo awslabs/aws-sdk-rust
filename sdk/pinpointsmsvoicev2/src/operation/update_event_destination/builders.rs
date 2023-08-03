@@ -3,6 +3,23 @@ pub use crate::operation::update_event_destination::_update_event_destination_ou
 
 pub use crate::operation::update_event_destination::_update_event_destination_input::UpdateEventDestinationInputBuilder;
 
+impl UpdateEventDestinationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_event_destination::UpdateEventDestinationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_event_destination::UpdateEventDestinationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_event_destination();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateEventDestination`.
 ///
 /// <p>Updates an existing event destination in a configuration set. You can update the IAM role ARN for CloudWatch Logs and Kinesis Data Firehose. You can also enable or disable the event destination.</p>

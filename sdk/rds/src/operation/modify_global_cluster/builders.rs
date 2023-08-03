@@ -3,6 +3,23 @@ pub use crate::operation::modify_global_cluster::_modify_global_cluster_output::
 
 pub use crate::operation::modify_global_cluster::_modify_global_cluster_input::ModifyGlobalClusterInputBuilder;
 
+impl ModifyGlobalClusterInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_global_cluster::ModifyGlobalClusterOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_global_cluster::ModifyGlobalClusterError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_global_cluster();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyGlobalCluster`.
 ///
 /// <p>Modifies a setting for an Amazon Aurora global cluster. You can change one or more database configuration parameters by specifying these parameters and the new values in the request. For more information on Amazon Aurora, see <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html"> What is Amazon Aurora?</a> in the <i>Amazon Aurora User Guide</i>.</p> <note>

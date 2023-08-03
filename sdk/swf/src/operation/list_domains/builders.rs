@@ -3,6 +3,23 @@ pub use crate::operation::list_domains::_list_domains_output::ListDomainsOutputB
 
 pub use crate::operation::list_domains::_list_domains_input::ListDomainsInputBuilder;
 
+impl ListDomainsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_domains::ListDomainsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_domains::ListDomainsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_domains();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDomains`.
 ///
 /// <p>Returns the list of domains registered in the account. The results may be split into multiple pages. To retrieve subsequent pages, make the call again using the nextPageToken returned by the initial call.</p> <note>

@@ -3,6 +3,23 @@ pub use crate::operation::list_device_identifiers::_list_device_identifiers_outp
 
 pub use crate::operation::list_device_identifiers::_list_device_identifiers_input::ListDeviceIdentifiersInputBuilder;
 
+impl ListDeviceIdentifiersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_device_identifiers::ListDeviceIdentifiersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_device_identifiers::ListDeviceIdentifiersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_device_identifiers();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDeviceIdentifiers`.
 ///
 /// <p>Lists device identifiers. Add filters to your request to return a more specific list of results. Use filters to match the Amazon Resource Name (ARN) of an order, the status of device identifiers, or the ARN of the traffic group.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::migrate_workspace::_migrate_workspace_output::MigrateW
 
 pub use crate::operation::migrate_workspace::_migrate_workspace_input::MigrateWorkspaceInputBuilder;
 
+impl MigrateWorkspaceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::migrate_workspace::MigrateWorkspaceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::migrate_workspace::MigrateWorkspaceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.migrate_workspace();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `MigrateWorkspace`.
 ///
 /// <p>Migrates a WorkSpace from one operating system or bundle type to another, while retaining the data on the user volume.</p>

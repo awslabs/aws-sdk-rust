@@ -3,6 +3,23 @@ pub use crate::operation::list_custom_routing_port_mappings::_list_custom_routin
 
 pub use crate::operation::list_custom_routing_port_mappings::_list_custom_routing_port_mappings_input::ListCustomRoutingPortMappingsInputBuilder;
 
+impl ListCustomRoutingPortMappingsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_custom_routing_port_mappings::ListCustomRoutingPortMappingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_custom_routing_port_mappings::ListCustomRoutingPortMappingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_custom_routing_port_mappings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListCustomRoutingPortMappings`.
 ///
 /// <p>Provides a complete mapping from the public accelerator IP address and port to destination EC2 instance IP addresses and ports in the virtual public cloud (VPC) subnet endpoint for a custom routing accelerator. For each subnet endpoint that you add, Global Accelerator creates a new static port mapping for the accelerator. The port mappings don't change after Global Accelerator generates them, so you can retrieve and cache the full mapping on your servers. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_resource_config_history::_get_resource_config_hist
 
 pub use crate::operation::get_resource_config_history::_get_resource_config_history_input::GetResourceConfigHistoryInputBuilder;
 
+impl GetResourceConfigHistoryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_resource_config_history::GetResourceConfigHistoryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_resource_config_history::GetResourceConfigHistoryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_resource_config_history();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetResourceConfigHistory`.
 ///
 /// <p>Returns a list of <code>ConfigurationItems</code> for the specified resource. The list contains details about each state of the resource during the specified time interval. If you specified a retention period to retain your <code>ConfigurationItems</code> between a minimum of 30 days and a maximum of 7 years (2557 days), Config returns the <code>ConfigurationItems</code> for the specified retention period. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_policy_principals::_list_policy_principals_output
 
 pub use crate::operation::list_policy_principals::_list_policy_principals_input::ListPolicyPrincipalsInputBuilder;
 
+impl ListPolicyPrincipalsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_policy_principals::ListPolicyPrincipalsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_policy_principals::ListPolicyPrincipalsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_policy_principals();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListPolicyPrincipals`.
 ///
 /// <p>Lists the principals associated with the specified policy.</p>

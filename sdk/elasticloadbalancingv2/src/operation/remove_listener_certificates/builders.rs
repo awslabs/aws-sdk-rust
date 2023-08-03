@@ -3,6 +3,23 @@ pub use crate::operation::remove_listener_certificates::_remove_listener_certifi
 
 pub use crate::operation::remove_listener_certificates::_remove_listener_certificates_input::RemoveListenerCertificatesInputBuilder;
 
+impl RemoveListenerCertificatesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::remove_listener_certificates::RemoveListenerCertificatesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::remove_listener_certificates::RemoveListenerCertificatesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.remove_listener_certificates();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RemoveListenerCertificates`.
 ///
 /// <p>Removes the specified certificate from the certificate list for the specified HTTPS or TLS listener.</p>

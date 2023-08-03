@@ -3,6 +3,23 @@ pub use crate::operation::search_local_gateway_routes::_search_local_gateway_rou
 
 pub use crate::operation::search_local_gateway_routes::_search_local_gateway_routes_input::SearchLocalGatewayRoutesInputBuilder;
 
+impl SearchLocalGatewayRoutesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::search_local_gateway_routes::SearchLocalGatewayRoutesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::search_local_gateway_routes::SearchLocalGatewayRoutesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.search_local_gateway_routes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SearchLocalGatewayRoutes`.
 ///
 /// <p>Searches for routes in the specified local gateway route table.</p>

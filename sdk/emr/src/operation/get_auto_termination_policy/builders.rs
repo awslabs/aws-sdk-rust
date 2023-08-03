@@ -3,6 +3,23 @@ pub use crate::operation::get_auto_termination_policy::_get_auto_termination_pol
 
 pub use crate::operation::get_auto_termination_policy::_get_auto_termination_policy_input::GetAutoTerminationPolicyInputBuilder;
 
+impl GetAutoTerminationPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_auto_termination_policy::GetAutoTerminationPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_auto_termination_policy::GetAutoTerminationPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_auto_termination_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetAutoTerminationPolicy`.
 ///
 /// <p>Returns the auto-termination policy for an Amazon EMR cluster.</p>

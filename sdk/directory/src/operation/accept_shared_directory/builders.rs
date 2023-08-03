@@ -3,6 +3,23 @@ pub use crate::operation::accept_shared_directory::_accept_shared_directory_outp
 
 pub use crate::operation::accept_shared_directory::_accept_shared_directory_input::AcceptSharedDirectoryInputBuilder;
 
+impl AcceptSharedDirectoryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::accept_shared_directory::AcceptSharedDirectoryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::accept_shared_directory::AcceptSharedDirectoryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.accept_shared_directory();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AcceptSharedDirectory`.
 ///
 /// <p>Accepts a directory sharing request that was sent from the directory owner account.</p>

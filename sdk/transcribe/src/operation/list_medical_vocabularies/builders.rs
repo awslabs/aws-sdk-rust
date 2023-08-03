@@ -3,6 +3,23 @@ pub use crate::operation::list_medical_vocabularies::_list_medical_vocabularies_
 
 pub use crate::operation::list_medical_vocabularies::_list_medical_vocabularies_input::ListMedicalVocabulariesInputBuilder;
 
+impl ListMedicalVocabulariesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_medical_vocabularies::ListMedicalVocabulariesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_medical_vocabularies::ListMedicalVocabulariesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_medical_vocabularies();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListMedicalVocabularies`.
 ///
 /// <p>Provides a list of custom medical vocabularies that match the specified criteria. If no criteria are specified, all custom medical vocabularies are returned.</p>

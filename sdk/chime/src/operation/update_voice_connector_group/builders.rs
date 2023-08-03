@@ -3,6 +3,23 @@ pub use crate::operation::update_voice_connector_group::_update_voice_connector_
 
 pub use crate::operation::update_voice_connector_group::_update_voice_connector_group_input::UpdateVoiceConnectorGroupInputBuilder;
 
+impl UpdateVoiceConnectorGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_voice_connector_group::UpdateVoiceConnectorGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_voice_connector_group::UpdateVoiceConnectorGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_voice_connector_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateVoiceConnectorGroup`.
 ///
 /// <p>Updates details of the specified Amazon Chime Voice Connector group, such as the name and Amazon Chime Voice Connector priority ranking.</p> <important>

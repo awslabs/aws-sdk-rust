@@ -3,6 +3,23 @@ pub use crate::operation::get_asset_property_value_history::_get_asset_property_
 
 pub use crate::operation::get_asset_property_value_history::_get_asset_property_value_history_input::GetAssetPropertyValueHistoryInputBuilder;
 
+impl GetAssetPropertyValueHistoryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_asset_property_value_history::GetAssetPropertyValueHistoryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_asset_property_value_history::GetAssetPropertyValueHistoryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_asset_property_value_history();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetAssetPropertyValueHistory`.
 ///
 /// <p>Gets the history of an asset property's values. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#historical-values">Querying historical values</a> in the <i>IoT SiteWise User Guide</i>.</p>

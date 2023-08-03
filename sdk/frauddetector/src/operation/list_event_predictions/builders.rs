@@ -3,6 +3,23 @@ pub use crate::operation::list_event_predictions::_list_event_predictions_output
 
 pub use crate::operation::list_event_predictions::_list_event_predictions_input::ListEventPredictionsInputBuilder;
 
+impl ListEventPredictionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_event_predictions::ListEventPredictionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_event_predictions::ListEventPredictionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_event_predictions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListEventPredictions`.
 ///
 /// <p>Gets a list of past predictions. The list can be filtered by detector ID, detector version ID, event ID, event type, or by specifying a time period. If filter is not specified, the most recent prediction is returned.</p>

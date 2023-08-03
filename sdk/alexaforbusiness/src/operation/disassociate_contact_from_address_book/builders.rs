@@ -3,6 +3,17 @@ pub use crate::operation::disassociate_contact_from_address_book::_disassociate_
 
 pub use crate::operation::disassociate_contact_from_address_book::_disassociate_contact_from_address_book_input::DisassociateContactFromAddressBookInputBuilder;
 
+impl DisassociateContactFromAddressBookInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::disassociate_contact_from_address_book::DisassociateContactFromAddressBookOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_contact_from_address_book::DisassociateContactFromAddressBookError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.disassociate_contact_from_address_book();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateContactFromAddressBook`.
 ///
 /// <p>Disassociates a contact from a given address book.</p>

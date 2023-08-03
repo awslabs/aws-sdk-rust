@@ -3,6 +3,17 @@ pub use crate::operation::start_medical_stream_transcription::_start_medical_str
 
 pub use crate::operation::start_medical_stream_transcription::_start_medical_stream_transcription_input::StartMedicalStreamTranscriptionInputBuilder;
 
+impl StartMedicalStreamTranscriptionInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionOutput, ::aws_smithy_http::result::SdkError<crate::operation::start_medical_stream_transcription::StartMedicalStreamTranscriptionError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.start_medical_stream_transcription();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartMedicalStreamTranscription`.
 ///
 /// <p>Starts a bidirectional HTTP/2 or WebSocket stream where audio is streamed to Amazon Transcribe Medical and the transcription results are streamed to your application.</p>

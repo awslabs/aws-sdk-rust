@@ -3,6 +3,23 @@ pub use crate::operation::get_rotation::_get_rotation_output::GetRotationOutputB
 
 pub use crate::operation::get_rotation::_get_rotation_input::GetRotationInputBuilder;
 
+impl GetRotationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_rotation::GetRotationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_rotation::GetRotationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_rotation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetRotation`.
 ///
 /// <p>Retrieves information about an on-call rotation.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_verified_access_endpoint::_create_verified_acce
 
 pub use crate::operation::create_verified_access_endpoint::_create_verified_access_endpoint_input::CreateVerifiedAccessEndpointInputBuilder;
 
+impl CreateVerifiedAccessEndpointInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_verified_access_endpoint::CreateVerifiedAccessEndpointOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_verified_access_endpoint::CreateVerifiedAccessEndpointError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_verified_access_endpoint();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateVerifiedAccessEndpoint`.
 ///
 /// <p>An Amazon Web Services Verified Access endpoint is where you define your application along with an optional endpoint-level access policy.</p>

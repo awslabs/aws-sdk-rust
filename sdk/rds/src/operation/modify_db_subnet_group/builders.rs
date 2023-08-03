@@ -3,6 +3,23 @@ pub use crate::operation::modify_db_subnet_group::_modify_db_subnet_group_output
 
 pub use crate::operation::modify_db_subnet_group::_modify_db_subnet_group_input::ModifyDbSubnetGroupInputBuilder;
 
+impl ModifyDbSubnetGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_db_subnet_group::ModifyDbSubnetGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_db_subnet_group::ModifyDBSubnetGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_db_subnet_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyDBSubnetGroup`.
 ///
 /// <p>Modifies an existing DB subnet group. DB subnet groups must contain at least one subnet in at least two AZs in the Amazon Web Services Region.</p>

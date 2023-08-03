@@ -3,6 +3,17 @@ pub use crate::operation::list_permission_set_provisioning_status::_list_permiss
 
 pub use crate::operation::list_permission_set_provisioning_status::_list_permission_set_provisioning_status_input::ListPermissionSetProvisioningStatusInputBuilder;
 
+impl ListPermissionSetProvisioningStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_permission_set_provisioning_status::ListPermissionSetProvisioningStatusOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_permission_set_provisioning_status::ListPermissionSetProvisioningStatusError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_permission_set_provisioning_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListPermissionSetProvisioningStatus`.
 ///
 /// <p>Lists the status of the permission set provisioning requests for a specified IAM Identity Center instance.</p>

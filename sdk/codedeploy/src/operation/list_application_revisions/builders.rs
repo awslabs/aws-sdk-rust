@@ -3,6 +3,23 @@ pub use crate::operation::list_application_revisions::_list_application_revision
 
 pub use crate::operation::list_application_revisions::_list_application_revisions_input::ListApplicationRevisionsInputBuilder;
 
+impl ListApplicationRevisionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_application_revisions::ListApplicationRevisionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_application_revisions::ListApplicationRevisionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_application_revisions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListApplicationRevisions`.
 ///
 /// <p>Lists information about revisions for an application.</p>

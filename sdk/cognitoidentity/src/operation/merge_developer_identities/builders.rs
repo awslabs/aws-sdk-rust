@@ -3,6 +3,23 @@ pub use crate::operation::merge_developer_identities::_merge_developer_identitie
 
 pub use crate::operation::merge_developer_identities::_merge_developer_identities_input::MergeDeveloperIdentitiesInputBuilder;
 
+impl MergeDeveloperIdentitiesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::merge_developer_identities::MergeDeveloperIdentitiesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::merge_developer_identities::MergeDeveloperIdentitiesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.merge_developer_identities();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `MergeDeveloperIdentities`.
 ///
 /// <p>Merges two users having different <code>IdentityId</code>s, existing in the same identity pool, and identified by the same developer provider. You can use this action to request that discrete users be merged and identified as a single user in the Cognito environment. Cognito associates the given source user (<code>SourceUserIdentifier</code>) with the <code>IdentityId</code> of the <code>DestinationUserIdentifier</code>. Only developer-authenticated users can be merged. If the users to be merged are associated with the same public provider, but as two different users, an exception will be thrown.</p>

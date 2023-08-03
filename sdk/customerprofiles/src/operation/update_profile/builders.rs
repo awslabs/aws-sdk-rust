@@ -3,6 +3,23 @@ pub use crate::operation::update_profile::_update_profile_output::UpdateProfileO
 
 pub use crate::operation::update_profile::_update_profile_input::UpdateProfileInputBuilder;
 
+impl UpdateProfileInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_profile::UpdateProfileOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_profile::UpdateProfileError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_profile();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateProfile`.
 ///
 /// <p>Updates the properties of a profile. The ProfileId is required for updating a customer profile.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_ipv6_pools::_describe_ipv6_pools_output::Desc
 
 pub use crate::operation::describe_ipv6_pools::_describe_ipv6_pools_input::DescribeIpv6PoolsInputBuilder;
 
+impl DescribeIpv6PoolsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_ipv6_pools::DescribeIpv6PoolsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_ipv6_pools::DescribeIpv6PoolsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_ipv6_pools();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeIpv6Pools`.
 ///
 /// <p>Describes your IPv6 address pools.</p>

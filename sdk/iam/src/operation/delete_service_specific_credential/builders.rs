@@ -3,6 +3,17 @@ pub use crate::operation::delete_service_specific_credential::_delete_service_sp
 
 pub use crate::operation::delete_service_specific_credential::_delete_service_specific_credential_input::DeleteServiceSpecificCredentialInputBuilder;
 
+impl DeleteServiceSpecificCredentialInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_service_specific_credential::DeleteServiceSpecificCredentialOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_service_specific_credential::DeleteServiceSpecificCredentialError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.delete_service_specific_credential();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteServiceSpecificCredential`.
 ///
 /// <p>Deletes the specified service-specific credential.</p>

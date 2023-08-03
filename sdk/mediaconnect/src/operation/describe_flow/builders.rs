@@ -3,6 +3,23 @@ pub use crate::operation::describe_flow::_describe_flow_output::DescribeFlowOutp
 
 pub use crate::operation::describe_flow::_describe_flow_input::DescribeFlowInputBuilder;
 
+impl DescribeFlowInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_flow::DescribeFlowOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_flow::DescribeFlowError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_flow();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeFlow`.
 ///
 /// Displays the details of a flow. The response includes the flow ARN, name, and Availability Zone, as well as details about the source, outputs, and entitlements.

@@ -3,6 +3,23 @@ pub use crate::operation::describe_batch_segment_job::_describe_batch_segment_jo
 
 pub use crate::operation::describe_batch_segment_job::_describe_batch_segment_job_input::DescribeBatchSegmentJobInputBuilder;
 
+impl DescribeBatchSegmentJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_batch_segment_job::DescribeBatchSegmentJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_batch_segment_job::DescribeBatchSegmentJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_batch_segment_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeBatchSegmentJob`.
 ///
 /// <p>Gets the properties of a batch segment job including name, Amazon Resource Name (ARN), status, input and output configurations, and the ARN of the solution version used to generate segments.</p>

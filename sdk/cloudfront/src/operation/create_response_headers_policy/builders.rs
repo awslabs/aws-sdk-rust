@@ -3,6 +3,23 @@ pub use crate::operation::create_response_headers_policy::_create_response_heade
 
 pub use crate::operation::create_response_headers_policy::_create_response_headers_policy_input::CreateResponseHeadersPolicyInputBuilder;
 
+impl CreateResponseHeadersPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_response_headers_policy::CreateResponseHeadersPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_response_headers_policy::CreateResponseHeadersPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_response_headers_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateResponseHeadersPolicy`.
 ///
 /// <p>Creates a response headers policy.</p>

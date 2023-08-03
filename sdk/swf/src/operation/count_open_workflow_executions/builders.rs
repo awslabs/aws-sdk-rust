@@ -3,6 +3,23 @@ pub use crate::operation::count_open_workflow_executions::_count_open_workflow_e
 
 pub use crate::operation::count_open_workflow_executions::_count_open_workflow_executions_input::CountOpenWorkflowExecutionsInputBuilder;
 
+impl CountOpenWorkflowExecutionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::count_open_workflow_executions::CountOpenWorkflowExecutionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::count_open_workflow_executions::CountOpenWorkflowExecutionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.count_open_workflow_executions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CountOpenWorkflowExecutions`.
 ///
 /// <p>Returns the number of open workflow executions within the given domain that meet the specified filtering criteria.</p> <note>

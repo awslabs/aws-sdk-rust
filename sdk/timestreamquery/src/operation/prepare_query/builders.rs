@@ -3,6 +3,23 @@ pub use crate::operation::prepare_query::_prepare_query_output::PrepareQueryOutp
 
 pub use crate::operation::prepare_query::_prepare_query_input::PrepareQueryInputBuilder;
 
+impl PrepareQueryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::prepare_query::PrepareQueryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::prepare_query::PrepareQueryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.prepare_query();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PrepareQuery`.
 ///
 /// <p>A synchronous operation that allows you to submit a query with parameters to be stored by Timestream for later running. Timestream only supports using this operation with the <code>PrepareQueryRequest$ValidateOnly</code> set to <code>true</code>. </p>

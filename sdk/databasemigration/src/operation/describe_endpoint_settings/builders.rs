@@ -3,6 +3,23 @@ pub use crate::operation::describe_endpoint_settings::_describe_endpoint_setting
 
 pub use crate::operation::describe_endpoint_settings::_describe_endpoint_settings_input::DescribeEndpointSettingsInputBuilder;
 
+impl DescribeEndpointSettingsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_endpoint_settings::DescribeEndpointSettingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_endpoint_settings::DescribeEndpointSettingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_endpoint_settings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeEndpointSettings`.
 ///
 /// <p>Returns information about the possible endpoint settings available when you create an endpoint for a specific database engine.</p>

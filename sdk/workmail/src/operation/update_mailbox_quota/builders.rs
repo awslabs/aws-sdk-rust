@@ -3,6 +3,23 @@ pub use crate::operation::update_mailbox_quota::_update_mailbox_quota_output::Up
 
 pub use crate::operation::update_mailbox_quota::_update_mailbox_quota_input::UpdateMailboxQuotaInputBuilder;
 
+impl UpdateMailboxQuotaInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_mailbox_quota::UpdateMailboxQuotaOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_mailbox_quota::UpdateMailboxQuotaError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_mailbox_quota();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateMailboxQuota`.
 ///
 /// <p>Updates a user's current mailbox quota for a specified organization and user.</p>

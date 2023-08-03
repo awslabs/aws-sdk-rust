@@ -3,6 +3,23 @@ pub use crate::operation::get_registry::_get_registry_output::GetRegistryOutputB
 
 pub use crate::operation::get_registry::_get_registry_input::GetRegistryInputBuilder;
 
+impl GetRegistryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_registry::GetRegistryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_registry::GetRegistryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_registry();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetRegistry`.
 ///
 /// <p>Describes the specified registry in detail.</p>

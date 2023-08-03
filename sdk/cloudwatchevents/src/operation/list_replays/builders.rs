@@ -3,6 +3,23 @@ pub use crate::operation::list_replays::_list_replays_output::ListReplaysOutputB
 
 pub use crate::operation::list_replays::_list_replays_input::ListReplaysInputBuilder;
 
+impl ListReplaysInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_replays::ListReplaysOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_replays::ListReplaysError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_replays();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListReplays`.
 ///
 /// <p>Lists your replays. You can either list all the replays or you can provide a prefix to match to the replay names. Filter parameters are exclusive.</p>

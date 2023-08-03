@@ -3,6 +3,23 @@ pub use crate::operation::get_event_selectors::_get_event_selectors_output::GetE
 
 pub use crate::operation::get_event_selectors::_get_event_selectors_input::GetEventSelectorsInputBuilder;
 
+impl GetEventSelectorsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_event_selectors::GetEventSelectorsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_event_selectors::GetEventSelectorsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_event_selectors();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetEventSelectors`.
 ///
 /// <p>Describes the settings for the event selectors that you configured for your trail. The information returned for your event selectors includes the following:</p>

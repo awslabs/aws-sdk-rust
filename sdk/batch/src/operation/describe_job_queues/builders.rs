@@ -3,6 +3,23 @@ pub use crate::operation::describe_job_queues::_describe_job_queues_output::Desc
 
 pub use crate::operation::describe_job_queues::_describe_job_queues_input::DescribeJobQueuesInputBuilder;
 
+impl DescribeJobQueuesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_job_queues::DescribeJobQueuesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_job_queues::DescribeJobQueuesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_job_queues();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeJobQueues`.
 ///
 /// <p>Describes one or more of your job queues.</p>

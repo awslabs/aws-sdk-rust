@@ -3,6 +3,23 @@ pub use crate::operation::create_matchmaking_configuration::_create_matchmaking_
 
 pub use crate::operation::create_matchmaking_configuration::_create_matchmaking_configuration_input::CreateMatchmakingConfigurationInputBuilder;
 
+impl CreateMatchmakingConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_matchmaking_configuration::CreateMatchmakingConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_matchmaking_configuration::CreateMatchmakingConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_matchmaking_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateMatchmakingConfiguration`.
 ///
 /// <p>Defines a new matchmaking configuration for use with FlexMatch. Whether your are using FlexMatch with Amazon GameLift hosting or as a standalone matchmaking service, the matchmaking configuration sets out rules for matching players and forming teams. If you're also using Amazon GameLift hosting, it defines how to start game sessions for each match. Your matchmaking system can use multiple configurations to handle different game scenarios. All matchmaking requests identify the matchmaking configuration to use and provide player attributes consistent with that configuration. </p>

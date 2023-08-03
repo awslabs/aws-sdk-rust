@@ -3,6 +3,23 @@ pub use crate::operation::list_icd10_cm_inference_jobs::_list_icd10_cm_inference
 
 pub use crate::operation::list_icd10_cm_inference_jobs::_list_icd10_cm_inference_jobs_input::ListIcd10CmInferenceJobsInputBuilder;
 
+impl ListIcd10CmInferenceJobsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_icd10_cm_inference_jobs::ListIcd10CmInferenceJobsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_icd10_cm_inference_jobs::ListICD10CMInferenceJobsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_icd10_cm_inference_jobs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListICD10CMInferenceJobs`.
 ///
 /// <p>Gets a list of InferICD10CM jobs that you have submitted.</p>

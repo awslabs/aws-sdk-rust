@@ -3,6 +3,23 @@ pub use crate::operation::start_event_data_store_ingestion::_start_event_data_st
 
 pub use crate::operation::start_event_data_store_ingestion::_start_event_data_store_ingestion_input::StartEventDataStoreIngestionInputBuilder;
 
+impl StartEventDataStoreIngestionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_event_data_store_ingestion::StartEventDataStoreIngestionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_event_data_store_ingestion::StartEventDataStoreIngestionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_event_data_store_ingestion();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartEventDataStoreIngestion`.
 ///
 /// <p>Starts the ingestion of live events on an event data store specified as either an ARN or the ID portion of the ARN. To start ingestion, the event data store <code>Status</code> must be <code>STOPPED_INGESTION</code> and the <code>eventCategory</code> must be <code>Management</code>, <code>Data</code>, or <code>ConfigurationItem</code>.</p>

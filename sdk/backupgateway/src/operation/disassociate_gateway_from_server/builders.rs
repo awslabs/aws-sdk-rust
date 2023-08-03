@@ -3,6 +3,23 @@ pub use crate::operation::disassociate_gateway_from_server::_disassociate_gatewa
 
 pub use crate::operation::disassociate_gateway_from_server::_disassociate_gateway_from_server_input::DisassociateGatewayFromServerInputBuilder;
 
+impl DisassociateGatewayFromServerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_gateway_from_server::DisassociateGatewayFromServerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_gateway_from_server::DisassociateGatewayFromServerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disassociate_gateway_from_server();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateGatewayFromServer`.
 ///
 /// <p>Disassociates a backup gateway from the specified server. After the disassociation process finishes, the gateway can no longer access the virtual machines on the server.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::deregister_package_version::_deregister_package_versio
 
 pub use crate::operation::deregister_package_version::_deregister_package_version_input::DeregisterPackageVersionInputBuilder;
 
+impl DeregisterPackageVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::deregister_package_version::DeregisterPackageVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::deregister_package_version::DeregisterPackageVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.deregister_package_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeregisterPackageVersion`.
 ///
 /// <p>Deregisters a package version.</p>

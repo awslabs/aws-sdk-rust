@@ -3,6 +3,23 @@ pub use crate::operation::complete_multipart_upload::_complete_multipart_upload_
 
 pub use crate::operation::complete_multipart_upload::_complete_multipart_upload_input::CompleteMultipartUploadInputBuilder;
 
+impl CompleteMultipartUploadInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::complete_multipart_upload::CompleteMultipartUploadOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::complete_multipart_upload::CompleteMultipartUploadError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.complete_multipart_upload();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CompleteMultipartUpload`.
 ///
 /// <p>Completes a multipart upload by assembling previously uploaded parts.</p>

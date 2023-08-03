@@ -3,6 +3,23 @@ pub use crate::operation::list_source_api_associations::_list_source_api_associa
 
 pub use crate::operation::list_source_api_associations::_list_source_api_associations_input::ListSourceApiAssociationsInputBuilder;
 
+impl ListSourceApiAssociationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_source_api_associations::ListSourceApiAssociationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_source_api_associations::ListSourceApiAssociationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_source_api_associations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListSourceApiAssociations`.
 ///
 /// <p>Lists the <code>SourceApiAssociationSummary</code> data.</p>

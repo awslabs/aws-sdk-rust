@@ -3,6 +3,23 @@ pub use crate::operation::disassociate_repository::_disassociate_repository_outp
 
 pub use crate::operation::disassociate_repository::_disassociate_repository_input::DisassociateRepositoryInputBuilder;
 
+impl DisassociateRepositoryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_repository::DisassociateRepositoryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_repository::DisassociateRepositoryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disassociate_repository();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateRepository`.
 ///
 /// <p>Removes the association between Amazon CodeGuru Reviewer and a repository.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_replace_root_volume_task::_create_replace_root_
 
 pub use crate::operation::create_replace_root_volume_task::_create_replace_root_volume_task_input::CreateReplaceRootVolumeTaskInputBuilder;
 
+impl CreateReplaceRootVolumeTaskInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_replace_root_volume_task::CreateReplaceRootVolumeTaskOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_replace_root_volume_task::CreateReplaceRootVolumeTaskError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_replace_root_volume_task();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateReplaceRootVolumeTask`.
 ///
 /// <p>Replaces the EBS-backed root volume for a <code>running</code> instance with a new volume that is restored to the original root volume's launch state, that is restored to a specific snapshot taken from the original root volume, or that is restored from an AMI that has the same key characteristics as that of the instance.</p>

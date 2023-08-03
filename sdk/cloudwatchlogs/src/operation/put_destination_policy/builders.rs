@@ -3,6 +3,23 @@ pub use crate::operation::put_destination_policy::_put_destination_policy_output
 
 pub use crate::operation::put_destination_policy::_put_destination_policy_input::PutDestinationPolicyInputBuilder;
 
+impl PutDestinationPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_destination_policy::PutDestinationPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_destination_policy::PutDestinationPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_destination_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutDestinationPolicy`.
 ///
 /// <p>Creates or updates an access policy associated with an existing destination. An access policy is an <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies_overview.html">IAM policy document</a> that is used to authorize claims to register a subscription filter against a given destination.</p>

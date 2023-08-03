@@ -3,6 +3,23 @@ pub use crate::operation::batch_evaluate_feature::_batch_evaluate_feature_output
 
 pub use crate::operation::batch_evaluate_feature::_batch_evaluate_feature_input::BatchEvaluateFeatureInputBuilder;
 
+impl BatchEvaluateFeatureInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_evaluate_feature::BatchEvaluateFeatureOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_evaluate_feature::BatchEvaluateFeatureError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_evaluate_feature();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchEvaluateFeature`.
 ///
 /// <p>This operation assigns feature variation to user sessions. For each user session, you pass in an <code>entityID</code> that represents the user. Evidently then checks the evaluation rules and assigns the variation.</p>

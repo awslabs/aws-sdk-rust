@@ -3,6 +3,23 @@ pub use crate::operation::delete_build::_delete_build_output::DeleteBuildOutputB
 
 pub use crate::operation::delete_build::_delete_build_input::DeleteBuildInputBuilder;
 
+impl DeleteBuildInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_build::DeleteBuildOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_build::DeleteBuildError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_build();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteBuild`.
 ///
 /// <p>Deletes a build. This operation permanently deletes the build resource and any uploaded build files. Deleting a build does not affect the status of any active fleets using the build, but you can no longer create new fleets with the deleted build.</p>

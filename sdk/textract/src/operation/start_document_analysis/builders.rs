@@ -3,6 +3,23 @@ pub use crate::operation::start_document_analysis::_start_document_analysis_outp
 
 pub use crate::operation::start_document_analysis::_start_document_analysis_input::StartDocumentAnalysisInputBuilder;
 
+impl StartDocumentAnalysisInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_document_analysis::StartDocumentAnalysisOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_document_analysis::StartDocumentAnalysisError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_document_analysis();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartDocumentAnalysis`.
 ///
 /// <p>Starts the asynchronous analysis of an input document for relationships between detected items such as key-value pairs, tables, and selection elements.</p>

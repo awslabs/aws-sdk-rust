@@ -3,6 +3,23 @@ pub use crate::operation::create_alarm_model::_create_alarm_model_output::Create
 
 pub use crate::operation::create_alarm_model::_create_alarm_model_input::CreateAlarmModelInputBuilder;
 
+impl CreateAlarmModelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_alarm_model::CreateAlarmModelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_alarm_model::CreateAlarmModelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_alarm_model();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateAlarmModel`.
 ///
 /// <p>Creates an alarm model to monitor an AWS IoT Events input attribute. You can use the alarm to get notified when the value is outside a specified range. For more information, see <a href="https://docs.aws.amazon.com/iotevents/latest/developerguide/create-alarms.html">Create an alarm model</a> in the <i>AWS IoT Events Developer Guide</i>.</p>

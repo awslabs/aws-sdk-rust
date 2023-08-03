@@ -3,6 +3,23 @@ pub use crate::operation::delete_message_batch::_delete_message_batch_output::De
 
 pub use crate::operation::delete_message_batch::_delete_message_batch_input::DeleteMessageBatchInputBuilder;
 
+impl DeleteMessageBatchInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_message_batch::DeleteMessageBatchOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_message_batch::DeleteMessageBatchError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_message_batch();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteMessageBatch`.
 ///
 /// <p>Deletes up to ten messages from the specified queue. This is a batch version of <code> <code>DeleteMessage</code>.</code> The result of the action on each message is reported individually in the response.</p> <important>

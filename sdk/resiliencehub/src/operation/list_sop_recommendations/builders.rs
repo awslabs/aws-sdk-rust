@@ -3,6 +3,23 @@ pub use crate::operation::list_sop_recommendations::_list_sop_recommendations_ou
 
 pub use crate::operation::list_sop_recommendations::_list_sop_recommendations_input::ListSopRecommendationsInputBuilder;
 
+impl ListSopRecommendationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_sop_recommendations::ListSopRecommendationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_sop_recommendations::ListSopRecommendationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_sop_recommendations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListSopRecommendations`.
 ///
 /// <p>Lists the standard operating procedure (SOP) recommendations for the Resilience Hub applications.</p>

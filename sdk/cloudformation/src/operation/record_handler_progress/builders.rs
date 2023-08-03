@@ -3,6 +3,23 @@ pub use crate::operation::record_handler_progress::_record_handler_progress_outp
 
 pub use crate::operation::record_handler_progress::_record_handler_progress_input::RecordHandlerProgressInputBuilder;
 
+impl RecordHandlerProgressInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::record_handler_progress::RecordHandlerProgressOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::record_handler_progress::RecordHandlerProgressError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.record_handler_progress();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RecordHandlerProgress`.
 ///
 /// <p>Reports progress of a resource handler to CloudFormation.</p>

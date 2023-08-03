@@ -3,6 +3,23 @@ pub use crate::operation::initiate_multipart_upload::_initiate_multipart_upload_
 
 pub use crate::operation::initiate_multipart_upload::_initiate_multipart_upload_input::InitiateMultipartUploadInputBuilder;
 
+impl InitiateMultipartUploadInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::initiate_multipart_upload::InitiateMultipartUploadOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::initiate_multipart_upload::InitiateMultipartUploadError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.initiate_multipart_upload();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `InitiateMultipartUpload`.
 ///
 /// <p>This operation initiates a multipart upload. Amazon S3 Glacier creates a multipart upload resource and returns its ID in the response. The multipart upload ID is used in subsequent requests to upload parts of an archive (see <code>UploadMultipartPart</code>).</p>

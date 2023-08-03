@@ -3,6 +3,23 @@ pub use crate::operation::describe_asset_property::_describe_asset_property_outp
 
 pub use crate::operation::describe_asset_property::_describe_asset_property_input::DescribeAssetPropertyInputBuilder;
 
+impl DescribeAssetPropertyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_asset_property::DescribeAssetPropertyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_asset_property::DescribeAssetPropertyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_asset_property();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAssetProperty`.
 ///
 /// <p>Retrieves information about an asset property.</p> <note>

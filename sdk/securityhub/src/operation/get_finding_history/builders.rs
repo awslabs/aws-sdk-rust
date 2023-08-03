@@ -3,6 +3,23 @@ pub use crate::operation::get_finding_history::_get_finding_history_output::GetF
 
 pub use crate::operation::get_finding_history::_get_finding_history_input::GetFindingHistoryInputBuilder;
 
+impl GetFindingHistoryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_finding_history::GetFindingHistoryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_finding_history::GetFindingHistoryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_finding_history();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetFindingHistory`.
 ///
 /// <p> Returns history for a Security Hub finding in the last 90 days. The history includes changes made to any fields in the Amazon Web Services Security Finding Format (ASFF). </p>

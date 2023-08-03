@@ -3,6 +3,23 @@ pub use crate::operation::create_progress_update_stream::_create_progress_update
 
 pub use crate::operation::create_progress_update_stream::_create_progress_update_stream_input::CreateProgressUpdateStreamInputBuilder;
 
+impl CreateProgressUpdateStreamInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_progress_update_stream::CreateProgressUpdateStreamOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_progress_update_stream::CreateProgressUpdateStreamError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_progress_update_stream();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateProgressUpdateStream`.
 ///
 /// <p>Creates a progress update stream which is an AWS resource used for access control as well as a namespace for migration task names that is implicitly linked to your AWS account. It must uniquely identify the migration tool as it is used for all updates made by the tool; however, it does not need to be unique for each AWS account because it is scoped to the AWS account.</p>

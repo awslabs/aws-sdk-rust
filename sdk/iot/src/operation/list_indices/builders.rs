@@ -3,6 +3,23 @@ pub use crate::operation::list_indices::_list_indices_output::ListIndicesOutputB
 
 pub use crate::operation::list_indices::_list_indices_input::ListIndicesInputBuilder;
 
+impl ListIndicesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_indices::ListIndicesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_indices::ListIndicesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_indices();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListIndices`.
 ///
 /// <p>Lists the search indices.</p>

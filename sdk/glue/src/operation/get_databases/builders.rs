@@ -3,6 +3,23 @@ pub use crate::operation::get_databases::_get_databases_output::GetDatabasesOutp
 
 pub use crate::operation::get_databases::_get_databases_input::GetDatabasesInputBuilder;
 
+impl GetDatabasesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_databases::GetDatabasesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_databases::GetDatabasesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_databases();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetDatabases`.
 ///
 /// <p>Retrieves all databases defined in a given Data Catalog.</p>

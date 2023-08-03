@@ -3,6 +3,23 @@ pub use crate::operation::describe_test_set::_describe_test_set_output::Describe
 
 pub use crate::operation::describe_test_set::_describe_test_set_input::DescribeTestSetInputBuilder;
 
+impl DescribeTestSetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_test_set::DescribeTestSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_test_set::DescribeTestSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_test_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeTestSet`.
 ///
 /// <p>Gets metadata information about the test set.</p>

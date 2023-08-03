@@ -3,6 +3,23 @@ pub use crate::operation::update_data_catalog::_update_data_catalog_output::Upda
 
 pub use crate::operation::update_data_catalog::_update_data_catalog_input::UpdateDataCatalogInputBuilder;
 
+impl UpdateDataCatalogInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_data_catalog::UpdateDataCatalogOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_data_catalog::UpdateDataCatalogError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_data_catalog();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateDataCatalog`.
 ///
 /// <p>Updates the data catalog that has the specified name.</p>

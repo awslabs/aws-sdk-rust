@@ -3,6 +3,23 @@ pub use crate::operation::connect_app_authorization::_connect_app_authorization_
 
 pub use crate::operation::connect_app_authorization::_connect_app_authorization_input::ConnectAppAuthorizationInputBuilder;
 
+impl ConnectAppAuthorizationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::connect_app_authorization::ConnectAppAuthorizationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::connect_app_authorization::ConnectAppAuthorizationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.connect_app_authorization();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ConnectAppAuthorization`.
 ///
 /// <p>Establishes a connection between Amazon Web Services AppFabric and an application, which allows AppFabric to call the APIs of the application.</p>

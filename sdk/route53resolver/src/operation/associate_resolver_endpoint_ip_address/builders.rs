@@ -3,6 +3,17 @@ pub use crate::operation::associate_resolver_endpoint_ip_address::_associate_res
 
 pub use crate::operation::associate_resolver_endpoint_ip_address::_associate_resolver_endpoint_ip_address_input::AssociateResolverEndpointIpAddressInputBuilder;
 
+impl AssociateResolverEndpointIpAddressInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::associate_resolver_endpoint_ip_address::AssociateResolverEndpointIpAddressOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_resolver_endpoint_ip_address::AssociateResolverEndpointIpAddressError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.associate_resolver_endpoint_ip_address();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateResolverEndpointIpAddress`.
 ///
 /// <p>Adds IP addresses to an inbound or an outbound Resolver endpoint. If you want to add more than one IP address, submit one <code>AssociateResolverEndpointIpAddress</code> request for each IP address.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_room_memberships::_list_room_memberships_output::
 
 pub use crate::operation::list_room_memberships::_list_room_memberships_input::ListRoomMembershipsInputBuilder;
 
+impl ListRoomMembershipsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_room_memberships::ListRoomMembershipsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_room_memberships::ListRoomMembershipsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_room_memberships();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListRoomMemberships`.
 ///
 /// <p>Lists the membership details for the specified room in an Amazon Chime Enterprise account, such as the members' IDs, email addresses, and names.</p>

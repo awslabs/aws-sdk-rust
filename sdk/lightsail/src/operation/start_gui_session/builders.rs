@@ -3,6 +3,23 @@ pub use crate::operation::start_gui_session::_start_gui_session_output::StartGui
 
 pub use crate::operation::start_gui_session::_start_gui_session_input::StartGuiSessionInputBuilder;
 
+impl StartGuiSessionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_gui_session::StartGuiSessionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_gui_session::StartGUISessionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_gui_session();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartGUISession`.
 ///
 /// <p>Initiates a graphical user interface (GUI) session that’s used to access a virtual computer’s operating system and application. The session will be active for 1 hour. Use this action to resume the session after it expires. </p>

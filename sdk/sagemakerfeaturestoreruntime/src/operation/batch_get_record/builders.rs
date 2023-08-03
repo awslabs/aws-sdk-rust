@@ -3,6 +3,23 @@ pub use crate::operation::batch_get_record::_batch_get_record_output::BatchGetRe
 
 pub use crate::operation::batch_get_record::_batch_get_record_input::BatchGetRecordInputBuilder;
 
+impl BatchGetRecordInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_record::BatchGetRecordOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_get_record::BatchGetRecordError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_get_record();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchGetRecord`.
 ///
 /// <p>Retrieves a batch of <code>Records</code> from a <code>FeatureGroup</code>.</p>

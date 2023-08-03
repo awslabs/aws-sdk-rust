@@ -3,6 +3,23 @@ pub use crate::operation::describe_insight::_describe_insight_output::DescribeIn
 
 pub use crate::operation::describe_insight::_describe_insight_input::DescribeInsightInputBuilder;
 
+impl DescribeInsightInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_insight::DescribeInsightOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_insight::DescribeInsightError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_insight();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeInsight`.
 ///
 /// <p> Returns details about an insight that you specify using its ID. </p>

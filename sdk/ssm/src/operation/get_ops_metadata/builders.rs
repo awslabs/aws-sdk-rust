@@ -3,6 +3,23 @@ pub use crate::operation::get_ops_metadata::_get_ops_metadata_output::GetOpsMeta
 
 pub use crate::operation::get_ops_metadata::_get_ops_metadata_input::GetOpsMetadataInputBuilder;
 
+impl GetOpsMetadataInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_ops_metadata::GetOpsMetadataOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_ops_metadata::GetOpsMetadataError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_ops_metadata();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetOpsMetadata`.
 ///
 /// <p>View operational metadata related to an application in Application Manager.</p>

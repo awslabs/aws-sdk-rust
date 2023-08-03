@@ -3,6 +3,23 @@ pub use crate::operation::evaluate_expression::_evaluate_expression_output::Eval
 
 pub use crate::operation::evaluate_expression::_evaluate_expression_input::EvaluateExpressionInputBuilder;
 
+impl EvaluateExpressionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::evaluate_expression::EvaluateExpressionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::evaluate_expression::EvaluateExpressionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.evaluate_expression();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `EvaluateExpression`.
 ///
 /// <p>Task runners call <code>EvaluateExpression</code> to evaluate a string in the context of the specified object. For example, a task runner can evaluate SQL queries stored in Amazon S3.</p> <examples>

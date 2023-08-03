@@ -3,6 +3,17 @@ pub use crate::operation::describe_app_version_resources_resolution_status::_des
 
 pub use crate::operation::describe_app_version_resources_resolution_status::_describe_app_version_resources_resolution_status_input::DescribeAppVersionResourcesResolutionStatusInputBuilder;
 
+impl DescribeAppVersionResourcesResolutionStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_app_version_resources_resolution_status::DescribeAppVersionResourcesResolutionStatusOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_app_version_resources_resolution_status::DescribeAppVersionResourcesResolutionStatusError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_app_version_resources_resolution_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAppVersionResourcesResolutionStatus`.
 ///
 /// <p>Returns the resolution status for the specified resolution identifier for an application version. If <code>resolutionId</code> is not specified, the current resolution status is returned.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_configured_table::_create_configured_table_outp
 
 pub use crate::operation::create_configured_table::_create_configured_table_input::CreateConfiguredTableInputBuilder;
 
+impl CreateConfiguredTableInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_configured_table::CreateConfiguredTableOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_configured_table::CreateConfiguredTableError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_configured_table();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateConfiguredTable`.
 ///
 /// <p>Creates a new configured table resource.</p>

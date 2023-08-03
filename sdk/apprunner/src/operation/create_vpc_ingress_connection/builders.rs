@@ -3,6 +3,23 @@ pub use crate::operation::create_vpc_ingress_connection::_create_vpc_ingress_con
 
 pub use crate::operation::create_vpc_ingress_connection::_create_vpc_ingress_connection_input::CreateVpcIngressConnectionInputBuilder;
 
+impl CreateVpcIngressConnectionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_vpc_ingress_connection::CreateVpcIngressConnectionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_vpc_ingress_connection::CreateVpcIngressConnectionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_vpc_ingress_connection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateVpcIngressConnection`.
 ///
 /// <p>Create an App Runner VPC Ingress Connection resource. App Runner requires this resource when you want to associate your App Runner service with an Amazon VPC endpoint.</p>

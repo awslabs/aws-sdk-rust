@@ -3,6 +3,23 @@ pub use crate::operation::create_internet_gateway::_create_internet_gateway_outp
 
 pub use crate::operation::create_internet_gateway::_create_internet_gateway_input::CreateInternetGatewayInputBuilder;
 
+impl CreateInternetGatewayInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_internet_gateway::CreateInternetGatewayOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_internet_gateway::CreateInternetGatewayError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_internet_gateway();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateInternetGateway`.
 ///
 /// <p>Creates an internet gateway for use with a VPC. After creating the internet gateway, you attach it to a VPC using <code>AttachInternetGateway</code>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::put_bucket_logging::_put_bucket_logging_output::PutBuc
 
 pub use crate::operation::put_bucket_logging::_put_bucket_logging_input::PutBucketLoggingInputBuilder;
 
+impl PutBucketLoggingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_bucket_logging::PutBucketLoggingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_bucket_logging::PutBucketLoggingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_bucket_logging();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutBucketLogging`.
 ///
 /// <p>Set the logging parameters for a bucket and to specify permissions for who can view and modify the logging parameters. All logs are saved to buckets in the same Amazon Web Services Region as the source bucket. To set the logging status of a bucket, you must be the bucket owner.</p>

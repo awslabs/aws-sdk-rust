@@ -3,6 +3,23 @@ pub use crate::operation::validate_policy::_validate_policy_output::ValidatePoli
 
 pub use crate::operation::validate_policy::_validate_policy_input::ValidatePolicyInputBuilder;
 
+impl ValidatePolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::validate_policy::ValidatePolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::validate_policy::ValidatePolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.validate_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ValidatePolicy`.
 ///
 /// <p>Requests the validation of a policy and returns a list of findings. The findings help you identify issues and provide actionable recommendations to resolve the issue and enable you to author functional policies that meet security best practices. </p>

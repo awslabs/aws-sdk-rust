@@ -3,6 +3,23 @@ pub use crate::operation::delete_database::_delete_database_output::DeleteDataba
 
 pub use crate::operation::delete_database::_delete_database_input::DeleteDatabaseInputBuilder;
 
+impl DeleteDatabaseInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_database::DeleteDatabaseOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_database::DeleteDatabaseError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_database();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteDatabase`.
 ///
 /// <p>Removes a specified database from a Data Catalog.</p> <note>

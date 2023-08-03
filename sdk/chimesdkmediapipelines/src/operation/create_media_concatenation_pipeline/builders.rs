@@ -3,6 +3,17 @@ pub use crate::operation::create_media_concatenation_pipeline::_create_media_con
 
 pub use crate::operation::create_media_concatenation_pipeline::_create_media_concatenation_pipeline_input::CreateMediaConcatenationPipelineInputBuilder;
 
+impl CreateMediaConcatenationPipelineInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::create_media_concatenation_pipeline::CreateMediaConcatenationPipelineOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_media_concatenation_pipeline::CreateMediaConcatenationPipelineError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.create_media_concatenation_pipeline();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateMediaConcatenationPipeline`.
 ///
 /// <p>Creates a media concatenation pipeline.</p>

@@ -3,6 +3,17 @@ pub use crate::operation::create_verified_access_trust_provider::_create_verifie
 
 pub use crate::operation::create_verified_access_trust_provider::_create_verified_access_trust_provider_input::CreateVerifiedAccessTrustProviderInputBuilder;
 
+impl CreateVerifiedAccessTrustProviderInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::create_verified_access_trust_provider::CreateVerifiedAccessTrustProviderOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_verified_access_trust_provider::CreateVerifiedAccessTrustProviderError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.create_verified_access_trust_provider();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateVerifiedAccessTrustProvider`.
 ///
 /// <p>A trust provider is a third-party entity that creates, maintains, and manages identity information for users and devices. When an application request is made, the identity information sent by the trust provider is evaluated by Verified Access before allowing or denying the application request.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::associate_external_connection::_associate_external_con
 
 pub use crate::operation::associate_external_connection::_associate_external_connection_input::AssociateExternalConnectionInputBuilder;
 
+impl AssociateExternalConnectionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_external_connection::AssociateExternalConnectionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_external_connection::AssociateExternalConnectionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_external_connection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateExternalConnection`.
 ///
 /// <p>Adds an existing external connection to a repository. One external connection is allowed per repository.</p> <note>

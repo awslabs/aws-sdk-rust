@@ -3,6 +3,23 @@ pub use crate::operation::delete_apns_sandbox_channel::_delete_apns_sandbox_chan
 
 pub use crate::operation::delete_apns_sandbox_channel::_delete_apns_sandbox_channel_input::DeleteApnsSandboxChannelInputBuilder;
 
+impl DeleteApnsSandboxChannelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_apns_sandbox_channel::DeleteApnsSandboxChannelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_apns_sandbox_channel::DeleteApnsSandboxChannelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_apns_sandbox_channel();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteApnsSandboxChannel`.
 ///
 /// <p>Disables the APNs sandbox channel for an application and deletes any existing settings for the channel.</p>

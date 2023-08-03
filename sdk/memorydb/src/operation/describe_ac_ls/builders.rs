@@ -3,6 +3,23 @@ pub use crate::operation::describe_ac_ls::_describe_ac_ls_output::DescribeAcLsOu
 
 pub use crate::operation::describe_ac_ls::_describe_ac_ls_input::DescribeAcLsInputBuilder;
 
+impl DescribeAcLsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_ac_ls::DescribeAcLsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_ac_ls::DescribeACLsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_ac_ls();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeACLs`.
 ///
 /// <p>Returns a list of ACLs</p>

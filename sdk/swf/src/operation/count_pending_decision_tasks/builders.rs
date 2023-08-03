@@ -3,6 +3,23 @@ pub use crate::operation::count_pending_decision_tasks::_count_pending_decision_
 
 pub use crate::operation::count_pending_decision_tasks::_count_pending_decision_tasks_input::CountPendingDecisionTasksInputBuilder;
 
+impl CountPendingDecisionTasksInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::count_pending_decision_tasks::CountPendingDecisionTasksOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::count_pending_decision_tasks::CountPendingDecisionTasksError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.count_pending_decision_tasks();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CountPendingDecisionTasks`.
 ///
 /// <p>Returns the estimated number of decision tasks in the specified task list. The count returned is an approximation and isn't guaranteed to be exact. If you specify a task list that no decision task was ever scheduled in then <code>0</code> is returned.</p>

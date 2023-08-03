@@ -3,6 +3,23 @@ pub use crate::operation::get_pipeline_definition::_get_pipeline_definition_outp
 
 pub use crate::operation::get_pipeline_definition::_get_pipeline_definition_input::GetPipelineDefinitionInputBuilder;
 
+impl GetPipelineDefinitionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_pipeline_definition::GetPipelineDefinitionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_pipeline_definition::GetPipelineDefinitionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_pipeline_definition();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetPipelineDefinition`.
 ///
 /// <p>Gets the definition of the specified pipeline. You can call <code>GetPipelineDefinition</code> to retrieve the pipeline definition that you provided using <code>PutPipelineDefinition</code>.</p> <examples>

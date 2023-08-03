@@ -3,6 +3,23 @@ pub use crate::operation::forget_device::_forget_device_output::ForgetDeviceOutp
 
 pub use crate::operation::forget_device::_forget_device_input::ForgetDeviceInputBuilder;
 
+impl ForgetDeviceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::forget_device::ForgetDeviceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::forget_device::ForgetDeviceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.forget_device();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ForgetDevice`.
 ///
 /// <p>Forgets the specified device.</p>

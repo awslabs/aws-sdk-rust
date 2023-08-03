@@ -3,6 +3,23 @@ pub use crate::operation::retrieve::_retrieve_output::RetrieveOutputBuilder;
 
 pub use crate::operation::retrieve::_retrieve_input::RetrieveInputBuilder;
 
+impl RetrieveInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::retrieve::RetrieveOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::retrieve::RetrieveError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.retrieve();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `Retrieve`.
 ///
 /// <p>Retrieves relevant passages or text excerpts given an input query.</p>

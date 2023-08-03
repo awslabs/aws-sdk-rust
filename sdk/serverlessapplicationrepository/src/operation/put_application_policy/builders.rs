@@ -3,6 +3,23 @@ pub use crate::operation::put_application_policy::_put_application_policy_output
 
 pub use crate::operation::put_application_policy::_put_application_policy_input::PutApplicationPolicyInputBuilder;
 
+impl PutApplicationPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_application_policy::PutApplicationPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_application_policy::PutApplicationPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_application_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutApplicationPolicy`.
 ///
 /// <p>Sets the permission policy for an application. For the list of actions supported for this operation, see <a href="https://docs.aws.amazon.com/serverlessrepo/latest/devguide/access-control-resource-based.html#application-permissions">Application Permissions</a> .</p>

@@ -3,6 +3,23 @@ pub use crate::operation::confirm_device::_confirm_device_output::ConfirmDeviceO
 
 pub use crate::operation::confirm_device::_confirm_device_input::ConfirmDeviceInputBuilder;
 
+impl ConfirmDeviceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::confirm_device::ConfirmDeviceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::confirm_device::ConfirmDeviceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.confirm_device();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ConfirmDevice`.
 ///
 /// <p>Confirms tracking of the device. This API call is the call that begins device tracking.</p>

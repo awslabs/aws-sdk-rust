@@ -3,6 +3,23 @@ pub use crate::operation::update_traffic_distribution::_update_traffic_distribut
 
 pub use crate::operation::update_traffic_distribution::_update_traffic_distribution_input::UpdateTrafficDistributionInputBuilder;
 
+impl UpdateTrafficDistributionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_traffic_distribution::UpdateTrafficDistributionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_traffic_distribution::UpdateTrafficDistributionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_traffic_distribution();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateTrafficDistribution`.
 ///
 /// <p>Updates the traffic distribution for a given traffic distribution group. </p>

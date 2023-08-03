@@ -3,6 +3,23 @@ pub use crate::operation::describe_gateway_information::_describe_gateway_inform
 
 pub use crate::operation::describe_gateway_information::_describe_gateway_information_input::DescribeGatewayInformationInputBuilder;
 
+impl DescribeGatewayInformationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_gateway_information::DescribeGatewayInformationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_gateway_information::DescribeGatewayInformationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_gateway_information();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeGatewayInformation`.
 ///
 /// <p>Returns metadata about a gateway such as its name, network interfaces, configured time zone, and the state (whether the gateway is running or not). To specify which gateway to describe, use the Amazon Resource Name (ARN) of the gateway in your request.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_agreements::_list_agreements_output::ListAgreemen
 
 pub use crate::operation::list_agreements::_list_agreements_input::ListAgreementsInputBuilder;
 
+impl ListAgreementsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_agreements::ListAgreementsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_agreements::ListAgreementsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_agreements();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAgreements`.
 ///
 /// <p>Returns a list of the agreements for the server that's identified by the <code>ServerId</code> that you supply. If you want to limit the results to a certain number, supply a value for the <code>MaxResults</code> parameter. If you ran the command previously and received a value for <code>NextToken</code>, you can supply that value to continue listing agreements from where you left off.</p>

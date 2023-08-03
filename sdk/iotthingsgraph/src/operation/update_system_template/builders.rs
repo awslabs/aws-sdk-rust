@@ -3,6 +3,23 @@ pub use crate::operation::update_system_template::_update_system_template_output
 
 pub use crate::operation::update_system_template::_update_system_template_input::UpdateSystemTemplateInputBuilder;
 
+impl UpdateSystemTemplateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_system_template::UpdateSystemTemplateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_system_template::UpdateSystemTemplateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_system_template();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateSystemTemplate`.
 ///
 /// <p>Updates the specified system. You don't need to run this action after updating a workflow. Any deployment that uses the system will see the changes in the system when it is redeployed.</p>

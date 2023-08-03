@@ -3,6 +3,17 @@ pub use crate::operation::associate_transit_gateway_multicast_domain::_associate
 
 pub use crate::operation::associate_transit_gateway_multicast_domain::_associate_transit_gateway_multicast_domain_input::AssociateTransitGatewayMulticastDomainInputBuilder;
 
+impl AssociateTransitGatewayMulticastDomainInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::associate_transit_gateway_multicast_domain::AssociateTransitGatewayMulticastDomainOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_transit_gateway_multicast_domain::AssociateTransitGatewayMulticastDomainError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.associate_transit_gateway_multicast_domain();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateTransitGatewayMulticastDomain`.
 ///
 /// <p>Associates the specified subnets and transit gateway attachments with the specified transit gateway multicast domain.</p>

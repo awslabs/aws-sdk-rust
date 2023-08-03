@@ -3,6 +3,23 @@ pub use crate::operation::update_work_group::_update_work_group_output::UpdateWo
 
 pub use crate::operation::update_work_group::_update_work_group_input::UpdateWorkGroupInputBuilder;
 
+impl UpdateWorkGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_work_group::UpdateWorkGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_work_group::UpdateWorkGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_work_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateWorkGroup`.
 ///
 /// <p>Updates the workgroup with the specified name. The workgroup's name cannot be changed. Only <code>ConfigurationUpdates</code> can be specified.</p>

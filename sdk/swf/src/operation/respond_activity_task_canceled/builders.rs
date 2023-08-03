@@ -3,6 +3,23 @@ pub use crate::operation::respond_activity_task_canceled::_respond_activity_task
 
 pub use crate::operation::respond_activity_task_canceled::_respond_activity_task_canceled_input::RespondActivityTaskCanceledInputBuilder;
 
+impl RespondActivityTaskCanceledInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::respond_activity_task_canceled::RespondActivityTaskCanceledOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::respond_activity_task_canceled::RespondActivityTaskCanceledError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.respond_activity_task_canceled();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RespondActivityTaskCanceled`.
 ///
 /// <p>Used by workers to tell the service that the <code>ActivityTask</code> identified by the <code>taskToken</code> was successfully canceled. Additional <code>details</code> can be provided using the <code>details</code> argument.</p>

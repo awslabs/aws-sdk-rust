@@ -3,6 +3,23 @@ pub use crate::operation::list_jobs_by_pipeline::_list_jobs_by_pipeline_output::
 
 pub use crate::operation::list_jobs_by_pipeline::_list_jobs_by_pipeline_input::ListJobsByPipelineInputBuilder;
 
+impl ListJobsByPipelineInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_jobs_by_pipeline::ListJobsByPipelineOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_jobs_by_pipeline::ListJobsByPipelineError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_jobs_by_pipeline();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListJobsByPipeline`.
 ///
 /// <p>The ListJobsByPipeline operation gets a list of the jobs currently in a pipeline.</p>

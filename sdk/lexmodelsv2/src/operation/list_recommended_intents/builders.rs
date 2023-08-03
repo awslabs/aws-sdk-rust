@@ -3,6 +3,23 @@ pub use crate::operation::list_recommended_intents::_list_recommended_intents_ou
 
 pub use crate::operation::list_recommended_intents::_list_recommended_intents_input::ListRecommendedIntentsInputBuilder;
 
+impl ListRecommendedIntentsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_recommended_intents::ListRecommendedIntentsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_recommended_intents::ListRecommendedIntentsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_recommended_intents();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListRecommendedIntents`.
 ///
 /// <p>Gets a list of recommended intents provided by the bot recommendation that you can use in your bot. Intents in the response are ordered by relevance.</p>

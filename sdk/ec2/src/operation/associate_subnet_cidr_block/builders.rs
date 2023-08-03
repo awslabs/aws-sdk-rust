@@ -3,6 +3,23 @@ pub use crate::operation::associate_subnet_cidr_block::_associate_subnet_cidr_bl
 
 pub use crate::operation::associate_subnet_cidr_block::_associate_subnet_cidr_block_input::AssociateSubnetCidrBlockInputBuilder;
 
+impl AssociateSubnetCidrBlockInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_subnet_cidr_block::AssociateSubnetCidrBlockOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_subnet_cidr_block::AssociateSubnetCidrBlockError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_subnet_cidr_block();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateSubnetCidrBlock`.
 ///
 /// <p>Associates a CIDR block with your subnet. You can only associate a single IPv6 CIDR block with your subnet. An IPv6 CIDR block must have a prefix length of /64.</p>

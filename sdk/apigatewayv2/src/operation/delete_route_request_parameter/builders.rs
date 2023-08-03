@@ -3,6 +3,23 @@ pub use crate::operation::delete_route_request_parameter::_delete_route_request_
 
 pub use crate::operation::delete_route_request_parameter::_delete_route_request_parameter_input::DeleteRouteRequestParameterInputBuilder;
 
+impl DeleteRouteRequestParameterInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_route_request_parameter::DeleteRouteRequestParameterOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_route_request_parameter::DeleteRouteRequestParameterError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_route_request_parameter();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteRouteRequestParameter`.
 ///
 /// <p>Deletes a route request parameter. Supported only for WebSocket APIs.</p>

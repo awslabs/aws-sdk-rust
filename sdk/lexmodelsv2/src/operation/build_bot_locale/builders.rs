@@ -3,6 +3,23 @@ pub use crate::operation::build_bot_locale::_build_bot_locale_output::BuildBotLo
 
 pub use crate::operation::build_bot_locale::_build_bot_locale_input::BuildBotLocaleInputBuilder;
 
+impl BuildBotLocaleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::build_bot_locale::BuildBotLocaleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::build_bot_locale::BuildBotLocaleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.build_bot_locale();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BuildBotLocale`.
 ///
 /// <p>Builds a bot, its intents, and its slot types into a specific locale. A bot can be built into multiple locales. At runtime the locale is used to choose a specific build of the bot.</p>

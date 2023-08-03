@@ -3,6 +3,23 @@ pub use crate::operation::delete_annotation_store::_delete_annotation_store_outp
 
 pub use crate::operation::delete_annotation_store::_delete_annotation_store_input::DeleteAnnotationStoreInputBuilder;
 
+impl DeleteAnnotationStoreInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_annotation_store::DeleteAnnotationStoreOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_annotation_store::DeleteAnnotationStoreError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_annotation_store();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteAnnotationStore`.
 ///
 /// <p>Deletes an annotation store.</p>

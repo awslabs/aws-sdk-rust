@@ -3,6 +3,23 @@ pub use crate::operation::list_vpc_ingress_connections::_list_vpc_ingress_connec
 
 pub use crate::operation::list_vpc_ingress_connections::_list_vpc_ingress_connections_input::ListVpcIngressConnectionsInputBuilder;
 
+impl ListVpcIngressConnectionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_vpc_ingress_connections::ListVpcIngressConnectionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_vpc_ingress_connections::ListVpcIngressConnectionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_vpc_ingress_connections();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListVpcIngressConnections`.
 ///
 /// <p>Return a list of App Runner VPC Ingress Connections in your Amazon Web Services account.</p>

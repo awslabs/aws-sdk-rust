@@ -3,6 +3,17 @@ pub use crate::operation::create_subscription_definition_version::_create_subscr
 
 pub use crate::operation::create_subscription_definition_version::_create_subscription_definition_version_input::CreateSubscriptionDefinitionVersionInputBuilder;
 
+impl CreateSubscriptionDefinitionVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::create_subscription_definition_version::CreateSubscriptionDefinitionVersionOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_subscription_definition_version::CreateSubscriptionDefinitionVersionError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.create_subscription_definition_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateSubscriptionDefinitionVersion`.
 ///
 /// Creates a version of a subscription definition which has already been defined.

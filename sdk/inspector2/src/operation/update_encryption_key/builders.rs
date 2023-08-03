@@ -3,6 +3,23 @@ pub use crate::operation::update_encryption_key::_update_encryption_key_output::
 
 pub use crate::operation::update_encryption_key::_update_encryption_key_input::UpdateEncryptionKeyInputBuilder;
 
+impl UpdateEncryptionKeyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_encryption_key::UpdateEncryptionKeyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_encryption_key::UpdateEncryptionKeyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_encryption_key();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateEncryptionKey`.
 ///
 /// <p>Updates an encryption key. A <code>ResourceNotFoundException</code> means that an AWS owned key is being used for encryption.</p>

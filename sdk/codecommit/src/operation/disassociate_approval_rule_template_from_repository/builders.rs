@@ -3,6 +3,17 @@ pub use crate::operation::disassociate_approval_rule_template_from_repository::_
 
 pub use crate::operation::disassociate_approval_rule_template_from_repository::_disassociate_approval_rule_template_from_repository_input::DisassociateApprovalRuleTemplateFromRepositoryInputBuilder;
 
+impl DisassociateApprovalRuleTemplateFromRepositoryInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_approval_rule_template_from_repository::DisassociateApprovalRuleTemplateFromRepositoryError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.disassociate_approval_rule_template_from_repository();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateApprovalRuleTemplateFromRepository`.
 ///
 /// <p>Removes the association between a template and a repository so that approval rules based on the template are not automatically created when pull requests are created in the specified repository. This does not delete any approval rules previously created for pull requests through the template association.</p>

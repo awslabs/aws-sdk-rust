@@ -3,6 +3,23 @@ pub use crate::operation::get_resource_policies::_get_resource_policies_output::
 
 pub use crate::operation::get_resource_policies::_get_resource_policies_input::GetResourcePoliciesInputBuilder;
 
+impl GetResourcePoliciesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_resource_policies::GetResourcePoliciesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_resource_policies::GetResourcePoliciesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_resource_policies();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetResourcePolicies`.
 ///
 /// <p>Retrieves the resource policies set on individual resources by Resource Access Manager during cross-account permission grants. Also retrieves the Data Catalog resource policy.</p>

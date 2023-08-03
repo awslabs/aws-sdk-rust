@@ -3,6 +3,17 @@ pub use crate::operation::restore_db_instance_from_db_snapshot::_restore_db_inst
 
 pub use crate::operation::restore_db_instance_from_db_snapshot::_restore_db_instance_from_db_snapshot_input::RestoreDbInstanceFromDbSnapshotInputBuilder;
 
+impl RestoreDbInstanceFromDbSnapshotInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::restore_db_instance_from_db_snapshot::RestoreDbInstanceFromDbSnapshotOutput, ::aws_smithy_http::result::SdkError<crate::operation::restore_db_instance_from_db_snapshot::RestoreDBInstanceFromDBSnapshotError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.restore_db_instance_from_db_snapshot();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RestoreDBInstanceFromDBSnapshot`.
 ///
 /// <p>Creates a new DB instance from a DB snapshot. The target database is created from the source database restore point with most of the source's original configuration, including the default security group and DB parameter group. By default, the new DB instance is created as a Single-AZ deployment, except when the instance is a SQL Server instance that has an option group associated with mirroring. In this case, the instance becomes a Multi-AZ deployment, not a Single-AZ deployment.</p>

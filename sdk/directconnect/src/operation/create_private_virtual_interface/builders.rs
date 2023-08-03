@@ -3,6 +3,23 @@ pub use crate::operation::create_private_virtual_interface::_create_private_virt
 
 pub use crate::operation::create_private_virtual_interface::_create_private_virtual_interface_input::CreatePrivateVirtualInterfaceInputBuilder;
 
+impl CreatePrivateVirtualInterfaceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_private_virtual_interface::CreatePrivateVirtualInterfaceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_private_virtual_interface();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreatePrivateVirtualInterface`.
 ///
 /// <p>Creates a private virtual interface. A virtual interface is the VLAN that transports Direct Connect traffic. A private virtual interface can be connected to either a Direct Connect gateway or a Virtual Private Gateway (VGW). Connecting the private virtual interface to a Direct Connect gateway enables the possibility for connecting to multiple VPCs, including VPCs in different Amazon Web Services Regions. Connecting the private virtual interface to a VGW only provides access to a single VPC within the same Region.</p>

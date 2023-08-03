@@ -3,6 +3,23 @@ pub use crate::operation::update_rule_group::_update_rule_group_output::UpdateRu
 
 pub use crate::operation::update_rule_group::_update_rule_group_input::UpdateRuleGroupInputBuilder;
 
+impl UpdateRuleGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_rule_group::UpdateRuleGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_rule_group::UpdateRuleGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_rule_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateRuleGroup`.
 ///
 /// <p>Updates the rule settings for the specified rule group. You use a rule group by reference in one or more firewall policies. When you modify a rule group, you modify all firewall policies that use the rule group. </p>

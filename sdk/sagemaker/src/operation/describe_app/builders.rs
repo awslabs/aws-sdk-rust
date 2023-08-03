@@ -3,6 +3,23 @@ pub use crate::operation::describe_app::_describe_app_output::DescribeAppOutputB
 
 pub use crate::operation::describe_app::_describe_app_input::DescribeAppInputBuilder;
 
+impl DescribeAppInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_app::DescribeAppOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_app::DescribeAppError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_app();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeApp`.
 ///
 /// <p>Describes the app.</p>

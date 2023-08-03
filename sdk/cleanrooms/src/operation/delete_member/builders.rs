@@ -3,6 +3,23 @@ pub use crate::operation::delete_member::_delete_member_output::DeleteMemberOutp
 
 pub use crate::operation::delete_member::_delete_member_input::DeleteMemberInputBuilder;
 
+impl DeleteMemberInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_member::DeleteMemberOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_member::DeleteMemberError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_member();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteMember`.
 ///
 /// <p>Removes the specified member from a collaboration. The removed member is placed in the Removed status and can't interact with the collaboration. The removed member's data is inaccessible to active members of the collaboration.</p>

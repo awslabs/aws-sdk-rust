@@ -3,6 +3,23 @@ pub use crate::operation::put_project_events::_put_project_events_output::PutPro
 
 pub use crate::operation::put_project_events::_put_project_events_input::PutProjectEventsInputBuilder;
 
+impl PutProjectEventsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_project_events::PutProjectEventsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_project_events::PutProjectEventsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_project_events();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutProjectEvents`.
 ///
 /// <p>Sends performance events to Evidently. These events can be used to evaluate a launch or an experiment.</p>

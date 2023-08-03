@@ -3,6 +3,23 @@ pub use crate::operation::delete_rule::_delete_rule_output::DeleteRuleOutputBuil
 
 pub use crate::operation::delete_rule::_delete_rule_input::DeleteRuleInputBuilder;
 
+impl DeleteRuleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_rule::DeleteRuleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_rule::DeleteRuleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_rule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteRule`.
 ///
 /// <p>Deletes a listener rule. Each listener has a default rule for checking connection requests, but you can define additional rules. Each rule consists of a priority, one or more actions, and one or more conditions. You can delete additional listener rules, but you cannot delete the default rule.</p>

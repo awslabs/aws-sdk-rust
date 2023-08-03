@@ -3,6 +3,23 @@ pub use crate::operation::describe_client_properties::_describe_client_propertie
 
 pub use crate::operation::describe_client_properties::_describe_client_properties_input::DescribeClientPropertiesInputBuilder;
 
+impl DescribeClientPropertiesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_client_properties::DescribeClientPropertiesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_client_properties::DescribeClientPropertiesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_client_properties();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeClientProperties`.
 ///
 /// <p>Retrieves a list that describes one or more specified Amazon WorkSpaces clients.</p>

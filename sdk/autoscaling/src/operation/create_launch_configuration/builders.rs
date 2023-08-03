@@ -3,6 +3,23 @@ pub use crate::operation::create_launch_configuration::_create_launch_configurat
 
 pub use crate::operation::create_launch_configuration::_create_launch_configuration_input::CreateLaunchConfigurationInputBuilder;
 
+impl CreateLaunchConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_launch_configuration::CreateLaunchConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_launch_configuration::CreateLaunchConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_launch_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateLaunchConfiguration`.
 ///
 /// <p>Creates a launch configuration.</p>

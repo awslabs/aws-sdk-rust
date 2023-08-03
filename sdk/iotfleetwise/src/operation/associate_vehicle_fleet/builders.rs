@@ -3,6 +3,23 @@ pub use crate::operation::associate_vehicle_fleet::_associate_vehicle_fleet_outp
 
 pub use crate::operation::associate_vehicle_fleet::_associate_vehicle_fleet_input::AssociateVehicleFleetInputBuilder;
 
+impl AssociateVehicleFleetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_vehicle_fleet::AssociateVehicleFleetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_vehicle_fleet::AssociateVehicleFleetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_vehicle_fleet();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateVehicleFleet`.
 ///
 /// <p> Adds, or associates, a vehicle with a fleet. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::check_domain_transferability::_check_domain_transferab
 
 pub use crate::operation::check_domain_transferability::_check_domain_transferability_input::CheckDomainTransferabilityInputBuilder;
 
+impl CheckDomainTransferabilityInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::check_domain_transferability::CheckDomainTransferabilityOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::check_domain_transferability::CheckDomainTransferabilityError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.check_domain_transferability();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CheckDomainTransferability`.
 ///
 /// <p>Checks whether a domain name can be transferred to Amazon Route 53. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::put_configuration::_put_configuration_output::PutConfi
 
 pub use crate::operation::put_configuration::_put_configuration_input::PutConfigurationInputBuilder;
 
+impl PutConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_configuration::PutConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_configuration::PutConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutConfiguration`.
 ///
 /// <p> Associates a <code>TagKey</code> configuration to an account. </p>

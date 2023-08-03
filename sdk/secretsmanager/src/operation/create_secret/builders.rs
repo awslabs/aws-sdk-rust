@@ -3,6 +3,23 @@ pub use crate::operation::create_secret::_create_secret_output::CreateSecretOutp
 
 pub use crate::operation::create_secret::_create_secret_input::CreateSecretInputBuilder;
 
+impl CreateSecretInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_secret::CreateSecretOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_secret::CreateSecretError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_secret();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateSecret`.
 ///
 /// <p>Creates a new secret. A <i>secret</i> can be a password, a set of credentials such as a user name and password, an OAuth token, or other secret information that you store in an encrypted form in Secrets Manager. The secret also includes the connection information to access a database or other service, which Secrets Manager doesn't encrypt. A secret in Secrets Manager consists of both the protected secret data and the important information needed to manage the secret.</p>

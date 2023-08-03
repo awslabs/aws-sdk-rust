@@ -3,6 +3,17 @@ pub use crate::operation::get_transit_gateway_multicast_domain_associations::_ge
 
 pub use crate::operation::get_transit_gateway_multicast_domain_associations::_get_transit_gateway_multicast_domain_associations_input::GetTransitGatewayMulticastDomainAssociationsInputBuilder;
 
+impl GetTransitGatewayMulticastDomainAssociationsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_transit_gateway_multicast_domain_associations::GetTransitGatewayMulticastDomainAssociationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_transit_gateway_multicast_domain_associations::GetTransitGatewayMulticastDomainAssociationsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_transit_gateway_multicast_domain_associations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetTransitGatewayMulticastDomainAssociations`.
 ///
 /// <p>Gets information about the associations for the transit gateway multicast domain.</p>

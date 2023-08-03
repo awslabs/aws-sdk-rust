@@ -3,6 +3,23 @@ pub use crate::operation::get_index::_get_index_output::GetIndexOutputBuilder;
 
 pub use crate::operation::get_index::_get_index_input::GetIndexInputBuilder;
 
+impl GetIndexInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_index::GetIndexOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_index::GetIndexError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_index();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetIndex`.
 ///
 /// <p>Retrieves details about the Amazon Web Services Resource Explorer index in the Amazon Web Services Region in which you invoked the operation.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::group_resources::_group_resources_output::GroupResourc
 
 pub use crate::operation::group_resources::_group_resources_input::GroupResourcesInputBuilder;
 
+impl GroupResourcesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::group_resources::GroupResourcesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::group_resources::GroupResourcesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.group_resources();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GroupResources`.
 ///
 /// <p>Adds the specified resources to the specified group.</p> <important>

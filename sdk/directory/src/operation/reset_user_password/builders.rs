@@ -3,6 +3,23 @@ pub use crate::operation::reset_user_password::_reset_user_password_output::Rese
 
 pub use crate::operation::reset_user_password::_reset_user_password_input::ResetUserPasswordInputBuilder;
 
+impl ResetUserPasswordInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::reset_user_password::ResetUserPasswordOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::reset_user_password::ResetUserPasswordError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.reset_user_password();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ResetUserPassword`.
 ///
 /// <p>Resets the password for any user in your Managed Microsoft AD or Simple AD directory.</p>

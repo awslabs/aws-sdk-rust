@@ -3,6 +3,23 @@ pub use crate::operation::is_member_in_groups::_is_member_in_groups_output::IsMe
 
 pub use crate::operation::is_member_in_groups::_is_member_in_groups_input::IsMemberInGroupsInputBuilder;
 
+impl IsMemberInGroupsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::is_member_in_groups::IsMemberInGroupsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::is_member_in_groups::IsMemberInGroupsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.is_member_in_groups();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `IsMemberInGroups`.
 ///
 /// <p>Checks the user's membership in all requested groups and returns if the member exists in all queried groups.</p>

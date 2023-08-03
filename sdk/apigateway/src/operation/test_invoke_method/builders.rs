@@ -3,6 +3,23 @@ pub use crate::operation::test_invoke_method::_test_invoke_method_output::TestIn
 
 pub use crate::operation::test_invoke_method::_test_invoke_method_input::TestInvokeMethodInputBuilder;
 
+impl TestInvokeMethodInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::test_invoke_method::TestInvokeMethodOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::test_invoke_method::TestInvokeMethodError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.test_invoke_method();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `TestInvokeMethod`.
 ///
 /// <p>Simulate the invocation of a Method in your RestApi with headers, parameters, and an incoming request body.</p>

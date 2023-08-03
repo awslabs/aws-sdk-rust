@@ -3,6 +3,23 @@ pub use crate::operation::backtrack_db_cluster::_backtrack_db_cluster_output::Ba
 
 pub use crate::operation::backtrack_db_cluster::_backtrack_db_cluster_input::BacktrackDbClusterInputBuilder;
 
+impl BacktrackDbClusterInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::backtrack_db_cluster::BacktrackDbClusterOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::backtrack_db_cluster::BacktrackDBClusterError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.backtrack_db_cluster();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BacktrackDBCluster`.
 ///
 /// <p>Backtracks a DB cluster to a specific time, without creating a new DB cluster.</p>

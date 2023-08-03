@@ -3,6 +3,23 @@ pub use crate::operation::get_baidu_channel::_get_baidu_channel_output::GetBaidu
 
 pub use crate::operation::get_baidu_channel::_get_baidu_channel_input::GetBaiduChannelInputBuilder;
 
+impl GetBaiduChannelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_baidu_channel::GetBaiduChannelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_baidu_channel::GetBaiduChannelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_baidu_channel();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetBaiduChannel`.
 ///
 /// <p>Retrieves information about the status and settings of the Baidu channel for an application.</p>

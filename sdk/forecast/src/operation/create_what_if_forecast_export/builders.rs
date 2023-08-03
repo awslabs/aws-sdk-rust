@@ -3,6 +3,23 @@ pub use crate::operation::create_what_if_forecast_export::_create_what_if_foreca
 
 pub use crate::operation::create_what_if_forecast_export::_create_what_if_forecast_export_input::CreateWhatIfForecastExportInputBuilder;
 
+impl CreateWhatIfForecastExportInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_what_if_forecast_export::CreateWhatIfForecastExportOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_what_if_forecast_export::CreateWhatIfForecastExportError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_what_if_forecast_export();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateWhatIfForecastExport`.
 ///
 /// <p>Exports a forecast created by the <code>CreateWhatIfForecast</code> operation to your Amazon Simple Storage Service (Amazon S3) bucket. The forecast file name will match the following conventions:</p>

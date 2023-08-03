@@ -3,6 +3,23 @@ pub use crate::operation::describe_feature_metadata::_describe_feature_metadata_
 
 pub use crate::operation::describe_feature_metadata::_describe_feature_metadata_input::DescribeFeatureMetadataInputBuilder;
 
+impl DescribeFeatureMetadataInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_feature_metadata::DescribeFeatureMetadataOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_feature_metadata::DescribeFeatureMetadataError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_feature_metadata();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeFeatureMetadata`.
 ///
 /// <p>Shows the metadata for a feature within a feature group.</p>

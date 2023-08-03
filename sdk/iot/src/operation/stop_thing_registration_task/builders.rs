@@ -3,6 +3,23 @@ pub use crate::operation::stop_thing_registration_task::_stop_thing_registration
 
 pub use crate::operation::stop_thing_registration_task::_stop_thing_registration_task_input::StopThingRegistrationTaskInputBuilder;
 
+impl StopThingRegistrationTaskInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_thing_registration_task::StopThingRegistrationTaskOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_thing_registration_task::StopThingRegistrationTaskError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_thing_registration_task();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopThingRegistrationTask`.
 ///
 /// <p>Cancels a bulk thing provisioning task.</p>

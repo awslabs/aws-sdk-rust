@@ -3,6 +3,23 @@ pub use crate::operation::get_entity_types::_get_entity_types_output::GetEntityT
 
 pub use crate::operation::get_entity_types::_get_entity_types_input::GetEntityTypesInputBuilder;
 
+impl GetEntityTypesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_entity_types::GetEntityTypesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_entity_types::GetEntityTypesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_entity_types();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetEntityTypes`.
 ///
 /// <p>Gets all entity types or a specific entity type if a name is specified. This is a paginated API. If you provide a null <code>maxResults</code>, this action retrieves a maximum of 10 records per page. If you provide a <code>maxResults</code>, the value must be between 5 and 10. To get the next page results, provide the pagination token from the <code>GetEntityTypesResponse</code> as part of your request. A null pagination token fetches the records from the beginning. </p>

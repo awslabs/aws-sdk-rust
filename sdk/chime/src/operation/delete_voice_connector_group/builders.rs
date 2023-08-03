@@ -3,6 +3,23 @@ pub use crate::operation::delete_voice_connector_group::_delete_voice_connector_
 
 pub use crate::operation::delete_voice_connector_group::_delete_voice_connector_group_input::DeleteVoiceConnectorGroupInputBuilder;
 
+impl DeleteVoiceConnectorGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_voice_connector_group::DeleteVoiceConnectorGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_voice_connector_group::DeleteVoiceConnectorGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_voice_connector_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteVoiceConnectorGroup`.
 ///
 /// <p>Deletes the specified Amazon Chime Voice Connector group. Any <code>VoiceConnectorItems</code> and phone numbers associated with the group must be removed before it can be deleted.</p> <important>

@@ -3,6 +3,23 @@ pub use crate::operation::list_campaigns::_list_campaigns_output::ListCampaignsO
 
 pub use crate::operation::list_campaigns::_list_campaigns_input::ListCampaignsInputBuilder;
 
+impl ListCampaignsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_campaigns::ListCampaignsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_campaigns::ListCampaignsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_campaigns();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListCampaigns`.
 ///
 /// <p>Returns a list of campaigns that use the given solution. When a solution is not specified, all the campaigns associated with the account are listed. The response provides the properties for each campaign, including the Amazon Resource Name (ARN). For more information on campaigns, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateCampaign.html">CreateCampaign</a>.</p>

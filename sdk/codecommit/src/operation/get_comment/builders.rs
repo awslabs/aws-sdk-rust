@@ -3,6 +3,23 @@ pub use crate::operation::get_comment::_get_comment_output::GetCommentOutputBuil
 
 pub use crate::operation::get_comment::_get_comment_input::GetCommentInputBuilder;
 
+impl GetCommentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_comment::GetCommentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_comment::GetCommentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_comment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetComment`.
 ///
 /// <p>Returns the content of a comment made on a change, file, or commit in a repository. </p> <note>

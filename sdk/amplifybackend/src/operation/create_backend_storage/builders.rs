@@ -3,6 +3,23 @@ pub use crate::operation::create_backend_storage::_create_backend_storage_output
 
 pub use crate::operation::create_backend_storage::_create_backend_storage_input::CreateBackendStorageInputBuilder;
 
+impl CreateBackendStorageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_backend_storage::CreateBackendStorageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_backend_storage::CreateBackendStorageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_backend_storage();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateBackendStorage`.
 ///
 /// <p>Creates a backend storage resource.</p>

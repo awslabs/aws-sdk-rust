@@ -3,6 +3,17 @@ pub use crate::operation::reject_domain_transfer_from_another_aws_account::_reje
 
 pub use crate::operation::reject_domain_transfer_from_another_aws_account::_reject_domain_transfer_from_another_aws_account_input::RejectDomainTransferFromAnotherAwsAccountInputBuilder;
 
+impl RejectDomainTransferFromAnotherAwsAccountInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::reject_domain_transfer_from_another_aws_account::RejectDomainTransferFromAnotherAwsAccountOutput, ::aws_smithy_http::result::SdkError<crate::operation::reject_domain_transfer_from_another_aws_account::RejectDomainTransferFromAnotherAwsAccountError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.reject_domain_transfer_from_another_aws_account();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RejectDomainTransferFromAnotherAwsAccount`.
 ///
 /// <p>Rejects the transfer of a domain from another Amazon Web Services account to the current Amazon Web Services account. You initiate a transfer betweenAmazon Web Services accounts using <a href="https://docs.aws.amazon.com/Route53/latest/APIReference/API_domains_TransferDomainToAnotherAwsAccount.html">TransferDomainToAnotherAwsAccount</a>. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::update_world_template::_update_world_template_output::
 
 pub use crate::operation::update_world_template::_update_world_template_input::UpdateWorldTemplateInputBuilder;
 
+impl UpdateWorldTemplateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_world_template::UpdateWorldTemplateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_world_template::UpdateWorldTemplateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_world_template();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateWorldTemplate`.
 ///
 /// <p>Updates a world template.</p>

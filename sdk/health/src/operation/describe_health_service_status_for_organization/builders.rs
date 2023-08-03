@@ -3,6 +3,17 @@ pub use crate::operation::describe_health_service_status_for_organization::_desc
 
 pub use crate::operation::describe_health_service_status_for_organization::_describe_health_service_status_for_organization_input::DescribeHealthServiceStatusForOrganizationInputBuilder;
 
+impl DescribeHealthServiceStatusForOrganizationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_health_service_status_for_organization::DescribeHealthServiceStatusForOrganizationOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_health_service_status_for_organization::DescribeHealthServiceStatusForOrganizationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_health_service_status_for_organization();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeHealthServiceStatusForOrganization`.
 ///
 /// <p>This operation provides status information on enabling or disabling Health to work with your organization. To call this operation, you must use the organization's management account.</p>

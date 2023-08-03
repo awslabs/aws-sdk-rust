@@ -3,6 +3,23 @@ pub use crate::operation::describe_channel_moderator::_describe_channel_moderato
 
 pub use crate::operation::describe_channel_moderator::_describe_channel_moderator_input::DescribeChannelModeratorInputBuilder;
 
+impl DescribeChannelModeratorInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_channel_moderator::DescribeChannelModeratorOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_channel_moderator::DescribeChannelModeratorError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_channel_moderator();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeChannelModerator`.
 ///
 /// <p>Returns the full details of a single ChannelModerator.</p> <note>

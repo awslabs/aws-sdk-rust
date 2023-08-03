@@ -3,6 +3,17 @@ pub use crate::operation::disassociate_qualification_from_worker::_disassociate_
 
 pub use crate::operation::disassociate_qualification_from_worker::_disassociate_qualification_from_worker_input::DisassociateQualificationFromWorkerInputBuilder;
 
+impl DisassociateQualificationFromWorkerInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::disassociate_qualification_from_worker::DisassociateQualificationFromWorkerOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_qualification_from_worker::DisassociateQualificationFromWorkerError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.disassociate_qualification_from_worker();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateQualificationFromWorker`.
 ///
 /// <p> The <code>DisassociateQualificationFromWorker</code> revokes a previously granted Qualification from a user. </p>

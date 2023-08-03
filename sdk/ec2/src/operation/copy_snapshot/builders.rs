@@ -3,6 +3,23 @@ pub use crate::operation::copy_snapshot::_copy_snapshot_output::CopySnapshotOutp
 
 pub use crate::operation::copy_snapshot::_copy_snapshot_input::CopySnapshotInputBuilder;
 
+impl CopySnapshotInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::copy_snapshot::CopySnapshotOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::copy_snapshot::CopySnapshotError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.copy_snapshot();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CopySnapshot`.
 ///
 /// <p>Copies a point-in-time snapshot of an EBS volume and stores it in Amazon S3. You can copy a snapshot within the same Region, from one Region to another, or from a Region to an Outpost. You can't copy a snapshot from an Outpost to a Region, from one Outpost to another, or within the same Outpost.</p>

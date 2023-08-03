@@ -3,6 +3,23 @@ pub use crate::operation::reset_distribution_cache::_reset_distribution_cache_ou
 
 pub use crate::operation::reset_distribution_cache::_reset_distribution_cache_input::ResetDistributionCacheInputBuilder;
 
+impl ResetDistributionCacheInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::reset_distribution_cache::ResetDistributionCacheOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::reset_distribution_cache::ResetDistributionCacheError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.reset_distribution_cache();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ResetDistributionCache`.
 ///
 /// <p>Deletes currently cached content from your Amazon Lightsail content delivery network (CDN) distribution.</p>

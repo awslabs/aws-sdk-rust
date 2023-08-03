@@ -3,6 +3,23 @@ pub use crate::operation::put_bucket_ownership_controls::_put_bucket_ownership_c
 
 pub use crate::operation::put_bucket_ownership_controls::_put_bucket_ownership_controls_input::PutBucketOwnershipControlsInputBuilder;
 
+impl PutBucketOwnershipControlsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_bucket_ownership_controls::PutBucketOwnershipControlsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_bucket_ownership_controls::PutBucketOwnershipControlsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_bucket_ownership_controls();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutBucketOwnershipControls`.
 ///
 /// <p>Creates or modifies <code>OwnershipControls</code> for an Amazon S3 bucket. To use this operation, you must have the <code>s3:PutBucketOwnershipControls</code> permission. For more information about Amazon S3 permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/user-guide/using-with-s3-actions.html">Specifying permissions in a policy</a>. </p>

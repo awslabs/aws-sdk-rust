@@ -3,6 +3,17 @@ pub use crate::operation::describe_maintenance_window_tasks::_describe_maintenan
 
 pub use crate::operation::describe_maintenance_window_tasks::_describe_maintenance_window_tasks_input::DescribeMaintenanceWindowTasksInputBuilder;
 
+impl DescribeMaintenanceWindowTasksInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_maintenance_window_tasks::DescribeMaintenanceWindowTasksOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_maintenance_window_tasks::DescribeMaintenanceWindowTasksError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_maintenance_window_tasks();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeMaintenanceWindowTasks`.
 ///
 /// <p>Lists the tasks in a maintenance window.</p> <note>

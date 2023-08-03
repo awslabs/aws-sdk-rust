@@ -3,6 +3,23 @@ pub use crate::operation::create_trail::_create_trail_output::CreateTrailOutputB
 
 pub use crate::operation::create_trail::_create_trail_input::CreateTrailInputBuilder;
 
+impl CreateTrailInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_trail::CreateTrailOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_trail::CreateTrailError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_trail();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateTrail`.
 ///
 /// <p>Creates a trail that specifies the settings for delivery of log data to an Amazon S3 bucket. </p>

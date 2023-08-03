@@ -3,6 +3,23 @@ pub use crate::operation::delete_event_integration::_delete_event_integration_ou
 
 pub use crate::operation::delete_event_integration::_delete_event_integration_input::DeleteEventIntegrationInputBuilder;
 
+impl DeleteEventIntegrationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_event_integration::DeleteEventIntegrationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_event_integration::DeleteEventIntegrationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_event_integration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteEventIntegration`.
 ///
 /// <p>Deletes the specified existing event integration. If the event integration is associated with clients, the request is rejected.</p>

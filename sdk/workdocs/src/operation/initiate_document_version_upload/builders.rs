@@ -3,6 +3,23 @@ pub use crate::operation::initiate_document_version_upload::_initiate_document_v
 
 pub use crate::operation::initiate_document_version_upload::_initiate_document_version_upload_input::InitiateDocumentVersionUploadInputBuilder;
 
+impl InitiateDocumentVersionUploadInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::initiate_document_version_upload::InitiateDocumentVersionUploadError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.initiate_document_version_upload();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `InitiateDocumentVersionUpload`.
 ///
 /// <p>Creates a new document object and version object.</p>

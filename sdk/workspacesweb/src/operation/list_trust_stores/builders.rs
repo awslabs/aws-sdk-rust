@@ -3,6 +3,23 @@ pub use crate::operation::list_trust_stores::_list_trust_stores_output::ListTrus
 
 pub use crate::operation::list_trust_stores::_list_trust_stores_input::ListTrustStoresInputBuilder;
 
+impl ListTrustStoresInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_trust_stores::ListTrustStoresOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_trust_stores::ListTrustStoresError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_trust_stores();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListTrustStores`.
 ///
 /// <p>Retrieves a list of trust stores.</p>

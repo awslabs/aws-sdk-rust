@@ -3,6 +3,23 @@ pub use crate::operation::search_vocabularies::_search_vocabularies_output::Sear
 
 pub use crate::operation::search_vocabularies::_search_vocabularies_input::SearchVocabulariesInputBuilder;
 
+impl SearchVocabulariesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::search_vocabularies::SearchVocabulariesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::search_vocabularies::SearchVocabulariesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.search_vocabularies();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SearchVocabularies`.
 ///
 /// <p>Searches for vocabularies within a specific Amazon Connect instance using <code>State</code>, <code>NameStartsWith</code>, and <code>LanguageCode</code>.</p>

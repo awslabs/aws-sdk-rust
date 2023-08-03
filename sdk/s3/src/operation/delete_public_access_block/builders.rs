@@ -3,6 +3,23 @@ pub use crate::operation::delete_public_access_block::_delete_public_access_bloc
 
 pub use crate::operation::delete_public_access_block::_delete_public_access_block_input::DeletePublicAccessBlockInputBuilder;
 
+impl DeletePublicAccessBlockInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_public_access_block::DeletePublicAccessBlockOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_public_access_block::DeletePublicAccessBlockError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_public_access_block();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeletePublicAccessBlock`.
 ///
 /// <p>Removes the <code>PublicAccessBlock</code> configuration for an Amazon S3 bucket. To use this operation, you must have the <code>s3:PutBucketPublicAccessBlock</code> permission. For more information about permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions Related to Bucket Subresource Operations</a> and <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing Access Permissions to Your Amazon S3 Resources</a>.</p>

@@ -3,6 +3,17 @@ pub use crate::operation::delete_bucket_metrics_configuration::_delete_bucket_me
 
 pub use crate::operation::delete_bucket_metrics_configuration::_delete_bucket_metrics_configuration_input::DeleteBucketMetricsConfigurationInputBuilder;
 
+impl DeleteBucketMetricsConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_bucket_metrics_configuration::DeleteBucketMetricsConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_bucket_metrics_configuration::DeleteBucketMetricsConfigurationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.delete_bucket_metrics_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteBucketMetricsConfiguration`.
 ///
 /// <p>Deletes a metrics configuration for the Amazon CloudWatch request metrics (specified by the metrics configuration ID) from the bucket. Note that this doesn't include the daily storage metrics.</p>

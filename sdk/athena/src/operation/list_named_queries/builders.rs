@@ -3,6 +3,23 @@ pub use crate::operation::list_named_queries::_list_named_queries_output::ListNa
 
 pub use crate::operation::list_named_queries::_list_named_queries_input::ListNamedQueriesInputBuilder;
 
+impl ListNamedQueriesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_named_queries::ListNamedQueriesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_named_queries::ListNamedQueriesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_named_queries();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListNamedQueries`.
 ///
 /// <p>Provides a list of available query IDs only for queries saved in the specified workgroup. Requires that you have access to the specified workgroup. If a workgroup is not specified, lists the saved queries for the primary workgroup.</p>

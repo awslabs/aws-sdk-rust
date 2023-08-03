@@ -3,6 +3,23 @@ pub use crate::operation::list_hub_contents::_list_hub_contents_output::ListHubC
 
 pub use crate::operation::list_hub_contents::_list_hub_contents_input::ListHubContentsInputBuilder;
 
+impl ListHubContentsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_hub_contents::ListHubContentsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_hub_contents::ListHubContentsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_hub_contents();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListHubContents`.
 ///
 /// <p>List the contents of a hub.</p> <note>

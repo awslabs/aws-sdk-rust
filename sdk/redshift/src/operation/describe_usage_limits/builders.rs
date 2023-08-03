@@ -3,6 +3,23 @@ pub use crate::operation::describe_usage_limits::_describe_usage_limits_output::
 
 pub use crate::operation::describe_usage_limits::_describe_usage_limits_input::DescribeUsageLimitsInputBuilder;
 
+impl DescribeUsageLimitsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_usage_limits::DescribeUsageLimitsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_usage_limits::DescribeUsageLimitsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_usage_limits();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeUsageLimits`.
 ///
 /// <p>Shows usage limits on a cluster. Results are filtered based on the combination of input usage limit identifier, cluster identifier, and feature type parameters:</p>

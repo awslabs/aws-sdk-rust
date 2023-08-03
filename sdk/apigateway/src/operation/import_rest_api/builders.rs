@@ -3,6 +3,23 @@ pub use crate::operation::import_rest_api::_import_rest_api_output::ImportRestAp
 
 pub use crate::operation::import_rest_api::_import_rest_api_input::ImportRestApiInputBuilder;
 
+impl ImportRestApiInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::import_rest_api::ImportRestApiOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::import_rest_api::ImportRestApiError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.import_rest_api();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ImportRestApi`.
 ///
 /// <p>A feature of the API Gateway control service for creating a new API from an external API definition file.</p>

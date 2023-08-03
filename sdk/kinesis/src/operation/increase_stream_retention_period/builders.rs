@@ -3,6 +3,23 @@ pub use crate::operation::increase_stream_retention_period::_increase_stream_ret
 
 pub use crate::operation::increase_stream_retention_period::_increase_stream_retention_period_input::IncreaseStreamRetentionPeriodInputBuilder;
 
+impl IncreaseStreamRetentionPeriodInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::increase_stream_retention_period::IncreaseStreamRetentionPeriodOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::increase_stream_retention_period::IncreaseStreamRetentionPeriodError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.increase_stream_retention_period();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `IncreaseStreamRetentionPeriod`.
 ///
 /// <p>Increases the Kinesis data stream's retention period, which is the length of time data records are accessible after they are added to the stream. The maximum value of a stream's retention period is 8760 hours (365 days).</p> <note>

@@ -3,6 +3,23 @@ pub use crate::operation::update_domain_nameservers::_update_domain_nameservers_
 
 pub use crate::operation::update_domain_nameservers::_update_domain_nameservers_input::UpdateDomainNameserversInputBuilder;
 
+impl UpdateDomainNameserversInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_domain_nameservers::UpdateDomainNameserversOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_domain_nameservers::UpdateDomainNameserversError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_domain_nameservers();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateDomainNameservers`.
 ///
 /// <p>This operation replaces the current set of name servers for the domain with the specified set of name servers. If you use Amazon Route 53 as your DNS service, specify the four name servers in the delegation set for the hosted zone for the domain.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::detach_internet_gateway::_detach_internet_gateway_outp
 
 pub use crate::operation::detach_internet_gateway::_detach_internet_gateway_input::DetachInternetGatewayInputBuilder;
 
+impl DetachInternetGatewayInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::detach_internet_gateway::DetachInternetGatewayOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::detach_internet_gateway::DetachInternetGatewayError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.detach_internet_gateway();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DetachInternetGateway`.
 ///
 /// <p>Detaches an internet gateway from a VPC, disabling connectivity between the internet and the VPC. The VPC must not contain any running instances with Elastic IP addresses or public IPv4 addresses.</p>

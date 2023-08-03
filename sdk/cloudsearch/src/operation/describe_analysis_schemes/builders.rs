@@ -3,6 +3,23 @@ pub use crate::operation::describe_analysis_schemes::_describe_analysis_schemes_
 
 pub use crate::operation::describe_analysis_schemes::_describe_analysis_schemes_input::DescribeAnalysisSchemesInputBuilder;
 
+impl DescribeAnalysisSchemesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_analysis_schemes::DescribeAnalysisSchemesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_analysis_schemes::DescribeAnalysisSchemesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_analysis_schemes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAnalysisSchemes`.
 ///
 /// <p>Gets the analysis schemes configured for a domain. An analysis scheme defines language-specific text processing options for a <code>text</code> field. Can be limited to specific analysis schemes by name. By default, shows all analysis schemes and includes any pending changes to the configuration. Set the <code>Deployed</code> option to <code>true</code> to show the active configuration and exclude pending changes. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html" target="_blank">Configuring Analysis Schemes</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>

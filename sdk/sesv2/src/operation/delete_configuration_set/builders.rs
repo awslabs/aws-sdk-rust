@@ -3,6 +3,23 @@ pub use crate::operation::delete_configuration_set::_delete_configuration_set_ou
 
 pub use crate::operation::delete_configuration_set::_delete_configuration_set_input::DeleteConfigurationSetInputBuilder;
 
+impl DeleteConfigurationSetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_configuration_set::DeleteConfigurationSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_configuration_set::DeleteConfigurationSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_configuration_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteConfigurationSet`.
 ///
 /// <p>Delete an existing configuration set.</p>

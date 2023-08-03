@@ -3,6 +3,23 @@ pub use crate::operation::create_fleet::_create_fleet_output::CreateFleetOutputB
 
 pub use crate::operation::create_fleet::_create_fleet_input::CreateFleetInputBuilder;
 
+impl CreateFleetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_fleet::CreateFleetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_fleet::CreateFleetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_fleet();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateFleet`.
 ///
 /// <p>Creates a fleet of Amazon Elastic Compute Cloud (Amazon EC2) instances to host your custom game server or Realtime Servers. Use this operation to configure the computing resources for your fleet and provide instructions for running game servers on each instance.</p>

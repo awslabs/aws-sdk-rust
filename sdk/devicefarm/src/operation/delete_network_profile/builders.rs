@@ -3,6 +3,23 @@ pub use crate::operation::delete_network_profile::_delete_network_profile_output
 
 pub use crate::operation::delete_network_profile::_delete_network_profile_input::DeleteNetworkProfileInputBuilder;
 
+impl DeleteNetworkProfileInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_network_profile::DeleteNetworkProfileOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_network_profile::DeleteNetworkProfileError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_network_profile();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteNetworkProfile`.
 ///
 /// <p>Deletes a network profile.</p>

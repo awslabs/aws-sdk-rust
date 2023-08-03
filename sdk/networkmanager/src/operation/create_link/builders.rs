@@ -3,6 +3,23 @@ pub use crate::operation::create_link::_create_link_output::CreateLinkOutputBuil
 
 pub use crate::operation::create_link::_create_link_input::CreateLinkInputBuilder;
 
+impl CreateLinkInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_link::CreateLinkOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_link::CreateLinkError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_link();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateLink`.
 ///
 /// <p>Creates a new link for a specified site.</p>

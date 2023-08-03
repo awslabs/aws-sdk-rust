@@ -3,6 +3,23 @@ pub use crate::operation::list_object_attributes::_list_object_attributes_output
 
 pub use crate::operation::list_object_attributes::_list_object_attributes_input::ListObjectAttributesInputBuilder;
 
+impl ListObjectAttributesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_object_attributes::ListObjectAttributesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_object_attributes::ListObjectAttributesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_object_attributes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListObjectAttributes`.
 ///
 /// <p>Lists all attributes that are associated with an object. </p>

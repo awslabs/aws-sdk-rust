@@ -3,6 +3,23 @@ pub use crate::operation::update_file_system::_update_file_system_output::Update
 
 pub use crate::operation::update_file_system::_update_file_system_input::UpdateFileSystemInputBuilder;
 
+impl UpdateFileSystemInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_file_system::UpdateFileSystemOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_file_system::UpdateFileSystemError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_file_system();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateFileSystem`.
 ///
 /// <p>Use this operation to update the configuration of an existing Amazon FSx file system. You can update multiple properties in a single request.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_job_flows::_describe_job_flows_output::Descri
 
 pub use crate::operation::describe_job_flows::_describe_job_flows_input::DescribeJobFlowsInputBuilder;
 
+impl DescribeJobFlowsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_job_flows::DescribeJobFlowsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_job_flows::DescribeJobFlowsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_job_flows();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeJobFlows`.
 ///
 /// <p>This API is no longer supported and will eventually be removed. We recommend you use <code>ListClusters</code>, <code>DescribeCluster</code>, <code>ListSteps</code>, <code>ListInstanceGroups</code> and <code>ListBootstrapActions</code> instead.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::put_logging_configuration::_put_logging_configuration_
 
 pub use crate::operation::put_logging_configuration::_put_logging_configuration_input::PutLoggingConfigurationInputBuilder;
 
+impl PutLoggingConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_logging_configuration::PutLoggingConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_logging_configuration::PutLoggingConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_logging_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutLoggingConfiguration`.
 ///
 /// <p>Enables the specified <code>LoggingConfiguration</code>, to start logging from a web ACL, according to the configuration provided. </p> <note>

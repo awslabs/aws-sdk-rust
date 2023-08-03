@@ -3,6 +3,23 @@ pub use crate::operation::delete_vpn_connection_route::_delete_vpn_connection_ro
 
 pub use crate::operation::delete_vpn_connection_route::_delete_vpn_connection_route_input::DeleteVpnConnectionRouteInputBuilder;
 
+impl DeleteVpnConnectionRouteInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_vpn_connection_route::DeleteVpnConnectionRouteOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_vpn_connection_route::DeleteVpnConnectionRouteError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_vpn_connection_route();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteVpnConnectionRoute`.
 ///
 /// <p>Deletes the specified static route associated with a VPN connection between an existing virtual private gateway and a VPN customer gateway. The static route allows traffic to be routed from the virtual private gateway to the VPN customer gateway.</p>

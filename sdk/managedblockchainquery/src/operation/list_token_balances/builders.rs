@@ -3,6 +3,23 @@ pub use crate::operation::list_token_balances::_list_token_balances_output::List
 
 pub use crate::operation::list_token_balances::_list_token_balances_input::ListTokenBalancesInputBuilder;
 
+impl ListTokenBalancesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_token_balances::ListTokenBalancesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_token_balances::ListTokenBalancesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_token_balances();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListTokenBalances`.
 ///
 /// <p>This action returns the following for a given a blockchain network:</p>

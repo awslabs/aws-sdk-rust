@@ -3,6 +3,23 @@ pub use crate::operation::list_resolver_query_log_configs::_list_resolver_query_
 
 pub use crate::operation::list_resolver_query_log_configs::_list_resolver_query_log_configs_input::ListResolverQueryLogConfigsInputBuilder;
 
+impl ListResolverQueryLogConfigsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_resolver_query_log_configs::ListResolverQueryLogConfigsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_resolver_query_log_configs::ListResolverQueryLogConfigsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_resolver_query_log_configs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListResolverQueryLogConfigs`.
 ///
 /// <p>Lists information about the specified query logging configurations. Each configuration defines where you want Resolver to save DNS query logs and specifies the VPCs that you want to log queries for.</p>

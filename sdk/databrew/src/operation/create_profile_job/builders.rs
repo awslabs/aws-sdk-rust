@@ -3,6 +3,23 @@ pub use crate::operation::create_profile_job::_create_profile_job_output::Create
 
 pub use crate::operation::create_profile_job::_create_profile_job_input::CreateProfileJobInputBuilder;
 
+impl CreateProfileJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_profile_job::CreateProfileJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_profile_job::CreateProfileJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_profile_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateProfileJob`.
 ///
 /// <p>Creates a new job to analyze a dataset and create its data profile.</p>

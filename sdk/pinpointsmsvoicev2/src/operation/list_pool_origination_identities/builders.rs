@@ -3,6 +3,23 @@ pub use crate::operation::list_pool_origination_identities::_list_pool_originati
 
 pub use crate::operation::list_pool_origination_identities::_list_pool_origination_identities_input::ListPoolOriginationIdentitiesInputBuilder;
 
+impl ListPoolOriginationIdentitiesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_pool_origination_identities::ListPoolOriginationIdentitiesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_pool_origination_identities::ListPoolOriginationIdentitiesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_pool_origination_identities();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListPoolOriginationIdentities`.
 ///
 /// <p>Lists all associated origination identities in your pool.</p>

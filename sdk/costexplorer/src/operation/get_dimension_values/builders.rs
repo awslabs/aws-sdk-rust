@@ -3,6 +3,23 @@ pub use crate::operation::get_dimension_values::_get_dimension_values_output::Ge
 
 pub use crate::operation::get_dimension_values::_get_dimension_values_input::GetDimensionValuesInputBuilder;
 
+impl GetDimensionValuesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_dimension_values::GetDimensionValuesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_dimension_values::GetDimensionValuesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_dimension_values();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetDimensionValues`.
 ///
 /// <p>Retrieves all available filter values for a specified filter over a period of time. You can search the dimension values for an arbitrary string. </p>

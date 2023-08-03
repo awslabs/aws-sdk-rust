@@ -3,6 +3,23 @@ pub use crate::operation::disable_fast_launch::_disable_fast_launch_output::Disa
 
 pub use crate::operation::disable_fast_launch::_disable_fast_launch_input::DisableFastLaunchInputBuilder;
 
+impl DisableFastLaunchInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disable_fast_launch::DisableFastLaunchOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disable_fast_launch::DisableFastLaunchError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disable_fast_launch();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisableFastLaunch`.
 ///
 /// <p>Discontinue faster launching for a Windows AMI, and clean up existing pre-provisioned snapshots. When you disable faster launching, the AMI uses the standard launch process for each instance. All pre-provisioned snapshots must be removed before you can enable faster launching again.</p> <note>

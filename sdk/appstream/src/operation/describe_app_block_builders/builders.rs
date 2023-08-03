@@ -3,6 +3,23 @@ pub use crate::operation::describe_app_block_builders::_describe_app_block_build
 
 pub use crate::operation::describe_app_block_builders::_describe_app_block_builders_input::DescribeAppBlockBuildersInputBuilder;
 
+impl DescribeAppBlockBuildersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_app_block_builders::DescribeAppBlockBuildersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_app_block_builders::DescribeAppBlockBuildersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_app_block_builders();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAppBlockBuilders`.
 ///
 /// <p>Retrieves a list that describes one or more app block builders.</p>

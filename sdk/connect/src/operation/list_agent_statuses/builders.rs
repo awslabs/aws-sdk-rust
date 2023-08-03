@@ -3,6 +3,23 @@ pub use crate::operation::list_agent_statuses::_list_agent_statuses_output::List
 
 pub use crate::operation::list_agent_statuses::_list_agent_statuses_input::ListAgentStatusesInputBuilder;
 
+impl ListAgentStatusesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_agent_statuses::ListAgentStatusesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_agent_statuses::ListAgentStatusesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_agent_statuses();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAgentStatuses`.
 ///
 /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>

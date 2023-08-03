@@ -3,6 +3,23 @@ pub use crate::operation::create_partner_input::_create_partner_input_output::Cr
 
 pub use crate::operation::create_partner_input::_create_partner_input_input::CreatePartnerInputInputBuilder;
 
+impl CreatePartnerInputInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_partner_input::CreatePartnerInputOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_partner_input::CreatePartnerInputError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_partner_input();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreatePartnerInput`.
 ///
 /// Create a partner input

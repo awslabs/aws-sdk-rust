@@ -3,6 +3,23 @@ pub use crate::operation::cancel_capacity_reservation::_cancel_capacity_reservat
 
 pub use crate::operation::cancel_capacity_reservation::_cancel_capacity_reservation_input::CancelCapacityReservationInputBuilder;
 
+impl CancelCapacityReservationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::cancel_capacity_reservation::CancelCapacityReservationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::cancel_capacity_reservation::CancelCapacityReservationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.cancel_capacity_reservation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CancelCapacityReservation`.
 ///
 /// <p>Cancels the capacity reservation with the specified name. Cancelled reservations remain in your account and will be deleted 45 days after cancellation. During the 45 days, you cannot re-purpose or reuse a reservation that has been cancelled, but you can refer to its tags and view it for historical reference. </p>

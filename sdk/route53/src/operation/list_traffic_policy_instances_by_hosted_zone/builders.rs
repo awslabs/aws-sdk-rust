@@ -3,6 +3,17 @@ pub use crate::operation::list_traffic_policy_instances_by_hosted_zone::_list_tr
 
 pub use crate::operation::list_traffic_policy_instances_by_hosted_zone::_list_traffic_policy_instances_by_hosted_zone_input::ListTrafficPolicyInstancesByHostedZoneInputBuilder;
 
+impl ListTrafficPolicyInstancesByHostedZoneInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_traffic_policy_instances_by_hosted_zone::ListTrafficPolicyInstancesByHostedZoneOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_traffic_policy_instances_by_hosted_zone::ListTrafficPolicyInstancesByHostedZoneError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_traffic_policy_instances_by_hosted_zone();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListTrafficPolicyInstancesByHostedZone`.
 ///
 /// <p>Gets information about the traffic policy instances that you created in a specified hosted zone.</p> <note>

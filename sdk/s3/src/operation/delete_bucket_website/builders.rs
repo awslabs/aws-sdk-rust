@@ -3,6 +3,23 @@ pub use crate::operation::delete_bucket_website::_delete_bucket_website_output::
 
 pub use crate::operation::delete_bucket_website::_delete_bucket_website_input::DeleteBucketWebsiteInputBuilder;
 
+impl DeleteBucketWebsiteInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_bucket_website::DeleteBucketWebsiteOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_bucket_website::DeleteBucketWebsiteError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_bucket_website();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteBucketWebsite`.
 ///
 /// <p>This action removes the website configuration for a bucket. Amazon S3 returns a <code>200 OK</code> response upon successfully deleting a website configuration on the specified bucket. You will get a <code>200 OK</code> response if the website configuration you are trying to delete does not exist on the bucket. Amazon S3 returns a <code>404</code> response if the bucket specified in the request does not exist.</p>

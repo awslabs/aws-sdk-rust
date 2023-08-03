@@ -3,6 +3,23 @@ pub use crate::operation::delete_report_plan::_delete_report_plan_output::Delete
 
 pub use crate::operation::delete_report_plan::_delete_report_plan_input::DeleteReportPlanInputBuilder;
 
+impl DeleteReportPlanInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_report_plan::DeleteReportPlanOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_report_plan::DeleteReportPlanError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_report_plan();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteReportPlan`.
 ///
 /// <p>Deletes the report plan specified by a report plan name.</p>

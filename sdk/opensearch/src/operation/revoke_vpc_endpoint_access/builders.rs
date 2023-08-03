@@ -3,6 +3,23 @@ pub use crate::operation::revoke_vpc_endpoint_access::_revoke_vpc_endpoint_acces
 
 pub use crate::operation::revoke_vpc_endpoint_access::_revoke_vpc_endpoint_access_input::RevokeVpcEndpointAccessInputBuilder;
 
+impl RevokeVpcEndpointAccessInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::revoke_vpc_endpoint_access::RevokeVpcEndpointAccessOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::revoke_vpc_endpoint_access::RevokeVpcEndpointAccessError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.revoke_vpc_endpoint_access();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RevokeVpcEndpointAccess`.
 ///
 /// <p>Revokes access to an Amazon OpenSearch Service domain that was provided through an interface VPC endpoint.</p>

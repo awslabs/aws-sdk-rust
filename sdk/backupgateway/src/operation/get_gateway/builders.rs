@@ -3,6 +3,23 @@ pub use crate::operation::get_gateway::_get_gateway_output::GetGatewayOutputBuil
 
 pub use crate::operation::get_gateway::_get_gateway_input::GetGatewayInputBuilder;
 
+impl GetGatewayInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_gateway::GetGatewayOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_gateway::GetGatewayError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_gateway();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetGateway`.
 ///
 /// <p>By providing the ARN (Amazon Resource Name), this API returns the gateway.</p>

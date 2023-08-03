@@ -3,6 +3,17 @@ pub use crate::operation::describe_reserved_db_instances_offerings::_describe_re
 
 pub use crate::operation::describe_reserved_db_instances_offerings::_describe_reserved_db_instances_offerings_input::DescribeReservedDbInstancesOfferingsInputBuilder;
 
+impl DescribeReservedDbInstancesOfferingsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_reserved_db_instances_offerings::DescribeReservedDbInstancesOfferingsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_reserved_db_instances_offerings::DescribeReservedDBInstancesOfferingsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_reserved_db_instances_offerings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeReservedDBInstancesOfferings`.
 ///
 /// <p>Lists available reserved DB instance offerings.</p>

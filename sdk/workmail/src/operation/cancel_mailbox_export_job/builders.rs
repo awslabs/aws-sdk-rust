@@ -3,6 +3,23 @@ pub use crate::operation::cancel_mailbox_export_job::_cancel_mailbox_export_job_
 
 pub use crate::operation::cancel_mailbox_export_job::_cancel_mailbox_export_job_input::CancelMailboxExportJobInputBuilder;
 
+impl CancelMailboxExportJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::cancel_mailbox_export_job::CancelMailboxExportJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::cancel_mailbox_export_job::CancelMailboxExportJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.cancel_mailbox_export_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CancelMailboxExportJob`.
 ///
 /// <p>Cancels a mailbox export job.</p> <note>

@@ -3,6 +3,23 @@ pub use crate::operation::get_open_id_token::_get_open_id_token_output::GetOpenI
 
 pub use crate::operation::get_open_id_token::_get_open_id_token_input::GetOpenIdTokenInputBuilder;
 
+impl GetOpenIdTokenInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_open_id_token::GetOpenIdTokenOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_open_id_token::GetOpenIdTokenError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_open_id_token();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetOpenIdToken`.
 ///
 /// <p>Gets an OpenID token, using a known Cognito ID. This known Cognito ID is returned by <code>GetId</code>. You can optionally add additional logins for the identity. Supplying multiple logins creates an implicit link.</p>

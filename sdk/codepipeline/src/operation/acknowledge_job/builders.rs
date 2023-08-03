@@ -3,6 +3,23 @@ pub use crate::operation::acknowledge_job::_acknowledge_job_output::AcknowledgeJ
 
 pub use crate::operation::acknowledge_job::_acknowledge_job_input::AcknowledgeJobInputBuilder;
 
+impl AcknowledgeJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::acknowledge_job::AcknowledgeJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::acknowledge_job::AcknowledgeJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.acknowledge_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AcknowledgeJob`.
 ///
 /// <p>Returns information about a specified job and whether that job has been received by the job worker. Used for custom actions only.</p>

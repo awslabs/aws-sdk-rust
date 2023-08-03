@@ -3,6 +3,23 @@ pub use crate::operation::add_user_to_group::_add_user_to_group_output::AddUserT
 
 pub use crate::operation::add_user_to_group::_add_user_to_group_input::AddUserToGroupInputBuilder;
 
+impl AddUserToGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::add_user_to_group::AddUserToGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::add_user_to_group::AddUserToGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.add_user_to_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AddUserToGroup`.
 ///
 /// <p>Adds the specified user to the specified group.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_profiling_group::_delete_profiling_group_output
 
 pub use crate::operation::delete_profiling_group::_delete_profiling_group_input::DeleteProfilingGroupInputBuilder;
 
+impl DeleteProfilingGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_profiling_group::DeleteProfilingGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_profiling_group::DeleteProfilingGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_profiling_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteProfilingGroup`.
 ///
 /// <p>Deletes a profiling group.</p>

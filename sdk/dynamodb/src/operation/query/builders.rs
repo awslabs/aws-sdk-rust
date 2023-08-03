@@ -3,6 +3,23 @@ pub use crate::operation::query::_query_output::QueryOutputBuilder;
 
 pub use crate::operation::query::_query_input::QueryInputBuilder;
 
+impl QueryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::query::QueryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::query::QueryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.query();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `Query`.
 ///
 /// <p>You must provide the name of the partition key attribute and a single value for that attribute. <code>Query</code> returns all items with that partition key value. Optionally, you can provide a sort key attribute and use a comparison operator to refine the search results.</p>

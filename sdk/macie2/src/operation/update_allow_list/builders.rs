@@ -3,6 +3,23 @@ pub use crate::operation::update_allow_list::_update_allow_list_output::UpdateAl
 
 pub use crate::operation::update_allow_list::_update_allow_list_input::UpdateAllowListInputBuilder;
 
+impl UpdateAllowListInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_allow_list::UpdateAllowListOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_allow_list::UpdateAllowListError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_allow_list();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateAllowList`.
 ///
 /// <p>Updates the settings for an allow list.</p>

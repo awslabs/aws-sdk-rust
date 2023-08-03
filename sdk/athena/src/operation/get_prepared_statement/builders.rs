@@ -3,6 +3,23 @@ pub use crate::operation::get_prepared_statement::_get_prepared_statement_output
 
 pub use crate::operation::get_prepared_statement::_get_prepared_statement_input::GetPreparedStatementInputBuilder;
 
+impl GetPreparedStatementInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_prepared_statement::GetPreparedStatementOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_prepared_statement::GetPreparedStatementError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_prepared_statement();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetPreparedStatement`.
 ///
 /// <p>Retrieves the prepared statement with the specified name from the specified workgroup.</p>

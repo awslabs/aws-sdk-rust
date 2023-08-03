@@ -3,6 +3,23 @@ pub use crate::operation::disable_radius::_disable_radius_output::DisableRadiusO
 
 pub use crate::operation::disable_radius::_disable_radius_input::DisableRadiusInputBuilder;
 
+impl DisableRadiusInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disable_radius::DisableRadiusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disable_radius::DisableRadiusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disable_radius();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisableRadius`.
 ///
 /// <p>Disables multi-factor authentication (MFA) with the Remote Authentication Dial In User Service (RADIUS) server for an AD Connector or Microsoft AD directory.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_annotation_import_jobs::_list_annotation_import_j
 
 pub use crate::operation::list_annotation_import_jobs::_list_annotation_import_jobs_input::ListAnnotationImportJobsInputBuilder;
 
+impl ListAnnotationImportJobsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_annotation_import_jobs::ListAnnotationImportJobsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_annotation_import_jobs::ListAnnotationImportJobsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_annotation_import_jobs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAnnotationImportJobs`.
 ///
 /// <p>Retrieves a list of annotation import jobs.</p>

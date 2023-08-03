@@ -3,6 +3,23 @@ pub use crate::operation::list_journeys::_list_journeys_output::ListJourneysOutp
 
 pub use crate::operation::list_journeys::_list_journeys_input::ListJourneysInputBuilder;
 
+impl ListJourneysInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_journeys::ListJourneysOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_journeys::ListJourneysError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_journeys();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListJourneys`.
 ///
 /// <p>Retrieves information about the status, configuration, and other settings for all the journeys that are associated with an application.</p>

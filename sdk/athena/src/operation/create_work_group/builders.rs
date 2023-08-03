@@ -3,6 +3,23 @@ pub use crate::operation::create_work_group::_create_work_group_output::CreateWo
 
 pub use crate::operation::create_work_group::_create_work_group_input::CreateWorkGroupInputBuilder;
 
+impl CreateWorkGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_work_group::CreateWorkGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_work_group::CreateWorkGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_work_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateWorkGroup`.
 ///
 /// <p>Creates a workgroup with the specified name. A workgroup can be an Apache Spark enabled workgroup or an Athena SQL workgroup.</p>

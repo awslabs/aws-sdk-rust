@@ -3,6 +3,17 @@ pub use crate::operation::batch_get_aggregate_resource_config::_batch_get_aggreg
 
 pub use crate::operation::batch_get_aggregate_resource_config::_batch_get_aggregate_resource_config_input::BatchGetAggregateResourceConfigInputBuilder;
 
+impl BatchGetAggregateResourceConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::batch_get_aggregate_resource_config::BatchGetAggregateResourceConfigOutput, ::aws_smithy_http::result::SdkError<crate::operation::batch_get_aggregate_resource_config::BatchGetAggregateResourceConfigError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.batch_get_aggregate_resource_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchGetAggregateResourceConfig`.
 ///
 /// <p>Returns the current configuration items for resources that are present in your Config aggregator. The operation also returns a list of resources that are not processed in the current request. If there are no unprocessed resources, the operation returns an empty <code>unprocessedResourceIdentifiers</code> list. </p> <note>

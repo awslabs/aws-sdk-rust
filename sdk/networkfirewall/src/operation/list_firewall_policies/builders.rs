@@ -3,6 +3,23 @@ pub use crate::operation::list_firewall_policies::_list_firewall_policies_output
 
 pub use crate::operation::list_firewall_policies::_list_firewall_policies_input::ListFirewallPoliciesInputBuilder;
 
+impl ListFirewallPoliciesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_firewall_policies::ListFirewallPoliciesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_firewall_policies::ListFirewallPoliciesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_firewall_policies();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListFirewallPolicies`.
 ///
 /// <p>Retrieves the metadata for the firewall policies that you have defined. Depending on your setting for max results and the number of firewall policies, a single call might not return the full list. </p>

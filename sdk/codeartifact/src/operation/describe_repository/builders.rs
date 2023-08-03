@@ -3,6 +3,23 @@ pub use crate::operation::describe_repository::_describe_repository_output::Desc
 
 pub use crate::operation::describe_repository::_describe_repository_input::DescribeRepositoryInputBuilder;
 
+impl DescribeRepositoryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_repository::DescribeRepositoryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_repository::DescribeRepositoryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_repository();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeRepository`.
 ///
 /// <p> Returns a <code>RepositoryDescription</code> object that contains detailed information about the requested repository. </p>

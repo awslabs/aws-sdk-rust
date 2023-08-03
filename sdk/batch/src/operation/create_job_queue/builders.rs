@@ -3,6 +3,23 @@ pub use crate::operation::create_job_queue::_create_job_queue_output::CreateJobQ
 
 pub use crate::operation::create_job_queue::_create_job_queue_input::CreateJobQueueInputBuilder;
 
+impl CreateJobQueueInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_job_queue::CreateJobQueueOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_job_queue::CreateJobQueueError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_job_queue();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateJobQueue`.
 ///
 /// <p>Creates an Batch job queue. When you create a job queue, you associate one or more compute environments to the queue and assign an order of preference for the compute environments.</p>

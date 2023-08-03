@@ -3,6 +3,17 @@ pub use crate::operation::describe_storage_system_resources::_describe_storage_s
 
 pub use crate::operation::describe_storage_system_resources::_describe_storage_system_resources_input::DescribeStorageSystemResourcesInputBuilder;
 
+impl DescribeStorageSystemResourcesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_storage_system_resources::DescribeStorageSystemResourcesOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_storage_system_resources::DescribeStorageSystemResourcesError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_storage_system_resources();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeStorageSystemResources`.
 ///
 /// <p>Returns information that DataSync Discovery collects about resources in your on-premises storage system.</p>

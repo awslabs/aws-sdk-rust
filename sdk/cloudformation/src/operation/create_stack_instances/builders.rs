@@ -3,6 +3,23 @@ pub use crate::operation::create_stack_instances::_create_stack_instances_output
 
 pub use crate::operation::create_stack_instances::_create_stack_instances_input::CreateStackInstancesInputBuilder;
 
+impl CreateStackInstancesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_stack_instances::CreateStackInstancesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_stack_instances::CreateStackInstancesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_stack_instances();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateStackInstances`.
 ///
 /// <p>Creates stack instances for the specified accounts, within the specified Amazon Web Services Regions. A stack instance refers to a stack in a specific account and Region. You must specify at least one value for either <code>Accounts</code> or <code>DeploymentTargets</code>, and you must specify at least one value for <code>Regions</code>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::update_project_visibility::_update_project_visibility_
 
 pub use crate::operation::update_project_visibility::_update_project_visibility_input::UpdateProjectVisibilityInputBuilder;
 
+impl UpdateProjectVisibilityInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_project_visibility::UpdateProjectVisibilityOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_project_visibility::UpdateProjectVisibilityError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_project_visibility();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateProjectVisibility`.
 ///
 /// <p>Changes the public visibility for a project. The project's build results, logs, and artifacts are available to the general public. For more information, see <a href="https://docs.aws.amazon.com/codebuild/latest/userguide/public-builds.html">Public build projects</a> in the <i>CodeBuild User Guide</i>.</p> <important>

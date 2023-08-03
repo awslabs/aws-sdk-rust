@@ -3,6 +3,23 @@ pub use crate::operation::create_snapshots::_create_snapshots_output::CreateSnap
 
 pub use crate::operation::create_snapshots::_create_snapshots_input::CreateSnapshotsInputBuilder;
 
+impl CreateSnapshotsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_snapshots::CreateSnapshotsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_snapshots::CreateSnapshotsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_snapshots();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateSnapshots`.
 ///
 /// <p>Creates crash-consistent snapshots of multiple EBS volumes and stores the data in S3. Volumes are chosen by specifying an instance. Any attached volumes will produce one snapshot each that is crash-consistent across the instance.</p>

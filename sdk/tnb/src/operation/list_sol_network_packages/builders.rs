@@ -3,6 +3,23 @@ pub use crate::operation::list_sol_network_packages::_list_sol_network_packages_
 
 pub use crate::operation::list_sol_network_packages::_list_sol_network_packages_input::ListSolNetworkPackagesInputBuilder;
 
+impl ListSolNetworkPackagesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_sol_network_packages::ListSolNetworkPackagesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_sol_network_packages::ListSolNetworkPackagesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_sol_network_packages();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListSolNetworkPackages`.
 ///
 /// <p>Lists network packages.</p>

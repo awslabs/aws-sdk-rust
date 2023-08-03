@@ -3,6 +3,23 @@ pub use crate::operation::list_batch_inference_jobs::_list_batch_inference_jobs_
 
 pub use crate::operation::list_batch_inference_jobs::_list_batch_inference_jobs_input::ListBatchInferenceJobsInputBuilder;
 
+impl ListBatchInferenceJobsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_batch_inference_jobs::ListBatchInferenceJobsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_batch_inference_jobs::ListBatchInferenceJobsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_batch_inference_jobs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListBatchInferenceJobs`.
 ///
 /// <p>Gets a list of the batch inference jobs that have been performed off of a solution version.</p>

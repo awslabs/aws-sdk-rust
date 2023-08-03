@@ -3,6 +3,23 @@ pub use crate::operation::merge_profiles::_merge_profiles_output::MergeProfilesO
 
 pub use crate::operation::merge_profiles::_merge_profiles_input::MergeProfilesInputBuilder;
 
+impl MergeProfilesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::merge_profiles::MergeProfilesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::merge_profiles::MergeProfilesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.merge_profiles();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `MergeProfiles`.
 ///
 /// <p>Runs an AWS Lambda job that does the following:</p>

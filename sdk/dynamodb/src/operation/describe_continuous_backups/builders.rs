@@ -3,6 +3,23 @@ pub use crate::operation::describe_continuous_backups::_describe_continuous_back
 
 pub use crate::operation::describe_continuous_backups::_describe_continuous_backups_input::DescribeContinuousBackupsInputBuilder;
 
+impl DescribeContinuousBackupsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_continuous_backups::DescribeContinuousBackupsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_continuous_backups::DescribeContinuousBackupsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_continuous_backups();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeContinuousBackups`.
 ///
 /// <p>Checks the status of continuous backups and point in time recovery on the specified table. Continuous backups are <code>ENABLED</code> on all tables at table creation. If point in time recovery is enabled, <code>PointInTimeRecoveryStatus</code> will be set to ENABLED.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_cidr_collection::_delete_cidr_collection_output
 
 pub use crate::operation::delete_cidr_collection::_delete_cidr_collection_input::DeleteCidrCollectionInputBuilder;
 
+impl DeleteCidrCollectionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_cidr_collection::DeleteCidrCollectionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_cidr_collection::DeleteCidrCollectionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_cidr_collection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteCidrCollection`.
 ///
 /// <p>Deletes a CIDR collection in the current Amazon Web Services account. The collection must be empty before it can be deleted.</p>

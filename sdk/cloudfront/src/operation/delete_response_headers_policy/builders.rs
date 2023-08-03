@@ -3,6 +3,23 @@ pub use crate::operation::delete_response_headers_policy::_delete_response_heade
 
 pub use crate::operation::delete_response_headers_policy::_delete_response_headers_policy_input::DeleteResponseHeadersPolicyInputBuilder;
 
+impl DeleteResponseHeadersPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_response_headers_policy::DeleteResponseHeadersPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_response_headers_policy::DeleteResponseHeadersPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_response_headers_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteResponseHeadersPolicy`.
 ///
 /// <p>Deletes a response headers policy.</p>

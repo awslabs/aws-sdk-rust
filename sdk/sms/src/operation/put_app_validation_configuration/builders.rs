@@ -3,6 +3,23 @@ pub use crate::operation::put_app_validation_configuration::_put_app_validation_
 
 pub use crate::operation::put_app_validation_configuration::_put_app_validation_configuration_input::PutAppValidationConfigurationInputBuilder;
 
+impl PutAppValidationConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_app_validation_configuration::PutAppValidationConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_app_validation_configuration::PutAppValidationConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_app_validation_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutAppValidationConfiguration`.
 ///
 /// <p>Creates or updates a validation configuration for the specified application.</p>

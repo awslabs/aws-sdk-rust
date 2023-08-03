@@ -3,6 +3,23 @@ pub use crate::operation::create_core_network::_create_core_network_output::Crea
 
 pub use crate::operation::create_core_network::_create_core_network_input::CreateCoreNetworkInputBuilder;
 
+impl CreateCoreNetworkInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_core_network::CreateCoreNetworkOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_core_network::CreateCoreNetworkError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_core_network();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateCoreNetwork`.
 ///
 /// <p>Creates a core network as part of your global network, and optionally, with a core network policy.</p>

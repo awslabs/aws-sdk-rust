@@ -3,6 +3,23 @@ pub use crate::operation::describe_alarm::_describe_alarm_output::DescribeAlarmO
 
 pub use crate::operation::describe_alarm::_describe_alarm_input::DescribeAlarmInputBuilder;
 
+impl DescribeAlarmInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_alarm::DescribeAlarmOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_alarm::DescribeAlarmError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_alarm();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAlarm`.
 ///
 /// <p>Retrieves information about an alarm.</p>

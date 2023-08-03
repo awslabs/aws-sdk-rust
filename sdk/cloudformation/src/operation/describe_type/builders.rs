@@ -3,6 +3,23 @@ pub use crate::operation::describe_type::_describe_type_output::DescribeTypeOutp
 
 pub use crate::operation::describe_type::_describe_type_input::DescribeTypeInputBuilder;
 
+impl DescribeTypeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_type::DescribeTypeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_type::DescribeTypeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_type();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeType`.
 ///
 /// <p>Returns detailed information about an extension that has been registered.</p>

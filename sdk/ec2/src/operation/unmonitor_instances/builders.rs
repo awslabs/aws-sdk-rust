@@ -3,6 +3,23 @@ pub use crate::operation::unmonitor_instances::_unmonitor_instances_output::Unmo
 
 pub use crate::operation::unmonitor_instances::_unmonitor_instances_input::UnmonitorInstancesInputBuilder;
 
+impl UnmonitorInstancesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::unmonitor_instances::UnmonitorInstancesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::unmonitor_instances::UnmonitorInstancesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.unmonitor_instances();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UnmonitorInstances`.
 ///
 /// <p>Disables detailed monitoring for a running instance. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-cloudwatch.html">Monitoring your instances and volumes</a> in the <i>Amazon EC2 User Guide</i>.</p>

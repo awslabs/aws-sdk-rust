@@ -3,6 +3,23 @@ pub use crate::operation::search_contacts::_search_contacts_output::SearchContac
 
 pub use crate::operation::search_contacts::_search_contacts_input::SearchContactsInputBuilder;
 
+impl SearchContactsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::search_contacts::SearchContactsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::search_contacts::SearchContactsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.search_contacts();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SearchContacts`.
 ///
 /// <p>Searches contacts and lists the ones that meet a set of filter and sort criteria.</p>

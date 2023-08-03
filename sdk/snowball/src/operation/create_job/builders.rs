@@ -3,6 +3,23 @@ pub use crate::operation::create_job::_create_job_output::CreateJobOutputBuilder
 
 pub use crate::operation::create_job::_create_job_input::CreateJobInputBuilder;
 
+impl CreateJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_job::CreateJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_job::CreateJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateJob`.
 ///
 /// <p>Creates a job to import or export data between Amazon S3 and your on-premises data center. Your Amazon Web Services account must have the right trust policies and permissions in place to create a job for a Snow device. If you're creating a job for a node in a cluster, you only need to provide the <code>clusterId</code> value; the other job attributes are inherited from the cluster. </p> <note>

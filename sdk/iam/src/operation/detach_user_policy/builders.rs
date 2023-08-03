@@ -3,6 +3,23 @@ pub use crate::operation::detach_user_policy::_detach_user_policy_output::Detach
 
 pub use crate::operation::detach_user_policy::_detach_user_policy_input::DetachUserPolicyInputBuilder;
 
+impl DetachUserPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::detach_user_policy::DetachUserPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::detach_user_policy::DetachUserPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.detach_user_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DetachUserPolicy`.
 ///
 /// <p>Removes the specified managed policy from the specified user.</p>

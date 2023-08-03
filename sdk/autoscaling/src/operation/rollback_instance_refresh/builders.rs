@@ -3,6 +3,23 @@ pub use crate::operation::rollback_instance_refresh::_rollback_instance_refresh_
 
 pub use crate::operation::rollback_instance_refresh::_rollback_instance_refresh_input::RollbackInstanceRefreshInputBuilder;
 
+impl RollbackInstanceRefreshInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::rollback_instance_refresh::RollbackInstanceRefreshOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::rollback_instance_refresh::RollbackInstanceRefreshError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.rollback_instance_refresh();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RollbackInstanceRefresh`.
 ///
 /// <p>Cancels an instance refresh that is in progress and rolls back any changes that it made. Amazon EC2 Auto Scaling replaces any instances that were replaced during the instance refresh. This restores your Auto Scaling group to the configuration that it was using before the start of the instance refresh. </p>

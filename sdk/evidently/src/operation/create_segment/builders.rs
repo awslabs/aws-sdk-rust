@@ -3,6 +3,23 @@ pub use crate::operation::create_segment::_create_segment_output::CreateSegmentO
 
 pub use crate::operation::create_segment::_create_segment_input::CreateSegmentInputBuilder;
 
+impl CreateSegmentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_segment::CreateSegmentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_segment::CreateSegmentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_segment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateSegment`.
 ///
 /// <p>Use this operation to define a <i>segment</i> of your audience. A segment is a portion of your audience that share one or more characteristics. Examples could be Chrome browser users, users in Europe, or Firefox browser users in Europe who also fit other criteria that your application collects, such as age.</p>

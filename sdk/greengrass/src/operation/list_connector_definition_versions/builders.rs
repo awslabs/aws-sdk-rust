@@ -3,6 +3,17 @@ pub use crate::operation::list_connector_definition_versions::_list_connector_de
 
 pub use crate::operation::list_connector_definition_versions::_list_connector_definition_versions_input::ListConnectorDefinitionVersionsInputBuilder;
 
+impl ListConnectorDefinitionVersionsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_connector_definition_versions::ListConnectorDefinitionVersionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_connector_definition_versions::ListConnectorDefinitionVersionsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_connector_definition_versions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListConnectorDefinitionVersions`.
 ///
 /// Lists the versions of a connector definition, which are containers for connectors. Connectors run on the Greengrass core and contain built-in integration with local infrastructure, device protocols, AWS, and other cloud services.

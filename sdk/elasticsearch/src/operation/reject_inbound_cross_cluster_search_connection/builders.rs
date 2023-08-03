@@ -3,6 +3,17 @@ pub use crate::operation::reject_inbound_cross_cluster_search_connection::_rejec
 
 pub use crate::operation::reject_inbound_cross_cluster_search_connection::_reject_inbound_cross_cluster_search_connection_input::RejectInboundCrossClusterSearchConnectionInputBuilder;
 
+impl RejectInboundCrossClusterSearchConnectionInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::reject_inbound_cross_cluster_search_connection::RejectInboundCrossClusterSearchConnectionOutput, ::aws_smithy_http::result::SdkError<crate::operation::reject_inbound_cross_cluster_search_connection::RejectInboundCrossClusterSearchConnectionError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.reject_inbound_cross_cluster_search_connection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RejectInboundCrossClusterSearchConnection`.
 ///
 /// <p>Allows the destination domain owner to reject an inbound cross-cluster search connection request.</p>

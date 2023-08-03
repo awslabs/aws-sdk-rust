@@ -3,6 +3,23 @@ pub use crate::operation::delete_assistant::_delete_assistant_output::DeleteAssi
 
 pub use crate::operation::delete_assistant::_delete_assistant_input::DeleteAssistantInputBuilder;
 
+impl DeleteAssistantInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_assistant::DeleteAssistantOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_assistant::DeleteAssistantError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_assistant();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteAssistant`.
 ///
 /// <p>Deletes an assistant.</p>

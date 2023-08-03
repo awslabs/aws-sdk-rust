@@ -3,6 +3,23 @@ pub use crate::operation::batch_put_asset_property_value::_batch_put_asset_prope
 
 pub use crate::operation::batch_put_asset_property_value::_batch_put_asset_property_value_input::BatchPutAssetPropertyValueInputBuilder;
 
+impl BatchPutAssetPropertyValueInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_put_asset_property_value::BatchPutAssetPropertyValueError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_put_asset_property_value();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchPutAssetPropertyValue`.
 ///
 /// <p>Sends a list of asset property values to IoT SiteWise. Each value is a timestamp-quality-value (TQV) data point. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/ingest-api.html">Ingesting data using the API</a> in the <i>IoT SiteWise User Guide</i>.</p>

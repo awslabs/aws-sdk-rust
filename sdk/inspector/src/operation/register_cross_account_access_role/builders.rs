@@ -3,6 +3,17 @@ pub use crate::operation::register_cross_account_access_role::_register_cross_ac
 
 pub use crate::operation::register_cross_account_access_role::_register_cross_account_access_role_input::RegisterCrossAccountAccessRoleInputBuilder;
 
+impl RegisterCrossAccountAccessRoleInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRoleOutput, ::aws_smithy_http::result::SdkError<crate::operation::register_cross_account_access_role::RegisterCrossAccountAccessRoleError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.register_cross_account_access_role();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RegisterCrossAccountAccessRole`.
 ///
 /// <p>Registers the IAM role that grants Amazon Inspector access to AWS Services needed to perform security assessments.</p>

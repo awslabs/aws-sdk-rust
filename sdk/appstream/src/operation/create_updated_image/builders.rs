@@ -3,6 +3,23 @@ pub use crate::operation::create_updated_image::_create_updated_image_output::Cr
 
 pub use crate::operation::create_updated_image::_create_updated_image_input::CreateUpdatedImageInputBuilder;
 
+impl CreateUpdatedImageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_updated_image::CreateUpdatedImageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_updated_image::CreateUpdatedImageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_updated_image();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateUpdatedImage`.
 ///
 /// <p>Creates a new image with the latest Windows operating system updates, driver updates, and AppStream 2.0 agent software.</p>

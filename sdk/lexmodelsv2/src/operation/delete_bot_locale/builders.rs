@@ -3,6 +3,23 @@ pub use crate::operation::delete_bot_locale::_delete_bot_locale_output::DeleteBo
 
 pub use crate::operation::delete_bot_locale::_delete_bot_locale_input::DeleteBotLocaleInputBuilder;
 
+impl DeleteBotLocaleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_bot_locale::DeleteBotLocaleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_bot_locale::DeleteBotLocaleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_bot_locale();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteBotLocale`.
 ///
 /// <p>Removes a locale from a bot.</p>

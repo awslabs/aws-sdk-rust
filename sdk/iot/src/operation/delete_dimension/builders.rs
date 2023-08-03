@@ -3,6 +3,23 @@ pub use crate::operation::delete_dimension::_delete_dimension_output::DeleteDime
 
 pub use crate::operation::delete_dimension::_delete_dimension_input::DeleteDimensionInputBuilder;
 
+impl DeleteDimensionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_dimension::DeleteDimensionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_dimension::DeleteDimensionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_dimension();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteDimension`.
 ///
 /// <p>Removes the specified dimension from your Amazon Web Services accounts.</p>

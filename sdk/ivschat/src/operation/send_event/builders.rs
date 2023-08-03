@@ -3,6 +3,23 @@ pub use crate::operation::send_event::_send_event_output::SendEventOutputBuilder
 
 pub use crate::operation::send_event::_send_event_input::SendEventInputBuilder;
 
+impl SendEventInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::send_event::SendEventOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::send_event::SendEventError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.send_event();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SendEvent`.
 ///
 /// <p>Sends an event to a room. Use this within your application’s business logic to send events to clients of a room; e.g., to notify clients to change the way the chat UI is rendered.</p>

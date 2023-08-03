@@ -3,6 +3,23 @@ pub use crate::operation::describe_metric_set::_describe_metric_set_output::Desc
 
 pub use crate::operation::describe_metric_set::_describe_metric_set_input::DescribeMetricSetInputBuilder;
 
+impl DescribeMetricSetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_metric_set::DescribeMetricSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_metric_set::DescribeMetricSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_metric_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeMetricSet`.
 ///
 /// <p>Describes a dataset.</p>

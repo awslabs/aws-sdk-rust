@@ -3,6 +3,23 @@ pub use crate::operation::list_rx_norm_inference_jobs::_list_rx_norm_inference_j
 
 pub use crate::operation::list_rx_norm_inference_jobs::_list_rx_norm_inference_jobs_input::ListRxNormInferenceJobsInputBuilder;
 
+impl ListRxNormInferenceJobsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_rx_norm_inference_jobs::ListRxNormInferenceJobsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_rx_norm_inference_jobs::ListRxNormInferenceJobsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_rx_norm_inference_jobs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListRxNormInferenceJobs`.
 ///
 /// <p>Gets a list of InferRxNorm jobs that you have submitted.</p>

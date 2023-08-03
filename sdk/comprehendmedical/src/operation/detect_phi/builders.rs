@@ -3,6 +3,23 @@ pub use crate::operation::detect_phi::_detect_phi_output::DetectPhiOutputBuilder
 
 pub use crate::operation::detect_phi::_detect_phi_input::DetectPhiInputBuilder;
 
+impl DetectPhiInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::detect_phi::DetectPhiOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::detect_phi::DetectPHIError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.detect_phi();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DetectPHI`.
 ///
 /// <p>Inspects the clinical text for protected health information (PHI) entities and returns the entity category, location, and confidence score for each entity. Amazon Comprehend Medical only detects entities in English language texts.</p>

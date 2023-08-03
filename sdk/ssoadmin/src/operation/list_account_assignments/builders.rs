@@ -3,6 +3,23 @@ pub use crate::operation::list_account_assignments::_list_account_assignments_ou
 
 pub use crate::operation::list_account_assignments::_list_account_assignments_input::ListAccountAssignmentsInputBuilder;
 
+impl ListAccountAssignmentsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_account_assignments::ListAccountAssignmentsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_account_assignments::ListAccountAssignmentsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_account_assignments();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAccountAssignments`.
 ///
 /// <p>Lists the assignee of the specified AWS account with the specified permission set.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_entities_for_policy::_list_entities_for_policy_ou
 
 pub use crate::operation::list_entities_for_policy::_list_entities_for_policy_input::ListEntitiesForPolicyInputBuilder;
 
+impl ListEntitiesForPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_entities_for_policy::ListEntitiesForPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_entities_for_policy::ListEntitiesForPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_entities_for_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListEntitiesForPolicy`.
 ///
 /// <p>Lists all IAM users, groups, and roles that the specified managed policy is attached to.</p>

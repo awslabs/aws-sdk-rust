@@ -3,6 +3,17 @@ pub use crate::operation::describe_cluster_parameter_groups::_describe_cluster_p
 
 pub use crate::operation::describe_cluster_parameter_groups::_describe_cluster_parameter_groups_input::DescribeClusterParameterGroupsInputBuilder;
 
+impl DescribeClusterParameterGroupsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_cluster_parameter_groups::DescribeClusterParameterGroupsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_cluster_parameter_groups::DescribeClusterParameterGroupsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_cluster_parameter_groups();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeClusterParameterGroups`.
 ///
 /// <p>Returns a list of Amazon Redshift parameter groups, including parameter groups you created and the default parameter group. For each parameter group, the response includes the parameter group name, description, and parameter group family name. You can optionally specify a name to retrieve the description of a specific parameter group.</p>

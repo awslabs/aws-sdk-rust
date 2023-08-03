@@ -3,6 +3,23 @@ pub use crate::operation::list_repositories::_list_repositories_output::ListRepo
 
 pub use crate::operation::list_repositories::_list_repositories_input::ListRepositoriesInputBuilder;
 
+impl ListRepositoriesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_repositories::ListRepositoriesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_repositories::ListRepositoriesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_repositories();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListRepositories`.
 ///
 /// <p>Gets information about one or more repositories.</p>

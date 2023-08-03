@@ -3,6 +3,23 @@ pub use crate::operation::start_fraudster_registration_job::_start_fraudster_reg
 
 pub use crate::operation::start_fraudster_registration_job::_start_fraudster_registration_job_input::StartFraudsterRegistrationJobInputBuilder;
 
+impl StartFraudsterRegistrationJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_fraudster_registration_job::StartFraudsterRegistrationJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_fraudster_registration_job::StartFraudsterRegistrationJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_fraudster_registration_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartFraudsterRegistrationJob`.
 ///
 /// <p>Starts a new batch fraudster registration job using provided details.</p>

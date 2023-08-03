@@ -3,6 +3,23 @@ pub use crate::operation::describe_alarm_model::_describe_alarm_model_output::De
 
 pub use crate::operation::describe_alarm_model::_describe_alarm_model_input::DescribeAlarmModelInputBuilder;
 
+impl DescribeAlarmModelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_alarm_model::DescribeAlarmModelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_alarm_model::DescribeAlarmModelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_alarm_model();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAlarmModel`.
 ///
 /// <p>Retrieves information about an alarm model. If you don't specify a value for the <code>alarmModelVersion</code> parameter, the latest version is returned.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_cost_allocation_tags::_list_cost_allocation_tags_
 
 pub use crate::operation::list_cost_allocation_tags::_list_cost_allocation_tags_input::ListCostAllocationTagsInputBuilder;
 
+impl ListCostAllocationTagsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_cost_allocation_tags::ListCostAllocationTagsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_cost_allocation_tags::ListCostAllocationTagsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_cost_allocation_tags();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListCostAllocationTags`.
 ///
 /// <p>Get a list of cost allocation tags. All inputs in the API are optional and serve as filters. By default, all cost allocation tags are returned. </p>

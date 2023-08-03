@@ -3,6 +3,23 @@ pub use crate::operation::update_quick_connect_name::_update_quick_connect_name_
 
 pub use crate::operation::update_quick_connect_name::_update_quick_connect_name_input::UpdateQuickConnectNameInputBuilder;
 
+impl UpdateQuickConnectNameInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_quick_connect_name::UpdateQuickConnectNameOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_quick_connect_name::UpdateQuickConnectNameError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_quick_connect_name();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateQuickConnectName`.
 ///
 /// <p>Updates the name and description of a quick connect. The request accepts the following data in JSON format. At least <code>Name</code> or <code>Description</code> must be provided.</p>

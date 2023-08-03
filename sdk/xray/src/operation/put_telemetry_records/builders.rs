@@ -3,6 +3,23 @@ pub use crate::operation::put_telemetry_records::_put_telemetry_records_output::
 
 pub use crate::operation::put_telemetry_records::_put_telemetry_records_input::PutTelemetryRecordsInputBuilder;
 
+impl PutTelemetryRecordsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_telemetry_records::PutTelemetryRecordsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_telemetry_records::PutTelemetryRecordsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_telemetry_records();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutTelemetryRecords`.
 ///
 /// <p>Used by the Amazon Web Services X-Ray daemon to upload telemetry.</p>

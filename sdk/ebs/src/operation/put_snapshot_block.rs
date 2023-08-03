@@ -222,7 +222,7 @@ mod put_snapshot_block_request_test {
                 "1 validation error detected".to_owned(),
             ))
             .build();
-        let http_response = ::http::response::Builder::new()
+        let mut http_response = ::http::response::Builder::new()
             .header("content-length", "77")
             .header("content-type", "application/json")
             .header("date", "Wed, 30 Jun 2021 23:42:27 GMT")
@@ -280,7 +280,7 @@ mod put_snapshot_block_request_test {
                 crate::types::ValidationExceptionReason::from("INVALID_VOLUME_SIZE"),
             ))
             .build();
-        let http_response = ::http::response::Builder::new()
+        let mut http_response = ::http::response::Builder::new()
         .header("content-length", "77")
         .header("content-type", "application/json")
         .header("date", "Wed, 30 Jun 2021 23:42:27 GMT")

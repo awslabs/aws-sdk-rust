@@ -3,6 +3,23 @@ pub use crate::operation::schedule_key_deletion::_schedule_key_deletion_output::
 
 pub use crate::operation::schedule_key_deletion::_schedule_key_deletion_input::ScheduleKeyDeletionInputBuilder;
 
+impl ScheduleKeyDeletionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::schedule_key_deletion::ScheduleKeyDeletionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::schedule_key_deletion::ScheduleKeyDeletionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.schedule_key_deletion();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ScheduleKeyDeletion`.
 ///
 /// <p>Schedules the deletion of a KMS key. By default, KMS applies a waiting period of 30 days, but you can specify a waiting period of 7-30 days. When this operation is successful, the key state of the KMS key changes to <code>PendingDeletion</code> and the key can't be used in any cryptographic operations. It remains in this state for the duration of the waiting period. Before the waiting period ends, you can use <code>CancelKeyDeletion</code> to cancel the deletion of the KMS key. After the waiting period ends, KMS deletes the KMS key, its key material, and all KMS data associated with it, including all aliases that refer to it.</p> <important>

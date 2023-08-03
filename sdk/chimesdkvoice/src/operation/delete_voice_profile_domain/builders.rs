@@ -3,6 +3,23 @@ pub use crate::operation::delete_voice_profile_domain::_delete_voice_profile_dom
 
 pub use crate::operation::delete_voice_profile_domain::_delete_voice_profile_domain_input::DeleteVoiceProfileDomainInputBuilder;
 
+impl DeleteVoiceProfileDomainInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_voice_profile_domain::DeleteVoiceProfileDomainOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_voice_profile_domain::DeleteVoiceProfileDomainError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_voice_profile_domain();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteVoiceProfileDomain`.
 ///
 /// <p>Deletes all voice profiles in the domain. WARNING: This action is not reversible.</p>

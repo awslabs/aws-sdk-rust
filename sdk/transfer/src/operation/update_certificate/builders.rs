@@ -3,6 +3,23 @@ pub use crate::operation::update_certificate::_update_certificate_output::Update
 
 pub use crate::operation::update_certificate::_update_certificate_input::UpdateCertificateInputBuilder;
 
+impl UpdateCertificateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_certificate::UpdateCertificateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_certificate::UpdateCertificateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_certificate();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateCertificate`.
 ///
 /// <p>Updates the active and inactive dates for a certificate.</p>

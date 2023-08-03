@@ -3,6 +3,23 @@ pub use crate::operation::detect_labels::_detect_labels_output::DetectLabelsOutp
 
 pub use crate::operation::detect_labels::_detect_labels_input::DetectLabelsInputBuilder;
 
+impl DetectLabelsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::detect_labels::DetectLabelsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::detect_labels::DetectLabelsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.detect_labels();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DetectLabels`.
 ///
 /// <p>Detects instances of real-world entities within an image (JPEG or PNG) provided as input. This includes objects like flower, tree, and table; events like wedding, graduation, and birthday party; and concepts like landscape, evening, and nature. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_edge_deployment_stage::_delete_edge_deployment_
 
 pub use crate::operation::delete_edge_deployment_stage::_delete_edge_deployment_stage_input::DeleteEdgeDeploymentStageInputBuilder;
 
+impl DeleteEdgeDeploymentStageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_edge_deployment_stage::DeleteEdgeDeploymentStageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_edge_deployment_stage::DeleteEdgeDeploymentStageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_edge_deployment_stage();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteEdgeDeploymentStage`.
 ///
 /// <p>Delete a stage in an edge deployment plan if (and only if) the stage is inactive.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_labeling_job::_create_labeling_job_output::Crea
 
 pub use crate::operation::create_labeling_job::_create_labeling_job_input::CreateLabelingJobInputBuilder;
 
+impl CreateLabelingJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_labeling_job::CreateLabelingJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_labeling_job::CreateLabelingJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_labeling_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateLabelingJob`.
 ///
 /// <p>Creates a job that uses workers to label the data objects in your input dataset. You can use the labeled data to train machine learning models. </p>

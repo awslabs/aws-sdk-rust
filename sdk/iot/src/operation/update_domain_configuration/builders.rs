@@ -3,6 +3,23 @@ pub use crate::operation::update_domain_configuration::_update_domain_configurat
 
 pub use crate::operation::update_domain_configuration::_update_domain_configuration_input::UpdateDomainConfigurationInputBuilder;
 
+impl UpdateDomainConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_domain_configuration::UpdateDomainConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_domain_configuration::UpdateDomainConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_domain_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateDomainConfiguration`.
 ///
 /// <p>Updates values stored in the domain configuration. Domain configurations for default endpoints can't be updated.</p>

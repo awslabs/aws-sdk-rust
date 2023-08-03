@@ -3,6 +3,23 @@ pub use crate::operation::create_sampling_rule::_create_sampling_rule_output::Cr
 
 pub use crate::operation::create_sampling_rule::_create_sampling_rule_input::CreateSamplingRuleInputBuilder;
 
+impl CreateSamplingRuleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_sampling_rule::CreateSamplingRuleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_sampling_rule::CreateSamplingRuleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_sampling_rule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateSamplingRule`.
 ///
 /// <p>Creates a rule to control sampling behavior for instrumented applications. Services retrieve rules with <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingRules.html">GetSamplingRules</a>, and evaluate each rule in ascending order of <i>priority</i> for each request. If a rule matches, the service records a trace, borrowing it from the reservoir size. After 10 seconds, the service reports back to X-Ray with <a href="https://docs.aws.amazon.com/xray/latest/api/API_GetSamplingTargets.html">GetSamplingTargets</a> to get updated versions of each in-use rule. The updated rule contains a trace quota that the service can use instead of borrowing from the reservoir.</p>

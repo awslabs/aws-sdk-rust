@@ -3,6 +3,23 @@ pub use crate::operation::create_trust_store::_create_trust_store_output::Create
 
 pub use crate::operation::create_trust_store::_create_trust_store_input::CreateTrustStoreInputBuilder;
 
+impl CreateTrustStoreInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_trust_store::CreateTrustStoreOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_trust_store::CreateTrustStoreError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_trust_store();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateTrustStore`.
 ///
 /// <p>Creates a trust store that can be associated with a web portal. A trust store contains certificate authority (CA) certificates. Once associated with a web portal, the browser in a streaming session will recognize certificates that have been issued using any of the CAs in the trust store. If your organization has internal websites that use certificates issued by private CAs, you should add the private CA certificate to the trust store. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_alarms::_describe_alarms_output::DescribeAlar
 
 pub use crate::operation::describe_alarms::_describe_alarms_input::DescribeAlarmsInputBuilder;
 
+impl DescribeAlarmsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_alarms::DescribeAlarmsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_alarms::DescribeAlarmsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_alarms();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAlarms`.
 ///
 /// <p>Retrieves the specified alarms. You can filter the results by specifying a prefix for the alarm name, the alarm state, or a prefix for any action.</p>

@@ -3,6 +3,17 @@ pub use crate::operation::put_repository_permissions_policy::_put_repository_per
 
 pub use crate::operation::put_repository_permissions_policy::_put_repository_permissions_policy_input::PutRepositoryPermissionsPolicyInputBuilder;
 
+impl PutRepositoryPermissionsPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::put_repository_permissions_policy::PutRepositoryPermissionsPolicyOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_repository_permissions_policy::PutRepositoryPermissionsPolicyError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.put_repository_permissions_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutRepositoryPermissionsPolicy`.
 ///
 /// <p> Sets the resource policy on a repository that specifies permissions to access it. </p>

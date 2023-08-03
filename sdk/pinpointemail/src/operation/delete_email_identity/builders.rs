@@ -3,6 +3,23 @@ pub use crate::operation::delete_email_identity::_delete_email_identity_output::
 
 pub use crate::operation::delete_email_identity::_delete_email_identity_input::DeleteEmailIdentityInputBuilder;
 
+impl DeleteEmailIdentityInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_email_identity::DeleteEmailIdentityOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_email_identity::DeleteEmailIdentityError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_email_identity();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteEmailIdentity`.
 ///
 /// <p>Deletes an email identity that you previously verified for use with Amazon Pinpoint. An identity can be either an email address or a domain name.</p>

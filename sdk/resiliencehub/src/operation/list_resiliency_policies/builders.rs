@@ -3,6 +3,23 @@ pub use crate::operation::list_resiliency_policies::_list_resiliency_policies_ou
 
 pub use crate::operation::list_resiliency_policies::_list_resiliency_policies_input::ListResiliencyPoliciesInputBuilder;
 
+impl ListResiliencyPoliciesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_resiliency_policies::ListResiliencyPoliciesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_resiliency_policies::ListResiliencyPoliciesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_resiliency_policies();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListResiliencyPolicies`.
 ///
 /// <p>Lists the resiliency policies for the Resilience Hub applications.</p>

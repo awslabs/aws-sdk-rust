@@ -3,6 +3,23 @@ pub use crate::operation::list_licenses::_list_licenses_output::ListLicensesOutp
 
 pub use crate::operation::list_licenses::_list_licenses_input::ListLicensesInputBuilder;
 
+impl ListLicensesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_licenses::ListLicensesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_licenses::ListLicensesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_licenses();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListLicenses`.
 ///
 /// <p>Lists the licenses for your account.</p>

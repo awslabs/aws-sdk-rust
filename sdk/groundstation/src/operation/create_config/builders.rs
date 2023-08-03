@@ -3,6 +3,23 @@ pub use crate::operation::create_config::_create_config_output::CreateConfigOutp
 
 pub use crate::operation::create_config::_create_config_input::CreateConfigInputBuilder;
 
+impl CreateConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_config::CreateConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_config::CreateConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateConfig`.
 ///
 /// <p>Creates a <code>Config</code> with the specified <code>configData</code> parameters.</p>

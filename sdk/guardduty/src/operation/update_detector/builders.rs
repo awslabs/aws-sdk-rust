@@ -3,6 +3,23 @@ pub use crate::operation::update_detector::_update_detector_output::UpdateDetect
 
 pub use crate::operation::update_detector::_update_detector_input::UpdateDetectorInputBuilder;
 
+impl UpdateDetectorInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_detector::UpdateDetectorOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_detector::UpdateDetectorError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_detector();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateDetector`.
 ///
 /// <p>Updates the Amazon GuardDuty detector specified by the detectorId.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_root_folders::_describe_root_folders_output::
 
 pub use crate::operation::describe_root_folders::_describe_root_folders_input::DescribeRootFoldersInputBuilder;
 
+impl DescribeRootFoldersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_root_folders::DescribeRootFoldersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_root_folders::DescribeRootFoldersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_root_folders();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeRootFolders`.
 ///
 /// <p>Describes the current user's special folders; the <code>RootFolder</code> and the <code>RecycleBin</code>. <code>RootFolder</code> is the root of user's files and folders and <code>RecycleBin</code> is the root of recycled items. This is not a valid action for SigV4 (administrative API) clients.</p>

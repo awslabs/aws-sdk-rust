@@ -3,6 +3,23 @@ pub use crate::operation::create_software_update_job::_create_software_update_jo
 
 pub use crate::operation::create_software_update_job::_create_software_update_job_input::CreateSoftwareUpdateJobInputBuilder;
 
+impl CreateSoftwareUpdateJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_software_update_job::CreateSoftwareUpdateJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_software_update_job::CreateSoftwareUpdateJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_software_update_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateSoftwareUpdateJob`.
 ///
 /// Creates a software update for a core or group of cores (specified as an IoT thing group.) Use this to update the OTA Agent as well as the Greengrass core software. It makes use of the IoT Jobs feature which provides additional commands to manage a Greengrass core software update job.

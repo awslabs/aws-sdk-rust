@@ -3,6 +3,23 @@ pub use crate::operation::update_domain_contact_privacy::_update_domain_contact_
 
 pub use crate::operation::update_domain_contact_privacy::_update_domain_contact_privacy_input::UpdateDomainContactPrivacyInputBuilder;
 
+impl UpdateDomainContactPrivacyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_domain_contact_privacy::UpdateDomainContactPrivacyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_domain_contact_privacy::UpdateDomainContactPrivacyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_domain_contact_privacy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateDomainContactPrivacy`.
 ///
 /// <p>This operation updates the specified domain contact's privacy setting. When privacy protection is enabled, your contact information is replaced with contact information for the registrar or with the phrase "REDACTED FOR PRIVACY", or "On behalf of <domain name>

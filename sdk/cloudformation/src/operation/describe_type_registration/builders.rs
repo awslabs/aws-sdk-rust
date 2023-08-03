@@ -3,6 +3,23 @@ pub use crate::operation::describe_type_registration::_describe_type_registratio
 
 pub use crate::operation::describe_type_registration::_describe_type_registration_input::DescribeTypeRegistrationInputBuilder;
 
+impl DescribeTypeRegistrationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_type_registration::DescribeTypeRegistrationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_type_registration::DescribeTypeRegistrationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_type_registration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeTypeRegistration`.
 ///
 /// <p>Returns information about an extension's registration, including its current status and type and version identifiers.</p>

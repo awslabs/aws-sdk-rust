@@ -3,6 +3,23 @@ pub use crate::operation::register_volume::_register_volume_output::RegisterVolu
 
 pub use crate::operation::register_volume::_register_volume_input::RegisterVolumeInputBuilder;
 
+impl RegisterVolumeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::register_volume::RegisterVolumeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::register_volume::RegisterVolumeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.register_volume();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RegisterVolume`.
 ///
 /// <p>Registers an Amazon EBS volume with a specified stack. A volume can be registered with only one stack at a time. If the volume is already registered, you must first deregister it by calling <code>DeregisterVolume</code>. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p>

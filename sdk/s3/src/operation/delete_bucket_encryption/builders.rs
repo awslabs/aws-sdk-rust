@@ -3,6 +3,23 @@ pub use crate::operation::delete_bucket_encryption::_delete_bucket_encryption_ou
 
 pub use crate::operation::delete_bucket_encryption::_delete_bucket_encryption_input::DeleteBucketEncryptionInputBuilder;
 
+impl DeleteBucketEncryptionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_bucket_encryption::DeleteBucketEncryptionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_bucket_encryption::DeleteBucketEncryptionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_bucket_encryption();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteBucketEncryption`.
 ///
 /// <p>This implementation of the DELETE action resets the default encryption for the bucket as server-side encryption with Amazon S3 managed keys (SSE-S3). For information about the bucket default encryption feature, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/bucket-encryption.html">Amazon S3 Bucket Default Encryption</a> in the <i>Amazon S3 User Guide</i>.</p>

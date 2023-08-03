@@ -3,6 +3,23 @@ pub use crate::operation::describe_principal_mapping::_describe_principal_mappin
 
 pub use crate::operation::describe_principal_mapping::_describe_principal_mapping_input::DescribePrincipalMappingInputBuilder;
 
+impl DescribePrincipalMappingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_principal_mapping::DescribePrincipalMappingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_principal_mapping::DescribePrincipalMappingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_principal_mapping();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribePrincipalMapping`.
 ///
 /// <p>Describes the processing of <code>PUT</code> and <code>DELETE</code> actions for mapping users to their groups. This includes information on the status of actions currently processing or yet to be processed, when actions were last updated, when actions were received by Amazon Kendra, the latest action that should process and apply after other actions, and useful error messages if an action could not be processed.</p>

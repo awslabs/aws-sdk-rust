@@ -3,6 +3,23 @@ pub use crate::operation::describe_file_systems::_describe_file_systems_output::
 
 pub use crate::operation::describe_file_systems::_describe_file_systems_input::DescribeFileSystemsInputBuilder;
 
+impl DescribeFileSystemsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_file_systems::DescribeFileSystemsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_file_systems::DescribeFileSystemsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_file_systems();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeFileSystems`.
 ///
 /// <p>Returns the description of a specific Amazon EFS file system if either the file system <code>CreationToken</code> or the <code>FileSystemId</code> is provided. Otherwise, it returns descriptions of all file systems owned by the caller's Amazon Web Services account in the Amazon Web Services Region of the endpoint that you're calling.</p>

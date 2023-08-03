@@ -3,6 +3,23 @@ pub use crate::operation::create_chat_token::_create_chat_token_output::CreateCh
 
 pub use crate::operation::create_chat_token::_create_chat_token_input::CreateChatTokenInputBuilder;
 
+impl CreateChatTokenInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_chat_token::CreateChatTokenOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_chat_token::CreateChatTokenError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_chat_token();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateChatToken`.
 ///
 /// <p>Creates an encrypted token that is used by a chat participant to establish an individual WebSocket chat connection to a room. When the token is used to connect to chat, the connection is valid for the session duration specified in the request. The token becomes invalid at the token-expiration timestamp included in the response.</p>

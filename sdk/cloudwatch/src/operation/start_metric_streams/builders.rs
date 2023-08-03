@@ -3,6 +3,23 @@ pub use crate::operation::start_metric_streams::_start_metric_streams_output::St
 
 pub use crate::operation::start_metric_streams::_start_metric_streams_input::StartMetricStreamsInputBuilder;
 
+impl StartMetricStreamsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_metric_streams::StartMetricStreamsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_metric_streams::StartMetricStreamsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_metric_streams();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartMetricStreams`.
 ///
 /// <p>Starts the streaming of metrics for one or more of your metric streams.</p>

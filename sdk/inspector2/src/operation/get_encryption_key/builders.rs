@@ -3,6 +3,23 @@ pub use crate::operation::get_encryption_key::_get_encryption_key_output::GetEnc
 
 pub use crate::operation::get_encryption_key::_get_encryption_key_input::GetEncryptionKeyInputBuilder;
 
+impl GetEncryptionKeyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_encryption_key::GetEncryptionKeyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_encryption_key::GetEncryptionKeyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_encryption_key();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetEncryptionKey`.
 ///
 /// <p>Gets an encryption key.</p>

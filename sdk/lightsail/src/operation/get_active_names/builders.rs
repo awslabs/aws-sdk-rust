@@ -3,6 +3,23 @@ pub use crate::operation::get_active_names::_get_active_names_output::GetActiveN
 
 pub use crate::operation::get_active_names::_get_active_names_input::GetActiveNamesInputBuilder;
 
+impl GetActiveNamesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_active_names::GetActiveNamesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_active_names::GetActiveNamesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_active_names();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetActiveNames`.
 ///
 /// <p>Returns the names of all active (not deleted) resources.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_cost_and_usage_with_resources::_get_cost_and_usage
 
 pub use crate::operation::get_cost_and_usage_with_resources::_get_cost_and_usage_with_resources_input::GetCostAndUsageWithResourcesInputBuilder;
 
+impl GetCostAndUsageWithResourcesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_cost_and_usage_with_resources::GetCostAndUsageWithResourcesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_cost_and_usage_with_resources::GetCostAndUsageWithResourcesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_cost_and_usage_with_resources();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetCostAndUsageWithResources`.
 ///
 /// <p>Retrieves cost and usage metrics with resources for your account. You can specify which cost and usage-related metric, such as <code>BlendedCosts</code> or <code>UsageQuantity</code>, that you want the request to return. You can also filter and group your data by various dimensions, such as <code>SERVICE</code> or <code>AZ</code>, in a specific time range. For a complete list of valid dimensions, see the <a href="https://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a> operation. Management account in an organization in Organizations have access to all member accounts. This API is currently available for the Amazon Elastic Compute Cloud – Compute service only.</p> <note>

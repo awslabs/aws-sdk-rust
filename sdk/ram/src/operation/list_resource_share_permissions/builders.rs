@@ -3,6 +3,23 @@ pub use crate::operation::list_resource_share_permissions::_list_resource_share_
 
 pub use crate::operation::list_resource_share_permissions::_list_resource_share_permissions_input::ListResourceSharePermissionsInputBuilder;
 
+impl ListResourceSharePermissionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_resource_share_permissions::ListResourceSharePermissionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_resource_share_permissions::ListResourceSharePermissionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_resource_share_permissions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListResourceSharePermissions`.
 ///
 /// <p>Lists the RAM permissions that are associated with a resource share.</p>

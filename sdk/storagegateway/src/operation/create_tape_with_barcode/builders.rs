@@ -3,6 +3,23 @@ pub use crate::operation::create_tape_with_barcode::_create_tape_with_barcode_ou
 
 pub use crate::operation::create_tape_with_barcode::_create_tape_with_barcode_input::CreateTapeWithBarcodeInputBuilder;
 
+impl CreateTapeWithBarcodeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_tape_with_barcode::CreateTapeWithBarcodeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_tape_with_barcode::CreateTapeWithBarcodeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_tape_with_barcode();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateTapeWithBarcode`.
 ///
 /// <p>Creates a virtual tape by using your own barcode. You write data to the virtual tape and then archive the tape. A barcode is unique and cannot be reused if it has already been used on a tape. This applies to barcodes used on deleted tapes. This operation is only supported in the tape gateway type.</p> <note>

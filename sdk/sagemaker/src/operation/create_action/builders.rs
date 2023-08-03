@@ -3,6 +3,23 @@ pub use crate::operation::create_action::_create_action_output::CreateActionOutp
 
 pub use crate::operation::create_action::_create_action_input::CreateActionInputBuilder;
 
+impl CreateActionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_action::CreateActionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_action::CreateActionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_action();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateAction`.
 ///
 /// <p>Creates an <i>action</i>. An action is a lineage tracking entity that represents an action or activity. For example, a model deployment or an HPO job. Generally, an action involves at least one input or output artifact. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html">Amazon SageMaker ML Lineage Tracking</a>.</p>

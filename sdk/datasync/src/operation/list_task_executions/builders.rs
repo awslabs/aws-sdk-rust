@@ -3,6 +3,23 @@ pub use crate::operation::list_task_executions::_list_task_executions_output::Li
 
 pub use crate::operation::list_task_executions::_list_task_executions_input::ListTaskExecutionsInputBuilder;
 
+impl ListTaskExecutionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_task_executions::ListTaskExecutionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_task_executions::ListTaskExecutionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_task_executions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListTaskExecutions`.
 ///
 /// <p>Returns a list of executed tasks.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::set_identity_dkim_enabled::_set_identity_dkim_enabled_
 
 pub use crate::operation::set_identity_dkim_enabled::_set_identity_dkim_enabled_input::SetIdentityDkimEnabledInputBuilder;
 
+impl SetIdentityDkimEnabledInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::set_identity_dkim_enabled::SetIdentityDkimEnabledError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.set_identity_dkim_enabled();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SetIdentityDkimEnabled`.
 ///
 /// <p>Enables or disables Easy DKIM signing of email sent from an identity. If Easy DKIM signing is enabled for a domain, then Amazon SES uses DKIM to sign all email that it sends from addresses on that domain. If Easy DKIM signing is enabled for an email address, then Amazon SES uses DKIM to sign all email it sends from that address.</p> <note>

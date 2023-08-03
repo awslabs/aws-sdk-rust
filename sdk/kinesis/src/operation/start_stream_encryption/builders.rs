@@ -3,6 +3,23 @@ pub use crate::operation::start_stream_encryption::_start_stream_encryption_outp
 
 pub use crate::operation::start_stream_encryption::_start_stream_encryption_input::StartStreamEncryptionInputBuilder;
 
+impl StartStreamEncryptionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_stream_encryption::StartStreamEncryptionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_stream_encryption::StartStreamEncryptionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_stream_encryption();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartStreamEncryption`.
 ///
 /// <p>Enables or updates server-side encryption using an Amazon Web Services KMS key for a specified stream. </p>

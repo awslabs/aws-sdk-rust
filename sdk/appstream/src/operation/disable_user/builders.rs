@@ -3,6 +3,23 @@ pub use crate::operation::disable_user::_disable_user_output::DisableUserOutputB
 
 pub use crate::operation::disable_user::_disable_user_input::DisableUserInputBuilder;
 
+impl DisableUserInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disable_user::DisableUserOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disable_user::DisableUserError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disable_user();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisableUser`.
 ///
 /// <p>Disables the specified user in the user pool. Users can't sign in to AppStream 2.0 until they are re-enabled. This action does not delete the user. </p>

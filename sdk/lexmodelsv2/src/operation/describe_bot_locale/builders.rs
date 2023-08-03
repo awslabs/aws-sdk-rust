@@ -3,6 +3,23 @@ pub use crate::operation::describe_bot_locale::_describe_bot_locale_output::Desc
 
 pub use crate::operation::describe_bot_locale::_describe_bot_locale_input::DescribeBotLocaleInputBuilder;
 
+impl DescribeBotLocaleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_bot_locale::DescribeBotLocaleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_bot_locale::DescribeBotLocaleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_bot_locale();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeBotLocale`.
 ///
 /// <p>Describes the settings that a bot has for a specific locale. </p>

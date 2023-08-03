@@ -3,6 +3,23 @@ pub use crate::operation::list_managed_data_identifiers::_list_managed_data_iden
 
 pub use crate::operation::list_managed_data_identifiers::_list_managed_data_identifiers_input::ListManagedDataIdentifiersInputBuilder;
 
+impl ListManagedDataIdentifiersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_managed_data_identifiers::ListManagedDataIdentifiersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_managed_data_identifiers::ListManagedDataIdentifiersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_managed_data_identifiers();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListManagedDataIdentifiers`.
 ///
 /// <p>Retrieves information about all the managed data identifiers that Amazon Macie currently provides.</p>

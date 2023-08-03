@@ -3,6 +3,23 @@ pub use crate::operation::get_resolver_endpoint::_get_resolver_endpoint_output::
 
 pub use crate::operation::get_resolver_endpoint::_get_resolver_endpoint_input::GetResolverEndpointInputBuilder;
 
+impl GetResolverEndpointInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_resolver_endpoint::GetResolverEndpointOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_resolver_endpoint::GetResolverEndpointError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_resolver_endpoint();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetResolverEndpoint`.
 ///
 /// <p>Gets information about a specified Resolver endpoint, such as whether it's an inbound or an outbound Resolver endpoint, and the current status of the endpoint.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::authorize_endpoint_access::_authorize_endpoint_access_
 
 pub use crate::operation::authorize_endpoint_access::_authorize_endpoint_access_input::AuthorizeEndpointAccessInputBuilder;
 
+impl AuthorizeEndpointAccessInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::authorize_endpoint_access::AuthorizeEndpointAccessOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::authorize_endpoint_access::AuthorizeEndpointAccessError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.authorize_endpoint_access();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AuthorizeEndpointAccess`.
 ///
 /// <p>Grants access to a cluster.</p>

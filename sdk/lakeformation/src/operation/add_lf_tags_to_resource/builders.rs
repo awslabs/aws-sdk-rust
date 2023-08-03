@@ -3,6 +3,23 @@ pub use crate::operation::add_lf_tags_to_resource::_add_lf_tags_to_resource_outp
 
 pub use crate::operation::add_lf_tags_to_resource::_add_lf_tags_to_resource_input::AddLfTagsToResourceInputBuilder;
 
+impl AddLfTagsToResourceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::add_lf_tags_to_resource::AddLfTagsToResourceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::add_lf_tags_to_resource::AddLFTagsToResourceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.add_lf_tags_to_resource();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AddLFTagsToResource`.
 ///
 /// <p>Attaches one or more LF-tags to an existing resource.</p>

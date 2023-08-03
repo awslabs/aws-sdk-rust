@@ -3,6 +3,23 @@ pub use crate::operation::delete_nat_gateway::_delete_nat_gateway_output::Delete
 
 pub use crate::operation::delete_nat_gateway::_delete_nat_gateway_input::DeleteNatGatewayInputBuilder;
 
+impl DeleteNatGatewayInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_nat_gateway::DeleteNatGatewayOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_nat_gateway::DeleteNatGatewayError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_nat_gateway();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteNatGateway`.
 ///
 /// <p>Deletes the specified NAT gateway. Deleting a public NAT gateway disassociates its Elastic IP address, but does not release the address from your account. Deleting a NAT gateway does not delete any NAT gateway routes in your route tables.</p>

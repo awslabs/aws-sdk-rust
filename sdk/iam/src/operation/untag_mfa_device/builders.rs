@@ -3,6 +3,23 @@ pub use crate::operation::untag_mfa_device::_untag_mfa_device_output::UntagMfaDe
 
 pub use crate::operation::untag_mfa_device::_untag_mfa_device_input::UntagMfaDeviceInputBuilder;
 
+impl UntagMfaDeviceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::untag_mfa_device::UntagMfaDeviceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::untag_mfa_device::UntagMFADeviceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.untag_mfa_device();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UntagMFADevice`.
 ///
 /// <p>Removes the specified tags from the IAM virtual multi-factor authentication (MFA) device. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>

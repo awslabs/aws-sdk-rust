@@ -3,6 +3,23 @@ pub use crate::operation::disassociate_api::_disassociate_api_output::Disassocia
 
 pub use crate::operation::disassociate_api::_disassociate_api_input::DisassociateApiInputBuilder;
 
+impl DisassociateApiInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_api::DisassociateApiOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_api::DisassociateApiError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disassociate_api();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateApi`.
 ///
 /// <p>Removes an <code>ApiAssociation</code> object from a custom domain.</p>

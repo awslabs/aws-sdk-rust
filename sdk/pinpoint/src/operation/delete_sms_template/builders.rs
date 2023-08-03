@@ -3,6 +3,23 @@ pub use crate::operation::delete_sms_template::_delete_sms_template_output::Dele
 
 pub use crate::operation::delete_sms_template::_delete_sms_template_input::DeleteSmsTemplateInputBuilder;
 
+impl DeleteSmsTemplateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_sms_template::DeleteSmsTemplateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_sms_template::DeleteSmsTemplateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_sms_template();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteSmsTemplate`.
 ///
 /// <p>Deletes a message template for messages that were sent through the SMS channel.</p>

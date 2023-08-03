@@ -3,6 +3,23 @@ pub use crate::operation::update_function_code::_update_function_code_output::Up
 
 pub use crate::operation::update_function_code::_update_function_code_input::UpdateFunctionCodeInputBuilder;
 
+impl UpdateFunctionCodeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_function_code::UpdateFunctionCodeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_function_code::UpdateFunctionCodeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_function_code();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateFunctionCode`.
 ///
 /// <p>Updates a Lambda function's code. If code signing is enabled for the function, the code package must be signed by a trusted publisher. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-codesigning.html">Configuring code signing for Lambda</a>.</p>

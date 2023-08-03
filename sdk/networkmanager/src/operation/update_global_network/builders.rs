@@ -3,6 +3,23 @@ pub use crate::operation::update_global_network::_update_global_network_output::
 
 pub use crate::operation::update_global_network::_update_global_network_input::UpdateGlobalNetworkInputBuilder;
 
+impl UpdateGlobalNetworkInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_global_network::UpdateGlobalNetworkOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_global_network::UpdateGlobalNetworkError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_global_network();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateGlobalNetwork`.
 ///
 /// <p>Updates an existing global network. To remove information for any of the parameters, specify an empty string.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_provisioning_claim::_create_provisioning_claim_
 
 pub use crate::operation::create_provisioning_claim::_create_provisioning_claim_input::CreateProvisioningClaimInputBuilder;
 
+impl CreateProvisioningClaimInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_provisioning_claim::CreateProvisioningClaimOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_provisioning_claim::CreateProvisioningClaimError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_provisioning_claim();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateProvisioningClaim`.
 ///
 /// <p>Creates a provisioning claim.</p>

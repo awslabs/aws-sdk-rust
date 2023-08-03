@@ -3,6 +3,23 @@ pub use crate::operation::get_cognito_events::_get_cognito_events_output::GetCog
 
 pub use crate::operation::get_cognito_events::_get_cognito_events_input::GetCognitoEventsInputBuilder;
 
+impl GetCognitoEventsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_cognito_events::GetCognitoEventsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_cognito_events::GetCognitoEventsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_cognito_events();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetCognitoEvents`.
 ///
 /// <p>Gets the events and the corresponding Lambda functions associated with an identity pool.</p>

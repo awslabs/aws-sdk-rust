@@ -3,6 +3,23 @@ pub use crate::operation::get_subscription_state::_get_subscription_state_output
 
 pub use crate::operation::get_subscription_state::_get_subscription_state_input::GetSubscriptionStateInputBuilder;
 
+impl GetSubscriptionStateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_subscription_state::GetSubscriptionStateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_subscription_state::GetSubscriptionStateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_subscription_state();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetSubscriptionState`.
 ///
 /// <p>Returns the <code>SubscriptionState</code>, either <code>Active</code> or <code>Inactive</code>.</p>

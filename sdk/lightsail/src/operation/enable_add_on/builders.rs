@@ -3,6 +3,23 @@ pub use crate::operation::enable_add_on::_enable_add_on_output::EnableAddOnOutpu
 
 pub use crate::operation::enable_add_on::_enable_add_on_input::EnableAddOnInputBuilder;
 
+impl EnableAddOnInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::enable_add_on::EnableAddOnOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::enable_add_on::EnableAddOnError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.enable_add_on();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `EnableAddOn`.
 ///
 /// <p>Enables or modifies an add-on for an Amazon Lightsail resource. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>

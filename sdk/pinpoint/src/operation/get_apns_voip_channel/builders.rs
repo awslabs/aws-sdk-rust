@@ -3,6 +3,23 @@ pub use crate::operation::get_apns_voip_channel::_get_apns_voip_channel_output::
 
 pub use crate::operation::get_apns_voip_channel::_get_apns_voip_channel_input::GetApnsVoipChannelInputBuilder;
 
+impl GetApnsVoipChannelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_apns_voip_channel::GetApnsVoipChannelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_apns_voip_channel::GetApnsVoipChannelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_apns_voip_channel();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetApnsVoipChannel`.
 ///
 /// <p>Retrieves information about the status and settings of the APNs VoIP channel for an application.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_browser_settings::_delete_browser_settings_outp
 
 pub use crate::operation::delete_browser_settings::_delete_browser_settings_input::DeleteBrowserSettingsInputBuilder;
 
+impl DeleteBrowserSettingsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_browser_settings::DeleteBrowserSettingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_browser_settings::DeleteBrowserSettingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_browser_settings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteBrowserSettings`.
 ///
 /// <p>Deletes browser settings.</p>

@@ -3,6 +3,17 @@ pub use crate::operation::put_bucket_lifecycle_configuration::_put_bucket_lifecy
 
 pub use crate::operation::put_bucket_lifecycle_configuration::_put_bucket_lifecycle_configuration_input::PutBucketLifecycleConfigurationInputBuilder;
 
+impl PutBucketLifecycleConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::put_bucket_lifecycle_configuration::PutBucketLifecycleConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_bucket_lifecycle_configuration::PutBucketLifecycleConfigurationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.put_bucket_lifecycle_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutBucketLifecycleConfiguration`.
 ///
 /// <p>Creates a new lifecycle configuration for the bucket or replaces an existing lifecycle configuration. Keep in mind that this will overwrite an existing lifecycle configuration, so if you want to retain any configuration details, they must be included in the new lifecycle configuration. For information about lifecycle configuration, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/object-lifecycle-mgmt.html">Managing your storage lifecycle</a>.</p> <note>

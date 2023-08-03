@@ -3,6 +3,23 @@ pub use crate::operation::list_group_resources::_list_group_resources_output::Li
 
 pub use crate::operation::list_group_resources::_list_group_resources_input::ListGroupResourcesInputBuilder;
 
+impl ListGroupResourcesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_group_resources::ListGroupResourcesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_group_resources::ListGroupResourcesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_group_resources();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListGroupResources`.
 ///
 /// <p>Returns a list of ARNs of the resources that are members of a specified resource group.</p>

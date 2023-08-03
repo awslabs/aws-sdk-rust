@@ -3,6 +3,23 @@ pub use crate::operation::create_webhook::_create_webhook_output::CreateWebhookO
 
 pub use crate::operation::create_webhook::_create_webhook_input::CreateWebhookInputBuilder;
 
+impl CreateWebhookInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_webhook::CreateWebhookOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_webhook::CreateWebhookError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_webhook();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateWebhook`.
 ///
 /// <p>For an existing CodeBuild build project that has its source code stored in a GitHub or Bitbucket repository, enables CodeBuild to start rebuilding the source code every time a code change is pushed to the repository.</p> <important>

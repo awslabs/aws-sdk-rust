@@ -3,6 +3,23 @@ pub use crate::operation::list_rule_based_matches::_list_rule_based_matches_outp
 
 pub use crate::operation::list_rule_based_matches::_list_rule_based_matches_input::ListRuleBasedMatchesInputBuilder;
 
+impl ListRuleBasedMatchesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_rule_based_matches::ListRuleBasedMatchesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_rule_based_matches::ListRuleBasedMatchesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_rule_based_matches();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListRuleBasedMatches`.
 ///
 /// <p>Returns a set of <code>MatchIds</code> that belong to the given domain.</p>

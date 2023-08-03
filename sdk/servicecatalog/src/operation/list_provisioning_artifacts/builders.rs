@@ -3,6 +3,23 @@ pub use crate::operation::list_provisioning_artifacts::_list_provisioning_artifa
 
 pub use crate::operation::list_provisioning_artifacts::_list_provisioning_artifacts_input::ListProvisioningArtifactsInputBuilder;
 
+impl ListProvisioningArtifactsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_provisioning_artifacts::ListProvisioningArtifactsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_provisioning_artifacts::ListProvisioningArtifactsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_provisioning_artifacts();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListProvisioningArtifacts`.
 ///
 /// <p>Lists all provisioning artifacts (also known as versions) for the specified product.</p>

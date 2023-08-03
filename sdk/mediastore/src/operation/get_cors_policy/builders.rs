@@ -3,6 +3,23 @@ pub use crate::operation::get_cors_policy::_get_cors_policy_output::GetCorsPolic
 
 pub use crate::operation::get_cors_policy::_get_cors_policy_input::GetCorsPolicyInputBuilder;
 
+impl GetCorsPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_cors_policy::GetCorsPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_cors_policy::GetCorsPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_cors_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetCorsPolicy`.
 ///
 /// <p>Returns the cross-origin resource sharing (CORS) configuration information that is set for the container.</p>

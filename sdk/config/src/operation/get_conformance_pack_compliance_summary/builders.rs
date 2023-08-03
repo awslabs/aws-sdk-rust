@@ -3,6 +3,17 @@ pub use crate::operation::get_conformance_pack_compliance_summary::_get_conforma
 
 pub use crate::operation::get_conformance_pack_compliance_summary::_get_conformance_pack_compliance_summary_input::GetConformancePackComplianceSummaryInputBuilder;
 
+impl GetConformancePackComplianceSummaryInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_conformance_pack_compliance_summary::GetConformancePackComplianceSummaryOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_conformance_pack_compliance_summary::GetConformancePackComplianceSummaryError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_conformance_pack_compliance_summary();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetConformancePackComplianceSummary`.
 ///
 /// <p>Returns compliance details for the conformance pack based on the cumulative compliance results of all the rules in that conformance pack.</p>

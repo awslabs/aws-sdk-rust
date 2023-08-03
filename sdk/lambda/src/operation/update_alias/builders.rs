@@ -3,6 +3,23 @@ pub use crate::operation::update_alias::_update_alias_output::UpdateAliasOutputB
 
 pub use crate::operation::update_alias::_update_alias_input::UpdateAliasInputBuilder;
 
+impl UpdateAliasInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_alias::UpdateAliasOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_alias::UpdateAliasError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_alias();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateAlias`.
 ///
 /// <p>Updates the configuration of a Lambda function <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">alias</a>.</p>

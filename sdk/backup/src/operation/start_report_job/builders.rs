@@ -3,6 +3,23 @@ pub use crate::operation::start_report_job::_start_report_job_output::StartRepor
 
 pub use crate::operation::start_report_job::_start_report_job_input::StartReportJobInputBuilder;
 
+impl StartReportJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_report_job::StartReportJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_report_job::StartReportJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_report_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartReportJob`.
 ///
 /// <p>Starts an on-demand report job for the specified report plan.</p>

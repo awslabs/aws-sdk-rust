@@ -3,6 +3,23 @@ pub use crate::operation::update_user_pool::_update_user_pool_output::UpdateUser
 
 pub use crate::operation::update_user_pool::_update_user_pool_input::UpdateUserPoolInputBuilder;
 
+impl UpdateUserPoolInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_user_pool::UpdateUserPoolOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_user_pool::UpdateUserPoolError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_user_pool();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateUserPool`.
 ///
 /// <p>Updates the specified user pool with the specified attributes. You can get a list of the current user pool settings using <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_DescribeUserPool.html">DescribeUserPool</a>. If you don't provide a value for an attribute, it will be set to the default value. </p> <note>

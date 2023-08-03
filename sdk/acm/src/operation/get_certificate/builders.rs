@@ -3,6 +3,23 @@ pub use crate::operation::get_certificate::_get_certificate_output::GetCertifica
 
 pub use crate::operation::get_certificate::_get_certificate_input::GetCertificateInputBuilder;
 
+impl GetCertificateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_certificate::GetCertificateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_certificate::GetCertificateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_certificate();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetCertificate`.
 ///
 /// <p>Retrieves an Amazon-issued certificate and its certificate chain. The chain consists of the certificate of the issuing CA and the intermediate certificates of any other subordinate CAs. All of the certificates are base64 encoded. You can use <a href="https://wiki.openssl.org/index.php/Command_Line_Utilities">OpenSSL</a> to decode the certificates and inspect individual fields.</p>

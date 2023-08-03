@@ -3,6 +3,23 @@ pub use crate::operation::delete_location::_delete_location_output::DeleteLocati
 
 pub use crate::operation::delete_location::_delete_location_input::DeleteLocationInputBuilder;
 
+impl DeleteLocationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_location::DeleteLocationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_location::DeleteLocationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_location();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteLocation`.
 ///
 /// <p>Deletes the configuration of a location used by DataSync. </p>

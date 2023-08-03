@@ -3,6 +3,23 @@ pub use crate::operation::list_contacts::_list_contacts_output::ListContactsOutp
 
 pub use crate::operation::list_contacts::_list_contacts_input::ListContactsInputBuilder;
 
+impl ListContactsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_contacts::ListContactsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_contacts::ListContactsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_contacts();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListContacts`.
 ///
 /// <p>Returns a list of contacts.</p>

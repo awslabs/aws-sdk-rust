@@ -3,6 +3,23 @@ pub use crate::operation::create_traffic_mirror_target::_create_traffic_mirror_t
 
 pub use crate::operation::create_traffic_mirror_target::_create_traffic_mirror_target_input::CreateTrafficMirrorTargetInputBuilder;
 
+impl CreateTrafficMirrorTargetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_traffic_mirror_target::CreateTrafficMirrorTargetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_traffic_mirror_target::CreateTrafficMirrorTargetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_traffic_mirror_target();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateTrafficMirrorTarget`.
 ///
 /// <p>Creates a target for your Traffic Mirror session.</p>

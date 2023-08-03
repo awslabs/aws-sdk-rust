@@ -3,6 +3,23 @@ pub use crate::operation::mark_as_archived::_mark_as_archived_output::MarkAsArch
 
 pub use crate::operation::mark_as_archived::_mark_as_archived_input::MarkAsArchivedInputBuilder;
 
+impl MarkAsArchivedInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::mark_as_archived::MarkAsArchivedOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::mark_as_archived::MarkAsArchivedError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.mark_as_archived();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `MarkAsArchived`.
 ///
 /// <p>Archives specific Source Servers by setting the SourceServer.isArchived property to true for specified SourceServers by ID. This command only works for SourceServers with a lifecycle. state which equals DISCONNECTED or CUTOVER.</p>

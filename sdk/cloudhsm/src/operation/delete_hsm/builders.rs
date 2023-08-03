@@ -3,6 +3,23 @@ pub use crate::operation::delete_hsm::_delete_hsm_output::DeleteHsmOutputBuilder
 
 pub use crate::operation::delete_hsm::_delete_hsm_input::DeleteHsmInputBuilder;
 
+impl DeleteHsmInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_hsm::DeleteHsmOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_hsm::DeleteHsmError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_hsm();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteHsm`.
 ///
 /// <p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.</p>

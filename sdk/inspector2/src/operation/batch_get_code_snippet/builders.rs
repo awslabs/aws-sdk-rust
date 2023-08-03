@@ -3,6 +3,23 @@ pub use crate::operation::batch_get_code_snippet::_batch_get_code_snippet_output
 
 pub use crate::operation::batch_get_code_snippet::_batch_get_code_snippet_input::BatchGetCodeSnippetInputBuilder;
 
+impl BatchGetCodeSnippetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_code_snippet::BatchGetCodeSnippetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_get_code_snippet::BatchGetCodeSnippetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_get_code_snippet();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchGetCodeSnippet`.
 ///
 /// <p>Retrieves code snippets from findings that Amazon Inspector detected code vulnerabilities in.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_queued_savings_plan::_delete_queued_savings_pla
 
 pub use crate::operation::delete_queued_savings_plan::_delete_queued_savings_plan_input::DeleteQueuedSavingsPlanInputBuilder;
 
+impl DeleteQueuedSavingsPlanInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_queued_savings_plan::DeleteQueuedSavingsPlanOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_queued_savings_plan::DeleteQueuedSavingsPlanError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_queued_savings_plan();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteQueuedSavingsPlan`.
 ///
 /// <p>Deletes the queued purchase for the specified Savings Plan.</p>

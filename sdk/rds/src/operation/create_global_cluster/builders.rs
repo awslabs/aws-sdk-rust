@@ -3,6 +3,23 @@ pub use crate::operation::create_global_cluster::_create_global_cluster_output::
 
 pub use crate::operation::create_global_cluster::_create_global_cluster_input::CreateGlobalClusterInputBuilder;
 
+impl CreateGlobalClusterInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_global_cluster::CreateGlobalClusterOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_global_cluster::CreateGlobalClusterError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_global_cluster();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateGlobalCluster`.
 ///
 /// <p>Creates an Aurora global database spread across multiple Amazon Web Services Regions. The global database contains a single primary cluster with read-write capability, and a read-only secondary cluster that receives data from the primary cluster through high-speed replication performed by the Aurora storage subsystem.</p>

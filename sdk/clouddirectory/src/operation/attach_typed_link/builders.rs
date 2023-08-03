@@ -3,6 +3,23 @@ pub use crate::operation::attach_typed_link::_attach_typed_link_output::AttachTy
 
 pub use crate::operation::attach_typed_link::_attach_typed_link_input::AttachTypedLinkInputBuilder;
 
+impl AttachTypedLinkInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::attach_typed_link::AttachTypedLinkOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::attach_typed_link::AttachTypedLinkError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.attach_typed_link();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AttachTypedLink`.
 ///
 /// <p>Attaches a typed link to a specified source and target object. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>

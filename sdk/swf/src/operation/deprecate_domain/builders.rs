@@ -3,6 +3,23 @@ pub use crate::operation::deprecate_domain::_deprecate_domain_output::DeprecateD
 
 pub use crate::operation::deprecate_domain::_deprecate_domain_input::DeprecateDomainInputBuilder;
 
+impl DeprecateDomainInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::deprecate_domain::DeprecateDomainOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::deprecate_domain::DeprecateDomainError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.deprecate_domain();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeprecateDomain`.
 ///
 /// <p>Deprecates the specified domain. After a domain has been deprecated it cannot be used to create new workflow executions or register new types. However, you can still use visibility actions on this domain. Deprecating a domain also deprecates all activity and workflow types registered in the domain. Executions that were started before the domain was deprecated continues to run.</p> <note>

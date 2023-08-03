@@ -3,6 +3,17 @@ pub use crate::operation::deregister_patch_baseline_for_patch_group::_deregister
 
 pub use crate::operation::deregister_patch_baseline_for_patch_group::_deregister_patch_baseline_for_patch_group_input::DeregisterPatchBaselineForPatchGroupInputBuilder;
 
+impl DeregisterPatchBaselineForPatchGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::deregister_patch_baseline_for_patch_group::DeregisterPatchBaselineForPatchGroupOutput, ::aws_smithy_http::result::SdkError<crate::operation::deregister_patch_baseline_for_patch_group::DeregisterPatchBaselineForPatchGroupError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.deregister_patch_baseline_for_patch_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeregisterPatchBaselineForPatchGroup`.
 ///
 /// <p>Removes a patch group from a patch baseline.</p>

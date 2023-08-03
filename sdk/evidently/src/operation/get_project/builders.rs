@@ -3,6 +3,23 @@ pub use crate::operation::get_project::_get_project_output::GetProjectOutputBuil
 
 pub use crate::operation::get_project::_get_project_input::GetProjectInputBuilder;
 
+impl GetProjectInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_project::GetProjectOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_project::GetProjectError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_project();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetProject`.
 ///
 /// <p>Returns the details about one launch. You must already know the project name. To retrieve a list of projects in your account, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_ListProjects.html">ListProjects</a>.</p>

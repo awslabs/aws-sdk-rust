@@ -3,6 +3,17 @@ pub use crate::operation::get_distribution_latest_cache_reset::_get_distribution
 
 pub use crate::operation::get_distribution_latest_cache_reset::_get_distribution_latest_cache_reset_input::GetDistributionLatestCacheResetInputBuilder;
 
+impl GetDistributionLatestCacheResetInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_distribution_latest_cache_reset::GetDistributionLatestCacheResetOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_distribution_latest_cache_reset::GetDistributionLatestCacheResetError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_distribution_latest_cache_reset();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetDistributionLatestCacheReset`.
 ///
 /// <p>Returns the timestamp and status of the last cache reset of a specific Amazon Lightsail content delivery network (CDN) distribution.</p>

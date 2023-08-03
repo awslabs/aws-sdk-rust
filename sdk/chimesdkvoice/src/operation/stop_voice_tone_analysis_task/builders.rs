@@ -3,6 +3,23 @@ pub use crate::operation::stop_voice_tone_analysis_task::_stop_voice_tone_analys
 
 pub use crate::operation::stop_voice_tone_analysis_task::_stop_voice_tone_analysis_task_input::StopVoiceToneAnalysisTaskInputBuilder;
 
+impl StopVoiceToneAnalysisTaskInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_voice_tone_analysis_task::StopVoiceToneAnalysisTaskOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_voice_tone_analysis_task::StopVoiceToneAnalysisTaskError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_voice_tone_analysis_task();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopVoiceToneAnalysisTask`.
 ///
 /// <p>Stops a voice tone analysis task.</p>

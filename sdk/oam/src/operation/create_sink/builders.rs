@@ -3,6 +3,23 @@ pub use crate::operation::create_sink::_create_sink_output::CreateSinkOutputBuil
 
 pub use crate::operation::create_sink::_create_sink_input::CreateSinkInputBuilder;
 
+impl CreateSinkInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_sink::CreateSinkOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_sink::CreateSinkError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_sink();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateSink`.
 ///
 /// <p>Use this to create a <i>sink</i> in the current account, so that it can be used as a monitoring account in CloudWatch cross-account observability. A sink is a resource that represents an attachment point in a monitoring account. Source accounts can link to the sink to send observability data.</p>

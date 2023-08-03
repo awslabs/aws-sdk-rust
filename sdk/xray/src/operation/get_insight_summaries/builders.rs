@@ -3,6 +3,23 @@ pub use crate::operation::get_insight_summaries::_get_insight_summaries_output::
 
 pub use crate::operation::get_insight_summaries::_get_insight_summaries_input::GetInsightSummariesInputBuilder;
 
+impl GetInsightSummariesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_insight_summaries::GetInsightSummariesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_insight_summaries::GetInsightSummariesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_insight_summaries();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetInsightSummaries`.
 ///
 /// <p>Retrieves the summaries of all insights in the specified group matching the provided filter values.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_resolver_endpoint::_delete_resolver_endpoint_ou
 
 pub use crate::operation::delete_resolver_endpoint::_delete_resolver_endpoint_input::DeleteResolverEndpointInputBuilder;
 
+impl DeleteResolverEndpointInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_resolver_endpoint::DeleteResolverEndpointOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_resolver_endpoint::DeleteResolverEndpointError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_resolver_endpoint();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteResolverEndpoint`.
 ///
 /// <p>Deletes a Resolver endpoint. The effect of deleting a Resolver endpoint depends on whether it's an inbound or an outbound Resolver endpoint:</p>

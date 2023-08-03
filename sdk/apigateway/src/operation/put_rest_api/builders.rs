@@ -3,6 +3,23 @@ pub use crate::operation::put_rest_api::_put_rest_api_output::PutRestApiOutputBu
 
 pub use crate::operation::put_rest_api::_put_rest_api_input::PutRestApiInputBuilder;
 
+impl PutRestApiInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_rest_api::PutRestApiOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_rest_api::PutRestApiError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_rest_api();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutRestApi`.
 ///
 /// <p>A feature of the API Gateway control service for updating an existing API with an input of external API definitions. The update can take the form of merging the supplied definition into the existing API or overwriting the existing API.</p>

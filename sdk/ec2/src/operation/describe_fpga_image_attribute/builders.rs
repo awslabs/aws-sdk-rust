@@ -3,6 +3,23 @@ pub use crate::operation::describe_fpga_image_attribute::_describe_fpga_image_at
 
 pub use crate::operation::describe_fpga_image_attribute::_describe_fpga_image_attribute_input::DescribeFpgaImageAttributeInputBuilder;
 
+impl DescribeFpgaImageAttributeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_fpga_image_attribute::DescribeFpgaImageAttributeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_fpga_image_attribute::DescribeFpgaImageAttributeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_fpga_image_attribute();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeFpgaImageAttribute`.
 ///
 /// <p>Describes the specified attribute of the specified Amazon FPGA Image (AFI).</p>

@@ -3,6 +3,23 @@ pub use crate::operation::update_broker::_update_broker_output::UpdateBrokerOutp
 
 pub use crate::operation::update_broker::_update_broker_input::UpdateBrokerInputBuilder;
 
+impl UpdateBrokerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_broker::UpdateBrokerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_broker::UpdateBrokerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_broker();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateBroker`.
 ///
 /// <p>Adds a pending configuration change to a broker.</p>

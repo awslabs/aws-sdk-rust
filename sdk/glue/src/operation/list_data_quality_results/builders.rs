@@ -3,6 +3,23 @@ pub use crate::operation::list_data_quality_results::_list_data_quality_results_
 
 pub use crate::operation::list_data_quality_results::_list_data_quality_results_input::ListDataQualityResultsInputBuilder;
 
+impl ListDataQualityResultsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_data_quality_results::ListDataQualityResultsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_data_quality_results::ListDataQualityResultsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_data_quality_results();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDataQualityResults`.
 ///
 /// <p>Returns all data quality execution results for your account.</p>

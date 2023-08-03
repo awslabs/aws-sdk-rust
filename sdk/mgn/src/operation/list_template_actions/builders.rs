@@ -3,6 +3,23 @@ pub use crate::operation::list_template_actions::_list_template_actions_output::
 
 pub use crate::operation::list_template_actions::_list_template_actions_input::ListTemplateActionsInputBuilder;
 
+impl ListTemplateActionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_template_actions::ListTemplateActionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_template_actions::ListTemplateActionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_template_actions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListTemplateActions`.
 ///
 /// <p>List template post migration custom actions.</p>

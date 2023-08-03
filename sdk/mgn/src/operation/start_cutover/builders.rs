@@ -3,6 +3,23 @@ pub use crate::operation::start_cutover::_start_cutover_output::StartCutoverOutp
 
 pub use crate::operation::start_cutover::_start_cutover_input::StartCutoverInputBuilder;
 
+impl StartCutoverInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_cutover::StartCutoverOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_cutover::StartCutoverError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_cutover();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartCutover`.
 ///
 /// <p>Launches a Cutover Instance for specific Source Servers. This command starts a LAUNCH job whose initiatedBy property is StartCutover and changes the SourceServer.lifeCycle.state property to CUTTING_OVER.</p>

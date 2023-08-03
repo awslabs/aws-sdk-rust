@@ -3,6 +3,23 @@ pub use crate::operation::list_ip_sets::_list_ip_sets_output::ListIpSetsOutputBu
 
 pub use crate::operation::list_ip_sets::_list_ip_sets_input::ListIpSetsInputBuilder;
 
+impl ListIpSetsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_ip_sets::ListIpSetsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_ip_sets::ListIPSetsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_ip_sets();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListIPSets`.
 ///
 /// <p>Lists the IPSets of the GuardDuty service specified by the detector ID. If you use this operation from a member account, the IPSets returned are the IPSets from the associated administrator account.</p>

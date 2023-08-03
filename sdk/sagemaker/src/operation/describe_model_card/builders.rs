@@ -3,6 +3,23 @@ pub use crate::operation::describe_model_card::_describe_model_card_output::Desc
 
 pub use crate::operation::describe_model_card::_describe_model_card_input::DescribeModelCardInputBuilder;
 
+impl DescribeModelCardInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_model_card::DescribeModelCardOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_model_card::DescribeModelCardError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_model_card();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeModelCard`.
 ///
 /// <p>Describes the content, creation time, and security configuration of an Amazon SageMaker Model Card.</p>

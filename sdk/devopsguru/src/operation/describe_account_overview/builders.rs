@@ -3,6 +3,23 @@ pub use crate::operation::describe_account_overview::_describe_account_overview_
 
 pub use crate::operation::describe_account_overview::_describe_account_overview_input::DescribeAccountOverviewInputBuilder;
 
+impl DescribeAccountOverviewInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_account_overview::DescribeAccountOverviewOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_account_overview::DescribeAccountOverviewError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_account_overview();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAccountOverview`.
 ///
 /// <p> For the time range passed in, returns the number of open reactive insight that were created, the number of open proactive insights that were created, and the Mean Time to Recover (MTTR) for all closed reactive insights. </p>

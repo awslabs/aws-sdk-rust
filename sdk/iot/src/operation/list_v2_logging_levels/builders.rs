@@ -3,6 +3,23 @@ pub use crate::operation::list_v2_logging_levels::_list_v2_logging_levels_output
 
 pub use crate::operation::list_v2_logging_levels::_list_v2_logging_levels_input::ListV2LoggingLevelsInputBuilder;
 
+impl ListV2LoggingLevelsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_v2_logging_levels::ListV2LoggingLevelsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_v2_logging_levels::ListV2LoggingLevelsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_v2_logging_levels();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListV2LoggingLevels`.
 ///
 /// <p>Lists logging levels.</p>

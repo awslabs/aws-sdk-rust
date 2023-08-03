@@ -3,6 +3,23 @@ pub use crate::operation::enable_vpc_classic_link::_enable_vpc_classic_link_outp
 
 pub use crate::operation::enable_vpc_classic_link::_enable_vpc_classic_link_input::EnableVpcClassicLinkInputBuilder;
 
+impl EnableVpcClassicLinkInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::enable_vpc_classic_link::EnableVpcClassicLinkOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::enable_vpc_classic_link::EnableVpcClassicLinkError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.enable_vpc_classic_link();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `EnableVpcClassicLink`.
 ///
 /// <note>

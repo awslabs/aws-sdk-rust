@@ -3,6 +3,23 @@ pub use crate::operation::associate_admin_account::_associate_admin_account_outp
 
 pub use crate::operation::associate_admin_account::_associate_admin_account_input::AssociateAdminAccountInputBuilder;
 
+impl AssociateAdminAccountInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_admin_account::AssociateAdminAccountOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_admin_account::AssociateAdminAccountError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_admin_account();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateAdminAccount`.
 ///
 /// <p>Sets a Firewall Manager default administrator account. The Firewall Manager default administrator account can manage third-party firewalls and has full administrative scope that allows administration of all policy types, accounts, organizational units, and Regions. This account must be a member account of the organization in Organizations whose resources you want to protect.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_custom_data_identifier::_create_custom_data_ide
 
 pub use crate::operation::create_custom_data_identifier::_create_custom_data_identifier_input::CreateCustomDataIdentifierInputBuilder;
 
+impl CreateCustomDataIdentifierInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_custom_data_identifier::CreateCustomDataIdentifierOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_custom_data_identifier::CreateCustomDataIdentifierError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_custom_data_identifier();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateCustomDataIdentifier`.
 ///
 /// <p>Creates and defines the criteria and other settings for a custom data identifier.</p>

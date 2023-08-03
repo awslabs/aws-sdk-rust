@@ -3,6 +3,23 @@ pub use crate::operation::deregister_stream_consumer::_deregister_stream_consume
 
 pub use crate::operation::deregister_stream_consumer::_deregister_stream_consumer_input::DeregisterStreamConsumerInputBuilder;
 
+impl DeregisterStreamConsumerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::deregister_stream_consumer::DeregisterStreamConsumerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::deregister_stream_consumer::DeregisterStreamConsumerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.deregister_stream_consumer();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeregisterStreamConsumer`.
 ///
 /// <p>To deregister a consumer, provide its ARN. Alternatively, you can provide the ARN of the data stream and the name you gave the consumer when you registered it. You may also provide all three parameters, as long as they don't conflict with each other. If you don't know the name or ARN of the consumer that you want to deregister, you can use the <code>ListStreamConsumers</code> operation to get a list of the descriptions of all the consumers that are currently registered with a given data stream. The description of a consumer contains its name and ARN.</p>

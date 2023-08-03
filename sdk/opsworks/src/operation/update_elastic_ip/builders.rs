@@ -3,6 +3,23 @@ pub use crate::operation::update_elastic_ip::_update_elastic_ip_output::UpdateEl
 
 pub use crate::operation::update_elastic_ip::_update_elastic_ip_input::UpdateElasticIpInputBuilder;
 
+impl UpdateElasticIpInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_elastic_ip::UpdateElasticIpOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_elastic_ip::UpdateElasticIpError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_elastic_ip();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateElasticIp`.
 ///
 /// <p>Updates a registered Elastic IP address's name. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p>

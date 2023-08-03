@@ -3,6 +3,23 @@ pub use crate::operation::update_event_sources_config::_update_event_sources_con
 
 pub use crate::operation::update_event_sources_config::_update_event_sources_config_input::UpdateEventSourcesConfigInputBuilder;
 
+impl UpdateEventSourcesConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_event_sources_config::UpdateEventSourcesConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_event_sources_config::UpdateEventSourcesConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_event_sources_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateEventSourcesConfig`.
 ///
 /// <p>Enables or disables integration with a service that can be integrated with DevOps Guru. The one service that can be integrated with DevOps Guru is Amazon CodeGuru Profiler, which can produce proactive recommendations which can be stored and viewed in DevOps Guru.</p>

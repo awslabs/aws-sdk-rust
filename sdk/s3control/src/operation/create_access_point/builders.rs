@@ -3,6 +3,23 @@ pub use crate::operation::create_access_point::_create_access_point_output::Crea
 
 pub use crate::operation::create_access_point::_create_access_point_input::CreateAccessPointInputBuilder;
 
+impl CreateAccessPointInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_access_point::CreateAccessPointOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_access_point::CreateAccessPointError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_access_point();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateAccessPoint`.
 ///
 /// <p>Creates an access point and associates it with the specified bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-points.html">Managing Data Access with Amazon S3 Access Points</a> in the <i>Amazon S3 User Guide</i>.</p>

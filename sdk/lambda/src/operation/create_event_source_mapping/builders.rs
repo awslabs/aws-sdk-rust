@@ -3,6 +3,23 @@ pub use crate::operation::create_event_source_mapping::_create_event_source_mapp
 
 pub use crate::operation::create_event_source_mapping::_create_event_source_mapping_input::CreateEventSourceMappingInputBuilder;
 
+impl CreateEventSourceMappingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_event_source_mapping::CreateEventSourceMappingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_event_source_mapping::CreateEventSourceMappingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_event_source_mapping();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateEventSourceMapping`.
 ///
 /// <p>Creates a mapping between an event source and an Lambda function. Lambda reads items from the event source and invokes the function.</p>

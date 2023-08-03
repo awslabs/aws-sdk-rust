@@ -3,6 +3,23 @@ pub use crate::operation::list_vpc_endpoints::_list_vpc_endpoints_output::ListVp
 
 pub use crate::operation::list_vpc_endpoints::_list_vpc_endpoints_input::ListVpcEndpointsInputBuilder;
 
+impl ListVpcEndpointsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_vpc_endpoints::ListVpcEndpointsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_vpc_endpoints::ListVpcEndpointsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_vpc_endpoints();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListVpcEndpoints`.
 ///
 /// <p>Retrieves all Amazon OpenSearch Service-managed VPC endpoints in the current account and Region.</p>

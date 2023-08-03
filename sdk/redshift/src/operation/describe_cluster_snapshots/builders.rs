@@ -3,6 +3,23 @@ pub use crate::operation::describe_cluster_snapshots::_describe_cluster_snapshot
 
 pub use crate::operation::describe_cluster_snapshots::_describe_cluster_snapshots_input::DescribeClusterSnapshotsInputBuilder;
 
+impl DescribeClusterSnapshotsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_cluster_snapshots::DescribeClusterSnapshotsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_cluster_snapshots();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeClusterSnapshots`.
 ///
 /// <p>Returns one or more snapshot objects, which contain metadata about your cluster snapshots. By default, this operation returns information about all snapshots of all clusters that are owned by your Amazon Web Services account. No information is returned for snapshots owned by inactive Amazon Web Services accounts.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_report_group::_create_report_group_output::Crea
 
 pub use crate::operation::create_report_group::_create_report_group_input::CreateReportGroupInputBuilder;
 
+impl CreateReportGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_report_group::CreateReportGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_report_group::CreateReportGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_report_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateReportGroup`.
 ///
 /// <p> Creates a report group. A report group contains a collection of reports. </p>

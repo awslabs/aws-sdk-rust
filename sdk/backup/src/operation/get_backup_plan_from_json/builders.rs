@@ -3,6 +3,23 @@ pub use crate::operation::get_backup_plan_from_json::_get_backup_plan_from_json_
 
 pub use crate::operation::get_backup_plan_from_json::_get_backup_plan_from_json_input::GetBackupPlanFromJsonInputBuilder;
 
+impl GetBackupPlanFromJsonInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_backup_plan_from_json::GetBackupPlanFromJsonOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_backup_plan_from_json::GetBackupPlanFromJSONError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_backup_plan_from_json();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetBackupPlanFromJSON`.
 ///
 /// <p>Returns a valid JSON document specifying a backup plan or an error.</p>

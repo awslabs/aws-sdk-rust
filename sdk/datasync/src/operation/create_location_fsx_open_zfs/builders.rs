@@ -3,6 +3,23 @@ pub use crate::operation::create_location_fsx_open_zfs::_create_location_fsx_ope
 
 pub use crate::operation::create_location_fsx_open_zfs::_create_location_fsx_open_zfs_input::CreateLocationFsxOpenZfsInputBuilder;
 
+impl CreateLocationFsxOpenZfsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_location_fsx_open_zfs::CreateLocationFsxOpenZfsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_location_fsx_open_zfs::CreateLocationFsxOpenZfsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_location_fsx_open_zfs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateLocationFsxOpenZfs`.
 ///
 /// <p>Creates an endpoint for an Amazon FSx for OpenZFS file system that DataSync can access for a transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-openzfs-location.html">Creating a location for FSx for OpenZFS</a>.</p> <note>

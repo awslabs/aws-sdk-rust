@@ -3,6 +3,23 @@ pub use crate::operation::delete_parameter::_delete_parameter_output::DeletePara
 
 pub use crate::operation::delete_parameter::_delete_parameter_input::DeleteParameterInputBuilder;
 
+impl DeleteParameterInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_parameter::DeleteParameterOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_parameter::DeleteParameterError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_parameter();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteParameter`.
 ///
 /// <p>Delete a parameter from the system. After deleting a parameter, wait for at least 30 seconds to create a parameter with the same name.</p>

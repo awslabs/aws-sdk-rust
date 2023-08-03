@@ -3,6 +3,17 @@ pub use crate::operation::get_custom_verification_email_template::_get_custom_ve
 
 pub use crate::operation::get_custom_verification_email_template::_get_custom_verification_email_template_input::GetCustomVerificationEmailTemplateInputBuilder;
 
+impl GetCustomVerificationEmailTemplateInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_custom_verification_email_template::GetCustomVerificationEmailTemplateOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_custom_verification_email_template::GetCustomVerificationEmailTemplateError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_custom_verification_email_template();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetCustomVerificationEmailTemplate`.
 ///
 /// <p>Returns the custom email verification template for the template name you specify.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::restore_snapshot_tier::_restore_snapshot_tier_output::
 
 pub use crate::operation::restore_snapshot_tier::_restore_snapshot_tier_input::RestoreSnapshotTierInputBuilder;
 
+impl RestoreSnapshotTierInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::restore_snapshot_tier::RestoreSnapshotTierOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::restore_snapshot_tier::RestoreSnapshotTierError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.restore_snapshot_tier();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RestoreSnapshotTier`.
 ///
 /// <p>Restores an archived Amazon EBS snapshot for use temporarily or permanently, or modifies the restore period or restore type for a snapshot that was previously temporarily restored.</p>

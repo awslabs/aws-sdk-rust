@@ -3,6 +3,23 @@ pub use crate::operation::deactivate_pipeline::_deactivate_pipeline_output::Deac
 
 pub use crate::operation::deactivate_pipeline::_deactivate_pipeline_input::DeactivatePipelineInputBuilder;
 
+impl DeactivatePipelineInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::deactivate_pipeline::DeactivatePipelineOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::deactivate_pipeline::DeactivatePipelineError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.deactivate_pipeline();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeactivatePipeline`.
 ///
 /// <p>Deactivates the specified running pipeline. The pipeline is set to the <code>DEACTIVATING</code> state until the deactivation process completes.</p>

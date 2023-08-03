@@ -3,6 +3,23 @@ pub use crate::operation::delete_snapshot_schedule::_delete_snapshot_schedule_ou
 
 pub use crate::operation::delete_snapshot_schedule::_delete_snapshot_schedule_input::DeleteSnapshotScheduleInputBuilder;
 
+impl DeleteSnapshotScheduleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_snapshot_schedule::DeleteSnapshotScheduleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_snapshot_schedule::DeleteSnapshotScheduleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_snapshot_schedule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteSnapshotSchedule`.
 ///
 /// <p>Deletes a snapshot of a volume.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::activate_device_identifier::_activate_device_identifie
 
 pub use crate::operation::activate_device_identifier::_activate_device_identifier_input::ActivateDeviceIdentifierInputBuilder;
 
+impl ActivateDeviceIdentifierInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::activate_device_identifier::ActivateDeviceIdentifierOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::activate_device_identifier::ActivateDeviceIdentifierError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.activate_device_identifier();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ActivateDeviceIdentifier`.
 ///
 /// <p>Activates the specified device identifier.</p>

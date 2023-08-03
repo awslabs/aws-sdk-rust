@@ -3,6 +3,23 @@ pub use crate::operation::start_stage_deployment::_start_stage_deployment_output
 
 pub use crate::operation::start_stage_deployment::_start_stage_deployment_input::StartStageDeploymentInputBuilder;
 
+impl StartStageDeploymentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_stage_deployment::StartStageDeploymentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_stage_deployment::StartStageDeploymentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_stage_deployment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartStageDeployment`.
 ///
 /// <p>Deploys a snapshot to the stage and creates a new game runtime.</p>

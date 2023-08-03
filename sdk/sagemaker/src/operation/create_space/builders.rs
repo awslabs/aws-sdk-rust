@@ -3,6 +3,23 @@ pub use crate::operation::create_space::_create_space_output::CreateSpaceOutputB
 
 pub use crate::operation::create_space::_create_space_input::CreateSpaceInputBuilder;
 
+impl CreateSpaceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_space::CreateSpaceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_space::CreateSpaceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_space();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateSpace`.
 ///
 /// <p>Creates a space used for real time collaboration in a Domain.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::update_instance_metadata_options::_update_instance_met
 
 pub use crate::operation::update_instance_metadata_options::_update_instance_metadata_options_input::UpdateInstanceMetadataOptionsInputBuilder;
 
+impl UpdateInstanceMetadataOptionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_instance_metadata_options::UpdateInstanceMetadataOptionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_instance_metadata_options::UpdateInstanceMetadataOptionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_instance_metadata_options();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateInstanceMetadataOptions`.
 ///
 /// <p>Modifies the Amazon Lightsail instance metadata parameters on a running or stopped instance. When you modify the parameters on a running instance, the <code>GetInstance</code> or <code>GetInstances</code> API operation initially responds with a state of <code>pending</code>. After the parameter modifications are successfully applied, the state changes to <code>applied</code> in subsequent <code>GetInstance</code> or <code>GetInstances</code> API calls. For more information, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-instance-metadata-service">Use IMDSv2 with an Amazon Lightsail instance</a> in the <i>Amazon Lightsail Developer Guide</i>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::cancel_legal_hold::_cancel_legal_hold_output::CancelLe
 
 pub use crate::operation::cancel_legal_hold::_cancel_legal_hold_input::CancelLegalHoldInputBuilder;
 
+impl CancelLegalHoldInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::cancel_legal_hold::CancelLegalHoldOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::cancel_legal_hold::CancelLegalHoldError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.cancel_legal_hold();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CancelLegalHold`.
 ///
 /// <p>This action removes the specified legal hold on a recovery point. This action can only be performed by a user with sufficient permissions.</p>

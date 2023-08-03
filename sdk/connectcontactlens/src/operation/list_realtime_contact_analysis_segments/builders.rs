@@ -3,6 +3,17 @@ pub use crate::operation::list_realtime_contact_analysis_segments::_list_realtim
 
 pub use crate::operation::list_realtime_contact_analysis_segments::_list_realtime_contact_analysis_segments_input::ListRealtimeContactAnalysisSegmentsInputBuilder;
 
+impl ListRealtimeContactAnalysisSegmentsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_realtime_contact_analysis_segments::ListRealtimeContactAnalysisSegmentsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_realtime_contact_analysis_segments::ListRealtimeContactAnalysisSegmentsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_realtime_contact_analysis_segments();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListRealtimeContactAnalysisSegments`.
 ///
 /// <p>Provides a list of analysis segments for a real-time analysis session.</p>

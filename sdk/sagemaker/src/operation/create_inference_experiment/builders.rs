@@ -3,6 +3,23 @@ pub use crate::operation::create_inference_experiment::_create_inference_experim
 
 pub use crate::operation::create_inference_experiment::_create_inference_experiment_input::CreateInferenceExperimentInputBuilder;
 
+impl CreateInferenceExperimentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_inference_experiment::CreateInferenceExperimentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_inference_experiment::CreateInferenceExperimentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_inference_experiment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateInferenceExperiment`.
 ///
 /// <p> Creates an inference experiment using the configurations specified in the request. </p>

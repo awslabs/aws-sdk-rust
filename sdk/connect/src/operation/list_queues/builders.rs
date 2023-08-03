@@ -3,6 +3,23 @@ pub use crate::operation::list_queues::_list_queues_output::ListQueuesOutputBuil
 
 pub use crate::operation::list_queues::_list_queues_input::ListQueuesInputBuilder;
 
+impl ListQueuesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_queues::ListQueuesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_queues::ListQueuesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_queues();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListQueues`.
 ///
 /// <p>Provides information about the queues for the specified Amazon Connect instance.</p>

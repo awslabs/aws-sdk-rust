@@ -3,6 +3,17 @@ pub use crate::operation::enable_sharing_with_aws_organization::_enable_sharing_
 
 pub use crate::operation::enable_sharing_with_aws_organization::_enable_sharing_with_aws_organization_input::EnableSharingWithAwsOrganizationInputBuilder;
 
+impl EnableSharingWithAwsOrganizationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganizationOutput, ::aws_smithy_http::result::SdkError<crate::operation::enable_sharing_with_aws_organization::EnableSharingWithAwsOrganizationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.enable_sharing_with_aws_organization();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `EnableSharingWithAwsOrganization`.
 ///
 /// <p>Enables resource sharing within your organization in Organizations. This operation creates a service-linked role called <code>AWSServiceRoleForResourceAccessManager</code> that has the IAM managed policy named AWSResourceAccessManagerServiceRolePolicy attached. This role permits RAM to retrieve information about the organization and its structure. This lets you share resources with all of the accounts in the calling account's organization by specifying the organization ID, or all of the accounts in an organizational unit (OU) by specifying the OU ID. Until you enable sharing within the organization, you can specify only individual Amazon Web Services accounts, or for supported resource types, IAM roles and users.</p>

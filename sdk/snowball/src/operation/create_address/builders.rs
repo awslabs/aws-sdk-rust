@@ -3,6 +3,23 @@ pub use crate::operation::create_address::_create_address_output::CreateAddressO
 
 pub use crate::operation::create_address::_create_address_input::CreateAddressInputBuilder;
 
+impl CreateAddressInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_address::CreateAddressOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_address::CreateAddressError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_address();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateAddress`.
 ///
 /// <p>Creates an address for a Snow device to be shipped to. In most regions, addresses are validated at the time of creation. The address you provide must be located within the serviceable area of your region. If the address is invalid or unsupported, then an exception is thrown.</p>

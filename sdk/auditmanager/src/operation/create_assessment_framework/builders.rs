@@ -3,6 +3,23 @@ pub use crate::operation::create_assessment_framework::_create_assessment_framew
 
 pub use crate::operation::create_assessment_framework::_create_assessment_framework_input::CreateAssessmentFrameworkInputBuilder;
 
+impl CreateAssessmentFrameworkInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_assessment_framework::CreateAssessmentFrameworkOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_assessment_framework::CreateAssessmentFrameworkError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_assessment_framework();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateAssessmentFramework`.
 ///
 /// <p> Creates a custom framework in Audit Manager. </p>

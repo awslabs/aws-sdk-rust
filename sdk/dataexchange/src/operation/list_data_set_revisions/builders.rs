@@ -3,6 +3,23 @@ pub use crate::operation::list_data_set_revisions::_list_data_set_revisions_outp
 
 pub use crate::operation::list_data_set_revisions::_list_data_set_revisions_input::ListDataSetRevisionsInputBuilder;
 
+impl ListDataSetRevisionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_data_set_revisions::ListDataSetRevisionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_data_set_revisions::ListDataSetRevisionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_data_set_revisions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDataSetRevisions`.
 ///
 /// <p>This operation lists a data set's revisions sorted by CreatedAt in descending order.</p>

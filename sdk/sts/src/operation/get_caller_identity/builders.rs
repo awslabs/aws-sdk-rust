@@ -3,6 +3,23 @@ pub use crate::operation::get_caller_identity::_get_caller_identity_output::GetC
 
 pub use crate::operation::get_caller_identity::_get_caller_identity_input::GetCallerIdentityInputBuilder;
 
+impl GetCallerIdentityInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_caller_identity::GetCallerIdentityOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_caller_identity::GetCallerIdentityError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_caller_identity();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetCallerIdentity`.
 ///
 /// <p>Returns details about the IAM user or role whose credentials are used to call the operation.</p> <note>

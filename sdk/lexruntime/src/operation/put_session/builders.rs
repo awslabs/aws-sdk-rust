@@ -3,6 +3,23 @@ pub use crate::operation::put_session::_put_session_output::PutSessionOutputBuil
 
 pub use crate::operation::put_session::_put_session_input::PutSessionInputBuilder;
 
+impl PutSessionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_session::PutSessionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_session::PutSessionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_session();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutSession`.
 ///
 /// <p>Creates a new session or modifies an existing session with an Amazon Lex bot. Use this operation to enable your application to set the state of the bot.</p>

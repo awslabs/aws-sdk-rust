@@ -3,6 +3,23 @@ pub use crate::operation::create_studio_component::_create_studio_component_outp
 
 pub use crate::operation::create_studio_component::_create_studio_component_input::CreateStudioComponentInputBuilder;
 
+impl CreateStudioComponentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_studio_component::CreateStudioComponentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_studio_component::CreateStudioComponentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_studio_component();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateStudioComponent`.
 ///
 /// <p>Creates a studio component resource.</p>

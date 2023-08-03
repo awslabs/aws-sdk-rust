@@ -3,6 +3,17 @@ pub use crate::operation::associate_approval_rule_template_with_repository::_ass
 
 pub use crate::operation::associate_approval_rule_template_with_repository::_associate_approval_rule_template_with_repository_input::AssociateApprovalRuleTemplateWithRepositoryInputBuilder;
 
+impl AssociateApprovalRuleTemplateWithRepositoryInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::associate_approval_rule_template_with_repository::AssociateApprovalRuleTemplateWithRepositoryOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_approval_rule_template_with_repository::AssociateApprovalRuleTemplateWithRepositoryError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.associate_approval_rule_template_with_repository();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateApprovalRuleTemplateWithRepository`.
 ///
 /// <p>Creates an association between an approval rule template and a specified repository. Then, the next time a pull request is created in the repository where the destination reference (if specified) matches the destination reference (branch) for the pull request, an approval rule that matches the template conditions is automatically created for that pull request. If no destination references are specified in the template, an approval rule that matches the template contents is created for all pull requests in that repository.</p>

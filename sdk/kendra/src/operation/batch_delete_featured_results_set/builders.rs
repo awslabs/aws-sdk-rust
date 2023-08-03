@@ -3,6 +3,23 @@ pub use crate::operation::batch_delete_featured_results_set::_batch_delete_featu
 
 pub use crate::operation::batch_delete_featured_results_set::_batch_delete_featured_results_set_input::BatchDeleteFeaturedResultsSetInputBuilder;
 
+impl BatchDeleteFeaturedResultsSetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_delete_featured_results_set::BatchDeleteFeaturedResultsSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_delete_featured_results_set::BatchDeleteFeaturedResultsSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_delete_featured_results_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchDeleteFeaturedResultsSet`.
 ///
 /// <p>Removes one or more sets of featured results. Features results are placed above all other results for certain queries. If there's an exact match of a query, then one or more specific documents are featured in the search results.</p>

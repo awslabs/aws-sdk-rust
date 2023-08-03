@@ -3,6 +3,23 @@ pub use crate::operation::list_recipes::_list_recipes_output::ListRecipesOutputB
 
 pub use crate::operation::list_recipes::_list_recipes_input::ListRecipesInputBuilder;
 
+impl ListRecipesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_recipes::ListRecipesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_recipes::ListRecipesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_recipes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListRecipes`.
 ///
 /// <p>Returns a list of available recipes. The response provides the properties for each recipe, including the recipe's Amazon Resource Name (ARN).</p>

@@ -3,6 +3,23 @@ pub use crate::operation::start_assessment_framework_share::_start_assessment_fr
 
 pub use crate::operation::start_assessment_framework_share::_start_assessment_framework_share_input::StartAssessmentFrameworkShareInputBuilder;
 
+impl StartAssessmentFrameworkShareInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_assessment_framework_share::StartAssessmentFrameworkShareOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_assessment_framework_share::StartAssessmentFrameworkShareError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_assessment_framework_share();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartAssessmentFrameworkShare`.
 ///
 /// <p> Creates a share request for a custom framework in Audit Manager. </p>

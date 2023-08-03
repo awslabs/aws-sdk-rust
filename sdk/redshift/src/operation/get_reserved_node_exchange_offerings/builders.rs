@@ -3,6 +3,17 @@ pub use crate::operation::get_reserved_node_exchange_offerings::_get_reserved_no
 
 pub use crate::operation::get_reserved_node_exchange_offerings::_get_reserved_node_exchange_offerings_input::GetReservedNodeExchangeOfferingsInputBuilder;
 
+impl GetReservedNodeExchangeOfferingsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_reserved_node_exchange_offerings::GetReservedNodeExchangeOfferingsOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_reserved_node_exchange_offerings::GetReservedNodeExchangeOfferingsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_reserved_node_exchange_offerings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetReservedNodeExchangeOfferings`.
 ///
 /// <p>Returns an array of DC2 ReservedNodeOfferings that matches the payment type, term, and usage price of the given DC1 reserved node.</p>

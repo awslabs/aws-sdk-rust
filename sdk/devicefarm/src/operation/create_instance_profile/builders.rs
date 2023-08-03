@@ -3,6 +3,23 @@ pub use crate::operation::create_instance_profile::_create_instance_profile_outp
 
 pub use crate::operation::create_instance_profile::_create_instance_profile_input::CreateInstanceProfileInputBuilder;
 
+impl CreateInstanceProfileInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_instance_profile::CreateInstanceProfileOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_instance_profile::CreateInstanceProfileError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_instance_profile();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateInstanceProfile`.
 ///
 /// <p>Creates a profile that can be applied to one or more private fleet device instances.</p>

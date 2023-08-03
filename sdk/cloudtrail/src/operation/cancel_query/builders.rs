@@ -3,6 +3,23 @@ pub use crate::operation::cancel_query::_cancel_query_output::CancelQueryOutputB
 
 pub use crate::operation::cancel_query::_cancel_query_input::CancelQueryInputBuilder;
 
+impl CancelQueryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::cancel_query::CancelQueryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::cancel_query::CancelQueryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.cancel_query();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CancelQuery`.
 ///
 /// <p>Cancels a query if the query is not in a terminated state, such as <code>CANCELLED</code>, <code>FAILED</code>, <code>TIMED_OUT</code>, or <code>FINISHED</code>. You must specify an ARN value for <code>EventDataStore</code>. The ID of the query that you want to cancel is also required. When you run <code>CancelQuery</code>, the query status might show as <code>CANCELLED</code> even if the operation is not yet finished.</p>

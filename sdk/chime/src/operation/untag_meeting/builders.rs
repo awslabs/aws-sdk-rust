@@ -3,6 +3,23 @@ pub use crate::operation::untag_meeting::_untag_meeting_output::UntagMeetingOutp
 
 pub use crate::operation::untag_meeting::_untag_meeting_input::UntagMeetingInputBuilder;
 
+impl UntagMeetingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::untag_meeting::UntagMeetingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::untag_meeting::UntagMeetingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.untag_meeting();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UntagMeeting`.
 ///
 /// <p>Untags the specified tags from the specified Amazon Chime SDK meeting.</p> <important>

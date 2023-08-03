@@ -3,6 +3,23 @@ pub use crate::operation::create_world_template::_create_world_template_output::
 
 pub use crate::operation::create_world_template::_create_world_template_input::CreateWorldTemplateInputBuilder;
 
+impl CreateWorldTemplateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_world_template::CreateWorldTemplateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_world_template::CreateWorldTemplateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_world_template();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateWorldTemplate`.
 ///
 /// <p>Creates a world template.</p>

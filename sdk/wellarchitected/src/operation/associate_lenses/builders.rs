@@ -3,6 +3,23 @@ pub use crate::operation::associate_lenses::_associate_lenses_output::AssociateL
 
 pub use crate::operation::associate_lenses::_associate_lenses_input::AssociateLensesInputBuilder;
 
+impl AssociateLensesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_lenses::AssociateLensesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_lenses::AssociateLensesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_lenses();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateLenses`.
 ///
 /// <p>Associate a lens to a workload.</p>

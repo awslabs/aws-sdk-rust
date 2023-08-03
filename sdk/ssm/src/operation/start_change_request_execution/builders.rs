@@ -3,6 +3,23 @@ pub use crate::operation::start_change_request_execution::_start_change_request_
 
 pub use crate::operation::start_change_request_execution::_start_change_request_execution_input::StartChangeRequestExecutionInputBuilder;
 
+impl StartChangeRequestExecutionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_change_request_execution::StartChangeRequestExecutionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_change_request_execution::StartChangeRequestExecutionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_change_request_execution();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartChangeRequestExecution`.
 ///
 /// <p>Creates a change request for Change Manager. The Automation runbooks specified in the change request run only after all required approvals for the change request have been received.</p>

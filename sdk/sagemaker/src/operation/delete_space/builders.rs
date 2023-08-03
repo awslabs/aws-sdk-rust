@@ -3,6 +3,23 @@ pub use crate::operation::delete_space::_delete_space_output::DeleteSpaceOutputB
 
 pub use crate::operation::delete_space::_delete_space_input::DeleteSpaceInputBuilder;
 
+impl DeleteSpaceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_space::DeleteSpaceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_space::DeleteSpaceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_space();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteSpace`.
 ///
 /// <p>Used to delete a space.</p>

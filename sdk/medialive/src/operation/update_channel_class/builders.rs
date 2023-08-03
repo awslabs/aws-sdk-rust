@@ -3,6 +3,23 @@ pub use crate::operation::update_channel_class::_update_channel_class_output::Up
 
 pub use crate::operation::update_channel_class::_update_channel_class_input::UpdateChannelClassInputBuilder;
 
+impl UpdateChannelClassInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_channel_class::UpdateChannelClassOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_channel_class::UpdateChannelClassError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_channel_class();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateChannelClass`.
 ///
 /// Changes the class of the channel.

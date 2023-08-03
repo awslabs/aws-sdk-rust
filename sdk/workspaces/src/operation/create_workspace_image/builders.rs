@@ -3,6 +3,23 @@ pub use crate::operation::create_workspace_image::_create_workspace_image_output
 
 pub use crate::operation::create_workspace_image::_create_workspace_image_input::CreateWorkspaceImageInputBuilder;
 
+impl CreateWorkspaceImageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_workspace_image::CreateWorkspaceImageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_workspace_image::CreateWorkspaceImageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_workspace_image();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateWorkspaceImage`.
 ///
 /// <p>Creates a new WorkSpace image from an existing WorkSpace.</p>

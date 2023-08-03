@@ -3,6 +3,23 @@ pub use crate::operation::put_storage_lens_configuration::_put_storage_lens_conf
 
 pub use crate::operation::put_storage_lens_configuration::_put_storage_lens_configuration_input::PutStorageLensConfigurationInputBuilder;
 
+impl PutStorageLensConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_storage_lens_configuration::PutStorageLensConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_storage_lens_configuration::PutStorageLensConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_storage_lens_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutStorageLensConfiguration`.
 ///
 /// <p>Puts an Amazon S3 Storage Lens configuration. For more information about S3 Storage Lens, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage_lens.html">Working with Amazon S3 Storage Lens</a> in the <i>Amazon S3 User Guide</i>. For a complete list of S3 Storage Lens metrics, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage_lens_metrics_glossary.html">S3 Storage Lens metrics glossary</a> in the <i>Amazon S3 User Guide</i>.</p> <note>

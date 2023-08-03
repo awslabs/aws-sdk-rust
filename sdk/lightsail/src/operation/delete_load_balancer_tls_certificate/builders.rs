@@ -3,6 +3,17 @@ pub use crate::operation::delete_load_balancer_tls_certificate::_delete_load_bal
 
 pub use crate::operation::delete_load_balancer_tls_certificate::_delete_load_balancer_tls_certificate_input::DeleteLoadBalancerTlsCertificateInputBuilder;
 
+impl DeleteLoadBalancerTlsCertificateInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_load_balancer_tls_certificate::DeleteLoadBalancerTlsCertificateOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_load_balancer_tls_certificate::DeleteLoadBalancerTlsCertificateError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.delete_load_balancer_tls_certificate();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteLoadBalancerTlsCertificate`.
 ///
 /// <p>Deletes an SSL/TLS certificate associated with a Lightsail load balancer.</p>

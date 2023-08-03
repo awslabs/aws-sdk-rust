@@ -3,6 +3,23 @@ pub use crate::operation::stop_remote_access_session::_stop_remote_access_sessio
 
 pub use crate::operation::stop_remote_access_session::_stop_remote_access_session_input::StopRemoteAccessSessionInputBuilder;
 
+impl StopRemoteAccessSessionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_remote_access_session::StopRemoteAccessSessionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_remote_access_session::StopRemoteAccessSessionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_remote_access_session();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopRemoteAccessSession`.
 ///
 /// <p>Ends a specified remote access session.</p>

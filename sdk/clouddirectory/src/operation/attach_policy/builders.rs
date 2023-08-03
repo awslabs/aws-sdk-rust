@@ -3,6 +3,23 @@ pub use crate::operation::attach_policy::_attach_policy_output::AttachPolicyOutp
 
 pub use crate::operation::attach_policy::_attach_policy_input::AttachPolicyInputBuilder;
 
+impl AttachPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::attach_policy::AttachPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::attach_policy::AttachPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.attach_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AttachPolicy`.
 ///
 /// <p>Attaches a policy object to a regular object. An object can have a limited number of attached policies.</p>

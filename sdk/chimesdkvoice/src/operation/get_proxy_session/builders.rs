@@ -3,6 +3,23 @@ pub use crate::operation::get_proxy_session::_get_proxy_session_output::GetProxy
 
 pub use crate::operation::get_proxy_session::_get_proxy_session_input::GetProxySessionInputBuilder;
 
+impl GetProxySessionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_proxy_session::GetProxySessionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_proxy_session::GetProxySessionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_proxy_session();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetProxySession`.
 ///
 /// <p>Retrieves the specified proxy session details for the specified Amazon Chime SDK Voice Connector.</p>

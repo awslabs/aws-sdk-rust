@@ -3,6 +3,23 @@ pub use crate::operation::update_channel::_update_channel_output::UpdateChannelO
 
 pub use crate::operation::update_channel::_update_channel_input::UpdateChannelInputBuilder;
 
+impl UpdateChannelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_channel::UpdateChannelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_channel::UpdateChannelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_channel();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateChannel`.
 ///
 /// <p>Updates a channel's configuration. Live channels cannot be updated. You must stop the ongoing stream, update the channel, and restart the stream for the changes to take effect.</p>

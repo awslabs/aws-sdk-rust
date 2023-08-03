@@ -3,6 +3,23 @@ pub use crate::operation::describe_availability_zones::_describe_availability_zo
 
 pub use crate::operation::describe_availability_zones::_describe_availability_zones_input::DescribeAvailabilityZonesInputBuilder;
 
+impl DescribeAvailabilityZonesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_availability_zones::DescribeAvailabilityZonesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_availability_zones::DescribeAvailabilityZonesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_availability_zones();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAvailabilityZones`.
 ///
 /// <p>Describes the Availability Zones, Local Zones, and Wavelength Zones that are available to you. If there is an event impacting a zone, you can use this request to view the state and any provided messages for that zone.</p>

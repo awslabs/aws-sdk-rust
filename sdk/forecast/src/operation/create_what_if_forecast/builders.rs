@@ -3,6 +3,23 @@ pub use crate::operation::create_what_if_forecast::_create_what_if_forecast_outp
 
 pub use crate::operation::create_what_if_forecast::_create_what_if_forecast_input::CreateWhatIfForecastInputBuilder;
 
+impl CreateWhatIfForecastInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_what_if_forecast::CreateWhatIfForecastOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_what_if_forecast::CreateWhatIfForecastError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_what_if_forecast();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateWhatIfForecast`.
 ///
 /// <p>A what-if forecast is a forecast that is created from a modified version of the baseline forecast. Each what-if forecast incorporates either a replacement dataset or a set of transformations to the original dataset. </p>

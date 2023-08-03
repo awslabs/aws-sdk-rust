@@ -3,6 +3,23 @@ pub use crate::operation::create_room_membership::_create_room_membership_output
 
 pub use crate::operation::create_room_membership::_create_room_membership_input::CreateRoomMembershipInputBuilder;
 
+impl CreateRoomMembershipInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_room_membership::CreateRoomMembershipOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_room_membership::CreateRoomMembershipError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_room_membership();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateRoomMembership`.
 ///
 /// <p>Adds a member to a chat room in an Amazon Chime Enterprise account. A member can be either a user or a bot. The member role designates whether the member is a chat room administrator or a general chat room member.</p>

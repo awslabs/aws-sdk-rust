@@ -3,6 +3,23 @@ pub use crate::operation::start_annotation_import_job::_start_annotation_import_
 
 pub use crate::operation::start_annotation_import_job::_start_annotation_import_job_input::StartAnnotationImportJobInputBuilder;
 
+impl StartAnnotationImportJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_annotation_import_job::StartAnnotationImportJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_annotation_import_job::StartAnnotationImportJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_annotation_import_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartAnnotationImportJob`.
 ///
 /// <p>Starts an annotation import job.</p>

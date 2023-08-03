@@ -3,6 +3,23 @@ pub use crate::operation::create_model_package::_create_model_package_output::Cr
 
 pub use crate::operation::create_model_package::_create_model_package_input::CreateModelPackageInputBuilder;
 
+impl CreateModelPackageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_model_package::CreateModelPackageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_model_package::CreateModelPackageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_model_package();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateModelPackage`.
 ///
 /// <p>Creates a model package that you can use to create SageMaker models or list on Amazon Web Services Marketplace, or a versioned model that is part of a model group. Buyers can subscribe to model packages listed on Amazon Web Services Marketplace to create models in SageMaker.</p>

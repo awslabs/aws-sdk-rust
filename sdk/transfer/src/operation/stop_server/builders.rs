@@ -3,6 +3,23 @@ pub use crate::operation::stop_server::_stop_server_output::StopServerOutputBuil
 
 pub use crate::operation::stop_server::_stop_server_input::StopServerInputBuilder;
 
+impl StopServerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_server::StopServerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_server::StopServerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_server();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopServer`.
 ///
 /// <p>Changes the state of a file transfer protocol-enabled server from <code>ONLINE</code> to <code>OFFLINE</code>. An <code>OFFLINE</code> server cannot accept and process file transfer jobs. Information tied to your server, such as server and user properties, are not affected by stopping your server.</p> <note>

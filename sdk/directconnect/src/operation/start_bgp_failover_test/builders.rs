@@ -3,6 +3,23 @@ pub use crate::operation::start_bgp_failover_test::_start_bgp_failover_test_outp
 
 pub use crate::operation::start_bgp_failover_test::_start_bgp_failover_test_input::StartBgpFailoverTestInputBuilder;
 
+impl StartBgpFailoverTestInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_bgp_failover_test::StartBgpFailoverTestOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_bgp_failover_test::StartBgpFailoverTestError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_bgp_failover_test();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartBgpFailoverTest`.
 ///
 /// <p>Starts the virtual interface failover test that verifies your configuration meets your resiliency requirements by placing the BGP peering session in the DOWN state. You can then send traffic to verify that there are no outages.</p>

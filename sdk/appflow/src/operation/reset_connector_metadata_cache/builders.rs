@@ -3,6 +3,23 @@ pub use crate::operation::reset_connector_metadata_cache::_reset_connector_metad
 
 pub use crate::operation::reset_connector_metadata_cache::_reset_connector_metadata_cache_input::ResetConnectorMetadataCacheInputBuilder;
 
+impl ResetConnectorMetadataCacheInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::reset_connector_metadata_cache::ResetConnectorMetadataCacheOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::reset_connector_metadata_cache::ResetConnectorMetadataCacheError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.reset_connector_metadata_cache();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ResetConnectorMetadataCache`.
 ///
 /// <p>Resets metadata about your connector entities that Amazon AppFlow stored in its cache. Use this action when you want Amazon AppFlow to return the latest information about the data that you have in a source application.</p>

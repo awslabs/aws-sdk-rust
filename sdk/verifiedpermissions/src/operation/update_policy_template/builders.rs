@@ -3,6 +3,23 @@ pub use crate::operation::update_policy_template::_update_policy_template_output
 
 pub use crate::operation::update_policy_template::_update_policy_template_input::UpdatePolicyTemplateInputBuilder;
 
+impl UpdatePolicyTemplateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_policy_template::UpdatePolicyTemplateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_policy_template::UpdatePolicyTemplateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_policy_template();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdatePolicyTemplate`.
 ///
 /// <p>Updates the specified policy template. You can update only the description and the some elements of the <a href="https://docs.aws.amazon.com/verifiedpermissions/latest/apireference/API_UpdatePolicyTemplate.html#amazonverifiedpermissions-UpdatePolicyTemplate-request-policyBody">policyBody</a>. </p> <important>

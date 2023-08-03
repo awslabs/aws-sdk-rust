@@ -3,6 +3,17 @@ pub use crate::operation::create_custom_routing_accelerator::_create_custom_rout
 
 pub use crate::operation::create_custom_routing_accelerator::_create_custom_routing_accelerator_input::CreateCustomRoutingAcceleratorInputBuilder;
 
+impl CreateCustomRoutingAcceleratorInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::create_custom_routing_accelerator::CreateCustomRoutingAcceleratorOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_custom_routing_accelerator::CreateCustomRoutingAcceleratorError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.create_custom_routing_accelerator();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateCustomRoutingAccelerator`.
 ///
 /// <p>Create a custom routing accelerator. A custom routing accelerator directs traffic to one of possibly thousands of Amazon EC2 instance destinations running in a single or multiple virtual private clouds (VPC) subnet endpoints.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_network::_get_network_output::GetNetworkOutputBuil
 
 pub use crate::operation::get_network::_get_network_input::GetNetworkInputBuilder;
 
+impl GetNetworkInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_network::GetNetworkOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_network::GetNetworkError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_network();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetNetwork`.
 ///
 /// <p>Gets the specified network.</p>

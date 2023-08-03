@@ -3,6 +3,23 @@ pub use crate::operation::create_featured_results_set::_create_featured_results_
 
 pub use crate::operation::create_featured_results_set::_create_featured_results_set_input::CreateFeaturedResultsSetInputBuilder;
 
+impl CreateFeaturedResultsSetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_featured_results_set::CreateFeaturedResultsSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_featured_results_set::CreateFeaturedResultsSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_featured_results_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateFeaturedResultsSet`.
 ///
 /// <p>Creates a set of featured results to display at the top of the search results page. Featured results are placed above all other results for certain queries. You map specific queries to specific documents for featuring in the results. If a query contains an exact match, then one or more specific documents are featured in the search results.</p>

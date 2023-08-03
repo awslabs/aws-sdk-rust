@@ -3,6 +3,17 @@ pub use crate::operation::get_bucket_accelerate_configuration::_get_bucket_accel
 
 pub use crate::operation::get_bucket_accelerate_configuration::_get_bucket_accelerate_configuration_input::GetBucketAccelerateConfigurationInputBuilder;
 
+impl GetBucketAccelerateConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_bucket_accelerate_configuration::GetBucketAccelerateConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_bucket_accelerate_configuration::GetBucketAccelerateConfigurationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_bucket_accelerate_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetBucketAccelerateConfiguration`.
 ///
 /// <p>This implementation of the GET action uses the <code>accelerate</code> subresource to return the Transfer Acceleration state of a bucket, which is either <code>Enabled</code> or <code>Suspended</code>. Amazon S3 Transfer Acceleration is a bucket-level feature that enables you to perform faster data transfers to and from Amazon S3.</p>

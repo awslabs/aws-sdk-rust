@@ -3,6 +3,23 @@ pub use crate::operation::set_v2_logging_level::_set_v2_logging_level_output::Se
 
 pub use crate::operation::set_v2_logging_level::_set_v2_logging_level_input::SetV2LoggingLevelInputBuilder;
 
+impl SetV2LoggingLevelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::set_v2_logging_level::SetV2LoggingLevelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::set_v2_logging_level::SetV2LoggingLevelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.set_v2_logging_level();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SetV2LoggingLevel`.
 ///
 /// <p>Sets the logging level.</p>

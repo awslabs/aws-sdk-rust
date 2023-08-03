@@ -3,6 +3,23 @@ pub use crate::operation::associate_lex_bot::_associate_lex_bot_output::Associat
 
 pub use crate::operation::associate_lex_bot::_associate_lex_bot_input::AssociateLexBotInputBuilder;
 
+impl AssociateLexBotInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_lex_bot::AssociateLexBotOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_lex_bot::AssociateLexBotError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_lex_bot();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateLexBot`.
 ///
 /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>

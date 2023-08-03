@@ -3,6 +3,23 @@ pub use crate::operation::add_layer_version_permission::_add_layer_version_permi
 
 pub use crate::operation::add_layer_version_permission::_add_layer_version_permission_input::AddLayerVersionPermissionInputBuilder;
 
+impl AddLayerVersionPermissionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::add_layer_version_permission::AddLayerVersionPermissionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::add_layer_version_permission::AddLayerVersionPermissionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.add_layer_version_permission();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AddLayerVersionPermission`.
 ///
 /// <p>Adds permissions to the resource-based policy of a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda layer</a>. Use this action to grant layer usage permission to other accounts. You can grant permission to a single account, all accounts in an organization, or all Amazon Web Services accounts. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_agreement::_create_agreement_output::CreateAgre
 
 pub use crate::operation::create_agreement::_create_agreement_input::CreateAgreementInputBuilder;
 
+impl CreateAgreementInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_agreement::CreateAgreementOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_agreement::CreateAgreementError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_agreement();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateAgreement`.
 ///
 /// <p>Creates an agreement. An agreement is a bilateral trading partner agreement, or partnership, between an Transfer Family server and an AS2 process. The agreement defines the file and message transfer relationship between the server and the AS2 process. To define an agreement, Transfer Family combines a server, local profile, partner profile, certificate, and other attributes.</p>

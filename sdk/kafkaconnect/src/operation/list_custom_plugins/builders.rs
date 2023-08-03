@@ -3,6 +3,23 @@ pub use crate::operation::list_custom_plugins::_list_custom_plugins_output::List
 
 pub use crate::operation::list_custom_plugins::_list_custom_plugins_input::ListCustomPluginsInputBuilder;
 
+impl ListCustomPluginsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_custom_plugins::ListCustomPluginsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_custom_plugins::ListCustomPluginsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_custom_plugins();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListCustomPlugins`.
 ///
 /// <p>Returns a list of all of the custom plugins in this account and Region.</p>

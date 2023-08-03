@@ -3,6 +3,23 @@ pub use crate::operation::disassociate_link::_disassociate_link_output::Disassoc
 
 pub use crate::operation::disassociate_link::_disassociate_link_input::DisassociateLinkInputBuilder;
 
+impl DisassociateLinkInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_link::DisassociateLinkOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_link::DisassociateLinkError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disassociate_link();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateLink`.
 ///
 /// <p>Disassociates an existing device from a link. You must first disassociate any customer gateways that are associated with the link.</p>

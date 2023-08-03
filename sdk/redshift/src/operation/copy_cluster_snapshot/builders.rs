@@ -3,6 +3,23 @@ pub use crate::operation::copy_cluster_snapshot::_copy_cluster_snapshot_output::
 
 pub use crate::operation::copy_cluster_snapshot::_copy_cluster_snapshot_input::CopyClusterSnapshotInputBuilder;
 
+impl CopyClusterSnapshotInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::copy_cluster_snapshot::CopyClusterSnapshotOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::copy_cluster_snapshot::CopyClusterSnapshotError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.copy_cluster_snapshot();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CopyClusterSnapshot`.
 ///
 /// <p>Copies the specified automated cluster snapshot to a new manual cluster snapshot. The source must be an automated snapshot and it must be in the available state.</p>

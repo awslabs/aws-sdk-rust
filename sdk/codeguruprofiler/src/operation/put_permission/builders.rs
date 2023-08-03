@@ -3,6 +3,23 @@ pub use crate::operation::put_permission::_put_permission_output::PutPermissionO
 
 pub use crate::operation::put_permission::_put_permission_input::PutPermissionInputBuilder;
 
+impl PutPermissionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_permission::PutPermissionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_permission::PutPermissionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_permission();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutPermission`.
 ///
 /// <p> Adds permissions to a profiling group's resource-based policy that are provided using an action group. If a profiling group doesn't have a resource-based policy, one is created for it using the permissions in the action group and the roles and users in the <code>principals</code> parameter. </p>

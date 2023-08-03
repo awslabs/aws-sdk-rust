@@ -3,6 +3,17 @@ pub use crate::operation::get_relational_database_snapshots::_get_relational_dat
 
 pub use crate::operation::get_relational_database_snapshots::_get_relational_database_snapshots_input::GetRelationalDatabaseSnapshotsInputBuilder;
 
+impl GetRelationalDatabaseSnapshotsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_relational_database_snapshots::GetRelationalDatabaseSnapshotsOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_relational_database_snapshots::GetRelationalDatabaseSnapshotsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_relational_database_snapshots();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetRelationalDatabaseSnapshots`.
 ///
 /// <p>Returns information about all of your database snapshots in Amazon Lightsail.</p>

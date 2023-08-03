@@ -3,6 +3,23 @@ pub use crate::operation::update_user_hierarchy_group_name::_update_user_hierarc
 
 pub use crate::operation::update_user_hierarchy_group_name::_update_user_hierarchy_group_name_input::UpdateUserHierarchyGroupNameInputBuilder;
 
+impl UpdateUserHierarchyGroupNameInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_user_hierarchy_group_name::UpdateUserHierarchyGroupNameOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_user_hierarchy_group_name::UpdateUserHierarchyGroupNameError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_user_hierarchy_group_name();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateUserHierarchyGroupName`.
 ///
 /// <p>Updates the name of the user hierarchy group. </p>

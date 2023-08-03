@@ -3,6 +3,23 @@ pub use crate::operation::create_public_key::_create_public_key_output::CreatePu
 
 pub use crate::operation::create_public_key::_create_public_key_input::CreatePublicKeyInputBuilder;
 
+impl CreatePublicKeyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_public_key::CreatePublicKeyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_public_key::CreatePublicKeyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_public_key();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreatePublicKey`.
 ///
 /// <p>Uploads a public key to CloudFront that you can use with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">signed URLs and signed cookies</a>, or with <a href="https://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/field-level-encryption.html">field-level encryption</a>.</p>

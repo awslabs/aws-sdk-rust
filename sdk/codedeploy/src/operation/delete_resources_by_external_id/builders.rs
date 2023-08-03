@@ -3,6 +3,23 @@ pub use crate::operation::delete_resources_by_external_id::_delete_resources_by_
 
 pub use crate::operation::delete_resources_by_external_id::_delete_resources_by_external_id_input::DeleteResourcesByExternalIdInputBuilder;
 
+impl DeleteResourcesByExternalIdInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_resources_by_external_id::DeleteResourcesByExternalIdOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_resources_by_external_id::DeleteResourcesByExternalIdError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_resources_by_external_id();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteResourcesByExternalId`.
 ///
 /// <p>Deletes resources linked to an external ID.</p>

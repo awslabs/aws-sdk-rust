@@ -3,6 +3,23 @@ pub use crate::operation::start_incident::_start_incident_output::StartIncidentO
 
 pub use crate::operation::start_incident::_start_incident_input::StartIncidentInputBuilder;
 
+impl StartIncidentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_incident::StartIncidentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_incident::StartIncidentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_incident();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartIncident`.
 ///
 /// <p>Used to start an incident from CloudWatch alarms, EventBridge events, or manually. </p>

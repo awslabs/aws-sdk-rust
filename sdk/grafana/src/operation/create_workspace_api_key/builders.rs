@@ -3,6 +3,23 @@ pub use crate::operation::create_workspace_api_key::_create_workspace_api_key_ou
 
 pub use crate::operation::create_workspace_api_key::_create_workspace_api_key_input::CreateWorkspaceApiKeyInputBuilder;
 
+impl CreateWorkspaceApiKeyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_workspace_api_key::CreateWorkspaceApiKeyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_workspace_api_key::CreateWorkspaceApiKeyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_workspace_api_key();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateWorkspaceApiKey`.
 ///
 /// <p>Creates a Grafana API key for the workspace. This key can be used to authenticate requests sent to the workspace's HTTP API. See <a href="https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html">https://docs.aws.amazon.com/grafana/latest/userguide/Using-Grafana-APIs.html</a> for available APIs and example requests.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_test_grid_projects::_list_test_grid_projects_outp
 
 pub use crate::operation::list_test_grid_projects::_list_test_grid_projects_input::ListTestGridProjectsInputBuilder;
 
+impl ListTestGridProjectsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_test_grid_projects::ListTestGridProjectsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_test_grid_projects::ListTestGridProjectsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_test_grid_projects();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListTestGridProjects`.
 ///
 /// <p>Gets a list of all Selenium testing projects in your account.</p>

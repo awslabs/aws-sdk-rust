@@ -3,6 +3,17 @@ pub use crate::operation::create_network_interface_permission::_create_network_i
 
 pub use crate::operation::create_network_interface_permission::_create_network_interface_permission_input::CreateNetworkInterfacePermissionInputBuilder;
 
+impl CreateNetworkInterfacePermissionInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::create_network_interface_permission::CreateNetworkInterfacePermissionOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_network_interface_permission::CreateNetworkInterfacePermissionError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.create_network_interface_permission();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateNetworkInterfacePermission`.
 ///
 /// <p>Grants an Amazon Web Services-authorized account permission to attach the specified network interface to an instance in their account.</p>

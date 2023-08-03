@@ -3,6 +3,17 @@ pub use crate::operation::update_configuration_set_event_destination::_update_co
 
 pub use crate::operation::update_configuration_set_event_destination::_update_configuration_set_event_destination_input::UpdateConfigurationSetEventDestinationInputBuilder;
 
+impl UpdateConfigurationSetEventDestinationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::update_configuration_set_event_destination::UpdateConfigurationSetEventDestinationOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_configuration_set_event_destination::UpdateConfigurationSetEventDestinationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.update_configuration_set_event_destination();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateConfigurationSetEventDestination`.
 ///
 /// <p>Updates the event destination of a configuration set. Event destinations are associated with configuration sets, which enable you to publish email sending events to Amazon CloudWatch, Amazon Kinesis Firehose, or Amazon Simple Notification Service (Amazon SNS). For information about using configuration sets, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Monitoring Your Amazon SES Sending Activity</a> in the <i>Amazon SES Developer Guide.</i> </p> <note>

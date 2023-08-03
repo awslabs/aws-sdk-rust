@@ -3,6 +3,23 @@ pub use crate::operation::list_grants::_list_grants_output::ListGrantsOutputBuil
 
 pub use crate::operation::list_grants::_list_grants_input::ListGrantsInputBuilder;
 
+impl ListGrantsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_grants::ListGrantsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_grants::ListGrantsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_grants();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListGrants`.
 ///
 /// <p>Gets a list of all grants for the specified KMS key. </p>

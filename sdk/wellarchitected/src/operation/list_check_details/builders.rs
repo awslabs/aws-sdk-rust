@@ -3,6 +3,23 @@ pub use crate::operation::list_check_details::_list_check_details_output::ListCh
 
 pub use crate::operation::list_check_details::_list_check_details_input::ListCheckDetailsInputBuilder;
 
+impl ListCheckDetailsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_check_details::ListCheckDetailsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_check_details::ListCheckDetailsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_check_details();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListCheckDetails`.
 ///
 /// <p>List of Trusted Advisor check details by account related to the workload.</p>

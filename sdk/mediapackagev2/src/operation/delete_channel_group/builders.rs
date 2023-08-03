@@ -3,6 +3,23 @@ pub use crate::operation::delete_channel_group::_delete_channel_group_output::De
 
 pub use crate::operation::delete_channel_group::_delete_channel_group_input::DeleteChannelGroupInputBuilder;
 
+impl DeleteChannelGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_channel_group::DeleteChannelGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_channel_group::DeleteChannelGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_channel_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteChannelGroup`.
 ///
 /// <p>Delete a channel group. You must delete the channel group's channels and origin endpoints before you can delete the channel group. If you delete a channel group, you'll lose access to the egress domain and will have to create a new channel group to replace it.</p>

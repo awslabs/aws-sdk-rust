@@ -3,6 +3,23 @@ pub use crate::operation::describe_fast_launch_images::_describe_fast_launch_ima
 
 pub use crate::operation::describe_fast_launch_images::_describe_fast_launch_images_input::DescribeFastLaunchImagesInputBuilder;
 
+impl DescribeFastLaunchImagesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_fast_launch_images::DescribeFastLaunchImagesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_fast_launch_images::DescribeFastLaunchImagesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_fast_launch_images();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeFastLaunchImages`.
 ///
 /// <p>Describe details for Windows AMIs that are configured for faster launching.</p>

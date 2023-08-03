@@ -3,6 +3,23 @@ pub use crate::operation::describe_collection::_describe_collection_output::Desc
 
 pub use crate::operation::describe_collection::_describe_collection_input::DescribeCollectionInputBuilder;
 
+impl DescribeCollectionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_collection::DescribeCollectionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_collection::DescribeCollectionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_collection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeCollection`.
 ///
 /// <p>Describes the specified collection. You can use <code>DescribeCollection</code> to get information, such as the number of faces indexed into a collection and the version of the model used by the collection for face detection.</p>

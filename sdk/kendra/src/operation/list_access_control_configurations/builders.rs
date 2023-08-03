@@ -3,6 +3,17 @@ pub use crate::operation::list_access_control_configurations::_list_access_contr
 
 pub use crate::operation::list_access_control_configurations::_list_access_control_configurations_input::ListAccessControlConfigurationsInputBuilder;
 
+impl ListAccessControlConfigurationsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_access_control_configurations::ListAccessControlConfigurationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_access_control_configurations::ListAccessControlConfigurationsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_access_control_configurations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAccessControlConfigurations`.
 ///
 /// <p>Lists one or more access control configurations for an index. This includes user and group access information for your documents. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>

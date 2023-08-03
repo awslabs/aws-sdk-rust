@@ -3,6 +3,23 @@ pub use crate::operation::delete_message::_delete_message_output::DeleteMessageO
 
 pub use crate::operation::delete_message::_delete_message_input::DeleteMessageInputBuilder;
 
+impl DeleteMessageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_message::DeleteMessageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_message::DeleteMessageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_message();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteMessage`.
 ///
 /// <p>Deletes the specified message from the specified queue. To select the message to delete, use the <code>ReceiptHandle</code> of the message (<i>not</i> the <code>MessageId</code> which you receive when you send the message). Amazon SQS can delete a message from a queue even if a visibility timeout setting causes the message to be locked by another consumer. Amazon SQS automatically deletes messages left in a queue longer than the retention period configured for the queue. </p> <note>

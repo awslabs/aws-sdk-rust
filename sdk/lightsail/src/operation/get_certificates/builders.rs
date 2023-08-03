@@ -3,6 +3,23 @@ pub use crate::operation::get_certificates::_get_certificates_output::GetCertifi
 
 pub use crate::operation::get_certificates::_get_certificates_input::GetCertificatesInputBuilder;
 
+impl GetCertificatesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_certificates::GetCertificatesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_certificates::GetCertificatesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_certificates();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetCertificates`.
 ///
 /// <p>Returns information about one or more Amazon Lightsail SSL/TLS certificates.</p> <note>

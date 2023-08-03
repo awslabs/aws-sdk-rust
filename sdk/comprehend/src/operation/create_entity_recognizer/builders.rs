@@ -3,6 +3,23 @@ pub use crate::operation::create_entity_recognizer::_create_entity_recognizer_ou
 
 pub use crate::operation::create_entity_recognizer::_create_entity_recognizer_input::CreateEntityRecognizerInputBuilder;
 
+impl CreateEntityRecognizerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_entity_recognizer::CreateEntityRecognizerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_entity_recognizer::CreateEntityRecognizerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_entity_recognizer();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateEntityRecognizer`.
 ///
 /// <p>Creates an entity recognizer using submitted files. After your <code>CreateEntityRecognizer</code> request is submitted, you can check job status using the <code>DescribeEntityRecognizer</code> API. </p>

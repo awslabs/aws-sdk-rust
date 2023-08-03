@@ -3,6 +3,23 @@ pub use crate::operation::authorize_snapshot_access::_authorize_snapshot_access_
 
 pub use crate::operation::authorize_snapshot_access::_authorize_snapshot_access_input::AuthorizeSnapshotAccessInputBuilder;
 
+impl AuthorizeSnapshotAccessInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccessOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::authorize_snapshot_access::AuthorizeSnapshotAccessError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.authorize_snapshot_access();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AuthorizeSnapshotAccess`.
 ///
 /// <p>Authorizes the specified Amazon Web Services account to restore the specified snapshot.</p>

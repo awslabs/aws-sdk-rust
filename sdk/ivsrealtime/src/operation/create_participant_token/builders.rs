@@ -3,6 +3,23 @@ pub use crate::operation::create_participant_token::_create_participant_token_ou
 
 pub use crate::operation::create_participant_token::_create_participant_token_input::CreateParticipantTokenInputBuilder;
 
+impl CreateParticipantTokenInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_participant_token::CreateParticipantTokenOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_participant_token::CreateParticipantTokenError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_participant_token();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateParticipantToken`.
 ///
 /// <p>Creates an additional token for a specified stage. This can be done after stage creation or when tokens expire. Tokens always are scoped to the stage for which they are created.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::infer_snomedct::_infer_snomedct_output::InferSnomedctO
 
 pub use crate::operation::infer_snomedct::_infer_snomedct_input::InferSnomedctInputBuilder;
 
+impl InferSnomedctInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::infer_snomedct::InferSnomedctOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::infer_snomedct::InferSNOMEDCTError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.infer_snomedct();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `InferSNOMEDCT`.
 ///
 /// <p> InferSNOMEDCT detects possible medical concepts as entities and links them to codes from the Systematized Nomenclature of Medicine, Clinical Terms (SNOMED-CT) ontology</p>

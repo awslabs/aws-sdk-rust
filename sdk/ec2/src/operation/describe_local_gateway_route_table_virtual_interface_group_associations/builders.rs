@@ -3,6 +3,18 @@ pub use crate::operation::describe_local_gateway_route_table_virtual_interface_g
 
 pub use crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::_describe_local_gateway_route_table_virtual_interface_group_associations_input::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsInputBuilder;
 
+impl DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_local_gateway_route_table_virtual_interface_group_associations::DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociationsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder =
+            client.describe_local_gateway_route_table_virtual_interface_group_associations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeLocalGatewayRouteTableVirtualInterfaceGroupAssociations`.
 ///
 /// <p>Describes the associations between virtual interface groups and local gateway route tables.</p>

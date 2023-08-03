@@ -3,6 +3,23 @@ pub use crate::operation::describe_problem_observations::_describe_problem_obser
 
 pub use crate::operation::describe_problem_observations::_describe_problem_observations_input::DescribeProblemObservationsInputBuilder;
 
+impl DescribeProblemObservationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_problem_observations::DescribeProblemObservationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_problem_observations::DescribeProblemObservationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_problem_observations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeProblemObservations`.
 ///
 /// <p>Describes the anomalies or errors associated with the problem.</p>

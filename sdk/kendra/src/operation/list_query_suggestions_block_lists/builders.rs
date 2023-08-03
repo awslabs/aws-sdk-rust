@@ -3,6 +3,17 @@ pub use crate::operation::list_query_suggestions_block_lists::_list_query_sugges
 
 pub use crate::operation::list_query_suggestions_block_lists::_list_query_suggestions_block_lists_input::ListQuerySuggestionsBlockListsInputBuilder;
 
+impl ListQuerySuggestionsBlockListsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_query_suggestions_block_lists::ListQuerySuggestionsBlockListsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_query_suggestions_block_lists::ListQuerySuggestionsBlockListsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_query_suggestions_block_lists();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListQuerySuggestionsBlockLists`.
 ///
 /// <p>Lists the block lists used for query suggestions for an index.</p>

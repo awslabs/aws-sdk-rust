@@ -3,6 +3,17 @@ pub use crate::operation::describe_auto_scaling_notification_types::_describe_au
 
 pub use crate::operation::describe_auto_scaling_notification_types::_describe_auto_scaling_notification_types_input::DescribeAutoScalingNotificationTypesInputBuilder;
 
+impl DescribeAutoScalingNotificationTypesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_auto_scaling_notification_types::DescribeAutoScalingNotificationTypesOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_auto_scaling_notification_types::DescribeAutoScalingNotificationTypesError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_auto_scaling_notification_types();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAutoScalingNotificationTypes`.
 ///
 /// <p>Describes the notification types that are supported by Amazon EC2 Auto Scaling.</p>

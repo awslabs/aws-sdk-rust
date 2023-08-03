@@ -3,6 +3,23 @@ pub use crate::operation::list_commands::_list_commands_output::ListCommandsOutp
 
 pub use crate::operation::list_commands::_list_commands_input::ListCommandsInputBuilder;
 
+impl ListCommandsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_commands::ListCommandsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_commands::ListCommandsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_commands();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListCommands`.
 ///
 /// <p>Lists the commands requested by users of the Amazon Web Services account.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_campaign_activities::_get_campaign_activities_outp
 
 pub use crate::operation::get_campaign_activities::_get_campaign_activities_input::GetCampaignActivitiesInputBuilder;
 
+impl GetCampaignActivitiesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_campaign_activities::GetCampaignActivitiesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_campaign_activities::GetCampaignActivitiesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_campaign_activities();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetCampaignActivities`.
 ///
 /// <p>Retrieves information about all the activities for a campaign.</p>

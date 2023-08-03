@@ -3,6 +3,23 @@ pub use crate::operation::create_notebook::_create_notebook_output::CreateNotebo
 
 pub use crate::operation::create_notebook::_create_notebook_input::CreateNotebookInputBuilder;
 
+impl CreateNotebookInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_notebook::CreateNotebookOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_notebook::CreateNotebookError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_notebook();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateNotebook`.
 ///
 /// <p>Creates an empty <code>ipynb</code> file in the specified Apache Spark enabled workgroup. Throws an error if a file in the workgroup with the same name already exists.</p>

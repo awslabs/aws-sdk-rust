@@ -3,6 +3,23 @@ pub use crate::operation::translate_pin_data::_translate_pin_data_output::Transl
 
 pub use crate::operation::translate_pin_data::_translate_pin_data_input::TranslatePinDataInputBuilder;
 
+impl TranslatePinDataInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::translate_pin_data::TranslatePinDataOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::translate_pin_data::TranslatePinDataError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.translate_pin_data();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `TranslatePinData`.
 ///
 /// <p>Translates encrypted PIN block from and to ISO 9564 formats 0,1,3,4. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/translate-pin-data.html">Translate PIN data</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.</p>

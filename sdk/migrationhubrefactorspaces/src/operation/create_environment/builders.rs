@@ -3,6 +3,23 @@ pub use crate::operation::create_environment::_create_environment_output::Create
 
 pub use crate::operation::create_environment::_create_environment_input::CreateEnvironmentInputBuilder;
 
+impl CreateEnvironmentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_environment::CreateEnvironmentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_environment::CreateEnvironmentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_environment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateEnvironment`.
 ///
 /// <p>Creates an Amazon Web Services Migration Hub Refactor Spaces environment. The caller owns the environment resource, and all Refactor Spaces applications, services, and routes created within the environment. They are referred to as the <i>environment owner</i>. The environment owner has cross-account visibility and control of Refactor Spaces resources that are added to the environment by other accounts that the environment is shared with.</p>

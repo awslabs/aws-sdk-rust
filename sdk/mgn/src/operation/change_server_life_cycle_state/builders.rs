@@ -3,6 +3,23 @@ pub use crate::operation::change_server_life_cycle_state::_change_server_life_cy
 
 pub use crate::operation::change_server_life_cycle_state::_change_server_life_cycle_state_input::ChangeServerLifeCycleStateInputBuilder;
 
+impl ChangeServerLifeCycleStateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::change_server_life_cycle_state::ChangeServerLifeCycleStateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::change_server_life_cycle_state::ChangeServerLifeCycleStateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.change_server_life_cycle_state();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ChangeServerLifeCycleState`.
 ///
 /// <p>Allows the user to set the SourceServer.LifeCycle.state property for specific Source Server IDs to one of the following: READY_FOR_TEST or READY_FOR_CUTOVER. This command only works if the Source Server is already launchable (dataReplicationInfo.lagDuration is not null.)</p>

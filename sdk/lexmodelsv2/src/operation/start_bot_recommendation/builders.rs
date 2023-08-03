@@ -3,6 +3,23 @@ pub use crate::operation::start_bot_recommendation::_start_bot_recommendation_ou
 
 pub use crate::operation::start_bot_recommendation::_start_bot_recommendation_input::StartBotRecommendationInputBuilder;
 
+impl StartBotRecommendationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_bot_recommendation::StartBotRecommendationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_bot_recommendation::StartBotRecommendationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_bot_recommendation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartBotRecommendation`.
 ///
 /// <p>Use this to provide your transcript data, and to start the bot recommendation process.</p>

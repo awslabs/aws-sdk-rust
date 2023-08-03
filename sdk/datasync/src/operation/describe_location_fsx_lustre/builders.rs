@@ -3,6 +3,23 @@ pub use crate::operation::describe_location_fsx_lustre::_describe_location_fsx_l
 
 pub use crate::operation::describe_location_fsx_lustre::_describe_location_fsx_lustre_input::DescribeLocationFsxLustreInputBuilder;
 
+impl DescribeLocationFsxLustreInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_location_fsx_lustre::DescribeLocationFsxLustreOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_location_fsx_lustre::DescribeLocationFsxLustreError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_location_fsx_lustre();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeLocationFsxLustre`.
 ///
 /// <p>Provides details about how an DataSync location for an Amazon FSx for Lustre file system is configured.</p>

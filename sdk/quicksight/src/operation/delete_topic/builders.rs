@@ -3,6 +3,23 @@ pub use crate::operation::delete_topic::_delete_topic_output::DeleteTopicOutputB
 
 pub use crate::operation::delete_topic::_delete_topic_input::DeleteTopicInputBuilder;
 
+impl DeleteTopicInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_topic::DeleteTopicOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_topic::DeleteTopicError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_topic();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteTopic`.
 ///
 /// <p>Deletes a topic.</p>

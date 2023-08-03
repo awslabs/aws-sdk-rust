@@ -3,6 +3,23 @@ pub use crate::operation::get_assessment::_get_assessment_output::GetAssessmentO
 
 pub use crate::operation::get_assessment::_get_assessment_input::GetAssessmentInputBuilder;
 
+impl GetAssessmentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_assessment::GetAssessmentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_assessment::GetAssessmentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_assessment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetAssessment`.
 ///
 /// <p>Gets information about a specified assessment. </p>

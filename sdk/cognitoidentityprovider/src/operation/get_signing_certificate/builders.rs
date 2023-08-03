@@ -3,6 +3,23 @@ pub use crate::operation::get_signing_certificate::_get_signing_certificate_outp
 
 pub use crate::operation::get_signing_certificate::_get_signing_certificate_input::GetSigningCertificateInputBuilder;
 
+impl GetSigningCertificateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_signing_certificate::GetSigningCertificateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_signing_certificate::GetSigningCertificateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_signing_certificate();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetSigningCertificate`.
 ///
 /// <p>This method takes a user pool ID, and returns the signing certificate. The issued certificate is valid for 10 years from the date of issue.</p>

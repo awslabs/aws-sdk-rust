@@ -3,6 +3,23 @@ pub use crate::operation::list_device_events::_list_device_events_output::ListDe
 
 pub use crate::operation::list_device_events::_list_device_events_input::ListDeviceEventsInputBuilder;
 
+impl ListDeviceEventsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_device_events::ListDeviceEventsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_device_events::ListDeviceEventsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_device_events();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDeviceEvents`.
 ///
 /// <p>Using a device ID, returns a DeviceEventsResponse object containing an array of events for the device.</p>

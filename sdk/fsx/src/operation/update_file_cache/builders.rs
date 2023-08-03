@@ -3,6 +3,23 @@ pub use crate::operation::update_file_cache::_update_file_cache_output::UpdateFi
 
 pub use crate::operation::update_file_cache::_update_file_cache_input::UpdateFileCacheInputBuilder;
 
+impl UpdateFileCacheInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_file_cache::UpdateFileCacheOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_file_cache::UpdateFileCacheError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_file_cache();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateFileCache`.
 ///
 /// <p>Updates the configuration of an existing Amazon File Cache resource. You can update multiple properties in a single request.</p>

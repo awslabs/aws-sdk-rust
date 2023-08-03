@@ -3,6 +3,23 @@ pub use crate::operation::delete_watchlist::_delete_watchlist_output::DeleteWatc
 
 pub use crate::operation::delete_watchlist::_delete_watchlist_input::DeleteWatchlistInputBuilder;
 
+impl DeleteWatchlistInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_watchlist::DeleteWatchlistOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_watchlist::DeleteWatchlistError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_watchlist();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteWatchlist`.
 ///
 /// <p>Deletes the specified watchlist from Voice ID. This API throws an exception when there are fraudsters in the watchlist that you are trying to delete. You must delete the fraudsters, and then delete the watchlist. Every domain has a default watchlist which cannot be deleted. </p>

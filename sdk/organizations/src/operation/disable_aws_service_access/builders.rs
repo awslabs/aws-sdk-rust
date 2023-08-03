@@ -3,6 +3,23 @@ pub use crate::operation::disable_aws_service_access::_disable_aws_service_acces
 
 pub use crate::operation::disable_aws_service_access::_disable_aws_service_access_input::DisableAwsServiceAccessInputBuilder;
 
+impl DisableAwsServiceAccessInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disable_aws_service_access::DisableAwsServiceAccessOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disable_aws_service_access::DisableAWSServiceAccessError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disable_aws_service_access();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisableAWSServiceAccess`.
 ///
 /// <p>Disables the integration of an Amazon Web Services service (the service that is specified by <code>ServicePrincipal</code>) with Organizations. When you disable integration, the specified service no longer can create a <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/using-service-linked-roles.html">service-linked role</a> in <i>new</i> accounts in your organization. This means the service can't perform operations on your behalf on any new accounts in your organization. The service can still perform operations in older accounts until the service completes its clean-up from Organizations.</p> <important>

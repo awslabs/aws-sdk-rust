@@ -3,6 +3,23 @@ pub use crate::operation::describe_evaluation_form::_describe_evaluation_form_ou
 
 pub use crate::operation::describe_evaluation_form::_describe_evaluation_form_input::DescribeEvaluationFormInputBuilder;
 
+impl DescribeEvaluationFormInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_evaluation_form::DescribeEvaluationFormOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_evaluation_form::DescribeEvaluationFormError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_evaluation_form();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeEvaluationForm`.
 ///
 /// <p>Describes an evaluation form in the specified Amazon Connect instance. If the version property is not provided, the latest version of the evaluation form is described.</p>

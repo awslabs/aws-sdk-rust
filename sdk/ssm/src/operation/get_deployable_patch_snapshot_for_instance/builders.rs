@@ -3,6 +3,17 @@ pub use crate::operation::get_deployable_patch_snapshot_for_instance::_get_deplo
 
 pub use crate::operation::get_deployable_patch_snapshot_for_instance::_get_deployable_patch_snapshot_for_instance_input::GetDeployablePatchSnapshotForInstanceInputBuilder;
 
+impl GetDeployablePatchSnapshotForInstanceInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_deployable_patch_snapshot_for_instance::GetDeployablePatchSnapshotForInstanceError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_deployable_patch_snapshot_for_instance();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetDeployablePatchSnapshotForInstance`.
 ///
 /// <p>Retrieves the current snapshot for the patch baseline the managed node uses. This API is primarily used by the <code>AWS-RunPatchBaseline</code> Systems Manager document (SSM document).</p> <note>

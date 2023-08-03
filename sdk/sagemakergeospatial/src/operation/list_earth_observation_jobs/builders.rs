@@ -3,6 +3,23 @@ pub use crate::operation::list_earth_observation_jobs::_list_earth_observation_j
 
 pub use crate::operation::list_earth_observation_jobs::_list_earth_observation_jobs_input::ListEarthObservationJobsInputBuilder;
 
+impl ListEarthObservationJobsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_earth_observation_jobs::ListEarthObservationJobsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_earth_observation_jobs::ListEarthObservationJobsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_earth_observation_jobs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListEarthObservationJobs`.
 ///
 /// <p>Use this operation to get a list of the Earth Observation jobs associated with the calling Amazon Web Services account.</p>

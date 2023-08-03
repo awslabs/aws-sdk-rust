@@ -3,6 +3,23 @@ pub use crate::operation::associate_license::_associate_license_output::Associat
 
 pub use crate::operation::associate_license::_associate_license_input::AssociateLicenseInputBuilder;
 
+impl AssociateLicenseInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_license::AssociateLicenseOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_license::AssociateLicenseError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_license();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateLicense`.
 ///
 /// <p>Assigns a Grafana Enterprise license to a workspace. Upgrading to Grafana Enterprise incurs additional fees. For more information, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/upgrade-to-Grafana-Enterprise.html">Upgrade a workspace to Grafana Enterprise</a>.</p>

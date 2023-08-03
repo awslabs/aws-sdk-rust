@@ -3,6 +3,23 @@ pub use crate::operation::describe_ipam_scopes::_describe_ipam_scopes_output::De
 
 pub use crate::operation::describe_ipam_scopes::_describe_ipam_scopes_input::DescribeIpamScopesInputBuilder;
 
+impl DescribeIpamScopesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_ipam_scopes::DescribeIpamScopesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_ipam_scopes::DescribeIpamScopesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_ipam_scopes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeIpamScopes`.
 ///
 /// <p>Get information about your IPAM scopes.</p>

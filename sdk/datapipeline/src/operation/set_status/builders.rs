@@ -3,6 +3,23 @@ pub use crate::operation::set_status::_set_status_output::SetStatusOutputBuilder
 
 pub use crate::operation::set_status::_set_status_input::SetStatusInputBuilder;
 
+impl SetStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::set_status::SetStatusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::set_status::SetStatusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.set_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SetStatus`.
 ///
 /// <p>Requests that the status of the specified physical or logical pipeline objects be updated in the specified pipeline. This update might not occur immediately, but is eventually consistent. The status that can be set depends on the type of object (for example, DataNode or Activity). You cannot perform this operation on <code>FINISHED</code> pipelines and attempting to do so returns <code>InvalidRequestException</code>.</p> <examples>

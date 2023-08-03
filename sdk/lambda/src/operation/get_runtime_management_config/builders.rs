@@ -3,6 +3,23 @@ pub use crate::operation::get_runtime_management_config::_get_runtime_management
 
 pub use crate::operation::get_runtime_management_config::_get_runtime_management_config_input::GetRuntimeManagementConfigInputBuilder;
 
+impl GetRuntimeManagementConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_runtime_management_config::GetRuntimeManagementConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_runtime_management_config::GetRuntimeManagementConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_runtime_management_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetRuntimeManagementConfig`.
 ///
 /// <p>Retrieves the runtime management configuration for a function's version. If the runtime update mode is <b>Manual</b>, this includes the ARN of the runtime version and the runtime update mode. If the runtime update mode is <b>Auto</b> or <b>Function update</b>, this includes the runtime update mode and <code>null</code> is returned for the ARN. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-update.html">Runtime updates</a>.</p>

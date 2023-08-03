@@ -3,6 +3,23 @@ pub use crate::operation::update_bot::_update_bot_output::UpdateBotOutputBuilder
 
 pub use crate::operation::update_bot::_update_bot_input::UpdateBotInputBuilder;
 
+impl UpdateBotInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_bot::UpdateBotOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_bot::UpdateBotError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_bot();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateBot`.
 ///
 /// <p>Updates the configuration of an existing bot. </p>

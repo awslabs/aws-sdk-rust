@@ -3,6 +3,23 @@ pub use crate::operation::unlock_rule::_unlock_rule_output::UnlockRuleOutputBuil
 
 pub use crate::operation::unlock_rule::_unlock_rule_input::UnlockRuleInputBuilder;
 
+impl UnlockRuleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::unlock_rule::UnlockRuleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::unlock_rule::UnlockRuleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.unlock_rule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UnlockRule`.
 ///
 /// <p>Unlocks a retention rule. After a retention rule is unlocked, it can be modified or deleted only after the unlock delay period expires.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_custom_entity_type::_delete_custom_entity_type_
 
 pub use crate::operation::delete_custom_entity_type::_delete_custom_entity_type_input::DeleteCustomEntityTypeInputBuilder;
 
+impl DeleteCustomEntityTypeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_custom_entity_type::DeleteCustomEntityTypeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_custom_entity_type::DeleteCustomEntityTypeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_custom_entity_type();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteCustomEntityType`.
 ///
 /// <p>Deletes a custom pattern by specifying its name.</p>

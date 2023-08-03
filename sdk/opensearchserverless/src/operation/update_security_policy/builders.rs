@@ -3,6 +3,23 @@ pub use crate::operation::update_security_policy::_update_security_policy_output
 
 pub use crate::operation::update_security_policy::_update_security_policy_input::UpdateSecurityPolicyInputBuilder;
 
+impl UpdateSecurityPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_security_policy::UpdateSecurityPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_security_policy::UpdateSecurityPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_security_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateSecurityPolicy`.
 ///
 /// <p>Updates an OpenSearch Serverless security policy. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-network.html">Network access for Amazon OpenSearch Serverless</a> and <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-encryption.html">Encryption at rest for Amazon OpenSearch Serverless</a>.</p>

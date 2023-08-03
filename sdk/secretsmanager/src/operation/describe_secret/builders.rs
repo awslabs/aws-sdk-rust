@@ -3,6 +3,23 @@ pub use crate::operation::describe_secret::_describe_secret_output::DescribeSecr
 
 pub use crate::operation::describe_secret::_describe_secret_input::DescribeSecretInputBuilder;
 
+impl DescribeSecretInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_secret::DescribeSecretOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_secret::DescribeSecretError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_secret();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeSecret`.
 ///
 /// <p>Retrieves the details of a secret. It does not include the encrypted secret value. Secrets Manager only returns fields that have a value in the response. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_stream::_create_stream_output::CreateStreamOutp
 
 pub use crate::operation::create_stream::_create_stream_input::CreateStreamInputBuilder;
 
+impl CreateStreamInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_stream::CreateStreamOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_stream::CreateStreamError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_stream();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateStream`.
 ///
 /// <p>Creates a stream for delivering one or more large files in chunks over MQTT. A stream transports data bytes in chunks or blocks packaged as MQTT messages from a source like S3. You can have one or more files associated with a stream.</p>

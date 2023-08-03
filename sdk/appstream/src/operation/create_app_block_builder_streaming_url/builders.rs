@@ -3,6 +3,17 @@ pub use crate::operation::create_app_block_builder_streaming_url::_create_app_bl
 
 pub use crate::operation::create_app_block_builder_streaming_url::_create_app_block_builder_streaming_url_input::CreateAppBlockBuilderStreamingUrlInputBuilder;
 
+impl CreateAppBlockBuilderStreamingUrlInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::create_app_block_builder_streaming_url::CreateAppBlockBuilderStreamingUrlOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_app_block_builder_streaming_url::CreateAppBlockBuilderStreamingURLError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.create_app_block_builder_streaming_url();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateAppBlockBuilderStreamingURL`.
 ///
 /// <p>Creates a URL to start a create app block builder streaming session.</p>

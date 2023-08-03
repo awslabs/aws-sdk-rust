@@ -3,6 +3,23 @@ pub use crate::operation::start_assessment_run::_start_assessment_run_output::St
 
 pub use crate::operation::start_assessment_run::_start_assessment_run_input::StartAssessmentRunInputBuilder;
 
+impl StartAssessmentRunInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_assessment_run::StartAssessmentRunOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_assessment_run::StartAssessmentRunError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_assessment_run();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartAssessmentRun`.
 ///
 /// <p>Starts the assessment run specified by the ARN of the assessment template. For this API to function properly, you must not exceed the limit of running up to 500 concurrent agents per AWS account.</p>

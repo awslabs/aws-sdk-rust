@@ -3,6 +3,23 @@ pub use crate::operation::describe_fleet_attributes::_describe_fleet_attributes_
 
 pub use crate::operation::describe_fleet_attributes::_describe_fleet_attributes_input::DescribeFleetAttributesInputBuilder;
 
+impl DescribeFleetAttributesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_fleet_attributes::DescribeFleetAttributesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_fleet_attributes::DescribeFleetAttributesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_fleet_attributes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeFleetAttributes`.
 ///
 /// <p>Retrieves core fleet-wide properties, including the computing hardware and deployment configuration for all instances in the fleet.</p>

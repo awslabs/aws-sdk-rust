@@ -3,6 +3,23 @@ pub use crate::operation::list_handshakes_for_account::_list_handshakes_for_acco
 
 pub use crate::operation::list_handshakes_for_account::_list_handshakes_for_account_input::ListHandshakesForAccountInputBuilder;
 
+impl ListHandshakesForAccountInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_handshakes_for_account::ListHandshakesForAccountOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_handshakes_for_account::ListHandshakesForAccountError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_handshakes_for_account();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListHandshakesForAccount`.
 ///
 /// <p>Lists the current handshakes that are associated with the account of the requesting user.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_stacks::_describe_stacks_output::DescribeStac
 
 pub use crate::operation::describe_stacks::_describe_stacks_input::DescribeStacksInputBuilder;
 
+impl DescribeStacksInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_stacks::DescribeStacksOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_stacks::DescribeStacksError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_stacks();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeStacks`.
 ///
 /// <p>Returns the description for the specified stack; if no stack name was specified, then it returns the description for all the stacks created.</p> <note>

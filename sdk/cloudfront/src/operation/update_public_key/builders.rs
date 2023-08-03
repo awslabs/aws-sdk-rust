@@ -3,6 +3,23 @@ pub use crate::operation::update_public_key::_update_public_key_output::UpdatePu
 
 pub use crate::operation::update_public_key::_update_public_key_input::UpdatePublicKeyInputBuilder;
 
+impl UpdatePublicKeyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_public_key::UpdatePublicKeyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_public_key::UpdatePublicKeyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_public_key();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdatePublicKey`.
 ///
 /// <p>Update public key information. Note that the only value you can change is the comment.</p>

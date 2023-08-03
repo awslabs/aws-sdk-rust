@@ -3,6 +3,23 @@ pub use crate::operation::describe_account::_describe_account_output::DescribeAc
 
 pub use crate::operation::describe_account::_describe_account_input::DescribeAccountInputBuilder;
 
+impl DescribeAccountInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_account::DescribeAccountOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_account::DescribeAccountError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_account();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAccount`.
 ///
 /// <p>Retrieves a list that describes the configuration of Bring Your Own License (BYOL) for the specified account.</p>

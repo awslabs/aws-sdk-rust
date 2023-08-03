@@ -3,6 +3,23 @@ pub use crate::operation::cancel_batch_import_job::_cancel_batch_import_job_outp
 
 pub use crate::operation::cancel_batch_import_job::_cancel_batch_import_job_input::CancelBatchImportJobInputBuilder;
 
+impl CancelBatchImportJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::cancel_batch_import_job::CancelBatchImportJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::cancel_batch_import_job::CancelBatchImportJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.cancel_batch_import_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CancelBatchImportJob`.
 ///
 /// <p> Cancels an in-progress batch import job.</p>

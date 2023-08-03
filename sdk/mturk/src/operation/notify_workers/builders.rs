@@ -3,6 +3,23 @@ pub use crate::operation::notify_workers::_notify_workers_output::NotifyWorkersO
 
 pub use crate::operation::notify_workers::_notify_workers_input::NotifyWorkersInputBuilder;
 
+impl NotifyWorkersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::notify_workers::NotifyWorkersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::notify_workers::NotifyWorkersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.notify_workers();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `NotifyWorkers`.
 ///
 /// <p> The <code>NotifyWorkers</code> operation sends an email to one or more Workers that you specify with the Worker ID. You can specify up to 100 Worker IDs to send the same message with a single call to the NotifyWorkers operation. The NotifyWorkers operation will send a notification email to a Worker only if you have previously approved or rejected work from the Worker. </p>

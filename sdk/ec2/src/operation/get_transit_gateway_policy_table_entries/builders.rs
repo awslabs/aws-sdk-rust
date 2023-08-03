@@ -3,6 +3,17 @@ pub use crate::operation::get_transit_gateway_policy_table_entries::_get_transit
 
 pub use crate::operation::get_transit_gateway_policy_table_entries::_get_transit_gateway_policy_table_entries_input::GetTransitGatewayPolicyTableEntriesInputBuilder;
 
+impl GetTransitGatewayPolicyTableEntriesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_transit_gateway_policy_table_entries::GetTransitGatewayPolicyTableEntriesOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_transit_gateway_policy_table_entries::GetTransitGatewayPolicyTableEntriesError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_transit_gateway_policy_table_entries();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetTransitGatewayPolicyTableEntries`.
 ///
 /// <p>Returns a list of transit gateway policy table entries.</p>

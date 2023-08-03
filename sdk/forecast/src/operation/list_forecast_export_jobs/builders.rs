@@ -3,6 +3,23 @@ pub use crate::operation::list_forecast_export_jobs::_list_forecast_export_jobs_
 
 pub use crate::operation::list_forecast_export_jobs::_list_forecast_export_jobs_input::ListForecastExportJobsInputBuilder;
 
+impl ListForecastExportJobsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_forecast_export_jobs::ListForecastExportJobsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_forecast_export_jobs::ListForecastExportJobsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_forecast_export_jobs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListForecastExportJobs`.
 ///
 /// <p>Returns a list of forecast export jobs created using the <code>CreateForecastExportJob</code> operation. For each forecast export job, this operation returns a summary of its properties, including its Amazon Resource Name (ARN). To retrieve the complete set of properties, use the ARN with the <code>DescribeForecastExportJob</code> operation. You can filter the list using an array of <code>Filter</code> objects.</p>

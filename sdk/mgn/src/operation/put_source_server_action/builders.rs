@@ -3,6 +3,23 @@ pub use crate::operation::put_source_server_action::_put_source_server_action_ou
 
 pub use crate::operation::put_source_server_action::_put_source_server_action_input::PutSourceServerActionInputBuilder;
 
+impl PutSourceServerActionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_source_server_action::PutSourceServerActionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_source_server_action::PutSourceServerActionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_source_server_action();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutSourceServerAction`.
 ///
 /// <p>Put source server post migration custom action.</p>

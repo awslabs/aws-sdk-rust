@@ -3,6 +3,23 @@ pub use crate::operation::accept_portfolio_share::_accept_portfolio_share_output
 
 pub use crate::operation::accept_portfolio_share::_accept_portfolio_share_input::AcceptPortfolioShareInputBuilder;
 
+impl AcceptPortfolioShareInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::accept_portfolio_share::AcceptPortfolioShareOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::accept_portfolio_share::AcceptPortfolioShareError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.accept_portfolio_share();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AcceptPortfolioShare`.
 ///
 /// <p>Accepts an offer to share the specified portfolio.</p>

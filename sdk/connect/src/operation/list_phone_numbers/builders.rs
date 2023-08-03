@@ -3,6 +3,23 @@ pub use crate::operation::list_phone_numbers::_list_phone_numbers_output::ListPh
 
 pub use crate::operation::list_phone_numbers::_list_phone_numbers_input::ListPhoneNumbersInputBuilder;
 
+impl ListPhoneNumbersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_phone_numbers::ListPhoneNumbersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_phone_numbers::ListPhoneNumbersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_phone_numbers();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListPhoneNumbers`.
 ///
 /// <p>Provides information about the phone numbers for the specified Amazon Connect instance. </p>

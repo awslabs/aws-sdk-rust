@@ -3,6 +3,23 @@ pub use crate::operation::list_solution_versions::_list_solution_versions_output
 
 pub use crate::operation::list_solution_versions::_list_solution_versions_input::ListSolutionVersionsInputBuilder;
 
+impl ListSolutionVersionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_solution_versions::ListSolutionVersionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_solution_versions::ListSolutionVersionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_solution_versions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListSolutionVersions`.
 ///
 /// <p>Returns a list of solution versions for the given solution. When a solution is not specified, all the solution versions associated with the account are listed. The response provides the properties for each solution version, including the Amazon Resource Name (ARN).</p>

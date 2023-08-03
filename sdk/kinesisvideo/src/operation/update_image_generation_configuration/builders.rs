@@ -3,6 +3,17 @@ pub use crate::operation::update_image_generation_configuration::_update_image_g
 
 pub use crate::operation::update_image_generation_configuration::_update_image_generation_configuration_input::UpdateImageGenerationConfigurationInputBuilder;
 
+impl UpdateImageGenerationConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::update_image_generation_configuration::UpdateImageGenerationConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_image_generation_configuration::UpdateImageGenerationConfigurationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.update_image_generation_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateImageGenerationConfiguration`.
 ///
 /// <p>Updates the <code>StreamInfo</code> and <code>ImageProcessingConfiguration</code> fields.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_regex_pattern_sets::_list_regex_pattern_sets_outp
 
 pub use crate::operation::list_regex_pattern_sets::_list_regex_pattern_sets_input::ListRegexPatternSetsInputBuilder;
 
+impl ListRegexPatternSetsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_regex_pattern_sets::ListRegexPatternSetsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_regex_pattern_sets::ListRegexPatternSetsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_regex_pattern_sets();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListRegexPatternSets`.
 ///
 /// <note>

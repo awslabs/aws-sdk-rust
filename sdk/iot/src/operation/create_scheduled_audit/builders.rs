@@ -3,6 +3,23 @@ pub use crate::operation::create_scheduled_audit::_create_scheduled_audit_output
 
 pub use crate::operation::create_scheduled_audit::_create_scheduled_audit_input::CreateScheduledAuditInputBuilder;
 
+impl CreateScheduledAuditInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_scheduled_audit::CreateScheduledAuditOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_scheduled_audit::CreateScheduledAuditError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_scheduled_audit();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateScheduledAudit`.
 ///
 /// <p>Creates a scheduled audit that is run at a specified time interval.</p>

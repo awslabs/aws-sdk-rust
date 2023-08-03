@@ -3,6 +3,23 @@ pub use crate::operation::batch_disassociate_resource::_batch_disassociate_resou
 
 pub use crate::operation::batch_disassociate_resource::_batch_disassociate_resource_input::BatchDisassociateResourceInputBuilder;
 
+impl BatchDisassociateResourceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_disassociate_resource::BatchDisassociateResourceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_disassociate_resource::BatchDisassociateResourceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_disassociate_resource();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchDisassociateResource`.
 ///
 /// <p>Disassociates resources from a Firewall Manager resource set.</p>

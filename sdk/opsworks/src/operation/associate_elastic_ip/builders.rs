@@ -3,6 +3,23 @@ pub use crate::operation::associate_elastic_ip::_associate_elastic_ip_output::As
 
 pub use crate::operation::associate_elastic_ip::_associate_elastic_ip_input::AssociateElasticIpInputBuilder;
 
+impl AssociateElasticIpInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_elastic_ip::AssociateElasticIpOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_elastic_ip::AssociateElasticIpError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_elastic_ip();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateElasticIp`.
 ///
 /// <p>Associates one of the stack's registered Elastic IP addresses with a specified instance. The address must first be registered with the stack by calling <code>RegisterElasticIp</code>. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p>

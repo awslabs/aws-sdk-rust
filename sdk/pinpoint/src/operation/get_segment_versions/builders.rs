@@ -3,6 +3,23 @@ pub use crate::operation::get_segment_versions::_get_segment_versions_output::Ge
 
 pub use crate::operation::get_segment_versions::_get_segment_versions_input::GetSegmentVersionsInputBuilder;
 
+impl GetSegmentVersionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_segment_versions::GetSegmentVersionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_segment_versions::GetSegmentVersionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_segment_versions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetSegmentVersions`.
 ///
 /// <p>Retrieves information about the configuration, dimension, and other settings for all the versions of a specific segment that's associated with an application.</p>

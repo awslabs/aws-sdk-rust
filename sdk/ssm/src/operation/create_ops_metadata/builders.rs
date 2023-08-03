@@ -3,6 +3,23 @@ pub use crate::operation::create_ops_metadata::_create_ops_metadata_output::Crea
 
 pub use crate::operation::create_ops_metadata::_create_ops_metadata_input::CreateOpsMetadataInputBuilder;
 
+impl CreateOpsMetadataInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_ops_metadata::CreateOpsMetadataOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_ops_metadata::CreateOpsMetadataError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_ops_metadata();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateOpsMetadata`.
 ///
 /// <p>If you create a new application in Application Manager, Amazon Web Services Systems Manager calls this API operation to specify information about the new application, including the application type.</p>

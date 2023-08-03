@@ -3,6 +3,23 @@ pub use crate::operation::delete_bucket::_delete_bucket_output::DeleteBucketOutp
 
 pub use crate::operation::delete_bucket::_delete_bucket_input::DeleteBucketInputBuilder;
 
+impl DeleteBucketInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_bucket::DeleteBucketOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_bucket::DeleteBucketError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_bucket();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteBucket`.
 ///
 /// <p>Deletes the S3 bucket. All objects (including all object versions and delete markers) in the bucket must be deleted before the bucket itself can be deleted.</p>

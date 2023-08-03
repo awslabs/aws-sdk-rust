@@ -3,6 +3,23 @@ pub use crate::operation::get_conference_provider::_get_conference_provider_outp
 
 pub use crate::operation::get_conference_provider::_get_conference_provider_input::GetConferenceProviderInputBuilder;
 
+impl GetConferenceProviderInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_conference_provider::GetConferenceProviderOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_conference_provider::GetConferenceProviderError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_conference_provider();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetConferenceProvider`.
 ///
 /// <p>Gets details about a specific conference provider.</p>

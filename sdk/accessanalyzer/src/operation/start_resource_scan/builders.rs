@@ -3,6 +3,23 @@ pub use crate::operation::start_resource_scan::_start_resource_scan_output::Star
 
 pub use crate::operation::start_resource_scan::_start_resource_scan_input::StartResourceScanInputBuilder;
 
+impl StartResourceScanInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_resource_scan::StartResourceScanOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_resource_scan::StartResourceScanError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_resource_scan();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartResourceScan`.
 ///
 /// <p>Immediately starts a scan of the policies applied to the specified resource.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_tape_archives::_describe_tape_archives_output
 
 pub use crate::operation::describe_tape_archives::_describe_tape_archives_input::DescribeTapeArchivesInputBuilder;
 
+impl DescribeTapeArchivesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_tape_archives::DescribeTapeArchivesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_tape_archives::DescribeTapeArchivesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_tape_archives();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeTapeArchives`.
 ///
 /// <p>Returns a description of specified virtual tapes in the virtual tape shelf (VTS). This operation is only supported in the tape gateway type.</p>

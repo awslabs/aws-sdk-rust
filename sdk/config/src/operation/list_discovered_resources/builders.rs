@@ -3,6 +3,23 @@ pub use crate::operation::list_discovered_resources::_list_discovered_resources_
 
 pub use crate::operation::list_discovered_resources::_list_discovered_resources_input::ListDiscoveredResourcesInputBuilder;
 
+impl ListDiscoveredResourcesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_discovered_resources::ListDiscoveredResourcesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_discovered_resources::ListDiscoveredResourcesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_discovered_resources();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDiscoveredResources`.
 ///
 /// <p>Accepts a resource type and returns a list of resource identifiers for the resources of that type. A resource identifier includes the resource type, ID, and (if available) the custom resource name. The results consist of resources that Config has discovered, including those that Config is not currently recording. You can narrow the results to include only resources that have specific resource IDs or a resource name.</p> <note>

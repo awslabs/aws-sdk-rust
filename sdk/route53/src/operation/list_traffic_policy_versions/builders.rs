@@ -3,6 +3,23 @@ pub use crate::operation::list_traffic_policy_versions::_list_traffic_policy_ver
 
 pub use crate::operation::list_traffic_policy_versions::_list_traffic_policy_versions_input::ListTrafficPolicyVersionsInputBuilder;
 
+impl ListTrafficPolicyVersionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_traffic_policy_versions::ListTrafficPolicyVersionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_traffic_policy_versions::ListTrafficPolicyVersionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_traffic_policy_versions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListTrafficPolicyVersions`.
 ///
 /// <p>Gets information about all of the versions for a specified traffic policy.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_portfolio_share_status::_describe_portfolio_s
 
 pub use crate::operation::describe_portfolio_share_status::_describe_portfolio_share_status_input::DescribePortfolioShareStatusInputBuilder;
 
+impl DescribePortfolioShareStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_portfolio_share_status::DescribePortfolioShareStatusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_portfolio_share_status::DescribePortfolioShareStatusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_portfolio_share_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribePortfolioShareStatus`.
 ///
 /// <p>Gets the status of the specified portfolio share operation. This API can only be called by the management account in the organization or by a delegated admin.</p>

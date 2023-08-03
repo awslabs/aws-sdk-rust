@@ -3,6 +3,23 @@ pub use crate::operation::rebuild_environment::_rebuild_environment_output::Rebu
 
 pub use crate::operation::rebuild_environment::_rebuild_environment_input::RebuildEnvironmentInputBuilder;
 
+impl RebuildEnvironmentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::rebuild_environment::RebuildEnvironmentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::rebuild_environment::RebuildEnvironmentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.rebuild_environment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RebuildEnvironment`.
 ///
 /// <p>Deletes and recreates all of the AWS resources (for example: the Auto Scaling group, load balancer, etc.) for a specified environment and forces a restart.</p>

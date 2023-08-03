@@ -3,6 +3,23 @@ pub use crate::operation::update_signal_catalog::_update_signal_catalog_output::
 
 pub use crate::operation::update_signal_catalog::_update_signal_catalog_input::UpdateSignalCatalogInputBuilder;
 
+impl UpdateSignalCatalogInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_signal_catalog::UpdateSignalCatalogOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_signal_catalog::UpdateSignalCatalogError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_signal_catalog();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateSignalCatalog`.
 ///
 /// <p> Updates a signal catalog. </p>

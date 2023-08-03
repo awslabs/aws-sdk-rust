@@ -3,6 +3,23 @@ pub use crate::operation::get_route_response::_get_route_response_output::GetRou
 
 pub use crate::operation::get_route_response::_get_route_response_input::GetRouteResponseInputBuilder;
 
+impl GetRouteResponseInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_route_response::GetRouteResponseOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_route_response::GetRouteResponseError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_route_response();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetRouteResponse`.
 ///
 /// <p>Gets a RouteResponse.</p>

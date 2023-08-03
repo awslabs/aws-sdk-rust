@@ -3,6 +3,23 @@ pub use crate::operation::batch_grant_permissions::_batch_grant_permissions_outp
 
 pub use crate::operation::batch_grant_permissions::_batch_grant_permissions_input::BatchGrantPermissionsInputBuilder;
 
+impl BatchGrantPermissionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_grant_permissions::BatchGrantPermissionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_grant_permissions::BatchGrantPermissionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_grant_permissions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchGrantPermissions`.
 ///
 /// <p>Batch operation to grant permissions to the principal.</p>

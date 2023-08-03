@@ -3,6 +3,23 @@ pub use crate::operation::start_voice_tone_analysis_task::_start_voice_tone_anal
 
 pub use crate::operation::start_voice_tone_analysis_task::_start_voice_tone_analysis_task_input::StartVoiceToneAnalysisTaskInputBuilder;
 
+impl StartVoiceToneAnalysisTaskInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_voice_tone_analysis_task::StartVoiceToneAnalysisTaskError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_voice_tone_analysis_task();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartVoiceToneAnalysisTask`.
 ///
 /// <p>Starts a voice tone analysis task. For more information about voice tone analysis, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/pstn-voice-analytics.html">Using Amazon Chime SDK voice analytics</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> <important>

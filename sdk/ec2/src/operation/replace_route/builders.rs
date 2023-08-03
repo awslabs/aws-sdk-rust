@@ -3,6 +3,23 @@ pub use crate::operation::replace_route::_replace_route_output::ReplaceRouteOutp
 
 pub use crate::operation::replace_route::_replace_route_input::ReplaceRouteInputBuilder;
 
+impl ReplaceRouteInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::replace_route::ReplaceRouteOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::replace_route::ReplaceRouteError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.replace_route();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ReplaceRoute`.
 ///
 /// <p>Replaces an existing route within a route table in a VPC.</p>

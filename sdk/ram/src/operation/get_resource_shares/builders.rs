@@ -3,6 +3,23 @@ pub use crate::operation::get_resource_shares::_get_resource_shares_output::GetR
 
 pub use crate::operation::get_resource_shares::_get_resource_shares_input::GetResourceSharesInputBuilder;
 
+impl GetResourceSharesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_resource_shares::GetResourceSharesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_resource_shares::GetResourceSharesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_resource_shares();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetResourceShares`.
 ///
 /// <p>Retrieves details about the resource shares that you own or that are shared with you.</p>

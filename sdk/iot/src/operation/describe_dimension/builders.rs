@@ -3,6 +3,23 @@ pub use crate::operation::describe_dimension::_describe_dimension_output::Descri
 
 pub use crate::operation::describe_dimension::_describe_dimension_input::DescribeDimensionInputBuilder;
 
+impl DescribeDimensionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_dimension::DescribeDimensionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_dimension::DescribeDimensionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_dimension();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeDimension`.
 ///
 /// <p>Provides details about a dimension that is defined in your Amazon Web Services accounts.</p>

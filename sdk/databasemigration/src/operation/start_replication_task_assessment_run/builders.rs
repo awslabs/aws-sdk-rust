@@ -3,6 +3,17 @@ pub use crate::operation::start_replication_task_assessment_run::_start_replicat
 
 pub use crate::operation::start_replication_task_assessment_run::_start_replication_task_assessment_run_input::StartReplicationTaskAssessmentRunInputBuilder;
 
+impl StartReplicationTaskAssessmentRunInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::start_replication_task_assessment_run::StartReplicationTaskAssessmentRunOutput, ::aws_smithy_http::result::SdkError<crate::operation::start_replication_task_assessment_run::StartReplicationTaskAssessmentRunError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.start_replication_task_assessment_run();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartReplicationTaskAssessmentRun`.
 ///
 /// <p>Starts a new premigration assessment run for one or more individual assessments of a migration task.</p>

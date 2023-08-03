@@ -3,6 +3,23 @@ pub use crate::operation::create_origin_endpoint::_create_origin_endpoint_output
 
 pub use crate::operation::create_origin_endpoint::_create_origin_endpoint_input::CreateOriginEndpointInputBuilder;
 
+impl CreateOriginEndpointInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_origin_endpoint::CreateOriginEndpointOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_origin_endpoint::CreateOriginEndpointError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_origin_endpoint();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateOriginEndpoint`.
 ///
 /// <p>The endpoint is attached to a channel, and represents the output of the live content. You can associate multiple endpoints to a single channel. Each endpoint gives players and downstream CDNs (such as Amazon CloudFront) access to the content for playback. Content can't be served from a channel until it has an endpoint. You can create only one endpoint with each request. </p>

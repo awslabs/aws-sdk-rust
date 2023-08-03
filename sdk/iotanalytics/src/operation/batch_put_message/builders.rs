@@ -3,6 +3,23 @@ pub use crate::operation::batch_put_message::_batch_put_message_output::BatchPut
 
 pub use crate::operation::batch_put_message::_batch_put_message_input::BatchPutMessageInputBuilder;
 
+impl BatchPutMessageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_put_message::BatchPutMessageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_put_message::BatchPutMessageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_put_message();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchPutMessage`.
 ///
 /// <p>Sends messages to a channel.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_rotation::_delete_rotation_output::DeleteRotati
 
 pub use crate::operation::delete_rotation::_delete_rotation_input::DeleteRotationInputBuilder;
 
+impl DeleteRotationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_rotation::DeleteRotationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_rotation::DeleteRotationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_rotation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteRotation`.
 ///
 /// <p>Deletes a rotation from the system. If a rotation belongs to more than one on-call schedule, this operation deletes it from all of them.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_analyzer::_create_analyzer_output::CreateAnalyz
 
 pub use crate::operation::create_analyzer::_create_analyzer_input::CreateAnalyzerInputBuilder;
 
+impl CreateAnalyzerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_analyzer::CreateAnalyzerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_analyzer::CreateAnalyzerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_analyzer();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateAnalyzer`.
 ///
 /// <p>Creates an analyzer for your account.</p>

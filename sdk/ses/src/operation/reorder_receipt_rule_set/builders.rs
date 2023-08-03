@@ -3,6 +3,23 @@ pub use crate::operation::reorder_receipt_rule_set::_reorder_receipt_rule_set_ou
 
 pub use crate::operation::reorder_receipt_rule_set::_reorder_receipt_rule_set_input::ReorderReceiptRuleSetInputBuilder;
 
+impl ReorderReceiptRuleSetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::reorder_receipt_rule_set::ReorderReceiptRuleSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::reorder_receipt_rule_set::ReorderReceiptRuleSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.reorder_receipt_rule_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ReorderReceiptRuleSet`.
 ///
 /// <p>Reorders the receipt rules within a receipt rule set.</p> <note>

@@ -3,6 +3,23 @@ pub use crate::operation::get_ec2_instance_recommendations::_get_ec2_instance_re
 
 pub use crate::operation::get_ec2_instance_recommendations::_get_ec2_instance_recommendations_input::GetEc2InstanceRecommendationsInputBuilder;
 
+impl GetEc2InstanceRecommendationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_ec2_instance_recommendations::GetEc2InstanceRecommendationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_ec2_instance_recommendations::GetEC2InstanceRecommendationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_ec2_instance_recommendations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetEC2InstanceRecommendations`.
 ///
 /// <p>Returns Amazon EC2 instance recommendations.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::start_workflow_run::_start_workflow_run_output::StartW
 
 pub use crate::operation::start_workflow_run::_start_workflow_run_input::StartWorkflowRunInputBuilder;
 
+impl StartWorkflowRunInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_workflow_run::StartWorkflowRunOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_workflow_run::StartWorkflowRunError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_workflow_run();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartWorkflowRun`.
 ///
 /// <p>Starts a new run of the specified workflow.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_local_gateway_route_table::_create_local_gatewa
 
 pub use crate::operation::create_local_gateway_route_table::_create_local_gateway_route_table_input::CreateLocalGatewayRouteTableInputBuilder;
 
+impl CreateLocalGatewayRouteTableInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_local_gateway_route_table::CreateLocalGatewayRouteTableOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_local_gateway_route_table::CreateLocalGatewayRouteTableError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_local_gateway_route_table();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateLocalGatewayRouteTable`.
 ///
 /// <p> Creates a local gateway route table. </p>

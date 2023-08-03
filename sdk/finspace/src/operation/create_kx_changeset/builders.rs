@@ -3,6 +3,23 @@ pub use crate::operation::create_kx_changeset::_create_kx_changeset_output::Crea
 
 pub use crate::operation::create_kx_changeset::_create_kx_changeset_input::CreateKxChangesetInputBuilder;
 
+impl CreateKxChangesetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_kx_changeset::CreateKxChangesetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_kx_changeset::CreateKxChangesetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_kx_changeset();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateKxChangeset`.
 ///
 /// <p> Creates a changeset for a kdb database. A changeset allows you to add and delete existing files by using an ordered list of change requests. </p>

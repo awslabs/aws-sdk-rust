@@ -3,6 +3,23 @@ pub use crate::operation::create_replication_job::_create_replication_job_output
 
 pub use crate::operation::create_replication_job::_create_replication_job_input::CreateReplicationJobInputBuilder;
 
+impl CreateReplicationJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_replication_job::CreateReplicationJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_replication_job::CreateReplicationJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_replication_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateReplicationJob`.
 ///
 /// <p>Creates a replication job. The replication job schedules periodic replication runs to replicate your server to Amazon Web Services. Each replication run creates an Amazon Machine Image (AMI).</p>

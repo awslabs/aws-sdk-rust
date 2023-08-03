@@ -3,6 +3,23 @@ pub use crate::operation::get_pending_job_executions::_get_pending_job_execution
 
 pub use crate::operation::get_pending_job_executions::_get_pending_job_executions_input::GetPendingJobExecutionsInputBuilder;
 
+impl GetPendingJobExecutionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_pending_job_executions::GetPendingJobExecutionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_pending_job_executions::GetPendingJobExecutionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_pending_job_executions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetPendingJobExecutions`.
 ///
 /// <p>Gets the list of all jobs for a thing that are not in a terminal status.</p>

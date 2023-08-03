@@ -3,6 +3,23 @@ pub use crate::operation::set_task_status::_set_task_status_output::SetTaskStatu
 
 pub use crate::operation::set_task_status::_set_task_status_input::SetTaskStatusInputBuilder;
 
+impl SetTaskStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::set_task_status::SetTaskStatusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::set_task_status::SetTaskStatusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.set_task_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SetTaskStatus`.
 ///
 /// <p>Task runners call <code>SetTaskStatus</code> to notify AWS Data Pipeline that a task is completed and provide information about the final status. A task runner makes this call regardless of whether the task was sucessful. A task runner does not need to call <code>SetTaskStatus</code> for tasks that are canceled by the web service during a call to <code>ReportTaskProgress</code>.</p> <examples>

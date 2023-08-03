@@ -3,6 +3,23 @@ pub use crate::operation::deregister_scalable_target::_deregister_scalable_targe
 
 pub use crate::operation::deregister_scalable_target::_deregister_scalable_target_input::DeregisterScalableTargetInputBuilder;
 
+impl DeregisterScalableTargetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::deregister_scalable_target::DeregisterScalableTargetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::deregister_scalable_target::DeregisterScalableTargetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.deregister_scalable_target();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeregisterScalableTarget`.
 ///
 /// <p>Deregisters an Application Auto Scaling scalable target when you have finished using it. To see which resources have been registered, use <a href="https://docs.aws.amazon.com/autoscaling/application/APIReference/API_DescribeScalableTargets.html">DescribeScalableTargets</a>. </p> <note>

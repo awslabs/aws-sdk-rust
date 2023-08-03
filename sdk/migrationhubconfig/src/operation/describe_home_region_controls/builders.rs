@@ -3,6 +3,23 @@ pub use crate::operation::describe_home_region_controls::_describe_home_region_c
 
 pub use crate::operation::describe_home_region_controls::_describe_home_region_controls_input::DescribeHomeRegionControlsInputBuilder;
 
+impl DescribeHomeRegionControlsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_home_region_controls::DescribeHomeRegionControlsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_home_region_controls::DescribeHomeRegionControlsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_home_region_controls();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeHomeRegionControls`.
 ///
 /// <p>This API permits filtering on the <code>ControlId</code> and <code>HomeRegion</code> fields.</p>

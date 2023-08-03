@@ -3,6 +3,23 @@ pub use crate::operation::stop_source_network_replication::_stop_source_network_
 
 pub use crate::operation::stop_source_network_replication::_stop_source_network_replication_input::StopSourceNetworkReplicationInputBuilder;
 
+impl StopSourceNetworkReplicationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_source_network_replication::StopSourceNetworkReplicationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_source_network_replication::StopSourceNetworkReplicationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_source_network_replication();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopSourceNetworkReplication`.
 ///
 /// <p>Stops replication for a Source Network. This action would make the Source Network unprotected.</p>

@@ -3,6 +3,17 @@ pub use crate::operation::put_lifecycle_event_hook_execution_status::_put_lifecy
 
 pub use crate::operation::put_lifecycle_event_hook_execution_status::_put_lifecycle_event_hook_execution_status_input::PutLifecycleEventHookExecutionStatusInputBuilder;
 
+impl PutLifecycleEventHookExecutionStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::put_lifecycle_event_hook_execution_status::PutLifecycleEventHookExecutionStatusOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_lifecycle_event_hook_execution_status::PutLifecycleEventHookExecutionStatusError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.put_lifecycle_event_hook_execution_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutLifecycleEventHookExecutionStatus`.
 ///
 /// <p> Sets the result of a Lambda validation function. The function validates lifecycle hooks during a deployment that uses the Lambda or Amazon ECS compute platform. For Lambda deployments, the available lifecycle hooks are <code>BeforeAllowTraffic</code> and <code>AfterAllowTraffic</code>. For Amazon ECS deployments, the available lifecycle hooks are <code>BeforeInstall</code>, <code>AfterInstall</code>, <code>AfterAllowTestTraffic</code>, <code>BeforeAllowTraffic</code>, and <code>AfterAllowTraffic</code>. Lambda validation functions return <code>Succeeded</code> or <code>Failed</code>. For more information, see <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html#appspec-hooks-lambda">AppSpec 'hooks' Section for an Lambda Deployment </a> and <a href="https://docs.aws.amazon.com/codedeploy/latest/userguide/reference-appspec-file-structure-hooks.html#appspec-hooks-ecs">AppSpec 'hooks' Section for an Amazon ECS Deployment</a>.</p>

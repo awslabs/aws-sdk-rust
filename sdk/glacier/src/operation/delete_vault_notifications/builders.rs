@@ -3,6 +3,23 @@ pub use crate::operation::delete_vault_notifications::_delete_vault_notification
 
 pub use crate::operation::delete_vault_notifications::_delete_vault_notifications_input::DeleteVaultNotificationsInputBuilder;
 
+impl DeleteVaultNotificationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_vault_notifications::DeleteVaultNotificationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_vault_notifications::DeleteVaultNotificationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_vault_notifications();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteVaultNotifications`.
 ///
 /// <p>This operation deletes the notification configuration set for a vault. The operation is eventually consistent; that is, it might take some time for Amazon S3 Glacier to completely disable the notifications and you might still receive some notifications for a short time after you send the delete request.</p>

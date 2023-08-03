@@ -3,6 +3,23 @@ pub use crate::operation::put_insight_selectors::_put_insight_selectors_output::
 
 pub use crate::operation::put_insight_selectors::_put_insight_selectors_input::PutInsightSelectorsInputBuilder;
 
+impl PutInsightSelectorsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_insight_selectors::PutInsightSelectorsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_insight_selectors::PutInsightSelectorsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_insight_selectors();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutInsightSelectors`.
 ///
 /// <p>Lets you enable Insights event logging by specifying the Insights selectors that you want to enable on an existing trail. You also use <code>PutInsightSelectors</code> to turn off Insights event logging, by passing an empty list of insight types. The valid Insights event types in this release are <code>ApiErrorRateInsight</code> and <code>ApiCallRateInsight</code>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::start_dev_environment_session::_start_dev_environment_
 
 pub use crate::operation::start_dev_environment_session::_start_dev_environment_session_input::StartDevEnvironmentSessionInputBuilder;
 
+impl StartDevEnvironmentSessionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_dev_environment_session::StartDevEnvironmentSessionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_dev_environment_session::StartDevEnvironmentSessionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_dev_environment_session();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartDevEnvironmentSession`.
 ///
 /// <p>Starts a session for a specified Dev Environment.</p>

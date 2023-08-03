@@ -3,6 +3,23 @@ pub use crate::operation::update_service_pipeline::_update_service_pipeline_outp
 
 pub use crate::operation::update_service_pipeline::_update_service_pipeline_input::UpdateServicePipelineInputBuilder;
 
+impl UpdateServicePipelineInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_service_pipeline::UpdateServicePipelineOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_service_pipeline::UpdateServicePipelineError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_service_pipeline();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateServicePipeline`.
 ///
 /// <p>Update the service pipeline.</p>

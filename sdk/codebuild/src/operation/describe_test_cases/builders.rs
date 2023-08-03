@@ -3,6 +3,23 @@ pub use crate::operation::describe_test_cases::_describe_test_cases_output::Desc
 
 pub use crate::operation::describe_test_cases::_describe_test_cases_input::DescribeTestCasesInputBuilder;
 
+impl DescribeTestCasesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_test_cases::DescribeTestCasesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_test_cases::DescribeTestCasesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_test_cases();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeTestCases`.
 ///
 /// <p> Returns a list of details about test cases for a report. </p>

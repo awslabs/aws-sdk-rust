@@ -3,6 +3,23 @@ pub use crate::operation::create_scan::_create_scan_output::CreateScanOutputBuil
 
 pub use crate::operation::create_scan::_create_scan_input::CreateScanInputBuilder;
 
+impl CreateScanInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_scan::CreateScanOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_scan::CreateScanError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_scan();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateScan`.
 ///
 /// <p>Use to create a scan using code uploaded to an S3 bucket.</p>

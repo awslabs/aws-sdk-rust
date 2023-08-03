@@ -3,6 +3,23 @@ pub use crate::operation::modify_image_attribute::_modify_image_attribute_output
 
 pub use crate::operation::modify_image_attribute::_modify_image_attribute_input::ModifyImageAttributeInputBuilder;
 
+impl ModifyImageAttributeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_image_attribute::ModifyImageAttributeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_image_attribute::ModifyImageAttributeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_image_attribute();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyImageAttribute`.
 ///
 /// <p>Modifies the specified attribute of the specified AMI. You can specify only one attribute at a time.</p>

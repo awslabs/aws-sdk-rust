@@ -3,6 +3,17 @@ pub use crate::operation::authorize_db_security_group_ingress::_authorize_db_sec
 
 pub use crate::operation::authorize_db_security_group_ingress::_authorize_db_security_group_ingress_input::AuthorizeDbSecurityGroupIngressInputBuilder;
 
+impl AuthorizeDbSecurityGroupIngressInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::authorize_db_security_group_ingress::AuthorizeDbSecurityGroupIngressOutput, ::aws_smithy_http::result::SdkError<crate::operation::authorize_db_security_group_ingress::AuthorizeDBSecurityGroupIngressError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.authorize_db_security_group_ingress();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AuthorizeDBSecurityGroupIngress`.
 ///
 /// <p>Enables ingress to a DBSecurityGroup using one of two forms of authorization. First, EC2 or VPC security groups can be added to the DBSecurityGroup if the application using the database is running on EC2 or VPC instances. Second, IP ranges are available if the application accessing your database is running on the internet. Required parameters for this API are one of CIDR range, EC2SecurityGroupId for VPC, or (EC2SecurityGroupOwnerId and either EC2SecurityGroupName or EC2SecurityGroupId for non-VPC).</p>

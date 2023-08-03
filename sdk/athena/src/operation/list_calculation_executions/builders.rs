@@ -3,6 +3,23 @@ pub use crate::operation::list_calculation_executions::_list_calculation_executi
 
 pub use crate::operation::list_calculation_executions::_list_calculation_executions_input::ListCalculationExecutionsInputBuilder;
 
+impl ListCalculationExecutionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_calculation_executions::ListCalculationExecutionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_calculation_executions::ListCalculationExecutionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_calculation_executions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListCalculationExecutions`.
 ///
 /// <p>Lists the calculations that have been submitted to a session in descending order. Newer calculations are listed first; older calculations are listed later.</p>

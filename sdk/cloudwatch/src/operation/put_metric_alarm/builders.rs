@@ -3,6 +3,23 @@ pub use crate::operation::put_metric_alarm::_put_metric_alarm_output::PutMetricA
 
 pub use crate::operation::put_metric_alarm::_put_metric_alarm_input::PutMetricAlarmInputBuilder;
 
+impl PutMetricAlarmInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_metric_alarm::PutMetricAlarmOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_metric_alarm::PutMetricAlarmError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_metric_alarm();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutMetricAlarm`.
 ///
 /// <p>Creates or updates an alarm and associates it with the specified metric, metric math expression, anomaly detection model, or Metrics Insights query. For more information about using a Metrics Insights query for an alarm, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/Create_Metrics_Insights_Alarm.html">Create alarms on Metrics Insights queries</a>.</p>

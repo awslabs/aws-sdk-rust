@@ -3,6 +3,23 @@ pub use crate::operation::put_notification_configuration::_put_notification_conf
 
 pub use crate::operation::put_notification_configuration::_put_notification_configuration_input::PutNotificationConfigurationInputBuilder;
 
+impl PutNotificationConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_notification_configuration::PutNotificationConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_notification_configuration::PutNotificationConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_notification_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutNotificationConfiguration`.
 ///
 /// <p>Configures an Auto Scaling group to send notifications when specified events take place. Subscribers to the specified topic can have messages delivered to an endpoint such as a web server or an email address.</p>

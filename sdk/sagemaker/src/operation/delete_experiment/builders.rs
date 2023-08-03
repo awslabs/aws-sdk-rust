@@ -3,6 +3,23 @@ pub use crate::operation::delete_experiment::_delete_experiment_output::DeleteEx
 
 pub use crate::operation::delete_experiment::_delete_experiment_input::DeleteExperimentInputBuilder;
 
+impl DeleteExperimentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_experiment::DeleteExperimentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_experiment::DeleteExperimentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_experiment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteExperiment`.
 ///
 /// <p>Deletes an SageMaker experiment. All trials associated with the experiment must be deleted first. Use the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_ListTrials.html">ListTrials</a> API to get a list of the trials associated with the experiment.</p>

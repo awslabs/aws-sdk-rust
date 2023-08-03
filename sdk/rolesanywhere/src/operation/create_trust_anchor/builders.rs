@@ -3,6 +3,23 @@ pub use crate::operation::create_trust_anchor::_create_trust_anchor_output::Crea
 
 pub use crate::operation::create_trust_anchor::_create_trust_anchor_input::CreateTrustAnchorInputBuilder;
 
+impl CreateTrustAnchorInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_trust_anchor::CreateTrustAnchorOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_trust_anchor::CreateTrustAnchorError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_trust_anchor();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateTrustAnchor`.
 ///
 /// <p>Creates a trust anchor to establish trust between IAM Roles Anywhere and your certificate authority (CA). You can define a trust anchor as a reference to an Private Certificate Authority (Private CA) or by uploading a CA certificate. Your Amazon Web Services workloads can authenticate with the trust anchor using certificates issued by the CA in exchange for temporary Amazon Web Services credentials.</p>

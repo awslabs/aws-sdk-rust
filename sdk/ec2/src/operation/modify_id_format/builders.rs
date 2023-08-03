@@ -3,6 +3,23 @@ pub use crate::operation::modify_id_format::_modify_id_format_output::ModifyIdFo
 
 pub use crate::operation::modify_id_format::_modify_id_format_input::ModifyIdFormatInputBuilder;
 
+impl ModifyIdFormatInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_id_format::ModifyIdFormatOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_id_format::ModifyIdFormatError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_id_format();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyIdFormat`.
 ///
 /// <p>Modifies the ID format for the specified resource on a per-Region basis. You can specify that resources should receive longer IDs (17-character IDs) when they are created.</p>

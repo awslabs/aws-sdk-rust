@@ -3,6 +3,23 @@ pub use crate::operation::delete_account_customization::_delete_account_customiz
 
 pub use crate::operation::delete_account_customization::_delete_account_customization_input::DeleteAccountCustomizationInputBuilder;
 
+impl DeleteAccountCustomizationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_account_customization::DeleteAccountCustomizationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_account_customization::DeleteAccountCustomizationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_account_customization();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteAccountCustomization`.
 ///
 /// <p>Deletes all Amazon QuickSight customizations in this Amazon Web Services Region for the specified Amazon Web Services account and Amazon QuickSight namespace.</p>

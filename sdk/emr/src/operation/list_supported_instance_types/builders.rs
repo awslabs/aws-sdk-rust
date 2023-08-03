@@ -3,6 +3,23 @@ pub use crate::operation::list_supported_instance_types::_list_supported_instanc
 
 pub use crate::operation::list_supported_instance_types::_list_supported_instance_types_input::ListSupportedInstanceTypesInputBuilder;
 
+impl ListSupportedInstanceTypesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_supported_instance_types::ListSupportedInstanceTypesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_supported_instance_types::ListSupportedInstanceTypesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_supported_instance_types();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListSupportedInstanceTypes`.
 ///
 /// <p>A list of the instance types that Amazon EMR supports. You can filter the list by Amazon Web Services Region and Amazon EMR release. </p>

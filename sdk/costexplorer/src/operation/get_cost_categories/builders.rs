@@ -3,6 +3,23 @@ pub use crate::operation::get_cost_categories::_get_cost_categories_output::GetC
 
 pub use crate::operation::get_cost_categories::_get_cost_categories_input::GetCostCategoriesInputBuilder;
 
+impl GetCostCategoriesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_cost_categories::GetCostCategoriesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_cost_categories::GetCostCategoriesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_cost_categories();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetCostCategories`.
 ///
 /// <p>Retrieves an array of Cost Category names and values incurred cost.</p> <note>

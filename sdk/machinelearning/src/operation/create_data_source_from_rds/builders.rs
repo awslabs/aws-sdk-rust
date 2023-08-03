@@ -3,6 +3,23 @@ pub use crate::operation::create_data_source_from_rds::_create_data_source_from_
 
 pub use crate::operation::create_data_source_from_rds::_create_data_source_from_rds_input::CreateDataSourceFromRdsInputBuilder;
 
+impl CreateDataSourceFromRdsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_data_source_from_rds::CreateDataSourceFromRdsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_data_source_from_rds::CreateDataSourceFromRDSError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_data_source_from_rds();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateDataSourceFromRDS`.
 ///
 /// <p>Creates a <code>DataSource</code> object from an <a href="http://aws.amazon.com/rds/"> Amazon Relational Database Service</a> (Amazon RDS). A <code>DataSource</code> references data that can be used to perform <code>CreateMLModel</code>, <code>CreateEvaluation</code>, or <code>CreateBatchPrediction</code> operations.</p>

@@ -3,6 +3,17 @@ pub use crate::operation::get_organization_config_rule_detailed_status::_get_org
 
 pub use crate::operation::get_organization_config_rule_detailed_status::_get_organization_config_rule_detailed_status_input::GetOrganizationConfigRuleDetailedStatusInputBuilder;
 
+impl GetOrganizationConfigRuleDetailedStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_organization_config_rule_detailed_status::GetOrganizationConfigRuleDetailedStatusOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_organization_config_rule_detailed_status::GetOrganizationConfigRuleDetailedStatusError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_organization_config_rule_detailed_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetOrganizationConfigRuleDetailedStatus`.
 ///
 /// <p>Returns detailed status for each member account within an organization for a given organization Config rule.</p>

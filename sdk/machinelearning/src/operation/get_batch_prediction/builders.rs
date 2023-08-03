@@ -3,6 +3,23 @@ pub use crate::operation::get_batch_prediction::_get_batch_prediction_output::Ge
 
 pub use crate::operation::get_batch_prediction::_get_batch_prediction_input::GetBatchPredictionInputBuilder;
 
+impl GetBatchPredictionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_batch_prediction::GetBatchPredictionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_batch_prediction::GetBatchPredictionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_batch_prediction();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetBatchPrediction`.
 ///
 /// <p>Returns a <code>BatchPrediction</code> that includes detailed metadata, status, and data file information for a <code>Batch Prediction</code> request.</p>

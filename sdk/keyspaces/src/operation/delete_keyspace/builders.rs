@@ -3,6 +3,23 @@ pub use crate::operation::delete_keyspace::_delete_keyspace_output::DeleteKeyspa
 
 pub use crate::operation::delete_keyspace::_delete_keyspace_input::DeleteKeyspaceInputBuilder;
 
+impl DeleteKeyspaceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_keyspace::DeleteKeyspaceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_keyspace::DeleteKeyspaceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_keyspace();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteKeyspace`.
 ///
 /// <p>The <code>DeleteKeyspace</code> operation deletes a keyspace and all of its tables. </p>

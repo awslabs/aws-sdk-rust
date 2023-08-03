@@ -3,6 +3,23 @@ pub use crate::operation::list_image_versions::_list_image_versions_output::List
 
 pub use crate::operation::list_image_versions::_list_image_versions_input::ListImageVersionsInputBuilder;
 
+impl ListImageVersionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_image_versions::ListImageVersionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_image_versions::ListImageVersionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_image_versions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListImageVersions`.
 ///
 /// <p>Lists the versions of a specified image and their properties. The list can be filtered by creation time or modified time.</p>

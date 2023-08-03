@@ -3,6 +3,23 @@ pub use crate::operation::get_trigger::_get_trigger_output::GetTriggerOutputBuil
 
 pub use crate::operation::get_trigger::_get_trigger_input::GetTriggerInputBuilder;
 
+impl GetTriggerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_trigger::GetTriggerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_trigger::GetTriggerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_trigger();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetTrigger`.
 ///
 /// <p>Retrieves the definition of a trigger.</p>

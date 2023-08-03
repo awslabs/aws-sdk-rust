@@ -3,6 +3,17 @@ pub use crate::operation::describe_traffic_distribution_group::_describe_traffic
 
 pub use crate::operation::describe_traffic_distribution_group::_describe_traffic_distribution_group_input::DescribeTrafficDistributionGroupInputBuilder;
 
+impl DescribeTrafficDistributionGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_traffic_distribution_group::DescribeTrafficDistributionGroupOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_traffic_distribution_group::DescribeTrafficDistributionGroupError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_traffic_distribution_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeTrafficDistributionGroup`.
 ///
 /// <p>Gets details and status of a traffic distribution group.</p>

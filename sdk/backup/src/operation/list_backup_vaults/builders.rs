@@ -3,6 +3,23 @@ pub use crate::operation::list_backup_vaults::_list_backup_vaults_output::ListBa
 
 pub use crate::operation::list_backup_vaults::_list_backup_vaults_input::ListBackupVaultsInputBuilder;
 
+impl ListBackupVaultsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_backup_vaults::ListBackupVaultsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_backup_vaults::ListBackupVaultsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_backup_vaults();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListBackupVaults`.
 ///
 /// <p>Returns a list of recovery point storage containers along with information about them.</p>

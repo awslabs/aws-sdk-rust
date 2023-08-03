@@ -3,6 +3,23 @@ pub use crate::operation::update_template::_update_template_output::UpdateTempla
 
 pub use crate::operation::update_template::_update_template_input::UpdateTemplateInputBuilder;
 
+impl UpdateTemplateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_template::UpdateTemplateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_template::UpdateTemplateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_template();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateTemplate`.
 ///
 /// <p>Updates an email template. Email templates enable you to send personalized email to one or more destinations in a single API operation. For more information, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/send-personalized-email-api.html">Amazon SES Developer Guide</a>.</p>

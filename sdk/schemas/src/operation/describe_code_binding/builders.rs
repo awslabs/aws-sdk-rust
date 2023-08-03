@@ -3,6 +3,23 @@ pub use crate::operation::describe_code_binding::_describe_code_binding_output::
 
 pub use crate::operation::describe_code_binding::_describe_code_binding_input::DescribeCodeBindingInputBuilder;
 
+impl DescribeCodeBindingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_code_binding::DescribeCodeBindingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_code_binding::DescribeCodeBindingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_code_binding();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeCodeBinding`.
 ///
 /// <p>Describe the code binding URI.</p>

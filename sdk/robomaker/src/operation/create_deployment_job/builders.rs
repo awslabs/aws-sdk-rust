@@ -3,6 +3,23 @@ pub use crate::operation::create_deployment_job::_create_deployment_job_output::
 
 pub use crate::operation::create_deployment_job::_create_deployment_job_input::CreateDeploymentJobInputBuilder;
 
+impl CreateDeploymentJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_deployment_job::CreateDeploymentJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_deployment_job::CreateDeploymentJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_deployment_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateDeploymentJob`.
 ///
 /// <p>Deploys a specific version of a robot application to robots in a fleet.</p> <important>

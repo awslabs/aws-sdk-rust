@@ -3,6 +3,23 @@ pub use crate::operation::describe_resource_permissions::_describe_resource_perm
 
 pub use crate::operation::describe_resource_permissions::_describe_resource_permissions_input::DescribeResourcePermissionsInputBuilder;
 
+impl DescribeResourcePermissionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_resource_permissions::DescribeResourcePermissionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_resource_permissions::DescribeResourcePermissionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_resource_permissions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeResourcePermissions`.
 ///
 /// <p>Describes the permissions of a specified resource.</p>

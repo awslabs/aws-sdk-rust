@@ -3,6 +3,23 @@ pub use crate::operation::delete_access_control_rule::_delete_access_control_rul
 
 pub use crate::operation::delete_access_control_rule::_delete_access_control_rule_input::DeleteAccessControlRuleInputBuilder;
 
+impl DeleteAccessControlRuleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_access_control_rule::DeleteAccessControlRuleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_access_control_rule::DeleteAccessControlRuleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_access_control_rule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteAccessControlRule`.
 ///
 /// <p>Deletes an access control rule for the specified WorkMail organization.</p> <note>

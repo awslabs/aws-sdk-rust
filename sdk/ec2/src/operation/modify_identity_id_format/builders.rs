@@ -3,6 +3,23 @@ pub use crate::operation::modify_identity_id_format::_modify_identity_id_format_
 
 pub use crate::operation::modify_identity_id_format::_modify_identity_id_format_input::ModifyIdentityIdFormatInputBuilder;
 
+impl ModifyIdentityIdFormatInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_identity_id_format::ModifyIdentityIdFormatOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_identity_id_format::ModifyIdentityIdFormatError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_identity_id_format();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyIdentityIdFormat`.
 ///
 /// <p>Modifies the ID format of a resource for a specified IAM user, IAM role, or the root user for an account; or all IAM users, IAM roles, and the root user for an account. You can specify that resources should receive longer IDs (17-character IDs) when they are created. </p>

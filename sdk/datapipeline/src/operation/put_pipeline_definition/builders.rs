@@ -3,6 +3,23 @@ pub use crate::operation::put_pipeline_definition::_put_pipeline_definition_outp
 
 pub use crate::operation::put_pipeline_definition::_put_pipeline_definition_input::PutPipelineDefinitionInputBuilder;
 
+impl PutPipelineDefinitionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_pipeline_definition::PutPipelineDefinitionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_pipeline_definition::PutPipelineDefinitionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_pipeline_definition();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutPipelineDefinition`.
 ///
 /// <p>Adds tasks, schedules, and preconditions to the specified pipeline. You can use <code>PutPipelineDefinition</code> to populate a new pipeline.</p>

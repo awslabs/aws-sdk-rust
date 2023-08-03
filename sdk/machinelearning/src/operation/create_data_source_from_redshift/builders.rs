@@ -3,6 +3,23 @@ pub use crate::operation::create_data_source_from_redshift::_create_data_source_
 
 pub use crate::operation::create_data_source_from_redshift::_create_data_source_from_redshift_input::CreateDataSourceFromRedshiftInputBuilder;
 
+impl CreateDataSourceFromRedshiftInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_data_source_from_redshift::CreateDataSourceFromRedshiftOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_data_source_from_redshift::CreateDataSourceFromRedshiftError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_data_source_from_redshift();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateDataSourceFromRedshift`.
 ///
 /// <p>Creates a <code>DataSource</code> from a database hosted on an Amazon Redshift cluster. A <code>DataSource</code> references data that can be used to perform either <code>CreateMLModel</code>, <code>CreateEvaluation</code>, or <code>CreateBatchPrediction</code> operations.</p>

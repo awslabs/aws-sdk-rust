@@ -3,6 +3,17 @@ pub use crate::operation::describe_orderable_cluster_options::_describe_orderabl
 
 pub use crate::operation::describe_orderable_cluster_options::_describe_orderable_cluster_options_input::DescribeOrderableClusterOptionsInputBuilder;
 
+impl DescribeOrderableClusterOptionsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_orderable_cluster_options::DescribeOrderableClusterOptionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_orderable_cluster_options::DescribeOrderableClusterOptionsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_orderable_cluster_options();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeOrderableClusterOptions`.
 ///
 /// <p>Returns a list of orderable cluster options. Before you create a new cluster you can use this operation to find what options are available, such as the EC2 Availability Zones (AZ) in the specific Amazon Web Services Region that you can specify, and the node types you can request. The node types differ by available storage, memory, CPU and price. With the cost involved you might want to obtain a list of cluster options in the specific region and specify values when creating a cluster. For more information about managing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>

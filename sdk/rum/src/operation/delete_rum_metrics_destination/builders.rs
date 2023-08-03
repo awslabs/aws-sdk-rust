@@ -3,6 +3,23 @@ pub use crate::operation::delete_rum_metrics_destination::_delete_rum_metrics_de
 
 pub use crate::operation::delete_rum_metrics_destination::_delete_rum_metrics_destination_input::DeleteRumMetricsDestinationInputBuilder;
 
+impl DeleteRumMetricsDestinationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_rum_metrics_destination::DeleteRumMetricsDestinationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_rum_metrics_destination::DeleteRumMetricsDestinationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_rum_metrics_destination();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteRumMetricsDestination`.
 ///
 /// <p>Deletes a destination for CloudWatch RUM extended metrics, so that the specified app monitor stops sending extended metrics to that destination.</p>

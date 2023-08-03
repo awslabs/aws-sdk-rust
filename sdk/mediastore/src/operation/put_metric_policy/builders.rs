@@ -3,6 +3,23 @@ pub use crate::operation::put_metric_policy::_put_metric_policy_output::PutMetri
 
 pub use crate::operation::put_metric_policy::_put_metric_policy_input::PutMetricPolicyInputBuilder;
 
+impl PutMetricPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_metric_policy::PutMetricPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_metric_policy::PutMetricPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_metric_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutMetricPolicy`.
 ///
 /// <p>The metric policy that you want to add to the container. A metric policy allows AWS Elemental MediaStore to send metrics to Amazon CloudWatch. It takes up to 20 minutes for the new policy to take effect.</p>

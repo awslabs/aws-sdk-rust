@@ -3,6 +3,23 @@ pub use crate::operation::delete_thing_type::_delete_thing_type_output::DeleteTh
 
 pub use crate::operation::delete_thing_type::_delete_thing_type_input::DeleteThingTypeInputBuilder;
 
+impl DeleteThingTypeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_thing_type::DeleteThingTypeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_thing_type::DeleteThingTypeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_thing_type();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteThingType`.
 ///
 /// <p>Deletes the specified thing type. You cannot delete a thing type if it has things associated with it. To delete a thing type, first mark it as deprecated by calling <code>DeprecateThingType</code>, then remove any associated things by calling <code>UpdateThing</code> to change the thing type on any associated thing, and finally use <code>DeleteThingType</code> to delete the thing type.</p>

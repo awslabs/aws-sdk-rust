@@ -3,6 +3,23 @@ pub use crate::operation::revoke_invitation::_revoke_invitation_output::RevokeIn
 
 pub use crate::operation::revoke_invitation::_revoke_invitation_input::RevokeInvitationInputBuilder;
 
+impl RevokeInvitationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::revoke_invitation::RevokeInvitationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::revoke_invitation::RevokeInvitationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.revoke_invitation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RevokeInvitation`.
 ///
 /// <p>Revokes an invitation and invalidates the enrollment URL.</p>

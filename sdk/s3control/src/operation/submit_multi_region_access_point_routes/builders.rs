@@ -3,6 +3,17 @@ pub use crate::operation::submit_multi_region_access_point_routes::_submit_multi
 
 pub use crate::operation::submit_multi_region_access_point_routes::_submit_multi_region_access_point_routes_input::SubmitMultiRegionAccessPointRoutesInputBuilder;
 
+impl SubmitMultiRegionAccessPointRoutesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesOutput, ::aws_smithy_http::result::SdkError<crate::operation::submit_multi_region_access_point_routes::SubmitMultiRegionAccessPointRoutesError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.submit_multi_region_access_point_routes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SubmitMultiRegionAccessPointRoutes`.
 ///
 /// <p>Submits an updated route configuration for a Multi-Region Access Point. This API operation updates the routing status for the specified Regions from active to passive, or from passive to active. A value of <code>0</code> indicates a passive status, which means that traffic won't be routed to the specified Region. A value of <code>100</code> indicates an active status, which means that traffic will be routed to the specified Region. At least one Region must be active at all times.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_traffic_mirror_targets::_describe_traffic_mir
 
 pub use crate::operation::describe_traffic_mirror_targets::_describe_traffic_mirror_targets_input::DescribeTrafficMirrorTargetsInputBuilder;
 
+impl DescribeTrafficMirrorTargetsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_traffic_mirror_targets::DescribeTrafficMirrorTargetsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_traffic_mirror_targets::DescribeTrafficMirrorTargetsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_traffic_mirror_targets();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeTrafficMirrorTargets`.
 ///
 /// <p>Information about one or more Traffic Mirror targets.</p>

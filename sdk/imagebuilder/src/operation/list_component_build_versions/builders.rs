@@ -3,6 +3,23 @@ pub use crate::operation::list_component_build_versions::_list_component_build_v
 
 pub use crate::operation::list_component_build_versions::_list_component_build_versions_input::ListComponentBuildVersionsInputBuilder;
 
+impl ListComponentBuildVersionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_component_build_versions::ListComponentBuildVersionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_component_build_versions::ListComponentBuildVersionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_component_build_versions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListComponentBuildVersions`.
 ///
 /// <p>Returns the list of component build versions for the specified semantic version.</p> <note>

@@ -3,6 +3,23 @@ pub use crate::operation::update_role_alias::_update_role_alias_output::UpdateRo
 
 pub use crate::operation::update_role_alias::_update_role_alias_input::UpdateRoleAliasInputBuilder;
 
+impl UpdateRoleAliasInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_role_alias::UpdateRoleAliasOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_role_alias::UpdateRoleAliasError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_role_alias();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateRoleAlias`.
 ///
 /// <p>Updates a role alias.</p>

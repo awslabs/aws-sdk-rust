@@ -3,6 +3,23 @@ pub use crate::operation::associate_source_network_stack::_associate_source_netw
 
 pub use crate::operation::associate_source_network_stack::_associate_source_network_stack_input::AssociateSourceNetworkStackInputBuilder;
 
+impl AssociateSourceNetworkStackInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_source_network_stack::AssociateSourceNetworkStackOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_source_network_stack::AssociateSourceNetworkStackError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_source_network_stack();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateSourceNetworkStack`.
 ///
 /// <p>Associate a Source Network to an existing CloudFormation Stack and modify launch templates to use this network. Can be used for reverting to previously deployed CloudFormation stacks.</p>

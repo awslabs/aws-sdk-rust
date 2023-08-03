@@ -3,6 +3,23 @@ pub use crate::operation::update_replication_set::_update_replication_set_output
 
 pub use crate::operation::update_replication_set::_update_replication_set_input::UpdateReplicationSetInputBuilder;
 
+impl UpdateReplicationSetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_replication_set::UpdateReplicationSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_replication_set::UpdateReplicationSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_replication_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateReplicationSet`.
 ///
 /// <p>Add or delete Regions from your replication set.</p>

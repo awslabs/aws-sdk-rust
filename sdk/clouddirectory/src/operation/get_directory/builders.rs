@@ -3,6 +3,23 @@ pub use crate::operation::get_directory::_get_directory_output::GetDirectoryOutp
 
 pub use crate::operation::get_directory::_get_directory_input::GetDirectoryInputBuilder;
 
+impl GetDirectoryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_directory::GetDirectoryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_directory::GetDirectoryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_directory();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetDirectory`.
 ///
 /// <p>Retrieves metadata about a directory.</p>

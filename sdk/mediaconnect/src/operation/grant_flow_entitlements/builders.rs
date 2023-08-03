@@ -3,6 +3,23 @@ pub use crate::operation::grant_flow_entitlements::_grant_flow_entitlements_outp
 
 pub use crate::operation::grant_flow_entitlements::_grant_flow_entitlements_input::GrantFlowEntitlementsInputBuilder;
 
+impl GrantFlowEntitlementsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::grant_flow_entitlements::GrantFlowEntitlementsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::grant_flow_entitlements::GrantFlowEntitlementsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.grant_flow_entitlements();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GrantFlowEntitlements`.
 ///
 /// Grants entitlements to an existing flow.

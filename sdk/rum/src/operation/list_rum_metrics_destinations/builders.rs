@@ -3,6 +3,23 @@ pub use crate::operation::list_rum_metrics_destinations::_list_rum_metrics_desti
 
 pub use crate::operation::list_rum_metrics_destinations::_list_rum_metrics_destinations_input::ListRumMetricsDestinationsInputBuilder;
 
+impl ListRumMetricsDestinationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_rum_metrics_destinations::ListRumMetricsDestinationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_rum_metrics_destinations::ListRumMetricsDestinationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_rum_metrics_destinations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListRumMetricsDestinations`.
 ///
 /// <p>Returns a list of destinations that you have created to receive RUM extended metrics, for the specified app monitor.</p>

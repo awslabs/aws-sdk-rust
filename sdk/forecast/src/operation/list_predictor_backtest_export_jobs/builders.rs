@@ -3,6 +3,17 @@ pub use crate::operation::list_predictor_backtest_export_jobs::_list_predictor_b
 
 pub use crate::operation::list_predictor_backtest_export_jobs::_list_predictor_backtest_export_jobs_input::ListPredictorBacktestExportJobsInputBuilder;
 
+impl ListPredictorBacktestExportJobsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_predictor_backtest_export_jobs::ListPredictorBacktestExportJobsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_predictor_backtest_export_jobs::ListPredictorBacktestExportJobsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_predictor_backtest_export_jobs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListPredictorBacktestExportJobs`.
 ///
 /// <p>Returns a list of predictor backtest export jobs created using the <code>CreatePredictorBacktestExportJob</code> operation. This operation returns a summary for each backtest export job. You can filter the list using an array of <code>Filter</code> objects.</p>

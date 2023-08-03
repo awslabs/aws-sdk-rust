@@ -3,6 +3,23 @@ pub use crate::operation::put_account_details::_put_account_details_output::PutA
 
 pub use crate::operation::put_account_details::_put_account_details_input::PutAccountDetailsInputBuilder;
 
+impl PutAccountDetailsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_account_details::PutAccountDetailsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_account_details::PutAccountDetailsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_account_details();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutAccountDetails`.
 ///
 /// <p>Update your Amazon SES account details.</p>

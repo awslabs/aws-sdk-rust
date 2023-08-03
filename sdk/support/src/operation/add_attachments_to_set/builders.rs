@@ -3,6 +3,23 @@ pub use crate::operation::add_attachments_to_set::_add_attachments_to_set_output
 
 pub use crate::operation::add_attachments_to_set::_add_attachments_to_set_input::AddAttachmentsToSetInputBuilder;
 
+impl AddAttachmentsToSetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::add_attachments_to_set::AddAttachmentsToSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::add_attachments_to_set::AddAttachmentsToSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.add_attachments_to_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AddAttachmentsToSet`.
 ///
 /// <p>Adds one or more attachments to an attachment set. </p>

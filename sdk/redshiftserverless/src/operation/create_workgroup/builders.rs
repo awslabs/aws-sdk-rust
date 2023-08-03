@@ -3,6 +3,23 @@ pub use crate::operation::create_workgroup::_create_workgroup_output::CreateWork
 
 pub use crate::operation::create_workgroup::_create_workgroup_input::CreateWorkgroupInputBuilder;
 
+impl CreateWorkgroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_workgroup::CreateWorkgroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_workgroup::CreateWorkgroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_workgroup();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateWorkgroup`.
 ///
 /// <p>Creates an workgroup in Amazon Redshift Serverless.</p>

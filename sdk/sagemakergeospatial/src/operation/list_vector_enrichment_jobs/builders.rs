@@ -3,6 +3,23 @@ pub use crate::operation::list_vector_enrichment_jobs::_list_vector_enrichment_j
 
 pub use crate::operation::list_vector_enrichment_jobs::_list_vector_enrichment_jobs_input::ListVectorEnrichmentJobsInputBuilder;
 
+impl ListVectorEnrichmentJobsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_vector_enrichment_jobs::ListVectorEnrichmentJobsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_vector_enrichment_jobs::ListVectorEnrichmentJobsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_vector_enrichment_jobs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListVectorEnrichmentJobs`.
 ///
 /// <p>Retrieves a list of vector enrichment jobs.</p>

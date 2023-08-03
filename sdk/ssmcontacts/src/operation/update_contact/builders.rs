@@ -3,6 +3,23 @@ pub use crate::operation::update_contact::_update_contact_output::UpdateContactO
 
 pub use crate::operation::update_contact::_update_contact_input::UpdateContactInputBuilder;
 
+impl UpdateContactInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_contact::UpdateContactOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_contact::UpdateContactError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_contact();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateContact`.
 ///
 /// <p>Updates the contact or escalation plan specified.</p>

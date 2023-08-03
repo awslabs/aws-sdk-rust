@@ -3,6 +3,23 @@ pub use crate::operation::notify_migration_task_state::_notify_migration_task_st
 
 pub use crate::operation::notify_migration_task_state::_notify_migration_task_state_input::NotifyMigrationTaskStateInputBuilder;
 
+impl NotifyMigrationTaskStateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::notify_migration_task_state::NotifyMigrationTaskStateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::notify_migration_task_state::NotifyMigrationTaskStateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.notify_migration_task_state();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `NotifyMigrationTaskState`.
 ///
 /// <p>Notifies Migration Hub of the current status, progress, or other detail regarding a migration task. This API has the following traits:</p>

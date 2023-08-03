@@ -3,6 +3,23 @@ pub use crate::operation::create_custom_action_type::_create_custom_action_type_
 
 pub use crate::operation::create_custom_action_type::_create_custom_action_type_input::CreateCustomActionTypeInputBuilder;
 
+impl CreateCustomActionTypeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_custom_action_type::CreateCustomActionTypeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_custom_action_type::CreateCustomActionTypeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_custom_action_type();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateCustomActionType`.
 ///
 /// <p>Creates a new custom action that can be used in all pipelines associated with the Amazon Web Services account. Only used for custom actions.</p>

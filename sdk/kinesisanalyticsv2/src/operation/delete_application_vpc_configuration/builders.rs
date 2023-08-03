@@ -3,6 +3,17 @@ pub use crate::operation::delete_application_vpc_configuration::_delete_applicat
 
 pub use crate::operation::delete_application_vpc_configuration::_delete_application_vpc_configuration_input::DeleteApplicationVpcConfigurationInputBuilder;
 
+impl DeleteApplicationVpcConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_application_vpc_configuration::DeleteApplicationVpcConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_application_vpc_configuration::DeleteApplicationVpcConfigurationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.delete_application_vpc_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteApplicationVpcConfiguration`.
 ///
 /// <p>Removes a VPC configuration from a Kinesis Data Analytics application.</p>

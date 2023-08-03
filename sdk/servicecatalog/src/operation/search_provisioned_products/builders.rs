@@ -3,6 +3,23 @@ pub use crate::operation::search_provisioned_products::_search_provisioned_produ
 
 pub use crate::operation::search_provisioned_products::_search_provisioned_products_input::SearchProvisionedProductsInputBuilder;
 
+impl SearchProvisionedProductsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::search_provisioned_products::SearchProvisionedProductsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::search_provisioned_products::SearchProvisionedProductsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.search_provisioned_products();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SearchProvisionedProducts`.
 ///
 /// <p>Gets information about the provisioned products that meet the specified criteria.</p>

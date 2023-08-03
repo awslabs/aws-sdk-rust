@@ -3,6 +3,23 @@ pub use crate::operation::list_notebook_metadata::_list_notebook_metadata_output
 
 pub use crate::operation::list_notebook_metadata::_list_notebook_metadata_input::ListNotebookMetadataInputBuilder;
 
+impl ListNotebookMetadataInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_notebook_metadata::ListNotebookMetadataOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_notebook_metadata::ListNotebookMetadataError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_notebook_metadata();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListNotebookMetadata`.
 ///
 /// <p>Displays the notebook files for the specified workgroup in paginated format.</p>

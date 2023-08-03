@@ -3,6 +3,17 @@ pub use crate::operation::list_configured_table_associations::_list_configured_t
 
 pub use crate::operation::list_configured_table_associations::_list_configured_table_associations_input::ListConfiguredTableAssociationsInputBuilder;
 
+impl ListConfiguredTableAssociationsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_configured_table_associations::ListConfiguredTableAssociationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_configured_table_associations::ListConfiguredTableAssociationsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_configured_table_associations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListConfiguredTableAssociations`.
 ///
 /// <p>Lists configured table associations for a membership.</p>

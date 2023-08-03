@@ -3,6 +3,23 @@ pub use crate::operation::start_pipeline_execution::_start_pipeline_execution_ou
 
 pub use crate::operation::start_pipeline_execution::_start_pipeline_execution_input::StartPipelineExecutionInputBuilder;
 
+impl StartPipelineExecutionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_pipeline_execution::StartPipelineExecutionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_pipeline_execution::StartPipelineExecutionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_pipeline_execution();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartPipelineExecution`.
 ///
 /// <p>Starts the specified pipeline. Specifically, it begins processing the latest commit to the source location specified as part of the pipeline.</p>

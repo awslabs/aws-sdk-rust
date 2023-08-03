@@ -3,6 +3,23 @@ pub use crate::operation::update_app_version_app_component::_update_app_version_
 
 pub use crate::operation::update_app_version_app_component::_update_app_version_app_component_input::UpdateAppVersionAppComponentInputBuilder;
 
+impl UpdateAppVersionAppComponentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_app_version_app_component::UpdateAppVersionAppComponentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_app_version_app_component::UpdateAppVersionAppComponentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_app_version_app_component();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateAppVersionAppComponent`.
 ///
 /// <p>Updates an existing Application Component in the Resilience Hub application.</p> <note>

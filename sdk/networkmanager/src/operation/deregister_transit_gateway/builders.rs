@@ -3,6 +3,23 @@ pub use crate::operation::deregister_transit_gateway::_deregister_transit_gatewa
 
 pub use crate::operation::deregister_transit_gateway::_deregister_transit_gateway_input::DeregisterTransitGatewayInputBuilder;
 
+impl DeregisterTransitGatewayInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::deregister_transit_gateway::DeregisterTransitGatewayOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::deregister_transit_gateway::DeregisterTransitGatewayError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.deregister_transit_gateway();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeregisterTransitGateway`.
 ///
 /// <p>Deregisters a transit gateway from your global network. This action does not delete your transit gateway, or modify any of its attachments. This action removes any customer gateway associations.</p>

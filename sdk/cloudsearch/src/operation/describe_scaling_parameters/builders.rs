@@ -3,6 +3,23 @@ pub use crate::operation::describe_scaling_parameters::_describe_scaling_paramet
 
 pub use crate::operation::describe_scaling_parameters::_describe_scaling_parameters_input::DescribeScalingParametersInputBuilder;
 
+impl DescribeScalingParametersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_scaling_parameters::DescribeScalingParametersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_scaling_parameters::DescribeScalingParametersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_scaling_parameters();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeScalingParameters`.
 ///
 /// <p>Gets the scaling parameters configured for a domain. A domain's scaling parameters specify the desired search instance type and replication count. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-scaling-options.html" target="_blank">Configuring Scaling Options</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>

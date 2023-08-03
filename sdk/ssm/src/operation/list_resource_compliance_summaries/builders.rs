@@ -3,6 +3,17 @@ pub use crate::operation::list_resource_compliance_summaries::_list_resource_com
 
 pub use crate::operation::list_resource_compliance_summaries::_list_resource_compliance_summaries_input::ListResourceComplianceSummariesInputBuilder;
 
+impl ListResourceComplianceSummariesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_resource_compliance_summaries::ListResourceComplianceSummariesOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_resource_compliance_summaries::ListResourceComplianceSummariesError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_resource_compliance_summaries();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListResourceComplianceSummaries`.
 ///
 /// <p>Returns a resource-level summary count. The summary includes information about compliant and non-compliant statuses and detailed compliance-item severity counts, according to the filter criteria you specify.</p>

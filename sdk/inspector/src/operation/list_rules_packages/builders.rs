@@ -3,6 +3,23 @@ pub use crate::operation::list_rules_packages::_list_rules_packages_output::List
 
 pub use crate::operation::list_rules_packages::_list_rules_packages_input::ListRulesPackagesInputBuilder;
 
+impl ListRulesPackagesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_rules_packages::ListRulesPackagesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_rules_packages::ListRulesPackagesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_rules_packages();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListRulesPackages`.
 ///
 /// <p>Lists all available Amazon Inspector rules packages.</p>

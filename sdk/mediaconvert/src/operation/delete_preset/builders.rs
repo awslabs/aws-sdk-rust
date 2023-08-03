@@ -3,6 +3,23 @@ pub use crate::operation::delete_preset::_delete_preset_output::DeletePresetOutp
 
 pub use crate::operation::delete_preset::_delete_preset_input::DeletePresetInputBuilder;
 
+impl DeletePresetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_preset::DeletePresetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_preset::DeletePresetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_preset();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeletePreset`.
 ///
 /// Permanently delete a preset you have created.

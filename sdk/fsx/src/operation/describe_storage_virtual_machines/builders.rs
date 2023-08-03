@@ -3,6 +3,17 @@ pub use crate::operation::describe_storage_virtual_machines::_describe_storage_v
 
 pub use crate::operation::describe_storage_virtual_machines::_describe_storage_virtual_machines_input::DescribeStorageVirtualMachinesInputBuilder;
 
+impl DescribeStorageVirtualMachinesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_storage_virtual_machines::DescribeStorageVirtualMachinesOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_storage_virtual_machines::DescribeStorageVirtualMachinesError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_storage_virtual_machines();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeStorageVirtualMachines`.
 ///
 /// <p>Describes one or more Amazon FSx for NetApp ONTAP storage virtual machines (SVMs).</p>

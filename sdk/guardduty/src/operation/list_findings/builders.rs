@@ -3,6 +3,23 @@ pub use crate::operation::list_findings::_list_findings_output::ListFindingsOutp
 
 pub use crate::operation::list_findings::_list_findings_input::ListFindingsInputBuilder;
 
+impl ListFindingsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_findings::ListFindingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_findings::ListFindingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_findings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListFindings`.
 ///
 /// <p>Lists Amazon GuardDuty findings for the specified detector ID.</p>

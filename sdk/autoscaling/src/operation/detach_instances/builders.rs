@@ -3,6 +3,23 @@ pub use crate::operation::detach_instances::_detach_instances_output::DetachInst
 
 pub use crate::operation::detach_instances::_detach_instances_input::DetachInstancesInputBuilder;
 
+impl DetachInstancesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::detach_instances::DetachInstancesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::detach_instances::DetachInstancesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.detach_instances();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DetachInstances`.
 ///
 /// <p>Removes one or more instances from the specified Auto Scaling group.</p>

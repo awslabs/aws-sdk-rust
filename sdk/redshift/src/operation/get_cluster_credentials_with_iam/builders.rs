@@ -3,6 +3,23 @@ pub use crate::operation::get_cluster_credentials_with_iam::_get_cluster_credent
 
 pub use crate::operation::get_cluster_credentials_with_iam::_get_cluster_credentials_with_iam_input::GetClusterCredentialsWithIamInputBuilder;
 
+impl GetClusterCredentialsWithIamInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIamOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_cluster_credentials_with_iam::GetClusterCredentialsWithIAMError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_cluster_credentials_with_iam();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetClusterCredentialsWithIAM`.
 ///
 /// <p>Returns a database user name and temporary password with temporary authorization to log in to an Amazon Redshift database. The database user is mapped 1:1 to the source Identity and Access Management (IAM) identity. For more information about IAM identities, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id.html">IAM Identities (users, user groups, and roles)</a> in the Amazon Web Services Identity and Access Management User Guide.</p>

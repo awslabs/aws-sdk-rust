@@ -3,6 +3,23 @@ pub use crate::operation::batch_get_resource_config::_batch_get_resource_config_
 
 pub use crate::operation::batch_get_resource_config::_batch_get_resource_config_input::BatchGetResourceConfigInputBuilder;
 
+impl BatchGetResourceConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_resource_config::BatchGetResourceConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_get_resource_config::BatchGetResourceConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_get_resource_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchGetResourceConfig`.
 ///
 /// <p>Returns the <code>BaseConfigurationItem</code> for one or more requested resources. The operation also returns a list of resources that are not processed in the current request. If there are no unprocessed resources, the operation returns an empty unprocessedResourceKeys list. </p> <note>

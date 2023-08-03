@@ -3,6 +3,23 @@ pub use crate::operation::get_key_rotation_status::_get_key_rotation_status_outp
 
 pub use crate::operation::get_key_rotation_status::_get_key_rotation_status_input::GetKeyRotationStatusInputBuilder;
 
+impl GetKeyRotationStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_key_rotation_status::GetKeyRotationStatusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_key_rotation_status::GetKeyRotationStatusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_key_rotation_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetKeyRotationStatus`.
 ///
 /// <p>Gets a Boolean value that indicates whether <a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html">automatic rotation of the key material</a> is enabled for the specified KMS key.</p>

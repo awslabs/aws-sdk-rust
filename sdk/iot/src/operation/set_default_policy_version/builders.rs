@@ -3,6 +3,23 @@ pub use crate::operation::set_default_policy_version::_set_default_policy_versio
 
 pub use crate::operation::set_default_policy_version::_set_default_policy_version_input::SetDefaultPolicyVersionInputBuilder;
 
+impl SetDefaultPolicyVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::set_default_policy_version::SetDefaultPolicyVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::set_default_policy_version::SetDefaultPolicyVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.set_default_policy_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SetDefaultPolicyVersion`.
 ///
 /// <p>Sets the specified version of the specified policy as the policy's default (operative) version. This action affects all certificates to which the policy is attached. To list the principals the policy is attached to, use the <code>ListPrincipalPolicies</code> action.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_inference_scheduler::_delete_inference_schedule
 
 pub use crate::operation::delete_inference_scheduler::_delete_inference_scheduler_input::DeleteInferenceSchedulerInputBuilder;
 
+impl DeleteInferenceSchedulerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_inference_scheduler::DeleteInferenceSchedulerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_inference_scheduler::DeleteInferenceSchedulerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_inference_scheduler();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteInferenceScheduler`.
 ///
 /// <p>Deletes an inference scheduler that has been set up. Already processed output results are not affected. </p>

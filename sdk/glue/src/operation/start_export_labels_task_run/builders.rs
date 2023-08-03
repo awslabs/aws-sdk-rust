@@ -3,6 +3,23 @@ pub use crate::operation::start_export_labels_task_run::_start_export_labels_tas
 
 pub use crate::operation::start_export_labels_task_run::_start_export_labels_task_run_input::StartExportLabelsTaskRunInputBuilder;
 
+impl StartExportLabelsTaskRunInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_export_labels_task_run::StartExportLabelsTaskRunOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_export_labels_task_run::StartExportLabelsTaskRunError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_export_labels_task_run();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartExportLabelsTaskRun`.
 ///
 /// <p>Begins an asynchronous task to export all labeled data for a particular transform. This task is the only label-related API call that is not part of the typical active learning workflow. You typically use <code>StartExportLabelsTaskRun</code> when you want to work with all of your existing labels at the same time, such as when you want to remove or change labels that were previously submitted as truth. This API operation accepts the <code>TransformId</code> whose labels you want to export and an Amazon Simple Storage Service (Amazon S3) path to export the labels to. The operation returns a <code>TaskRunId</code>. You can check on the status of your task run by calling the <code>GetMLTaskRun</code> API.</p>

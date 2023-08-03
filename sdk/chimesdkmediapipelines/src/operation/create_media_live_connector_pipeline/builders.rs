@@ -3,6 +3,17 @@ pub use crate::operation::create_media_live_connector_pipeline::_create_media_li
 
 pub use crate::operation::create_media_live_connector_pipeline::_create_media_live_connector_pipeline_input::CreateMediaLiveConnectorPipelineInputBuilder;
 
+impl CreateMediaLiveConnectorPipelineInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::create_media_live_connector_pipeline::CreateMediaLiveConnectorPipelineOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_media_live_connector_pipeline::CreateMediaLiveConnectorPipelineError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.create_media_live_connector_pipeline();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateMediaLiveConnectorPipeline`.
 ///
 /// <p>Creates a media live connector pipeline in an Amazon Chime SDK meeting.</p>

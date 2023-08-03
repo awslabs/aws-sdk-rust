@@ -3,6 +3,23 @@ pub use crate::operation::create_security_profile::_create_security_profile_outp
 
 pub use crate::operation::create_security_profile::_create_security_profile_input::CreateSecurityProfileInputBuilder;
 
+impl CreateSecurityProfileInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_security_profile::CreateSecurityProfileOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_security_profile::CreateSecurityProfileError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_security_profile();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateSecurityProfile`.
 ///
 /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>

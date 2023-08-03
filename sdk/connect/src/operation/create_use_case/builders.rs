@@ -3,6 +3,23 @@ pub use crate::operation::create_use_case::_create_use_case_output::CreateUseCas
 
 pub use crate::operation::create_use_case::_create_use_case_input::CreateUseCaseInputBuilder;
 
+impl CreateUseCaseInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_use_case::CreateUseCaseOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_use_case::CreateUseCaseError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_use_case();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateUseCase`.
 ///
 /// <p>Creates a use case for an integration association.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_tags_for_resource::_list_tags_for_resource_output
 
 pub use crate::operation::list_tags_for_resource::_list_tags_for_resource_input::ListTagsForResourceInputBuilder;
 
+impl ListTagsForResourceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_tags_for_resource::ListTagsForResourceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_tags_for_resource::ListTagsForResourceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_tags_for_resource();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListTagsForResource`.
 ///
 /// <p>Retrieves all tags assigned to a Amazon GameLift resource. Use resource tags to organize Amazon Web Services resources for a range of purposes. This operation handles the permissions necessary to manage tags for Amazon GameLift resources that support tagging.</p>

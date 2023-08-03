@@ -3,6 +3,23 @@ pub use crate::operation::configure_logs::_configure_logs_output::ConfigureLogsO
 
 pub use crate::operation::configure_logs::_configure_logs_input::ConfigureLogsInputBuilder;
 
+impl ConfigureLogsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::configure_logs::ConfigureLogsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::configure_logs::ConfigureLogsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.configure_logs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ConfigureLogs`.
 ///
 /// Changes the packaging group's properities to configure log subscription

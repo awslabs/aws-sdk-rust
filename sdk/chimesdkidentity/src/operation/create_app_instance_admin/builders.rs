@@ -3,6 +3,23 @@ pub use crate::operation::create_app_instance_admin::_create_app_instance_admin_
 
 pub use crate::operation::create_app_instance_admin::_create_app_instance_admin_input::CreateAppInstanceAdminInputBuilder;
 
+impl CreateAppInstanceAdminInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_app_instance_admin::CreateAppInstanceAdminOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_app_instance_admin::CreateAppInstanceAdminError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_app_instance_admin();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateAppInstanceAdmin`.
 ///
 /// <p>Promotes an <code>AppInstanceUser</code> or <code>AppInstanceBot</code> to an <code>AppInstanceAdmin</code>. The promoted entity can perform the following actions. </p>

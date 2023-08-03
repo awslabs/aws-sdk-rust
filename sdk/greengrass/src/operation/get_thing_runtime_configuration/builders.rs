@@ -3,6 +3,23 @@ pub use crate::operation::get_thing_runtime_configuration::_get_thing_runtime_co
 
 pub use crate::operation::get_thing_runtime_configuration::_get_thing_runtime_configuration_input::GetThingRuntimeConfigurationInputBuilder;
 
+impl GetThingRuntimeConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_thing_runtime_configuration::GetThingRuntimeConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_thing_runtime_configuration::GetThingRuntimeConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_thing_runtime_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetThingRuntimeConfiguration`.
 ///
 /// Get the runtime configuration of a thing.

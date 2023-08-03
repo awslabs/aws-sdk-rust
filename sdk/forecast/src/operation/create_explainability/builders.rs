@@ -3,6 +3,23 @@ pub use crate::operation::create_explainability::_create_explainability_output::
 
 pub use crate::operation::create_explainability::_create_explainability_input::CreateExplainabilityInputBuilder;
 
+impl CreateExplainabilityInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_explainability::CreateExplainabilityOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_explainability::CreateExplainabilityError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_explainability();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateExplainability`.
 ///
 /// <note>

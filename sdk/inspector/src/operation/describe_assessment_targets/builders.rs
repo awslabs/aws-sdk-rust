@@ -3,6 +3,23 @@ pub use crate::operation::describe_assessment_targets::_describe_assessment_targ
 
 pub use crate::operation::describe_assessment_targets::_describe_assessment_targets_input::DescribeAssessmentTargetsInputBuilder;
 
+impl DescribeAssessmentTargetsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_assessment_targets::DescribeAssessmentTargetsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_assessment_targets::DescribeAssessmentTargetsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_assessment_targets();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAssessmentTargets`.
 ///
 /// <p>Describes the assessment targets that are specified by the ARNs of the assessment targets.</p>

@@ -3,6 +3,17 @@ pub use crate::operation::get_application_component_details::_get_application_co
 
 pub use crate::operation::get_application_component_details::_get_application_component_details_input::GetApplicationComponentDetailsInputBuilder;
 
+impl GetApplicationComponentDetailsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_application_component_details::GetApplicationComponentDetailsOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_application_component_details::GetApplicationComponentDetailsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_application_component_details();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetApplicationComponentDetails`.
 ///
 /// <p> Retrieves details about an application component. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_trusted_advisor_checks::_describe_trusted_adv
 
 pub use crate::operation::describe_trusted_advisor_checks::_describe_trusted_advisor_checks_input::DescribeTrustedAdvisorChecksInputBuilder;
 
+impl DescribeTrustedAdvisorChecksInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_trusted_advisor_checks::DescribeTrustedAdvisorChecksOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_trusted_advisor_checks::DescribeTrustedAdvisorChecksError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_trusted_advisor_checks();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeTrustedAdvisorChecks`.
 ///
 /// <p>Returns information about all available Trusted Advisor checks, including the name, ID, category, description, and metadata. You must specify a language code.</p>

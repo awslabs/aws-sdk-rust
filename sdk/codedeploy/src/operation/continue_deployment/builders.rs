@@ -3,6 +3,23 @@ pub use crate::operation::continue_deployment::_continue_deployment_output::Cont
 
 pub use crate::operation::continue_deployment::_continue_deployment_input::ContinueDeploymentInputBuilder;
 
+impl ContinueDeploymentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::continue_deployment::ContinueDeploymentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::continue_deployment::ContinueDeploymentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.continue_deployment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ContinueDeployment`.
 ///
 /// <p>For a blue/green deployment, starts the process of rerouting traffic from instances in the original environment to instances in the replacement environment without waiting for a specified wait time to elapse. (Traffic rerouting, which is achieved by registering instances in the replacement environment with the load balancer, can start as soon as all instances have a status of Ready.) </p>

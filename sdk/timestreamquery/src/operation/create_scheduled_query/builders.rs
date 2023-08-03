@@ -3,6 +3,23 @@ pub use crate::operation::create_scheduled_query::_create_scheduled_query_output
 
 pub use crate::operation::create_scheduled_query::_create_scheduled_query_input::CreateScheduledQueryInputBuilder;
 
+impl CreateScheduledQueryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_scheduled_query::CreateScheduledQueryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_scheduled_query::CreateScheduledQueryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_scheduled_query();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateScheduledQuery`.
 ///
 /// <p> Create a scheduled query that will be run on your behalf at the configured schedule. Timestream assumes the execution role provided as part of the <code>ScheduledQueryExecutionRoleArn</code> parameter to run the query. You can use the <code>NotificationConfiguration</code> parameter to configure notification for your scheduled query operations.</p>

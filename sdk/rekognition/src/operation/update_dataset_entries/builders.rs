@@ -3,6 +3,23 @@ pub use crate::operation::update_dataset_entries::_update_dataset_entries_output
 
 pub use crate::operation::update_dataset_entries::_update_dataset_entries_input::UpdateDatasetEntriesInputBuilder;
 
+impl UpdateDatasetEntriesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_dataset_entries::UpdateDatasetEntriesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_dataset_entries::UpdateDatasetEntriesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_dataset_entries();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateDatasetEntries`.
 ///
 /// <p>Adds or updates one or more entries (images) in a dataset. An entry is a JSON Line which contains the information for a single image, including the image location, assigned labels, and object location bounding boxes. For more information, see Image-Level labels in manifest files and Object localization in manifest files in the <i>Amazon Rekognition Custom Labels Developer Guide</i>. </p>

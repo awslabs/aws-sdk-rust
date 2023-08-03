@@ -3,6 +3,23 @@ pub use crate::operation::delete_custom_db_engine_version::_delete_custom_db_eng
 
 pub use crate::operation::delete_custom_db_engine_version::_delete_custom_db_engine_version_input::DeleteCustomDbEngineVersionInputBuilder;
 
+impl DeleteCustomDbEngineVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_custom_db_engine_version::DeleteCustomDbEngineVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_custom_db_engine_version::DeleteCustomDBEngineVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_custom_db_engine_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteCustomDBEngineVersion`.
 ///
 /// <p>Deletes a custom engine version. To run this command, make sure you meet the following prerequisites:</p>

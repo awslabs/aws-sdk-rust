@@ -3,6 +3,23 @@ pub use crate::operation::get_job_unlock_code::_get_job_unlock_code_output::GetJ
 
 pub use crate::operation::get_job_unlock_code::_get_job_unlock_code_input::GetJobUnlockCodeInputBuilder;
 
+impl GetJobUnlockCodeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_job_unlock_code::GetJobUnlockCodeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_job_unlock_code::GetJobUnlockCodeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_job_unlock_code();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetJobUnlockCode`.
 ///
 /// <p>Returns the <code>UnlockCode</code> code value for the specified job. A particular <code>UnlockCode</code> value can be accessed for up to 360 days after the associated job has been created.</p>

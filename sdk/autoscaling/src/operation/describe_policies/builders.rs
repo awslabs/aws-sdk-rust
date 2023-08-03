@@ -3,6 +3,23 @@ pub use crate::operation::describe_policies::_describe_policies_output::Describe
 
 pub use crate::operation::describe_policies::_describe_policies_input::DescribePoliciesInputBuilder;
 
+impl DescribePoliciesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_policies::DescribePoliciesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_policies::DescribePoliciesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_policies();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribePolicies`.
 ///
 /// <p>Gets information about the scaling policies in the account and Region.</p>

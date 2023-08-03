@@ -3,6 +3,23 @@ pub use crate::operation::list_coverage_statistics::_list_coverage_statistics_ou
 
 pub use crate::operation::list_coverage_statistics::_list_coverage_statistics_input::ListCoverageStatisticsInputBuilder;
 
+impl ListCoverageStatisticsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_coverage_statistics::ListCoverageStatisticsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_coverage_statistics::ListCoverageStatisticsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_coverage_statistics();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListCoverageStatistics`.
 ///
 /// <p>Lists Amazon Inspector coverage statistics for your environment.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_resource_set_resources::_list_resource_set_resour
 
 pub use crate::operation::list_resource_set_resources::_list_resource_set_resources_input::ListResourceSetResourcesInputBuilder;
 
+impl ListResourceSetResourcesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_resource_set_resources::ListResourceSetResourcesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_resource_set_resources::ListResourceSetResourcesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_resource_set_resources();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListResourceSetResources`.
 ///
 /// <p>Returns an array of resources that are currently associated to a resource set.</p>

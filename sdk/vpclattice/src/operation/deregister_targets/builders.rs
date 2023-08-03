@@ -3,6 +3,23 @@ pub use crate::operation::deregister_targets::_deregister_targets_output::Deregi
 
 pub use crate::operation::deregister_targets::_deregister_targets_input::DeregisterTargetsInputBuilder;
 
+impl DeregisterTargetsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::deregister_targets::DeregisterTargetsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::deregister_targets::DeregisterTargetsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.deregister_targets();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeregisterTargets`.
 ///
 /// <p>Deregisters the specified targets from the specified target group.</p>

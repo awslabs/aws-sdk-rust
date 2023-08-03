@@ -3,6 +3,23 @@ pub use crate::operation::delete_notification_subscription::_delete_notification
 
 pub use crate::operation::delete_notification_subscription::_delete_notification_subscription_input::DeleteNotificationSubscriptionInputBuilder;
 
+impl DeleteNotificationSubscriptionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_notification_subscription::DeleteNotificationSubscriptionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_notification_subscription::DeleteNotificationSubscriptionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_notification_subscription();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteNotificationSubscription`.
 ///
 /// <p>Deletes the specified subscription from the specified organization.</p>

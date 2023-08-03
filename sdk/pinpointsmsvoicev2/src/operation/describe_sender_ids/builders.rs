@@ -3,6 +3,23 @@ pub use crate::operation::describe_sender_ids::_describe_sender_ids_output::Desc
 
 pub use crate::operation::describe_sender_ids::_describe_sender_ids_input::DescribeSenderIdsInputBuilder;
 
+impl DescribeSenderIdsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_sender_ids::DescribeSenderIdsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_sender_ids::DescribeSenderIdsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_sender_ids();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeSenderIds`.
 ///
 /// <p>Describes the specified SenderIds or all SenderIds associated with your Amazon Web Services account.</p>

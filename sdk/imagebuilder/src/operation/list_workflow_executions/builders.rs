@@ -3,6 +3,23 @@ pub use crate::operation::list_workflow_executions::_list_workflow_executions_ou
 
 pub use crate::operation::list_workflow_executions::_list_workflow_executions_input::ListWorkflowExecutionsInputBuilder;
 
+impl ListWorkflowExecutionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_workflow_executions::ListWorkflowExecutionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_workflow_executions::ListWorkflowExecutionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_workflow_executions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListWorkflowExecutions`.
 ///
 /// <p>Returns a list of workflow runtime instance metadata objects for a specific image build version.</p>

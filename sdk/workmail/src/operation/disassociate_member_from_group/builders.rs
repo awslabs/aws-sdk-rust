@@ -3,6 +3,23 @@ pub use crate::operation::disassociate_member_from_group::_disassociate_member_f
 
 pub use crate::operation::disassociate_member_from_group::_disassociate_member_from_group_input::DisassociateMemberFromGroupInputBuilder;
 
+impl DisassociateMemberFromGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_member_from_group::DisassociateMemberFromGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_member_from_group::DisassociateMemberFromGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disassociate_member_from_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateMemberFromGroup`.
 ///
 /// <p>Removes a member from a group.</p>

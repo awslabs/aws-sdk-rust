@@ -3,6 +3,23 @@ pub use crate::operation::create_relational_database::_create_relational_databas
 
 pub use crate::operation::create_relational_database::_create_relational_database_input::CreateRelationalDatabaseInputBuilder;
 
+impl CreateRelationalDatabaseInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_relational_database::CreateRelationalDatabaseOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_relational_database::CreateRelationalDatabaseError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_relational_database();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateRelationalDatabase`.
 ///
 /// <p>Creates a new database in Amazon Lightsail.</p>

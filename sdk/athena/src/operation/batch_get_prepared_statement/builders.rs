@@ -3,6 +3,23 @@ pub use crate::operation::batch_get_prepared_statement::_batch_get_prepared_stat
 
 pub use crate::operation::batch_get_prepared_statement::_batch_get_prepared_statement_input::BatchGetPreparedStatementInputBuilder;
 
+impl BatchGetPreparedStatementInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_prepared_statement::BatchGetPreparedStatementOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_get_prepared_statement::BatchGetPreparedStatementError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_get_prepared_statement();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchGetPreparedStatement`.
 ///
 /// <p>Returns the details of a single prepared statement or a list of up to 256 prepared statements for the array of prepared statement names that you provide. Requires you to have access to the workgroup to which the prepared statements belong. If a prepared statement cannot be retrieved for the name specified, the statement is listed in <code>UnprocessedPreparedStatementNames</code>.</p>

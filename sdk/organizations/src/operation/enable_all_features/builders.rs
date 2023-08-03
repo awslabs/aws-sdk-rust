@@ -3,6 +3,23 @@ pub use crate::operation::enable_all_features::_enable_all_features_output::Enab
 
 pub use crate::operation::enable_all_features::_enable_all_features_input::EnableAllFeaturesInputBuilder;
 
+impl EnableAllFeaturesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::enable_all_features::EnableAllFeaturesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::enable_all_features::EnableAllFeaturesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.enable_all_features();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `EnableAllFeatures`.
 ///
 /// <p>Enables all features in an organization. This enables the use of organization policies that can restrict the services and actions that can be called in each account. Until you enable all features, you have access only to consolidated billing, and you can't use any of the advanced account administration features that Organizations supports. For more information, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_org_support-all-features.html">Enabling All Features in Your Organization</a> in the <i>Organizations User Guide.</i> </p> <important>

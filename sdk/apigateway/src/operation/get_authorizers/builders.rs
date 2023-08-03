@@ -3,6 +3,23 @@ pub use crate::operation::get_authorizers::_get_authorizers_output::GetAuthorize
 
 pub use crate::operation::get_authorizers::_get_authorizers_input::GetAuthorizersInputBuilder;
 
+impl GetAuthorizersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_authorizers::GetAuthorizersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_authorizers::GetAuthorizersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_authorizers();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetAuthorizers`.
 ///
 /// <p>Describe an existing Authorizers resource.</p>

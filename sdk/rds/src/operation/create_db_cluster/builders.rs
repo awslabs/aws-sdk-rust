@@ -3,6 +3,23 @@ pub use crate::operation::create_db_cluster::_create_db_cluster_output::CreateDb
 
 pub use crate::operation::create_db_cluster::_create_db_cluster_input::CreateDbClusterInputBuilder;
 
+impl CreateDbClusterInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_db_cluster::CreateDbClusterOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_db_cluster::CreateDBClusterError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_db_cluster();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateDBCluster`.
 ///
 /// <p>Creates a new Amazon Aurora DB cluster or Multi-AZ DB cluster.</p>

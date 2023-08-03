@@ -3,6 +3,23 @@ pub use crate::operation::list_suite_definitions::_list_suite_definitions_output
 
 pub use crate::operation::list_suite_definitions::_list_suite_definitions_input::ListSuiteDefinitionsInputBuilder;
 
+impl ListSuiteDefinitionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_suite_definitions::ListSuiteDefinitionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_suite_definitions::ListSuiteDefinitionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_suite_definitions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListSuiteDefinitions`.
 ///
 /// <p>Lists the Device Advisor test suites you have created.</p>

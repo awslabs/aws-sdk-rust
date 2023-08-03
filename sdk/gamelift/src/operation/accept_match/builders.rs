@@ -3,6 +3,23 @@ pub use crate::operation::accept_match::_accept_match_output::AcceptMatchOutputB
 
 pub use crate::operation::accept_match::_accept_match_input::AcceptMatchInputBuilder;
 
+impl AcceptMatchInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::accept_match::AcceptMatchOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::accept_match::AcceptMatchError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.accept_match();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AcceptMatch`.
 ///
 /// <p>Registers a player's acceptance or rejection of a proposed FlexMatch match. A matchmaking configuration may require player acceptance; if so, then matches built with that configuration cannot be completed unless all players accept the proposed match within a specified time limit. </p>

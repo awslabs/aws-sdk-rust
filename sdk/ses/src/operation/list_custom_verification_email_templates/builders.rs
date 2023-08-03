@@ -3,6 +3,17 @@ pub use crate::operation::list_custom_verification_email_templates::_list_custom
 
 pub use crate::operation::list_custom_verification_email_templates::_list_custom_verification_email_templates_input::ListCustomVerificationEmailTemplatesInputBuilder;
 
+impl ListCustomVerificationEmailTemplatesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_custom_verification_email_templates::ListCustomVerificationEmailTemplatesOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_custom_verification_email_templates::ListCustomVerificationEmailTemplatesError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_custom_verification_email_templates();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListCustomVerificationEmailTemplates`.
 ///
 /// <p>Lists the existing custom verification email templates for your account in the current AWS Region.</p>

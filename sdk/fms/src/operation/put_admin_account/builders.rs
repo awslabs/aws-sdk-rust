@@ -3,6 +3,23 @@ pub use crate::operation::put_admin_account::_put_admin_account_output::PutAdmin
 
 pub use crate::operation::put_admin_account::_put_admin_account_input::PutAdminAccountInputBuilder;
 
+impl PutAdminAccountInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_admin_account::PutAdminAccountOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_admin_account::PutAdminAccountError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_admin_account();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutAdminAccount`.
 ///
 /// <p>Creates or updates an Firewall Manager administrator account. The account must be a member of the organization that was onboarded to Firewall Manager by <code>AssociateAdminAccount</code>. Only the organization's management account can create an Firewall Manager administrator account. When you create an Firewall Manager administrator account, the service checks to see if the account is already a delegated administrator within Organizations. If the account isn't a delegated administrator, Firewall Manager calls Organizations to delegate the account within Organizations. For more information about administrator accounts within Organizations, see <a href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_manage_accounts.html">Managing the Amazon Web Services Accounts in Your Organization</a>.</p>

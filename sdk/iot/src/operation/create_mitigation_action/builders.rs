@@ -3,6 +3,23 @@ pub use crate::operation::create_mitigation_action::_create_mitigation_action_ou
 
 pub use crate::operation::create_mitigation_action::_create_mitigation_action_input::CreateMitigationActionInputBuilder;
 
+impl CreateMitigationActionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_mitigation_action::CreateMitigationActionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_mitigation_action::CreateMitigationActionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_mitigation_action();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateMitigationAction`.
 ///
 /// <p>Defines an action that can be applied to audit findings by using StartAuditMitigationActionsTask. Only certain types of mitigation actions can be applied to specific check names. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-mitigation-actions.html">Mitigation actions</a>. Each mitigation action can apply only one type of change.</p>

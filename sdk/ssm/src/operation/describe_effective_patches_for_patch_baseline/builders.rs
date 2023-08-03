@@ -3,6 +3,17 @@ pub use crate::operation::describe_effective_patches_for_patch_baseline::_descri
 
 pub use crate::operation::describe_effective_patches_for_patch_baseline::_describe_effective_patches_for_patch_baseline_input::DescribeEffectivePatchesForPatchBaselineInputBuilder;
 
+impl DescribeEffectivePatchesForPatchBaselineInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_effective_patches_for_patch_baseline::DescribeEffectivePatchesForPatchBaselineOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_effective_patches_for_patch_baseline::DescribeEffectivePatchesForPatchBaselineError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_effective_patches_for_patch_baseline();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeEffectivePatchesForPatchBaseline`.
 ///
 /// <p>Retrieves the current effective patches (the patch and the approval state) for the specified patch baseline. Applies to patch baselines for Windows only.</p>

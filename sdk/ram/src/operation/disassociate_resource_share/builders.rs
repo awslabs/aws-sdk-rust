@@ -3,6 +3,23 @@ pub use crate::operation::disassociate_resource_share::_disassociate_resource_sh
 
 pub use crate::operation::disassociate_resource_share::_disassociate_resource_share_input::DisassociateResourceShareInputBuilder;
 
+impl DisassociateResourceShareInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_resource_share::DisassociateResourceShareOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_resource_share::DisassociateResourceShareError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disassociate_resource_share();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateResourceShare`.
 ///
 /// <p>Removes the specified principals or resources from participating in the specified resource share.</p>

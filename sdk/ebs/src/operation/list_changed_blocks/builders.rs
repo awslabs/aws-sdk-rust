@@ -3,6 +3,23 @@ pub use crate::operation::list_changed_blocks::_list_changed_blocks_output::List
 
 pub use crate::operation::list_changed_blocks::_list_changed_blocks_input::ListChangedBlocksInputBuilder;
 
+impl ListChangedBlocksInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_changed_blocks::ListChangedBlocksOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_changed_blocks::ListChangedBlocksError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_changed_blocks();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListChangedBlocks`.
 ///
 /// <p>Returns information about the blocks that are different between two Amazon Elastic Block Store snapshots of the same volume/snapshot lineage.</p>

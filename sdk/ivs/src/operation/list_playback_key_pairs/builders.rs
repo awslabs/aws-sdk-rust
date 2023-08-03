@@ -3,6 +3,23 @@ pub use crate::operation::list_playback_key_pairs::_list_playback_key_pairs_outp
 
 pub use crate::operation::list_playback_key_pairs::_list_playback_key_pairs_input::ListPlaybackKeyPairsInputBuilder;
 
+impl ListPlaybackKeyPairsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_playback_key_pairs::ListPlaybackKeyPairsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_playback_key_pairs::ListPlaybackKeyPairsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_playback_key_pairs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListPlaybackKeyPairs`.
 ///
 /// <p>Gets summary information about playback key pairs. For more information, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html">Setting Up Private Channels</a> in the <i>Amazon IVS User Guide</i>.</p>

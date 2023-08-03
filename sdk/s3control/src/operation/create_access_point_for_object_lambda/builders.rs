@@ -3,6 +3,17 @@ pub use crate::operation::create_access_point_for_object_lambda::_create_access_
 
 pub use crate::operation::create_access_point_for_object_lambda::_create_access_point_for_object_lambda_input::CreateAccessPointForObjectLambdaInputBuilder;
 
+impl CreateAccessPointForObjectLambdaInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::create_access_point_for_object_lambda::CreateAccessPointForObjectLambdaOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_access_point_for_object_lambda::CreateAccessPointForObjectLambdaError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.create_access_point_for_object_lambda();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateAccessPointForObjectLambda`.
 ///
 /// <p>Creates an Object Lambda Access Point. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/transforming-objects.html">Transforming objects with Object Lambda Access Points</a> in the <i>Amazon S3 User Guide</i>.</p>

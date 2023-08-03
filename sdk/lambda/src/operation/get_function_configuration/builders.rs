@@ -3,6 +3,23 @@ pub use crate::operation::get_function_configuration::_get_function_configuratio
 
 pub use crate::operation::get_function_configuration::_get_function_configuration_input::GetFunctionConfigurationInputBuilder;
 
+impl GetFunctionConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_function_configuration::GetFunctionConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_function_configuration::GetFunctionConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_function_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetFunctionConfiguration`.
 ///
 /// <p>Returns the version-specific settings of a Lambda function or version. The output includes only options that can vary between versions of a function. To modify these settings, use <code>UpdateFunctionConfiguration</code>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::send_alexa_offer_to_master::_send_alexa_offer_to_maste
 
 pub use crate::operation::send_alexa_offer_to_master::_send_alexa_offer_to_master_input::SendAlexaOfferToMasterInputBuilder;
 
+impl SendAlexaOfferToMasterInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::send_alexa_offer_to_master::SendAlexaOfferToMasterError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.send_alexa_offer_to_master();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SendAlexaOfferToMaster`.
 ///
 /// <p>This API allows you to connect WebRTC-enabled devices with Alexa display devices. When invoked, it sends the Alexa Session Description Protocol (SDP) offer to the master peer. The offer is delivered as soon as the master is connected to the specified signaling channel. This API returns the SDP answer from the connected master. If the master is not connected to the signaling channel, redelivery requests are made until the message expires.</p>

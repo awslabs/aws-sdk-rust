@@ -3,6 +3,17 @@ pub use crate::operation::authorize_cluster_security_group_ingress::_authorize_c
 
 pub use crate::operation::authorize_cluster_security_group_ingress::_authorize_cluster_security_group_ingress_input::AuthorizeClusterSecurityGroupIngressInputBuilder;
 
+impl AuthorizeClusterSecurityGroupIngressInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::authorize_cluster_security_group_ingress::AuthorizeClusterSecurityGroupIngressOutput, ::aws_smithy_http::result::SdkError<crate::operation::authorize_cluster_security_group_ingress::AuthorizeClusterSecurityGroupIngressError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.authorize_cluster_security_group_ingress();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AuthorizeClusterSecurityGroupIngress`.
 ///
 /// <p>Adds an inbound (ingress) rule to an Amazon Redshift security group. Depending on whether the application accessing your cluster is running on the Internet or an Amazon EC2 instance, you can authorize inbound access to either a Classless Interdomain Routing (CIDR)/Internet Protocol (IP) range or to an Amazon EC2 security group. You can add as many as 20 ingress rules to an Amazon Redshift security group.</p>

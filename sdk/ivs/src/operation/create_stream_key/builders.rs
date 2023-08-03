@@ -3,6 +3,23 @@ pub use crate::operation::create_stream_key::_create_stream_key_output::CreateSt
 
 pub use crate::operation::create_stream_key::_create_stream_key_input::CreateStreamKeyInputBuilder;
 
+impl CreateStreamKeyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_stream_key::CreateStreamKeyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_stream_key::CreateStreamKeyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_stream_key();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateStreamKey`.
 ///
 /// <p>Creates a stream key, used to initiate a stream, for the specified channel ARN.</p>

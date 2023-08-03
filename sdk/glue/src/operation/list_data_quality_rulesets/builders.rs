@@ -3,6 +3,23 @@ pub use crate::operation::list_data_quality_rulesets::_list_data_quality_ruleset
 
 pub use crate::operation::list_data_quality_rulesets::_list_data_quality_rulesets_input::ListDataQualityRulesetsInputBuilder;
 
+impl ListDataQualityRulesetsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_data_quality_rulesets::ListDataQualityRulesetsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_data_quality_rulesets::ListDataQualityRulesetsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_data_quality_rulesets();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDataQualityRulesets`.
 ///
 /// <p>Returns a paginated list of rulesets for the specified list of Glue tables.</p>

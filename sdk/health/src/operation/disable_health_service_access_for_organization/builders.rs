@@ -3,6 +3,17 @@ pub use crate::operation::disable_health_service_access_for_organization::_disab
 
 pub use crate::operation::disable_health_service_access_for_organization::_disable_health_service_access_for_organization_input::DisableHealthServiceAccessForOrganizationInputBuilder;
 
+impl DisableHealthServiceAccessForOrganizationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::disable_health_service_access_for_organization::DisableHealthServiceAccessForOrganizationOutput, ::aws_smithy_http::result::SdkError<crate::operation::disable_health_service_access_for_organization::DisableHealthServiceAccessForOrganizationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.disable_health_service_access_for_organization();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisableHealthServiceAccessForOrganization`.
 ///
 /// <p>Disables Health from working with Organizations. To call this operation, you must sign in to the organization's management account. For more information, see <a href="https://docs.aws.amazon.com/health/latest/ug/aggregate-events.html">Aggregating Health events</a> in the <i>Health User Guide</i>.</p>

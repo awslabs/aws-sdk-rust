@@ -3,6 +3,23 @@ pub use crate::operation::search_skill_groups::_search_skill_groups_output::Sear
 
 pub use crate::operation::search_skill_groups::_search_skill_groups_input::SearchSkillGroupsInputBuilder;
 
+impl SearchSkillGroupsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::search_skill_groups::SearchSkillGroupsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::search_skill_groups::SearchSkillGroupsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.search_skill_groups();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SearchSkillGroups`.
 ///
 /// <p>Searches skill groups and lists the ones that meet a set of filter and sort criteria.</p>

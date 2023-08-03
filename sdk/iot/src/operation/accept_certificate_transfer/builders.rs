@@ -3,6 +3,23 @@ pub use crate::operation::accept_certificate_transfer::_accept_certificate_trans
 
 pub use crate::operation::accept_certificate_transfer::_accept_certificate_transfer_input::AcceptCertificateTransferInputBuilder;
 
+impl AcceptCertificateTransferInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::accept_certificate_transfer::AcceptCertificateTransferOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::accept_certificate_transfer::AcceptCertificateTransferError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.accept_certificate_transfer();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AcceptCertificateTransfer`.
 ///
 /// <p>Accepts a pending certificate transfer. The default state of the certificate is INACTIVE.</p>

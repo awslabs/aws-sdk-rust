@@ -3,6 +3,23 @@ pub use crate::operation::get_policy_template::_get_policy_template_output::GetP
 
 pub use crate::operation::get_policy_template::_get_policy_template_input::GetPolicyTemplateInputBuilder;
 
+impl GetPolicyTemplateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_policy_template::GetPolicyTemplateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_policy_template::GetPolicyTemplateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_policy_template();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetPolicyTemplate`.
 ///
 /// <p>Retrieve the details for the specified policy template in the specified policy store.</p>

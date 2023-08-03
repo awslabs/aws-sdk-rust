@@ -3,6 +3,23 @@ pub use crate::operation::list_channel_groups::_list_channel_groups_output::List
 
 pub use crate::operation::list_channel_groups::_list_channel_groups_input::ListChannelGroupsInputBuilder;
 
+impl ListChannelGroupsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_channel_groups::ListChannelGroupsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_channel_groups::ListChannelGroupsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_channel_groups();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListChannelGroups`.
 ///
 /// <p>Retrieves all channel groups that are configured in AWS Elemental MediaPackage, including the channels and origin endpoints that are associated with it.</p>

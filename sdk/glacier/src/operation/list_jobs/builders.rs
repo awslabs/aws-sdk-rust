@@ -3,6 +3,23 @@ pub use crate::operation::list_jobs::_list_jobs_output::ListJobsOutputBuilder;
 
 pub use crate::operation::list_jobs::_list_jobs_input::ListJobsInputBuilder;
 
+impl ListJobsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_jobs::ListJobsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_jobs::ListJobsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_jobs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListJobs`.
 ///
 /// <p>This operation lists jobs for a vault, including jobs that are in-progress and jobs that have recently finished. The List Job operation returns a list of these jobs sorted by job initiation time.</p> <note>

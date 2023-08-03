@@ -3,6 +3,23 @@ pub use crate::operation::get_account_settings::_get_account_settings_output::Ge
 
 pub use crate::operation::get_account_settings::_get_account_settings_input::GetAccountSettingsInputBuilder;
 
+impl GetAccountSettingsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_account_settings::GetAccountSettingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_account_settings::GetAccountSettingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_account_settings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetAccountSettings`.
 ///
 /// <p>Get detail data for Proton account-wide settings.</p>

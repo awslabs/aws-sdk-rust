@@ -3,6 +3,17 @@ pub use crate::operation::set_load_balancer_policies_of_listener::_set_load_bala
 
 pub use crate::operation::set_load_balancer_policies_of_listener::_set_load_balancer_policies_of_listener_input::SetLoadBalancerPoliciesOfListenerInputBuilder;
 
+impl SetLoadBalancerPoliciesOfListenerInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::set_load_balancer_policies_of_listener::SetLoadBalancerPoliciesOfListenerOutput, ::aws_smithy_http::result::SdkError<crate::operation::set_load_balancer_policies_of_listener::SetLoadBalancerPoliciesOfListenerError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.set_load_balancer_policies_of_listener();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SetLoadBalancerPoliciesOfListener`.
 ///
 /// <p>Replaces the current set of policies for the specified load balancer port with the specified set of policies.</p>

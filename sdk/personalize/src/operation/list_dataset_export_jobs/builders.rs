@@ -3,6 +3,23 @@ pub use crate::operation::list_dataset_export_jobs::_list_dataset_export_jobs_ou
 
 pub use crate::operation::list_dataset_export_jobs::_list_dataset_export_jobs_input::ListDatasetExportJobsInputBuilder;
 
+impl ListDatasetExportJobsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_dataset_export_jobs::ListDatasetExportJobsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_dataset_export_jobs::ListDatasetExportJobsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_dataset_export_jobs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDatasetExportJobs`.
 ///
 /// <p>Returns a list of dataset export jobs that use the given dataset. When a dataset is not specified, all the dataset export jobs associated with the account are listed. The response provides the properties for each dataset export job, including the Amazon Resource Name (ARN). For more information on dataset export jobs, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetExportJob.html">CreateDatasetExportJob</a>. For more information on datasets, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDataset.html">CreateDataset</a>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_contact_evaluation::_describe_contact_evaluat
 
 pub use crate::operation::describe_contact_evaluation::_describe_contact_evaluation_input::DescribeContactEvaluationInputBuilder;
 
+impl DescribeContactEvaluationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_contact_evaluation::DescribeContactEvaluationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_contact_evaluation::DescribeContactEvaluationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_contact_evaluation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeContactEvaluation`.
 ///
 /// <p>Describes a contact evaluation in the specified Amazon Connect instance.</p>

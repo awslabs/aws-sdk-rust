@@ -3,6 +3,23 @@ pub use crate::operation::update_response_plan::_update_response_plan_output::Up
 
 pub use crate::operation::update_response_plan::_update_response_plan_input::UpdateResponsePlanInputBuilder;
 
+impl UpdateResponsePlanInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_response_plan::UpdateResponsePlanOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_response_plan::UpdateResponsePlanError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_response_plan();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateResponsePlan`.
 ///
 /// <p>Updates the specified response plan.</p>

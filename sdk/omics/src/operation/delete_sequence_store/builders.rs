@@ -3,6 +3,23 @@ pub use crate::operation::delete_sequence_store::_delete_sequence_store_output::
 
 pub use crate::operation::delete_sequence_store::_delete_sequence_store_input::DeleteSequenceStoreInputBuilder;
 
+impl DeleteSequenceStoreInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_sequence_store::DeleteSequenceStoreOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_sequence_store::DeleteSequenceStoreError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_sequence_store();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteSequenceStore`.
 ///
 /// <p>Deletes a sequence store.</p>

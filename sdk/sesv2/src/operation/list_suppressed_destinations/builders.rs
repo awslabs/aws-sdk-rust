@@ -3,6 +3,23 @@ pub use crate::operation::list_suppressed_destinations::_list_suppressed_destina
 
 pub use crate::operation::list_suppressed_destinations::_list_suppressed_destinations_input::ListSuppressedDestinationsInputBuilder;
 
+impl ListSuppressedDestinationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_suppressed_destinations::ListSuppressedDestinationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_suppressed_destinations::ListSuppressedDestinationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_suppressed_destinations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListSuppressedDestinations`.
 ///
 /// <p>Retrieves a list of email addresses that are on the suppression list for your account.</p>

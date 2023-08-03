@@ -3,6 +3,23 @@ pub use crate::operation::create_campaign::_create_campaign_output::CreateCampai
 
 pub use crate::operation::create_campaign::_create_campaign_input::CreateCampaignInputBuilder;
 
+impl CreateCampaignInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_campaign::CreateCampaignOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_campaign::CreateCampaignError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_campaign();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateCampaign`.
 ///
 /// <p>Creates a new campaign for an application or updates the settings of an existing campaign for an application.</p>

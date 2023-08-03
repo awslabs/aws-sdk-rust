@@ -3,6 +3,23 @@ pub use crate::operation::create_partition_index::_create_partition_index_output
 
 pub use crate::operation::create_partition_index::_create_partition_index_input::CreatePartitionIndexInputBuilder;
 
+impl CreatePartitionIndexInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_partition_index::CreatePartitionIndexOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_partition_index::CreatePartitionIndexError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_partition_index();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreatePartitionIndex`.
 ///
 /// <p>Creates a specified partition index in an existing table.</p>

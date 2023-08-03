@@ -3,6 +3,23 @@ pub use crate::operation::get_instance_access_details::_get_instance_access_deta
 
 pub use crate::operation::get_instance_access_details::_get_instance_access_details_input::GetInstanceAccessDetailsInputBuilder;
 
+impl GetInstanceAccessDetailsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_instance_access_details::GetInstanceAccessDetailsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_instance_access_details::GetInstanceAccessDetailsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_instance_access_details();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetInstanceAccessDetails`.
 ///
 /// <p>Returns temporary SSH keys you can use to connect to a specific virtual private server, or <i>instance</i>.</p>

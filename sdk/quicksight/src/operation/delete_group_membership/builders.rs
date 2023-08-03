@@ -3,6 +3,23 @@ pub use crate::operation::delete_group_membership::_delete_group_membership_outp
 
 pub use crate::operation::delete_group_membership::_delete_group_membership_input::DeleteGroupMembershipInputBuilder;
 
+impl DeleteGroupMembershipInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_group_membership::DeleteGroupMembershipOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_group_membership::DeleteGroupMembershipError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_group_membership();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteGroupMembership`.
 ///
 /// <p>Removes a user from a group so that the user is no longer a member of the group.</p>

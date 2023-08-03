@@ -3,6 +3,23 @@ pub use crate::operation::get_cluster::_get_cluster_output::GetClusterOutputBuil
 
 pub use crate::operation::get_cluster::_get_cluster_input::GetClusterInputBuilder;
 
+impl GetClusterInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_cluster::GetClusterOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_cluster::GetClusterError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_cluster();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetCluster`.
 ///
 /// <p>Returns information about a specific Elastic DocumentDB cluster.</p>

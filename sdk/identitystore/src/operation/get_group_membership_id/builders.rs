@@ -3,6 +3,23 @@ pub use crate::operation::get_group_membership_id::_get_group_membership_id_outp
 
 pub use crate::operation::get_group_membership_id::_get_group_membership_id_input::GetGroupMembershipIdInputBuilder;
 
+impl GetGroupMembershipIdInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_group_membership_id::GetGroupMembershipIdOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_group_membership_id::GetGroupMembershipIdError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_group_membership_id();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetGroupMembershipId`.
 ///
 /// <p>Retrieves the <code>MembershipId</code> in an identity store.</p>

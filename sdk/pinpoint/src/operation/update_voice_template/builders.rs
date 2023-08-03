@@ -3,6 +3,23 @@ pub use crate::operation::update_voice_template::_update_voice_template_output::
 
 pub use crate::operation::update_voice_template::_update_voice_template_input::UpdateVoiceTemplateInputBuilder;
 
+impl UpdateVoiceTemplateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_voice_template::UpdateVoiceTemplateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_voice_template::UpdateVoiceTemplateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_voice_template();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateVoiceTemplate`.
 ///
 /// <p>Updates an existing message template for messages that are sent through the voice channel.</p>

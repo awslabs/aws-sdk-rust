@@ -3,6 +3,23 @@ pub use crate::operation::create_mesh::_create_mesh_output::CreateMeshOutputBuil
 
 pub use crate::operation::create_mesh::_create_mesh_input::CreateMeshInputBuilder;
 
+impl CreateMeshInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_mesh::CreateMeshOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_mesh::CreateMeshError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_mesh();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateMesh`.
 ///
 /// <p>Creates a service mesh.</p>

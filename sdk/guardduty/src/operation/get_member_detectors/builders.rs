@@ -3,6 +3,23 @@ pub use crate::operation::get_member_detectors::_get_member_detectors_output::Ge
 
 pub use crate::operation::get_member_detectors::_get_member_detectors_input::GetMemberDetectorsInputBuilder;
 
+impl GetMemberDetectorsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_member_detectors::GetMemberDetectorsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_member_detectors::GetMemberDetectorsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_member_detectors();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetMemberDetectors`.
 ///
 /// <p>Describes which data sources are enabled for the member account's detector.</p>

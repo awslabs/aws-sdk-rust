@@ -3,6 +3,23 @@ pub use crate::operation::update_address_book::_update_address_book_output::Upda
 
 pub use crate::operation::update_address_book::_update_address_book_input::UpdateAddressBookInputBuilder;
 
+impl UpdateAddressBookInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_address_book::UpdateAddressBookOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_address_book::UpdateAddressBookError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_address_book();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateAddressBook`.
 ///
 /// <p>Updates address book details by the address book ARN.</p>

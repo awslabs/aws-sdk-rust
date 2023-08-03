@@ -3,6 +3,23 @@ pub use crate::operation::create_service_instance::_create_service_instance_outp
 
 pub use crate::operation::create_service_instance::_create_service_instance_input::CreateServiceInstanceInputBuilder;
 
+impl CreateServiceInstanceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_service_instance::CreateServiceInstanceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_service_instance::CreateServiceInstanceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_service_instance();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateServiceInstance`.
 ///
 /// <p>Create a service instance.</p>

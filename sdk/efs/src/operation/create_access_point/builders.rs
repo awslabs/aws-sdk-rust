@@ -3,6 +3,23 @@ pub use crate::operation::create_access_point::_create_access_point_output::Crea
 
 pub use crate::operation::create_access_point::_create_access_point_input::CreateAccessPointInputBuilder;
 
+impl CreateAccessPointInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_access_point::CreateAccessPointOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_access_point::CreateAccessPointError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_access_point();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateAccessPoint`.
 ///
 /// <p>Creates an EFS access point. An access point is an application-specific view into an EFS file system that applies an operating system user and group, and a file system path, to any file system request made through the access point. The operating system user and group override any identity information provided by the NFS client. The file system path is exposed as the access point's root directory. Applications using the access point can only access data in the application's own directory and any subdirectories. To learn more, see <a href="https://docs.aws.amazon.com/efs/latest/ug/efs-access-points.html">Mounting a file system using EFS access points</a>.</p> <note>

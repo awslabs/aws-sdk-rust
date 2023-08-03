@@ -3,6 +3,23 @@ pub use crate::operation::list_frameworks::_list_frameworks_output::ListFramewor
 
 pub use crate::operation::list_frameworks::_list_frameworks_input::ListFrameworksInputBuilder;
 
+impl ListFrameworksInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_frameworks::ListFrameworksOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_frameworks::ListFrameworksError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_frameworks();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListFrameworks`.
 ///
 /// <p>Returns a list of all frameworks for an Amazon Web Services account and Amazon Web Services Region.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_workforces::_list_workforces_output::ListWorkforc
 
 pub use crate::operation::list_workforces::_list_workforces_input::ListWorkforcesInputBuilder;
 
+impl ListWorkforcesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_workforces::ListWorkforcesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_workforces::ListWorkforcesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_workforces();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListWorkforces`.
 ///
 /// <p>Use this operation to list all private and vendor workforces in an Amazon Web Services Region. Note that you can only have one private workforce per Amazon Web Services Region.</p>

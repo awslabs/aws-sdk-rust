@@ -3,6 +3,23 @@ pub use crate::operation::update_custom_key_store::_update_custom_key_store_outp
 
 pub use crate::operation::update_custom_key_store::_update_custom_key_store_input::UpdateCustomKeyStoreInputBuilder;
 
+impl UpdateCustomKeyStoreInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_custom_key_store::UpdateCustomKeyStoreOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_custom_key_store::UpdateCustomKeyStoreError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_custom_key_store();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateCustomKeyStore`.
 ///
 /// <p>Changes the properties of a custom key store. You can use this operation to change the properties of an CloudHSM key store or an external key store.</p>

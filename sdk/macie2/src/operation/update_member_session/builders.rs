@@ -3,6 +3,23 @@ pub use crate::operation::update_member_session::_update_member_session_output::
 
 pub use crate::operation::update_member_session::_update_member_session_input::UpdateMemberSessionInputBuilder;
 
+impl UpdateMemberSessionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_member_session::UpdateMemberSessionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_member_session::UpdateMemberSessionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_member_session();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateMemberSession`.
 ///
 /// <p>Enables an Amazon Macie administrator to suspend or re-enable Macie for a member account.</p>

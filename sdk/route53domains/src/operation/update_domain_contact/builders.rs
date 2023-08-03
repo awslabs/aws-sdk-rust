@@ -3,6 +3,23 @@ pub use crate::operation::update_domain_contact::_update_domain_contact_output::
 
 pub use crate::operation::update_domain_contact::_update_domain_contact_input::UpdateDomainContactInputBuilder;
 
+impl UpdateDomainContactInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_domain_contact::UpdateDomainContactOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_domain_contact::UpdateDomainContactError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_domain_contact();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateDomainContact`.
 ///
 /// <p>This operation updates the contact information for a particular domain. You must specify information for at least one contact: registrant, administrator, or technical.</p>

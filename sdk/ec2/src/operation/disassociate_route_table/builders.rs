@@ -3,6 +3,23 @@ pub use crate::operation::disassociate_route_table::_disassociate_route_table_ou
 
 pub use crate::operation::disassociate_route_table::_disassociate_route_table_input::DisassociateRouteTableInputBuilder;
 
+impl DisassociateRouteTableInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_route_table::DisassociateRouteTableOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_route_table::DisassociateRouteTableError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disassociate_route_table();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateRouteTable`.
 ///
 /// <p>Disassociates a subnet or gateway from a route table.</p>

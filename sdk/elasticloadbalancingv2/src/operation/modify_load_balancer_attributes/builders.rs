@@ -3,6 +3,23 @@ pub use crate::operation::modify_load_balancer_attributes::_modify_load_balancer
 
 pub use crate::operation::modify_load_balancer_attributes::_modify_load_balancer_attributes_input::ModifyLoadBalancerAttributesInputBuilder;
 
+impl ModifyLoadBalancerAttributesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_load_balancer_attributes::ModifyLoadBalancerAttributesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_load_balancer_attributes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyLoadBalancerAttributes`.
 ///
 /// <p>Modifies the specified attributes of the specified Application Load Balancer, Network Load Balancer, or Gateway Load Balancer.</p>

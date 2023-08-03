@@ -3,6 +3,23 @@ pub use crate::operation::create_index::_create_index_output::CreateIndexOutputB
 
 pub use crate::operation::create_index::_create_index_input::CreateIndexInputBuilder;
 
+impl CreateIndexInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_index::CreateIndexOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_index::CreateIndexError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_index();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateIndex`.
 ///
 /// <p>Creates an Amazon Kendra index. Index creation is an asynchronous API. To determine if index creation has completed, check the <code>Status</code> field returned from a call to <code>DescribeIndex</code>. The <code>Status</code> field is set to <code>ACTIVE</code> when the index is ready to use.</p>

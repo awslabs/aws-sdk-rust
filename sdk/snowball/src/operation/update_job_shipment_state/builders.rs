@@ -3,6 +3,23 @@ pub use crate::operation::update_job_shipment_state::_update_job_shipment_state_
 
 pub use crate::operation::update_job_shipment_state::_update_job_shipment_state_input::UpdateJobShipmentStateInputBuilder;
 
+impl UpdateJobShipmentStateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_job_shipment_state::UpdateJobShipmentStateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_job_shipment_state::UpdateJobShipmentStateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_job_shipment_state();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateJobShipmentState`.
 ///
 /// <p>Updates the state when a shipment state changes to a different state.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::import_model::_import_model_output::ImportModelOutputB
 
 pub use crate::operation::import_model::_import_model_input::ImportModelInputBuilder;
 
+impl ImportModelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::import_model::ImportModelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::import_model::ImportModelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.import_model();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ImportModel`.
 ///
 /// <p>Creates a new custom model that replicates a source custom model that you import. The source model can be in your Amazon Web Services account or another one.</p>

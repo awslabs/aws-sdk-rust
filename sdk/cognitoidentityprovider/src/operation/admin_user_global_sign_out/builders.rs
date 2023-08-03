@@ -3,6 +3,23 @@ pub use crate::operation::admin_user_global_sign_out::_admin_user_global_sign_ou
 
 pub use crate::operation::admin_user_global_sign_out::_admin_user_global_sign_out_input::AdminUserGlobalSignOutInputBuilder;
 
+impl AdminUserGlobalSignOutInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::admin_user_global_sign_out::AdminUserGlobalSignOutOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::admin_user_global_sign_out::AdminUserGlobalSignOutError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.admin_user_global_sign_out();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AdminUserGlobalSignOut`.
 ///
 /// <p>Signs out a user from all devices. You must sign <code>AdminUserGlobalSignOut</code> requests with Amazon Web Services credentials. It also invalidates all refresh tokens that Amazon Cognito has issued to a user. The user's current access and ID tokens remain valid until they expire. By default, access and ID tokens expire one hour after they're issued. A user can still use a hosted UI cookie to retrieve new tokens for the duration of the cookie validity period of 1 hour.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_association::_describe_association_output::De
 
 pub use crate::operation::describe_association::_describe_association_input::DescribeAssociationInputBuilder;
 
+impl DescribeAssociationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_association::DescribeAssociationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_association::DescribeAssociationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_association();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAssociation`.
 ///
 /// <p>Describes the association for the specified target or managed node. If you created the association by using the <code>Targets</code> parameter, then you must retrieve the association by using the association ID.</p>

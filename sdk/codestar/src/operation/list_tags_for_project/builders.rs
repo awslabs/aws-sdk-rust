@@ -3,6 +3,23 @@ pub use crate::operation::list_tags_for_project::_list_tags_for_project_output::
 
 pub use crate::operation::list_tags_for_project::_list_tags_for_project_input::ListTagsForProjectInputBuilder;
 
+impl ListTagsForProjectInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_tags_for_project::ListTagsForProjectOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_tags_for_project::ListTagsForProjectError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_tags_for_project();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListTagsForProject`.
 ///
 /// <p>Gets the tags for a project.</p>

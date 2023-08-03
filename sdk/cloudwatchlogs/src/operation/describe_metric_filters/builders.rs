@@ -3,6 +3,23 @@ pub use crate::operation::describe_metric_filters::_describe_metric_filters_outp
 
 pub use crate::operation::describe_metric_filters::_describe_metric_filters_input::DescribeMetricFiltersInputBuilder;
 
+impl DescribeMetricFiltersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_metric_filters::DescribeMetricFiltersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_metric_filters::DescribeMetricFiltersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_metric_filters();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeMetricFilters`.
 ///
 /// <p>Lists the specified metric filters. You can list all of the metric filters or filter the results by log name, prefix, metric name, or metric namespace. The results are ASCII-sorted by filter name.</p>

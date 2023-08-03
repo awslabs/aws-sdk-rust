@@ -3,6 +3,23 @@ pub use crate::operation::update_smb_local_groups::_update_smb_local_groups_outp
 
 pub use crate::operation::update_smb_local_groups::_update_smb_local_groups_input::UpdateSmbLocalGroupsInputBuilder;
 
+impl UpdateSmbLocalGroupsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_smb_local_groups::UpdateSmbLocalGroupsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_smb_local_groups::UpdateSMBLocalGroupsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_smb_local_groups();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateSMBLocalGroups`.
 ///
 /// <p>Updates the list of Active Directory users and groups that have special permissions for SMB file shares on the gateway.</p>

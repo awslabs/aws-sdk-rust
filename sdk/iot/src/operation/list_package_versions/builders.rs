@@ -3,6 +3,23 @@ pub use crate::operation::list_package_versions::_list_package_versions_output::
 
 pub use crate::operation::list_package_versions::_list_package_versions_input::ListPackageVersionsInputBuilder;
 
+impl ListPackageVersionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_package_versions::ListPackageVersionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_package_versions::ListPackageVersionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_package_versions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListPackageVersions`.
 ///
 /// <p>Lists the software package versions associated to the account.</p>

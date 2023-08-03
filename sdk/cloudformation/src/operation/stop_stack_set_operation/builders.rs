@@ -3,6 +3,23 @@ pub use crate::operation::stop_stack_set_operation::_stop_stack_set_operation_ou
 
 pub use crate::operation::stop_stack_set_operation::_stop_stack_set_operation_input::StopStackSetOperationInputBuilder;
 
+impl StopStackSetOperationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_stack_set_operation::StopStackSetOperationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_stack_set_operation::StopStackSetOperationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_stack_set_operation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopStackSetOperation`.
 ///
 /// <p>Stops an in-progress operation on a stack set and its associated stack instances. StackSets will cancel all the unstarted stack instance deployments and wait for those are in-progress to complete.</p>

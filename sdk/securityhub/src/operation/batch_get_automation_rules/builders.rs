@@ -3,6 +3,23 @@ pub use crate::operation::batch_get_automation_rules::_batch_get_automation_rule
 
 pub use crate::operation::batch_get_automation_rules::_batch_get_automation_rules_input::BatchGetAutomationRulesInputBuilder;
 
+impl BatchGetAutomationRulesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_automation_rules::BatchGetAutomationRulesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_get_automation_rules::BatchGetAutomationRulesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_get_automation_rules();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchGetAutomationRules`.
 ///
 /// <p> Retrieves a list of details for automation rules based on rule Amazon Resource Names (ARNs). </p>

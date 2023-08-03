@@ -3,6 +3,23 @@ pub use crate::operation::list_state_machines::_list_state_machines_output::List
 
 pub use crate::operation::list_state_machines::_list_state_machines_input::ListStateMachinesInputBuilder;
 
+impl ListStateMachinesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_state_machines::ListStateMachinesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_state_machines::ListStateMachinesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_state_machines();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListStateMachines`.
 ///
 /// <p>Lists the existing state machines.</p>

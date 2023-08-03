@@ -3,6 +3,23 @@ pub use crate::operation::list_label_groups::_list_label_groups_output::ListLabe
 
 pub use crate::operation::list_label_groups::_list_label_groups_input::ListLabelGroupsInputBuilder;
 
+impl ListLabelGroupsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_label_groups::ListLabelGroupsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_label_groups::ListLabelGroupsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_label_groups();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListLabelGroups`.
 ///
 /// <p> Returns a list of the label groups. </p>

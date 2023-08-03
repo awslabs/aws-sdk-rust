@@ -3,6 +3,23 @@ pub use crate::operation::describe_db_proxy_target_groups::_describe_db_proxy_ta
 
 pub use crate::operation::describe_db_proxy_target_groups::_describe_db_proxy_target_groups_input::DescribeDbProxyTargetGroupsInputBuilder;
 
+impl DescribeDbProxyTargetGroupsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_db_proxy_target_groups::DescribeDbProxyTargetGroupsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_db_proxy_target_groups::DescribeDBProxyTargetGroupsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_db_proxy_target_groups();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeDBProxyTargetGroups`.
 ///
 /// <p>Returns information about DB proxy target groups, represented by <code>DBProxyTargetGroup</code> data structures.</p>

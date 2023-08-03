@@ -3,6 +3,23 @@ pub use crate::operation::deactivate_anomaly_detector::_deactivate_anomaly_detec
 
 pub use crate::operation::deactivate_anomaly_detector::_deactivate_anomaly_detector_input::DeactivateAnomalyDetectorInputBuilder;
 
+impl DeactivateAnomalyDetectorInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::deactivate_anomaly_detector::DeactivateAnomalyDetectorOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::deactivate_anomaly_detector::DeactivateAnomalyDetectorError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.deactivate_anomaly_detector();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeactivateAnomalyDetector`.
 ///
 /// <p>Deactivates an anomaly detector.</p>

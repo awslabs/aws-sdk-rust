@@ -3,6 +3,23 @@ pub use crate::operation::add_application_output::_add_application_output_output
 
 pub use crate::operation::add_application_output::_add_application_output_input::AddApplicationOutputInputBuilder;
 
+impl AddApplicationOutputInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::add_application_output::AddApplicationOutputOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::add_application_output::AddApplicationOutputError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.add_application_output();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AddApplicationOutput`.
 ///
 /// <p>Adds an external destination to your SQL-based Kinesis Data Analytics application.</p>

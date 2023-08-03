@@ -3,6 +3,23 @@ pub use crate::operation::create_target_group::_create_target_group_output::Crea
 
 pub use crate::operation::create_target_group::_create_target_group_input::CreateTargetGroupInputBuilder;
 
+impl CreateTargetGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_target_group::CreateTargetGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_target_group::CreateTargetGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_target_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateTargetGroup`.
 ///
 /// <p>Creates a target group. A target group is a collection of targets, or compute resources, that run your application or service. A target group can only be used by a single service.</p>

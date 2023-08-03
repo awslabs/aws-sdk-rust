@@ -3,6 +3,23 @@ pub use crate::operation::update_template_permissions::_update_template_permissi
 
 pub use crate::operation::update_template_permissions::_update_template_permissions_input::UpdateTemplatePermissionsInputBuilder;
 
+impl UpdateTemplatePermissionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_template_permissions::UpdateTemplatePermissionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_template_permissions::UpdateTemplatePermissionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_template_permissions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateTemplatePermissions`.
 ///
 /// <p>Updates the resource permissions for a template.</p>

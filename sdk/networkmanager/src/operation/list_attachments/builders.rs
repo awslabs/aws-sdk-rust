@@ -3,6 +3,23 @@ pub use crate::operation::list_attachments::_list_attachments_output::ListAttach
 
 pub use crate::operation::list_attachments::_list_attachments_input::ListAttachmentsInputBuilder;
 
+impl ListAttachmentsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_attachments::ListAttachmentsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_attachments::ListAttachmentsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_attachments();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAttachments`.
 ///
 /// <p>Returns a list of core network attachments.</p>

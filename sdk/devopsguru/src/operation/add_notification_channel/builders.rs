@@ -3,6 +3,23 @@ pub use crate::operation::add_notification_channel::_add_notification_channel_ou
 
 pub use crate::operation::add_notification_channel::_add_notification_channel_input::AddNotificationChannelInputBuilder;
 
+impl AddNotificationChannelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::add_notification_channel::AddNotificationChannelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::add_notification_channel::AddNotificationChannelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.add_notification_channel();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AddNotificationChannel`.
 ///
 /// <p> Adds a notification channel to DevOps Guru. A notification channel is used to notify you about important DevOps Guru events, such as when an insight is generated. </p>

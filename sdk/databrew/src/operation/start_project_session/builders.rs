@@ -3,6 +3,23 @@ pub use crate::operation::start_project_session::_start_project_session_output::
 
 pub use crate::operation::start_project_session::_start_project_session_input::StartProjectSessionInputBuilder;
 
+impl StartProjectSessionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_project_session::StartProjectSessionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_project_session::StartProjectSessionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_project_session();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartProjectSession`.
 ///
 /// <p>Creates an interactive session, enabling you to manipulate data in a DataBrew project.</p>

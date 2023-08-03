@@ -3,6 +3,23 @@ pub use crate::operation::create_usage_plan_key::_create_usage_plan_key_output::
 
 pub use crate::operation::create_usage_plan_key::_create_usage_plan_key_input::CreateUsagePlanKeyInputBuilder;
 
+impl CreateUsagePlanKeyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_usage_plan_key::CreateUsagePlanKeyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_usage_plan_key::CreateUsagePlanKeyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_usage_plan_key();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateUsagePlanKey`.
 ///
 /// <p>Creates a usage plan key for adding an existing API key to a usage plan.</p>

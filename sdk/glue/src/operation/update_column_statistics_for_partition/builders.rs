@@ -3,6 +3,17 @@ pub use crate::operation::update_column_statistics_for_partition::_update_column
 
 pub use crate::operation::update_column_statistics_for_partition::_update_column_statistics_for_partition_input::UpdateColumnStatisticsForPartitionInputBuilder;
 
+impl UpdateColumnStatisticsForPartitionInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::update_column_statistics_for_partition::UpdateColumnStatisticsForPartitionOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_column_statistics_for_partition::UpdateColumnStatisticsForPartitionError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.update_column_statistics_for_partition();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateColumnStatisticsForPartition`.
 ///
 /// <p>Creates or updates partition statistics of columns.</p>

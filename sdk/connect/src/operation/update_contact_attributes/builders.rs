@@ -3,6 +3,23 @@ pub use crate::operation::update_contact_attributes::_update_contact_attributes_
 
 pub use crate::operation::update_contact_attributes::_update_contact_attributes_input::UpdateContactAttributesInputBuilder;
 
+impl UpdateContactAttributesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_contact_attributes::UpdateContactAttributesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_contact_attributes::UpdateContactAttributesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_contact_attributes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateContactAttributes`.
 ///
 /// <p>Creates or updates user-defined contact attributes associated with the specified contact.</p>

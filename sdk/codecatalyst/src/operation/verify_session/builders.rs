@@ -3,6 +3,23 @@ pub use crate::operation::verify_session::_verify_session_output::VerifySessionO
 
 pub use crate::operation::verify_session::_verify_session_input::VerifySessionInputBuilder;
 
+impl VerifySessionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::verify_session::VerifySessionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::verify_session::VerifySessionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.verify_session();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `VerifySession`.
 ///
 /// <p>Verifies whether the calling user has a valid Amazon CodeCatalyst login and session. If successful, this returns the ID of the user in Amazon CodeCatalyst.</p>

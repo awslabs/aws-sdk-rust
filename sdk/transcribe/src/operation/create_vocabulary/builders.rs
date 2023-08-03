@@ -3,6 +3,23 @@ pub use crate::operation::create_vocabulary::_create_vocabulary_output::CreateVo
 
 pub use crate::operation::create_vocabulary::_create_vocabulary_input::CreateVocabularyInputBuilder;
 
+impl CreateVocabularyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_vocabulary::CreateVocabularyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_vocabulary::CreateVocabularyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_vocabulary();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateVocabulary`.
 ///
 /// <p>Creates a new custom vocabulary.</p>

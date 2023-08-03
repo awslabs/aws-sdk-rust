@@ -3,6 +3,23 @@ pub use crate::operation::create_configuration_profile::_create_configuration_pr
 
 pub use crate::operation::create_configuration_profile::_create_configuration_profile_input::CreateConfigurationProfileInputBuilder;
 
+impl CreateConfigurationProfileInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_configuration_profile::CreateConfigurationProfileOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_configuration_profile::CreateConfigurationProfileError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_configuration_profile();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateConfigurationProfile`.
 ///
 /// <p>Creates a configuration profile, which is information that enables AppConfig to access the configuration source. Valid configuration sources include the following:</p>

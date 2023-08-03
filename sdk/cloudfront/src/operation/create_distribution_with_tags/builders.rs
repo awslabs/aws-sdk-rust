@@ -3,6 +3,23 @@ pub use crate::operation::create_distribution_with_tags::_create_distribution_wi
 
 pub use crate::operation::create_distribution_with_tags::_create_distribution_with_tags_input::CreateDistributionWithTagsInputBuilder;
 
+impl CreateDistributionWithTagsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_distribution_with_tags::CreateDistributionWithTagsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_distribution_with_tags::CreateDistributionWithTagsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_distribution_with_tags();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateDistributionWithTags`.
 ///
 /// <p>Create a new distribution with tags.</p>

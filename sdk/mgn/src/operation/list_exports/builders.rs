@@ -3,6 +3,23 @@ pub use crate::operation::list_exports::_list_exports_output::ListExportsOutputB
 
 pub use crate::operation::list_exports::_list_exports_input::ListExportsInputBuilder;
 
+impl ListExportsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_exports::ListExportsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_exports::ListExportsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_exports();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListExports`.
 ///
 /// <p>List exports.</p>

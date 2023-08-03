@@ -3,6 +3,23 @@ pub use crate::operation::scan::_scan_output::ScanOutputBuilder;
 
 pub use crate::operation::scan::_scan_input::ScanInputBuilder;
 
+impl ScanInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::scan::ScanOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::scan::ScanError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.scan();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `Scan`.
 ///
 /// <p>The <code>Scan</code> operation returns one or more items and item attributes by accessing every item in a table or a secondary index. To have DynamoDB return fewer items, you can provide a <code>FilterExpression</code> operation.</p>

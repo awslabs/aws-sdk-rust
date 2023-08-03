@@ -3,6 +3,23 @@ pub use crate::operation::put_mailbox_permissions::_put_mailbox_permissions_outp
 
 pub use crate::operation::put_mailbox_permissions::_put_mailbox_permissions_input::PutMailboxPermissionsInputBuilder;
 
+impl PutMailboxPermissionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_mailbox_permissions::PutMailboxPermissionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_mailbox_permissions::PutMailboxPermissionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_mailbox_permissions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutMailboxPermissions`.
 ///
 /// <p>Sets permissions for a user, group, or resource. This replaces any pre-existing permissions.</p>

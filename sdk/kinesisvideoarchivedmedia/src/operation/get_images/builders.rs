@@ -3,6 +3,23 @@ pub use crate::operation::get_images::_get_images_output::GetImagesOutputBuilder
 
 pub use crate::operation::get_images::_get_images_input::GetImagesInputBuilder;
 
+impl GetImagesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_images::GetImagesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_images::GetImagesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_images();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetImages`.
 ///
 /// <p>Retrieves a list of Images corresponding to each timestamp for a given time range, sampling interval, and image format configuration.</p>

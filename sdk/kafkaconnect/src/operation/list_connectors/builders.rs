@@ -3,6 +3,23 @@ pub use crate::operation::list_connectors::_list_connectors_output::ListConnecto
 
 pub use crate::operation::list_connectors::_list_connectors_input::ListConnectorsInputBuilder;
 
+impl ListConnectorsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_connectors::ListConnectorsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_connectors::ListConnectorsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_connectors();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListConnectors`.
 ///
 /// <p>Returns a list of all the connectors in this account and Region. The list is limited to connectors whose name starts with the specified prefix. The response also includes a description of each of the listed connectors.</p>

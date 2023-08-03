@@ -3,6 +3,23 @@ pub use crate::operation::disassociate_health_check::_disassociate_health_check_
 
 pub use crate::operation::disassociate_health_check::_disassociate_health_check_input::DisassociateHealthCheckInputBuilder;
 
+impl DisassociateHealthCheckInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_health_check::DisassociateHealthCheckOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_health_check::DisassociateHealthCheckError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disassociate_health_check();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateHealthCheck`.
 ///
 /// <p>Removes health-based detection from the Shield Advanced protection for a resource. Shield Advanced health-based detection uses the health of your Amazon Web Services resource to improve responsiveness and accuracy in attack detection and response. </p>

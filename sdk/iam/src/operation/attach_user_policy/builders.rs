@@ -3,6 +3,23 @@ pub use crate::operation::attach_user_policy::_attach_user_policy_output::Attach
 
 pub use crate::operation::attach_user_policy::_attach_user_policy_input::AttachUserPolicyInputBuilder;
 
+impl AttachUserPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::attach_user_policy::AttachUserPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::attach_user_policy::AttachUserPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.attach_user_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AttachUserPolicy`.
 ///
 /// <p>Attaches the specified managed policy to the specified user.</p>

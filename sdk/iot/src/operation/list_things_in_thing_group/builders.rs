@@ -3,6 +3,23 @@ pub use crate::operation::list_things_in_thing_group::_list_things_in_thing_grou
 
 pub use crate::operation::list_things_in_thing_group::_list_things_in_thing_group_input::ListThingsInThingGroupInputBuilder;
 
+impl ListThingsInThingGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_things_in_thing_group::ListThingsInThingGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_things_in_thing_group::ListThingsInThingGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_things_in_thing_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListThingsInThingGroup`.
 ///
 /// <p>Lists the things in the specified group.</p>

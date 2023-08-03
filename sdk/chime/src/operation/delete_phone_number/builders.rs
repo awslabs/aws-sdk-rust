@@ -3,6 +3,23 @@ pub use crate::operation::delete_phone_number::_delete_phone_number_output::Dele
 
 pub use crate::operation::delete_phone_number::_delete_phone_number_input::DeletePhoneNumberInputBuilder;
 
+impl DeletePhoneNumberInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_phone_number::DeletePhoneNumberOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_phone_number::DeletePhoneNumberError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_phone_number();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeletePhoneNumber`.
 ///
 /// <p>Moves the specified phone number into the <b>Deletion queue</b>. A phone number must be disassociated from any users or Amazon Chime Voice Connectors before it can be deleted.</p>

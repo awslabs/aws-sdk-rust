@@ -3,6 +3,23 @@ pub use crate::operation::start_crawler::_start_crawler_output::StartCrawlerOutp
 
 pub use crate::operation::start_crawler::_start_crawler_input::StartCrawlerInputBuilder;
 
+impl StartCrawlerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_crawler::StartCrawlerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_crawler::StartCrawlerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_crawler();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartCrawler`.
 ///
 /// <p>Starts a crawl using the specified crawler, regardless of what is scheduled. If the crawler is already running, returns a <a href="https://docs.aws.amazon.com/glue/latest/dg/aws-glue-api-exceptions.html#aws-glue-api-exceptions-CrawlerRunningException">CrawlerRunningException</a>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_spot_instance_requests::_describe_spot_instan
 
 pub use crate::operation::describe_spot_instance_requests::_describe_spot_instance_requests_input::DescribeSpotInstanceRequestsInputBuilder;
 
+impl DescribeSpotInstanceRequestsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_spot_instance_requests::DescribeSpotInstanceRequestsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_spot_instance_requests::DescribeSpotInstanceRequestsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_spot_instance_requests();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeSpotInstanceRequests`.
 ///
 /// <p>Describes the specified Spot Instance requests.</p>

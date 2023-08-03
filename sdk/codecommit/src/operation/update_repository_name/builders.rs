@@ -3,6 +3,23 @@ pub use crate::operation::update_repository_name::_update_repository_name_output
 
 pub use crate::operation::update_repository_name::_update_repository_name_input::UpdateRepositoryNameInputBuilder;
 
+impl UpdateRepositoryNameInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_repository_name::UpdateRepositoryNameOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_repository_name::UpdateRepositoryNameError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_repository_name();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateRepositoryName`.
 ///
 /// <p>Renames a repository. The repository name must be unique across the calling AWS account. Repository names are limited to 100 alphanumeric, dash, and underscore characters, and cannot include certain characters. The suffix .git is prohibited. For more information about the limits on repository names, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/limits.html">Limits</a> in the AWS CodeCommit User Guide.</p>

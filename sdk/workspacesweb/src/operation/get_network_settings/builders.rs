@@ -3,6 +3,23 @@ pub use crate::operation::get_network_settings::_get_network_settings_output::Ge
 
 pub use crate::operation::get_network_settings::_get_network_settings_input::GetNetworkSettingsInputBuilder;
 
+impl GetNetworkSettingsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_network_settings::GetNetworkSettingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_network_settings::GetNetworkSettingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_network_settings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetNetworkSettings`.
 ///
 /// <p>Gets the network settings.</p>

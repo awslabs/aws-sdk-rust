@@ -3,6 +3,23 @@ pub use crate::operation::create_launch::_create_launch_output::CreateLaunchOutp
 
 pub use crate::operation::create_launch::_create_launch_input::CreateLaunchInputBuilder;
 
+impl CreateLaunchInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_launch::CreateLaunchOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_launch::CreateLaunchError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_launch();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateLaunch`.
 ///
 /// <p>Creates a <i>launch</i> of a given feature. Before you create a launch, you must create the feature to use for the launch.</p>

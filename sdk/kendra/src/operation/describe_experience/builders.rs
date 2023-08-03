@@ -3,6 +3,23 @@ pub use crate::operation::describe_experience::_describe_experience_output::Desc
 
 pub use crate::operation::describe_experience::_describe_experience_input::DescribeExperienceInputBuilder;
 
+impl DescribeExperienceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_experience::DescribeExperienceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_experience::DescribeExperienceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_experience();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeExperience`.
 ///
 /// <p>Gets information about your Amazon Kendra experience such as a search application. For more information on creating a search application experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building a search experience with no code</a>.</p>

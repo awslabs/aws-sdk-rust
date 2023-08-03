@@ -3,6 +3,23 @@ pub use crate::operation::detect_dominant_language::_detect_dominant_language_ou
 
 pub use crate::operation::detect_dominant_language::_detect_dominant_language_input::DetectDominantLanguageInputBuilder;
 
+impl DetectDominantLanguageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::detect_dominant_language::DetectDominantLanguageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::detect_dominant_language::DetectDominantLanguageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.detect_dominant_language();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DetectDominantLanguage`.
 ///
 /// <p>Determines the dominant language of the input text. For a list of languages that Amazon Comprehend can detect, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-languages.html">Amazon Comprehend Supported Languages</a>. </p>

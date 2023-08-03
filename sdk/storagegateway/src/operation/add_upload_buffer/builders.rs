@@ -3,6 +3,23 @@ pub use crate::operation::add_upload_buffer::_add_upload_buffer_output::AddUploa
 
 pub use crate::operation::add_upload_buffer::_add_upload_buffer_input::AddUploadBufferInputBuilder;
 
+impl AddUploadBufferInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::add_upload_buffer::AddUploadBufferOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::add_upload_buffer::AddUploadBufferError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.add_upload_buffer();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AddUploadBuffer`.
 ///
 /// <p>Configures one or more gateway local disks as upload buffer for a specified gateway. This operation is supported for the stored volume, cached volume, and tape gateway types.</p>

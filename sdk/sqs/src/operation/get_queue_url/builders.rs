@@ -3,6 +3,23 @@ pub use crate::operation::get_queue_url::_get_queue_url_output::GetQueueUrlOutpu
 
 pub use crate::operation::get_queue_url::_get_queue_url_input::GetQueueUrlInputBuilder;
 
+impl GetQueueUrlInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_queue_url::GetQueueUrlOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_queue_url::GetQueueUrlError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_queue_url();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetQueueUrl`.
 ///
 /// <p>Returns the URL of an existing Amazon SQS queue.</p>

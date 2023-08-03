@@ -3,6 +3,23 @@ pub use crate::operation::describe_security_policy::_describe_security_policy_ou
 
 pub use crate::operation::describe_security_policy::_describe_security_policy_input::DescribeSecurityPolicyInputBuilder;
 
+impl DescribeSecurityPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_security_policy::DescribeSecurityPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_security_policy::DescribeSecurityPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_security_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeSecurityPolicy`.
 ///
 /// <p>Describes the security policy that is attached to your file transfer protocol-enabled server. The response contains a description of the security policy's properties. For more information about security policies, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/security-policies.html">Working with security policies</a>.</p>

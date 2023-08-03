@@ -3,6 +3,23 @@ pub use crate::operation::get_listener::_get_listener_output::GetListenerOutputB
 
 pub use crate::operation::get_listener::_get_listener_input::GetListenerInputBuilder;
 
+impl GetListenerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_listener::GetListenerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_listener::GetListenerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_listener();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetListener`.
 ///
 /// <p>Retrieves information about the specified listener for the specified service.</p>

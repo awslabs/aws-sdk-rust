@@ -3,6 +3,23 @@ pub use crate::operation::create_pull_through_cache_rule::_create_pull_through_c
 
 pub use crate::operation::create_pull_through_cache_rule::_create_pull_through_cache_rule_input::CreatePullThroughCacheRuleInputBuilder;
 
+impl CreatePullThroughCacheRuleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_pull_through_cache_rule::CreatePullThroughCacheRuleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_pull_through_cache_rule::CreatePullThroughCacheRuleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_pull_through_cache_rule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreatePullThroughCacheRule`.
 ///
 /// <p>Creates a pull through cache rule. A pull through cache rule provides a way to cache images from an external public registry in your Amazon ECR private registry.</p>

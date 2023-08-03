@@ -3,6 +3,23 @@ pub use crate::operation::list_ops_item_events::_list_ops_item_events_output::Li
 
 pub use crate::operation::list_ops_item_events::_list_ops_item_events_input::ListOpsItemEventsInputBuilder;
 
+impl ListOpsItemEventsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_ops_item_events::ListOpsItemEventsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_ops_item_events::ListOpsItemEventsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_ops_item_events();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListOpsItemEvents`.
 ///
 /// <p>Returns a list of all OpsItem events in the current Amazon Web Services Region and Amazon Web Services account. You can limit the results to events associated with specific OpsItems by specifying a filter.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_db_cluster_parameter_group::_delete_db_cluster_
 
 pub use crate::operation::delete_db_cluster_parameter_group::_delete_db_cluster_parameter_group_input::DeleteDbClusterParameterGroupInputBuilder;
 
+impl DeleteDbClusterParameterGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_db_cluster_parameter_group::DeleteDbClusterParameterGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_db_cluster_parameter_group::DeleteDBClusterParameterGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_db_cluster_parameter_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteDBClusterParameterGroup`.
 ///
 /// <p>Deletes a specified DB cluster parameter group. The DB cluster parameter group to be deleted can't be associated with any DB clusters.</p>

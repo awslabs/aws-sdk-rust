@@ -3,6 +3,23 @@ pub use crate::operation::create_place_index::_create_place_index_output::Create
 
 pub use crate::operation::create_place_index::_create_place_index_input::CreatePlaceIndexInputBuilder;
 
+impl CreatePlaceIndexInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_place_index::CreatePlaceIndexOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_place_index::CreatePlaceIndexError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_place_index();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreatePlaceIndex`.
 ///
 /// <p>Creates a place index resource in your Amazon Web Services account. Use a place index resource to geocode addresses and other text queries by using the <code>SearchPlaceIndexForText</code> operation, and reverse geocode coordinates by using the <code>SearchPlaceIndexForPosition</code> operation, and enable autosuggestions by using the <code>SearchPlaceIndexForSuggestions</code> operation.</p> <note>

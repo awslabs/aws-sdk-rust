@@ -3,6 +3,23 @@ pub use crate::operation::replace_network_acl_association::_replace_network_acl_
 
 pub use crate::operation::replace_network_acl_association::_replace_network_acl_association_input::ReplaceNetworkAclAssociationInputBuilder;
 
+impl ReplaceNetworkAclAssociationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::replace_network_acl_association::ReplaceNetworkAclAssociationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::replace_network_acl_association::ReplaceNetworkAclAssociationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.replace_network_acl_association();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ReplaceNetworkAclAssociation`.
 ///
 /// <p>Changes which network ACL a subnet is associated with. By default when you create a subnet, it's automatically associated with the default network ACL. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html">Network ACLs</a> in the <i>Amazon VPC User Guide</i>.</p>

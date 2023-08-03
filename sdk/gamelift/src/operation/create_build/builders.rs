@@ -3,6 +3,23 @@ pub use crate::operation::create_build::_create_build_output::CreateBuildOutputB
 
 pub use crate::operation::create_build::_create_build_input::CreateBuildInputBuilder;
 
+impl CreateBuildInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_build::CreateBuildOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_build::CreateBuildError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_build();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateBuild`.
 ///
 /// <p>Creates a new Amazon GameLift build resource for your game server binary files. Combine game server binaries into a zip file for use with Amazon GameLift. </p> <important>

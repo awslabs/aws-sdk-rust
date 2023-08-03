@@ -3,6 +3,23 @@ pub use crate::operation::batch_start::_batch_start_output::BatchStartOutputBuil
 
 pub use crate::operation::batch_start::_batch_start_input::BatchStartInputBuilder;
 
+impl BatchStartInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_start::BatchStartOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_start::BatchStartError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_start();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchStart`.
 ///
 /// Starts existing resources

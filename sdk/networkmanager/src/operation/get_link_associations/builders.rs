@@ -3,6 +3,23 @@ pub use crate::operation::get_link_associations::_get_link_associations_output::
 
 pub use crate::operation::get_link_associations::_get_link_associations_input::GetLinkAssociationsInputBuilder;
 
+impl GetLinkAssociationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_link_associations::GetLinkAssociationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_link_associations::GetLinkAssociationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_link_associations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetLinkAssociations`.
 ///
 /// <p>Gets the link associations for a device or a link. Either the device ID or the link ID must be specified.</p>

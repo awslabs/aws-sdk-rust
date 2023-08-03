@@ -3,6 +3,23 @@ pub use crate::operation::generate_client_certificate::_generate_client_certific
 
 pub use crate::operation::generate_client_certificate::_generate_client_certificate_input::GenerateClientCertificateInputBuilder;
 
+impl GenerateClientCertificateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::generate_client_certificate::GenerateClientCertificateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::generate_client_certificate::GenerateClientCertificateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.generate_client_certificate();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GenerateClientCertificate`.
 ///
 /// <p>Generates a ClientCertificate resource.</p>

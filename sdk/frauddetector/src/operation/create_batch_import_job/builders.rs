@@ -3,6 +3,23 @@ pub use crate::operation::create_batch_import_job::_create_batch_import_job_outp
 
 pub use crate::operation::create_batch_import_job::_create_batch_import_job_input::CreateBatchImportJobInputBuilder;
 
+impl CreateBatchImportJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_batch_import_job::CreateBatchImportJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_batch_import_job::CreateBatchImportJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_batch_import_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateBatchImportJob`.
 ///
 /// <p>Creates a batch import job. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_event_stream::_create_event_stream_output::Crea
 
 pub use crate::operation::create_event_stream::_create_event_stream_input::CreateEventStreamInputBuilder;
 
+impl CreateEventStreamInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_event_stream::CreateEventStreamOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_event_stream::CreateEventStreamError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_event_stream();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateEventStream`.
 ///
 /// <p>Creates an event stream, which is a subscription to real-time events, such as when profiles are created and updated through Amazon Connect Customer Profiles.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_aws_log_source::_delete_aws_log_source_output::
 
 pub use crate::operation::delete_aws_log_source::_delete_aws_log_source_input::DeleteAwsLogSourceInputBuilder;
 
+impl DeleteAwsLogSourceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_aws_log_source::DeleteAwsLogSourceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_aws_log_source::DeleteAwsLogSourceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_aws_log_source();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteAwsLogSource`.
 ///
 /// <p>Removes a natively supported Amazon Web Service as an Amazon Security Lake source. You can remove a source for one or more Regions. When you remove the source, Security Lake stops collecting data from that source in the specified Regions and accounts, and subscribers can no longer consume new data from the source. However, subscribers can still consume data that Security Lake collected from the source before removal.</p>

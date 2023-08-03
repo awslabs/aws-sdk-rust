@@ -3,6 +3,23 @@ pub use crate::operation::describe_identity_usage::_describe_identity_usage_outp
 
 pub use crate::operation::describe_identity_usage::_describe_identity_usage_input::DescribeIdentityUsageInputBuilder;
 
+impl DescribeIdentityUsageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_identity_usage::DescribeIdentityUsageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_identity_usage::DescribeIdentityUsageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_identity_usage();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeIdentityUsage`.
 ///
 /// <p>Gets usage information for an identity, including number of datasets and data usage.</p>

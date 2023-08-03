@@ -3,6 +3,23 @@ pub use crate::operation::list_dataset_groups::_list_dataset_groups_output::List
 
 pub use crate::operation::list_dataset_groups::_list_dataset_groups_input::ListDatasetGroupsInputBuilder;
 
+impl ListDatasetGroupsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_dataset_groups::ListDatasetGroupsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_dataset_groups::ListDatasetGroupsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_dataset_groups();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDatasetGroups`.
 ///
 /// <p>Returns a list of dataset groups. The response provides the properties for each dataset group, including the Amazon Resource Name (ARN). For more information on dataset groups, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetGroup.html">CreateDatasetGroup</a>.</p>

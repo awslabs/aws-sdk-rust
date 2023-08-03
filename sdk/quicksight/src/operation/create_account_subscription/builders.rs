@@ -3,6 +3,23 @@ pub use crate::operation::create_account_subscription::_create_account_subscript
 
 pub use crate::operation::create_account_subscription::_create_account_subscription_input::CreateAccountSubscriptionInputBuilder;
 
+impl CreateAccountSubscriptionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_account_subscription::CreateAccountSubscriptionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_account_subscription::CreateAccountSubscriptionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_account_subscription();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateAccountSubscription`.
 ///
 /// <p>Creates an Amazon QuickSight account, or subscribes to Amazon QuickSight Q.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_client_branding::_describe_client_branding_ou
 
 pub use crate::operation::describe_client_branding::_describe_client_branding_input::DescribeClientBrandingInputBuilder;
 
+impl DescribeClientBrandingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_client_branding::DescribeClientBrandingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_client_branding::DescribeClientBrandingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_client_branding();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeClientBranding`.
 ///
 /// <p>Describes the specified client branding. Client branding allows you to customize the log in page of various device types for your users. You can add your company logo, the support email address, support link, link to reset password, and a custom message for users trying to sign in.</p> <note>

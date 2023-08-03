@@ -3,6 +3,23 @@ pub use crate::operation::update_table_replica_auto_scaling::_update_table_repli
 
 pub use crate::operation::update_table_replica_auto_scaling::_update_table_replica_auto_scaling_input::UpdateTableReplicaAutoScalingInputBuilder;
 
+impl UpdateTableReplicaAutoScalingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_table_replica_auto_scaling::UpdateTableReplicaAutoScalingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_table_replica_auto_scaling::UpdateTableReplicaAutoScalingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_table_replica_auto_scaling();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateTableReplicaAutoScaling`.
 ///
 /// <p>Updates auto scaling settings on your global tables at once.</p> <important>

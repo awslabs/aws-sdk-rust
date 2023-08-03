@@ -3,6 +3,23 @@ pub use crate::operation::describe_location_fsx_windows::_describe_location_fsx_
 
 pub use crate::operation::describe_location_fsx_windows::_describe_location_fsx_windows_input::DescribeLocationFsxWindowsInputBuilder;
 
+impl DescribeLocationFsxWindowsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_location_fsx_windows::DescribeLocationFsxWindowsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_location_fsx_windows::DescribeLocationFsxWindowsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_location_fsx_windows();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeLocationFsxWindows`.
 ///
 /// <p>Returns metadata about an Amazon FSx for Windows File Server location, such as information about its path.</p>

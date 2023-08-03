@@ -3,6 +3,23 @@ pub use crate::operation::list_permission_associations::_list_permission_associa
 
 pub use crate::operation::list_permission_associations::_list_permission_associations_input::ListPermissionAssociationsInputBuilder;
 
+impl ListPermissionAssociationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_permission_associations::ListPermissionAssociationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_permission_associations::ListPermissionAssociationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_permission_associations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListPermissionAssociations`.
 ///
 /// <p>Lists information about the managed permission and its associations to any resource shares that use this managed permission. This lets you see which resource shares use which versions of the specified managed permission.</p>

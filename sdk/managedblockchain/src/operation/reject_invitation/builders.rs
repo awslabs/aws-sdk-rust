@@ -3,6 +3,23 @@ pub use crate::operation::reject_invitation::_reject_invitation_output::RejectIn
 
 pub use crate::operation::reject_invitation::_reject_invitation_input::RejectInvitationInputBuilder;
 
+impl RejectInvitationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::reject_invitation::RejectInvitationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::reject_invitation::RejectInvitationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.reject_invitation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RejectInvitation`.
 ///
 /// <p>Rejects an invitation to join a network. This action can be called by a principal in an Amazon Web Services account that has received an invitation to create a member and join a network.</p>

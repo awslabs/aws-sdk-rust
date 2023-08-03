@@ -3,6 +3,23 @@ pub use crate::operation::start_copy_job::_start_copy_job_output::StartCopyJobOu
 
 pub use crate::operation::start_copy_job::_start_copy_job_input::StartCopyJobInputBuilder;
 
+impl StartCopyJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_copy_job::StartCopyJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_copy_job::StartCopyJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_copy_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartCopyJob`.
 ///
 /// <p>Starts a job to create a one-time copy of the specified resource.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::detach_object::_detach_object_output::DetachObjectOutp
 
 pub use crate::operation::detach_object::_detach_object_input::DetachObjectInputBuilder;
 
+impl DetachObjectInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::detach_object::DetachObjectOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::detach_object::DetachObjectError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.detach_object();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DetachObject`.
 ///
 /// <p>Detaches a given object from the parent object. The object that is to be detached from the parent is specified by the link name.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_sdk::_get_sdk_output::GetSdkOutputBuilder;
 
 pub use crate::operation::get_sdk::_get_sdk_input::GetSdkInputBuilder;
 
+impl GetSdkInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_sdk::GetSdkOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_sdk::GetSdkError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_sdk();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetSdk`.
 ///
 /// <p>Generates a client SDK for a RestApi and Stage.</p>

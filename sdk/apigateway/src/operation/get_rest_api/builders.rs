@@ -3,6 +3,23 @@ pub use crate::operation::get_rest_api::_get_rest_api_output::GetRestApiOutputBu
 
 pub use crate::operation::get_rest_api::_get_rest_api_input::GetRestApiInputBuilder;
 
+impl GetRestApiInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_rest_api::GetRestApiOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_rest_api::GetRestApiError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_rest_api();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetRestApi`.
 ///
 /// <p>Lists the RestApi resource in the collection.</p>

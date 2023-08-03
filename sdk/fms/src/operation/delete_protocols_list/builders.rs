@@ -3,6 +3,23 @@ pub use crate::operation::delete_protocols_list::_delete_protocols_list_output::
 
 pub use crate::operation::delete_protocols_list::_delete_protocols_list_input::DeleteProtocolsListInputBuilder;
 
+impl DeleteProtocolsListInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_protocols_list::DeleteProtocolsListOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_protocols_list::DeleteProtocolsListError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_protocols_list();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteProtocolsList`.
 ///
 /// <p>Permanently deletes an Firewall Manager protocols list.</p>

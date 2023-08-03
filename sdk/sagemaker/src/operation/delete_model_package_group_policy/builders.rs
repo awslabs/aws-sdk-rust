@@ -3,6 +3,23 @@ pub use crate::operation::delete_model_package_group_policy::_delete_model_packa
 
 pub use crate::operation::delete_model_package_group_policy::_delete_model_package_group_policy_input::DeleteModelPackageGroupPolicyInputBuilder;
 
+impl DeleteModelPackageGroupPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_model_package_group_policy::DeleteModelPackageGroupPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_model_package_group_policy::DeleteModelPackageGroupPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_model_package_group_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteModelPackageGroupPolicy`.
 ///
 /// <p>Deletes a model group resource policy.</p>

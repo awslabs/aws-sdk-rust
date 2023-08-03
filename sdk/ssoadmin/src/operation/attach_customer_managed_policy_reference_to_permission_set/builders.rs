@@ -3,6 +3,18 @@ pub use crate::operation::attach_customer_managed_policy_reference_to_permission
 
 pub use crate::operation::attach_customer_managed_policy_reference_to_permission_set::_attach_customer_managed_policy_reference_to_permission_set_input::AttachCustomerManagedPolicyReferenceToPermissionSetInputBuilder;
 
+impl AttachCustomerManagedPolicyReferenceToPermissionSetInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::attach_customer_managed_policy_reference_to_permission_set::AttachCustomerManagedPolicyReferenceToPermissionSetOutput, ::aws_smithy_http::result::SdkError<crate::operation::attach_customer_managed_policy_reference_to_permission_set::AttachCustomerManagedPolicyReferenceToPermissionSetError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder =
+            client.attach_customer_managed_policy_reference_to_permission_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AttachCustomerManagedPolicyReferenceToPermissionSet`.
 ///
 /// <p>Attaches the specified customer managed policy to the specified <code>PermissionSet</code>.</p>

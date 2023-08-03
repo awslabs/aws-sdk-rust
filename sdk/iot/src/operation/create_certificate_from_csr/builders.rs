@@ -3,6 +3,23 @@ pub use crate::operation::create_certificate_from_csr::_create_certificate_from_
 
 pub use crate::operation::create_certificate_from_csr::_create_certificate_from_csr_input::CreateCertificateFromCsrInputBuilder;
 
+impl CreateCertificateFromCsrInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_certificate_from_csr::CreateCertificateFromCsrOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_certificate_from_csr::CreateCertificateFromCsrError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_certificate_from_csr();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateCertificateFromCsr`.
 ///
 /// <p>Creates an X.509 certificate using the specified certificate signing request. </p>

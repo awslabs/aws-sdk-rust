@@ -3,6 +3,23 @@ pub use crate::operation::disable_rule::_disable_rule_output::DisableRuleOutputB
 
 pub use crate::operation::disable_rule::_disable_rule_input::DisableRuleInputBuilder;
 
+impl DisableRuleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disable_rule::DisableRuleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disable_rule::DisableRuleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disable_rule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisableRule`.
 ///
 /// <p>Disables the specified rule. A disabled rule won't match any events, and won't self-trigger if it has a schedule expression.</p>

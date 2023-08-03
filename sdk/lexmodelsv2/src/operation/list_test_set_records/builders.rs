@@ -3,6 +3,23 @@ pub use crate::operation::list_test_set_records::_list_test_set_records_output::
 
 pub use crate::operation::list_test_set_records::_list_test_set_records_input::ListTestSetRecordsInputBuilder;
 
+impl ListTestSetRecordsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_test_set_records::ListTestSetRecordsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_test_set_records::ListTestSetRecordsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_test_set_records();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListTestSetRecords`.
 ///
 /// <p>The list of test set records.</p>

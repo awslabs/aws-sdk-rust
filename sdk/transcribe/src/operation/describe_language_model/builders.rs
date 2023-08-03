@@ -3,6 +3,23 @@ pub use crate::operation::describe_language_model::_describe_language_model_outp
 
 pub use crate::operation::describe_language_model::_describe_language_model_input::DescribeLanguageModelInputBuilder;
 
+impl DescribeLanguageModelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_language_model::DescribeLanguageModelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_language_model::DescribeLanguageModelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_language_model();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeLanguageModel`.
 ///
 /// <p>Provides information about the specified custom language model.</p>

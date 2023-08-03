@@ -3,6 +3,23 @@ pub use crate::operation::describe_data_set::_describe_data_set_output::Describe
 
 pub use crate::operation::describe_data_set::_describe_data_set_input::DescribeDataSetInputBuilder;
 
+impl DescribeDataSetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_data_set::DescribeDataSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_data_set::DescribeDataSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_data_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeDataSet`.
 ///
 /// <p>Describes a dataset. This operation doesn't support datasets that include uploaded files as a source.</p>

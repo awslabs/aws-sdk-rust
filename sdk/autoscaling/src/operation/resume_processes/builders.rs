@@ -3,6 +3,23 @@ pub use crate::operation::resume_processes::_resume_processes_output::ResumeProc
 
 pub use crate::operation::resume_processes::_resume_processes_input::ResumeProcessesInputBuilder;
 
+impl ResumeProcessesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::resume_processes::ResumeProcessesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::resume_processes::ResumeProcessesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.resume_processes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ResumeProcesses`.
 ///
 /// <p>Resumes the specified suspended auto scaling processes, or all suspended process, for the specified Auto Scaling group.</p>

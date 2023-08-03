@@ -3,6 +3,23 @@ pub use crate::operation::create_location_smb::_create_location_smb_output::Crea
 
 pub use crate::operation::create_location_smb::_create_location_smb_input::CreateLocationSmbInputBuilder;
 
+impl CreateLocationSmbInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_location_smb::CreateLocationSmbOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_location_smb::CreateLocationSmbError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_location_smb();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateLocationSmb`.
 ///
 /// <p>Creates an endpoint for a Server Message Block (SMB) file server that DataSync can use for a data transfer.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_file_system_aliases::_describe_file_system_al
 
 pub use crate::operation::describe_file_system_aliases::_describe_file_system_aliases_input::DescribeFileSystemAliasesInputBuilder;
 
+impl DescribeFileSystemAliasesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_file_system_aliases::DescribeFileSystemAliasesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_file_system_aliases::DescribeFileSystemAliasesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_file_system_aliases();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeFileSystemAliases`.
 ///
 /// <p>Returns the DNS aliases that are associated with the specified Amazon FSx for Windows File Server file system. A history of all DNS aliases that have been associated with and disassociated from the file system is available in the list of <code>AdministrativeAction</code> provided in the <code>DescribeFileSystems</code> operation response.</p>

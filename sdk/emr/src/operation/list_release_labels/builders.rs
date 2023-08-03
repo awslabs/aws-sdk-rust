@@ -3,6 +3,23 @@ pub use crate::operation::list_release_labels::_list_release_labels_output::List
 
 pub use crate::operation::list_release_labels::_list_release_labels_input::ListReleaseLabelsInputBuilder;
 
+impl ListReleaseLabelsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_release_labels::ListReleaseLabelsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_release_labels::ListReleaseLabelsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_release_labels();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListReleaseLabels`.
 ///
 /// <p>Retrieves release labels of Amazon EMR services in the Region where the API is called.</p>

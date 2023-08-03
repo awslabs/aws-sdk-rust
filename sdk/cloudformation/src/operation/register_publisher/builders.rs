@@ -3,6 +3,23 @@ pub use crate::operation::register_publisher::_register_publisher_output::Regist
 
 pub use crate::operation::register_publisher::_register_publisher_input::RegisterPublisherInputBuilder;
 
+impl RegisterPublisherInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::register_publisher::RegisterPublisherOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::register_publisher::RegisterPublisherError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.register_publisher();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RegisterPublisher`.
 ///
 /// <p>Registers your account as a publisher of public extensions in the CloudFormation registry. Public extensions are available for use by all CloudFormation users. This publisher ID applies to your account in all Amazon Web Services Regions.</p>

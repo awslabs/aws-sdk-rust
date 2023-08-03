@@ -3,6 +3,23 @@ pub use crate::operation::assign_private_ip_addresses::_assign_private_ip_addres
 
 pub use crate::operation::assign_private_ip_addresses::_assign_private_ip_addresses_input::AssignPrivateIpAddressesInputBuilder;
 
+impl AssignPrivateIpAddressesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::assign_private_ip_addresses::AssignPrivateIpAddressesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::assign_private_ip_addresses::AssignPrivateIpAddressesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.assign_private_ip_addresses();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssignPrivateIpAddresses`.
 ///
 /// <p>Assigns one or more secondary private IP addresses to the specified network interface.</p>

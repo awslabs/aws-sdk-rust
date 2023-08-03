@@ -3,6 +3,23 @@ pub use crate::operation::delete_lifecycle_policy::_delete_lifecycle_policy_outp
 
 pub use crate::operation::delete_lifecycle_policy::_delete_lifecycle_policy_input::DeleteLifecyclePolicyInputBuilder;
 
+impl DeleteLifecyclePolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_lifecycle_policy::DeleteLifecyclePolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_lifecycle_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteLifecyclePolicy`.
 ///
 /// <p>Removes an object lifecycle policy from a container. It takes up to 20 minutes for the change to take effect.</p>

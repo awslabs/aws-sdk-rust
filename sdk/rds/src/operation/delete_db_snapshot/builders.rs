@@ -3,6 +3,23 @@ pub use crate::operation::delete_db_snapshot::_delete_db_snapshot_output::Delete
 
 pub use crate::operation::delete_db_snapshot::_delete_db_snapshot_input::DeleteDbSnapshotInputBuilder;
 
+impl DeleteDbSnapshotInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_db_snapshot::DeleteDbSnapshotOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_db_snapshot::DeleteDBSnapshotError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_db_snapshot();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteDBSnapshot`.
 ///
 /// <p>Deletes a DB snapshot. If the snapshot is being copied, the copy operation is terminated.</p> <note>

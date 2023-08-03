@@ -3,6 +3,23 @@ pub use crate::operation::create_pipe::_create_pipe_output::CreatePipeOutputBuil
 
 pub use crate::operation::create_pipe::_create_pipe_input::CreatePipeInputBuilder;
 
+impl CreatePipeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_pipe::CreatePipeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_pipe::CreatePipeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_pipe();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreatePipe`.
 ///
 /// <p>Create a pipe. Amazon EventBridge Pipes connect event sources to targets and reduces the need for specialized knowledge and integration code.</p>

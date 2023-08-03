@@ -3,6 +3,23 @@ pub use crate::operation::start_pipeline_reprocessing::_start_pipeline_reprocess
 
 pub use crate::operation::start_pipeline_reprocessing::_start_pipeline_reprocessing_input::StartPipelineReprocessingInputBuilder;
 
+impl StartPipelineReprocessingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_pipeline_reprocessing::StartPipelineReprocessingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_pipeline_reprocessing::StartPipelineReprocessingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_pipeline_reprocessing();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartPipelineReprocessing`.
 ///
 /// <p>Starts the reprocessing of raw message data through the pipeline.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_ingestion::_describe_ingestion_output::Descri
 
 pub use crate::operation::describe_ingestion::_describe_ingestion_input::DescribeIngestionInputBuilder;
 
+impl DescribeIngestionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_ingestion::DescribeIngestionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_ingestion::DescribeIngestionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_ingestion();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeIngestion`.
 ///
 /// <p>Describes a SPICE ingestion.</p>

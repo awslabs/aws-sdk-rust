@@ -3,6 +3,23 @@ pub use crate::operation::list_network_profiles::_list_network_profiles_output::
 
 pub use crate::operation::list_network_profiles::_list_network_profiles_input::ListNetworkProfilesInputBuilder;
 
+impl ListNetworkProfilesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_network_profiles::ListNetworkProfilesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_network_profiles::ListNetworkProfilesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_network_profiles();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListNetworkProfiles`.
 ///
 /// <p>Returns the list of available network profiles.</p>

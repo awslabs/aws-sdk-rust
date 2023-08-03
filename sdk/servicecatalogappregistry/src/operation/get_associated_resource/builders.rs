@@ -3,6 +3,23 @@ pub use crate::operation::get_associated_resource::_get_associated_resource_outp
 
 pub use crate::operation::get_associated_resource::_get_associated_resource_input::GetAssociatedResourceInputBuilder;
 
+impl GetAssociatedResourceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_associated_resource::GetAssociatedResourceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_associated_resource::GetAssociatedResourceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_associated_resource();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetAssociatedResource`.
 ///
 /// <p>Gets the resource associated with the application.</p>

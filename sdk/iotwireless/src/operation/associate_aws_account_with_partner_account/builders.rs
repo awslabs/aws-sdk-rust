@@ -3,6 +3,17 @@ pub use crate::operation::associate_aws_account_with_partner_account::_associate
 
 pub use crate::operation::associate_aws_account_with_partner_account::_associate_aws_account_with_partner_account_input::AssociateAwsAccountWithPartnerAccountInputBuilder;
 
+impl AssociateAwsAccountWithPartnerAccountInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::associate_aws_account_with_partner_account::AssociateAwsAccountWithPartnerAccountOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_aws_account_with_partner_account::AssociateAwsAccountWithPartnerAccountError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.associate_aws_account_with_partner_account();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateAwsAccountWithPartnerAccount`.
 ///
 /// <p>Associates a partner account with your AWS account.</p>

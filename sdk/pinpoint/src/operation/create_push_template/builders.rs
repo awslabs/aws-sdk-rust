@@ -3,6 +3,23 @@ pub use crate::operation::create_push_template::_create_push_template_output::Cr
 
 pub use crate::operation::create_push_template::_create_push_template_input::CreatePushTemplateInputBuilder;
 
+impl CreatePushTemplateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_push_template::CreatePushTemplateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_push_template::CreatePushTemplateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_push_template();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreatePushTemplate`.
 ///
 /// <p>Creates a message template for messages that are sent through a push notification channel.</p>

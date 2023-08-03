@@ -3,6 +3,23 @@ pub use crate::operation::create_domain_name::_create_domain_name_output::Create
 
 pub use crate::operation::create_domain_name::_create_domain_name_input::CreateDomainNameInputBuilder;
 
+impl CreateDomainNameInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_domain_name::CreateDomainNameOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_domain_name::CreateDomainNameError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_domain_name();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateDomainName`.
 ///
 /// <p>Creates a new domain name.</p>

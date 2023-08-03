@@ -3,6 +3,23 @@ pub use crate::operation::delete_fleet_advisor_collector::_delete_fleet_advisor_
 
 pub use crate::operation::delete_fleet_advisor_collector::_delete_fleet_advisor_collector_input::DeleteFleetAdvisorCollectorInputBuilder;
 
+impl DeleteFleetAdvisorCollectorInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_fleet_advisor_collector::DeleteFleetAdvisorCollectorOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_fleet_advisor_collector::DeleteFleetAdvisorCollectorError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_fleet_advisor_collector();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteFleetAdvisorCollector`.
 ///
 /// <p>Deletes the specified Fleet Advisor collector.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_endpoint::_describe_endpoint_output::Describe
 
 pub use crate::operation::describe_endpoint::_describe_endpoint_input::DescribeEndpointInputBuilder;
 
+impl DescribeEndpointInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_endpoint::DescribeEndpointOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_endpoint::DescribeEndpointError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_endpoint();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeEndpoint`.
 ///
 /// <p>Gets the properties associated with a specific endpoint. Use this operation to get the status of an endpoint. For information about endpoints, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/manage-endpoints.html">Managing endpoints</a>.</p>

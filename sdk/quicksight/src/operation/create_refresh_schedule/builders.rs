@@ -3,6 +3,23 @@ pub use crate::operation::create_refresh_schedule::_create_refresh_schedule_outp
 
 pub use crate::operation::create_refresh_schedule::_create_refresh_schedule_input::CreateRefreshScheduleInputBuilder;
 
+impl CreateRefreshScheduleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_refresh_schedule::CreateRefreshScheduleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_refresh_schedule::CreateRefreshScheduleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_refresh_schedule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateRefreshSchedule`.
 ///
 /// <p>Creates a refresh schedule for a dataset. You can create up to 5 different schedules for a single dataset.</p>

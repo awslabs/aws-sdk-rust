@@ -3,6 +3,23 @@ pub use crate::operation::register_event_topic::_register_event_topic_output::Re
 
 pub use crate::operation::register_event_topic::_register_event_topic_input::RegisterEventTopicInputBuilder;
 
+impl RegisterEventTopicInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::register_event_topic::RegisterEventTopicOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::register_event_topic::RegisterEventTopicError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.register_event_topic();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RegisterEventTopic`.
 ///
 /// <p>Associates a directory with an Amazon SNS topic. This establishes the directory as a publisher to the specified Amazon SNS topic. You can then receive email or text (SMS) messages when the status of your directory changes. You get notified if your directory goes from an Active status to an Impaired or Inoperable status. You also receive a notification when the directory returns to an Active status.</p>

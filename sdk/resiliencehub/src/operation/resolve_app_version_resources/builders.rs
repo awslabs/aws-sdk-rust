@@ -3,6 +3,23 @@ pub use crate::operation::resolve_app_version_resources::_resolve_app_version_re
 
 pub use crate::operation::resolve_app_version_resources::_resolve_app_version_resources_input::ResolveAppVersionResourcesInputBuilder;
 
+impl ResolveAppVersionResourcesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::resolve_app_version_resources::ResolveAppVersionResourcesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::resolve_app_version_resources::ResolveAppVersionResourcesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.resolve_app_version_resources();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ResolveAppVersionResources`.
 ///
 /// <p>Resolves the resources for an application version.</p>

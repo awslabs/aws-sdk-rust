@@ -3,6 +3,23 @@ pub use crate::operation::list_flow_execution_messages::_list_flow_execution_mes
 
 pub use crate::operation::list_flow_execution_messages::_list_flow_execution_messages_input::ListFlowExecutionMessagesInputBuilder;
 
+impl ListFlowExecutionMessagesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_flow_execution_messages::ListFlowExecutionMessagesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_flow_execution_messages::ListFlowExecutionMessagesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_flow_execution_messages();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListFlowExecutionMessages`.
 ///
 /// <p>Returns a list of objects that contain information about events in a flow execution.</p>

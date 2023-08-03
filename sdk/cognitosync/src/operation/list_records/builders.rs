@@ -3,6 +3,23 @@ pub use crate::operation::list_records::_list_records_output::ListRecordsOutputB
 
 pub use crate::operation::list_records::_list_records_input::ListRecordsInputBuilder;
 
+impl ListRecordsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_records::ListRecordsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_records::ListRecordsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_records();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListRecords`.
 ///
 /// <p>Gets paginated records, optionally changed after a particular sync count for a dataset and identity. With Amazon Cognito Sync, each identity has access only to its own data. Thus, the credentials used to make this API call need to have access to the identity data.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::accept_grant::_accept_grant_output::AcceptGrantOutputB
 
 pub use crate::operation::accept_grant::_accept_grant_input::AcceptGrantInputBuilder;
 
+impl AcceptGrantInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::accept_grant::AcceptGrantOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::accept_grant::AcceptGrantError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.accept_grant();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AcceptGrant`.
 ///
 /// <p>Accepts the specified grant.</p>

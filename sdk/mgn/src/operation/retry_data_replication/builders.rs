@@ -3,6 +3,23 @@ pub use crate::operation::retry_data_replication::_retry_data_replication_output
 
 pub use crate::operation::retry_data_replication::_retry_data_replication_input::RetryDataReplicationInputBuilder;
 
+impl RetryDataReplicationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::retry_data_replication::RetryDataReplicationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::retry_data_replication::RetryDataReplicationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.retry_data_replication();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RetryDataReplication`.
 ///
 /// <p>Causes the data replication initiation sequence to begin immediately upon next Handshake for specified SourceServer IDs, regardless of when the previous initiation started. This command will not work if the SourceServer is not stalled or is in a DISCONNECTED or STOPPED state.</p>

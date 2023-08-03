@@ -3,6 +3,23 @@ pub use crate::operation::put_event_selectors::_put_event_selectors_output::PutE
 
 pub use crate::operation::put_event_selectors::_put_event_selectors_input::PutEventSelectorsInputBuilder;
 
+impl PutEventSelectorsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_event_selectors::PutEventSelectorsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_event_selectors::PutEventSelectorsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_event_selectors();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutEventSelectors`.
 ///
 /// <p>Configures an event selector or advanced event selectors for your trail. Use event selectors or advanced event selectors to specify management and data event settings for your trail. If you want your trail to log Insights events, be sure the event selector enables logging of the Insights event types you want configured for your trail. For more information about logging Insights events, see <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/logging-insights-events-with-cloudtrail.html">Logging Insights events for trails</a> in the <i>CloudTrail User Guide</i>. By default, trails created without specific event selectors are configured to log all read and write management events, and no data events.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_reserved_cache_nodes::_describe_reserved_cach
 
 pub use crate::operation::describe_reserved_cache_nodes::_describe_reserved_cache_nodes_input::DescribeReservedCacheNodesInputBuilder;
 
+impl DescribeReservedCacheNodesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_reserved_cache_nodes::DescribeReservedCacheNodesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_reserved_cache_nodes::DescribeReservedCacheNodesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_reserved_cache_nodes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeReservedCacheNodes`.
 ///
 /// <p>Returns information about reserved cache nodes for this account, or about a specified reserved cache node.</p>

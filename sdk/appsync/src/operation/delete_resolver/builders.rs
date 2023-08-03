@@ -3,6 +3,23 @@ pub use crate::operation::delete_resolver::_delete_resolver_output::DeleteResolv
 
 pub use crate::operation::delete_resolver::_delete_resolver_input::DeleteResolverInputBuilder;
 
+impl DeleteResolverInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_resolver::DeleteResolverOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_resolver::DeleteResolverError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_resolver();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteResolver`.
 ///
 /// <p>Deletes a <code>Resolver</code> object.</p>

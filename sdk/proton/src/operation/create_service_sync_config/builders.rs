@@ -3,6 +3,23 @@ pub use crate::operation::create_service_sync_config::_create_service_sync_confi
 
 pub use crate::operation::create_service_sync_config::_create_service_sync_config_input::CreateServiceSyncConfigInputBuilder;
 
+impl CreateServiceSyncConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_service_sync_config::CreateServiceSyncConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_service_sync_config::CreateServiceSyncConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_service_sync_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateServiceSyncConfig`.
 ///
 /// <p>Create the Proton Ops configuration file.</p>

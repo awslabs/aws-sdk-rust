@@ -3,6 +3,23 @@ pub use crate::operation::delete_client_vpn_endpoint::_delete_client_vpn_endpoin
 
 pub use crate::operation::delete_client_vpn_endpoint::_delete_client_vpn_endpoint_input::DeleteClientVpnEndpointInputBuilder;
 
+impl DeleteClientVpnEndpointInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_client_vpn_endpoint::DeleteClientVpnEndpointOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_client_vpn_endpoint::DeleteClientVpnEndpointError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_client_vpn_endpoint();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteClientVpnEndpoint`.
 ///
 /// <p>Deletes the specified Client VPN endpoint. You must disassociate all target networks before you can delete a Client VPN endpoint.</p>

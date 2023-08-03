@@ -3,6 +3,23 @@ pub use crate::operation::delete_user_group::_delete_user_group_output::DeleteUs
 
 pub use crate::operation::delete_user_group::_delete_user_group_input::DeleteUserGroupInputBuilder;
 
+impl DeleteUserGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_user_group::DeleteUserGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_user_group::DeleteUserGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_user_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteUserGroup`.
 ///
 /// <p>For Redis engine version 6.0 onwards: Deletes a user group. The user group must first be disassociated from the replication group before it can be deleted. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using Role Based Access Control (RBAC)</a>. </p>

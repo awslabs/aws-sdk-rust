@@ -3,6 +3,23 @@ pub use crate::operation::associate_trust_store::_associate_trust_store_output::
 
 pub use crate::operation::associate_trust_store::_associate_trust_store_input::AssociateTrustStoreInputBuilder;
 
+impl AssociateTrustStoreInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_trust_store::AssociateTrustStoreOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_trust_store::AssociateTrustStoreError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_trust_store();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateTrustStore`.
 ///
 /// <p>Associates a trust store with a web portal.</p>

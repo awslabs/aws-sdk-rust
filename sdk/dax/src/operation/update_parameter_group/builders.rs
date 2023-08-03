@@ -3,6 +3,23 @@ pub use crate::operation::update_parameter_group::_update_parameter_group_output
 
 pub use crate::operation::update_parameter_group::_update_parameter_group_input::UpdateParameterGroupInputBuilder;
 
+impl UpdateParameterGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_parameter_group::UpdateParameterGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_parameter_group::UpdateParameterGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_parameter_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateParameterGroup`.
 ///
 /// <p>Modifies the parameters of a parameter group. You can modify up to 20 parameters in a single request by submitting a list parameter name and value pairs.</p>

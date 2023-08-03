@@ -3,6 +3,23 @@ pub use crate::operation::describe_access_policy::_describe_access_policy_output
 
 pub use crate::operation::describe_access_policy::_describe_access_policy_input::DescribeAccessPolicyInputBuilder;
 
+impl DescribeAccessPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_access_policy::DescribeAccessPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_access_policy::DescribeAccessPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_access_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAccessPolicy`.
 ///
 /// <p>Describes an access policy, which specifies an identity's access to an IoT SiteWise Monitor portal or project.</p>

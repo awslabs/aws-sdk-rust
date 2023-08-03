@@ -3,6 +3,23 @@ pub use crate::operation::create_backend_config::_create_backend_config_output::
 
 pub use crate::operation::create_backend_config::_create_backend_config_input::CreateBackendConfigInputBuilder;
 
+impl CreateBackendConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_backend_config::CreateBackendConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_backend_config::CreateBackendConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_backend_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateBackendConfig`.
 ///
 /// <p>Creates a config object for a backend.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::test_hypervisor_configuration::_test_hypervisor_config
 
 pub use crate::operation::test_hypervisor_configuration::_test_hypervisor_configuration_input::TestHypervisorConfigurationInputBuilder;
 
+impl TestHypervisorConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::test_hypervisor_configuration::TestHypervisorConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::test_hypervisor_configuration::TestHypervisorConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.test_hypervisor_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `TestHypervisorConfiguration`.
 ///
 /// <p>Tests your hypervisor configuration to validate that backup gateway can connect with the hypervisor and its resources.</p>

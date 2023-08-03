@@ -3,6 +3,23 @@ pub use crate::operation::put_trace_segments::_put_trace_segments_output::PutTra
 
 pub use crate::operation::put_trace_segments::_put_trace_segments_input::PutTraceSegmentsInputBuilder;
 
+impl PutTraceSegmentsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_trace_segments::PutTraceSegmentsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_trace_segments::PutTraceSegmentsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_trace_segments();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutTraceSegments`.
 ///
 /// <p>Uploads segment documents to Amazon Web Services X-Ray. The <a href="https://docs.aws.amazon.com/xray/index.html">X-Ray SDK</a> generates segment documents and sends them to the X-Ray daemon, which uploads them in batches. A segment document can be a completed segment, an in-progress segment, or an array of subsegments.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::back_test_anomaly_detector::_back_test_anomaly_detecto
 
 pub use crate::operation::back_test_anomaly_detector::_back_test_anomaly_detector_input::BackTestAnomalyDetectorInputBuilder;
 
+impl BackTestAnomalyDetectorInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::back_test_anomaly_detector::BackTestAnomalyDetectorOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::back_test_anomaly_detector::BackTestAnomalyDetectorError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.back_test_anomaly_detector();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BackTestAnomalyDetector`.
 ///
 /// <p>Runs a backtest for anomaly detection for the specified resource.</p>

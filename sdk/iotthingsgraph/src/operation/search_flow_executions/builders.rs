@@ -3,6 +3,23 @@ pub use crate::operation::search_flow_executions::_search_flow_executions_output
 
 pub use crate::operation::search_flow_executions::_search_flow_executions_input::SearchFlowExecutionsInputBuilder;
 
+impl SearchFlowExecutionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::search_flow_executions::SearchFlowExecutionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::search_flow_executions::SearchFlowExecutionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.search_flow_executions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SearchFlowExecutions`.
 ///
 /// <p>Searches for AWS IoT Things Graph workflow execution instances.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::unlink_developer_identity::_unlink_developer_identity_
 
 pub use crate::operation::unlink_developer_identity::_unlink_developer_identity_input::UnlinkDeveloperIdentityInputBuilder;
 
+impl UnlinkDeveloperIdentityInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::unlink_developer_identity::UnlinkDeveloperIdentityOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::unlink_developer_identity::UnlinkDeveloperIdentityError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.unlink_developer_identity();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UnlinkDeveloperIdentity`.
 ///
 /// <p>Unlinks a <code>DeveloperUserIdentifier</code> from an existing identity. Unlinked developer users will be considered new identities next time they are seen. If, for a given Cognito identity, you remove all federated identities as well as the developer user identifier, the Cognito identity becomes inaccessible.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_allow_list::_get_allow_list_output::GetAllowListOu
 
 pub use crate::operation::get_allow_list::_get_allow_list_input::GetAllowListInputBuilder;
 
+impl GetAllowListInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_allow_list::GetAllowListOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_allow_list::GetAllowListError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_allow_list();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetAllowList`.
 ///
 /// <p>Retrieves the settings and status of an allow list.</p>

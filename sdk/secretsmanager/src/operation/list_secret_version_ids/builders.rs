@@ -3,6 +3,23 @@ pub use crate::operation::list_secret_version_ids::_list_secret_version_ids_outp
 
 pub use crate::operation::list_secret_version_ids::_list_secret_version_ids_input::ListSecretVersionIdsInputBuilder;
 
+impl ListSecretVersionIdsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_secret_version_ids::ListSecretVersionIdsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_secret_version_ids::ListSecretVersionIdsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_secret_version_ids();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListSecretVersionIds`.
 ///
 /// <p>Lists the versions of a secret. Secrets Manager uses staging labels to indicate the different versions of a secret. For more information, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/getting-started.html#term_version"> Secrets Manager concepts: Versions</a>.</p>

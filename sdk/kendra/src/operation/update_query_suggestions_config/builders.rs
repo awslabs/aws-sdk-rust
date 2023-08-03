@@ -3,6 +3,23 @@ pub use crate::operation::update_query_suggestions_config::_update_query_suggest
 
 pub use crate::operation::update_query_suggestions_config::_update_query_suggestions_config_input::UpdateQuerySuggestionsConfigInputBuilder;
 
+impl UpdateQuerySuggestionsConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_query_suggestions_config::UpdateQuerySuggestionsConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_query_suggestions_config::UpdateQuerySuggestionsConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_query_suggestions_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateQuerySuggestionsConfig`.
 ///
 /// <p>Updates the settings of query suggestions for an index.</p>

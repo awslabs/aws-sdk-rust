@@ -3,6 +3,23 @@ pub use crate::operation::delete_load_balancer_policy::_delete_load_balancer_pol
 
 pub use crate::operation::delete_load_balancer_policy::_delete_load_balancer_policy_input::DeleteLoadBalancerPolicyInputBuilder;
 
+impl DeleteLoadBalancerPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_load_balancer_policy::DeleteLoadBalancerPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_load_balancer_policy::DeleteLoadBalancerPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_load_balancer_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteLoadBalancerPolicy`.
 ///
 /// <p>Deletes the specified policy from the specified load balancer. This policy must not be enabled for any listeners.</p>

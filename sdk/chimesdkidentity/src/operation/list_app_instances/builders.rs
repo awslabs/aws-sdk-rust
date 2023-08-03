@@ -3,6 +3,23 @@ pub use crate::operation::list_app_instances::_list_app_instances_output::ListAp
 
 pub use crate::operation::list_app_instances::_list_app_instances_input::ListAppInstancesInputBuilder;
 
+impl ListAppInstancesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_app_instances::ListAppInstancesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_app_instances::ListAppInstancesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_app_instances();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAppInstances`.
 ///
 /// <p>Lists all Amazon Chime <code>AppInstance</code>s created under a single AWS account.</p>

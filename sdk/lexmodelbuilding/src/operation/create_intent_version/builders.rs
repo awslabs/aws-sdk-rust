@@ -3,6 +3,23 @@ pub use crate::operation::create_intent_version::_create_intent_version_output::
 
 pub use crate::operation::create_intent_version::_create_intent_version_input::CreateIntentVersionInputBuilder;
 
+impl CreateIntentVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_intent_version::CreateIntentVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_intent_version::CreateIntentVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_intent_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateIntentVersion`.
 ///
 /// <p>Creates a new version of an intent based on the <code>$LATEST</code> version of the intent. If the <code>$LATEST</code> version of this intent hasn't changed since you last updated it, Amazon Lex doesn't create a new version. It returns the last version you created.</p> <note>

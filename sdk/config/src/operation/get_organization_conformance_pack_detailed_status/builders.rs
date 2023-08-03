@@ -3,6 +3,17 @@ pub use crate::operation::get_organization_conformance_pack_detailed_status::_ge
 
 pub use crate::operation::get_organization_conformance_pack_detailed_status::_get_organization_conformance_pack_detailed_status_input::GetOrganizationConformancePackDetailedStatusInputBuilder;
 
+impl GetOrganizationConformancePackDetailedStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_organization_conformance_pack_detailed_status::GetOrganizationConformancePackDetailedStatusOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_organization_conformance_pack_detailed_status::GetOrganizationConformancePackDetailedStatusError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_organization_conformance_pack_detailed_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetOrganizationConformancePackDetailedStatus`.
 ///
 /// <p>Returns detailed status for each member account within an organization for a given organization conformance pack.</p>

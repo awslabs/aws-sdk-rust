@@ -3,6 +3,17 @@ pub use crate::operation::update_application_resource_lifecycle::_update_applica
 
 pub use crate::operation::update_application_resource_lifecycle::_update_application_resource_lifecycle_input::UpdateApplicationResourceLifecycleInputBuilder;
 
+impl UpdateApplicationResourceLifecycleInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::update_application_resource_lifecycle::UpdateApplicationResourceLifecycleOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_application_resource_lifecycle::UpdateApplicationResourceLifecycleError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.update_application_resource_lifecycle();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateApplicationResourceLifecycle`.
 ///
 /// <p>Modifies lifecycle settings for an application.</p>

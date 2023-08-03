@@ -3,6 +3,23 @@ pub use crate::operation::update_stack_set::_update_stack_set_output::UpdateStac
 
 pub use crate::operation::update_stack_set::_update_stack_set_input::UpdateStackSetInputBuilder;
 
+impl UpdateStackSetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_stack_set::UpdateStackSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_stack_set::UpdateStackSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_stack_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateStackSet`.
 ///
 /// <p>Updates the stack set, and associated stack instances in the specified accounts and Amazon Web Services Regions.</p>

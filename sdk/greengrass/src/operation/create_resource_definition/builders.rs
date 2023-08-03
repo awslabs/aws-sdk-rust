@@ -3,6 +3,23 @@ pub use crate::operation::create_resource_definition::_create_resource_definitio
 
 pub use crate::operation::create_resource_definition::_create_resource_definition_input::CreateResourceDefinitionInputBuilder;
 
+impl CreateResourceDefinitionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_resource_definition::CreateResourceDefinitionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_resource_definition::CreateResourceDefinitionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_resource_definition();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateResourceDefinition`.
 ///
 /// Creates a resource definition which contains a list of resources to be used in a group. You can create an initial version of the definition by providing a list of resources now, or use ''CreateResourceDefinitionVersion'' later.

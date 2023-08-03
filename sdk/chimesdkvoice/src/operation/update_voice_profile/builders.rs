@@ -3,6 +3,23 @@ pub use crate::operation::update_voice_profile::_update_voice_profile_output::Up
 
 pub use crate::operation::update_voice_profile::_update_voice_profile_input::UpdateVoiceProfileInputBuilder;
 
+impl UpdateVoiceProfileInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_voice_profile::UpdateVoiceProfileOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_voice_profile::UpdateVoiceProfileError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_voice_profile();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateVoiceProfile`.
 ///
 /// <p>Updates the specified voice profile’s voice print and refreshes its expiration timestamp.</p> <important>

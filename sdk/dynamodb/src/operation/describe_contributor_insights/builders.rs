@@ -3,6 +3,23 @@ pub use crate::operation::describe_contributor_insights::_describe_contributor_i
 
 pub use crate::operation::describe_contributor_insights::_describe_contributor_insights_input::DescribeContributorInsightsInputBuilder;
 
+impl DescribeContributorInsightsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_contributor_insights::DescribeContributorInsightsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_contributor_insights::DescribeContributorInsightsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_contributor_insights();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeContributorInsights`.
 ///
 /// <p>Returns information about contributor insights for a given table or global secondary index.</p>

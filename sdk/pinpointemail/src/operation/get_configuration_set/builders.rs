@@ -3,6 +3,23 @@ pub use crate::operation::get_configuration_set::_get_configuration_set_output::
 
 pub use crate::operation::get_configuration_set::_get_configuration_set_input::GetConfigurationSetInputBuilder;
 
+impl GetConfigurationSetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_configuration_set::GetConfigurationSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_configuration_set::GetConfigurationSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_configuration_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetConfigurationSet`.
 ///
 /// <p>Get information about an existing configuration set, including the dedicated IP pool that it's associated with, whether or not it's enabled for sending email, and more.</p>

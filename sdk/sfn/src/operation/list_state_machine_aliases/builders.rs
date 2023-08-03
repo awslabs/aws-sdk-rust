@@ -3,6 +3,23 @@ pub use crate::operation::list_state_machine_aliases::_list_state_machine_aliase
 
 pub use crate::operation::list_state_machine_aliases::_list_state_machine_aliases_input::ListStateMachineAliasesInputBuilder;
 
+impl ListStateMachineAliasesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_state_machine_aliases::ListStateMachineAliasesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_state_machine_aliases::ListStateMachineAliasesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_state_machine_aliases();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListStateMachineAliases`.
 ///
 /// <p>Lists <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">aliases</a> for a specified state machine ARN. Results are sorted by time, with the most recently created aliases listed first. </p>

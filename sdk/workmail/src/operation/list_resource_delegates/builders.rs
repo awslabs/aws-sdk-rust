@@ -3,6 +3,23 @@ pub use crate::operation::list_resource_delegates::_list_resource_delegates_outp
 
 pub use crate::operation::list_resource_delegates::_list_resource_delegates_input::ListResourceDelegatesInputBuilder;
 
+impl ListResourceDelegatesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_resource_delegates::ListResourceDelegatesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_resource_delegates::ListResourceDelegatesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_resource_delegates();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListResourceDelegates`.
 ///
 /// <p>Lists the delegates associated with a resource. Users and groups can be resource delegates and answer requests on behalf of the resource.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_robot_applications::_list_robot_applications_outp
 
 pub use crate::operation::list_robot_applications::_list_robot_applications_input::ListRobotApplicationsInputBuilder;
 
+impl ListRobotApplicationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_robot_applications::ListRobotApplicationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_robot_applications::ListRobotApplicationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_robot_applications();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListRobotApplications`.
 ///
 /// <p>Returns a list of robot application. You can optionally provide filters to retrieve specific robot applications.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_recipe_job::_create_recipe_job_output::CreateRe
 
 pub use crate::operation::create_recipe_job::_create_recipe_job_input::CreateRecipeJobInputBuilder;
 
+impl CreateRecipeJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_recipe_job::CreateRecipeJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_recipe_job::CreateRecipeJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_recipe_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateRecipeJob`.
 ///
 /// <p>Creates a new job to transform input data, using steps defined in an existing Glue DataBrew recipe</p>

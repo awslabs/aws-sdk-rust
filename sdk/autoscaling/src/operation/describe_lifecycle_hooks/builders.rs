@@ -3,6 +3,23 @@ pub use crate::operation::describe_lifecycle_hooks::_describe_lifecycle_hooks_ou
 
 pub use crate::operation::describe_lifecycle_hooks::_describe_lifecycle_hooks_input::DescribeLifecycleHooksInputBuilder;
 
+impl DescribeLifecycleHooksInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_lifecycle_hooks::DescribeLifecycleHooksOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_lifecycle_hooks::DescribeLifecycleHooksError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_lifecycle_hooks();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeLifecycleHooks`.
 ///
 /// <p>Gets information about the lifecycle hooks for the specified Auto Scaling group.</p>

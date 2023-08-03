@@ -3,6 +3,17 @@ pub use crate::operation::describe_configuration_aggregator_sources_status::_des
 
 pub use crate::operation::describe_configuration_aggregator_sources_status::_describe_configuration_aggregator_sources_status_input::DescribeConfigurationAggregatorSourcesStatusInputBuilder;
 
+impl DescribeConfigurationAggregatorSourcesStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_configuration_aggregator_sources_status::DescribeConfigurationAggregatorSourcesStatusOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_configuration_aggregator_sources_status::DescribeConfigurationAggregatorSourcesStatusError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_configuration_aggregator_sources_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeConfigurationAggregatorSourcesStatus`.
 ///
 /// <p>Returns status information for sources within an aggregator. The status includes information about the last time Config verified authorization between the source account and an aggregator account. In case of a failure, the status contains the related error code or message. </p>

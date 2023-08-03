@@ -3,6 +3,23 @@ pub use crate::operation::create_app_bundle::_create_app_bundle_output::CreateAp
 
 pub use crate::operation::create_app_bundle::_create_app_bundle_input::CreateAppBundleInputBuilder;
 
+impl CreateAppBundleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_app_bundle::CreateAppBundleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_app_bundle::CreateAppBundleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_app_bundle();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateAppBundle`.
 ///
 /// <p>Creates an app bundle to collect data from an application using AppFabric.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_invalidations::_list_invalidations_output::ListIn
 
 pub use crate::operation::list_invalidations::_list_invalidations_input::ListInvalidationsInputBuilder;
 
+impl ListInvalidationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_invalidations::ListInvalidationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_invalidations::ListInvalidationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_invalidations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListInvalidations`.
 ///
 /// <p>Lists invalidation batches.</p>

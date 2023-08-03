@@ -3,6 +3,23 @@ pub use crate::operation::get_distribution_bundles::_get_distribution_bundles_ou
 
 pub use crate::operation::get_distribution_bundles::_get_distribution_bundles_input::GetDistributionBundlesInputBuilder;
 
+impl GetDistributionBundlesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_distribution_bundles::GetDistributionBundlesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_distribution_bundles::GetDistributionBundlesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_distribution_bundles();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetDistributionBundles`.
 ///
 /// <p>Returns the bundles that can be applied to your Amazon Lightsail content delivery network (CDN) distributions.</p>

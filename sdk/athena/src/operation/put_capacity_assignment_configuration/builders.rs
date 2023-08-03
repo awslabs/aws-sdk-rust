@@ -3,6 +3,17 @@ pub use crate::operation::put_capacity_assignment_configuration::_put_capacity_a
 
 pub use crate::operation::put_capacity_assignment_configuration::_put_capacity_assignment_configuration_input::PutCapacityAssignmentConfigurationInputBuilder;
 
+impl PutCapacityAssignmentConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::put_capacity_assignment_configuration::PutCapacityAssignmentConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_capacity_assignment_configuration::PutCapacityAssignmentConfigurationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.put_capacity_assignment_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutCapacityAssignmentConfiguration`.
 ///
 /// <p>Puts a new capacity assignment configuration for a specified capacity reservation. If a capacity assignment configuration already exists for the capacity reservation, replaces the existing capacity assignment configuration.</p>

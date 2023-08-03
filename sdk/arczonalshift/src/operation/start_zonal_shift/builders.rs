@@ -3,6 +3,23 @@ pub use crate::operation::start_zonal_shift::_start_zonal_shift_output::StartZon
 
 pub use crate::operation::start_zonal_shift::_start_zonal_shift_input::StartZonalShiftInputBuilder;
 
+impl StartZonalShiftInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_zonal_shift::StartZonalShiftOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_zonal_shift::StartZonalShiftError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_zonal_shift();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartZonalShift`.
 ///
 /// <p>You start a zonal shift to temporarily move load balancer traffic away from an Availability Zone in a AWS Region, to help your application recover immediately, for example, from a developer's bad code deployment or from an AWS infrastructure failure in a single Availability Zone. You can start a zonal shift in Route 53 ARC only for managed resources in your account in an AWS Region. Resources are automatically registered with Route 53 ARC by AWS services.</p>

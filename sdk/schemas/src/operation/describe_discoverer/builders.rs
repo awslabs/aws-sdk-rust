@@ -3,6 +3,23 @@ pub use crate::operation::describe_discoverer::_describe_discoverer_output::Desc
 
 pub use crate::operation::describe_discoverer::_describe_discoverer_input::DescribeDiscovererInputBuilder;
 
+impl DescribeDiscovererInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_discoverer::DescribeDiscovererOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_discoverer::DescribeDiscovererError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_discoverer();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeDiscoverer`.
 ///
 /// <p>Describes the discoverer.</p>

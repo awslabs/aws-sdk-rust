@@ -3,6 +3,23 @@ pub use crate::operation::describe_state_machine::_describe_state_machine_output
 
 pub use crate::operation::describe_state_machine::_describe_state_machine_input::DescribeStateMachineInputBuilder;
 
+impl DescribeStateMachineInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_state_machine::DescribeStateMachineOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_state_machine::DescribeStateMachineError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_state_machine();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeStateMachine`.
 ///
 /// <p>Provides information about a state machine's definition, its IAM role Amazon Resource Name (ARN), and configuration.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_notification_rules::_list_notification_rules_outp
 
 pub use crate::operation::list_notification_rules::_list_notification_rules_input::ListNotificationRulesInputBuilder;
 
+impl ListNotificationRulesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_notification_rules::ListNotificationRulesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_notification_rules::ListNotificationRulesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_notification_rules();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListNotificationRules`.
 ///
 /// <p>Returns a list of the notification rules for an Amazon Web Services account.</p>

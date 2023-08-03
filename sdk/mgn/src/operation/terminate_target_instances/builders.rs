@@ -3,6 +3,23 @@ pub use crate::operation::terminate_target_instances::_terminate_target_instance
 
 pub use crate::operation::terminate_target_instances::_terminate_target_instances_input::TerminateTargetInstancesInputBuilder;
 
+impl TerminateTargetInstancesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::terminate_target_instances::TerminateTargetInstancesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::terminate_target_instances::TerminateTargetInstancesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.terminate_target_instances();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `TerminateTargetInstances`.
 ///
 /// <p>Starts a job that terminates specific launched EC2 Test and Cutover instances. This command will not work for any Source Server with a lifecycle.state of TESTING, CUTTING_OVER, or CUTOVER.</p>

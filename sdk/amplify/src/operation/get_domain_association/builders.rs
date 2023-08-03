@@ -3,6 +3,23 @@ pub use crate::operation::get_domain_association::_get_domain_association_output
 
 pub use crate::operation::get_domain_association::_get_domain_association_input::GetDomainAssociationInputBuilder;
 
+impl GetDomainAssociationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_domain_association::GetDomainAssociationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_domain_association::GetDomainAssociationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_domain_association();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetDomainAssociation`.
 ///
 /// <p> Returns the domain information for an Amplify app. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_backend_environment::_create_backend_environmen
 
 pub use crate::operation::create_backend_environment::_create_backend_environment_input::CreateBackendEnvironmentInputBuilder;
 
+impl CreateBackendEnvironmentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_backend_environment::CreateBackendEnvironmentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_backend_environment::CreateBackendEnvironmentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_backend_environment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateBackendEnvironment`.
 ///
 /// <p> Creates a new backend environment for an Amplify app. </p>

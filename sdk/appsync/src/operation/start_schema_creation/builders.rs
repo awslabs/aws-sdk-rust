@@ -3,6 +3,23 @@ pub use crate::operation::start_schema_creation::_start_schema_creation_output::
 
 pub use crate::operation::start_schema_creation::_start_schema_creation_input::StartSchemaCreationInputBuilder;
 
+impl StartSchemaCreationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_schema_creation::StartSchemaCreationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_schema_creation::StartSchemaCreationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_schema_creation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartSchemaCreation`.
 ///
 /// <p>Adds a new schema to your GraphQL API.</p>

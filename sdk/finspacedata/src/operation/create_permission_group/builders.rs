@@ -3,6 +3,23 @@ pub use crate::operation::create_permission_group::_create_permission_group_outp
 
 pub use crate::operation::create_permission_group::_create_permission_group_input::CreatePermissionGroupInputBuilder;
 
+impl CreatePermissionGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_permission_group::CreatePermissionGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_permission_group::CreatePermissionGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_permission_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreatePermissionGroup`.
 ///
 /// <p>Creates a group of permissions for various actions that a user can perform in FinSpace.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::update_topic_permissions::_update_topic_permissions_ou
 
 pub use crate::operation::update_topic_permissions::_update_topic_permissions_input::UpdateTopicPermissionsInputBuilder;
 
+impl UpdateTopicPermissionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_topic_permissions::UpdateTopicPermissionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_topic_permissions::UpdateTopicPermissionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_topic_permissions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateTopicPermissions`.
 ///
 /// <p>Updates the permissions of a topic.</p>

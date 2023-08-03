@@ -3,6 +3,23 @@ pub use crate::operation::describe_interconnect_loa::_describe_interconnect_loa_
 
 pub use crate::operation::describe_interconnect_loa::_describe_interconnect_loa_input::DescribeInterconnectLoaInputBuilder;
 
+impl DescribeInterconnectLoaInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_interconnect_loa::DescribeInterconnectLoaOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_interconnect_loa::DescribeInterconnectLoaError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_interconnect_loa();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeInterconnectLoa`.
 ///
 /// <p>Deprecated. Use <code>DescribeLoa</code> instead.</p>

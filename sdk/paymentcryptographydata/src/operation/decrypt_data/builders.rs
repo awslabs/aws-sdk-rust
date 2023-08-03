@@ -3,6 +3,23 @@ pub use crate::operation::decrypt_data::_decrypt_data_output::DecryptDataOutputB
 
 pub use crate::operation::decrypt_data::_decrypt_data_input::DecryptDataInputBuilder;
 
+impl DecryptDataInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::decrypt_data::DecryptDataOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::decrypt_data::DecryptDataError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.decrypt_data();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DecryptData`.
 ///
 /// <p>Decrypts ciphertext data to plaintext using symmetric, asymmetric, or DUKPT data encryption key. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/decrypt-data.html">Decrypt data</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.</p>

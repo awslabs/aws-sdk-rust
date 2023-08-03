@@ -3,6 +3,23 @@ pub use crate::operation::import_playback_key_pair::_import_playback_key_pair_ou
 
 pub use crate::operation::import_playback_key_pair::_import_playback_key_pair_input::ImportPlaybackKeyPairInputBuilder;
 
+impl ImportPlaybackKeyPairInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::import_playback_key_pair::ImportPlaybackKeyPairOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::import_playback_key_pair::ImportPlaybackKeyPairError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.import_playback_key_pair();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ImportPlaybackKeyPair`.
 ///
 /// <p>Imports the public portion of a new key pair and returns its <code>arn</code> and <code>fingerprint</code>. The <code>privateKey</code> can then be used to generate viewer authorization tokens, to grant viewers access to private channels. For more information, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html">Setting Up Private Channels</a> in the <i>Amazon IVS User Guide</i>.</p>

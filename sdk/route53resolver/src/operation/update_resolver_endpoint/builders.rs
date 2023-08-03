@@ -3,6 +3,23 @@ pub use crate::operation::update_resolver_endpoint::_update_resolver_endpoint_ou
 
 pub use crate::operation::update_resolver_endpoint::_update_resolver_endpoint_input::UpdateResolverEndpointInputBuilder;
 
+impl UpdateResolverEndpointInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_resolver_endpoint::UpdateResolverEndpointOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_resolver_endpoint::UpdateResolverEndpointError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_resolver_endpoint();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateResolverEndpoint`.
 ///
 /// <p>Updates the name, or enpoint type for an inbound or an outbound Resolver endpoint. You can only update between IPV4 and DUALSTACK, IPV6 endpoint type can't be updated to other type. </p>

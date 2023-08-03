@@ -3,6 +3,17 @@ pub use crate::operation::failover_global_replication_group::_failover_global_re
 
 pub use crate::operation::failover_global_replication_group::_failover_global_replication_group_input::FailoverGlobalReplicationGroupInputBuilder;
 
+impl FailoverGlobalReplicationGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::failover_global_replication_group::FailoverGlobalReplicationGroupOutput, ::aws_smithy_http::result::SdkError<crate::operation::failover_global_replication_group::FailoverGlobalReplicationGroupError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.failover_global_replication_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `FailoverGlobalReplicationGroup`.
 ///
 /// <p>Used to failover the primary region to a secondary region. The secondary region will become primary, and all other clusters will become secondary.</p>

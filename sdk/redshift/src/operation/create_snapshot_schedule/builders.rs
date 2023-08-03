@@ -3,6 +3,23 @@ pub use crate::operation::create_snapshot_schedule::_create_snapshot_schedule_ou
 
 pub use crate::operation::create_snapshot_schedule::_create_snapshot_schedule_input::CreateSnapshotScheduleInputBuilder;
 
+impl CreateSnapshotScheduleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_snapshot_schedule::CreateSnapshotScheduleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_snapshot_schedule::CreateSnapshotScheduleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_snapshot_schedule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateSnapshotSchedule`.
 ///
 /// <p>Create a snapshot schedule that can be associated to a cluster and which overrides the default system backup schedule. </p>

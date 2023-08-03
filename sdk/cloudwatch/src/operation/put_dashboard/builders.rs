@@ -3,6 +3,23 @@ pub use crate::operation::put_dashboard::_put_dashboard_output::PutDashboardOutp
 
 pub use crate::operation::put_dashboard::_put_dashboard_input::PutDashboardInputBuilder;
 
+impl PutDashboardInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_dashboard::PutDashboardOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_dashboard::PutDashboardError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_dashboard();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutDashboard`.
 ///
 /// <p>Creates a dashboard if it does not already exist, or updates an existing dashboard. If you update a dashboard, the entire contents are replaced with what you specify here.</p>

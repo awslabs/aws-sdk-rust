@@ -3,6 +3,23 @@ pub use crate::operation::create_sip_media_application_call::_create_sip_media_a
 
 pub use crate::operation::create_sip_media_application_call::_create_sip_media_application_call_input::CreateSipMediaApplicationCallInputBuilder;
 
+impl CreateSipMediaApplicationCallInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCallOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_sip_media_application_call::CreateSipMediaApplicationCallError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_sip_media_application_call();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateSipMediaApplicationCall`.
 ///
 /// <p>Creates an outbound call to a phone number from the phone number specified in the request, and it invokes the endpoint of the specified <code>sipMediaApplicationId</code>.</p> <important>

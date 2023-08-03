@@ -3,6 +3,17 @@ pub use crate::operation::delete_transit_gateway_route_table_announcement::_dele
 
 pub use crate::operation::delete_transit_gateway_route_table_announcement::_delete_transit_gateway_route_table_announcement_input::DeleteTransitGatewayRouteTableAnnouncementInputBuilder;
 
+impl DeleteTransitGatewayRouteTableAnnouncementInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_transit_gateway_route_table_announcement::DeleteTransitGatewayRouteTableAnnouncementOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_transit_gateway_route_table_announcement::DeleteTransitGatewayRouteTableAnnouncementError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.delete_transit_gateway_route_table_announcement();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteTransitGatewayRouteTableAnnouncement`.
 ///
 /// <p>Advertises to the transit gateway that a transit gateway route table is deleted.</p>

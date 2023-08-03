@@ -3,6 +3,23 @@ pub use crate::operation::list_applied_schema_arns::_list_applied_schema_arns_ou
 
 pub use crate::operation::list_applied_schema_arns::_list_applied_schema_arns_input::ListAppliedSchemaArnsInputBuilder;
 
+impl ListAppliedSchemaArnsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_applied_schema_arns::ListAppliedSchemaArnsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_applied_schema_arns::ListAppliedSchemaArnsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_applied_schema_arns();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAppliedSchemaArns`.
 ///
 /// <p>Lists schema major versions applied to a directory. If <code>SchemaArn</code> is provided, lists the minor version.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_deployment_strategy::_delete_deployment_strateg
 
 pub use crate::operation::delete_deployment_strategy::_delete_deployment_strategy_input::DeleteDeploymentStrategyInputBuilder;
 
+impl DeleteDeploymentStrategyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_deployment_strategy::DeleteDeploymentStrategyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_deployment_strategy::DeleteDeploymentStrategyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_deployment_strategy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteDeploymentStrategy`.
 ///
 /// <p>Deletes a deployment strategy. Deleting a deployment strategy does not delete a configuration from a host.</p>

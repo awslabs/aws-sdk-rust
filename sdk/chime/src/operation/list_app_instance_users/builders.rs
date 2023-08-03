@@ -3,6 +3,23 @@ pub use crate::operation::list_app_instance_users::_list_app_instance_users_outp
 
 pub use crate::operation::list_app_instance_users::_list_app_instance_users_input::ListAppInstanceUsersInputBuilder;
 
+impl ListAppInstanceUsersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_app_instance_users::ListAppInstanceUsersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_app_instance_users::ListAppInstanceUsersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_app_instance_users();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAppInstanceUsers`.
 ///
 /// <p>List all <code>AppInstanceUsers</code> created under a single <code>AppInstance</code>. </p> <important>

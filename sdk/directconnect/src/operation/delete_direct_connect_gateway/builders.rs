@@ -3,6 +3,23 @@ pub use crate::operation::delete_direct_connect_gateway::_delete_direct_connect_
 
 pub use crate::operation::delete_direct_connect_gateway::_delete_direct_connect_gateway_input::DeleteDirectConnectGatewayInputBuilder;
 
+impl DeleteDirectConnectGatewayInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_direct_connect_gateway::DeleteDirectConnectGatewayOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_direct_connect_gateway::DeleteDirectConnectGatewayError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_direct_connect_gateway();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteDirectConnectGateway`.
 ///
 /// <p>Deletes the specified Direct Connect gateway. You must first delete all virtual interfaces that are attached to the Direct Connect gateway and disassociate all virtual private gateways associated with the Direct Connect gateway.</p>

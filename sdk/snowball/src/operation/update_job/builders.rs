@@ -3,6 +3,23 @@ pub use crate::operation::update_job::_update_job_output::UpdateJobOutputBuilder
 
 pub use crate::operation::update_job::_update_job_input::UpdateJobInputBuilder;
 
+impl UpdateJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_job::UpdateJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_job::UpdateJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateJob`.
 ///
 /// <p>While a job's <code>JobState</code> value is <code>New</code>, you can update some of the information associated with a job. Once the job changes to a different job state, usually within 60 minutes of the job being created, this action is no longer available.</p>

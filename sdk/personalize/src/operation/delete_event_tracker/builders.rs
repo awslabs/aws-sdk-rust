@@ -3,6 +3,23 @@ pub use crate::operation::delete_event_tracker::_delete_event_tracker_output::De
 
 pub use crate::operation::delete_event_tracker::_delete_event_tracker_input::DeleteEventTrackerInputBuilder;
 
+impl DeleteEventTrackerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_event_tracker::DeleteEventTrackerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_event_tracker::DeleteEventTrackerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_event_tracker();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteEventTracker`.
 ///
 /// <p>Deletes the event tracker. Does not delete the event-interactions dataset from the associated dataset group. For more information on event trackers, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateEventTracker.html">CreateEventTracker</a>.</p>

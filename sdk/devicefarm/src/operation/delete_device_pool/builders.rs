@@ -3,6 +3,23 @@ pub use crate::operation::delete_device_pool::_delete_device_pool_output::Delete
 
 pub use crate::operation::delete_device_pool::_delete_device_pool_input::DeleteDevicePoolInputBuilder;
 
+impl DeleteDevicePoolInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_device_pool::DeleteDevicePoolOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_device_pool::DeleteDevicePoolError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_device_pool();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteDevicePool`.
 ///
 /// <p>Deletes a device pool given the pool ARN. Does not allow deletion of curated pools owned by the system.</p>

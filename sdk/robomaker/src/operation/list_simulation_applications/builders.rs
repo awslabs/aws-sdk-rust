@@ -3,6 +3,23 @@ pub use crate::operation::list_simulation_applications::_list_simulation_applica
 
 pub use crate::operation::list_simulation_applications::_list_simulation_applications_input::ListSimulationApplicationsInputBuilder;
 
+impl ListSimulationApplicationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_simulation_applications::ListSimulationApplicationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_simulation_applications::ListSimulationApplicationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_simulation_applications();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListSimulationApplications`.
 ///
 /// <p>Returns a list of simulation applications. You can optionally provide filters to retrieve specific simulation applications. </p>

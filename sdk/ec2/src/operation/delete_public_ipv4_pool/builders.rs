@@ -3,6 +3,23 @@ pub use crate::operation::delete_public_ipv4_pool::_delete_public_ipv4_pool_outp
 
 pub use crate::operation::delete_public_ipv4_pool::_delete_public_ipv4_pool_input::DeletePublicIpv4PoolInputBuilder;
 
+impl DeletePublicIpv4PoolInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_public_ipv4_pool::DeletePublicIpv4PoolOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_public_ipv4_pool::DeletePublicIpv4PoolError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_public_ipv4_pool();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeletePublicIpv4Pool`.
 ///
 /// <p>Delete a public IPv4 pool. A public IPv4 pool is an EC2 IP address pool required for the public IPv4 CIDRs that you own and bring to Amazon Web Services to manage with IPAM. IPv6 addresses you bring to Amazon Web Services, however, use IPAM pools only.</p>

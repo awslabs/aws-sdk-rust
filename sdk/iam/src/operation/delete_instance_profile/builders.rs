@@ -3,6 +3,23 @@ pub use crate::operation::delete_instance_profile::_delete_instance_profile_outp
 
 pub use crate::operation::delete_instance_profile::_delete_instance_profile_input::DeleteInstanceProfileInputBuilder;
 
+impl DeleteInstanceProfileInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_instance_profile::DeleteInstanceProfileOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_instance_profile::DeleteInstanceProfileError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_instance_profile();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteInstanceProfile`.
 ///
 /// <p>Deletes the specified instance profile. The instance profile must not have an associated role.</p> <important>

@@ -3,6 +3,23 @@ pub use crate::operation::deprecate_flow_template::_deprecate_flow_template_outp
 
 pub use crate::operation::deprecate_flow_template::_deprecate_flow_template_input::DeprecateFlowTemplateInputBuilder;
 
+impl DeprecateFlowTemplateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::deprecate_flow_template::DeprecateFlowTemplateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::deprecate_flow_template::DeprecateFlowTemplateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.deprecate_flow_template();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeprecateFlowTemplate`.
 ///
 /// <p>Deprecates the specified workflow. This action marks the workflow for deletion. Deprecated flows can't be deployed, but existing deployments will continue to run.</p>

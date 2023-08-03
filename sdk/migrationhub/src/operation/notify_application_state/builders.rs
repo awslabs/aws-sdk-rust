@@ -3,6 +3,23 @@ pub use crate::operation::notify_application_state::_notify_application_state_ou
 
 pub use crate::operation::notify_application_state::_notify_application_state_input::NotifyApplicationStateInputBuilder;
 
+impl NotifyApplicationStateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::notify_application_state::NotifyApplicationStateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::notify_application_state::NotifyApplicationStateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.notify_application_state();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `NotifyApplicationState`.
 ///
 /// <p>Sets the migration state of an application. For a given application identified by the value passed to <code>ApplicationId</code>, its status is set or updated by passing one of three values to <code>Status</code>: <code>NOT_STARTED | IN_PROGRESS | COMPLETED</code>.</p>

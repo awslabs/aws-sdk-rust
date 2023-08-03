@@ -3,6 +3,23 @@ pub use crate::operation::delete_subscriber_notification::_delete_subscriber_not
 
 pub use crate::operation::delete_subscriber_notification::_delete_subscriber_notification_input::DeleteSubscriberNotificationInputBuilder;
 
+impl DeleteSubscriberNotificationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_subscriber_notification::DeleteSubscriberNotificationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_subscriber_notification::DeleteSubscriberNotificationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_subscriber_notification();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteSubscriberNotification`.
 ///
 /// <p>Deletes the specified notification subscription in Amazon Security Lake for the organization you specify.</p>

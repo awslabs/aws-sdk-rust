@@ -3,6 +3,23 @@ pub use crate::operation::describe_accelerators::_describe_accelerators_output::
 
 pub use crate::operation::describe_accelerators::_describe_accelerators_input::DescribeAcceleratorsInputBuilder;
 
+impl DescribeAcceleratorsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_accelerators::DescribeAcceleratorsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_accelerators::DescribeAcceleratorsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_accelerators();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAccelerators`.
 ///
 /// <p> Describes information over a provided set of accelerators belonging to an account. </p>

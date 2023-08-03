@@ -3,6 +3,23 @@ pub use crate::operation::describe_mailbox_export_job::_describe_mailbox_export_
 
 pub use crate::operation::describe_mailbox_export_job::_describe_mailbox_export_job_input::DescribeMailboxExportJobInputBuilder;
 
+impl DescribeMailboxExportJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_mailbox_export_job::DescribeMailboxExportJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_mailbox_export_job::DescribeMailboxExportJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_mailbox_export_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeMailboxExportJob`.
 ///
 /// <p>Describes the current status of a mailbox export job.</p>

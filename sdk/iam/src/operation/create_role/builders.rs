@@ -3,6 +3,23 @@ pub use crate::operation::create_role::_create_role_output::CreateRoleOutputBuil
 
 pub use crate::operation::create_role::_create_role_input::CreateRoleInputBuilder;
 
+impl CreateRoleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_role::CreateRoleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_role::CreateRoleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_role();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateRole`.
 ///
 /// <p>Creates a new role for your Amazon Web Services account.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_domain_endpoint_options::_describe_domain_end
 
 pub use crate::operation::describe_domain_endpoint_options::_describe_domain_endpoint_options_input::DescribeDomainEndpointOptionsInputBuilder;
 
+impl DescribeDomainEndpointOptionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_domain_endpoint_options::DescribeDomainEndpointOptionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_domain_endpoint_options::DescribeDomainEndpointOptionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_domain_endpoint_options();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeDomainEndpointOptions`.
 ///
 /// <p>Returns the domain's endpoint options, specifically whether all requests to the domain must arrive over HTTPS. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-domain-endpoint-options.html" target="_blank">Configuring Domain Endpoint Options</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>

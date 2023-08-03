@@ -3,6 +3,23 @@ pub use crate::operation::get_web_acl::_get_web_acl_output::GetWebAclOutputBuild
 
 pub use crate::operation::get_web_acl::_get_web_acl_input::GetWebAclInputBuilder;
 
+impl GetWebAclInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_web_acl::GetWebAclOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_web_acl::GetWebACLError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_web_acl();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetWebACL`.
 ///
 /// <p>Retrieves the specified <code>WebACL</code>.</p>

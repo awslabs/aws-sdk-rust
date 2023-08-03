@@ -3,6 +3,23 @@ pub use crate::operation::list_snomedct_inference_jobs::_list_snomedct_inference
 
 pub use crate::operation::list_snomedct_inference_jobs::_list_snomedct_inference_jobs_input::ListSnomedctInferenceJobsInputBuilder;
 
+impl ListSnomedctInferenceJobsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_snomedct_inference_jobs::ListSnomedctInferenceJobsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_snomedct_inference_jobs::ListSNOMEDCTInferenceJobsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_snomedct_inference_jobs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListSNOMEDCTInferenceJobs`.
 ///
 /// <p> Gets a list of InferSNOMEDCT jobs a user has submitted. </p>

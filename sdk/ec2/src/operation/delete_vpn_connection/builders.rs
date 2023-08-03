@@ -3,6 +3,23 @@ pub use crate::operation::delete_vpn_connection::_delete_vpn_connection_output::
 
 pub use crate::operation::delete_vpn_connection::_delete_vpn_connection_input::DeleteVpnConnectionInputBuilder;
 
+impl DeleteVpnConnectionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_vpn_connection::DeleteVpnConnectionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_vpn_connection::DeleteVpnConnectionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_vpn_connection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteVpnConnection`.
 ///
 /// <p>Deletes the specified VPN connection.</p>

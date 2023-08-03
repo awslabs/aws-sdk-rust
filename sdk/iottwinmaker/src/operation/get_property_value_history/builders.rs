@@ -3,6 +3,23 @@ pub use crate::operation::get_property_value_history::_get_property_value_histor
 
 pub use crate::operation::get_property_value_history::_get_property_value_history_input::GetPropertyValueHistoryInputBuilder;
 
+impl GetPropertyValueHistoryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_property_value_history::GetPropertyValueHistoryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_property_value_history::GetPropertyValueHistoryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_property_value_history();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetPropertyValueHistory`.
 ///
 /// <p>Retrieves information about the history of a time series property value for a component, component type, entity, or workspace.</p>

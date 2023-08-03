@@ -3,6 +3,23 @@ pub use crate::operation::ungroup_resources::_ungroup_resources_output::UngroupR
 
 pub use crate::operation::ungroup_resources::_ungroup_resources_input::UngroupResourcesInputBuilder;
 
+impl UngroupResourcesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::ungroup_resources::UngroupResourcesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::ungroup_resources::UngroupResourcesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.ungroup_resources();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UngroupResources`.
 ///
 /// <p>Removes the specified resources from the specified group. This operation works only with static groups that you populated using the <code>GroupResources</code> operation. It doesn't work with any resource groups that are automatically populated by tag-based or CloudFormation stack-based queries.</p>

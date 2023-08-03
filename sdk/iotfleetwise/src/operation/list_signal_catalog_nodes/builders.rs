@@ -3,6 +3,23 @@ pub use crate::operation::list_signal_catalog_nodes::_list_signal_catalog_nodes_
 
 pub use crate::operation::list_signal_catalog_nodes::_list_signal_catalog_nodes_input::ListSignalCatalogNodesInputBuilder;
 
+impl ListSignalCatalogNodesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_signal_catalog_nodes::ListSignalCatalogNodesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_signal_catalog_nodes::ListSignalCatalogNodesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_signal_catalog_nodes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListSignalCatalogNodes`.
 ///
 /// <p> Lists of information about the signals (nodes) specified in a signal catalog. </p> <note>

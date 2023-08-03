@@ -3,6 +3,23 @@ pub use crate::operation::add_tags_to_resource::_add_tags_to_resource_output::Ad
 
 pub use crate::operation::add_tags_to_resource::_add_tags_to_resource_input::AddTagsToResourceInputBuilder;
 
+impl AddTagsToResourceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::add_tags_to_resource::AddTagsToResourceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::add_tags_to_resource::AddTagsToResourceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.add_tags_to_resource();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AddTagsToResource`.
 ///
 /// <p>Adds metadata tags to an Amazon Neptune resource. These tags can also be used with cost allocation reporting to track cost associated with Amazon Neptune resources, or used in a Condition statement in an IAM policy for Amazon Neptune.</p>

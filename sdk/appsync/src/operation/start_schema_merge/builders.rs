@@ -3,6 +3,23 @@ pub use crate::operation::start_schema_merge::_start_schema_merge_output::StartS
 
 pub use crate::operation::start_schema_merge::_start_schema_merge_input::StartSchemaMergeInputBuilder;
 
+impl StartSchemaMergeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_schema_merge::StartSchemaMergeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_schema_merge::StartSchemaMergeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_schema_merge();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartSchemaMerge`.
 ///
 /// <p>Initiates a merge operation. Returns a status that shows the result of the merge operation.</p>

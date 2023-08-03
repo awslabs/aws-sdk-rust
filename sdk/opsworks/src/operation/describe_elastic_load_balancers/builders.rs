@@ -3,6 +3,23 @@ pub use crate::operation::describe_elastic_load_balancers::_describe_elastic_loa
 
 pub use crate::operation::describe_elastic_load_balancers::_describe_elastic_load_balancers_input::DescribeElasticLoadBalancersInputBuilder;
 
+impl DescribeElasticLoadBalancersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_elastic_load_balancers::DescribeElasticLoadBalancersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_elastic_load_balancers::DescribeElasticLoadBalancersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_elastic_load_balancers();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeElasticLoadBalancers`.
 ///
 /// <p>Describes a stack's Elastic Load Balancing instances.</p> <note>

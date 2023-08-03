@@ -3,6 +3,23 @@ pub use crate::operation::unassign_ipv6_addresses::_unassign_ipv6_addresses_outp
 
 pub use crate::operation::unassign_ipv6_addresses::_unassign_ipv6_addresses_input::UnassignIpv6AddressesInputBuilder;
 
+impl UnassignIpv6AddressesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::unassign_ipv6_addresses::UnassignIpv6AddressesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::unassign_ipv6_addresses::UnassignIpv6AddressesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.unassign_ipv6_addresses();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UnassignIpv6Addresses`.
 ///
 /// <p>Unassigns one or more IPv6 addresses IPv4 Prefix Delegation prefixes from a network interface.</p>

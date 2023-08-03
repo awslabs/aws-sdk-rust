@@ -3,6 +3,23 @@ pub use crate::operation::update_multiplex_program::_update_multiplex_program_ou
 
 pub use crate::operation::update_multiplex_program::_update_multiplex_program_input::UpdateMultiplexProgramInputBuilder;
 
+impl UpdateMultiplexProgramInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_multiplex_program::UpdateMultiplexProgramOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_multiplex_program::UpdateMultiplexProgramError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_multiplex_program();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateMultiplexProgram`.
 ///
 /// Update a program in a multiplex.

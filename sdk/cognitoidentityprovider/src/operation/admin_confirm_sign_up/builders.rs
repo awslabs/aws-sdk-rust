@@ -3,6 +3,23 @@ pub use crate::operation::admin_confirm_sign_up::_admin_confirm_sign_up_output::
 
 pub use crate::operation::admin_confirm_sign_up::_admin_confirm_sign_up_input::AdminConfirmSignUpInputBuilder;
 
+impl AdminConfirmSignUpInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::admin_confirm_sign_up::AdminConfirmSignUpOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::admin_confirm_sign_up::AdminConfirmSignUpError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.admin_confirm_sign_up();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AdminConfirmSignUp`.
 ///
 /// <p>Confirms user registration as an admin without using a confirmation code. Works on any user.</p>

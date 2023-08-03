@@ -3,6 +3,23 @@ pub use crate::operation::stop_application::_stop_application_output::StopApplic
 
 pub use crate::operation::stop_application::_stop_application_input::StopApplicationInputBuilder;
 
+impl StopApplicationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_application::StopApplicationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_application::StopApplicationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_application();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopApplication`.
 ///
 /// <p>Stops the application from processing data. You can stop an application only if it is in the running status, unless you set the <code>Force</code> parameter to <code>true</code>.</p>

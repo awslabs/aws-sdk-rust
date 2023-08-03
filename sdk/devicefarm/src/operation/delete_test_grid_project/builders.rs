@@ -3,6 +3,23 @@ pub use crate::operation::delete_test_grid_project::_delete_test_grid_project_ou
 
 pub use crate::operation::delete_test_grid_project::_delete_test_grid_project_input::DeleteTestGridProjectInputBuilder;
 
+impl DeleteTestGridProjectInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_test_grid_project::DeleteTestGridProjectOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_test_grid_project::DeleteTestGridProjectError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_test_grid_project();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteTestGridProject`.
 ///
 /// <p> Deletes a Selenium testing project and all content generated under it. </p> <important>

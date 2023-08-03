@@ -3,6 +3,23 @@ pub use crate::operation::get_integration::_get_integration_output::GetIntegrati
 
 pub use crate::operation::get_integration::_get_integration_input::GetIntegrationInputBuilder;
 
+impl GetIntegrationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_integration::GetIntegrationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_integration::GetIntegrationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_integration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetIntegration`.
 ///
 /// <p>Get the integration settings.</p>

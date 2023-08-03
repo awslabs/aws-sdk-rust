@@ -3,6 +3,23 @@ pub use crate::operation::describe_entity_aggregates::_describe_entity_aggregate
 
 pub use crate::operation::describe_entity_aggregates::_describe_entity_aggregates_input::DescribeEntityAggregatesInputBuilder;
 
+impl DescribeEntityAggregatesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_entity_aggregates::DescribeEntityAggregatesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_entity_aggregates::DescribeEntityAggregatesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_entity_aggregates();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeEntityAggregates`.
 ///
 /// <p>Returns the number of entities that are affected by each of the specified events.</p>

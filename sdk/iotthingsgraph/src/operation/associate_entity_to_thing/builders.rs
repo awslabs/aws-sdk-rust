@@ -3,6 +3,23 @@ pub use crate::operation::associate_entity_to_thing::_associate_entity_to_thing_
 
 pub use crate::operation::associate_entity_to_thing::_associate_entity_to_thing_input::AssociateEntityToThingInputBuilder;
 
+impl AssociateEntityToThingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_entity_to_thing::AssociateEntityToThingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_entity_to_thing::AssociateEntityToThingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_entity_to_thing();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateEntityToThing`.
 ///
 /// <p>Associates a device with a concrete thing that is in the user's registry.</p>

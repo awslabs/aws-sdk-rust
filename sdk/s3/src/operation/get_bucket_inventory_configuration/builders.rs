@@ -3,6 +3,17 @@ pub use crate::operation::get_bucket_inventory_configuration::_get_bucket_invent
 
 pub use crate::operation::get_bucket_inventory_configuration::_get_bucket_inventory_configuration_input::GetBucketInventoryConfigurationInputBuilder;
 
+impl GetBucketInventoryConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_bucket_inventory_configuration::GetBucketInventoryConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_bucket_inventory_configuration::GetBucketInventoryConfigurationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_bucket_inventory_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetBucketInventoryConfiguration`.
 ///
 /// <p>Returns an inventory configuration (identified by the inventory configuration ID) from the bucket.</p>

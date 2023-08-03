@@ -3,6 +3,23 @@ pub use crate::operation::delete_streaming_distribution::_delete_streaming_distr
 
 pub use crate::operation::delete_streaming_distribution::_delete_streaming_distribution_input::DeleteStreamingDistributionInputBuilder;
 
+impl DeleteStreamingDistributionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_streaming_distribution::DeleteStreamingDistributionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_streaming_distribution::DeleteStreamingDistributionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_streaming_distribution();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteStreamingDistribution`.
 ///
 /// <p>Delete a streaming distribution. To delete an RTMP distribution using the CloudFront API, perform the following steps.</p>

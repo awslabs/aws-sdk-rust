@@ -3,6 +3,23 @@ pub use crate::operation::create_user::_create_user_output::CreateUserOutputBuil
 
 pub use crate::operation::create_user::_create_user_input::CreateUserInputBuilder;
 
+impl CreateUserInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_user::CreateUserOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_user::CreateUserError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_user();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateUser`.
 ///
 /// <p>For Redis engine version 6.0 onwards: Creates a Redis user. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.RBAC.html">Using Role Based Access Control (RBAC)</a>.</p>

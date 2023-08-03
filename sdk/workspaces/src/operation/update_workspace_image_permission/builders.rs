@@ -3,6 +3,17 @@ pub use crate::operation::update_workspace_image_permission::_update_workspace_i
 
 pub use crate::operation::update_workspace_image_permission::_update_workspace_image_permission_input::UpdateWorkspaceImagePermissionInputBuilder;
 
+impl UpdateWorkspaceImagePermissionInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::update_workspace_image_permission::UpdateWorkspaceImagePermissionOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_workspace_image_permission::UpdateWorkspaceImagePermissionError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.update_workspace_image_permission();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateWorkspaceImagePermission`.
 ///
 /// <p>Shares or unshares an image with one account in the same Amazon Web Services Region by specifying whether that account has permission to copy the image. If the copy image permission is granted, the image is shared with that account. If the copy image permission is revoked, the image is unshared with the account.</p>

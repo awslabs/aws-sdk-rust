@@ -3,6 +3,23 @@ pub use crate::operation::approve_assignment::_approve_assignment_output::Approv
 
 pub use crate::operation::approve_assignment::_approve_assignment_input::ApproveAssignmentInputBuilder;
 
+impl ApproveAssignmentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::approve_assignment::ApproveAssignmentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::approve_assignment::ApproveAssignmentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.approve_assignment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ApproveAssignment`.
 ///
 /// <p> The <code>ApproveAssignment</code> operation approves the results of a completed assignment. </p>

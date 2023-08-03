@@ -3,6 +3,23 @@ pub use crate::operation::update_email_identity_policy::_update_email_identity_p
 
 pub use crate::operation::update_email_identity_policy::_update_email_identity_policy_input::UpdateEmailIdentityPolicyInputBuilder;
 
+impl UpdateEmailIdentityPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_email_identity_policy::UpdateEmailIdentityPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_email_identity_policy::UpdateEmailIdentityPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_email_identity_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateEmailIdentityPolicy`.
 ///
 /// <p>Updates the specified sending authorization policy for the given identity (an email address or a domain). This API returns successfully even if a policy with the specified name does not exist.</p> <note>

@@ -3,6 +3,17 @@ pub use crate::operation::describe_application_instance_details::_describe_appli
 
 pub use crate::operation::describe_application_instance_details::_describe_application_instance_details_input::DescribeApplicationInstanceDetailsInputBuilder;
 
+impl DescribeApplicationInstanceDetailsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_application_instance_details::DescribeApplicationInstanceDetailsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_application_instance_details::DescribeApplicationInstanceDetailsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_application_instance_details();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeApplicationInstanceDetails`.
 ///
 /// <p>Returns information about an application instance's configuration manifest.</p>

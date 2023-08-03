@@ -3,6 +3,23 @@ pub use crate::operation::list_elasticsearch_versions::_list_elasticsearch_versi
 
 pub use crate::operation::list_elasticsearch_versions::_list_elasticsearch_versions_input::ListElasticsearchVersionsInputBuilder;
 
+impl ListElasticsearchVersionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_elasticsearch_versions::ListElasticsearchVersionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_elasticsearch_versions::ListElasticsearchVersionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_elasticsearch_versions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListElasticsearchVersions`.
 ///
 /// <p>List all supported Elasticsearch versions</p>

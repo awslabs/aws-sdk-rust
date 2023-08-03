@@ -3,6 +3,23 @@ pub use crate::operation::send_voice_message::_send_voice_message_output::SendVo
 
 pub use crate::operation::send_voice_message::_send_voice_message_input::SendVoiceMessageInputBuilder;
 
+impl SendVoiceMessageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::send_voice_message::SendVoiceMessageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::send_voice_message::SendVoiceMessageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.send_voice_message();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SendVoiceMessage`.
 ///
 /// Create a new voice message and send it to a recipient's phone number.

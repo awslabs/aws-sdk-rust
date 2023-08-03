@@ -3,6 +3,23 @@ pub use crate::operation::list_application_dpu_sizes::_list_application_dpu_size
 
 pub use crate::operation::list_application_dpu_sizes::_list_application_dpu_sizes_input::ListApplicationDpuSizesInputBuilder;
 
+impl ListApplicationDpuSizesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_application_dpu_sizes::ListApplicationDpuSizesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_application_dpu_sizes::ListApplicationDPUSizesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_application_dpu_sizes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListApplicationDPUSizes`.
 ///
 /// <p>Returns the supported DPU sizes for the supported application runtimes (for example, <code>Athena notebook version 1</code>). </p>

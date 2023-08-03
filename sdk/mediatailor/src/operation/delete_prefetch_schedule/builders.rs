@@ -3,6 +3,23 @@ pub use crate::operation::delete_prefetch_schedule::_delete_prefetch_schedule_ou
 
 pub use crate::operation::delete_prefetch_schedule::_delete_prefetch_schedule_input::DeletePrefetchScheduleInputBuilder;
 
+impl DeletePrefetchScheduleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_prefetch_schedule::DeletePrefetchScheduleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_prefetch_schedule::DeletePrefetchScheduleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_prefetch_schedule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeletePrefetchSchedule`.
 ///
 /// <p>Deletes a prefetch schedule for a specific playback configuration. If you call <code>DeletePrefetchSchedule</code> on an expired prefetch schedule, MediaTailor returns an HTTP 404 status code. For more information about ad prefetching, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/prefetching-ads.html">Using ad prefetching</a> in the <i>MediaTailor User Guide</i>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::confirm_sign_up::_confirm_sign_up_output::ConfirmSignU
 
 pub use crate::operation::confirm_sign_up::_confirm_sign_up_input::ConfirmSignUpInputBuilder;
 
+impl ConfirmSignUpInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::confirm_sign_up::ConfirmSignUpOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::confirm_sign_up::ConfirmSignUpError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.confirm_sign_up();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ConfirmSignUp`.
 ///
 /// <p>Confirms registration of a new user.</p>

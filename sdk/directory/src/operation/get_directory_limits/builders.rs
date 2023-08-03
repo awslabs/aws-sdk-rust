@@ -3,6 +3,23 @@ pub use crate::operation::get_directory_limits::_get_directory_limits_output::Ge
 
 pub use crate::operation::get_directory_limits::_get_directory_limits_input::GetDirectoryLimitsInputBuilder;
 
+impl GetDirectoryLimitsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_directory_limits::GetDirectoryLimitsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_directory_limits::GetDirectoryLimitsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_directory_limits();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetDirectoryLimits`.
 ///
 /// <p>Obtains directory limit information for the current Region.</p>

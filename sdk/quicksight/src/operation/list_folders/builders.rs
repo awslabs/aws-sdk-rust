@@ -3,6 +3,23 @@ pub use crate::operation::list_folders::_list_folders_output::ListFoldersOutputB
 
 pub use crate::operation::list_folders::_list_folders_input::ListFoldersInputBuilder;
 
+impl ListFoldersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_folders::ListFoldersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_folders::ListFoldersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_folders();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListFolders`.
 ///
 /// <p>Lists all folders in an account.</p>

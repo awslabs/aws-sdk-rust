@@ -3,6 +3,23 @@ pub use crate::operation::create_ipam_pool::_create_ipam_pool_output::CreateIpam
 
 pub use crate::operation::create_ipam_pool::_create_ipam_pool_input::CreateIpamPoolInputBuilder;
 
+impl CreateIpamPoolInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_ipam_pool::CreateIpamPoolOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_ipam_pool::CreateIpamPoolError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_ipam_pool();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateIpamPool`.
 ///
 /// <p>Create an IP address pool for Amazon VPC IP Address Manager (IPAM). In IPAM, a pool is a collection of contiguous IP addresses CIDRs. Pools enable you to organize your IP addresses according to your routing and security needs. For example, if you have separate routing and security needs for development and production applications, you can create a pool for each.</p>

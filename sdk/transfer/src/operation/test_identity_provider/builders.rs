@@ -3,6 +3,23 @@ pub use crate::operation::test_identity_provider::_test_identity_provider_output
 
 pub use crate::operation::test_identity_provider::_test_identity_provider_input::TestIdentityProviderInputBuilder;
 
+impl TestIdentityProviderInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::test_identity_provider::TestIdentityProviderOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::test_identity_provider::TestIdentityProviderError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.test_identity_provider();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `TestIdentityProvider`.
 ///
 /// <p>If the <code>IdentityProviderType</code> of a file transfer protocol-enabled server is <code>AWS_DIRECTORY_SERVICE</code> or <code>API_Gateway</code>, tests whether your identity provider is set up successfully. We highly recommend that you call this operation to test your authentication method as soon as you create your server. By doing so, you can troubleshoot issues with the identity provider integration to ensure that your users can successfully use the service.</p>

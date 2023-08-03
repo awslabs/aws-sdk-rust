@@ -3,6 +3,23 @@ pub use crate::operation::list_lineage_groups::_list_lineage_groups_output::List
 
 pub use crate::operation::list_lineage_groups::_list_lineage_groups_input::ListLineageGroupsInputBuilder;
 
+impl ListLineageGroupsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_lineage_groups::ListLineageGroupsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_lineage_groups::ListLineageGroupsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_lineage_groups();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListLineageGroups`.
 ///
 /// <p>A list of lineage groups shared with your Amazon Web Services account. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/xaccount-lineage-tracking.html"> Cross-Account Lineage Tracking </a> in the <i>Amazon SageMaker Developer Guide</i>.</p>

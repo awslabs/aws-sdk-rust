@@ -3,6 +3,23 @@ pub use crate::operation::get_detectors::_get_detectors_output::GetDetectorsOutp
 
 pub use crate::operation::get_detectors::_get_detectors_input::GetDetectorsInputBuilder;
 
+impl GetDetectorsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_detectors::GetDetectorsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_detectors::GetDetectorsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_detectors();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetDetectors`.
 ///
 /// <p>Gets all detectors or a single detector if a <code>detectorId</code> is specified. This is a paginated API. If you provide a null <code>maxResults</code>, this action retrieves a maximum of 10 records per page. If you provide a <code>maxResults</code>, the value must be between 5 and 10. To get the next page results, provide the pagination token from the <code>GetDetectorsResponse</code> as part of your request. A null pagination token fetches the records from the beginning. </p>

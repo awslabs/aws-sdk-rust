@@ -3,6 +3,23 @@ pub use crate::operation::delete_file::_delete_file_output::DeleteFileOutputBuil
 
 pub use crate::operation::delete_file::_delete_file_input::DeleteFileInputBuilder;
 
+impl DeleteFileInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_file::DeleteFileOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_file::DeleteFileError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_file();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteFile`.
 ///
 /// <p>Deletes a specified file from a specified branch. A commit is created on the branch that contains the revision. The file still exists in the commits earlier to the commit that contains the deletion.</p>

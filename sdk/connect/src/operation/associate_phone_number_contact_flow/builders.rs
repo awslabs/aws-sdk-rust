@@ -3,6 +3,17 @@ pub use crate::operation::associate_phone_number_contact_flow::_associate_phone_
 
 pub use crate::operation::associate_phone_number_contact_flow::_associate_phone_number_contact_flow_input::AssociatePhoneNumberContactFlowInputBuilder;
 
+impl AssociatePhoneNumberContactFlowInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::associate_phone_number_contact_flow::AssociatePhoneNumberContactFlowOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_phone_number_contact_flow::AssociatePhoneNumberContactFlowError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.associate_phone_number_contact_flow();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociatePhoneNumberContactFlow`.
 ///
 /// <p>Associates a flow with a phone number claimed to your Amazon Connect instance.</p> <important>

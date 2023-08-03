@@ -3,6 +3,17 @@ pub use crate::operation::modify_certificate_based_auth_properties::_modify_cert
 
 pub use crate::operation::modify_certificate_based_auth_properties::_modify_certificate_based_auth_properties_input::ModifyCertificateBasedAuthPropertiesInputBuilder;
 
+impl ModifyCertificateBasedAuthPropertiesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::modify_certificate_based_auth_properties::ModifyCertificateBasedAuthPropertiesOutput, ::aws_smithy_http::result::SdkError<crate::operation::modify_certificate_based_auth_properties::ModifyCertificateBasedAuthPropertiesError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.modify_certificate_based_auth_properties();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyCertificateBasedAuthProperties`.
 ///
 /// <p>Modifies the properties of the certificate-based authentication you want to use with your WorkSpaces.</p>

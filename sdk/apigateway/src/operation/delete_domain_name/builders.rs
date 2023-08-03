@@ -3,6 +3,23 @@ pub use crate::operation::delete_domain_name::_delete_domain_name_output::Delete
 
 pub use crate::operation::delete_domain_name::_delete_domain_name_input::DeleteDomainNameInputBuilder;
 
+impl DeleteDomainNameInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_domain_name::DeleteDomainNameOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_domain_name::DeleteDomainNameError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_domain_name();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteDomainName`.
 ///
 /// <p>Deletes the DomainName resource.</p>

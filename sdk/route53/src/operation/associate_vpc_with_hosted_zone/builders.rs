@@ -3,6 +3,23 @@ pub use crate::operation::associate_vpc_with_hosted_zone::_associate_vpc_with_ho
 
 pub use crate::operation::associate_vpc_with_hosted_zone::_associate_vpc_with_hosted_zone_input::AssociateVpcWithHostedZoneInputBuilder;
 
+impl AssociateVpcWithHostedZoneInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_vpc_with_hosted_zone::AssociateVpcWithHostedZoneOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_vpc_with_hosted_zone::AssociateVPCWithHostedZoneError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_vpc_with_hosted_zone();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateVPCWithHostedZone`.
 ///
 /// <p>Associates an Amazon VPC with a private hosted zone. </p> <important>

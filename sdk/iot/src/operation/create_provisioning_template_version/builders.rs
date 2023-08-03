@@ -3,6 +3,17 @@ pub use crate::operation::create_provisioning_template_version::_create_provisio
 
 pub use crate::operation::create_provisioning_template_version::_create_provisioning_template_version_input::CreateProvisioningTemplateVersionInputBuilder;
 
+impl CreateProvisioningTemplateVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::create_provisioning_template_version::CreateProvisioningTemplateVersionOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_provisioning_template_version::CreateProvisioningTemplateVersionError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.create_provisioning_template_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateProvisioningTemplateVersion`.
 ///
 /// <p>Creates a new version of a provisioning template.</p>

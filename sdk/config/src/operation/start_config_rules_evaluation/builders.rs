@@ -3,6 +3,23 @@ pub use crate::operation::start_config_rules_evaluation::_start_config_rules_eva
 
 pub use crate::operation::start_config_rules_evaluation::_start_config_rules_evaluation_input::StartConfigRulesEvaluationInputBuilder;
 
+impl StartConfigRulesEvaluationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_config_rules_evaluation::StartConfigRulesEvaluationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_config_rules_evaluation::StartConfigRulesEvaluationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_config_rules_evaluation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartConfigRulesEvaluation`.
 ///
 /// <p>Runs an on-demand evaluation for the specified Config rules against the last known configuration state of the resources. Use <code>StartConfigRulesEvaluation</code> when you want to test that a rule you updated is working as expected. <code>StartConfigRulesEvaluation</code> does not re-record the latest configuration state for your resources. It re-runs an evaluation against the last known state of your resources. </p>

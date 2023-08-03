@@ -3,6 +3,23 @@ pub use crate::operation::list_data_sets::_list_data_sets_output::ListDataSetsOu
 
 pub use crate::operation::list_data_sets::_list_data_sets_input::ListDataSetsInputBuilder;
 
+impl ListDataSetsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_data_sets::ListDataSetsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_data_sets::ListDataSetsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_data_sets();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDataSets`.
 ///
 /// <p>Lists the data sets imported for a specific application. In Amazon Web Services Mainframe Modernization, data sets are associated with applications deployed on runtime environments. This is known as importing data sets. Currently, Amazon Web Services Mainframe Modernization can import data sets into catalogs using <a href="https://docs.aws.amazon.com/m2/latest/APIReference/API_CreateDataSetImportTask.html">CreateDataSetImportTask</a>.</p>

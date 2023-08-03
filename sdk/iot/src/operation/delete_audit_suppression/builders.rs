@@ -3,6 +3,23 @@ pub use crate::operation::delete_audit_suppression::_delete_audit_suppression_ou
 
 pub use crate::operation::delete_audit_suppression::_delete_audit_suppression_input::DeleteAuditSuppressionInputBuilder;
 
+impl DeleteAuditSuppressionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_audit_suppression::DeleteAuditSuppressionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_audit_suppression::DeleteAuditSuppressionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_audit_suppression();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteAuditSuppression`.
 ///
 /// <p> Deletes a Device Defender audit suppression. </p>

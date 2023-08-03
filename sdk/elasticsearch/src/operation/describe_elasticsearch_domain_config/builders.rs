@@ -3,6 +3,17 @@ pub use crate::operation::describe_elasticsearch_domain_config::_describe_elasti
 
 pub use crate::operation::describe_elasticsearch_domain_config::_describe_elasticsearch_domain_config_input::DescribeElasticsearchDomainConfigInputBuilder;
 
+impl DescribeElasticsearchDomainConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_elasticsearch_domain_config::DescribeElasticsearchDomainConfigOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_elasticsearch_domain_config::DescribeElasticsearchDomainConfigError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_elasticsearch_domain_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeElasticsearchDomainConfig`.
 ///
 /// <p>Provides cluster configuration information about the specified Elasticsearch domain, such as the state, creation date, update version, and update date for cluster options.</p>

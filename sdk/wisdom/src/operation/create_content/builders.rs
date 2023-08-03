@@ -3,6 +3,23 @@ pub use crate::operation::create_content::_create_content_output::CreateContentO
 
 pub use crate::operation::create_content::_create_content_input::CreateContentInputBuilder;
 
+impl CreateContentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_content::CreateContentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_content::CreateContentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_content();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateContent`.
 ///
 /// <p>Creates Wisdom content. Before to calling this API, use <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_StartContentUpload.html">StartContentUpload</a> to upload an asset.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_processing_jobs::_list_processing_jobs_output::Li
 
 pub use crate::operation::list_processing_jobs::_list_processing_jobs_input::ListProcessingJobsInputBuilder;
 
+impl ListProcessingJobsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_processing_jobs::ListProcessingJobsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_processing_jobs::ListProcessingJobsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_processing_jobs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListProcessingJobs`.
 ///
 /// <p>Lists processing jobs that satisfy various filters.</p>

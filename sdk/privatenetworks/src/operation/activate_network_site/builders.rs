@@ -3,6 +3,23 @@ pub use crate::operation::activate_network_site::_activate_network_site_output::
 
 pub use crate::operation::activate_network_site::_activate_network_site_input::ActivateNetworkSiteInputBuilder;
 
+impl ActivateNetworkSiteInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::activate_network_site::ActivateNetworkSiteOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::activate_network_site::ActivateNetworkSiteError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.activate_network_site();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ActivateNetworkSite`.
 ///
 /// <p>Activates the specified network site.</p>

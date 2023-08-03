@@ -3,6 +3,23 @@ pub use crate::operation::delete_server_catalog::_delete_server_catalog_output::
 
 pub use crate::operation::delete_server_catalog::_delete_server_catalog_input::DeleteServerCatalogInputBuilder;
 
+impl DeleteServerCatalogInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_server_catalog::DeleteServerCatalogOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_server_catalog::DeleteServerCatalogError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_server_catalog();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteServerCatalog`.
 ///
 /// <p>Deletes all servers from your server catalog.</p>

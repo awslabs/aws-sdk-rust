@@ -3,6 +3,23 @@ pub use crate::operation::promote_read_replica_db_cluster::_promote_read_replica
 
 pub use crate::operation::promote_read_replica_db_cluster::_promote_read_replica_db_cluster_input::PromoteReadReplicaDbClusterInputBuilder;
 
+impl PromoteReadReplicaDbClusterInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::promote_read_replica_db_cluster::PromoteReadReplicaDbClusterOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::promote_read_replica_db_cluster::PromoteReadReplicaDBClusterError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.promote_read_replica_db_cluster();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PromoteReadReplicaDBCluster`.
 ///
 /// <p>Promotes a read replica DB cluster to a standalone DB cluster.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_connector_definitions::_list_connector_definition
 
 pub use crate::operation::list_connector_definitions::_list_connector_definitions_input::ListConnectorDefinitionsInputBuilder;
 
+impl ListConnectorDefinitionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_connector_definitions::ListConnectorDefinitionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_connector_definitions::ListConnectorDefinitionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_connector_definitions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListConnectorDefinitions`.
 ///
 /// Retrieves a list of connector definitions.

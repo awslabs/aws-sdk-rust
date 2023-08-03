@@ -3,6 +3,23 @@ pub use crate::operation::get_sip_media_application::_get_sip_media_application_
 
 pub use crate::operation::get_sip_media_application::_get_sip_media_application_input::GetSipMediaApplicationInputBuilder;
 
+impl GetSipMediaApplicationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_sip_media_application::GetSipMediaApplicationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_sip_media_application::GetSipMediaApplicationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_sip_media_application();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetSipMediaApplication`.
 ///
 /// <p>Retrieves the information for a SIP media application, including name, AWS Region, and endpoints.</p>

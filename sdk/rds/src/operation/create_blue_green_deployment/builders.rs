@@ -3,6 +3,23 @@ pub use crate::operation::create_blue_green_deployment::_create_blue_green_deplo
 
 pub use crate::operation::create_blue_green_deployment::_create_blue_green_deployment_input::CreateBlueGreenDeploymentInputBuilder;
 
+impl CreateBlueGreenDeploymentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_blue_green_deployment::CreateBlueGreenDeploymentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_blue_green_deployment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateBlueGreenDeployment`.
 ///
 /// <p>Creates a blue/green deployment.</p>

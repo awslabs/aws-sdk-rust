@@ -3,6 +3,23 @@ pub use crate::operation::get_endpoint::_get_endpoint_output::GetEndpointOutputB
 
 pub use crate::operation::get_endpoint::_get_endpoint_input::GetEndpointInputBuilder;
 
+impl GetEndpointInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_endpoint::GetEndpointOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_endpoint::GetEndpointError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_endpoint();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetEndpoint`.
 ///
 /// <p>Gets information about an Device Advisor endpoint.</p>

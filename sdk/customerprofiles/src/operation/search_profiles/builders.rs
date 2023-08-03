@@ -3,6 +3,23 @@ pub use crate::operation::search_profiles::_search_profiles_output::SearchProfil
 
 pub use crate::operation::search_profiles::_search_profiles_input::SearchProfilesInputBuilder;
 
+impl SearchProfilesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::search_profiles::SearchProfilesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::search_profiles::SearchProfilesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.search_profiles();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SearchProfiles`.
 ///
 /// <p>Searches for profiles within a specific domain using one or more predefined search keys (e.g., _fullName, _phone, _email, _account, etc.) and/or custom-defined search keys. A search key is a data type pair that consists of a <code>KeyName</code> and <code>Values</code> list.</p>

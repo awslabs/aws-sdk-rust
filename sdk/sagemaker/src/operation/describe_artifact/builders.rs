@@ -3,6 +3,23 @@ pub use crate::operation::describe_artifact::_describe_artifact_output::Describe
 
 pub use crate::operation::describe_artifact::_describe_artifact_input::DescribeArtifactInputBuilder;
 
+impl DescribeArtifactInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_artifact::DescribeArtifactOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_artifact::DescribeArtifactError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_artifact();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeArtifact`.
 ///
 /// <p>Describes an artifact.</p>

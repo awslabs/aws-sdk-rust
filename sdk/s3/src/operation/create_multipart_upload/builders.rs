@@ -3,6 +3,23 @@ pub use crate::operation::create_multipart_upload::_create_multipart_upload_outp
 
 pub use crate::operation::create_multipart_upload::_create_multipart_upload_input::CreateMultipartUploadInputBuilder;
 
+impl CreateMultipartUploadInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_multipart_upload::CreateMultipartUploadOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_multipart_upload::CreateMultipartUploadError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_multipart_upload();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateMultipartUpload`.
 ///
 /// <p>This action initiates a multipart upload and returns an upload ID. This upload ID is used to associate all of the parts in the specific multipart upload. You specify this upload ID in each of your subsequent upload part requests (see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_UploadPart.html">UploadPart</a>). You also include this upload ID in the final request to either complete or abort the multipart upload request.</p>

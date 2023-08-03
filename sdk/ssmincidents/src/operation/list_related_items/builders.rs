@@ -3,6 +3,23 @@ pub use crate::operation::list_related_items::_list_related_items_output::ListRe
 
 pub use crate::operation::list_related_items::_list_related_items_input::ListRelatedItemsInputBuilder;
 
+impl ListRelatedItemsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_related_items::ListRelatedItemsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_related_items::ListRelatedItemsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_related_items();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListRelatedItems`.
 ///
 /// <p>List all related items for an incident record.</p>

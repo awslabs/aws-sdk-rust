@@ -3,6 +3,23 @@ pub use crate::operation::retrieve_tape_recovery_point::_retrieve_tape_recovery_
 
 pub use crate::operation::retrieve_tape_recovery_point::_retrieve_tape_recovery_point_input::RetrieveTapeRecoveryPointInputBuilder;
 
+impl RetrieveTapeRecoveryPointInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::retrieve_tape_recovery_point::RetrieveTapeRecoveryPointOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::retrieve_tape_recovery_point::RetrieveTapeRecoveryPointError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.retrieve_tape_recovery_point();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RetrieveTapeRecoveryPoint`.
 ///
 /// <p>Retrieves the recovery point for the specified virtual tape. This operation is only supported in the tape gateway type.</p>

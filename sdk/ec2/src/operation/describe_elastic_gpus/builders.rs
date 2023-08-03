@@ -3,6 +3,23 @@ pub use crate::operation::describe_elastic_gpus::_describe_elastic_gpus_output::
 
 pub use crate::operation::describe_elastic_gpus::_describe_elastic_gpus_input::DescribeElasticGpusInputBuilder;
 
+impl DescribeElasticGpusInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_elastic_gpus::DescribeElasticGpusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_elastic_gpus::DescribeElasticGpusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_elastic_gpus();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeElasticGpus`.
 ///
 /// <p>Describes the Elastic Graphics accelerator associated with your instances. For more information about Elastic Graphics, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/WindowsGuide/elastic-graphics.html">Amazon Elastic Graphics</a>.</p>

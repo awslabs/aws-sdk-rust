@@ -3,6 +3,23 @@ pub use crate::operation::list_approval_rule_templates::_list_approval_rule_temp
 
 pub use crate::operation::list_approval_rule_templates::_list_approval_rule_templates_input::ListApprovalRuleTemplatesInputBuilder;
 
+impl ListApprovalRuleTemplatesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_approval_rule_templates::ListApprovalRuleTemplatesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_approval_rule_templates::ListApprovalRuleTemplatesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_approval_rule_templates();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListApprovalRuleTemplates`.
 ///
 /// <p>Lists all approval rule templates in the specified AWS Region in your AWS account. If an AWS Region is not specified, the AWS Region where you are signed in is used.</p>

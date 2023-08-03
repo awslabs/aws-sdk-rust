@@ -3,6 +3,23 @@ pub use crate::operation::put_firewall_rule_group_policy::_put_firewall_rule_gro
 
 pub use crate::operation::put_firewall_rule_group_policy::_put_firewall_rule_group_policy_input::PutFirewallRuleGroupPolicyInputBuilder;
 
+impl PutFirewallRuleGroupPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_firewall_rule_group_policy::PutFirewallRuleGroupPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_firewall_rule_group_policy::PutFirewallRuleGroupPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_firewall_rule_group_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutFirewallRuleGroupPolicy`.
 ///
 /// <p>Attaches an Identity and Access Management (Amazon Web Services IAM) policy for sharing the rule group. You can use the policy to share the rule group using Resource Access Manager (RAM). </p>

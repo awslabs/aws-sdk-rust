@@ -3,6 +3,17 @@ pub use crate::operation::get_temporary_glue_table_credentials::_get_temporary_g
 
 pub use crate::operation::get_temporary_glue_table_credentials::_get_temporary_glue_table_credentials_input::GetTemporaryGlueTableCredentialsInputBuilder;
 
+impl GetTemporaryGlueTableCredentialsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_temporary_glue_table_credentials::GetTemporaryGlueTableCredentialsOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_temporary_glue_table_credentials::GetTemporaryGlueTableCredentialsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_temporary_glue_table_credentials();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetTemporaryGlueTableCredentials`.
 ///
 /// <p>Allows a caller in a secure environment to assume a role with permission to access Amazon S3. In order to vend such credentials, Lake Formation assumes the role associated with a registered location, for example an Amazon S3 bucket, with a scope down policy which restricts the access to a single prefix.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::admin_list_user_auth_events::_admin_list_user_auth_eve
 
 pub use crate::operation::admin_list_user_auth_events::_admin_list_user_auth_events_input::AdminListUserAuthEventsInputBuilder;
 
+impl AdminListUserAuthEventsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::admin_list_user_auth_events::AdminListUserAuthEventsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::admin_list_user_auth_events::AdminListUserAuthEventsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.admin_list_user_auth_events();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AdminListUserAuthEvents`.
 ///
 /// <p>A history of user activity and any risks detected as part of Amazon Cognito advanced security.</p>

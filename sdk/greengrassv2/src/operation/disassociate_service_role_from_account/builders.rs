@@ -3,6 +3,17 @@ pub use crate::operation::disassociate_service_role_from_account::_disassociate_
 
 pub use crate::operation::disassociate_service_role_from_account::_disassociate_service_role_from_account_input::DisassociateServiceRoleFromAccountInputBuilder;
 
+impl DisassociateServiceRoleFromAccountInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::disassociate_service_role_from_account::DisassociateServiceRoleFromAccountOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_service_role_from_account::DisassociateServiceRoleFromAccountError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.disassociate_service_role_from_account();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateServiceRoleFromAccount`.
 ///
 /// <p>Disassociates the Greengrass service role from IoT Greengrass for your Amazon Web Services account in this Amazon Web Services Region. Without a service role, IoT Greengrass can't verify the identity of client devices or manage core device connectivity information. For more information, see <a href="https://docs.aws.amazon.com/greengrass/v2/developerguide/greengrass-service-role.html">Greengrass service role</a> in the <i>IoT Greengrass Version 2 Developer Guide</i>.</p>

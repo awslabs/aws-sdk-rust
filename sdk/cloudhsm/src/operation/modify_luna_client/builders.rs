@@ -3,6 +3,23 @@ pub use crate::operation::modify_luna_client::_modify_luna_client_output::Modify
 
 pub use crate::operation::modify_luna_client::_modify_luna_client_input::ModifyLunaClientInputBuilder;
 
+impl ModifyLunaClientInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_luna_client::ModifyLunaClientOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_luna_client::ModifyLunaClientError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_luna_client();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyLunaClient`.
 ///
 /// <p>This is documentation for <b>AWS CloudHSM Classic</b>. For more information, see <a href="http://aws.amazon.com/cloudhsm/faqs-classic/">AWS CloudHSM Classic FAQs</a>, the <a href="https://docs.aws.amazon.com/cloudhsm/classic/userguide/">AWS CloudHSM Classic User Guide</a>, and the <a href="https://docs.aws.amazon.com/cloudhsm/classic/APIReference/">AWS CloudHSM Classic API Reference</a>.</p>

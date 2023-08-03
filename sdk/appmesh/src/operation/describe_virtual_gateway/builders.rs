@@ -3,6 +3,23 @@ pub use crate::operation::describe_virtual_gateway::_describe_virtual_gateway_ou
 
 pub use crate::operation::describe_virtual_gateway::_describe_virtual_gateway_input::DescribeVirtualGatewayInputBuilder;
 
+impl DescribeVirtualGatewayInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_virtual_gateway::DescribeVirtualGatewayOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_virtual_gateway::DescribeVirtualGatewayError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_virtual_gateway();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeVirtualGateway`.
 ///
 /// <p>Describes an existing virtual gateway.</p>

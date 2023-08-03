@@ -3,6 +3,23 @@ pub use crate::operation::add_listener_certificates::_add_listener_certificates_
 
 pub use crate::operation::add_listener_certificates::_add_listener_certificates_input::AddListenerCertificatesInputBuilder;
 
+impl AddListenerCertificatesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::add_listener_certificates::AddListenerCertificatesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::add_listener_certificates::AddListenerCertificatesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.add_listener_certificates();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AddListenerCertificates`.
 ///
 /// <p>Adds the specified SSL server certificate to the certificate list for the specified HTTPS or TLS listener.</p>

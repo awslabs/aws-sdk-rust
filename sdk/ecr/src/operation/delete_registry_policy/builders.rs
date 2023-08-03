@@ -3,6 +3,23 @@ pub use crate::operation::delete_registry_policy::_delete_registry_policy_output
 
 pub use crate::operation::delete_registry_policy::_delete_registry_policy_input::DeleteRegistryPolicyInputBuilder;
 
+impl DeleteRegistryPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_registry_policy::DeleteRegistryPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_registry_policy::DeleteRegistryPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_registry_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteRegistryPolicy`.
 ///
 /// <p>Deletes the registry permissions policy.</p>

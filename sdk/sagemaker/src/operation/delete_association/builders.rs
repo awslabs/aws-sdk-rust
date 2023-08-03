@@ -3,6 +3,23 @@ pub use crate::operation::delete_association::_delete_association_output::Delete
 
 pub use crate::operation::delete_association::_delete_association_input::DeleteAssociationInputBuilder;
 
+impl DeleteAssociationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_association::DeleteAssociationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_association::DeleteAssociationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_association();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteAssociation`.
 ///
 /// <p>Deletes an association.</p>

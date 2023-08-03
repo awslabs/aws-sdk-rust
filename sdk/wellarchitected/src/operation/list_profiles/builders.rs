@@ -3,6 +3,23 @@ pub use crate::operation::list_profiles::_list_profiles_output::ListProfilesOutp
 
 pub use crate::operation::list_profiles::_list_profiles_input::ListProfilesInputBuilder;
 
+impl ListProfilesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_profiles::ListProfilesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_profiles::ListProfilesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_profiles();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListProfiles`.
 ///
 /// <p>List profiles.</p>

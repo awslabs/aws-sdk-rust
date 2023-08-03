@@ -3,6 +3,23 @@ pub use crate::operation::describe_bot::_describe_bot_output::DescribeBotOutputB
 
 pub use crate::operation::describe_bot::_describe_bot_input::DescribeBotInputBuilder;
 
+impl DescribeBotInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_bot::DescribeBotOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_bot::DescribeBotError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_bot();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeBot`.
 ///
 /// <p>Provides metadata information about a bot. </p>

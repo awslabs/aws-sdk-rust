@@ -3,6 +3,23 @@ pub use crate::operation::search_entities::_search_entities_output::SearchEntiti
 
 pub use crate::operation::search_entities::_search_entities_input::SearchEntitiesInputBuilder;
 
+impl SearchEntitiesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::search_entities::SearchEntitiesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::search_entities::SearchEntitiesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.search_entities();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SearchEntities`.
 ///
 /// <p>Searches for entities of the specified type. You can search for entities in your namespace and the public namespace that you're tracking.</p>

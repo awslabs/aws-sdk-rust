@@ -3,6 +3,23 @@ pub use crate::operation::compose_environments::_compose_environments_output::Co
 
 pub use crate::operation::compose_environments::_compose_environments_input::ComposeEnvironmentsInputBuilder;
 
+impl ComposeEnvironmentsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::compose_environments::ComposeEnvironmentsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::compose_environments::ComposeEnvironmentsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.compose_environments();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ComposeEnvironments`.
 ///
 /// <p>Create or update a group of environments that each run a separate component of a single application. Takes a list of version labels that specify application source bundles for each of the environments to create or update. The name of each environment and other required information must be included in the source bundles in an environment manifest named <code>env.yaml</code>. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html">Compose Environments</a> for details.</p>

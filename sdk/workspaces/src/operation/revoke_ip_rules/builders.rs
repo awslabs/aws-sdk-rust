@@ -3,6 +3,23 @@ pub use crate::operation::revoke_ip_rules::_revoke_ip_rules_output::RevokeIpRule
 
 pub use crate::operation::revoke_ip_rules::_revoke_ip_rules_input::RevokeIpRulesInputBuilder;
 
+impl RevokeIpRulesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::revoke_ip_rules::RevokeIpRulesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::revoke_ip_rules::RevokeIpRulesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.revoke_ip_rules();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RevokeIpRules`.
 ///
 /// <p>Removes one or more rules from the specified IP access control group.</p>

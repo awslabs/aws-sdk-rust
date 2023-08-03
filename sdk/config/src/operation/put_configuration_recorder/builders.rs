@@ -3,6 +3,23 @@ pub use crate::operation::put_configuration_recorder::_put_configuration_recorde
 
 pub use crate::operation::put_configuration_recorder::_put_configuration_recorder_input::PutConfigurationRecorderInputBuilder;
 
+impl PutConfigurationRecorderInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_configuration_recorder::PutConfigurationRecorderOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_configuration_recorder::PutConfigurationRecorderError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_configuration_recorder();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutConfigurationRecorder`.
 ///
 /// <p>Creates a new configuration recorder to record configuration changes for specified resource types.</p>

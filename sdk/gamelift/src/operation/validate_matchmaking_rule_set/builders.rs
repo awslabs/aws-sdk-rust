@@ -3,6 +3,23 @@ pub use crate::operation::validate_matchmaking_rule_set::_validate_matchmaking_r
 
 pub use crate::operation::validate_matchmaking_rule_set::_validate_matchmaking_rule_set_input::ValidateMatchmakingRuleSetInputBuilder;
 
+impl ValidateMatchmakingRuleSetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::validate_matchmaking_rule_set::ValidateMatchmakingRuleSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.validate_matchmaking_rule_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ValidateMatchmakingRuleSet`.
 ///
 /// <p>Validates the syntax of a matchmaking rule or rule set. This operation checks that the rule set is using syntactically correct JSON and that it conforms to allowed property expressions. To validate syntax, provide a rule set JSON string.</p>

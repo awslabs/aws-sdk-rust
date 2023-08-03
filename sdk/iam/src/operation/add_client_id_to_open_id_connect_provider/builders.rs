@@ -3,6 +3,17 @@ pub use crate::operation::add_client_id_to_open_id_connect_provider::_add_client
 
 pub use crate::operation::add_client_id_to_open_id_connect_provider::_add_client_id_to_open_id_connect_provider_input::AddClientIdToOpenIdConnectProviderInputBuilder;
 
+impl AddClientIdToOpenIdConnectProviderInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::add_client_id_to_open_id_connect_provider::AddClientIdToOpenIdConnectProviderOutput, ::aws_smithy_http::result::SdkError<crate::operation::add_client_id_to_open_id_connect_provider::AddClientIDToOpenIDConnectProviderError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.add_client_id_to_open_id_connect_provider();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AddClientIDToOpenIDConnectProvider`.
 ///
 /// <p>Adds a new client ID (also known as audience) to the list of client IDs already registered for the specified IAM OpenID Connect (OIDC) provider resource.</p>

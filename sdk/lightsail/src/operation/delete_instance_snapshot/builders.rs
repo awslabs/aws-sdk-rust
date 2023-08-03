@@ -3,6 +3,23 @@ pub use crate::operation::delete_instance_snapshot::_delete_instance_snapshot_ou
 
 pub use crate::operation::delete_instance_snapshot::_delete_instance_snapshot_input::DeleteInstanceSnapshotInputBuilder;
 
+impl DeleteInstanceSnapshotInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_instance_snapshot::DeleteInstanceSnapshotOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_instance_snapshot::DeleteInstanceSnapshotError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_instance_snapshot();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteInstanceSnapshot`.
 ///
 /// <p>Deletes a specific snapshot of a virtual private server (or <i>instance</i>).</p>

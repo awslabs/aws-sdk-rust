@@ -3,6 +3,23 @@ pub use crate::operation::batch_get_repositories::_batch_get_repositories_output
 
 pub use crate::operation::batch_get_repositories::_batch_get_repositories_input::BatchGetRepositoriesInputBuilder;
 
+impl BatchGetRepositoriesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_repositories::BatchGetRepositoriesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_get_repositories::BatchGetRepositoriesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_get_repositories();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchGetRepositories`.
 ///
 /// <p>Returns information about one or more repositories.</p> <note>

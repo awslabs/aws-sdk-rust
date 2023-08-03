@@ -3,6 +3,23 @@ pub use crate::operation::delete_partner::_delete_partner_output::DeletePartnerO
 
 pub use crate::operation::delete_partner::_delete_partner_input::DeletePartnerInputBuilder;
 
+impl DeletePartnerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_partner::DeletePartnerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_partner::DeletePartnerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_partner();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeletePartner`.
 ///
 /// <p>Deletes a partner integration from a cluster. Data can still flow to the cluster until the integration is deleted at the partner's website.</p>

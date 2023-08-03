@@ -3,6 +3,23 @@ pub use crate::operation::start_celebrity_recognition::_start_celebrity_recognit
 
 pub use crate::operation::start_celebrity_recognition::_start_celebrity_recognition_input::StartCelebrityRecognitionInputBuilder;
 
+impl StartCelebrityRecognitionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_celebrity_recognition::StartCelebrityRecognitionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_celebrity_recognition::StartCelebrityRecognitionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_celebrity_recognition();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartCelebrityRecognition`.
 ///
 /// <p>Starts asynchronous recognition of celebrities in a stored video.</p>

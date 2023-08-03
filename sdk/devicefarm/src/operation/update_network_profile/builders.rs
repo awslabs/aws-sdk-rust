@@ -3,6 +3,23 @@ pub use crate::operation::update_network_profile::_update_network_profile_output
 
 pub use crate::operation::update_network_profile::_update_network_profile_input::UpdateNetworkProfileInputBuilder;
 
+impl UpdateNetworkProfileInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_network_profile::UpdateNetworkProfileOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_network_profile::UpdateNetworkProfileError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_network_profile();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateNetworkProfile`.
 ///
 /// <p>Updates the network profile.</p>

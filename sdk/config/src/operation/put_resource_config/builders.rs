@@ -3,6 +3,23 @@ pub use crate::operation::put_resource_config::_put_resource_config_output::PutR
 
 pub use crate::operation::put_resource_config::_put_resource_config_input::PutResourceConfigInputBuilder;
 
+impl PutResourceConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_resource_config::PutResourceConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_resource_config::PutResourceConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_resource_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutResourceConfig`.
 ///
 /// <p>Records the configuration state for the resource provided in the request. The configuration state of a resource is represented in Config as Configuration Items. Once this API records the configuration item, you can retrieve the list of configuration items for the custom resource type using existing Config APIs. </p> <note>

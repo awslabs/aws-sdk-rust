@@ -3,6 +3,23 @@ pub use crate::operation::count_pending_activity_tasks::_count_pending_activity_
 
 pub use crate::operation::count_pending_activity_tasks::_count_pending_activity_tasks_input::CountPendingActivityTasksInputBuilder;
 
+impl CountPendingActivityTasksInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::count_pending_activity_tasks::CountPendingActivityTasksOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::count_pending_activity_tasks::CountPendingActivityTasksError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.count_pending_activity_tasks();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CountPendingActivityTasks`.
 ///
 /// <p>Returns the estimated number of activity tasks in the specified task list. The count returned is an approximation and isn't guaranteed to be exact. If you specify a task list that no activity task was ever scheduled in then <code>0</code> is returned.</p>

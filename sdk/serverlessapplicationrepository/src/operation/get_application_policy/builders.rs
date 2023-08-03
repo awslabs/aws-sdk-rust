@@ -3,6 +3,23 @@ pub use crate::operation::get_application_policy::_get_application_policy_output
 
 pub use crate::operation::get_application_policy::_get_application_policy_input::GetApplicationPolicyInputBuilder;
 
+impl GetApplicationPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_application_policy::GetApplicationPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_application_policy::GetApplicationPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_application_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetApplicationPolicy`.
 ///
 /// <p>Retrieves the policy for the application.</p>

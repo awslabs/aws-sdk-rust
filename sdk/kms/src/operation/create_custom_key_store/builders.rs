@@ -3,6 +3,23 @@ pub use crate::operation::create_custom_key_store::_create_custom_key_store_outp
 
 pub use crate::operation::create_custom_key_store::_create_custom_key_store_input::CreateCustomKeyStoreInputBuilder;
 
+impl CreateCustomKeyStoreInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_custom_key_store::CreateCustomKeyStoreOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_custom_key_store::CreateCustomKeyStoreError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_custom_key_store();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateCustomKeyStore`.
 ///
 /// <p>Creates a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a> backed by a key store that you own and manage. When you use a KMS key in a custom key store for a cryptographic operation, the cryptographic operation is actually performed in your key store using your keys. KMS supports <a href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-cloudhsm.html">CloudHSM key stores</a> backed by an <a href="https://docs.aws.amazon.com/cloudhsm/latest/userguide/clusters.html">CloudHSM cluster</a> and <a href="https://docs.aws.amazon.com/kms/latest/developerguide/keystore-external.html">external key stores</a> backed by an external key store proxy and external key manager outside of Amazon Web Services.</p>

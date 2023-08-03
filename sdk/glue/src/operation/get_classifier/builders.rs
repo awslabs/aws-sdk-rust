@@ -3,6 +3,23 @@ pub use crate::operation::get_classifier::_get_classifier_output::GetClassifierO
 
 pub use crate::operation::get_classifier::_get_classifier_input::GetClassifierInputBuilder;
 
+impl GetClassifierInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_classifier::GetClassifierOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_classifier::GetClassifierError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_classifier();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetClassifier`.
 ///
 /// <p>Retrieve a classifier by name.</p>

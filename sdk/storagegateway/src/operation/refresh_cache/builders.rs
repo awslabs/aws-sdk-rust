@@ -3,6 +3,23 @@ pub use crate::operation::refresh_cache::_refresh_cache_output::RefreshCacheOutp
 
 pub use crate::operation::refresh_cache::_refresh_cache_input::RefreshCacheInputBuilder;
 
+impl RefreshCacheInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::refresh_cache::RefreshCacheOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::refresh_cache::RefreshCacheError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.refresh_cache();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RefreshCache`.
 ///
 /// <p>Refreshes the cached inventory of objects for the specified file share. This operation finds objects in the Amazon S3 bucket that were added, removed, or replaced since the gateway last listed the bucket's contents and cached the results. This operation does not import files into the S3 File Gateway cache storage. It only updates the cached inventory to reflect changes in the inventory of the objects in the S3 bucket. This operation is only supported in the S3 File Gateway types.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::lookup_policy::_lookup_policy_output::LookupPolicyOutp
 
 pub use crate::operation::lookup_policy::_lookup_policy_input::LookupPolicyInputBuilder;
 
+impl LookupPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::lookup_policy::LookupPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::lookup_policy::LookupPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.lookup_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `LookupPolicy`.
 ///
 /// <p>Lists all policies from the root of the <code>Directory</code> to the object specified. If there are no policies present, an empty list is returned. If policies are present, and if some objects don't have the policies attached, it returns the <code>ObjectIdentifier</code> for such objects. If policies are present, it returns <code>ObjectIdentifier</code>, <code>policyId</code>, and <code>policyType</code>. Paths that don't lead to the root from the target object are ignored. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>

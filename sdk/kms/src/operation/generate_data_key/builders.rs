@@ -3,6 +3,23 @@ pub use crate::operation::generate_data_key::_generate_data_key_output::Generate
 
 pub use crate::operation::generate_data_key::_generate_data_key_input::GenerateDataKeyInputBuilder;
 
+impl GenerateDataKeyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::generate_data_key::GenerateDataKeyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::generate_data_key::GenerateDataKeyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.generate_data_key();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GenerateDataKey`.
 ///
 /// <p>Returns a unique symmetric data key for use outside of KMS. This operation returns a plaintext copy of the data key and a copy that is encrypted under a symmetric encryption KMS key that you specify. The bytes in the plaintext key are random; they are not related to the caller or the KMS key. You can use the plaintext key to encrypt your data outside of KMS and store the encrypted data key with the encrypted data.</p>

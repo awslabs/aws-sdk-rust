@@ -3,6 +3,17 @@ pub use crate::operation::update_license_manager_report_generator::_update_licen
 
 pub use crate::operation::update_license_manager_report_generator::_update_license_manager_report_generator_input::UpdateLicenseManagerReportGeneratorInputBuilder;
 
+impl UpdateLicenseManagerReportGeneratorInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::update_license_manager_report_generator::UpdateLicenseManagerReportGeneratorOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_license_manager_report_generator::UpdateLicenseManagerReportGeneratorError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.update_license_manager_report_generator();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateLicenseManagerReportGenerator`.
 ///
 /// <p>Updates a report generator.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::transfer_certificate::_transfer_certificate_output::Tr
 
 pub use crate::operation::transfer_certificate::_transfer_certificate_input::TransferCertificateInputBuilder;
 
+impl TransferCertificateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::transfer_certificate::TransferCertificateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::transfer_certificate::TransferCertificateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.transfer_certificate();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `TransferCertificate`.
 ///
 /// <p>Transfers the specified certificate to the specified Amazon Web Services account.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_virtual_router::_delete_virtual_router_output::
 
 pub use crate::operation::delete_virtual_router::_delete_virtual_router_input::DeleteVirtualRouterInputBuilder;
 
+impl DeleteVirtualRouterInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_virtual_router::DeleteVirtualRouterOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_virtual_router::DeleteVirtualRouterError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_virtual_router();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteVirtualRouter`.
 ///
 /// <p>Deletes an existing virtual router.</p>

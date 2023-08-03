@@ -3,6 +3,23 @@ pub use crate::operation::list_addons::_list_addons_output::ListAddonsOutputBuil
 
 pub use crate::operation::list_addons::_list_addons_input::ListAddonsInputBuilder;
 
+impl ListAddonsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_addons::ListAddonsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_addons::ListAddonsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_addons();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAddons`.
 ///
 /// <p>Lists the available add-ons.</p>

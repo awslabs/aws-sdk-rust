@@ -3,6 +3,23 @@ pub use crate::operation::publish_function::_publish_function_output::PublishFun
 
 pub use crate::operation::publish_function::_publish_function_input::PublishFunctionInputBuilder;
 
+impl PublishFunctionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::publish_function::PublishFunctionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::publish_function::PublishFunctionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.publish_function();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PublishFunction`.
 ///
 /// <p>Publishes a CloudFront function by copying the function code from the <code>DEVELOPMENT</code> stage to <code>LIVE</code>. This automatically updates all cache behaviors that are using this function to use the newly published copy in the <code>LIVE</code> stage.</p>

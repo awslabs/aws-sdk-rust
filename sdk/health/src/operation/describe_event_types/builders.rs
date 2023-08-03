@@ -3,6 +3,23 @@ pub use crate::operation::describe_event_types::_describe_event_types_output::De
 
 pub use crate::operation::describe_event_types::_describe_event_types_input::DescribeEventTypesInputBuilder;
 
+impl DescribeEventTypesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_event_types::DescribeEventTypesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_event_types::DescribeEventTypesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_event_types();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeEventTypes`.
 ///
 /// <p>Returns the event types that meet the specified filter criteria. You can use this API operation to find information about the Health event, such as the category, Amazon Web Service, and event code. The metadata for each event appears in the <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_EventType.html">EventType</a> object. </p>

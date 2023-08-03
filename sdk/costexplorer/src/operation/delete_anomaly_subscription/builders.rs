@@ -3,6 +3,23 @@ pub use crate::operation::delete_anomaly_subscription::_delete_anomaly_subscript
 
 pub use crate::operation::delete_anomaly_subscription::_delete_anomaly_subscription_input::DeleteAnomalySubscriptionInputBuilder;
 
+impl DeleteAnomalySubscriptionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_anomaly_subscription::DeleteAnomalySubscriptionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_anomaly_subscription::DeleteAnomalySubscriptionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_anomaly_subscription();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteAnomalySubscription`.
 ///
 /// <p>Deletes a cost anomaly subscription. </p>

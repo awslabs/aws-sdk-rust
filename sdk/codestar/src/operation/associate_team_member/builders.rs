@@ -3,6 +3,23 @@ pub use crate::operation::associate_team_member::_associate_team_member_output::
 
 pub use crate::operation::associate_team_member::_associate_team_member_input::AssociateTeamMemberInputBuilder;
 
+impl AssociateTeamMemberInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_team_member::AssociateTeamMemberOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_team_member::AssociateTeamMemberError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_team_member();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateTeamMember`.
 ///
 /// <p>Adds an IAM user to the team for an AWS CodeStar project.</p>

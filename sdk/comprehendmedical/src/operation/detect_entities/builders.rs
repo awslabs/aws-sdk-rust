@@ -3,6 +3,23 @@ pub use crate::operation::detect_entities::_detect_entities_output::DetectEntiti
 
 pub use crate::operation::detect_entities::_detect_entities_input::DetectEntitiesInputBuilder;
 
+impl DetectEntitiesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::detect_entities::DetectEntitiesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::detect_entities::DetectEntitiesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.detect_entities();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DetectEntities`.
 ///
 /// <p>The <code>DetectEntities</code> operation is deprecated. You should use the <code>DetectEntitiesV2</code> operation instead.</p>

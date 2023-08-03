@@ -3,6 +3,23 @@ pub use crate::operation::update_vtl_device_type::_update_vtl_device_type_output
 
 pub use crate::operation::update_vtl_device_type::_update_vtl_device_type_input::UpdateVtlDeviceTypeInputBuilder;
 
+impl UpdateVtlDeviceTypeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_vtl_device_type::UpdateVtlDeviceTypeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_vtl_device_type::UpdateVTLDeviceTypeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_vtl_device_type();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateVTLDeviceType`.
 ///
 /// <p>Updates the type of medium changer in a tape gateway. When you activate a tape gateway, you select a medium changer type for the tape gateway. This operation enables you to select a different type of medium changer after a tape gateway is activated. This operation is only supported in the tape gateway type.</p>

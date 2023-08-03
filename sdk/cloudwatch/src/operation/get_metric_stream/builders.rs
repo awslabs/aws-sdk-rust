@@ -3,6 +3,23 @@ pub use crate::operation::get_metric_stream::_get_metric_stream_output::GetMetri
 
 pub use crate::operation::get_metric_stream::_get_metric_stream_input::GetMetricStreamInputBuilder;
 
+impl GetMetricStreamInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_metric_stream::GetMetricStreamOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_metric_stream::GetMetricStreamError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_metric_stream();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetMetricStream`.
 ///
 /// <p>Returns information about the metric stream that you specify.</p>

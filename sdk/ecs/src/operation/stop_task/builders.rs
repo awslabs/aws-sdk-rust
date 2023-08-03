@@ -3,6 +3,23 @@ pub use crate::operation::stop_task::_stop_task_output::StopTaskOutputBuilder;
 
 pub use crate::operation::stop_task::_stop_task_input::StopTaskInputBuilder;
 
+impl StopTaskInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_task::StopTaskOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_task::StopTaskError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_task();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopTask`.
 ///
 /// <p>Stops a running task. Any tags associated with the task will be deleted.</p>

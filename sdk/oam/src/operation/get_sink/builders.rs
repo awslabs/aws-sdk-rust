@@ -3,6 +3,23 @@ pub use crate::operation::get_sink::_get_sink_output::GetSinkOutputBuilder;
 
 pub use crate::operation::get_sink::_get_sink_input::GetSinkInputBuilder;
 
+impl GetSinkInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_sink::GetSinkOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_sink::GetSinkError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_sink();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetSink`.
 ///
 /// <p>Returns complete information about one monitoring account sink.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_authorizer::_delete_authorizer_output::DeleteAu
 
 pub use crate::operation::delete_authorizer::_delete_authorizer_input::DeleteAuthorizerInputBuilder;
 
+impl DeleteAuthorizerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_authorizer::DeleteAuthorizerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_authorizer::DeleteAuthorizerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_authorizer();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteAuthorizer`.
 ///
 /// <p>Deletes an Authorizer.</p>

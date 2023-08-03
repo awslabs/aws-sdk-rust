@@ -3,6 +3,23 @@ pub use crate::operation::update_access::_update_access_output::UpdateAccessOutp
 
 pub use crate::operation::update_access::_update_access_input::UpdateAccessInputBuilder;
 
+impl UpdateAccessInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_access::UpdateAccessOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_access::UpdateAccessError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_access();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateAccess`.
 ///
 /// <p>Allows you to update parameters for the access specified in the <code>ServerID</code> and <code>ExternalID</code> parameters.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::update_api_key::_update_api_key_output::UpdateApiKeyOu
 
 pub use crate::operation::update_api_key::_update_api_key_input::UpdateApiKeyInputBuilder;
 
+impl UpdateApiKeyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_api_key::UpdateApiKeyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_api_key::UpdateApiKeyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_api_key();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateApiKey`.
 ///
 /// <p>Changes information about an ApiKey resource.</p>

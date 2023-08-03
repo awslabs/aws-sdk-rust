@@ -3,6 +3,23 @@ pub use crate::operation::describe_program::_describe_program_output::DescribePr
 
 pub use crate::operation::describe_program::_describe_program_input::DescribeProgramInputBuilder;
 
+impl DescribeProgramInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_program::DescribeProgramOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_program::DescribeProgramError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_program();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeProgram`.
 ///
 /// <p>Describes a program within a channel. For information about programs, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-programs.html">Working with programs</a> in the <i>MediaTailor User Guide</i>.</p>

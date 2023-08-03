@@ -3,6 +3,23 @@ pub use crate::operation::list_media_pipelines::_list_media_pipelines_output::Li
 
 pub use crate::operation::list_media_pipelines::_list_media_pipelines_input::ListMediaPipelinesInputBuilder;
 
+impl ListMediaPipelinesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_media_pipelines::ListMediaPipelinesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_media_pipelines::ListMediaPipelinesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_media_pipelines();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListMediaPipelines`.
 ///
 /// <p>Returns a list of media pipelines.</p>

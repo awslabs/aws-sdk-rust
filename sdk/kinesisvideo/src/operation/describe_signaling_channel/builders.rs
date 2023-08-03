@@ -3,6 +3,23 @@ pub use crate::operation::describe_signaling_channel::_describe_signaling_channe
 
 pub use crate::operation::describe_signaling_channel::_describe_signaling_channel_input::DescribeSignalingChannelInputBuilder;
 
+impl DescribeSignalingChannelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_signaling_channel::DescribeSignalingChannelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_signaling_channel::DescribeSignalingChannelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_signaling_channel();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeSignalingChannel`.
 ///
 /// <p>Returns the most current information about the signaling channel. You must specify either the name or the Amazon Resource Name (ARN) of the channel that you want to describe.</p>

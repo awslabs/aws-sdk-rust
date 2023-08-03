@@ -3,6 +3,17 @@ pub use crate::operation::associate_user_to_permission_group::_associate_user_to
 
 pub use crate::operation::associate_user_to_permission_group::_associate_user_to_permission_group_input::AssociateUserToPermissionGroupInputBuilder;
 
+impl AssociateUserToPermissionGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::associate_user_to_permission_group::AssociateUserToPermissionGroupOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_user_to_permission_group::AssociateUserToPermissionGroupError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.associate_user_to_permission_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateUserToPermissionGroup`.
 ///
 /// <p>Adds a user account to a permission group to grant permissions for actions a user can perform in FinSpace.</p>

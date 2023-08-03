@@ -3,6 +3,23 @@ pub use crate::operation::list_stage_devices::_list_stage_devices_output::ListSt
 
 pub use crate::operation::list_stage_devices::_list_stage_devices_input::ListStageDevicesInputBuilder;
 
+impl ListStageDevicesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_stage_devices::ListStageDevicesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_stage_devices::ListStageDevicesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_stage_devices();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListStageDevices`.
 ///
 /// <p>Lists devices allocated to the stage, containing detailed device information and deployment status.</p>

@@ -3,6 +3,17 @@ pub use crate::operation::put_app_instance_user_expiration_settings::_put_app_in
 
 pub use crate::operation::put_app_instance_user_expiration_settings::_put_app_instance_user_expiration_settings_input::PutAppInstanceUserExpirationSettingsInputBuilder;
 
+impl PutAppInstanceUserExpirationSettingsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettingsOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_app_instance_user_expiration_settings::PutAppInstanceUserExpirationSettingsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.put_app_instance_user_expiration_settings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutAppInstanceUserExpirationSettings`.
 ///
 /// <p>Sets the number of days before the <code>AppInstanceUser</code> is automatically deleted.</p> <note>

@@ -3,6 +3,23 @@ pub use crate::operation::get_template_step_group::_get_template_step_group_outp
 
 pub use crate::operation::get_template_step_group::_get_template_step_group_input::GetTemplateStepGroupInputBuilder;
 
+impl GetTemplateStepGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_template_step_group::GetTemplateStepGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_template_step_group::GetTemplateStepGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_template_step_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetTemplateStepGroup`.
 ///
 /// <p>Get a step group in a template.</p>

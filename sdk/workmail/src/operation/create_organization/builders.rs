@@ -3,6 +3,23 @@ pub use crate::operation::create_organization::_create_organization_output::Crea
 
 pub use crate::operation::create_organization::_create_organization_input::CreateOrganizationInputBuilder;
 
+impl CreateOrganizationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_organization::CreateOrganizationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_organization::CreateOrganizationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_organization();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateOrganization`.
 ///
 /// <p>Creates a new WorkMail organization. Optionally, you can choose to associate an existing AWS Directory Service directory with your organization. If an AWS Directory Service directory ID is specified, the organization alias must match the directory alias. If you choose not to associate an existing directory with your organization, then we create a new WorkMail directory for you. For more information, see <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/add_new_organization.html">Adding an organization</a> in the <i>WorkMail Administrator Guide</i>.</p>

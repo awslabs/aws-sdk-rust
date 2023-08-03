@@ -3,6 +3,23 @@ pub use crate::operation::cancel_order::_cancel_order_output::CancelOrderOutputB
 
 pub use crate::operation::cancel_order::_cancel_order_input::CancelOrderInputBuilder;
 
+impl CancelOrderInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::cancel_order::CancelOrderOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::cancel_order::CancelOrderError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.cancel_order();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CancelOrder`.
 ///
 /// <p>Cancels the specified order for an Outpost.</p>

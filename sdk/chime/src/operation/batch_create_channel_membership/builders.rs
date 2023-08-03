@@ -3,6 +3,23 @@ pub use crate::operation::batch_create_channel_membership::_batch_create_channel
 
 pub use crate::operation::batch_create_channel_membership::_batch_create_channel_membership_input::BatchCreateChannelMembershipInputBuilder;
 
+impl BatchCreateChannelMembershipInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_create_channel_membership::BatchCreateChannelMembershipError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_create_channel_membership();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchCreateChannelMembership`.
 ///
 /// <p>Adds a specified number of users to a channel.</p> <important>

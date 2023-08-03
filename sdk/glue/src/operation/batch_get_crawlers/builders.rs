@@ -3,6 +3,23 @@ pub use crate::operation::batch_get_crawlers::_batch_get_crawlers_output::BatchG
 
 pub use crate::operation::batch_get_crawlers::_batch_get_crawlers_input::BatchGetCrawlersInputBuilder;
 
+impl BatchGetCrawlersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_crawlers::BatchGetCrawlersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_get_crawlers::BatchGetCrawlersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_get_crawlers();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchGetCrawlers`.
 ///
 /// <p>Returns a list of resource metadata for a given list of crawler names. After calling the <code>ListCrawlers</code> operation, you can call this operation to access the data to which you have been granted permissions. This operation supports all IAM permissions, including permission conditions that uses tags.</p>

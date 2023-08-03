@@ -3,6 +3,23 @@ pub use crate::operation::get_host::_get_host_output::GetHostOutputBuilder;
 
 pub use crate::operation::get_host::_get_host_input::GetHostInputBuilder;
 
+impl GetHostInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_host::GetHostOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_host::GetHostError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_host();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetHost`.
 ///
 /// <p>Returns the host ARN and details such as status, provider type, endpoint, and, if applicable, the VPC configuration.</p>

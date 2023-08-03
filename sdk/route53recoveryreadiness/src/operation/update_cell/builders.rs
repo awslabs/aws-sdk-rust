@@ -3,6 +3,23 @@ pub use crate::operation::update_cell::_update_cell_output::UpdateCellOutputBuil
 
 pub use crate::operation::update_cell::_update_cell_input::UpdateCellInputBuilder;
 
+impl UpdateCellInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_cell::UpdateCellOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_cell::UpdateCellError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_cell();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateCell`.
 ///
 /// <p>Updates a cell to replace the list of nested cells with a new list of nested cells.</p>

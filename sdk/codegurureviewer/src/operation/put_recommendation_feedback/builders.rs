@@ -3,6 +3,23 @@ pub use crate::operation::put_recommendation_feedback::_put_recommendation_feedb
 
 pub use crate::operation::put_recommendation_feedback::_put_recommendation_feedback_input::PutRecommendationFeedbackInputBuilder;
 
+impl PutRecommendationFeedbackInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_recommendation_feedback::PutRecommendationFeedbackOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_recommendation_feedback::PutRecommendationFeedbackError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_recommendation_feedback();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutRecommendationFeedback`.
 ///
 /// <p>Stores customer feedback for a CodeGuru Reviewer recommendation. When this API is called again with different reactions the previous feedback is overwritten.</p>

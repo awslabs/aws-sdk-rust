@@ -3,6 +3,23 @@ pub use crate::operation::list_policies::_list_policies_output::ListPoliciesOutp
 
 pub use crate::operation::list_policies::_list_policies_input::ListPoliciesInputBuilder;
 
+impl ListPoliciesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_policies::ListPoliciesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_policies::ListPoliciesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_policies();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListPolicies`.
 ///
 /// <p>Returns an array of <code>PolicySummary</code> objects.</p>

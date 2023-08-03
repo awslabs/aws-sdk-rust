@@ -3,6 +3,23 @@ pub use crate::operation::put_studio_members::_put_studio_members_output::PutStu
 
 pub use crate::operation::put_studio_members::_put_studio_members_input::PutStudioMembersInputBuilder;
 
+impl PutStudioMembersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_studio_members::PutStudioMembersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_studio_members::PutStudioMembersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_studio_members();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutStudioMembers`.
 ///
 /// <p>Add/update users with given persona to studio membership.</p>

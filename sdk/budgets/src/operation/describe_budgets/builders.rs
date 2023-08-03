@@ -3,6 +3,23 @@ pub use crate::operation::describe_budgets::_describe_budgets_output::DescribeBu
 
 pub use crate::operation::describe_budgets::_describe_budgets_input::DescribeBudgetsInputBuilder;
 
+impl DescribeBudgetsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_budgets::DescribeBudgetsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_budgets::DescribeBudgetsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_budgets();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeBudgets`.
 ///
 /// <p>Lists the budgets that are associated with an account.</p> <important>

@@ -3,6 +3,23 @@ pub use crate::operation::create_variant_store::_create_variant_store_output::Cr
 
 pub use crate::operation::create_variant_store::_create_variant_store_input::CreateVariantStoreInputBuilder;
 
+impl CreateVariantStoreInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_variant_store::CreateVariantStoreOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_variant_store::CreateVariantStoreError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_variant_store();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateVariantStore`.
 ///
 /// <p>Creates a variant store.</p>

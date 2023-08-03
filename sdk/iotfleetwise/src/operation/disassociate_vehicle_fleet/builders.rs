@@ -3,6 +3,23 @@ pub use crate::operation::disassociate_vehicle_fleet::_disassociate_vehicle_flee
 
 pub use crate::operation::disassociate_vehicle_fleet::_disassociate_vehicle_fleet_input::DisassociateVehicleFleetInputBuilder;
 
+impl DisassociateVehicleFleetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_vehicle_fleet::DisassociateVehicleFleetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_vehicle_fleet::DisassociateVehicleFleetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disassociate_vehicle_fleet();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateVehicleFleet`.
 ///
 /// <p>Removes, or disassociates, a vehicle from a fleet. Disassociating a vehicle from a fleet doesn't delete the vehicle.</p> <note>

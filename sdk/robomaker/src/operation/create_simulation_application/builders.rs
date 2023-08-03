@@ -3,6 +3,23 @@ pub use crate::operation::create_simulation_application::_create_simulation_appl
 
 pub use crate::operation::create_simulation_application::_create_simulation_application_input::CreateSimulationApplicationInputBuilder;
 
+impl CreateSimulationApplicationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_simulation_application::CreateSimulationApplicationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_simulation_application::CreateSimulationApplicationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_simulation_application();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateSimulationApplication`.
 ///
 /// <p>Creates a simulation application.</p>

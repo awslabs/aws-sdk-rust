@@ -3,6 +3,23 @@ pub use crate::operation::create_dataset::_create_dataset_output::CreateDatasetO
 
 pub use crate::operation::create_dataset::_create_dataset_input::CreateDatasetInputBuilder;
 
+impl CreateDatasetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_dataset::CreateDatasetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_dataset::CreateDatasetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_dataset();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateDataset`.
 ///
 /// <p>Creates an empty dataset and adds it to the specified dataset group. Use <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDatasetImportJob.html">CreateDatasetImportJob</a> to import your training data to a dataset.</p>

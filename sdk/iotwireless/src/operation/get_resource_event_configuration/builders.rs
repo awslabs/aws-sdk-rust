@@ -3,6 +3,23 @@ pub use crate::operation::get_resource_event_configuration::_get_resource_event_
 
 pub use crate::operation::get_resource_event_configuration::_get_resource_event_configuration_input::GetResourceEventConfigurationInputBuilder;
 
+impl GetResourceEventConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_resource_event_configuration::GetResourceEventConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_resource_event_configuration::GetResourceEventConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_resource_event_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetResourceEventConfiguration`.
 ///
 /// <p>Get the event configuration for a particular resource identifier.</p>

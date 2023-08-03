@@ -3,6 +3,23 @@ pub use crate::operation::get_kx_connection_string::_get_kx_connection_string_ou
 
 pub use crate::operation::get_kx_connection_string::_get_kx_connection_string_input::GetKxConnectionStringInputBuilder;
 
+impl GetKxConnectionStringInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_kx_connection_string::GetKxConnectionStringOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_kx_connection_string::GetKxConnectionStringError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_kx_connection_string();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetKxConnectionString`.
 ///
 /// <p>Retrieves a connection string for a user to connect to a kdb cluster. You must call this API using the same role that you have defined while creating a user. </p>

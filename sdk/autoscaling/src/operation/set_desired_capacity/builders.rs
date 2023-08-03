@@ -3,6 +3,23 @@ pub use crate::operation::set_desired_capacity::_set_desired_capacity_output::Se
 
 pub use crate::operation::set_desired_capacity::_set_desired_capacity_input::SetDesiredCapacityInputBuilder;
 
+impl SetDesiredCapacityInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::set_desired_capacity::SetDesiredCapacityOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::set_desired_capacity::SetDesiredCapacityError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.set_desired_capacity();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SetDesiredCapacity`.
 ///
 /// <p>Sets the size of the specified Auto Scaling group.</p>

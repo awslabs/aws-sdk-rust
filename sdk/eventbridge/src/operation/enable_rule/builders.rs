@@ -3,6 +3,23 @@ pub use crate::operation::enable_rule::_enable_rule_output::EnableRuleOutputBuil
 
 pub use crate::operation::enable_rule::_enable_rule_input::EnableRuleInputBuilder;
 
+impl EnableRuleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::enable_rule::EnableRuleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::enable_rule::EnableRuleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.enable_rule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `EnableRule`.
 ///
 /// <p>Enables the specified rule. If the rule does not exist, the operation fails.</p>

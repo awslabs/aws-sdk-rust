@@ -3,6 +3,17 @@ pub use crate::operation::get_associated_enclave_certificate_iam_roles::_get_ass
 
 pub use crate::operation::get_associated_enclave_certificate_iam_roles::_get_associated_enclave_certificate_iam_roles_input::GetAssociatedEnclaveCertificateIamRolesInputBuilder;
 
+impl GetAssociatedEnclaveCertificateIamRolesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_associated_enclave_certificate_iam_roles::GetAssociatedEnclaveCertificateIamRolesOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_associated_enclave_certificate_iam_roles::GetAssociatedEnclaveCertificateIamRolesError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_associated_enclave_certificate_iam_roles();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetAssociatedEnclaveCertificateIamRoles`.
 ///
 /// <p>Returns the IAM roles that are associated with the specified ACM (ACM) certificate. It also returns the name of the Amazon S3 bucket and the Amazon S3 object key where the certificate, certificate chain, and encrypted private key bundle are stored, and the ARN of the KMS key that's used to encrypt the private key.</p>

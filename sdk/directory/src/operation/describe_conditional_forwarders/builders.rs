@@ -3,6 +3,23 @@ pub use crate::operation::describe_conditional_forwarders::_describe_conditional
 
 pub use crate::operation::describe_conditional_forwarders::_describe_conditional_forwarders_input::DescribeConditionalForwardersInputBuilder;
 
+impl DescribeConditionalForwardersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_conditional_forwarders::DescribeConditionalForwardersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_conditional_forwarders::DescribeConditionalForwardersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_conditional_forwarders();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeConditionalForwarders`.
 ///
 /// <p>Obtains information about the conditional forwarders for this account.</p>

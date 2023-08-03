@@ -3,6 +3,23 @@ pub use crate::operation::analyze_document::_analyze_document_output::AnalyzeDoc
 
 pub use crate::operation::analyze_document::_analyze_document_input::AnalyzeDocumentInputBuilder;
 
+impl AnalyzeDocumentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::analyze_document::AnalyzeDocumentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::analyze_document::AnalyzeDocumentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.analyze_document();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AnalyzeDocument`.
 ///
 /// <p>Analyzes an input document for relationships between detected items. </p>

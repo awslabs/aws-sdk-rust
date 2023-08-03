@@ -3,6 +3,23 @@ pub use crate::operation::list_hi_ts::_list_hi_ts_output::ListHiTsOutputBuilder;
 
 pub use crate::operation::list_hi_ts::_list_hi_ts_input::ListHiTsInputBuilder;
 
+impl ListHiTsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_hi_ts::ListHiTsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_hi_ts::ListHITsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_hi_ts();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListHITs`.
 ///
 /// <p> The <code>ListHITs</code> operation returns all of a Requester's HITs. The operation returns HITs of any status, except for HITs that have been deleted of with the DeleteHIT operation or that have been auto-deleted. </p>

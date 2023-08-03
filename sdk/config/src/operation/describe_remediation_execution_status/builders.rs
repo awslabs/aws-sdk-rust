@@ -3,6 +3,17 @@ pub use crate::operation::describe_remediation_execution_status::_describe_remed
 
 pub use crate::operation::describe_remediation_execution_status::_describe_remediation_execution_status_input::DescribeRemediationExecutionStatusInputBuilder;
 
+impl DescribeRemediationExecutionStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_remediation_execution_status::DescribeRemediationExecutionStatusOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_remediation_execution_status::DescribeRemediationExecutionStatusError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_remediation_execution_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeRemediationExecutionStatus`.
 ///
 /// <p>Provides a detailed view of a Remediation Execution for a set of resources including state, timestamps for when steps for the remediation execution occur, and any error messages for steps that have failed. When you specify the limit and the next token, you receive a paginated response.</p>

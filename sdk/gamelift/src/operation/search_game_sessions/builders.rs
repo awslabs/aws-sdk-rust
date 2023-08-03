@@ -3,6 +3,23 @@ pub use crate::operation::search_game_sessions::_search_game_sessions_output::Se
 
 pub use crate::operation::search_game_sessions::_search_game_sessions_input::SearchGameSessionsInputBuilder;
 
+impl SearchGameSessionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::search_game_sessions::SearchGameSessionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::search_game_sessions::SearchGameSessionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.search_game_sessions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SearchGameSessions`.
 ///
 /// <p>Retrieves all active game sessions that match a set of search criteria and sorts them into a specified order. </p>

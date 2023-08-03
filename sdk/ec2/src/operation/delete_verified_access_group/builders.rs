@@ -3,6 +3,23 @@ pub use crate::operation::delete_verified_access_group::_delete_verified_access_
 
 pub use crate::operation::delete_verified_access_group::_delete_verified_access_group_input::DeleteVerifiedAccessGroupInputBuilder;
 
+impl DeleteVerifiedAccessGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_verified_access_group::DeleteVerifiedAccessGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_verified_access_group::DeleteVerifiedAccessGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_verified_access_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteVerifiedAccessGroup`.
 ///
 /// <p>Delete an Amazon Web Services Verified Access group.</p>

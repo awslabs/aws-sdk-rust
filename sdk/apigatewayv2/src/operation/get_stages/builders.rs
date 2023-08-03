@@ -3,6 +3,23 @@ pub use crate::operation::get_stages::_get_stages_output::GetStagesOutputBuilder
 
 pub use crate::operation::get_stages::_get_stages_input::GetStagesInputBuilder;
 
+impl GetStagesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_stages::GetStagesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_stages::GetStagesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_stages();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetStages`.
 ///
 /// <p>Gets the Stages for an API.</p>

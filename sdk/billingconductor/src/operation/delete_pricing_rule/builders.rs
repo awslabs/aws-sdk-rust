@@ -3,6 +3,23 @@ pub use crate::operation::delete_pricing_rule::_delete_pricing_rule_output::Dele
 
 pub use crate::operation::delete_pricing_rule::_delete_pricing_rule_input::DeletePricingRuleInputBuilder;
 
+impl DeletePricingRuleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_pricing_rule::DeletePricingRuleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_pricing_rule::DeletePricingRuleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_pricing_rule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeletePricingRule`.
 ///
 /// <p> Deletes the pricing rule that's identified by the input Amazon Resource Name (ARN). </p>

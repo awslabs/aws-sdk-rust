@@ -3,6 +3,23 @@ pub use crate::operation::list_page_receipts::_list_page_receipts_output::ListPa
 
 pub use crate::operation::list_page_receipts::_list_page_receipts_input::ListPageReceiptsInputBuilder;
 
+impl ListPageReceiptsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_page_receipts::ListPageReceiptsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_page_receipts::ListPageReceiptsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_page_receipts();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListPageReceipts`.
 ///
 /// <p>Lists all of the engagements to contact channels that have been acknowledged.</p>

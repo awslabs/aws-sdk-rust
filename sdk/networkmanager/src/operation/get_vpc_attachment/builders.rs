@@ -3,6 +3,23 @@ pub use crate::operation::get_vpc_attachment::_get_vpc_attachment_output::GetVpc
 
 pub use crate::operation::get_vpc_attachment::_get_vpc_attachment_input::GetVpcAttachmentInputBuilder;
 
+impl GetVpcAttachmentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_vpc_attachment::GetVpcAttachmentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_vpc_attachment::GetVpcAttachmentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_vpc_attachment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetVpcAttachment`.
 ///
 /// <p>Returns information about a VPC attachment.</p>

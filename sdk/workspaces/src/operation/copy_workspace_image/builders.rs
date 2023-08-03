@@ -3,6 +3,23 @@ pub use crate::operation::copy_workspace_image::_copy_workspace_image_output::Co
 
 pub use crate::operation::copy_workspace_image::_copy_workspace_image_input::CopyWorkspaceImageInputBuilder;
 
+impl CopyWorkspaceImageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::copy_workspace_image::CopyWorkspaceImageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::copy_workspace_image::CopyWorkspaceImageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.copy_workspace_image();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CopyWorkspaceImage`.
 ///
 /// <p>Copies the specified image from the specified Region to the current Region. For more information about copying images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/copy-custom-image.html"> Copy a Custom WorkSpaces Image</a>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_slot_type_version::_delete_slot_type_version_ou
 
 pub use crate::operation::delete_slot_type_version::_delete_slot_type_version_input::DeleteSlotTypeVersionInputBuilder;
 
+impl DeleteSlotTypeVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_slot_type_version::DeleteSlotTypeVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_slot_type_version::DeleteSlotTypeVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_slot_type_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteSlotTypeVersion`.
 ///
 /// <p>Deletes a specific version of a slot type. To delete all versions of a slot type, use the <code>DeleteSlotType</code> operation. </p>

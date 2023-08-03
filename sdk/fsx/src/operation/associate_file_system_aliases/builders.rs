@@ -3,6 +3,23 @@ pub use crate::operation::associate_file_system_aliases::_associate_file_system_
 
 pub use crate::operation::associate_file_system_aliases::_associate_file_system_aliases_input::AssociateFileSystemAliasesInputBuilder;
 
+impl AssociateFileSystemAliasesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_file_system_aliases::AssociateFileSystemAliasesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_file_system_aliases::AssociateFileSystemAliasesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_file_system_aliases();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateFileSystemAliases`.
 ///
 /// <p>Use this action to associate one or more Domain Name Server (DNS) aliases with an existing Amazon FSx for Windows File Server file system. A file system can have a maximum of 50 DNS aliases associated with it at any one time. If you try to associate a DNS alias that is already associated with the file system, FSx takes no action on that alias in the request. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">Working with DNS Aliases</a> and <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/walkthrough05-file-system-custom-CNAME.html">Walkthrough 5: Using DNS aliases to access your file system</a>, including additional steps you must take to be able to access your file system using a DNS alias.</p>

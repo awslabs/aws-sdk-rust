@@ -3,6 +3,23 @@ pub use crate::operation::create_form::_create_form_output::CreateFormOutputBuil
 
 pub use crate::operation::create_form::_create_form_input::CreateFormInputBuilder;
 
+impl CreateFormInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_form::CreateFormOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_form::CreateFormError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_form();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateForm`.
 ///
 /// <p>Creates a new form for an Amplify.</p>

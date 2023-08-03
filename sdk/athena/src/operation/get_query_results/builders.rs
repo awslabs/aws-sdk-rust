@@ -3,6 +3,23 @@ pub use crate::operation::get_query_results::_get_query_results_output::GetQuery
 
 pub use crate::operation::get_query_results::_get_query_results_input::GetQueryResultsInputBuilder;
 
+impl GetQueryResultsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_query_results::GetQueryResultsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_query_results::GetQueryResultsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_query_results();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetQueryResults`.
 ///
 /// <p>Streams the results of a single query execution specified by <code>QueryExecutionId</code> from the Athena query results location in Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/athena/latest/ug/querying.html">Working with query results, recent queries, and output files</a> in the <i>Amazon Athena User Guide</i>. This request does not execute the query but returns results. Use <code>StartQueryExecution</code> to run a query.</p>

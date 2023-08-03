@@ -3,6 +3,23 @@ pub use crate::operation::get_kx_cluster::_get_kx_cluster_output::GetKxClusterOu
 
 pub use crate::operation::get_kx_cluster::_get_kx_cluster_input::GetKxClusterInputBuilder;
 
+impl GetKxClusterInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_kx_cluster::GetKxClusterOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_kx_cluster::GetKxClusterError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_kx_cluster();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetKxCluster`.
 ///
 /// <p>Retrieves information about a kdb cluster.</p>

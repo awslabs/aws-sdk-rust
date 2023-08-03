@@ -3,6 +3,23 @@ pub use crate::operation::update_timeline_event::_update_timeline_event_output::
 
 pub use crate::operation::update_timeline_event::_update_timeline_event_input::UpdateTimelineEventInputBuilder;
 
+impl UpdateTimelineEventInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_timeline_event::UpdateTimelineEventOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_timeline_event::UpdateTimelineEventError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_timeline_event();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateTimelineEvent`.
 ///
 /// <p>Updates a timeline event. You can update events of type <code>Custom Event</code>.</p>

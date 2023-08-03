@@ -3,6 +3,23 @@ pub use crate::operation::create_input_security_group::_create_input_security_gr
 
 pub use crate::operation::create_input_security_group::_create_input_security_group_input::CreateInputSecurityGroupInputBuilder;
 
+impl CreateInputSecurityGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_input_security_group::CreateInputSecurityGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_input_security_group::CreateInputSecurityGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_input_security_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateInputSecurityGroup`.
 ///
 /// Creates a Input Security Group

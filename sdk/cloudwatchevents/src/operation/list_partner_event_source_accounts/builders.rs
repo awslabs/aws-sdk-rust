@@ -3,6 +3,17 @@ pub use crate::operation::list_partner_event_source_accounts::_list_partner_even
 
 pub use crate::operation::list_partner_event_source_accounts::_list_partner_event_source_accounts_input::ListPartnerEventSourceAccountsInputBuilder;
 
+impl ListPartnerEventSourceAccountsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_partner_event_source_accounts::ListPartnerEventSourceAccountsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_partner_event_source_accounts::ListPartnerEventSourceAccountsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_partner_event_source_accounts();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListPartnerEventSourceAccounts`.
 ///
 /// <p>An SaaS partner can use this operation to display the Amazon Web Services account ID that a particular partner event source name is associated with. This operation is not used by Amazon Web Services customers.</p>

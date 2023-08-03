@@ -3,6 +3,23 @@ pub use crate::operation::list_lf_tags::_list_lf_tags_output::ListLfTagsOutputBu
 
 pub use crate::operation::list_lf_tags::_list_lf_tags_input::ListLfTagsInputBuilder;
 
+impl ListLfTagsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_lf_tags::ListLfTagsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_lf_tags::ListLFTagsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_lf_tags();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListLFTags`.
 ///
 /// <p>Lists LF-tags that the requester has permission to view. </p>

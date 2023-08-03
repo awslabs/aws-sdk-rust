@@ -3,6 +3,23 @@ pub use crate::operation::update_byte_match_set::_update_byte_match_set_output::
 
 pub use crate::operation::update_byte_match_set::_update_byte_match_set_input::UpdateByteMatchSetInputBuilder;
 
+impl UpdateByteMatchSetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_byte_match_set::UpdateByteMatchSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_byte_match_set::UpdateByteMatchSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_byte_match_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateByteMatchSet`.
 ///
 /// <note>

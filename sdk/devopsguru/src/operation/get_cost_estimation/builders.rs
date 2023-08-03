@@ -3,6 +3,23 @@ pub use crate::operation::get_cost_estimation::_get_cost_estimation_output::GetC
 
 pub use crate::operation::get_cost_estimation::_get_cost_estimation_input::GetCostEstimationInputBuilder;
 
+impl GetCostEstimationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_cost_estimation::GetCostEstimationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_cost_estimation::GetCostEstimationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_cost_estimation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetCostEstimation`.
 ///
 /// <p>Returns an estimate of the monthly cost for DevOps Guru to analyze your Amazon Web Services resources. For more information, see <a href="https://docs.aws.amazon.com/devops-guru/latest/userguide/cost-estimate.html">Estimate your Amazon DevOps Guru costs</a> and <a href="http://aws.amazon.com/devops-guru/pricing/">Amazon DevOps Guru pricing</a>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::pause_service::_pause_service_output::PauseServiceOutp
 
 pub use crate::operation::pause_service::_pause_service_input::PauseServiceInputBuilder;
 
+impl PauseServiceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::pause_service::PauseServiceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::pause_service::PauseServiceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.pause_service();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PauseService`.
 ///
 /// <p>Pause an active App Runner service. App Runner reduces compute capacity for the service to zero and loses state (for example, ephemeral storage is removed).</p>

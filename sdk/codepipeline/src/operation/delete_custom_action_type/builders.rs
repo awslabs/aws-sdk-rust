@@ -3,6 +3,23 @@ pub use crate::operation::delete_custom_action_type::_delete_custom_action_type_
 
 pub use crate::operation::delete_custom_action_type::_delete_custom_action_type_input::DeleteCustomActionTypeInputBuilder;
 
+impl DeleteCustomActionTypeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_custom_action_type::DeleteCustomActionTypeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_custom_action_type::DeleteCustomActionTypeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_custom_action_type();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteCustomActionType`.
 ///
 /// <p>Marks a custom action as deleted. <code>PollForJobs</code> for the custom action fails after the action is marked for deletion. Used for custom actions only.</p> <important>

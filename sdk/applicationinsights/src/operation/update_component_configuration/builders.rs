@@ -3,6 +3,23 @@ pub use crate::operation::update_component_configuration::_update_component_conf
 
 pub use crate::operation::update_component_configuration::_update_component_configuration_input::UpdateComponentConfigurationInputBuilder;
 
+impl UpdateComponentConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_component_configuration::UpdateComponentConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_component_configuration::UpdateComponentConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_component_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateComponentConfiguration`.
 ///
 /// <p>Updates the monitoring configurations for the component. The configuration input parameter is an escaped JSON of the configuration and should match the schema of what is returned by <code>DescribeComponentConfigurationRecommendation</code>. </p>

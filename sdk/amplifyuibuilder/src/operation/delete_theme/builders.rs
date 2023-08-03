@@ -3,6 +3,23 @@ pub use crate::operation::delete_theme::_delete_theme_output::DeleteThemeOutputB
 
 pub use crate::operation::delete_theme::_delete_theme_input::DeleteThemeInputBuilder;
 
+impl DeleteThemeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_theme::DeleteThemeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_theme::DeleteThemeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_theme();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteTheme`.
 ///
 /// <p>Deletes a theme from an Amplify app.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_configured_table::_get_configured_table_output::Ge
 
 pub use crate::operation::get_configured_table::_get_configured_table_input::GetConfiguredTableInputBuilder;
 
+impl GetConfiguredTableInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_configured_table::GetConfiguredTableOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_configured_table::GetConfiguredTableError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_configured_table();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetConfiguredTable`.
 ///
 /// <p>Retrieves a configured table.</p>

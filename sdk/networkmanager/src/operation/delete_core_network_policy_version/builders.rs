@@ -3,6 +3,17 @@ pub use crate::operation::delete_core_network_policy_version::_delete_core_netwo
 
 pub use crate::operation::delete_core_network_policy_version::_delete_core_network_policy_version_input::DeleteCoreNetworkPolicyVersionInputBuilder;
 
+impl DeleteCoreNetworkPolicyVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_core_network_policy_version::DeleteCoreNetworkPolicyVersionOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_core_network_policy_version::DeleteCoreNetworkPolicyVersionError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.delete_core_network_policy_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteCoreNetworkPolicyVersion`.
 ///
 /// <p>Deletes a policy version from a core network. You can't delete the current LIVE policy.</p>

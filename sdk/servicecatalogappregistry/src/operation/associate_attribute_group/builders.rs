@@ -3,6 +3,23 @@ pub use crate::operation::associate_attribute_group::_associate_attribute_group_
 
 pub use crate::operation::associate_attribute_group::_associate_attribute_group_input::AssociateAttributeGroupInputBuilder;
 
+impl AssociateAttributeGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_attribute_group::AssociateAttributeGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_attribute_group::AssociateAttributeGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_attribute_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateAttributeGroup`.
 ///
 /// <p>Associates an attribute group with an application to augment the application's metadata with the group's attributes. This feature enables applications to be described with user-defined details that are machine-readable, such as third-party integrations.</p>

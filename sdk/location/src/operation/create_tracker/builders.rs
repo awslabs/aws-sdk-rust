@@ -3,6 +3,23 @@ pub use crate::operation::create_tracker::_create_tracker_output::CreateTrackerO
 
 pub use crate::operation::create_tracker::_create_tracker_input::CreateTrackerInputBuilder;
 
+impl CreateTrackerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_tracker::CreateTrackerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_tracker::CreateTrackerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_tracker();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateTracker`.
 ///
 /// <p>Creates a tracker resource in your Amazon Web Services account, which lets you retrieve current and historical location of devices.</p>

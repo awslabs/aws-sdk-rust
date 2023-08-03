@@ -3,6 +3,23 @@ pub use crate::operation::describe_instance_refreshes::_describe_instance_refres
 
 pub use crate::operation::describe_instance_refreshes::_describe_instance_refreshes_input::DescribeInstanceRefreshesInputBuilder;
 
+impl DescribeInstanceRefreshesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_instance_refreshes::DescribeInstanceRefreshesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_instance_refreshes::DescribeInstanceRefreshesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_instance_refreshes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeInstanceRefreshes`.
 ///
 /// <p>Gets information about the instance refreshes for the specified Auto Scaling group.</p>

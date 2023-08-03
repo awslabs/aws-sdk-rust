@@ -3,6 +3,23 @@ pub use crate::operation::describe_handshake::_describe_handshake_output::Descri
 
 pub use crate::operation::describe_handshake::_describe_handshake_input::DescribeHandshakeInputBuilder;
 
+impl DescribeHandshakeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_handshake::DescribeHandshakeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_handshake::DescribeHandshakeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_handshake();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeHandshake`.
 ///
 /// <p>Retrieves information about a previously requested handshake. The handshake ID comes from the response to the original <code>InviteAccountToOrganization</code> operation that generated the handshake.</p>

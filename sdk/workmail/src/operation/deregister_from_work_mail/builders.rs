@@ -3,6 +3,23 @@ pub use crate::operation::deregister_from_work_mail::_deregister_from_work_mail_
 
 pub use crate::operation::deregister_from_work_mail::_deregister_from_work_mail_input::DeregisterFromWorkMailInputBuilder;
 
+impl DeregisterFromWorkMailInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::deregister_from_work_mail::DeregisterFromWorkMailOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::deregister_from_work_mail::DeregisterFromWorkMailError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.deregister_from_work_mail();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeregisterFromWorkMail`.
 ///
 /// <p>Mark a user, group, or resource as no longer used in WorkMail. This action disassociates the mailbox and schedules it for clean-up. WorkMail keeps mailboxes for 30 days before they are permanently removed. The functionality in the console is <i>Disable</i>.</p>

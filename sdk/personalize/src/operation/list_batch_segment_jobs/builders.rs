@@ -3,6 +3,23 @@ pub use crate::operation::list_batch_segment_jobs::_list_batch_segment_jobs_outp
 
 pub use crate::operation::list_batch_segment_jobs::_list_batch_segment_jobs_input::ListBatchSegmentJobsInputBuilder;
 
+impl ListBatchSegmentJobsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_batch_segment_jobs::ListBatchSegmentJobsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_batch_segment_jobs::ListBatchSegmentJobsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_batch_segment_jobs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListBatchSegmentJobs`.
 ///
 /// <p>Gets a list of the batch segment jobs that have been performed off of a solution version that you specify.</p>

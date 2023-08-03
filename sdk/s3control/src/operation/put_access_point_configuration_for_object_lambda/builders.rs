@@ -3,6 +3,17 @@ pub use crate::operation::put_access_point_configuration_for_object_lambda::_put
 
 pub use crate::operation::put_access_point_configuration_for_object_lambda::_put_access_point_configuration_for_object_lambda_input::PutAccessPointConfigurationForObjectLambdaInputBuilder;
 
+impl PutAccessPointConfigurationForObjectLambdaInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::put_access_point_configuration_for_object_lambda::PutAccessPointConfigurationForObjectLambdaOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_access_point_configuration_for_object_lambda::PutAccessPointConfigurationForObjectLambdaError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.put_access_point_configuration_for_object_lambda();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutAccessPointConfigurationForObjectLambda`.
 ///
 /// <p>Replaces configuration for an Object Lambda Access Point.</p>

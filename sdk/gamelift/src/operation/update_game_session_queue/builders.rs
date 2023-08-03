@@ -3,6 +3,23 @@ pub use crate::operation::update_game_session_queue::_update_game_session_queue_
 
 pub use crate::operation::update_game_session_queue::_update_game_session_queue_input::UpdateGameSessionQueueInputBuilder;
 
+impl UpdateGameSessionQueueInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_game_session_queue::UpdateGameSessionQueueOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_game_session_queue::UpdateGameSessionQueueError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_game_session_queue();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateGameSessionQueue`.
 ///
 /// <p>Updates the configuration of a game session queue, which determines how the queue processes new game session requests. To update settings, specify the queue name to be updated and provide the new settings. When updating destinations, provide a complete list of destinations. </p>

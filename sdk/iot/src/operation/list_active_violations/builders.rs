@@ -3,6 +3,23 @@ pub use crate::operation::list_active_violations::_list_active_violations_output
 
 pub use crate::operation::list_active_violations::_list_active_violations_input::ListActiveViolationsInputBuilder;
 
+impl ListActiveViolationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_active_violations::ListActiveViolationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_active_violations::ListActiveViolationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_active_violations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListActiveViolations`.
 ///
 /// <p>Lists the active violations for a given Device Defender security profile.</p>

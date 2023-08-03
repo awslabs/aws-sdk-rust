@@ -3,6 +3,23 @@ pub use crate::operation::publish_version::_publish_version_output::PublishVersi
 
 pub use crate::operation::publish_version::_publish_version_input::PublishVersionInputBuilder;
 
+impl PublishVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::publish_version::PublishVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::publish_version::PublishVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.publish_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PublishVersion`.
 ///
 /// <p>Creates a <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">version</a> from the current code and configuration of a function. Use versions to create a snapshot of your function code and configuration that doesn't change.</p>

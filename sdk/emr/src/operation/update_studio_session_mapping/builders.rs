@@ -3,6 +3,23 @@ pub use crate::operation::update_studio_session_mapping::_update_studio_session_
 
 pub use crate::operation::update_studio_session_mapping::_update_studio_session_mapping_input::UpdateStudioSessionMappingInputBuilder;
 
+impl UpdateStudioSessionMappingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_studio_session_mapping::UpdateStudioSessionMappingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_studio_session_mapping::UpdateStudioSessionMappingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_studio_session_mapping();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateStudioSessionMapping`.
 ///
 /// <p>Updates the session policy attached to the user or group for the specified Amazon EMR Studio.</p>

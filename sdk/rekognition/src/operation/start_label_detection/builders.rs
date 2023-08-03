@@ -3,6 +3,23 @@ pub use crate::operation::start_label_detection::_start_label_detection_output::
 
 pub use crate::operation::start_label_detection::_start_label_detection_input::StartLabelDetectionInputBuilder;
 
+impl StartLabelDetectionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_label_detection::StartLabelDetectionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_label_detection::StartLabelDetectionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_label_detection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartLabelDetection`.
 ///
 /// <p>Starts asynchronous detection of labels in a stored video.</p>

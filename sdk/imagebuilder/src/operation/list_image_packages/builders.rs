@@ -3,6 +3,23 @@ pub use crate::operation::list_image_packages::_list_image_packages_output::List
 
 pub use crate::operation::list_image_packages::_list_image_packages_input::ListImagePackagesInputBuilder;
 
+impl ListImagePackagesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_image_packages::ListImagePackagesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_image_packages::ListImagePackagesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_image_packages();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListImagePackages`.
 ///
 /// <p>List the Packages that are associated with an Image Build Version, as determined by Amazon Web Services Systems Manager Inventory at build time.</p>

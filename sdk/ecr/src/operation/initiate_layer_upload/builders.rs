@@ -3,6 +3,23 @@ pub use crate::operation::initiate_layer_upload::_initiate_layer_upload_output::
 
 pub use crate::operation::initiate_layer_upload::_initiate_layer_upload_input::InitiateLayerUploadInputBuilder;
 
+impl InitiateLayerUploadInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::initiate_layer_upload::InitiateLayerUploadOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::initiate_layer_upload::InitiateLayerUploadError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.initiate_layer_upload();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `InitiateLayerUpload`.
 ///
 /// <p>Notifies Amazon ECR that you intend to upload an image layer.</p>

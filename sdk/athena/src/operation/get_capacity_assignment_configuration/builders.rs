@@ -3,6 +3,17 @@ pub use crate::operation::get_capacity_assignment_configuration::_get_capacity_a
 
 pub use crate::operation::get_capacity_assignment_configuration::_get_capacity_assignment_configuration_input::GetCapacityAssignmentConfigurationInputBuilder;
 
+impl GetCapacityAssignmentConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_capacity_assignment_configuration::GetCapacityAssignmentConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_capacity_assignment_configuration::GetCapacityAssignmentConfigurationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_capacity_assignment_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetCapacityAssignmentConfiguration`.
 ///
 /// <p>Gets the capacity assignment configuration for a capacity reservation, if one exists.</p>

@@ -3,6 +3,17 @@ pub use crate::operation::describe_state_machine_for_execution::_describe_state_
 
 pub use crate::operation::describe_state_machine_for_execution::_describe_state_machine_for_execution_input::DescribeStateMachineForExecutionInputBuilder;
 
+impl DescribeStateMachineForExecutionInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_state_machine_for_execution::DescribeStateMachineForExecutionOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_state_machine_for_execution::DescribeStateMachineForExecutionError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_state_machine_for_execution();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeStateMachineForExecution`.
 ///
 /// <p>Provides information about a state machine's definition, its execution role ARN, and configuration. If a Map Run dispatched the execution, this action returns the Map Run Amazon Resource Name (ARN) in the response. The state machine returned is the state machine associated with the Map Run.</p> <note>

@@ -3,6 +3,23 @@ pub use crate::operation::list_facet_names::_list_facet_names_output::ListFacetN
 
 pub use crate::operation::list_facet_names::_list_facet_names_input::ListFacetNamesInputBuilder;
 
+impl ListFacetNamesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_facet_names::ListFacetNamesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_facet_names::ListFacetNamesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_facet_names();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListFacetNames`.
 ///
 /// <p>Retrieves the names of facets that exist in a schema.</p>

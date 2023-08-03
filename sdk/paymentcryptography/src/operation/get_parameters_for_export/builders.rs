@@ -3,6 +3,23 @@ pub use crate::operation::get_parameters_for_export::_get_parameters_for_export_
 
 pub use crate::operation::get_parameters_for_export::_get_parameters_for_export_input::GetParametersForExportInputBuilder;
 
+impl GetParametersForExportInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_parameters_for_export::GetParametersForExportOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_parameters_for_export::GetParametersForExportError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_parameters_for_export();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetParametersForExport`.
 ///
 /// <p>Gets the export token and the signing key certificate to initiate a TR-34 key export from Amazon Web Services Payment Cryptography.</p>

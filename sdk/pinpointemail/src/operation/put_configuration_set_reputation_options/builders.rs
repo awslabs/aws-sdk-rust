@@ -3,6 +3,17 @@ pub use crate::operation::put_configuration_set_reputation_options::_put_configu
 
 pub use crate::operation::put_configuration_set_reputation_options::_put_configuration_set_reputation_options_input::PutConfigurationSetReputationOptionsInputBuilder;
 
+impl PutConfigurationSetReputationOptionsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::put_configuration_set_reputation_options::PutConfigurationSetReputationOptionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_configuration_set_reputation_options::PutConfigurationSetReputationOptionsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.put_configuration_set_reputation_options();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutConfigurationSetReputationOptions`.
 ///
 /// <p>Enable or disable collection of reputation metrics for emails that you send using a particular configuration set in a specific AWS Region.</p>

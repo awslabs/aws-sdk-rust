@@ -3,6 +3,17 @@ pub use crate::operation::update_company_network_configuration::_update_company_
 
 pub use crate::operation::update_company_network_configuration::_update_company_network_configuration_input::UpdateCompanyNetworkConfigurationInputBuilder;
 
+impl UpdateCompanyNetworkConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::update_company_network_configuration::UpdateCompanyNetworkConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_company_network_configuration::UpdateCompanyNetworkConfigurationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.update_company_network_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateCompanyNetworkConfiguration`.
 ///
 /// <p>Updates the company network configuration for the fleet.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_dataset::_delete_dataset_output::DeleteDatasetO
 
 pub use crate::operation::delete_dataset::_delete_dataset_input::DeleteDatasetInputBuilder;
 
+impl DeleteDatasetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_dataset::DeleteDatasetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_dataset::DeleteDatasetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_dataset();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteDataset`.
 ///
 /// <p> Deletes a dataset and associated artifacts. The operation will check to see if any inference scheduler or data ingestion job is currently using the dataset, and if there isn't, the dataset, its metadata, and any associated data stored in S3 will be deleted. This does not affect any models that used this dataset for training and evaluation, but does prevent it from being used in the future. </p>

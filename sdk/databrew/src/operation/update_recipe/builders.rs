@@ -3,6 +3,23 @@ pub use crate::operation::update_recipe::_update_recipe_output::UpdateRecipeOutp
 
 pub use crate::operation::update_recipe::_update_recipe_input::UpdateRecipeInputBuilder;
 
+impl UpdateRecipeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_recipe::UpdateRecipeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_recipe::UpdateRecipeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_recipe();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateRecipe`.
 ///
 /// <p>Modifies the definition of the <code>LATEST_WORKING</code> version of a DataBrew recipe.</p>

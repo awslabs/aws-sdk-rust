@@ -3,6 +3,23 @@ pub use crate::operation::list_build_batches_for_project::_list_build_batches_fo
 
 pub use crate::operation::list_build_batches_for_project::_list_build_batches_for_project_input::ListBuildBatchesForProjectInputBuilder;
 
+impl ListBuildBatchesForProjectInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_build_batches_for_project::ListBuildBatchesForProjectOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_build_batches_for_project::ListBuildBatchesForProjectError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_build_batches_for_project();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListBuildBatchesForProject`.
 ///
 /// <p>Retrieves the identifiers of the build batches for a specific project.</p>

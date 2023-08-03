@@ -3,6 +3,23 @@ pub use crate::operation::reject_vpc_endpoint_connections::_reject_vpc_endpoint_
 
 pub use crate::operation::reject_vpc_endpoint_connections::_reject_vpc_endpoint_connections_input::RejectVpcEndpointConnectionsInputBuilder;
 
+impl RejectVpcEndpointConnectionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::reject_vpc_endpoint_connections::RejectVpcEndpointConnectionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::reject_vpc_endpoint_connections::RejectVpcEndpointConnectionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.reject_vpc_endpoint_connections();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RejectVpcEndpointConnections`.
 ///
 /// <p>Rejects VPC endpoint connection requests to your VPC endpoint service.</p>

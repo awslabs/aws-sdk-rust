@@ -3,6 +3,23 @@ pub use crate::operation::update_anomaly_monitor::_update_anomaly_monitor_output
 
 pub use crate::operation::update_anomaly_monitor::_update_anomaly_monitor_input::UpdateAnomalyMonitorInputBuilder;
 
+impl UpdateAnomalyMonitorInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_anomaly_monitor::UpdateAnomalyMonitorOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_anomaly_monitor::UpdateAnomalyMonitorError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_anomaly_monitor();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateAnomalyMonitor`.
 ///
 /// <p>Updates an existing cost anomaly monitor. The changes made are applied going forward, and doesn't change anomalies detected in the past. </p>

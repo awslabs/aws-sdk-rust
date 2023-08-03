@@ -3,6 +3,23 @@ pub use crate::operation::put_cluster_policy::_put_cluster_policy_output::PutClu
 
 pub use crate::operation::put_cluster_policy::_put_cluster_policy_input::PutClusterPolicyInputBuilder;
 
+impl PutClusterPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_cluster_policy::PutClusterPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_cluster_policy::PutClusterPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_cluster_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutClusterPolicy`.
 ///
 /// <p>Creates or updates the MSK cluster policy specified by the cluster Amazon Resource Name (ARN) in the request.</p>

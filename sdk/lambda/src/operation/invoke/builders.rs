@@ -3,6 +3,23 @@ pub use crate::operation::invoke::_invoke_output::InvokeOutputBuilder;
 
 pub use crate::operation::invoke::_invoke_input::InvokeInputBuilder;
 
+impl InvokeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::invoke::InvokeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::invoke::InvokeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.invoke();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `Invoke`.
 ///
 /// <p>Invokes a Lambda function. You can invoke a function synchronously (and wait for the response), or asynchronously. To invoke a function asynchronously, set <code>InvocationType</code> to <code>Event</code>.</p>

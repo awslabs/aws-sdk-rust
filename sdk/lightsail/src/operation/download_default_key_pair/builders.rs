@@ -3,6 +3,23 @@ pub use crate::operation::download_default_key_pair::_download_default_key_pair_
 
 pub use crate::operation::download_default_key_pair::_download_default_key_pair_input::DownloadDefaultKeyPairInputBuilder;
 
+impl DownloadDefaultKeyPairInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::download_default_key_pair::DownloadDefaultKeyPairOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::download_default_key_pair::DownloadDefaultKeyPairError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.download_default_key_pair();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DownloadDefaultKeyPair`.
 ///
 /// <p>Downloads the regional Amazon Lightsail default key pair.</p>

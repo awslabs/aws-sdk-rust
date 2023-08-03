@@ -3,6 +3,23 @@ pub use crate::operation::update_endpoint_group::_update_endpoint_group_output::
 
 pub use crate::operation::update_endpoint_group::_update_endpoint_group_input::UpdateEndpointGroupInputBuilder;
 
+impl UpdateEndpointGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_endpoint_group::UpdateEndpointGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_endpoint_group::UpdateEndpointGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_endpoint_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateEndpointGroup`.
 ///
 /// <p>Update an endpoint group. A resource must be valid and active when you add it as an endpoint.</p>

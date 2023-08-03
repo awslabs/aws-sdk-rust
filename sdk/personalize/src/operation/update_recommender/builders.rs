@@ -3,6 +3,23 @@ pub use crate::operation::update_recommender::_update_recommender_output::Update
 
 pub use crate::operation::update_recommender::_update_recommender_input::UpdateRecommenderInputBuilder;
 
+impl UpdateRecommenderInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_recommender::UpdateRecommenderOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_recommender::UpdateRecommenderError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_recommender();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateRecommender`.
 ///
 /// <p>Updates the recommender to modify the recommender configuration. If you update the recommender to modify the columns used in training, Amazon Personalize automatically starts a full retraining of the models backing your recommender. While the update completes, you can still get recommendations from the recommender. The recommender uses the previous configuration until the update completes. To track the status of this update, use the <code>latestRecommenderUpdate</code> returned in the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_DescribeRecommender.html">DescribeRecommender</a> operation. </p>

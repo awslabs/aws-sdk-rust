@@ -3,6 +3,23 @@ pub use crate::operation::list_versions_by_function::_list_versions_by_function_
 
 pub use crate::operation::list_versions_by_function::_list_versions_by_function_input::ListVersionsByFunctionInputBuilder;
 
+impl ListVersionsByFunctionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_versions_by_function::ListVersionsByFunctionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_versions_by_function::ListVersionsByFunctionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_versions_by_function();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListVersionsByFunction`.
 ///
 /// <p>Returns a list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">versions</a>, with the version-specific configuration of each. Lambda returns up to 50 versions per call.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_accuracy_metrics::_get_accuracy_metrics_output::Ge
 
 pub use crate::operation::get_accuracy_metrics::_get_accuracy_metrics_input::GetAccuracyMetricsInputBuilder;
 
+impl GetAccuracyMetricsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_accuracy_metrics::GetAccuracyMetricsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_accuracy_metrics::GetAccuracyMetricsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_accuracy_metrics();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetAccuracyMetrics`.
 ///
 /// <p>Provides metrics on the accuracy of the models that were trained by the <code>CreatePredictor</code> operation. Use metrics to see how well the model performed and to decide whether to use the predictor to generate a forecast. For more information, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/metrics.html">Predictor Metrics</a>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::copy_backup_to_region::_copy_backup_to_region_output::
 
 pub use crate::operation::copy_backup_to_region::_copy_backup_to_region_input::CopyBackupToRegionInputBuilder;
 
+impl CopyBackupToRegionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::copy_backup_to_region::CopyBackupToRegionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::copy_backup_to_region::CopyBackupToRegionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.copy_backup_to_region();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CopyBackupToRegion`.
 ///
 /// <p>Copy an AWS CloudHSM cluster backup to a different region.</p>

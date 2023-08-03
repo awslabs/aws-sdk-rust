@@ -3,6 +3,23 @@ pub use crate::operation::list_alarm_models::_list_alarm_models_output::ListAlar
 
 pub use crate::operation::list_alarm_models::_list_alarm_models_input::ListAlarmModelsInputBuilder;
 
+impl ListAlarmModelsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_alarm_models::ListAlarmModelsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_alarm_models::ListAlarmModelsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_alarm_models();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAlarmModels`.
 ///
 /// <p>Lists the alarm models that you created. The operation returns only the metadata associated with each alarm model.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_profiling_group::_describe_profiling_group_ou
 
 pub use crate::operation::describe_profiling_group::_describe_profiling_group_input::DescribeProfilingGroupInputBuilder;
 
+impl DescribeProfilingGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_profiling_group::DescribeProfilingGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_profiling_group::DescribeProfilingGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_profiling_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeProfilingGroup`.
 ///
 /// <p> Returns a <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> object that contains information about the requested profiling group. </p>

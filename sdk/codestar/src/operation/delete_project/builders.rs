@@ -3,6 +3,23 @@ pub use crate::operation::delete_project::_delete_project_output::DeleteProjectO
 
 pub use crate::operation::delete_project::_delete_project_input::DeleteProjectInputBuilder;
 
+impl DeleteProjectInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_project::DeleteProjectOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_project::DeleteProjectError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_project();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteProject`.
 ///
 /// <p>Deletes a project, including project resources. Does not delete users associated with the project, but does delete the IAM roles that allowed access to the project.</p>

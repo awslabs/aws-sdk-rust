@@ -3,6 +3,23 @@ pub use crate::operation::delete_template_sync_config::_delete_template_sync_con
 
 pub use crate::operation::delete_template_sync_config::_delete_template_sync_config_input::DeleteTemplateSyncConfigInputBuilder;
 
+impl DeleteTemplateSyncConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_template_sync_config::DeleteTemplateSyncConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_template_sync_config::DeleteTemplateSyncConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_template_sync_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteTemplateSyncConfig`.
 ///
 /// <p>Delete a template sync configuration.</p>

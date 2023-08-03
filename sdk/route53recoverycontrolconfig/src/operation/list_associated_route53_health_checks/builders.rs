@@ -3,6 +3,17 @@ pub use crate::operation::list_associated_route53_health_checks::_list_associate
 
 pub use crate::operation::list_associated_route53_health_checks::_list_associated_route53_health_checks_input::ListAssociatedRoute53HealthChecksInputBuilder;
 
+impl ListAssociatedRoute53HealthChecksInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_associated_route53_health_checks::ListAssociatedRoute53HealthChecksOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_associated_route53_health_checks::ListAssociatedRoute53HealthChecksError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_associated_route53_health_checks();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAssociatedRoute53HealthChecks`.
 ///
 /// <p>Returns an array of all Amazon Route 53 health checks associated with a specific routing control.</p>

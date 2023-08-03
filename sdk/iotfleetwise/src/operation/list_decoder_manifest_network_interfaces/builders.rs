@@ -3,6 +3,17 @@ pub use crate::operation::list_decoder_manifest_network_interfaces::_list_decode
 
 pub use crate::operation::list_decoder_manifest_network_interfaces::_list_decoder_manifest_network_interfaces_input::ListDecoderManifestNetworkInterfacesInputBuilder;
 
+impl ListDecoderManifestNetworkInterfacesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_decoder_manifest_network_interfaces::ListDecoderManifestNetworkInterfacesOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_decoder_manifest_network_interfaces::ListDecoderManifestNetworkInterfacesError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_decoder_manifest_network_interfaces();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDecoderManifestNetworkInterfaces`.
 ///
 /// <p> Lists the network interfaces specified in a decoder manifest. </p> <note>

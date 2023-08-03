@@ -3,6 +3,23 @@ pub use crate::operation::list_local_disks::_list_local_disks_output::ListLocalD
 
 pub use crate::operation::list_local_disks::_list_local_disks_input::ListLocalDisksInputBuilder;
 
+impl ListLocalDisksInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_local_disks::ListLocalDisksOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_local_disks::ListLocalDisksError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_local_disks();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListLocalDisks`.
 ///
 /// <p>Returns a list of the gateway's local disks. To specify which gateway to describe, you use the Amazon Resource Name (ARN) of the gateway in the body of the request.</p>

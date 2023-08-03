@@ -3,6 +3,23 @@ pub use crate::operation::create_rotation::_create_rotation_output::CreateRotati
 
 pub use crate::operation::create_rotation::_create_rotation_input::CreateRotationInputBuilder;
 
+impl CreateRotationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_rotation::CreateRotationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_rotation::CreateRotationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_rotation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateRotation`.
 ///
 /// <p>Creates a rotation in an on-call schedule.</p>

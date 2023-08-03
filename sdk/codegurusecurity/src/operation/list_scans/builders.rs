@@ -3,6 +3,23 @@ pub use crate::operation::list_scans::_list_scans_output::ListScansOutputBuilder
 
 pub use crate::operation::list_scans::_list_scans_input::ListScansInputBuilder;
 
+impl ListScansInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_scans::ListScansOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_scans::ListScansError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_scans();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListScans`.
 ///
 /// <p>Returns a list of all the standard scans in an account. Does not return express scans.</p>

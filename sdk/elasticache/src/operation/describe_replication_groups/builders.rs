@@ -3,6 +3,23 @@ pub use crate::operation::describe_replication_groups::_describe_replication_gro
 
 pub use crate::operation::describe_replication_groups::_describe_replication_groups_input::DescribeReplicationGroupsInputBuilder;
 
+impl DescribeReplicationGroupsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_replication_groups::DescribeReplicationGroupsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_replication_groups::DescribeReplicationGroupsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_replication_groups();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeReplicationGroups`.
 ///
 /// <p>Returns information about a particular replication group. If no identifier is specified, <code>DescribeReplicationGroups</code> returns information about all replication groups.</p> <note>

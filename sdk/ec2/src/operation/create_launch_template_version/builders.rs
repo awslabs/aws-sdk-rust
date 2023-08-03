@@ -3,6 +3,23 @@ pub use crate::operation::create_launch_template_version::_create_launch_templat
 
 pub use crate::operation::create_launch_template_version::_create_launch_template_version_input::CreateLaunchTemplateVersionInputBuilder;
 
+impl CreateLaunchTemplateVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_launch_template_version::CreateLaunchTemplateVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_launch_template_version::CreateLaunchTemplateVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_launch_template_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateLaunchTemplateVersion`.
 ///
 /// <p>Creates a new version of a launch template. You can specify an existing version of launch template from which to base the new version.</p>

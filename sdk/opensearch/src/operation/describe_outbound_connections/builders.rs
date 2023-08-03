@@ -3,6 +3,23 @@ pub use crate::operation::describe_outbound_connections::_describe_outbound_conn
 
 pub use crate::operation::describe_outbound_connections::_describe_outbound_connections_input::DescribeOutboundConnectionsInputBuilder;
 
+impl DescribeOutboundConnectionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_outbound_connections::DescribeOutboundConnectionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_outbound_connections::DescribeOutboundConnectionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_outbound_connections();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeOutboundConnections`.
 ///
 /// <p>Lists all the outbound cross-cluster connections for a local (source) Amazon OpenSearch Service domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cross-cluster-search.html">Cross-cluster search for Amazon OpenSearch Service</a>.</p>

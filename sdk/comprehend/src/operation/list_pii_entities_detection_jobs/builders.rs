@@ -3,6 +3,23 @@ pub use crate::operation::list_pii_entities_detection_jobs::_list_pii_entities_d
 
 pub use crate::operation::list_pii_entities_detection_jobs::_list_pii_entities_detection_jobs_input::ListPiiEntitiesDetectionJobsInputBuilder;
 
+impl ListPiiEntitiesDetectionJobsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_pii_entities_detection_jobs::ListPiiEntitiesDetectionJobsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_pii_entities_detection_jobs::ListPiiEntitiesDetectionJobsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_pii_entities_detection_jobs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListPiiEntitiesDetectionJobs`.
 ///
 /// <p>Gets a list of the PII entity detection jobs that you have submitted.</p>

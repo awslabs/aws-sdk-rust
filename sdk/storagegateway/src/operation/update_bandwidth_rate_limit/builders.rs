@@ -3,6 +3,23 @@ pub use crate::operation::update_bandwidth_rate_limit::_update_bandwidth_rate_li
 
 pub use crate::operation::update_bandwidth_rate_limit::_update_bandwidth_rate_limit_input::UpdateBandwidthRateLimitInputBuilder;
 
+impl UpdateBandwidthRateLimitInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_bandwidth_rate_limit::UpdateBandwidthRateLimitOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_bandwidth_rate_limit::UpdateBandwidthRateLimitError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_bandwidth_rate_limit();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateBandwidthRateLimit`.
 ///
 /// <p>Updates the bandwidth rate limits of a gateway. You can update both the upload and download bandwidth rate limit or specify only one of the two. If you don't set a bandwidth rate limit, the existing rate limit remains. This operation is supported only for the stored volume, cached volume, and tape gateway types. To update bandwidth rate limits for S3 file gateways, use <code>UpdateBandwidthRateLimitSchedule</code>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_traffic_policy_version::_create_traffic_policy_
 
 pub use crate::operation::create_traffic_policy_version::_create_traffic_policy_version_input::CreateTrafficPolicyVersionInputBuilder;
 
+impl CreateTrafficPolicyVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_traffic_policy_version::CreateTrafficPolicyVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_traffic_policy_version::CreateTrafficPolicyVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_traffic_policy_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateTrafficPolicyVersion`.
 ///
 /// <p>Creates a new version of an existing traffic policy. When you create a new version of a traffic policy, you specify the ID of the traffic policy that you want to update and a JSON-formatted document that describes the new version. You use traffic policies to create multiple DNS resource record sets for one domain name (such as example.com) or one subdomain name (such as www.example.com). You can create a maximum of 1000 versions of a traffic policy. If you reach the limit and need to create another version, you'll need to start a new traffic policy.</p>

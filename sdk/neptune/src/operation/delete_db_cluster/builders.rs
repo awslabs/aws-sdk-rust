@@ -3,6 +3,23 @@ pub use crate::operation::delete_db_cluster::_delete_db_cluster_output::DeleteDb
 
 pub use crate::operation::delete_db_cluster::_delete_db_cluster_input::DeleteDbClusterInputBuilder;
 
+impl DeleteDbClusterInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_db_cluster::DeleteDbClusterOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_db_cluster::DeleteDBClusterError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_db_cluster();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteDBCluster`.
 ///
 /// <p>The DeleteDBCluster action deletes a previously provisioned DB cluster. When you delete a DB cluster, all automated backups for that DB cluster are deleted and can't be recovered. Manual DB cluster snapshots of the specified DB cluster are not deleted.</p>

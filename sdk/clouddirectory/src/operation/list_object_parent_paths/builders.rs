@@ -3,6 +3,23 @@ pub use crate::operation::list_object_parent_paths::_list_object_parent_paths_ou
 
 pub use crate::operation::list_object_parent_paths::_list_object_parent_paths_input::ListObjectParentPathsInputBuilder;
 
+impl ListObjectParentPathsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_object_parent_paths::ListObjectParentPathsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_object_parent_paths::ListObjectParentPathsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_object_parent_paths();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListObjectParentPaths`.
 ///
 /// <p>Retrieves all available parent paths for any object type such as node, leaf node, policy node, and index node objects. For more information about objects, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directorystructure.html">Directory Structure</a>.</p>

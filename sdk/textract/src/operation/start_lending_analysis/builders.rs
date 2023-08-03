@@ -3,6 +3,23 @@ pub use crate::operation::start_lending_analysis::_start_lending_analysis_output
 
 pub use crate::operation::start_lending_analysis::_start_lending_analysis_input::StartLendingAnalysisInputBuilder;
 
+impl StartLendingAnalysisInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_lending_analysis::StartLendingAnalysisOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_lending_analysis::StartLendingAnalysisError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_lending_analysis();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartLendingAnalysis`.
 ///
 /// <p>Starts the classification and analysis of an input document. <code>StartLendingAnalysis</code> initiates the classification and analysis of a packet of lending documents. <code>StartLendingAnalysis</code> operates on a document file located in an Amazon S3 bucket.</p>

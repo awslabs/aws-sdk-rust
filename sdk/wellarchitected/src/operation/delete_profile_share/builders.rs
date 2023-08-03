@@ -3,6 +3,23 @@ pub use crate::operation::delete_profile_share::_delete_profile_share_output::De
 
 pub use crate::operation::delete_profile_share::_delete_profile_share_input::DeleteProfileShareInputBuilder;
 
+impl DeleteProfileShareInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_profile_share::DeleteProfileShareOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_profile_share::DeleteProfileShareError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_profile_share();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteProfileShare`.
 ///
 /// <p>Delete a profile share.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_package::_delete_package_output::DeletePackageO
 
 pub use crate::operation::delete_package::_delete_package_input::DeletePackageInputBuilder;
 
+impl DeletePackageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_package::DeletePackageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_package::DeletePackageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_package();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeletePackage`.
 ///
 /// <p>Delete the package.</p>

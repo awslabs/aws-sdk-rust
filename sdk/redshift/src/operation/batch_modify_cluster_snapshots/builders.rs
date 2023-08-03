@@ -3,6 +3,23 @@ pub use crate::operation::batch_modify_cluster_snapshots::_batch_modify_cluster_
 
 pub use crate::operation::batch_modify_cluster_snapshots::_batch_modify_cluster_snapshots_input::BatchModifyClusterSnapshotsInputBuilder;
 
+impl BatchModifyClusterSnapshotsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_modify_cluster_snapshots::BatchModifyClusterSnapshotsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_modify_cluster_snapshots::BatchModifyClusterSnapshotsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_modify_cluster_snapshots();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchModifyClusterSnapshots`.
 ///
 /// <p>Modifies the settings for a set of cluster snapshots.</p>

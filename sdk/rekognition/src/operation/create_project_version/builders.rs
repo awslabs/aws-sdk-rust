@@ -3,6 +3,23 @@ pub use crate::operation::create_project_version::_create_project_version_output
 
 pub use crate::operation::create_project_version::_create_project_version_input::CreateProjectVersionInputBuilder;
 
+impl CreateProjectVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_project_version::CreateProjectVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_project_version::CreateProjectVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_project_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateProjectVersion`.
 ///
 /// <p>Creates a new version of a model and begins training. Models are managed as part of an Amazon Rekognition Custom Labels project. The response from <code>CreateProjectVersion</code> is an Amazon Resource Name (ARN) for the version of the model. </p>

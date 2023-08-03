@@ -3,6 +3,23 @@ pub use crate::operation::list_principal_policies::_list_principal_policies_outp
 
 pub use crate::operation::list_principal_policies::_list_principal_policies_input::ListPrincipalPoliciesInputBuilder;
 
+impl ListPrincipalPoliciesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_principal_policies::ListPrincipalPoliciesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_principal_policies::ListPrincipalPoliciesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_principal_policies();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListPrincipalPolicies`.
 ///
 /// <p>Lists the policies attached to the specified principal. If you use an Cognito identity, the ID must be in <a href="https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetCredentialsForIdentity.html#API_GetCredentialsForIdentity_RequestSyntax">AmazonCognito Identity format</a>.</p>

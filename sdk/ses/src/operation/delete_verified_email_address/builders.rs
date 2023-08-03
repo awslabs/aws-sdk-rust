@@ -3,6 +3,23 @@ pub use crate::operation::delete_verified_email_address::_delete_verified_email_
 
 pub use crate::operation::delete_verified_email_address::_delete_verified_email_address_input::DeleteVerifiedEmailAddressInputBuilder;
 
+impl DeleteVerifiedEmailAddressInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_verified_email_address::DeleteVerifiedEmailAddressOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_verified_email_address::DeleteVerifiedEmailAddressError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_verified_email_address();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteVerifiedEmailAddress`.
 ///
 /// <p>Deprecated. Use the <code>DeleteIdentity</code> operation to delete email addresses and domains.</p>

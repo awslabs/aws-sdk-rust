@@ -3,6 +3,23 @@ pub use crate::operation::list_sensor_statistics::_list_sensor_statistics_output
 
 pub use crate::operation::list_sensor_statistics::_list_sensor_statistics_input::ListSensorStatisticsInputBuilder;
 
+impl ListSensorStatisticsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_sensor_statistics::ListSensorStatisticsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_sensor_statistics::ListSensorStatisticsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_sensor_statistics();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListSensorStatistics`.
 ///
 /// <p> Lists statistics about the data collected for each of the sensors that have been successfully ingested in the particular dataset. Can also be used to retreive Sensor Statistics for a previous ingestion job. </p>

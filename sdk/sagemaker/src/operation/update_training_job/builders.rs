@@ -3,6 +3,23 @@ pub use crate::operation::update_training_job::_update_training_job_output::Upda
 
 pub use crate::operation::update_training_job::_update_training_job_input::UpdateTrainingJobInputBuilder;
 
+impl UpdateTrainingJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_training_job::UpdateTrainingJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_training_job::UpdateTrainingJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_training_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateTrainingJob`.
 ///
 /// <p>Update a model training job to request a new Debugger profiling configuration or to change warm pool retention length.</p>

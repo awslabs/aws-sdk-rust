@@ -3,6 +3,23 @@ pub use crate::operation::get_cardinality::_get_cardinality_output::GetCardinali
 
 pub use crate::operation::get_cardinality::_get_cardinality_input::GetCardinalityInputBuilder;
 
+impl GetCardinalityInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_cardinality::GetCardinalityOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_cardinality::GetCardinalityError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_cardinality();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetCardinality`.
 ///
 /// <p>Returns the approximate count of unique values that match the query.</p>

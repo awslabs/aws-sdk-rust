@@ -3,6 +3,23 @@ pub use crate::operation::describe_feature_group::_describe_feature_group_output
 
 pub use crate::operation::describe_feature_group::_describe_feature_group_input::DescribeFeatureGroupInputBuilder;
 
+impl DescribeFeatureGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_feature_group::DescribeFeatureGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_feature_group::DescribeFeatureGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_feature_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeFeatureGroup`.
 ///
 /// <p>Use this operation to describe a <code>FeatureGroup</code>. The response includes information on the creation time, <code>FeatureGroup</code> name, the unique identifier for each <code>FeatureGroup</code>, and more.</p>

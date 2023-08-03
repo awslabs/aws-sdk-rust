@@ -3,6 +3,23 @@ pub use crate::operation::list_virtual_mfa_devices::_list_virtual_mfa_devices_ou
 
 pub use crate::operation::list_virtual_mfa_devices::_list_virtual_mfa_devices_input::ListVirtualMfaDevicesInputBuilder;
 
+impl ListVirtualMfaDevicesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_virtual_mfa_devices::ListVirtualMfaDevicesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_virtual_mfa_devices::ListVirtualMFADevicesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_virtual_mfa_devices();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListVirtualMFADevices`.
 ///
 /// <p>Lists the virtual MFA devices defined in the Amazon Web Services account by assignment status. If you do not specify an assignment status, the operation returns a list of all virtual MFA devices. Assignment status can be <code>Assigned</code>, <code>Unassigned</code>, or <code>Any</code>.</p> <note>

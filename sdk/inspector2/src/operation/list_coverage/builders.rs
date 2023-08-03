@@ -3,6 +3,23 @@ pub use crate::operation::list_coverage::_list_coverage_output::ListCoverageOutp
 
 pub use crate::operation::list_coverage::_list_coverage_input::ListCoverageInputBuilder;
 
+impl ListCoverageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_coverage::ListCoverageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_coverage::ListCoverageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_coverage();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListCoverage`.
 ///
 /// <p>Lists coverage details for you environment.</p>

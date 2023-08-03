@@ -3,6 +3,23 @@ pub use crate::operation::create_instance::_create_instance_output::CreateInstan
 
 pub use crate::operation::create_instance::_create_instance_input::CreateInstanceInputBuilder;
 
+impl CreateInstanceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_instance::CreateInstanceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_instance::CreateInstanceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_instance();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateInstance`.
 ///
 /// <p>Creates an instance in a specified stack. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-add.html">Adding an Instance to a Layer</a>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_vpn_connection_device_types::_get_vpn_connection_d
 
 pub use crate::operation::get_vpn_connection_device_types::_get_vpn_connection_device_types_input::GetVpnConnectionDeviceTypesInputBuilder;
 
+impl GetVpnConnectionDeviceTypesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_vpn_connection_device_types::GetVpnConnectionDeviceTypesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_vpn_connection_device_types::GetVpnConnectionDeviceTypesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_vpn_connection_device_types();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetVpnConnectionDeviceTypes`.
 ///
 /// <p>Obtain a list of customer gateway devices for which sample configuration files can be provided. The request has no additional parameters. You can also see the list of device types with sample configuration files available under <a href="https://docs.aws.amazon.com/vpn/latest/s2svpn/your-cgw.html">Your customer gateway device</a> in the <i>Amazon Web Services Site-to-Site VPN User Guide</i>.</p>

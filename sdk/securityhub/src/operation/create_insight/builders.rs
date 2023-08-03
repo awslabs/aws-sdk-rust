@@ -3,6 +3,23 @@ pub use crate::operation::create_insight::_create_insight_output::CreateInsightO
 
 pub use crate::operation::create_insight::_create_insight_input::CreateInsightInputBuilder;
 
+impl CreateInsightInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_insight::CreateInsightOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_insight::CreateInsightError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_insight();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateInsight`.
 ///
 /// <p>Creates a custom insight in Security Hub. An insight is a consolidation of findings that relate to a security issue that requires attention or remediation.</p>

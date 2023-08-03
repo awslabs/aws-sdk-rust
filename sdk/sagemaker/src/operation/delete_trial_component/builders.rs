@@ -3,6 +3,23 @@ pub use crate::operation::delete_trial_component::_delete_trial_component_output
 
 pub use crate::operation::delete_trial_component::_delete_trial_component_input::DeleteTrialComponentInputBuilder;
 
+impl DeleteTrialComponentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_trial_component::DeleteTrialComponentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_trial_component::DeleteTrialComponentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_trial_component();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteTrialComponent`.
 ///
 /// <p>Deletes the specified trial component. A trial component must be disassociated from all trials before the trial component can be deleted. To disassociate a trial component from a trial, call the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DisassociateTrialComponent.html">DisassociateTrialComponent</a> API.</p>

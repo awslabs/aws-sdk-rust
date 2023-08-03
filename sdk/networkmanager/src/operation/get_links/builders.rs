@@ -3,6 +3,23 @@ pub use crate::operation::get_links::_get_links_output::GetLinksOutputBuilder;
 
 pub use crate::operation::get_links::_get_links_input::GetLinksInputBuilder;
 
+impl GetLinksInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_links::GetLinksOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_links::GetLinksError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_links();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetLinks`.
 ///
 /// <p>Gets information about one or more links in a specified global network.</p>

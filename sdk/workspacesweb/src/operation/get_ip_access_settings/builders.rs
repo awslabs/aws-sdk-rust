@@ -3,6 +3,23 @@ pub use crate::operation::get_ip_access_settings::_get_ip_access_settings_output
 
 pub use crate::operation::get_ip_access_settings::_get_ip_access_settings_input::GetIpAccessSettingsInputBuilder;
 
+impl GetIpAccessSettingsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_ip_access_settings::GetIpAccessSettingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_ip_access_settings::GetIpAccessSettingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_ip_access_settings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetIpAccessSettings`.
 ///
 /// <p>Gets the IP access settings.</p>

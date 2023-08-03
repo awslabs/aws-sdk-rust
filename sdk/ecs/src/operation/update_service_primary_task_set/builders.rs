@@ -3,6 +3,23 @@ pub use crate::operation::update_service_primary_task_set::_update_service_prima
 
 pub use crate::operation::update_service_primary_task_set::_update_service_primary_task_set_input::UpdateServicePrimaryTaskSetInputBuilder;
 
+impl UpdateServicePrimaryTaskSetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_service_primary_task_set::UpdateServicePrimaryTaskSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_service_primary_task_set::UpdateServicePrimaryTaskSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_service_primary_task_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateServicePrimaryTaskSet`.
 ///
 /// <p>Modifies which task set in a service is the primary task set. Any parameters that are updated on the primary task set in a service will transition to the service. This is used when a service uses the <code>EXTERNAL</code> deployment controller type. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_hosted_zones_by_vpc::_list_hosted_zones_by_vpc_ou
 
 pub use crate::operation::list_hosted_zones_by_vpc::_list_hosted_zones_by_vpc_input::ListHostedZonesByVpcInputBuilder;
 
+impl ListHostedZonesByVpcInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_hosted_zones_by_vpc::ListHostedZonesByVpcOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_hosted_zones_by_vpc::ListHostedZonesByVPCError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_hosted_zones_by_vpc();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListHostedZonesByVPC`.
 ///
 /// <p>Lists all the private hosted zones that a specified VPC is associated with, regardless of which Amazon Web Services account or Amazon Web Services service owns the hosted zones. The <code>HostedZoneOwner</code> structure in the response contains one of the following values:</p>

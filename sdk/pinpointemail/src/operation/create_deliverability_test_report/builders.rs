@@ -3,6 +3,17 @@ pub use crate::operation::create_deliverability_test_report::_create_deliverabil
 
 pub use crate::operation::create_deliverability_test_report::_create_deliverability_test_report_input::CreateDeliverabilityTestReportInputBuilder;
 
+impl CreateDeliverabilityTestReportInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::create_deliverability_test_report::CreateDeliverabilityTestReportOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_deliverability_test_report::CreateDeliverabilityTestReportError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.create_deliverability_test_report();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateDeliverabilityTestReport`.
 ///
 /// <p>Create a new predictive inbox placement test. Predictive inbox placement tests can help you predict how your messages will be handled by various email providers around the world. When you perform a predictive inbox placement test, you provide a sample message that contains the content that you plan to send to your customers. Amazon Pinpoint then sends that message to special email addresses spread across several major email providers. After about 24 hours, the test is complete, and you can use the <code>GetDeliverabilityTestReport</code> operation to view the results of the test.</p>

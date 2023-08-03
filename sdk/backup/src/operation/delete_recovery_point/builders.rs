@@ -3,6 +3,23 @@ pub use crate::operation::delete_recovery_point::_delete_recovery_point_output::
 
 pub use crate::operation::delete_recovery_point::_delete_recovery_point_input::DeleteRecoveryPointInputBuilder;
 
+impl DeleteRecoveryPointInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_recovery_point::DeleteRecoveryPointOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_recovery_point::DeleteRecoveryPointError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_recovery_point();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteRecoveryPoint`.
 ///
 /// <p>Deletes the recovery point specified by a recovery point ID.</p>

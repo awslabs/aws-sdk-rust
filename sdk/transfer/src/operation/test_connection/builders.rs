@@ -3,6 +3,23 @@ pub use crate::operation::test_connection::_test_connection_output::TestConnecti
 
 pub use crate::operation::test_connection::_test_connection_input::TestConnectionInputBuilder;
 
+impl TestConnectionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::test_connection::TestConnectionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::test_connection::TestConnectionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.test_connection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `TestConnection`.
 ///
 /// <p>Tests whether your SFTP connector is set up successfully. We highly recommend that you call this operation to test your ability to transfer files between a Transfer Family server and a trading partner's SFTP server.</p>

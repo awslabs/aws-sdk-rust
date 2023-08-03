@@ -3,6 +3,23 @@ pub use crate::operation::validate_e911_address::_validate_e911_address_output::
 
 pub use crate::operation::validate_e911_address::_validate_e911_address_input::ValidateE911AddressInputBuilder;
 
+impl ValidateE911AddressInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::validate_e911_address::ValidateE911AddressOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::validate_e911_address::ValidateE911AddressError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.validate_e911_address();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ValidateE911Address`.
 ///
 /// <p>Validates an address to be used for 911 calls made with Amazon Chime SDK Voice Connectors. You can use validated addresses in a Presence Information Data Format Location Object file that you include in SIP requests. That helps ensure that addresses are routed to the appropriate Public Safety Answering Point.</p>

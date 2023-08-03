@@ -3,6 +3,23 @@ pub use crate::operation::list_dev_environments::_list_dev_environments_output::
 
 pub use crate::operation::list_dev_environments::_list_dev_environments_input::ListDevEnvironmentsInputBuilder;
 
+impl ListDevEnvironmentsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_dev_environments::ListDevEnvironmentsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_dev_environments::ListDevEnvironmentsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_dev_environments();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDevEnvironments`.
 ///
 /// <p>Retrieves a list of Dev Environments in a project.</p>

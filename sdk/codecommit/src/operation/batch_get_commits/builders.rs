@@ -3,6 +3,23 @@ pub use crate::operation::batch_get_commits::_batch_get_commits_output::BatchGet
 
 pub use crate::operation::batch_get_commits::_batch_get_commits_input::BatchGetCommitsInputBuilder;
 
+impl BatchGetCommitsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_commits::BatchGetCommitsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_get_commits::BatchGetCommitsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_get_commits();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchGetCommits`.
 ///
 /// <p>Returns information about the contents of one or more commits in a repository.</p>

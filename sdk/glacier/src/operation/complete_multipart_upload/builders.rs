@@ -3,6 +3,23 @@ pub use crate::operation::complete_multipart_upload::_complete_multipart_upload_
 
 pub use crate::operation::complete_multipart_upload::_complete_multipart_upload_input::CompleteMultipartUploadInputBuilder;
 
+impl CompleteMultipartUploadInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::complete_multipart_upload::CompleteMultipartUploadOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::complete_multipart_upload::CompleteMultipartUploadError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.complete_multipart_upload();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CompleteMultipartUpload`.
 ///
 /// <p>You call this operation to inform Amazon S3 Glacier (Glacier) that all the archive parts have been uploaded and that Glacier can now assemble the archive from the uploaded parts. After assembling and saving the archive to the vault, Glacier returns the URI path of the newly created archive resource. Using the URI path, you can then access the archive. After you upload an archive, you should save the archive ID returned to retrieve the archive at a later point. You can also get the vault inventory to obtain a list of archive IDs in a vault. For more information, see <code>InitiateJob</code>.</p>

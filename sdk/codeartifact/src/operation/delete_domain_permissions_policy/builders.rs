@@ -3,6 +3,23 @@ pub use crate::operation::delete_domain_permissions_policy::_delete_domain_permi
 
 pub use crate::operation::delete_domain_permissions_policy::_delete_domain_permissions_policy_input::DeleteDomainPermissionsPolicyInputBuilder;
 
+impl DeleteDomainPermissionsPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_domain_permissions_policy::DeleteDomainPermissionsPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_domain_permissions_policy::DeleteDomainPermissionsPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_domain_permissions_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteDomainPermissionsPolicy`.
 ///
 /// <p> Deletes the resource policy set on a domain. </p>

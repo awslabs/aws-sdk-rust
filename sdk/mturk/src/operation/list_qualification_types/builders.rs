@@ -3,6 +3,23 @@ pub use crate::operation::list_qualification_types::_list_qualification_types_ou
 
 pub use crate::operation::list_qualification_types::_list_qualification_types_input::ListQualificationTypesInputBuilder;
 
+impl ListQualificationTypesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_qualification_types::ListQualificationTypesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_qualification_types::ListQualificationTypesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_qualification_types();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListQualificationTypes`.
 ///
 /// <p> The <code>ListQualificationTypes</code> operation returns a list of Qualification types, filtered by an optional search term. </p>

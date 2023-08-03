@@ -3,6 +3,23 @@ pub use crate::operation::list_statements::_list_statements_output::ListStatemen
 
 pub use crate::operation::list_statements::_list_statements_input::ListStatementsInputBuilder;
 
+impl ListStatementsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_statements::ListStatementsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_statements::ListStatementsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_statements();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListStatements`.
 ///
 /// <p>List of SQL statements. By default, only finished statements are shown. A token is returned to page through the statement list. </p>

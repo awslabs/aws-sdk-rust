@@ -3,6 +3,23 @@ pub use crate::operation::delete_workspace_image::_delete_workspace_image_output
 
 pub use crate::operation::delete_workspace_image::_delete_workspace_image_input::DeleteWorkspaceImageInputBuilder;
 
+impl DeleteWorkspaceImageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_workspace_image::DeleteWorkspaceImageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_workspace_image::DeleteWorkspaceImageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_workspace_image();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteWorkspaceImage`.
 ///
 /// <p>Deletes the specified image from your account. To delete an image, you must first delete any bundles that are associated with the image and unshare the image if it is shared with other accounts. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::test_authorization::_test_authorization_output::TestAu
 
 pub use crate::operation::test_authorization::_test_authorization_input::TestAuthorizationInputBuilder;
 
+impl TestAuthorizationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::test_authorization::TestAuthorizationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::test_authorization::TestAuthorizationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.test_authorization();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `TestAuthorization`.
 ///
 /// <p>Tests if a specified principal is authorized to perform an IoT action on a specified resource. Use this to test and debug the authorization behavior of devices that connect to the IoT device gateway.</p>

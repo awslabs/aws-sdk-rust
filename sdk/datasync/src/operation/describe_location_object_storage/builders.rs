@@ -3,6 +3,23 @@ pub use crate::operation::describe_location_object_storage::_describe_location_o
 
 pub use crate::operation::describe_location_object_storage::_describe_location_object_storage_input::DescribeLocationObjectStorageInputBuilder;
 
+impl DescribeLocationObjectStorageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_location_object_storage::DescribeLocationObjectStorageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_location_object_storage::DescribeLocationObjectStorageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_location_object_storage();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeLocationObjectStorage`.
 ///
 /// <p>Returns metadata about your DataSync location for an object storage system.</p>

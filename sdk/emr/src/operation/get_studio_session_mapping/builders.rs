@@ -3,6 +3,23 @@ pub use crate::operation::get_studio_session_mapping::_get_studio_session_mappin
 
 pub use crate::operation::get_studio_session_mapping::_get_studio_session_mapping_input::GetStudioSessionMappingInputBuilder;
 
+impl GetStudioSessionMappingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_studio_session_mapping::GetStudioSessionMappingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_studio_session_mapping::GetStudioSessionMappingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_studio_session_mapping();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetStudioSessionMapping`.
 ///
 /// <p>Fetches mapping details for the specified Amazon EMR Studio and identity (user or group).</p>

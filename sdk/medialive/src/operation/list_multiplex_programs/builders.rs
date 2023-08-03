@@ -3,6 +3,23 @@ pub use crate::operation::list_multiplex_programs::_list_multiplex_programs_outp
 
 pub use crate::operation::list_multiplex_programs::_list_multiplex_programs_input::ListMultiplexProgramsInputBuilder;
 
+impl ListMultiplexProgramsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_multiplex_programs::ListMultiplexProgramsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_multiplex_programs::ListMultiplexProgramsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_multiplex_programs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListMultiplexPrograms`.
 ///
 /// List the programs that currently exist for a specific multiplex.

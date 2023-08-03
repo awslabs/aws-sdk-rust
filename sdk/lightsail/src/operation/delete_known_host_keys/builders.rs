@@ -3,6 +3,23 @@ pub use crate::operation::delete_known_host_keys::_delete_known_host_keys_output
 
 pub use crate::operation::delete_known_host_keys::_delete_known_host_keys_input::DeleteKnownHostKeysInputBuilder;
 
+impl DeleteKnownHostKeysInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_known_host_keys::DeleteKnownHostKeysOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_known_host_keys::DeleteKnownHostKeysError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_known_host_keys();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteKnownHostKeys`.
 ///
 /// <p>Deletes the known host key or certificate used by the Amazon Lightsail browser-based SSH or RDP clients to authenticate an instance. This operation enables the Lightsail browser-based SSH or RDP clients to connect to the instance after a host key mismatch.</p> <important>

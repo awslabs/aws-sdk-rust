@@ -3,6 +3,23 @@ pub use crate::operation::delete_trial::_delete_trial_output::DeleteTrialOutputB
 
 pub use crate::operation::delete_trial::_delete_trial_input::DeleteTrialInputBuilder;
 
+impl DeleteTrialInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_trial::DeleteTrialOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_trial::DeleteTrialError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_trial();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteTrial`.
 ///
 /// <p>Deletes the specified trial. All trial components that make up the trial must be deleted first. Use the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeTrialComponent.html">DescribeTrialComponent</a> API to get the list of trial components.</p>

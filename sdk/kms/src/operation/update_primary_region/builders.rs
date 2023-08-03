@@ -3,6 +3,23 @@ pub use crate::operation::update_primary_region::_update_primary_region_output::
 
 pub use crate::operation::update_primary_region::_update_primary_region_input::UpdatePrimaryRegionInputBuilder;
 
+impl UpdatePrimaryRegionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_primary_region::UpdatePrimaryRegionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_primary_region::UpdatePrimaryRegionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_primary_region();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdatePrimaryRegion`.
 ///
 /// <p>Changes the primary key of a multi-Region key. </p>

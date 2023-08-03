@@ -3,6 +3,17 @@ pub use crate::operation::cancel_reserved_instances_listing::_cancel_reserved_in
 
 pub use crate::operation::cancel_reserved_instances_listing::_cancel_reserved_instances_listing_input::CancelReservedInstancesListingInputBuilder;
 
+impl CancelReservedInstancesListingInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::cancel_reserved_instances_listing::CancelReservedInstancesListingOutput, ::aws_smithy_http::result::SdkError<crate::operation::cancel_reserved_instances_listing::CancelReservedInstancesListingError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.cancel_reserved_instances_listing();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CancelReservedInstancesListing`.
 ///
 /// <p>Cancels the specified Reserved Instance listing in the Reserved Instance Marketplace.</p>

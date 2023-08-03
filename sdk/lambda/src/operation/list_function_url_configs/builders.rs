@@ -3,6 +3,23 @@ pub use crate::operation::list_function_url_configs::_list_function_url_configs_
 
 pub use crate::operation::list_function_url_configs::_list_function_url_configs_input::ListFunctionUrlConfigsInputBuilder;
 
+impl ListFunctionUrlConfigsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_function_url_configs::ListFunctionUrlConfigsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_function_url_configs::ListFunctionUrlConfigsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_function_url_configs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListFunctionUrlConfigs`.
 ///
 /// <p>Returns a list of Lambda function URLs for the specified function.</p>

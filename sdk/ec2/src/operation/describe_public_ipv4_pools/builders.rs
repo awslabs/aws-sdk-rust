@@ -3,6 +3,23 @@ pub use crate::operation::describe_public_ipv4_pools::_describe_public_ipv4_pool
 
 pub use crate::operation::describe_public_ipv4_pools::_describe_public_ipv4_pools_input::DescribePublicIpv4PoolsInputBuilder;
 
+impl DescribePublicIpv4PoolsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_public_ipv4_pools::DescribePublicIpv4PoolsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_public_ipv4_pools::DescribePublicIpv4PoolsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_public_ipv4_pools();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribePublicIpv4Pools`.
 ///
 /// <p>Describes the specified IPv4 address pools.</p>

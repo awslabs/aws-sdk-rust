@@ -3,6 +3,17 @@ pub use crate::operation::batch_import_evidence_to_assessment_control::_batch_im
 
 pub use crate::operation::batch_import_evidence_to_assessment_control::_batch_import_evidence_to_assessment_control_input::BatchImportEvidenceToAssessmentControlInputBuilder;
 
+impl BatchImportEvidenceToAssessmentControlInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::batch_import_evidence_to_assessment_control::BatchImportEvidenceToAssessmentControlOutput, ::aws_smithy_http::result::SdkError<crate::operation::batch_import_evidence_to_assessment_control::BatchImportEvidenceToAssessmentControlError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.batch_import_evidence_to_assessment_control();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchImportEvidenceToAssessmentControl`.
 ///
 /// <p>Adds one or more pieces of evidence to a control in an Audit Manager assessment. </p>

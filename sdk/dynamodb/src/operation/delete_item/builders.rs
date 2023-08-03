@@ -3,6 +3,23 @@ pub use crate::operation::delete_item::_delete_item_output::DeleteItemOutputBuil
 
 pub use crate::operation::delete_item::_delete_item_input::DeleteItemInputBuilder;
 
+impl DeleteItemInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_item::DeleteItemOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_item::DeleteItemError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_item();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteItem`.
 ///
 /// <p>Deletes a single item in a table by primary key. You can perform a conditional delete operation that deletes the item if it exists, or if it has an expected attribute value.</p>

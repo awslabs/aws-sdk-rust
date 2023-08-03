@@ -3,6 +3,17 @@ pub use crate::operation::describe_inbound_cross_cluster_search_connections::_de
 
 pub use crate::operation::describe_inbound_cross_cluster_search_connections::_describe_inbound_cross_cluster_search_connections_input::DescribeInboundCrossClusterSearchConnectionsInputBuilder;
 
+impl DescribeInboundCrossClusterSearchConnectionsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_inbound_cross_cluster_search_connections::DescribeInboundCrossClusterSearchConnectionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_inbound_cross_cluster_search_connections::DescribeInboundCrossClusterSearchConnectionsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_inbound_cross_cluster_search_connections();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeInboundCrossClusterSearchConnections`.
 ///
 /// <p>Lists all the inbound cross-cluster search connections for a destination domain.</p>

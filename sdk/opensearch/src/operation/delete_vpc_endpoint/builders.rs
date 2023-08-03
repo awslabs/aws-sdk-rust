@@ -3,6 +3,23 @@ pub use crate::operation::delete_vpc_endpoint::_delete_vpc_endpoint_output::Dele
 
 pub use crate::operation::delete_vpc_endpoint::_delete_vpc_endpoint_input::DeleteVpcEndpointInputBuilder;
 
+impl DeleteVpcEndpointInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_vpc_endpoint::DeleteVpcEndpointOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_vpc_endpoint::DeleteVpcEndpointError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_vpc_endpoint();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteVpcEndpoint`.
 ///
 /// <p>Deletes an Amazon OpenSearch Service-managed interface VPC endpoint.</p>

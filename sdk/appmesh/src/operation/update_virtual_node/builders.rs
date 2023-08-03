@@ -3,6 +3,23 @@ pub use crate::operation::update_virtual_node::_update_virtual_node_output::Upda
 
 pub use crate::operation::update_virtual_node::_update_virtual_node_input::UpdateVirtualNodeInputBuilder;
 
+impl UpdateVirtualNodeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_virtual_node::UpdateVirtualNodeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_virtual_node::UpdateVirtualNodeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_virtual_node();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateVirtualNode`.
 ///
 /// <p>Updates an existing virtual node in a specified service mesh.</p>

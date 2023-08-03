@@ -3,6 +3,23 @@ pub use crate::operation::abort_multipart_upload::_abort_multipart_upload_output
 
 pub use crate::operation::abort_multipart_upload::_abort_multipart_upload_input::AbortMultipartUploadInputBuilder;
 
+impl AbortMultipartUploadInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::abort_multipart_upload::AbortMultipartUploadOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::abort_multipart_upload::AbortMultipartUploadError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.abort_multipart_upload();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AbortMultipartUpload`.
 ///
 /// <p>This action aborts a multipart upload. After a multipart upload is aborted, no additional parts can be uploaded using that upload ID. The storage consumed by any previously uploaded parts will be freed. However, if any part uploads are currently in progress, those part uploads might or might not succeed. As a result, it might be necessary to abort a given multipart upload multiple times in order to completely free all storage consumed by all parts. </p>

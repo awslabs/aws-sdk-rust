@@ -3,6 +3,17 @@ pub use crate::operation::update_configuration_set_sending_enabled::_update_conf
 
 pub use crate::operation::update_configuration_set_sending_enabled::_update_configuration_set_sending_enabled_input::UpdateConfigurationSetSendingEnabledInputBuilder;
 
+impl UpdateConfigurationSetSendingEnabledInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::update_configuration_set_sending_enabled::UpdateConfigurationSetSendingEnabledOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_configuration_set_sending_enabled::UpdateConfigurationSetSendingEnabledError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.update_configuration_set_sending_enabled();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateConfigurationSetSendingEnabled`.
 ///
 /// <p>Enables or disables email sending for messages sent using a specific configuration set in a given AWS Region. You can use this operation in conjunction with Amazon CloudWatch alarms to temporarily pause email sending for a configuration set when the reputation metrics for that configuration set (such as your bounce on complaint rate) exceed certain thresholds.</p>

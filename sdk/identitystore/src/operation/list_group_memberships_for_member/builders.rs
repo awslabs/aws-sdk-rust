@@ -3,6 +3,23 @@ pub use crate::operation::list_group_memberships_for_member::_list_group_members
 
 pub use crate::operation::list_group_memberships_for_member::_list_group_memberships_for_member_input::ListGroupMembershipsForMemberInputBuilder;
 
+impl ListGroupMembershipsForMemberInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_group_memberships_for_member::ListGroupMembershipsForMemberOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_group_memberships_for_member::ListGroupMembershipsForMemberError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_group_memberships_for_member();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListGroupMembershipsForMember`.
 ///
 /// <p>For the specified member in the specified identity store, returns the list of all <code>GroupMembership</code> objects and returns results in paginated form.</p>

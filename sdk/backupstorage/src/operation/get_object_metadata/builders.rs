@@ -3,6 +3,23 @@ pub use crate::operation::get_object_metadata::_get_object_metadata_output::GetO
 
 pub use crate::operation::get_object_metadata::_get_object_metadata_input::GetObjectMetadataInputBuilder;
 
+impl GetObjectMetadataInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_object_metadata::GetObjectMetadataOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_object_metadata::GetObjectMetadataError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_object_metadata();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetObjectMetadata`.
 ///
 /// Get metadata associated with an Object.

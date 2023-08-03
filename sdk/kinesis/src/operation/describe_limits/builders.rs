@@ -3,6 +3,23 @@ pub use crate::operation::describe_limits::_describe_limits_output::DescribeLimi
 
 pub use crate::operation::describe_limits::_describe_limits_input::DescribeLimitsInputBuilder;
 
+impl DescribeLimitsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_limits::DescribeLimitsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_limits::DescribeLimitsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_limits();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeLimits`.
 ///
 /// <p>Describes the shard limits and usage for the account.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_endpoint_config::_create_endpoint_config_output
 
 pub use crate::operation::create_endpoint_config::_create_endpoint_config_input::CreateEndpointConfigInputBuilder;
 
+impl CreateEndpointConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_endpoint_config::CreateEndpointConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_endpoint_config::CreateEndpointConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_endpoint_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateEndpointConfig`.
 ///
 /// <p>Creates an endpoint configuration that SageMaker hosting services uses to deploy models. In the configuration, you identify one or more models, created using the <code>CreateModel</code> API, to deploy and the resources that you want SageMaker to provision. Then you call the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html">CreateEndpoint</a> API.</p> <note>

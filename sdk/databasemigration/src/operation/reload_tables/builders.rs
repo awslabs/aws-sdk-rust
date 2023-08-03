@@ -3,6 +3,23 @@ pub use crate::operation::reload_tables::_reload_tables_output::ReloadTablesOutp
 
 pub use crate::operation::reload_tables::_reload_tables_input::ReloadTablesInputBuilder;
 
+impl ReloadTablesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::reload_tables::ReloadTablesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::reload_tables::ReloadTablesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.reload_tables();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ReloadTables`.
 ///
 /// <p>Reloads the target database table with the source data. </p>

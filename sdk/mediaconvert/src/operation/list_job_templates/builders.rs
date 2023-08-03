@@ -3,6 +3,23 @@ pub use crate::operation::list_job_templates::_list_job_templates_output::ListJo
 
 pub use crate::operation::list_job_templates::_list_job_templates_input::ListJobTemplatesInputBuilder;
 
+impl ListJobTemplatesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_job_templates::ListJobTemplatesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_job_templates::ListJobTemplatesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_job_templates();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListJobTemplates`.
 ///
 /// Retrieve a JSON array of up to twenty of your job templates. This will return the templates themselves, not just a list of them. To retrieve the next twenty templates, use the nextToken string returned with the array

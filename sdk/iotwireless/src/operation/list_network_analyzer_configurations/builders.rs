@@ -3,6 +3,17 @@ pub use crate::operation::list_network_analyzer_configurations::_list_network_an
 
 pub use crate::operation::list_network_analyzer_configurations::_list_network_analyzer_configurations_input::ListNetworkAnalyzerConfigurationsInputBuilder;
 
+impl ListNetworkAnalyzerConfigurationsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_network_analyzer_configurations::ListNetworkAnalyzerConfigurationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_network_analyzer_configurations::ListNetworkAnalyzerConfigurationsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_network_analyzer_configurations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListNetworkAnalyzerConfigurations`.
 ///
 /// <p>Lists the network analyzer configurations.</p>

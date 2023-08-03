@@ -3,6 +3,17 @@ pub use crate::operation::delete_environment_template_version::_delete_environme
 
 pub use crate::operation::delete_environment_template_version::_delete_environment_template_version_input::DeleteEnvironmentTemplateVersionInputBuilder;
 
+impl DeleteEnvironmentTemplateVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_environment_template_version::DeleteEnvironmentTemplateVersionOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_environment_template_version::DeleteEnvironmentTemplateVersionError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.delete_environment_template_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteEnvironmentTemplateVersion`.
 ///
 /// <p>If no other minor versions of an environment template exist, delete a major version of the environment template if it's not the <code>Recommended</code> version. Delete the <code>Recommended</code> version of the environment template if no other major versions or minor versions of the environment template exist. A major version of an environment template is a version that's not backward compatible.</p>

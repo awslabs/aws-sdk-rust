@@ -3,6 +3,17 @@ pub use crate::operation::list_data_quality_ruleset_evaluation_runs::_list_data_
 
 pub use crate::operation::list_data_quality_ruleset_evaluation_runs::_list_data_quality_ruleset_evaluation_runs_input::ListDataQualityRulesetEvaluationRunsInputBuilder;
 
+impl ListDataQualityRulesetEvaluationRunsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_data_quality_ruleset_evaluation_runs::ListDataQualityRulesetEvaluationRunsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_data_quality_ruleset_evaluation_runs::ListDataQualityRulesetEvaluationRunsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_data_quality_ruleset_evaluation_runs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDataQualityRulesetEvaluationRuns`.
 ///
 /// <p>Lists all the runs meeting the filter criteria, where a ruleset is evaluated against a data source.</p>

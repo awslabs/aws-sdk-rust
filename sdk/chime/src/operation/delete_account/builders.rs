@@ -3,6 +3,23 @@ pub use crate::operation::delete_account::_delete_account_output::DeleteAccountO
 
 pub use crate::operation::delete_account::_delete_account_input::DeleteAccountInputBuilder;
 
+impl DeleteAccountInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_account::DeleteAccountOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_account::DeleteAccountError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_account();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteAccount`.
 ///
 /// <p>Deletes the specified Amazon Chime account. You must suspend all users before deleting <code>Team</code> account. You can use the <code>BatchSuspendUser</code> action to dodo.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::invoke_async::_invoke_async_output::InvokeAsyncOutputB
 
 pub use crate::operation::invoke_async::_invoke_async_input::InvokeAsyncInputBuilder;
 
+impl InvokeAsyncInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::invoke_async::InvokeAsyncOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::invoke_async::InvokeAsyncError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.invoke_async();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `InvokeAsync`.
 ///
 /// <important>

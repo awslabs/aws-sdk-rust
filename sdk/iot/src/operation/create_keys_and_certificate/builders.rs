@@ -3,6 +3,23 @@ pub use crate::operation::create_keys_and_certificate::_create_keys_and_certific
 
 pub use crate::operation::create_keys_and_certificate::_create_keys_and_certificate_input::CreateKeysAndCertificateInputBuilder;
 
+impl CreateKeysAndCertificateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_keys_and_certificate::CreateKeysAndCertificateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_keys_and_certificate::CreateKeysAndCertificateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_keys_and_certificate();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateKeysAndCertificate`.
 ///
 /// <p>Creates a 2048-bit RSA key pair and issues an X.509 certificate using the issued public key. You can also call <code>CreateKeysAndCertificate</code> over MQTT from a device, for more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-wo-cert.html#provision-mqtt-api">Provisioning MQTT API</a>.</p>

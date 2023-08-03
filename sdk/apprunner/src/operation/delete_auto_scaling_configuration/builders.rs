@@ -3,6 +3,17 @@ pub use crate::operation::delete_auto_scaling_configuration::_delete_auto_scalin
 
 pub use crate::operation::delete_auto_scaling_configuration::_delete_auto_scaling_configuration_input::DeleteAutoScalingConfigurationInputBuilder;
 
+impl DeleteAutoScalingConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_auto_scaling_configuration::DeleteAutoScalingConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_auto_scaling_configuration::DeleteAutoScalingConfigurationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.delete_auto_scaling_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteAutoScalingConfiguration`.
 ///
 /// <p>Delete an App Runner automatic scaling configuration resource. You can delete a specific revision or the latest active revision. You can't delete a configuration that's used by one or more App Runner services.</p>

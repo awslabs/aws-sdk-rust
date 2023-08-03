@@ -3,6 +3,23 @@ pub use crate::operation::update_expiration_for_hit::_update_expiration_for_hit_
 
 pub use crate::operation::update_expiration_for_hit::_update_expiration_for_hit_input::UpdateExpirationForHitInputBuilder;
 
+impl UpdateExpirationForHitInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_expiration_for_hit::UpdateExpirationForHitOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_expiration_for_hit::UpdateExpirationForHITError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_expiration_for_hit();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateExpirationForHIT`.
 ///
 /// <p> The <code>UpdateExpirationForHIT</code> operation allows you update the expiration time of a HIT. If you update it to a time in the past, the HIT will be immediately expired. </p>

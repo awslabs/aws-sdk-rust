@@ -3,6 +3,23 @@ pub use crate::operation::delete_call_analytics_category::_delete_call_analytics
 
 pub use crate::operation::delete_call_analytics_category::_delete_call_analytics_category_input::DeleteCallAnalyticsCategoryInputBuilder;
 
+impl DeleteCallAnalyticsCategoryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_call_analytics_category::DeleteCallAnalyticsCategoryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_call_analytics_category::DeleteCallAnalyticsCategoryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_call_analytics_category();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteCallAnalyticsCategory`.
 ///
 /// <p>Deletes a Call Analytics category. To use this operation, specify the name of the category you want to delete using <code>CategoryName</code>. Category names are case sensitive.</p>

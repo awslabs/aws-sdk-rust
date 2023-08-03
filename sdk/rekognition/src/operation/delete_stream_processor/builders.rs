@@ -3,6 +3,23 @@ pub use crate::operation::delete_stream_processor::_delete_stream_processor_outp
 
 pub use crate::operation::delete_stream_processor::_delete_stream_processor_input::DeleteStreamProcessorInputBuilder;
 
+impl DeleteStreamProcessorInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_stream_processor::DeleteStreamProcessorOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_stream_processor::DeleteStreamProcessorError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_stream_processor();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteStreamProcessor`.
 ///
 /// <p>Deletes the stream processor identified by <code>Name</code>. You assign the value for <code>Name</code> when you create the stream processor with <code>CreateStreamProcessor</code>. You might not be able to use the same name for a stream processor for a few seconds after calling <code>DeleteStreamProcessor</code>.</p>

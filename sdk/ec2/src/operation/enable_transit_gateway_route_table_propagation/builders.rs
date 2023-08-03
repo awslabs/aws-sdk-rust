@@ -3,6 +3,17 @@ pub use crate::operation::enable_transit_gateway_route_table_propagation::_enabl
 
 pub use crate::operation::enable_transit_gateway_route_table_propagation::_enable_transit_gateway_route_table_propagation_input::EnableTransitGatewayRouteTablePropagationInputBuilder;
 
+impl EnableTransitGatewayRouteTablePropagationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::enable_transit_gateway_route_table_propagation::EnableTransitGatewayRouteTablePropagationOutput, ::aws_smithy_http::result::SdkError<crate::operation::enable_transit_gateway_route_table_propagation::EnableTransitGatewayRouteTablePropagationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.enable_transit_gateway_route_table_propagation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `EnableTransitGatewayRouteTablePropagation`.
 ///
 /// <p>Enables the specified attachment to propagate routes to the specified propagation route table.</p>

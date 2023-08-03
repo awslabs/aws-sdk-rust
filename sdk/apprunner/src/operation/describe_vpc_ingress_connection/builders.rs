@@ -3,6 +3,23 @@ pub use crate::operation::describe_vpc_ingress_connection::_describe_vpc_ingress
 
 pub use crate::operation::describe_vpc_ingress_connection::_describe_vpc_ingress_connection_input::DescribeVpcIngressConnectionInputBuilder;
 
+impl DescribeVpcIngressConnectionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_vpc_ingress_connection::DescribeVpcIngressConnectionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_vpc_ingress_connection::DescribeVpcIngressConnectionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_vpc_ingress_connection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeVpcIngressConnection`.
 ///
 /// <p>Return a full description of an App Runner VPC Ingress Connection resource.</p>

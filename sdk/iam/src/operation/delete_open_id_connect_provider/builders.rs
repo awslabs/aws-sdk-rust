@@ -3,6 +3,23 @@ pub use crate::operation::delete_open_id_connect_provider::_delete_open_id_conne
 
 pub use crate::operation::delete_open_id_connect_provider::_delete_open_id_connect_provider_input::DeleteOpenIdConnectProviderInputBuilder;
 
+impl DeleteOpenIdConnectProviderInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_open_id_connect_provider::DeleteOpenIdConnectProviderOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_open_id_connect_provider::DeleteOpenIDConnectProviderError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_open_id_connect_provider();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteOpenIDConnectProvider`.
 ///
 /// <p>Deletes an OpenID Connect identity provider (IdP) resource object in IAM.</p>

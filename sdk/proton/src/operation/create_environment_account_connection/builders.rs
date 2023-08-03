@@ -3,6 +3,17 @@ pub use crate::operation::create_environment_account_connection::_create_environ
 
 pub use crate::operation::create_environment_account_connection::_create_environment_account_connection_input::CreateEnvironmentAccountConnectionInputBuilder;
 
+impl CreateEnvironmentAccountConnectionInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::create_environment_account_connection::CreateEnvironmentAccountConnectionOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_environment_account_connection::CreateEnvironmentAccountConnectionError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.create_environment_account_connection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateEnvironmentAccountConnection`.
 ///
 /// <p>Create an environment account connection in an environment account so that environment infrastructure resources can be provisioned in the environment account from a management account.</p>

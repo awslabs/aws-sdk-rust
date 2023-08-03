@@ -3,6 +3,23 @@ pub use crate::operation::start_app_replication::_start_app_replication_output::
 
 pub use crate::operation::start_app_replication::_start_app_replication_input::StartAppReplicationInputBuilder;
 
+impl StartAppReplicationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_app_replication::StartAppReplicationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_app_replication::StartAppReplicationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_app_replication();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartAppReplication`.
 ///
 /// <p>Starts replicating the specified application by creating replication jobs for each server in the application.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::start_app::_start_app_output::StartAppOutputBuilder;
 
 pub use crate::operation::start_app::_start_app_input::StartAppInputBuilder;
 
+impl StartAppInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_app::StartAppOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_app::StartAppError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_app();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartApp`.
 ///
 /// <p>Starts a custom app with the configuration specified in the simulation schema.</p>

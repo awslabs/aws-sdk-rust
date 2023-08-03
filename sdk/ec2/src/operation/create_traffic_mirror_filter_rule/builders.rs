@@ -3,6 +3,23 @@ pub use crate::operation::create_traffic_mirror_filter_rule::_create_traffic_mir
 
 pub use crate::operation::create_traffic_mirror_filter_rule::_create_traffic_mirror_filter_rule_input::CreateTrafficMirrorFilterRuleInputBuilder;
 
+impl CreateTrafficMirrorFilterRuleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_traffic_mirror_filter_rule::CreateTrafficMirrorFilterRuleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_traffic_mirror_filter_rule::CreateTrafficMirrorFilterRuleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_traffic_mirror_filter_rule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateTrafficMirrorFilterRule`.
 ///
 /// <p>Creates a Traffic Mirror filter rule.</p>

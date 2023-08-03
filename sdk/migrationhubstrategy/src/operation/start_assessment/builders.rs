@@ -3,6 +3,23 @@ pub use crate::operation::start_assessment::_start_assessment_output::StartAsses
 
 pub use crate::operation::start_assessment::_start_assessment_input::StartAssessmentInputBuilder;
 
+impl StartAssessmentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_assessment::StartAssessmentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_assessment::StartAssessmentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_assessment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartAssessment`.
 ///
 /// <p> Starts the assessment of an on-premises environment. </p>

@@ -3,6 +3,17 @@ pub use crate::operation::get_relational_database_log_streams::_get_relational_d
 
 pub use crate::operation::get_relational_database_log_streams::_get_relational_database_log_streams_input::GetRelationalDatabaseLogStreamsInputBuilder;
 
+impl GetRelationalDatabaseLogStreamsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_relational_database_log_streams::GetRelationalDatabaseLogStreamsOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_relational_database_log_streams::GetRelationalDatabaseLogStreamsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_relational_database_log_streams();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetRelationalDatabaseLogStreams`.
 ///
 /// <p>Returns a list of available log streams for a specific database in Amazon Lightsail.</p>

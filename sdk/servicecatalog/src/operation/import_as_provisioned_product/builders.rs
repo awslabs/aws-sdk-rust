@@ -3,6 +3,23 @@ pub use crate::operation::import_as_provisioned_product::_import_as_provisioned_
 
 pub use crate::operation::import_as_provisioned_product::_import_as_provisioned_product_input::ImportAsProvisionedProductInputBuilder;
 
+impl ImportAsProvisionedProductInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::import_as_provisioned_product::ImportAsProvisionedProductOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::import_as_provisioned_product::ImportAsProvisionedProductError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.import_as_provisioned_product();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ImportAsProvisionedProduct`.
 ///
 /// <p> Requests the import of a resource as an Service Catalog provisioned product that is associated to an Service Catalog product and provisioning artifact. Once imported, all supported governance actions are supported on the provisioned product. </p>

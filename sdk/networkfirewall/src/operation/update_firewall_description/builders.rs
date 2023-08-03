@@ -3,6 +3,23 @@ pub use crate::operation::update_firewall_description::_update_firewall_descript
 
 pub use crate::operation::update_firewall_description::_update_firewall_description_input::UpdateFirewallDescriptionInputBuilder;
 
+impl UpdateFirewallDescriptionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_firewall_description::UpdateFirewallDescriptionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_firewall_description::UpdateFirewallDescriptionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_firewall_description();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateFirewallDescription`.
 ///
 /// <p>Modifies the description for the specified firewall. Use the description to help you identify the firewall when you're working with it. </p>

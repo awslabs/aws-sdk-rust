@@ -3,6 +3,23 @@ pub use crate::operation::list_entity_personas::_list_entity_personas_output::Li
 
 pub use crate::operation::list_entity_personas::_list_entity_personas_input::ListEntityPersonasInputBuilder;
 
+impl ListEntityPersonasInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_entity_personas::ListEntityPersonasOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_entity_personas::ListEntityPersonasError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_entity_personas();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListEntityPersonas`.
 ///
 /// <p>Lists specific permissions of users and groups with access to your Amazon Kendra experience.</p>

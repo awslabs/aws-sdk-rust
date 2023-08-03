@@ -3,6 +3,23 @@ pub use crate::operation::get_alias::_get_alias_output::GetAliasOutputBuilder;
 
 pub use crate::operation::get_alias::_get_alias_input::GetAliasInputBuilder;
 
+impl GetAliasInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_alias::GetAliasOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_alias::GetAliasError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_alias();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetAlias`.
 ///
 /// <p>Gets the Amazon Web Services Payment Cryptography key associated with the alias.</p>

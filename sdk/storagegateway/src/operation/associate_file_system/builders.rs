@@ -3,6 +3,23 @@ pub use crate::operation::associate_file_system::_associate_file_system_output::
 
 pub use crate::operation::associate_file_system::_associate_file_system_input::AssociateFileSystemInputBuilder;
 
+impl AssociateFileSystemInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_file_system::AssociateFileSystemOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_file_system::AssociateFileSystemError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_file_system();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateFileSystem`.
 ///
 /// <p>Associate an Amazon FSx file system with the FSx File Gateway. After the association process is complete, the file shares on the Amazon FSx file system are available for access through the gateway. This operation only supports the FSx File Gateway type.</p>

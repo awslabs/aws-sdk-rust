@@ -3,6 +3,23 @@ pub use crate::operation::get_permission::_get_permission_output::GetPermissionO
 
 pub use crate::operation::get_permission::_get_permission_input::GetPermissionInputBuilder;
 
+impl GetPermissionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_permission::GetPermissionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_permission::GetPermissionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_permission();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetPermission`.
 ///
 /// <p>Retrieves the contents of a managed permission in JSON format.</p>

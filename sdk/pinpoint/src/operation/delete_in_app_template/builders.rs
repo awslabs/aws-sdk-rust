@@ -3,6 +3,23 @@ pub use crate::operation::delete_in_app_template::_delete_in_app_template_output
 
 pub use crate::operation::delete_in_app_template::_delete_in_app_template_input::DeleteInAppTemplateInputBuilder;
 
+impl DeleteInAppTemplateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_in_app_template::DeleteInAppTemplateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_in_app_template::DeleteInAppTemplateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_in_app_template();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteInAppTemplate`.
 ///
 /// <p>Deletes a message template for messages sent using the in-app message channel.</p>

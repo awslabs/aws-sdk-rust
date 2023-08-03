@@ -3,6 +3,23 @@ pub use crate::operation::start_failback_launch::_start_failback_launch_output::
 
 pub use crate::operation::start_failback_launch::_start_failback_launch_input::StartFailbackLaunchInputBuilder;
 
+impl StartFailbackLaunchInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_failback_launch::StartFailbackLaunchOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_failback_launch::StartFailbackLaunchError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_failback_launch();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartFailbackLaunch`.
 ///
 /// <p>Initiates a Job for launching the machine that is being failed back to from the specified Recovery Instance. This will run conversion on the failback client and will reboot your machine, thus completing the failback process.</p>

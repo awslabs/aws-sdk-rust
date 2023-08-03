@@ -3,6 +3,17 @@ pub use crate::operation::list_calculated_attribute_definitions::_list_calculate
 
 pub use crate::operation::list_calculated_attribute_definitions::_list_calculated_attribute_definitions_input::ListCalculatedAttributeDefinitionsInputBuilder;
 
+impl ListCalculatedAttributeDefinitionsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_calculated_attribute_definitions::ListCalculatedAttributeDefinitionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_calculated_attribute_definitions::ListCalculatedAttributeDefinitionsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_calculated_attribute_definitions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListCalculatedAttributeDefinitions`.
 ///
 /// <p>Lists calculated attribute definitions for Customer Profiles</p>

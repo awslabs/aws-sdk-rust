@@ -3,6 +3,23 @@ pub use crate::operation::set_security_groups::_set_security_groups_output::SetS
 
 pub use crate::operation::set_security_groups::_set_security_groups_input::SetSecurityGroupsInputBuilder;
 
+impl SetSecurityGroupsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::set_security_groups::SetSecurityGroupsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::set_security_groups::SetSecurityGroupsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.set_security_groups();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SetSecurityGroups`.
 ///
 /// <p>Associates the specified security groups with the specified Application Load Balancer. The specified security groups override the previously associated security groups.</p>

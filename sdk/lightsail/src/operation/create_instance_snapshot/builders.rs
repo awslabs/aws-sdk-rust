@@ -3,6 +3,23 @@ pub use crate::operation::create_instance_snapshot::_create_instance_snapshot_ou
 
 pub use crate::operation::create_instance_snapshot::_create_instance_snapshot_input::CreateInstanceSnapshotInputBuilder;
 
+impl CreateInstanceSnapshotInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_instance_snapshot::CreateInstanceSnapshotOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_instance_snapshot::CreateInstanceSnapshotError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_instance_snapshot();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateInstanceSnapshot`.
 ///
 /// <p>Creates a snapshot of a specific virtual private server, or <i>instance</i>. You can use a snapshot to create a new instance that is based on that snapshot.</p>

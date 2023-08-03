@@ -3,6 +3,23 @@ pub use crate::operation::describe_flywheel::_describe_flywheel_output::Describe
 
 pub use crate::operation::describe_flywheel::_describe_flywheel_input::DescribeFlywheelInputBuilder;
 
+impl DescribeFlywheelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_flywheel::DescribeFlywheelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_flywheel::DescribeFlywheelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_flywheel();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeFlywheel`.
 ///
 /// <p>Provides configuration information about the flywheel. For more information about flywheels, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/flywheels-about.html"> Flywheel overview</a> in the <i>Amazon Comprehend Developer Guide</i>.</p>

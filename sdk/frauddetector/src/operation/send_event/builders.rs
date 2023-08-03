@@ -3,6 +3,23 @@ pub use crate::operation::send_event::_send_event_output::SendEventOutputBuilder
 
 pub use crate::operation::send_event::_send_event_input::SendEventInputBuilder;
 
+impl SendEventInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::send_event::SendEventOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::send_event::SendEventError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.send_event();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SendEvent`.
 ///
 /// <p>Stores events in Amazon Fraud Detector without generating fraud predictions for those events. For example, you can use <code>SendEvent</code> to upload a historical dataset, which you can then later use to train a model.</p>

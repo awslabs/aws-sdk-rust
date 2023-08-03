@@ -3,6 +3,23 @@ pub use crate::operation::start_device_sync::_start_device_sync_output::StartDev
 
 pub use crate::operation::start_device_sync::_start_device_sync_input::StartDeviceSyncInputBuilder;
 
+impl StartDeviceSyncInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_device_sync::StartDeviceSyncOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_device_sync::StartDeviceSyncError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_device_sync();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartDeviceSync`.
 ///
 /// <p>Resets a device and its account to the known default settings. This clears all information and settings set by previous users in the following ways:</p>

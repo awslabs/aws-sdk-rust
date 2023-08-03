@@ -3,6 +3,23 @@ pub use crate::operation::disassociate_file_system_aliases::_disassociate_file_s
 
 pub use crate::operation::disassociate_file_system_aliases::_disassociate_file_system_aliases_input::DisassociateFileSystemAliasesInputBuilder;
 
+impl DisassociateFileSystemAliasesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_file_system_aliases::DisassociateFileSystemAliasesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_file_system_aliases::DisassociateFileSystemAliasesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disassociate_file_system_aliases();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateFileSystemAliases`.
 ///
 /// <p>Use this action to disassociate, or remove, one or more Domain Name Service (DNS) aliases from an Amazon FSx for Windows File Server file system. If you attempt to disassociate a DNS alias that is not associated with the file system, Amazon FSx responds with a 400 Bad Request. For more information, see <a href="https://docs.aws.amazon.com/fsx/latest/WindowsGuide/managing-dns-aliases.html">Working with DNS Aliases</a>.</p>

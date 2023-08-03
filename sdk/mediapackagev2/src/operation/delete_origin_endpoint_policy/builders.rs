@@ -3,6 +3,23 @@ pub use crate::operation::delete_origin_endpoint_policy::_delete_origin_endpoint
 
 pub use crate::operation::delete_origin_endpoint_policy::_delete_origin_endpoint_policy_input::DeleteOriginEndpointPolicyInputBuilder;
 
+impl DeleteOriginEndpointPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_origin_endpoint_policy::DeleteOriginEndpointPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_origin_endpoint_policy::DeleteOriginEndpointPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_origin_endpoint_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteOriginEndpointPolicy`.
 ///
 /// <p>Delete an origin endpoint policy.</p>

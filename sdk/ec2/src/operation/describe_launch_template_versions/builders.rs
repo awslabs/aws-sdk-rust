@@ -3,6 +3,17 @@ pub use crate::operation::describe_launch_template_versions::_describe_launch_te
 
 pub use crate::operation::describe_launch_template_versions::_describe_launch_template_versions_input::DescribeLaunchTemplateVersionsInputBuilder;
 
+impl DescribeLaunchTemplateVersionsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_launch_template_versions::DescribeLaunchTemplateVersionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_launch_template_versions::DescribeLaunchTemplateVersionsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_launch_template_versions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeLaunchTemplateVersions`.
 ///
 /// <p>Describes one or more versions of a specified launch template. You can describe all versions, individual versions, or a range of versions. You can also describe all the latest versions or all the default versions of all the launch templates in your account.</p>

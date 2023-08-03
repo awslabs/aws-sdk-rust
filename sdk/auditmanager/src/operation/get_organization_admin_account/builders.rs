@@ -3,6 +3,23 @@ pub use crate::operation::get_organization_admin_account::_get_organization_admi
 
 pub use crate::operation::get_organization_admin_account::_get_organization_admin_account_input::GetOrganizationAdminAccountInputBuilder;
 
+impl GetOrganizationAdminAccountInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_organization_admin_account::GetOrganizationAdminAccountOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_organization_admin_account::GetOrganizationAdminAccountError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_organization_admin_account();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetOrganizationAdminAccount`.
 ///
 /// <p> Gets the name of the delegated Amazon Web Services administrator account for a specified organization. </p>

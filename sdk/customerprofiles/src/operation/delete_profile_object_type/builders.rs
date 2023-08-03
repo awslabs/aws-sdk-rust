@@ -3,6 +3,23 @@ pub use crate::operation::delete_profile_object_type::_delete_profile_object_typ
 
 pub use crate::operation::delete_profile_object_type::_delete_profile_object_type_input::DeleteProfileObjectTypeInputBuilder;
 
+impl DeleteProfileObjectTypeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_profile_object_type::DeleteProfileObjectTypeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_profile_object_type::DeleteProfileObjectTypeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_profile_object_type();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteProfileObjectType`.
 ///
 /// <p>Removes a ProfileObjectType from a specific domain as well as removes all the ProfileObjects of that type. It also disables integrations from this specific ProfileObjectType. In addition, it scrubs all of the fields of the standard profile that were populated from this ProfileObjectType.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::disable_region::_disable_region_output::DisableRegionO
 
 pub use crate::operation::disable_region::_disable_region_input::DisableRegionInputBuilder;
 
+impl DisableRegionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disable_region::DisableRegionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disable_region::DisableRegionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disable_region();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisableRegion`.
 ///
 /// <p>Disables (opts-out) a particular Region for an account.</p>

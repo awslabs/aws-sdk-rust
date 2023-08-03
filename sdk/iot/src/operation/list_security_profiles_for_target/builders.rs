@@ -3,6 +3,23 @@ pub use crate::operation::list_security_profiles_for_target::_list_security_prof
 
 pub use crate::operation::list_security_profiles_for_target::_list_security_profiles_for_target_input::ListSecurityProfilesForTargetInputBuilder;
 
+impl ListSecurityProfilesForTargetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_security_profiles_for_target::ListSecurityProfilesForTargetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_security_profiles_for_target::ListSecurityProfilesForTargetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_security_profiles_for_target();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListSecurityProfilesForTarget`.
 ///
 /// <p>Lists the Device Defender security profiles attached to a target (thing group).</p>

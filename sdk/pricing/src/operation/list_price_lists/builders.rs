@@ -3,6 +3,23 @@ pub use crate::operation::list_price_lists::_list_price_lists_output::ListPriceL
 
 pub use crate::operation::list_price_lists::_list_price_lists_input::ListPriceListsInputBuilder;
 
+impl ListPriceListsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_price_lists::ListPriceListsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_price_lists::ListPriceListsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_price_lists();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListPriceLists`.
 ///
 /// <p> <i> <b>This feature is in preview release and is subject to change. Your use of Amazon Web Services Price List API is subject to the Beta Service Participation terms of the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a> (Section 1.10).</b> </i> </p>

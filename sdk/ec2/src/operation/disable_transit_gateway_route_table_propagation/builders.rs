@@ -3,6 +3,17 @@ pub use crate::operation::disable_transit_gateway_route_table_propagation::_disa
 
 pub use crate::operation::disable_transit_gateway_route_table_propagation::_disable_transit_gateway_route_table_propagation_input::DisableTransitGatewayRouteTablePropagationInputBuilder;
 
+impl DisableTransitGatewayRouteTablePropagationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::disable_transit_gateway_route_table_propagation::DisableTransitGatewayRouteTablePropagationOutput, ::aws_smithy_http::result::SdkError<crate::operation::disable_transit_gateway_route_table_propagation::DisableTransitGatewayRouteTablePropagationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.disable_transit_gateway_route_table_propagation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisableTransitGatewayRouteTablePropagation`.
 ///
 /// <p>Disables the specified resource attachment from propagating routes to the specified propagation route table.</p>

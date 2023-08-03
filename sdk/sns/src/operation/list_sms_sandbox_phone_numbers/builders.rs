@@ -3,6 +3,23 @@ pub use crate::operation::list_sms_sandbox_phone_numbers::_list_sms_sandbox_phon
 
 pub use crate::operation::list_sms_sandbox_phone_numbers::_list_sms_sandbox_phone_numbers_input::ListSmsSandboxPhoneNumbersInputBuilder;
 
+impl ListSmsSandboxPhoneNumbersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_sms_sandbox_phone_numbers::ListSmsSandboxPhoneNumbersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_sms_sandbox_phone_numbers::ListSMSSandboxPhoneNumbersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_sms_sandbox_phone_numbers();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListSMSSandboxPhoneNumbers`.
 ///
 /// <p>Lists the calling Amazon Web Services account's current verified and pending destination phone numbers in the SMS sandbox.</p>

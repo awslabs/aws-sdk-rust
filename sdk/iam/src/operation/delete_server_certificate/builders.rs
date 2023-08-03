@@ -3,6 +3,23 @@ pub use crate::operation::delete_server_certificate::_delete_server_certificate_
 
 pub use crate::operation::delete_server_certificate::_delete_server_certificate_input::DeleteServerCertificateInputBuilder;
 
+impl DeleteServerCertificateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_server_certificate::DeleteServerCertificateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_server_certificate::DeleteServerCertificateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_server_certificate();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteServerCertificate`.
 ///
 /// <p>Deletes the specified server certificate.</p>

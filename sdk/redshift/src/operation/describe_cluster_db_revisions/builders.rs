@@ -3,6 +3,23 @@ pub use crate::operation::describe_cluster_db_revisions::_describe_cluster_db_re
 
 pub use crate::operation::describe_cluster_db_revisions::_describe_cluster_db_revisions_input::DescribeClusterDbRevisionsInputBuilder;
 
+impl DescribeClusterDbRevisionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_cluster_db_revisions::DescribeClusterDbRevisionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_cluster_db_revisions::DescribeClusterDbRevisionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_cluster_db_revisions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeClusterDbRevisions`.
 ///
 /// <p>Returns an array of <code>ClusterDbRevision</code> objects.</p>

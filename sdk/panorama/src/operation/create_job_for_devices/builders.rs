@@ -3,6 +3,23 @@ pub use crate::operation::create_job_for_devices::_create_job_for_devices_output
 
 pub use crate::operation::create_job_for_devices::_create_job_for_devices_input::CreateJobForDevicesInputBuilder;
 
+impl CreateJobForDevicesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_job_for_devices::CreateJobForDevicesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_job_for_devices::CreateJobForDevicesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_job_for_devices();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateJobForDevices`.
 ///
 /// <p>Creates a job to run on a device. A job can update a device's software or reboot it.</p>

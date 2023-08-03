@@ -3,6 +3,17 @@ pub use crate::operation::update_number_of_domain_controllers::_update_number_of
 
 pub use crate::operation::update_number_of_domain_controllers::_update_number_of_domain_controllers_input::UpdateNumberOfDomainControllersInputBuilder;
 
+impl UpdateNumberOfDomainControllersInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::update_number_of_domain_controllers::UpdateNumberOfDomainControllersOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_number_of_domain_controllers::UpdateNumberOfDomainControllersError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.update_number_of_domain_controllers();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateNumberOfDomainControllers`.
 ///
 /// <p>Adds or removes domain controllers to or from the directory. Based on the difference between current value and new value (provided through this API call), domain controllers will be added or removed. It may take up to 45 minutes for any new domain controllers to become fully active once the requested number of domain controllers is updated. During this time, you cannot make another update request.</p>

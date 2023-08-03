@@ -3,6 +3,23 @@ pub use crate::operation::disassociate_assets::_disassociate_assets_output::Disa
 
 pub use crate::operation::disassociate_assets::_disassociate_assets_input::DisassociateAssetsInputBuilder;
 
+impl DisassociateAssetsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_assets::DisassociateAssetsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_assets::DisassociateAssetsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disassociate_assets();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateAssets`.
 ///
 /// <p>Disassociates a child asset from the given parent asset through a hierarchy defined in the parent asset's model.</p>

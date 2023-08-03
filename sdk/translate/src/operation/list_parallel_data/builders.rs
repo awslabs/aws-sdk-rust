@@ -3,6 +3,23 @@ pub use crate::operation::list_parallel_data::_list_parallel_data_output::ListPa
 
 pub use crate::operation::list_parallel_data::_list_parallel_data_input::ListParallelDataInputBuilder;
 
+impl ListParallelDataInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_parallel_data::ListParallelDataOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_parallel_data::ListParallelDataError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_parallel_data();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListParallelData`.
 ///
 /// <p>Provides a list of your parallel data resources in Amazon Translate.</p>

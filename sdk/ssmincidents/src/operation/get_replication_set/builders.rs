@@ -3,6 +3,23 @@ pub use crate::operation::get_replication_set::_get_replication_set_output::GetR
 
 pub use crate::operation::get_replication_set::_get_replication_set_input::GetReplicationSetInputBuilder;
 
+impl GetReplicationSetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_replication_set::GetReplicationSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_replication_set::GetReplicationSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_replication_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetReplicationSet`.
 ///
 /// <p>Retrieve your Incident Manager replication set.</p>

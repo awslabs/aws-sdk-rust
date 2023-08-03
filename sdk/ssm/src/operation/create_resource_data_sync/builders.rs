@@ -3,6 +3,23 @@ pub use crate::operation::create_resource_data_sync::_create_resource_data_sync_
 
 pub use crate::operation::create_resource_data_sync::_create_resource_data_sync_input::CreateResourceDataSyncInputBuilder;
 
+impl CreateResourceDataSyncInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_resource_data_sync::CreateResourceDataSyncOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_resource_data_sync::CreateResourceDataSyncError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_resource_data_sync();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateResourceDataSync`.
 ///
 /// <p>A resource data sync helps you view data from multiple sources in a single location. Amazon Web Services Systems Manager offers two types of resource data sync: <code>SyncToDestination</code> and <code>SyncFromSource</code>.</p>

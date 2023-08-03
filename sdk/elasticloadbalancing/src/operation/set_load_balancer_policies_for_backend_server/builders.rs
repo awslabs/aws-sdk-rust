@@ -3,6 +3,17 @@ pub use crate::operation::set_load_balancer_policies_for_backend_server::_set_lo
 
 pub use crate::operation::set_load_balancer_policies_for_backend_server::_set_load_balancer_policies_for_backend_server_input::SetLoadBalancerPoliciesForBackendServerInputBuilder;
 
+impl SetLoadBalancerPoliciesForBackendServerInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::set_load_balancer_policies_for_backend_server::SetLoadBalancerPoliciesForBackendServerOutput, ::aws_smithy_http::result::SdkError<crate::operation::set_load_balancer_policies_for_backend_server::SetLoadBalancerPoliciesForBackendServerError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.set_load_balancer_policies_for_backend_server();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SetLoadBalancerPoliciesForBackendServer`.
 ///
 /// <p>Replaces the set of policies associated with the specified port on which the EC2 instance is listening with a new set of policies. At this time, only the back-end server authentication policy type can be applied to the instance ports; this policy type is composed of multiple public key policies.</p>

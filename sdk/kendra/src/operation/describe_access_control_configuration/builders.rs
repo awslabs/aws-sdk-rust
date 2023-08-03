@@ -3,6 +3,17 @@ pub use crate::operation::describe_access_control_configuration::_describe_acces
 
 pub use crate::operation::describe_access_control_configuration::_describe_access_control_configuration_input::DescribeAccessControlConfigurationInputBuilder;
 
+impl DescribeAccessControlConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_access_control_configuration::DescribeAccessControlConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_access_control_configuration::DescribeAccessControlConfigurationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_access_control_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAccessControlConfiguration`.
 ///
 /// <p>Gets information about an access control configuration that you created for your documents in an index. This includes user and group access information for your documents. This is useful for user context filtering, where search results are filtered based on the user or their group access to documents.</p>

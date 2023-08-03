@@ -3,6 +3,23 @@ pub use crate::operation::describe_default_authorizer::_describe_default_authori
 
 pub use crate::operation::describe_default_authorizer::_describe_default_authorizer_input::DescribeDefaultAuthorizerInputBuilder;
 
+impl DescribeDefaultAuthorizerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_default_authorizer::DescribeDefaultAuthorizerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_default_authorizer::DescribeDefaultAuthorizerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_default_authorizer();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeDefaultAuthorizer`.
 ///
 /// <p>Describes the default authorizer.</p>

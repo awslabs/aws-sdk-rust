@@ -3,6 +3,23 @@ pub use crate::operation::update_task_set::_update_task_set_output::UpdateTaskSe
 
 pub use crate::operation::update_task_set::_update_task_set_input::UpdateTaskSetInputBuilder;
 
+impl UpdateTaskSetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_task_set::UpdateTaskSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_task_set::UpdateTaskSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_task_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateTaskSet`.
 ///
 /// <p>Modifies a task set. This is used when a service uses the <code>EXTERNAL</code> deployment controller type. For more information, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>

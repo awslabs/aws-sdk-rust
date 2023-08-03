@@ -3,6 +3,17 @@ pub use crate::operation::list_bucket_analytics_configurations::_list_bucket_ana
 
 pub use crate::operation::list_bucket_analytics_configurations::_list_bucket_analytics_configurations_input::ListBucketAnalyticsConfigurationsInputBuilder;
 
+impl ListBucketAnalyticsConfigurationsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_bucket_analytics_configurations::ListBucketAnalyticsConfigurationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_bucket_analytics_configurations::ListBucketAnalyticsConfigurationsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_bucket_analytics_configurations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListBucketAnalyticsConfigurations`.
 ///
 /// <p>Lists the analytics configurations for the bucket. You can have up to 1,000 analytics configurations per bucket.</p>

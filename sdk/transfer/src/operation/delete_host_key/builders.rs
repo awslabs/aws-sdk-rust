@@ -3,6 +3,23 @@ pub use crate::operation::delete_host_key::_delete_host_key_output::DeleteHostKe
 
 pub use crate::operation::delete_host_key::_delete_host_key_input::DeleteHostKeyInputBuilder;
 
+impl DeleteHostKeyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_host_key::DeleteHostKeyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_host_key::DeleteHostKeyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_host_key();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteHostKey`.
 ///
 /// <p>Deletes the host key that's specified in the <code>HostKeyId</code> parameter.</p>

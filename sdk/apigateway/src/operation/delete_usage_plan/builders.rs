@@ -3,6 +3,23 @@ pub use crate::operation::delete_usage_plan::_delete_usage_plan_output::DeleteUs
 
 pub use crate::operation::delete_usage_plan::_delete_usage_plan_input::DeleteUsagePlanInputBuilder;
 
+impl DeleteUsagePlanInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_usage_plan::DeleteUsagePlanOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_usage_plan::DeleteUsagePlanError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_usage_plan();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteUsagePlan`.
 ///
 /// <p>Deletes a usage plan of a given plan Id.</p>

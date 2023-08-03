@@ -3,6 +3,17 @@ pub use crate::operation::describe_document_classification_job::_describe_docume
 
 pub use crate::operation::describe_document_classification_job::_describe_document_classification_job_input::DescribeDocumentClassificationJobInputBuilder;
 
+impl DescribeDocumentClassificationJobInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_document_classification_job::DescribeDocumentClassificationJobOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_document_classification_job::DescribeDocumentClassificationJobError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_document_classification_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeDocumentClassificationJob`.
 ///
 /// <p>Gets the properties associated with a document classification job. Use this operation to get the status of a classification job.</p>

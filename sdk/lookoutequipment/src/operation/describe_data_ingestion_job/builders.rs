@@ -3,6 +3,23 @@ pub use crate::operation::describe_data_ingestion_job::_describe_data_ingestion_
 
 pub use crate::operation::describe_data_ingestion_job::_describe_data_ingestion_job_input::DescribeDataIngestionJobInputBuilder;
 
+impl DescribeDataIngestionJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_data_ingestion_job::DescribeDataIngestionJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_data_ingestion_job::DescribeDataIngestionJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_data_ingestion_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeDataIngestionJob`.
 ///
 /// <p>Provides information on a specific data ingestion job such as creation time, dataset ARN, and status.</p>

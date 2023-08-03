@@ -3,6 +3,23 @@ pub use crate::operation::update_feature_group::_update_feature_group_output::Up
 
 pub use crate::operation::update_feature_group::_update_feature_group_input::UpdateFeatureGroupInputBuilder;
 
+impl UpdateFeatureGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_feature_group::UpdateFeatureGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_feature_group::UpdateFeatureGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_feature_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateFeatureGroup`.
 ///
 /// <p>Updates the feature group by either adding features or updating the online store configuration. Use one of the following request parameters at a time while using the <code>UpdateFeatureGroup</code> API.</p>

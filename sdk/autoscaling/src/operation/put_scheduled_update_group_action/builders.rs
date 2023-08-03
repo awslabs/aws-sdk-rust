@@ -3,6 +3,23 @@ pub use crate::operation::put_scheduled_update_group_action::_put_scheduled_upda
 
 pub use crate::operation::put_scheduled_update_group_action::_put_scheduled_update_group_action_input::PutScheduledUpdateGroupActionInputBuilder;
 
+impl PutScheduledUpdateGroupActionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_scheduled_update_group_action::PutScheduledUpdateGroupActionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_scheduled_update_group_action::PutScheduledUpdateGroupActionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_scheduled_update_group_action();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutScheduledUpdateGroupAction`.
 ///
 /// <p>Creates or updates a scheduled scaling action for an Auto Scaling group.</p>

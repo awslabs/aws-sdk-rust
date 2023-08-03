@@ -3,6 +3,23 @@ pub use crate::operation::deregister_event_topic::_deregister_event_topic_output
 
 pub use crate::operation::deregister_event_topic::_deregister_event_topic_input::DeregisterEventTopicInputBuilder;
 
+impl DeregisterEventTopicInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::deregister_event_topic::DeregisterEventTopicOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::deregister_event_topic::DeregisterEventTopicError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.deregister_event_topic();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeregisterEventTopic`.
 ///
 /// <p>Removes the specified directory as a publisher to the specified Amazon SNS topic.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_reference_store::_get_reference_store_output::GetR
 
 pub use crate::operation::get_reference_store::_get_reference_store_input::GetReferenceStoreInputBuilder;
 
+impl GetReferenceStoreInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_reference_store::GetReferenceStoreOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_reference_store::GetReferenceStoreError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_reference_store();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetReferenceStore`.
 ///
 /// <p>Gets information about a reference store.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_virtual_gateways::_describe_virtual_gateways_
 
 pub use crate::operation::describe_virtual_gateways::_describe_virtual_gateways_input::DescribeVirtualGatewaysInputBuilder;
 
+impl DescribeVirtualGatewaysInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_virtual_gateways::DescribeVirtualGatewaysOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_virtual_gateways::DescribeVirtualGatewaysError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_virtual_gateways();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeVirtualGateways`.
 ///
 /// <p>Lists the virtual private gateways owned by the Amazon Web Services account.</p>

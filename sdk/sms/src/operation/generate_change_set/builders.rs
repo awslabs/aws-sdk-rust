@@ -3,6 +3,23 @@ pub use crate::operation::generate_change_set::_generate_change_set_output::Gene
 
 pub use crate::operation::generate_change_set::_generate_change_set_input::GenerateChangeSetInputBuilder;
 
+impl GenerateChangeSetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::generate_change_set::GenerateChangeSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::generate_change_set::GenerateChangeSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.generate_change_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GenerateChangeSet`.
 ///
 /// <p>Generates a target change set for a currently launched stack and writes it to an Amazon S3 object in the customer’s Amazon S3 bucket.</p>

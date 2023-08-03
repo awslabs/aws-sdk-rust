@@ -3,6 +3,23 @@ pub use crate::operation::stop_icd10_cm_inference_job::_stop_icd10_cm_inference_
 
 pub use crate::operation::stop_icd10_cm_inference_job::_stop_icd10_cm_inference_job_input::StopIcd10CmInferenceJobInputBuilder;
 
+impl StopIcd10CmInferenceJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_icd10_cm_inference_job::StopIcd10CmInferenceJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_icd10_cm_inference_job::StopICD10CMInferenceJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_icd10_cm_inference_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopICD10CMInferenceJob`.
 ///
 /// <p>Stops an InferICD10CM inference job in progress.</p>

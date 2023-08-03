@@ -3,6 +3,23 @@ pub use crate::operation::describe_fleet_metric::_describe_fleet_metric_output::
 
 pub use crate::operation::describe_fleet_metric::_describe_fleet_metric_input::DescribeFleetMetricInputBuilder;
 
+impl DescribeFleetMetricInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_fleet_metric::DescribeFleetMetricOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_fleet_metric::DescribeFleetMetricError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_fleet_metric();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeFleetMetric`.
 ///
 /// <p>Gets information about the specified fleet metric.</p>

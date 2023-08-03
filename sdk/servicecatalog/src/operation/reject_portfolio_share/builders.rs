@@ -3,6 +3,23 @@ pub use crate::operation::reject_portfolio_share::_reject_portfolio_share_output
 
 pub use crate::operation::reject_portfolio_share::_reject_portfolio_share_input::RejectPortfolioShareInputBuilder;
 
+impl RejectPortfolioShareInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::reject_portfolio_share::RejectPortfolioShareOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::reject_portfolio_share::RejectPortfolioShareError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.reject_portfolio_share();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RejectPortfolioShare`.
 ///
 /// <p>Rejects an offer to share the specified portfolio.</p>

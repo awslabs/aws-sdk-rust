@@ -3,6 +3,17 @@ pub use crate::operation::list_firewall_rule_group_associations::_list_firewall_
 
 pub use crate::operation::list_firewall_rule_group_associations::_list_firewall_rule_group_associations_input::ListFirewallRuleGroupAssociationsInputBuilder;
 
+impl ListFirewallRuleGroupAssociationsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_firewall_rule_group_associations::ListFirewallRuleGroupAssociationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_firewall_rule_group_associations::ListFirewallRuleGroupAssociationsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_firewall_rule_group_associations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListFirewallRuleGroupAssociations`.
 ///
 /// <p>Retrieves the firewall rule group associations that you have defined. Each association enables DNS filtering for a VPC with one rule group. </p>

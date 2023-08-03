@@ -3,6 +3,23 @@ pub use crate::operation::list_batch_job_executions::_list_batch_job_executions_
 
 pub use crate::operation::list_batch_job_executions::_list_batch_job_executions_input::ListBatchJobExecutionsInputBuilder;
 
+impl ListBatchJobExecutionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_batch_job_executions::ListBatchJobExecutionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_batch_job_executions::ListBatchJobExecutionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_batch_job_executions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListBatchJobExecutions`.
 ///
 /// <p>Lists historical, current, and scheduled batch job executions for a specific application.</p>

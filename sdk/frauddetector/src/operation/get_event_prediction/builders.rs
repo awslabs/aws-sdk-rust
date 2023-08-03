@@ -3,6 +3,23 @@ pub use crate::operation::get_event_prediction::_get_event_prediction_output::Ge
 
 pub use crate::operation::get_event_prediction::_get_event_prediction_input::GetEventPredictionInputBuilder;
 
+impl GetEventPredictionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_event_prediction::GetEventPredictionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_event_prediction::GetEventPredictionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_event_prediction();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetEventPrediction`.
 ///
 /// <p>Evaluates an event against a detector version. If a version ID is not provided, the detector’s (<code>ACTIVE</code>) version is used.</p>

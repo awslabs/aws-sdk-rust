@@ -3,6 +3,23 @@ pub use crate::operation::add_tags::_add_tags_output::AddTagsOutputBuilder;
 
 pub use crate::operation::add_tags::_add_tags_input::AddTagsInputBuilder;
 
+impl AddTagsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::add_tags::AddTagsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::add_tags::AddTagsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.add_tags();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AddTags`.
 ///
 /// <p>Adds one or more tags to a trail, event data store, or channel, up to a limit of 50. Overwrites an existing tag's value when a new value is specified for an existing tag key. Tag key names must be unique; you cannot have two keys with the same name but different values. If you specify a key without a value, the tag will be created with the specified key and a value of null. You can tag a trail or event data store that applies to all Amazon Web Services Regions only from the Region in which the trail or event data store was created (also known as its home Region).</p>

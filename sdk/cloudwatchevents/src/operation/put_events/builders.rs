@@ -3,6 +3,23 @@ pub use crate::operation::put_events::_put_events_output::PutEventsOutputBuilder
 
 pub use crate::operation::put_events::_put_events_input::PutEventsInputBuilder;
 
+impl PutEventsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_events::PutEventsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_events::PutEventsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_events();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutEvents`.
 ///
 /// <p>Sends custom events to Amazon EventBridge so that they can be matched to rules.</p>

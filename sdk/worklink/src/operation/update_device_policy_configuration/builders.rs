@@ -3,6 +3,17 @@ pub use crate::operation::update_device_policy_configuration::_update_device_pol
 
 pub use crate::operation::update_device_policy_configuration::_update_device_policy_configuration_input::UpdateDevicePolicyConfigurationInputBuilder;
 
+impl UpdateDevicePolicyConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::update_device_policy_configuration::UpdateDevicePolicyConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_device_policy_configuration::UpdateDevicePolicyConfigurationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.update_device_policy_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateDevicePolicyConfiguration`.
 ///
 /// <p>Updates the device policy configuration for the fleet.</p>

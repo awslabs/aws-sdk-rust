@@ -3,6 +3,17 @@ pub use crate::operation::create_environment_template_version::_create_environme
 
 pub use crate::operation::create_environment_template_version::_create_environment_template_version_input::CreateEnvironmentTemplateVersionInputBuilder;
 
+impl CreateEnvironmentTemplateVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::create_environment_template_version::CreateEnvironmentTemplateVersionOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_environment_template_version::CreateEnvironmentTemplateVersionError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.create_environment_template_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateEnvironmentTemplateVersion`.
 ///
 /// <p>Create a new major or minor version of an environment template. A major version of an environment template is a version that <i>isn't</i> backwards compatible. A minor version of an environment template is a version that's backwards compatible within its major version.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::batch_get_dev_endpoints::_batch_get_dev_endpoints_outp
 
 pub use crate::operation::batch_get_dev_endpoints::_batch_get_dev_endpoints_input::BatchGetDevEndpointsInputBuilder;
 
+impl BatchGetDevEndpointsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_dev_endpoints::BatchGetDevEndpointsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_get_dev_endpoints::BatchGetDevEndpointsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_get_dev_endpoints();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchGetDevEndpoints`.
 ///
 /// <p>Returns a list of resource metadata for a given list of development endpoint names. After calling the <code>ListDevEndpoints</code> operation, you can call this operation to access the data to which you have been granted permissions. This operation supports all IAM permissions, including permission conditions that uses tags.</p>

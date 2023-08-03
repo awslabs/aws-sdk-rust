@@ -3,6 +3,23 @@ pub use crate::operation::update_access_key::_update_access_key_output::UpdateAc
 
 pub use crate::operation::update_access_key::_update_access_key_input::UpdateAccessKeyInputBuilder;
 
+impl UpdateAccessKeyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_access_key::UpdateAccessKeyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_access_key::UpdateAccessKeyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_access_key();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateAccessKey`.
 ///
 /// <p>Changes the status of the specified access key from Active to Inactive, or vice versa. This operation can be used to disable a user's key as part of a key rotation workflow.</p>

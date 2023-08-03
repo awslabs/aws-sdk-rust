@@ -3,6 +3,23 @@ pub use crate::operation::describe_connector_profiles::_describe_connector_profi
 
 pub use crate::operation::describe_connector_profiles::_describe_connector_profiles_input::DescribeConnectorProfilesInputBuilder;
 
+impl DescribeConnectorProfilesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_connector_profiles::DescribeConnectorProfilesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_connector_profiles::DescribeConnectorProfilesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_connector_profiles();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeConnectorProfiles`.
 ///
 /// <p> Returns a list of <code>connector-profile</code> details matching the provided <code>connector-profile</code> names and <code>connector-types</code>. Both input lists are optional, and you can use them to filter the result. </p>

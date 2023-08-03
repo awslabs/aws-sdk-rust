@@ -3,6 +3,23 @@ pub use crate::operation::sign_up::_sign_up_output::SignUpOutputBuilder;
 
 pub use crate::operation::sign_up::_sign_up_input::SignUpInputBuilder;
 
+impl SignUpInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::sign_up::SignUpOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::sign_up::SignUpError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.sign_up();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SignUp`.
 ///
 /// <p>Registers the user in the specified user pool and creates a user name, password, and user attributes.</p> <note>

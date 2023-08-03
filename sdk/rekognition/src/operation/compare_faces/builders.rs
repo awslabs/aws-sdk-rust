@@ -3,6 +3,23 @@ pub use crate::operation::compare_faces::_compare_faces_output::CompareFacesOutp
 
 pub use crate::operation::compare_faces::_compare_faces_input::CompareFacesInputBuilder;
 
+impl CompareFacesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::compare_faces::CompareFacesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::compare_faces::CompareFacesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.compare_faces();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CompareFaces`.
 ///
 /// <p>Compares a face in the <i>source</i> input image with each of the 100 largest faces detected in the <i>target</i> input image. </p>

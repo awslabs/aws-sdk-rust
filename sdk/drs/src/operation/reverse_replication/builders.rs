@@ -3,6 +3,23 @@ pub use crate::operation::reverse_replication::_reverse_replication_output::Reve
 
 pub use crate::operation::reverse_replication::_reverse_replication_input::ReverseReplicationInputBuilder;
 
+impl ReverseReplicationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::reverse_replication::ReverseReplicationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::reverse_replication::ReverseReplicationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.reverse_replication();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ReverseReplication`.
 ///
 /// <p>Start replication to origin / target region - applies only to protected instances that originated in EC2. For recovery instances on target region - starts replication back to origin region. For failback instances on origin region - starts replication to target region to re-protect them. </p>

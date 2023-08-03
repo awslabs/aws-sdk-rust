@@ -3,6 +3,23 @@ pub use crate::operation::describe_hsm_client_certificates::_describe_hsm_client
 
 pub use crate::operation::describe_hsm_client_certificates::_describe_hsm_client_certificates_input::DescribeHsmClientCertificatesInputBuilder;
 
+impl DescribeHsmClientCertificatesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_hsm_client_certificates::DescribeHsmClientCertificatesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_hsm_client_certificates::DescribeHsmClientCertificatesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_hsm_client_certificates();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeHsmClientCertificates`.
 ///
 /// <p>Returns information about the specified HSM client certificate. If no certificate ID is specified, returns information about all the HSM certificates owned by your Amazon Web Services account.</p>

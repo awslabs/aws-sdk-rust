@@ -3,6 +3,23 @@ pub use crate::operation::start_medical_transcription_job::_start_medical_transc
 
 pub use crate::operation::start_medical_transcription_job::_start_medical_transcription_job_input::StartMedicalTranscriptionJobInputBuilder;
 
+impl StartMedicalTranscriptionJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_medical_transcription_job::StartMedicalTranscriptionJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_medical_transcription_job::StartMedicalTranscriptionJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_medical_transcription_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartMedicalTranscriptionJob`.
 ///
 /// <p>Transcribes the audio from a medical dictation or conversation and applies any additional Request Parameters you choose to include in your request.</p>

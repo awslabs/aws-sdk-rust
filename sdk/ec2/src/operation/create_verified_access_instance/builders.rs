@@ -3,6 +3,23 @@ pub use crate::operation::create_verified_access_instance::_create_verified_acce
 
 pub use crate::operation::create_verified_access_instance::_create_verified_access_instance_input::CreateVerifiedAccessInstanceInputBuilder;
 
+impl CreateVerifiedAccessInstanceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_verified_access_instance::CreateVerifiedAccessInstanceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_verified_access_instance::CreateVerifiedAccessInstanceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_verified_access_instance();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateVerifiedAccessInstance`.
 ///
 /// <p>An Amazon Web Services Verified Access instance is a regional entity that evaluates application requests and grants access only when your security requirements are met.</p>

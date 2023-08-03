@@ -3,6 +3,23 @@ pub use crate::operation::put_warm_pool::_put_warm_pool_output::PutWarmPoolOutpu
 
 pub use crate::operation::put_warm_pool::_put_warm_pool_input::PutWarmPoolInputBuilder;
 
+impl PutWarmPoolInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_warm_pool::PutWarmPoolOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_warm_pool::PutWarmPoolError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_warm_pool();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutWarmPool`.
 ///
 /// <p>Creates or updates a warm pool for the specified Auto Scaling group. A warm pool is a pool of pre-initialized EC2 instances that sits alongside the Auto Scaling group. Whenever your application needs to scale out, the Auto Scaling group can draw on the warm pool to meet its new desired capacity. For more information and example configurations, see <a href="https://docs.aws.amazon.com/autoscaling/ec2/userguide/ec2-auto-scaling-warm-pools.html">Warm pools for Amazon EC2 Auto Scaling</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>

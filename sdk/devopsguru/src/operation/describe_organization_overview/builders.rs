@@ -3,6 +3,23 @@ pub use crate::operation::describe_organization_overview::_describe_organization
 
 pub use crate::operation::describe_organization_overview::_describe_organization_overview_input::DescribeOrganizationOverviewInputBuilder;
 
+impl DescribeOrganizationOverviewInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_organization_overview::DescribeOrganizationOverviewOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_organization_overview::DescribeOrganizationOverviewError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_organization_overview();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeOrganizationOverview`.
 ///
 /// <p>Returns an overview of your organization's history based on the specified time range. The overview includes the total reactive and proactive insights.</p>

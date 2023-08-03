@@ -3,6 +3,23 @@ pub use crate::operation::start_face_search::_start_face_search_output::StartFac
 
 pub use crate::operation::start_face_search::_start_face_search_input::StartFaceSearchInputBuilder;
 
+impl StartFaceSearchInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_face_search::StartFaceSearchOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_face_search::StartFaceSearchError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_face_search();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartFaceSearch`.
 ///
 /// <p>Starts the asynchronous search for faces in a collection that match the faces of persons detected in a stored video.</p>

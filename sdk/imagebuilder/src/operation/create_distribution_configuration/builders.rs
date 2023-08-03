@@ -3,6 +3,17 @@ pub use crate::operation::create_distribution_configuration::_create_distributio
 
 pub use crate::operation::create_distribution_configuration::_create_distribution_configuration_input::CreateDistributionConfigurationInputBuilder;
 
+impl CreateDistributionConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::create_distribution_configuration::CreateDistributionConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_distribution_configuration::CreateDistributionConfigurationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.create_distribution_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateDistributionConfiguration`.
 ///
 /// <p>Creates a new distribution configuration. Distribution configurations define and configure the outputs of your pipeline.</p>

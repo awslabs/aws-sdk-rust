@@ -3,6 +3,23 @@ pub use crate::operation::untag_resource::_untag_resource_output::UntagResourceO
 
 pub use crate::operation::untag_resource::_untag_resource_input::UntagResourceInputBuilder;
 
+impl UntagResourceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::untag_resource::UntagResourceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::untag_resource::UntagResourceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.untag_resource();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UntagResource`.
 ///
 /// <p>Removes the tags with the specified keys from the specified resource. Tags are key:value pairs that you can use to categorize and manage your resources, for purposes like billing. For example, you might set the tag key to "customer" and the value to the customer name or ID. You can specify one or more tags to add to each Amazon Web Services resource, up to 50 tags for a resource.</p>

@@ -3,6 +3,17 @@ pub use crate::operation::delete_slack_workspace_configuration::_delete_slack_wo
 
 pub use crate::operation::delete_slack_workspace_configuration::_delete_slack_workspace_configuration_input::DeleteSlackWorkspaceConfigurationInputBuilder;
 
+impl DeleteSlackWorkspaceConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_slack_workspace_configuration::DeleteSlackWorkspaceConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_slack_workspace_configuration::DeleteSlackWorkspaceConfigurationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.delete_slack_workspace_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteSlackWorkspaceConfiguration`.
 ///
 /// <p>Deletes a Slack workspace configuration from your Amazon Web Services account. This operation doesn't delete your Slack workspace.</p>

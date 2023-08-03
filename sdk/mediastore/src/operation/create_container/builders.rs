@@ -3,6 +3,23 @@ pub use crate::operation::create_container::_create_container_output::CreateCont
 
 pub use crate::operation::create_container::_create_container_input::CreateContainerInputBuilder;
 
+impl CreateContainerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_container::CreateContainerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_container::CreateContainerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_container();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateContainer`.
 ///
 /// <p>Creates a storage container to hold objects. A container is similar to a bucket in the Amazon S3 service.</p>

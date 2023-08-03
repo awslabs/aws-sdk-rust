@@ -3,6 +3,23 @@ pub use crate::operation::create_flow_definition::_create_flow_definition_output
 
 pub use crate::operation::create_flow_definition::_create_flow_definition_input::CreateFlowDefinitionInputBuilder;
 
+impl CreateFlowDefinitionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_flow_definition::CreateFlowDefinitionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_flow_definition::CreateFlowDefinitionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_flow_definition();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateFlowDefinition`.
 ///
 /// <p>Creates a flow definition.</p>

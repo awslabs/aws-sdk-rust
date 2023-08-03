@@ -3,6 +3,23 @@ pub use crate::operation::get_repository_sync_status::_get_repository_sync_statu
 
 pub use crate::operation::get_repository_sync_status::_get_repository_sync_status_input::GetRepositorySyncStatusInputBuilder;
 
+impl GetRepositorySyncStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_repository_sync_status::GetRepositorySyncStatusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_repository_sync_status::GetRepositorySyncStatusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_repository_sync_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetRepositorySyncStatus`.
 ///
 /// <p>Get the sync status of a repository used for Proton template sync. For more information about template sync, see .</p> <note>

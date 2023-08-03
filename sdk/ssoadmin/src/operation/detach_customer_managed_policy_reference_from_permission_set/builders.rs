@@ -3,6 +3,18 @@ pub use crate::operation::detach_customer_managed_policy_reference_from_permissi
 
 pub use crate::operation::detach_customer_managed_policy_reference_from_permission_set::_detach_customer_managed_policy_reference_from_permission_set_input::DetachCustomerManagedPolicyReferenceFromPermissionSetInputBuilder;
 
+impl DetachCustomerManagedPolicyReferenceFromPermissionSetInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::detach_customer_managed_policy_reference_from_permission_set::DetachCustomerManagedPolicyReferenceFromPermissionSetOutput, ::aws_smithy_http::result::SdkError<crate::operation::detach_customer_managed_policy_reference_from_permission_set::DetachCustomerManagedPolicyReferenceFromPermissionSetError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder =
+            client.detach_customer_managed_policy_reference_from_permission_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DetachCustomerManagedPolicyReferenceFromPermissionSet`.
 ///
 /// <p>Detaches the specified customer managed policy from the specified <code>PermissionSet</code>.</p>

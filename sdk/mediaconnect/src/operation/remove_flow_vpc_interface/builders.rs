@@ -3,6 +3,23 @@ pub use crate::operation::remove_flow_vpc_interface::_remove_flow_vpc_interface_
 
 pub use crate::operation::remove_flow_vpc_interface::_remove_flow_vpc_interface_input::RemoveFlowVpcInterfaceInputBuilder;
 
+impl RemoveFlowVpcInterfaceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::remove_flow_vpc_interface::RemoveFlowVpcInterfaceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::remove_flow_vpc_interface::RemoveFlowVpcInterfaceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.remove_flow_vpc_interface();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RemoveFlowVpcInterface`.
 ///
 /// Removes a VPC Interface from an existing flow. This request can be made only on a VPC interface that does not have a Source or Output associated with it. If the VPC interface is referenced by a Source or Output, you must first delete or update the Source or Output to no longer reference the VPC interface.

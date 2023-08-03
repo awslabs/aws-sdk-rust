@@ -3,6 +3,23 @@ pub use crate::operation::update_stack_instances::_update_stack_instances_output
 
 pub use crate::operation::update_stack_instances::_update_stack_instances_input::UpdateStackInstancesInputBuilder;
 
+impl UpdateStackInstancesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_stack_instances::UpdateStackInstancesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_stack_instances::UpdateStackInstancesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_stack_instances();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateStackInstances`.
 ///
 /// <p>Updates the parameter values for stack instances for the specified accounts, within the specified Amazon Web Services Regions. A stack instance refers to a stack in a specific account and Region.</p>

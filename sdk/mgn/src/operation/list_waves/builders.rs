@@ -3,6 +3,23 @@ pub use crate::operation::list_waves::_list_waves_output::ListWavesOutputBuilder
 
 pub use crate::operation::list_waves::_list_waves_input::ListWavesInputBuilder;
 
+impl ListWavesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_waves::ListWavesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_waves::ListWavesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_waves();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListWaves`.
 ///
 /// <p>Retrieves all waves or multiple waves by ID.</p>

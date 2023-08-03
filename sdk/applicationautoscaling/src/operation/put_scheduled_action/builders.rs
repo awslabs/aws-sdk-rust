@@ -3,6 +3,23 @@ pub use crate::operation::put_scheduled_action::_put_scheduled_action_output::Pu
 
 pub use crate::operation::put_scheduled_action::_put_scheduled_action_input::PutScheduledActionInputBuilder;
 
+impl PutScheduledActionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_scheduled_action::PutScheduledActionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_scheduled_action::PutScheduledActionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_scheduled_action();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutScheduledAction`.
 ///
 /// <p>Creates or updates a scheduled action for an Application Auto Scaling scalable target. </p>

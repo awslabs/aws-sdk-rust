@@ -3,6 +3,23 @@ pub use crate::operation::describe_human_loop::_describe_human_loop_output::Desc
 
 pub use crate::operation::describe_human_loop::_describe_human_loop_input::DescribeHumanLoopInputBuilder;
 
+impl DescribeHumanLoopInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_human_loop::DescribeHumanLoopOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_human_loop::DescribeHumanLoopError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_human_loop();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeHumanLoop`.
 ///
 /// <p>Returns information about the specified human loop. If the human loop was deleted, this operation will return a <code>ResourceNotFoundException</code> error. </p>

@@ -3,6 +3,17 @@ pub use crate::operation::create_transit_gateway_prefix_list_reference::_create_
 
 pub use crate::operation::create_transit_gateway_prefix_list_reference::_create_transit_gateway_prefix_list_reference_input::CreateTransitGatewayPrefixListReferenceInputBuilder;
 
+impl CreateTransitGatewayPrefixListReferenceInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::create_transit_gateway_prefix_list_reference::CreateTransitGatewayPrefixListReferenceOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_transit_gateway_prefix_list_reference::CreateTransitGatewayPrefixListReferenceError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.create_transit_gateway_prefix_list_reference();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateTransitGatewayPrefixListReference`.
 ///
 /// <p>Creates a reference (route) to a prefix list in a specified transit gateway route table.</p>

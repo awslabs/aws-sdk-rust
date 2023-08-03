@@ -3,6 +3,23 @@ pub use crate::operation::enable_domain_auto_renew::_enable_domain_auto_renew_ou
 
 pub use crate::operation::enable_domain_auto_renew::_enable_domain_auto_renew_input::EnableDomainAutoRenewInputBuilder;
 
+impl EnableDomainAutoRenewInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::enable_domain_auto_renew::EnableDomainAutoRenewOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::enable_domain_auto_renew::EnableDomainAutoRenewError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.enable_domain_auto_renew();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `EnableDomainAutoRenew`.
 ///
 /// <p>This operation configures Amazon Route 53 to automatically renew the specified domain before the domain registration expires. The cost of renewing your domain registration is billed to your Amazon Web Services account.</p>

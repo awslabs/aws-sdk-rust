@@ -3,6 +3,23 @@ pub use crate::operation::create_virtual_node::_create_virtual_node_output::Crea
 
 pub use crate::operation::create_virtual_node::_create_virtual_node_input::CreateVirtualNodeInputBuilder;
 
+impl CreateVirtualNodeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_virtual_node::CreateVirtualNodeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_virtual_node::CreateVirtualNodeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_virtual_node();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateVirtualNode`.
 ///
 /// <p>Creates a virtual node within a service mesh.</p>

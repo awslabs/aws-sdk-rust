@@ -3,6 +3,23 @@ pub use crate::operation::get_resolver_dnssec_config::_get_resolver_dnssec_confi
 
 pub use crate::operation::get_resolver_dnssec_config::_get_resolver_dnssec_config_input::GetResolverDnssecConfigInputBuilder;
 
+impl GetResolverDnssecConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_resolver_dnssec_config::GetResolverDnssecConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_resolver_dnssec_config::GetResolverDnssecConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_resolver_dnssec_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetResolverDnssecConfig`.
 ///
 /// <p>Gets DNSSEC validation information for a specified resource.</p>

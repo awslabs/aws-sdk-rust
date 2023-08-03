@@ -3,6 +3,23 @@ pub use crate::operation::describe_inference_scheduler::_describe_inference_sche
 
 pub use crate::operation::describe_inference_scheduler::_describe_inference_scheduler_input::DescribeInferenceSchedulerInputBuilder;
 
+impl DescribeInferenceSchedulerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_inference_scheduler::DescribeInferenceSchedulerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_inference_scheduler::DescribeInferenceSchedulerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_inference_scheduler();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeInferenceScheduler`.
 ///
 /// <p> Specifies information about the inference scheduler being used, including name, model, status, and associated metadata </p>

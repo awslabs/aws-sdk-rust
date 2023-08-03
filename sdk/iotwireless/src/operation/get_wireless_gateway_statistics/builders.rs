@@ -3,6 +3,23 @@ pub use crate::operation::get_wireless_gateway_statistics::_get_wireless_gateway
 
 pub use crate::operation::get_wireless_gateway_statistics::_get_wireless_gateway_statistics_input::GetWirelessGatewayStatisticsInputBuilder;
 
+impl GetWirelessGatewayStatisticsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_wireless_gateway_statistics::GetWirelessGatewayStatisticsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_wireless_gateway_statistics::GetWirelessGatewayStatisticsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_wireless_gateway_statistics();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetWirelessGatewayStatistics`.
 ///
 /// <p>Gets operating information about a wireless gateway.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_blueprint_runs::_get_blueprint_runs_output::GetBlu
 
 pub use crate::operation::get_blueprint_runs::_get_blueprint_runs_input::GetBlueprintRunsInputBuilder;
 
+impl GetBlueprintRunsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_blueprint_runs::GetBlueprintRunsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_blueprint_runs::GetBlueprintRunsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_blueprint_runs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetBlueprintRuns`.
 ///
 /// <p>Retrieves the details of blueprint runs for a specified blueprint.</p>

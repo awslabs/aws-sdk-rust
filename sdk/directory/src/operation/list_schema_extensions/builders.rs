@@ -3,6 +3,23 @@ pub use crate::operation::list_schema_extensions::_list_schema_extensions_output
 
 pub use crate::operation::list_schema_extensions::_list_schema_extensions_input::ListSchemaExtensionsInputBuilder;
 
+impl ListSchemaExtensionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_schema_extensions::ListSchemaExtensionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_schema_extensions::ListSchemaExtensionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_schema_extensions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListSchemaExtensions`.
 ///
 /// <p>Lists all schema extensions applied to a Microsoft AD Directory.</p>

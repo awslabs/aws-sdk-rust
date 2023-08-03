@@ -3,6 +3,23 @@ pub use crate::operation::list_import_errors::_list_import_errors_output::ListIm
 
 pub use crate::operation::list_import_errors::_list_import_errors_input::ListImportErrorsInputBuilder;
 
+impl ListImportErrorsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_import_errors::ListImportErrorsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_import_errors::ListImportErrorsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_import_errors();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListImportErrors`.
 ///
 /// <p>List import errors.</p>

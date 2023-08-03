@@ -3,6 +3,23 @@ pub use crate::operation::get_access_key_last_used::_get_access_key_last_used_ou
 
 pub use crate::operation::get_access_key_last_used::_get_access_key_last_used_input::GetAccessKeyLastUsedInputBuilder;
 
+impl GetAccessKeyLastUsedInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_access_key_last_used::GetAccessKeyLastUsedOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_access_key_last_used::GetAccessKeyLastUsedError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_access_key_last_used();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetAccessKeyLastUsed`.
 ///
 /// <p>Retrieves information about when the specified access key was last used. The information includes the date and time of last use, along with the Amazon Web Services service and Region that were specified in the last request made with that key.</p>

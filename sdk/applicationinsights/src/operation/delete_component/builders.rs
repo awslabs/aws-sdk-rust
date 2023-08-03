@@ -3,6 +3,23 @@ pub use crate::operation::delete_component::_delete_component_output::DeleteComp
 
 pub use crate::operation::delete_component::_delete_component_input::DeleteComponentInputBuilder;
 
+impl DeleteComponentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_component::DeleteComponentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_component::DeleteComponentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_component();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteComponent`.
 ///
 /// <p>Ungroups a custom component. When you ungroup custom components, all applicable monitors that are set up for the component are removed and the instances revert to their standalone status.</p>

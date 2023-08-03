@@ -3,6 +3,23 @@ pub use crate::operation::get_readiness_check::_get_readiness_check_output::GetR
 
 pub use crate::operation::get_readiness_check::_get_readiness_check_input::GetReadinessCheckInputBuilder;
 
+impl GetReadinessCheckInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_readiness_check::GetReadinessCheckOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_readiness_check::GetReadinessCheckError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_readiness_check();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetReadinessCheck`.
 ///
 /// <p>Gets details about a readiness check.</p>

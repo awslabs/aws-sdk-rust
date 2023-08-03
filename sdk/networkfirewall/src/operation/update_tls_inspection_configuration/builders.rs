@@ -3,6 +3,17 @@ pub use crate::operation::update_tls_inspection_configuration::_update_tls_inspe
 
 pub use crate::operation::update_tls_inspection_configuration::_update_tls_inspection_configuration_input::UpdateTlsInspectionConfigurationInputBuilder;
 
+impl UpdateTlsInspectionConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::update_tls_inspection_configuration::UpdateTlsInspectionConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_tls_inspection_configuration::UpdateTLSInspectionConfigurationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.update_tls_inspection_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateTLSInspectionConfiguration`.
 ///
 /// <p>Updates the TLS inspection configuration settings for the specified TLS inspection configuration. You use a TLS inspection configuration by reference in one or more firewall policies. When you modify a TLS inspection configuration, you modify all firewall policies that use the TLS inspection configuration. </p>

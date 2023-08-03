@@ -3,6 +3,23 @@ pub use crate::operation::describe_input_device_thumbnail::_describe_input_devic
 
 pub use crate::operation::describe_input_device_thumbnail::_describe_input_device_thumbnail_input::DescribeInputDeviceThumbnailInputBuilder;
 
+impl DescribeInputDeviceThumbnailInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_input_device_thumbnail::DescribeInputDeviceThumbnailOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_input_device_thumbnail::DescribeInputDeviceThumbnailError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_input_device_thumbnail();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeInputDeviceThumbnail`.
 ///
 /// Get the latest thumbnail data for the input device.

@@ -3,6 +3,23 @@ pub use crate::operation::create_delivery_stream::_create_delivery_stream_output
 
 pub use crate::operation::create_delivery_stream::_create_delivery_stream_input::CreateDeliveryStreamInputBuilder;
 
+impl CreateDeliveryStreamInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_delivery_stream::CreateDeliveryStreamOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_delivery_stream::CreateDeliveryStreamError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_delivery_stream();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateDeliveryStream`.
 ///
 /// <p>Creates a Kinesis Data Firehose delivery stream.</p>

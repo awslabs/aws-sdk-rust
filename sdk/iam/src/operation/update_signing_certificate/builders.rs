@@ -3,6 +3,23 @@ pub use crate::operation::update_signing_certificate::_update_signing_certificat
 
 pub use crate::operation::update_signing_certificate::_update_signing_certificate_input::UpdateSigningCertificateInputBuilder;
 
+impl UpdateSigningCertificateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_signing_certificate::UpdateSigningCertificateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_signing_certificate::UpdateSigningCertificateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_signing_certificate();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateSigningCertificate`.
 ///
 /// <p>Changes the status of the specified user signing certificate from active to disabled, or vice versa. This operation can be used to disable an IAM user's signing certificate as part of a certificate rotation work flow.</p>

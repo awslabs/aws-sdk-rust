@@ -3,6 +3,23 @@ pub use crate::operation::list_identity_resolution_jobs::_list_identity_resoluti
 
 pub use crate::operation::list_identity_resolution_jobs::_list_identity_resolution_jobs_input::ListIdentityResolutionJobsInputBuilder;
 
+impl ListIdentityResolutionJobsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_identity_resolution_jobs::ListIdentityResolutionJobsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_identity_resolution_jobs::ListIdentityResolutionJobsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_identity_resolution_jobs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListIdentityResolutionJobs`.
 ///
 /// <p>Lists all of the Identity Resolution Jobs in your domain. The response sorts the list by <code>JobStartTime</code>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_fargate_profile::_create_fargate_profile_output
 
 pub use crate::operation::create_fargate_profile::_create_fargate_profile_input::CreateFargateProfileInputBuilder;
 
+impl CreateFargateProfileInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_fargate_profile::CreateFargateProfileOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_fargate_profile::CreateFargateProfileError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_fargate_profile();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateFargateProfile`.
 ///
 /// <p>Creates an Fargate profile for your Amazon EKS cluster. You must have at least one Fargate profile in a cluster to be able to run pods on Fargate.</p>

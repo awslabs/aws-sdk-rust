@@ -3,6 +3,23 @@ pub use crate::operation::create_assessment_report::_create_assessment_report_ou
 
 pub use crate::operation::create_assessment_report::_create_assessment_report_input::CreateAssessmentReportInputBuilder;
 
+impl CreateAssessmentReportInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_assessment_report::CreateAssessmentReportOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_assessment_report::CreateAssessmentReportError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_assessment_report();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateAssessmentReport`.
 ///
 /// <p> Creates an assessment report for the specified assessment. </p>

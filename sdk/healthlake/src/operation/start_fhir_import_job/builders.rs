@@ -3,6 +3,23 @@ pub use crate::operation::start_fhir_import_job::_start_fhir_import_job_output::
 
 pub use crate::operation::start_fhir_import_job::_start_fhir_import_job_input::StartFhirImportJobInputBuilder;
 
+impl StartFhirImportJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_fhir_import_job::StartFhirImportJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_fhir_import_job::StartFHIRImportJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_fhir_import_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartFHIRImportJob`.
 ///
 /// <p>Begins a FHIR Import job.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_default_vpc::_create_default_vpc_output::Create
 
 pub use crate::operation::create_default_vpc::_create_default_vpc_input::CreateDefaultVpcInputBuilder;
 
+impl CreateDefaultVpcInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_default_vpc::CreateDefaultVpcOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_default_vpc::CreateDefaultVpcError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_default_vpc();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateDefaultVpc`.
 ///
 /// <p>Creates a default VPC with a size <code>/16</code> IPv4 CIDR block and a default subnet in each Availability Zone. For more information about the components of a default VPC, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/default-vpc.html">Default VPCs</a> in the <i>Amazon VPC User Guide</i>. You cannot specify the components of the default VPC yourself.</p>

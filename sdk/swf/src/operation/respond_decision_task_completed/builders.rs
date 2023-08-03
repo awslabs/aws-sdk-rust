@@ -3,6 +3,23 @@ pub use crate::operation::respond_decision_task_completed::_respond_decision_tas
 
 pub use crate::operation::respond_decision_task_completed::_respond_decision_task_completed_input::RespondDecisionTaskCompletedInputBuilder;
 
+impl RespondDecisionTaskCompletedInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::respond_decision_task_completed::RespondDecisionTaskCompletedOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::respond_decision_task_completed::RespondDecisionTaskCompletedError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.respond_decision_task_completed();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RespondDecisionTaskCompleted`.
 ///
 /// <p>Used by deciders to tell the service that the <code>DecisionTask</code> identified by the <code>taskToken</code> has successfully completed. The <code>decisions</code> argument specifies the list of decisions made while processing the task.</p>

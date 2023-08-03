@@ -3,6 +3,23 @@ pub use crate::operation::list_cost_category_definitions::_list_cost_category_de
 
 pub use crate::operation::list_cost_category_definitions::_list_cost_category_definitions_input::ListCostCategoryDefinitionsInputBuilder;
 
+impl ListCostCategoryDefinitionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_cost_category_definitions::ListCostCategoryDefinitionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_cost_category_definitions::ListCostCategoryDefinitionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_cost_category_definitions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListCostCategoryDefinitions`.
 ///
 /// <p>Returns the name, Amazon Resource Name (ARN), <code>NumberOfRules</code> and effective dates of all Cost Categories defined in the account. You have the option to use <code>EffectiveOn</code> to return a list of Cost Categories that were active on a specific date. If there is no <code>EffectiveOn</code> specified, you’ll see Cost Categories that are effective on the current date. If Cost Category is still effective, <code>EffectiveEnd</code> is omitted in the response. <code>ListCostCategoryDefinitions</code> supports pagination. The request can have a <code>MaxResults</code> range up to 100.</p>

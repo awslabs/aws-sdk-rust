@@ -3,6 +3,23 @@ pub use crate::operation::delete_transit_gateway_route::_delete_transit_gateway_
 
 pub use crate::operation::delete_transit_gateway_route::_delete_transit_gateway_route_input::DeleteTransitGatewayRouteInputBuilder;
 
+impl DeleteTransitGatewayRouteInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_transit_gateway_route::DeleteTransitGatewayRouteOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_transit_gateway_route::DeleteTransitGatewayRouteError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_transit_gateway_route();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteTransitGatewayRoute`.
 ///
 /// <p>Deletes the specified route from the specified transit gateway route table.</p>

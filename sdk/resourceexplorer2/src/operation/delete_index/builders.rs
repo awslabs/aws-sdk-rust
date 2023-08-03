@@ -3,6 +3,23 @@ pub use crate::operation::delete_index::_delete_index_output::DeleteIndexOutputB
 
 pub use crate::operation::delete_index::_delete_index_input::DeleteIndexInputBuilder;
 
+impl DeleteIndexInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_index::DeleteIndexOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_index::DeleteIndexError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_index();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteIndex`.
 ///
 /// <p>Deletes the specified index and turns off Amazon Web Services Resource Explorer in the specified Amazon Web Services Region. When you delete an index, Resource Explorer stops discovering and indexing resources in that Region. Resource Explorer also deletes all views in that Region. These actions occur as asynchronous background tasks. You can check to see when the actions are complete by using the <code>GetIndex</code> operation and checking the <code>Status</code> response value.</p> <note>

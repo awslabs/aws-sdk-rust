@@ -3,6 +3,23 @@ pub use crate::operation::attach_group_policy::_attach_group_policy_output::Atta
 
 pub use crate::operation::attach_group_policy::_attach_group_policy_input::AttachGroupPolicyInputBuilder;
 
+impl AttachGroupPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::attach_group_policy::AttachGroupPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::attach_group_policy::AttachGroupPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.attach_group_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AttachGroupPolicy`.
 ///
 /// <p>Attaches the specified managed policy to the specified IAM group.</p>

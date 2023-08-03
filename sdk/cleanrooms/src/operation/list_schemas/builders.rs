@@ -3,6 +3,23 @@ pub use crate::operation::list_schemas::_list_schemas_output::ListSchemasOutputB
 
 pub use crate::operation::list_schemas::_list_schemas_input::ListSchemasInputBuilder;
 
+impl ListSchemasInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_schemas::ListSchemasOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_schemas::ListSchemasError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_schemas();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListSchemas`.
 ///
 /// <p>Lists the schemas for relations within a collaboration.</p>

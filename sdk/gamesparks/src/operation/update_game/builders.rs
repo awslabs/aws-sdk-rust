@@ -3,6 +3,23 @@ pub use crate::operation::update_game::_update_game_output::UpdateGameOutputBuil
 
 pub use crate::operation::update_game::_update_game_input::UpdateGameInputBuilder;
 
+impl UpdateGameInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_game::UpdateGameOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_game::UpdateGameError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_game();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateGame`.
 ///
 /// <p>Updates details of the game.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_file_caches::_describe_file_caches_output::De
 
 pub use crate::operation::describe_file_caches::_describe_file_caches_input::DescribeFileCachesInputBuilder;
 
+impl DescribeFileCachesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_file_caches::DescribeFileCachesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_file_caches::DescribeFileCachesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_file_caches();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeFileCaches`.
 ///
 /// <p>Returns the description of a specific Amazon File Cache resource, if a <code>FileCacheIds</code> value is provided for that cache. Otherwise, it returns descriptions of all caches owned by your Amazon Web Services account in the Amazon Web Services Region of the endpoint that you're calling.</p>

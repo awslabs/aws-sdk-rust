@@ -3,6 +3,23 @@ pub use crate::operation::delete_auto_snapshot::_delete_auto_snapshot_output::De
 
 pub use crate::operation::delete_auto_snapshot::_delete_auto_snapshot_input::DeleteAutoSnapshotInputBuilder;
 
+impl DeleteAutoSnapshotInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_auto_snapshot::DeleteAutoSnapshotOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_auto_snapshot::DeleteAutoSnapshotError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_auto_snapshot();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteAutoSnapshot`.
 ///
 /// <p>Deletes an automatic snapshot of an instance or disk. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>

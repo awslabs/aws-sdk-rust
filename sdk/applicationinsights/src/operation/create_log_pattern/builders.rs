@@ -3,6 +3,23 @@ pub use crate::operation::create_log_pattern::_create_log_pattern_output::Create
 
 pub use crate::operation::create_log_pattern::_create_log_pattern_input::CreateLogPatternInputBuilder;
 
+impl CreateLogPatternInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_log_pattern::CreateLogPatternOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_log_pattern::CreateLogPatternError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_log_pattern();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateLogPattern`.
 ///
 /// <p>Adds an log pattern to a <code>LogPatternSet</code>.</p>

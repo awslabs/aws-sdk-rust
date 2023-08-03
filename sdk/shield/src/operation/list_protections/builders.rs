@@ -3,6 +3,23 @@ pub use crate::operation::list_protections::_list_protections_output::ListProtec
 
 pub use crate::operation::list_protections::_list_protections_input::ListProtectionsInputBuilder;
 
+impl ListProtectionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_protections::ListProtectionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_protections::ListProtectionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_protections();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListProtections`.
 ///
 /// <p>Retrieves <code>Protection</code> objects for the account. You can retrieve all protections or you can provide filtering criteria and retrieve just the subset of protections that match the criteria. </p>

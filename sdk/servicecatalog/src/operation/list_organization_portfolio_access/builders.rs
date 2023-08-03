@@ -3,6 +3,17 @@ pub use crate::operation::list_organization_portfolio_access::_list_organization
 
 pub use crate::operation::list_organization_portfolio_access::_list_organization_portfolio_access_input::ListOrganizationPortfolioAccessInputBuilder;
 
+impl ListOrganizationPortfolioAccessInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccessOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_organization_portfolio_access::ListOrganizationPortfolioAccessError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_organization_portfolio_access();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListOrganizationPortfolioAccess`.
 ///
 /// <p>Lists the organization nodes that have access to the specified portfolio. This API can only be called by the management account in the organization or by a delegated admin.</p>

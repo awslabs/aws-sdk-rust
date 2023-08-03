@@ -3,6 +3,17 @@ pub use crate::operation::list_requested_service_quota_change_history_by_quota::
 
 pub use crate::operation::list_requested_service_quota_change_history_by_quota::_list_requested_service_quota_change_history_by_quota_input::ListRequestedServiceQuotaChangeHistoryByQuotaInputBuilder;
 
+impl ListRequestedServiceQuotaChangeHistoryByQuotaInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_requested_service_quota_change_history_by_quota::ListRequestedServiceQuotaChangeHistoryByQuotaOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_requested_service_quota_change_history_by_quota::ListRequestedServiceQuotaChangeHistoryByQuotaError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_requested_service_quota_change_history_by_quota();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListRequestedServiceQuotaChangeHistoryByQuota`.
 ///
 /// <p>Retrieves the quota increase requests for the specified quota.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::update_hypervisor::_update_hypervisor_output::UpdateHy
 
 pub use crate::operation::update_hypervisor::_update_hypervisor_input::UpdateHypervisorInputBuilder;
 
+impl UpdateHypervisorInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_hypervisor::UpdateHypervisorOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_hypervisor::UpdateHypervisorError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_hypervisor();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateHypervisor`.
 ///
 /// <p>Updates a hypervisor metadata, including its host, username, and password. Specify which hypervisor to update using the Amazon Resource Name (ARN) of the hypervisor in your request.</p>

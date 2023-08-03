@@ -3,6 +3,23 @@ pub use crate::operation::list_firewall_configs::_list_firewall_configs_output::
 
 pub use crate::operation::list_firewall_configs::_list_firewall_configs_input::ListFirewallConfigsInputBuilder;
 
+impl ListFirewallConfigsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_firewall_configs::ListFirewallConfigsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_firewall_configs::ListFirewallConfigsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_firewall_configs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListFirewallConfigs`.
 ///
 /// <p>Retrieves the firewall configurations that you have defined. DNS Firewall uses the configurations to manage firewall behavior for your VPCs. </p>

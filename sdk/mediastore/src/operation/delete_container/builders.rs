@@ -3,6 +3,23 @@ pub use crate::operation::delete_container::_delete_container_output::DeleteCont
 
 pub use crate::operation::delete_container::_delete_container_input::DeleteContainerInputBuilder;
 
+impl DeleteContainerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_container::DeleteContainerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_container::DeleteContainerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_container();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteContainer`.
 ///
 /// <p>Deletes the specified container. Before you make a <code>DeleteContainer</code> request, delete any objects in the container or in any folders in the container. You can delete only empty containers. </p>

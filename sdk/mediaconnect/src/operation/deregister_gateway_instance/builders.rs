@@ -3,6 +3,23 @@ pub use crate::operation::deregister_gateway_instance::_deregister_gateway_insta
 
 pub use crate::operation::deregister_gateway_instance::_deregister_gateway_instance_input::DeregisterGatewayInstanceInputBuilder;
 
+impl DeregisterGatewayInstanceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::deregister_gateway_instance::DeregisterGatewayInstanceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::deregister_gateway_instance::DeregisterGatewayInstanceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.deregister_gateway_instance();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeregisterGatewayInstance`.
 ///
 /// Deregisters an instance. Before you deregister an instance, all bridges running on the instance must be stopped. If you want to deregister an instance without stopping the bridges, you must use the --force option.

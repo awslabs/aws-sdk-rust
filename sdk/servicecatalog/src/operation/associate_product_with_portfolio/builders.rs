@@ -3,6 +3,23 @@ pub use crate::operation::associate_product_with_portfolio::_associate_product_w
 
 pub use crate::operation::associate_product_with_portfolio::_associate_product_with_portfolio_input::AssociateProductWithPortfolioInputBuilder;
 
+impl AssociateProductWithPortfolioInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_product_with_portfolio::AssociateProductWithPortfolioOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_product_with_portfolio::AssociateProductWithPortfolioError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_product_with_portfolio();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateProductWithPortfolio`.
 ///
 /// <p>Associates the specified product with the specified portfolio.</p>

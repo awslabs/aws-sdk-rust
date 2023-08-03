@@ -3,6 +3,23 @@ pub use crate::operation::delete_simulation::_delete_simulation_output::DeleteSi
 
 pub use crate::operation::delete_simulation::_delete_simulation_input::DeleteSimulationInputBuilder;
 
+impl DeleteSimulationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_simulation::DeleteSimulationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_simulation::DeleteSimulationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_simulation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteSimulation`.
 ///
 /// <p>Deletes all SimSpace Weaver resources assigned to the given simulation.</p> <note>

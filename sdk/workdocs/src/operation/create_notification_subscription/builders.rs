@@ -3,6 +3,23 @@ pub use crate::operation::create_notification_subscription::_create_notification
 
 pub use crate::operation::create_notification_subscription::_create_notification_subscription_input::CreateNotificationSubscriptionInputBuilder;
 
+impl CreateNotificationSubscriptionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_notification_subscription::CreateNotificationSubscriptionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_notification_subscription::CreateNotificationSubscriptionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_notification_subscription();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateNotificationSubscription`.
 ///
 /// <p>Configure Amazon WorkDocs to use Amazon SNS notifications. The endpoint receives a confirmation message, and must confirm the subscription.</p>

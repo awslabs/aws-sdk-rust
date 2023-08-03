@@ -3,6 +3,23 @@ pub use crate::operation::describe_product_as_admin::_describe_product_as_admin_
 
 pub use crate::operation::describe_product_as_admin::_describe_product_as_admin_input::DescribeProductAsAdminInputBuilder;
 
+impl DescribeProductAsAdminInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_product_as_admin::DescribeProductAsAdminOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_product_as_admin::DescribeProductAsAdminError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_product_as_admin();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeProductAsAdmin`.
 ///
 /// <p>Gets information about the specified product. This operation is run with administrator access.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::update_ca_certificate::_update_ca_certificate_output::
 
 pub use crate::operation::update_ca_certificate::_update_ca_certificate_input::UpdateCaCertificateInputBuilder;
 
+impl UpdateCaCertificateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_ca_certificate::UpdateCaCertificateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_ca_certificate::UpdateCACertificateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_ca_certificate();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateCACertificate`.
 ///
 /// <p>Updates a registered CA certificate.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_code_repositories::_list_code_repositories_output
 
 pub use crate::operation::list_code_repositories::_list_code_repositories_input::ListCodeRepositoriesInputBuilder;
 
+impl ListCodeRepositoriesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_code_repositories::ListCodeRepositoriesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_code_repositories::ListCodeRepositoriesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_code_repositories();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListCodeRepositories`.
 ///
 /// <p>Gets a list of the Git repositories in your account.</p>

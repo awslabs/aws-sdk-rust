@@ -3,6 +3,23 @@ pub use crate::operation::put_anomaly_detector::_put_anomaly_detector_output::Pu
 
 pub use crate::operation::put_anomaly_detector::_put_anomaly_detector_input::PutAnomalyDetectorInputBuilder;
 
+impl PutAnomalyDetectorInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_anomaly_detector::PutAnomalyDetectorOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_anomaly_detector::PutAnomalyDetectorError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_anomaly_detector();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutAnomalyDetector`.
 ///
 /// <p>Creates an anomaly detection model for a CloudWatch metric. You can use the model to display a band of expected normal values when the metric is graphed.</p>

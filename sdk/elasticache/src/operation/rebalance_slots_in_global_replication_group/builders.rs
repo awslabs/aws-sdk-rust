@@ -3,6 +3,17 @@ pub use crate::operation::rebalance_slots_in_global_replication_group::_rebalanc
 
 pub use crate::operation::rebalance_slots_in_global_replication_group::_rebalance_slots_in_global_replication_group_input::RebalanceSlotsInGlobalReplicationGroupInputBuilder;
 
+impl RebalanceSlotsInGlobalReplicationGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::rebalance_slots_in_global_replication_group::RebalanceSlotsInGlobalReplicationGroupOutput, ::aws_smithy_http::result::SdkError<crate::operation::rebalance_slots_in_global_replication_group::RebalanceSlotsInGlobalReplicationGroupError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.rebalance_slots_in_global_replication_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RebalanceSlotsInGlobalReplicationGroup`.
 ///
 /// <p>Redistribute slots to ensure uniform distribution across existing shards in the cluster.</p>

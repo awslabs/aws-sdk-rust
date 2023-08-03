@@ -3,6 +3,23 @@ pub use crate::operation::create_app_block_builder::_create_app_block_builder_ou
 
 pub use crate::operation::create_app_block_builder::_create_app_block_builder_input::CreateAppBlockBuilderInputBuilder;
 
+impl CreateAppBlockBuilderInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_app_block_builder::CreateAppBlockBuilderOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_app_block_builder::CreateAppBlockBuilderError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_app_block_builder();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateAppBlockBuilder`.
 ///
 /// <p>Creates an app block builder.</p>

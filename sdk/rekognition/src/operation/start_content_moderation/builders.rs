@@ -3,6 +3,23 @@ pub use crate::operation::start_content_moderation::_start_content_moderation_ou
 
 pub use crate::operation::start_content_moderation::_start_content_moderation_input::StartContentModerationInputBuilder;
 
+impl StartContentModerationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_content_moderation::StartContentModerationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_content_moderation::StartContentModerationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_content_moderation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartContentModeration`.
 ///
 /// <p> Starts asynchronous detection of inappropriate, unwanted, or offensive content in a stored video. For a list of moderation labels in Amazon Rekognition, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/moderation.html#moderation-api">Using the image and video moderation APIs</a>.</p>

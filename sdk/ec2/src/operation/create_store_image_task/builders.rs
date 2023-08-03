@@ -3,6 +3,23 @@ pub use crate::operation::create_store_image_task::_create_store_image_task_outp
 
 pub use crate::operation::create_store_image_task::_create_store_image_task_input::CreateStoreImageTaskInputBuilder;
 
+impl CreateStoreImageTaskInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_store_image_task::CreateStoreImageTaskOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_store_image_task::CreateStoreImageTaskError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_store_image_task();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateStoreImageTask`.
 ///
 /// <p>Stores an AMI as a single object in an Amazon S3 bucket.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_vpc_attachment::_create_vpc_attachment_output::
 
 pub use crate::operation::create_vpc_attachment::_create_vpc_attachment_input::CreateVpcAttachmentInputBuilder;
 
+impl CreateVpcAttachmentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_vpc_attachment::CreateVpcAttachmentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_vpc_attachment::CreateVpcAttachmentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_vpc_attachment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateVpcAttachment`.
 ///
 /// <p>Creates a VPC attachment on an edge location of a core network.</p>

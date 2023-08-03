@@ -3,6 +3,23 @@ pub use crate::operation::list_metrics::_list_metrics_output::ListMetricsOutputB
 
 pub use crate::operation::list_metrics::_list_metrics_input::ListMetricsInputBuilder;
 
+impl ListMetricsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_metrics::ListMetricsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_metrics::ListMetricsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_metrics();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListMetrics`.
 ///
 /// <p>List the specified metrics. You can use the returned metrics with <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricData.html">GetMetricData</a> or <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_GetMetricStatistics.html">GetMetricStatistics</a> to get statistical data.</p>

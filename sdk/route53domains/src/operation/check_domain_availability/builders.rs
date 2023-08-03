@@ -3,6 +3,23 @@ pub use crate::operation::check_domain_availability::_check_domain_availability_
 
 pub use crate::operation::check_domain_availability::_check_domain_availability_input::CheckDomainAvailabilityInputBuilder;
 
+impl CheckDomainAvailabilityInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::check_domain_availability::CheckDomainAvailabilityOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::check_domain_availability::CheckDomainAvailabilityError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.check_domain_availability();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CheckDomainAvailability`.
 ///
 /// <p>This operation checks the availability of one domain name. Note that if the availability status of a domain is pending, you must submit another request to determine the availability of the domain name.</p>

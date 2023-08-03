@@ -3,6 +3,23 @@ pub use crate::operation::get_bucket_policy::_get_bucket_policy_output::GetBucke
 
 pub use crate::operation::get_bucket_policy::_get_bucket_policy_input::GetBucketPolicyInputBuilder;
 
+impl GetBucketPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_bucket_policy::GetBucketPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_bucket_policy::GetBucketPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_bucket_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetBucketPolicy`.
 ///
 /// <p>Returns the policy of a specified bucket. If you are using an identity other than the root user of the Amazon Web Services account that owns the bucket, the calling identity must have the <code>GetBucketPolicy</code> permissions on the specified bucket and belong to the bucket owner's account in order to use this operation.</p>

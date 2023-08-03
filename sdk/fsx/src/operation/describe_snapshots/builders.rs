@@ -3,6 +3,23 @@ pub use crate::operation::describe_snapshots::_describe_snapshots_output::Descri
 
 pub use crate::operation::describe_snapshots::_describe_snapshots_input::DescribeSnapshotsInputBuilder;
 
+impl DescribeSnapshotsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_snapshots::DescribeSnapshotsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_snapshots::DescribeSnapshotsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_snapshots();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeSnapshots`.
 ///
 /// <p>Returns the description of specific Amazon FSx for OpenZFS snapshots, if a <code>SnapshotIds</code> value is provided. Otherwise, this operation returns all snapshots owned by your Amazon Web Services account in the Amazon Web Services Region of the endpoint that you're calling.</p>

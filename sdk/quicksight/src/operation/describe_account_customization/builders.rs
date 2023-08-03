@@ -3,6 +3,23 @@ pub use crate::operation::describe_account_customization::_describe_account_cust
 
 pub use crate::operation::describe_account_customization::_describe_account_customization_input::DescribeAccountCustomizationInputBuilder;
 
+impl DescribeAccountCustomizationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_account_customization::DescribeAccountCustomizationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_account_customization::DescribeAccountCustomizationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_account_customization();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAccountCustomization`.
 ///
 /// <p>Describes the customizations associated with the provided Amazon Web Services account and Amazon Amazon QuickSight namespace in an Amazon Web Services Region. The Amazon QuickSight console evaluates which customizations to apply by running this API operation with the <code>Resolved</code> flag included. </p>

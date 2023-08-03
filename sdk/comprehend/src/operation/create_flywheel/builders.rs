@@ -3,6 +3,23 @@ pub use crate::operation::create_flywheel::_create_flywheel_output::CreateFlywhe
 
 pub use crate::operation::create_flywheel::_create_flywheel_input::CreateFlywheelInputBuilder;
 
+impl CreateFlywheelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_flywheel::CreateFlywheelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_flywheel::CreateFlywheelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_flywheel();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateFlywheel`.
 ///
 /// <p>A flywheel is an Amazon Web Services resource that orchestrates the ongoing training of a model for custom classification or custom entity recognition. You can create a flywheel to start with an existing trained model, or Comprehend can create and train a new model.</p>

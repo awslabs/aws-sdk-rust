@@ -3,6 +3,17 @@ pub use crate::operation::batch_disassociate_assessment_report_evidence::_batch_
 
 pub use crate::operation::batch_disassociate_assessment_report_evidence::_batch_disassociate_assessment_report_evidence_input::BatchDisassociateAssessmentReportEvidenceInputBuilder;
 
+impl BatchDisassociateAssessmentReportEvidenceInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::batch_disassociate_assessment_report_evidence::BatchDisassociateAssessmentReportEvidenceOutput, ::aws_smithy_http::result::SdkError<crate::operation::batch_disassociate_assessment_report_evidence::BatchDisassociateAssessmentReportEvidenceError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.batch_disassociate_assessment_report_evidence();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchDisassociateAssessmentReportEvidence`.
 ///
 /// <p> Disassociates a list of evidence from an assessment report in Audit Manager. </p>

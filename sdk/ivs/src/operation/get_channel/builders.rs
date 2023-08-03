@@ -3,6 +3,23 @@ pub use crate::operation::get_channel::_get_channel_output::GetChannelOutputBuil
 
 pub use crate::operation::get_channel::_get_channel_input::GetChannelInputBuilder;
 
+impl GetChannelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_channel::GetChannelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_channel::GetChannelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_channel();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetChannel`.
 ///
 /// <p>Gets the channel configuration for the specified channel ARN. See also <code>BatchGetChannel</code>.</p>

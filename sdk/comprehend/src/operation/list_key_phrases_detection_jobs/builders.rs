@@ -3,6 +3,23 @@ pub use crate::operation::list_key_phrases_detection_jobs::_list_key_phrases_det
 
 pub use crate::operation::list_key_phrases_detection_jobs::_list_key_phrases_detection_jobs_input::ListKeyPhrasesDetectionJobsInputBuilder;
 
+impl ListKeyPhrasesDetectionJobsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_key_phrases_detection_jobs::ListKeyPhrasesDetectionJobsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_key_phrases_detection_jobs::ListKeyPhrasesDetectionJobsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_key_phrases_detection_jobs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListKeyPhrasesDetectionJobs`.
 ///
 /// <p>Get a list of key phrase detection jobs that you have submitted.</p>

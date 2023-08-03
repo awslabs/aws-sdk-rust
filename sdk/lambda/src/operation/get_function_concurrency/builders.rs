@@ -3,6 +3,23 @@ pub use crate::operation::get_function_concurrency::_get_function_concurrency_ou
 
 pub use crate::operation::get_function_concurrency::_get_function_concurrency_input::GetFunctionConcurrencyInputBuilder;
 
+impl GetFunctionConcurrencyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_function_concurrency::GetFunctionConcurrencyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_function_concurrency::GetFunctionConcurrencyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_function_concurrency();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetFunctionConcurrency`.
 ///
 /// <p>Returns details about the reserved concurrency configuration for a function. To set a concurrency limit for a function, use <code>PutFunctionConcurrency</code>.</p>

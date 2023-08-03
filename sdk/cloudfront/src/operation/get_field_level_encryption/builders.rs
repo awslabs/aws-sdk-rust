@@ -3,6 +3,23 @@ pub use crate::operation::get_field_level_encryption::_get_field_level_encryptio
 
 pub use crate::operation::get_field_level_encryption::_get_field_level_encryption_input::GetFieldLevelEncryptionInputBuilder;
 
+impl GetFieldLevelEncryptionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_field_level_encryption::GetFieldLevelEncryptionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_field_level_encryption::GetFieldLevelEncryptionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_field_level_encryption();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetFieldLevelEncryption`.
 ///
 /// <p>Get the field-level encryption configuration information.</p>

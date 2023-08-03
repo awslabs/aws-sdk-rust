@@ -3,6 +3,23 @@ pub use crate::operation::list_hyper_parameter_tuning_jobs::_list_hyper_paramete
 
 pub use crate::operation::list_hyper_parameter_tuning_jobs::_list_hyper_parameter_tuning_jobs_input::ListHyperParameterTuningJobsInputBuilder;
 
+impl ListHyperParameterTuningJobsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_hyper_parameter_tuning_jobs::ListHyperParameterTuningJobsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_hyper_parameter_tuning_jobs::ListHyperParameterTuningJobsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_hyper_parameter_tuning_jobs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListHyperParameterTuningJobs`.
 ///
 /// <p>Gets a list of <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_HyperParameterTuningJobSummary.html">HyperParameterTuningJobSummary</a> objects that describe the hyperparameter tuning jobs launched in your account.</p>

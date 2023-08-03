@@ -3,6 +3,17 @@ pub use crate::operation::describe_transit_gateway_route_table_announcements::_d
 
 pub use crate::operation::describe_transit_gateway_route_table_announcements::_describe_transit_gateway_route_table_announcements_input::DescribeTransitGatewayRouteTableAnnouncementsInputBuilder;
 
+impl DescribeTransitGatewayRouteTableAnnouncementsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_transit_gateway_route_table_announcements::DescribeTransitGatewayRouteTableAnnouncementsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_transit_gateway_route_table_announcements::DescribeTransitGatewayRouteTableAnnouncementsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_transit_gateway_route_table_announcements();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeTransitGatewayRouteTableAnnouncements`.
 ///
 /// <p>Describes one or more transit gateway route table advertisements.</p>

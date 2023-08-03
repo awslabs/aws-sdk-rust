@@ -3,6 +3,23 @@ pub use crate::operation::update_primary_email_address::_update_primary_email_ad
 
 pub use crate::operation::update_primary_email_address::_update_primary_email_address_input::UpdatePrimaryEmailAddressInputBuilder;
 
+impl UpdatePrimaryEmailAddressInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_primary_email_address::UpdatePrimaryEmailAddressOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_primary_email_address::UpdatePrimaryEmailAddressError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_primary_email_address();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdatePrimaryEmailAddress`.
 ///
 /// <p>Updates the primary email for a user, group, or resource. The current email is moved into the list of aliases (or swapped between an existing alias and the current primary email), and the email provided in the input is promoted as the primary.</p>

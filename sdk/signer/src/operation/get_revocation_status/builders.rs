@@ -3,6 +3,23 @@ pub use crate::operation::get_revocation_status::_get_revocation_status_output::
 
 pub use crate::operation::get_revocation_status::_get_revocation_status_input::GetRevocationStatusInputBuilder;
 
+impl GetRevocationStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_revocation_status::GetRevocationStatusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_revocation_status::GetRevocationStatusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_revocation_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetRevocationStatus`.
 ///
 /// <p>Retrieves the revocation status of one or more of the signing profile, signing job, and signing certificate.</p>

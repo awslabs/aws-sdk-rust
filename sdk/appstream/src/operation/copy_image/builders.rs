@@ -3,6 +3,23 @@ pub use crate::operation::copy_image::_copy_image_output::CopyImageOutputBuilder
 
 pub use crate::operation::copy_image::_copy_image_input::CopyImageInputBuilder;
 
+impl CopyImageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::copy_image::CopyImageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::copy_image::CopyImageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.copy_image();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CopyImage`.
 ///
 /// <p>Copies the image within the same region or to a new region within the same AWS account. Note that any tags you added to the image will not be copied.</p>

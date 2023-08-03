@@ -3,6 +3,17 @@ pub use crate::operation::disassociate_recovery_point_from_parent::_disassociate
 
 pub use crate::operation::disassociate_recovery_point_from_parent::_disassociate_recovery_point_from_parent_input::DisassociateRecoveryPointFromParentInputBuilder;
 
+impl DisassociateRecoveryPointFromParentInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::disassociate_recovery_point_from_parent::DisassociateRecoveryPointFromParentOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_recovery_point_from_parent::DisassociateRecoveryPointFromParentError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.disassociate_recovery_point_from_parent();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateRecoveryPointFromParent`.
 ///
 /// <p>This action to a specific child (nested) recovery point removes the relationship between the specified recovery point and its parent (composite) recovery point.</p>

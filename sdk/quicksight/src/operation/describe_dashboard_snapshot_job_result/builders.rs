@@ -3,6 +3,17 @@ pub use crate::operation::describe_dashboard_snapshot_job_result::_describe_dash
 
 pub use crate::operation::describe_dashboard_snapshot_job_result::_describe_dashboard_snapshot_job_result_input::DescribeDashboardSnapshotJobResultInputBuilder;
 
+impl DescribeDashboardSnapshotJobResultInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_dashboard_snapshot_job_result::DescribeDashboardSnapshotJobResultOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_dashboard_snapshot_job_result::DescribeDashboardSnapshotJobResultError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_dashboard_snapshot_job_result();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeDashboardSnapshotJobResult`.
 ///
 /// <p>Describes the result of an existing snapshot job that has finished running.</p>

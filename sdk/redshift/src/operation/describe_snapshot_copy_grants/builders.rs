@@ -3,6 +3,23 @@ pub use crate::operation::describe_snapshot_copy_grants::_describe_snapshot_copy
 
 pub use crate::operation::describe_snapshot_copy_grants::_describe_snapshot_copy_grants_input::DescribeSnapshotCopyGrantsInputBuilder;
 
+impl DescribeSnapshotCopyGrantsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_snapshot_copy_grants::DescribeSnapshotCopyGrantsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_snapshot_copy_grants::DescribeSnapshotCopyGrantsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_snapshot_copy_grants();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeSnapshotCopyGrants`.
 ///
 /// <p>Returns a list of snapshot copy grants owned by the Amazon Web Services account in the destination region.</p>

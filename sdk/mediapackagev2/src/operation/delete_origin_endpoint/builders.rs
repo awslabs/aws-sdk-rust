@@ -3,6 +3,23 @@ pub use crate::operation::delete_origin_endpoint::_delete_origin_endpoint_output
 
 pub use crate::operation::delete_origin_endpoint::_delete_origin_endpoint_input::DeleteOriginEndpointInputBuilder;
 
+impl DeleteOriginEndpointInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_origin_endpoint::DeleteOriginEndpointOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_origin_endpoint::DeleteOriginEndpointError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_origin_endpoint();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteOriginEndpoint`.
 ///
 /// <p>Origin endpoints can serve content until they're deleted. Delete the endpoint if it should no longer respond to playback requests. You must delete all endpoints from a channel before you can delete the channel.</p>

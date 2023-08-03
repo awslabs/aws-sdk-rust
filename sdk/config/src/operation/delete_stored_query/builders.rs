@@ -3,6 +3,23 @@ pub use crate::operation::delete_stored_query::_delete_stored_query_output::Dele
 
 pub use crate::operation::delete_stored_query::_delete_stored_query_input::DeleteStoredQueryInputBuilder;
 
+impl DeleteStoredQueryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_stored_query::DeleteStoredQueryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_stored_query::DeleteStoredQueryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_stored_query();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteStoredQuery`.
 ///
 /// <p>Deletes the stored query for a single Amazon Web Services account and a single Amazon Web Services Region.</p>

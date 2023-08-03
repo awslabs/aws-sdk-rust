@@ -3,6 +3,23 @@ pub use crate::operation::update_default_mail_domain::_update_default_mail_domai
 
 pub use crate::operation::update_default_mail_domain::_update_default_mail_domain_input::UpdateDefaultMailDomainInputBuilder;
 
+impl UpdateDefaultMailDomainInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_default_mail_domain::UpdateDefaultMailDomainOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_default_mail_domain::UpdateDefaultMailDomainError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_default_mail_domain();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateDefaultMailDomain`.
 ///
 /// <p>Updates the default mail domain for an organization. The default mail domain is used by the WorkMail AWS Console to suggest an email address when enabling a mail user. You can only have one default domain.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_service_instances::_list_service_instances_output
 
 pub use crate::operation::list_service_instances::_list_service_instances_input::ListServiceInstancesInputBuilder;
 
+impl ListServiceInstancesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_service_instances::ListServiceInstancesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_service_instances::ListServiceInstancesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_service_instances();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListServiceInstances`.
 ///
 /// <p>List service instances with summary data. This action lists service instances of all services in the Amazon Web Services account.</p>

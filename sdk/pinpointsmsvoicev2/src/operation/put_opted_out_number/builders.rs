@@ -3,6 +3,23 @@ pub use crate::operation::put_opted_out_number::_put_opted_out_number_output::Pu
 
 pub use crate::operation::put_opted_out_number::_put_opted_out_number_input::PutOptedOutNumberInputBuilder;
 
+impl PutOptedOutNumberInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_opted_out_number::PutOptedOutNumberOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_opted_out_number::PutOptedOutNumberError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_opted_out_number();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutOptedOutNumber`.
 ///
 /// <p>Creates an opted out destination phone number in the opt-out list.</p>

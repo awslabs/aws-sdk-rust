@@ -3,6 +3,17 @@ pub use crate::operation::delete_bucket_inventory_configuration::_delete_bucket_
 
 pub use crate::operation::delete_bucket_inventory_configuration::_delete_bucket_inventory_configuration_input::DeleteBucketInventoryConfigurationInputBuilder;
 
+impl DeleteBucketInventoryConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_bucket_inventory_configuration::DeleteBucketInventoryConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_bucket_inventory_configuration::DeleteBucketInventoryConfigurationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.delete_bucket_inventory_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteBucketInventoryConfiguration`.
 ///
 /// <p>Deletes an inventory configuration (identified by the inventory ID) from the bucket.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_gui_session_access_details::_create_gui_session
 
 pub use crate::operation::create_gui_session_access_details::_create_gui_session_access_details_input::CreateGuiSessionAccessDetailsInputBuilder;
 
+impl CreateGuiSessionAccessDetailsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_gui_session_access_details::CreateGuiSessionAccessDetailsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_gui_session_access_details::CreateGUISessionAccessDetailsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_gui_session_access_details();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateGUISessionAccessDetails`.
 ///
 /// <p>Creates two URLs that are used to access a virtual computer’s graphical user interface (GUI) session. The primary URL initiates a web-based NICE DCV session to the virtual computer's application. The secondary URL initiates a web-based NICE DCV session to the virtual computer's operating session. </p>

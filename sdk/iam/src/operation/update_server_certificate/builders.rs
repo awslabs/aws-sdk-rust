@@ -3,6 +3,23 @@ pub use crate::operation::update_server_certificate::_update_server_certificate_
 
 pub use crate::operation::update_server_certificate::_update_server_certificate_input::UpdateServerCertificateInputBuilder;
 
+impl UpdateServerCertificateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_server_certificate::UpdateServerCertificateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_server_certificate::UpdateServerCertificateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_server_certificate();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateServerCertificate`.
 ///
 /// <p>Updates the name and/or the path of the specified server certificate stored in IAM.</p>

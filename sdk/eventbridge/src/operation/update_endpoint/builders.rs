@@ -3,6 +3,23 @@ pub use crate::operation::update_endpoint::_update_endpoint_output::UpdateEndpoi
 
 pub use crate::operation::update_endpoint::_update_endpoint_input::UpdateEndpointInputBuilder;
 
+impl UpdateEndpointInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_endpoint::UpdateEndpointOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_endpoint::UpdateEndpointError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_endpoint();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateEndpoint`.
 ///
 /// <p>Update an existing endpoint. For more information about global endpoints, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-global-endpoints.html">Making applications Regional-fault tolerant with global endpoints and event replication</a> in the Amazon EventBridge User Guide..</p>

@@ -3,6 +3,17 @@ pub use crate::operation::describe_transit_gateway_peering_attachments::_describ
 
 pub use crate::operation::describe_transit_gateway_peering_attachments::_describe_transit_gateway_peering_attachments_input::DescribeTransitGatewayPeeringAttachmentsInputBuilder;
 
+impl DescribeTransitGatewayPeeringAttachmentsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_transit_gateway_peering_attachments::DescribeTransitGatewayPeeringAttachmentsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_transit_gateway_peering_attachments::DescribeTransitGatewayPeeringAttachmentsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_transit_gateway_peering_attachments();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeTransitGatewayPeeringAttachments`.
 ///
 /// <p>Describes your transit gateway peering attachments.</p>

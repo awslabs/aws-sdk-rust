@@ -3,6 +3,23 @@ pub use crate::operation::untag_delivery_stream::_untag_delivery_stream_output::
 
 pub use crate::operation::untag_delivery_stream::_untag_delivery_stream_input::UntagDeliveryStreamInputBuilder;
 
+impl UntagDeliveryStreamInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::untag_delivery_stream::UntagDeliveryStreamOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::untag_delivery_stream::UntagDeliveryStreamError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.untag_delivery_stream();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UntagDeliveryStream`.
 ///
 /// <p>Removes tags from the specified delivery stream. Removed tags are deleted, and you can't recover them after this operation successfully completes.</p>

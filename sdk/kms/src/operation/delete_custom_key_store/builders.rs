@@ -3,6 +3,23 @@ pub use crate::operation::delete_custom_key_store::_delete_custom_key_store_outp
 
 pub use crate::operation::delete_custom_key_store::_delete_custom_key_store_input::DeleteCustomKeyStoreInputBuilder;
 
+impl DeleteCustomKeyStoreInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_custom_key_store::DeleteCustomKeyStoreOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_custom_key_store::DeleteCustomKeyStoreError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_custom_key_store();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteCustomKeyStore`.
 ///
 /// <p>Deletes a <a href="https://docs.aws.amazon.com/kms/latest/developerguide/custom-key-store-overview.html">custom key store</a>. This operation does not affect any backing elements of the custom key store. It does not delete the CloudHSM cluster that is associated with an CloudHSM key store, or affect any users or keys in the cluster. For an external key store, it does not affect the external key store proxy, external key manager, or any external keys.</p>

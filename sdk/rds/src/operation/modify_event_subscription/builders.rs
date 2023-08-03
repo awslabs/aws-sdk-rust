@@ -3,6 +3,23 @@ pub use crate::operation::modify_event_subscription::_modify_event_subscription_
 
 pub use crate::operation::modify_event_subscription::_modify_event_subscription_input::ModifyEventSubscriptionInputBuilder;
 
+impl ModifyEventSubscriptionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_event_subscription::ModifyEventSubscriptionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_event_subscription::ModifyEventSubscriptionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_event_subscription();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyEventSubscription`.
 ///
 /// <p>Modifies an existing RDS event notification subscription. You can't modify the source identifiers using this call. To change source identifiers for a subscription, use the <code>AddSourceIdentifierToSubscription</code> and <code>RemoveSourceIdentifierFromSubscription</code> calls.</p>

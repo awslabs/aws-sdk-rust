@@ -3,6 +3,23 @@ pub use crate::operation::delete_campaign::_delete_campaign_output::DeleteCampai
 
 pub use crate::operation::delete_campaign::_delete_campaign_input::DeleteCampaignInputBuilder;
 
+impl DeleteCampaignInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_campaign::DeleteCampaignOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_campaign::DeleteCampaignError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_campaign();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteCampaign`.
 ///
 /// <p>Removes a campaign by deleting the solution deployment. The solution that the campaign is based on is not deleted and can be redeployed when needed. A deleted campaign can no longer be specified in a <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a> request. For information on creating campaigns, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateCampaign.html">CreateCampaign</a>.</p>

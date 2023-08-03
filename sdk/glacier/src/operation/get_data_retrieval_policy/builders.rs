@@ -3,6 +3,23 @@ pub use crate::operation::get_data_retrieval_policy::_get_data_retrieval_policy_
 
 pub use crate::operation::get_data_retrieval_policy::_get_data_retrieval_policy_input::GetDataRetrievalPolicyInputBuilder;
 
+impl GetDataRetrievalPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_data_retrieval_policy::GetDataRetrievalPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_data_retrieval_policy::GetDataRetrievalPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_data_retrieval_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetDataRetrievalPolicy`.
 ///
 /// <p>This operation returns the current data retrieval policy for the account and region specified in the GET request. For more information about data retrieval policies, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/data-retrieval-policy.html">Amazon Glacier Data Retrieval Policies</a>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::batch_detect_sentiment::_batch_detect_sentiment_output
 
 pub use crate::operation::batch_detect_sentiment::_batch_detect_sentiment_input::BatchDetectSentimentInputBuilder;
 
+impl BatchDetectSentimentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_detect_sentiment::BatchDetectSentimentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_detect_sentiment::BatchDetectSentimentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_detect_sentiment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchDetectSentiment`.
 ///
 /// <p>Inspects a batch of documents and returns an inference of the prevailing sentiment, <code>POSITIVE</code>, <code>NEUTRAL</code>, <code>MIXED</code>, or <code>NEGATIVE</code>, in each one.</p>

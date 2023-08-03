@@ -3,6 +3,17 @@ pub use crate::operation::put_configuration_set_delivery_options::_put_configura
 
 pub use crate::operation::put_configuration_set_delivery_options::_put_configuration_set_delivery_options_input::PutConfigurationSetDeliveryOptionsInputBuilder;
 
+impl PutConfigurationSetDeliveryOptionsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::put_configuration_set_delivery_options::PutConfigurationSetDeliveryOptionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_configuration_set_delivery_options::PutConfigurationSetDeliveryOptionsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.put_configuration_set_delivery_options();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutConfigurationSetDeliveryOptions`.
 ///
 /// <p>Adds or updates the delivery options for a configuration set.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::update_flywheel::_update_flywheel_output::UpdateFlywhe
 
 pub use crate::operation::update_flywheel::_update_flywheel_input::UpdateFlywheelInputBuilder;
 
+impl UpdateFlywheelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_flywheel::UpdateFlywheelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_flywheel::UpdateFlywheelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_flywheel();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateFlywheel`.
 ///
 /// <p>Update the configuration information for an existing flywheel.</p>

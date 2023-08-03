@@ -3,6 +3,23 @@ pub use crate::operation::batch_associate_scram_secret::_batch_associate_scram_s
 
 pub use crate::operation::batch_associate_scram_secret::_batch_associate_scram_secret_input::BatchAssociateScramSecretInputBuilder;
 
+impl BatchAssociateScramSecretInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_associate_scram_secret::BatchAssociateScramSecretOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_associate_scram_secret::BatchAssociateScramSecretError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_associate_scram_secret();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchAssociateScramSecret`.
 ///
 /// <p>Associates one or more Scram Secrets with an Amazon MSK cluster.</p>

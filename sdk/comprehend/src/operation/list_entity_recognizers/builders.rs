@@ -3,6 +3,23 @@ pub use crate::operation::list_entity_recognizers::_list_entity_recognizers_outp
 
 pub use crate::operation::list_entity_recognizers::_list_entity_recognizers_input::ListEntityRecognizersInputBuilder;
 
+impl ListEntityRecognizersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_entity_recognizers::ListEntityRecognizersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_entity_recognizers::ListEntityRecognizersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_entity_recognizers();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListEntityRecognizers`.
 ///
 /// <p>Gets a list of the properties of all entity recognizers that you created, including recognizers currently in training. Allows you to filter the list of recognizers based on criteria such as status and submission time. This call returns up to 500 entity recognizers in the list, with a default number of 100 recognizers in the list.</p>

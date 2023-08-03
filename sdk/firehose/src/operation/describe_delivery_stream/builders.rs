@@ -3,6 +3,23 @@ pub use crate::operation::describe_delivery_stream::_describe_delivery_stream_ou
 
 pub use crate::operation::describe_delivery_stream::_describe_delivery_stream_input::DescribeDeliveryStreamInputBuilder;
 
+impl DescribeDeliveryStreamInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_delivery_stream::DescribeDeliveryStreamOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_delivery_stream::DescribeDeliveryStreamError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_delivery_stream();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeDeliveryStream`.
 ///
 /// <p>Describes the specified delivery stream and its status. For example, after your delivery stream is created, call <code>DescribeDeliveryStream</code> to see whether the delivery stream is <code>ACTIVE</code> and therefore ready for data to be sent to it. </p>

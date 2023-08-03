@@ -3,6 +3,23 @@ pub use crate::operation::delete_policy_version::_delete_policy_version_output::
 
 pub use crate::operation::delete_policy_version::_delete_policy_version_input::DeletePolicyVersionInputBuilder;
 
+impl DeletePolicyVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_policy_version::DeletePolicyVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_policy_version::DeletePolicyVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_policy_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeletePolicyVersion`.
 ///
 /// <p>Deletes the specified version of the specified policy. You cannot delete the default version of a policy using this action. To delete the default version of a policy, use <code>DeletePolicy</code>. To find out which version of a policy is marked as the default version, use ListPolicyVersions.</p>

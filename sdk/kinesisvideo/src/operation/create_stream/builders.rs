@@ -3,6 +3,23 @@ pub use crate::operation::create_stream::_create_stream_output::CreateStreamOutp
 
 pub use crate::operation::create_stream::_create_stream_input::CreateStreamInputBuilder;
 
+impl CreateStreamInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_stream::CreateStreamOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_stream::CreateStreamError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_stream();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateStream`.
 ///
 /// <p>Creates a new Kinesis video stream. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::start_session::_start_session_output::StartSessionOutp
 
 pub use crate::operation::start_session::_start_session_input::StartSessionInputBuilder;
 
+impl StartSessionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_session::StartSessionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_session::StartSessionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_session();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartSession`.
 ///
 /// <p>Initiates a connection to a target (for example, a managed node) for a Session Manager session. Returns a URL and token that can be used to open a WebSocket connection for sending input and receiving outputs.</p> <note>

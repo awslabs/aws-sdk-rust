@@ -3,6 +3,23 @@ pub use crate::operation::describe_ml_models::_describe_ml_models_output::Descri
 
 pub use crate::operation::describe_ml_models::_describe_ml_models_input::DescribeMlModelsInputBuilder;
 
+impl DescribeMlModelsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_ml_models::DescribeMlModelsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_ml_models::DescribeMLModelsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_ml_models();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeMLModels`.
 ///
 /// <p>Returns a list of <code>MLModel</code> that match the search criteria in the request.</p>

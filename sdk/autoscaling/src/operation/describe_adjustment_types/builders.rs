@@ -3,6 +3,23 @@ pub use crate::operation::describe_adjustment_types::_describe_adjustment_types_
 
 pub use crate::operation::describe_adjustment_types::_describe_adjustment_types_input::DescribeAdjustmentTypesInputBuilder;
 
+impl DescribeAdjustmentTypesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_adjustment_types::DescribeAdjustmentTypesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_adjustment_types::DescribeAdjustmentTypesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_adjustment_types();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAdjustmentTypes`.
 ///
 /// <p>Describes the available adjustment types for step scaling and simple scaling policies.</p>

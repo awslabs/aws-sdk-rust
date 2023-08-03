@@ -3,6 +3,23 @@ pub use crate::operation::create_batch_load_task::_create_batch_load_task_output
 
 pub use crate::operation::create_batch_load_task::_create_batch_load_task_input::CreateBatchLoadTaskInputBuilder;
 
+impl CreateBatchLoadTaskInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_batch_load_task::CreateBatchLoadTaskOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_batch_load_task::CreateBatchLoadTaskError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_batch_load_task();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateBatchLoadTask`.
 ///
 /// <p>Creates a new Timestream batch load task. A batch load task processes data from a CSV source in an S3 location and writes to a Timestream table. A mapping from source to target is defined in a batch load task. Errors and events are written to a report at an S3 location. For the report, if the KMS key is not specified, the report will be encrypted with an S3 managed key when <code>SSE_S3</code> is the option. Otherwise an error is thrown. For more information, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#aws-managed-cmk">Amazon Web Services managed keys</a>. <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Service quotas apply</a>. For details, see <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.create-batch-load.html">code sample</a>.</p>

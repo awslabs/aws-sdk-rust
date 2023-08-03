@@ -3,6 +3,23 @@ pub use crate::operation::describe_compute::_describe_compute_output::DescribeCo
 
 pub use crate::operation::describe_compute::_describe_compute_input::DescribeComputeInputBuilder;
 
+impl DescribeComputeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_compute::DescribeComputeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_compute::DescribeComputeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_compute();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeCompute`.
 ///
 /// <p>Retrieves properties for a compute resource. To request a compute resource specify the fleet ID and compute name. If successful, Amazon GameLift returns an object containing the build properties.</p>

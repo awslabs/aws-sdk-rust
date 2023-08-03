@@ -3,6 +3,23 @@ pub use crate::operation::list_medical_transcription_jobs::_list_medical_transcr
 
 pub use crate::operation::list_medical_transcription_jobs::_list_medical_transcription_jobs_input::ListMedicalTranscriptionJobsInputBuilder;
 
+impl ListMedicalTranscriptionJobsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_medical_transcription_jobs::ListMedicalTranscriptionJobsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_medical_transcription_jobs::ListMedicalTranscriptionJobsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_medical_transcription_jobs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListMedicalTranscriptionJobs`.
 ///
 /// <p>Provides a list of medical transcription jobs that match the specified criteria. If no criteria are specified, all medical transcription jobs are returned.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_policy::_create_policy_output::CreatePolicyOutp
 
 pub use crate::operation::create_policy::_create_policy_input::CreatePolicyInputBuilder;
 
+impl CreatePolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_policy::CreatePolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_policy::CreatePolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreatePolicy`.
 ///
 /// <p>Creates a policy of a specified type that you can attach to a root, an organizational unit (OU), or an individual Amazon Web Services account.</p>

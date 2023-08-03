@@ -3,6 +3,23 @@ pub use crate::operation::describe_dataset_group::_describe_dataset_group_output
 
 pub use crate::operation::describe_dataset_group::_describe_dataset_group_input::DescribeDatasetGroupInputBuilder;
 
+impl DescribeDatasetGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_dataset_group::DescribeDatasetGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_dataset_group::DescribeDatasetGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_dataset_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeDatasetGroup`.
 ///
 /// <p>Describes a dataset group created using the <a href="https://docs.aws.amazon.com/forecast/latest/dg/API_CreateDatasetGroup.html">CreateDatasetGroup</a> operation.</p>

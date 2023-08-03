@@ -3,6 +3,23 @@ pub use crate::operation::list_resolver_rules::_list_resolver_rules_output::List
 
 pub use crate::operation::list_resolver_rules::_list_resolver_rules_input::ListResolverRulesInputBuilder;
 
+impl ListResolverRulesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_resolver_rules::ListResolverRulesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_resolver_rules::ListResolverRulesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_resolver_rules();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListResolverRules`.
 ///
 /// <p>Lists the Resolver rules that were created using the current Amazon Web Services account.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::put_bandwidth_rate_limit_schedule::_put_bandwidth_rate
 
 pub use crate::operation::put_bandwidth_rate_limit_schedule::_put_bandwidth_rate_limit_schedule_input::PutBandwidthRateLimitScheduleInputBuilder;
 
+impl PutBandwidthRateLimitScheduleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_bandwidth_rate_limit_schedule::PutBandwidthRateLimitScheduleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_bandwidth_rate_limit_schedule::PutBandwidthRateLimitScheduleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_bandwidth_rate_limit_schedule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutBandwidthRateLimitSchedule`.
 ///
 /// <p>This action sets the bandwidth rate limit schedule for a specified gateway. By default, gateways do not have a bandwidth rate limit schedule, which means no bandwidth rate limiting is in effect. Use this to initiate a gateway's bandwidth rate limit schedule.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_replication_instances::_describe_replication_
 
 pub use crate::operation::describe_replication_instances::_describe_replication_instances_input::DescribeReplicationInstancesInputBuilder;
 
+impl DescribeReplicationInstancesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_replication_instances::DescribeReplicationInstancesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_replication_instances::DescribeReplicationInstancesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_replication_instances();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeReplicationInstances`.
 ///
 /// <p>Returns information about replication instances for your account in the current region.</p>

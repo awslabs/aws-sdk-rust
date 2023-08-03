@@ -3,6 +3,23 @@ pub use crate::operation::list_assessment_runs::_list_assessment_runs_output::Li
 
 pub use crate::operation::list_assessment_runs::_list_assessment_runs_input::ListAssessmentRunsInputBuilder;
 
+impl ListAssessmentRunsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_assessment_runs::ListAssessmentRunsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_assessment_runs::ListAssessmentRunsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_assessment_runs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAssessmentRuns`.
 ///
 /// <p>Lists the assessment runs that correspond to the assessment templates that are specified by the ARNs of the assessment templates.</p>

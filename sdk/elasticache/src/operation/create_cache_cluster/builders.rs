@@ -3,6 +3,23 @@ pub use crate::operation::create_cache_cluster::_create_cache_cluster_output::Cr
 
 pub use crate::operation::create_cache_cluster::_create_cache_cluster_input::CreateCacheClusterInputBuilder;
 
+impl CreateCacheClusterInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_cache_cluster::CreateCacheClusterOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_cache_cluster::CreateCacheClusterError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_cache_cluster();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateCacheCluster`.
 ///
 /// <p>Creates a cluster. All nodes in the cluster run the same protocol-compliant cache engine software, either Memcached or Redis.</p>

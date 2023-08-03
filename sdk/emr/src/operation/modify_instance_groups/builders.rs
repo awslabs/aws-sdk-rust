@@ -3,6 +3,23 @@ pub use crate::operation::modify_instance_groups::_modify_instance_groups_output
 
 pub use crate::operation::modify_instance_groups::_modify_instance_groups_input::ModifyInstanceGroupsInputBuilder;
 
+impl ModifyInstanceGroupsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_instance_groups::ModifyInstanceGroupsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_instance_groups::ModifyInstanceGroupsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_instance_groups();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyInstanceGroups`.
 ///
 /// <p>ModifyInstanceGroups modifies the number of nodes and configuration settings of an instance group. The input parameters include the new target instance count for the group and the instance group ID. The call will either succeed or fail atomically.</p>

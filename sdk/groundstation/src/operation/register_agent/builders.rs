@@ -3,6 +3,23 @@ pub use crate::operation::register_agent::_register_agent_output::RegisterAgentO
 
 pub use crate::operation::register_agent::_register_agent_input::RegisterAgentInputBuilder;
 
+impl RegisterAgentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::register_agent::RegisterAgentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::register_agent::RegisterAgentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.register_agent();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RegisterAgent`.
 ///
 /// <note>

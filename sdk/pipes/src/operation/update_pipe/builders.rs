@@ -3,6 +3,23 @@ pub use crate::operation::update_pipe::_update_pipe_output::UpdatePipeOutputBuil
 
 pub use crate::operation::update_pipe::_update_pipe_input::UpdatePipeInputBuilder;
 
+impl UpdatePipeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_pipe::UpdatePipeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_pipe::UpdatePipeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_pipe();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdatePipe`.
 ///
 /// <p>Update an existing pipe. When you call <code>UpdatePipe</code>, only the fields that are included in the request are changed, the rest are unchanged. The exception to this is if you modify any Amazon Web Services-service specific fields in the <code>SourceParameters</code>, <code>EnrichmentParameters</code>, or <code>TargetParameters</code> objects. The fields in these objects are updated atomically as one and override existing values. This is by design and means that if you don't specify an optional field in one of these Parameters objects, that field will be set to its system-default value after the update.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_storage_virtual_machine::_delete_storage_virtua
 
 pub use crate::operation::delete_storage_virtual_machine::_delete_storage_virtual_machine_input::DeleteStorageVirtualMachineInputBuilder;
 
+impl DeleteStorageVirtualMachineInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_storage_virtual_machine::DeleteStorageVirtualMachineOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_storage_virtual_machine::DeleteStorageVirtualMachineError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_storage_virtual_machine();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteStorageVirtualMachine`.
 ///
 /// <p>Deletes an existing Amazon FSx for ONTAP storage virtual machine (SVM). Prior to deleting an SVM, you must delete all non-root volumes in the SVM, otherwise the operation will fail.</p>

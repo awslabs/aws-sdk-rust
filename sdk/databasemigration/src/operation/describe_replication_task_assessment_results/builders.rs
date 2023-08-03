@@ -3,6 +3,17 @@ pub use crate::operation::describe_replication_task_assessment_results::_describ
 
 pub use crate::operation::describe_replication_task_assessment_results::_describe_replication_task_assessment_results_input::DescribeReplicationTaskAssessmentResultsInputBuilder;
 
+impl DescribeReplicationTaskAssessmentResultsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_replication_task_assessment_results::DescribeReplicationTaskAssessmentResultsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_replication_task_assessment_results::DescribeReplicationTaskAssessmentResultsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_replication_task_assessment_results();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeReplicationTaskAssessmentResults`.
 ///
 /// <p>Returns the task assessment results from the Amazon S3 bucket that DMS creates in your Amazon Web Services account. This action always returns the latest results.</p>

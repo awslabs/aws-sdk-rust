@@ -3,6 +3,23 @@ pub use crate::operation::list_managed_rule_sets::_list_managed_rule_sets_output
 
 pub use crate::operation::list_managed_rule_sets::_list_managed_rule_sets_input::ListManagedRuleSetsInputBuilder;
 
+impl ListManagedRuleSetsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_managed_rule_sets::ListManagedRuleSetsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_managed_rule_sets::ListManagedRuleSetsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_managed_rule_sets();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListManagedRuleSets`.
 ///
 /// <p>Retrieves the managed rule sets that you own. </p> <note>

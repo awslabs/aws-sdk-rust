@@ -3,6 +3,23 @@ pub use crate::operation::create_labels::_create_labels_output::CreateLabelsOutp
 
 pub use crate::operation::create_labels::_create_labels_input::CreateLabelsInputBuilder;
 
+impl CreateLabelsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_labels::CreateLabelsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_labels::CreateLabelsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_labels();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateLabels`.
 ///
 /// <p>Adds the specified list of labels to the given resource (a document or folder)</p>

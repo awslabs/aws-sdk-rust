@@ -3,6 +3,23 @@ pub use crate::operation::cancel_batch_prediction_job::_cancel_batch_prediction_
 
 pub use crate::operation::cancel_batch_prediction_job::_cancel_batch_prediction_job_input::CancelBatchPredictionJobInputBuilder;
 
+impl CancelBatchPredictionJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::cancel_batch_prediction_job::CancelBatchPredictionJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::cancel_batch_prediction_job::CancelBatchPredictionJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.cancel_batch_prediction_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CancelBatchPredictionJob`.
 ///
 /// <p>Cancels the specified batch prediction job.</p>

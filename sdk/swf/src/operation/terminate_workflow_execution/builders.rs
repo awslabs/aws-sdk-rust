@@ -3,6 +3,23 @@ pub use crate::operation::terminate_workflow_execution::_terminate_workflow_exec
 
 pub use crate::operation::terminate_workflow_execution::_terminate_workflow_execution_input::TerminateWorkflowExecutionInputBuilder;
 
+impl TerminateWorkflowExecutionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::terminate_workflow_execution::TerminateWorkflowExecutionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::terminate_workflow_execution::TerminateWorkflowExecutionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.terminate_workflow_execution();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `TerminateWorkflowExecution`.
 ///
 /// <p>Records a <code>WorkflowExecutionTerminated</code> event and forces closure of the workflow execution identified by the given domain, runId, and workflowId. The child policy, registered with the workflow type or specified when starting this execution, is applied to any open child workflow executions of this workflow execution.</p> <important>

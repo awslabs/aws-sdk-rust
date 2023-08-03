@@ -3,6 +3,23 @@ pub use crate::operation::get_detector_version::_get_detector_version_output::Ge
 
 pub use crate::operation::get_detector_version::_get_detector_version_input::GetDetectorVersionInputBuilder;
 
+impl GetDetectorVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_detector_version::GetDetectorVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_detector_version::GetDetectorVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_detector_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetDetectorVersion`.
 ///
 /// <p>Gets a particular detector version. </p>

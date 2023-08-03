@@ -3,6 +3,23 @@ pub use crate::operation::modify_vpc_attribute::_modify_vpc_attribute_output::Mo
 
 pub use crate::operation::modify_vpc_attribute::_modify_vpc_attribute_input::ModifyVpcAttributeInputBuilder;
 
+impl ModifyVpcAttributeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_vpc_attribute::ModifyVpcAttributeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_vpc_attribute::ModifyVpcAttributeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_vpc_attribute();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyVpcAttribute`.
 ///
 /// <p>Modifies the specified attribute of the specified VPC.</p>

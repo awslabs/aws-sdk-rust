@@ -3,6 +3,23 @@ pub use crate::operation::create_trial::_create_trial_output::CreateTrialOutputB
 
 pub use crate::operation::create_trial::_create_trial_input::CreateTrialInputBuilder;
 
+impl CreateTrialInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_trial::CreateTrialOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_trial::CreateTrialError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_trial();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateTrial`.
 ///
 /// <p>Creates an SageMaker <i>trial</i>. A trial is a set of steps called <i>trial components</i> that produce a machine learning model. A trial is part of a single SageMaker <i>experiment</i>.</p>

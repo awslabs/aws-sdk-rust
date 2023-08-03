@@ -3,6 +3,23 @@ pub use crate::operation::create_revision::_create_revision_output::CreateRevisi
 
 pub use crate::operation::create_revision::_create_revision_input::CreateRevisionInputBuilder;
 
+impl CreateRevisionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_revision::CreateRevisionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_revision::CreateRevisionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_revision();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateRevision`.
 ///
 /// <p>This operation creates a revision for a data set.</p>

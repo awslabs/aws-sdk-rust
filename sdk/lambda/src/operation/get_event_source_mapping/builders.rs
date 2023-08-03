@@ -3,6 +3,23 @@ pub use crate::operation::get_event_source_mapping::_get_event_source_mapping_ou
 
 pub use crate::operation::get_event_source_mapping::_get_event_source_mapping_input::GetEventSourceMappingInputBuilder;
 
+impl GetEventSourceMappingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_event_source_mapping::GetEventSourceMappingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_event_source_mapping::GetEventSourceMappingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_event_source_mapping();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetEventSourceMapping`.
 ///
 /// <p>Returns details about an event source mapping. You can get the identifier of a mapping from the output of <code>ListEventSourceMappings</code>.</p>

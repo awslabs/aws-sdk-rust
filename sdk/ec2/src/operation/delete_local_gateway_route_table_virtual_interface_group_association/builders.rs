@@ -3,6 +3,18 @@ pub use crate::operation::delete_local_gateway_route_table_virtual_interface_gro
 
 pub use crate::operation::delete_local_gateway_route_table_virtual_interface_group_association::_delete_local_gateway_route_table_virtual_interface_group_association_input::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationInputBuilder;
 
+impl DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_local_gateway_route_table_virtual_interface_group_association::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_local_gateway_route_table_virtual_interface_group_association::DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder =
+            client.delete_local_gateway_route_table_virtual_interface_group_association();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociation`.
 ///
 /// <p> Deletes a local gateway route table virtual interface group association. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_principal_mapping::_delete_principal_mapping_ou
 
 pub use crate::operation::delete_principal_mapping::_delete_principal_mapping_input::DeletePrincipalMappingInputBuilder;
 
+impl DeletePrincipalMappingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_principal_mapping::DeletePrincipalMappingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_principal_mapping::DeletePrincipalMappingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_principal_mapping();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeletePrincipalMapping`.
 ///
 /// <p>Deletes a group so that all users and sub groups that belong to the group can no longer access documents only available to that group.</p>

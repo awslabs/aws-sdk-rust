@@ -3,6 +3,23 @@ pub use crate::operation::get_transit_gateway_peering::_get_transit_gateway_peer
 
 pub use crate::operation::get_transit_gateway_peering::_get_transit_gateway_peering_input::GetTransitGatewayPeeringInputBuilder;
 
+impl GetTransitGatewayPeeringInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_transit_gateway_peering::GetTransitGatewayPeeringOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_transit_gateway_peering::GetTransitGatewayPeeringError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_transit_gateway_peering();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetTransitGatewayPeering`.
 ///
 /// <p>Returns information about a transit gateway peer.</p>

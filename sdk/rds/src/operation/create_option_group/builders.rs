@@ -3,6 +3,23 @@ pub use crate::operation::create_option_group::_create_option_group_output::Crea
 
 pub use crate::operation::create_option_group::_create_option_group_input::CreateOptionGroupInputBuilder;
 
+impl CreateOptionGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_option_group::CreateOptionGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_option_group::CreateOptionGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_option_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateOptionGroup`.
 ///
 /// <p>Creates a new option group. You can create up to 20 option groups.</p>

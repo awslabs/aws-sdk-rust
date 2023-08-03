@@ -3,6 +3,23 @@ pub use crate::operation::update_usage::_update_usage_output::UpdateUsageOutputB
 
 pub use crate::operation::update_usage::_update_usage_input::UpdateUsageInputBuilder;
 
+impl UpdateUsageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_usage::UpdateUsageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_usage::UpdateUsageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_usage();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateUsage`.
 ///
 /// <p>Grants a temporary extension to the remaining quota of a usage plan associated with a specified API key.</p>

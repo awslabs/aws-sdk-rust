@@ -3,6 +3,23 @@ pub use crate::operation::deregister_volume::_deregister_volume_output::Deregist
 
 pub use crate::operation::deregister_volume::_deregister_volume_input::DeregisterVolumeInputBuilder;
 
+impl DeregisterVolumeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::deregister_volume::DeregisterVolumeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::deregister_volume::DeregisterVolumeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.deregister_volume();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeregisterVolume`.
 ///
 /// <p>Deregisters an Amazon EBS volume. The volume can then be registered by another stack. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p>

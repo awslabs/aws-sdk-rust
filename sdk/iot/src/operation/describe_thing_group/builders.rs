@@ -3,6 +3,23 @@ pub use crate::operation::describe_thing_group::_describe_thing_group_output::De
 
 pub use crate::operation::describe_thing_group::_describe_thing_group_input::DescribeThingGroupInputBuilder;
 
+impl DescribeThingGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_thing_group::DescribeThingGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_thing_group::DescribeThingGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_thing_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeThingGroup`.
 ///
 /// <p>Describe a thing group.</p>

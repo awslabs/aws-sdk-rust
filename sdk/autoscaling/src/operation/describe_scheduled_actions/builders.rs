@@ -3,6 +3,23 @@ pub use crate::operation::describe_scheduled_actions::_describe_scheduled_action
 
 pub use crate::operation::describe_scheduled_actions::_describe_scheduled_actions_input::DescribeScheduledActionsInputBuilder;
 
+impl DescribeScheduledActionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_scheduled_actions::DescribeScheduledActionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_scheduled_actions::DescribeScheduledActionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_scheduled_actions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeScheduledActions`.
 ///
 /// <p>Gets information about the scheduled actions that haven't run or that have not reached their end time.</p>

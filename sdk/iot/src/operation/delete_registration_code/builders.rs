@@ -3,6 +3,23 @@ pub use crate::operation::delete_registration_code::_delete_registration_code_ou
 
 pub use crate::operation::delete_registration_code::_delete_registration_code_input::DeleteRegistrationCodeInputBuilder;
 
+impl DeleteRegistrationCodeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_registration_code::DeleteRegistrationCodeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_registration_code::DeleteRegistrationCodeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_registration_code();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteRegistrationCode`.
 ///
 /// <p>Deletes a CA certificate registration code.</p>

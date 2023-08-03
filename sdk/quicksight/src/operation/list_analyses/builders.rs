@@ -3,6 +3,23 @@ pub use crate::operation::list_analyses::_list_analyses_output::ListAnalysesOutp
 
 pub use crate::operation::list_analyses::_list_analyses_input::ListAnalysesInputBuilder;
 
+impl ListAnalysesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_analyses::ListAnalysesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_analyses::ListAnalysesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_analyses();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAnalyses`.
 ///
 /// <p>Lists Amazon QuickSight analyses that exist in the specified Amazon Web Services account.</p>

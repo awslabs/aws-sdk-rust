@@ -3,6 +3,23 @@ pub use crate::operation::delete_signing_certificate::_delete_signing_certificat
 
 pub use crate::operation::delete_signing_certificate::_delete_signing_certificate_input::DeleteSigningCertificateInputBuilder;
 
+impl DeleteSigningCertificateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_signing_certificate::DeleteSigningCertificateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_signing_certificate::DeleteSigningCertificateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_signing_certificate();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteSigningCertificate`.
 ///
 /// <p>Deletes a signing certificate associated with the specified IAM user.</p>

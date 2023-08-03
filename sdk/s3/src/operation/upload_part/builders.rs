@@ -3,6 +3,23 @@ pub use crate::operation::upload_part::_upload_part_output::UploadPartOutputBuil
 
 pub use crate::operation::upload_part::_upload_part_input::UploadPartInputBuilder;
 
+impl UploadPartInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::upload_part::UploadPartOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::upload_part::UploadPartError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.upload_part();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UploadPart`.
 ///
 /// <p>Uploads a part in a multipart upload.</p> <note>

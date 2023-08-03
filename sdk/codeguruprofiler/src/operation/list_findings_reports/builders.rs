@@ -3,6 +3,23 @@ pub use crate::operation::list_findings_reports::_list_findings_reports_output::
 
 pub use crate::operation::list_findings_reports::_list_findings_reports_input::ListFindingsReportsInputBuilder;
 
+impl ListFindingsReportsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_findings_reports::ListFindingsReportsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_findings_reports::ListFindingsReportsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_findings_reports();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListFindingsReports`.
 ///
 /// <p>List the available reports for a given profiling group and time range.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::unarchive_wave::_unarchive_wave_output::UnarchiveWaveO
 
 pub use crate::operation::unarchive_wave::_unarchive_wave_input::UnarchiveWaveInputBuilder;
 
+impl UnarchiveWaveInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::unarchive_wave::UnarchiveWaveOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::unarchive_wave::UnarchiveWaveError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.unarchive_wave();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UnarchiveWave`.
 ///
 /// <p>Unarchive wave.</p>

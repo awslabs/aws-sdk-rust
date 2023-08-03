@@ -3,6 +3,23 @@ pub use crate::operation::get_ui_customization::_get_ui_customization_output::Ge
 
 pub use crate::operation::get_ui_customization::_get_ui_customization_input::GetUiCustomizationInputBuilder;
 
+impl GetUiCustomizationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_ui_customization::GetUiCustomizationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_ui_customization::GetUICustomizationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_ui_customization();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetUICustomization`.
 ///
 /// <p>Gets the user interface (UI) Customization information for a particular app client's app UI, if any such information exists for the client. If nothing is set for the particular client, but there is an existing pool level customization (the app <code>clientId</code> is <code>ALL</code>), then that information is returned. If nothing is present, then an empty shape is returned.</p>

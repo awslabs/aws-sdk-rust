@@ -3,6 +3,23 @@ pub use crate::operation::get_job_document::_get_job_document_output::GetJobDocu
 
 pub use crate::operation::get_job_document::_get_job_document_input::GetJobDocumentInputBuilder;
 
+impl GetJobDocumentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_job_document::GetJobDocumentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_job_document::GetJobDocumentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_job_document();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetJobDocument`.
 ///
 /// <p>Gets a job document.</p>

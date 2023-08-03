@@ -3,6 +3,23 @@ pub use crate::operation::delete_canary::_delete_canary_output::DeleteCanaryOutp
 
 pub use crate::operation::delete_canary::_delete_canary_input::DeleteCanaryInputBuilder;
 
+impl DeleteCanaryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_canary::DeleteCanaryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_canary::DeleteCanaryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_canary();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteCanary`.
 ///
 /// <p>Permanently deletes the specified canary.</p>

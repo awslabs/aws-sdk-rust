@@ -3,6 +3,23 @@ pub use crate::operation::create_proposal::_create_proposal_output::CreatePropos
 
 pub use crate::operation::create_proposal::_create_proposal_input::CreateProposalInputBuilder;
 
+impl CreateProposalInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_proposal::CreateProposalOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_proposal::CreateProposalError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_proposal();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateProposal`.
 ///
 /// <p>Creates a proposal for a change to the network that other members of the network can vote on, for example, a proposal to add a new member to the network. Any member can create a proposal.</p>

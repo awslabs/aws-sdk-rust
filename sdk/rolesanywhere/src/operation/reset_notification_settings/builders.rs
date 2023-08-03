@@ -3,6 +3,23 @@ pub use crate::operation::reset_notification_settings::_reset_notification_setti
 
 pub use crate::operation::reset_notification_settings::_reset_notification_settings_input::ResetNotificationSettingsInputBuilder;
 
+impl ResetNotificationSettingsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::reset_notification_settings::ResetNotificationSettingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::reset_notification_settings::ResetNotificationSettingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.reset_notification_settings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ResetNotificationSettings`.
 ///
 /// <p>Resets the <i>custom notification setting</i> to IAM Roles Anywhere default setting. </p>

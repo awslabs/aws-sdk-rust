@@ -3,6 +3,23 @@ pub use crate::operation::notify_recommendations_received::_notify_recommendatio
 
 pub use crate::operation::notify_recommendations_received::_notify_recommendations_received_input::NotifyRecommendationsReceivedInputBuilder;
 
+impl NotifyRecommendationsReceivedInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::notify_recommendations_received::NotifyRecommendationsReceivedOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::notify_recommendations_received::NotifyRecommendationsReceivedError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.notify_recommendations_received();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `NotifyRecommendationsReceived`.
 ///
 /// <p>Removes the specified recommendations from the specified assistant's queue of newly available recommendations. You can use this API in conjunction with <a href="https://docs.aws.amazon.com/wisdom/latest/APIReference/API_GetRecommendations.html">GetRecommendations</a> and a <code>waitTimeSeconds</code> input for long-polling behavior and avoiding duplicate recommendations.</p>

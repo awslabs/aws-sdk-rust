@@ -3,6 +3,17 @@ pub use crate::operation::disassociate_origination_identity::_disassociate_origi
 
 pub use crate::operation::disassociate_origination_identity::_disassociate_origination_identity_input::DisassociateOriginationIdentityInputBuilder;
 
+impl DisassociateOriginationIdentityInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::disassociate_origination_identity::DisassociateOriginationIdentityOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_origination_identity::DisassociateOriginationIdentityError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.disassociate_origination_identity();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateOriginationIdentity`.
 ///
 /// <p>Removes the specified origination identity from an existing pool.</p>

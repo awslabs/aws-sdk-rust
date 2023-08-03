@@ -3,6 +3,23 @@ pub use crate::operation::describe_security_configuration::_describe_security_co
 
 pub use crate::operation::describe_security_configuration::_describe_security_configuration_input::DescribeSecurityConfigurationInputBuilder;
 
+impl DescribeSecurityConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_security_configuration::DescribeSecurityConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_security_configuration::DescribeSecurityConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_security_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeSecurityConfiguration`.
 ///
 /// <p>Provides the details of a security configuration by returning the configuration JSON.</p>

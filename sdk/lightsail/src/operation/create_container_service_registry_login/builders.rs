@@ -3,6 +3,17 @@ pub use crate::operation::create_container_service_registry_login::_create_conta
 
 pub use crate::operation::create_container_service_registry_login::_create_container_service_registry_login_input::CreateContainerServiceRegistryLoginInputBuilder;
 
+impl CreateContainerServiceRegistryLoginInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::create_container_service_registry_login::CreateContainerServiceRegistryLoginOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_container_service_registry_login::CreateContainerServiceRegistryLoginError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.create_container_service_registry_login();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateContainerServiceRegistryLogin`.
 ///
 /// <p>Creates a temporary set of log in credentials that you can use to log in to the Docker process on your local machine. After you're logged in, you can use the native Docker commands to push your local container images to the container image registry of your Amazon Lightsail account so that you can use them with your Lightsail container service. The log in credentials expire 12 hours after they are created, at which point you will need to create a new set of log in credentials.</p> <note>

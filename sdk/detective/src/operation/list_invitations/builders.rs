@@ -3,6 +3,23 @@ pub use crate::operation::list_invitations::_list_invitations_output::ListInvita
 
 pub use crate::operation::list_invitations::_list_invitations_input::ListInvitationsInputBuilder;
 
+impl ListInvitationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_invitations::ListInvitationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_invitations::ListInvitationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_invitations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListInvitations`.
 ///
 /// <p>Retrieves the list of open and accepted behavior graph invitations for the member account. This operation can only be called by an invited member account.</p>

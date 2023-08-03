@@ -3,6 +3,23 @@ pub use crate::operation::replicate_secret_to_regions::_replicate_secret_to_regi
 
 pub use crate::operation::replicate_secret_to_regions::_replicate_secret_to_regions_input::ReplicateSecretToRegionsInputBuilder;
 
+impl ReplicateSecretToRegionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::replicate_secret_to_regions::ReplicateSecretToRegionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::replicate_secret_to_regions::ReplicateSecretToRegionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.replicate_secret_to_regions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ReplicateSecretToRegions`.
 ///
 /// <p>Replicates the secret to a new Regions. See <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/create-manage-multi-region-secrets.html">Multi-Region secrets</a>.</p>

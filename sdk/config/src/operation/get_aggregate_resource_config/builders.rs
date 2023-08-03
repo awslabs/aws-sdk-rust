@@ -3,6 +3,23 @@ pub use crate::operation::get_aggregate_resource_config::_get_aggregate_resource
 
 pub use crate::operation::get_aggregate_resource_config::_get_aggregate_resource_config_input::GetAggregateResourceConfigInputBuilder;
 
+impl GetAggregateResourceConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_aggregate_resource_config::GetAggregateResourceConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_aggregate_resource_config::GetAggregateResourceConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_aggregate_resource_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetAggregateResourceConfig`.
 ///
 /// <p>Returns configuration item that is aggregated for your specific resource in a specific source account and region.</p>

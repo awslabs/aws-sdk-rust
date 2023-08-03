@@ -3,6 +3,23 @@ pub use crate::operation::verify_domain_identity::_verify_domain_identity_output
 
 pub use crate::operation::verify_domain_identity::_verify_domain_identity_input::VerifyDomainIdentityInputBuilder;
 
+impl VerifyDomainIdentityInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::verify_domain_identity::VerifyDomainIdentityOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::verify_domain_identity::VerifyDomainIdentityError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.verify_domain_identity();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `VerifyDomainIdentity`.
 ///
 /// <p>Adds a domain to the list of identities for your Amazon SES account in the current AWS Region and attempts to verify it. For more information about verifying domains, see <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/verify-addresses-and-domains.html">Verifying Email Addresses and Domains</a> in the <i>Amazon SES Developer Guide.</i> </p>

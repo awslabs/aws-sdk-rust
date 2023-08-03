@@ -3,6 +3,17 @@ pub use crate::operation::list_available_managed_rule_groups::_list_available_ma
 
 pub use crate::operation::list_available_managed_rule_groups::_list_available_managed_rule_groups_input::ListAvailableManagedRuleGroupsInputBuilder;
 
+impl ListAvailableManagedRuleGroupsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_available_managed_rule_groups::ListAvailableManagedRuleGroupsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_available_managed_rule_groups::ListAvailableManagedRuleGroupsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_available_managed_rule_groups();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAvailableManagedRuleGroups`.
 ///
 /// <p>Retrieves an array of managed rule groups that are available for you to use. This list includes all Amazon Web Services Managed Rules rule groups and all of the Amazon Web Services Marketplace managed rule groups that you're subscribed to.</p>

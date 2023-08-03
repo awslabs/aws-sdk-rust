@@ -3,6 +3,23 @@ pub use crate::operation::get_introspection_schema::_get_introspection_schema_ou
 
 pub use crate::operation::get_introspection_schema::_get_introspection_schema_input::GetIntrospectionSchemaInputBuilder;
 
+impl GetIntrospectionSchemaInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_introspection_schema::GetIntrospectionSchemaOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_introspection_schema::GetIntrospectionSchemaError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_introspection_schema();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetIntrospectionSchema`.
 ///
 /// <p>Retrieves the introspection schema for a GraphQL API.</p>

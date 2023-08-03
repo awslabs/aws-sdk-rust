@@ -3,6 +3,23 @@ pub use crate::operation::list_stage_sessions::_list_stage_sessions_output::List
 
 pub use crate::operation::list_stage_sessions::_list_stage_sessions_input::ListStageSessionsInputBuilder;
 
+impl ListStageSessionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_stage_sessions::ListStageSessionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_stage_sessions::ListStageSessionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_stage_sessions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListStageSessions`.
 ///
 /// <p>Gets all sessions for a specified stage.</p>

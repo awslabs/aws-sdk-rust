@@ -3,6 +3,23 @@ pub use crate::operation::reload_replication_tables::_reload_replication_tables_
 
 pub use crate::operation::reload_replication_tables::_reload_replication_tables_input::ReloadReplicationTablesInputBuilder;
 
+impl ReloadReplicationTablesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::reload_replication_tables::ReloadReplicationTablesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::reload_replication_tables::ReloadReplicationTablesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.reload_replication_tables();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ReloadReplicationTables`.
 ///
 /// <p>Reloads the target database table with the source data for a given DMS Serverless replication configuration.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_evaluation_forms::_list_evaluation_forms_output::
 
 pub use crate::operation::list_evaluation_forms::_list_evaluation_forms_input::ListEvaluationFormsInputBuilder;
 
+impl ListEvaluationFormsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_evaluation_forms::ListEvaluationFormsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_evaluation_forms::ListEvaluationFormsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_evaluation_forms();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListEvaluationForms`.
 ///
 /// <p>Lists evaluation forms in the specified Amazon Connect instance.</p>

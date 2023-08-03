@@ -3,6 +3,23 @@ pub use crate::operation::stop_text_translation_job::_stop_text_translation_job_
 
 pub use crate::operation::stop_text_translation_job::_stop_text_translation_job_input::StopTextTranslationJobInputBuilder;
 
+impl StopTextTranslationJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_text_translation_job::StopTextTranslationJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_text_translation_job::StopTextTranslationJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_text_translation_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopTextTranslationJob`.
 ///
 /// <p>Stops an asynchronous batch translation job that is in progress.</p>

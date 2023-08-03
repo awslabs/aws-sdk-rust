@@ -3,6 +3,23 @@ pub use crate::operation::list_assessments::_list_assessments_output::ListAssess
 
 pub use crate::operation::list_assessments::_list_assessments_input::ListAssessmentsInputBuilder;
 
+impl ListAssessmentsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_assessments::ListAssessmentsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_assessments::ListAssessmentsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_assessments();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAssessments`.
 ///
 /// <p> Returns a list of current and past assessments from Audit Manager. </p>

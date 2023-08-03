@@ -3,6 +3,23 @@ pub use crate::operation::enable_insight_rules::_enable_insight_rules_output::En
 
 pub use crate::operation::enable_insight_rules::_enable_insight_rules_input::EnableInsightRulesInputBuilder;
 
+impl EnableInsightRulesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::enable_insight_rules::EnableInsightRulesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::enable_insight_rules::EnableInsightRulesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.enable_insight_rules();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `EnableInsightRules`.
 ///
 /// <p>Enables the specified Contributor Insights rules. When rules are enabled, they immediately begin analyzing log data.</p>

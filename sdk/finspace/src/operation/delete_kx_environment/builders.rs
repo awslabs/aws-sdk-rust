@@ -3,6 +3,23 @@ pub use crate::operation::delete_kx_environment::_delete_kx_environment_output::
 
 pub use crate::operation::delete_kx_environment::_delete_kx_environment_input::DeleteKxEnvironmentInputBuilder;
 
+impl DeleteKxEnvironmentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_kx_environment::DeleteKxEnvironmentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_kx_environment::DeleteKxEnvironmentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_kx_environment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteKxEnvironment`.
 ///
 /// <p>Deletes the kdb environment. This action is irreversible. Deleting a kdb environment will remove all the associated data and any services running in it. </p>

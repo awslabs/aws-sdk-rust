@@ -3,6 +3,23 @@ pub use crate::operation::get_room_skill_parameter::_get_room_skill_parameter_ou
 
 pub use crate::operation::get_room_skill_parameter::_get_room_skill_parameter_input::GetRoomSkillParameterInputBuilder;
 
+impl GetRoomSkillParameterInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_room_skill_parameter::GetRoomSkillParameterOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_room_skill_parameter::GetRoomSkillParameterError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_room_skill_parameter();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetRoomSkillParameter`.
 ///
 /// <p>Gets room skill parameter details by room, skill, and parameter key ARN.</p>

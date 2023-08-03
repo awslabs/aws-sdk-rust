@@ -3,6 +3,23 @@ pub use crate::operation::update_scheduled_audit::_update_scheduled_audit_output
 
 pub use crate::operation::update_scheduled_audit::_update_scheduled_audit_input::UpdateScheduledAuditInputBuilder;
 
+impl UpdateScheduledAuditInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_scheduled_audit::UpdateScheduledAuditOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_scheduled_audit::UpdateScheduledAuditError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_scheduled_audit();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateScheduledAudit`.
 ///
 /// <p>Updates a scheduled audit, including which checks are performed and how often the audit takes place.</p>

@@ -3,6 +3,17 @@ pub use crate::operation::describe_reserved_instances_offerings::_describe_reser
 
 pub use crate::operation::describe_reserved_instances_offerings::_describe_reserved_instances_offerings_input::DescribeReservedInstancesOfferingsInputBuilder;
 
+impl DescribeReservedInstancesOfferingsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_reserved_instances_offerings::DescribeReservedInstancesOfferingsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_reserved_instances_offerings::DescribeReservedInstancesOfferingsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_reserved_instances_offerings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeReservedInstancesOfferings`.
 ///
 /// <p>Describes Reserved Instance offerings that are available for purchase. With Reserved Instances, you purchase the right to launch instances for a period of time. During that time period, you do not receive insufficient capacity errors, and you pay a lower usage rate than the rate charged for On-Demand instances for the actual time used.</p>

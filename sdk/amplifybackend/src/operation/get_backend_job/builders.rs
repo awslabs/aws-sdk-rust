@@ -3,6 +3,23 @@ pub use crate::operation::get_backend_job::_get_backend_job_output::GetBackendJo
 
 pub use crate::operation::get_backend_job::_get_backend_job_input::GetBackendJobInputBuilder;
 
+impl GetBackendJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_backend_job::GetBackendJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_backend_job::GetBackendJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_backend_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetBackendJob`.
 ///
 /// <p>Returns information about a specific job.</p>

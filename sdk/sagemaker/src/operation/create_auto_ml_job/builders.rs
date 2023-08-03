@@ -3,6 +3,23 @@ pub use crate::operation::create_auto_ml_job::_create_auto_ml_job_output::Create
 
 pub use crate::operation::create_auto_ml_job::_create_auto_ml_job_input::CreateAutoMlJobInputBuilder;
 
+impl CreateAutoMlJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_auto_ml_job::CreateAutoMlJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_auto_ml_job::CreateAutoMLJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_auto_ml_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateAutoMLJob`.
 ///
 /// <p>Creates an Autopilot job also referred to as Autopilot experiment or AutoML job.</p> <note>

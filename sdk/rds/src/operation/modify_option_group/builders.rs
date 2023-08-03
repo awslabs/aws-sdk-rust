@@ -3,6 +3,23 @@ pub use crate::operation::modify_option_group::_modify_option_group_output::Modi
 
 pub use crate::operation::modify_option_group::_modify_option_group_input::ModifyOptionGroupInputBuilder;
 
+impl ModifyOptionGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_option_group::ModifyOptionGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_option_group::ModifyOptionGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_option_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyOptionGroup`.
 ///
 /// <p>Modifies an existing option group.</p>

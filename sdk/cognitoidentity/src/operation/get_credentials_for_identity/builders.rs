@@ -3,6 +3,23 @@ pub use crate::operation::get_credentials_for_identity::_get_credentials_for_ide
 
 pub use crate::operation::get_credentials_for_identity::_get_credentials_for_identity_input::GetCredentialsForIdentityInputBuilder;
 
+impl GetCredentialsForIdentityInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_credentials_for_identity::GetCredentialsForIdentityOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_credentials_for_identity::GetCredentialsForIdentityError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_credentials_for_identity();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetCredentialsForIdentity`.
 ///
 /// <p>Returns credentials for the provided identity ID. Any provided logins will be validated against supported login providers. If the token is for cognito-identity.amazonaws.com, it will be passed through to AWS Security Token Service with the appropriate role for the token.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_task::_delete_task_output::DeleteTaskOutputBuil
 
 pub use crate::operation::delete_task::_delete_task_input::DeleteTaskInputBuilder;
 
+impl DeleteTaskInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_task::DeleteTaskOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_task::DeleteTaskError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_task();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteTask`.
 ///
 /// <p>Deletes an DataSync task.</p>

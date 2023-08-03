@@ -3,6 +3,23 @@ pub use crate::operation::update_fleet_attributes::_update_fleet_attributes_outp
 
 pub use crate::operation::update_fleet_attributes::_update_fleet_attributes_input::UpdateFleetAttributesInputBuilder;
 
+impl UpdateFleetAttributesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_fleet_attributes::UpdateFleetAttributesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_fleet_attributes::UpdateFleetAttributesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_fleet_attributes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateFleetAttributes`.
 ///
 /// <p>Updates a fleet's mutable attributes, including game session protection and resource creation limits.</p>

@@ -3,6 +3,17 @@ pub use crate::operation::describe_configuration_recorder_status::_describe_conf
 
 pub use crate::operation::describe_configuration_recorder_status::_describe_configuration_recorder_status_input::DescribeConfigurationRecorderStatusInputBuilder;
 
+impl DescribeConfigurationRecorderStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_configuration_recorder_status::DescribeConfigurationRecorderStatusOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_configuration_recorder_status::DescribeConfigurationRecorderStatusError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_configuration_recorder_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeConfigurationRecorderStatus`.
 ///
 /// <p>Returns the current status of the specified configuration recorder as well as the status of the last recording event for the recorder. If a configuration recorder is not specified, this action returns the status of all configuration recorders associated with the account.</p> <note>

@@ -3,6 +3,23 @@ pub use crate::operation::put_repository_catalog_data::_put_repository_catalog_d
 
 pub use crate::operation::put_repository_catalog_data::_put_repository_catalog_data_input::PutRepositoryCatalogDataInputBuilder;
 
+impl PutRepositoryCatalogDataInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_repository_catalog_data::PutRepositoryCatalogDataOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_repository_catalog_data::PutRepositoryCatalogDataError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_repository_catalog_data();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutRepositoryCatalogData`.
 ///
 /// <p>Creates or updates the catalog data for a repository in a public registry.</p>

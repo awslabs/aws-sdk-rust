@@ -3,6 +3,23 @@ pub use crate::operation::put_bucket_cors::_put_bucket_cors_output::PutBucketCor
 
 pub use crate::operation::put_bucket_cors::_put_bucket_cors_input::PutBucketCorsInputBuilder;
 
+impl PutBucketCorsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_bucket_cors::PutBucketCorsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_bucket_cors::PutBucketCorsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_bucket_cors();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutBucketCors`.
 ///
 /// <p>Sets the <code>cors</code> configuration for your bucket. If the configuration exists, Amazon S3 replaces it.</p>

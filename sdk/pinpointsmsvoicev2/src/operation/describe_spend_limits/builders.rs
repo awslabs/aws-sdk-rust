@@ -3,6 +3,23 @@ pub use crate::operation::describe_spend_limits::_describe_spend_limits_output::
 
 pub use crate::operation::describe_spend_limits::_describe_spend_limits_input::DescribeSpendLimitsInputBuilder;
 
+impl DescribeSpendLimitsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_spend_limits::DescribeSpendLimitsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_spend_limits::DescribeSpendLimitsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_spend_limits();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeSpendLimits`.
 ///
 /// <p>Describes the current Amazon Pinpoint monthly spend limits for sending voice and text messages.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_replication_tasks::_describe_replication_task
 
 pub use crate::operation::describe_replication_tasks::_describe_replication_tasks_input::DescribeReplicationTasksInputBuilder;
 
+impl DescribeReplicationTasksInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_replication_tasks::DescribeReplicationTasksOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_replication_tasks::DescribeReplicationTasksError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_replication_tasks();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeReplicationTasks`.
 ///
 /// <p>Returns information about replication tasks for your account in the current region.</p>

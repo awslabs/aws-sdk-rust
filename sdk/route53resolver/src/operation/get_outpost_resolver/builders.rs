@@ -3,6 +3,23 @@ pub use crate::operation::get_outpost_resolver::_get_outpost_resolver_output::Ge
 
 pub use crate::operation::get_outpost_resolver::_get_outpost_resolver_input::GetOutpostResolverInputBuilder;
 
+impl GetOutpostResolverInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_outpost_resolver::GetOutpostResolverOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_outpost_resolver::GetOutpostResolverError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_outpost_resolver();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetOutpostResolver`.
 ///
 /// <p>Gets information about a specified Resolver on the Outpost, such as its instance count and type, name, and the current status of the Resolver.</p>

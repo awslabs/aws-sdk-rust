@@ -3,6 +3,23 @@ pub use crate::operation::register_rds_db_instance::_register_rds_db_instance_ou
 
 pub use crate::operation::register_rds_db_instance::_register_rds_db_instance_input::RegisterRdsDbInstanceInputBuilder;
 
+impl RegisterRdsDbInstanceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::register_rds_db_instance::RegisterRdsDbInstanceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::register_rds_db_instance::RegisterRdsDbInstanceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.register_rds_db_instance();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RegisterRdsDbInstance`.
 ///
 /// <p>Registers an Amazon RDS instance with a stack.</p>

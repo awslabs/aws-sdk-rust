@@ -3,6 +3,23 @@ pub use crate::operation::start_change_set::_start_change_set_output::StartChang
 
 pub use crate::operation::start_change_set::_start_change_set_input::StartChangeSetInputBuilder;
 
+impl StartChangeSetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_change_set::StartChangeSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_change_set::StartChangeSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_change_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartChangeSet`.
 ///
 /// <p>Allows you to request changes for your entities. Within a single <code>ChangeSet</code>, you can't start the same change type against the same entity multiple times. Additionally, when a <code>ChangeSet</code> is running, all the entities targeted by the different changes are locked until the change set has completed (either succeeded, cancelled, or failed). If you try to start a change set containing a change against an entity that is already locked, you will receive a <code>ResourceInUseException</code> error.</p>

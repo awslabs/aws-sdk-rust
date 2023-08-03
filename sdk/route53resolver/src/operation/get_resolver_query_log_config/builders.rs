@@ -3,6 +3,23 @@ pub use crate::operation::get_resolver_query_log_config::_get_resolver_query_log
 
 pub use crate::operation::get_resolver_query_log_config::_get_resolver_query_log_config_input::GetResolverQueryLogConfigInputBuilder;
 
+impl GetResolverQueryLogConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_resolver_query_log_config::GetResolverQueryLogConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_resolver_query_log_config::GetResolverQueryLogConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_resolver_query_log_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetResolverQueryLogConfig`.
 ///
 /// <p>Gets information about a specified Resolver query logging configuration, such as the number of VPCs that the configuration is logging queries for and the location that logs are sent to. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::start_segment_detection::_start_segment_detection_outp
 
 pub use crate::operation::start_segment_detection::_start_segment_detection_input::StartSegmentDetectionInputBuilder;
 
+impl StartSegmentDetectionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_segment_detection::StartSegmentDetectionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_segment_detection::StartSegmentDetectionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_segment_detection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartSegmentDetection`.
 ///
 /// <p>Starts asynchronous detection of segment detection in a stored video.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::start_project_version::_start_project_version_output::
 
 pub use crate::operation::start_project_version::_start_project_version_input::StartProjectVersionInputBuilder;
 
+impl StartProjectVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_project_version::StartProjectVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_project_version::StartProjectVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_project_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartProjectVersion`.
 ///
 /// <p>Starts the running of the version of a model. Starting a model takes a while to complete. To check the current state of the model, use <code>DescribeProjectVersions</code>.</p>

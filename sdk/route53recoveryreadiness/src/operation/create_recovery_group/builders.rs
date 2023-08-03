@@ -3,6 +3,23 @@ pub use crate::operation::create_recovery_group::_create_recovery_group_output::
 
 pub use crate::operation::create_recovery_group::_create_recovery_group_input::CreateRecoveryGroupInputBuilder;
 
+impl CreateRecoveryGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_recovery_group::CreateRecoveryGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_recovery_group::CreateRecoveryGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_recovery_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateRecoveryGroup`.
 ///
 /// <p>Creates a recovery group in an account. A recovery group corresponds to an application and includes a list of the cells that make up the application.</p>

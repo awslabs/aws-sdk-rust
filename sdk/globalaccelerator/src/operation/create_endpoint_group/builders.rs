@@ -3,6 +3,23 @@ pub use crate::operation::create_endpoint_group::_create_endpoint_group_output::
 
 pub use crate::operation::create_endpoint_group::_create_endpoint_group_input::CreateEndpointGroupInputBuilder;
 
+impl CreateEndpointGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_endpoint_group::CreateEndpointGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_endpoint_group::CreateEndpointGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_endpoint_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateEndpointGroup`.
 ///
 /// <p>Create an endpoint group for the specified listener. An endpoint group is a collection of endpoints in one Amazon Web Services Region. A resource must be valid and active when you add it as an endpoint.</p>

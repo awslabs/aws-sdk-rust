@@ -3,6 +3,23 @@ pub use crate::operation::describe_data_set_permissions::_describe_data_set_perm
 
 pub use crate::operation::describe_data_set_permissions::_describe_data_set_permissions_input::DescribeDataSetPermissionsInputBuilder;
 
+impl DescribeDataSetPermissionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_data_set_permissions::DescribeDataSetPermissionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_data_set_permissions::DescribeDataSetPermissionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_data_set_permissions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeDataSetPermissions`.
 ///
 /// <p>Describes the permissions on a dataset.</p>

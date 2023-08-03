@@ -3,6 +3,23 @@ pub use crate::operation::create_job::_create_job_output::CreateJobOutputBuilder
 
 pub use crate::operation::create_job::_create_job_input::CreateJobInputBuilder;
 
+impl CreateJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_job::CreateJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_job::CreateJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateJob`.
 ///
 /// <p>You can use S3 Batch Operations to perform large-scale batch actions on Amazon S3 objects. Batch Operations can run a single action on lists of Amazon S3 objects that you specify. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops.html">S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.</p>

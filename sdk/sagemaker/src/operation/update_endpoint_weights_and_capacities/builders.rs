@@ -3,6 +3,17 @@ pub use crate::operation::update_endpoint_weights_and_capacities::_update_endpoi
 
 pub use crate::operation::update_endpoint_weights_and_capacities::_update_endpoint_weights_and_capacities_input::UpdateEndpointWeightsAndCapacitiesInputBuilder;
 
+impl UpdateEndpointWeightsAndCapacitiesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::update_endpoint_weights_and_capacities::UpdateEndpointWeightsAndCapacitiesOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_endpoint_weights_and_capacities::UpdateEndpointWeightsAndCapacitiesError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.update_endpoint_weights_and_capacities();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateEndpointWeightsAndCapacities`.
 ///
 /// <p>Updates variant weight of one or more variants associated with an existing endpoint, or capacity of one variant associated with an existing endpoint. When it receives the request, SageMaker sets the endpoint status to <code>Updating</code>. After updating the endpoint, it sets the status to <code>InService</code>. To check the status of an endpoint, use the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeEndpoint.html">DescribeEndpoint</a> API. </p>

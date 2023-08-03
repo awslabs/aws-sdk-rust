@@ -3,6 +3,23 @@ pub use crate::operation::list_transcription_jobs::_list_transcription_jobs_outp
 
 pub use crate::operation::list_transcription_jobs::_list_transcription_jobs_input::ListTranscriptionJobsInputBuilder;
 
+impl ListTranscriptionJobsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_transcription_jobs::ListTranscriptionJobsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_transcription_jobs::ListTranscriptionJobsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_transcription_jobs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListTranscriptionJobs`.
 ///
 /// <p>Provides a list of transcription jobs that match the specified criteria. If no criteria are specified, all transcription jobs are returned.</p>

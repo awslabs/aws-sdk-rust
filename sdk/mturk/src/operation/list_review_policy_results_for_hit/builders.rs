@@ -3,6 +3,17 @@ pub use crate::operation::list_review_policy_results_for_hit::_list_review_polic
 
 pub use crate::operation::list_review_policy_results_for_hit::_list_review_policy_results_for_hit_input::ListReviewPolicyResultsForHitInputBuilder;
 
+impl ListReviewPolicyResultsForHitInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_review_policy_results_for_hit::ListReviewPolicyResultsForHitOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_review_policy_results_for_hit::ListReviewPolicyResultsForHITError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_review_policy_results_for_hit();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListReviewPolicyResultsForHIT`.
 ///
 /// <p> The <code>ListReviewPolicyResultsForHIT</code> operation retrieves the computed results and the actions taken in the course of executing your Review Policies for a given HIT. For information about how to specify Review Policies when you call CreateHIT, see Review Policies. The ListReviewPolicyResultsForHIT operation can return results for both Assignment-level and HIT-level review results. </p>

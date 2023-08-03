@@ -3,6 +3,23 @@ pub use crate::operation::create_gateway::_create_gateway_output::CreateGatewayO
 
 pub use crate::operation::create_gateway::_create_gateway_input::CreateGatewayInputBuilder;
 
+impl CreateGatewayInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_gateway::CreateGatewayOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_gateway::CreateGatewayError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_gateway();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateGateway`.
 ///
 /// <p>Creates a backup gateway. After you create a gateway, you can associate it with a server using the <code>AssociateGatewayToServer</code> operation.</p>

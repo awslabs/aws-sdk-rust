@@ -3,6 +3,23 @@ pub use crate::operation::update_repository::_update_repository_output::UpdateRe
 
 pub use crate::operation::update_repository::_update_repository_input::UpdateRepositoryInputBuilder;
 
+impl UpdateRepositoryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_repository::UpdateRepositoryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_repository::UpdateRepositoryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_repository();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateRepository`.
 ///
 /// <p> Update the properties of a repository. </p>

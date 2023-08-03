@@ -3,6 +3,23 @@ pub use crate::operation::put_retention_policy::_put_retention_policy_output::Pu
 
 pub use crate::operation::put_retention_policy::_put_retention_policy_input::PutRetentionPolicyInputBuilder;
 
+impl PutRetentionPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_retention_policy::PutRetentionPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_retention_policy::PutRetentionPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_retention_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutRetentionPolicy`.
 ///
 /// <p>Sets the retention of the specified log group. With a retention policy, you can configure the number of days for which to retain log events in the specified log group.</p> <note>

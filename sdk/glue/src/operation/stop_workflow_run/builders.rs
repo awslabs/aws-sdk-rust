@@ -3,6 +3,23 @@ pub use crate::operation::stop_workflow_run::_stop_workflow_run_output::StopWork
 
 pub use crate::operation::stop_workflow_run::_stop_workflow_run_input::StopWorkflowRunInputBuilder;
 
+impl StopWorkflowRunInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_workflow_run::StopWorkflowRunOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_workflow_run::StopWorkflowRunError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_workflow_run();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopWorkflowRun`.
 ///
 /// <p>Stops the execution of the specified workflow run.</p>

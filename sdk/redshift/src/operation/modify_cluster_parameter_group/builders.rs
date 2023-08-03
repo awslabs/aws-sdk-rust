@@ -3,6 +3,23 @@ pub use crate::operation::modify_cluster_parameter_group::_modify_cluster_parame
 
 pub use crate::operation::modify_cluster_parameter_group::_modify_cluster_parameter_group_input::ModifyClusterParameterGroupInputBuilder;
 
+impl ModifyClusterParameterGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_cluster_parameter_group::ModifyClusterParameterGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_cluster_parameter_group::ModifyClusterParameterGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_cluster_parameter_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyClusterParameterGroup`.
 ///
 /// <p>Modifies the parameters of a parameter group. For the parameters parameter, it can't contain ASCII characters.</p>

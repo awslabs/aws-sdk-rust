@@ -3,6 +3,23 @@ pub use crate::operation::vote_on_proposal::_vote_on_proposal_output::VoteOnProp
 
 pub use crate::operation::vote_on_proposal::_vote_on_proposal_input::VoteOnProposalInputBuilder;
 
+impl VoteOnProposalInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::vote_on_proposal::VoteOnProposalOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::vote_on_proposal::VoteOnProposalError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.vote_on_proposal();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `VoteOnProposal`.
 ///
 /// <p>Casts a vote for a specified <code>ProposalId</code> on behalf of a member. The member to vote as, specified by <code>VoterMemberId</code>, must be in the same Amazon Web Services account as the principal that calls the action.</p>

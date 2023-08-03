@@ -3,6 +3,17 @@ pub use crate::operation::decrease_node_groups_in_global_replication_group::_dec
 
 pub use crate::operation::decrease_node_groups_in_global_replication_group::_decrease_node_groups_in_global_replication_group_input::DecreaseNodeGroupsInGlobalReplicationGroupInputBuilder;
 
+impl DecreaseNodeGroupsInGlobalReplicationGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::decrease_node_groups_in_global_replication_group::DecreaseNodeGroupsInGlobalReplicationGroupOutput, ::aws_smithy_http::result::SdkError<crate::operation::decrease_node_groups_in_global_replication_group::DecreaseNodeGroupsInGlobalReplicationGroupError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.decrease_node_groups_in_global_replication_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DecreaseNodeGroupsInGlobalReplicationGroup`.
 ///
 /// <p>Decreases the number of node groups in a Global datastore</p>

@@ -3,6 +3,17 @@ pub use crate::operation::modify_verified_access_trust_provider::_modify_verifie
 
 pub use crate::operation::modify_verified_access_trust_provider::_modify_verified_access_trust_provider_input::ModifyVerifiedAccessTrustProviderInputBuilder;
 
+impl ModifyVerifiedAccessTrustProviderInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::modify_verified_access_trust_provider::ModifyVerifiedAccessTrustProviderOutput, ::aws_smithy_http::result::SdkError<crate::operation::modify_verified_access_trust_provider::ModifyVerifiedAccessTrustProviderError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.modify_verified_access_trust_provider();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyVerifiedAccessTrustProvider`.
 ///
 /// <p>Modifies the configuration of the specified Amazon Web Services Verified Access trust provider.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_hsm_configuration::_create_hsm_configuration_ou
 
 pub use crate::operation::create_hsm_configuration::_create_hsm_configuration_input::CreateHsmConfigurationInputBuilder;
 
+impl CreateHsmConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_hsm_configuration::CreateHsmConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_hsm_configuration::CreateHsmConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_hsm_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateHsmConfiguration`.
 ///
 /// <p>Creates an HSM configuration that contains the information required by an Amazon Redshift cluster to store and use database encryption keys in a Hardware Security Module (HSM). After creating the HSM configuration, you can specify it as a parameter when creating a cluster. The cluster will then store its encryption keys in the HSM.</p>

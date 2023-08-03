@@ -3,6 +3,23 @@ pub use crate::operation::simulate_custom_policy::_simulate_custom_policy_output
 
 pub use crate::operation::simulate_custom_policy::_simulate_custom_policy_input::SimulateCustomPolicyInputBuilder;
 
+impl SimulateCustomPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::simulate_custom_policy::SimulateCustomPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::simulate_custom_policy::SimulateCustomPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.simulate_custom_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SimulateCustomPolicy`.
 ///
 /// <p>Simulate how a set of IAM policies and optionally a resource-based policy works with a list of API operations and Amazon Web Services resources to determine the policies' effective permissions. The policies are provided as strings.</p>

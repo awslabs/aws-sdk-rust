@@ -3,6 +3,23 @@ pub use crate::operation::create_workspace_bundle::_create_workspace_bundle_outp
 
 pub use crate::operation::create_workspace_bundle::_create_workspace_bundle_input::CreateWorkspaceBundleInputBuilder;
 
+impl CreateWorkspaceBundleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_workspace_bundle::CreateWorkspaceBundleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_workspace_bundle::CreateWorkspaceBundleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_workspace_bundle();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateWorkspaceBundle`.
 ///
 /// <p>Creates the specified WorkSpace bundle. For more information about creating WorkSpace bundles, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/create-custom-bundle.html"> Create a Custom WorkSpaces Image and Bundle</a>.</p>

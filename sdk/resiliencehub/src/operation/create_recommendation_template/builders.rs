@@ -3,6 +3,23 @@ pub use crate::operation::create_recommendation_template::_create_recommendation
 
 pub use crate::operation::create_recommendation_template::_create_recommendation_template_input::CreateRecommendationTemplateInputBuilder;
 
+impl CreateRecommendationTemplateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_recommendation_template::CreateRecommendationTemplateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_recommendation_template::CreateRecommendationTemplateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_recommendation_template();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateRecommendationTemplate`.
 ///
 /// <p>Creates a new recommendation template for the Resilience Hub application.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_bucket_website::_get_bucket_website_output::GetBuc
 
 pub use crate::operation::get_bucket_website::_get_bucket_website_input::GetBucketWebsiteInputBuilder;
 
+impl GetBucketWebsiteInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_bucket_website::GetBucketWebsiteOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_bucket_website::GetBucketWebsiteError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_bucket_website();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetBucketWebsite`.
 ///
 /// <p>Returns the website configuration for a bucket. To host website on Amazon S3, you can configure a bucket as website by adding a website configuration. For more information about hosting websites, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html">Hosting Websites on Amazon S3</a>. </p>

@@ -3,6 +3,17 @@ pub use crate::operation::list_infrastructure_configurations::_list_infrastructu
 
 pub use crate::operation::list_infrastructure_configurations::_list_infrastructure_configurations_input::ListInfrastructureConfigurationsInputBuilder;
 
+impl ListInfrastructureConfigurationsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_infrastructure_configurations::ListInfrastructureConfigurationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_infrastructure_configurations::ListInfrastructureConfigurationsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_infrastructure_configurations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListInfrastructureConfigurations`.
 ///
 /// <p>Returns a list of infrastructure configurations.</p>

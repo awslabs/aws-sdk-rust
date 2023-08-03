@@ -3,6 +3,23 @@ pub use crate::operation::list_table_metadata::_list_table_metadata_output::List
 
 pub use crate::operation::list_table_metadata::_list_table_metadata_input::ListTableMetadataInputBuilder;
 
+impl ListTableMetadataInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_table_metadata::ListTableMetadataOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_table_metadata::ListTableMetadataError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_table_metadata();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListTableMetadata`.
 ///
 /// <p>Lists the metadata for the tables in the specified data catalog database.</p>

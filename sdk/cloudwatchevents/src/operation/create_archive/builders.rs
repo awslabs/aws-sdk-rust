@@ -3,6 +3,23 @@ pub use crate::operation::create_archive::_create_archive_output::CreateArchiveO
 
 pub use crate::operation::create_archive::_create_archive_input::CreateArchiveInputBuilder;
 
+impl CreateArchiveInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_archive::CreateArchiveOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_archive::CreateArchiveError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_archive();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateArchive`.
 ///
 /// <p>Creates an archive of events with the specified settings. When you create an archive, incoming events might not immediately start being sent to the archive. Allow a short period of time for changes to take effect. If you do not specify a pattern to filter events sent to the archive, all events are sent to the archive except replayed events. Replayed events are not sent to an archive.</p>

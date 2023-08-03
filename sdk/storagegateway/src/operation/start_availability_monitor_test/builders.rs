@@ -3,6 +3,23 @@ pub use crate::operation::start_availability_monitor_test::_start_availability_m
 
 pub use crate::operation::start_availability_monitor_test::_start_availability_monitor_test_input::StartAvailabilityMonitorTestInputBuilder;
 
+impl StartAvailabilityMonitorTestInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_availability_monitor_test::StartAvailabilityMonitorTestOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_availability_monitor_test::StartAvailabilityMonitorTestError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_availability_monitor_test();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartAvailabilityMonitorTest`.
 ///
 /// <p>Start a test that verifies that the specified gateway is configured for High Availability monitoring in your host environment. This request only initiates the test and that a successful response only indicates that the test was started. It doesn't indicate that the test passed. For the status of the test, invoke the <code>DescribeAvailabilityMonitorTest</code> API.</p> <note>

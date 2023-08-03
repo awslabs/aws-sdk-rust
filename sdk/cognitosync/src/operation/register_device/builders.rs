@@ -3,6 +3,23 @@ pub use crate::operation::register_device::_register_device_output::RegisterDevi
 
 pub use crate::operation::register_device::_register_device_input::RegisterDeviceInputBuilder;
 
+impl RegisterDeviceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::register_device::RegisterDeviceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::register_device::RegisterDeviceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.register_device();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RegisterDevice`.
 ///
 /// <p>Registers a device to receive push sync notifications.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_object_tagging::_get_object_tagging_output::GetObj
 
 pub use crate::operation::get_object_tagging::_get_object_tagging_input::GetObjectTaggingInputBuilder;
 
+impl GetObjectTaggingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_object_tagging::GetObjectTaggingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_object_tagging::GetObjectTaggingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_object_tagging();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetObjectTagging`.
 ///
 /// <p>Returns the tag-set of an object. You send the GET request against the tagging subresource associated with the object.</p>

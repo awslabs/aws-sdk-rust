@@ -3,6 +3,23 @@ pub use crate::operation::create_replication_group::_create_replication_group_ou
 
 pub use crate::operation::create_replication_group::_create_replication_group_input::CreateReplicationGroupInputBuilder;
 
+impl CreateReplicationGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_replication_group::CreateReplicationGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_replication_group::CreateReplicationGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_replication_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateReplicationGroup`.
 ///
 /// <p>Creates a Redis (cluster mode disabled) or a Redis (cluster mode enabled) replication group.</p>

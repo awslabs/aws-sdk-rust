@@ -3,6 +3,23 @@ pub use crate::operation::reboot_db_instance::_reboot_db_instance_output::Reboot
 
 pub use crate::operation::reboot_db_instance::_reboot_db_instance_input::RebootDbInstanceInputBuilder;
 
+impl RebootDbInstanceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::reboot_db_instance::RebootDbInstanceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::reboot_db_instance::RebootDBInstanceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.reboot_db_instance();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RebootDBInstance`.
 ///
 /// <p>You might need to reboot your instance, usually for maintenance reasons. For example, if you make certain changes, or if you change the cluster parameter group that is associated with the instance, you must reboot the instance for the changes to take effect. </p>

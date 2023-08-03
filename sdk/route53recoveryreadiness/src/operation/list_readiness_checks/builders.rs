@@ -3,6 +3,23 @@ pub use crate::operation::list_readiness_checks::_list_readiness_checks_output::
 
 pub use crate::operation::list_readiness_checks::_list_readiness_checks_input::ListReadinessChecksInputBuilder;
 
+impl ListReadinessChecksInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_readiness_checks::ListReadinessChecksOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_readiness_checks::ListReadinessChecksError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_readiness_checks();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListReadinessChecks`.
 ///
 /// <p>Lists the readiness checks for an account.</p>

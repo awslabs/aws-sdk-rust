@@ -3,6 +3,23 @@ pub use crate::operation::update_in_app_template::_update_in_app_template_output
 
 pub use crate::operation::update_in_app_template::_update_in_app_template_input::UpdateInAppTemplateInputBuilder;
 
+impl UpdateInAppTemplateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_in_app_template::UpdateInAppTemplateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_in_app_template::UpdateInAppTemplateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_in_app_template();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateInAppTemplate`.
 ///
 /// <p>Updates an existing message template for messages sent through the in-app message channel.</p>

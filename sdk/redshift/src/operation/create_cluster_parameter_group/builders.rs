@@ -3,6 +3,23 @@ pub use crate::operation::create_cluster_parameter_group::_create_cluster_parame
 
 pub use crate::operation::create_cluster_parameter_group::_create_cluster_parameter_group_input::CreateClusterParameterGroupInputBuilder;
 
+impl CreateClusterParameterGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_cluster_parameter_group::CreateClusterParameterGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_cluster_parameter_group::CreateClusterParameterGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_cluster_parameter_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateClusterParameterGroup`.
 ///
 /// <p>Creates an Amazon Redshift parameter group.</p>

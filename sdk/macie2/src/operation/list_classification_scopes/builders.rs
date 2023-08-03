@@ -3,6 +3,23 @@ pub use crate::operation::list_classification_scopes::_list_classification_scope
 
 pub use crate::operation::list_classification_scopes::_list_classification_scopes_input::ListClassificationScopesInputBuilder;
 
+impl ListClassificationScopesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_classification_scopes::ListClassificationScopesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_classification_scopes::ListClassificationScopesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_classification_scopes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListClassificationScopes`.
 ///
 /// <p>Retrieves a subset of information about the classification scope for an account.</p>

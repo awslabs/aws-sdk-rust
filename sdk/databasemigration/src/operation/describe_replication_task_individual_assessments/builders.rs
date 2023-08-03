@@ -3,6 +3,17 @@ pub use crate::operation::describe_replication_task_individual_assessments::_des
 
 pub use crate::operation::describe_replication_task_individual_assessments::_describe_replication_task_individual_assessments_input::DescribeReplicationTaskIndividualAssessmentsInputBuilder;
 
+impl DescribeReplicationTaskIndividualAssessmentsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_replication_task_individual_assessments::DescribeReplicationTaskIndividualAssessmentsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_replication_task_individual_assessments::DescribeReplicationTaskIndividualAssessmentsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_replication_task_individual_assessments();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeReplicationTaskIndividualAssessments`.
 ///
 /// <p>Returns a paginated list of individual assessments based on filter settings.</p>

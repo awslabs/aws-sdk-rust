@@ -3,6 +3,23 @@ pub use crate::operation::create_namespace::_create_namespace_output::CreateName
 
 pub use crate::operation::create_namespace::_create_namespace_input::CreateNamespaceInputBuilder;
 
+impl CreateNamespaceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_namespace::CreateNamespaceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_namespace::CreateNamespaceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_namespace();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateNamespace`.
 ///
 /// <p>(Enterprise edition only) Creates a new namespace for you to use with Amazon QuickSight.</p>

@@ -3,6 +3,17 @@ pub use crate::operation::list_resolver_endpoint_ip_addresses::_list_resolver_en
 
 pub use crate::operation::list_resolver_endpoint_ip_addresses::_list_resolver_endpoint_ip_addresses_input::ListResolverEndpointIpAddressesInputBuilder;
 
+impl ListResolverEndpointIpAddressesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_resolver_endpoint_ip_addresses::ListResolverEndpointIpAddressesOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_resolver_endpoint_ip_addresses::ListResolverEndpointIpAddressesError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_resolver_endpoint_ip_addresses();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListResolverEndpointIpAddresses`.
 ///
 /// <p>Gets the IP addresses for a specified Resolver endpoint.</p>

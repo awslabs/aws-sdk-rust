@@ -3,6 +3,17 @@ pub use crate::operation::list_service_instance_provisioned_resources::_list_ser
 
 pub use crate::operation::list_service_instance_provisioned_resources::_list_service_instance_provisioned_resources_input::ListServiceInstanceProvisionedResourcesInputBuilder;
 
+impl ListServiceInstanceProvisionedResourcesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_service_instance_provisioned_resources::ListServiceInstanceProvisionedResourcesOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_service_instance_provisioned_resources::ListServiceInstanceProvisionedResourcesError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_service_instance_provisioned_resources();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListServiceInstanceProvisionedResources`.
 ///
 /// <p>List provisioned resources for a service instance with details.</p>

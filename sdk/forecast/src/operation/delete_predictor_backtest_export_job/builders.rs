@@ -3,6 +3,17 @@ pub use crate::operation::delete_predictor_backtest_export_job::_delete_predicto
 
 pub use crate::operation::delete_predictor_backtest_export_job::_delete_predictor_backtest_export_job_input::DeletePredictorBacktestExportJobInputBuilder;
 
+impl DeletePredictorBacktestExportJobInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_predictor_backtest_export_job::DeletePredictorBacktestExportJobOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_predictor_backtest_export_job::DeletePredictorBacktestExportJobError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.delete_predictor_backtest_export_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeletePredictorBacktestExportJob`.
 ///
 /// <p>Deletes a predictor backtest export job.</p>

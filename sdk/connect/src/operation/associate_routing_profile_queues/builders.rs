@@ -3,6 +3,23 @@ pub use crate::operation::associate_routing_profile_queues::_associate_routing_p
 
 pub use crate::operation::associate_routing_profile_queues::_associate_routing_profile_queues_input::AssociateRoutingProfileQueuesInputBuilder;
 
+impl AssociateRoutingProfileQueuesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_routing_profile_queues::AssociateRoutingProfileQueuesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_routing_profile_queues::AssociateRoutingProfileQueuesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_routing_profile_queues();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateRoutingProfileQueues`.
 ///
 /// <p>Associates a set of queues with a routing profile.</p>

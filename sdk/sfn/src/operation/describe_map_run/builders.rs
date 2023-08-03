@@ -3,6 +3,23 @@ pub use crate::operation::describe_map_run::_describe_map_run_output::DescribeMa
 
 pub use crate::operation::describe_map_run::_describe_map_run_input::DescribeMapRunInputBuilder;
 
+impl DescribeMapRunInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_map_run::DescribeMapRunOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_map_run::DescribeMapRunError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_map_run();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeMapRun`.
 ///
 /// <p>Provides information about a Map Run's configuration, progress, and results. For more information, see <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-examine-map-run.html">Examining Map Run</a> in the <i>Step Functions Developer Guide</i>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::update_stream_processor::_update_stream_processor_outp
 
 pub use crate::operation::update_stream_processor::_update_stream_processor_input::UpdateStreamProcessorInputBuilder;
 
+impl UpdateStreamProcessorInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_stream_processor::UpdateStreamProcessorOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_stream_processor::UpdateStreamProcessorError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_stream_processor();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateStreamProcessor`.
 ///
 /// <p> Allows you to update a stream processor. You can change some settings and regions of interest and delete certain parameters. </p>

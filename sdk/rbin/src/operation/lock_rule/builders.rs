@@ -3,6 +3,23 @@ pub use crate::operation::lock_rule::_lock_rule_output::LockRuleOutputBuilder;
 
 pub use crate::operation::lock_rule::_lock_rule_input::LockRuleInputBuilder;
 
+impl LockRuleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::lock_rule::LockRuleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::lock_rule::LockRuleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.lock_rule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `LockRule`.
 ///
 /// <p>Locks a retention rule. A locked retention rule can't be modified or deleted.</p>

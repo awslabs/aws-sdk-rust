@@ -3,6 +3,23 @@ pub use crate::operation::get_administrator_account::_get_administrator_account_
 
 pub use crate::operation::get_administrator_account::_get_administrator_account_input::GetAdministratorAccountInputBuilder;
 
+impl GetAdministratorAccountInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_administrator_account::GetAdministratorAccountOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_administrator_account::GetAdministratorAccountError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_administrator_account();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetAdministratorAccount`.
 ///
 /// <p>Provides the details for the Security Hub administrator account for the current member account.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_bundle_tasks::_describe_bundle_tasks_output::
 
 pub use crate::operation::describe_bundle_tasks::_describe_bundle_tasks_input::DescribeBundleTasksInputBuilder;
 
+impl DescribeBundleTasksInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_bundle_tasks::DescribeBundleTasksOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_bundle_tasks::DescribeBundleTasksError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_bundle_tasks();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeBundleTasks`.
 ///
 /// <p>Describes the specified bundle tasks or all of your bundle tasks.</p> <note>

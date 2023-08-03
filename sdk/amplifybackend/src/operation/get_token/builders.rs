@@ -3,6 +3,23 @@ pub use crate::operation::get_token::_get_token_output::GetTokenOutputBuilder;
 
 pub use crate::operation::get_token::_get_token_input::GetTokenInputBuilder;
 
+impl GetTokenInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_token::GetTokenOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_token::GetTokenError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_token();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetToken`.
 ///
 /// <p>Gets the challenge token based on the given appId and sessionId.</p>

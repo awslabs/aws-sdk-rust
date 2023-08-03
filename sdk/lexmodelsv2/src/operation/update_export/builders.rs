@@ -3,6 +3,23 @@ pub use crate::operation::update_export::_update_export_output::UpdateExportOutp
 
 pub use crate::operation::update_export::_update_export_input::UpdateExportInputBuilder;
 
+impl UpdateExportInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_export::UpdateExportOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_export::UpdateExportError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_export();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateExport`.
 ///
 /// <p>Updates the password used to protect an export zip archive.</p>

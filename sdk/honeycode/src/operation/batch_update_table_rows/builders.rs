@@ -3,6 +3,23 @@ pub use crate::operation::batch_update_table_rows::_batch_update_table_rows_outp
 
 pub use crate::operation::batch_update_table_rows::_batch_update_table_rows_input::BatchUpdateTableRowsInputBuilder;
 
+impl BatchUpdateTableRowsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_update_table_rows::BatchUpdateTableRowsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_update_table_rows::BatchUpdateTableRowsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_update_table_rows();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchUpdateTableRows`.
 ///
 /// <p> The BatchUpdateTableRows API allows you to update one or more rows in a table in a workbook. </p>

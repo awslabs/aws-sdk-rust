@@ -3,6 +3,23 @@ pub use crate::operation::batch_get_partition::_batch_get_partition_output::Batc
 
 pub use crate::operation::batch_get_partition::_batch_get_partition_input::BatchGetPartitionInputBuilder;
 
+impl BatchGetPartitionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_partition::BatchGetPartitionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_get_partition::BatchGetPartitionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_get_partition();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchGetPartition`.
 ///
 /// <p>Retrieves partitions in a batch request.</p>

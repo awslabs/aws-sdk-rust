@@ -3,6 +3,23 @@ pub use crate::operation::update_application_settings::_update_application_setti
 
 pub use crate::operation::update_application_settings::_update_application_settings_input::UpdateApplicationSettingsInputBuilder;
 
+impl UpdateApplicationSettingsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_application_settings::UpdateApplicationSettingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_application_settings::UpdateApplicationSettingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_application_settings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateApplicationSettings`.
 ///
 /// <p>Updates the settings of an application registered with AWS Systems Manager for SAP.</p>

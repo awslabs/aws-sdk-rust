@@ -3,6 +3,23 @@ pub use crate::operation::create_flow::_create_flow_output::CreateFlowOutputBuil
 
 pub use crate::operation::create_flow::_create_flow_input::CreateFlowInputBuilder;
 
+impl CreateFlowInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_flow::CreateFlowOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_flow::CreateFlowError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_flow();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateFlow`.
 ///
 /// Creates a new flow. The request must include one source. The request optionally can include outputs (up to 50) and entitlements (up to 50).

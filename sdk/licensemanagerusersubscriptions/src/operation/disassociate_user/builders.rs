@@ -3,6 +3,23 @@ pub use crate::operation::disassociate_user::_disassociate_user_output::Disassoc
 
 pub use crate::operation::disassociate_user::_disassociate_user_input::DisassociateUserInputBuilder;
 
+impl DisassociateUserInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_user::DisassociateUserOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_user::DisassociateUserError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disassociate_user();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateUser`.
 ///
 /// <p>Disassociates the user from an EC2 instance providing user-based subscriptions.</p>

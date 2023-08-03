@@ -3,6 +3,23 @@ pub use crate::operation::describe_table_data_import_job::_describe_table_data_i
 
 pub use crate::operation::describe_table_data_import_job::_describe_table_data_import_job_input::DescribeTableDataImportJobInputBuilder;
 
+impl DescribeTableDataImportJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_table_data_import_job::DescribeTableDataImportJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_table_data_import_job::DescribeTableDataImportJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_table_data_import_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeTableDataImportJob`.
 ///
 /// <p> The DescribeTableDataImportJob API allows you to retrieve the status and details of a table data import job. </p>

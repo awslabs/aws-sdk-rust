@@ -3,6 +3,23 @@ pub use crate::operation::get_extension::_get_extension_output::GetExtensionOutp
 
 pub use crate::operation::get_extension::_get_extension_input::GetExtensionInputBuilder;
 
+impl GetExtensionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_extension::GetExtensionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_extension::GetExtensionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_extension();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetExtension`.
 ///
 /// <p>Returns information about an AppConfig extension.</p>

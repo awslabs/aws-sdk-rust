@@ -3,6 +3,23 @@ pub use crate::operation::delete_multicast_group::_delete_multicast_group_output
 
 pub use crate::operation::delete_multicast_group::_delete_multicast_group_input::DeleteMulticastGroupInputBuilder;
 
+impl DeleteMulticastGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_multicast_group::DeleteMulticastGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_multicast_group::DeleteMulticastGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_multicast_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteMulticastGroup`.
 ///
 /// <p>Deletes a multicast group if it is not in use by a fuota task.</p>

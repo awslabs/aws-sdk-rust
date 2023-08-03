@@ -3,6 +3,17 @@ pub use crate::operation::delete_direct_connect_gateway_association_proposal::_d
 
 pub use crate::operation::delete_direct_connect_gateway_association_proposal::_delete_direct_connect_gateway_association_proposal_input::DeleteDirectConnectGatewayAssociationProposalInputBuilder;
 
+impl DeleteDirectConnectGatewayAssociationProposalInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_direct_connect_gateway_association_proposal::DeleteDirectConnectGatewayAssociationProposalOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_direct_connect_gateway_association_proposal::DeleteDirectConnectGatewayAssociationProposalError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.delete_direct_connect_gateway_association_proposal();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteDirectConnectGatewayAssociationProposal`.
 ///
 /// <p>Deletes the association proposal request between the specified Direct Connect gateway and virtual private gateway or transit gateway.</p>

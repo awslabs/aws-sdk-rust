@@ -3,6 +3,23 @@ pub use crate::operation::start_replication::_start_replication_output::StartRep
 
 pub use crate::operation::start_replication::_start_replication_input::StartReplicationInputBuilder;
 
+impl StartReplicationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_replication::StartReplicationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_replication::StartReplicationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_replication();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartReplication`.
 ///
 /// <p>For a given DMS Serverless replication configuration, DMS connects to the source endpoint and collects the metadata to analyze the replication workload. Using this metadata, DMS then computes and provisions the required capacity and starts replicating to the target endpoint using the server resources that DMS has provisioned for the DMS Serverless replication.</p>

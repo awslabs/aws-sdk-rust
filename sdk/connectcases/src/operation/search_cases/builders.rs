@@ -3,6 +3,23 @@ pub use crate::operation::search_cases::_search_cases_output::SearchCasesOutputB
 
 pub use crate::operation::search_cases::_search_cases_input::SearchCasesInputBuilder;
 
+impl SearchCasesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::search_cases::SearchCasesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::search_cases::SearchCasesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.search_cases();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SearchCases`.
 ///
 /// <p>Searches for cases within their associated Cases domain. Search results are returned as a paginated list of abridged case documents.</p> <note>

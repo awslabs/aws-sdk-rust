@@ -3,6 +3,23 @@ pub use crate::operation::untag_open_id_connect_provider::_untag_open_id_connect
 
 pub use crate::operation::untag_open_id_connect_provider::_untag_open_id_connect_provider_input::UntagOpenIdConnectProviderInputBuilder;
 
+impl UntagOpenIdConnectProviderInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::untag_open_id_connect_provider::UntagOpenIdConnectProviderOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::untag_open_id_connect_provider::UntagOpenIDConnectProviderError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.untag_open_id_connect_provider();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UntagOpenIDConnectProvider`.
 ///
 /// <p>Removes the specified tags from the specified OpenID Connect (OIDC)-compatible identity provider in IAM. For more information about OIDC providers, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_oidc.html">About web identity federation</a>. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>

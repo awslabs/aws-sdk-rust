@@ -3,6 +3,23 @@ pub use crate::operation::create_batch_prediction::_create_batch_prediction_outp
 
 pub use crate::operation::create_batch_prediction::_create_batch_prediction_input::CreateBatchPredictionInputBuilder;
 
+impl CreateBatchPredictionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_batch_prediction::CreateBatchPredictionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_batch_prediction::CreateBatchPredictionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_batch_prediction();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateBatchPrediction`.
 ///
 /// <p>Generates predictions for a group of observations. The observations to process exist in one or more data files referenced by a <code>DataSource</code>. This operation creates a new <code>BatchPrediction</code>, and uses an <code>MLModel</code> and the data files referenced by the <code>DataSource</code> as information sources. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_key_policies::_list_key_policies_output::ListKeyP
 
 pub use crate::operation::list_key_policies::_list_key_policies_input::ListKeyPoliciesInputBuilder;
 
+impl ListKeyPoliciesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_key_policies::ListKeyPoliciesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_key_policies::ListKeyPoliciesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_key_policies();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListKeyPolicies`.
 ///
 /// <p>Gets the names of the key policies that are attached to a KMS key. This operation is designed to get policy names that you can use in a <code>GetKeyPolicy</code> operation. However, the only valid policy name is <code>default</code>. </p>

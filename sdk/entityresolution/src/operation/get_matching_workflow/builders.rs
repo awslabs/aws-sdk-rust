@@ -3,6 +3,23 @@ pub use crate::operation::get_matching_workflow::_get_matching_workflow_output::
 
 pub use crate::operation::get_matching_workflow::_get_matching_workflow_input::GetMatchingWorkflowInputBuilder;
 
+impl GetMatchingWorkflowInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_matching_workflow::GetMatchingWorkflowOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_matching_workflow::GetMatchingWorkflowError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_matching_workflow();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetMatchingWorkflow`.
 ///
 /// <p>Returns the <code>MatchingWorkflow</code> with a given name, if it exists.</p>

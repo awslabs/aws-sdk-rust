@@ -3,6 +3,23 @@ pub use crate::operation::list_recommendations::_list_recommendations_output::Li
 
 pub use crate::operation::list_recommendations::_list_recommendations_input::ListRecommendationsInputBuilder;
 
+impl ListRecommendationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_recommendations::ListRecommendationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_recommendations::ListRecommendationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_recommendations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListRecommendations`.
 ///
 /// <p>Returns the list of all recommendations for a completed code review.</p>

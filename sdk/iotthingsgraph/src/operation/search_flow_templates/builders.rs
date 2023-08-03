@@ -3,6 +3,23 @@ pub use crate::operation::search_flow_templates::_search_flow_templates_output::
 
 pub use crate::operation::search_flow_templates::_search_flow_templates_input::SearchFlowTemplatesInputBuilder;
 
+impl SearchFlowTemplatesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::search_flow_templates::SearchFlowTemplatesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::search_flow_templates::SearchFlowTemplatesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.search_flow_templates();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SearchFlowTemplates`.
 ///
 /// <p>Searches for summary information about workflows.</p>

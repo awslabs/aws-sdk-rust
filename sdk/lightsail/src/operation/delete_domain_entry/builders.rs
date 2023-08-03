@@ -3,6 +3,23 @@ pub use crate::operation::delete_domain_entry::_delete_domain_entry_output::Dele
 
 pub use crate::operation::delete_domain_entry::_delete_domain_entry_input::DeleteDomainEntryInputBuilder;
 
+impl DeleteDomainEntryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_domain_entry::DeleteDomainEntryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_domain_entry::DeleteDomainEntryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_domain_entry();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteDomainEntry`.
 ///
 /// <p>Deletes a specific domain entry.</p>

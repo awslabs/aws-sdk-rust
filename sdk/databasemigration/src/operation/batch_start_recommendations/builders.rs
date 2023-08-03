@@ -3,6 +3,23 @@ pub use crate::operation::batch_start_recommendations::_batch_start_recommendati
 
 pub use crate::operation::batch_start_recommendations::_batch_start_recommendations_input::BatchStartRecommendationsInputBuilder;
 
+impl BatchStartRecommendationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_start_recommendations::BatchStartRecommendationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_start_recommendations::BatchStartRecommendationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_start_recommendations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchStartRecommendations`.
 ///
 /// <p>Starts the analysis of up to 20 source databases to recommend target engines for each source database. This is a batch version of <a href="https://docs.aws.amazon.com/dms/latest/APIReference/API_StartRecommendations.html">StartRecommendations</a>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::add_communication_to_case::_add_communication_to_case_
 
 pub use crate::operation::add_communication_to_case::_add_communication_to_case_input::AddCommunicationToCaseInputBuilder;
 
+impl AddCommunicationToCaseInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::add_communication_to_case::AddCommunicationToCaseOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::add_communication_to_case::AddCommunicationToCaseError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.add_communication_to_case();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AddCommunicationToCase`.
 ///
 /// <p>Adds additional customer communication to an Amazon Web Services Support case. Use the <code>caseId</code> parameter to identify the case to which to add communication. You can list a set of email addresses to copy on the communication by using the <code>ccEmailAddresses</code> parameter. The <code>communicationBody</code> value contains the text of the communication.</p> <note>

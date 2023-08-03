@@ -3,6 +3,23 @@ pub use crate::operation::delete_accessor::_delete_accessor_output::DeleteAccess
 
 pub use crate::operation::delete_accessor::_delete_accessor_input::DeleteAccessorInputBuilder;
 
+impl DeleteAccessorInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_accessor::DeleteAccessorOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_accessor::DeleteAccessorError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_accessor();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteAccessor`.
 ///
 /// <p>Deletes an accessor that your Amazon Web Services account owns. An accessor object is a container that has the information required for token based access to your Ethereum nodes including, the <code>BILLING_TOKEN</code>. After an accessor is deleted, the status of the accessor changes from <code>AVAILABLE</code> to <code>PENDING_DELETION</code>. An accessor in the <code>PENDING_DELETION</code> state can’t be used for new WebSocket requests or HTTP requests. However, WebSocket connections that were initiated while the accessor was in the <code>AVAILABLE</code> state remain open until they expire (up to 2 hours).</p>

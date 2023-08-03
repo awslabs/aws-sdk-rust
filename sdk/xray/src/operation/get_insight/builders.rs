@@ -3,6 +3,23 @@ pub use crate::operation::get_insight::_get_insight_output::GetInsightOutputBuil
 
 pub use crate::operation::get_insight::_get_insight_input::GetInsightInputBuilder;
 
+impl GetInsightInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_insight::GetInsightOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_insight::GetInsightError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_insight();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetInsight`.
 ///
 /// <p>Retrieves the summary information of an insight. This includes impact to clients and root cause services, the top anomalous services, the category, the state of the insight, and the start and end time of the insight.</p>

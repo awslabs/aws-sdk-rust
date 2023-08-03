@@ -3,6 +3,23 @@ pub use crate::operation::delete_document_classifier::_delete_document_classifie
 
 pub use crate::operation::delete_document_classifier::_delete_document_classifier_input::DeleteDocumentClassifierInputBuilder;
 
+impl DeleteDocumentClassifierInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_document_classifier::DeleteDocumentClassifierOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_document_classifier::DeleteDocumentClassifierError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_document_classifier();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteDocumentClassifier`.
 ///
 /// <p>Deletes a previously created document classifier</p>

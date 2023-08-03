@@ -3,6 +3,23 @@ pub use crate::operation::create_outpost_resolver::_create_outpost_resolver_outp
 
 pub use crate::operation::create_outpost_resolver::_create_outpost_resolver_input::CreateOutpostResolverInputBuilder;
 
+impl CreateOutpostResolverInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_outpost_resolver::CreateOutpostResolverOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_outpost_resolver::CreateOutpostResolverError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_outpost_resolver();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateOutpostResolver`.
 ///
 /// <p>Creates an Route&nbsp;53 Resolver on an Outpost.</p>

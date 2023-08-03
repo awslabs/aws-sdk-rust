@@ -3,6 +3,23 @@ pub use crate::operation::create_broker::_create_broker_output::CreateBrokerOutp
 
 pub use crate::operation::create_broker::_create_broker_input::CreateBrokerInputBuilder;
 
+impl CreateBrokerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_broker::CreateBrokerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_broker::CreateBrokerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_broker();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateBroker`.
 ///
 /// <p>Creates a broker. Note: This API is asynchronous.</p>

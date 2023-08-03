@@ -3,6 +3,23 @@ pub use crate::operation::create_monitor::_create_monitor_output::CreateMonitorO
 
 pub use crate::operation::create_monitor::_create_monitor_input::CreateMonitorInputBuilder;
 
+impl CreateMonitorInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_monitor::CreateMonitorOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_monitor::CreateMonitorError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_monitor();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateMonitor`.
 ///
 /// <p>Creates a predictor monitor resource for an existing auto predictor. Predictor monitoring allows you to see how your predictor's performance changes over time. For more information, see <a href="https://docs.aws.amazon.com/forecast/latest/dg/predictor-monitoring.html">Predictor Monitoring</a>. </p>

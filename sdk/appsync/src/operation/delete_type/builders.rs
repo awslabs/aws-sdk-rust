@@ -3,6 +3,23 @@ pub use crate::operation::delete_type::_delete_type_output::DeleteTypeOutputBuil
 
 pub use crate::operation::delete_type::_delete_type_input::DeleteTypeInputBuilder;
 
+impl DeleteTypeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_type::DeleteTypeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_type::DeleteTypeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_type();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteType`.
 ///
 /// <p>Deletes a <code>Type</code> object.</p>

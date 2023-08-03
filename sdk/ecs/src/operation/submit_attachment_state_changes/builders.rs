@@ -3,6 +3,23 @@ pub use crate::operation::submit_attachment_state_changes::_submit_attachment_st
 
 pub use crate::operation::submit_attachment_state_changes::_submit_attachment_state_changes_input::SubmitAttachmentStateChangesInputBuilder;
 
+impl SubmitAttachmentStateChangesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::submit_attachment_state_changes::SubmitAttachmentStateChangesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::submit_attachment_state_changes::SubmitAttachmentStateChangesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.submit_attachment_state_changes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SubmitAttachmentStateChanges`.
 ///
 /// <note>

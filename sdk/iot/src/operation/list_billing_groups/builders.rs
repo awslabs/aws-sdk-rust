@@ -3,6 +3,23 @@ pub use crate::operation::list_billing_groups::_list_billing_groups_output::List
 
 pub use crate::operation::list_billing_groups::_list_billing_groups_input::ListBillingGroupsInputBuilder;
 
+impl ListBillingGroupsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_billing_groups::ListBillingGroupsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_billing_groups::ListBillingGroupsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_billing_groups();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListBillingGroups`.
 ///
 /// <p>Lists the billing groups you have created.</p>

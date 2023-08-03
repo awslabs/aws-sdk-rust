@@ -3,6 +3,23 @@ pub use crate::operation::get_ice_server_config::_get_ice_server_config_output::
 
 pub use crate::operation::get_ice_server_config::_get_ice_server_config_input::GetIceServerConfigInputBuilder;
 
+impl GetIceServerConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_ice_server_config::GetIceServerConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_ice_server_config::GetIceServerConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_ice_server_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetIceServerConfig`.
 ///
 /// <p>Gets the Interactive Connectivity Establishment (ICE) server configuration information, including URIs, username, and password which can be used to configure the WebRTC connection. The ICE component uses this configuration information to setup the WebRTC connection, including authenticating with the Traversal Using Relays around NAT (TURN) relay server. </p>

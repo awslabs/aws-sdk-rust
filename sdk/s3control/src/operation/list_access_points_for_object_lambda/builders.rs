@@ -3,6 +3,17 @@ pub use crate::operation::list_access_points_for_object_lambda::_list_access_poi
 
 pub use crate::operation::list_access_points_for_object_lambda::_list_access_points_for_object_lambda_input::ListAccessPointsForObjectLambdaInputBuilder;
 
+impl ListAccessPointsForObjectLambdaInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_access_points_for_object_lambda::ListAccessPointsForObjectLambdaOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_access_points_for_object_lambda::ListAccessPointsForObjectLambdaError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_access_points_for_object_lambda();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAccessPointsForObjectLambda`.
 ///
 /// <p>Returns some or all (up to 1,000) access points associated with the Object Lambda Access Point per call. If there are more access points than what can be returned in one call, the response will include a continuation token that you can use to list the additional access points.</p>

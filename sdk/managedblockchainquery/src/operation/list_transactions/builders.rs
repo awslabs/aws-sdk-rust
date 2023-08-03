@@ -3,6 +3,23 @@ pub use crate::operation::list_transactions::_list_transactions_output::ListTran
 
 pub use crate::operation::list_transactions::_list_transactions_input::ListTransactionsInputBuilder;
 
+impl ListTransactionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_transactions::ListTransactionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_transactions::ListTransactionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_transactions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListTransactions`.
 ///
 /// <p>Lists all of the transactions on a given wallet address or to a specific contract.</p>

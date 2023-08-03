@@ -3,6 +3,23 @@ pub use crate::operation::update_resource_position::_update_resource_position_ou
 
 pub use crate::operation::update_resource_position::_update_resource_position_input::UpdateResourcePositionInputBuilder;
 
+impl UpdateResourcePositionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_resource_position::UpdateResourcePositionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_resource_position::UpdateResourcePositionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_resource_position();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateResourcePosition`.
 ///
 /// <p>Update the position information of a given wireless device or a wireless gateway resource. The position coordinates are based on the <a href="https://gisgeography.com/wgs84-world-geodetic-system/"> World Geodetic System (WGS84)</a>.</p>

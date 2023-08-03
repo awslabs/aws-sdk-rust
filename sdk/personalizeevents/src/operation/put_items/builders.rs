@@ -3,6 +3,23 @@ pub use crate::operation::put_items::_put_items_output::PutItemsOutputBuilder;
 
 pub use crate::operation::put_items::_put_items_input::PutItemsInputBuilder;
 
+impl PutItemsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_items::PutItemsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_items::PutItemsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_items();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutItems`.
 ///
 /// <p>Adds one or more items to an Items dataset. For more information see <a href="https://docs.aws.amazon.com/personalize/latest/dg/importing-items.html">Importing Items Incrementally</a>. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_rotation_override::_delete_rotation_override_ou
 
 pub use crate::operation::delete_rotation_override::_delete_rotation_override_input::DeleteRotationOverrideInputBuilder;
 
+impl DeleteRotationOverrideInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_rotation_override::DeleteRotationOverrideOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_rotation_override::DeleteRotationOverrideError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_rotation_override();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteRotationOverride`.
 ///
 /// <p>Deletes an existing override for an on-call rotation.</p>

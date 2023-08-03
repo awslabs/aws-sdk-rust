@@ -3,6 +3,23 @@ pub use crate::operation::list_hours_of_operations::_list_hours_of_operations_ou
 
 pub use crate::operation::list_hours_of_operations::_list_hours_of_operations_input::ListHoursOfOperationsInputBuilder;
 
+impl ListHoursOfOperationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_hours_of_operations::ListHoursOfOperationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_hours_of_operations::ListHoursOfOperationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_hours_of_operations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListHoursOfOperations`.
 ///
 /// <p>Provides information about the hours of operation for the specified Amazon Connect instance.</p>

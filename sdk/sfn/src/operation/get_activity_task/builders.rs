@@ -3,6 +3,23 @@ pub use crate::operation::get_activity_task::_get_activity_task_output::GetActiv
 
 pub use crate::operation::get_activity_task::_get_activity_task_input::GetActivityTaskInputBuilder;
 
+impl GetActivityTaskInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_activity_task::GetActivityTaskOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_activity_task::GetActivityTaskError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_activity_task();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetActivityTask`.
 ///
 /// <p>Used by workers to retrieve a task (with the specified activity ARN) which has been scheduled for execution by a running state machine. This initiates a long poll, where the service holds the HTTP connection open and responds as soon as a task becomes available (i.e. an execution of a task of this type is needed.) The maximum time the service holds on to the request before responding is 60 seconds. If no task is available within 60 seconds, the poll returns a <code>taskToken</code> with a null string.</p> <note>

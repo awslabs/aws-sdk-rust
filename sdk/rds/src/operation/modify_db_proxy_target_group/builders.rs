@@ -3,6 +3,23 @@ pub use crate::operation::modify_db_proxy_target_group::_modify_db_proxy_target_
 
 pub use crate::operation::modify_db_proxy_target_group::_modify_db_proxy_target_group_input::ModifyDbProxyTargetGroupInputBuilder;
 
+impl ModifyDbProxyTargetGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_db_proxy_target_group::ModifyDbProxyTargetGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_db_proxy_target_group::ModifyDBProxyTargetGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_db_proxy_target_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyDBProxyTargetGroup`.
 ///
 /// <p>Modifies the properties of a <code>DBProxyTargetGroup</code>.</p>

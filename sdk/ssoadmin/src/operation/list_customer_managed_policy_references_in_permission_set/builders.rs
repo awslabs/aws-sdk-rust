@@ -3,6 +3,17 @@ pub use crate::operation::list_customer_managed_policy_references_in_permission_
 
 pub use crate::operation::list_customer_managed_policy_references_in_permission_set::_list_customer_managed_policy_references_in_permission_set_input::ListCustomerManagedPolicyReferencesInPermissionSetInputBuilder;
 
+impl ListCustomerManagedPolicyReferencesInPermissionSetInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_customer_managed_policy_references_in_permission_set::ListCustomerManagedPolicyReferencesInPermissionSetOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_customer_managed_policy_references_in_permission_set::ListCustomerManagedPolicyReferencesInPermissionSetError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_customer_managed_policy_references_in_permission_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListCustomerManagedPolicyReferencesInPermissionSet`.
 ///
 /// <p>Lists all customer managed policies attached to a specified <code>PermissionSet</code>.</p>

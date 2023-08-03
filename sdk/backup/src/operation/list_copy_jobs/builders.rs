@@ -3,6 +3,23 @@ pub use crate::operation::list_copy_jobs::_list_copy_jobs_output::ListCopyJobsOu
 
 pub use crate::operation::list_copy_jobs::_list_copy_jobs_input::ListCopyJobsInputBuilder;
 
+impl ListCopyJobsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_copy_jobs::ListCopyJobsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_copy_jobs::ListCopyJobsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_copy_jobs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListCopyJobs`.
 ///
 /// <p>Returns metadata about your copy jobs.</p>

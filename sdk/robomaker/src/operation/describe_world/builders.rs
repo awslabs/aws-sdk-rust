@@ -3,6 +3,23 @@ pub use crate::operation::describe_world::_describe_world_output::DescribeWorldO
 
 pub use crate::operation::describe_world::_describe_world_input::DescribeWorldInputBuilder;
 
+impl DescribeWorldInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_world::DescribeWorldOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_world::DescribeWorldError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_world();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeWorld`.
 ///
 /// <p>Describes a world.</p>

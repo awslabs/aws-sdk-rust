@@ -3,6 +3,23 @@ pub use crate::operation::describe_supported_languages::_describe_supported_lang
 
 pub use crate::operation::describe_supported_languages::_describe_supported_languages_input::DescribeSupportedLanguagesInputBuilder;
 
+impl DescribeSupportedLanguagesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_supported_languages::DescribeSupportedLanguagesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_supported_languages::DescribeSupportedLanguagesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_supported_languages();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeSupportedLanguages`.
 ///
 /// <p>Returns a list of supported languages for a specified <code>categoryCode</code>, <code>issueType</code> and <code>serviceCode</code>. The returned supported languages will include a ISO 639-1 code for the <code>language</code>, and the language display name.</p> <note>

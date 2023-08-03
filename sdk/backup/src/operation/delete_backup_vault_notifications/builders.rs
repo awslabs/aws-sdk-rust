@@ -3,6 +3,17 @@ pub use crate::operation::delete_backup_vault_notifications::_delete_backup_vaul
 
 pub use crate::operation::delete_backup_vault_notifications::_delete_backup_vault_notifications_input::DeleteBackupVaultNotificationsInputBuilder;
 
+impl DeleteBackupVaultNotificationsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_backup_vault_notifications::DeleteBackupVaultNotificationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_backup_vault_notifications::DeleteBackupVaultNotificationsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.delete_backup_vault_notifications();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteBackupVaultNotifications`.
 ///
 /// <p>Deletes event notifications for the specified backup vault.</p>

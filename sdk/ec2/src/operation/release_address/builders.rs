@@ -3,6 +3,23 @@ pub use crate::operation::release_address::_release_address_output::ReleaseAddre
 
 pub use crate::operation::release_address::_release_address_input::ReleaseAddressInputBuilder;
 
+impl ReleaseAddressInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::release_address::ReleaseAddressOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::release_address::ReleaseAddressError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.release_address();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ReleaseAddress`.
 ///
 /// <p>Releases the specified Elastic IP address.</p>

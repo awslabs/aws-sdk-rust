@@ -3,6 +3,17 @@ pub use crate::operation::list_virtual_interface_test_history::_list_virtual_int
 
 pub use crate::operation::list_virtual_interface_test_history::_list_virtual_interface_test_history_input::ListVirtualInterfaceTestHistoryInputBuilder;
 
+impl ListVirtualInterfaceTestHistoryInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_virtual_interface_test_history::ListVirtualInterfaceTestHistoryOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_virtual_interface_test_history::ListVirtualInterfaceTestHistoryError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_virtual_interface_test_history();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListVirtualInterfaceTestHistory`.
 ///
 /// <p>Lists the virtual interface failover test history.</p>

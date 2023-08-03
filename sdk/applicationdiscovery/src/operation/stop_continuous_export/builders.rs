@@ -3,6 +3,23 @@ pub use crate::operation::stop_continuous_export::_stop_continuous_export_output
 
 pub use crate::operation::stop_continuous_export::_stop_continuous_export_input::StopContinuousExportInputBuilder;
 
+impl StopContinuousExportInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_continuous_export::StopContinuousExportOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_continuous_export::StopContinuousExportError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_continuous_export();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopContinuousExport`.
 ///
 /// <p>Stop the continuous flow of agent's discovered data into Amazon Athena.</p>

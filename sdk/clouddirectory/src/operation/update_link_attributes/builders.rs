@@ -3,6 +3,23 @@ pub use crate::operation::update_link_attributes::_update_link_attributes_output
 
 pub use crate::operation::update_link_attributes::_update_link_attributes_input::UpdateLinkAttributesInputBuilder;
 
+impl UpdateLinkAttributesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_link_attributes::UpdateLinkAttributesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_link_attributes::UpdateLinkAttributesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_link_attributes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateLinkAttributes`.
 ///
 /// <p>Updates a given typed link’s attributes. Attributes to be updated must not contribute to the typed link’s identity, as defined by its <code>IdentityAttributeOrder</code>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_fleets_for_vehicle::_list_fleets_for_vehicle_outp
 
 pub use crate::operation::list_fleets_for_vehicle::_list_fleets_for_vehicle_input::ListFleetsForVehicleInputBuilder;
 
+impl ListFleetsForVehicleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_fleets_for_vehicle::ListFleetsForVehicleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_fleets_for_vehicle::ListFleetsForVehicleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_fleets_for_vehicle();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListFleetsForVehicle`.
 ///
 /// <p>Retrieves a list of IDs for all fleets that the vehicle is associated with.</p> <note>

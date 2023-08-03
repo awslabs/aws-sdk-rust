@@ -3,6 +3,23 @@ pub use crate::operation::list_service_pipeline_outputs::_list_service_pipeline_
 
 pub use crate::operation::list_service_pipeline_outputs::_list_service_pipeline_outputs_input::ListServicePipelineOutputsInputBuilder;
 
+impl ListServicePipelineOutputsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_service_pipeline_outputs::ListServicePipelineOutputsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_service_pipeline_outputs::ListServicePipelineOutputsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_service_pipeline_outputs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListServicePipelineOutputs`.
 ///
 /// <p>Get a list of service pipeline Infrastructure as Code (IaC) outputs.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_fuota_task::_create_fuota_task_output::CreateFu
 
 pub use crate::operation::create_fuota_task::_create_fuota_task_input::CreateFuotaTaskInputBuilder;
 
+impl CreateFuotaTaskInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_fuota_task::CreateFuotaTaskOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_fuota_task::CreateFuotaTaskError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_fuota_task();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateFuotaTask`.
 ///
 /// <p>Creates a FUOTA task.</p>

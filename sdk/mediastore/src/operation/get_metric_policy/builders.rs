@@ -3,6 +3,23 @@ pub use crate::operation::get_metric_policy::_get_metric_policy_output::GetMetri
 
 pub use crate::operation::get_metric_policy::_get_metric_policy_input::GetMetricPolicyInputBuilder;
 
+impl GetMetricPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_metric_policy::GetMetricPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_metric_policy::GetMetricPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_metric_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetMetricPolicy`.
 ///
 /// <p>Returns the metric policy for the specified container. </p>

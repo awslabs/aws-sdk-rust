@@ -3,6 +3,23 @@ pub use crate::operation::delete_organization_config_rule::_delete_organization_
 
 pub use crate::operation::delete_organization_config_rule::_delete_organization_config_rule_input::DeleteOrganizationConfigRuleInputBuilder;
 
+impl DeleteOrganizationConfigRuleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_organization_config_rule::DeleteOrganizationConfigRuleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_organization_config_rule::DeleteOrganizationConfigRuleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_organization_config_rule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteOrganizationConfigRule`.
 ///
 /// <p>Deletes the specified organization Config rule and all of its evaluation results from all member accounts in that organization. </p>

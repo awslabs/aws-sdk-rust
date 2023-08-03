@@ -3,6 +3,23 @@ pub use crate::operation::describe_risk_configuration::_describe_risk_configurat
 
 pub use crate::operation::describe_risk_configuration::_describe_risk_configuration_input::DescribeRiskConfigurationInputBuilder;
 
+impl DescribeRiskConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_risk_configuration::DescribeRiskConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_risk_configuration::DescribeRiskConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_risk_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeRiskConfiguration`.
 ///
 /// <p>Describes the risk configuration.</p>

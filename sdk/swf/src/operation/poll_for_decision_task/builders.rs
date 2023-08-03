@@ -3,6 +3,23 @@ pub use crate::operation::poll_for_decision_task::_poll_for_decision_task_output
 
 pub use crate::operation::poll_for_decision_task::_poll_for_decision_task_input::PollForDecisionTaskInputBuilder;
 
+impl PollForDecisionTaskInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::poll_for_decision_task::PollForDecisionTaskOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::poll_for_decision_task::PollForDecisionTaskError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.poll_for_decision_task();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PollForDecisionTask`.
 ///
 /// <p>Used by deciders to get a <code>DecisionTask</code> from the specified decision <code>taskList</code>. A decision task may be returned for any open workflow execution that is using the specified task list. The task includes a paginated view of the history of the workflow execution. The decider should use the workflow type and the history to determine how to properly handle the task.</p>

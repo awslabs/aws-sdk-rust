@@ -3,6 +3,23 @@ pub use crate::operation::describe_time_based_auto_scaling::_describe_time_based
 
 pub use crate::operation::describe_time_based_auto_scaling::_describe_time_based_auto_scaling_input::DescribeTimeBasedAutoScalingInputBuilder;
 
+impl DescribeTimeBasedAutoScalingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_time_based_auto_scaling::DescribeTimeBasedAutoScalingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_time_based_auto_scaling::DescribeTimeBasedAutoScalingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_time_based_auto_scaling();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeTimeBasedAutoScaling`.
 ///
 /// <p>Describes time-based auto scaling configurations for specified instances.</p> <note>

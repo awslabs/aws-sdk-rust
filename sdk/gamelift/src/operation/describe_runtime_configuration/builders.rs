@@ -3,6 +3,23 @@ pub use crate::operation::describe_runtime_configuration::_describe_runtime_conf
 
 pub use crate::operation::describe_runtime_configuration::_describe_runtime_configuration_input::DescribeRuntimeConfigurationInputBuilder;
 
+impl DescribeRuntimeConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_runtime_configuration::DescribeRuntimeConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_runtime_configuration::DescribeRuntimeConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_runtime_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeRuntimeConfiguration`.
 ///
 /// <p>Retrieves a fleet's runtime configuration settings. The runtime configuration tells Amazon GameLift which server processes to run (and how) on each instance in the fleet.</p>

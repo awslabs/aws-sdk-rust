@@ -3,6 +3,23 @@ pub use crate::operation::list_speaker_enrollment_jobs::_list_speaker_enrollment
 
 pub use crate::operation::list_speaker_enrollment_jobs::_list_speaker_enrollment_jobs_input::ListSpeakerEnrollmentJobsInputBuilder;
 
+impl ListSpeakerEnrollmentJobsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_speaker_enrollment_jobs::ListSpeakerEnrollmentJobsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_speaker_enrollment_jobs::ListSpeakerEnrollmentJobsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_speaker_enrollment_jobs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListSpeakerEnrollmentJobs`.
 ///
 /// <p>Lists all the speaker enrollment jobs in the domain with the specified <code>JobStatus</code>. If <code>JobStatus</code> is not provided, this lists all jobs with all possible speaker enrollment job statuses.</p>

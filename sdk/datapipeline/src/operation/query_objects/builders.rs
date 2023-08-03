@@ -3,6 +3,23 @@ pub use crate::operation::query_objects::_query_objects_output::QueryObjectsOutp
 
 pub use crate::operation::query_objects::_query_objects_input::QueryObjectsInputBuilder;
 
+impl QueryObjectsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::query_objects::QueryObjectsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::query_objects::QueryObjectsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.query_objects();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `QueryObjects`.
 ///
 /// <p>Queries the specified pipeline for the names of objects that match the specified set of conditions.</p> <examples>

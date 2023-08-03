@@ -3,6 +3,23 @@ pub use crate::operation::get_service_instance_sync_status::_get_service_instanc
 
 pub use crate::operation::get_service_instance_sync_status::_get_service_instance_sync_status_input::GetServiceInstanceSyncStatusInputBuilder;
 
+impl GetServiceInstanceSyncStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_service_instance_sync_status::GetServiceInstanceSyncStatusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_service_instance_sync_status::GetServiceInstanceSyncStatusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_service_instance_sync_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetServiceInstanceSyncStatus`.
 ///
 /// <p>Get the status of the synced service instance.</p>

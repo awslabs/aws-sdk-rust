@@ -3,6 +3,23 @@ pub use crate::operation::enable_ebs_encryption_by_default::_enable_ebs_encrypti
 
 pub use crate::operation::enable_ebs_encryption_by_default::_enable_ebs_encryption_by_default_input::EnableEbsEncryptionByDefaultInputBuilder;
 
+impl EnableEbsEncryptionByDefaultInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::enable_ebs_encryption_by_default::EnableEbsEncryptionByDefaultOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::enable_ebs_encryption_by_default::EnableEbsEncryptionByDefaultError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.enable_ebs_encryption_by_default();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `EnableEbsEncryptionByDefault`.
 ///
 /// <p>Enables EBS encryption by default for your account in the current Region.</p>

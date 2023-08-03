@@ -3,6 +3,23 @@ pub use crate::operation::get_account::_get_account_output::GetAccountOutputBuil
 
 pub use crate::operation::get_account::_get_account_input::GetAccountInputBuilder;
 
+impl GetAccountInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_account::GetAccountOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_account::GetAccountError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_account();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetAccount`.
 ///
 /// <p>Obtain information about the email-sending status and capabilities of your Amazon SES account in the current Amazon Web Services Region.</p>

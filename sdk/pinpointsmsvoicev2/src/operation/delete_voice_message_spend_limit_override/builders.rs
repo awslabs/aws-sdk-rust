@@ -3,6 +3,17 @@ pub use crate::operation::delete_voice_message_spend_limit_override::_delete_voi
 
 pub use crate::operation::delete_voice_message_spend_limit_override::_delete_voice_message_spend_limit_override_input::DeleteVoiceMessageSpendLimitOverrideInputBuilder;
 
+impl DeleteVoiceMessageSpendLimitOverrideInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_voice_message_spend_limit_override::DeleteVoiceMessageSpendLimitOverrideOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_voice_message_spend_limit_override::DeleteVoiceMessageSpendLimitOverrideError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.delete_voice_message_spend_limit_override();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteVoiceMessageSpendLimitOverride`.
 ///
 /// <p>Deletes an account level monthly spend limit override for sending voice messages. Deleting a spend limit override sets the <code>EnforcedLimit</code> equal to the <code>MaxLimit</code>, which is controlled by Amazon Web Services. For more information on spending limits (quotas) see <a href="https://docs.aws.amazon.com/pinpoint/latest/developerguide/quotas.html">Amazon Pinpoint quotas</a> in the <i>Amazon Pinpoint Developer Guide</i>.</p>

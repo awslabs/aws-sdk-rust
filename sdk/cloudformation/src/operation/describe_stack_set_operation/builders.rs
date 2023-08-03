@@ -3,6 +3,23 @@ pub use crate::operation::describe_stack_set_operation::_describe_stack_set_oper
 
 pub use crate::operation::describe_stack_set_operation::_describe_stack_set_operation_input::DescribeStackSetOperationInputBuilder;
 
+impl DescribeStackSetOperationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_stack_set_operation::DescribeStackSetOperationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_stack_set_operation::DescribeStackSetOperationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_stack_set_operation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeStackSetOperation`.
 ///
 /// <p>Returns the description of the specified StackSet operation.</p>

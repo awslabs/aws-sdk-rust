@@ -3,6 +3,23 @@ pub use crate::operation::delete_constraint::_delete_constraint_output::DeleteCo
 
 pub use crate::operation::delete_constraint::_delete_constraint_input::DeleteConstraintInputBuilder;
 
+impl DeleteConstraintInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_constraint::DeleteConstraintOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_constraint::DeleteConstraintError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_constraint();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteConstraint`.
 ///
 /// <p>Deletes the specified constraint.</p>

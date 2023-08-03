@@ -3,6 +3,23 @@ pub use crate::operation::create_client_vpn_route::_create_client_vpn_route_outp
 
 pub use crate::operation::create_client_vpn_route::_create_client_vpn_route_input::CreateClientVpnRouteInputBuilder;
 
+impl CreateClientVpnRouteInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_client_vpn_route::CreateClientVpnRouteOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_client_vpn_route::CreateClientVpnRouteError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_client_vpn_route();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateClientVpnRoute`.
 ///
 /// <p>Adds a route to a network to a Client VPN endpoint. Each Client VPN endpoint has a route table that describes the available destination network routes. Each route in the route table specifies the path for traﬃc to speciﬁc resources or networks.</p>

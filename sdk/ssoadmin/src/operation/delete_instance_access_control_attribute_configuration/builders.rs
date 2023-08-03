@@ -3,6 +3,17 @@ pub use crate::operation::delete_instance_access_control_attribute_configuration
 
 pub use crate::operation::delete_instance_access_control_attribute_configuration::_delete_instance_access_control_attribute_configuration_input::DeleteInstanceAccessControlAttributeConfigurationInputBuilder;
 
+impl DeleteInstanceAccessControlAttributeConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_instance_access_control_attribute_configuration::DeleteInstanceAccessControlAttributeConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_instance_access_control_attribute_configuration::DeleteInstanceAccessControlAttributeConfigurationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.delete_instance_access_control_attribute_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteInstanceAccessControlAttributeConfiguration`.
 ///
 /// <p>Disables the attributes-based access control (ABAC) feature for the specified IAM Identity Center instance and deletes all of the attribute mappings that have been configured. Once deleted, any attributes that are received from an identity source and any custom attributes you have previously configured will not be passed. For more information about ABAC, see <a href="/singlesignon/latest/userguide/abac.html">Attribute-Based Access Control</a> in the <i>IAM Identity Center User Guide</i>.</p>

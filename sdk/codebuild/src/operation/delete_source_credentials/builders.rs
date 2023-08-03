@@ -3,6 +3,23 @@ pub use crate::operation::delete_source_credentials::_delete_source_credentials_
 
 pub use crate::operation::delete_source_credentials::_delete_source_credentials_input::DeleteSourceCredentialsInputBuilder;
 
+impl DeleteSourceCredentialsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_source_credentials::DeleteSourceCredentialsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_source_credentials::DeleteSourceCredentialsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_source_credentials();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteSourceCredentials`.
 ///
 /// <p> Deletes a set of GitHub, GitHub Enterprise, or Bitbucket source credentials. </p>

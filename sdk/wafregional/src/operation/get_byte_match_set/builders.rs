@@ -3,6 +3,23 @@ pub use crate::operation::get_byte_match_set::_get_byte_match_set_output::GetByt
 
 pub use crate::operation::get_byte_match_set::_get_byte_match_set_input::GetByteMatchSetInputBuilder;
 
+impl GetByteMatchSetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_byte_match_set::GetByteMatchSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_byte_match_set::GetByteMatchSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_byte_match_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetByteMatchSet`.
 ///
 /// <note>

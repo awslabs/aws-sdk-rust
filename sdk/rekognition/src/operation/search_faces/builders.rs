@@ -3,6 +3,23 @@ pub use crate::operation::search_faces::_search_faces_output::SearchFacesOutputB
 
 pub use crate::operation::search_faces::_search_faces_input::SearchFacesInputBuilder;
 
+impl SearchFacesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::search_faces::SearchFacesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::search_faces::SearchFacesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.search_faces();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SearchFaces`.
 ///
 /// <p>For a given input face ID, searches for matching faces in the collection the face belongs to. You get a face ID when you add a face to the collection using the <code>IndexFaces</code> operation. The operation compares the features of the input face with faces in the specified collection. </p> <note>

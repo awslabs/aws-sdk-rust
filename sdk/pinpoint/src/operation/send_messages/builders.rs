@@ -3,6 +3,23 @@ pub use crate::operation::send_messages::_send_messages_output::SendMessagesOutp
 
 pub use crate::operation::send_messages::_send_messages_input::SendMessagesInputBuilder;
 
+impl SendMessagesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::send_messages::SendMessagesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::send_messages::SendMessagesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.send_messages();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SendMessages`.
 ///
 /// <p>Creates and sends a direct message.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_schema::_get_schema_output::GetSchemaOutputBuilder
 
 pub use crate::operation::get_schema::_get_schema_input::GetSchemaInputBuilder;
 
+impl GetSchemaInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_schema::GetSchemaOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_schema::GetSchemaError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_schema();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetSchema`.
 ///
 /// <p>Describes the specified schema in detail.</p>

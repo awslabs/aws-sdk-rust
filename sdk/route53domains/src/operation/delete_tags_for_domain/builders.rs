@@ -3,6 +3,23 @@ pub use crate::operation::delete_tags_for_domain::_delete_tags_for_domain_output
 
 pub use crate::operation::delete_tags_for_domain::_delete_tags_for_domain_input::DeleteTagsForDomainInputBuilder;
 
+impl DeleteTagsForDomainInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_tags_for_domain::DeleteTagsForDomainOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_tags_for_domain::DeleteTagsForDomainError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_tags_for_domain();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteTagsForDomain`.
 ///
 /// <p>This operation deletes the specified tags for a domain.</p>

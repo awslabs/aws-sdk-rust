@@ -3,6 +3,23 @@ pub use crate::operation::delete_role_alias::_delete_role_alias_output::DeleteRo
 
 pub use crate::operation::delete_role_alias::_delete_role_alias_input::DeleteRoleAliasInputBuilder;
 
+impl DeleteRoleAliasInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_role_alias::DeleteRoleAliasOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_role_alias::DeleteRoleAliasError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_role_alias();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteRoleAlias`.
 ///
 /// <p>Deletes a role alias</p>

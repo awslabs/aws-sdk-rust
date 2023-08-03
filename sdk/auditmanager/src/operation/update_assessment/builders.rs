@@ -3,6 +3,23 @@ pub use crate::operation::update_assessment::_update_assessment_output::UpdateAs
 
 pub use crate::operation::update_assessment::_update_assessment_input::UpdateAssessmentInputBuilder;
 
+impl UpdateAssessmentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_assessment::UpdateAssessmentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_assessment::UpdateAssessmentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_assessment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateAssessment`.
 ///
 /// <p> Edits an Audit Manager assessment. </p>

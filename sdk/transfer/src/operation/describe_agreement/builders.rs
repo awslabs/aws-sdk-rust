@@ -3,6 +3,23 @@ pub use crate::operation::describe_agreement::_describe_agreement_output::Descri
 
 pub use crate::operation::describe_agreement::_describe_agreement_input::DescribeAgreementInputBuilder;
 
+impl DescribeAgreementInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_agreement::DescribeAgreementOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_agreement::DescribeAgreementError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_agreement();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAgreement`.
 ///
 /// <p>Describes the agreement that's identified by the <code>AgreementId</code>.</p>

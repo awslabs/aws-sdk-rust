@@ -3,6 +3,17 @@ pub use crate::operation::register_app_instance_user_endpoint::_register_app_ins
 
 pub use crate::operation::register_app_instance_user_endpoint::_register_app_instance_user_endpoint_input::RegisterAppInstanceUserEndpointInputBuilder;
 
+impl RegisterAppInstanceUserEndpointInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointOutput, ::aws_smithy_http::result::SdkError<crate::operation::register_app_instance_user_endpoint::RegisterAppInstanceUserEndpointError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.register_app_instance_user_endpoint();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RegisterAppInstanceUserEndpoint`.
 ///
 /// <p>Registers an endpoint under an Amazon Chime <code>AppInstanceUser</code>. The endpoint receives messages for a user. For push notifications, the endpoint is a mobile device used to receive mobile push notifications for a user.</p>

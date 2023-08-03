@@ -3,6 +3,23 @@ pub use crate::operation::post_comment_for_compared_commit::_post_comment_for_co
 
 pub use crate::operation::post_comment_for_compared_commit::_post_comment_for_compared_commit_input::PostCommentForComparedCommitInputBuilder;
 
+impl PostCommentForComparedCommitInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::post_comment_for_compared_commit::PostCommentForComparedCommitError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.post_comment_for_compared_commit();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PostCommentForComparedCommit`.
 ///
 /// <p>Posts a comment on the comparison between two commits.</p>

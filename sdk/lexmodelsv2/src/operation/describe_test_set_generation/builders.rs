@@ -3,6 +3,23 @@ pub use crate::operation::describe_test_set_generation::_describe_test_set_gener
 
 pub use crate::operation::describe_test_set_generation::_describe_test_set_generation_input::DescribeTestSetGenerationInputBuilder;
 
+impl DescribeTestSetGenerationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_test_set_generation::DescribeTestSetGenerationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_test_set_generation::DescribeTestSetGenerationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_test_set_generation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeTestSetGeneration`.
 ///
 /// <p>Gets metadata information about the test set generation.</p>

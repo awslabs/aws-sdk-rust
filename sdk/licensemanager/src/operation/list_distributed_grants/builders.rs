@@ -3,6 +3,23 @@ pub use crate::operation::list_distributed_grants::_list_distributed_grants_outp
 
 pub use crate::operation::list_distributed_grants::_list_distributed_grants_input::ListDistributedGrantsInputBuilder;
 
+impl ListDistributedGrantsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_distributed_grants::ListDistributedGrantsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_distributed_grants::ListDistributedGrantsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_distributed_grants();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDistributedGrants`.
 ///
 /// <p>Lists the grants distributed for the specified license.</p>

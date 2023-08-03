@@ -3,6 +3,23 @@ pub use crate::operation::delete_layer::_delete_layer_output::DeleteLayerOutputB
 
 pub use crate::operation::delete_layer::_delete_layer_input::DeleteLayerInputBuilder;
 
+impl DeleteLayerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_layer::DeleteLayerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_layer::DeleteLayerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_layer();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteLayer`.
 ///
 /// <p>Deletes a specified layer. You must first stop and then delete all associated instances or unassign registered instances. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-delete.html">How to Delete a Layer</a>.</p>

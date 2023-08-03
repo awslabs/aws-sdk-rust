@@ -3,6 +3,23 @@ pub use crate::operation::delete_bot_alias::_delete_bot_alias_output::DeleteBotA
 
 pub use crate::operation::delete_bot_alias::_delete_bot_alias_input::DeleteBotAliasInputBuilder;
 
+impl DeleteBotAliasInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_bot_alias::DeleteBotAliasOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_bot_alias::DeleteBotAliasError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_bot_alias();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteBotAlias`.
 ///
 /// <p>Deletes the specified bot alias.</p>

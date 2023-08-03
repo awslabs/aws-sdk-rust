@@ -3,6 +3,23 @@ pub use crate::operation::write_get_object_response::_write_get_object_response_
 
 pub use crate::operation::write_get_object_response::_write_get_object_response_input::WriteGetObjectResponseInputBuilder;
 
+impl WriteGetObjectResponseInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::write_get_object_response::WriteGetObjectResponseOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::write_get_object_response::WriteGetObjectResponseError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.write_get_object_response();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `WriteGetObjectResponse`.
 ///
 /// <p>Passes transformed objects to a <code>GetObject</code> operation when using Object Lambda access points. For information about Object Lambda access points, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/transforming-objects.html">Transforming objects with Object Lambda access points</a> in the <i>Amazon S3 User Guide</i>.</p>

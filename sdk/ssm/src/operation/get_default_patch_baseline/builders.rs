@@ -3,6 +3,23 @@ pub use crate::operation::get_default_patch_baseline::_get_default_patch_baselin
 
 pub use crate::operation::get_default_patch_baseline::_get_default_patch_baseline_input::GetDefaultPatchBaselineInputBuilder;
 
+impl GetDefaultPatchBaselineInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_default_patch_baseline::GetDefaultPatchBaselineOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_default_patch_baseline::GetDefaultPatchBaselineError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_default_patch_baseline();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetDefaultPatchBaseline`.
 ///
 /// <p>Retrieves the default patch baseline. Amazon Web Services Systems Manager supports creating multiple default patch baselines. For example, you can create a default patch baseline for each operating system.</p>

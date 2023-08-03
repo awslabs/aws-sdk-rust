@@ -3,6 +3,23 @@ pub use crate::operation::delete_cluster::_delete_cluster_output::DeleteClusterO
 
 pub use crate::operation::delete_cluster::_delete_cluster_input::DeleteClusterInputBuilder;
 
+impl DeleteClusterInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_cluster::DeleteClusterOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_cluster::DeleteClusterError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_cluster();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteCluster`.
 ///
 /// <p>Deletes a previously provisioned cluster without its final snapshot being created. A successful response from the web service indicates that the request was received correctly. Use <code>DescribeClusters</code> to monitor the status of the deletion. The delete operation cannot be canceled or reverted once submitted. For more information about managing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>

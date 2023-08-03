@@ -3,6 +3,17 @@ pub use crate::operation::associate_service_action_with_provisioning_artifact::_
 
 pub use crate::operation::associate_service_action_with_provisioning_artifact::_associate_service_action_with_provisioning_artifact_input::AssociateServiceActionWithProvisioningArtifactInputBuilder;
 
+impl AssociateServiceActionWithProvisioningArtifactInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::associate_service_action_with_provisioning_artifact::AssociateServiceActionWithProvisioningArtifactOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_service_action_with_provisioning_artifact::AssociateServiceActionWithProvisioningArtifactError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.associate_service_action_with_provisioning_artifact();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateServiceActionWithProvisioningArtifact`.
 ///
 /// <p>Associates a self-service action with a provisioning artifact.</p>

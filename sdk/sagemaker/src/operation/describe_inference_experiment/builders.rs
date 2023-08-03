@@ -3,6 +3,23 @@ pub use crate::operation::describe_inference_experiment::_describe_inference_exp
 
 pub use crate::operation::describe_inference_experiment::_describe_inference_experiment_input::DescribeInferenceExperimentInputBuilder;
 
+impl DescribeInferenceExperimentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_inference_experiment::DescribeInferenceExperimentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_inference_experiment::DescribeInferenceExperimentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_inference_experiment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeInferenceExperiment`.
 ///
 /// <p>Returns details about an inference experiment.</p>

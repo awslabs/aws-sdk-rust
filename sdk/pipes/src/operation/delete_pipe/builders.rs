@@ -3,6 +3,23 @@ pub use crate::operation::delete_pipe::_delete_pipe_output::DeletePipeOutputBuil
 
 pub use crate::operation::delete_pipe::_delete_pipe_input::DeletePipeInputBuilder;
 
+impl DeletePipeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_pipe::DeletePipeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_pipe::DeletePipeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_pipe();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeletePipe`.
 ///
 /// <p>Delete an existing pipe. For more information about pipes, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes.html">Amazon EventBridge Pipes</a> in the Amazon EventBridge User Guide.</p>

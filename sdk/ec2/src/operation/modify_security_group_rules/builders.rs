@@ -3,6 +3,23 @@ pub use crate::operation::modify_security_group_rules::_modify_security_group_ru
 
 pub use crate::operation::modify_security_group_rules::_modify_security_group_rules_input::ModifySecurityGroupRulesInputBuilder;
 
+impl ModifySecurityGroupRulesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_security_group_rules::ModifySecurityGroupRulesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_security_group_rules::ModifySecurityGroupRulesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_security_group_rules();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifySecurityGroupRules`.
 ///
 /// <p>Modifies the rules of a security group.</p>

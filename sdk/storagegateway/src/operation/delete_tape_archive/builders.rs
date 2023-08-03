@@ -3,6 +3,23 @@ pub use crate::operation::delete_tape_archive::_delete_tape_archive_output::Dele
 
 pub use crate::operation::delete_tape_archive::_delete_tape_archive_input::DeleteTapeArchiveInputBuilder;
 
+impl DeleteTapeArchiveInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_tape_archive::DeleteTapeArchiveOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_tape_archive::DeleteTapeArchiveError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_tape_archive();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteTapeArchive`.
 ///
 /// <p>Deletes the specified virtual tape from the virtual tape shelf (VTS). This operation is only supported in the tape gateway type.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::put_bucket_policy::_put_bucket_policy_output::PutBucke
 
 pub use crate::operation::put_bucket_policy::_put_bucket_policy_input::PutBucketPolicyInputBuilder;
 
+impl PutBucketPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_bucket_policy::PutBucketPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_bucket_policy::PutBucketPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_bucket_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutBucketPolicy`.
 ///
 /// <p>Applies an Amazon S3 bucket policy to an Amazon S3 bucket. If you are using an identity other than the root user of the Amazon Web Services account that owns the bucket, the calling identity must have the <code>PutBucketPolicy</code> permissions on the specified bucket and belong to the bucket owner's account in order to use this operation.</p>

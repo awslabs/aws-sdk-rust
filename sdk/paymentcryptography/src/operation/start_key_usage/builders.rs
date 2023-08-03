@@ -3,6 +3,23 @@ pub use crate::operation::start_key_usage::_start_key_usage_output::StartKeyUsag
 
 pub use crate::operation::start_key_usage::_start_key_usage_input::StartKeyUsageInputBuilder;
 
+impl StartKeyUsageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_key_usage::StartKeyUsageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_key_usage::StartKeyUsageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_key_usage();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartKeyUsage`.
 ///
 /// <p>Enables an Amazon Web Services Payment Cryptography key, which makes it active for cryptographic operations within Amazon Web Services Payment Cryptography</p>

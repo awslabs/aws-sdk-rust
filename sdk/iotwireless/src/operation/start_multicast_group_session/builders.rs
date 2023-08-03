@@ -3,6 +3,23 @@ pub use crate::operation::start_multicast_group_session::_start_multicast_group_
 
 pub use crate::operation::start_multicast_group_session::_start_multicast_group_session_input::StartMulticastGroupSessionInputBuilder;
 
+impl StartMulticastGroupSessionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_multicast_group_session::StartMulticastGroupSessionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_multicast_group_session::StartMulticastGroupSessionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_multicast_group_session();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartMulticastGroupSession`.
 ///
 /// <p>Starts a multicast group session.</p>

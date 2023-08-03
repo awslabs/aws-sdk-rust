@@ -3,6 +3,23 @@ pub use crate::operation::start_query::_start_query_output::StartQueryOutputBuil
 
 pub use crate::operation::start_query::_start_query_input::StartQueryInputBuilder;
 
+impl StartQueryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_query::StartQueryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_query::StartQueryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_query();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartQuery`.
 ///
 /// <p>Starts a CloudTrail Lake query. Use the <code>QueryStatement</code> parameter to provide your SQL query, enclosed in single quotation marks. Use the optional <code>DeliveryS3Uri</code> parameter to deliver the query results to an S3 bucket.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::send_bulk_templated_email::_send_bulk_templated_email_
 
 pub use crate::operation::send_bulk_templated_email::_send_bulk_templated_email_input::SendBulkTemplatedEmailInputBuilder;
 
+impl SendBulkTemplatedEmailInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::send_bulk_templated_email::SendBulkTemplatedEmailOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::send_bulk_templated_email::SendBulkTemplatedEmailError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.send_bulk_templated_email();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SendBulkTemplatedEmail`.
 ///
 /// <p>Composes an email message to multiple destinations. The message body is created using an email template.</p>

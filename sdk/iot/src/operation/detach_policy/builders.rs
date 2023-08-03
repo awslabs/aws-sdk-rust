@@ -3,6 +3,23 @@ pub use crate::operation::detach_policy::_detach_policy_output::DetachPolicyOutp
 
 pub use crate::operation::detach_policy::_detach_policy_input::DetachPolicyInputBuilder;
 
+impl DetachPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::detach_policy::DetachPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::detach_policy::DetachPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.detach_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DetachPolicy`.
 ///
 /// <p>Detaches a policy from the specified target.</p> <note>

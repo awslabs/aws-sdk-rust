@@ -3,6 +3,23 @@ pub use crate::operation::describe_archive::_describe_archive_output::DescribeAr
 
 pub use crate::operation::describe_archive::_describe_archive_input::DescribeArchiveInputBuilder;
 
+impl DescribeArchiveInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_archive::DescribeArchiveOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_archive::DescribeArchiveError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_archive();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeArchive`.
 ///
 /// <p>Retrieves details about an archive.</p>

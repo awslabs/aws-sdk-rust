@@ -3,6 +3,23 @@ pub use crate::operation::delete_quick_connect::_delete_quick_connect_output::De
 
 pub use crate::operation::delete_quick_connect::_delete_quick_connect_input::DeleteQuickConnectInputBuilder;
 
+impl DeleteQuickConnectInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_quick_connect::DeleteQuickConnectOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_quick_connect::DeleteQuickConnectError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_quick_connect();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteQuickConnect`.
 ///
 /// <p>Deletes a quick connect.</p>

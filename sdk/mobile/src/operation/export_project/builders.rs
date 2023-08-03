@@ -3,6 +3,23 @@ pub use crate::operation::export_project::_export_project_output::ExportProjectO
 
 pub use crate::operation::export_project::_export_project_input::ExportProjectInputBuilder;
 
+impl ExportProjectInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::export_project::ExportProjectOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::export_project::ExportProjectError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.export_project();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ExportProject`.
 ///
 /// <p> Exports project configuration to a snapshot which can be downloaded and shared. Note that mobile app push credentials are encrypted in exported projects, so they can only be shared successfully within the same AWS account. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_simulation::_describe_simulation_output::Desc
 
 pub use crate::operation::describe_simulation::_describe_simulation_input::DescribeSimulationInputBuilder;
 
+impl DescribeSimulationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_simulation::DescribeSimulationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_simulation::DescribeSimulationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_simulation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeSimulation`.
 ///
 /// <p>Returns the current state of the given simulation.</p>

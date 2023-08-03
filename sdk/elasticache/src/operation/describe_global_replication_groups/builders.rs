@@ -3,6 +3,17 @@ pub use crate::operation::describe_global_replication_groups::_describe_global_r
 
 pub use crate::operation::describe_global_replication_groups::_describe_global_replication_groups_input::DescribeGlobalReplicationGroupsInputBuilder;
 
+impl DescribeGlobalReplicationGroupsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_global_replication_groups::DescribeGlobalReplicationGroupsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_global_replication_groups::DescribeGlobalReplicationGroupsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_global_replication_groups();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeGlobalReplicationGroups`.
 ///
 /// <p>Returns information about a particular global replication group. If no identifier is specified, returns information about all Global datastores. </p>

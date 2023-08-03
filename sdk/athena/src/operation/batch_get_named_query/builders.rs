@@ -3,6 +3,23 @@ pub use crate::operation::batch_get_named_query::_batch_get_named_query_output::
 
 pub use crate::operation::batch_get_named_query::_batch_get_named_query_input::BatchGetNamedQueryInputBuilder;
 
+impl BatchGetNamedQueryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_named_query::BatchGetNamedQueryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_get_named_query::BatchGetNamedQueryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_get_named_query();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchGetNamedQuery`.
 ///
 /// <p>Returns the details of a single named query or a list of up to 50 queries, which you provide as an array of query ID strings. Requires you to have access to the workgroup in which the queries were saved. Use <code>ListNamedQueriesInput</code> to get the list of named query IDs in the specified workgroup. If information could not be retrieved for a submitted query ID, information about the query ID submitted is listed under <code>UnprocessedNamedQueryId</code>. Named queries differ from executed queries. Use <code>BatchGetQueryExecutionInput</code> to get details about each unique query execution, and <code>ListQueryExecutionsInput</code> to get a list of query execution IDs.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_endpoint_authorization::_describe_endpoint_au
 
 pub use crate::operation::describe_endpoint_authorization::_describe_endpoint_authorization_input::DescribeEndpointAuthorizationInputBuilder;
 
+impl DescribeEndpointAuthorizationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_endpoint_authorization::DescribeEndpointAuthorizationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_endpoint_authorization::DescribeEndpointAuthorizationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_endpoint_authorization();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeEndpointAuthorization`.
 ///
 /// <p>Describes an endpoint authorization.</p>

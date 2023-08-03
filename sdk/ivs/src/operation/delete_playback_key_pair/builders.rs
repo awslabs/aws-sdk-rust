@@ -3,6 +3,23 @@ pub use crate::operation::delete_playback_key_pair::_delete_playback_key_pair_ou
 
 pub use crate::operation::delete_playback_key_pair::_delete_playback_key_pair_input::DeletePlaybackKeyPairInputBuilder;
 
+impl DeletePlaybackKeyPairInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_playback_key_pair::DeletePlaybackKeyPairOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_playback_key_pair::DeletePlaybackKeyPairError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_playback_key_pair();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeletePlaybackKeyPair`.
 ///
 /// <p>Deletes a specified authorization key pair. This invalidates future viewer tokens generated using the key pair’s <code>privateKey</code>. For more information, see <a href="https://docs.aws.amazon.com/ivs/latest/userguide/private-channels.html">Setting Up Private Channels</a> in the <i>Amazon IVS User Guide</i>.</p>

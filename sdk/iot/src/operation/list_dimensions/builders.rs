@@ -3,6 +3,23 @@ pub use crate::operation::list_dimensions::_list_dimensions_output::ListDimensio
 
 pub use crate::operation::list_dimensions::_list_dimensions_input::ListDimensionsInputBuilder;
 
+impl ListDimensionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_dimensions::ListDimensionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_dimensions::ListDimensionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_dimensions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDimensions`.
 ///
 /// <p>List the set of dimensions that are defined for your Amazon Web Services accounts.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::put_group_policy::_put_group_policy_output::PutGroupPo
 
 pub use crate::operation::put_group_policy::_put_group_policy_input::PutGroupPolicyInputBuilder;
 
+impl PutGroupPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_group_policy::PutGroupPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_group_policy::PutGroupPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_group_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutGroupPolicy`.
 ///
 /// <p>Adds or updates an inline policy document that is embedded in the specified IAM group.</p>

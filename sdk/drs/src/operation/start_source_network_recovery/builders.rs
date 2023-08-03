@@ -3,6 +3,23 @@ pub use crate::operation::start_source_network_recovery::_start_source_network_r
 
 pub use crate::operation::start_source_network_recovery::_start_source_network_recovery_input::StartSourceNetworkRecoveryInputBuilder;
 
+impl StartSourceNetworkRecoveryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_source_network_recovery::StartSourceNetworkRecoveryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_source_network_recovery::StartSourceNetworkRecoveryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_source_network_recovery();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartSourceNetworkRecovery`.
 ///
 /// <p>Deploy VPC for the specified Source Network and modify launch templates to use this network. The VPC will be deployed using a dedicated CloudFormation stack.</p>

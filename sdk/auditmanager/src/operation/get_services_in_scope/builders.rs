@@ -3,6 +3,23 @@ pub use crate::operation::get_services_in_scope::_get_services_in_scope_output::
 
 pub use crate::operation::get_services_in_scope::_get_services_in_scope_input::GetServicesInScopeInputBuilder;
 
+impl GetServicesInScopeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_services_in_scope::GetServicesInScopeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_services_in_scope::GetServicesInScopeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_services_in_scope();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetServicesInScope`.
 ///
 /// <p>Gets a list of all of the Amazon Web Services that you can choose to include in your assessment. When you <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_CreateAssessment.html">create an assessment</a>, specify which of these services you want to include to narrow the assessment's <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_Scope.html">scope</a>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_instance_profile::_create_instance_profile_outp
 
 pub use crate::operation::create_instance_profile::_create_instance_profile_input::CreateInstanceProfileInputBuilder;
 
+impl CreateInstanceProfileInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_instance_profile::CreateInstanceProfileOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_instance_profile::CreateInstanceProfileError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_instance_profile();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateInstanceProfile`.
 ///
 /// <p> Creates a new instance profile. For information about instance profiles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_switch-role-ec2.html">Using roles for applications on Amazon EC2</a> in the <i>IAM User Guide</i>, and <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/iam-roles-for-amazon-ec2.html#ec2-instance-profile">Instance profiles</a> in the <i>Amazon EC2 User Guide</i>.</p>

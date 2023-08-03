@@ -3,6 +3,23 @@ pub use crate::operation::create_ruleset::_create_ruleset_output::CreateRulesetO
 
 pub use crate::operation::create_ruleset::_create_ruleset_input::CreateRulesetInputBuilder;
 
+impl CreateRulesetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_ruleset::CreateRulesetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_ruleset::CreateRulesetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_ruleset();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateRuleset`.
 ///
 /// <p>Creates a new ruleset that can be used in a profile job to validate the data quality of a dataset.</p>

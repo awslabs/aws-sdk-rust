@@ -3,6 +3,23 @@ pub use crate::operation::revoke_snapshot_access::_revoke_snapshot_access_output
 
 pub use crate::operation::revoke_snapshot_access::_revoke_snapshot_access_input::RevokeSnapshotAccessInputBuilder;
 
+impl RevokeSnapshotAccessInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::revoke_snapshot_access::RevokeSnapshotAccessOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::revoke_snapshot_access::RevokeSnapshotAccessError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.revoke_snapshot_access();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RevokeSnapshotAccess`.
 ///
 /// <p>Removes the ability of the specified Amazon Web Services account to restore the specified snapshot. If the account is currently restoring the snapshot, the restore will run to completion.</p>

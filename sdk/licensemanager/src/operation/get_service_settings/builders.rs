@@ -3,6 +3,23 @@ pub use crate::operation::get_service_settings::_get_service_settings_output::Ge
 
 pub use crate::operation::get_service_settings::_get_service_settings_input::GetServiceSettingsInputBuilder;
 
+impl GetServiceSettingsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_service_settings::GetServiceSettingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_service_settings::GetServiceSettingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_service_settings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetServiceSettings`.
 ///
 /// <p>Gets the License Manager settings for the current Region.</p>

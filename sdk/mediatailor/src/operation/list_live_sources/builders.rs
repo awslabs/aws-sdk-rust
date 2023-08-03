@@ -3,6 +3,23 @@ pub use crate::operation::list_live_sources::_list_live_sources_output::ListLive
 
 pub use crate::operation::list_live_sources::_list_live_sources_input::ListLiveSourcesInputBuilder;
 
+impl ListLiveSourcesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_live_sources::ListLiveSourcesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_live_sources::ListLiveSourcesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_live_sources();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListLiveSources`.
 ///
 /// <p>Lists the live sources contained in a source location. A source represents a piece of content.</p>

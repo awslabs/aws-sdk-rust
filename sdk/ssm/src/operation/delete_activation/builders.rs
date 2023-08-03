@@ -3,6 +3,23 @@ pub use crate::operation::delete_activation::_delete_activation_output::DeleteAc
 
 pub use crate::operation::delete_activation::_delete_activation_input::DeleteActivationInputBuilder;
 
+impl DeleteActivationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_activation::DeleteActivationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_activation::DeleteActivationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_activation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteActivation`.
 ///
 /// <p>Deletes an activation. You aren't required to delete an activation. If you delete an activation, you can no longer use it to register additional managed nodes. Deleting an activation doesn't de-register managed nodes. You must manually de-register managed nodes.</p>

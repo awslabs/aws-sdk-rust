@@ -3,6 +3,23 @@ pub use crate::operation::batch_suspend_user::_batch_suspend_user_output::BatchS
 
 pub use crate::operation::batch_suspend_user::_batch_suspend_user_input::BatchSuspendUserInputBuilder;
 
+impl BatchSuspendUserInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_suspend_user::BatchSuspendUserOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_suspend_user::BatchSuspendUserError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_suspend_user();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchSuspendUser`.
 ///
 /// <p>Suspends up to 50 users from a <code>Team</code> or <code>EnterpriseLWA</code> Amazon Chime account. For more information about different account types, see <a href="https://docs.aws.amazon.com/chime/latest/ag/manage-chime-account.html">Managing Your Amazon Chime Accounts</a> in the <i>Amazon Chime Administration Guide</i>.</p>

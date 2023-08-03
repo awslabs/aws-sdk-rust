@@ -3,6 +3,23 @@ pub use crate::operation::list_ota_updates::_list_ota_updates_output::ListOtaUpd
 
 pub use crate::operation::list_ota_updates::_list_ota_updates_input::ListOtaUpdatesInputBuilder;
 
+impl ListOtaUpdatesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_ota_updates::ListOtaUpdatesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_ota_updates::ListOTAUpdatesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_ota_updates();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListOTAUpdates`.
 ///
 /// <p>Lists OTA updates.</p>

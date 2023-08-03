@@ -3,6 +3,23 @@ pub use crate::operation::generate_access_logs::_generate_access_logs_output::Ge
 
 pub use crate::operation::generate_access_logs::_generate_access_logs_input::GenerateAccessLogsInputBuilder;
 
+impl GenerateAccessLogsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::generate_access_logs::GenerateAccessLogsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::generate_access_logs::GenerateAccessLogsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.generate_access_logs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GenerateAccessLogs`.
 ///
 /// <p> Returns the website access logs for a specific time range using a presigned URL. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_partner_event_source::_describe_partner_event
 
 pub use crate::operation::describe_partner_event_source::_describe_partner_event_source_input::DescribePartnerEventSourceInputBuilder;
 
+impl DescribePartnerEventSourceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_partner_event_source::DescribePartnerEventSourceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_partner_event_source::DescribePartnerEventSourceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_partner_event_source();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribePartnerEventSource`.
 ///
 /// <p>An SaaS partner can use this operation to list details about a partner event source that they have created. Amazon Web Services customers do not use this operation. Instead, Amazon Web Services customers can use <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DescribeEventSource.html">DescribeEventSource</a> to see details about a partner event source that is shared with them.</p>

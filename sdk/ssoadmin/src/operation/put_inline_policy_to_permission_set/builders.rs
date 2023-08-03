@@ -3,6 +3,17 @@ pub use crate::operation::put_inline_policy_to_permission_set::_put_inline_polic
 
 pub use crate::operation::put_inline_policy_to_permission_set::_put_inline_policy_to_permission_set_input::PutInlinePolicyToPermissionSetInputBuilder;
 
+impl PutInlinePolicyToPermissionSetInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::put_inline_policy_to_permission_set::PutInlinePolicyToPermissionSetOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_inline_policy_to_permission_set::PutInlinePolicyToPermissionSetError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.put_inline_policy_to_permission_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutInlinePolicyToPermissionSet`.
 ///
 /// <p>Attaches an inline policy to a permission set.</p> <note>

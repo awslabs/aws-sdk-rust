@@ -3,6 +3,23 @@ pub use crate::operation::delete_interconnect::_delete_interconnect_output::Dele
 
 pub use crate::operation::delete_interconnect::_delete_interconnect_input::DeleteInterconnectInputBuilder;
 
+impl DeleteInterconnectInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_interconnect::DeleteInterconnectOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_interconnect::DeleteInterconnectError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_interconnect();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteInterconnect`.
 ///
 /// <p>Deletes the specified interconnect.</p> <note>

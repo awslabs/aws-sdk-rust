@@ -3,6 +3,23 @@ pub use crate::operation::delete_stream_key::_delete_stream_key_output::DeleteSt
 
 pub use crate::operation::delete_stream_key::_delete_stream_key_input::DeleteStreamKeyInputBuilder;
 
+impl DeleteStreamKeyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_stream_key::DeleteStreamKeyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_stream_key::DeleteStreamKeyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_stream_key();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteStreamKey`.
 ///
 /// <p>Deletes the stream key for the specified ARN, so it can no longer be used to stream.</p>

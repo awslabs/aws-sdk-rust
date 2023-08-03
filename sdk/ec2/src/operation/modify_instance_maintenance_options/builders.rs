@@ -3,6 +3,17 @@ pub use crate::operation::modify_instance_maintenance_options::_modify_instance_
 
 pub use crate::operation::modify_instance_maintenance_options::_modify_instance_maintenance_options_input::ModifyInstanceMaintenanceOptionsInputBuilder;
 
+impl ModifyInstanceMaintenanceOptionsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::modify_instance_maintenance_options::ModifyInstanceMaintenanceOptionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::modify_instance_maintenance_options::ModifyInstanceMaintenanceOptionsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.modify_instance_maintenance_options();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyInstanceMaintenanceOptions`.
 ///
 /// <p>Modifies the recovery behavior of your instance to disable simplified automatic recovery or set the recovery behavior to default. The default configuration will not enable simplified automatic recovery for an unsupported instance type. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-instance-recover.html#instance-configuration-recovery">Simplified automatic recovery</a>.</p>

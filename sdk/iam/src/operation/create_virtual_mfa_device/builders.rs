@@ -3,6 +3,23 @@ pub use crate::operation::create_virtual_mfa_device::_create_virtual_mfa_device_
 
 pub use crate::operation::create_virtual_mfa_device::_create_virtual_mfa_device_input::CreateVirtualMfaDeviceInputBuilder;
 
+impl CreateVirtualMfaDeviceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_virtual_mfa_device::CreateVirtualMfaDeviceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_virtual_mfa_device::CreateVirtualMFADeviceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_virtual_mfa_device();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateVirtualMFADevice`.
 ///
 /// <p>Creates a new virtual MFA device for the Amazon Web Services account. After creating the virtual MFA, use <code>EnableMFADevice</code> to attach the MFA device to an IAM user. For more information about creating and working with virtual MFA devices, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_VirtualMFA.html">Using a virtual MFA device</a> in the <i>IAM User Guide</i>.</p>

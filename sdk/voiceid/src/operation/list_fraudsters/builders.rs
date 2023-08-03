@@ -3,6 +3,23 @@ pub use crate::operation::list_fraudsters::_list_fraudsters_output::ListFraudste
 
 pub use crate::operation::list_fraudsters::_list_fraudsters_input::ListFraudstersInputBuilder;
 
+impl ListFraudstersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_fraudsters::ListFraudstersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_fraudsters::ListFraudstersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_fraudsters();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListFraudsters`.
 ///
 /// <p>Lists all fraudsters in a specified watchlist or domain.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_subscription_definitions::_list_subscription_defi
 
 pub use crate::operation::list_subscription_definitions::_list_subscription_definitions_input::ListSubscriptionDefinitionsInputBuilder;
 
+impl ListSubscriptionDefinitionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_subscription_definitions::ListSubscriptionDefinitionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_subscription_definitions::ListSubscriptionDefinitionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_subscription_definitions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListSubscriptionDefinitions`.
 ///
 /// Retrieves a list of subscription definitions.

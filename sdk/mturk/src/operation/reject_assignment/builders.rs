@@ -3,6 +3,23 @@ pub use crate::operation::reject_assignment::_reject_assignment_output::RejectAs
 
 pub use crate::operation::reject_assignment::_reject_assignment_input::RejectAssignmentInputBuilder;
 
+impl RejectAssignmentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::reject_assignment::RejectAssignmentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::reject_assignment::RejectAssignmentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.reject_assignment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RejectAssignment`.
 ///
 /// <p> The <code>RejectAssignment</code> operation rejects the results of a completed assignment. </p>

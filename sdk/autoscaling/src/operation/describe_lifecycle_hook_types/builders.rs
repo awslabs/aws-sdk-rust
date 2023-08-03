@@ -3,6 +3,23 @@ pub use crate::operation::describe_lifecycle_hook_types::_describe_lifecycle_hoo
 
 pub use crate::operation::describe_lifecycle_hook_types::_describe_lifecycle_hook_types_input::DescribeLifecycleHookTypesInputBuilder;
 
+impl DescribeLifecycleHookTypesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_lifecycle_hook_types::DescribeLifecycleHookTypesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_lifecycle_hook_types::DescribeLifecycleHookTypesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_lifecycle_hook_types();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeLifecycleHookTypes`.
 ///
 /// <p>Describes the available types of lifecycle hooks.</p>

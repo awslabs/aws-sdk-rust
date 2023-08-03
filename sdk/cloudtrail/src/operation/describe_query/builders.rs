@@ -3,6 +3,23 @@ pub use crate::operation::describe_query::_describe_query_output::DescribeQueryO
 
 pub use crate::operation::describe_query::_describe_query_input::DescribeQueryInputBuilder;
 
+impl DescribeQueryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_query::DescribeQueryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_query::DescribeQueryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_query();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeQuery`.
 ///
 /// <p>Returns metadata about a query, including query run time in milliseconds, number of events scanned and matched, and query status. If the query results were delivered to an S3 bucket, the response also provides the S3 URI and the delivery status.</p>

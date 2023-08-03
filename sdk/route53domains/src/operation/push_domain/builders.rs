@@ -3,6 +3,23 @@ pub use crate::operation::push_domain::_push_domain_output::PushDomainOutputBuil
 
 pub use crate::operation::push_domain::_push_domain_input::PushDomainInputBuilder;
 
+impl PushDomainInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::push_domain::PushDomainOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::push_domain::PushDomainError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.push_domain();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PushDomain`.
 ///
 /// <p> Moves a domain from Amazon Web Services to another registrar. </p>

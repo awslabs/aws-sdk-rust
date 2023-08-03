@@ -3,6 +3,23 @@ pub use crate::operation::disassociate_attribute_group::_disassociate_attribute_
 
 pub use crate::operation::disassociate_attribute_group::_disassociate_attribute_group_input::DisassociateAttributeGroupInputBuilder;
 
+impl DisassociateAttributeGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_attribute_group::DisassociateAttributeGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_attribute_group::DisassociateAttributeGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disassociate_attribute_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateAttributeGroup`.
 ///
 /// <p>Disassociates an attribute group from an application to remove the extra attributes contained in the attribute group from the application's metadata. This operation reverts <code>AssociateAttributeGroup</code>.</p>

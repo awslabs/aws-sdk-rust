@@ -3,6 +3,23 @@ pub use crate::operation::list_backup_selections::_list_backup_selections_output
 
 pub use crate::operation::list_backup_selections::_list_backup_selections_input::ListBackupSelectionsInputBuilder;
 
+impl ListBackupSelectionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_backup_selections::ListBackupSelectionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_backup_selections::ListBackupSelectionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_backup_selections();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListBackupSelections`.
 ///
 /// <p>Returns an array containing metadata of the resources associated with the target backup plan.</p>

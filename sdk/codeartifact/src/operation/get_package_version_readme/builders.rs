@@ -3,6 +3,23 @@ pub use crate::operation::get_package_version_readme::_get_package_version_readm
 
 pub use crate::operation::get_package_version_readme::_get_package_version_readme_input::GetPackageVersionReadmeInputBuilder;
 
+impl GetPackageVersionReadmeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_package_version_readme::GetPackageVersionReadmeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_package_version_readme::GetPackageVersionReadmeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_package_version_readme();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetPackageVersionReadme`.
 ///
 /// <p> Gets the readme file or descriptive text for a package version. </p>

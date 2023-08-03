@@ -3,6 +3,23 @@ pub use crate::operation::list_applications::_list_applications_output::ListAppl
 
 pub use crate::operation::list_applications::_list_applications_input::ListApplicationsInputBuilder;
 
+impl ListApplicationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_applications::ListApplicationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_applications::ListApplicationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_applications();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListApplications`.
 ///
 /// <p>Lists all applications in your Amazon Web Services account.</p>

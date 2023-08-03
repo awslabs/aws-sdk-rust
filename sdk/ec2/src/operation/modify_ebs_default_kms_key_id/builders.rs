@@ -3,6 +3,23 @@ pub use crate::operation::modify_ebs_default_kms_key_id::_modify_ebs_default_kms
 
 pub use crate::operation::modify_ebs_default_kms_key_id::_modify_ebs_default_kms_key_id_input::ModifyEbsDefaultKmsKeyIdInputBuilder;
 
+impl ModifyEbsDefaultKmsKeyIdInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_ebs_default_kms_key_id::ModifyEbsDefaultKmsKeyIdOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_ebs_default_kms_key_id::ModifyEbsDefaultKmsKeyIdError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_ebs_default_kms_key_id();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyEbsDefaultKmsKeyId`.
 ///
 /// <p>Changes the default KMS key for EBS encryption by default for your account in this Region.</p>

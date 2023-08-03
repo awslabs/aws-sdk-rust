@@ -3,6 +3,23 @@ pub use crate::operation::create_members::_create_members_output::CreateMembersO
 
 pub use crate::operation::create_members::_create_members_input::CreateMembersInputBuilder;
 
+impl CreateMembersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_members::CreateMembersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_members::CreateMembersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_members();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateMembers`.
 ///
 /// <p>Creates member accounts of the current Amazon Web Services account by specifying a list of Amazon Web Services account IDs. This step is a prerequisite for managing the associated member accounts either by invitation or through an organization.</p>

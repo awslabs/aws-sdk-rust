@@ -3,6 +3,23 @@ pub use crate::operation::start_query_execution::_start_query_execution_output::
 
 pub use crate::operation::start_query_execution::_start_query_execution_input::StartQueryExecutionInputBuilder;
 
+impl StartQueryExecutionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_query_execution::StartQueryExecutionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_query_execution::StartQueryExecutionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_query_execution();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartQueryExecution`.
 ///
 /// <p>Runs the SQL query statements contained in the <code>Query</code>. Requires you to have access to the workgroup in which the query ran. Running queries against an external catalog requires <code>GetDataCatalog</code> permission to the catalog. For code samples using the Amazon Web Services SDK for Java, see <a href="http://docs.aws.amazon.com/athena/latest/ug/code-samples.html">Examples and Code Samples</a> in the <i>Amazon Athena User Guide</i>.</p>

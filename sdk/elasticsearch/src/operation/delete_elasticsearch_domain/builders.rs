@@ -3,6 +3,23 @@ pub use crate::operation::delete_elasticsearch_domain::_delete_elasticsearch_dom
 
 pub use crate::operation::delete_elasticsearch_domain::_delete_elasticsearch_domain_input::DeleteElasticsearchDomainInputBuilder;
 
+impl DeleteElasticsearchDomainInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_elasticsearch_domain::DeleteElasticsearchDomainOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_elasticsearch_domain::DeleteElasticsearchDomainError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_elasticsearch_domain();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteElasticsearchDomain`.
 ///
 /// <p>Permanently deletes the specified Elasticsearch domain and all of its data. Once a domain is deleted, it cannot be recovered.</p>

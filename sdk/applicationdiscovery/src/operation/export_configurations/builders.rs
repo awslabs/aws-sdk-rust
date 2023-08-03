@@ -3,6 +3,23 @@ pub use crate::operation::export_configurations::_export_configurations_output::
 
 pub use crate::operation::export_configurations::_export_configurations_input::ExportConfigurationsInputBuilder;
 
+impl ExportConfigurationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::export_configurations::ExportConfigurationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::export_configurations::ExportConfigurationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.export_configurations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ExportConfigurations`.
 ///
 /// <p>Deprecated. Use <code>StartExportTask</code> instead.</p>

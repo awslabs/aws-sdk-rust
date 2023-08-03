@@ -3,6 +3,23 @@ pub use crate::operation::delete_named_query::_delete_named_query_output::Delete
 
 pub use crate::operation::delete_named_query::_delete_named_query_input::DeleteNamedQueryInputBuilder;
 
+impl DeleteNamedQueryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_named_query::DeleteNamedQueryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_named_query::DeleteNamedQueryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_named_query();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteNamedQuery`.
 ///
 /// <p>Deletes the named query if you have access to the workgroup in which the query was saved.</p>

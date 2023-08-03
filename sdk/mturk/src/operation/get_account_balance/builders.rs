@@ -3,6 +3,23 @@ pub use crate::operation::get_account_balance::_get_account_balance_output::GetA
 
 pub use crate::operation::get_account_balance::_get_account_balance_input::GetAccountBalanceInputBuilder;
 
+impl GetAccountBalanceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_account_balance::GetAccountBalanceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_account_balance::GetAccountBalanceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_account_balance();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetAccountBalance`.
 ///
 /// <p>The <code>GetAccountBalance</code> operation retrieves the Prepaid HITs balance in your Amazon Mechanical Turk account if you are a Prepaid Requester. Alternatively, this operation will retrieve the remaining available AWS Billing usage if you have enabled AWS Billing. Note: If you have enabled AWS Billing and still have a remaining Prepaid HITs balance, this balance can be viewed on the My Account page in the Requester console.</p>

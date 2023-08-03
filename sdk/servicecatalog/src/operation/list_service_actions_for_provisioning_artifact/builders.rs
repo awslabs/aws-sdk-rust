@@ -3,6 +3,17 @@ pub use crate::operation::list_service_actions_for_provisioning_artifact::_list_
 
 pub use crate::operation::list_service_actions_for_provisioning_artifact::_list_service_actions_for_provisioning_artifact_input::ListServiceActionsForProvisioningArtifactInputBuilder;
 
+impl ListServiceActionsForProvisioningArtifactInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_service_actions_for_provisioning_artifact::ListServiceActionsForProvisioningArtifactOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_service_actions_for_provisioning_artifact::ListServiceActionsForProvisioningArtifactError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_service_actions_for_provisioning_artifact();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListServiceActionsForProvisioningArtifact`.
 ///
 /// <p>Returns a paginated list of self-service actions associated with the specified Product ID and Provisioning Artifact ID.</p>

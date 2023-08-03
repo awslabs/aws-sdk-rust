@@ -3,6 +3,23 @@ pub use crate::operation::create_firewall::_create_firewall_output::CreateFirewa
 
 pub use crate::operation::create_firewall::_create_firewall_input::CreateFirewallInputBuilder;
 
+impl CreateFirewallInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_firewall::CreateFirewallOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_firewall::CreateFirewallError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_firewall();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateFirewall`.
 ///
 /// <p>Creates an Network Firewall <code>Firewall</code> and accompanying <code>FirewallStatus</code> for a VPC. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::batch_enable_alarm::_batch_enable_alarm_output::BatchE
 
 pub use crate::operation::batch_enable_alarm::_batch_enable_alarm_input::BatchEnableAlarmInputBuilder;
 
+impl BatchEnableAlarmInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_enable_alarm::BatchEnableAlarmOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_enable_alarm::BatchEnableAlarmError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_enable_alarm();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchEnableAlarm`.
 ///
 /// <p>Enables one or more alarms. The alarms change to the <code>NORMAL</code> state after you enable them.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::update_asset_model::_update_asset_model_output::Update
 
 pub use crate::operation::update_asset_model::_update_asset_model_input::UpdateAssetModelInputBuilder;
 
+impl UpdateAssetModelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_asset_model::UpdateAssetModelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_asset_model::UpdateAssetModelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_asset_model();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateAssetModel`.
 ///
 /// <p>Updates an asset model and all of the assets that were created from the model. Each asset created from the model inherits the updated asset model's property and hierarchy definitions. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/update-assets-and-models.html">Updating assets and models</a> in the <i>IoT SiteWise User Guide</i>.</p> <important>

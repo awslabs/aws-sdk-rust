@@ -3,6 +3,17 @@ pub use crate::operation::describe_cost_category_definition::_describe_cost_cate
 
 pub use crate::operation::describe_cost_category_definition::_describe_cost_category_definition_input::DescribeCostCategoryDefinitionInputBuilder;
 
+impl DescribeCostCategoryDefinitionInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_cost_category_definition::DescribeCostCategoryDefinitionError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_cost_category_definition();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeCostCategoryDefinition`.
 ///
 /// <p>Returns the name, Amazon Resource Name (ARN), rules, definition, and effective dates of a Cost Category that's defined in the account.</p>

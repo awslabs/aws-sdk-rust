@@ -3,6 +3,23 @@ pub use crate::operation::dissociate_entity_from_thing::_dissociate_entity_from_
 
 pub use crate::operation::dissociate_entity_from_thing::_dissociate_entity_from_thing_input::DissociateEntityFromThingInputBuilder;
 
+impl DissociateEntityFromThingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::dissociate_entity_from_thing::DissociateEntityFromThingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::dissociate_entity_from_thing::DissociateEntityFromThingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.dissociate_entity_from_thing();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DissociateEntityFromThing`.
 ///
 /// <p>Dissociates a device entity from a concrete thing. The action takes only the type of the entity that you need to dissociate because only one entity of a particular type can be associated with a thing.</p>

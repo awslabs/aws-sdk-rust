@@ -3,6 +3,23 @@ pub use crate::operation::create_key::_create_key_output::CreateKeyOutputBuilder
 
 pub use crate::operation::create_key::_create_key_input::CreateKeyInputBuilder;
 
+impl CreateKeyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_key::CreateKeyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_key::CreateKeyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_key();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateKey`.
 ///
 /// <p>Creates an API key resource in your Amazon Web Services account, which lets you grant actions for Amazon Location resources to the API key bearer.</p> <note>

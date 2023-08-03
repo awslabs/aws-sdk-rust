@@ -3,6 +3,17 @@ pub use crate::operation::add_application_cloud_watch_logging_option::_add_appli
 
 pub use crate::operation::add_application_cloud_watch_logging_option::_add_application_cloud_watch_logging_option_input::AddApplicationCloudWatchLoggingOptionInputBuilder;
 
+impl AddApplicationCloudWatchLoggingOptionInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionOutput, ::aws_smithy_http::result::SdkError<crate::operation::add_application_cloud_watch_logging_option::AddApplicationCloudWatchLoggingOptionError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.add_application_cloud_watch_logging_option();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AddApplicationCloudWatchLoggingOption`.
 ///
 /// <p>Adds an Amazon CloudWatch log stream to monitor application configuration errors.</p>

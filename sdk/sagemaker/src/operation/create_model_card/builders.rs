@@ -3,6 +3,23 @@ pub use crate::operation::create_model_card::_create_model_card_output::CreateMo
 
 pub use crate::operation::create_model_card::_create_model_card_input::CreateModelCardInputBuilder;
 
+impl CreateModelCardInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_model_card::CreateModelCardOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_model_card::CreateModelCardError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_model_card();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateModelCard`.
 ///
 /// <p>Creates an Amazon SageMaker Model Card.</p>

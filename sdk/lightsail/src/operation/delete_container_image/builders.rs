@@ -3,6 +3,23 @@ pub use crate::operation::delete_container_image::_delete_container_image_output
 
 pub use crate::operation::delete_container_image::_delete_container_image_input::DeleteContainerImageInputBuilder;
 
+impl DeleteContainerImageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_container_image::DeleteContainerImageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_container_image::DeleteContainerImageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_container_image();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteContainerImage`.
 ///
 /// <p>Deletes a container image that is registered to your Amazon Lightsail container service.</p>

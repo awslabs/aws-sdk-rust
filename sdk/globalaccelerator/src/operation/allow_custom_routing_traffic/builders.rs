@@ -3,6 +3,23 @@ pub use crate::operation::allow_custom_routing_traffic::_allow_custom_routing_tr
 
 pub use crate::operation::allow_custom_routing_traffic::_allow_custom_routing_traffic_input::AllowCustomRoutingTrafficInputBuilder;
 
+impl AllowCustomRoutingTrafficInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::allow_custom_routing_traffic::AllowCustomRoutingTrafficOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::allow_custom_routing_traffic::AllowCustomRoutingTrafficError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.allow_custom_routing_traffic();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AllowCustomRoutingTraffic`.
 ///
 /// <p>Specify the Amazon EC2 instance (destination) IP addresses and ports for a VPC subnet endpoint that can receive traffic for a custom routing accelerator. You can allow traffic to all destinations in the subnet endpoint, or allow traffic to a specified list of destination IP addresses and ports in the subnet. Note that you cannot specify IP addresses or ports outside of the range that you configured for the endpoint group.</p>

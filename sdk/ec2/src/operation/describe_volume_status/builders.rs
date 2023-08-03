@@ -3,6 +3,23 @@ pub use crate::operation::describe_volume_status::_describe_volume_status_output
 
 pub use crate::operation::describe_volume_status::_describe_volume_status_input::DescribeVolumeStatusInputBuilder;
 
+impl DescribeVolumeStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_volume_status::DescribeVolumeStatusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_volume_status::DescribeVolumeStatusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_volume_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeVolumeStatus`.
 ///
 /// <p>Describes the status of the specified volumes. Volume status provides the result of the checks performed on your volumes to determine events that can impair the performance of your volumes. The performance of a volume can be affected if an issue occurs on the volume's underlying host. If the volume's underlying host experiences a power outage or system issue, after the system is restored, there could be data inconsistencies on the volume. Volume events notify you if this occurs. Volume actions notify you if any action needs to be taken in response to the event.</p>

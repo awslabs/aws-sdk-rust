@@ -3,6 +3,23 @@ pub use crate::operation::admin_initiate_auth::_admin_initiate_auth_output::Admi
 
 pub use crate::operation::admin_initiate_auth::_admin_initiate_auth_input::AdminInitiateAuthInputBuilder;
 
+impl AdminInitiateAuthInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::admin_initiate_auth::AdminInitiateAuthOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::admin_initiate_auth::AdminInitiateAuthError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.admin_initiate_auth();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AdminInitiateAuth`.
 ///
 /// <p>Initiates the authentication flow, as an administrator.</p> <note>

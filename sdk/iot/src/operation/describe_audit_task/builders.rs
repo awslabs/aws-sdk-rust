@@ -3,6 +3,23 @@ pub use crate::operation::describe_audit_task::_describe_audit_task_output::Desc
 
 pub use crate::operation::describe_audit_task::_describe_audit_task_input::DescribeAuditTaskInputBuilder;
 
+impl DescribeAuditTaskInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_audit_task::DescribeAuditTaskOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_audit_task::DescribeAuditTaskError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_audit_task();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAuditTask`.
 ///
 /// <p>Gets information about a Device Defender audit.</p>

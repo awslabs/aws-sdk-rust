@@ -3,6 +3,23 @@ pub use crate::operation::update_apns_channel::_update_apns_channel_output::Upda
 
 pub use crate::operation::update_apns_channel::_update_apns_channel_input::UpdateApnsChannelInputBuilder;
 
+impl UpdateApnsChannelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_apns_channel::UpdateApnsChannelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_apns_channel::UpdateApnsChannelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_apns_channel();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateApnsChannel`.
 ///
 /// <p>Enables the APNs channel for an application or updates the status and settings of the APNs channel for an application.</p>

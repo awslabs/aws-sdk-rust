@@ -3,6 +3,23 @@ pub use crate::operation::remove_tags::_remove_tags_output::RemoveTagsOutputBuil
 
 pub use crate::operation::remove_tags::_remove_tags_input::RemoveTagsInputBuilder;
 
+impl RemoveTagsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::remove_tags::RemoveTagsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::remove_tags::RemoveTagsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.remove_tags();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RemoveTags`.
 ///
 /// <p>Removes the specified set of tags from the specified Elasticsearch domain.</p>

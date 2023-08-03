@@ -3,6 +3,23 @@ pub use crate::operation::launch_app::_launch_app_output::LaunchAppOutputBuilder
 
 pub use crate::operation::launch_app::_launch_app_input::LaunchAppInputBuilder;
 
+impl LaunchAppInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::launch_app::LaunchAppOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::launch_app::LaunchAppError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.launch_app();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `LaunchApp`.
 ///
 /// <p>Launches the specified application as a stack in CloudFormation.</p>

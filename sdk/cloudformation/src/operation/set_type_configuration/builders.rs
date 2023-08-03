@@ -3,6 +3,23 @@ pub use crate::operation::set_type_configuration::_set_type_configuration_output
 
 pub use crate::operation::set_type_configuration::_set_type_configuration_input::SetTypeConfigurationInputBuilder;
 
+impl SetTypeConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::set_type_configuration::SetTypeConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::set_type_configuration::SetTypeConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.set_type_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SetTypeConfiguration`.
 ///
 /// <p>Specifies the configuration data for a registered CloudFormation extension, in the given account and Region.</p>

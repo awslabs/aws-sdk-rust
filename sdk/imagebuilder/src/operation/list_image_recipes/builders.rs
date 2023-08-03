@@ -3,6 +3,23 @@ pub use crate::operation::list_image_recipes::_list_image_recipes_output::ListIm
 
 pub use crate::operation::list_image_recipes::_list_image_recipes_input::ListImageRecipesInputBuilder;
 
+impl ListImageRecipesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_image_recipes::ListImageRecipesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_image_recipes::ListImageRecipesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_image_recipes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListImageRecipes`.
 ///
 /// <p>Returns a list of image recipes.</p>

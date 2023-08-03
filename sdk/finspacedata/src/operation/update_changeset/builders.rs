@@ -3,6 +3,23 @@ pub use crate::operation::update_changeset::_update_changeset_output::UpdateChan
 
 pub use crate::operation::update_changeset::_update_changeset_input::UpdateChangesetInputBuilder;
 
+impl UpdateChangesetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_changeset::UpdateChangesetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_changeset::UpdateChangesetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_changeset();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateChangeset`.
 ///
 /// <p>Updates a FinSpace Changeset.</p>

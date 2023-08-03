@@ -3,6 +3,23 @@ pub use crate::operation::get_device_profile::_get_device_profile_output::GetDev
 
 pub use crate::operation::get_device_profile::_get_device_profile_input::GetDeviceProfileInputBuilder;
 
+impl GetDeviceProfileInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_device_profile::GetDeviceProfileOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_device_profile::GetDeviceProfileError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_device_profile();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetDeviceProfile`.
 ///
 /// <p>Gets information about a device profile.</p>

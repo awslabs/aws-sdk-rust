@@ -3,6 +3,23 @@ pub use crate::operation::list_entitlements::_list_entitlements_output::ListEnti
 
 pub use crate::operation::list_entitlements::_list_entitlements_input::ListEntitlementsInputBuilder;
 
+impl ListEntitlementsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_entitlements::ListEntitlementsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_entitlements::ListEntitlementsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_entitlements();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListEntitlements`.
 ///
 /// Displays a list of all entitlements that have been granted to this account. This request returns 20 results per page.

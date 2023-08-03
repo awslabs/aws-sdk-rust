@@ -3,6 +3,23 @@ pub use crate::operation::update_trust::_update_trust_output::UpdateTrustOutputB
 
 pub use crate::operation::update_trust::_update_trust_input::UpdateTrustInputBuilder;
 
+impl UpdateTrustInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_trust::UpdateTrustOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_trust::UpdateTrustError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_trust();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateTrust`.
 ///
 /// <p>Updates the trust that has been set up between your Managed Microsoft AD directory and an self-managed Active Directory.</p>

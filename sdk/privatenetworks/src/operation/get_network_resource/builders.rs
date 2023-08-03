@@ -3,6 +3,23 @@ pub use crate::operation::get_network_resource::_get_network_resource_output::Ge
 
 pub use crate::operation::get_network_resource::_get_network_resource_input::GetNetworkResourceInputBuilder;
 
+impl GetNetworkResourceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_network_resource::GetNetworkResourceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_network_resource::GetNetworkResourceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_network_resource();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetNetworkResource`.
 ///
 /// <p>Gets the specified network resource.</p>

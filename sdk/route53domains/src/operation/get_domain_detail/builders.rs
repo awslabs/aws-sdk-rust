@@ -3,6 +3,23 @@ pub use crate::operation::get_domain_detail::_get_domain_detail_output::GetDomai
 
 pub use crate::operation::get_domain_detail::_get_domain_detail_input::GetDomainDetailInputBuilder;
 
+impl GetDomainDetailInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_domain_detail::GetDomainDetailOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_domain_detail::GetDomainDetailError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_domain_detail();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetDomainDetail`.
 ///
 /// <p>This operation returns detailed information about a specified domain that is associated with the current Amazon Web Services account. Contact information for the domain is also returned as part of the output.</p>

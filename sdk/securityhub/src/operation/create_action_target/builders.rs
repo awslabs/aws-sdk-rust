@@ -3,6 +3,23 @@ pub use crate::operation::create_action_target::_create_action_target_output::Cr
 
 pub use crate::operation::create_action_target::_create_action_target_input::CreateActionTargetInputBuilder;
 
+impl CreateActionTargetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_action_target::CreateActionTargetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_action_target::CreateActionTargetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_action_target();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateActionTarget`.
 ///
 /// <p>Creates a custom action target in Security Hub.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_instance_connect_endpoint::_create_instance_con
 
 pub use crate::operation::create_instance_connect_endpoint::_create_instance_connect_endpoint_input::CreateInstanceConnectEndpointInputBuilder;
 
+impl CreateInstanceConnectEndpointInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_instance_connect_endpoint::CreateInstanceConnectEndpointOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_instance_connect_endpoint::CreateInstanceConnectEndpointError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_instance_connect_endpoint();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateInstanceConnectEndpoint`.
 ///
 /// <p>Creates an EC2 Instance Connect Endpoint.</p>

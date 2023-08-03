@@ -3,6 +3,23 @@ pub use crate::operation::deregister_ecs_cluster::_deregister_ecs_cluster_output
 
 pub use crate::operation::deregister_ecs_cluster::_deregister_ecs_cluster_input::DeregisterEcsClusterInputBuilder;
 
+impl DeregisterEcsClusterInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::deregister_ecs_cluster::DeregisterEcsClusterOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::deregister_ecs_cluster::DeregisterEcsClusterError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.deregister_ecs_cluster();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeregisterEcsCluster`.
 ///
 /// <p>Deregisters a specified Amazon ECS cluster from a stack. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-ecscluster.html#workinglayers-ecscluster-delete"> Resource Management</a>.</p>

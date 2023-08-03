@@ -3,6 +3,23 @@ pub use crate::operation::stop_replication::_stop_replication_output::StopReplic
 
 pub use crate::operation::stop_replication::_stop_replication_input::StopReplicationInputBuilder;
 
+impl StopReplicationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_replication::StopReplicationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_replication::StopReplicationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_replication();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopReplication`.
 ///
 /// <p>For a given DMS Serverless replication configuration, DMS stops any and all ongoing DMS Serverless replications. This command doesn't deprovision the stopped replications.</p>

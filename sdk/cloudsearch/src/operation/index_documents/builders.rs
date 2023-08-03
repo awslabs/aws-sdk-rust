@@ -3,6 +3,23 @@ pub use crate::operation::index_documents::_index_documents_output::IndexDocumen
 
 pub use crate::operation::index_documents::_index_documents_input::IndexDocumentsInputBuilder;
 
+impl IndexDocumentsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::index_documents::IndexDocumentsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::index_documents::IndexDocumentsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.index_documents();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `IndexDocuments`.
 ///
 /// <p>Tells the search domain to start indexing its documents using the latest indexing options. This operation must be invoked to activate options whose <code>OptionStatus</code> is <code>RequiresIndexDocuments</code>.</p>

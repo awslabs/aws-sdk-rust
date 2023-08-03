@@ -3,6 +3,23 @@ pub use crate::operation::get_reference_import_job::_get_reference_import_job_ou
 
 pub use crate::operation::get_reference_import_job::_get_reference_import_job_input::GetReferenceImportJobInputBuilder;
 
+impl GetReferenceImportJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_reference_import_job::GetReferenceImportJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_reference_import_job::GetReferenceImportJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_reference_import_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetReferenceImportJob`.
 ///
 /// <p>Gets information about a reference import job.</p>

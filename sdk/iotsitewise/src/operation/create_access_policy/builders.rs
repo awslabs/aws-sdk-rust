@@ -3,6 +3,23 @@ pub use crate::operation::create_access_policy::_create_access_policy_output::Cr
 
 pub use crate::operation::create_access_policy::_create_access_policy_input::CreateAccessPolicyInputBuilder;
 
+impl CreateAccessPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_access_policy::CreateAccessPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_access_policy::CreateAccessPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_access_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateAccessPolicy`.
 ///
 /// <p>Creates an access policy that grants the specified identity (IAM Identity Center user, IAM Identity Center group, or IAM user) access to the specified IoT SiteWise Monitor portal or project resource.</p>

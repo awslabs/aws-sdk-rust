@@ -3,6 +3,23 @@ pub use crate::operation::get_savings_plans_utilization::_get_savings_plans_util
 
 pub use crate::operation::get_savings_plans_utilization::_get_savings_plans_utilization_input::GetSavingsPlansUtilizationInputBuilder;
 
+impl GetSavingsPlansUtilizationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_savings_plans_utilization::GetSavingsPlansUtilizationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_savings_plans_utilization::GetSavingsPlansUtilizationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_savings_plans_utilization();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetSavingsPlansUtilization`.
 ///
 /// <p>Retrieves the Savings Plans utilization for your account across date ranges with daily or monthly granularity. Management account in an organization have access to member accounts. You can use <code>GetDimensionValues</code> in <code>SAVINGS_PLANS</code> to determine the possible dimension values.</p> <note>

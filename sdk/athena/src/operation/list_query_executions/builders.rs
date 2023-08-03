@@ -3,6 +3,23 @@ pub use crate::operation::list_query_executions::_list_query_executions_output::
 
 pub use crate::operation::list_query_executions::_list_query_executions_input::ListQueryExecutionsInputBuilder;
 
+impl ListQueryExecutionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_query_executions::ListQueryExecutionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_query_executions::ListQueryExecutionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_query_executions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListQueryExecutions`.
 ///
 /// <p>Provides a list of available query execution IDs for the queries in the specified workgroup. If a workgroup is not specified, returns a list of query execution IDs for the primary workgroup. Requires you to have access to the workgroup in which the queries ran.</p>

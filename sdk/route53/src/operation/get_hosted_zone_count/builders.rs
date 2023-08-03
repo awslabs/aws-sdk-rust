@@ -3,6 +3,23 @@ pub use crate::operation::get_hosted_zone_count::_get_hosted_zone_count_output::
 
 pub use crate::operation::get_hosted_zone_count::_get_hosted_zone_count_input::GetHostedZoneCountInputBuilder;
 
+impl GetHostedZoneCountInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_hosted_zone_count::GetHostedZoneCountOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_hosted_zone_count::GetHostedZoneCountError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_hosted_zone_count();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetHostedZoneCount`.
 ///
 /// <p>Retrieves the number of hosted zones that are associated with the current Amazon Web Services account.</p>

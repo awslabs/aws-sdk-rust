@@ -3,6 +3,17 @@ pub use crate::operation::get_identity_notification_attributes::_get_identity_no
 
 pub use crate::operation::get_identity_notification_attributes::_get_identity_notification_attributes_input::GetIdentityNotificationAttributesInputBuilder;
 
+impl GetIdentityNotificationAttributesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_identity_notification_attributes::GetIdentityNotificationAttributesOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_identity_notification_attributes::GetIdentityNotificationAttributesError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_identity_notification_attributes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetIdentityNotificationAttributes`.
 ///
 /// <p>Given a list of verified identities (email addresses and/or domains), returns a structure describing identity notification attributes.</p>

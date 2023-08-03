@@ -3,6 +3,23 @@ pub use crate::operation::create_source_network::_create_source_network_output::
 
 pub use crate::operation::create_source_network::_create_source_network_input::CreateSourceNetworkInputBuilder;
 
+impl CreateSourceNetworkInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_source_network::CreateSourceNetworkOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_source_network::CreateSourceNetworkError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_source_network();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateSourceNetwork`.
 ///
 /// <p>Create a new Source Network resource for a provided VPC ID.</p>

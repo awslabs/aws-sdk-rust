@@ -3,6 +3,23 @@ pub use crate::operation::search_associated_transcripts::_search_associated_tran
 
 pub use crate::operation::search_associated_transcripts::_search_associated_transcripts_input::SearchAssociatedTranscriptsInputBuilder;
 
+impl SearchAssociatedTranscriptsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::search_associated_transcripts::SearchAssociatedTranscriptsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::search_associated_transcripts::SearchAssociatedTranscriptsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.search_associated_transcripts();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SearchAssociatedTranscripts`.
 ///
 /// <p>Search for associated transcripts that meet the specified criteria.</p>

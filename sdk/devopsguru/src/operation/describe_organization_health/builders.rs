@@ -3,6 +3,23 @@ pub use crate::operation::describe_organization_health::_describe_organization_h
 
 pub use crate::operation::describe_organization_health::_describe_organization_health_input::DescribeOrganizationHealthInputBuilder;
 
+impl DescribeOrganizationHealthInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_organization_health::DescribeOrganizationHealthOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_organization_health::DescribeOrganizationHealthError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_organization_health();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeOrganizationHealth`.
 ///
 /// <p>Returns active insights, predictive insights, and resource hours analyzed in last hour.</p>

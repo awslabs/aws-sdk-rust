@@ -3,6 +3,23 @@ pub use crate::operation::get_ml_transform::_get_ml_transform_output::GetMlTrans
 
 pub use crate::operation::get_ml_transform::_get_ml_transform_input::GetMlTransformInputBuilder;
 
+impl GetMlTransformInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_ml_transform::GetMlTransformOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_ml_transform::GetMLTransformError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_ml_transform();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetMLTransform`.
 ///
 /// <p>Gets an Glue machine learning transform artifact and all its corresponding metadata. Machine learning transforms are a special type of transform that use machine learning to learn the details of the transformation to be performed by learning from examples provided by humans. These transformations are then saved by Glue. You can retrieve their metadata by calling <code>GetMLTransform</code>.</p>

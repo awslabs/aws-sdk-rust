@@ -3,6 +3,23 @@ pub use crate::operation::delete_directory::_delete_directory_output::DeleteDire
 
 pub use crate::operation::delete_directory::_delete_directory_input::DeleteDirectoryInputBuilder;
 
+impl DeleteDirectoryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_directory::DeleteDirectoryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_directory::DeleteDirectoryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_directory();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteDirectory`.
 ///
 /// <p>Deletes a directory. Only disabled directories can be deleted. A deleted directory cannot be undone. Exercise extreme caution when deleting directories.</p>

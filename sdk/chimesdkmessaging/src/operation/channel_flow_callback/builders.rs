@@ -3,6 +3,23 @@ pub use crate::operation::channel_flow_callback::_channel_flow_callback_output::
 
 pub use crate::operation::channel_flow_callback::_channel_flow_callback_input::ChannelFlowCallbackInputBuilder;
 
+impl ChannelFlowCallbackInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::channel_flow_callback::ChannelFlowCallbackOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::channel_flow_callback::ChannelFlowCallbackError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.channel_flow_callback();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ChannelFlowCallback`.
 ///
 /// <p>Calls back Amazon Chime SDK messaging with a processing response message. This should be invoked from the processor Lambda. This is a developer API.</p>

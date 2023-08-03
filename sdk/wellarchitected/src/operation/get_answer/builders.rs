@@ -3,6 +3,23 @@ pub use crate::operation::get_answer::_get_answer_output::GetAnswerOutputBuilder
 
 pub use crate::operation::get_answer::_get_answer_input::GetAnswerInputBuilder;
 
+impl GetAnswerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_answer::GetAnswerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_answer::GetAnswerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_answer();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetAnswer`.
 ///
 /// <p>Get the answer to a specific question in a workload review.</p>

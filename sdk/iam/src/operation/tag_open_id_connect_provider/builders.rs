@@ -3,6 +3,23 @@ pub use crate::operation::tag_open_id_connect_provider::_tag_open_id_connect_pro
 
 pub use crate::operation::tag_open_id_connect_provider::_tag_open_id_connect_provider_input::TagOpenIdConnectProviderInputBuilder;
 
+impl TagOpenIdConnectProviderInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::tag_open_id_connect_provider::TagOpenIdConnectProviderOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::tag_open_id_connect_provider::TagOpenIDConnectProviderError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.tag_open_id_connect_provider();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `TagOpenIDConnectProvider`.
 ///
 /// <p>Adds one or more tags to an OpenID Connect (OIDC)-compatible identity provider. For more information about these providers, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_oidc.html">About web identity federation</a>. If a tag with the same key name already exists, then that tag is overwritten with the new value.</p>

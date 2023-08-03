@@ -3,6 +3,23 @@ pub use crate::operation::create_model::_create_model_output::CreateModelOutputB
 
 pub use crate::operation::create_model::_create_model_input::CreateModelInputBuilder;
 
+impl CreateModelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_model::CreateModelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_model::CreateModelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_model();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateModel`.
 ///
 /// <p>Creates a model using the specified model type.</p>

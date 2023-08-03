@@ -3,6 +3,23 @@ pub use crate::operation::stop_backup_job::_stop_backup_job_output::StopBackupJo
 
 pub use crate::operation::stop_backup_job::_stop_backup_job_input::StopBackupJobInputBuilder;
 
+impl StopBackupJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_backup_job::StopBackupJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_backup_job::StopBackupJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_backup_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopBackupJob`.
 ///
 /// <p>Attempts to cancel a job to create a one-time backup of a resource.</p>

@@ -3,6 +3,17 @@ pub use crate::operation::describe_orderable_replication_instances::_describe_or
 
 pub use crate::operation::describe_orderable_replication_instances::_describe_orderable_replication_instances_input::DescribeOrderableReplicationInstancesInputBuilder;
 
+impl DescribeOrderableReplicationInstancesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_orderable_replication_instances::DescribeOrderableReplicationInstancesOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_orderable_replication_instances::DescribeOrderableReplicationInstancesError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_orderable_replication_instances();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeOrderableReplicationInstances`.
 ///
 /// <p>Returns information about the replication instance types that can be created in the specified region.</p>

@@ -3,6 +3,17 @@ pub use crate::operation::describe_observability_configuration::_describe_observ
 
 pub use crate::operation::describe_observability_configuration::_describe_observability_configuration_input::DescribeObservabilityConfigurationInputBuilder;
 
+impl DescribeObservabilityConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_observability_configuration::DescribeObservabilityConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_observability_configuration::DescribeObservabilityConfigurationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_observability_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeObservabilityConfiguration`.
 ///
 /// <p>Return a full description of an App Runner observability configuration resource.</p>

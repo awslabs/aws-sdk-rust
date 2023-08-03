@@ -3,6 +3,23 @@ pub use crate::operation::get_macie_session::_get_macie_session_output::GetMacie
 
 pub use crate::operation::get_macie_session::_get_macie_session_input::GetMacieSessionInputBuilder;
 
+impl GetMacieSessionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_macie_session::GetMacieSessionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_macie_session::GetMacieSessionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_macie_session();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetMacieSession`.
 ///
 /// <p>Retrieves the status and configuration settings for an Amazon Macie account.</p>

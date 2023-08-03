@@ -3,6 +3,23 @@ pub use crate::operation::describe_custom_metric::_describe_custom_metric_output
 
 pub use crate::operation::describe_custom_metric::_describe_custom_metric_input::DescribeCustomMetricInputBuilder;
 
+impl DescribeCustomMetricInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_custom_metric::DescribeCustomMetricOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_custom_metric::DescribeCustomMetricError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_custom_metric();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeCustomMetric`.
 ///
 /// <p> Gets information about a Device Defender detect custom metric. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_email_templates::_list_email_templates_output::Li
 
 pub use crate::operation::list_email_templates::_list_email_templates_input::ListEmailTemplatesInputBuilder;
 
+impl ListEmailTemplatesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_email_templates::ListEmailTemplatesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_email_templates::ListEmailTemplatesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_email_templates();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListEmailTemplates`.
 ///
 /// <p>Lists the email templates present in your Amazon SES account in the current Amazon Web Services Region.</p>

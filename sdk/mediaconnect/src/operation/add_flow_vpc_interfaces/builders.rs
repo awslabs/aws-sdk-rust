@@ -3,6 +3,23 @@ pub use crate::operation::add_flow_vpc_interfaces::_add_flow_vpc_interfaces_outp
 
 pub use crate::operation::add_flow_vpc_interfaces::_add_flow_vpc_interfaces_input::AddFlowVpcInterfacesInputBuilder;
 
+impl AddFlowVpcInterfacesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::add_flow_vpc_interfaces::AddFlowVpcInterfacesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.add_flow_vpc_interfaces();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AddFlowVpcInterfaces`.
 ///
 /// Adds VPC interfaces to flow

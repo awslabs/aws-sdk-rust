@@ -3,6 +3,23 @@ pub use crate::operation::resync_mfa_device::_resync_mfa_device_output::ResyncMf
 
 pub use crate::operation::resync_mfa_device::_resync_mfa_device_input::ResyncMfaDeviceInputBuilder;
 
+impl ResyncMfaDeviceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::resync_mfa_device::ResyncMfaDeviceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::resync_mfa_device::ResyncMFADeviceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.resync_mfa_device();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ResyncMFADevice`.
 ///
 /// <p>Synchronizes the specified MFA device with its IAM resource object on the Amazon Web Services servers.</p>

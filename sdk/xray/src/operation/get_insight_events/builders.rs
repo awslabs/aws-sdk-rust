@@ -3,6 +3,23 @@ pub use crate::operation::get_insight_events::_get_insight_events_output::GetIns
 
 pub use crate::operation::get_insight_events::_get_insight_events_input::GetInsightEventsInputBuilder;
 
+impl GetInsightEventsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_insight_events::GetInsightEventsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_insight_events::GetInsightEventsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_insight_events();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetInsightEvents`.
 ///
 /// <p>X-Ray reevaluates insights periodically until they're resolved, and records each intermediate state as an event. You can review an insight's events in the Impact Timeline on the Inspect page in the X-Ray console.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::deprovision_public_ipv4_pool_cidr::_deprovision_public
 
 pub use crate::operation::deprovision_public_ipv4_pool_cidr::_deprovision_public_ipv4_pool_cidr_input::DeprovisionPublicIpv4PoolCidrInputBuilder;
 
+impl DeprovisionPublicIpv4PoolCidrInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::deprovision_public_ipv4_pool_cidr::DeprovisionPublicIpv4PoolCidrOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::deprovision_public_ipv4_pool_cidr::DeprovisionPublicIpv4PoolCidrError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.deprovision_public_ipv4_pool_cidr();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeprovisionPublicIpv4PoolCidr`.
 ///
 /// <p>Deprovision a CIDR from a public IPv4 pool.</p>

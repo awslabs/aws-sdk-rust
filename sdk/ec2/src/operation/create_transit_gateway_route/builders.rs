@@ -3,6 +3,23 @@ pub use crate::operation::create_transit_gateway_route::_create_transit_gateway_
 
 pub use crate::operation::create_transit_gateway_route::_create_transit_gateway_route_input::CreateTransitGatewayRouteInputBuilder;
 
+impl CreateTransitGatewayRouteInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_transit_gateway_route::CreateTransitGatewayRouteOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_transit_gateway_route::CreateTransitGatewayRouteError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_transit_gateway_route();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateTransitGatewayRoute`.
 ///
 /// <p>Creates a static route for the specified transit gateway route table.</p>

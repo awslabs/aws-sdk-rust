@@ -3,6 +3,23 @@ pub use crate::operation::get_account_sending_enabled::_get_account_sending_enab
 
 pub use crate::operation::get_account_sending_enabled::_get_account_sending_enabled_input::GetAccountSendingEnabledInputBuilder;
 
+impl GetAccountSendingEnabledInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_account_sending_enabled::GetAccountSendingEnabledOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_account_sending_enabled::GetAccountSendingEnabledError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_account_sending_enabled();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetAccountSendingEnabled`.
 ///
 /// <p>Returns the email sending status of the Amazon SES account for the current region.</p>

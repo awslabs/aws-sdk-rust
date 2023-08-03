@@ -3,6 +3,17 @@ pub use crate::operation::describe_app_block_builder_app_block_associations::_de
 
 pub use crate::operation::describe_app_block_builder_app_block_associations::_describe_app_block_builder_app_block_associations_input::DescribeAppBlockBuilderAppBlockAssociationsInputBuilder;
 
+impl DescribeAppBlockBuilderAppBlockAssociationsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_app_block_builder_app_block_associations::DescribeAppBlockBuilderAppBlockAssociationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_app_block_builder_app_block_associations::DescribeAppBlockBuilderAppBlockAssociationsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_app_block_builder_app_block_associations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAppBlockBuilderAppBlockAssociations`.
 ///
 /// <p>Retrieves a list that describes one or more app block builder associations.</p>

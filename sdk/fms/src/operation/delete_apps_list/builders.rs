@@ -3,6 +3,23 @@ pub use crate::operation::delete_apps_list::_delete_apps_list_output::DeleteApps
 
 pub use crate::operation::delete_apps_list::_delete_apps_list_input::DeleteAppsListInputBuilder;
 
+impl DeleteAppsListInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_apps_list::DeleteAppsListOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_apps_list::DeleteAppsListError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_apps_list();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteAppsList`.
 ///
 /// <p>Permanently deletes an Firewall Manager applications list.</p>

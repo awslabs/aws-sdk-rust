@@ -3,6 +3,23 @@ pub use crate::operation::delete_queue::_delete_queue_output::DeleteQueueOutputB
 
 pub use crate::operation::delete_queue::_delete_queue_input::DeleteQueueInputBuilder;
 
+impl DeleteQueueInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_queue::DeleteQueueOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_queue::DeleteQueueError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_queue();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteQueue`.
 ///
 /// <p>Deletes the queue specified by the <code>QueueUrl</code>, regardless of the queue's contents.</p> <important>

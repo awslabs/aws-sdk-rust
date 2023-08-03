@@ -3,6 +3,23 @@ pub use crate::operation::update_pool::_update_pool_output::UpdatePoolOutputBuil
 
 pub use crate::operation::update_pool::_update_pool_input::UpdatePoolInputBuilder;
 
+impl UpdatePoolInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_pool::UpdatePoolOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_pool::UpdatePoolError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_pool();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdatePool`.
 ///
 /// <p>Updates the configuration of an existing pool. You can update the opt-out list, enable or disable two-way messaging, change the <code>TwoWayChannelArn</code>, enable or disable self-managed opt-outs, enable or disable deletion protection, and enable or disable shared routes.</p>

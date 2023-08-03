@@ -3,6 +3,23 @@ pub use crate::operation::create_anomaly_monitor::_create_anomaly_monitor_output
 
 pub use crate::operation::create_anomaly_monitor::_create_anomaly_monitor_input::CreateAnomalyMonitorInputBuilder;
 
+impl CreateAnomalyMonitorInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_anomaly_monitor::CreateAnomalyMonitorOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_anomaly_monitor::CreateAnomalyMonitorError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_anomaly_monitor();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateAnomalyMonitor`.
 ///
 /// <p>Creates a new cost anomaly detection monitor with the requested type and monitor specification. </p>

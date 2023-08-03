@@ -3,6 +3,23 @@ pub use crate::operation::get_variant_store::_get_variant_store_output::GetVaria
 
 pub use crate::operation::get_variant_store::_get_variant_store_input::GetVariantStoreInputBuilder;
 
+impl GetVariantStoreInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_variant_store::GetVariantStoreOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_variant_store::GetVariantStoreError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_variant_store();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetVariantStore`.
 ///
 /// <p>Gets information about a variant store.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_worker_configurations::_list_worker_configuration
 
 pub use crate::operation::list_worker_configurations::_list_worker_configurations_input::ListWorkerConfigurationsInputBuilder;
 
+impl ListWorkerConfigurationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_worker_configurations::ListWorkerConfigurationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_worker_configurations::ListWorkerConfigurationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_worker_configurations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListWorkerConfigurations`.
 ///
 /// <p>Returns a list of all of the worker configurations in this account and Region.</p>

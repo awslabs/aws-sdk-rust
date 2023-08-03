@@ -3,6 +3,23 @@ pub use crate::operation::update_subnet_change_protection::_update_subnet_change
 
 pub use crate::operation::update_subnet_change_protection::_update_subnet_change_protection_input::UpdateSubnetChangeProtectionInputBuilder;
 
+impl UpdateSubnetChangeProtectionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_subnet_change_protection::UpdateSubnetChangeProtectionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_subnet_change_protection::UpdateSubnetChangeProtectionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_subnet_change_protection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateSubnetChangeProtection`.
 ///
 /// <p></p>

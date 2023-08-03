@@ -3,6 +3,23 @@ pub use crate::operation::list_languages::_list_languages_output::ListLanguagesO
 
 pub use crate::operation::list_languages::_list_languages_input::ListLanguagesInputBuilder;
 
+impl ListLanguagesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_languages::ListLanguagesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_languages::ListLanguagesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_languages();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListLanguages`.
 ///
 /// <p>Provides a list of languages (RFC-5646 codes and names) that Amazon Translate supports.</p>

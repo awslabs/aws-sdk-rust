@@ -3,6 +3,23 @@ pub use crate::operation::put_object::_put_object_output::PutObjectOutputBuilder
 
 pub use crate::operation::put_object::_put_object_input::PutObjectInputBuilder;
 
+impl PutObjectInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_object::PutObjectOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_object::PutObjectError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_object();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutObject`.
 ///
 /// <p>Adds an object to a bucket. You must have WRITE permissions on a bucket to add an object to it.</p> <note>

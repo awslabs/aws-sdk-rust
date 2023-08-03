@@ -3,6 +3,23 @@ pub use crate::operation::associate_origination_identity::_associate_origination
 
 pub use crate::operation::associate_origination_identity::_associate_origination_identity_input::AssociateOriginationIdentityInputBuilder;
 
+impl AssociateOriginationIdentityInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_origination_identity::AssociateOriginationIdentityOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_origination_identity::AssociateOriginationIdentityError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_origination_identity();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateOriginationIdentity`.
 ///
 /// <p>Associates the specified origination identity with a pool.</p>

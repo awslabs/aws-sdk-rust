@@ -3,6 +3,23 @@ pub use crate::operation::update_control_panel::_update_control_panel_output::Up
 
 pub use crate::operation::update_control_panel::_update_control_panel_input::UpdateControlPanelInputBuilder;
 
+impl UpdateControlPanelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_control_panel::UpdateControlPanelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_control_panel::UpdateControlPanelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_control_panel();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateControlPanel`.
 ///
 /// <p>Updates a control panel. The only update you can make to a control panel is to change the name of the control panel.</p>

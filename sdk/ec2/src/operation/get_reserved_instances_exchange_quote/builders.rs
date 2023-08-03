@@ -3,6 +3,17 @@ pub use crate::operation::get_reserved_instances_exchange_quote::_get_reserved_i
 
 pub use crate::operation::get_reserved_instances_exchange_quote::_get_reserved_instances_exchange_quote_input::GetReservedInstancesExchangeQuoteInputBuilder;
 
+impl GetReservedInstancesExchangeQuoteInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_reserved_instances_exchange_quote::GetReservedInstancesExchangeQuoteOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_reserved_instances_exchange_quote::GetReservedInstancesExchangeQuoteError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_reserved_instances_exchange_quote();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetReservedInstancesExchangeQuote`.
 ///
 /// <p>Returns a quote and exchange information for exchanging one or more specified Convertible Reserved Instances for a new Convertible Reserved Instance. If the exchange cannot be performed, the reason is returned in the response. Use <code>AcceptReservedInstancesExchangeQuote</code> to perform the exchange.</p>

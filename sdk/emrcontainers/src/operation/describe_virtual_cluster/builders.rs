@@ -3,6 +3,23 @@ pub use crate::operation::describe_virtual_cluster::_describe_virtual_cluster_ou
 
 pub use crate::operation::describe_virtual_cluster::_describe_virtual_cluster_input::DescribeVirtualClusterInputBuilder;
 
+impl DescribeVirtualClusterInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_virtual_cluster::DescribeVirtualClusterOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_virtual_cluster::DescribeVirtualClusterError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_virtual_cluster();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeVirtualCluster`.
 ///
 /// <p>Displays detailed information about a specified virtual cluster. Virtual cluster is a managed entity on Amazon EMR on EKS. You can create, describe, list and delete virtual clusters. They do not consume any additional resource in your system. A single virtual cluster maps to a single Kubernetes namespace. Given this relationship, you can model virtual clusters the same way you model Kubernetes namespaces to meet your requirements.</p>

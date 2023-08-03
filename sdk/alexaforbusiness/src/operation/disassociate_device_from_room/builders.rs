@@ -3,6 +3,23 @@ pub use crate::operation::disassociate_device_from_room::_disassociate_device_fr
 
 pub use crate::operation::disassociate_device_from_room::_disassociate_device_from_room_input::DisassociateDeviceFromRoomInputBuilder;
 
+impl DisassociateDeviceFromRoomInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_device_from_room::DisassociateDeviceFromRoomOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_device_from_room::DisassociateDeviceFromRoomError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disassociate_device_from_room();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateDeviceFromRoom`.
 ///
 /// <p>Disassociates a device from its current room. The device continues to be connected to the Wi-Fi network and is still registered to the account. The device settings and skills are removed from the room.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::deactivate_mfa_device::_deactivate_mfa_device_output::
 
 pub use crate::operation::deactivate_mfa_device::_deactivate_mfa_device_input::DeactivateMfaDeviceInputBuilder;
 
+impl DeactivateMfaDeviceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::deactivate_mfa_device::DeactivateMfaDeviceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::deactivate_mfa_device::DeactivateMFADeviceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.deactivate_mfa_device();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeactivateMFADevice`.
 ///
 /// <p>Deactivates the specified MFA device and removes it from association with the user name for which it was originally enabled.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_sol_function_package::_create_sol_function_pack
 
 pub use crate::operation::create_sol_function_package::_create_sol_function_package_input::CreateSolFunctionPackageInputBuilder;
 
+impl CreateSolFunctionPackageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_sol_function_package::CreateSolFunctionPackageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_sol_function_package::CreateSolFunctionPackageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_sol_function_package();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateSolFunctionPackage`.
 ///
 /// <p>Creates a function package.</p>

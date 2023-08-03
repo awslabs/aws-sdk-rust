@@ -3,6 +3,23 @@ pub use crate::operation::delete_network::_delete_network_output::DeleteNetworkO
 
 pub use crate::operation::delete_network::_delete_network_input::DeleteNetworkInputBuilder;
 
+impl DeleteNetworkInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_network::DeleteNetworkOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_network::DeleteNetworkError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_network();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteNetwork`.
 ///
 /// <p>Deletes the specified network. You must delete network sites before you delete the network. For more information, see <a href="https://docs.aws.amazon.com/private-networks/latest/APIReference/API_DeleteNetworkSite.html">DeleteNetworkSite</a> in the <i>API Reference for Amazon Web Services Private 5G</i>.</p>

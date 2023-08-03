@@ -3,6 +3,23 @@ pub use crate::operation::list_discovered_resources::_list_discovered_resources_
 
 pub use crate::operation::list_discovered_resources::_list_discovered_resources_input::ListDiscoveredResourcesInputBuilder;
 
+impl ListDiscoveredResourcesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_discovered_resources::ListDiscoveredResourcesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_discovered_resources::ListDiscoveredResourcesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_discovered_resources();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDiscoveredResources`.
 ///
 /// <p>Lists discovered resources associated with the given <code>MigrationTask</code>.</p>

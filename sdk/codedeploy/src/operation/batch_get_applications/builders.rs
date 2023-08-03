@@ -3,6 +3,23 @@ pub use crate::operation::batch_get_applications::_batch_get_applications_output
 
 pub use crate::operation::batch_get_applications::_batch_get_applications_input::BatchGetApplicationsInputBuilder;
 
+impl BatchGetApplicationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_applications::BatchGetApplicationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_get_applications::BatchGetApplicationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_get_applications();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchGetApplications`.
 ///
 /// <p>Gets information about one or more applications. The maximum number of applications that can be returned is 100.</p>

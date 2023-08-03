@@ -3,6 +3,23 @@ pub use crate::operation::batch_get_asset_property_value::_batch_get_asset_prope
 
 pub use crate::operation::batch_get_asset_property_value::_batch_get_asset_property_value_input::BatchGetAssetPropertyValueInputBuilder;
 
+impl BatchGetAssetPropertyValueInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_asset_property_value::BatchGetAssetPropertyValueOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_get_asset_property_value::BatchGetAssetPropertyValueError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_get_asset_property_value();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchGetAssetPropertyValue`.
 ///
 /// <p>Gets the current value for one or more asset properties. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/query-industrial-data.html#current-values">Querying current values</a> in the <i>IoT SiteWise User Guide</i>.</p>

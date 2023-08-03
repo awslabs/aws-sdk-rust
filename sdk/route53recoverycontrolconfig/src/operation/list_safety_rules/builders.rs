@@ -3,6 +3,23 @@ pub use crate::operation::list_safety_rules::_list_safety_rules_output::ListSafe
 
 pub use crate::operation::list_safety_rules::_list_safety_rules_input::ListSafetyRulesInputBuilder;
 
+impl ListSafetyRulesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_safety_rules::ListSafetyRulesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_safety_rules::ListSafetyRulesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_safety_rules();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListSafetyRules`.
 ///
 /// <p>List the safety rules (the assertion rules and gating rules) that you've defined for the routing controls in a control panel.</p>

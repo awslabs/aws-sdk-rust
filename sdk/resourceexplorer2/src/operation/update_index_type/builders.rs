@@ -3,6 +3,23 @@ pub use crate::operation::update_index_type::_update_index_type_output::UpdateIn
 
 pub use crate::operation::update_index_type::_update_index_type_input::UpdateIndexTypeInputBuilder;
 
+impl UpdateIndexTypeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_index_type::UpdateIndexTypeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_index_type::UpdateIndexTypeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_index_type();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateIndexType`.
 ///
 /// <p>Changes the type of the index from one of the following types to the other. For more information about indexes and the role they perform in Amazon Web Services Resource Explorer, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/manage-aggregator-region.html">Turning on cross-Region search by creating an aggregator index</a> in the <i>Amazon Web Services Resource Explorer User Guide</i>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_metric_widget_image::_get_metric_widget_image_outp
 
 pub use crate::operation::get_metric_widget_image::_get_metric_widget_image_input::GetMetricWidgetImageInputBuilder;
 
+impl GetMetricWidgetImageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_metric_widget_image::GetMetricWidgetImageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_metric_widget_image::GetMetricWidgetImageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_metric_widget_image();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetMetricWidgetImage`.
 ///
 /// <p>You can use the <code>GetMetricWidgetImage</code> API to retrieve a snapshot graph of one or more Amazon CloudWatch metrics as a bitmap image. You can then embed this image into your services and products, such as wiki pages, reports, and documents. You could also retrieve images regularly, such as every minute, and create your own custom live dashboard.</p>

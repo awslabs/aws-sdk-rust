@@ -3,6 +3,23 @@ pub use crate::operation::claim_device::_claim_device_output::ClaimDeviceOutputB
 
 pub use crate::operation::claim_device::_claim_device_input::ClaimDeviceInputBuilder;
 
+impl ClaimDeviceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::claim_device::ClaimDeviceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::claim_device::ClaimDeviceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.claim_device();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ClaimDevice`.
 ///
 /// Send a request to claim an AWS Elemental device that you have purchased from a third-party vendor. After the request succeeds, you will own the device.

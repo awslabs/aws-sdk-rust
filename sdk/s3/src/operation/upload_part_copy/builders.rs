@@ -3,6 +3,23 @@ pub use crate::operation::upload_part_copy::_upload_part_copy_output::UploadPart
 
 pub use crate::operation::upload_part_copy::_upload_part_copy_input::UploadPartCopyInputBuilder;
 
+impl UploadPartCopyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::upload_part_copy::UploadPartCopyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::upload_part_copy::UploadPartCopyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.upload_part_copy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UploadPartCopy`.
 ///
 /// <p>Uploads a part by copying data from an existing object as data source. You specify the data source by adding the request header <code>x-amz-copy-source</code> in your request and a byte range by adding the request header <code>x-amz-copy-source-range</code> in your request. </p>

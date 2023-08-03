@@ -3,6 +3,23 @@ pub use crate::operation::create_logging_configuration::_create_logging_configur
 
 pub use crate::operation::create_logging_configuration::_create_logging_configuration_input::CreateLoggingConfigurationInputBuilder;
 
+impl CreateLoggingConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_logging_configuration::CreateLoggingConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_logging_configuration::CreateLoggingConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_logging_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateLoggingConfiguration`.
 ///
 /// <p>Creates a logging configuration that allows clients to store and record sent messages.</p>

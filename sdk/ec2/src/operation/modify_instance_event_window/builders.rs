@@ -3,6 +3,23 @@ pub use crate::operation::modify_instance_event_window::_modify_instance_event_w
 
 pub use crate::operation::modify_instance_event_window::_modify_instance_event_window_input::ModifyInstanceEventWindowInputBuilder;
 
+impl ModifyInstanceEventWindowInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_instance_event_window::ModifyInstanceEventWindowOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_instance_event_window::ModifyInstanceEventWindowError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_instance_event_window();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyInstanceEventWindow`.
 ///
 /// <p>Modifies the specified event window.</p>

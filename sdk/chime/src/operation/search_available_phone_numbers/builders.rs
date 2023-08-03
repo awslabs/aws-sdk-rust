@@ -3,6 +3,23 @@ pub use crate::operation::search_available_phone_numbers::_search_available_phon
 
 pub use crate::operation::search_available_phone_numbers::_search_available_phone_numbers_input::SearchAvailablePhoneNumbersInputBuilder;
 
+impl SearchAvailablePhoneNumbersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.search_available_phone_numbers();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SearchAvailablePhoneNumbers`.
 ///
 /// <p>Searches for phone numbers that can be ordered. For US numbers, provide at least one of the following search filters: <code>AreaCode</code>, <code>City</code>, <code>State</code>, or <code>TollFreePrefix</code>. If you provide <code>City</code>, you must also provide <code>State</code>. Numbers outside the US only support the <code>PhoneNumberType</code> filter, which you must use.</p>

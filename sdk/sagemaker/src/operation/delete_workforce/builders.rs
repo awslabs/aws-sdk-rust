@@ -3,6 +3,23 @@ pub use crate::operation::delete_workforce::_delete_workforce_output::DeleteWork
 
 pub use crate::operation::delete_workforce::_delete_workforce_input::DeleteWorkforceInputBuilder;
 
+impl DeleteWorkforceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_workforce::DeleteWorkforceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_workforce::DeleteWorkforceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_workforce();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteWorkforce`.
 ///
 /// <p>Use this operation to delete a workforce.</p>

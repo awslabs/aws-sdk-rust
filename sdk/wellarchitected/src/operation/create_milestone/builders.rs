@@ -3,6 +3,23 @@ pub use crate::operation::create_milestone::_create_milestone_output::CreateMile
 
 pub use crate::operation::create_milestone::_create_milestone_input::CreateMilestoneInputBuilder;
 
+impl CreateMilestoneInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_milestone::CreateMilestoneOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_milestone::CreateMilestoneError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_milestone();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateMilestone`.
 ///
 /// <p>Create a milestone for an existing workload.</p>

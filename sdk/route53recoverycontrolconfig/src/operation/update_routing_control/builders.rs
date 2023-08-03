@@ -3,6 +3,23 @@ pub use crate::operation::update_routing_control::_update_routing_control_output
 
 pub use crate::operation::update_routing_control::_update_routing_control_input::UpdateRoutingControlInputBuilder;
 
+impl UpdateRoutingControlInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_routing_control::UpdateRoutingControlOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_routing_control::UpdateRoutingControlError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_routing_control();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateRoutingControl`.
 ///
 /// <p>Updates a routing control. You can only update the name of the routing control. To get or update the routing control state, see the Recovery Cluster (data plane) API actions for Amazon Route 53 Application Recovery Controller.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::export_earth_observation_job::_export_earth_observatio
 
 pub use crate::operation::export_earth_observation_job::_export_earth_observation_job_input::ExportEarthObservationJobInputBuilder;
 
+impl ExportEarthObservationJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::export_earth_observation_job::ExportEarthObservationJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::export_earth_observation_job::ExportEarthObservationJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.export_earth_observation_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ExportEarthObservationJob`.
 ///
 /// <p>Use this operation to export results of an Earth Observation job and optionally source images used as input to the EOJ to an Amazon S3 location.</p>

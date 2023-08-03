@@ -3,6 +3,23 @@ pub use crate::operation::list_explainabilities::_list_explainabilities_output::
 
 pub use crate::operation::list_explainabilities::_list_explainabilities_input::ListExplainabilitiesInputBuilder;
 
+impl ListExplainabilitiesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_explainabilities::ListExplainabilitiesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_explainabilities::ListExplainabilitiesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_explainabilities();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListExplainabilities`.
 ///
 /// <p>Returns a list of Explainability resources created using the <code>CreateExplainability</code> operation. This operation returns a summary for each Explainability. You can filter the list using an array of <code>Filter</code> objects.</p>

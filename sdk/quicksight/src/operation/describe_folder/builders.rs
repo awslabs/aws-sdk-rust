@@ -3,6 +3,23 @@ pub use crate::operation::describe_folder::_describe_folder_output::DescribeFold
 
 pub use crate::operation::describe_folder::_describe_folder_input::DescribeFolderInputBuilder;
 
+impl DescribeFolderInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_folder::DescribeFolderOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_folder::DescribeFolderError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_folder();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeFolder`.
 ///
 /// <p>Describes a folder.</p>

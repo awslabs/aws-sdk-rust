@@ -3,6 +3,23 @@ pub use crate::operation::get_label_detection::_get_label_detection_output::GetL
 
 pub use crate::operation::get_label_detection::_get_label_detection_input::GetLabelDetectionInputBuilder;
 
+impl GetLabelDetectionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_label_detection::GetLabelDetectionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_label_detection::GetLabelDetectionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_label_detection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetLabelDetection`.
 ///
 /// <p>Gets the label detection results of a Amazon Rekognition Video analysis started by <code>StartLabelDetection</code>. </p>

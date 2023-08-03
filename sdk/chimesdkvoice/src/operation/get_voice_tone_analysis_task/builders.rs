@@ -3,6 +3,23 @@ pub use crate::operation::get_voice_tone_analysis_task::_get_voice_tone_analysis
 
 pub use crate::operation::get_voice_tone_analysis_task::_get_voice_tone_analysis_task_input::GetVoiceToneAnalysisTaskInputBuilder;
 
+impl GetVoiceToneAnalysisTaskInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_voice_tone_analysis_task::GetVoiceToneAnalysisTaskOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_voice_tone_analysis_task::GetVoiceToneAnalysisTaskError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_voice_tone_analysis_task();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetVoiceToneAnalysisTask`.
 ///
 /// <p>Retrieves the details of a voice tone analysis task.</p>

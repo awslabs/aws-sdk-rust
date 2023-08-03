@@ -3,6 +3,23 @@ pub use crate::operation::associate_service_quota_template::_associate_service_q
 
 pub use crate::operation::associate_service_quota_template::_associate_service_quota_template_input::AssociateServiceQuotaTemplateInputBuilder;
 
+impl AssociateServiceQuotaTemplateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_service_quota_template::AssociateServiceQuotaTemplateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_service_quota_template::AssociateServiceQuotaTemplateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_service_quota_template();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateServiceQuotaTemplate`.
 ///
 /// <p>Associates your quota request template with your organization. When a new account is created in your organization, the quota increase requests in the template are automatically applied to the account. You can add a quota increase request for any adjustable quota to your template.</p>

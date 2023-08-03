@@ -3,6 +3,23 @@ pub use crate::operation::update_template_active_version::_update_template_activ
 
 pub use crate::operation::update_template_active_version::_update_template_active_version_input::UpdateTemplateActiveVersionInputBuilder;
 
+impl UpdateTemplateActiveVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_template_active_version::UpdateTemplateActiveVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_template_active_version::UpdateTemplateActiveVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_template_active_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateTemplateActiveVersion`.
 ///
 /// <p>Changes the status of a specific version of a message template to <i>active</i>.</p>

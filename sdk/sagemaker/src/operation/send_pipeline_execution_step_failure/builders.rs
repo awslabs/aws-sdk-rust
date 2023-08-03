@@ -3,6 +3,17 @@ pub use crate::operation::send_pipeline_execution_step_failure::_send_pipeline_e
 
 pub use crate::operation::send_pipeline_execution_step_failure::_send_pipeline_execution_step_failure_input::SendPipelineExecutionStepFailureInputBuilder;
 
+impl SendPipelineExecutionStepFailureInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailureOutput, ::aws_smithy_http::result::SdkError<crate::operation::send_pipeline_execution_step_failure::SendPipelineExecutionStepFailureError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.send_pipeline_execution_step_failure();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SendPipelineExecutionStepFailure`.
 ///
 /// <p>Notifies the pipeline that the execution of a callback step failed, along with a message describing why. When a callback step is run, the pipeline generates a callback token and includes the token in a message sent to Amazon Simple Queue Service (Amazon SQS).</p>

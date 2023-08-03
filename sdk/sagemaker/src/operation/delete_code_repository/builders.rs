@@ -3,6 +3,23 @@ pub use crate::operation::delete_code_repository::_delete_code_repository_output
 
 pub use crate::operation::delete_code_repository::_delete_code_repository_input::DeleteCodeRepositoryInputBuilder;
 
+impl DeleteCodeRepositoryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_code_repository::DeleteCodeRepositoryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_code_repository::DeleteCodeRepositoryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_code_repository();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteCodeRepository`.
 ///
 /// <p>Deletes the specified Git repository from your account.</p>

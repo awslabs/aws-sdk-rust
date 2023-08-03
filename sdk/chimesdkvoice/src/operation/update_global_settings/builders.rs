@@ -3,6 +3,23 @@ pub use crate::operation::update_global_settings::_update_global_settings_output
 
 pub use crate::operation::update_global_settings::_update_global_settings_input::UpdateGlobalSettingsInputBuilder;
 
+impl UpdateGlobalSettingsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_global_settings::UpdateGlobalSettingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_global_settings::UpdateGlobalSettingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_global_settings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateGlobalSettings`.
 ///
 /// <p>Updates global settings for the Amazon Chime SDK Voice Connectors in an AWS account.</p>

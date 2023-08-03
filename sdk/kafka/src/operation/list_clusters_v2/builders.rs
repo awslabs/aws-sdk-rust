@@ -3,6 +3,23 @@ pub use crate::operation::list_clusters_v2::_list_clusters_v2_output::ListCluste
 
 pub use crate::operation::list_clusters_v2::_list_clusters_v2_input::ListClustersV2InputBuilder;
 
+impl ListClustersV2InputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_clusters_v2::ListClustersV2Output,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_clusters_v2::ListClustersV2Error,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_clusters_v2();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListClustersV2`.
 ///
 /// <p>Returns a list of all the MSK clusters in the current Region.</p>

@@ -3,6 +3,17 @@ pub use crate::operation::disassociate_user_access_logging_settings::_disassocia
 
 pub use crate::operation::disassociate_user_access_logging_settings::_disassociate_user_access_logging_settings_input::DisassociateUserAccessLoggingSettingsInputBuilder;
 
+impl DisassociateUserAccessLoggingSettingsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::disassociate_user_access_logging_settings::DisassociateUserAccessLoggingSettingsOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_user_access_logging_settings::DisassociateUserAccessLoggingSettingsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.disassociate_user_access_logging_settings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateUserAccessLoggingSettings`.
 ///
 /// <p>Disassociates user access logging settings from a web portal.</p>

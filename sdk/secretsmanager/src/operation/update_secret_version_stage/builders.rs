@@ -3,6 +3,23 @@ pub use crate::operation::update_secret_version_stage::_update_secret_version_st
 
 pub use crate::operation::update_secret_version_stage::_update_secret_version_stage_input::UpdateSecretVersionStageInputBuilder;
 
+impl UpdateSecretVersionStageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_secret_version_stage::UpdateSecretVersionStageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_secret_version_stage::UpdateSecretVersionStageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_secret_version_stage();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateSecretVersionStage`.
 ///
 /// <p>Modifies the staging labels attached to a version of a secret. Secrets Manager uses staging labels to track a version as it progresses through the secret rotation process. Each staging label can be attached to only one version at a time. To add a staging label to a version when it is already attached to another version, Secrets Manager first removes it from the other version first and then attaches it to this one. For more information about versions and staging labels, see <a href="https://docs.aws.amazon.com/secretsmanager/latest/userguide/getting-started.html#term_version">Concepts: Version</a>. </p>

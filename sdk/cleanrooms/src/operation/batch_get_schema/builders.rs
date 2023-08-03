@@ -3,6 +3,23 @@ pub use crate::operation::batch_get_schema::_batch_get_schema_output::BatchGetSc
 
 pub use crate::operation::batch_get_schema::_batch_get_schema_input::BatchGetSchemaInputBuilder;
 
+impl BatchGetSchemaInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_schema::BatchGetSchemaOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_get_schema::BatchGetSchemaError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_get_schema();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchGetSchema`.
 ///
 /// <p>Retrieves multiple schemas by their identifiers.</p>

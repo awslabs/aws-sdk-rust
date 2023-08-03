@@ -3,6 +3,23 @@ pub use crate::operation::describe_featured_results_set::_describe_featured_resu
 
 pub use crate::operation::describe_featured_results_set::_describe_featured_results_set_input::DescribeFeaturedResultsSetInputBuilder;
 
+impl DescribeFeaturedResultsSetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_featured_results_set::DescribeFeaturedResultsSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_featured_results_set::DescribeFeaturedResultsSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_featured_results_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeFeaturedResultsSet`.
 ///
 /// <p>Gets information about a set of featured results. Features results are placed above all other results for certain queries. If there's an exact match of a query, then one or more specific documents are featured in the search results.</p>

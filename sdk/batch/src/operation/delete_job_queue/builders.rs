@@ -3,6 +3,23 @@ pub use crate::operation::delete_job_queue::_delete_job_queue_output::DeleteJobQ
 
 pub use crate::operation::delete_job_queue::_delete_job_queue_input::DeleteJobQueueInputBuilder;
 
+impl DeleteJobQueueInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_job_queue::DeleteJobQueueOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_job_queue::DeleteJobQueueError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_job_queue();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteJobQueue`.
 ///
 /// <p>Deletes the specified job queue. You must first disable submissions for a queue with the <code>UpdateJobQueue</code> operation. All jobs in the queue are eventually terminated when you delete a job queue. The jobs are terminated at a rate of about 16 jobs each second.</p>

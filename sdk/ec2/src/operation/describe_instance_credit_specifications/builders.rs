@@ -3,6 +3,17 @@ pub use crate::operation::describe_instance_credit_specifications::_describe_ins
 
 pub use crate::operation::describe_instance_credit_specifications::_describe_instance_credit_specifications_input::DescribeInstanceCreditSpecificationsInputBuilder;
 
+impl DescribeInstanceCreditSpecificationsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_instance_credit_specifications::DescribeInstanceCreditSpecificationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_instance_credit_specifications::DescribeInstanceCreditSpecificationsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_instance_credit_specifications();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeInstanceCreditSpecifications`.
 ///
 /// <p>Describes the credit option for CPU usage of the specified burstable performance instances. The credit options are <code>standard</code> and <code>unlimited</code>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_crawls::_list_crawls_output::ListCrawlsOutputBuil
 
 pub use crate::operation::list_crawls::_list_crawls_input::ListCrawlsInputBuilder;
 
+impl ListCrawlsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_crawls::ListCrawlsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_crawls::ListCrawlsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_crawls();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListCrawls`.
 ///
 /// <p>Returns all the crawls of a specified crawler. Returns only the crawls that have occurred since the launch date of the crawler history feature, and only retains up to 12 months of crawls. Older crawls will not be returned.</p>

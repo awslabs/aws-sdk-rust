@@ -3,6 +3,23 @@ pub use crate::operation::update_subscriber::_update_subscriber_output::UpdateSu
 
 pub use crate::operation::update_subscriber::_update_subscriber_input::UpdateSubscriberInputBuilder;
 
+impl UpdateSubscriberInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_subscriber::UpdateSubscriberOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_subscriber::UpdateSubscriberError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_subscriber();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateSubscriber`.
 ///
 /// <p>Updates an existing subscription for the given Amazon Security Lake account ID. You can update a subscriber by changing the sources that the subscriber consumes data from.</p>

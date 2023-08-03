@@ -3,6 +3,23 @@ pub use crate::operation::delete_imported_key_material::_delete_imported_key_mat
 
 pub use crate::operation::delete_imported_key_material::_delete_imported_key_material_input::DeleteImportedKeyMaterialInputBuilder;
 
+impl DeleteImportedKeyMaterialInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_imported_key_material::DeleteImportedKeyMaterialOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_imported_key_material::DeleteImportedKeyMaterialError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_imported_key_material();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteImportedKeyMaterial`.
 ///
 /// <p>Deletes key material that was previously imported. This operation makes the specified KMS key temporarily unusable. To restore the usability of the KMS key, reimport the same key material. For more information about importing key material into KMS, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/importing-keys.html">Importing Key Material</a> in the <i>Key Management Service Developer Guide</i>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::update_budget::_update_budget_output::UpdateBudgetOutp
 
 pub use crate::operation::update_budget::_update_budget_input::UpdateBudgetInputBuilder;
 
+impl UpdateBudgetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_budget::UpdateBudgetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_budget::UpdateBudgetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_budget();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateBudget`.
 ///
 /// <p>Updates a budget. You can change every part of a budget except for the <code>budgetName</code> and the <code>calculatedSpend</code>. When you modify a budget, the <code>calculatedSpend</code> drops to zero until Amazon Web Services has new usage data to use for forecasting.</p> <important>

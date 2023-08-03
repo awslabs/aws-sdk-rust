@@ -3,6 +3,17 @@ pub use crate::operation::delete_voice_connector_streaming_configuration::_delet
 
 pub use crate::operation::delete_voice_connector_streaming_configuration::_delete_voice_connector_streaming_configuration_input::DeleteVoiceConnectorStreamingConfigurationInputBuilder;
 
+impl DeleteVoiceConnectorStreamingConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_voice_connector_streaming_configuration::DeleteVoiceConnectorStreamingConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_voice_connector_streaming_configuration::DeleteVoiceConnectorStreamingConfigurationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.delete_voice_connector_streaming_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteVoiceConnectorStreamingConfiguration`.
 ///
 /// <p>Deletes a Voice Connector's streaming configuration.</p>

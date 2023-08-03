@@ -3,6 +3,23 @@ pub use crate::operation::set_vault_notifications::_set_vault_notifications_outp
 
 pub use crate::operation::set_vault_notifications::_set_vault_notifications_input::SetVaultNotificationsInputBuilder;
 
+impl SetVaultNotificationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::set_vault_notifications::SetVaultNotificationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::set_vault_notifications::SetVaultNotificationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.set_vault_notifications();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SetVaultNotifications`.
 ///
 /// <p>This operation configures notifications that will be sent when specific events happen to a vault. By default, you don't get any notifications.</p>

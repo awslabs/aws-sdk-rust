@@ -3,6 +3,17 @@ pub use crate::operation::delete_configuration_set_event_destination::_delete_co
 
 pub use crate::operation::delete_configuration_set_event_destination::_delete_configuration_set_event_destination_input::DeleteConfigurationSetEventDestinationInputBuilder;
 
+impl DeleteConfigurationSetEventDestinationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_configuration_set_event_destination::DeleteConfigurationSetEventDestinationOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_configuration_set_event_destination::DeleteConfigurationSetEventDestinationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.delete_configuration_set_event_destination();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteConfigurationSetEventDestination`.
 ///
 /// <p>Deletes a configuration set event destination. Configuration set event destinations are associated with configuration sets, which enable you to publish email sending events. For information about using configuration sets, see the <a href="https://docs.aws.amazon.com/ses/latest/DeveloperGuide/monitor-sending-activity.html">Amazon SES Developer Guide</a>.</p>

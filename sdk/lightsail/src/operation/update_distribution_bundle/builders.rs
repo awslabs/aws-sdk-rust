@@ -3,6 +3,23 @@ pub use crate::operation::update_distribution_bundle::_update_distribution_bundl
 
 pub use crate::operation::update_distribution_bundle::_update_distribution_bundle_input::UpdateDistributionBundleInputBuilder;
 
+impl UpdateDistributionBundleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_distribution_bundle::UpdateDistributionBundleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_distribution_bundle::UpdateDistributionBundleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_distribution_bundle();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateDistributionBundle`.
 ///
 /// <p>Updates the bundle of your Amazon Lightsail content delivery network (CDN) distribution.</p>

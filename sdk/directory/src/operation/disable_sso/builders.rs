@@ -3,6 +3,23 @@ pub use crate::operation::disable_sso::_disable_sso_output::DisableSsoOutputBuil
 
 pub use crate::operation::disable_sso::_disable_sso_input::DisableSsoInputBuilder;
 
+impl DisableSsoInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disable_sso::DisableSsoOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disable_sso::DisableSsoError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disable_sso();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisableSso`.
 ///
 /// <p>Disables single-sign on for a directory.</p>

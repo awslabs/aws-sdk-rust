@@ -3,6 +3,23 @@ pub use crate::operation::describe_signing_job::_describe_signing_job_output::De
 
 pub use crate::operation::describe_signing_job::_describe_signing_job_input::DescribeSigningJobInputBuilder;
 
+impl DescribeSigningJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_signing_job::DescribeSigningJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_signing_job::DescribeSigningJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_signing_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeSigningJob`.
 ///
 /// <p>Returns information about a specific code signing job. You specify the job by using the <code>jobId</code> value that is returned by the <code>StartSigningJob</code> operation. </p>

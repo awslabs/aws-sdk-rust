@@ -3,6 +3,23 @@ pub use crate::operation::get_code_binding_source::_get_code_binding_source_outp
 
 pub use crate::operation::get_code_binding_source::_get_code_binding_source_input::GetCodeBindingSourceInputBuilder;
 
+impl GetCodeBindingSourceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_code_binding_source::GetCodeBindingSourceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_code_binding_source::GetCodeBindingSourceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_code_binding_source();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetCodeBindingSource`.
 ///
 /// <p>Get the code binding source URI.</p>

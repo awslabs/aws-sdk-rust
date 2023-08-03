@@ -3,6 +3,23 @@ pub use crate::operation::list_source_repository_branches::_list_source_reposito
 
 pub use crate::operation::list_source_repository_branches::_list_source_repository_branches_input::ListSourceRepositoryBranchesInputBuilder;
 
+impl ListSourceRepositoryBranchesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_source_repository_branches::ListSourceRepositoryBranchesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_source_repository_branches::ListSourceRepositoryBranchesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_source_repository_branches();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListSourceRepositoryBranches`.
 ///
 /// <p>Retrieves a list of branches in a specified source repository.</p>

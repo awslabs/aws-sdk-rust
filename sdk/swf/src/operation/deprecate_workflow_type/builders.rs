@@ -3,6 +3,23 @@ pub use crate::operation::deprecate_workflow_type::_deprecate_workflow_type_outp
 
 pub use crate::operation::deprecate_workflow_type::_deprecate_workflow_type_input::DeprecateWorkflowTypeInputBuilder;
 
+impl DeprecateWorkflowTypeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::deprecate_workflow_type::DeprecateWorkflowTypeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::deprecate_workflow_type::DeprecateWorkflowTypeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.deprecate_workflow_type();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeprecateWorkflowType`.
 ///
 /// <p>Deprecates the specified <i>workflow type</i>. After a workflow type has been deprecated, you cannot create new executions of that type. Executions that were started before the type was deprecated continues to run. A deprecated workflow type may still be used when calling visibility actions.</p> <note>

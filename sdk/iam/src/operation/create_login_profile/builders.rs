@@ -3,6 +3,23 @@ pub use crate::operation::create_login_profile::_create_login_profile_output::Cr
 
 pub use crate::operation::create_login_profile::_create_login_profile_input::CreateLoginProfileInputBuilder;
 
+impl CreateLoginProfileInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_login_profile::CreateLoginProfileOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_login_profile::CreateLoginProfileError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_login_profile();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateLoginProfile`.
 ///
 /// <p>Creates a password for the specified IAM user. A password allows an IAM user to access Amazon Web Services services through the Amazon Web Services Management Console.</p>

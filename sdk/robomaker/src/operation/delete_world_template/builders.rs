@@ -3,6 +3,23 @@ pub use crate::operation::delete_world_template::_delete_world_template_output::
 
 pub use crate::operation::delete_world_template::_delete_world_template_input::DeleteWorldTemplateInputBuilder;
 
+impl DeleteWorldTemplateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_world_template::DeleteWorldTemplateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_world_template::DeleteWorldTemplateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_world_template();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteWorldTemplate`.
 ///
 /// <p>Deletes a world template.</p>

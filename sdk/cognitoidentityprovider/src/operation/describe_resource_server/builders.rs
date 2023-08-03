@@ -3,6 +3,23 @@ pub use crate::operation::describe_resource_server::_describe_resource_server_ou
 
 pub use crate::operation::describe_resource_server::_describe_resource_server_input::DescribeResourceServerInputBuilder;
 
+impl DescribeResourceServerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_resource_server::DescribeResourceServerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_resource_server::DescribeResourceServerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_resource_server();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeResourceServer`.
 ///
 /// <p>Describes a resource server.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_organizations::_list_organizations_output::ListOr
 
 pub use crate::operation::list_organizations::_list_organizations_input::ListOrganizationsInputBuilder;
 
+impl ListOrganizationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_organizations::ListOrganizationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_organizations::ListOrganizationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_organizations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListOrganizations`.
 ///
 /// <p>Returns summaries of the customer's organizations.</p>

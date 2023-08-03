@@ -3,6 +3,23 @@ pub use crate::operation::create_capacity_reservation::_create_capacity_reservat
 
 pub use crate::operation::create_capacity_reservation::_create_capacity_reservation_input::CreateCapacityReservationInputBuilder;
 
+impl CreateCapacityReservationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_capacity_reservation::CreateCapacityReservationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_capacity_reservation::CreateCapacityReservationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_capacity_reservation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateCapacityReservation`.
 ///
 /// <p>Creates a capacity reservation with the specified name and number of requested data processing units.</p>

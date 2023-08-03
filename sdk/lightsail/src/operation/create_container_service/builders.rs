@@ -3,6 +3,23 @@ pub use crate::operation::create_container_service::_create_container_service_ou
 
 pub use crate::operation::create_container_service::_create_container_service_input::CreateContainerServiceInputBuilder;
 
+impl CreateContainerServiceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_container_service::CreateContainerServiceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_container_service::CreateContainerServiceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_container_service();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateContainerService`.
 ///
 /// <p>Creates an Amazon Lightsail container service.</p>

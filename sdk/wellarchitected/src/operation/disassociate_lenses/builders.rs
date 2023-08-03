@@ -3,6 +3,23 @@ pub use crate::operation::disassociate_lenses::_disassociate_lenses_output::Disa
 
 pub use crate::operation::disassociate_lenses::_disassociate_lenses_input::DisassociateLensesInputBuilder;
 
+impl DisassociateLensesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_lenses::DisassociateLensesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_lenses::DisassociateLensesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disassociate_lenses();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateLenses`.
 ///
 /// <p>Disassociate a lens from a workload.</p>

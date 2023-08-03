@@ -3,6 +3,23 @@ pub use crate::operation::describe_storage::_describe_storage_output::DescribeSt
 
 pub use crate::operation::describe_storage::_describe_storage_input::DescribeStorageInputBuilder;
 
+impl DescribeStorageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_storage::DescribeStorageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_storage::DescribeStorageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_storage();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeStorage`.
 ///
 /// <p>Returns account level backups storage size and provisional storage.</p>

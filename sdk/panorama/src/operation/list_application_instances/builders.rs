@@ -3,6 +3,23 @@ pub use crate::operation::list_application_instances::_list_application_instance
 
 pub use crate::operation::list_application_instances::_list_application_instances_input::ListApplicationInstancesInputBuilder;
 
+impl ListApplicationInstancesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_application_instances::ListApplicationInstancesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_application_instances::ListApplicationInstancesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_application_instances();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListApplicationInstances`.
 ///
 /// <p>Returns a list of application instances.</p>

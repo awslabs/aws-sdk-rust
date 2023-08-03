@@ -3,6 +3,23 @@ pub use crate::operation::delete_profile_key::_delete_profile_key_output::Delete
 
 pub use crate::operation::delete_profile_key::_delete_profile_key_input::DeleteProfileKeyInputBuilder;
 
+impl DeleteProfileKeyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_profile_key::DeleteProfileKeyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_profile_key::DeleteProfileKeyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_profile_key();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteProfileKey`.
 ///
 /// <p>Removes a searchable key from a customer profile.</p>

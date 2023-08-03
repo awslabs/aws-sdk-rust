@@ -3,6 +3,23 @@ pub use crate::operation::remove_attributes_from_findings::_remove_attributes_fr
 
 pub use crate::operation::remove_attributes_from_findings::_remove_attributes_from_findings_input::RemoveAttributesFromFindingsInputBuilder;
 
+impl RemoveAttributesFromFindingsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::remove_attributes_from_findings::RemoveAttributesFromFindingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::remove_attributes_from_findings::RemoveAttributesFromFindingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.remove_attributes_from_findings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RemoveAttributesFromFindings`.
 ///
 /// <p>Removes entire attributes (key and value pairs) from the findings that are specified by the ARNs of the findings where an attribute with the specified key exists.</p>

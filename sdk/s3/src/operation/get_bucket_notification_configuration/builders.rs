@@ -3,6 +3,17 @@ pub use crate::operation::get_bucket_notification_configuration::_get_bucket_not
 
 pub use crate::operation::get_bucket_notification_configuration::_get_bucket_notification_configuration_input::GetBucketNotificationConfigurationInputBuilder;
 
+impl GetBucketNotificationConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_bucket_notification_configuration::GetBucketNotificationConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_bucket_notification_configuration::GetBucketNotificationConfigurationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_bucket_notification_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetBucketNotificationConfiguration`.
 ///
 /// <p>Returns the notification configuration of a bucket.</p>

@@ -3,6 +3,17 @@ pub use crate::operation::describe_spot_datafeed_subscription::_describe_spot_da
 
 pub use crate::operation::describe_spot_datafeed_subscription::_describe_spot_datafeed_subscription_input::DescribeSpotDatafeedSubscriptionInputBuilder;
 
+impl DescribeSpotDatafeedSubscriptionInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_spot_datafeed_subscription::DescribeSpotDatafeedSubscriptionOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_spot_datafeed_subscription::DescribeSpotDatafeedSubscriptionError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_spot_datafeed_subscription();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeSpotDatafeedSubscription`.
 ///
 /// <p>Describes the data feed for Spot Instances. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-data-feeds.html">Spot Instance data feed</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>

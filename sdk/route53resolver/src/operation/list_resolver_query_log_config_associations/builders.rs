@@ -3,6 +3,17 @@ pub use crate::operation::list_resolver_query_log_config_associations::_list_res
 
 pub use crate::operation::list_resolver_query_log_config_associations::_list_resolver_query_log_config_associations_input::ListResolverQueryLogConfigAssociationsInputBuilder;
 
+impl ListResolverQueryLogConfigAssociationsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_resolver_query_log_config_associations::ListResolverQueryLogConfigAssociationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_resolver_query_log_config_associations::ListResolverQueryLogConfigAssociationsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_resolver_query_log_config_associations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListResolverQueryLogConfigAssociations`.
 ///
 /// <p>Lists information about associations between Amazon VPCs and query logging configurations.</p>

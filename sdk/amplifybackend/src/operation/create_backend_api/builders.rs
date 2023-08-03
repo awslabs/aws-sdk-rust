@@ -3,6 +3,23 @@ pub use crate::operation::create_backend_api::_create_backend_api_output::Create
 
 pub use crate::operation::create_backend_api::_create_backend_api_input::CreateBackendApiInputBuilder;
 
+impl CreateBackendApiInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_backend_api::CreateBackendApiOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_backend_api::CreateBackendAPIError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_backend_api();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateBackendAPI`.
 ///
 /// <p>Creates a new backend API resource.</p>

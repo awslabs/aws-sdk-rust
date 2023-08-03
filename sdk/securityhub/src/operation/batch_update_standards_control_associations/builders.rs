@@ -3,6 +3,17 @@ pub use crate::operation::batch_update_standards_control_associations::_batch_up
 
 pub use crate::operation::batch_update_standards_control_associations::_batch_update_standards_control_associations_input::BatchUpdateStandardsControlAssociationsInputBuilder;
 
+impl BatchUpdateStandardsControlAssociationsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::batch_update_standards_control_associations::BatchUpdateStandardsControlAssociationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::batch_update_standards_control_associations::BatchUpdateStandardsControlAssociationsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.batch_update_standards_control_associations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchUpdateStandardsControlAssociations`.
 ///
 /// <p> For a batch of security controls and standards, this operation updates the enablement status of a control in a standard. </p>

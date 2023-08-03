@@ -3,6 +3,23 @@ pub use crate::operation::disable_aws_organizations_access::_disable_aws_organiz
 
 pub use crate::operation::disable_aws_organizations_access::_disable_aws_organizations_access_input::DisableAwsOrganizationsAccessInputBuilder;
 
+impl DisableAwsOrganizationsAccessInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disable_aws_organizations_access::DisableAwsOrganizationsAccessOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disable_aws_organizations_access::DisableAWSOrganizationsAccessError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disable_aws_organizations_access();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisableAWSOrganizationsAccess`.
 ///
 /// <p>Disable portfolio sharing through the Organizations service. This command will not delete your current shares, but prevents you from creating new shares throughout your organization. Current shares are not kept in sync with your organization structure if the structure changes after calling this API. Only the management account in the organization can call this API.</p>

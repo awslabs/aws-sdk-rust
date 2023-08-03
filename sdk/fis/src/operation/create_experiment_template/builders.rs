@@ -3,6 +3,23 @@ pub use crate::operation::create_experiment_template::_create_experiment_templat
 
 pub use crate::operation::create_experiment_template::_create_experiment_template_input::CreateExperimentTemplateInputBuilder;
 
+impl CreateExperimentTemplateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_experiment_template::CreateExperimentTemplateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_experiment_template::CreateExperimentTemplateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_experiment_template();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateExperimentTemplate`.
 ///
 /// <p>Creates an experiment template. </p>

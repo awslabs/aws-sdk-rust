@@ -3,6 +3,23 @@ pub use crate::operation::register_ecs_cluster::_register_ecs_cluster_output::Re
 
 pub use crate::operation::register_ecs_cluster::_register_ecs_cluster_input::RegisterEcsClusterInputBuilder;
 
+impl RegisterEcsClusterInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::register_ecs_cluster::RegisterEcsClusterOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::register_ecs_cluster::RegisterEcsClusterError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.register_ecs_cluster();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RegisterEcsCluster`.
 ///
 /// <p>Registers a specified Amazon ECS cluster with a stack. You can register only one cluster with a stack. A cluster can be registered with only one stack. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-ecscluster.html"> Resource Management</a>.</p>

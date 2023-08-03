@@ -3,6 +3,23 @@ pub use crate::operation::delete_custom_log_source::_delete_custom_log_source_ou
 
 pub use crate::operation::delete_custom_log_source::_delete_custom_log_source_input::DeleteCustomLogSourceInputBuilder;
 
+impl DeleteCustomLogSourceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_custom_log_source::DeleteCustomLogSourceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_custom_log_source::DeleteCustomLogSourceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_custom_log_source();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteCustomLogSource`.
 ///
 /// <p>Removes a custom log source from Amazon Security Lake, to stop sending data from the custom source to Security Lake.</p>

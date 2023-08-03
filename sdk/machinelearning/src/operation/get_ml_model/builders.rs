@@ -3,6 +3,23 @@ pub use crate::operation::get_ml_model::_get_ml_model_output::GetMlModelOutputBu
 
 pub use crate::operation::get_ml_model::_get_ml_model_input::GetMlModelInputBuilder;
 
+impl GetMlModelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_ml_model::GetMlModelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_ml_model::GetMLModelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_ml_model();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetMLModel`.
 ///
 /// <p>Returns an <code>MLModel</code> that includes detailed metadata, data source information, and the current status of the <code>MLModel</code>.</p>

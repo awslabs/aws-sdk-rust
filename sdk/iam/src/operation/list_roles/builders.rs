@@ -3,6 +3,23 @@ pub use crate::operation::list_roles::_list_roles_output::ListRolesOutputBuilder
 
 pub use crate::operation::list_roles::_list_roles_input::ListRolesInputBuilder;
 
+impl ListRolesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_roles::ListRolesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_roles::ListRolesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_roles();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListRoles`.
 ///
 /// <p>Lists the IAM roles that have the specified path prefix. If there are none, the operation returns an empty list. For more information about roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM roles</a> in the <i>IAM User Guide</i>.</p> <note>

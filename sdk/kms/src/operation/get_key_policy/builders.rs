@@ -3,6 +3,23 @@ pub use crate::operation::get_key_policy::_get_key_policy_output::GetKeyPolicyOu
 
 pub use crate::operation::get_key_policy::_get_key_policy_input::GetKeyPolicyInputBuilder;
 
+impl GetKeyPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_key_policy::GetKeyPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_key_policy::GetKeyPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_key_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetKeyPolicy`.
 ///
 /// <p>Gets a key policy attached to the specified KMS key.</p>

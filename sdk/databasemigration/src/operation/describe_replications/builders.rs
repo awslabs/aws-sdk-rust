@@ -3,6 +3,23 @@ pub use crate::operation::describe_replications::_describe_replications_output::
 
 pub use crate::operation::describe_replications::_describe_replications_input::DescribeReplicationsInputBuilder;
 
+impl DescribeReplicationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_replications::DescribeReplicationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_replications::DescribeReplicationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_replications();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeReplications`.
 ///
 /// <p>Provides details on replication progress by returning status information for one or more provisioned DMS Serverless replications.</p>

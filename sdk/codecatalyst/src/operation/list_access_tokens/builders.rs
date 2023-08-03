@@ -3,6 +3,23 @@ pub use crate::operation::list_access_tokens::_list_access_tokens_output::ListAc
 
 pub use crate::operation::list_access_tokens::_list_access_tokens_input::ListAccessTokensInputBuilder;
 
+impl ListAccessTokensInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_access_tokens::ListAccessTokensOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_access_tokens::ListAccessTokensError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_access_tokens();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAccessTokens`.
 ///
 /// <p>Lists all personal access tokens (PATs) associated with the user who calls the API. You can only list PATs associated with your Amazon Web Services Builder ID.</p>

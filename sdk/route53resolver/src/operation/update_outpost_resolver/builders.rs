@@ -3,6 +3,23 @@ pub use crate::operation::update_outpost_resolver::_update_outpost_resolver_outp
 
 pub use crate::operation::update_outpost_resolver::_update_outpost_resolver_input::UpdateOutpostResolverInputBuilder;
 
+impl UpdateOutpostResolverInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_outpost_resolver::UpdateOutpostResolverOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_outpost_resolver::UpdateOutpostResolverError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_outpost_resolver();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateOutpostResolver`.
 ///
 /// <p>You can use <code>UpdateOutpostResolver</code> to update the instance count, type, or name of a Resolver on an Outpost.</p>

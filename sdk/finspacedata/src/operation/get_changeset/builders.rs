@@ -3,6 +3,23 @@ pub use crate::operation::get_changeset::_get_changeset_output::GetChangesetOutp
 
 pub use crate::operation::get_changeset::_get_changeset_input::GetChangesetInputBuilder;
 
+impl GetChangesetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_changeset::GetChangesetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_changeset::GetChangesetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_changeset();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetChangeset`.
 ///
 /// <p>Get information about a Changeset.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::disassociate_vpc_from_hosted_zone::_disassociate_vpc_f
 
 pub use crate::operation::disassociate_vpc_from_hosted_zone::_disassociate_vpc_from_hosted_zone_input::DisassociateVpcFromHostedZoneInputBuilder;
 
+impl DisassociateVpcFromHostedZoneInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_vpc_from_hosted_zone::DisassociateVpcFromHostedZoneOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_vpc_from_hosted_zone::DisassociateVPCFromHostedZoneError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disassociate_vpc_from_hosted_zone();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateVPCFromHostedZone`.
 ///
 /// <p>Disassociates an Amazon Virtual Private Cloud (Amazon VPC) from an Amazon Route 53 private hosted zone. Note the following:</p>

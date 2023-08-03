@@ -3,6 +3,23 @@ pub use crate::operation::stop_relational_database::_stop_relational_database_ou
 
 pub use crate::operation::stop_relational_database::_stop_relational_database_input::StopRelationalDatabaseInputBuilder;
 
+impl StopRelationalDatabaseInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_relational_database::StopRelationalDatabaseOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_relational_database::StopRelationalDatabaseError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_relational_database();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopRelationalDatabase`.
 ///
 /// <p>Stops a specific database that is currently running in Amazon Lightsail.</p>

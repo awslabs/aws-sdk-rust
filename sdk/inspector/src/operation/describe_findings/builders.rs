@@ -3,6 +3,23 @@ pub use crate::operation::describe_findings::_describe_findings_output::Describe
 
 pub use crate::operation::describe_findings::_describe_findings_input::DescribeFindingsInputBuilder;
 
+impl DescribeFindingsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_findings::DescribeFindingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_findings::DescribeFindingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_findings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeFindings`.
 ///
 /// <p>Describes the findings that are specified by the ARNs of the findings.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_trigger::_delete_trigger_output::DeleteTriggerO
 
 pub use crate::operation::delete_trigger::_delete_trigger_input::DeleteTriggerInputBuilder;
 
+impl DeleteTriggerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_trigger::DeleteTriggerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_trigger::DeleteTriggerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_trigger();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteTrigger`.
 ///
 /// <p>Deletes a specified trigger. If the trigger is not found, no exception is thrown.</p>

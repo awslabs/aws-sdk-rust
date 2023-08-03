@@ -3,6 +3,23 @@ pub use crate::operation::get_network_site::_get_network_site_output::GetNetwork
 
 pub use crate::operation::get_network_site::_get_network_site_input::GetNetworkSiteInputBuilder;
 
+impl GetNetworkSiteInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_network_site::GetNetworkSiteOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_network_site::GetNetworkSiteError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_network_site();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetNetworkSite`.
 ///
 /// <p>Gets the specified network site.</p>

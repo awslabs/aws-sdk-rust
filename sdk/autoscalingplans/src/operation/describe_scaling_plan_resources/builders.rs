@@ -3,6 +3,23 @@ pub use crate::operation::describe_scaling_plan_resources::_describe_scaling_pla
 
 pub use crate::operation::describe_scaling_plan_resources::_describe_scaling_plan_resources_input::DescribeScalingPlanResourcesInputBuilder;
 
+impl DescribeScalingPlanResourcesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_scaling_plan_resources::DescribeScalingPlanResourcesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_scaling_plan_resources::DescribeScalingPlanResourcesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_scaling_plan_resources();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeScalingPlanResources`.
 ///
 /// <p>Describes the scalable resources in the specified scaling plan.</p>

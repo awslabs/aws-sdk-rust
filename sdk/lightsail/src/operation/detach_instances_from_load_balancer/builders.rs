@@ -3,6 +3,17 @@ pub use crate::operation::detach_instances_from_load_balancer::_detach_instances
 
 pub use crate::operation::detach_instances_from_load_balancer::_detach_instances_from_load_balancer_input::DetachInstancesFromLoadBalancerInputBuilder;
 
+impl DetachInstancesFromLoadBalancerInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::detach_instances_from_load_balancer::DetachInstancesFromLoadBalancerOutput, ::aws_smithy_http::result::SdkError<crate::operation::detach_instances_from_load_balancer::DetachInstancesFromLoadBalancerError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.detach_instances_from_load_balancer();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DetachInstancesFromLoadBalancer`.
 ///
 /// <p>Detaches the specified instances from a Lightsail load balancer.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_geo_location::_get_geo_location_output::GetGeoLoca
 
 pub use crate::operation::get_geo_location::_get_geo_location_input::GetGeoLocationInputBuilder;
 
+impl GetGeoLocationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_geo_location::GetGeoLocationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_geo_location::GetGeoLocationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_geo_location();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetGeoLocation`.
 ///
 /// <p>Gets information about whether a specified geographic location is supported for Amazon Route 53 geolocation resource record sets.</p>

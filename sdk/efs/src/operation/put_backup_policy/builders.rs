@@ -3,6 +3,23 @@ pub use crate::operation::put_backup_policy::_put_backup_policy_output::PutBacku
 
 pub use crate::operation::put_backup_policy::_put_backup_policy_input::PutBackupPolicyInputBuilder;
 
+impl PutBackupPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_backup_policy::PutBackupPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_backup_policy::PutBackupPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_backup_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutBackupPolicy`.
 ///
 /// <p>Updates the file system's backup policy. Use this action to start or stop automatic backups of the file system. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_face_detection::_get_face_detection_output::GetFac
 
 pub use crate::operation::get_face_detection::_get_face_detection_input::GetFaceDetectionInputBuilder;
 
+impl GetFaceDetectionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_face_detection::GetFaceDetectionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_face_detection::GetFaceDetectionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_face_detection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetFaceDetection`.
 ///
 /// <p>Gets face detection results for a Amazon Rekognition Video analysis started by <code>StartFaceDetection</code>.</p>

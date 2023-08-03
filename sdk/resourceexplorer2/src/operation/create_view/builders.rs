@@ -3,6 +3,23 @@ pub use crate::operation::create_view::_create_view_output::CreateViewOutputBuil
 
 pub use crate::operation::create_view::_create_view_input::CreateViewInputBuilder;
 
+impl CreateViewInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_view::CreateViewOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_view::CreateViewError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_view();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateView`.
 ///
 /// <p>Creates a view that users can query by using the <code>Search</code> operation. Results from queries that you make using this view include only resources that match the view's <code>Filters</code>. For more information about Amazon Web Services Resource Explorer views, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/manage-views.html">Managing views</a> in the <i>Amazon Web Services Resource Explorer User Guide</i>.</p>

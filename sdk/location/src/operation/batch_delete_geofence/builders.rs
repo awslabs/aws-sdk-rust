@@ -3,6 +3,23 @@ pub use crate::operation::batch_delete_geofence::_batch_delete_geofence_output::
 
 pub use crate::operation::batch_delete_geofence::_batch_delete_geofence_input::BatchDeleteGeofenceInputBuilder;
 
+impl BatchDeleteGeofenceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_delete_geofence::BatchDeleteGeofenceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_delete_geofence::BatchDeleteGeofenceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_delete_geofence();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchDeleteGeofence`.
 ///
 /// <p>Deletes a batch of geofences from a geofence collection.</p> <note>

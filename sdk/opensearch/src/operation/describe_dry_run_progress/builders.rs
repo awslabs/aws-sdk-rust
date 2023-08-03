@@ -3,6 +3,23 @@ pub use crate::operation::describe_dry_run_progress::_describe_dry_run_progress_
 
 pub use crate::operation::describe_dry_run_progress::_describe_dry_run_progress_input::DescribeDryRunProgressInputBuilder;
 
+impl DescribeDryRunProgressInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_dry_run_progress::DescribeDryRunProgressOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_dry_run_progress::DescribeDryRunProgressError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_dry_run_progress();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeDryRunProgress`.
 ///
 /// <p>Describes the progress of a pre-update dry run analysis on an Amazon OpenSearch Service domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-configuration-changes#dryrun">Determining whether a change will cause a blue/green deployment</a>.</p>

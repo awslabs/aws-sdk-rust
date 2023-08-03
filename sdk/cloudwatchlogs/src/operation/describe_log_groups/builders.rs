@@ -3,6 +3,23 @@ pub use crate::operation::describe_log_groups::_describe_log_groups_output::Desc
 
 pub use crate::operation::describe_log_groups::_describe_log_groups_input::DescribeLogGroupsInputBuilder;
 
+impl DescribeLogGroupsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_log_groups::DescribeLogGroupsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_log_groups::DescribeLogGroupsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_log_groups();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeLogGroups`.
 ///
 /// <p>Lists the specified log groups. You can list all your log groups or filter the results by prefix. The results are ASCII-sorted by log group name.</p>

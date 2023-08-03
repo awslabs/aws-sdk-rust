@@ -3,6 +3,23 @@ pub use crate::operation::describe_dataset::_describe_dataset_output::DescribeDa
 
 pub use crate::operation::describe_dataset::_describe_dataset_input::DescribeDatasetInputBuilder;
 
+impl DescribeDatasetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_dataset::DescribeDatasetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_dataset::DescribeDatasetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_dataset();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeDataset`.
 ///
 /// <p>Returns information about the dataset that you specify. For more information about datasets, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/flywheels-about.html"> Flywheel overview</a> in the <i>Amazon Comprehend Developer Guide</i>.</p>

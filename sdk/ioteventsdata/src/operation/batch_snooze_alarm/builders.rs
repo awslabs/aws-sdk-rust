@@ -3,6 +3,23 @@ pub use crate::operation::batch_snooze_alarm::_batch_snooze_alarm_output::BatchS
 
 pub use crate::operation::batch_snooze_alarm::_batch_snooze_alarm_input::BatchSnoozeAlarmInputBuilder;
 
+impl BatchSnoozeAlarmInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_snooze_alarm::BatchSnoozeAlarmOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_snooze_alarm::BatchSnoozeAlarmError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_snooze_alarm();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchSnoozeAlarm`.
 ///
 /// <p>Changes one or more alarms to the snooze mode. The alarms change to the <code>SNOOZE_DISABLED</code> state after you set them to the snooze mode.</p>

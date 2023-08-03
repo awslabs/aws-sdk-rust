@@ -3,6 +3,17 @@ pub use crate::operation::delete_messaging_streaming_configurations::_delete_mes
 
 pub use crate::operation::delete_messaging_streaming_configurations::_delete_messaging_streaming_configurations_input::DeleteMessagingStreamingConfigurationsInputBuilder;
 
+impl DeleteMessagingStreamingConfigurationsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_messaging_streaming_configurations::DeleteMessagingStreamingConfigurationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_messaging_streaming_configurations::DeleteMessagingStreamingConfigurationsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.delete_messaging_streaming_configurations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteMessagingStreamingConfigurations`.
 ///
 /// <p>Deletes the streaming configurations for an <code>AppInstance</code>. For more information, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/streaming-export.html">Streaming messaging data</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p>

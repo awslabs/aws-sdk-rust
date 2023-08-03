@@ -3,6 +3,23 @@ pub use crate::operation::list_members::_list_members_output::ListMembersOutputB
 
 pub use crate::operation::list_members::_list_members_input::ListMembersInputBuilder;
 
+impl ListMembersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_members::ListMembersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_members::ListMembersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_members();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListMembers`.
 ///
 /// <p>Returns a list of the members in a network and properties of their configurations.</p>

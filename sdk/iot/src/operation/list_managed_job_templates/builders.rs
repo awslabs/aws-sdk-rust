@@ -3,6 +3,23 @@ pub use crate::operation::list_managed_job_templates::_list_managed_job_template
 
 pub use crate::operation::list_managed_job_templates::_list_managed_job_templates_input::ListManagedJobTemplatesInputBuilder;
 
+impl ListManagedJobTemplatesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_managed_job_templates::ListManagedJobTemplatesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_managed_job_templates::ListManagedJobTemplatesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_managed_job_templates();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListManagedJobTemplates`.
 ///
 /// <p>Returns a list of managed job templates.</p>

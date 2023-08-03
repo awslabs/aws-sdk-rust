@@ -3,6 +3,23 @@ pub use crate::operation::create_task::_create_task_output::CreateTaskOutputBuil
 
 pub use crate::operation::create_task::_create_task_input::CreateTaskInputBuilder;
 
+impl CreateTaskInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_task::CreateTaskOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_task::CreateTaskError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_task();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateTask`.
 ///
 /// <p>Instructs one or more devices to start a task, such as unlocking or rebooting.</p>

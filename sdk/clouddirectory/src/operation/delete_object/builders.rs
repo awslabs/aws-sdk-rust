@@ -3,6 +3,23 @@ pub use crate::operation::delete_object::_delete_object_output::DeleteObjectOutp
 
 pub use crate::operation::delete_object::_delete_object_input::DeleteObjectInputBuilder;
 
+impl DeleteObjectInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_object::DeleteObjectOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_object::DeleteObjectError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_object();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteObject`.
 ///
 /// <p>Deletes an object and its associated attributes. Only objects with no children and no parents can be deleted. The maximum number of attributes that can be deleted during an object deletion is 30. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/limits.html">Amazon Cloud Directory Limits</a>.</p>

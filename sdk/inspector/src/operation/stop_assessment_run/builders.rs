@@ -3,6 +3,23 @@ pub use crate::operation::stop_assessment_run::_stop_assessment_run_output::Stop
 
 pub use crate::operation::stop_assessment_run::_stop_assessment_run_input::StopAssessmentRunInputBuilder;
 
+impl StopAssessmentRunInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_assessment_run::StopAssessmentRunOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_assessment_run::StopAssessmentRunError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_assessment_run();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopAssessmentRun`.
 ///
 /// <p>Stops the assessment run that is specified by the ARN of the assessment run.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::put_alarm::_put_alarm_output::PutAlarmOutputBuilder;
 
 pub use crate::operation::put_alarm::_put_alarm_input::PutAlarmInputBuilder;
 
+impl PutAlarmInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_alarm::PutAlarmOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_alarm::PutAlarmError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_alarm();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutAlarm`.
 ///
 /// <p>Creates or updates an alarm, and associates it with the specified metric.</p>

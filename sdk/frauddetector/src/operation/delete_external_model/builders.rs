@@ -3,6 +3,23 @@ pub use crate::operation::delete_external_model::_delete_external_model_output::
 
 pub use crate::operation::delete_external_model::_delete_external_model_input::DeleteExternalModelInputBuilder;
 
+impl DeleteExternalModelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_external_model::DeleteExternalModelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_external_model::DeleteExternalModelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_external_model();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteExternalModel`.
 ///
 /// <p>Removes a SageMaker model from Amazon Fraud Detector.</p>

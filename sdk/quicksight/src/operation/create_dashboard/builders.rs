@@ -3,6 +3,23 @@ pub use crate::operation::create_dashboard::_create_dashboard_output::CreateDash
 
 pub use crate::operation::create_dashboard::_create_dashboard_input::CreateDashboardInputBuilder;
 
+impl CreateDashboardInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_dashboard::CreateDashboardOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_dashboard::CreateDashboardError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_dashboard();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateDashboard`.
 ///
 /// <p>Creates a dashboard from either a template or directly with a <code>DashboardDefinition</code>. To first create a template, see the <code> <a href="https://docs.aws.amazon.com/quicksight/latest/APIReference/API_CreateTemplate.html">CreateTemplate</a> </code> API operation.</p>

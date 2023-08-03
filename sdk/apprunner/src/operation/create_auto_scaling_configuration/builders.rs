@@ -3,6 +3,17 @@ pub use crate::operation::create_auto_scaling_configuration::_create_auto_scalin
 
 pub use crate::operation::create_auto_scaling_configuration::_create_auto_scaling_configuration_input::CreateAutoScalingConfigurationInputBuilder;
 
+impl CreateAutoScalingConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::create_auto_scaling_configuration::CreateAutoScalingConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_auto_scaling_configuration::CreateAutoScalingConfigurationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.create_auto_scaling_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateAutoScalingConfiguration`.
 ///
 /// <p>Create an App Runner automatic scaling configuration resource. App Runner requires this resource when you create or update App Runner services and you require non-default auto scaling settings. You can share an auto scaling configuration across multiple services.</p>

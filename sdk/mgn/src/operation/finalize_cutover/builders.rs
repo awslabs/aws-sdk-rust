@@ -3,6 +3,23 @@ pub use crate::operation::finalize_cutover::_finalize_cutover_output::FinalizeCu
 
 pub use crate::operation::finalize_cutover::_finalize_cutover_input::FinalizeCutoverInputBuilder;
 
+impl FinalizeCutoverInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::finalize_cutover::FinalizeCutoverOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::finalize_cutover::FinalizeCutoverError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.finalize_cutover();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `FinalizeCutover`.
 ///
 /// <p>Finalizes the cutover immediately for specific Source Servers. All AWS resources created by Application Migration Service for enabling the replication of these source servers will be terminated / deleted within 90 minutes. Launched Test or Cutover instances will NOT be terminated. The AWS Replication Agent will receive a command to uninstall itself (within 10 minutes). The following properties of the SourceServer will be changed immediately: dataReplicationInfo.dataReplicationState will be changed to DISCONNECTED; The SourceServer.lifeCycle.state will be changed to CUTOVER; The totalStorageBytes property fo each of dataReplicationInfo.replicatedDisks will be set to zero; dataReplicationInfo.lagDuration and dataReplicationInfo.lagDuration will be nullified.</p>

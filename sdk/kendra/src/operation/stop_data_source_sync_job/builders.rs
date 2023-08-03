@@ -3,6 +3,23 @@ pub use crate::operation::stop_data_source_sync_job::_stop_data_source_sync_job_
 
 pub use crate::operation::stop_data_source_sync_job::_stop_data_source_sync_job_input::StopDataSourceSyncJobInputBuilder;
 
+impl StopDataSourceSyncJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_data_source_sync_job::StopDataSourceSyncJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_data_source_sync_job::StopDataSourceSyncJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_data_source_sync_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopDataSourceSyncJob`.
 ///
 /// <p>Stops a synchronization job that is currently running. You can't stop a scheduled synchronization job.</p>

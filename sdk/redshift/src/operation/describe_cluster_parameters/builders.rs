@@ -3,6 +3,23 @@ pub use crate::operation::describe_cluster_parameters::_describe_cluster_paramet
 
 pub use crate::operation::describe_cluster_parameters::_describe_cluster_parameters_input::DescribeClusterParametersInputBuilder;
 
+impl DescribeClusterParametersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_cluster_parameters::DescribeClusterParametersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_cluster_parameters::DescribeClusterParametersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_cluster_parameters();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeClusterParameters`.
 ///
 /// <p>Returns a detailed list of parameters contained within the specified Amazon Redshift parameter group. For each parameter the response includes information such as parameter name, description, data type, value, whether the parameter value is modifiable, and so on.</p>

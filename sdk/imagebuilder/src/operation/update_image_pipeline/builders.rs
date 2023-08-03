@@ -3,6 +3,23 @@ pub use crate::operation::update_image_pipeline::_update_image_pipeline_output::
 
 pub use crate::operation::update_image_pipeline::_update_image_pipeline_input::UpdateImagePipelineInputBuilder;
 
+impl UpdateImagePipelineInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_image_pipeline::UpdateImagePipelineOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_image_pipeline::UpdateImagePipelineError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_image_pipeline();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateImagePipeline`.
 ///
 /// <p>Updates an image pipeline. Image pipelines enable you to automate the creation and distribution of images.</p> <note>

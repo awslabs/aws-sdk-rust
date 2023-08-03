@@ -3,6 +3,23 @@ pub use crate::operation::check_in_license::_check_in_license_output::CheckInLic
 
 pub use crate::operation::check_in_license::_check_in_license_input::CheckInLicenseInputBuilder;
 
+impl CheckInLicenseInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::check_in_license::CheckInLicenseOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::check_in_license::CheckInLicenseError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.check_in_license();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CheckInLicense`.
 ///
 /// <p>Checks in the specified license. Check in a license when it is no longer in use.</p>

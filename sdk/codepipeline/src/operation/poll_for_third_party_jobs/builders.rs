@@ -3,6 +3,23 @@ pub use crate::operation::poll_for_third_party_jobs::_poll_for_third_party_jobs_
 
 pub use crate::operation::poll_for_third_party_jobs::_poll_for_third_party_jobs_input::PollForThirdPartyJobsInputBuilder;
 
+impl PollForThirdPartyJobsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::poll_for_third_party_jobs::PollForThirdPartyJobsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::poll_for_third_party_jobs::PollForThirdPartyJobsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.poll_for_third_party_jobs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PollForThirdPartyJobs`.
 ///
 /// <p>Determines whether there are any third party jobs for a job worker to act on. Used for partner actions only.</p> <important>

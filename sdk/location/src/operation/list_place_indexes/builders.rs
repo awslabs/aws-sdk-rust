@@ -3,6 +3,23 @@ pub use crate::operation::list_place_indexes::_list_place_indexes_output::ListPl
 
 pub use crate::operation::list_place_indexes::_list_place_indexes_input::ListPlaceIndexesInputBuilder;
 
+impl ListPlaceIndexesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_place_indexes::ListPlaceIndexesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_place_indexes::ListPlaceIndexesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_place_indexes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListPlaceIndexes`.
 ///
 /// <p>Lists place index resources in your Amazon Web Services account.</p>

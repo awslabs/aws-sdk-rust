@@ -3,6 +3,23 @@ pub use crate::operation::delete_facet::_delete_facet_output::DeleteFacetOutputB
 
 pub use crate::operation::delete_facet::_delete_facet_input::DeleteFacetInputBuilder;
 
+impl DeleteFacetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_facet::DeleteFacetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_facet::DeleteFacetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_facet();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteFacet`.
 ///
 /// <p>Deletes a given <code>Facet</code>. All attributes and <code>Rule</code>s that are associated with the facet will be deleted. Only development schema facets are allowed deletion.</p>

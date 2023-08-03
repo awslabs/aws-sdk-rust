@@ -3,6 +3,17 @@ pub use crate::operation::disassociate_enclave_certificate_iam_role::_disassocia
 
 pub use crate::operation::disassociate_enclave_certificate_iam_role::_disassociate_enclave_certificate_iam_role_input::DisassociateEnclaveCertificateIamRoleInputBuilder;
 
+impl DisassociateEnclaveCertificateIamRoleInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::disassociate_enclave_certificate_iam_role::DisassociateEnclaveCertificateIamRoleOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_enclave_certificate_iam_role::DisassociateEnclaveCertificateIamRoleError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.disassociate_enclave_certificate_iam_role();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateEnclaveCertificateIamRole`.
 ///
 /// <p>Disassociates an IAM role from an Certificate Manager (ACM) certificate. Disassociating an IAM role from an ACM certificate removes the Amazon S3 object that contains the certificate, certificate chain, and encrypted private key from the Amazon S3 bucket. It also revokes the IAM role's permission to use the KMS key used to encrypt the private key. This effectively revokes the role's permission to use the certificate.</p>

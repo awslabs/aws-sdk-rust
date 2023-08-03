@@ -3,6 +3,23 @@ pub use crate::operation::delete_fleet_metric::_delete_fleet_metric_output::Dele
 
 pub use crate::operation::delete_fleet_metric::_delete_fleet_metric_input::DeleteFleetMetricInputBuilder;
 
+impl DeleteFleetMetricInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_fleet_metric::DeleteFleetMetricOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_fleet_metric::DeleteFleetMetricError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_fleet_metric();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteFleetMetric`.
 ///
 /// <p>Deletes the specified fleet metric. Returns successfully with no error if the deletion is successful or you specify a fleet metric that doesn't exist.</p>

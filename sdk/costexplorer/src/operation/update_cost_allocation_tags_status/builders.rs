@@ -3,6 +3,17 @@ pub use crate::operation::update_cost_allocation_tags_status::_update_cost_alloc
 
 pub use crate::operation::update_cost_allocation_tags_status::_update_cost_allocation_tags_status_input::UpdateCostAllocationTagsStatusInputBuilder;
 
+impl UpdateCostAllocationTagsStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::update_cost_allocation_tags_status::UpdateCostAllocationTagsStatusOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_cost_allocation_tags_status::UpdateCostAllocationTagsStatusError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.update_cost_allocation_tags_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateCostAllocationTagsStatus`.
 ///
 /// <p>Updates status for cost allocation tags in bulk, with maximum batch size of 20. If the tag status that's updated is the same as the existing tag status, the request doesn't fail. Instead, it doesn't have any effect on the tag status (for example, activating the active tag). </p>

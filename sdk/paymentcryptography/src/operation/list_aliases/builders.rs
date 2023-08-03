@@ -3,6 +3,23 @@ pub use crate::operation::list_aliases::_list_aliases_output::ListAliasesOutputB
 
 pub use crate::operation::list_aliases::_list_aliases_input::ListAliasesInputBuilder;
 
+impl ListAliasesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_aliases::ListAliasesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_aliases::ListAliasesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_aliases();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAliases`.
 ///
 /// <p>Lists the aliases for all keys in the caller's Amazon Web Services account and Amazon Web Services Region. You can filter the list of aliases. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/keys-managealias.html">Using aliases</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.</p>

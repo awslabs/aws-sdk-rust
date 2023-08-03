@@ -3,6 +3,17 @@ pub use crate::operation::create_app_cookie_stickiness_policy::_create_app_cooki
 
 pub use crate::operation::create_app_cookie_stickiness_policy::_create_app_cookie_stickiness_policy_input::CreateAppCookieStickinessPolicyInputBuilder;
 
+impl CreateAppCookieStickinessPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::create_app_cookie_stickiness_policy::CreateAppCookieStickinessPolicyOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_app_cookie_stickiness_policy::CreateAppCookieStickinessPolicyError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.create_app_cookie_stickiness_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateAppCookieStickinessPolicy`.
 ///
 /// <p>Generates a stickiness policy with sticky session lifetimes that follow that of an application-generated cookie. This policy can be associated only with HTTP/HTTPS listeners.</p>

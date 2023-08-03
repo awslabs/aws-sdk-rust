@@ -3,6 +3,23 @@ pub use crate::operation::create_prefetch_schedule::_create_prefetch_schedule_ou
 
 pub use crate::operation::create_prefetch_schedule::_create_prefetch_schedule_input::CreatePrefetchScheduleInputBuilder;
 
+impl CreatePrefetchScheduleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_prefetch_schedule::CreatePrefetchScheduleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_prefetch_schedule::CreatePrefetchScheduleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_prefetch_schedule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreatePrefetchSchedule`.
 ///
 /// <p>Creates a prefetch schedule for a playback configuration. A prefetch schedule allows you to tell MediaTailor to fetch and prepare certain ads before an ad break happens. For more information about ad prefetching, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/prefetching-ads.html">Using ad prefetching</a> in the <i>MediaTailor User Guide</i>.</p>

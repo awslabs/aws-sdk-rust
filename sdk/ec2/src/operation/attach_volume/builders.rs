@@ -3,6 +3,23 @@ pub use crate::operation::attach_volume::_attach_volume_output::AttachVolumeOutp
 
 pub use crate::operation::attach_volume::_attach_volume_input::AttachVolumeInputBuilder;
 
+impl AttachVolumeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::attach_volume::AttachVolumeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::attach_volume::AttachVolumeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.attach_volume();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AttachVolume`.
 ///
 /// <p>Attaches an EBS volume to a running or stopped instance and exposes it to the instance with the specified device name.</p>

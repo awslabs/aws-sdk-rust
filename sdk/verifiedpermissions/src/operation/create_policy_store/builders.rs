@@ -3,6 +3,23 @@ pub use crate::operation::create_policy_store::_create_policy_store_output::Crea
 
 pub use crate::operation::create_policy_store::_create_policy_store_input::CreatePolicyStoreInputBuilder;
 
+impl CreatePolicyStoreInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_policy_store::CreatePolicyStoreOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_policy_store::CreatePolicyStoreError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_policy_store();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreatePolicyStore`.
 ///
 /// <p>Creates a policy store. A policy store is a container for policy resources.</p> <note>

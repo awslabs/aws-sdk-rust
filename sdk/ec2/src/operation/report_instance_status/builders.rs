@@ -3,6 +3,23 @@ pub use crate::operation::report_instance_status::_report_instance_status_output
 
 pub use crate::operation::report_instance_status::_report_instance_status_input::ReportInstanceStatusInputBuilder;
 
+impl ReportInstanceStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::report_instance_status::ReportInstanceStatusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::report_instance_status::ReportInstanceStatusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.report_instance_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ReportInstanceStatus`.
 ///
 /// <p>Submits feedback about the status of an instance. The instance must be in the <code>running</code> state. If your experience with the instance differs from the instance status returned by <code>DescribeInstanceStatus</code>, use <code>ReportInstanceStatus</code> to report your experience with the instance. Amazon EC2 collects this information to improve the accuracy of status checks.</p>

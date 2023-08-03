@@ -3,6 +3,23 @@ pub use crate::operation::receive_message::_receive_message_output::ReceiveMessa
 
 pub use crate::operation::receive_message::_receive_message_input::ReceiveMessageInputBuilder;
 
+impl ReceiveMessageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::receive_message::ReceiveMessageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::receive_message::ReceiveMessageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.receive_message();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ReceiveMessage`.
 ///
 /// <p>Retrieves one or more messages (up to 10), from the specified queue. Using the <code>WaitTimeSeconds</code> parameter enables long-poll support. For more information, see <a href="https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-long-polling.html">Amazon SQS Long Polling</a> in the <i>Amazon SQS Developer Guide</i>. </p>

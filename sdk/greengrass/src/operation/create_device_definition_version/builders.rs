@@ -3,6 +3,23 @@ pub use crate::operation::create_device_definition_version::_create_device_defin
 
 pub use crate::operation::create_device_definition_version::_create_device_definition_version_input::CreateDeviceDefinitionVersionInputBuilder;
 
+impl CreateDeviceDefinitionVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_device_definition_version::CreateDeviceDefinitionVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_device_definition_version::CreateDeviceDefinitionVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_device_definition_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateDeviceDefinitionVersion`.
 ///
 /// Creates a version of a device definition that has already been defined.

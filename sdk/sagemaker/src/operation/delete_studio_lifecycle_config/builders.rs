@@ -3,6 +3,23 @@ pub use crate::operation::delete_studio_lifecycle_config::_delete_studio_lifecyc
 
 pub use crate::operation::delete_studio_lifecycle_config::_delete_studio_lifecycle_config_input::DeleteStudioLifecycleConfigInputBuilder;
 
+impl DeleteStudioLifecycleConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_studio_lifecycle_config::DeleteStudioLifecycleConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_studio_lifecycle_config::DeleteStudioLifecycleConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_studio_lifecycle_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteStudioLifecycleConfig`.
 ///
 /// <p>Deletes the Studio Lifecycle Configuration. In order to delete the Lifecycle Configuration, there must be no running apps using the Lifecycle Configuration. You must also remove the Lifecycle Configuration from UserSettings in all Domains and UserProfiles.</p>

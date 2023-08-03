@@ -3,6 +3,17 @@ pub use crate::operation::get_resolver_query_log_config_policy::_get_resolver_qu
 
 pub use crate::operation::get_resolver_query_log_config_policy::_get_resolver_query_log_config_policy_input::GetResolverQueryLogConfigPolicyInputBuilder;
 
+impl GetResolverQueryLogConfigPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_resolver_query_log_config_policy::GetResolverQueryLogConfigPolicyOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_resolver_query_log_config_policy::GetResolverQueryLogConfigPolicyError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_resolver_query_log_config_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetResolverQueryLogConfigPolicy`.
 ///
 /// <p>Gets information about a query logging policy. A query logging policy specifies the Resolver query logging operations and resources that you want to allow another Amazon Web Services account to be able to use.</p>

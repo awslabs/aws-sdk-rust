@@ -3,6 +3,23 @@ pub use crate::operation::replace_vpn_tunnel::_replace_vpn_tunnel_output::Replac
 
 pub use crate::operation::replace_vpn_tunnel::_replace_vpn_tunnel_input::ReplaceVpnTunnelInputBuilder;
 
+impl ReplaceVpnTunnelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::replace_vpn_tunnel::ReplaceVpnTunnelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::replace_vpn_tunnel::ReplaceVpnTunnelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.replace_vpn_tunnel();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ReplaceVpnTunnel`.
 ///
 /// <p>Trigger replacement of specified VPN tunnel.</p>

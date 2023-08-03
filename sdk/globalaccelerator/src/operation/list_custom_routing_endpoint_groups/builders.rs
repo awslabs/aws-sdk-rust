@@ -3,6 +3,17 @@ pub use crate::operation::list_custom_routing_endpoint_groups::_list_custom_rout
 
 pub use crate::operation::list_custom_routing_endpoint_groups::_list_custom_routing_endpoint_groups_input::ListCustomRoutingEndpointGroupsInputBuilder;
 
+impl ListCustomRoutingEndpointGroupsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_custom_routing_endpoint_groups::ListCustomRoutingEndpointGroupsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_custom_routing_endpoint_groups::ListCustomRoutingEndpointGroupsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_custom_routing_endpoint_groups();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListCustomRoutingEndpointGroups`.
 ///
 /// <p>List the endpoint groups that are associated with a listener for a custom routing accelerator. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::complete_snapshot::_complete_snapshot_output::Complete
 
 pub use crate::operation::complete_snapshot::_complete_snapshot_input::CompleteSnapshotInputBuilder;
 
+impl CompleteSnapshotInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::complete_snapshot::CompleteSnapshotOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::complete_snapshot::CompleteSnapshotError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.complete_snapshot();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CompleteSnapshot`.
 ///
 /// <p>Seals and completes the snapshot after all of the required blocks of data have been written to it. Completing the snapshot changes the status to <code>completed</code>. You cannot write new blocks to a snapshot after it has been completed.</p>

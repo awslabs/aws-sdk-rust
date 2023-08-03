@@ -3,6 +3,23 @@ pub use crate::operation::create_application::_create_application_output::Create
 
 pub use crate::operation::create_application::_create_application_input::CreateApplicationInputBuilder;
 
+impl CreateApplicationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_application::CreateApplicationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_application::CreateApplicationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_application();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateApplication`.
 ///
 /// <p>Creates an application. In AppConfig, an application is simply an organizational construct like a folder. This organizational construct has a relationship with some unit of executable code. For example, you could create an application called MyMobileApp to organize and manage configuration data for a mobile application installed by your users.</p>

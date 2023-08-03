@@ -3,6 +3,23 @@ pub use crate::operation::cancel_image_launch_permission::_cancel_image_launch_p
 
 pub use crate::operation::cancel_image_launch_permission::_cancel_image_launch_permission_input::CancelImageLaunchPermissionInputBuilder;
 
+impl CancelImageLaunchPermissionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::cancel_image_launch_permission::CancelImageLaunchPermissionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::cancel_image_launch_permission::CancelImageLaunchPermissionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.cancel_image_launch_permission();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CancelImageLaunchPermission`.
 ///
 /// <p>Removes your Amazon Web Services account from the launch permissions for the specified AMI. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/cancel-sharing-an-AMI.html"> Cancel having an AMI shared with your Amazon Web Services account</a> in the <i>Amazon EC2 User Guide</i>.</p>

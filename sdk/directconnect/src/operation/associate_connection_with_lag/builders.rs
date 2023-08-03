@@ -3,6 +3,23 @@ pub use crate::operation::associate_connection_with_lag::_associate_connection_w
 
 pub use crate::operation::associate_connection_with_lag::_associate_connection_with_lag_input::AssociateConnectionWithLagInputBuilder;
 
+impl AssociateConnectionWithLagInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_connection_with_lag::AssociateConnectionWithLagOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_connection_with_lag::AssociateConnectionWithLagError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_connection_with_lag();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateConnectionWithLag`.
 ///
 /// <p>Associates an existing connection with a link aggregation group (LAG). The connection is interrupted and re-established as a member of the LAG (connectivity to Amazon Web Services is interrupted). The connection must be hosted on the same Direct Connect endpoint as the LAG, and its bandwidth must match the bandwidth for the LAG. You can re-associate a connection that's currently associated with a different LAG; however, if removing the connection would cause the original LAG to fall below its setting for minimum number of operational connections, the request fails.</p>

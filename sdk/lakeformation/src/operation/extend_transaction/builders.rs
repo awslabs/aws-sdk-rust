@@ -3,6 +3,23 @@ pub use crate::operation::extend_transaction::_extend_transaction_output::Extend
 
 pub use crate::operation::extend_transaction::_extend_transaction_input::ExtendTransactionInputBuilder;
 
+impl ExtendTransactionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::extend_transaction::ExtendTransactionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::extend_transaction::ExtendTransactionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.extend_transaction();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ExtendTransaction`.
 ///
 /// <p>Indicates to the service that the specified transaction is still active and should not be treated as idle and aborted.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::associate_firewall_policy::_associate_firewall_policy_
 
 pub use crate::operation::associate_firewall_policy::_associate_firewall_policy_input::AssociateFirewallPolicyInputBuilder;
 
+impl AssociateFirewallPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_firewall_policy::AssociateFirewallPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_firewall_policy::AssociateFirewallPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_firewall_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateFirewallPolicy`.
 ///
 /// <p>Associates a <code>FirewallPolicy</code> to a <code>Firewall</code>. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::set_instance_protection::_set_instance_protection_outp
 
 pub use crate::operation::set_instance_protection::_set_instance_protection_input::SetInstanceProtectionInputBuilder;
 
+impl SetInstanceProtectionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::set_instance_protection::SetInstanceProtectionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::set_instance_protection::SetInstanceProtectionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.set_instance_protection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SetInstanceProtection`.
 ///
 /// <p>Updates the instance protection settings of the specified instances. This operation cannot be called on instances in a warm pool.</p>

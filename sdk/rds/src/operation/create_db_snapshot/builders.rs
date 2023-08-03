@@ -3,6 +3,23 @@ pub use crate::operation::create_db_snapshot::_create_db_snapshot_output::Create
 
 pub use crate::operation::create_db_snapshot::_create_db_snapshot_input::CreateDbSnapshotInputBuilder;
 
+impl CreateDbSnapshotInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_db_snapshot::CreateDbSnapshotOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_db_snapshot::CreateDBSnapshotError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_db_snapshot();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateDBSnapshot`.
 ///
 /// <p>Creates a snapshot of a DB instance. The source DB instance must be in the <code>available</code> or <code>storage-optimization</code> state.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_policies_for_target::_list_policies_for_target_ou
 
 pub use crate::operation::list_policies_for_target::_list_policies_for_target_input::ListPoliciesForTargetInputBuilder;
 
+impl ListPoliciesForTargetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_policies_for_target::ListPoliciesForTargetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_policies_for_target::ListPoliciesForTargetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_policies_for_target();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListPoliciesForTarget`.
 ///
 /// <p>Lists the policies that are directly attached to the specified target root, organizational unit (OU), or account. You must specify the policy type that you want included in the returned list.</p> <note>

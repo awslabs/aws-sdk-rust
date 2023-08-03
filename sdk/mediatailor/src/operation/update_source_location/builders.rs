@@ -3,6 +3,23 @@ pub use crate::operation::update_source_location::_update_source_location_output
 
 pub use crate::operation::update_source_location::_update_source_location_input::UpdateSourceLocationInputBuilder;
 
+impl UpdateSourceLocationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_source_location::UpdateSourceLocationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_source_location::UpdateSourceLocationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_source_location();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateSourceLocation`.
 ///
 /// <p>Updates a source location. A source location is a container for sources. For more information about source locations, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-source-locations.html">Working with source locations</a> in the <i>MediaTailor User Guide</i>.</p>

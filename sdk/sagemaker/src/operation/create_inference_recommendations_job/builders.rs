@@ -3,6 +3,17 @@ pub use crate::operation::create_inference_recommendations_job::_create_inferenc
 
 pub use crate::operation::create_inference_recommendations_job::_create_inference_recommendations_job_input::CreateInferenceRecommendationsJobInputBuilder;
 
+impl CreateInferenceRecommendationsJobInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::create_inference_recommendations_job::CreateInferenceRecommendationsJobOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_inference_recommendations_job::CreateInferenceRecommendationsJobError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.create_inference_recommendations_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateInferenceRecommendationsJob`.
 ///
 /// <p>Starts a recommendation job. You can create either an instance recommendation or load test job.</p>

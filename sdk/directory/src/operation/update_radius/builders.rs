@@ -3,6 +3,23 @@ pub use crate::operation::update_radius::_update_radius_output::UpdateRadiusOutp
 
 pub use crate::operation::update_radius::_update_radius_input::UpdateRadiusInputBuilder;
 
+impl UpdateRadiusInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_radius::UpdateRadiusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_radius::UpdateRadiusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_radius();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateRadius`.
 ///
 /// <p>Updates the Remote Authentication Dial In User Service (RADIUS) server information for an AD Connector or Microsoft AD directory.</p>

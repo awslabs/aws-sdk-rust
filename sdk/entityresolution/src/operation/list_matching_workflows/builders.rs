@@ -3,6 +3,23 @@ pub use crate::operation::list_matching_workflows::_list_matching_workflows_outp
 
 pub use crate::operation::list_matching_workflows::_list_matching_workflows_input::ListMatchingWorkflowsInputBuilder;
 
+impl ListMatchingWorkflowsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_matching_workflows::ListMatchingWorkflowsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_matching_workflows::ListMatchingWorkflowsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_matching_workflows();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListMatchingWorkflows`.
 ///
 /// <p>Returns a list of all the <code>MatchingWorkflows</code> that have been created for an AWS account.</p>

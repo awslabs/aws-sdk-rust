@@ -3,6 +3,23 @@ pub use crate::operation::start_inference_scheduler::_start_inference_scheduler_
 
 pub use crate::operation::start_inference_scheduler::_start_inference_scheduler_input::StartInferenceSchedulerInputBuilder;
 
+impl StartInferenceSchedulerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_inference_scheduler::StartInferenceSchedulerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_inference_scheduler::StartInferenceSchedulerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_inference_scheduler();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartInferenceScheduler`.
 ///
 /// <p>Starts an inference scheduler. </p>

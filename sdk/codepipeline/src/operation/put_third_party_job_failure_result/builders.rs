@@ -3,6 +3,17 @@ pub use crate::operation::put_third_party_job_failure_result::_put_third_party_j
 
 pub use crate::operation::put_third_party_job_failure_result::_put_third_party_job_failure_result_input::PutThirdPartyJobFailureResultInputBuilder;
 
+impl PutThirdPartyJobFailureResultInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::put_third_party_job_failure_result::PutThirdPartyJobFailureResultOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_third_party_job_failure_result::PutThirdPartyJobFailureResultError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.put_third_party_job_failure_result();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutThirdPartyJobFailureResult`.
 ///
 /// <p>Represents the failure of a third party job as returned to the pipeline by a job worker. Used for partner actions only.</p>

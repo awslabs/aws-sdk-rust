@@ -3,6 +3,23 @@ pub use crate::operation::get_source_api_association::_get_source_api_associatio
 
 pub use crate::operation::get_source_api_association::_get_source_api_association_input::GetSourceApiAssociationInputBuilder;
 
+impl GetSourceApiAssociationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_source_api_association::GetSourceApiAssociationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_source_api_association::GetSourceApiAssociationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_source_api_association();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetSourceApiAssociation`.
 ///
 /// <p>Retrieves a <code>SourceApiAssociation</code> object.</p>

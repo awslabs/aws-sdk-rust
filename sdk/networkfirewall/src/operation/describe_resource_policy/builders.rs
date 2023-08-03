@@ -3,6 +3,23 @@ pub use crate::operation::describe_resource_policy::_describe_resource_policy_ou
 
 pub use crate::operation::describe_resource_policy::_describe_resource_policy_input::DescribeResourcePolicyInputBuilder;
 
+impl DescribeResourcePolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_resource_policy::DescribeResourcePolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_resource_policy::DescribeResourcePolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_resource_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeResourcePolicy`.
 ///
 /// <p>Retrieves a resource policy that you created in a <code>PutResourcePolicy</code> request. </p>

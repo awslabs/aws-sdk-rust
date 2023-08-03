@@ -3,6 +3,23 @@ pub use crate::operation::delete_peering::_delete_peering_output::DeletePeeringO
 
 pub use crate::operation::delete_peering::_delete_peering_input::DeletePeeringInputBuilder;
 
+impl DeletePeeringInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_peering::DeletePeeringOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_peering::DeletePeeringError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_peering();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeletePeering`.
 ///
 /// <p>Deletes an existing peering connection.</p>

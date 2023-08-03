@@ -3,6 +3,23 @@ pub use crate::operation::list_run_groups::_list_run_groups_output::ListRunGroup
 
 pub use crate::operation::list_run_groups::_list_run_groups_input::ListRunGroupsInputBuilder;
 
+impl ListRunGroupsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_run_groups::ListRunGroupsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_run_groups::ListRunGroupsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_run_groups();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListRunGroups`.
 ///
 /// <p>Retrieves a list of run groups.</p>

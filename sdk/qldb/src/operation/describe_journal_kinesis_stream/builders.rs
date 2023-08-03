@@ -3,6 +3,23 @@ pub use crate::operation::describe_journal_kinesis_stream::_describe_journal_kin
 
 pub use crate::operation::describe_journal_kinesis_stream::_describe_journal_kinesis_stream_input::DescribeJournalKinesisStreamInputBuilder;
 
+impl DescribeJournalKinesisStreamInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_journal_kinesis_stream::DescribeJournalKinesisStreamOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_journal_kinesis_stream::DescribeJournalKinesisStreamError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_journal_kinesis_stream();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeJournalKinesisStream`.
 ///
 /// <p>Returns detailed information about a given Amazon QLDB journal stream. The output includes the Amazon Resource Name (ARN), stream name, current status, creation time, and the parameters of the original stream creation request.</p>

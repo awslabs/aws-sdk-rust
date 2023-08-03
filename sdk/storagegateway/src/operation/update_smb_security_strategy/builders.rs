@@ -3,6 +3,23 @@ pub use crate::operation::update_smb_security_strategy::_update_smb_security_str
 
 pub use crate::operation::update_smb_security_strategy::_update_smb_security_strategy_input::UpdateSmbSecurityStrategyInputBuilder;
 
+impl UpdateSmbSecurityStrategyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_smb_security_strategy::UpdateSmbSecurityStrategyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_smb_security_strategy::UpdateSMBSecurityStrategyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_smb_security_strategy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateSMBSecurityStrategy`.
 ///
 /// <p>Updates the SMB security strategy on a file gateway. This action is only supported in file gateways.</p> <note>

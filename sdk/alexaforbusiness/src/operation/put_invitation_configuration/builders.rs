@@ -3,6 +3,23 @@ pub use crate::operation::put_invitation_configuration::_put_invitation_configur
 
 pub use crate::operation::put_invitation_configuration::_put_invitation_configuration_input::PutInvitationConfigurationInputBuilder;
 
+impl PutInvitationConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_invitation_configuration::PutInvitationConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_invitation_configuration::PutInvitationConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_invitation_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutInvitationConfiguration`.
 ///
 /// <p>Configures the email template for the user enrollment invitation with the specified attributes.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::associate_data_share_consumer::_associate_data_share_c
 
 pub use crate::operation::associate_data_share_consumer::_associate_data_share_consumer_input::AssociateDataShareConsumerInputBuilder;
 
+impl AssociateDataShareConsumerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_data_share_consumer::AssociateDataShareConsumerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_data_share_consumer::AssociateDataShareConsumerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_data_share_consumer();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateDataShareConsumer`.
 ///
 /// <p>From a datashare consumer account, associates a datashare with the account (AssociateEntireAccount) or the specified namespace (ConsumerArn). If you make this association, the consumer can consume the datashare.</p>

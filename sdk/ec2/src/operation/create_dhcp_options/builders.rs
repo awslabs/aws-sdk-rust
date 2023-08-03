@@ -3,6 +3,23 @@ pub use crate::operation::create_dhcp_options::_create_dhcp_options_output::Crea
 
 pub use crate::operation::create_dhcp_options::_create_dhcp_options_input::CreateDhcpOptionsInputBuilder;
 
+impl CreateDhcpOptionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_dhcp_options::CreateDhcpOptionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_dhcp_options::CreateDhcpOptionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_dhcp_options();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateDhcpOptions`.
 ///
 /// <p>Creates a set of DHCP options for your VPC. After creating the set, you must associate it with the VPC, causing all existing and new instances that you launch in the VPC to use this set of DHCP options. The following are the individual DHCP options you can specify. For more information about the options, see <a href="http://www.ietf.org/rfc/rfc2132.txt">RFC 2132</a>.</p>

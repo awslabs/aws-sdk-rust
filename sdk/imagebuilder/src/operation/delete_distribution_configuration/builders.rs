@@ -3,6 +3,17 @@ pub use crate::operation::delete_distribution_configuration::_delete_distributio
 
 pub use crate::operation::delete_distribution_configuration::_delete_distribution_configuration_input::DeleteDistributionConfigurationInputBuilder;
 
+impl DeleteDistributionConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_distribution_configuration::DeleteDistributionConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_distribution_configuration::DeleteDistributionConfigurationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.delete_distribution_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteDistributionConfiguration`.
 ///
 /// <p>Deletes a distribution configuration.</p>

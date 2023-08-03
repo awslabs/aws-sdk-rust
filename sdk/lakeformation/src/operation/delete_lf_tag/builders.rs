@@ -3,6 +3,23 @@ pub use crate::operation::delete_lf_tag::_delete_lf_tag_output::DeleteLfTagOutpu
 
 pub use crate::operation::delete_lf_tag::_delete_lf_tag_input::DeleteLfTagInputBuilder;
 
+impl DeleteLfTagInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_lf_tag::DeleteLfTagOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_lf_tag::DeleteLFTagError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_lf_tag();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteLFTag`.
 ///
 /// <p>Deletes the specified LF-tag given a key name. If the input parameter tag key was not found, then the operation will throw an exception. When you delete an LF-tag, the <code>LFTagPolicy</code> attached to the LF-tag becomes invalid. If the deleted LF-tag was still assigned to any resource, the tag policy attach to the deleted LF-tag will no longer be applied to the resource.</p>

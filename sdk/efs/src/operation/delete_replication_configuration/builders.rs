@@ -3,6 +3,23 @@ pub use crate::operation::delete_replication_configuration::_delete_replication_
 
 pub use crate::operation::delete_replication_configuration::_delete_replication_configuration_input::DeleteReplicationConfigurationInputBuilder;
 
+impl DeleteReplicationConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_replication_configuration::DeleteReplicationConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_replication_configuration::DeleteReplicationConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_replication_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteReplicationConfiguration`.
 ///
 /// <p>Deletes an existing replication configuration. To delete a replication configuration, you must make the request from the Amazon Web Services Region in which the destination file system is located. Deleting a replication configuration ends the replication process. After a replication configuration is deleted, the destination file system is no longer read-only. You can write to the destination file system after its status becomes <code>Writeable</code>.</p>

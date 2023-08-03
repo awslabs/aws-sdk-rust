@@ -3,6 +3,23 @@ pub use crate::operation::create_web_acl::_create_web_acl_output::CreateWebAclOu
 
 pub use crate::operation::create_web_acl::_create_web_acl_input::CreateWebAclInputBuilder;
 
+impl CreateWebAclInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_web_acl::CreateWebAclOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_web_acl::CreateWebACLError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_web_acl();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateWebACL`.
 ///
 /// <p>Creates a <code>WebACL</code> per the specifications provided.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::disassociate_accounts::_disassociate_accounts_output::
 
 pub use crate::operation::disassociate_accounts::_disassociate_accounts_input::DisassociateAccountsInputBuilder;
 
+impl DisassociateAccountsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_accounts::DisassociateAccountsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_accounts::DisassociateAccountsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disassociate_accounts();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateAccounts`.
 ///
 /// <p>Removes the specified list of account IDs from the given billing group. </p>

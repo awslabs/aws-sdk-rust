@@ -3,6 +3,23 @@ pub use crate::operation::get_key::_get_key_output::GetKeyOutputBuilder;
 
 pub use crate::operation::get_key::_get_key_input::GetKeyInputBuilder;
 
+impl GetKeyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_key::GetKeyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_key::GetKeyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_key();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetKey`.
 ///
 /// <p>Gets the key material for an Amazon Web Services Payment Cryptography key, including the immutable and mutable data specified when the key was created.</p>

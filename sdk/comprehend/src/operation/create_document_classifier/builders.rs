@@ -3,6 +3,23 @@ pub use crate::operation::create_document_classifier::_create_document_classifie
 
 pub use crate::operation::create_document_classifier::_create_document_classifier_input::CreateDocumentClassifierInputBuilder;
 
+impl CreateDocumentClassifierInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_document_classifier::CreateDocumentClassifierOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_document_classifier::CreateDocumentClassifierError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_document_classifier();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateDocumentClassifier`.
 ///
 /// <p>Creates a new document classifier that you can use to categorize documents. To create a classifier, you provide a set of training documents that are labeled with the categories that you want to use. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/training-classifier-model.html">Training classifier models</a> in the Comprehend Developer Guide. </p>

@@ -3,6 +3,17 @@ pub use crate::operation::describe_fleet_advisor_schema_object_summary::_describ
 
 pub use crate::operation::describe_fleet_advisor_schema_object_summary::_describe_fleet_advisor_schema_object_summary_input::DescribeFleetAdvisorSchemaObjectSummaryInputBuilder;
 
+impl DescribeFleetAdvisorSchemaObjectSummaryInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_fleet_advisor_schema_object_summary::DescribeFleetAdvisorSchemaObjectSummaryOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_fleet_advisor_schema_object_summary::DescribeFleetAdvisorSchemaObjectSummaryError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_fleet_advisor_schema_object_summary();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeFleetAdvisorSchemaObjectSummary`.
 ///
 /// <p>Provides descriptions of the schemas discovered by your Fleet Advisor collectors.</p>

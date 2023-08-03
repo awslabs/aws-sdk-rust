@@ -3,6 +3,23 @@ pub use crate::operation::create_rate_based_rule::_create_rate_based_rule_output
 
 pub use crate::operation::create_rate_based_rule::_create_rate_based_rule_input::CreateRateBasedRuleInputBuilder;
 
+impl CreateRateBasedRuleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_rate_based_rule::CreateRateBasedRuleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_rate_based_rule::CreateRateBasedRuleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_rate_based_rule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateRateBasedRule`.
 ///
 /// <note>

@@ -3,6 +3,17 @@ pub use crate::operation::put_channel_membership_preferences::_put_channel_membe
 
 pub use crate::operation::put_channel_membership_preferences::_put_channel_membership_preferences_input::PutChannelMembershipPreferencesInputBuilder;
 
+impl PutChannelMembershipPreferencesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::put_channel_membership_preferences::PutChannelMembershipPreferencesOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_channel_membership_preferences::PutChannelMembershipPreferencesError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.put_channel_membership_preferences();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutChannelMembershipPreferences`.
 ///
 /// <p>Sets the membership preferences of an <code>AppInstanceUser</code> or <code>AppInstanceBot</code> for the specified channel. The user or bot must be a member of the channel. Only the user or bot who owns the membership can set preferences. Users or bots in the <code>AppInstanceAdmin</code> and channel moderator roles can't set preferences for other users. Banned users or bots can't set membership preferences for the channel from which they are banned.</p> <note>

@@ -3,6 +3,23 @@ pub use crate::operation::post_comment_reply::_post_comment_reply_output::PostCo
 
 pub use crate::operation::post_comment_reply::_post_comment_reply_input::PostCommentReplyInputBuilder;
 
+impl PostCommentReplyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::post_comment_reply::PostCommentReplyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::post_comment_reply::PostCommentReplyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.post_comment_reply();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PostCommentReply`.
 ///
 /// <p>Posts a comment in reply to an existing comment on a comparison between commits or a pull request.</p>

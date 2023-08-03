@@ -3,6 +3,23 @@ pub use crate::operation::merge_pull_request_by_squash::_merge_pull_request_by_s
 
 pub use crate::operation::merge_pull_request_by_squash::_merge_pull_request_by_squash_input::MergePullRequestBySquashInputBuilder;
 
+impl MergePullRequestBySquashInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::merge_pull_request_by_squash::MergePullRequestBySquashError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.merge_pull_request_by_squash();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `MergePullRequestBySquash`.
 ///
 /// <p>Attempts to merge the source commit of a pull request into the specified destination branch for that pull request at the specified commit using the squash merge strategy. If the merge is successful, it closes the pull request.</p>

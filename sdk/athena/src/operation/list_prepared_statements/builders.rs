@@ -3,6 +3,23 @@ pub use crate::operation::list_prepared_statements::_list_prepared_statements_ou
 
 pub use crate::operation::list_prepared_statements::_list_prepared_statements_input::ListPreparedStatementsInputBuilder;
 
+impl ListPreparedStatementsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_prepared_statements::ListPreparedStatementsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_prepared_statements::ListPreparedStatementsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_prepared_statements();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListPreparedStatements`.
 ///
 /// <p>Lists the prepared statements in the specified workgroup.</p>

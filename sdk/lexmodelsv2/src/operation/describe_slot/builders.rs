@@ -3,6 +3,23 @@ pub use crate::operation::describe_slot::_describe_slot_output::DescribeSlotOutp
 
 pub use crate::operation::describe_slot::_describe_slot_input::DescribeSlotInputBuilder;
 
+impl DescribeSlotInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_slot::DescribeSlotOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_slot::DescribeSlotError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_slot();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeSlot`.
 ///
 /// <p>Gets metadata information about a slot.</p>

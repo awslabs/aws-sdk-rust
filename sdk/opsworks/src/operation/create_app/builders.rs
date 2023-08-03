@@ -3,6 +3,23 @@ pub use crate::operation::create_app::_create_app_output::CreateAppOutputBuilder
 
 pub use crate::operation::create_app::_create_app_input::CreateAppInputBuilder;
 
+impl CreateAppInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_app::CreateAppOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_app::CreateAppError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_app();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateApp`.
 ///
 /// <p>Creates an app for a specified stack. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html">Creating Apps</a>.</p>

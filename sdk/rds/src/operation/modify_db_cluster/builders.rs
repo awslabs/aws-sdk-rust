@@ -3,6 +3,23 @@ pub use crate::operation::modify_db_cluster::_modify_db_cluster_output::ModifyDb
 
 pub use crate::operation::modify_db_cluster::_modify_db_cluster_input::ModifyDbClusterInputBuilder;
 
+impl ModifyDbClusterInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_db_cluster::ModifyDbClusterOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_db_cluster::ModifyDBClusterError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_db_cluster();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyDBCluster`.
 ///
 /// <p>Modifies the settings of an Amazon Aurora DB cluster or a Multi-AZ DB cluster. You can change one or more settings by specifying these parameters and the new values in the request.</p>

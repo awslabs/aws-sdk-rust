@@ -3,6 +3,23 @@ pub use crate::operation::search_security_profiles::_search_security_profiles_ou
 
 pub use crate::operation::search_security_profiles::_search_security_profiles_input::SearchSecurityProfilesInputBuilder;
 
+impl SearchSecurityProfilesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::search_security_profiles::SearchSecurityProfilesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::search_security_profiles::SearchSecurityProfilesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.search_security_profiles();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SearchSecurityProfiles`.
 ///
 /// <p>Searches security profiles in an Amazon Connect instance, with optional filtering.</p>

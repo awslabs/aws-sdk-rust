@@ -3,6 +3,23 @@ pub use crate::operation::describe_event_aggregates::_describe_event_aggregates_
 
 pub use crate::operation::describe_event_aggregates::_describe_event_aggregates_input::DescribeEventAggregatesInputBuilder;
 
+impl DescribeEventAggregatesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_event_aggregates::DescribeEventAggregatesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_event_aggregates::DescribeEventAggregatesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_event_aggregates();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeEventAggregates`.
 ///
 /// <p>Returns the number of events of each event type (issue, scheduled change, and account notification). If no filter is specified, the counts of all events in each category are returned.</p> <note>

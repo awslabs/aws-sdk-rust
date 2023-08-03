@@ -3,6 +3,23 @@ pub use crate::operation::delete_connection_alias::_delete_connection_alias_outp
 
 pub use crate::operation::delete_connection_alias::_delete_connection_alias_input::DeleteConnectionAliasInputBuilder;
 
+impl DeleteConnectionAliasInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_connection_alias::DeleteConnectionAliasOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_connection_alias::DeleteConnectionAliasError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_connection_alias();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteConnectionAlias`.
 ///
 /// <p>Deletes the specified connection alias. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html"> Cross-Region Redirection for Amazon WorkSpaces</a>.</p> <important>

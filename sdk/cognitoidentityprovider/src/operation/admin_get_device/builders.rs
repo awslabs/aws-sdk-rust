@@ -3,6 +3,23 @@ pub use crate::operation::admin_get_device::_admin_get_device_output::AdminGetDe
 
 pub use crate::operation::admin_get_device::_admin_get_device_input::AdminGetDeviceInputBuilder;
 
+impl AdminGetDeviceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::admin_get_device::AdminGetDeviceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::admin_get_device::AdminGetDeviceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.admin_get_device();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AdminGetDevice`.
 ///
 /// <p>Gets the device, as an administrator.</p>

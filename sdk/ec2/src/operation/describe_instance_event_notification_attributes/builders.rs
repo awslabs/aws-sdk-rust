@@ -3,6 +3,17 @@ pub use crate::operation::describe_instance_event_notification_attributes::_desc
 
 pub use crate::operation::describe_instance_event_notification_attributes::_describe_instance_event_notification_attributes_input::DescribeInstanceEventNotificationAttributesInputBuilder;
 
+impl DescribeInstanceEventNotificationAttributesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_instance_event_notification_attributes::DescribeInstanceEventNotificationAttributesOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_instance_event_notification_attributes::DescribeInstanceEventNotificationAttributesError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_instance_event_notification_attributes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeInstanceEventNotificationAttributes`.
 ///
 /// <p>Describes the tag keys that are registered to appear in scheduled event notifications for resources in the current Region.</p>

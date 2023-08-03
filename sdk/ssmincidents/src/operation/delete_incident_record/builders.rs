@@ -3,6 +3,23 @@ pub use crate::operation::delete_incident_record::_delete_incident_record_output
 
 pub use crate::operation::delete_incident_record::_delete_incident_record_input::DeleteIncidentRecordInputBuilder;
 
+impl DeleteIncidentRecordInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_incident_record::DeleteIncidentRecordOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_incident_record::DeleteIncidentRecordError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_incident_record();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteIncidentRecord`.
 ///
 /// <p>Delete an incident record from Incident Manager. </p>

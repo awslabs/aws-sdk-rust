@@ -3,6 +3,23 @@ pub use crate::operation::register_type::_register_type_output::RegisterTypeOutp
 
 pub use crate::operation::register_type::_register_type_input::RegisterTypeInputBuilder;
 
+impl RegisterTypeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::register_type::RegisterTypeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::register_type::RegisterTypeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.register_type();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RegisterType`.
 ///
 /// <p>Registers an extension with the CloudFormation service. Registering an extension makes it available for use in CloudFormation templates in your Amazon Web Services account, and includes:</p>

@@ -3,6 +3,23 @@ pub use crate::operation::register_account::_register_account_output::RegisterAc
 
 pub use crate::operation::register_account::_register_account_input::RegisterAccountInputBuilder;
 
+impl RegisterAccountInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::register_account::RegisterAccountOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::register_account::RegisterAccountError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.register_account();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RegisterAccount`.
 ///
 /// <p> Enables Audit Manager for the specified Amazon Web Services account. </p>

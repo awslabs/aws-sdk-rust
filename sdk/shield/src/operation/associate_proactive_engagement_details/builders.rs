@@ -3,6 +3,17 @@ pub use crate::operation::associate_proactive_engagement_details::_associate_pro
 
 pub use crate::operation::associate_proactive_engagement_details::_associate_proactive_engagement_details_input::AssociateProactiveEngagementDetailsInputBuilder;
 
+impl AssociateProactiveEngagementDetailsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::associate_proactive_engagement_details::AssociateProactiveEngagementDetailsOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_proactive_engagement_details::AssociateProactiveEngagementDetailsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.associate_proactive_engagement_details();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateProactiveEngagementDetails`.
 ///
 /// <p>Initializes proactive engagement and sets the list of contacts for the Shield Response Team (SRT) to use. You must provide at least one phone number in the emergency contact list. </p>

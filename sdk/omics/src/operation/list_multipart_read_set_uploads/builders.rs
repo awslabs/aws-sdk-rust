@@ -3,6 +3,23 @@ pub use crate::operation::list_multipart_read_set_uploads::_list_multipart_read_
 
 pub use crate::operation::list_multipart_read_set_uploads::_list_multipart_read_set_uploads_input::ListMultipartReadSetUploadsInputBuilder;
 
+impl ListMultipartReadSetUploadsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_multipart_read_set_uploads::ListMultipartReadSetUploadsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_multipart_read_set_uploads();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListMultipartReadSetUploads`.
 ///
 /// <p> Lists all multipart read set uploads and their statuses. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::update_extension_association::_update_extension_associ
 
 pub use crate::operation::update_extension_association::_update_extension_association_input::UpdateExtensionAssociationInputBuilder;
 
+impl UpdateExtensionAssociationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_extension_association::UpdateExtensionAssociationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_extension_association::UpdateExtensionAssociationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_extension_association();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateExtensionAssociation`.
 ///
 /// <p>Updates an association. For more information about extensions and associations, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.</p>

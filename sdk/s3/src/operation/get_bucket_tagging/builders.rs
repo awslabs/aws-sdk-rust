@@ -3,6 +3,23 @@ pub use crate::operation::get_bucket_tagging::_get_bucket_tagging_output::GetBuc
 
 pub use crate::operation::get_bucket_tagging::_get_bucket_tagging_input::GetBucketTaggingInputBuilder;
 
+impl GetBucketTaggingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_bucket_tagging::GetBucketTaggingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_bucket_tagging::GetBucketTaggingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_bucket_tagging();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetBucketTagging`.
 ///
 /// <p>Returns the tag set associated with the bucket.</p>

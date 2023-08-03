@@ -3,6 +3,23 @@ pub use crate::operation::get_job_details::_get_job_details_output::GetJobDetail
 
 pub use crate::operation::get_job_details::_get_job_details_input::GetJobDetailsInputBuilder;
 
+impl GetJobDetailsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_job_details::GetJobDetailsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_job_details::GetJobDetailsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_job_details();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetJobDetails`.
 ///
 /// <p>Returns information about a job. Used for custom actions only.</p> <important>

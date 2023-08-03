@@ -3,6 +3,23 @@ pub use crate::operation::put_package_origin_configuration::_put_package_origin_
 
 pub use crate::operation::put_package_origin_configuration::_put_package_origin_configuration_input::PutPackageOriginConfigurationInputBuilder;
 
+impl PutPackageOriginConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_package_origin_configuration::PutPackageOriginConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_package_origin_configuration::PutPackageOriginConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_package_origin_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutPackageOriginConfiguration`.
 ///
 /// <p>Sets the package origin configuration for a package.</p>

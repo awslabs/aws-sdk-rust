@@ -3,6 +3,23 @@ pub use crate::operation::list_volume_initiators::_list_volume_initiators_output
 
 pub use crate::operation::list_volume_initiators::_list_volume_initiators_input::ListVolumeInitiatorsInputBuilder;
 
+impl ListVolumeInitiatorsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_volume_initiators::ListVolumeInitiatorsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_volume_initiators::ListVolumeInitiatorsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_volume_initiators();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListVolumeInitiators`.
 ///
 /// <p>Lists iSCSI initiators that are connected to a volume. You can use this operation to determine whether a volume is being used or not. This operation is only supported in the cached volume and stored volume gateway types.</p>

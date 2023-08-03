@@ -3,6 +3,23 @@ pub use crate::operation::list_read_set_upload_parts::_list_read_set_upload_part
 
 pub use crate::operation::list_read_set_upload_parts::_list_read_set_upload_parts_input::ListReadSetUploadPartsInputBuilder;
 
+impl ListReadSetUploadPartsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_read_set_upload_parts::ListReadSetUploadPartsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_read_set_upload_parts::ListReadSetUploadPartsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_read_set_upload_parts();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListReadSetUploadParts`.
 ///
 /// <p> This operation will list all parts in a requested multipart upload for a sequence store. </p>

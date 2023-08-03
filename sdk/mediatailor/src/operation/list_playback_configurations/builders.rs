@@ -3,6 +3,23 @@ pub use crate::operation::list_playback_configurations::_list_playback_configura
 
 pub use crate::operation::list_playback_configurations::_list_playback_configurations_input::ListPlaybackConfigurationsInputBuilder;
 
+impl ListPlaybackConfigurationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_playback_configurations::ListPlaybackConfigurationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_playback_configurations::ListPlaybackConfigurationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_playback_configurations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListPlaybackConfigurations`.
 ///
 /// <p>Retrieves existing playback configurations. For information about MediaTailor configurations, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/configurations.html">Working with Configurations in AWS Elemental MediaTailor</a>.</p>

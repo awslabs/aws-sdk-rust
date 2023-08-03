@@ -3,6 +3,23 @@ pub use crate::operation::batch_disassociate_scram_secret::_batch_disassociate_s
 
 pub use crate::operation::batch_disassociate_scram_secret::_batch_disassociate_scram_secret_input::BatchDisassociateScramSecretInputBuilder;
 
+impl BatchDisassociateScramSecretInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_disassociate_scram_secret::BatchDisassociateScramSecretOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_disassociate_scram_secret::BatchDisassociateScramSecretError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_disassociate_scram_secret();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchDisassociateScramSecret`.
 ///
 /// <p>Disassociates one or more Scram Secrets from an Amazon MSK cluster.</p>

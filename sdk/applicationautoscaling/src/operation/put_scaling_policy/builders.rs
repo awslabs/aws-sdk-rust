@@ -3,6 +3,23 @@ pub use crate::operation::put_scaling_policy::_put_scaling_policy_output::PutSca
 
 pub use crate::operation::put_scaling_policy::_put_scaling_policy_input::PutScalingPolicyInputBuilder;
 
+impl PutScalingPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_scaling_policy::PutScalingPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_scaling_policy::PutScalingPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_scaling_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutScalingPolicy`.
 ///
 /// <p>Creates or updates a scaling policy for an Application Auto Scaling scalable target.</p>

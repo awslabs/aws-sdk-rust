@@ -3,6 +3,23 @@ pub use crate::operation::list_dead_letter_source_queues::_list_dead_letter_sour
 
 pub use crate::operation::list_dead_letter_source_queues::_list_dead_letter_source_queues_input::ListDeadLetterSourceQueuesInputBuilder;
 
+impl ListDeadLetterSourceQueuesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueuesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_dead_letter_source_queues::ListDeadLetterSourceQueuesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_dead_letter_source_queues();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDeadLetterSourceQueues`.
 ///
 /// <p>Returns a list of your queues that have the <code>RedrivePolicy</code> queue attribute configured with a dead-letter queue.</p>

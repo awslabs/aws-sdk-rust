@@ -3,6 +3,23 @@ pub use crate::operation::start_message_move_task::_start_message_move_task_outp
 
 pub use crate::operation::start_message_move_task::_start_message_move_task_input::StartMessageMoveTaskInputBuilder;
 
+impl StartMessageMoveTaskInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_message_move_task::StartMessageMoveTaskOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_message_move_task::StartMessageMoveTaskError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_message_move_task();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartMessageMoveTask`.
 ///
 /// <p>Starts an asynchronous task to move messages from a specified source queue to a specified destination queue.</p> <note>

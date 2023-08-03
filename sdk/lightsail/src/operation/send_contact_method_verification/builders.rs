@@ -3,6 +3,23 @@ pub use crate::operation::send_contact_method_verification::_send_contact_method
 
 pub use crate::operation::send_contact_method_verification::_send_contact_method_verification_input::SendContactMethodVerificationInputBuilder;
 
+impl SendContactMethodVerificationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::send_contact_method_verification::SendContactMethodVerificationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::send_contact_method_verification::SendContactMethodVerificationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.send_contact_method_verification();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SendContactMethodVerification`.
 ///
 /// <p>Sends a verification request to an email contact method to ensure it's owned by the requester. SMS contact methods don't need to be verified.</p>

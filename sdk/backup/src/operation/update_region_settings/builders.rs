@@ -3,6 +3,23 @@ pub use crate::operation::update_region_settings::_update_region_settings_output
 
 pub use crate::operation::update_region_settings::_update_region_settings_input::UpdateRegionSettingsInputBuilder;
 
+impl UpdateRegionSettingsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_region_settings::UpdateRegionSettingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_region_settings::UpdateRegionSettingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_region_settings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateRegionSettings`.
 ///
 /// <p>Updates the current service opt-in settings for the Region. If service-opt-in is enabled for a service, Backup tries to protect that service's resources in this Region, when the resource is included in an on-demand backup or scheduled backup plan. Otherwise, Backup does not try to protect that service's resources in this Region. Use the <code>DescribeRegionSettings</code> API to determine the resource types that are supported.</p>

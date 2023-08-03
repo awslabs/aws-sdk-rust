@@ -3,6 +3,23 @@ pub use crate::operation::get_relational_database::_get_relational_database_outp
 
 pub use crate::operation::get_relational_database::_get_relational_database_input::GetRelationalDatabaseInputBuilder;
 
+impl GetRelationalDatabaseInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_relational_database::GetRelationalDatabaseOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_relational_database::GetRelationalDatabaseError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_relational_database();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetRelationalDatabase`.
 ///
 /// <p>Returns information about a specific database in Amazon Lightsail.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_custom_domains::_describe_custom_domains_outp
 
 pub use crate::operation::describe_custom_domains::_describe_custom_domains_input::DescribeCustomDomainsInputBuilder;
 
+impl DescribeCustomDomainsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_custom_domains::DescribeCustomDomainsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_custom_domains::DescribeCustomDomainsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_custom_domains();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeCustomDomains`.
 ///
 /// <p>Return a description of custom domain names that are associated with an App Runner service.</p>

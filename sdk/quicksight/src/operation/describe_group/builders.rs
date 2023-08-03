@@ -3,6 +3,23 @@ pub use crate::operation::describe_group::_describe_group_output::DescribeGroupO
 
 pub use crate::operation::describe_group::_describe_group_input::DescribeGroupInputBuilder;
 
+impl DescribeGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_group::DescribeGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_group::DescribeGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeGroup`.
 ///
 /// <p>Returns an Amazon QuickSight group's description and Amazon Resource Name (ARN). </p>

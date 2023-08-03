@@ -3,6 +3,23 @@ pub use crate::operation::delete_call_analytics_job::_delete_call_analytics_job_
 
 pub use crate::operation::delete_call_analytics_job::_delete_call_analytics_job_input::DeleteCallAnalyticsJobInputBuilder;
 
+impl DeleteCallAnalyticsJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_call_analytics_job::DeleteCallAnalyticsJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_call_analytics_job::DeleteCallAnalyticsJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_call_analytics_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteCallAnalyticsJob`.
 ///
 /// <p>Deletes a Call Analytics job. To use this operation, specify the name of the job you want to delete using <code>CallAnalyticsJobName</code>. Job names are case sensitive.</p>

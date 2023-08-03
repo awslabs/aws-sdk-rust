@@ -3,6 +3,23 @@ pub use crate::operation::associate_applications::_associate_applications_output
 
 pub use crate::operation::associate_applications::_associate_applications_input::AssociateApplicationsInputBuilder;
 
+impl AssociateApplicationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_applications::AssociateApplicationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_applications::AssociateApplicationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_applications();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateApplications`.
 ///
 /// <p>Associate applications to wave.</p>

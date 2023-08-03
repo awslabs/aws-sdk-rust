@@ -3,6 +3,17 @@ pub use crate::operation::modify_verified_access_instance_logging_configuration:
 
 pub use crate::operation::modify_verified_access_instance_logging_configuration::_modify_verified_access_instance_logging_configuration_input::ModifyVerifiedAccessInstanceLoggingConfigurationInputBuilder;
 
+impl ModifyVerifiedAccessInstanceLoggingConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::modify_verified_access_instance_logging_configuration::ModifyVerifiedAccessInstanceLoggingConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::modify_verified_access_instance_logging_configuration::ModifyVerifiedAccessInstanceLoggingConfigurationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.modify_verified_access_instance_logging_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyVerifiedAccessInstanceLoggingConfiguration`.
 ///
 /// <p>Modifies the logging configuration for the specified Amazon Web Services Verified Access instance.</p>

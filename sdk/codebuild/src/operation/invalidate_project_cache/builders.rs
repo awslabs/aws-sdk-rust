@@ -3,6 +3,23 @@ pub use crate::operation::invalidate_project_cache::_invalidate_project_cache_ou
 
 pub use crate::operation::invalidate_project_cache::_invalidate_project_cache_input::InvalidateProjectCacheInputBuilder;
 
+impl InvalidateProjectCacheInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::invalidate_project_cache::InvalidateProjectCacheOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::invalidate_project_cache::InvalidateProjectCacheError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.invalidate_project_cache();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `InvalidateProjectCache`.
 ///
 /// <p>Resets the cache for a project.</p>

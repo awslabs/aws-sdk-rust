@@ -3,6 +3,23 @@ pub use crate::operation::describe_workspace_configuration::_describe_workspace_
 
 pub use crate::operation::describe_workspace_configuration::_describe_workspace_configuration_input::DescribeWorkspaceConfigurationInputBuilder;
 
+impl DescribeWorkspaceConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_workspace_configuration::DescribeWorkspaceConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_workspace_configuration::DescribeWorkspaceConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_workspace_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeWorkspaceConfiguration`.
 ///
 /// <p>Gets the current configuration string for the given workspace.</p>

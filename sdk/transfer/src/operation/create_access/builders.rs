@@ -3,6 +3,23 @@ pub use crate::operation::create_access::_create_access_output::CreateAccessOutp
 
 pub use crate::operation::create_access::_create_access_input::CreateAccessInputBuilder;
 
+impl CreateAccessInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_access::CreateAccessOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_access::CreateAccessError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_access();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateAccess`.
 ///
 /// <p>Used by administrators to choose which groups in the directory should have access to upload and download files over the enabled protocols using Transfer Family. For example, a Microsoft Active Directory might contain 50,000 users, but only a small fraction might need the ability to transfer files to the server. An administrator can use <code>CreateAccess</code> to limit the access to the correct set of users who need this ability.</p>

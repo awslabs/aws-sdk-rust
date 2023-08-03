@@ -3,6 +3,23 @@ pub use crate::operation::create_backup_vault::_create_backup_vault_output::Crea
 
 pub use crate::operation::create_backup_vault::_create_backup_vault_input::CreateBackupVaultInputBuilder;
 
+impl CreateBackupVaultInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_backup_vault::CreateBackupVaultOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_backup_vault::CreateBackupVaultError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_backup_vault();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateBackupVault`.
 ///
 /// <p>Creates a logical container where backups are stored. A <code>CreateBackupVault</code> request includes a name, optionally one or more resource tags, an encryption key, and a request ID.</p> <note>

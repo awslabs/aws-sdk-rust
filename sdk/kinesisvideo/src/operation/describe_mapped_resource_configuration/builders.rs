@@ -3,6 +3,17 @@ pub use crate::operation::describe_mapped_resource_configuration::_describe_mapp
 
 pub use crate::operation::describe_mapped_resource_configuration::_describe_mapped_resource_configuration_input::DescribeMappedResourceConfigurationInputBuilder;
 
+impl DescribeMappedResourceConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_mapped_resource_configuration::DescribeMappedResourceConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_mapped_resource_configuration::DescribeMappedResourceConfigurationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_mapped_resource_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeMappedResourceConfiguration`.
 ///
 /// <p>Returns the most current information about the stream. The <code>streamName</code> or <code>streamARN</code> should be provided in the input.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::update_matching_workflow::_update_matching_workflow_ou
 
 pub use crate::operation::update_matching_workflow::_update_matching_workflow_input::UpdateMatchingWorkflowInputBuilder;
 
+impl UpdateMatchingWorkflowInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_matching_workflow::UpdateMatchingWorkflowOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_matching_workflow::UpdateMatchingWorkflowError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_matching_workflow();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateMatchingWorkflow`.
 ///
 /// <p>Updates an existing <code>MatchingWorkflow</code>. This method is identical to <code>CreateMatchingWorkflow</code>, except it uses an HTTP <code>PUT</code> request instead of a <code>POST</code> request, and the <code>MatchingWorkflow</code> must already exist for the method to succeed.</p>

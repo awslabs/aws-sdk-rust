@@ -3,6 +3,23 @@ pub use crate::operation::list_app_version_app_components::_list_app_version_app
 
 pub use crate::operation::list_app_version_app_components::_list_app_version_app_components_input::ListAppVersionAppComponentsInputBuilder;
 
+impl ListAppVersionAppComponentsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_app_version_app_components::ListAppVersionAppComponentsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_app_version_app_components::ListAppVersionAppComponentsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_app_version_app_components();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAppVersionAppComponents`.
 ///
 /// <p>Lists all the Application Components in the Resilience Hub application.</p>

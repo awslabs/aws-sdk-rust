@@ -3,6 +3,23 @@ pub use crate::operation::update_snapshot_schedule::_update_snapshot_schedule_ou
 
 pub use crate::operation::update_snapshot_schedule::_update_snapshot_schedule_input::UpdateSnapshotScheduleInputBuilder;
 
+impl UpdateSnapshotScheduleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_snapshot_schedule::UpdateSnapshotScheduleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_snapshot_schedule::UpdateSnapshotScheduleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_snapshot_schedule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateSnapshotSchedule`.
 ///
 /// <p>Updates a snapshot schedule configured for a gateway volume. This operation is only supported in the cached volume and stored volume gateway types.</p>

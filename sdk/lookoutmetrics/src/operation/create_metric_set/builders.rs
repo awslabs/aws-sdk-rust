@@ -3,6 +3,23 @@ pub use crate::operation::create_metric_set::_create_metric_set_output::CreateMe
 
 pub use crate::operation::create_metric_set::_create_metric_set_input::CreateMetricSetInputBuilder;
 
+impl CreateMetricSetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_metric_set::CreateMetricSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_metric_set::CreateMetricSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_metric_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateMetricSet`.
 ///
 /// <p>Creates a dataset.</p>

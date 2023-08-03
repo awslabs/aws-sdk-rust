@@ -3,6 +3,23 @@ pub use crate::operation::create_resource_group::_create_resource_group_output::
 
 pub use crate::operation::create_resource_group::_create_resource_group_input::CreateResourceGroupInputBuilder;
 
+impl CreateResourceGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_resource_group::CreateResourceGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_resource_group::CreateResourceGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_resource_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateResourceGroup`.
 ///
 /// <p>Creates a resource group using the specified set of tags (key and value pairs) that are used to select the EC2 instances to be included in an Amazon Inspector assessment target. The created resource group is then used to create an Amazon Inspector assessment target. For more information, see <code>CreateAssessmentTarget</code>.</p>

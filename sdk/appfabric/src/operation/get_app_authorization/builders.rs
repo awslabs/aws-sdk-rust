@@ -3,6 +3,23 @@ pub use crate::operation::get_app_authorization::_get_app_authorization_output::
 
 pub use crate::operation::get_app_authorization::_get_app_authorization_input::GetAppAuthorizationInputBuilder;
 
+impl GetAppAuthorizationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_app_authorization::GetAppAuthorizationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_app_authorization::GetAppAuthorizationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_app_authorization();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetAppAuthorization`.
 ///
 /// <p>Returns information about an app authorization.</p>

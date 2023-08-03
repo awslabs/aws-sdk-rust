@@ -3,6 +3,23 @@ pub use crate::operation::describe_agent::_describe_agent_output::DescribeAgentO
 
 pub use crate::operation::describe_agent::_describe_agent_input::DescribeAgentInputBuilder;
 
+impl DescribeAgentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_agent::DescribeAgentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_agent::DescribeAgentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_agent();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAgent`.
 ///
 /// <p>Returns metadata about an DataSync agent, such as its name, endpoint type, and status.</p>

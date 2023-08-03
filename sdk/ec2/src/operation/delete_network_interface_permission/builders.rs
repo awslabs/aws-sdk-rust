@@ -3,6 +3,17 @@ pub use crate::operation::delete_network_interface_permission::_delete_network_i
 
 pub use crate::operation::delete_network_interface_permission::_delete_network_interface_permission_input::DeleteNetworkInterfacePermissionInputBuilder;
 
+impl DeleteNetworkInterfacePermissionInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_network_interface_permission::DeleteNetworkInterfacePermissionOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_network_interface_permission::DeleteNetworkInterfacePermissionError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.delete_network_interface_permission();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteNetworkInterfacePermission`.
 ///
 /// <p>Deletes a permission for a network interface. By default, you cannot delete the permission if the account for which you're removing the permission has attached the network interface to an instance. However, you can force delete the permission, regardless of any attachment.</p>

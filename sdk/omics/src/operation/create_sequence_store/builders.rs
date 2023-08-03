@@ -3,6 +3,23 @@ pub use crate::operation::create_sequence_store::_create_sequence_store_output::
 
 pub use crate::operation::create_sequence_store::_create_sequence_store_input::CreateSequenceStoreInputBuilder;
 
+impl CreateSequenceStoreInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_sequence_store::CreateSequenceStoreOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_sequence_store::CreateSequenceStoreError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_sequence_store();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateSequenceStore`.
 ///
 /// <p>Creates a sequence store.</p>

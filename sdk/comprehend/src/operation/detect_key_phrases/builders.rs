@@ -3,6 +3,23 @@ pub use crate::operation::detect_key_phrases::_detect_key_phrases_output::Detect
 
 pub use crate::operation::detect_key_phrases::_detect_key_phrases_input::DetectKeyPhrasesInputBuilder;
 
+impl DetectKeyPhrasesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::detect_key_phrases::DetectKeyPhrasesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::detect_key_phrases::DetectKeyPhrasesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.detect_key_phrases();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DetectKeyPhrases`.
 ///
 /// <p>Detects the key noun phrases found in the text. </p>

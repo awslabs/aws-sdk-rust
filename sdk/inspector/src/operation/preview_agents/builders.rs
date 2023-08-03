@@ -3,6 +3,23 @@ pub use crate::operation::preview_agents::_preview_agents_output::PreviewAgentsO
 
 pub use crate::operation::preview_agents::_preview_agents_input::PreviewAgentsInputBuilder;
 
+impl PreviewAgentsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::preview_agents::PreviewAgentsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::preview_agents::PreviewAgentsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.preview_agents();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PreviewAgents`.
 ///
 /// <p>Previews the agents installed on the EC2 instances that are part of the specified assessment target.</p>

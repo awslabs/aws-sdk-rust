@@ -3,6 +3,23 @@ pub use crate::operation::start_notebook_execution::_start_notebook_execution_ou
 
 pub use crate::operation::start_notebook_execution::_start_notebook_execution_input::StartNotebookExecutionInputBuilder;
 
+impl StartNotebookExecutionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_notebook_execution::StartNotebookExecutionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_notebook_execution::StartNotebookExecutionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_notebook_execution();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartNotebookExecution`.
 ///
 /// <p>Starts a notebook execution.</p>

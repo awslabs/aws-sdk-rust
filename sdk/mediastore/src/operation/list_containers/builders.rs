@@ -3,6 +3,23 @@ pub use crate::operation::list_containers::_list_containers_output::ListContaine
 
 pub use crate::operation::list_containers::_list_containers_input::ListContainersInputBuilder;
 
+impl ListContainersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_containers::ListContainersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_containers::ListContainersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_containers();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListContainers`.
 ///
 /// <p>Lists the properties of all containers in AWS Elemental MediaStore. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_cloud_formation_change_set::_create_cloud_forma
 
 pub use crate::operation::create_cloud_formation_change_set::_create_cloud_formation_change_set_input::CreateCloudFormationChangeSetInputBuilder;
 
+impl CreateCloudFormationChangeSetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_cloud_formation_change_set::CreateCloudFormationChangeSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_cloud_formation_change_set::CreateCloudFormationChangeSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_cloud_formation_change_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateCloudFormationChangeSet`.
 ///
 /// <p>Creates an AWS CloudFormation change set for the given application.</p>

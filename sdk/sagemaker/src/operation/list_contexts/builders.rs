@@ -3,6 +3,23 @@ pub use crate::operation::list_contexts::_list_contexts_output::ListContextsOutp
 
 pub use crate::operation::list_contexts::_list_contexts_input::ListContextsInputBuilder;
 
+impl ListContextsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_contexts::ListContextsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_contexts::ListContextsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_contexts();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListContexts`.
 ///
 /// <p>Lists the contexts in your account and their properties.</p>

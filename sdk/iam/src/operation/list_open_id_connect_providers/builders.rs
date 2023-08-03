@@ -3,6 +3,23 @@ pub use crate::operation::list_open_id_connect_providers::_list_open_id_connect_
 
 pub use crate::operation::list_open_id_connect_providers::_list_open_id_connect_providers_input::ListOpenIdConnectProvidersInputBuilder;
 
+impl ListOpenIdConnectProvidersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_open_id_connect_providers::ListOpenIdConnectProvidersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_open_id_connect_providers::ListOpenIDConnectProvidersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_open_id_connect_providers();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListOpenIDConnectProviders`.
 ///
 /// <p>Lists information about the IAM OpenID Connect (OIDC) provider resource objects defined in the Amazon Web Services account.</p> <note>

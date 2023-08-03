@@ -3,6 +3,23 @@ pub use crate::operation::get_api_key::_get_api_key_output::GetApiKeyOutputBuild
 
 pub use crate::operation::get_api_key::_get_api_key_input::GetApiKeyInputBuilder;
 
+impl GetApiKeyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_api_key::GetApiKeyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_api_key::GetApiKeyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_api_key();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetApiKey`.
 ///
 /// <p>Gets information about the current ApiKey resource.</p>

@@ -3,6 +3,17 @@ pub use crate::operation::disassociate_resource_share_permission::_disassociate_
 
 pub use crate::operation::disassociate_resource_share_permission::_disassociate_resource_share_permission_input::DisassociateResourceSharePermissionInputBuilder;
 
+impl DisassociateResourceSharePermissionInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::disassociate_resource_share_permission::DisassociateResourceSharePermissionOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_resource_share_permission::DisassociateResourceSharePermissionError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.disassociate_resource_share_permission();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateResourceSharePermission`.
 ///
 /// <p>Removes a managed permission from a resource share. Permission changes take effect immediately. You can remove a managed permission from a resource share only if there are currently no resources of the relevant resource type currently attached to the resource share.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_base_path_mapping::_delete_base_path_mapping_ou
 
 pub use crate::operation::delete_base_path_mapping::_delete_base_path_mapping_input::DeleteBasePathMappingInputBuilder;
 
+impl DeleteBasePathMappingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_base_path_mapping::DeleteBasePathMappingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_base_path_mapping::DeleteBasePathMappingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_base_path_mapping();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteBasePathMapping`.
 ///
 /// <p>Deletes the BasePathMapping resource.</p>

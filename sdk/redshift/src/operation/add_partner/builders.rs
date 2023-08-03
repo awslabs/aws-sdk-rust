@@ -3,6 +3,23 @@ pub use crate::operation::add_partner::_add_partner_output::AddPartnerOutputBuil
 
 pub use crate::operation::add_partner::_add_partner_input::AddPartnerInputBuilder;
 
+impl AddPartnerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::add_partner::AddPartnerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::add_partner::AddPartnerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.add_partner();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AddPartner`.
 ///
 /// <p>Adds a partner integration to a cluster. This operation authorizes a partner to push status updates for the specified database. To complete the integration, you also set up the integration on the partner website.</p>

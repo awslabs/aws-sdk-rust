@@ -3,6 +3,23 @@ pub use crate::operation::cancel_environment_deployment::_cancel_environment_dep
 
 pub use crate::operation::cancel_environment_deployment::_cancel_environment_deployment_input::CancelEnvironmentDeploymentInputBuilder;
 
+impl CancelEnvironmentDeploymentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::cancel_environment_deployment::CancelEnvironmentDeploymentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::cancel_environment_deployment::CancelEnvironmentDeploymentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.cancel_environment_deployment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CancelEnvironmentDeployment`.
 ///
 /// <p>Attempts to cancel an environment deployment on an <code>UpdateEnvironment</code> action, if the deployment is <code>IN_PROGRESS</code>. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-env-update.html">Update an environment</a> in the <i>Proton User guide</i>.</p>

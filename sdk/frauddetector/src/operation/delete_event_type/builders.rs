@@ -3,6 +3,23 @@ pub use crate::operation::delete_event_type::_delete_event_type_output::DeleteEv
 
 pub use crate::operation::delete_event_type::_delete_event_type_input::DeleteEventTypeInputBuilder;
 
+impl DeleteEventTypeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_event_type::DeleteEventTypeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_event_type::DeleteEventTypeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_event_type();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteEventType`.
 ///
 /// <p>Deletes an event type.</p>

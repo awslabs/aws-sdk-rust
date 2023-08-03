@@ -3,6 +3,23 @@ pub use crate::operation::get_calculation_execution::_get_calculation_execution_
 
 pub use crate::operation::get_calculation_execution::_get_calculation_execution_input::GetCalculationExecutionInputBuilder;
 
+impl GetCalculationExecutionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_calculation_execution::GetCalculationExecutionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_calculation_execution::GetCalculationExecutionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_calculation_execution();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetCalculationExecution`.
 ///
 /// <p>Describes a previously submitted calculation execution.</p>

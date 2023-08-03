@@ -3,6 +3,23 @@ pub use crate::operation::describe_configuration_revision::_describe_configurati
 
 pub use crate::operation::describe_configuration_revision::_describe_configuration_revision_input::DescribeConfigurationRevisionInputBuilder;
 
+impl DescribeConfigurationRevisionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_configuration_revision::DescribeConfigurationRevisionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_configuration_revision::DescribeConfigurationRevisionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_configuration_revision();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeConfigurationRevision`.
 ///
 /// <p>Returns a description of this revision of the configuration.</p>

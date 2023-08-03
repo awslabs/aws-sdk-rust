@@ -3,6 +3,23 @@ pub use crate::operation::describe_account_health::_describe_account_health_outp
 
 pub use crate::operation::describe_account_health::_describe_account_health_input::DescribeAccountHealthInputBuilder;
 
+impl DescribeAccountHealthInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_account_health::DescribeAccountHealthOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_account_health::DescribeAccountHealthError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_account_health();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAccountHealth`.
 ///
 /// <p> Returns the number of open reactive insights, the number of open proactive insights, and the number of metrics analyzed in your Amazon Web Services account. Use these numbers to gauge the health of operations in your Amazon Web Services account. </p>

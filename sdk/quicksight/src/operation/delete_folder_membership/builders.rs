@@ -3,6 +3,23 @@ pub use crate::operation::delete_folder_membership::_delete_folder_membership_ou
 
 pub use crate::operation::delete_folder_membership::_delete_folder_membership_input::DeleteFolderMembershipInputBuilder;
 
+impl DeleteFolderMembershipInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_folder_membership::DeleteFolderMembershipOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_folder_membership::DeleteFolderMembershipError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_folder_membership();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteFolderMembership`.
 ///
 /// <p>Removes an asset, such as a dashboard, analysis, or dataset, from a folder.</p>

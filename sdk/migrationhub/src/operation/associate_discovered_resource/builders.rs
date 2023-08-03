@@ -3,6 +3,23 @@ pub use crate::operation::associate_discovered_resource::_associate_discovered_r
 
 pub use crate::operation::associate_discovered_resource::_associate_discovered_resource_input::AssociateDiscoveredResourceInputBuilder;
 
+impl AssociateDiscoveredResourceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_discovered_resource::AssociateDiscoveredResourceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_discovered_resource::AssociateDiscoveredResourceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_discovered_resource();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateDiscoveredResource`.
 ///
 /// <p>Associates a discovered resource ID from Application Discovery Service with a migration task.</p>

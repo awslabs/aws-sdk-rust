@@ -3,6 +3,23 @@ pub use crate::operation::update_routing_profile_name::_update_routing_profile_n
 
 pub use crate::operation::update_routing_profile_name::_update_routing_profile_name_input::UpdateRoutingProfileNameInputBuilder;
 
+impl UpdateRoutingProfileNameInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_routing_profile_name::UpdateRoutingProfileNameOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_routing_profile_name::UpdateRoutingProfileNameError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_routing_profile_name();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateRoutingProfileName`.
 ///
 /// <p>Updates the name and description of a routing profile. The request accepts the following data in JSON format. At least <code>Name</code> or <code>Description</code> must be provided.</p>

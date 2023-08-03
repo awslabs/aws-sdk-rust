@@ -3,6 +3,23 @@ pub use crate::operation::list_device_resources::_list_device_resources_output::
 
 pub use crate::operation::list_device_resources::_list_device_resources_input::ListDeviceResourcesInputBuilder;
 
+impl ListDeviceResourcesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_device_resources::ListDeviceResourcesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_device_resources::ListDeviceResourcesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_device_resources();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDeviceResources`.
 ///
 /// <p>Returns a list of the Amazon Web Services resources available for a device. Currently, Amazon EC2 instances are the only supported resource type.</p>

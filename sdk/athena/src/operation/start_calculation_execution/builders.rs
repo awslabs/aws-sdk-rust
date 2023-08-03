@@ -3,6 +3,23 @@ pub use crate::operation::start_calculation_execution::_start_calculation_execut
 
 pub use crate::operation::start_calculation_execution::_start_calculation_execution_input::StartCalculationExecutionInputBuilder;
 
+impl StartCalculationExecutionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_calculation_execution::StartCalculationExecutionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_calculation_execution::StartCalculationExecutionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_calculation_execution();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartCalculationExecution`.
 ///
 /// <p>Submits calculations for execution within a session. You can supply the code to run as an inline code block within the request.</p>

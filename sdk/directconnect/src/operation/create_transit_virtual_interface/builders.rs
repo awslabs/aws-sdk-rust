@@ -3,6 +3,23 @@ pub use crate::operation::create_transit_virtual_interface::_create_transit_virt
 
 pub use crate::operation::create_transit_virtual_interface::_create_transit_virtual_interface_input::CreateTransitVirtualInterfaceInputBuilder;
 
+impl CreateTransitVirtualInterfaceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_transit_virtual_interface::CreateTransitVirtualInterfaceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_transit_virtual_interface();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateTransitVirtualInterface`.
 ///
 /// <p>Creates a transit virtual interface. A transit virtual interface should be used to access one or more transit gateways associated with Direct Connect gateways. A transit virtual interface enables the connection of multiple VPCs attached to a transit gateway to a Direct Connect gateway.</p> <important>

@@ -3,6 +3,23 @@ pub use crate::operation::swap_environment_cnam_es::_swap_environment_cnam_es_ou
 
 pub use crate::operation::swap_environment_cnam_es::_swap_environment_cnam_es_input::SwapEnvironmentCnamEsInputBuilder;
 
+impl SwapEnvironmentCnamEsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::swap_environment_cnam_es::SwapEnvironmentCnamEsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::swap_environment_cnam_es::SwapEnvironmentCNAMEsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.swap_environment_cnam_es();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SwapEnvironmentCNAMEs`.
 ///
 /// <p>Swaps the CNAMEs of two environments.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_recommender_configuration::_delete_recommender_
 
 pub use crate::operation::delete_recommender_configuration::_delete_recommender_configuration_input::DeleteRecommenderConfigurationInputBuilder;
 
+impl DeleteRecommenderConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_recommender_configuration::DeleteRecommenderConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_recommender_configuration::DeleteRecommenderConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_recommender_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteRecommenderConfiguration`.
 ///
 /// <p>Deletes an Amazon Pinpoint configuration for a recommender model.</p>

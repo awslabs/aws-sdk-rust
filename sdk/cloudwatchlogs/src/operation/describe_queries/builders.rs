@@ -3,6 +3,23 @@ pub use crate::operation::describe_queries::_describe_queries_output::DescribeQu
 
 pub use crate::operation::describe_queries::_describe_queries_input::DescribeQueriesInputBuilder;
 
+impl DescribeQueriesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_queries::DescribeQueriesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_queries::DescribeQueriesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_queries();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeQueries`.
 ///
 /// <p>Returns a list of CloudWatch Logs Insights queries that are scheduled, running, or have been run recently in this account. You can request all queries or limit it to queries of a specific log group or queries with a certain status.</p>

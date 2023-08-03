@@ -3,6 +3,23 @@ pub use crate::operation::create_route_table::_create_route_table_output::Create
 
 pub use crate::operation::create_route_table::_create_route_table_input::CreateRouteTableInputBuilder;
 
+impl CreateRouteTableInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_route_table::CreateRouteTableOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_route_table::CreateRouteTableError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_route_table();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateRouteTable`.
 ///
 /// <p>Creates a route table for the specified VPC. After you create a route table, you can add routes and associate the table with a subnet.</p>

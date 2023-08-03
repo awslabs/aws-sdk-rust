@@ -3,6 +3,23 @@ pub use crate::operation::batch_get_item::_batch_get_item_output::BatchGetItemOu
 
 pub use crate::operation::batch_get_item::_batch_get_item_input::BatchGetItemInputBuilder;
 
+impl BatchGetItemInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_item::BatchGetItemOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_get_item::BatchGetItemError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_get_item();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchGetItem`.
 ///
 /// <p>The <code>BatchGetItem</code> operation returns the attributes of one or more items from one or more tables. You identify requested items by primary key.</p>

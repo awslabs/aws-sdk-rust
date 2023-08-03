@@ -3,6 +3,23 @@ pub use crate::operation::list_phone_numbers_v2::_list_phone_numbers_v2_output::
 
 pub use crate::operation::list_phone_numbers_v2::_list_phone_numbers_v2_input::ListPhoneNumbersV2InputBuilder;
 
+impl ListPhoneNumbersV2InputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2Output,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_phone_numbers_v2::ListPhoneNumbersV2Error,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_phone_numbers_v2();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListPhoneNumbersV2`.
 ///
 /// <p>Lists phone numbers claimed to your Amazon Connect instance or traffic distribution group. If the provided <code>TargetArn</code> is a traffic distribution group, you can call this API in both Amazon Web Services Regions associated with traffic distribution group.</p>

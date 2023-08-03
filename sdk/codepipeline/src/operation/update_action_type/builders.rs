@@ -3,6 +3,23 @@ pub use crate::operation::update_action_type::_update_action_type_output::Update
 
 pub use crate::operation::update_action_type::_update_action_type_input::UpdateActionTypeInputBuilder;
 
+impl UpdateActionTypeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_action_type::UpdateActionTypeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_action_type::UpdateActionTypeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_action_type();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateActionType`.
 ///
 /// <p>Updates an action type that was created with any supported integration model, where the action type is to be used by customers of the action type provider. Use a JSON file with the action definition and <code>UpdateActionType</code> to provide the full structure.</p>

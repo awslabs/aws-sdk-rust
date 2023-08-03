@@ -3,6 +3,23 @@ pub use crate::operation::create_client_vpn_endpoint::_create_client_vpn_endpoin
 
 pub use crate::operation::create_client_vpn_endpoint::_create_client_vpn_endpoint_input::CreateClientVpnEndpointInputBuilder;
 
+impl CreateClientVpnEndpointInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_client_vpn_endpoint::CreateClientVpnEndpointOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_client_vpn_endpoint::CreateClientVpnEndpointError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_client_vpn_endpoint();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateClientVpnEndpoint`.
 ///
 /// <p>Creates a Client VPN endpoint. A Client VPN endpoint is the resource you create and configure to enable and manage client VPN sessions. It is the destination endpoint at which all client VPN sessions are terminated.</p>

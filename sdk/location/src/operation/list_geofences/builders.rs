@@ -3,6 +3,23 @@ pub use crate::operation::list_geofences::_list_geofences_output::ListGeofencesO
 
 pub use crate::operation::list_geofences::_list_geofences_input::ListGeofencesInputBuilder;
 
+impl ListGeofencesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_geofences::ListGeofencesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_geofences::ListGeofencesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_geofences();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListGeofences`.
 ///
 /// <p>Lists geofences stored in a given geofence collection.</p>

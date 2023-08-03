@@ -3,6 +3,23 @@ pub use crate::operation::terminate_client_vpn_connections::_terminate_client_vp
 
 pub use crate::operation::terminate_client_vpn_connections::_terminate_client_vpn_connections_input::TerminateClientVpnConnectionsInputBuilder;
 
+impl TerminateClientVpnConnectionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnectionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::terminate_client_vpn_connections::TerminateClientVpnConnectionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.terminate_client_vpn_connections();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `TerminateClientVpnConnections`.
 ///
 /// <p>Terminates active Client VPN endpoint connections. This action can be used to terminate a specific client connection, or up to five connections established by a specific user.</p>

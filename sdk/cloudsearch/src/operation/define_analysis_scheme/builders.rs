@@ -3,6 +3,23 @@ pub use crate::operation::define_analysis_scheme::_define_analysis_scheme_output
 
 pub use crate::operation::define_analysis_scheme::_define_analysis_scheme_input::DefineAnalysisSchemeInputBuilder;
 
+impl DefineAnalysisSchemeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::define_analysis_scheme::DefineAnalysisSchemeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::define_analysis_scheme::DefineAnalysisSchemeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.define_analysis_scheme();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DefineAnalysisScheme`.
 ///
 /// <p>Configures an analysis scheme that can be applied to a <code>text</code> or <code>text-array</code> field to define language-specific text processing options. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html" target="_blank">Configuring Analysis Schemes</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>

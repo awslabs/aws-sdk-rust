@@ -3,6 +3,23 @@ pub use crate::operation::create_container_recipe::_create_container_recipe_outp
 
 pub use crate::operation::create_container_recipe::_create_container_recipe_input::CreateContainerRecipeInputBuilder;
 
+impl CreateContainerRecipeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_container_recipe::CreateContainerRecipeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_container_recipe::CreateContainerRecipeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_container_recipe();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateContainerRecipe`.
 ///
 /// <p>Creates a new container recipe. Container recipes define how images are configured, tested, and assessed.</p>

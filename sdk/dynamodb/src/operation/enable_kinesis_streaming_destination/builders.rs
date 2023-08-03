@@ -3,6 +3,17 @@ pub use crate::operation::enable_kinesis_streaming_destination::_enable_kinesis_
 
 pub use crate::operation::enable_kinesis_streaming_destination::_enable_kinesis_streaming_destination_input::EnableKinesisStreamingDestinationInputBuilder;
 
+impl EnableKinesisStreamingDestinationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::enable_kinesis_streaming_destination::EnableKinesisStreamingDestinationOutput, ::aws_smithy_http::result::SdkError<crate::operation::enable_kinesis_streaming_destination::EnableKinesisStreamingDestinationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.enable_kinesis_streaming_destination();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `EnableKinesisStreamingDestination`.
 ///
 /// <p>Starts table data replication to the specified Kinesis data stream at a timestamp chosen during the enable workflow. If this operation doesn't return results immediately, use DescribeKinesisStreamingDestination to check if streaming to the Kinesis data stream is ACTIVE.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_user_permissions_boundary::_delete_user_permiss
 
 pub use crate::operation::delete_user_permissions_boundary::_delete_user_permissions_boundary_input::DeleteUserPermissionsBoundaryInputBuilder;
 
+impl DeleteUserPermissionsBoundaryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_user_permissions_boundary::DeleteUserPermissionsBoundaryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_user_permissions_boundary::DeleteUserPermissionsBoundaryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_user_permissions_boundary();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteUserPermissionsBoundary`.
 ///
 /// <p>Deletes the permissions boundary for the specified IAM user.</p> <important>

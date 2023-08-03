@@ -3,6 +3,23 @@ pub use crate::operation::list_managed_resources::_list_managed_resources_output
 
 pub use crate::operation::list_managed_resources::_list_managed_resources_input::ListManagedResourcesInputBuilder;
 
+impl ListManagedResourcesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_managed_resources::ListManagedResourcesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_managed_resources::ListManagedResourcesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_managed_resources();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListManagedResources`.
 ///
 /// <p>Lists all the resources in your AWS account in this AWS Region that are managed for zonal shifts in Amazon Route 53 Application Recovery Controller, and information about them. The information includes their Amazon Resource Names (ARNs), the Availability Zones the resources are deployed in, and the resource name.</p>

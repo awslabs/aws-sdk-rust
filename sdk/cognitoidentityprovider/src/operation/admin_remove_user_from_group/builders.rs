@@ -3,6 +3,23 @@ pub use crate::operation::admin_remove_user_from_group::_admin_remove_user_from_
 
 pub use crate::operation::admin_remove_user_from_group::_admin_remove_user_from_group_input::AdminRemoveUserFromGroupInputBuilder;
 
+impl AdminRemoveUserFromGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::admin_remove_user_from_group::AdminRemoveUserFromGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::admin_remove_user_from_group::AdminRemoveUserFromGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.admin_remove_user_from_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AdminRemoveUserFromGroup`.
 ///
 /// <p>Removes the specified user from the specified group.</p>

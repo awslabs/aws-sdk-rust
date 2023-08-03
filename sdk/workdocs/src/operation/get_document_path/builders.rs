@@ -3,6 +3,23 @@ pub use crate::operation::get_document_path::_get_document_path_output::GetDocum
 
 pub use crate::operation::get_document_path::_get_document_path_input::GetDocumentPathInputBuilder;
 
+impl GetDocumentPathInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_document_path::GetDocumentPathOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_document_path::GetDocumentPathError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_document_path();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetDocumentPath`.
 ///
 /// <p>Retrieves the path information (the hierarchy from the root folder) for the requested document.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_detector_model::_create_detector_model_output::
 
 pub use crate::operation::create_detector_model::_create_detector_model_input::CreateDetectorModelInputBuilder;
 
+impl CreateDetectorModelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_detector_model::CreateDetectorModelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_detector_model::CreateDetectorModelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_detector_model();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateDetectorModel`.
 ///
 /// <p>Creates a detector model.</p>

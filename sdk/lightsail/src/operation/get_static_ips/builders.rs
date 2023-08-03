@@ -3,6 +3,23 @@ pub use crate::operation::get_static_ips::_get_static_ips_output::GetStaticIpsOu
 
 pub use crate::operation::get_static_ips::_get_static_ips_input::GetStaticIpsInputBuilder;
 
+impl GetStaticIpsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_static_ips::GetStaticIpsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_static_ips::GetStaticIpsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_static_ips();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetStaticIps`.
 ///
 /// <p>Returns information about all static IPs in the user's account.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_run::_get_run_output::GetRunOutputBuilder;
 
 pub use crate::operation::get_run::_get_run_input::GetRunInputBuilder;
 
+impl GetRunInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_run::GetRunOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_run::GetRunError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_run();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetRun`.
 ///
 /// <p>Gets information about a run.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_threat_intel_set::_create_threat_intel_set_outp
 
 pub use crate::operation::create_threat_intel_set::_create_threat_intel_set_input::CreateThreatIntelSetInputBuilder;
 
+impl CreateThreatIntelSetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_threat_intel_set::CreateThreatIntelSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_threat_intel_set::CreateThreatIntelSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_threat_intel_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateThreatIntelSet`.
 ///
 /// <p>Creates a new ThreatIntelSet. ThreatIntelSets consist of known malicious IP addresses. GuardDuty generates findings based on ThreatIntelSets. Only users of the administrator account can use this operation.</p>

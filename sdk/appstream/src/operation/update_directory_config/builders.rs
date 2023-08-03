@@ -3,6 +3,23 @@ pub use crate::operation::update_directory_config::_update_directory_config_outp
 
 pub use crate::operation::update_directory_config::_update_directory_config_input::UpdateDirectoryConfigInputBuilder;
 
+impl UpdateDirectoryConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_directory_config::UpdateDirectoryConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_directory_config::UpdateDirectoryConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_directory_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateDirectoryConfig`.
 ///
 /// <p>Updates the specified Directory Config object in AppStream 2.0. This object includes the configuration information required to join fleets and image builders to Microsoft Active Directory domains.</p>

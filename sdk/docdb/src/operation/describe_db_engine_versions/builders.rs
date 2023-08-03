@@ -3,6 +3,23 @@ pub use crate::operation::describe_db_engine_versions::_describe_db_engine_versi
 
 pub use crate::operation::describe_db_engine_versions::_describe_db_engine_versions_input::DescribeDbEngineVersionsInputBuilder;
 
+impl DescribeDbEngineVersionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_db_engine_versions::DescribeDbEngineVersionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_db_engine_versions::DescribeDBEngineVersionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_db_engine_versions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeDBEngineVersions`.
 ///
 /// <p>Returns a list of the available engines.</p>

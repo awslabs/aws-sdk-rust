@@ -3,6 +3,23 @@ pub use crate::operation::get_hit::_get_hit_output::GetHitOutputBuilder;
 
 pub use crate::operation::get_hit::_get_hit_input::GetHitInputBuilder;
 
+impl GetHitInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_hit::GetHitOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_hit::GetHITError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_hit();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetHIT`.
 ///
 /// <p> The <code>GetHIT</code> operation retrieves the details of the specified HIT. </p>

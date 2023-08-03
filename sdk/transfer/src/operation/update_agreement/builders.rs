@@ -3,6 +3,23 @@ pub use crate::operation::update_agreement::_update_agreement_output::UpdateAgre
 
 pub use crate::operation::update_agreement::_update_agreement_input::UpdateAgreementInputBuilder;
 
+impl UpdateAgreementInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_agreement::UpdateAgreementOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_agreement::UpdateAgreementError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_agreement();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateAgreement`.
 ///
 /// <p>Updates some of the parameters for an existing agreement. Provide the <code>AgreementId</code> and the <code>ServerId</code> for the agreement that you want to update, along with the new values for the parameters to update.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::test_segment_pattern::_test_segment_pattern_output::Te
 
 pub use crate::operation::test_segment_pattern::_test_segment_pattern_input::TestSegmentPatternInputBuilder;
 
+impl TestSegmentPatternInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::test_segment_pattern::TestSegmentPatternOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::test_segment_pattern::TestSegmentPatternError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.test_segment_pattern();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `TestSegmentPattern`.
 ///
 /// <p>Use this operation to test a rules pattern that you plan to use to create an audience segment. For more information about segments, see <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_CreateSegment.html">CreateSegment</a>.</p>

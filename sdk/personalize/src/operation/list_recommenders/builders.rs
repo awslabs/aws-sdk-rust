@@ -3,6 +3,23 @@ pub use crate::operation::list_recommenders::_list_recommenders_output::ListReco
 
 pub use crate::operation::list_recommenders::_list_recommenders_input::ListRecommendersInputBuilder;
 
+impl ListRecommendersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_recommenders::ListRecommendersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_recommenders::ListRecommendersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_recommenders();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListRecommenders`.
 ///
 /// <p>Returns a list of recommenders in a given Domain dataset group. When a Domain dataset group is not specified, all the recommenders associated with the account are listed. The response provides the properties for each recommender, including the Amazon Resource Name (ARN). For more information on recommenders, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateRecommender.html">CreateRecommender</a>.</p>

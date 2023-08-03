@@ -3,6 +3,23 @@ pub use crate::operation::put_function_event_invoke_config::_put_function_event_
 
 pub use crate::operation::put_function_event_invoke_config::_put_function_event_invoke_config_input::PutFunctionEventInvokeConfigInputBuilder;
 
+impl PutFunctionEventInvokeConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_function_event_invoke_config::PutFunctionEventInvokeConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_function_event_invoke_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutFunctionEventInvokeConfig`.
 ///
 /// <p>Configures options for <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html">asynchronous invocation</a> on a function, version, or alias. If a configuration already exists for a function, version, or alias, this operation overwrites it. If you exclude any settings, they are removed. To set one option without affecting existing settings for other options, use <code>UpdateFunctionEventInvokeConfig</code>.</p>

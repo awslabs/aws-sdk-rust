@@ -3,6 +3,23 @@ pub use crate::operation::list_flow_definitions::_list_flow_definitions_output::
 
 pub use crate::operation::list_flow_definitions::_list_flow_definitions_input::ListFlowDefinitionsInputBuilder;
 
+impl ListFlowDefinitionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_flow_definitions::ListFlowDefinitionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_flow_definitions::ListFlowDefinitionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_flow_definitions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListFlowDefinitions`.
 ///
 /// <p>Returns information about the flow definitions in your account.</p>

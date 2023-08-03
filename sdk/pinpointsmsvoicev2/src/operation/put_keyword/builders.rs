@@ -3,6 +3,23 @@ pub use crate::operation::put_keyword::_put_keyword_output::PutKeywordOutputBuil
 
 pub use crate::operation::put_keyword::_put_keyword_input::PutKeywordInputBuilder;
 
+impl PutKeywordInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_keyword::PutKeywordOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_keyword::PutKeywordError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_keyword();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutKeyword`.
 ///
 /// <p>Creates or updates a keyword configuration on an origination phone number or pool.</p>

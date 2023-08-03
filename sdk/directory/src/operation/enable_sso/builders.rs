@@ -3,6 +3,23 @@ pub use crate::operation::enable_sso::_enable_sso_output::EnableSsoOutputBuilder
 
 pub use crate::operation::enable_sso::_enable_sso_input::EnableSsoInputBuilder;
 
+impl EnableSsoInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::enable_sso::EnableSsoOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::enable_sso::EnableSsoError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.enable_sso();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `EnableSso`.
 ///
 /// <p>Enables single sign-on for a directory. Single sign-on allows users in your directory to access certain Amazon Web Services services from a computer joined to the directory without having to enter their credentials separately.</p>

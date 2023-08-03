@@ -3,6 +3,23 @@ pub use crate::operation::delete_alias::_delete_alias_output::DeleteAliasOutputB
 
 pub use crate::operation::delete_alias::_delete_alias_input::DeleteAliasInputBuilder;
 
+impl DeleteAliasInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_alias::DeleteAliasOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_alias::DeleteAliasError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_alias();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteAlias`.
 ///
 /// <p>Deletes an alias. This operation removes all record of the alias. Game clients attempting to access a server process using the deleted alias receive an error. To delete an alias, specify the alias ID to be deleted.</p>

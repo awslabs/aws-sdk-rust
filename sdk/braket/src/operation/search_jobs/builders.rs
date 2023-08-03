@@ -3,6 +3,23 @@ pub use crate::operation::search_jobs::_search_jobs_output::SearchJobsOutputBuil
 
 pub use crate::operation::search_jobs::_search_jobs_input::SearchJobsInputBuilder;
 
+impl SearchJobsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::search_jobs::SearchJobsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::search_jobs::SearchJobsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.search_jobs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SearchJobs`.
 ///
 /// <p>Searches for Amazon Braket jobs that match the specified filter values.</p>

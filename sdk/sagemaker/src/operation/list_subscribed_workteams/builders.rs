@@ -3,6 +3,23 @@ pub use crate::operation::list_subscribed_workteams::_list_subscribed_workteams_
 
 pub use crate::operation::list_subscribed_workteams::_list_subscribed_workteams_input::ListSubscribedWorkteamsInputBuilder;
 
+impl ListSubscribedWorkteamsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_subscribed_workteams::ListSubscribedWorkteamsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_subscribed_workteams::ListSubscribedWorkteamsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_subscribed_workteams();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListSubscribedWorkteams`.
 ///
 /// <p>Gets a list of the work teams that you are subscribed to in the Amazon Web Services Marketplace. The list may be empty if no work team satisfies the filter specified in the <code>NameContains</code> parameter.</p>

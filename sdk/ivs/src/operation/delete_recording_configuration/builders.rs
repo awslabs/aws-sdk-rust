@@ -3,6 +3,23 @@ pub use crate::operation::delete_recording_configuration::_delete_recording_conf
 
 pub use crate::operation::delete_recording_configuration::_delete_recording_configuration_input::DeleteRecordingConfigurationInputBuilder;
 
+impl DeleteRecordingConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_recording_configuration::DeleteRecordingConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_recording_configuration::DeleteRecordingConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_recording_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteRecordingConfiguration`.
 ///
 /// <p>Deletes the recording configuration for the specified ARN.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::disable::_disable_output::DisableOutputBuilder;
 
 pub use crate::operation::disable::_disable_input::DisableInputBuilder;
 
+impl DisableInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disable::DisableOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disable::DisableError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disable();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `Disable`.
 ///
 /// <p>Disables Amazon Inspector scans for one or more Amazon Web Services accounts. Disabling all scan types in an account disables the Amazon Inspector service.</p>

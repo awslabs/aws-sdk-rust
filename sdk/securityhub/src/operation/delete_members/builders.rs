@@ -3,6 +3,23 @@ pub use crate::operation::delete_members::_delete_members_output::DeleteMembersO
 
 pub use crate::operation::delete_members::_delete_members_input::DeleteMembersInputBuilder;
 
+impl DeleteMembersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_members::DeleteMembersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_members::DeleteMembersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_members();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteMembers`.
 ///
 /// <p>Deletes the specified member accounts from Security Hub.</p>

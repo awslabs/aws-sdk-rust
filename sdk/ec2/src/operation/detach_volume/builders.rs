@@ -3,6 +3,23 @@ pub use crate::operation::detach_volume::_detach_volume_output::DetachVolumeOutp
 
 pub use crate::operation::detach_volume::_detach_volume_input::DetachVolumeInputBuilder;
 
+impl DetachVolumeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::detach_volume::DetachVolumeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::detach_volume::DetachVolumeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.detach_volume();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DetachVolume`.
 ///
 /// <p>Detaches an EBS volume from an instance. Make sure to unmount any file systems on the device within your operating system before detaching the volume. Failure to do so can result in the volume becoming stuck in the <code>busy</code> state while detaching. If this happens, detachment can be delayed indefinitely until you unmount the volume, force detachment, reboot the instance, or all three. If an EBS volume is the root device of an instance, it can't be detached while the instance is running. To detach the root volume, stop the instance first.</p>

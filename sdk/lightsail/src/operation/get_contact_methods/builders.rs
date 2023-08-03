@@ -3,6 +3,23 @@ pub use crate::operation::get_contact_methods::_get_contact_methods_output::GetC
 
 pub use crate::operation::get_contact_methods::_get_contact_methods_input::GetContactMethodsInputBuilder;
 
+impl GetContactMethodsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_contact_methods::GetContactMethodsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_contact_methods::GetContactMethodsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_contact_methods();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetContactMethods`.
 ///
 /// <p>Returns information about the configured contact methods. Specify a protocol in your request to return information about a specific contact method.</p>

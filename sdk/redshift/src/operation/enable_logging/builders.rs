@@ -3,6 +3,23 @@ pub use crate::operation::enable_logging::_enable_logging_output::EnableLoggingO
 
 pub use crate::operation::enable_logging::_enable_logging_input::EnableLoggingInputBuilder;
 
+impl EnableLoggingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::enable_logging::EnableLoggingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::enable_logging::EnableLoggingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.enable_logging();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `EnableLogging`.
 ///
 /// <p>Starts logging information, such as queries and connection attempts, for the specified Amazon Redshift cluster.</p>

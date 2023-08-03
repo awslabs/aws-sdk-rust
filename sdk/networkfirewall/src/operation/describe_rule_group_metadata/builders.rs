@@ -3,6 +3,23 @@ pub use crate::operation::describe_rule_group_metadata::_describe_rule_group_met
 
 pub use crate::operation::describe_rule_group_metadata::_describe_rule_group_metadata_input::DescribeRuleGroupMetadataInputBuilder;
 
+impl DescribeRuleGroupMetadataInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_rule_group_metadata::DescribeRuleGroupMetadataOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_rule_group_metadata::DescribeRuleGroupMetadataError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_rule_group_metadata();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeRuleGroupMetadata`.
 ///
 /// <p>High-level information about a rule group, returned by operations like create and describe. You can use the information provided in the metadata to retrieve and manage a rule group. You can retrieve all objects for a rule group by calling <code>DescribeRuleGroup</code>. </p>

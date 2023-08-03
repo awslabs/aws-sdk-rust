@@ -3,6 +3,23 @@ pub use crate::operation::start_data_source_sync_job::_start_data_source_sync_jo
 
 pub use crate::operation::start_data_source_sync_job::_start_data_source_sync_job_input::StartDataSourceSyncJobInputBuilder;
 
+impl StartDataSourceSyncJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_data_source_sync_job::StartDataSourceSyncJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_data_source_sync_job::StartDataSourceSyncJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_data_source_sync_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartDataSourceSyncJob`.
 ///
 /// <p>Starts a synchronization job for a data source connector. If a synchronization job is already in progress, Amazon Kendra returns a <code>ResourceInUseException</code> exception.</p>

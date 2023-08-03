@@ -3,6 +3,23 @@ pub use crate::operation::get_slot_type::_get_slot_type_output::GetSlotTypeOutpu
 
 pub use crate::operation::get_slot_type::_get_slot_type_input::GetSlotTypeInputBuilder;
 
+impl GetSlotTypeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_slot_type::GetSlotTypeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_slot_type::GetSlotTypeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_slot_type();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetSlotType`.
 ///
 /// <p>Returns information about a specific version of a slot type. In addition to specifying the slot type name, you must specify the slot type version.</p>

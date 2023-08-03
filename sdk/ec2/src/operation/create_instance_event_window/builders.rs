@@ -3,6 +3,23 @@ pub use crate::operation::create_instance_event_window::_create_instance_event_w
 
 pub use crate::operation::create_instance_event_window::_create_instance_event_window_input::CreateInstanceEventWindowInputBuilder;
 
+impl CreateInstanceEventWindowInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_instance_event_window::CreateInstanceEventWindowOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_instance_event_window::CreateInstanceEventWindowError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_instance_event_window();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateInstanceEventWindow`.
 ///
 /// <p>Creates an event window in which scheduled events for the associated Amazon EC2 instances can run.</p>

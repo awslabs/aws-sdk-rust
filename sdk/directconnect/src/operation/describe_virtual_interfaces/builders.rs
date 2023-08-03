@@ -3,6 +3,23 @@ pub use crate::operation::describe_virtual_interfaces::_describe_virtual_interfa
 
 pub use crate::operation::describe_virtual_interfaces::_describe_virtual_interfaces_input::DescribeVirtualInterfacesInputBuilder;
 
+impl DescribeVirtualInterfacesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_virtual_interfaces::DescribeVirtualInterfacesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_virtual_interfaces::DescribeVirtualInterfacesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_virtual_interfaces();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeVirtualInterfaces`.
 ///
 /// <p>Displays all virtual interfaces for an Amazon Web Services account. Virtual interfaces deleted fewer than 15 minutes before you make the request are also returned. If you specify a connection ID, only the virtual interfaces associated with the connection are returned. If you specify a virtual interface ID, then only a single virtual interface is returned.</p>

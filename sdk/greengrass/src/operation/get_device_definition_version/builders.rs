@@ -3,6 +3,23 @@ pub use crate::operation::get_device_definition_version::_get_device_definition_
 
 pub use crate::operation::get_device_definition_version::_get_device_definition_version_input::GetDeviceDefinitionVersionInputBuilder;
 
+impl GetDeviceDefinitionVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_device_definition_version::GetDeviceDefinitionVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_device_definition_version::GetDeviceDefinitionVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_device_definition_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetDeviceDefinitionVersion`.
 ///
 /// Retrieves information about a device definition version.

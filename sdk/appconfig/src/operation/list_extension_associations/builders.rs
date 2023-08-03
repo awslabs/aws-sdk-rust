@@ -3,6 +3,23 @@ pub use crate::operation::list_extension_associations::_list_extension_associati
 
 pub use crate::operation::list_extension_associations::_list_extension_associations_input::ListExtensionAssociationsInputBuilder;
 
+impl ListExtensionAssociationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_extension_associations::ListExtensionAssociationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_extension_associations::ListExtensionAssociationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_extension_associations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListExtensionAssociations`.
 ///
 /// <p>Lists all AppConfig extension associations in the account. For more information about extensions and associations, see <a href="https://docs.aws.amazon.com/appconfig/latest/userguide/working-with-appconfig-extensions.html">Working with AppConfig extensions</a> in the <i>AppConfig User Guide</i>.</p>

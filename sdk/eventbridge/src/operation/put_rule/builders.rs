@@ -3,6 +3,23 @@ pub use crate::operation::put_rule::_put_rule_output::PutRuleOutputBuilder;
 
 pub use crate::operation::put_rule::_put_rule_input::PutRuleInputBuilder;
 
+impl PutRuleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_rule::PutRuleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_rule::PutRuleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_rule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutRule`.
 ///
 /// <p>Creates or updates the specified rule. Rules are enabled by default, or based on value of the state. You can disable a rule using <a href="https://docs.aws.amazon.com/eventbridge/latest/APIReference/API_DisableRule.html">DisableRule</a>.</p>

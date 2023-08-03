@@ -3,6 +3,23 @@ pub use crate::operation::list_receipt_rule_sets::_list_receipt_rule_sets_output
 
 pub use crate::operation::list_receipt_rule_sets::_list_receipt_rule_sets_input::ListReceiptRuleSetsInputBuilder;
 
+impl ListReceiptRuleSetsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_receipt_rule_sets::ListReceiptRuleSetsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_receipt_rule_sets::ListReceiptRuleSetsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_receipt_rule_sets();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListReceiptRuleSets`.
 ///
 /// <p>Lists the receipt rule sets that exist under your AWS account in the current AWS Region. If there are additional receipt rule sets to be retrieved, you will receive a <code>NextToken</code> that you can provide to the next call to <code>ListReceiptRuleSets</code> to retrieve the additional entries.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_principal_things::_list_principal_things_output::
 
 pub use crate::operation::list_principal_things::_list_principal_things_input::ListPrincipalThingsInputBuilder;
 
+impl ListPrincipalThingsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_principal_things::ListPrincipalThingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_principal_things::ListPrincipalThingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_principal_things();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListPrincipalThings`.
 ///
 /// <p>Lists the things associated with the specified principal. A principal can be X.509 certificates, IAM users, groups, and roles, Amazon Cognito identities or federated identities. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::set_user_mfa_preference::_set_user_mfa_preference_outp
 
 pub use crate::operation::set_user_mfa_preference::_set_user_mfa_preference_input::SetUserMfaPreferenceInputBuilder;
 
+impl SetUserMfaPreferenceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::set_user_mfa_preference::SetUserMfaPreferenceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::set_user_mfa_preference::SetUserMFAPreferenceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.set_user_mfa_preference();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SetUserMFAPreference`.
 ///
 /// <p>Set the user's multi-factor authentication (MFA) method preference, including which MFA factors are activated and if any are preferred. Only one factor can be set as preferred. The preferred MFA factor will be used to authenticate a user if multiple factors are activated. If multiple options are activated and no preference is set, a challenge to choose an MFA option will be returned during sign-in. If an MFA type is activated for a user, the user will be prompted for MFA during all sign-in attempts unless device tracking is turned on and the device has been trusted. If you want MFA to be applied selectively based on the assessed risk level of sign-in attempts, deactivate MFA for users and turn on Adaptive Authentication for the user pool.</p>

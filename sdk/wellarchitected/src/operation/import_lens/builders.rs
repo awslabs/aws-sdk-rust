@@ -3,6 +3,23 @@ pub use crate::operation::import_lens::_import_lens_output::ImportLensOutputBuil
 
 pub use crate::operation::import_lens::_import_lens_input::ImportLensInputBuilder;
 
+impl ImportLensInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::import_lens::ImportLensOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::import_lens::ImportLensError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.import_lens();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ImportLens`.
 ///
 /// <p>Import a new custom lens or update an existing custom lens.</p>

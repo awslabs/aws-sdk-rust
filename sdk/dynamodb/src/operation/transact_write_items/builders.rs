@@ -3,6 +3,23 @@ pub use crate::operation::transact_write_items::_transact_write_items_output::Tr
 
 pub use crate::operation::transact_write_items::_transact_write_items_input::TransactWriteItemsInputBuilder;
 
+impl TransactWriteItemsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::transact_write_items::TransactWriteItemsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::transact_write_items::TransactWriteItemsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.transact_write_items();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `TransactWriteItems`.
 ///
 /// <p> <code>TransactWriteItems</code> is a synchronous write operation that groups up to 100 action requests. These actions can target items in different tables, but not in different Amazon Web Services accounts or Regions, and no two actions can target the same item. For example, you cannot both <code>ConditionCheck</code> and <code>Update</code> the same item. The aggregate size of the items in the transaction cannot exceed 4 MB.</p>

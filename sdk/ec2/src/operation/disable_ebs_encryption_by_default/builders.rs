@@ -3,6 +3,23 @@ pub use crate::operation::disable_ebs_encryption_by_default::_disable_ebs_encryp
 
 pub use crate::operation::disable_ebs_encryption_by_default::_disable_ebs_encryption_by_default_input::DisableEbsEncryptionByDefaultInputBuilder;
 
+impl DisableEbsEncryptionByDefaultInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disable_ebs_encryption_by_default::DisableEbsEncryptionByDefaultOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disable_ebs_encryption_by_default::DisableEbsEncryptionByDefaultError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disable_ebs_encryption_by_default();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisableEbsEncryptionByDefault`.
 ///
 /// <p>Disables EBS encryption by default for your account in the current Region.</p>

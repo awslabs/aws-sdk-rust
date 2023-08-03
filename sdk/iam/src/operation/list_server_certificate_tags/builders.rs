@@ -3,6 +3,23 @@ pub use crate::operation::list_server_certificate_tags::_list_server_certificate
 
 pub use crate::operation::list_server_certificate_tags::_list_server_certificate_tags_input::ListServerCertificateTagsInputBuilder;
 
+impl ListServerCertificateTagsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_server_certificate_tags::ListServerCertificateTagsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_server_certificate_tags::ListServerCertificateTagsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_server_certificate_tags();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListServerCertificateTags`.
 ///
 /// <p>Lists the tags that are attached to the specified IAM server certificate. The returned list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p> <note>

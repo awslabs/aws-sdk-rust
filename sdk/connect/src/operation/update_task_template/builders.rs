@@ -3,6 +3,23 @@ pub use crate::operation::update_task_template::_update_task_template_output::Up
 
 pub use crate::operation::update_task_template::_update_task_template_input::UpdateTaskTemplateInputBuilder;
 
+impl UpdateTaskTemplateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_task_template::UpdateTaskTemplateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_task_template::UpdateTaskTemplateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_task_template();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateTaskTemplate`.
 ///
 /// <p>Updates details about a specific task template in the specified Amazon Connect instance. This operation does not support partial updates. Instead it does a full update of template content.</p>

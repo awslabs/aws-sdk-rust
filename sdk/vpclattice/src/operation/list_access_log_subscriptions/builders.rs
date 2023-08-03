@@ -3,6 +3,23 @@ pub use crate::operation::list_access_log_subscriptions::_list_access_log_subscr
 
 pub use crate::operation::list_access_log_subscriptions::_list_access_log_subscriptions_input::ListAccessLogSubscriptionsInputBuilder;
 
+impl ListAccessLogSubscriptionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_access_log_subscriptions::ListAccessLogSubscriptionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_access_log_subscriptions::ListAccessLogSubscriptionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_access_log_subscriptions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAccessLogSubscriptions`.
 ///
 /// <p>Lists all access log subscriptions for the specified service network or service.</p>

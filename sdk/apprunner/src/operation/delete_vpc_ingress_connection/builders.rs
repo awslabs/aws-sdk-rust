@@ -3,6 +3,23 @@ pub use crate::operation::delete_vpc_ingress_connection::_delete_vpc_ingress_con
 
 pub use crate::operation::delete_vpc_ingress_connection::_delete_vpc_ingress_connection_input::DeleteVpcIngressConnectionInputBuilder;
 
+impl DeleteVpcIngressConnectionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_vpc_ingress_connection::DeleteVpcIngressConnectionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_vpc_ingress_connection::DeleteVpcIngressConnectionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_vpc_ingress_connection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteVpcIngressConnection`.
 ///
 /// <p>Delete an App Runner VPC Ingress Connection resource that's associated with an App Runner service. The VPC Ingress Connection must be in one of the following states to be deleted: </p>

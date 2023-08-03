@@ -3,6 +3,23 @@ pub use crate::operation::update_gateway_route::_update_gateway_route_output::Up
 
 pub use crate::operation::update_gateway_route::_update_gateway_route_input::UpdateGatewayRouteInputBuilder;
 
+impl UpdateGatewayRouteInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_gateway_route::UpdateGatewayRouteOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_gateway_route::UpdateGatewayRouteError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_gateway_route();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateGatewayRoute`.
 ///
 /// <p>Updates an existing gateway route that is associated to a specified virtual gateway in a service mesh.</p>

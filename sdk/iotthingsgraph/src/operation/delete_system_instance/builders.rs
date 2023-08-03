@@ -3,6 +3,23 @@ pub use crate::operation::delete_system_instance::_delete_system_instance_output
 
 pub use crate::operation::delete_system_instance::_delete_system_instance_input::DeleteSystemInstanceInputBuilder;
 
+impl DeleteSystemInstanceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_system_instance::DeleteSystemInstanceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_system_instance::DeleteSystemInstanceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_system_instance();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteSystemInstance`.
 ///
 /// <p>Deletes a system instance. Only system instances that have never been deployed, or that have been undeployed can be deleted.</p>

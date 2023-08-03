@@ -3,6 +3,23 @@ pub use crate::operation::configure_agent::_configure_agent_output::ConfigureAge
 
 pub use crate::operation::configure_agent::_configure_agent_input::ConfigureAgentInputBuilder;
 
+impl ConfigureAgentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::configure_agent::ConfigureAgentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::configure_agent::ConfigureAgentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.configure_agent();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ConfigureAgent`.
 ///
 /// <p> Used by profiler agents to report their current state and to receive remote configuration updates. For example, <code>ConfigureAgent</code> can be used to tell an agent whether to profile or not and for how long to return profiling data. </p>

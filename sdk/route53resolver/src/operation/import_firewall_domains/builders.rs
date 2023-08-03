@@ -3,6 +3,23 @@ pub use crate::operation::import_firewall_domains::_import_firewall_domains_outp
 
 pub use crate::operation::import_firewall_domains::_import_firewall_domains_input::ImportFirewallDomainsInputBuilder;
 
+impl ImportFirewallDomainsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::import_firewall_domains::ImportFirewallDomainsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::import_firewall_domains::ImportFirewallDomainsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.import_firewall_domains();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ImportFirewallDomains`.
 ///
 /// <p>Imports domain names from a file into a domain list, for use in a DNS firewall rule group. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_personalized_ranking::_get_personalized_ranking_ou
 
 pub use crate::operation::get_personalized_ranking::_get_personalized_ranking_input::GetPersonalizedRankingInputBuilder;
 
+impl GetPersonalizedRankingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_personalized_ranking::GetPersonalizedRankingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_personalized_ranking::GetPersonalizedRankingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_personalized_ranking();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetPersonalizedRanking`.
 ///
 /// <p>Re-ranks a list of recommended items for the given user. The first item in the list is deemed the most likely item to be of interest to the user.</p> <note>

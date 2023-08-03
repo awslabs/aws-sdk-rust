@@ -3,6 +3,23 @@ pub use crate::operation::update_phone_number::_update_phone_number_output::Upda
 
 pub use crate::operation::update_phone_number::_update_phone_number_input::UpdatePhoneNumberInputBuilder;
 
+impl UpdatePhoneNumberInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_phone_number::UpdatePhoneNumberOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_phone_number::UpdatePhoneNumberError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_phone_number();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdatePhoneNumber`.
 ///
 /// <p>Updates your claimed phone number from its current Amazon Connect instance or traffic distribution group to another Amazon Connect instance or traffic distribution group in the same Amazon Web Services Region.</p> <important>

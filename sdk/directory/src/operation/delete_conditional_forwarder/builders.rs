@@ -3,6 +3,23 @@ pub use crate::operation::delete_conditional_forwarder::_delete_conditional_forw
 
 pub use crate::operation::delete_conditional_forwarder::_delete_conditional_forwarder_input::DeleteConditionalForwarderInputBuilder;
 
+impl DeleteConditionalForwarderInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_conditional_forwarder::DeleteConditionalForwarderOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_conditional_forwarder::DeleteConditionalForwarderError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_conditional_forwarder();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteConditionalForwarder`.
 ///
 /// <p>Deletes a conditional forwarder that has been set up for your Amazon Web Services directory.</p>

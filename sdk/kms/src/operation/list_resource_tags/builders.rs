@@ -3,6 +3,23 @@ pub use crate::operation::list_resource_tags::_list_resource_tags_output::ListRe
 
 pub use crate::operation::list_resource_tags::_list_resource_tags_input::ListResourceTagsInputBuilder;
 
+impl ListResourceTagsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_resource_tags::ListResourceTagsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_resource_tags::ListResourceTagsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_resource_tags();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListResourceTags`.
 ///
 /// <p>Returns all tags on the specified KMS key.</p>

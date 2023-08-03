@@ -3,6 +3,23 @@ pub use crate::operation::delete_repository::_delete_repository_output::DeleteRe
 
 pub use crate::operation::delete_repository::_delete_repository_input::DeleteRepositoryInputBuilder;
 
+impl DeleteRepositoryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_repository::DeleteRepositoryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_repository::DeleteRepositoryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_repository();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteRepository`.
 ///
 /// <p>Deletes a repository. If a specified repository was already deleted, a null repository ID is returned.</p> <important>

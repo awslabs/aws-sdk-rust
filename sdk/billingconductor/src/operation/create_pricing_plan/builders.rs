@@ -3,6 +3,23 @@ pub use crate::operation::create_pricing_plan::_create_pricing_plan_output::Crea
 
 pub use crate::operation::create_pricing_plan::_create_pricing_plan_input::CreatePricingPlanInputBuilder;
 
+impl CreatePricingPlanInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_pricing_plan::CreatePricingPlanOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_pricing_plan::CreatePricingPlanError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_pricing_plan();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreatePricingPlan`.
 ///
 /// <p>Creates a pricing plan that is used for computing Amazon Web Services charges for billing groups. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::search_devices::_search_devices_output::SearchDevicesO
 
 pub use crate::operation::search_devices::_search_devices_input::SearchDevicesInputBuilder;
 
+impl SearchDevicesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::search_devices::SearchDevicesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::search_devices::SearchDevicesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.search_devices();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SearchDevices`.
 ///
 /// <p>Searches for devices using the specified filters.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_channel_group::_get_channel_group_output::GetChann
 
 pub use crate::operation::get_channel_group::_get_channel_group_input::GetChannelGroupInputBuilder;
 
+impl GetChannelGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_channel_group::GetChannelGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_channel_group::GetChannelGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_channel_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetChannelGroup`.
 ///
 /// <p>Retrieves the specified channel group that's configured in AWS Elemental MediaPackage, including the channels and origin endpoints that are associated with it.</p>

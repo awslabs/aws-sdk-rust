@@ -3,6 +3,23 @@ pub use crate::operation::create_snapshot::_create_snapshot_output::CreateSnapsh
 
 pub use crate::operation::create_snapshot::_create_snapshot_input::CreateSnapshotInputBuilder;
 
+impl CreateSnapshotInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_snapshot::CreateSnapshotOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_snapshot::CreateSnapshotError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_snapshot();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateSnapshot`.
 ///
 /// <p>Creates a snapshot of all databases in a namespace. For more information about snapshots, see <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/serverless-snapshots-recovery.html"> Working with snapshots and recovery points</a>.</p>

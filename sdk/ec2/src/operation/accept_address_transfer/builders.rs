@@ -3,6 +3,23 @@ pub use crate::operation::accept_address_transfer::_accept_address_transfer_outp
 
 pub use crate::operation::accept_address_transfer::_accept_address_transfer_input::AcceptAddressTransferInputBuilder;
 
+impl AcceptAddressTransferInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::accept_address_transfer::AcceptAddressTransferOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::accept_address_transfer::AcceptAddressTransferError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.accept_address_transfer();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AcceptAddressTransfer`.
 ///
 /// <p>Accepts an Elastic IP address transfer. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#using-instance-addressing-eips-transfer-accept">Accept a transferred Elastic IP address</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::add_tags::_add_tags_output::AddTagsOutputBuilder;
 
 pub use crate::operation::add_tags::_add_tags_input::AddTagsInputBuilder;
 
+impl AddTagsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::add_tags::AddTagsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::add_tags::AddTagsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.add_tags();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AddTags`.
 ///
 /// <p>Adds tags to an Amazon EMR resource, such as a cluster or an Amazon EMR Studio. Tags make it easier to associate resources in various ways, such as grouping clusters to track your Amazon EMR resource allocation costs. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag Clusters</a>. </p>

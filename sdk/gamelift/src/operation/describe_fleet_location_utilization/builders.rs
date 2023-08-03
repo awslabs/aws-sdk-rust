@@ -3,6 +3,17 @@ pub use crate::operation::describe_fleet_location_utilization::_describe_fleet_l
 
 pub use crate::operation::describe_fleet_location_utilization::_describe_fleet_location_utilization_input::DescribeFleetLocationUtilizationInputBuilder;
 
+impl DescribeFleetLocationUtilizationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_fleet_location_utilization::DescribeFleetLocationUtilizationOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_fleet_location_utilization::DescribeFleetLocationUtilizationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_fleet_location_utilization();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeFleetLocationUtilization`.
 ///
 /// <p>Retrieves current usage data for a fleet location. Utilization data provides a snapshot of current game hosting activity at the requested location. Use this operation to retrieve utilization information for a fleet's remote location or home Region (you can also retrieve home Region utilization by calling <code>DescribeFleetUtilization</code>).</p>

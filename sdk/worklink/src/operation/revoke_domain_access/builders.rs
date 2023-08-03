@@ -3,6 +3,23 @@ pub use crate::operation::revoke_domain_access::_revoke_domain_access_output::Re
 
 pub use crate::operation::revoke_domain_access::_revoke_domain_access_input::RevokeDomainAccessInputBuilder;
 
+impl RevokeDomainAccessInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::revoke_domain_access::RevokeDomainAccessOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::revoke_domain_access::RevokeDomainAccessError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.revoke_domain_access();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RevokeDomainAccess`.
 ///
 /// <p>Moves a domain to INACTIVE status if it was in the ACTIVE status.</p>

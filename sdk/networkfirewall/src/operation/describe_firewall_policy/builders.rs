@@ -3,6 +3,23 @@ pub use crate::operation::describe_firewall_policy::_describe_firewall_policy_ou
 
 pub use crate::operation::describe_firewall_policy::_describe_firewall_policy_input::DescribeFirewallPolicyInputBuilder;
 
+impl DescribeFirewallPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_firewall_policy::DescribeFirewallPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_firewall_policy::DescribeFirewallPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_firewall_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeFirewallPolicy`.
 ///
 /// <p>Returns the data objects for the specified firewall policy. </p>

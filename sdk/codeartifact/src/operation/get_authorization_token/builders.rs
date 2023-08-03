@@ -3,6 +3,23 @@ pub use crate::operation::get_authorization_token::_get_authorization_token_outp
 
 pub use crate::operation::get_authorization_token::_get_authorization_token_input::GetAuthorizationTokenInputBuilder;
 
+impl GetAuthorizationTokenInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_authorization_token::GetAuthorizationTokenOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_authorization_token::GetAuthorizationTokenError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_authorization_token();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetAuthorizationToken`.
 ///
 /// <p> Generates a temporary authorization token for accessing repositories in the domain. This API requires the <code>codeartifact:GetAuthorizationToken</code> and <code>sts:GetServiceBearerToken</code> permissions. For more information about authorization tokens, see <a href="https://docs.aws.amazon.com/codeartifact/latest/ug/tokens-authentication.html">CodeArtifact authentication and tokens</a>. </p> <note>

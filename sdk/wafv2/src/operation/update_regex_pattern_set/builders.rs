@@ -3,6 +3,23 @@ pub use crate::operation::update_regex_pattern_set::_update_regex_pattern_set_ou
 
 pub use crate::operation::update_regex_pattern_set::_update_regex_pattern_set_input::UpdateRegexPatternSetInputBuilder;
 
+impl UpdateRegexPatternSetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_regex_pattern_set::UpdateRegexPatternSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_regex_pattern_set::UpdateRegexPatternSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_regex_pattern_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateRegexPatternSet`.
 ///
 /// <p>Updates the specified <code>RegexPatternSet</code>.</p> <note>

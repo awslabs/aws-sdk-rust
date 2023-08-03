@@ -3,6 +3,23 @@ pub use crate::operation::register_default_patch_baseline::_register_default_pat
 
 pub use crate::operation::register_default_patch_baseline::_register_default_patch_baseline_input::RegisterDefaultPatchBaselineInputBuilder;
 
+impl RegisterDefaultPatchBaselineInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::register_default_patch_baseline::RegisterDefaultPatchBaselineOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::register_default_patch_baseline::RegisterDefaultPatchBaselineError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.register_default_patch_baseline();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RegisterDefaultPatchBaseline`.
 ///
 /// <p>Defines the default patch baseline for the relevant operating system.</p>

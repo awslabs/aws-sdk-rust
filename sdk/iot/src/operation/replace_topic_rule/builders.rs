@@ -3,6 +3,23 @@ pub use crate::operation::replace_topic_rule::_replace_topic_rule_output::Replac
 
 pub use crate::operation::replace_topic_rule::_replace_topic_rule_input::ReplaceTopicRuleInputBuilder;
 
+impl ReplaceTopicRuleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::replace_topic_rule::ReplaceTopicRuleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::replace_topic_rule::ReplaceTopicRuleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.replace_topic_rule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ReplaceTopicRule`.
 ///
 /// <p>Replaces the rule. You must specify all parameters for the new rule. Creating rules is an administrator-level action. Any user who has permission to create rules will be able to access data processed by the rule.</p>

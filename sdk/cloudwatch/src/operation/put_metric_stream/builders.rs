@@ -3,6 +3,23 @@ pub use crate::operation::put_metric_stream::_put_metric_stream_output::PutMetri
 
 pub use crate::operation::put_metric_stream::_put_metric_stream_input::PutMetricStreamInputBuilder;
 
+impl PutMetricStreamInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_metric_stream::PutMetricStreamOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_metric_stream::PutMetricStreamError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_metric_stream();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutMetricStream`.
 ///
 /// <p>Creates or updates a metric stream. Metric streams can automatically stream CloudWatch metrics to Amazon Web Services destinations, including Amazon S3, and to many third-party solutions.</p>

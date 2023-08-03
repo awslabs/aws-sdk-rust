@@ -3,6 +3,23 @@ pub use crate::operation::invoke_screen_automation::_invoke_screen_automation_ou
 
 pub use crate::operation::invoke_screen_automation::_invoke_screen_automation_input::InvokeScreenAutomationInputBuilder;
 
+impl InvokeScreenAutomationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::invoke_screen_automation::InvokeScreenAutomationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::invoke_screen_automation::InvokeScreenAutomationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.invoke_screen_automation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `InvokeScreenAutomation`.
 ///
 /// <p> The InvokeScreenAutomation API allows invoking an action defined in a screen in a Honeycode app. The API allows setting local variables, which can then be used in the automation being invoked. This allows automating the Honeycode app interactions to write, update or delete data in the workbook. </p>

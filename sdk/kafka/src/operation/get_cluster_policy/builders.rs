@@ -3,6 +3,23 @@ pub use crate::operation::get_cluster_policy::_get_cluster_policy_output::GetClu
 
 pub use crate::operation::get_cluster_policy::_get_cluster_policy_input::GetClusterPolicyInputBuilder;
 
+impl GetClusterPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_cluster_policy::GetClusterPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_cluster_policy::GetClusterPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_cluster_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetClusterPolicy`.
 ///
 /// <p>Get the MSK cluster policy specified by the Amazon Resource Name (ARN) in the request.</p>

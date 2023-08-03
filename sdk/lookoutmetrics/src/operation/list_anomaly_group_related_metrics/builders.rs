@@ -3,6 +3,17 @@ pub use crate::operation::list_anomaly_group_related_metrics::_list_anomaly_grou
 
 pub use crate::operation::list_anomaly_group_related_metrics::_list_anomaly_group_related_metrics_input::ListAnomalyGroupRelatedMetricsInputBuilder;
 
+impl ListAnomalyGroupRelatedMetricsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_anomaly_group_related_metrics::ListAnomalyGroupRelatedMetricsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_anomaly_group_related_metrics::ListAnomalyGroupRelatedMetricsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_anomaly_group_related_metrics();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAnomalyGroupRelatedMetrics`.
 ///
 /// <p>Returns a list of measures that are potential causes or effects of an anomaly group.</p>

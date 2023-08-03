@@ -3,6 +3,23 @@ pub use crate::operation::abort_vault_lock::_abort_vault_lock_output::AbortVault
 
 pub use crate::operation::abort_vault_lock::_abort_vault_lock_input::AbortVaultLockInputBuilder;
 
+impl AbortVaultLockInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::abort_vault_lock::AbortVaultLockOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::abort_vault_lock::AbortVaultLockError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.abort_vault_lock();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AbortVaultLock`.
 ///
 /// <p>This operation aborts the vault locking process if the vault lock is not in the <code>Locked</code> state. If the vault lock is in the <code>Locked</code> state when this operation is requested, the operation returns an <code>AccessDeniedException</code> error. Aborting the vault locking process removes the vault lock policy from the specified vault. </p>

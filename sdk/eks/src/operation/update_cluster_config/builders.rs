@@ -3,6 +3,23 @@ pub use crate::operation::update_cluster_config::_update_cluster_config_output::
 
 pub use crate::operation::update_cluster_config::_update_cluster_config_input::UpdateClusterConfigInputBuilder;
 
+impl UpdateClusterConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_cluster_config::UpdateClusterConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_cluster_config::UpdateClusterConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_cluster_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateClusterConfig`.
 ///
 /// <p>Updates an Amazon EKS cluster configuration. Your cluster continues to function during the update. The response output includes an update ID that you can use to track the status of your cluster update with the <code>DescribeUpdate</code> API operation.</p>

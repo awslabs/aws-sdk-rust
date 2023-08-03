@@ -3,6 +3,23 @@ pub use crate::operation::list_sub_channels::_list_sub_channels_output::ListSubC
 
 pub use crate::operation::list_sub_channels::_list_sub_channels_input::ListSubChannelsInputBuilder;
 
+impl ListSubChannelsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_sub_channels::ListSubChannelsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_sub_channels::ListSubChannelsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_sub_channels();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListSubChannels`.
 ///
 /// <p>Lists all the SubChannels in an elastic channel when given a channel ID. Available only to the app instance admins and channel moderators of elastic channels.</p>

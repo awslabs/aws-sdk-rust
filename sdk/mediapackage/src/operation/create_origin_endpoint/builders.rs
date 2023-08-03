@@ -3,6 +3,23 @@ pub use crate::operation::create_origin_endpoint::_create_origin_endpoint_output
 
 pub use crate::operation::create_origin_endpoint::_create_origin_endpoint_input::CreateOriginEndpointInputBuilder;
 
+impl CreateOriginEndpointInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_origin_endpoint::CreateOriginEndpointOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_origin_endpoint::CreateOriginEndpointError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_origin_endpoint();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateOriginEndpoint`.
 ///
 /// Creates a new OriginEndpoint record.

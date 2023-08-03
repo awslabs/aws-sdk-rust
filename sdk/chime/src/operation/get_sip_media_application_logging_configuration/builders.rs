@@ -3,6 +3,17 @@ pub use crate::operation::get_sip_media_application_logging_configuration::_get_
 
 pub use crate::operation::get_sip_media_application_logging_configuration::_get_sip_media_application_logging_configuration_input::GetSipMediaApplicationLoggingConfigurationInputBuilder;
 
+impl GetSipMediaApplicationLoggingConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_sip_media_application_logging_configuration::GetSipMediaApplicationLoggingConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_sip_media_application_logging_configuration::GetSipMediaApplicationLoggingConfigurationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_sip_media_application_logging_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetSipMediaApplicationLoggingConfiguration`.
 ///
 /// <p>Returns the logging configuration for the specified SIP media application.</p> <important>

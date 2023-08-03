@@ -3,6 +3,23 @@ pub use crate::operation::get_groups::_get_groups_output::GetGroupsOutputBuilder
 
 pub use crate::operation::get_groups::_get_groups_input::GetGroupsInputBuilder;
 
+impl GetGroupsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_groups::GetGroupsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_groups::GetGroupsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_groups();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetGroups`.
 ///
 /// <p>Retrieves all active group details.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_decoder_manifest::_delete_decoder_manifest_outp
 
 pub use crate::operation::delete_decoder_manifest::_delete_decoder_manifest_input::DeleteDecoderManifestInputBuilder;
 
+impl DeleteDecoderManifestInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_decoder_manifest::DeleteDecoderManifestOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_decoder_manifest::DeleteDecoderManifestError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_decoder_manifest();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteDecoderManifest`.
 ///
 /// <p> Deletes a decoder manifest. You can't delete a decoder manifest if it has vehicles associated with it. </p> <note>

@@ -3,6 +3,23 @@ pub use crate::operation::subscribe::_subscribe_output::SubscribeOutputBuilder;
 
 pub use crate::operation::subscribe::_subscribe_input::SubscribeInputBuilder;
 
+impl SubscribeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::subscribe::SubscribeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::subscribe::SubscribeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.subscribe();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `Subscribe`.
 ///
 /// <p>Creates an association between a notification rule and an Chatbot topic or Chatbot client so that the associated target can receive notifications when the events described in the rule are triggered.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::start_mailbox_export_job::_start_mailbox_export_job_ou
 
 pub use crate::operation::start_mailbox_export_job::_start_mailbox_export_job_input::StartMailboxExportJobInputBuilder;
 
+impl StartMailboxExportJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_mailbox_export_job::StartMailboxExportJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_mailbox_export_job::StartMailboxExportJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_mailbox_export_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartMailboxExportJob`.
 ///
 /// <p>Starts a mailbox export job to export MIME-format email messages and calendar items from the specified mailbox to the specified Amazon Simple Storage Service (Amazon S3) bucket. For more information, see <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/mail-export.html">Exporting mailbox content</a> in the <i>WorkMail Administrator Guide</i>.</p>

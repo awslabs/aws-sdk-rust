@@ -3,6 +3,23 @@ pub use crate::operation::execute_change_set::_execute_change_set_output::Execut
 
 pub use crate::operation::execute_change_set::_execute_change_set_input::ExecuteChangeSetInputBuilder;
 
+impl ExecuteChangeSetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::execute_change_set::ExecuteChangeSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::execute_change_set::ExecuteChangeSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.execute_change_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ExecuteChangeSet`.
 ///
 /// <p>Updates a stack using the input information that was provided when the specified change set was created. After the call successfully completes, CloudFormation starts updating the stack. Use the <code>DescribeStacks</code> action to view the status of the update.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_resource_server::_create_resource_server_output
 
 pub use crate::operation::create_resource_server::_create_resource_server_input::CreateResourceServerInputBuilder;
 
+impl CreateResourceServerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_resource_server::CreateResourceServerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_resource_server::CreateResourceServerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_resource_server();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateResourceServer`.
 ///
 /// <p>Creates a new OAuth2.0 resource server and defines custom scopes within it.</p>

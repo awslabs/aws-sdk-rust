@@ -3,6 +3,23 @@ pub use crate::operation::assign_instance::_assign_instance_output::AssignInstan
 
 pub use crate::operation::assign_instance::_assign_instance_input::AssignInstanceInputBuilder;
 
+impl AssignInstanceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::assign_instance::AssignInstanceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::assign_instance::AssignInstanceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.assign_instance();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssignInstance`.
 ///
 /// <p>Assign a registered instance to a layer.</p>

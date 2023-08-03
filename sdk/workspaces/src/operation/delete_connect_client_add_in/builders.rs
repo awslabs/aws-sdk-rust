@@ -3,6 +3,23 @@ pub use crate::operation::delete_connect_client_add_in::_delete_connect_client_a
 
 pub use crate::operation::delete_connect_client_add_in::_delete_connect_client_add_in_input::DeleteConnectClientAddInInputBuilder;
 
+impl DeleteConnectClientAddInInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_connect_client_add_in::DeleteConnectClientAddInOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_connect_client_add_in::DeleteConnectClientAddInError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_connect_client_add_in();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteConnectClientAddIn`.
 ///
 /// <p>Deletes a client-add-in for Amazon Connect that is configured within a directory.</p>

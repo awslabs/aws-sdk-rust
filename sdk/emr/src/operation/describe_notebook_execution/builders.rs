@@ -3,6 +3,23 @@ pub use crate::operation::describe_notebook_execution::_describe_notebook_execut
 
 pub use crate::operation::describe_notebook_execution::_describe_notebook_execution_input::DescribeNotebookExecutionInputBuilder;
 
+impl DescribeNotebookExecutionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_notebook_execution::DescribeNotebookExecutionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_notebook_execution::DescribeNotebookExecutionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_notebook_execution();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeNotebookExecution`.
 ///
 /// <p>Provides details of a notebook execution.</p>

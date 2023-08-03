@@ -3,6 +3,23 @@ pub use crate::operation::put_auto_scaling_policy::_put_auto_scaling_policy_outp
 
 pub use crate::operation::put_auto_scaling_policy::_put_auto_scaling_policy_input::PutAutoScalingPolicyInputBuilder;
 
+impl PutAutoScalingPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_auto_scaling_policy::PutAutoScalingPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_auto_scaling_policy::PutAutoScalingPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_auto_scaling_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutAutoScalingPolicy`.
 ///
 /// <p>Creates or updates an automatic scaling policy for a core instance group or task instance group in an Amazon EMR cluster. The automatic scaling policy defines how an instance group dynamically adds and terminates Amazon EC2 instances in response to the value of a CloudWatch metric.</p>

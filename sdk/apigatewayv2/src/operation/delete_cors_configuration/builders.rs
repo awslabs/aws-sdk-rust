@@ -3,6 +3,23 @@ pub use crate::operation::delete_cors_configuration::_delete_cors_configuration_
 
 pub use crate::operation::delete_cors_configuration::_delete_cors_configuration_input::DeleteCorsConfigurationInputBuilder;
 
+impl DeleteCorsConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_cors_configuration::DeleteCorsConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_cors_configuration::DeleteCorsConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_cors_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteCorsConfiguration`.
 ///
 /// <p>Deletes a CORS configuration.</p>

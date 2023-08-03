@@ -3,6 +3,23 @@ pub use crate::operation::get_role::_get_role_output::GetRoleOutputBuilder;
 
 pub use crate::operation::get_role::_get_role_input::GetRoleInputBuilder;
 
+impl GetRoleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_role::GetRoleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_role::GetRoleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_role();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetRole`.
 ///
 /// <p>Retrieves information about the specified role, including the role's path, GUID, ARN, and the role's trust policy that grants permission to assume the role. For more information about roles, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles.html">IAM roles</a> in the <i>IAM User Guide</i>.</p> <note>

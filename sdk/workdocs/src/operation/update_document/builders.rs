@@ -3,6 +3,23 @@ pub use crate::operation::update_document::_update_document_output::UpdateDocume
 
 pub use crate::operation::update_document::_update_document_input::UpdateDocumentInputBuilder;
 
+impl UpdateDocumentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_document::UpdateDocumentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_document::UpdateDocumentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_document();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateDocument`.
 ///
 /// <p>Updates the specified attributes of a document. The user must have access to both the document and its parent folder, if applicable.</p>

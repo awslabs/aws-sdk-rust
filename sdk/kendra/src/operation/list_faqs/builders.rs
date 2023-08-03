@@ -3,6 +3,23 @@ pub use crate::operation::list_faqs::_list_faqs_output::ListFaqsOutputBuilder;
 
 pub use crate::operation::list_faqs::_list_faqs_input::ListFaqsInputBuilder;
 
+impl ListFaqsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_faqs::ListFaqsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_faqs::ListFaqsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_faqs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListFaqs`.
 ///
 /// <p>Gets a list of FAQ lists associated with an index.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::start_attachment_upload::_start_attachment_upload_outp
 
 pub use crate::operation::start_attachment_upload::_start_attachment_upload_input::StartAttachmentUploadInputBuilder;
 
+impl StartAttachmentUploadInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_attachment_upload::StartAttachmentUploadOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_attachment_upload::StartAttachmentUploadError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_attachment_upload();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartAttachmentUpload`.
 ///
 /// <p>Provides a pre-signed Amazon S3 URL in response for uploading the file directly to S3.</p> <note>

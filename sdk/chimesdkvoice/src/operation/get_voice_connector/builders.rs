@@ -3,6 +3,23 @@ pub use crate::operation::get_voice_connector::_get_voice_connector_output::GetV
 
 pub use crate::operation::get_voice_connector::_get_voice_connector_input::GetVoiceConnectorInputBuilder;
 
+impl GetVoiceConnectorInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_voice_connector::GetVoiceConnectorOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_voice_connector::GetVoiceConnectorError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_voice_connector();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetVoiceConnector`.
 ///
 /// <p>Retrieves details for the specified Amazon Chime SDK Voice Connector, such as timestamps,name, outbound host, and encryption requirements.</p>

@@ -3,6 +3,17 @@ pub use crate::operation::update_configured_table_association::_update_configure
 
 pub use crate::operation::update_configured_table_association::_update_configured_table_association_input::UpdateConfiguredTableAssociationInputBuilder;
 
+impl UpdateConfiguredTableAssociationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::update_configured_table_association::UpdateConfiguredTableAssociationOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_configured_table_association::UpdateConfiguredTableAssociationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.update_configured_table_association();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateConfiguredTableAssociation`.
 ///
 /// <p>Updates a configured table association.</p>

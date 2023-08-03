@@ -3,6 +3,23 @@ pub use crate::operation::describe_organizational_unit::_describe_organizational
 
 pub use crate::operation::describe_organizational_unit::_describe_organizational_unit_input::DescribeOrganizationalUnitInputBuilder;
 
+impl DescribeOrganizationalUnitInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_organizational_unit::DescribeOrganizationalUnitOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_organizational_unit::DescribeOrganizationalUnitError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_organizational_unit();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeOrganizationalUnit`.
 ///
 /// <p>Retrieves information about an organizational unit (OU).</p>

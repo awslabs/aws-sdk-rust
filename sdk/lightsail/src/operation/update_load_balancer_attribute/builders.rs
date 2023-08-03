@@ -3,6 +3,23 @@ pub use crate::operation::update_load_balancer_attribute::_update_load_balancer_
 
 pub use crate::operation::update_load_balancer_attribute::_update_load_balancer_attribute_input::UpdateLoadBalancerAttributeInputBuilder;
 
+impl UpdateLoadBalancerAttributeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_load_balancer_attribute::UpdateLoadBalancerAttributeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_load_balancer_attribute::UpdateLoadBalancerAttributeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_load_balancer_attribute();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateLoadBalancerAttribute`.
 ///
 /// <p>Updates the specified attribute for a load balancer. You can only update one attribute at a time.</p>

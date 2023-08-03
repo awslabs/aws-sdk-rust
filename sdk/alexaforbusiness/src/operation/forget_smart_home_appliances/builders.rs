@@ -3,6 +3,23 @@ pub use crate::operation::forget_smart_home_appliances::_forget_smart_home_appli
 
 pub use crate::operation::forget_smart_home_appliances::_forget_smart_home_appliances_input::ForgetSmartHomeAppliancesInputBuilder;
 
+impl ForgetSmartHomeAppliancesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::forget_smart_home_appliances::ForgetSmartHomeAppliancesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::forget_smart_home_appliances::ForgetSmartHomeAppliancesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.forget_smart_home_appliances();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ForgetSmartHomeAppliances`.
 ///
 /// <p>Forgets smart home appliances associated to a room.</p>

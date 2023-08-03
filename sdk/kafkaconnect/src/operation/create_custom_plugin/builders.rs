@@ -3,6 +3,23 @@ pub use crate::operation::create_custom_plugin::_create_custom_plugin_output::Cr
 
 pub use crate::operation::create_custom_plugin::_create_custom_plugin_input::CreateCustomPluginInputBuilder;
 
+impl CreateCustomPluginInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_custom_plugin::CreateCustomPluginOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_custom_plugin::CreateCustomPluginError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_custom_plugin();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateCustomPlugin`.
 ///
 /// <p>Creates a custom plugin using the specified properties.</p>

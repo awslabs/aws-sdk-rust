@@ -3,6 +3,23 @@ pub use crate::operation::search_transit_gateway_routes::_search_transit_gateway
 
 pub use crate::operation::search_transit_gateway_routes::_search_transit_gateway_routes_input::SearchTransitGatewayRoutesInputBuilder;
 
+impl SearchTransitGatewayRoutesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::search_transit_gateway_routes::SearchTransitGatewayRoutesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::search_transit_gateway_routes::SearchTransitGatewayRoutesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.search_transit_gateway_routes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SearchTransitGatewayRoutes`.
 ///
 /// <p>Searches for routes in the specified transit gateway route table.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::reject_grant::_reject_grant_output::RejectGrantOutputB
 
 pub use crate::operation::reject_grant::_reject_grant_input::RejectGrantInputBuilder;
 
+impl RejectGrantInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::reject_grant::RejectGrantOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::reject_grant::RejectGrantError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.reject_grant();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RejectGrant`.
 ///
 /// <p>Rejects the specified grant.</p>

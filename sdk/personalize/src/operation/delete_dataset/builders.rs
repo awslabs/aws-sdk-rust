@@ -3,6 +3,23 @@ pub use crate::operation::delete_dataset::_delete_dataset_output::DeleteDatasetO
 
 pub use crate::operation::delete_dataset::_delete_dataset_input::DeleteDatasetInputBuilder;
 
+impl DeleteDatasetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_dataset::DeleteDatasetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_dataset::DeleteDatasetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_dataset();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteDataset`.
 ///
 /// <p>Deletes a dataset. You can't delete a dataset if an associated <code>DatasetImportJob</code> or <code>SolutionVersion</code> is in the CREATE PENDING or IN PROGRESS state. For more information on datasets, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateDataset.html">CreateDataset</a>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::put_maintenance_start_time::_put_maintenance_start_tim
 
 pub use crate::operation::put_maintenance_start_time::_put_maintenance_start_time_input::PutMaintenanceStartTimeInputBuilder;
 
+impl PutMaintenanceStartTimeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_maintenance_start_time::PutMaintenanceStartTimeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_maintenance_start_time::PutMaintenanceStartTimeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_maintenance_start_time();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutMaintenanceStartTime`.
 ///
 /// <p>Set the maintenance start time for a gateway.</p>

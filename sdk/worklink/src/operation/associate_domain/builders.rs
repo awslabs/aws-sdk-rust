@@ -3,6 +3,23 @@ pub use crate::operation::associate_domain::_associate_domain_output::AssociateD
 
 pub use crate::operation::associate_domain::_associate_domain_input::AssociateDomainInputBuilder;
 
+impl AssociateDomainInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_domain::AssociateDomainOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_domain::AssociateDomainError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_domain();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateDomain`.
 ///
 /// <p>Specifies a domain to be associated to Amazon WorkLink.</p>

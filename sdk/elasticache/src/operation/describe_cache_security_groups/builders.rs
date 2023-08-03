@@ -3,6 +3,23 @@ pub use crate::operation::describe_cache_security_groups::_describe_cache_securi
 
 pub use crate::operation::describe_cache_security_groups::_describe_cache_security_groups_input::DescribeCacheSecurityGroupsInputBuilder;
 
+impl DescribeCacheSecurityGroupsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_cache_security_groups::DescribeCacheSecurityGroupsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_cache_security_groups::DescribeCacheSecurityGroupsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_cache_security_groups();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeCacheSecurityGroups`.
 ///
 /// <p>Returns a list of cache security group descriptions. If a cache security group name is specified, the list contains only the description of that group. This applicable only when you have ElastiCache in Classic setup </p>

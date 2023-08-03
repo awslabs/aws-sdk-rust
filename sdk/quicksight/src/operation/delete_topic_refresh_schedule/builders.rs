@@ -3,6 +3,23 @@ pub use crate::operation::delete_topic_refresh_schedule::_delete_topic_refresh_s
 
 pub use crate::operation::delete_topic_refresh_schedule::_delete_topic_refresh_schedule_input::DeleteTopicRefreshScheduleInputBuilder;
 
+impl DeleteTopicRefreshScheduleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_topic_refresh_schedule::DeleteTopicRefreshScheduleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_topic_refresh_schedule::DeleteTopicRefreshScheduleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_topic_refresh_schedule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteTopicRefreshSchedule`.
 ///
 /// <p>Deletes a topic refresh schedule.</p>

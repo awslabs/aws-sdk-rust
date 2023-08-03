@@ -3,6 +3,23 @@ pub use crate::operation::list_model_manifest_nodes::_list_model_manifest_nodes_
 
 pub use crate::operation::list_model_manifest_nodes::_list_model_manifest_nodes_input::ListModelManifestNodesInputBuilder;
 
+impl ListModelManifestNodesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_model_manifest_nodes::ListModelManifestNodesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_model_manifest_nodes::ListModelManifestNodesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_model_manifest_nodes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListModelManifestNodes`.
 ///
 /// <p> Lists information about nodes specified in a vehicle model (model manifest). </p> <note>

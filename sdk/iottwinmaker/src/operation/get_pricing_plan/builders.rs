@@ -3,6 +3,23 @@ pub use crate::operation::get_pricing_plan::_get_pricing_plan_output::GetPricing
 
 pub use crate::operation::get_pricing_plan::_get_pricing_plan_input::GetPricingPlanInputBuilder;
 
+impl GetPricingPlanInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_pricing_plan::GetPricingPlanOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_pricing_plan::GetPricingPlanError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_pricing_plan();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetPricingPlan`.
 ///
 /// <p>Gets the pricing plan.</p>

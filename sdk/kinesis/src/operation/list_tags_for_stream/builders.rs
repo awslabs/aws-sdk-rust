@@ -3,6 +3,23 @@ pub use crate::operation::list_tags_for_stream::_list_tags_for_stream_output::Li
 
 pub use crate::operation::list_tags_for_stream::_list_tags_for_stream_input::ListTagsForStreamInputBuilder;
 
+impl ListTagsForStreamInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_tags_for_stream::ListTagsForStreamOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_tags_for_stream::ListTagsForStreamError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_tags_for_stream();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListTagsForStream`.
 ///
 /// <p>Lists the tags for the specified Kinesis data stream. This operation has a limit of five transactions per second per account.</p> <note>

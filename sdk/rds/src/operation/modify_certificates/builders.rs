@@ -3,6 +3,23 @@ pub use crate::operation::modify_certificates::_modify_certificates_output::Modi
 
 pub use crate::operation::modify_certificates::_modify_certificates_input::ModifyCertificatesInputBuilder;
 
+impl ModifyCertificatesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_certificates::ModifyCertificatesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_certificates::ModifyCertificatesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_certificates();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyCertificates`.
 ///
 /// <p>Override the system-default Secure Sockets Layer/Transport Layer Security (SSL/TLS) certificate for Amazon RDS for new DB instances, or remove the override.</p>

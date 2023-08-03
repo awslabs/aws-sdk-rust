@@ -3,6 +3,23 @@ pub use crate::operation::add_tags_to_vault::_add_tags_to_vault_output::AddTagsT
 
 pub use crate::operation::add_tags_to_vault::_add_tags_to_vault_input::AddTagsToVaultInputBuilder;
 
+impl AddTagsToVaultInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::add_tags_to_vault::AddTagsToVaultOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::add_tags_to_vault::AddTagsToVaultError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.add_tags_to_vault();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AddTagsToVault`.
 ///
 /// <p>This operation adds the specified tags to a vault. Each tag is composed of a key and a value. Each vault can have up to 10 tags. If your request would cause the tag limit for the vault to be exceeded, the operation throws the <code>LimitExceededException</code> error. If a tag already exists on the vault under a specified key, the existing key value will be overwritten. For more information about tags, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/tagging.html">Tagging Amazon S3 Glacier Resources</a>. </p>

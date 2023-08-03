@@ -3,6 +3,23 @@ pub use crate::operation::describe_account_policies::_describe_account_policies_
 
 pub use crate::operation::describe_account_policies::_describe_account_policies_input::DescribeAccountPoliciesInputBuilder;
 
+impl DescribeAccountPoliciesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_account_policies::DescribeAccountPoliciesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_account_policies::DescribeAccountPoliciesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_account_policies();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAccountPolicies`.
 ///
 /// <p>Returns a list of all CloudWatch Logs account policies in the account.</p>

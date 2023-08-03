@@ -3,6 +3,23 @@ pub use crate::operation::batch_get_deployment_groups::_batch_get_deployment_gro
 
 pub use crate::operation::batch_get_deployment_groups::_batch_get_deployment_groups_input::BatchGetDeploymentGroupsInputBuilder;
 
+impl BatchGetDeploymentGroupsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_deployment_groups::BatchGetDeploymentGroupsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_get_deployment_groups::BatchGetDeploymentGroupsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_get_deployment_groups();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchGetDeploymentGroups`.
 ///
 /// <p>Gets information about one or more deployment groups.</p>

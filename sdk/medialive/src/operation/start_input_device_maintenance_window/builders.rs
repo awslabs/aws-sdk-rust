@@ -3,6 +3,17 @@ pub use crate::operation::start_input_device_maintenance_window::_start_input_de
 
 pub use crate::operation::start_input_device_maintenance_window::_start_input_device_maintenance_window_input::StartInputDeviceMaintenanceWindowInputBuilder;
 
+impl StartInputDeviceMaintenanceWindowInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::start_input_device_maintenance_window::StartInputDeviceMaintenanceWindowOutput, ::aws_smithy_http::result::SdkError<crate::operation::start_input_device_maintenance_window::StartInputDeviceMaintenanceWindowError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.start_input_device_maintenance_window();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartInputDeviceMaintenanceWindow`.
 ///
 /// Start a maintenance window for the specified input device. Starting a maintenance window will give the device up to two hours to install software. If the device was streaming prior to the maintenance, it will resume streaming when the software is fully installed. Devices automatically install updates while they are powered on and their MediaLive channels are stopped. A maintenance window allows you to update a device without having to stop MediaLive channels that use the device. The device must remain powered on and connected to the internet for the duration of the maintenance.

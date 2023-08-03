@@ -3,6 +3,23 @@ pub use crate::operation::put_secret_value::_put_secret_value_output::PutSecretV
 
 pub use crate::operation::put_secret_value::_put_secret_value_input::PutSecretValueInputBuilder;
 
+impl PutSecretValueInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_secret_value::PutSecretValueOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_secret_value::PutSecretValueError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_secret_value();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutSecretValue`.
 ///
 /// <p>Creates a new version with a new encrypted secret value and attaches it to the secret. The version can contain a new <code>SecretString</code> value or a new <code>SecretBinary</code> value. </p>

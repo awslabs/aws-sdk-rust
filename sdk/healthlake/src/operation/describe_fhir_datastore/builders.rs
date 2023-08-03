@@ -3,6 +3,23 @@ pub use crate::operation::describe_fhir_datastore::_describe_fhir_datastore_outp
 
 pub use crate::operation::describe_fhir_datastore::_describe_fhir_datastore_input::DescribeFhirDatastoreInputBuilder;
 
+impl DescribeFhirDatastoreInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_fhir_datastore::DescribeFhirDatastoreOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_fhir_datastore::DescribeFHIRDatastoreError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_fhir_datastore();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeFHIRDatastore`.
 ///
 /// <p>Gets the properties associated with the FHIR data store, including the data store ID, data store ARN, data store name, data store status, when the data store was created, data store type version, and the data store's endpoint.</p>

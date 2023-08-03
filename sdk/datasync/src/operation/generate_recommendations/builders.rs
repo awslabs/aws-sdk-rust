@@ -3,6 +3,23 @@ pub use crate::operation::generate_recommendations::_generate_recommendations_ou
 
 pub use crate::operation::generate_recommendations::_generate_recommendations_input::GenerateRecommendationsInputBuilder;
 
+impl GenerateRecommendationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::generate_recommendations::GenerateRecommendationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::generate_recommendations::GenerateRecommendationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.generate_recommendations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GenerateRecommendations`.
 ///
 /// <p>Creates recommendations about where to migrate your data to in Amazon Web Services. Recommendations are generated based on information that DataSync Discovery collects about your on-premises storage system's resources. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/discovery-understand-recommendations.html">Recommendations provided by DataSync Discovery</a>.</p>

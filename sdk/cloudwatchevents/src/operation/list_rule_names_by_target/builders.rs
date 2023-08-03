@@ -3,6 +3,23 @@ pub use crate::operation::list_rule_names_by_target::_list_rule_names_by_target_
 
 pub use crate::operation::list_rule_names_by_target::_list_rule_names_by_target_input::ListRuleNamesByTargetInputBuilder;
 
+impl ListRuleNamesByTargetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_rule_names_by_target::ListRuleNamesByTargetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_rule_names_by_target::ListRuleNamesByTargetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_rule_names_by_target();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListRuleNamesByTarget`.
 ///
 /// <p>Lists the rules for the specified target. You can see which of the rules in Amazon EventBridge can invoke a specific target in your account.</p>

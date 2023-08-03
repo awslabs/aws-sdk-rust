@@ -3,6 +3,23 @@ pub use crate::operation::get_workgroup::_get_workgroup_output::GetWorkgroupOutp
 
 pub use crate::operation::get_workgroup::_get_workgroup_input::GetWorkgroupInputBuilder;
 
+impl GetWorkgroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_workgroup::GetWorkgroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_workgroup::GetWorkgroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_workgroup();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetWorkgroup`.
 ///
 /// <p>Returns information about a specific workgroup.</p>

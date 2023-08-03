@@ -3,6 +3,23 @@ pub use crate::operation::delete_log_group::_delete_log_group_output::DeleteLogG
 
 pub use crate::operation::delete_log_group::_delete_log_group_input::DeleteLogGroupInputBuilder;
 
+impl DeleteLogGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_log_group::DeleteLogGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_log_group::DeleteLogGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_log_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteLogGroup`.
 ///
 /// <p>Deletes the specified log group and permanently deletes all the archived log events associated with the log group.</p>

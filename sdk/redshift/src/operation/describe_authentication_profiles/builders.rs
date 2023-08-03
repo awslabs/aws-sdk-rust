@@ -3,6 +3,23 @@ pub use crate::operation::describe_authentication_profiles::_describe_authentica
 
 pub use crate::operation::describe_authentication_profiles::_describe_authentication_profiles_input::DescribeAuthenticationProfilesInputBuilder;
 
+impl DescribeAuthenticationProfilesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_authentication_profiles::DescribeAuthenticationProfilesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_authentication_profiles::DescribeAuthenticationProfilesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_authentication_profiles();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAuthenticationProfiles`.
 ///
 /// <p>Describes an authentication profile.</p>

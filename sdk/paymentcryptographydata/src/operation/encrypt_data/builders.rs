@@ -3,6 +3,23 @@ pub use crate::operation::encrypt_data::_encrypt_data_output::EncryptDataOutputB
 
 pub use crate::operation::encrypt_data::_encrypt_data_input::EncryptDataInputBuilder;
 
+impl EncryptDataInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::encrypt_data::EncryptDataOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::encrypt_data::EncryptDataError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.encrypt_data();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `EncryptData`.
 ///
 /// <p>Encrypts plaintext data to ciphertext using symmetric, asymmetric, or DUKPT data encryption key. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/encrypt-data.html">Encrypt data</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.</p>

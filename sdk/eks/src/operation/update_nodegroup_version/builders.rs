@@ -3,6 +3,23 @@ pub use crate::operation::update_nodegroup_version::_update_nodegroup_version_ou
 
 pub use crate::operation::update_nodegroup_version::_update_nodegroup_version_input::UpdateNodegroupVersionInputBuilder;
 
+impl UpdateNodegroupVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_nodegroup_version::UpdateNodegroupVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_nodegroup_version::UpdateNodegroupVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_nodegroup_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateNodegroupVersion`.
 ///
 /// <p>Updates the Kubernetes version or AMI version of an Amazon EKS managed node group.</p>

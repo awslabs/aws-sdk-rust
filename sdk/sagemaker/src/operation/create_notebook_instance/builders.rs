@@ -3,6 +3,23 @@ pub use crate::operation::create_notebook_instance::_create_notebook_instance_ou
 
 pub use crate::operation::create_notebook_instance::_create_notebook_instance_input::CreateNotebookInstanceInputBuilder;
 
+impl CreateNotebookInstanceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_notebook_instance::CreateNotebookInstanceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_notebook_instance::CreateNotebookInstanceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_notebook_instance();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateNotebookInstance`.
 ///
 /// <p>Creates an SageMaker notebook instance. A notebook instance is a machine learning (ML) compute instance running on a Jupyter notebook. </p>

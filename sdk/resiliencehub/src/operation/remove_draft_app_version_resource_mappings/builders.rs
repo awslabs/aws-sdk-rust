@@ -3,6 +3,17 @@ pub use crate::operation::remove_draft_app_version_resource_mappings::_remove_dr
 
 pub use crate::operation::remove_draft_app_version_resource_mappings::_remove_draft_app_version_resource_mappings_input::RemoveDraftAppVersionResourceMappingsInputBuilder;
 
+impl RemoveDraftAppVersionResourceMappingsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::remove_draft_app_version_resource_mappings::RemoveDraftAppVersionResourceMappingsOutput, ::aws_smithy_http::result::SdkError<crate::operation::remove_draft_app_version_resource_mappings::RemoveDraftAppVersionResourceMappingsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.remove_draft_app_version_resource_mappings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RemoveDraftAppVersionResourceMappings`.
 ///
 /// <p>Removes resource mappings from a draft application version.</p>

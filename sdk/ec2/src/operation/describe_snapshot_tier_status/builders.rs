@@ -3,6 +3,23 @@ pub use crate::operation::describe_snapshot_tier_status::_describe_snapshot_tier
 
 pub use crate::operation::describe_snapshot_tier_status::_describe_snapshot_tier_status_input::DescribeSnapshotTierStatusInputBuilder;
 
+impl DescribeSnapshotTierStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_snapshot_tier_status::DescribeSnapshotTierStatusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_snapshot_tier_status::DescribeSnapshotTierStatusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_snapshot_tier_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeSnapshotTierStatus`.
 ///
 /// <p>Describes the storage tier status of one or more Amazon EBS snapshots.</p>

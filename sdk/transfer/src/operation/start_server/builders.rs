@@ -3,6 +3,23 @@ pub use crate::operation::start_server::_start_server_output::StartServerOutputB
 
 pub use crate::operation::start_server::_start_server_input::StartServerInputBuilder;
 
+impl StartServerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_server::StartServerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_server::StartServerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_server();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartServer`.
 ///
 /// <p>Changes the state of a file transfer protocol-enabled server from <code>OFFLINE</code> to <code>ONLINE</code>. It has no impact on a server that is already <code>ONLINE</code>. An <code>ONLINE</code> server can accept and process file transfer jobs.</p>

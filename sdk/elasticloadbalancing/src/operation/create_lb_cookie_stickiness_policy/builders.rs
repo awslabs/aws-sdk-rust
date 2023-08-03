@@ -3,6 +3,17 @@ pub use crate::operation::create_lb_cookie_stickiness_policy::_create_lb_cookie_
 
 pub use crate::operation::create_lb_cookie_stickiness_policy::_create_lb_cookie_stickiness_policy_input::CreateLbCookieStickinessPolicyInputBuilder;
 
+impl CreateLbCookieStickinessPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::create_lb_cookie_stickiness_policy::CreateLbCookieStickinessPolicyOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_lb_cookie_stickiness_policy::CreateLBCookieStickinessPolicyError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.create_lb_cookie_stickiness_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateLBCookieStickinessPolicy`.
 ///
 /// <p>Generates a stickiness policy with sticky session lifetimes controlled by the lifetime of the browser (user-agent) or a specified expiration period. This policy can be associated only with HTTP/HTTPS listeners.</p>

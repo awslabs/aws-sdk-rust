@@ -3,6 +3,23 @@ pub use crate::operation::get_test::_get_test_output::GetTestOutputBuilder;
 
 pub use crate::operation::get_test::_get_test_input::GetTestInputBuilder;
 
+impl GetTestInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_test::GetTestOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_test::GetTestError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_test();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetTest`.
 ///
 /// <p>Gets information about a test.</p>

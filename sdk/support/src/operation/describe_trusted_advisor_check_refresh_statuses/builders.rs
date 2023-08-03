@@ -3,6 +3,17 @@ pub use crate::operation::describe_trusted_advisor_check_refresh_statuses::_desc
 
 pub use crate::operation::describe_trusted_advisor_check_refresh_statuses::_describe_trusted_advisor_check_refresh_statuses_input::DescribeTrustedAdvisorCheckRefreshStatusesInputBuilder;
 
+impl DescribeTrustedAdvisorCheckRefreshStatusesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_trusted_advisor_check_refresh_statuses::DescribeTrustedAdvisorCheckRefreshStatusesOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_trusted_advisor_check_refresh_statuses::DescribeTrustedAdvisorCheckRefreshStatusesError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_trusted_advisor_check_refresh_statuses();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeTrustedAdvisorCheckRefreshStatuses`.
 ///
 /// <p>Returns the refresh status of the Trusted Advisor checks that have the specified check IDs. You can get the check IDs by calling the <code>DescribeTrustedAdvisorChecks</code> operation.</p>

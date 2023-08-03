@@ -3,6 +3,17 @@ pub use crate::operation::describe_audit_mitigation_actions_task::_describe_audi
 
 pub use crate::operation::describe_audit_mitigation_actions_task::_describe_audit_mitigation_actions_task_input::DescribeAuditMitigationActionsTaskInputBuilder;
 
+impl DescribeAuditMitigationActionsTaskInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_audit_mitigation_actions_task::DescribeAuditMitigationActionsTaskOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_audit_mitigation_actions_task::DescribeAuditMitigationActionsTaskError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_audit_mitigation_actions_task();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAuditMitigationActionsTask`.
 ///
 /// <p>Gets information about an audit mitigation task that is used to apply mitigation actions to a set of audit findings. Properties include the actions being applied, the audit checks to which they're being applied, the task status, and aggregated task statistics.</p>

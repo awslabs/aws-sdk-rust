@@ -3,6 +3,23 @@ pub use crate::operation::create_fpga_image::_create_fpga_image_output::CreateFp
 
 pub use crate::operation::create_fpga_image::_create_fpga_image_input::CreateFpgaImageInputBuilder;
 
+impl CreateFpgaImageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_fpga_image::CreateFpgaImageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_fpga_image::CreateFpgaImageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_fpga_image();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateFpgaImage`.
 ///
 /// <p>Creates an Amazon FPGA Image (AFI) from the specified design checkpoint (DCP).</p>

@@ -3,6 +3,17 @@ pub use crate::operation::put_block_public_access_configuration::_put_block_publ
 
 pub use crate::operation::put_block_public_access_configuration::_put_block_public_access_configuration_input::PutBlockPublicAccessConfigurationInputBuilder;
 
+impl PutBlockPublicAccessConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::put_block_public_access_configuration::PutBlockPublicAccessConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_block_public_access_configuration::PutBlockPublicAccessConfigurationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.put_block_public_access_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutBlockPublicAccessConfiguration`.
 ///
 /// <p>Creates or updates an Amazon EMR block public access configuration for your Amazon Web Services account in the current Region. For more information see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/configure-block-public-access.html">Configure Block Public Access for Amazon EMR</a> in the <i>Amazon EMR Management Guide</i>.</p>

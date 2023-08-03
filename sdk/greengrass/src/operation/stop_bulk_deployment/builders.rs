@@ -3,6 +3,23 @@ pub use crate::operation::stop_bulk_deployment::_stop_bulk_deployment_output::St
 
 pub use crate::operation::stop_bulk_deployment::_stop_bulk_deployment_input::StopBulkDeploymentInputBuilder;
 
+impl StopBulkDeploymentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_bulk_deployment::StopBulkDeploymentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_bulk_deployment::StopBulkDeploymentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_bulk_deployment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopBulkDeployment`.
 ///
 /// Stops the execution of a bulk deployment. This action returns a status of ''Stopping'' until the deployment is stopped. You cannot start a new bulk deployment while a previous deployment is in the ''Stopping'' state. This action doesn't rollback completed deployments or cancel pending deployments.

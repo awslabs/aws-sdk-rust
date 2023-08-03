@@ -3,6 +3,23 @@ pub use crate::operation::update_environment_template::_update_environment_templ
 
 pub use crate::operation::update_environment_template::_update_environment_template_input::UpdateEnvironmentTemplateInputBuilder;
 
+impl UpdateEnvironmentTemplateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_environment_template::UpdateEnvironmentTemplateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_environment_template::UpdateEnvironmentTemplateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_environment_template();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateEnvironmentTemplate`.
 ///
 /// <p>Update an environment template.</p>

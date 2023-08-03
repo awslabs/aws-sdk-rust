@@ -3,6 +3,23 @@ pub use crate::operation::update_ingestion_destination::_update_ingestion_destin
 
 pub use crate::operation::update_ingestion_destination::_update_ingestion_destination_input::UpdateIngestionDestinationInputBuilder;
 
+impl UpdateIngestionDestinationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_ingestion_destination::UpdateIngestionDestinationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_ingestion_destination::UpdateIngestionDestinationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_ingestion_destination();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateIngestionDestination`.
 ///
 /// <p>Updates an ingestion destination, which specifies how an application's ingested data is processed by Amazon Web Services AppFabric and where it's delivered.</p>

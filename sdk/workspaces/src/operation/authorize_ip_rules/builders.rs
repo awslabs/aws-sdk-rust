@@ -3,6 +3,23 @@ pub use crate::operation::authorize_ip_rules::_authorize_ip_rules_output::Author
 
 pub use crate::operation::authorize_ip_rules::_authorize_ip_rules_input::AuthorizeIpRulesInputBuilder;
 
+impl AuthorizeIpRulesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::authorize_ip_rules::AuthorizeIpRulesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::authorize_ip_rules::AuthorizeIpRulesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.authorize_ip_rules();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AuthorizeIpRules`.
 ///
 /// <p>Adds one or more rules to the specified IP access control group.</p>

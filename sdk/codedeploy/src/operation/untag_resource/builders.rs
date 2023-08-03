@@ -3,6 +3,23 @@ pub use crate::operation::untag_resource::_untag_resource_output::UntagResourceO
 
 pub use crate::operation::untag_resource::_untag_resource_input::UntagResourceInputBuilder;
 
+impl UntagResourceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::untag_resource::UntagResourceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::untag_resource::UntagResourceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.untag_resource();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UntagResource`.
 ///
 /// <p> Disassociates a resource from a list of tags. The resource is identified by the <code>ResourceArn</code> input parameter. The tags are identified by the list of keys in the <code>TagKeys</code> input parameter. </p>

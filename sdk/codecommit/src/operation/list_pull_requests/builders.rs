@@ -3,6 +3,23 @@ pub use crate::operation::list_pull_requests::_list_pull_requests_output::ListPu
 
 pub use crate::operation::list_pull_requests::_list_pull_requests_input::ListPullRequestsInputBuilder;
 
+impl ListPullRequestsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_pull_requests::ListPullRequestsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_pull_requests::ListPullRequestsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_pull_requests();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListPullRequests`.
 ///
 /// <p>Returns a list of pull requests for a specified repository. The return list can be refined by pull request status or pull request author ARN.</p>

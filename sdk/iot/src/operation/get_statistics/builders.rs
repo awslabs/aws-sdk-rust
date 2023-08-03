@@ -3,6 +3,23 @@ pub use crate::operation::get_statistics::_get_statistics_output::GetStatisticsO
 
 pub use crate::operation::get_statistics::_get_statistics_input::GetStatisticsInputBuilder;
 
+impl GetStatisticsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_statistics::GetStatisticsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_statistics::GetStatisticsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_statistics();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetStatistics`.
 ///
 /// <p>Returns the count, average, sum, minimum, maximum, sum of squares, variance, and standard deviation for the specified aggregated field. If the aggregation field is of type <code>String</code>, only the count statistic is returned.</p>

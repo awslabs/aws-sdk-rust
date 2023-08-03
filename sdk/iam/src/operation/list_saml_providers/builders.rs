@@ -3,6 +3,23 @@ pub use crate::operation::list_saml_providers::_list_saml_providers_output::List
 
 pub use crate::operation::list_saml_providers::_list_saml_providers_input::ListSamlProvidersInputBuilder;
 
+impl ListSamlProvidersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_saml_providers::ListSamlProvidersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_saml_providers::ListSAMLProvidersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_saml_providers();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListSAMLProviders`.
 ///
 /// <p>Lists the SAML provider resource objects defined in IAM in the account. IAM resource-listing operations return a subset of the available attributes for the resource. For example, this operation does not return tags, even though they are an attribute of the returned object. To view all of the information for a SAML provider, see <code>GetSAMLProvider</code>.</p> <important>

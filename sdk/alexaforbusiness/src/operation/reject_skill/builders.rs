@@ -3,6 +3,23 @@ pub use crate::operation::reject_skill::_reject_skill_output::RejectSkillOutputB
 
 pub use crate::operation::reject_skill::_reject_skill_input::RejectSkillInputBuilder;
 
+impl RejectSkillInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::reject_skill::RejectSkillOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::reject_skill::RejectSkillError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.reject_skill();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RejectSkill`.
 ///
 /// <p>Disassociates a skill from the organization under a user's AWS account. If the skill is a private skill, it moves to an AcceptStatus of PENDING. Any private or public skill that is rejected can be added later by calling the ApproveSkill API. </p>

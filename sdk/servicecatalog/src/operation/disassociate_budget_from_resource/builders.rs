@@ -3,6 +3,17 @@ pub use crate::operation::disassociate_budget_from_resource::_disassociate_budge
 
 pub use crate::operation::disassociate_budget_from_resource::_disassociate_budget_from_resource_input::DisassociateBudgetFromResourceInputBuilder;
 
+impl DisassociateBudgetFromResourceInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::disassociate_budget_from_resource::DisassociateBudgetFromResourceOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_budget_from_resource::DisassociateBudgetFromResourceError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.disassociate_budget_from_resource();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateBudgetFromResource`.
 ///
 /// <p>Disassociates the specified budget from the specified resource.</p>

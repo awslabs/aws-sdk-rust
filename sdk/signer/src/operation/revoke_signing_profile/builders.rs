@@ -3,6 +3,23 @@ pub use crate::operation::revoke_signing_profile::_revoke_signing_profile_output
 
 pub use crate::operation::revoke_signing_profile::_revoke_signing_profile_input::RevokeSigningProfileInputBuilder;
 
+impl RevokeSigningProfileInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::revoke_signing_profile::RevokeSigningProfileOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::revoke_signing_profile::RevokeSigningProfileError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.revoke_signing_profile();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RevokeSigningProfile`.
 ///
 /// <p>Changes the state of a signing profile to REVOKED. This indicates that signatures generated using the signing profile after an effective start date are no longer valid.</p>

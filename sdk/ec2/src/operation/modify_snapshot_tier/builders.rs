@@ -3,6 +3,23 @@ pub use crate::operation::modify_snapshot_tier::_modify_snapshot_tier_output::Mo
 
 pub use crate::operation::modify_snapshot_tier::_modify_snapshot_tier_input::ModifySnapshotTierInputBuilder;
 
+impl ModifySnapshotTierInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_snapshot_tier::ModifySnapshotTierOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_snapshot_tier::ModifySnapshotTierError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_snapshot_tier();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifySnapshotTier`.
 ///
 /// <p>Archives an Amazon EBS snapshot. When you archive a snapshot, it is converted to a full snapshot that includes all of the blocks of data that were written to the volume at the time the snapshot was created, and moved from the standard tier to the archive tier. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/snapshot-archive.html">Archive Amazon EBS snapshots</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::update_endpoint::_update_endpoint_output::UpdateEndpoi
 
 pub use crate::operation::update_endpoint::_update_endpoint_input::UpdateEndpointInputBuilder;
 
+impl UpdateEndpointInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_endpoint::UpdateEndpointOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_endpoint::UpdateEndpointError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_endpoint();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateEndpoint`.
 ///
 /// <p>Creates a new endpoint for an application or updates the settings and attributes of an existing endpoint for an application. You can also use this operation to define custom attributes for an endpoint. If an update includes one or more values for a custom attribute, Amazon Pinpoint replaces (overwrites) any existing values with the new values.</p>

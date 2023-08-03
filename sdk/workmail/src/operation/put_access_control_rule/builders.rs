@@ -3,6 +3,23 @@ pub use crate::operation::put_access_control_rule::_put_access_control_rule_outp
 
 pub use crate::operation::put_access_control_rule::_put_access_control_rule_input::PutAccessControlRuleInputBuilder;
 
+impl PutAccessControlRuleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_access_control_rule::PutAccessControlRuleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_access_control_rule::PutAccessControlRuleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_access_control_rule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutAccessControlRule`.
 ///
 /// <p>Adds a new access control rule for the specified organization. The rule allows or denies access to the organization for the specified IPv4 addresses, access protocol actions, user IDs and impersonation IDs. Adding a new rule with the same name as an existing rule replaces the older rule.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_batch_import_jobs::_get_batch_import_jobs_output::
 
 pub use crate::operation::get_batch_import_jobs::_get_batch_import_jobs_input::GetBatchImportJobsInputBuilder;
 
+impl GetBatchImportJobsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_batch_import_jobs::GetBatchImportJobsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_batch_import_jobs::GetBatchImportJobsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_batch_import_jobs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetBatchImportJobs`.
 ///
 /// <p>Gets all batch import jobs or a specific job of the specified ID. This is a paginated API. If you provide a null <code>maxResults</code>, this action retrieves a maximum of 50 records per page. If you provide a <code>maxResults</code>, the value must be between 1 and 50. To get the next page results, provide the pagination token from the <code>GetBatchImportJobsResponse</code> as part of your request. A null pagination token fetches the records from the beginning.</p>

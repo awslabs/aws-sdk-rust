@@ -3,6 +3,23 @@ pub use crate::operation::list_access_policies::_list_access_policies_output::Li
 
 pub use crate::operation::list_access_policies::_list_access_policies_input::ListAccessPoliciesInputBuilder;
 
+impl ListAccessPoliciesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_access_policies::ListAccessPoliciesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_access_policies::ListAccessPoliciesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_access_policies();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAccessPolicies`.
 ///
 /// <p>Retrieves a paginated list of access policies for an identity (an IAM Identity Center user, an IAM Identity Center group, or an IAM user) or an IoT SiteWise Monitor resource (a portal or project).</p>

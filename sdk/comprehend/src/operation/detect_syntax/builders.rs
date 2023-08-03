@@ -3,6 +3,23 @@ pub use crate::operation::detect_syntax::_detect_syntax_output::DetectSyntaxOutp
 
 pub use crate::operation::detect_syntax::_detect_syntax_input::DetectSyntaxInputBuilder;
 
+impl DetectSyntaxInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::detect_syntax::DetectSyntaxOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::detect_syntax::DetectSyntaxError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.detect_syntax();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DetectSyntax`.
 ///
 /// <p>Inspects text for syntax and the part of speech of words in the document. For more information, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/how-syntax.html">Syntax</a> in the Comprehend Developer Guide. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_site::_create_site_output::CreateSiteOutputBuil
 
 pub use crate::operation::create_site::_create_site_input::CreateSiteInputBuilder;
 
+impl CreateSiteInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_site::CreateSiteOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_site::CreateSiteError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_site();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateSite`.
 ///
 /// <p> Creates a site for an Outpost. </p>

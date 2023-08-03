@@ -3,6 +3,23 @@ pub use crate::operation::test_invoke_authorizer::_test_invoke_authorizer_output
 
 pub use crate::operation::test_invoke_authorizer::_test_invoke_authorizer_input::TestInvokeAuthorizerInputBuilder;
 
+impl TestInvokeAuthorizerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::test_invoke_authorizer::TestInvokeAuthorizerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::test_invoke_authorizer::TestInvokeAuthorizerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.test_invoke_authorizer();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `TestInvokeAuthorizer`.
 ///
 /// <p>Simulate the execution of an Authorizer in your RestApi with headers, parameters, and an incoming request body.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_feature::_create_feature_output::CreateFeatureO
 
 pub use crate::operation::create_feature::_create_feature_input::CreateFeatureInputBuilder;
 
+impl CreateFeatureInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_feature::CreateFeatureOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_feature::CreateFeatureError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_feature();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateFeature`.
 ///
 /// <p>Creates an Evidently <i>feature</i> that you want to launch or test. You can define up to five variations of a feature, and use these variations in your launches and experiments. A feature must be created in a project. For information about creating a project, see <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_CreateProject.html">CreateProject</a>.</p>

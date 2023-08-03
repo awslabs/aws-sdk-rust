@@ -3,6 +3,23 @@ pub use crate::operation::get_bucket_acl::_get_bucket_acl_output::GetBucketAclOu
 
 pub use crate::operation::get_bucket_acl::_get_bucket_acl_input::GetBucketAclInputBuilder;
 
+impl GetBucketAclInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_bucket_acl::GetBucketAclOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_bucket_acl::GetBucketAclError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_bucket_acl();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetBucketAcl`.
 ///
 /// <p>This implementation of the <code>GET</code> action uses the <code>acl</code> subresource to return the access control list (ACL) of a bucket. To use <code>GET</code> to return the ACL of the bucket, you must have <code>READ_ACP</code> access to the bucket. If <code>READ_ACP</code> permission is granted to the anonymous user, you can return the ACL of the bucket without using an authorization header.</p>

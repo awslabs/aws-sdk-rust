@@ -3,6 +3,23 @@ pub use crate::operation::describe_rds_db_instances::_describe_rds_db_instances_
 
 pub use crate::operation::describe_rds_db_instances::_describe_rds_db_instances_input::DescribeRdsDbInstancesInputBuilder;
 
+impl DescribeRdsDbInstancesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_rds_db_instances::DescribeRdsDbInstancesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_rds_db_instances::DescribeRdsDbInstancesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_rds_db_instances();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeRdsDbInstances`.
 ///
 /// <p>Describes Amazon RDS instances.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_layouts::_list_layouts_output::ListLayoutsOutputB
 
 pub use crate::operation::list_layouts::_list_layouts_input::ListLayoutsInputBuilder;
 
+impl ListLayoutsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_layouts::ListLayoutsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_layouts::ListLayoutsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_layouts();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListLayouts`.
 ///
 /// <p>Lists all layouts in the given cases domain. Each list item is a condensed summary object of the layout.</p>

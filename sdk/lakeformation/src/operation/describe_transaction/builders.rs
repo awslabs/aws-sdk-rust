@@ -3,6 +3,23 @@ pub use crate::operation::describe_transaction::_describe_transaction_output::De
 
 pub use crate::operation::describe_transaction::_describe_transaction_input::DescribeTransactionInputBuilder;
 
+impl DescribeTransactionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_transaction::DescribeTransactionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_transaction::DescribeTransactionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_transaction();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeTransaction`.
 ///
 /// <p>Returns the details of a single transaction.</p>

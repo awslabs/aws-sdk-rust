@@ -3,6 +3,23 @@ pub use crate::operation::list_trackers::_list_trackers_output::ListTrackersOutp
 
 pub use crate::operation::list_trackers::_list_trackers_input::ListTrackersInputBuilder;
 
+impl ListTrackersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_trackers::ListTrackersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_trackers::ListTrackersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_trackers();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListTrackers`.
 ///
 /// <p>Lists tracker resources in your Amazon Web Services account.</p>

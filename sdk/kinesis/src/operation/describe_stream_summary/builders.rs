@@ -3,6 +3,23 @@ pub use crate::operation::describe_stream_summary::_describe_stream_summary_outp
 
 pub use crate::operation::describe_stream_summary::_describe_stream_summary_input::DescribeStreamSummaryInputBuilder;
 
+impl DescribeStreamSummaryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_stream_summary::DescribeStreamSummaryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_stream_summary::DescribeStreamSummaryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_stream_summary();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeStreamSummary`.
 ///
 /// <p>Provides a summarized description of the specified Kinesis data stream without the shard list.</p> <note>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_environment_memberships::_describe_environmen
 
 pub use crate::operation::describe_environment_memberships::_describe_environment_memberships_input::DescribeEnvironmentMembershipsInputBuilder;
 
+impl DescribeEnvironmentMembershipsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_environment_memberships::DescribeEnvironmentMembershipsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_environment_memberships::DescribeEnvironmentMembershipsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_environment_memberships();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeEnvironmentMemberships`.
 ///
 /// <p>Gets information about environment members for an Cloud9 development environment.</p>

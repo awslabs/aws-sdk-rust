@@ -3,6 +3,23 @@ pub use crate::operation::create_conference_provider::_create_conference_provide
 
 pub use crate::operation::create_conference_provider::_create_conference_provider_input::CreateConferenceProviderInputBuilder;
 
+impl CreateConferenceProviderInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_conference_provider::CreateConferenceProviderOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_conference_provider::CreateConferenceProviderError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_conference_provider();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateConferenceProvider`.
 ///
 /// <p>Adds a new conference provider under the user's AWS account.</p>

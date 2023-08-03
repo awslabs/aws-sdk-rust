@@ -3,6 +3,23 @@ pub use crate::operation::copy_distribution::_copy_distribution_output::CopyDist
 
 pub use crate::operation::copy_distribution::_copy_distribution_input::CopyDistributionInputBuilder;
 
+impl CopyDistributionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::copy_distribution::CopyDistributionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::copy_distribution::CopyDistributionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.copy_distribution();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CopyDistribution`.
 ///
 /// <p>Creates a staging distribution using the configuration of the provided primary distribution. A staging distribution is a copy of an existing distribution (called the primary distribution) that you can use in a continuous deployment workflow.</p>

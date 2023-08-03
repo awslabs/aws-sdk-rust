@@ -3,6 +3,23 @@ pub use crate::operation::put_partner_events::_put_partner_events_output::PutPar
 
 pub use crate::operation::put_partner_events::_put_partner_events_input::PutPartnerEventsInputBuilder;
 
+impl PutPartnerEventsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_partner_events::PutPartnerEventsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_partner_events::PutPartnerEventsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_partner_events();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutPartnerEvents`.
 ///
 /// <p>This is used by SaaS partners to write events to a customer's partner event bus. Amazon Web Services customers do not use this operation.</p>

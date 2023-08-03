@@ -3,6 +3,23 @@ pub use crate::operation::publish_batch::_publish_batch_output::PublishBatchOutp
 
 pub use crate::operation::publish_batch::_publish_batch_input::PublishBatchInputBuilder;
 
+impl PublishBatchInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::publish_batch::PublishBatchOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::publish_batch::PublishBatchError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.publish_batch();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PublishBatch`.
 ///
 /// <p>Publishes up to ten messages to the specified topic. This is a batch version of <code>Publish</code>. For FIFO topics, multiple messages within a single batch are published in the order they are sent, and messages are deduplicated within the batch and across batches for 5 minutes.</p>

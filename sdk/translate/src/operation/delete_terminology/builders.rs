@@ -3,6 +3,23 @@ pub use crate::operation::delete_terminology::_delete_terminology_output::Delete
 
 pub use crate::operation::delete_terminology::_delete_terminology_input::DeleteTerminologyInputBuilder;
 
+impl DeleteTerminologyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_terminology::DeleteTerminologyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_terminology::DeleteTerminologyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_terminology();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteTerminology`.
 ///
 /// <p>A synchronous action that deletes a custom terminology.</p>

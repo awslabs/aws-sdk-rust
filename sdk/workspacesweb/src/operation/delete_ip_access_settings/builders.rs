@@ -3,6 +3,23 @@ pub use crate::operation::delete_ip_access_settings::_delete_ip_access_settings_
 
 pub use crate::operation::delete_ip_access_settings::_delete_ip_access_settings_input::DeleteIpAccessSettingsInputBuilder;
 
+impl DeleteIpAccessSettingsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_ip_access_settings::DeleteIpAccessSettingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_ip_access_settings::DeleteIpAccessSettingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_ip_access_settings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteIpAccessSettings`.
 ///
 /// <p>Deletes IP access settings.</p>

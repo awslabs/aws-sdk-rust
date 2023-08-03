@@ -3,6 +3,23 @@ pub use crate::operation::create_platform_version::_create_platform_version_outp
 
 pub use crate::operation::create_platform_version::_create_platform_version_input::CreatePlatformVersionInputBuilder;
 
+impl CreatePlatformVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_platform_version::CreatePlatformVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_platform_version::CreatePlatformVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_platform_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreatePlatformVersion`.
 ///
 /// <p>Create a new version of your custom platform.</p>

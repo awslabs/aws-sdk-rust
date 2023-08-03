@@ -3,6 +3,17 @@ pub use crate::operation::describe_affected_accounts_for_organization::_describe
 
 pub use crate::operation::describe_affected_accounts_for_organization::_describe_affected_accounts_for_organization_input::DescribeAffectedAccountsForOrganizationInputBuilder;
 
+impl DescribeAffectedAccountsForOrganizationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_affected_accounts_for_organization::DescribeAffectedAccountsForOrganizationOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_affected_accounts_for_organization::DescribeAffectedAccountsForOrganizationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_affected_accounts_for_organization();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAffectedAccountsForOrganization`.
 ///
 /// <p>Returns a list of accounts in the organization from Organizations that are affected by the provided event. For more information about the different types of Health events, see <a href="https://docs.aws.amazon.com/health/latest/APIReference/API_Event.html">Event</a>. </p>

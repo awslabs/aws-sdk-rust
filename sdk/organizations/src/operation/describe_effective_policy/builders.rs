@@ -3,6 +3,23 @@ pub use crate::operation::describe_effective_policy::_describe_effective_policy_
 
 pub use crate::operation::describe_effective_policy::_describe_effective_policy_input::DescribeEffectivePolicyInputBuilder;
 
+impl DescribeEffectivePolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_effective_policy::DescribeEffectivePolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_effective_policy::DescribeEffectivePolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_effective_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeEffectivePolicy`.
 ///
 /// <p>Returns the contents of the effective policy for specified policy type and account. The effective policy is the aggregation of any policies of the specified type that the account inherits, plus any policy of that type that is directly attached to the account.</p>

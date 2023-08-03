@@ -3,6 +3,23 @@ pub use crate::operation::describe_managed_prefix_lists::_describe_managed_prefi
 
 pub use crate::operation::describe_managed_prefix_lists::_describe_managed_prefix_lists_input::DescribeManagedPrefixListsInputBuilder;
 
+impl DescribeManagedPrefixListsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_managed_prefix_lists::DescribeManagedPrefixListsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_managed_prefix_lists::DescribeManagedPrefixListsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_managed_prefix_lists();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeManagedPrefixLists`.
 ///
 /// <p>Describes your managed prefix lists and any Amazon Web Services-managed prefix lists.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::put_object_retention::_put_object_retention_output::Pu
 
 pub use crate::operation::put_object_retention::_put_object_retention_input::PutObjectRetentionInputBuilder;
 
+impl PutObjectRetentionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_object_retention::PutObjectRetentionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_object_retention::PutObjectRetentionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_object_retention();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutObjectRetention`.
 ///
 /// <p>Places an Object Retention configuration on an object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Locking Objects</a>. Users or accounts require the <code>s3:PutObjectRetention</code> permission in order to place an Object Retention configuration on objects. Bypassing a Governance Retention configuration requires the <code>s3:BypassGovernanceRetention</code> permission. </p>

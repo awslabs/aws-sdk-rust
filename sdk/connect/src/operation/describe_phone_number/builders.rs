@@ -3,6 +3,23 @@ pub use crate::operation::describe_phone_number::_describe_phone_number_output::
 
 pub use crate::operation::describe_phone_number::_describe_phone_number_input::DescribePhoneNumberInputBuilder;
 
+impl DescribePhoneNumberInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_phone_number::DescribePhoneNumberOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_phone_number::DescribePhoneNumberError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_phone_number();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribePhoneNumber`.
 ///
 /// <p>Gets details and status of a phone number that’s claimed to your Amazon Connect instance or traffic distribution group.</p> <important>

@@ -3,6 +3,23 @@ pub use crate::operation::reboot_node::_reboot_node_output::RebootNodeOutputBuil
 
 pub use crate::operation::reboot_node::_reboot_node_input::RebootNodeInputBuilder;
 
+impl RebootNodeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::reboot_node::RebootNodeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::reboot_node::RebootNodeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.reboot_node();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RebootNode`.
 ///
 /// <p>Reboots a single node of a DAX cluster. The reboot action takes place as soon as possible. During the reboot, the node status is set to REBOOTING.</p> <note>

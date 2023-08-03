@@ -3,6 +3,23 @@ pub use crate::operation::describe_key_pairs::_describe_key_pairs_output::Descri
 
 pub use crate::operation::describe_key_pairs::_describe_key_pairs_input::DescribeKeyPairsInputBuilder;
 
+impl DescribeKeyPairsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_key_pairs::DescribeKeyPairsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_key_pairs::DescribeKeyPairsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_key_pairs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeKeyPairs`.
 ///
 /// <p>Describes the specified key pairs or all of your key pairs.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::rebuild_workspaces::_rebuild_workspaces_output::Rebuil
 
 pub use crate::operation::rebuild_workspaces::_rebuild_workspaces_input::RebuildWorkspacesInputBuilder;
 
+impl RebuildWorkspacesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::rebuild_workspaces::RebuildWorkspacesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::rebuild_workspaces::RebuildWorkspacesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.rebuild_workspaces();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RebuildWorkspaces`.
 ///
 /// <p>Rebuilds the specified WorkSpace.</p>

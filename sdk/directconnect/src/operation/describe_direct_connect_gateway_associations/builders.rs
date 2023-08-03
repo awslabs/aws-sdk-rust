@@ -3,6 +3,17 @@ pub use crate::operation::describe_direct_connect_gateway_associations::_describ
 
 pub use crate::operation::describe_direct_connect_gateway_associations::_describe_direct_connect_gateway_associations_input::DescribeDirectConnectGatewayAssociationsInputBuilder;
 
+impl DescribeDirectConnectGatewayAssociationsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_direct_connect_gateway_associations::DescribeDirectConnectGatewayAssociationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_direct_connect_gateway_associations::DescribeDirectConnectGatewayAssociationsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_direct_connect_gateway_associations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeDirectConnectGatewayAssociations`.
 ///
 /// <p>Lists the associations between your Direct Connect gateways and virtual private gateways and transit gateways. You must specify one of the following:</p>

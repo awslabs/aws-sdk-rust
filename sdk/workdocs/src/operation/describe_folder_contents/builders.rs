@@ -3,6 +3,23 @@ pub use crate::operation::describe_folder_contents::_describe_folder_contents_ou
 
 pub use crate::operation::describe_folder_contents::_describe_folder_contents_input::DescribeFolderContentsInputBuilder;
 
+impl DescribeFolderContentsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_folder_contents::DescribeFolderContentsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_folder_contents::DescribeFolderContentsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_folder_contents();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeFolderContents`.
 ///
 /// <p>Describes the contents of the specified folder, including its documents and subfolders.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_data_source_permissions::_describe_data_sourc
 
 pub use crate::operation::describe_data_source_permissions::_describe_data_source_permissions_input::DescribeDataSourcePermissionsInputBuilder;
 
+impl DescribeDataSourcePermissionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_data_source_permissions::DescribeDataSourcePermissionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_data_source_permissions::DescribeDataSourcePermissionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_data_source_permissions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeDataSourcePermissions`.
 ///
 /// <p>Describes the resource permissions for a data source.</p>

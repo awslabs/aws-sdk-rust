@@ -3,6 +3,23 @@ pub use crate::operation::delete_sip_rule::_delete_sip_rule_output::DeleteSipRul
 
 pub use crate::operation::delete_sip_rule::_delete_sip_rule_input::DeleteSipRuleInputBuilder;
 
+impl DeleteSipRuleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_sip_rule::DeleteSipRuleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_sip_rule::DeleteSipRuleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_sip_rule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteSipRule`.
 ///
 /// <p>Deletes a SIP rule.</p>

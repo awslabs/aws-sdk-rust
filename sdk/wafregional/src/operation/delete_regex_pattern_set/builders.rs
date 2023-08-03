@@ -3,6 +3,23 @@ pub use crate::operation::delete_regex_pattern_set::_delete_regex_pattern_set_ou
 
 pub use crate::operation::delete_regex_pattern_set::_delete_regex_pattern_set_input::DeleteRegexPatternSetInputBuilder;
 
+impl DeleteRegexPatternSetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_regex_pattern_set::DeleteRegexPatternSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_regex_pattern_set::DeleteRegexPatternSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_regex_pattern_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteRegexPatternSet`.
 ///
 /// <note>

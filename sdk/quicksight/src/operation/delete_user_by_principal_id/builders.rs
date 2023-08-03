@@ -3,6 +3,23 @@ pub use crate::operation::delete_user_by_principal_id::_delete_user_by_principal
 
 pub use crate::operation::delete_user_by_principal_id::_delete_user_by_principal_id_input::DeleteUserByPrincipalIdInputBuilder;
 
+impl DeleteUserByPrincipalIdInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_user_by_principal_id::DeleteUserByPrincipalIdError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_user_by_principal_id();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteUserByPrincipalId`.
 ///
 /// <p>Deletes a user identified by its principal ID. </p>

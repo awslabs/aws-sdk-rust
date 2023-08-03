@@ -3,6 +3,23 @@ pub use crate::operation::update_schema::_update_schema_output::UpdateSchemaOutp
 
 pub use crate::operation::update_schema::_update_schema_input::UpdateSchemaInputBuilder;
 
+impl UpdateSchemaInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_schema::UpdateSchemaOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_schema::UpdateSchemaError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_schema();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateSchema`.
 ///
 /// <p>Updates the schema name with a new name. Only development schema names can be updated.</p>

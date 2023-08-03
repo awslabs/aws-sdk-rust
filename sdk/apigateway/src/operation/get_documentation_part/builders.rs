@@ -3,6 +3,23 @@ pub use crate::operation::get_documentation_part::_get_documentation_part_output
 
 pub use crate::operation::get_documentation_part::_get_documentation_part_input::GetDocumentationPartInputBuilder;
 
+impl GetDocumentationPartInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_documentation_part::GetDocumentationPartOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_documentation_part::GetDocumentationPartError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_documentation_part();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetDocumentationPart`.
 ///
 /// <p>Gets a documentation part.</p>

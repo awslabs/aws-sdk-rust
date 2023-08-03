@@ -3,6 +3,23 @@ pub use crate::operation::list_accesses::_list_accesses_output::ListAccessesOutp
 
 pub use crate::operation::list_accesses::_list_accesses_input::ListAccessesInputBuilder;
 
+impl ListAccessesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_accesses::ListAccessesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_accesses::ListAccessesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_accesses();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAccesses`.
 ///
 /// <p>Lists the details for all the accesses you have on your server.</p>

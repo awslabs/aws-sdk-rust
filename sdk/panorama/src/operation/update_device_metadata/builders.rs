@@ -3,6 +3,23 @@ pub use crate::operation::update_device_metadata::_update_device_metadata_output
 
 pub use crate::operation::update_device_metadata::_update_device_metadata_input::UpdateDeviceMetadataInputBuilder;
 
+impl UpdateDeviceMetadataInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_device_metadata::UpdateDeviceMetadataOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_device_metadata::UpdateDeviceMetadataError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_device_metadata();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateDeviceMetadata`.
 ///
 /// <p>Updates a device's metadata.</p>

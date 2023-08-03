@@ -3,6 +3,23 @@ pub use crate::operation::disable_macie::_disable_macie_output::DisableMacieOutp
 
 pub use crate::operation::disable_macie::_disable_macie_input::DisableMacieInputBuilder;
 
+impl DisableMacieInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disable_macie::DisableMacieOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disable_macie::DisableMacieError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disable_macie();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisableMacie`.
 ///
 /// <p>Disables Amazon Macie and deletes all settings and resources for a Macie account.</p>

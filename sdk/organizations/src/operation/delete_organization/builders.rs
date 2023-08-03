@@ -3,6 +3,23 @@ pub use crate::operation::delete_organization::_delete_organization_output::Dele
 
 pub use crate::operation::delete_organization::_delete_organization_input::DeleteOrganizationInputBuilder;
 
+impl DeleteOrganizationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_organization::DeleteOrganizationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_organization::DeleteOrganizationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_organization();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteOrganization`.
 ///
 /// <p>Deletes the organization. You can delete an organization only by using credentials from the management account. The organization must be empty of member accounts.</p>

@@ -3,6 +3,17 @@ pub use crate::operation::deregister_instances_from_load_balancer::_deregister_i
 
 pub use crate::operation::deregister_instances_from_load_balancer::_deregister_instances_from_load_balancer_input::DeregisterInstancesFromLoadBalancerInputBuilder;
 
+impl DeregisterInstancesFromLoadBalancerInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::deregister_instances_from_load_balancer::DeregisterInstancesFromLoadBalancerOutput, ::aws_smithy_http::result::SdkError<crate::operation::deregister_instances_from_load_balancer::DeregisterInstancesFromLoadBalancerError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.deregister_instances_from_load_balancer();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeregisterInstancesFromLoadBalancer`.
 ///
 /// <p>Deregisters the specified instances from the specified load balancer. After the instance is deregistered, it no longer receives traffic from the load balancer.</p>

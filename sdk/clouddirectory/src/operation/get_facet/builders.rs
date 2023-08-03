@@ -3,6 +3,23 @@ pub use crate::operation::get_facet::_get_facet_output::GetFacetOutputBuilder;
 
 pub use crate::operation::get_facet::_get_facet_input::GetFacetInputBuilder;
 
+impl GetFacetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_facet::GetFacetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_facet::GetFacetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_facet();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetFacet`.
 ///
 /// <p>Gets details of the <code>Facet</code>, such as facet name, attributes, <code>Rule</code>s, or <code>ObjectType</code>. You can call this on all kinds of schema facets -- published, development, or applied.</p>

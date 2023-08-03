@@ -3,6 +3,23 @@ pub use crate::operation::list_servers::_list_servers_output::ListServersOutputB
 
 pub use crate::operation::list_servers::_list_servers_input::ListServersInputBuilder;
 
+impl ListServersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_servers::ListServersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_servers::ListServersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_servers();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListServers`.
 ///
 /// <p>Lists the file transfer protocol-enabled servers that are associated with your Amazon Web Services account.</p>

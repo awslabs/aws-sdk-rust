@@ -3,6 +3,23 @@ pub use crate::operation::disassociate_certificate::_disassociate_certificate_ou
 
 pub use crate::operation::disassociate_certificate::_disassociate_certificate_input::DisassociateCertificateInputBuilder;
 
+impl DisassociateCertificateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_certificate::DisassociateCertificateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_certificate::DisassociateCertificateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disassociate_certificate();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateCertificate`.
 ///
 /// Removes an association between the Amazon Resource Name (ARN) of an AWS Certificate Manager (ACM) certificate and an AWS Elemental MediaConvert resource.

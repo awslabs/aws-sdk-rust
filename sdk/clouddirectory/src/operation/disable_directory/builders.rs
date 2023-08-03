@@ -3,6 +3,23 @@ pub use crate::operation::disable_directory::_disable_directory_output::DisableD
 
 pub use crate::operation::disable_directory::_disable_directory_input::DisableDirectoryInputBuilder;
 
+impl DisableDirectoryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disable_directory::DisableDirectoryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disable_directory::DisableDirectoryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disable_directory();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisableDirectory`.
 ///
 /// <p>Disables the specified directory. Disabled directories cannot be read or written to. Only enabled directories can be disabled. Disabled directories may be reenabled.</p>

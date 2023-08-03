@@ -3,6 +3,17 @@ pub use crate::operation::start_data_quality_ruleset_evaluation_run::_start_data
 
 pub use crate::operation::start_data_quality_ruleset_evaluation_run::_start_data_quality_ruleset_evaluation_run_input::StartDataQualityRulesetEvaluationRunInputBuilder;
 
+impl StartDataQualityRulesetEvaluationRunInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::start_data_quality_ruleset_evaluation_run::StartDataQualityRulesetEvaluationRunOutput, ::aws_smithy_http::result::SdkError<crate::operation::start_data_quality_ruleset_evaluation_run::StartDataQualityRulesetEvaluationRunError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.start_data_quality_ruleset_evaluation_run();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartDataQualityRulesetEvaluationRun`.
 ///
 /// <p>Once you have a ruleset definition (either recommended or your own), you call this operation to evaluate the ruleset against a data source (Glue table). The evaluation computes results which you can retrieve with the <code>GetDataQualityResult</code> API.</p>

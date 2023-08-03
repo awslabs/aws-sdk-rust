@@ -3,6 +3,23 @@ pub use crate::operation::describe_workflow_type::_describe_workflow_type_output
 
 pub use crate::operation::describe_workflow_type::_describe_workflow_type_input::DescribeWorkflowTypeInputBuilder;
 
+impl DescribeWorkflowTypeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_workflow_type::DescribeWorkflowTypeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_workflow_type::DescribeWorkflowTypeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_workflow_type();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeWorkflowType`.
 ///
 /// <p>Returns information about the specified <i>workflow type</i>. This includes configuration settings specified when the type was registered and other information such as creation date, current status, etc.</p>

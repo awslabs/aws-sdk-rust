@@ -3,6 +3,23 @@ pub use crate::operation::describe_backup_policy::_describe_backup_policy_output
 
 pub use crate::operation::describe_backup_policy::_describe_backup_policy_input::DescribeBackupPolicyInputBuilder;
 
+impl DescribeBackupPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_backup_policy::DescribeBackupPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_backup_policy::DescribeBackupPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_backup_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeBackupPolicy`.
 ///
 /// <p>Returns the backup policy for the specified EFS file system.</p>

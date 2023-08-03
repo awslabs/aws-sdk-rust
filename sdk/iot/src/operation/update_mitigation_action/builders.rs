@@ -3,6 +3,23 @@ pub use crate::operation::update_mitigation_action::_update_mitigation_action_ou
 
 pub use crate::operation::update_mitigation_action::_update_mitigation_action_input::UpdateMitigationActionInputBuilder;
 
+impl UpdateMitigationActionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_mitigation_action::UpdateMitigationActionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_mitigation_action::UpdateMitigationActionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_mitigation_action();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateMitigationAction`.
 ///
 /// <p>Updates the definition for the specified mitigation action.</p>

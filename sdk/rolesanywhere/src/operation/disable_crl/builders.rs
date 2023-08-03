@@ -3,6 +3,23 @@ pub use crate::operation::disable_crl::_disable_crl_output::DisableCrlOutputBuil
 
 pub use crate::operation::disable_crl::_disable_crl_input::DisableCrlInputBuilder;
 
+impl DisableCrlInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disable_crl::DisableCrlOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disable_crl::DisableCrlError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disable_crl();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisableCrl`.
 ///
 /// <p>Disables a certificate revocation list (CRL).</p>

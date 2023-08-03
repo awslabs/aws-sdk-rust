@@ -3,6 +3,23 @@ pub use crate::operation::abort_document_version_upload::_abort_document_version
 
 pub use crate::operation::abort_document_version_upload::_abort_document_version_upload_input::AbortDocumentVersionUploadInputBuilder;
 
+impl AbortDocumentVersionUploadInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::abort_document_version_upload::AbortDocumentVersionUploadOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::abort_document_version_upload::AbortDocumentVersionUploadError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.abort_document_version_upload();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AbortDocumentVersionUpload`.
 ///
 /// <p>Aborts the upload of the specified document version that was previously initiated by <code>InitiateDocumentVersionUpload</code>. The client should make this call only when it no longer intends to upload the document version, or fails to do so.</p>

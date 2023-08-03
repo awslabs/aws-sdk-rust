@@ -3,6 +3,23 @@ pub use crate::operation::describe_component_configuration::_describe_component_
 
 pub use crate::operation::describe_component_configuration::_describe_component_configuration_input::DescribeComponentConfigurationInputBuilder;
 
+impl DescribeComponentConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_component_configuration::DescribeComponentConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_component_configuration::DescribeComponentConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_component_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeComponentConfiguration`.
 ///
 /// <p>Describes the monitoring configuration of the component.</p>

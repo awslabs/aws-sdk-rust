@@ -3,6 +3,23 @@ pub use crate::operation::list_control_panels::_list_control_panels_output::List
 
 pub use crate::operation::list_control_panels::_list_control_panels_input::ListControlPanelsInputBuilder;
 
+impl ListControlPanelsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_control_panels::ListControlPanelsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_control_panels::ListControlPanelsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_control_panels();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListControlPanels`.
 ///
 /// <p>Returns an array of control panels in an account or in a cluster.</p>

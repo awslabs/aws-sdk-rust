@@ -3,6 +3,23 @@ pub use crate::operation::update_records::_update_records_output::UpdateRecordsO
 
 pub use crate::operation::update_records::_update_records_input::UpdateRecordsInputBuilder;
 
+impl UpdateRecordsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_records::UpdateRecordsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_records::UpdateRecordsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_records();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateRecords`.
 ///
 /// <p>Posts updates to records and adds and deletes records for a dataset and user.</p>

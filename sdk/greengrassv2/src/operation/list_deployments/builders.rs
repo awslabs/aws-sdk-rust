@@ -3,6 +3,23 @@ pub use crate::operation::list_deployments::_list_deployments_output::ListDeploy
 
 pub use crate::operation::list_deployments::_list_deployments_input::ListDeploymentsInputBuilder;
 
+impl ListDeploymentsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_deployments::ListDeploymentsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_deployments::ListDeploymentsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_deployments();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDeployments`.
 ///
 /// <p>Retrieves a paginated list of deployments.</p>

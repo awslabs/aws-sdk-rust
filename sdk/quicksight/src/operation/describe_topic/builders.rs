@@ -3,6 +3,23 @@ pub use crate::operation::describe_topic::_describe_topic_output::DescribeTopicO
 
 pub use crate::operation::describe_topic::_describe_topic_input::DescribeTopicInputBuilder;
 
+impl DescribeTopicInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_topic::DescribeTopicOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_topic::DescribeTopicError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_topic();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeTopic`.
 ///
 /// <p>Describes a topic.</p>

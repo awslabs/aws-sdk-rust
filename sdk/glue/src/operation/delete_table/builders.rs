@@ -3,6 +3,23 @@ pub use crate::operation::delete_table::_delete_table_output::DeleteTableOutputB
 
 pub use crate::operation::delete_table::_delete_table_input::DeleteTableInputBuilder;
 
+impl DeleteTableInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_table::DeleteTableOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_table::DeleteTableError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_table();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteTable`.
 ///
 /// <p>Removes a table definition from the Data Catalog.</p> <note>

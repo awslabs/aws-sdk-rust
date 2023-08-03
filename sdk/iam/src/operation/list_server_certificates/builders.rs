@@ -3,6 +3,23 @@ pub use crate::operation::list_server_certificates::_list_server_certificates_ou
 
 pub use crate::operation::list_server_certificates::_list_server_certificates_input::ListServerCertificatesInputBuilder;
 
+impl ListServerCertificatesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_server_certificates::ListServerCertificatesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_server_certificates::ListServerCertificatesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_server_certificates();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListServerCertificates`.
 ///
 /// <p>Lists the server certificates stored in IAM that have the specified path prefix. If none exist, the operation returns an empty list.</p>

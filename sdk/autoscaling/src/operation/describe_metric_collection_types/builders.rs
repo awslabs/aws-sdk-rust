@@ -3,6 +3,23 @@ pub use crate::operation::describe_metric_collection_types::_describe_metric_col
 
 pub use crate::operation::describe_metric_collection_types::_describe_metric_collection_types_input::DescribeMetricCollectionTypesInputBuilder;
 
+impl DescribeMetricCollectionTypesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_metric_collection_types::DescribeMetricCollectionTypesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_metric_collection_types::DescribeMetricCollectionTypesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_metric_collection_types();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeMetricCollectionTypes`.
 ///
 /// <p>Describes the available CloudWatch metrics for Amazon EC2 Auto Scaling.</p>

@@ -3,6 +3,17 @@ pub use crate::operation::list_bucket_metrics_configurations::_list_bucket_metri
 
 pub use crate::operation::list_bucket_metrics_configurations::_list_bucket_metrics_configurations_input::ListBucketMetricsConfigurationsInputBuilder;
 
+impl ListBucketMetricsConfigurationsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_bucket_metrics_configurations::ListBucketMetricsConfigurationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_bucket_metrics_configurations::ListBucketMetricsConfigurationsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_bucket_metrics_configurations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListBucketMetricsConfigurations`.
 ///
 /// <p>Lists the metrics configurations for the bucket. The metrics configurations are only for the request metrics of the bucket and do not provide information on daily storage metrics. You can have up to 1,000 configurations per bucket.</p>

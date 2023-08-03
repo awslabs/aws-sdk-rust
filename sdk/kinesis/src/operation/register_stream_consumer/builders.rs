@@ -3,6 +3,23 @@ pub use crate::operation::register_stream_consumer::_register_stream_consumer_ou
 
 pub use crate::operation::register_stream_consumer::_register_stream_consumer_input::RegisterStreamConsumerInputBuilder;
 
+impl RegisterStreamConsumerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::register_stream_consumer::RegisterStreamConsumerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::register_stream_consumer::RegisterStreamConsumerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.register_stream_consumer();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RegisterStreamConsumer`.
 ///
 /// <p>Registers a consumer with a Kinesis data stream. When you use this operation, the consumer you register can then call <code>SubscribeToShard</code> to receive data from the stream using enhanced fan-out, at a rate of up to 2 MiB per second for every shard you subscribe to. This rate is unaffected by the total number of consumers that read from the same stream.</p>

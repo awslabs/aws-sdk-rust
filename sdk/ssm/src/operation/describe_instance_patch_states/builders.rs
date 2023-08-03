@@ -3,6 +3,23 @@ pub use crate::operation::describe_instance_patch_states::_describe_instance_pat
 
 pub use crate::operation::describe_instance_patch_states::_describe_instance_patch_states_input::DescribeInstancePatchStatesInputBuilder;
 
+impl DescribeInstancePatchStatesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_instance_patch_states::DescribeInstancePatchStatesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_instance_patch_states::DescribeInstancePatchStatesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_instance_patch_states();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeInstancePatchStates`.
 ///
 /// <p>Retrieves the high-level patch state of one or more managed nodes.</p>

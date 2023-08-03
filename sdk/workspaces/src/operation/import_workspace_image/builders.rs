@@ -3,6 +3,23 @@ pub use crate::operation::import_workspace_image::_import_workspace_image_output
 
 pub use crate::operation::import_workspace_image::_import_workspace_image_input::ImportWorkspaceImageInputBuilder;
 
+impl ImportWorkspaceImageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::import_workspace_image::ImportWorkspaceImageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::import_workspace_image::ImportWorkspaceImageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.import_workspace_image();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ImportWorkspaceImage`.
 ///
 /// <p>Imports the specified Windows 10 or 11 Bring Your Own License (BYOL) image into Amazon WorkSpaces. The image must be an already licensed Amazon EC2 image that is in your Amazon Web Services account, and you must own the image. For more information about creating BYOL images, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/byol-windows-images.html"> Bring Your Own Windows Desktop Licenses</a>.</p>

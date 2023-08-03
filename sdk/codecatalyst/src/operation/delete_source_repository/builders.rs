@@ -3,6 +3,23 @@ pub use crate::operation::delete_source_repository::_delete_source_repository_ou
 
 pub use crate::operation::delete_source_repository::_delete_source_repository_input::DeleteSourceRepositoryInputBuilder;
 
+impl DeleteSourceRepositoryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_source_repository::DeleteSourceRepositoryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_source_repository::DeleteSourceRepositoryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_source_repository();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteSourceRepository`.
 ///
 /// <p>Deletes a source repository in Amazon CodeCatalyst. You cannot use this API to delete a linked repository. It can only be used to delete a Amazon CodeCatalyst source repository.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::enable_crl::_enable_crl_output::EnableCrlOutputBuilder
 
 pub use crate::operation::enable_crl::_enable_crl_input::EnableCrlInputBuilder;
 
+impl EnableCrlInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::enable_crl::EnableCrlOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::enable_crl::EnableCrlError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.enable_crl();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `EnableCrl`.
 ///
 /// <p>Enables a certificate revocation list (CRL). When enabled, certificates stored in the CRL are unauthorized to receive session credentials.</p>

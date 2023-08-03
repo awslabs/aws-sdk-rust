@@ -3,6 +3,17 @@ pub use crate::operation::get_instance_types_from_instance_requirements::_get_in
 
 pub use crate::operation::get_instance_types_from_instance_requirements::_get_instance_types_from_instance_requirements_input::GetInstanceTypesFromInstanceRequirementsInputBuilder;
 
+impl GetInstanceTypesFromInstanceRequirementsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_instance_types_from_instance_requirements::GetInstanceTypesFromInstanceRequirementsOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_instance_types_from_instance_requirements::GetInstanceTypesFromInstanceRequirementsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_instance_types_from_instance_requirements();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetInstanceTypesFromInstanceRequirements`.
 ///
 /// <p>Returns a list of instance types with the specified instance attributes. You can use the response to preview the instance types without launching instances. Note that the response does not consider capacity.</p>

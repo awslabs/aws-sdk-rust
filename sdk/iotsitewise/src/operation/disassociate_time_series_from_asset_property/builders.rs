@@ -3,6 +3,17 @@ pub use crate::operation::disassociate_time_series_from_asset_property::_disasso
 
 pub use crate::operation::disassociate_time_series_from_asset_property::_disassociate_time_series_from_asset_property_input::DisassociateTimeSeriesFromAssetPropertyInputBuilder;
 
+impl DisassociateTimeSeriesFromAssetPropertyInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_time_series_from_asset_property::DisassociateTimeSeriesFromAssetPropertyError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.disassociate_time_series_from_asset_property();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateTimeSeriesFromAssetProperty`.
 ///
 /// <p>Disassociates a time series (data stream) from an asset property.</p>

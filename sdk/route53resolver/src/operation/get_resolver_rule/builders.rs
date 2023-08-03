@@ -3,6 +3,23 @@ pub use crate::operation::get_resolver_rule::_get_resolver_rule_output::GetResol
 
 pub use crate::operation::get_resolver_rule::_get_resolver_rule_input::GetResolverRuleInputBuilder;
 
+impl GetResolverRuleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_resolver_rule::GetResolverRuleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_resolver_rule::GetResolverRuleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_resolver_rule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetResolverRule`.
 ///
 /// <p>Gets information about a specified Resolver rule, such as the domain name that the rule forwards DNS queries for and the ID of the outbound Resolver endpoint that the rule is associated with.</p>

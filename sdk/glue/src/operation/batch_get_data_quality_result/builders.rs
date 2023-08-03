@@ -3,6 +3,23 @@ pub use crate::operation::batch_get_data_quality_result::_batch_get_data_quality
 
 pub use crate::operation::batch_get_data_quality_result::_batch_get_data_quality_result_input::BatchGetDataQualityResultInputBuilder;
 
+impl BatchGetDataQualityResultInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_data_quality_result::BatchGetDataQualityResultOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_get_data_quality_result::BatchGetDataQualityResultError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_get_data_quality_result();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchGetDataQualityResult`.
 ///
 /// <p>Retrieves a list of data quality results for the specified result IDs.</p>

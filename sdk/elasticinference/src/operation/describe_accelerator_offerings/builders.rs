@@ -3,6 +3,23 @@ pub use crate::operation::describe_accelerator_offerings::_describe_accelerator_
 
 pub use crate::operation::describe_accelerator_offerings::_describe_accelerator_offerings_input::DescribeAcceleratorOfferingsInputBuilder;
 
+impl DescribeAcceleratorOfferingsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_accelerator_offerings::DescribeAcceleratorOfferingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_accelerator_offerings::DescribeAcceleratorOfferingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_accelerator_offerings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAcceleratorOfferings`.
 ///
 /// <p> Describes the locations in which a given accelerator type or set of types is present in a given region. </p>

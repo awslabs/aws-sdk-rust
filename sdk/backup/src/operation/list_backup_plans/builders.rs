@@ -3,6 +3,23 @@ pub use crate::operation::list_backup_plans::_list_backup_plans_output::ListBack
 
 pub use crate::operation::list_backup_plans::_list_backup_plans_input::ListBackupPlansInputBuilder;
 
+impl ListBackupPlansInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_backup_plans::ListBackupPlansOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_backup_plans::ListBackupPlansError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_backup_plans();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListBackupPlans`.
 ///
 /// <p>Returns a list of all active backup plans for an authenticated account. The list contains information such as Amazon Resource Names (ARNs), plan IDs, creation and deletion dates, version IDs, plan names, and creator request IDs.</p>

@@ -3,6 +3,17 @@ pub use crate::operation::list_resources_in_protection_group::_list_resources_in
 
 pub use crate::operation::list_resources_in_protection_group::_list_resources_in_protection_group_input::ListResourcesInProtectionGroupInputBuilder;
 
+impl ListResourcesInProtectionGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_resources_in_protection_group::ListResourcesInProtectionGroupOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_resources_in_protection_group::ListResourcesInProtectionGroupError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_resources_in_protection_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListResourcesInProtectionGroup`.
 ///
 /// <p>Retrieves the resources that are included in the protection group. </p>

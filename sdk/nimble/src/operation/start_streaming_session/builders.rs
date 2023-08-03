@@ -3,6 +3,23 @@ pub use crate::operation::start_streaming_session::_start_streaming_session_outp
 
 pub use crate::operation::start_streaming_session::_start_streaming_session_input::StartStreamingSessionInputBuilder;
 
+impl StartStreamingSessionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_streaming_session::StartStreamingSessionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_streaming_session::StartStreamingSessionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_streaming_session();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartStreamingSession`.
 ///
 /// <p>Transitions sessions from the <code>STOPPED</code> state into the <code>READY</code> state. The <code>START_IN_PROGRESS</code> state is the intermediate state between the <code>STOPPED</code> and <code>READY</code> states.</p>

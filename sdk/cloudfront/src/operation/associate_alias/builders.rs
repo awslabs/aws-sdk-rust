@@ -3,6 +3,23 @@ pub use crate::operation::associate_alias::_associate_alias_output::AssociateAli
 
 pub use crate::operation::associate_alias::_associate_alias_input::AssociateAliasInputBuilder;
 
+impl AssociateAliasInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_alias::AssociateAliasOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_alias::AssociateAliasError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_alias();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateAlias`.
 ///
 /// <p>Associates an alias (also known as a CNAME or an alternate domain name) with a CloudFront distribution.</p>

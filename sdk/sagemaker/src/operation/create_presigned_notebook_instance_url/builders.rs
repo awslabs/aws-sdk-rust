@@ -3,6 +3,17 @@ pub use crate::operation::create_presigned_notebook_instance_url::_create_presig
 
 pub use crate::operation::create_presigned_notebook_instance_url::_create_presigned_notebook_instance_url_input::CreatePresignedNotebookInstanceUrlInputBuilder;
 
+impl CreatePresignedNotebookInstanceUrlInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::create_presigned_notebook_instance_url::CreatePresignedNotebookInstanceUrlOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_presigned_notebook_instance_url::CreatePresignedNotebookInstanceUrlError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.create_presigned_notebook_instance_url();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreatePresignedNotebookInstanceUrl`.
 ///
 /// <p>Returns a URL that you can use to connect to the Jupyter server from a notebook instance. In the SageMaker console, when you choose <code>Open</code> next to a notebook instance, SageMaker opens a new tab showing the Jupyter server home page from the notebook instance. The console uses this API to get the URL and show the page.</p>

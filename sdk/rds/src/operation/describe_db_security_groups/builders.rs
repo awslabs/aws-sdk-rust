@@ -3,6 +3,23 @@ pub use crate::operation::describe_db_security_groups::_describe_db_security_gro
 
 pub use crate::operation::describe_db_security_groups::_describe_db_security_groups_input::DescribeDbSecurityGroupsInputBuilder;
 
+impl DescribeDbSecurityGroupsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_db_security_groups::DescribeDbSecurityGroupsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_db_security_groups::DescribeDBSecurityGroupsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_db_security_groups();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeDBSecurityGroups`.
 ///
 /// <p>Returns a list of <code>DBSecurityGroup</code> descriptions. If a <code>DBSecurityGroupName</code> is specified, the list will contain only the descriptions of the specified DB security group.</p> <note>

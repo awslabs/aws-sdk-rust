@@ -3,6 +3,17 @@ pub use crate::operation::get_ec2_recommendation_projected_metrics::_get_ec2_rec
 
 pub use crate::operation::get_ec2_recommendation_projected_metrics::_get_ec2_recommendation_projected_metrics_input::GetEc2RecommendationProjectedMetricsInputBuilder;
 
+impl GetEc2RecommendationProjectedMetricsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_ec2_recommendation_projected_metrics::GetEc2RecommendationProjectedMetricsOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_ec2_recommendation_projected_metrics::GetEC2RecommendationProjectedMetricsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_ec2_recommendation_projected_metrics();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetEC2RecommendationProjectedMetrics`.
 ///
 /// <p>Returns the projected utilization metrics of Amazon EC2 instance recommendations.</p> <note>

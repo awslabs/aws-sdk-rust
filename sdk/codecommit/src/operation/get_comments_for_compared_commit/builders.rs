@@ -3,6 +3,23 @@ pub use crate::operation::get_comments_for_compared_commit::_get_comments_for_co
 
 pub use crate::operation::get_comments_for_compared_commit::_get_comments_for_compared_commit_input::GetCommentsForComparedCommitInputBuilder;
 
+impl GetCommentsForComparedCommitInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_comments_for_compared_commit::GetCommentsForComparedCommitOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_comments_for_compared_commit::GetCommentsForComparedCommitError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_comments_for_compared_commit();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetCommentsForComparedCommit`.
 ///
 /// <p>Returns information about comments made on the comparison between two commits.</p> <note>

@@ -3,6 +3,23 @@ pub use crate::operation::start_object::_start_object_output::StartObjectOutputB
 
 pub use crate::operation::start_object::_start_object_input::StartObjectInputBuilder;
 
+impl StartObjectInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_object::StartObjectOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_object::StartObjectError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_object();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartObject`.
 ///
 /// Start upload containing one or many chunks.

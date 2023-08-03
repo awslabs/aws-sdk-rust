@@ -3,6 +3,17 @@ pub use crate::operation::list_data_quality_rule_recommendation_runs::_list_data
 
 pub use crate::operation::list_data_quality_rule_recommendation_runs::_list_data_quality_rule_recommendation_runs_input::ListDataQualityRuleRecommendationRunsInputBuilder;
 
+impl ListDataQualityRuleRecommendationRunsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_data_quality_rule_recommendation_runs::ListDataQualityRuleRecommendationRunsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_data_quality_rule_recommendation_runs::ListDataQualityRuleRecommendationRunsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_data_quality_rule_recommendation_runs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDataQualityRuleRecommendationRuns`.
 ///
 /// <p>Lists the recommendation runs meeting the filter criteria.</p>

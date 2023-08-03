@@ -3,6 +3,23 @@ pub use crate::operation::list_resolver_rule_associations::_list_resolver_rule_a
 
 pub use crate::operation::list_resolver_rule_associations::_list_resolver_rule_associations_input::ListResolverRuleAssociationsInputBuilder;
 
+impl ListResolverRuleAssociationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_resolver_rule_associations::ListResolverRuleAssociationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_resolver_rule_associations::ListResolverRuleAssociationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_resolver_rule_associations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListResolverRuleAssociations`.
 ///
 /// <p>Lists the associations that were created between Resolver rules and VPCs using the current Amazon Web Services account.</p>

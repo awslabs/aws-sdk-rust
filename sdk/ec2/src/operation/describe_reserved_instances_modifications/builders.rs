@@ -3,6 +3,17 @@ pub use crate::operation::describe_reserved_instances_modifications::_describe_r
 
 pub use crate::operation::describe_reserved_instances_modifications::_describe_reserved_instances_modifications_input::DescribeReservedInstancesModificationsInputBuilder;
 
+impl DescribeReservedInstancesModificationsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_reserved_instances_modifications::DescribeReservedInstancesModificationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_reserved_instances_modifications::DescribeReservedInstancesModificationsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_reserved_instances_modifications();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeReservedInstancesModifications`.
 ///
 /// <p>Describes the modifications made to your Reserved Instances. If no parameter is specified, information about all your Reserved Instances modification requests is returned. If a modification ID is specified, only information about the specific modification is returned.</p>

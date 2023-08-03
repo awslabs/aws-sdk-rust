@@ -3,6 +3,23 @@ pub use crate::operation::list_journal_s3_exports::_list_journal_s3_exports_outp
 
 pub use crate::operation::list_journal_s3_exports::_list_journal_s3_exports_input::ListJournalS3ExportsInputBuilder;
 
+impl ListJournalS3ExportsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_journal_s3_exports::ListJournalS3ExportsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_journal_s3_exports::ListJournalS3ExportsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_journal_s3_exports();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListJournalS3Exports`.
 ///
 /// <p>Returns all journal export jobs for all ledgers that are associated with the current Amazon Web Services account and Region.</p>

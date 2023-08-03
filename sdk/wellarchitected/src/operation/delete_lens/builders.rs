@@ -3,6 +3,23 @@ pub use crate::operation::delete_lens::_delete_lens_output::DeleteLensOutputBuil
 
 pub use crate::operation::delete_lens::_delete_lens_input::DeleteLensInputBuilder;
 
+impl DeleteLensInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_lens::DeleteLensOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_lens::DeleteLensError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_lens();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteLens`.
 ///
 /// <p>Delete an existing lens.</p>

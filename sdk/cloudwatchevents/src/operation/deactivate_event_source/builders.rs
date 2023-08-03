@@ -3,6 +3,23 @@ pub use crate::operation::deactivate_event_source::_deactivate_event_source_outp
 
 pub use crate::operation::deactivate_event_source::_deactivate_event_source_input::DeactivateEventSourceInputBuilder;
 
+impl DeactivateEventSourceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::deactivate_event_source::DeactivateEventSourceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::deactivate_event_source::DeactivateEventSourceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.deactivate_event_source();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeactivateEventSource`.
 ///
 /// <p>You can use this operation to temporarily stop receiving events from the specified partner event source. The matching event bus is not deleted. </p>

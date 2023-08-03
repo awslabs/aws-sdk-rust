@@ -3,6 +3,23 @@ pub use crate::operation::get_discovery_summary::_get_discovery_summary_output::
 
 pub use crate::operation::get_discovery_summary::_get_discovery_summary_input::GetDiscoverySummaryInputBuilder;
 
+impl GetDiscoverySummaryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_discovery_summary::GetDiscoverySummaryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_discovery_summary::GetDiscoverySummaryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_discovery_summary();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetDiscoverySummary`.
 ///
 /// <p>Retrieves a short summary of discovered assets.</p>

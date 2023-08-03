@@ -3,6 +3,23 @@ pub use crate::operation::batch_delete_partition::_batch_delete_partition_output
 
 pub use crate::operation::batch_delete_partition::_batch_delete_partition_input::BatchDeletePartitionInputBuilder;
 
+impl BatchDeletePartitionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_delete_partition::BatchDeletePartitionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_delete_partition::BatchDeletePartitionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_delete_partition();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchDeletePartition`.
 ///
 /// <p>Deletes one or more partitions in a batch operation.</p>

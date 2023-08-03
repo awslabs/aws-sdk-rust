@@ -3,6 +3,17 @@ pub use crate::operation::describe_model_bias_job_definition::_describe_model_bi
 
 pub use crate::operation::describe_model_bias_job_definition::_describe_model_bias_job_definition_input::DescribeModelBiasJobDefinitionInputBuilder;
 
+impl DescribeModelBiasJobDefinitionInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_model_bias_job_definition::DescribeModelBiasJobDefinitionOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_model_bias_job_definition::DescribeModelBiasJobDefinitionError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_model_bias_job_definition();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeModelBiasJobDefinition`.
 ///
 /// <p>Returns a description of a model bias job definition.</p>

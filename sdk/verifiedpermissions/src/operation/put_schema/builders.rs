@@ -3,6 +3,23 @@ pub use crate::operation::put_schema::_put_schema_output::PutSchemaOutputBuilder
 
 pub use crate::operation::put_schema::_put_schema_input::PutSchemaInputBuilder;
 
+impl PutSchemaInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_schema::PutSchemaOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_schema::PutSchemaError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_schema();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutSchema`.
 ///
 /// <p>Creates or updates the policy schema in the specified policy store. The schema is used to validate any Cedar policies and policy templates submitted to the policy store. Any changes to the schema validate only policies and templates submitted after the schema change. Existing policies and templates are not re-evaluated against the changed schema. If you later update a policy, then it is evaluated against the new schema at that time.</p>

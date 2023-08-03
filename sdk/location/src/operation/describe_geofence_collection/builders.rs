@@ -3,6 +3,23 @@ pub use crate::operation::describe_geofence_collection::_describe_geofence_colle
 
 pub use crate::operation::describe_geofence_collection::_describe_geofence_collection_input::DescribeGeofenceCollectionInputBuilder;
 
+impl DescribeGeofenceCollectionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_geofence_collection::DescribeGeofenceCollectionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_geofence_collection::DescribeGeofenceCollectionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_geofence_collection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeGeofenceCollection`.
 ///
 /// <p>Retrieves the geofence collection details.</p>

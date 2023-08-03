@@ -3,6 +3,23 @@ pub use crate::operation::get_object_acl::_get_object_acl_output::GetObjectAclOu
 
 pub use crate::operation::get_object_acl::_get_object_acl_input::GetObjectAclInputBuilder;
 
+impl GetObjectAclInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_object_acl::GetObjectAclOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_object_acl::GetObjectAclError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_object_acl();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetObjectAcl`.
 ///
 /// <p>Returns the access control list (ACL) of an object. To use this operation, you must have <code>s3:GetObjectAcl</code> permissions or <code>READ_ACP</code> access to the object. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/acl-overview.html#acl-access-policy-permission-mapping">Mapping of ACL permissions and access policy permissions</a> in the <i>Amazon S3 User Guide</i> </p>

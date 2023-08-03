@@ -3,6 +3,23 @@ pub use crate::operation::describe_opt_out_lists::_describe_opt_out_lists_output
 
 pub use crate::operation::describe_opt_out_lists::_describe_opt_out_lists_input::DescribeOptOutListsInputBuilder;
 
+impl DescribeOptOutListsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_opt_out_lists::DescribeOptOutListsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_opt_out_lists::DescribeOptOutListsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_opt_out_lists();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeOptOutLists`.
 ///
 /// <p>Describes the specified opt-out list or all opt-out lists in your account.</p>

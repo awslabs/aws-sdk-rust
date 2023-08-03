@@ -3,6 +3,23 @@ pub use crate::operation::verify_mac::_verify_mac_output::VerifyMacOutputBuilder
 
 pub use crate::operation::verify_mac::_verify_mac_input::VerifyMacInputBuilder;
 
+impl VerifyMacInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::verify_mac::VerifyMacOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::verify_mac::VerifyMacError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.verify_mac();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `VerifyMac`.
 ///
 /// <p>Verifies a Message Authentication Code (MAC). </p>

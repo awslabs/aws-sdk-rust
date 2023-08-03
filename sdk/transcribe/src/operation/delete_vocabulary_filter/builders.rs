@@ -3,6 +3,23 @@ pub use crate::operation::delete_vocabulary_filter::_delete_vocabulary_filter_ou
 
 pub use crate::operation::delete_vocabulary_filter::_delete_vocabulary_filter_input::DeleteVocabularyFilterInputBuilder;
 
+impl DeleteVocabularyFilterInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_vocabulary_filter::DeleteVocabularyFilterOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_vocabulary_filter::DeleteVocabularyFilterError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_vocabulary_filter();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteVocabularyFilter`.
 ///
 /// <p>Deletes a custom vocabulary filter. To use this operation, specify the name of the custom vocabulary filter you want to delete using <code>VocabularyFilterName</code>. Custom vocabulary filter names are case sensitive.</p>

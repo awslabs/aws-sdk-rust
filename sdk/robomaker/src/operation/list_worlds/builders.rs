@@ -3,6 +3,23 @@ pub use crate::operation::list_worlds::_list_worlds_output::ListWorldsOutputBuil
 
 pub use crate::operation::list_worlds::_list_worlds_input::ListWorldsInputBuilder;
 
+impl ListWorldsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_worlds::ListWorldsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_worlds::ListWorldsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_worlds();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListWorlds`.
 ///
 /// <p>Lists worlds.</p>

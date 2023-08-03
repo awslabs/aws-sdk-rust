@@ -3,6 +3,23 @@ pub use crate::operation::list_document_classifiers::_list_document_classifiers_
 
 pub use crate::operation::list_document_classifiers::_list_document_classifiers_input::ListDocumentClassifiersInputBuilder;
 
+impl ListDocumentClassifiersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_document_classifiers::ListDocumentClassifiersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_document_classifiers::ListDocumentClassifiersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_document_classifiers();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDocumentClassifiers`.
 ///
 /// <p>Gets a list of the document classifiers that you have created.</p>

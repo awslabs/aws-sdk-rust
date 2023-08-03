@@ -3,6 +3,23 @@ pub use crate::operation::get_outpost_instance_types::_get_outpost_instance_type
 
 pub use crate::operation::get_outpost_instance_types::_get_outpost_instance_types_input::GetOutpostInstanceTypesInputBuilder;
 
+impl GetOutpostInstanceTypesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_outpost_instance_types::GetOutpostInstanceTypesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_outpost_instance_types::GetOutpostInstanceTypesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_outpost_instance_types();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetOutpostInstanceTypes`.
 ///
 /// <p>Gets the instance types for the specified Outpost.</p>

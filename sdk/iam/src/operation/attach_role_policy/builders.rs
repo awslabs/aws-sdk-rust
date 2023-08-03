@@ -3,6 +3,23 @@ pub use crate::operation::attach_role_policy::_attach_role_policy_output::Attach
 
 pub use crate::operation::attach_role_policy::_attach_role_policy_input::AttachRolePolicyInputBuilder;
 
+impl AttachRolePolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::attach_role_policy::AttachRolePolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::attach_role_policy::AttachRolePolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.attach_role_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AttachRolePolicy`.
 ///
 /// <p>Attaches the specified managed policy to the specified IAM role. When you attach a managed policy to a role, the managed policy becomes part of the role's permission (access) policy.</p> <note>

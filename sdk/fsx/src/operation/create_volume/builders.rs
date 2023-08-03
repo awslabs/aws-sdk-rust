@@ -3,6 +3,23 @@ pub use crate::operation::create_volume::_create_volume_output::CreateVolumeOutp
 
 pub use crate::operation::create_volume::_create_volume_input::CreateVolumeInputBuilder;
 
+impl CreateVolumeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_volume::CreateVolumeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_volume::CreateVolumeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_volume();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateVolume`.
 ///
 /// <p>Creates an FSx for ONTAP or Amazon FSx for OpenZFS storage volume.</p>

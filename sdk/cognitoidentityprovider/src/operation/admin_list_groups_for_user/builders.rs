@@ -3,6 +3,23 @@ pub use crate::operation::admin_list_groups_for_user::_admin_list_groups_for_use
 
 pub use crate::operation::admin_list_groups_for_user::_admin_list_groups_for_user_input::AdminListGroupsForUserInputBuilder;
 
+impl AdminListGroupsForUserInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::admin_list_groups_for_user::AdminListGroupsForUserOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::admin_list_groups_for_user::AdminListGroupsForUserError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.admin_list_groups_for_user();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AdminListGroupsForUser`.
 ///
 /// <p>Lists the groups that the user belongs to.</p>

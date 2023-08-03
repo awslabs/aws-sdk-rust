@@ -3,6 +3,23 @@ pub use crate::operation::delete_access_log_settings::_delete_access_log_setting
 
 pub use crate::operation::delete_access_log_settings::_delete_access_log_settings_input::DeleteAccessLogSettingsInputBuilder;
 
+impl DeleteAccessLogSettingsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_access_log_settings::DeleteAccessLogSettingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_access_log_settings::DeleteAccessLogSettingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_access_log_settings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteAccessLogSettings`.
 ///
 /// <p>Deletes the AccessLogSettings for a Stage. To disable access logging for a Stage, delete its AccessLogSettings.</p>

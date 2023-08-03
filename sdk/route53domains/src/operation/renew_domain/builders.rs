@@ -3,6 +3,23 @@ pub use crate::operation::renew_domain::_renew_domain_output::RenewDomainOutputB
 
 pub use crate::operation::renew_domain::_renew_domain_input::RenewDomainInputBuilder;
 
+impl RenewDomainInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::renew_domain::RenewDomainOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::renew_domain::RenewDomainError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.renew_domain();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RenewDomain`.
 ///
 /// <p>This operation renews a domain for the specified number of years. The cost of renewing your domain is billed to your Amazon Web Services account.</p>

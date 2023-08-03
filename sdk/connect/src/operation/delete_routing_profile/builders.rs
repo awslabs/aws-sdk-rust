@@ -3,6 +3,23 @@ pub use crate::operation::delete_routing_profile::_delete_routing_profile_output
 
 pub use crate::operation::delete_routing_profile::_delete_routing_profile_input::DeleteRoutingProfileInputBuilder;
 
+impl DeleteRoutingProfileInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_routing_profile::DeleteRoutingProfileOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_routing_profile::DeleteRoutingProfileError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_routing_profile();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteRoutingProfile`.
 ///
 /// <p>Deletes a routing profile.</p>

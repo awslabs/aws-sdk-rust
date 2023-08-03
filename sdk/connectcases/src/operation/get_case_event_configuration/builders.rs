@@ -3,6 +3,23 @@ pub use crate::operation::get_case_event_configuration::_get_case_event_configur
 
 pub use crate::operation::get_case_event_configuration::_get_case_event_configuration_input::GetCaseEventConfigurationInputBuilder;
 
+impl GetCaseEventConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_case_event_configuration::GetCaseEventConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_case_event_configuration::GetCaseEventConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_case_event_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetCaseEventConfiguration`.
 ///
 /// <p>Returns the case event publishing configuration.</p>

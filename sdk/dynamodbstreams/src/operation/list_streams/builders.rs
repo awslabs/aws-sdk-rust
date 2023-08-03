@@ -3,6 +3,23 @@ pub use crate::operation::list_streams::_list_streams_output::ListStreamsOutputB
 
 pub use crate::operation::list_streams::_list_streams_input::ListStreamsInputBuilder;
 
+impl ListStreamsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_streams::ListStreamsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_streams::ListStreamsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_streams();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListStreams`.
 ///
 /// <p>Returns an array of stream ARNs associated with the current account and endpoint. If the <code>TableName</code> parameter is present, then <code>ListStreams</code> will return only the streams ARNs for that table.</p> <note>

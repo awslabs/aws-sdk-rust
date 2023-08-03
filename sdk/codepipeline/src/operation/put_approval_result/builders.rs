@@ -3,6 +3,23 @@ pub use crate::operation::put_approval_result::_put_approval_result_output::PutA
 
 pub use crate::operation::put_approval_result::_put_approval_result_input::PutApprovalResultInputBuilder;
 
+impl PutApprovalResultInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_approval_result::PutApprovalResultOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_approval_result::PutApprovalResultError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_approval_result();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutApprovalResult`.
 ///
 /// <p>Provides the response to a manual approval request to CodePipeline. Valid responses include Approved and Rejected.</p>

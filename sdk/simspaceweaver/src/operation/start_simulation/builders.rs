@@ -3,6 +3,23 @@ pub use crate::operation::start_simulation::_start_simulation_output::StartSimul
 
 pub use crate::operation::start_simulation::_start_simulation_input::StartSimulationInputBuilder;
 
+impl StartSimulationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_simulation::StartSimulationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_simulation::StartSimulationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_simulation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartSimulation`.
 ///
 /// <p>Starts a simulation with the given name. You must choose to start your simulation from a schema or from a snapshot. For more information about the schema, see the <a href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/schema-reference.html">schema reference</a> in the <i>SimSpace Weaver User Guide</i>. For more information about snapshots, see <a href="https://docs.aws.amazon.com/simspaceweaver/latest/userguide/working-with_snapshots.html">Snapshots</a> in the <i>SimSpace Weaver User Guide</i>.</p>

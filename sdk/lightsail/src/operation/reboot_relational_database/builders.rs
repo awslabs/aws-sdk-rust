@@ -3,6 +3,23 @@ pub use crate::operation::reboot_relational_database::_reboot_relational_databas
 
 pub use crate::operation::reboot_relational_database::_reboot_relational_database_input::RebootRelationalDatabaseInputBuilder;
 
+impl RebootRelationalDatabaseInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::reboot_relational_database::RebootRelationalDatabaseOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::reboot_relational_database::RebootRelationalDatabaseError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.reboot_relational_database();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RebootRelationalDatabase`.
 ///
 /// <p>Restarts a specific database in Amazon Lightsail.</p>

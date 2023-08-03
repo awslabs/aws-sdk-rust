@@ -3,6 +3,23 @@ pub use crate::operation::describe_account_subscription::_describe_account_subsc
 
 pub use crate::operation::describe_account_subscription::_describe_account_subscription_input::DescribeAccountSubscriptionInputBuilder;
 
+impl DescribeAccountSubscriptionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_account_subscription::DescribeAccountSubscriptionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_account_subscription::DescribeAccountSubscriptionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_account_subscription();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAccountSubscription`.
 ///
 /// <p>Use the DescribeAccountSubscription operation to receive a description of an Amazon QuickSight account's subscription. A successful API call returns an <code>AccountInfo</code> object that includes an account's name, subscription status, authentication type, edition, and notification email address.</p>

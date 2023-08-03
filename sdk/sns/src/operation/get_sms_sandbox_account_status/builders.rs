@@ -3,6 +3,23 @@ pub use crate::operation::get_sms_sandbox_account_status::_get_sms_sandbox_accou
 
 pub use crate::operation::get_sms_sandbox_account_status::_get_sms_sandbox_account_status_input::GetSmsSandboxAccountStatusInputBuilder;
 
+impl GetSmsSandboxAccountStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_sms_sandbox_account_status::GetSmsSandboxAccountStatusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_sms_sandbox_account_status::GetSMSSandboxAccountStatusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_sms_sandbox_account_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetSMSSandboxAccountStatus`.
 ///
 /// <p>Retrieves the SMS sandbox status for the calling Amazon Web Services account in the target Amazon Web Services Region.</p>

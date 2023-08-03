@@ -3,6 +3,23 @@ pub use crate::operation::get_access_control_effect::_get_access_control_effect_
 
 pub use crate::operation::get_access_control_effect::_get_access_control_effect_input::GetAccessControlEffectInputBuilder;
 
+impl GetAccessControlEffectInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_access_control_effect::GetAccessControlEffectOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_access_control_effect::GetAccessControlEffectError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_access_control_effect();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetAccessControlEffect`.
 ///
 /// <p>Gets the effects of an organization's access control rules as they apply to a specified IPv4 address, access protocol action, and user ID or impersonation role ID. You must provide either the user ID or impersonation role ID. Impersonation role ID can only be used with Action EWS.</p>

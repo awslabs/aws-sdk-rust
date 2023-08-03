@@ -3,6 +3,23 @@ pub use crate::operation::disassociate_discovered_resource::_disassociate_discov
 
 pub use crate::operation::disassociate_discovered_resource::_disassociate_discovered_resource_input::DisassociateDiscoveredResourceInputBuilder;
 
+impl DisassociateDiscoveredResourceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_discovered_resource::DisassociateDiscoveredResourceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_discovered_resource::DisassociateDiscoveredResourceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disassociate_discovered_resource();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateDiscoveredResource`.
 ///
 /// <p>Disassociate an Application Discovery Service discovered resource from a migration task.</p>

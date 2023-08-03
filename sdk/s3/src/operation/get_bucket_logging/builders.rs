@@ -3,6 +3,23 @@ pub use crate::operation::get_bucket_logging::_get_bucket_logging_output::GetBuc
 
 pub use crate::operation::get_bucket_logging::_get_bucket_logging_input::GetBucketLoggingInputBuilder;
 
+impl GetBucketLoggingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_bucket_logging::GetBucketLoggingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_bucket_logging::GetBucketLoggingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_bucket_logging();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetBucketLogging`.
 ///
 /// <p>Returns the logging status of a bucket and the permissions users have to view and modify that status.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_faq::_create_faq_output::CreateFaqOutputBuilder
 
 pub use crate::operation::create_faq::_create_faq_input::CreateFaqInputBuilder;
 
+impl CreateFaqInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_faq::CreateFaqOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_faq::CreateFaqError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_faq();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateFaq`.
 ///
 /// <p>Creates a set of frequently ask questions (FAQs) using a specified FAQ file stored in an Amazon S3 bucket.</p>

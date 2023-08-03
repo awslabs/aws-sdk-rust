@@ -3,6 +3,23 @@ pub use crate::operation::modify_cluster::_modify_cluster_output::ModifyClusterO
 
 pub use crate::operation::modify_cluster::_modify_cluster_input::ModifyClusterInputBuilder;
 
+impl ModifyClusterInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_cluster::ModifyClusterOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_cluster::ModifyClusterError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_cluster();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyCluster`.
 ///
 /// <p>Modifies AWS CloudHSM cluster.</p>

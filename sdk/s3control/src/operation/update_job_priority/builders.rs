@@ -3,6 +3,23 @@ pub use crate::operation::update_job_priority::_update_job_priority_output::Upda
 
 pub use crate::operation::update_job_priority::_update_job_priority_input::UpdateJobPriorityInputBuilder;
 
+impl UpdateJobPriorityInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_job_priority::UpdateJobPriorityOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_job_priority::UpdateJobPriorityError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_job_priority();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateJobPriority`.
 ///
 /// <p>Updates an existing S3 Batch Operations job's priority. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops.html">S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::update_hit_type_of_hit::_update_hit_type_of_hit_output
 
 pub use crate::operation::update_hit_type_of_hit::_update_hit_type_of_hit_input::UpdateHitTypeOfHitInputBuilder;
 
+impl UpdateHitTypeOfHitInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_hit_type_of_hit::UpdateHitTypeOfHitOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_hit_type_of_hit::UpdateHITTypeOfHITError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_hit_type_of_hit();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateHITTypeOfHIT`.
 ///
 /// <p> The <code>UpdateHITTypeOfHIT</code> operation allows you to change the HITType properties of a HIT. This operation disassociates the HIT from its old HITType properties and associates it with the new HITType properties. The HIT takes on the properties of the new HITType in place of the old ones. </p>

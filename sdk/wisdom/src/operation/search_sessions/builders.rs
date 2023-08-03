@@ -3,6 +3,23 @@ pub use crate::operation::search_sessions::_search_sessions_output::SearchSessio
 
 pub use crate::operation::search_sessions::_search_sessions_input::SearchSessionsInputBuilder;
 
+impl SearchSessionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::search_sessions::SearchSessionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::search_sessions::SearchSessionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.search_sessions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SearchSessions`.
 ///
 /// <p>Searches for sessions.</p>

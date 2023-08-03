@@ -3,6 +3,23 @@ pub use crate::operation::create_multiplex_program::_create_multiplex_program_ou
 
 pub use crate::operation::create_multiplex_program::_create_multiplex_program_input::CreateMultiplexProgramInputBuilder;
 
+impl CreateMultiplexProgramInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_multiplex_program::CreateMultiplexProgramOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_multiplex_program::CreateMultiplexProgramError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_multiplex_program();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateMultiplexProgram`.
 ///
 /// Create a new program in the multiplex.

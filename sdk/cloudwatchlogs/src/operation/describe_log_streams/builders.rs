@@ -3,6 +3,23 @@ pub use crate::operation::describe_log_streams::_describe_log_streams_output::De
 
 pub use crate::operation::describe_log_streams::_describe_log_streams_input::DescribeLogStreamsInputBuilder;
 
+impl DescribeLogStreamsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_log_streams::DescribeLogStreamsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_log_streams::DescribeLogStreamsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_log_streams();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeLogStreams`.
 ///
 /// <p>Lists the log streams for the specified log group. You can list all the log streams or filter the results by prefix. You can also control how the results are ordered.</p>

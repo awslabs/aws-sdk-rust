@@ -3,6 +3,23 @@ pub use crate::operation::get_generated_policy::_get_generated_policy_output::Ge
 
 pub use crate::operation::get_generated_policy::_get_generated_policy_input::GetGeneratedPolicyInputBuilder;
 
+impl GetGeneratedPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_generated_policy::GetGeneratedPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_generated_policy::GetGeneratedPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_generated_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetGeneratedPolicy`.
 ///
 /// <p>Retrieves the policy that was generated using <code>StartPolicyGeneration</code>. </p>

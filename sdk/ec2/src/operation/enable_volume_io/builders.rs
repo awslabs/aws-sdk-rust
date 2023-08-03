@@ -3,6 +3,23 @@ pub use crate::operation::enable_volume_io::_enable_volume_io_output::EnableVolu
 
 pub use crate::operation::enable_volume_io::_enable_volume_io_input::EnableVolumeIoInputBuilder;
 
+impl EnableVolumeIoInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::enable_volume_io::EnableVolumeIoOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::enable_volume_io::EnableVolumeIOError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.enable_volume_io();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `EnableVolumeIO`.
 ///
 /// <p>Enables I/O operations for a volume that had I/O operations disabled because the data on the volume was potentially inconsistent.</p>

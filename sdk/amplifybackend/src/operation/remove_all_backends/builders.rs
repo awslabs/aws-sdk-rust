@@ -3,6 +3,23 @@ pub use crate::operation::remove_all_backends::_remove_all_backends_output::Remo
 
 pub use crate::operation::remove_all_backends::_remove_all_backends_input::RemoveAllBackendsInputBuilder;
 
+impl RemoveAllBackendsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::remove_all_backends::RemoveAllBackendsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::remove_all_backends::RemoveAllBackendsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.remove_all_backends();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RemoveAllBackends`.
 ///
 /// <p>Removes all backend environments from your Amplify project.</p>

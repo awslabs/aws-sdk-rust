@@ -3,6 +3,23 @@ pub use crate::operation::start_instances::_start_instances_output::StartInstanc
 
 pub use crate::operation::start_instances::_start_instances_input::StartInstancesInputBuilder;
 
+impl StartInstancesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_instances::StartInstancesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_instances::StartInstancesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_instances();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartInstances`.
 ///
 /// <p>Starts an Amazon EBS-backed instance that you've previously stopped.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::modify_availability_zone_group::_modify_availability_z
 
 pub use crate::operation::modify_availability_zone_group::_modify_availability_zone_group_input::ModifyAvailabilityZoneGroupInputBuilder;
 
+impl ModifyAvailabilityZoneGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_availability_zone_group::ModifyAvailabilityZoneGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_availability_zone_group::ModifyAvailabilityZoneGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_availability_zone_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyAvailabilityZoneGroup`.
 ///
 /// <p>Changes the opt-in status of the Local Zone and Wavelength Zone group for your account.</p>

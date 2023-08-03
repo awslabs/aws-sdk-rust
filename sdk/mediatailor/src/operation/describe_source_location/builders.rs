@@ -3,6 +3,23 @@ pub use crate::operation::describe_source_location::_describe_source_location_ou
 
 pub use crate::operation::describe_source_location::_describe_source_location_input::DescribeSourceLocationInputBuilder;
 
+impl DescribeSourceLocationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_source_location::DescribeSourceLocationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_source_location::DescribeSourceLocationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_source_location();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeSourceLocation`.
 ///
 /// <p>Describes a source location. A source location is a container for sources. For more information about source locations, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-source-locations.html">Working with source locations</a> in the <i>MediaTailor User Guide</i>.</p>

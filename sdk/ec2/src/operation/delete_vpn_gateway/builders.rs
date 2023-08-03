@@ -3,6 +3,23 @@ pub use crate::operation::delete_vpn_gateway::_delete_vpn_gateway_output::Delete
 
 pub use crate::operation::delete_vpn_gateway::_delete_vpn_gateway_input::DeleteVpnGatewayInputBuilder;
 
+impl DeleteVpnGatewayInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_vpn_gateway::DeleteVpnGatewayOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_vpn_gateway::DeleteVpnGatewayError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_vpn_gateway();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteVpnGateway`.
 ///
 /// <p>Deletes the specified virtual private gateway. You must first detach the virtual private gateway from the VPC. Note that you don't need to delete the virtual private gateway if you plan to delete and recreate the VPN connection between your VPC and your network.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::restore_table_to_point_in_time::_restore_table_to_poin
 
 pub use crate::operation::restore_table_to_point_in_time::_restore_table_to_point_in_time_input::RestoreTableToPointInTimeInputBuilder;
 
+impl RestoreTableToPointInTimeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::restore_table_to_point_in_time::RestoreTableToPointInTimeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::restore_table_to_point_in_time::RestoreTableToPointInTimeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.restore_table_to_point_in_time();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RestoreTableToPointInTime`.
 ///
 /// <p>Restores the specified table to the specified point in time within <code>EarliestRestorableDateTime</code> and <code>LatestRestorableDateTime</code>. You can restore your table to any point in time during the last 35 days. Any number of users can execute up to 4 concurrent restores (any type of restore) in a given account. </p>

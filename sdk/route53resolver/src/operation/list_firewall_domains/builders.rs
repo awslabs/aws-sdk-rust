@@ -3,6 +3,23 @@ pub use crate::operation::list_firewall_domains::_list_firewall_domains_output::
 
 pub use crate::operation::list_firewall_domains::_list_firewall_domains_input::ListFirewallDomainsInputBuilder;
 
+impl ListFirewallDomainsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_firewall_domains::ListFirewallDomainsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_firewall_domains::ListFirewallDomainsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_firewall_domains();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListFirewallDomains`.
 ///
 /// <p>Retrieves the domains that you have defined for the specified firewall domain list. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_storedi_scsi_volumes::_describe_storedi_scsi_
 
 pub use crate::operation::describe_storedi_scsi_volumes::_describe_storedi_scsi_volumes_input::DescribeStorediScsiVolumesInputBuilder;
 
+impl DescribeStorediScsiVolumesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_storedi_scsi_volumes::DescribeStorediScsiVolumesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_storedi_scsi_volumes::DescribeStorediSCSIVolumesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_storedi_scsi_volumes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeStorediSCSIVolumes`.
 ///
 /// <p>Returns the description of the gateway volumes specified in the request. The list of gateway volumes in the request must be from one gateway. In the response, Storage Gateway returns volume information sorted by volume ARNs. This operation is only supported in stored volume gateway type.</p>

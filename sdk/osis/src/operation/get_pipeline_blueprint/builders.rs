@@ -3,6 +3,23 @@ pub use crate::operation::get_pipeline_blueprint::_get_pipeline_blueprint_output
 
 pub use crate::operation::get_pipeline_blueprint::_get_pipeline_blueprint_input::GetPipelineBlueprintInputBuilder;
 
+impl GetPipelineBlueprintInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_pipeline_blueprint::GetPipelineBlueprintOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_pipeline_blueprint::GetPipelineBlueprintError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_pipeline_blueprint();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetPipelineBlueprint`.
 ///
 /// <p>Retrieves information about a specific blueprint for OpenSearch Ingestion. Blueprints are templates for the configuration needed for a <code>CreatePipeline</code> request. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/creating-pipeline.html#pipeline-blueprint">Using blueprints to create a pipeline</a>.</p>

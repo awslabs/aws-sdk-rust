@@ -3,6 +3,23 @@ pub use crate::operation::describe_deployments::_describe_deployments_output::De
 
 pub use crate::operation::describe_deployments::_describe_deployments_input::DescribeDeploymentsInputBuilder;
 
+impl DescribeDeploymentsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_deployments::DescribeDeploymentsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_deployments::DescribeDeploymentsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_deployments();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeDeployments`.
 ///
 /// <p>Requests a description of a specified set of deployments.</p> <note>

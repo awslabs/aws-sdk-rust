@@ -3,6 +3,23 @@ pub use crate::operation::list_node_from_template_jobs::_list_node_from_template
 
 pub use crate::operation::list_node_from_template_jobs::_list_node_from_template_jobs_input::ListNodeFromTemplateJobsInputBuilder;
 
+impl ListNodeFromTemplateJobsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_node_from_template_jobs::ListNodeFromTemplateJobsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_node_from_template_jobs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListNodeFromTemplateJobs`.
 ///
 /// <p>Returns a list of camera stream node jobs.</p>

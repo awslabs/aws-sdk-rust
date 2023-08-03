@@ -3,6 +3,23 @@ pub use crate::operation::detect_document_text::_detect_document_text_output::De
 
 pub use crate::operation::detect_document_text::_detect_document_text_input::DetectDocumentTextInputBuilder;
 
+impl DetectDocumentTextInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::detect_document_text::DetectDocumentTextOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::detect_document_text::DetectDocumentTextError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.detect_document_text();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DetectDocumentText`.
 ///
 /// <p>Detects text in the input document. Amazon Textract can detect lines of text and the words that make up a line of text. The input document must be in one of the following image formats: JPEG, PNG, PDF, or TIFF. <code>DetectDocumentText</code> returns the detected text in an array of <code>Block</code> objects. </p>

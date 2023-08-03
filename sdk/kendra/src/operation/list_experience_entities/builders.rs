@@ -3,6 +3,23 @@ pub use crate::operation::list_experience_entities::_list_experience_entities_ou
 
 pub use crate::operation::list_experience_entities::_list_experience_entities_input::ListExperienceEntitiesInputBuilder;
 
+impl ListExperienceEntitiesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_experience_entities::ListExperienceEntitiesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_experience_entities::ListExperienceEntitiesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_experience_entities();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListExperienceEntities`.
 ///
 /// <p>Lists users or groups in your IAM Identity Center identity source that are granted access to your Amazon Kendra experience. You can create an Amazon Kendra experience such as a search application. For more information on creating a search application experience, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/deploying-search-experience-no-code.html">Building a search experience with no code</a>.</p>

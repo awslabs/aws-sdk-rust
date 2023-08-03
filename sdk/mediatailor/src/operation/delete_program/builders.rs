@@ -3,6 +3,23 @@ pub use crate::operation::delete_program::_delete_program_output::DeleteProgramO
 
 pub use crate::operation::delete_program::_delete_program_input::DeleteProgramInputBuilder;
 
+impl DeleteProgramInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_program::DeleteProgramOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_program::DeleteProgramError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_program();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteProgram`.
 ///
 /// <p>Deletes a program within a channel. For information about programs, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-programs.html">Working with programs</a> in the <i>MediaTailor User Guide</i>.</p>

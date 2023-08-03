@@ -3,6 +3,23 @@ pub use crate::operation::list_dev_endpoints::_list_dev_endpoints_output::ListDe
 
 pub use crate::operation::list_dev_endpoints::_list_dev_endpoints_input::ListDevEndpointsInputBuilder;
 
+impl ListDevEndpointsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_dev_endpoints::ListDevEndpointsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_dev_endpoints::ListDevEndpointsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_dev_endpoints();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDevEndpoints`.
 ///
 /// <p>Retrieves the names of all <code>DevEndpoint</code> resources in this Amazon Web Services account, or the resources with the specified tag. This operation allows you to see which resources are available in your account, and their names.</p>

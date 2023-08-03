@@ -3,6 +3,23 @@ pub use crate::operation::update_enrollment_status::_update_enrollment_status_ou
 
 pub use crate::operation::update_enrollment_status::_update_enrollment_status_input::UpdateEnrollmentStatusInputBuilder;
 
+impl UpdateEnrollmentStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_enrollment_status::UpdateEnrollmentStatusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_enrollment_status::UpdateEnrollmentStatusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_enrollment_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateEnrollmentStatus`.
 ///
 /// <p>Updates the enrollment (opt in and opt out) status of an account to the Compute Optimizer service.</p>

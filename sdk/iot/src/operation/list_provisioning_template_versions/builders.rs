@@ -3,6 +3,17 @@ pub use crate::operation::list_provisioning_template_versions::_list_provisionin
 
 pub use crate::operation::list_provisioning_template_versions::_list_provisioning_template_versions_input::ListProvisioningTemplateVersionsInputBuilder;
 
+impl ListProvisioningTemplateVersionsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_provisioning_template_versions::ListProvisioningTemplateVersionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_provisioning_template_versions::ListProvisioningTemplateVersionsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_provisioning_template_versions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListProvisioningTemplateVersions`.
 ///
 /// <p>A list of provisioning template versions.</p>

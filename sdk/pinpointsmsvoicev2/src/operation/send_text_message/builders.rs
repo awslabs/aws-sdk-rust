@@ -3,6 +3,23 @@ pub use crate::operation::send_text_message::_send_text_message_output::SendText
 
 pub use crate::operation::send_text_message::_send_text_message_input::SendTextMessageInputBuilder;
 
+impl SendTextMessageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::send_text_message::SendTextMessageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::send_text_message::SendTextMessageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.send_text_message();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SendTextMessage`.
 ///
 /// <p>Creates a new text message and sends it to a recipient's phone number.</p>

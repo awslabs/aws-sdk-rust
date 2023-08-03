@@ -3,6 +3,23 @@ pub use crate::operation::create_suite_definition::_create_suite_definition_outp
 
 pub use crate::operation::create_suite_definition::_create_suite_definition_input::CreateSuiteDefinitionInputBuilder;
 
+impl CreateSuiteDefinitionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_suite_definition::CreateSuiteDefinitionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_suite_definition::CreateSuiteDefinitionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_suite_definition();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateSuiteDefinition`.
 ///
 /// <p>Creates a Device Advisor test suite.</p>

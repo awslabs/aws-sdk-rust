@@ -3,6 +3,23 @@ pub use crate::operation::create_channel_ban::_create_channel_ban_output::Create
 
 pub use crate::operation::create_channel_ban::_create_channel_ban_input::CreateChannelBanInputBuilder;
 
+impl CreateChannelBanInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_channel_ban::CreateChannelBanOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_channel_ban::CreateChannelBanError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_channel_ban();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateChannelBan`.
 ///
 /// <p>Permanently bans a member from a channel. Moderators can't add banned members to a channel. To undo a ban, you first have to <code>DeleteChannelBan</code>, and then <code>CreateChannelMembership</code>. Bans are cleaned up when you delete users or channels.</p>

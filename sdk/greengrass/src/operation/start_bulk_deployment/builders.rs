@@ -3,6 +3,23 @@ pub use crate::operation::start_bulk_deployment::_start_bulk_deployment_output::
 
 pub use crate::operation::start_bulk_deployment::_start_bulk_deployment_input::StartBulkDeploymentInputBuilder;
 
+impl StartBulkDeploymentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_bulk_deployment::StartBulkDeploymentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_bulk_deployment::StartBulkDeploymentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_bulk_deployment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartBulkDeployment`.
 ///
 /// Deploys multiple groups in one operation. This action starts the bulk deployment of a specified set of group versions. Each group version deployment will be triggered with an adaptive rate that has a fixed upper limit. We recommend that you include an ''X-Amzn-Client-Token'' token in every ''StartBulkDeployment'' request. These requests are idempotent with respect to the token and the request parameters.

@@ -3,6 +3,23 @@ pub use crate::operation::deregister_application::_deregister_application_output
 
 pub use crate::operation::deregister_application::_deregister_application_input::DeregisterApplicationInputBuilder;
 
+impl DeregisterApplicationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::deregister_application::DeregisterApplicationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::deregister_application::DeregisterApplicationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.deregister_application();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeregisterApplication`.
 ///
 /// <p>Deregister an SAP application with AWS Systems Manager for SAP. This action does not aﬀect the existing setup of your SAP workloads on Amazon EC2.</p>

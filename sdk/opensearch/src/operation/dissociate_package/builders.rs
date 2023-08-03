@@ -3,6 +3,23 @@ pub use crate::operation::dissociate_package::_dissociate_package_output::Dissoc
 
 pub use crate::operation::dissociate_package::_dissociate_package_input::DissociatePackageInputBuilder;
 
+impl DissociatePackageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::dissociate_package::DissociatePackageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::dissociate_package::DissociatePackageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.dissociate_package();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DissociatePackage`.
 ///
 /// <p>Removes a package from the specified Amazon OpenSearch Service domain. The package can't be in use with any OpenSearch index for the dissociation to succeed. The package is still available in OpenSearch Service for association later. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom packages for Amazon OpenSearch Service</a>.</p>

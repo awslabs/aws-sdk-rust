@@ -3,6 +3,23 @@ pub use crate::operation::get_license_configuration::_get_license_configuration_
 
 pub use crate::operation::get_license_configuration::_get_license_configuration_input::GetLicenseConfigurationInputBuilder;
 
+impl GetLicenseConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_license_configuration::GetLicenseConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_license_configuration::GetLicenseConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_license_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetLicenseConfiguration`.
 ///
 /// <p>Gets detailed information about the specified license configuration.</p>

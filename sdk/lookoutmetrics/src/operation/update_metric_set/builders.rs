@@ -3,6 +3,23 @@ pub use crate::operation::update_metric_set::_update_metric_set_output::UpdateMe
 
 pub use crate::operation::update_metric_set::_update_metric_set_input::UpdateMetricSetInputBuilder;
 
+impl UpdateMetricSetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_metric_set::UpdateMetricSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_metric_set::UpdateMetricSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_metric_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateMetricSet`.
 ///
 /// <p>Updates a dataset.</p>

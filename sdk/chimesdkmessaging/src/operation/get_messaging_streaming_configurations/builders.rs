@@ -3,6 +3,17 @@ pub use crate::operation::get_messaging_streaming_configurations::_get_messaging
 
 pub use crate::operation::get_messaging_streaming_configurations::_get_messaging_streaming_configurations_input::GetMessagingStreamingConfigurationsInputBuilder;
 
+impl GetMessagingStreamingConfigurationsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_messaging_streaming_configurations::GetMessagingStreamingConfigurationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_messaging_streaming_configurations::GetMessagingStreamingConfigurationsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_messaging_streaming_configurations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetMessagingStreamingConfigurations`.
 ///
 /// <p>Retrieves the data streaming configuration for an <code>AppInstance</code>. For more information, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/streaming-export.html">Streaming messaging data</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p>

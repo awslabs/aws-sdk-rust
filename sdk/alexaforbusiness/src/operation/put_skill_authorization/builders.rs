@@ -3,6 +3,23 @@ pub use crate::operation::put_skill_authorization::_put_skill_authorization_outp
 
 pub use crate::operation::put_skill_authorization::_put_skill_authorization_input::PutSkillAuthorizationInputBuilder;
 
+impl PutSkillAuthorizationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_skill_authorization::PutSkillAuthorizationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_skill_authorization::PutSkillAuthorizationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_skill_authorization();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutSkillAuthorization`.
 ///
 /// <p>Links a user's account to a third-party skill provider. If this API operation is called by an assumed IAM role, the skill being linked must be a private skill. Also, the skill must be owned by the AWS account that assumed the IAM role.</p>

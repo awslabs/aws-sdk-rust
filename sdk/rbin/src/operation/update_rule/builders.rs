@@ -3,6 +3,23 @@ pub use crate::operation::update_rule::_update_rule_output::UpdateRuleOutputBuil
 
 pub use crate::operation::update_rule::_update_rule_input::UpdateRuleInputBuilder;
 
+impl UpdateRuleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_rule::UpdateRuleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_rule::UpdateRuleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_rule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateRule`.
 ///
 /// <p>Updates an existing Recycle Bin retention rule. You can update a retention rule's description, resource tags, and retention period at any time after creation. You can't update a retention rule's resource type after creation. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin-working-with-rules.html#recycle-bin-update-rule"> Update Recycle Bin retention rules</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>

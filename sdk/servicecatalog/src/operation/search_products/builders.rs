@@ -3,6 +3,23 @@ pub use crate::operation::search_products::_search_products_output::SearchProduc
 
 pub use crate::operation::search_products::_search_products_input::SearchProductsInputBuilder;
 
+impl SearchProductsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::search_products::SearchProductsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::search_products::SearchProductsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.search_products();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SearchProducts`.
 ///
 /// <p>Gets information about the products to which the caller has access.</p>

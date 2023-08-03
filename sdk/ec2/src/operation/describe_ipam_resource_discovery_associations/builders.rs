@@ -3,6 +3,17 @@ pub use crate::operation::describe_ipam_resource_discovery_associations::_descri
 
 pub use crate::operation::describe_ipam_resource_discovery_associations::_describe_ipam_resource_discovery_associations_input::DescribeIpamResourceDiscoveryAssociationsInputBuilder;
 
+impl DescribeIpamResourceDiscoveryAssociationsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_ipam_resource_discovery_associations::DescribeIpamResourceDiscoveryAssociationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_ipam_resource_discovery_associations::DescribeIpamResourceDiscoveryAssociationsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_ipam_resource_discovery_associations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeIpamResourceDiscoveryAssociations`.
 ///
 /// <p>Describes resource discovery association with an Amazon VPC IPAM. An associated resource discovery is a resource discovery that has been associated with an IPAM..</p>

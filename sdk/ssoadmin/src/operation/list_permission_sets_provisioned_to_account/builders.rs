@@ -3,6 +3,17 @@ pub use crate::operation::list_permission_sets_provisioned_to_account::_list_per
 
 pub use crate::operation::list_permission_sets_provisioned_to_account::_list_permission_sets_provisioned_to_account_input::ListPermissionSetsProvisionedToAccountInputBuilder;
 
+impl ListPermissionSetsProvisionedToAccountInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_permission_sets_provisioned_to_account::ListPermissionSetsProvisionedToAccountOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_permission_sets_provisioned_to_account::ListPermissionSetsProvisionedToAccountError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_permission_sets_provisioned_to_account();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListPermissionSetsProvisionedToAccount`.
 ///
 /// <p>Lists all the permission sets that are provisioned to a specified AWS account.</p>

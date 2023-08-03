@@ -3,6 +3,23 @@ pub use crate::operation::predict::_predict_output::PredictOutputBuilder;
 
 pub use crate::operation::predict::_predict_input::PredictInputBuilder;
 
+impl PredictInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::predict::PredictOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::predict::PredictError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.predict();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `Predict`.
 ///
 /// <p>Generates a prediction for the observation using the specified <code>ML Model</code>.</p>

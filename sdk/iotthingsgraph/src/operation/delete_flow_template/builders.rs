@@ -3,6 +3,23 @@ pub use crate::operation::delete_flow_template::_delete_flow_template_output::De
 
 pub use crate::operation::delete_flow_template::_delete_flow_template_input::DeleteFlowTemplateInputBuilder;
 
+impl DeleteFlowTemplateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_flow_template::DeleteFlowTemplateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_flow_template::DeleteFlowTemplateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_flow_template();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteFlowTemplate`.
 ///
 /// <p>Deletes a workflow. Any new system or deployment that contains this workflow will fail to update or deploy. Existing deployments that contain the workflow will continue to run (since they use a snapshot of the workflow taken at the time of deployment).</p>

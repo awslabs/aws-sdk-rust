@@ -3,6 +3,23 @@ pub use crate::operation::describe_batch_inference_job::_describe_batch_inferenc
 
 pub use crate::operation::describe_batch_inference_job::_describe_batch_inference_job_input::DescribeBatchInferenceJobInputBuilder;
 
+impl DescribeBatchInferenceJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_batch_inference_job::DescribeBatchInferenceJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_batch_inference_job::DescribeBatchInferenceJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_batch_inference_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeBatchInferenceJob`.
 ///
 /// <p>Gets the properties of a batch inference job including name, Amazon Resource Name (ARN), status, input and output configurations, and the ARN of the solution version used to generate the recommendations.</p>

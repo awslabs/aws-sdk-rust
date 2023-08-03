@@ -3,6 +3,23 @@ pub use crate::operation::list_monitoring_executions::_list_monitoring_execution
 
 pub use crate::operation::list_monitoring_executions::_list_monitoring_executions_input::ListMonitoringExecutionsInputBuilder;
 
+impl ListMonitoringExecutionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_monitoring_executions::ListMonitoringExecutionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_monitoring_executions::ListMonitoringExecutionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_monitoring_executions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListMonitoringExecutions`.
 ///
 /// <p>Returns list of all monitoring job executions.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_speaker::_describe_speaker_output::DescribeSp
 
 pub use crate::operation::describe_speaker::_describe_speaker_input::DescribeSpeakerInputBuilder;
 
+impl DescribeSpeakerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_speaker::DescribeSpeakerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_speaker::DescribeSpeakerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_speaker();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeSpeaker`.
 ///
 /// <p>Describes the specified speaker.</p>

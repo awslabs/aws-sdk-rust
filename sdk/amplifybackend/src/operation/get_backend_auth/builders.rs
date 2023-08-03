@@ -3,6 +3,23 @@ pub use crate::operation::get_backend_auth::_get_backend_auth_output::GetBackend
 
 pub use crate::operation::get_backend_auth::_get_backend_auth_input::GetBackendAuthInputBuilder;
 
+impl GetBackendAuthInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_backend_auth::GetBackendAuthOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_backend_auth::GetBackendAuthError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_backend_auth();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetBackendAuth`.
 ///
 /// <p>Gets a backend auth details.</p>

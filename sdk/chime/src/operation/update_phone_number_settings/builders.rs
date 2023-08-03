@@ -3,6 +3,23 @@ pub use crate::operation::update_phone_number_settings::_update_phone_number_set
 
 pub use crate::operation::update_phone_number_settings::_update_phone_number_settings_input::UpdatePhoneNumberSettingsInputBuilder;
 
+impl UpdatePhoneNumberSettingsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_phone_number_settings::UpdatePhoneNumberSettingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_phone_number_settings::UpdatePhoneNumberSettingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_phone_number_settings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdatePhoneNumberSettings`.
 ///
 /// <p>Updates the phone number settings for the administrator's AWS account, such as the default outbound calling name. You can update the default outbound calling name once every seven days. Outbound calling names can take up to 72 hours to update.</p>

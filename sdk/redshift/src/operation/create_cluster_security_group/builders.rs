@@ -3,6 +3,23 @@ pub use crate::operation::create_cluster_security_group::_create_cluster_securit
 
 pub use crate::operation::create_cluster_security_group::_create_cluster_security_group_input::CreateClusterSecurityGroupInputBuilder;
 
+impl CreateClusterSecurityGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_cluster_security_group::CreateClusterSecurityGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_cluster_security_group::CreateClusterSecurityGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_cluster_security_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateClusterSecurityGroup`.
 ///
 /// <p>Creates a new Amazon Redshift security group. You use security groups to control access to non-VPC clusters.</p>

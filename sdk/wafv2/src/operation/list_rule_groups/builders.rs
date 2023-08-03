@@ -3,6 +3,23 @@ pub use crate::operation::list_rule_groups::_list_rule_groups_output::ListRuleGr
 
 pub use crate::operation::list_rule_groups::_list_rule_groups_input::ListRuleGroupsInputBuilder;
 
+impl ListRuleGroupsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_rule_groups::ListRuleGroupsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_rule_groups::ListRuleGroupsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_rule_groups();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListRuleGroups`.
 ///
 /// <p>Retrieves an array of <code>RuleGroupSummary</code> objects for the rule groups that you manage. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::update_annotation_store::_update_annotation_store_outp
 
 pub use crate::operation::update_annotation_store::_update_annotation_store_input::UpdateAnnotationStoreInputBuilder;
 
+impl UpdateAnnotationStoreInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_annotation_store::UpdateAnnotationStoreOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_annotation_store::UpdateAnnotationStoreError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_annotation_store();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateAnnotationStore`.
 ///
 /// <p>Updates an annotation store.</p>

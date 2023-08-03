@@ -3,6 +3,23 @@ pub use crate::operation::search_groups::_search_groups_output::SearchGroupsOutp
 
 pub use crate::operation::search_groups::_search_groups_input::SearchGroupsInputBuilder;
 
+impl SearchGroupsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::search_groups::SearchGroupsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::search_groups::SearchGroupsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.search_groups();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SearchGroups`.
 ///
 /// <p>Use the <code>SearchGroups</code> operation to search groups in a specified Amazon QuickSight namespace using the supplied filters.</p>

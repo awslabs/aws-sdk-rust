@@ -3,6 +3,23 @@ pub use crate::operation::describe_configuration_recorders::_describe_configurat
 
 pub use crate::operation::describe_configuration_recorders::_describe_configuration_recorders_input::DescribeConfigurationRecordersInputBuilder;
 
+impl DescribeConfigurationRecordersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_configuration_recorders::DescribeConfigurationRecordersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_configuration_recorders::DescribeConfigurationRecordersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_configuration_recorders();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeConfigurationRecorders`.
 ///
 /// <p>Returns the details for the specified configuration recorders. If the configuration recorder is not specified, this action returns the details for all configuration recorders associated with the account.</p> <note>

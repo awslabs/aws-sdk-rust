@@ -3,6 +3,23 @@ pub use crate::operation::delete_traffic_mirror_target::_delete_traffic_mirror_t
 
 pub use crate::operation::delete_traffic_mirror_target::_delete_traffic_mirror_target_input::DeleteTrafficMirrorTargetInputBuilder;
 
+impl DeleteTrafficMirrorTargetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_traffic_mirror_target::DeleteTrafficMirrorTargetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_traffic_mirror_target::DeleteTrafficMirrorTargetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_traffic_mirror_target();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteTrafficMirrorTarget`.
 ///
 /// <p>Deletes the specified Traffic Mirror target.</p>

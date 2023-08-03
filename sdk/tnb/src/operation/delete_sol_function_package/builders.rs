@@ -3,6 +3,23 @@ pub use crate::operation::delete_sol_function_package::_delete_sol_function_pack
 
 pub use crate::operation::delete_sol_function_package::_delete_sol_function_package_input::DeleteSolFunctionPackageInputBuilder;
 
+impl DeleteSolFunctionPackageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_sol_function_package::DeleteSolFunctionPackageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_sol_function_package::DeleteSolFunctionPackageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_sol_function_package();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteSolFunctionPackage`.
 ///
 /// <p>Deletes a function package.</p>

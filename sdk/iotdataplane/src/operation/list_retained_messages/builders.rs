@@ -3,6 +3,23 @@ pub use crate::operation::list_retained_messages::_list_retained_messages_output
 
 pub use crate::operation::list_retained_messages::_list_retained_messages_input::ListRetainedMessagesInputBuilder;
 
+impl ListRetainedMessagesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_retained_messages::ListRetainedMessagesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_retained_messages::ListRetainedMessagesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_retained_messages();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListRetainedMessages`.
 ///
 /// <p>Lists summary information about the retained messages stored for the account.</p>

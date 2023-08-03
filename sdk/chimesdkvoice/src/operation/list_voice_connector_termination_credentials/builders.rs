@@ -3,6 +3,17 @@ pub use crate::operation::list_voice_connector_termination_credentials::_list_vo
 
 pub use crate::operation::list_voice_connector_termination_credentials::_list_voice_connector_termination_credentials_input::ListVoiceConnectorTerminationCredentialsInputBuilder;
 
+impl ListVoiceConnectorTerminationCredentialsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_voice_connector_termination_credentials::ListVoiceConnectorTerminationCredentialsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_voice_connector_termination_credentials::ListVoiceConnectorTerminationCredentialsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_voice_connector_termination_credentials();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListVoiceConnectorTerminationCredentials`.
 ///
 /// <p>Lists the SIP credentials for the specified Amazon Chime SDK Voice Connector.</p>

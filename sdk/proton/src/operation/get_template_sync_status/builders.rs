@@ -3,6 +3,23 @@ pub use crate::operation::get_template_sync_status::_get_template_sync_status_ou
 
 pub use crate::operation::get_template_sync_status::_get_template_sync_status_input::GetTemplateSyncStatusInputBuilder;
 
+impl GetTemplateSyncStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_template_sync_status::GetTemplateSyncStatusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_template_sync_status::GetTemplateSyncStatusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_template_sync_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetTemplateSyncStatus`.
 ///
 /// <p>Get the status of a template sync.</p>

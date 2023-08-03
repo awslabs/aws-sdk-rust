@@ -3,6 +3,23 @@ pub use crate::operation::list_feature_groups::_list_feature_groups_output::List
 
 pub use crate::operation::list_feature_groups::_list_feature_groups_input::ListFeatureGroupsInputBuilder;
 
+impl ListFeatureGroupsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_feature_groups::ListFeatureGroupsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_feature_groups::ListFeatureGroupsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_feature_groups();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListFeatureGroups`.
 ///
 /// <p>List <code>FeatureGroup</code>s based on given filter and order.</p>

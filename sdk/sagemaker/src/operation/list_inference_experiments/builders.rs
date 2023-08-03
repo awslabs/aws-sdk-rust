@@ -3,6 +3,23 @@ pub use crate::operation::list_inference_experiments::_list_inference_experiment
 
 pub use crate::operation::list_inference_experiments::_list_inference_experiments_input::ListInferenceExperimentsInputBuilder;
 
+impl ListInferenceExperimentsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_inference_experiments::ListInferenceExperimentsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_inference_experiments::ListInferenceExperimentsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_inference_experiments();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListInferenceExperiments`.
 ///
 /// <p>Returns the list of all inference experiments.</p>

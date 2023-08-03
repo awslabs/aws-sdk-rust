@@ -3,6 +3,23 @@ pub use crate::operation::list_knowledge_bases::_list_knowledge_bases_output::Li
 
 pub use crate::operation::list_knowledge_bases::_list_knowledge_bases_input::ListKnowledgeBasesInputBuilder;
 
+impl ListKnowledgeBasesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_knowledge_bases::ListKnowledgeBasesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_knowledge_bases::ListKnowledgeBasesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_knowledge_bases();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListKnowledgeBases`.
 ///
 /// <p>Lists the knowledge bases.</p>

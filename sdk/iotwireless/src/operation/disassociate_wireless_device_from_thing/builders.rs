@@ -3,6 +3,17 @@ pub use crate::operation::disassociate_wireless_device_from_thing::_disassociate
 
 pub use crate::operation::disassociate_wireless_device_from_thing::_disassociate_wireless_device_from_thing_input::DisassociateWirelessDeviceFromThingInputBuilder;
 
+impl DisassociateWirelessDeviceFromThingInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::disassociate_wireless_device_from_thing::DisassociateWirelessDeviceFromThingOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_wireless_device_from_thing::DisassociateWirelessDeviceFromThingError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.disassociate_wireless_device_from_thing();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateWirelessDeviceFromThing`.
 ///
 /// <p>Disassociates a wireless device from its currently associated thing.</p>

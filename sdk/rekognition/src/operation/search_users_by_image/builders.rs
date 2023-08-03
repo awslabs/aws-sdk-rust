@@ -3,6 +3,23 @@ pub use crate::operation::search_users_by_image::_search_users_by_image_output::
 
 pub use crate::operation::search_users_by_image::_search_users_by_image_input::SearchUsersByImageInputBuilder;
 
+impl SearchUsersByImageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::search_users_by_image::SearchUsersByImageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::search_users_by_image::SearchUsersByImageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.search_users_by_image();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SearchUsersByImage`.
 ///
 /// <p>Searches for UserIDs using a supplied image. It first detects the largest face in the image, and then searches a specified collection for matching UserIDs. </p>

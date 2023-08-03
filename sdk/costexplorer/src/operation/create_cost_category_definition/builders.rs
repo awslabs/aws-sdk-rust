@@ -3,6 +3,23 @@ pub use crate::operation::create_cost_category_definition::_create_cost_category
 
 pub use crate::operation::create_cost_category_definition::_create_cost_category_definition_input::CreateCostCategoryDefinitionInputBuilder;
 
+impl CreateCostCategoryDefinitionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_cost_category_definition::CreateCostCategoryDefinitionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_cost_category_definition::CreateCostCategoryDefinitionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_cost_category_definition();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateCostCategoryDefinition`.
 ///
 /// <p>Creates a new Cost Category with the requested name and rules.</p>

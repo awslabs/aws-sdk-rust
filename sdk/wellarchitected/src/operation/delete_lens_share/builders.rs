@@ -3,6 +3,23 @@ pub use crate::operation::delete_lens_share::_delete_lens_share_output::DeleteLe
 
 pub use crate::operation::delete_lens_share::_delete_lens_share_input::DeleteLensShareInputBuilder;
 
+impl DeleteLensShareInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_lens_share::DeleteLensShareOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_lens_share::DeleteLensShareError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_lens_share();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteLensShare`.
 ///
 /// <p>Delete a lens share.</p>

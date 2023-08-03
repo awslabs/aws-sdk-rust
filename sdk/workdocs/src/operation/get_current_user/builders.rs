@@ -3,6 +3,23 @@ pub use crate::operation::get_current_user::_get_current_user_output::GetCurrent
 
 pub use crate::operation::get_current_user::_get_current_user_input::GetCurrentUserInputBuilder;
 
+impl GetCurrentUserInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_current_user::GetCurrentUserOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_current_user::GetCurrentUserError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_current_user();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetCurrentUser`.
 ///
 /// <p>Retrieves details of the current user for whom the authentication token was generated. This is not a valid action for SigV4 (administrative API) clients.</p>

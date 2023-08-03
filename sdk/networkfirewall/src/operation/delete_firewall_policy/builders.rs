@@ -3,6 +3,23 @@ pub use crate::operation::delete_firewall_policy::_delete_firewall_policy_output
 
 pub use crate::operation::delete_firewall_policy::_delete_firewall_policy_input::DeleteFirewallPolicyInputBuilder;
 
+impl DeleteFirewallPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_firewall_policy::DeleteFirewallPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_firewall_policy::DeleteFirewallPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_firewall_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteFirewallPolicy`.
 ///
 /// <p>Deletes the specified <code>FirewallPolicy</code>. </p>

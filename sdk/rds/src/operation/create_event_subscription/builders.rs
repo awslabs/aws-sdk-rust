@@ -3,6 +3,23 @@ pub use crate::operation::create_event_subscription::_create_event_subscription_
 
 pub use crate::operation::create_event_subscription::_create_event_subscription_input::CreateEventSubscriptionInputBuilder;
 
+impl CreateEventSubscriptionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_event_subscription::CreateEventSubscriptionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_event_subscription::CreateEventSubscriptionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_event_subscription();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateEventSubscription`.
 ///
 /// <p>Creates an RDS event notification subscription. This operation requires a topic Amazon Resource Name (ARN) created by either the RDS console, the SNS console, or the SNS API. To obtain an ARN with SNS, you must create a topic in Amazon SNS and subscribe to the topic. The ARN is displayed in the SNS console.</p>

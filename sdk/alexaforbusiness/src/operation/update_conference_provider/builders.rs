@@ -3,6 +3,23 @@ pub use crate::operation::update_conference_provider::_update_conference_provide
 
 pub use crate::operation::update_conference_provider::_update_conference_provider_input::UpdateConferenceProviderInputBuilder;
 
+impl UpdateConferenceProviderInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_conference_provider::UpdateConferenceProviderOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_conference_provider::UpdateConferenceProviderError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_conference_provider();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateConferenceProvider`.
 ///
 /// <p>Updates an existing conference provider's settings.</p>

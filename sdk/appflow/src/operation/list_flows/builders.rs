@@ -3,6 +3,23 @@ pub use crate::operation::list_flows::_list_flows_output::ListFlowsOutputBuilder
 
 pub use crate::operation::list_flows::_list_flows_input::ListFlowsInputBuilder;
 
+impl ListFlowsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_flows::ListFlowsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_flows::ListFlowsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_flows();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListFlows`.
 ///
 /// <p> Lists all of the flows associated with your account. </p>

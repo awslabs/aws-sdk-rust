@@ -3,6 +3,23 @@ pub use crate::operation::list_imports::_list_imports_output::ListImportsOutputB
 
 pub use crate::operation::list_imports::_list_imports_input::ListImportsInputBuilder;
 
+impl ListImportsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_imports::ListImportsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_imports::ListImportsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_imports();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListImports`.
 ///
 /// <p> Returns information on all imports, or a select set of imports by <code>ImportStatus</code> or <code>Destination</code>. </p>

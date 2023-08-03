@@ -3,6 +3,23 @@ pub use crate::operation::get_serial_console_access_status::_get_serial_console_
 
 pub use crate::operation::get_serial_console_access_status::_get_serial_console_access_status_input::GetSerialConsoleAccessStatusInputBuilder;
 
+impl GetSerialConsoleAccessStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_serial_console_access_status::GetSerialConsoleAccessStatusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_serial_console_access_status::GetSerialConsoleAccessStatusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_serial_console_access_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetSerialConsoleAccessStatus`.
 ///
 /// <p>Retrieves the access status of your account to the EC2 serial console of all instances. By default, access to the EC2 serial console is disabled for your account. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/configure-access-to-serial-console.html#serial-console-account-access">Manage account access to the EC2 serial console</a> in the <i>Amazon EC2 User Guide</i>.</p>

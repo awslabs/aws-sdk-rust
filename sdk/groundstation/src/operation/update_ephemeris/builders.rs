@@ -3,6 +3,23 @@ pub use crate::operation::update_ephemeris::_update_ephemeris_output::UpdateEphe
 
 pub use crate::operation::update_ephemeris::_update_ephemeris_input::UpdateEphemerisInputBuilder;
 
+impl UpdateEphemerisInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_ephemeris::UpdateEphemerisOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_ephemeris::UpdateEphemerisError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_ephemeris();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateEphemeris`.
 ///
 /// <p>Updates an existing ephemeris</p>

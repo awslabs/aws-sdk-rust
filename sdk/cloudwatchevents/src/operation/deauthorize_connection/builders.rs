@@ -3,6 +3,23 @@ pub use crate::operation::deauthorize_connection::_deauthorize_connection_output
 
 pub use crate::operation::deauthorize_connection::_deauthorize_connection_input::DeauthorizeConnectionInputBuilder;
 
+impl DeauthorizeConnectionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::deauthorize_connection::DeauthorizeConnectionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::deauthorize_connection::DeauthorizeConnectionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.deauthorize_connection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeauthorizeConnection`.
 ///
 /// <p>Removes all authorization parameters from the connection. This lets you remove the secret from the connection so you can reuse it without having to create a new connection.</p>

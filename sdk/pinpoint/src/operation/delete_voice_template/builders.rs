@@ -3,6 +3,23 @@ pub use crate::operation::delete_voice_template::_delete_voice_template_output::
 
 pub use crate::operation::delete_voice_template::_delete_voice_template_input::DeleteVoiceTemplateInputBuilder;
 
+impl DeleteVoiceTemplateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_voice_template::DeleteVoiceTemplateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_voice_template::DeleteVoiceTemplateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_voice_template();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteVoiceTemplate`.
 ///
 /// <p>Deletes a message template for messages that were sent through the voice channel.</p>

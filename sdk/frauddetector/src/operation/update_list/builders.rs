@@ -3,6 +3,23 @@ pub use crate::operation::update_list::_update_list_output::UpdateListOutputBuil
 
 pub use crate::operation::update_list::_update_list_input::UpdateListInputBuilder;
 
+impl UpdateListInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_list::UpdateListOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_list::UpdateListError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_list();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateList`.
 ///
 /// <p> Updates a list. </p>

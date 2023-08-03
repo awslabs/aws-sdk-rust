@@ -3,6 +3,23 @@ pub use crate::operation::delete_aggregation_authorization::_delete_aggregation_
 
 pub use crate::operation::delete_aggregation_authorization::_delete_aggregation_authorization_input::DeleteAggregationAuthorizationInputBuilder;
 
+impl DeleteAggregationAuthorizationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_aggregation_authorization::DeleteAggregationAuthorizationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_aggregation_authorization::DeleteAggregationAuthorizationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_aggregation_authorization();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteAggregationAuthorization`.
 ///
 /// <p>Deletes the authorization granted to the specified configuration aggregator account in a specified region.</p>

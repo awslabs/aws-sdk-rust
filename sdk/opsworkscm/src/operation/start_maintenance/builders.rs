@@ -3,6 +3,23 @@ pub use crate::operation::start_maintenance::_start_maintenance_output::StartMai
 
 pub use crate::operation::start_maintenance::_start_maintenance_input::StartMaintenanceInputBuilder;
 
+impl StartMaintenanceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_maintenance::StartMaintenanceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_maintenance::StartMaintenanceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_maintenance();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartMaintenance`.
 ///
 /// <p> Manually starts server maintenance. This command can be useful if an earlier maintenance attempt failed, and the underlying cause of maintenance failure has been resolved. The server is in an <code>UNDER_MAINTENANCE</code> state while maintenance is in progress. </p>

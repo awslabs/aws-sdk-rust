@@ -3,6 +3,23 @@ pub use crate::operation::search_faces_by_image::_search_faces_by_image_output::
 
 pub use crate::operation::search_faces_by_image::_search_faces_by_image_input::SearchFacesByImageInputBuilder;
 
+impl SearchFacesByImageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::search_faces_by_image::SearchFacesByImageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::search_faces_by_image::SearchFacesByImageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.search_faces_by_image();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SearchFacesByImage`.
 ///
 /// <p>For a given input image, first detects the largest face in the image, and then searches the specified collection for matching faces. The operation compares the features of the input face with faces in the specified collection. </p> <note>

@@ -3,6 +3,23 @@ pub use crate::operation::create_connector::_create_connector_output::CreateConn
 
 pub use crate::operation::create_connector::_create_connector_input::CreateConnectorInputBuilder;
 
+impl CreateConnectorInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_connector::CreateConnectorOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_connector::CreateConnectorError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_connector();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateConnector`.
 ///
 /// <p>Creates the connector, which captures the parameters for an outbound connection for the AS2 or SFTP protocol. The connector is required for sending files to an externally hosted AS2 or SFTP server. For more details about AS2 connectors, see <a href="https://docs.aws.amazon.com/transfer/latest/userguide/create-b2b-server.html#configure-as2-connector">Create AS2 connectors</a>.</p> <note>

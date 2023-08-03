@@ -3,6 +3,23 @@ pub use crate::operation::delete_rule_groups_namespace::_delete_rule_groups_name
 
 pub use crate::operation::delete_rule_groups_namespace::_delete_rule_groups_namespace_input::DeleteRuleGroupsNamespaceInputBuilder;
 
+impl DeleteRuleGroupsNamespaceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_rule_groups_namespace::DeleteRuleGroupsNamespaceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_rule_groups_namespace::DeleteRuleGroupsNamespaceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_rule_groups_namespace();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteRuleGroupsNamespace`.
 ///
 /// Delete a rule groups namespace.

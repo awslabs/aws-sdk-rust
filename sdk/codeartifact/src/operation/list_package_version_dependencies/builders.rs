@@ -3,6 +3,17 @@ pub use crate::operation::list_package_version_dependencies::_list_package_versi
 
 pub use crate::operation::list_package_version_dependencies::_list_package_version_dependencies_input::ListPackageVersionDependenciesInputBuilder;
 
+impl ListPackageVersionDependenciesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_package_version_dependencies::ListPackageVersionDependenciesOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_package_version_dependencies::ListPackageVersionDependenciesError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_package_version_dependencies();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListPackageVersionDependencies`.
 ///
 /// <p> Returns the direct dependencies for a package version. The dependencies are returned as <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_PackageDependency.html">PackageDependency</a> objects. CodeArtifact extracts the dependencies for a package version from the metadata file for the package format (for example, the <code>package.json</code> file for npm packages and the <code>pom.xml</code> file for Maven). Any package version dependencies that are not listed in the configuration file are not returned. </p>

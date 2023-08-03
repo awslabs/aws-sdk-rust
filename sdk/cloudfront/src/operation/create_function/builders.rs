@@ -3,6 +3,23 @@ pub use crate::operation::create_function::_create_function_output::CreateFuncti
 
 pub use crate::operation::create_function::_create_function_input::CreateFunctionInputBuilder;
 
+impl CreateFunctionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_function::CreateFunctionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_function::CreateFunctionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_function();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateFunction`.
 ///
 /// <p>Creates a CloudFront function.</p>

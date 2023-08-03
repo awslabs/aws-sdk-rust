@@ -3,6 +3,23 @@ pub use crate::operation::cancel_audit_task::_cancel_audit_task_output::CancelAu
 
 pub use crate::operation::cancel_audit_task::_cancel_audit_task_input::CancelAuditTaskInputBuilder;
 
+impl CancelAuditTaskInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::cancel_audit_task::CancelAuditTaskOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::cancel_audit_task::CancelAuditTaskError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.cancel_audit_task();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CancelAuditTask`.
 ///
 /// <p>Cancels an audit that is in progress. The audit can be either scheduled or on demand. If the audit isn't in progress, an "InvalidRequestException" occurs.</p>

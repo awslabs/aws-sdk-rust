@@ -3,6 +3,23 @@ pub use crate::operation::delete_objects::_delete_objects_output::DeleteObjectsO
 
 pub use crate::operation::delete_objects::_delete_objects_input::DeleteObjectsInputBuilder;
 
+impl DeleteObjectsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_objects::DeleteObjectsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_objects::DeleteObjectsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_objects();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteObjects`.
 ///
 /// <p>This action enables you to delete multiple objects from a bucket using a single HTTP request. If you know the object keys that you want to delete, then this action provides a suitable alternative to sending individual delete requests, reducing per-request overhead.</p>

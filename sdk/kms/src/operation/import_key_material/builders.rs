@@ -3,6 +3,23 @@ pub use crate::operation::import_key_material::_import_key_material_output::Impo
 
 pub use crate::operation::import_key_material::_import_key_material_input::ImportKeyMaterialInputBuilder;
 
+impl ImportKeyMaterialInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::import_key_material::ImportKeyMaterialOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::import_key_material::ImportKeyMaterialError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.import_key_material();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ImportKeyMaterial`.
 ///
 /// <p>Imports or reimports key material into an existing KMS key that was created without key material. <code>ImportKeyMaterial</code> also sets the expiration model and expiration date of the imported key material.</p>

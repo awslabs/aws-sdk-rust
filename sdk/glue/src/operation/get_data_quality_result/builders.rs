@@ -3,6 +3,23 @@ pub use crate::operation::get_data_quality_result::_get_data_quality_result_outp
 
 pub use crate::operation::get_data_quality_result::_get_data_quality_result_input::GetDataQualityResultInputBuilder;
 
+impl GetDataQualityResultInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_data_quality_result::GetDataQualityResultOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_data_quality_result::GetDataQualityResultError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_data_quality_result();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetDataQualityResult`.
 ///
 /// <p>Retrieves the result of a data quality rule evaluation.</p>

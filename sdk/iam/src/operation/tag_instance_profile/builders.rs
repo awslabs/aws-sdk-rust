@@ -3,6 +3,23 @@ pub use crate::operation::tag_instance_profile::_tag_instance_profile_output::Ta
 
 pub use crate::operation::tag_instance_profile::_tag_instance_profile_input::TagInstanceProfileInputBuilder;
 
+impl TagInstanceProfileInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::tag_instance_profile::TagInstanceProfileOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::tag_instance_profile::TagInstanceProfileError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.tag_instance_profile();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `TagInstanceProfile`.
 ///
 /// <p>Adds one or more tags to an IAM instance profile. If a tag with the same key name already exists, then that tag is overwritten with the new value.</p>

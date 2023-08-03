@@ -3,6 +3,23 @@ pub use crate::operation::delete_system_template::_delete_system_template_output
 
 pub use crate::operation::delete_system_template::_delete_system_template_input::DeleteSystemTemplateInputBuilder;
 
+impl DeleteSystemTemplateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_system_template::DeleteSystemTemplateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_system_template::DeleteSystemTemplateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_system_template();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteSystemTemplate`.
 ///
 /// <p>Deletes a system. New deployments can't contain the system after its deletion. Existing deployments that contain the system will continue to work because they use a snapshot of the system that is taken when it is deployed.</p>

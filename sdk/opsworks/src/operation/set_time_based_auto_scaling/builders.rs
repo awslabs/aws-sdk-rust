@@ -3,6 +3,23 @@ pub use crate::operation::set_time_based_auto_scaling::_set_time_based_auto_scal
 
 pub use crate::operation::set_time_based_auto_scaling::_set_time_based_auto_scaling_input::SetTimeBasedAutoScalingInputBuilder;
 
+impl SetTimeBasedAutoScalingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::set_time_based_auto_scaling::SetTimeBasedAutoScalingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::set_time_based_auto_scaling::SetTimeBasedAutoScalingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.set_time_based_auto_scaling();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SetTimeBasedAutoScaling`.
 ///
 /// <p>Specify the time-based auto scaling configuration for a specified instance. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-autoscaling.html">Managing Load with Time-based and Load-based Instances</a>.</p>

@@ -3,6 +3,17 @@ pub use crate::operation::deregister_organization_admin_account::_deregister_org
 
 pub use crate::operation::deregister_organization_admin_account::_deregister_organization_admin_account_input::DeregisterOrganizationAdminAccountInputBuilder;
 
+impl DeregisterOrganizationAdminAccountInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::deregister_organization_admin_account::DeregisterOrganizationAdminAccountOutput, ::aws_smithy_http::result::SdkError<crate::operation::deregister_organization_admin_account::DeregisterOrganizationAdminAccountError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.deregister_organization_admin_account();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeregisterOrganizationAdminAccount`.
 ///
 /// <p>Removes the specified Amazon Web Services account as a delegated administrator for Audit Manager. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::update_cluster_configuration::_update_cluster_configur
 
 pub use crate::operation::update_cluster_configuration::_update_cluster_configuration_input::UpdateClusterConfigurationInputBuilder;
 
+impl UpdateClusterConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_cluster_configuration::UpdateClusterConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_cluster_configuration::UpdateClusterConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_cluster_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateClusterConfiguration`.
 ///
 /// <p>Updates the cluster with the configuration that is specified in the request body.</p>

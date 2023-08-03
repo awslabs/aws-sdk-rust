@@ -3,6 +3,23 @@ pub use crate::operation::list_channels::_list_channels_output::ListChannelsOutp
 
 pub use crate::operation::list_channels::_list_channels_input::ListChannelsInputBuilder;
 
+impl ListChannelsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_channels::ListChannelsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_channels::ListChannelsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_channels();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListChannels`.
 ///
 /// <p>Gets summary information about all channels in your account, in the Amazon Web Services region where the API request is processed. This list can be filtered to match a specified name or recording-configuration ARN. Filters are mutually exclusive and cannot be used together. If you try to use both filters, you will get an error (409 ConflictException).</p>

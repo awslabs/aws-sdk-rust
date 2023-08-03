@@ -3,6 +3,23 @@ pub use crate::operation::stop_crawler::_stop_crawler_output::StopCrawlerOutputB
 
 pub use crate::operation::stop_crawler::_stop_crawler_input::StopCrawlerInputBuilder;
 
+impl StopCrawlerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_crawler::StopCrawlerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_crawler::StopCrawlerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_crawler();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopCrawler`.
 ///
 /// <p>If the specified crawler is running, stops the crawl.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_input_devices::_list_input_devices_output::ListIn
 
 pub use crate::operation::list_input_devices::_list_input_devices_input::ListInputDevicesInputBuilder;
 
+impl ListInputDevicesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_input_devices::ListInputDevicesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_input_devices::ListInputDevicesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_input_devices();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListInputDevices`.
 ///
 /// List input devices

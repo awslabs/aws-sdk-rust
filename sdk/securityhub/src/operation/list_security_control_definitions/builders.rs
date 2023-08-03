@@ -3,6 +3,17 @@ pub use crate::operation::list_security_control_definitions::_list_security_cont
 
 pub use crate::operation::list_security_control_definitions::_list_security_control_definitions_input::ListSecurityControlDefinitionsInputBuilder;
 
+impl ListSecurityControlDefinitionsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_security_control_definitions::ListSecurityControlDefinitionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_security_control_definitions::ListSecurityControlDefinitionsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_security_control_definitions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListSecurityControlDefinitions`.
 ///
 /// <p> Lists all of the security controls that apply to a specified standard. </p>

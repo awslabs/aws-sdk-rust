@@ -3,6 +3,23 @@ pub use crate::operation::execute_policy::_execute_policy_output::ExecutePolicyO
 
 pub use crate::operation::execute_policy::_execute_policy_input::ExecutePolicyInputBuilder;
 
+impl ExecutePolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::execute_policy::ExecutePolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::execute_policy::ExecutePolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.execute_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ExecutePolicy`.
 ///
 /// <p>Executes the specified policy. This can be useful for testing the design of your scaling policy.</p>

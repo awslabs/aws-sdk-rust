@@ -3,6 +3,23 @@ pub use crate::operation::untag_instance_profile::_untag_instance_profile_output
 
 pub use crate::operation::untag_instance_profile::_untag_instance_profile_input::UntagInstanceProfileInputBuilder;
 
+impl UntagInstanceProfileInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::untag_instance_profile::UntagInstanceProfileOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::untag_instance_profile::UntagInstanceProfileError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.untag_instance_profile();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UntagInstanceProfile`.
 ///
 /// <p>Removes the specified tags from the IAM instance profile. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>

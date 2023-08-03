@@ -3,6 +3,23 @@ pub use crate::operation::get_bot_aliases::_get_bot_aliases_output::GetBotAliase
 
 pub use crate::operation::get_bot_aliases::_get_bot_aliases_input::GetBotAliasesInputBuilder;
 
+impl GetBotAliasesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_bot_aliases::GetBotAliasesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_bot_aliases::GetBotAliasesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_bot_aliases();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetBotAliases`.
 ///
 /// <p>Returns a list of aliases for a specified Amazon Lex bot.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_trigger::_create_trigger_output::CreateTriggerO
 
 pub use crate::operation::create_trigger::_create_trigger_input::CreateTriggerInputBuilder;
 
+impl CreateTriggerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_trigger::CreateTriggerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_trigger::CreateTriggerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_trigger();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateTrigger`.
 ///
 /// <p>Creates a new trigger.</p>

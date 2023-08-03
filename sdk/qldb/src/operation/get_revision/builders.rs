@@ -3,6 +3,23 @@ pub use crate::operation::get_revision::_get_revision_output::GetRevisionOutputB
 
 pub use crate::operation::get_revision::_get_revision_input::GetRevisionInputBuilder;
 
+impl GetRevisionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_revision::GetRevisionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_revision::GetRevisionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_revision();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetRevision`.
 ///
 /// <p>Returns a revision data object for a specified document ID and block address. Also returns a proof of the specified revision for verification if <code>DigestTipAddress</code> is provided.</p>

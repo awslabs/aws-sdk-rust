@@ -3,6 +3,23 @@ pub use crate::operation::cancel_change_set::_cancel_change_set_output::CancelCh
 
 pub use crate::operation::cancel_change_set::_cancel_change_set_input::CancelChangeSetInputBuilder;
 
+impl CancelChangeSetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::cancel_change_set::CancelChangeSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::cancel_change_set::CancelChangeSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.cancel_change_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CancelChangeSet`.
 ///
 /// <p>Used to cancel an open change request. Must be sent before the status of the request changes to <code>APPLYING</code>, the final stage of completing your change request. You can describe a change during the 60-day request history retention period for API calls.</p>

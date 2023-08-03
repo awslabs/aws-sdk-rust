@@ -3,6 +3,17 @@ pub use crate::operation::update_knowledge_base_template_uri::_update_knowledge_
 
 pub use crate::operation::update_knowledge_base_template_uri::_update_knowledge_base_template_uri_input::UpdateKnowledgeBaseTemplateUriInputBuilder;
 
+impl UpdateKnowledgeBaseTemplateUriInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::update_knowledge_base_template_uri::UpdateKnowledgeBaseTemplateUriOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_knowledge_base_template_uri::UpdateKnowledgeBaseTemplateUriError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.update_knowledge_base_template_uri();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateKnowledgeBaseTemplateUri`.
 ///
 /// <p>Updates the template URI of a knowledge base. This is only supported for knowledge bases of type EXTERNAL. Include a single variable in <code>${variable}</code> format; this interpolated by Wisdom using ingested content. For example, if you ingest a Salesforce article, it has an <code>Id</code> value, and you can set the template URI to <code>https://myInstanceName.lightning.force.com/lightning/r/Knowledge__kav/*${Id}*/view</code>. </p>

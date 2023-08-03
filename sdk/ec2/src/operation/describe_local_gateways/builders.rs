@@ -3,6 +3,23 @@ pub use crate::operation::describe_local_gateways::_describe_local_gateways_outp
 
 pub use crate::operation::describe_local_gateways::_describe_local_gateways_input::DescribeLocalGatewaysInputBuilder;
 
+impl DescribeLocalGatewaysInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_local_gateways::DescribeLocalGatewaysOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_local_gateways::DescribeLocalGatewaysError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_local_gateways();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeLocalGateways`.
 ///
 /// <p>Describes one or more local gateways. By default, all local gateways are described. Alternatively, you can filter the results.</p>

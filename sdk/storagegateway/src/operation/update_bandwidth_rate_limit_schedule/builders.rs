@@ -3,6 +3,17 @@ pub use crate::operation::update_bandwidth_rate_limit_schedule::_update_bandwidt
 
 pub use crate::operation::update_bandwidth_rate_limit_schedule::_update_bandwidth_rate_limit_schedule_input::UpdateBandwidthRateLimitScheduleInputBuilder;
 
+impl UpdateBandwidthRateLimitScheduleInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::update_bandwidth_rate_limit_schedule::UpdateBandwidthRateLimitScheduleOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_bandwidth_rate_limit_schedule::UpdateBandwidthRateLimitScheduleError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.update_bandwidth_rate_limit_schedule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateBandwidthRateLimitSchedule`.
 ///
 /// <p> Updates the bandwidth rate limit schedule for a specified gateway. By default, gateways do not have bandwidth rate limit schedules, which means no bandwidth rate limiting is in effect. Use this to initiate or update a gateway's bandwidth rate limit schedule. This operation is supported only for volume, tape and S3 file gateways. FSx file gateways do not support bandwidth rate limits.</p>

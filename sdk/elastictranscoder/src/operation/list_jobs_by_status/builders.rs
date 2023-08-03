@@ -3,6 +3,23 @@ pub use crate::operation::list_jobs_by_status::_list_jobs_by_status_output::List
 
 pub use crate::operation::list_jobs_by_status::_list_jobs_by_status_input::ListJobsByStatusInputBuilder;
 
+impl ListJobsByStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_jobs_by_status::ListJobsByStatusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_jobs_by_status::ListJobsByStatusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_jobs_by_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListJobsByStatus`.
 ///
 /// <p>The ListJobsByStatus operation gets a list of jobs that have a specified status. The response body contains one element for each job that satisfies the search criteria.</p>

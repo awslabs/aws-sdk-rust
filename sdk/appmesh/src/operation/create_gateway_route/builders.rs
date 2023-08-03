@@ -3,6 +3,23 @@ pub use crate::operation::create_gateway_route::_create_gateway_route_output::Cr
 
 pub use crate::operation::create_gateway_route::_create_gateway_route_input::CreateGatewayRouteInputBuilder;
 
+impl CreateGatewayRouteInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_gateway_route::CreateGatewayRouteOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_gateway_route::CreateGatewayRouteError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_gateway_route();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateGatewayRoute`.
 ///
 /// <p>Creates a gateway route.</p>

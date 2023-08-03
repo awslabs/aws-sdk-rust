@@ -3,6 +3,23 @@ pub use crate::operation::stop_automation_execution::_stop_automation_execution_
 
 pub use crate::operation::stop_automation_execution::_stop_automation_execution_input::StopAutomationExecutionInputBuilder;
 
+impl StopAutomationExecutionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_automation_execution::StopAutomationExecutionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_automation_execution::StopAutomationExecutionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_automation_execution();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopAutomationExecution`.
 ///
 /// <p>Stop an Automation that is currently running.</p>

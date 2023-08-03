@@ -3,6 +3,23 @@ pub use crate::operation::delete_task_definitions::_delete_task_definitions_outp
 
 pub use crate::operation::delete_task_definitions::_delete_task_definitions_input::DeleteTaskDefinitionsInputBuilder;
 
+impl DeleteTaskDefinitionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_task_definitions::DeleteTaskDefinitionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_task_definitions::DeleteTaskDefinitionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_task_definitions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteTaskDefinitions`.
 ///
 /// <p>Deletes one or more task definitions.</p>

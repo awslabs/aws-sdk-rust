@@ -3,6 +3,23 @@ pub use crate::operation::get_stream_key::_get_stream_key_output::GetStreamKeyOu
 
 pub use crate::operation::get_stream_key::_get_stream_key_input::GetStreamKeyInputBuilder;
 
+impl GetStreamKeyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_stream_key::GetStreamKeyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_stream_key::GetStreamKeyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_stream_key();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetStreamKey`.
 ///
 /// <p>Gets stream-key information for a specified ARN.</p>

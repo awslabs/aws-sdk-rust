@@ -3,6 +3,23 @@ pub use crate::operation::delete_api_key::_delete_api_key_output::DeleteApiKeyOu
 
 pub use crate::operation::delete_api_key::_delete_api_key_input::DeleteApiKeyInputBuilder;
 
+impl DeleteApiKeyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_api_key::DeleteApiKeyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_api_key::DeleteApiKeyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_api_key();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteApiKey`.
 ///
 /// <p>Deletes an API key.</p>

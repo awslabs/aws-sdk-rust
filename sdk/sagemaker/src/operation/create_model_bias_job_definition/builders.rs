@@ -3,6 +3,23 @@ pub use crate::operation::create_model_bias_job_definition::_create_model_bias_j
 
 pub use crate::operation::create_model_bias_job_definition::_create_model_bias_job_definition_input::CreateModelBiasJobDefinitionInputBuilder;
 
+impl CreateModelBiasJobDefinitionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_model_bias_job_definition::CreateModelBiasJobDefinitionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_model_bias_job_definition::CreateModelBiasJobDefinitionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_model_bias_job_definition();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateModelBiasJobDefinition`.
 ///
 /// <p>Creates the definition for a model bias job.</p>

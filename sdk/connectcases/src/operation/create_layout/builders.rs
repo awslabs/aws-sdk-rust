@@ -3,6 +3,23 @@ pub use crate::operation::create_layout::_create_layout_output::CreateLayoutOutp
 
 pub use crate::operation::create_layout::_create_layout_input::CreateLayoutInputBuilder;
 
+impl CreateLayoutInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_layout::CreateLayoutOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_layout::CreateLayoutError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_layout();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateLayout`.
 ///
 /// <p>Creates a layout in the Cases domain. Layouts define the following configuration in the top section and More Info tab of the Cases user interface:</p>

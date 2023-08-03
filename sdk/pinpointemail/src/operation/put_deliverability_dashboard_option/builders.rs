@@ -3,6 +3,17 @@ pub use crate::operation::put_deliverability_dashboard_option::_put_deliverabili
 
 pub use crate::operation::put_deliverability_dashboard_option::_put_deliverability_dashboard_option_input::PutDeliverabilityDashboardOptionInputBuilder;
 
+impl PutDeliverabilityDashboardOptionInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::put_deliverability_dashboard_option::PutDeliverabilityDashboardOptionOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_deliverability_dashboard_option::PutDeliverabilityDashboardOptionError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.put_deliverability_dashboard_option();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutDeliverabilityDashboardOption`.
 ///
 /// <p>Enable or disable the Deliverability dashboard for your Amazon Pinpoint account. When you enable the Deliverability dashboard, you gain access to reputation, deliverability, and other metrics for the domains that you use to send email using Amazon Pinpoint. You also gain the ability to perform predictive inbox placement tests.</p>

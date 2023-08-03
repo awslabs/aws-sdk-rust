@@ -3,6 +3,23 @@ pub use crate::operation::create_open_id_connect_provider::_create_open_id_conne
 
 pub use crate::operation::create_open_id_connect_provider::_create_open_id_connect_provider_input::CreateOpenIdConnectProviderInputBuilder;
 
+impl CreateOpenIdConnectProviderInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_open_id_connect_provider::CreateOpenIdConnectProviderOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_open_id_connect_provider::CreateOpenIDConnectProviderError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_open_id_connect_provider();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateOpenIDConnectProvider`.
 ///
 /// <p>Creates an IAM entity to describe an identity provider (IdP) that supports <a href="http://openid.net/connect/">OpenID Connect (OIDC)</a>.</p>

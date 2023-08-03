@@ -3,6 +3,23 @@ pub use crate::operation::create_event_tracker::_create_event_tracker_output::Cr
 
 pub use crate::operation::create_event_tracker::_create_event_tracker_input::CreateEventTrackerInputBuilder;
 
+impl CreateEventTrackerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_event_tracker::CreateEventTrackerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_event_tracker::CreateEventTrackerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_event_tracker();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateEventTracker`.
 ///
 /// <p>Creates an event tracker that you use when adding event data to a specified dataset group using the <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_UBS_PutEvents.html">PutEvents</a> API.</p> <note>

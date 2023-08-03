@@ -3,6 +3,23 @@ pub use crate::operation::list_provisioning_templates::_list_provisioning_templa
 
 pub use crate::operation::list_provisioning_templates::_list_provisioning_templates_input::ListProvisioningTemplatesInputBuilder;
 
+impl ListProvisioningTemplatesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_provisioning_templates::ListProvisioningTemplatesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_provisioning_templates::ListProvisioningTemplatesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_provisioning_templates();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListProvisioningTemplates`.
 ///
 /// <p>Lists the provisioning templates in your Amazon Web Services account.</p>

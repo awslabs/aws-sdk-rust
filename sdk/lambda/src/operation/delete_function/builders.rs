@@ -3,6 +3,23 @@ pub use crate::operation::delete_function::_delete_function_output::DeleteFuncti
 
 pub use crate::operation::delete_function::_delete_function_input::DeleteFunctionInputBuilder;
 
+impl DeleteFunctionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_function::DeleteFunctionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_function::DeleteFunctionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_function();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteFunction`.
 ///
 /// <p>Deletes a Lambda function. To delete a specific function version, use the <code>Qualifier</code> parameter. Otherwise, all versions and aliases are deleted. This doesn't require the user to have explicit permissions for <code>DeleteAlias</code>.</p>

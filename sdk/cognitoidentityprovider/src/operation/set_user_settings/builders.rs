@@ -3,6 +3,23 @@ pub use crate::operation::set_user_settings::_set_user_settings_output::SetUserS
 
 pub use crate::operation::set_user_settings::_set_user_settings_input::SetUserSettingsInputBuilder;
 
+impl SetUserSettingsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::set_user_settings::SetUserSettingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::set_user_settings::SetUserSettingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.set_user_settings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SetUserSettings`.
 ///
 /// <p> <i>This action is no longer supported.</i> You can use it to configure only SMS MFA. You can't use it to configure time-based one-time password (TOTP) software token MFA. To configure either type of MFA, use <a href="https://docs.aws.amazon.com/cognito-user-identity-pools/latest/APIReference/API_SetUserMFAPreference.html">SetUserMFAPreference</a> instead.</p>

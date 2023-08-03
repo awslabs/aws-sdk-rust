@@ -3,6 +3,23 @@ pub use crate::operation::unpeer_vpc::_unpeer_vpc_output::UnpeerVpcOutputBuilder
 
 pub use crate::operation::unpeer_vpc::_unpeer_vpc_input::UnpeerVpcInputBuilder;
 
+impl UnpeerVpcInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::unpeer_vpc::UnpeerVpcOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::unpeer_vpc::UnpeerVpcError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.unpeer_vpc();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UnpeerVpc`.
 ///
 /// <p>Unpeers the Lightsail VPC from the user's default VPC.</p>

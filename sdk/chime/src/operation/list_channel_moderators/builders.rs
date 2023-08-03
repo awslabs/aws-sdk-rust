@@ -3,6 +3,23 @@ pub use crate::operation::list_channel_moderators::_list_channel_moderators_outp
 
 pub use crate::operation::list_channel_moderators::_list_channel_moderators_input::ListChannelModeratorsInputBuilder;
 
+impl ListChannelModeratorsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_channel_moderators::ListChannelModeratorsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_channel_moderators::ListChannelModeratorsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_channel_moderators();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListChannelModerators`.
 ///
 /// <p>Lists all the moderators for a channel.</p> <note>

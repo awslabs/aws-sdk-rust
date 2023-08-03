@@ -3,6 +3,23 @@ pub use crate::operation::describe_event_tracker::_describe_event_tracker_output
 
 pub use crate::operation::describe_event_tracker::_describe_event_tracker_input::DescribeEventTrackerInputBuilder;
 
+impl DescribeEventTrackerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_event_tracker::DescribeEventTrackerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_event_tracker::DescribeEventTrackerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_event_tracker();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeEventTracker`.
 ///
 /// <p>Describes an event tracker. The response includes the <code>trackingId</code> and <code>status</code> of the event tracker. For more information on event trackers, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateEventTracker.html">CreateEventTracker</a>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::put_inventory::_put_inventory_output::PutInventoryOutp
 
 pub use crate::operation::put_inventory::_put_inventory_input::PutInventoryInputBuilder;
 
+impl PutInventoryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_inventory::PutInventoryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_inventory::PutInventoryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_inventory();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutInventory`.
 ///
 /// <p>Bulk update custom inventory items on one or more managed nodes. The request adds an inventory item, if it doesn't already exist, or updates an inventory item, if it does exist.</p>

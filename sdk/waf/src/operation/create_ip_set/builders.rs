@@ -3,6 +3,23 @@ pub use crate::operation::create_ip_set::_create_ip_set_output::CreateIpSetOutpu
 
 pub use crate::operation::create_ip_set::_create_ip_set_input::CreateIpSetInputBuilder;
 
+impl CreateIpSetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_ip_set::CreateIpSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_ip_set::CreateIPSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_ip_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateIPSet`.
 ///
 /// <note>

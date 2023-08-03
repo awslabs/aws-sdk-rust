@@ -3,6 +3,23 @@ pub use crate::operation::get_comment_reactions::_get_comment_reactions_output::
 
 pub use crate::operation::get_comment_reactions::_get_comment_reactions_input::GetCommentReactionsInputBuilder;
 
+impl GetCommentReactionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_comment_reactions::GetCommentReactionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_comment_reactions::GetCommentReactionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_comment_reactions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetCommentReactions`.
 ///
 /// <p>Returns information about reactions to a specified comment ID. Reactions from users who have been deleted will not be included in the count.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_forecast_export_job::_delete_forecast_export_jo
 
 pub use crate::operation::delete_forecast_export_job::_delete_forecast_export_job_input::DeleteForecastExportJobInputBuilder;
 
+impl DeleteForecastExportJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_forecast_export_job::DeleteForecastExportJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_forecast_export_job::DeleteForecastExportJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_forecast_export_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteForecastExportJob`.
 ///
 /// <p>Deletes a forecast export job created using the <code>CreateForecastExportJob</code> operation. You can delete only export jobs that have a status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>. To get the status, use the <code>DescribeForecastExportJob</code> operation.</p>

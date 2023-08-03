@@ -3,6 +3,17 @@ pub use crate::operation::disassociate_phone_numbers_from_voice_connector_group:
 
 pub use crate::operation::disassociate_phone_numbers_from_voice_connector_group::_disassociate_phone_numbers_from_voice_connector_group_input::DisassociatePhoneNumbersFromVoiceConnectorGroupInputBuilder;
 
+impl DisassociatePhoneNumbersFromVoiceConnectorGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::disassociate_phone_numbers_from_voice_connector_group::DisassociatePhoneNumbersFromVoiceConnectorGroupOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_phone_numbers_from_voice_connector_group::DisassociatePhoneNumbersFromVoiceConnectorGroupError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.disassociate_phone_numbers_from_voice_connector_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociatePhoneNumbersFromVoiceConnectorGroup`.
 ///
 /// <p>Disassociates the specified phone numbers from the specified Amazon Chime SDK Voice Connector group.</p>

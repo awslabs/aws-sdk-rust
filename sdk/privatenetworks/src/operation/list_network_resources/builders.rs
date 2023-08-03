@@ -3,6 +3,23 @@ pub use crate::operation::list_network_resources::_list_network_resources_output
 
 pub use crate::operation::list_network_resources::_list_network_resources_input::ListNetworkResourcesInputBuilder;
 
+impl ListNetworkResourcesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_network_resources::ListNetworkResourcesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_network_resources::ListNetworkResourcesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_network_resources();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListNetworkResources`.
 ///
 /// <p>Lists network resources. Add filters to your request to return a more specific list of results. Use filters to match the Amazon Resource Name (ARN) of an order or the status of network resources.</p>

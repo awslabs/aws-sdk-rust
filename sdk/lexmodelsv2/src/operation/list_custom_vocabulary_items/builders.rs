@@ -3,6 +3,23 @@ pub use crate::operation::list_custom_vocabulary_items::_list_custom_vocabulary_
 
 pub use crate::operation::list_custom_vocabulary_items::_list_custom_vocabulary_items_input::ListCustomVocabularyItemsInputBuilder;
 
+impl ListCustomVocabularyItemsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_custom_vocabulary_items::ListCustomVocabularyItemsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_custom_vocabulary_items();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListCustomVocabularyItems`.
 ///
 /// <p>Paginated list of custom vocabulary items for a given bot locale's custom vocabulary.</p>

@@ -3,6 +3,17 @@ pub use crate::operation::get_evidence_folders_by_assessment_control::_get_evide
 
 pub use crate::operation::get_evidence_folders_by_assessment_control::_get_evidence_folders_by_assessment_control_input::GetEvidenceFoldersByAssessmentControlInputBuilder;
 
+impl GetEvidenceFoldersByAssessmentControlInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_evidence_folders_by_assessment_control::GetEvidenceFoldersByAssessmentControlOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_evidence_folders_by_assessment_control::GetEvidenceFoldersByAssessmentControlError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_evidence_folders_by_assessment_control();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetEvidenceFoldersByAssessmentControl`.
 ///
 /// <p> Gets a list of evidence folders that are associated with a specified control in an Audit Manager assessment. </p>

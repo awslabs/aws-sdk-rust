@@ -3,6 +3,23 @@ pub use crate::operation::stream_journal_to_kinesis::_stream_journal_to_kinesis_
 
 pub use crate::operation::stream_journal_to_kinesis::_stream_journal_to_kinesis_input::StreamJournalToKinesisInputBuilder;
 
+impl StreamJournalToKinesisInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stream_journal_to_kinesis::StreamJournalToKinesisOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stream_journal_to_kinesis::StreamJournalToKinesisError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stream_journal_to_kinesis();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StreamJournalToKinesis`.
 ///
 /// <p>Creates a journal stream for a given Amazon QLDB ledger. The stream captures every document revision that is committed to the ledger's journal and delivers the data to a specified Amazon Kinesis Data Streams resource.</p>

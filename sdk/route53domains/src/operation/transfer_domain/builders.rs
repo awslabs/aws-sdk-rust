@@ -3,6 +3,23 @@ pub use crate::operation::transfer_domain::_transfer_domain_output::TransferDoma
 
 pub use crate::operation::transfer_domain::_transfer_domain_input::TransferDomainInputBuilder;
 
+impl TransferDomainInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::transfer_domain::TransferDomainOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::transfer_domain::TransferDomainError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.transfer_domain();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `TransferDomain`.
 ///
 /// <p>Transfers a domain from another registrar to Amazon Route 53. </p>

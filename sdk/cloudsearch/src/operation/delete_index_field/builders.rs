@@ -3,6 +3,23 @@ pub use crate::operation::delete_index_field::_delete_index_field_output::Delete
 
 pub use crate::operation::delete_index_field::_delete_index_field_input::DeleteIndexFieldInputBuilder;
 
+impl DeleteIndexFieldInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_index_field::DeleteIndexFieldOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_index_field::DeleteIndexFieldError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_index_field();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteIndexField`.
 ///
 /// <p>Removes an <code><code>IndexField</code></code> from the search domain. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html" target="_blank">Configuring Index Fields</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>

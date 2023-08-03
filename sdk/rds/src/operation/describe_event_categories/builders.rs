@@ -3,6 +3,23 @@ pub use crate::operation::describe_event_categories::_describe_event_categories_
 
 pub use crate::operation::describe_event_categories::_describe_event_categories_input::DescribeEventCategoriesInputBuilder;
 
+impl DescribeEventCategoriesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_event_categories::DescribeEventCategoriesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_event_categories::DescribeEventCategoriesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_event_categories();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeEventCategories`.
 ///
 /// <p>Displays a list of categories for all event source types, or, if specified, for a specified source type. You can also see this list in the "Amazon RDS event categories and event messages" section of the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Events.Messages.html"> <i>Amazon RDS User Guide</i> </a> or the <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/USER_Events.Messages.html"> <i>Amazon Aurora User Guide</i> </a>.</p>

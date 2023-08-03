@@ -3,6 +3,23 @@ pub use crate::operation::describe_endpoint_types::_describe_endpoint_types_outp
 
 pub use crate::operation::describe_endpoint_types::_describe_endpoint_types_input::DescribeEndpointTypesInputBuilder;
 
+impl DescribeEndpointTypesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_endpoint_types::DescribeEndpointTypesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_endpoint_types::DescribeEndpointTypesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_endpoint_types();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeEndpointTypes`.
 ///
 /// <p>Returns information about the type of endpoints available.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_kx_cluster::_create_kx_cluster_output::CreateKx
 
 pub use crate::operation::create_kx_cluster::_create_kx_cluster_input::CreateKxClusterInputBuilder;
 
+impl CreateKxClusterInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_kx_cluster::CreateKxClusterOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_kx_cluster::CreateKxClusterError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_kx_cluster();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateKxCluster`.
 ///
 /// <p>Creates a new kdb cluster.</p>

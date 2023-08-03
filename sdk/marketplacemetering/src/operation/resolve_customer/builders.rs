@@ -3,6 +3,23 @@ pub use crate::operation::resolve_customer::_resolve_customer_output::ResolveCus
 
 pub use crate::operation::resolve_customer::_resolve_customer_input::ResolveCustomerInputBuilder;
 
+impl ResolveCustomerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::resolve_customer::ResolveCustomerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::resolve_customer::ResolveCustomerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.resolve_customer();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ResolveCustomer`.
 ///
 /// <p> <code>ResolveCustomer</code> is called by a SaaS application during the registration process. When a buyer visits your website during the registration process, the buyer submits a registration token through their browser. The registration token is resolved through this API to obtain a <code>CustomerIdentifier</code> along with the <code>CustomerAWSAccountId</code> and <code>ProductCode</code>.</p> <note>

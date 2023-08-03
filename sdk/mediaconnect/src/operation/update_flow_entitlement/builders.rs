@@ -3,6 +3,23 @@ pub use crate::operation::update_flow_entitlement::_update_flow_entitlement_outp
 
 pub use crate::operation::update_flow_entitlement::_update_flow_entitlement_input::UpdateFlowEntitlementInputBuilder;
 
+impl UpdateFlowEntitlementInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_flow_entitlement::UpdateFlowEntitlementOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_flow_entitlement::UpdateFlowEntitlementError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_flow_entitlement();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateFlowEntitlement`.
 ///
 /// You can change an entitlement's description, subscribers, and encryption. If you change the subscribers, the service will remove the outputs that are are used by the subscribers that are removed.

@@ -3,6 +3,23 @@ pub use crate::operation::create_system_template::_create_system_template_output
 
 pub use crate::operation::create_system_template::_create_system_template_input::CreateSystemTemplateInputBuilder;
 
+impl CreateSystemTemplateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_system_template::CreateSystemTemplateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_system_template::CreateSystemTemplateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_system_template();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateSystemTemplate`.
 ///
 /// <p>Creates a system. The system is validated against the entities in the latest version of the user's namespace unless another namespace version is specified in the request.</p>

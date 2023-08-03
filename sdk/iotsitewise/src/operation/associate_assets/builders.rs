@@ -3,6 +3,23 @@ pub use crate::operation::associate_assets::_associate_assets_output::AssociateA
 
 pub use crate::operation::associate_assets::_associate_assets_input::AssociateAssetsInputBuilder;
 
+impl AssociateAssetsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_assets::AssociateAssetsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_assets::AssociateAssetsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_assets();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateAssets`.
 ///
 /// <p>Associates a child asset with the given parent asset through a hierarchy defined in the parent asset's model. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/add-associated-assets.html">Associating assets</a> in the <i>IoT SiteWise User Guide</i>.</p>

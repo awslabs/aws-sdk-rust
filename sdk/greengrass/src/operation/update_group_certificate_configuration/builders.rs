@@ -3,6 +3,17 @@ pub use crate::operation::update_group_certificate_configuration::_update_group_
 
 pub use crate::operation::update_group_certificate_configuration::_update_group_certificate_configuration_input::UpdateGroupCertificateConfigurationInputBuilder;
 
+impl UpdateGroupCertificateConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::update_group_certificate_configuration::UpdateGroupCertificateConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_group_certificate_configuration::UpdateGroupCertificateConfigurationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.update_group_certificate_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateGroupCertificateConfiguration`.
 ///
 /// Updates the Certificate expiry time for a group.

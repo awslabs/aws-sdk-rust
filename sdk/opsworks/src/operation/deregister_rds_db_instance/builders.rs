@@ -3,6 +3,23 @@ pub use crate::operation::deregister_rds_db_instance::_deregister_rds_db_instanc
 
 pub use crate::operation::deregister_rds_db_instance::_deregister_rds_db_instance_input::DeregisterRdsDbInstanceInputBuilder;
 
+impl DeregisterRdsDbInstanceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::deregister_rds_db_instance::DeregisterRdsDbInstanceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::deregister_rds_db_instance::DeregisterRdsDbInstanceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.deregister_rds_db_instance();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeregisterRdsDbInstance`.
 ///
 /// <p>Deregisters an Amazon RDS instance.</p>

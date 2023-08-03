@@ -3,6 +3,23 @@ pub use crate::operation::delete_user_endpoints::_delete_user_endpoints_output::
 
 pub use crate::operation::delete_user_endpoints::_delete_user_endpoints_input::DeleteUserEndpointsInputBuilder;
 
+impl DeleteUserEndpointsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_user_endpoints::DeleteUserEndpointsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_user_endpoints::DeleteUserEndpointsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_user_endpoints();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteUserEndpoints`.
 ///
 /// <p>Deletes all the endpoints that are associated with a specific user ID.</p>

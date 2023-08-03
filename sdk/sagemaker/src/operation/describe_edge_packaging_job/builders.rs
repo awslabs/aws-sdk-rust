@@ -3,6 +3,23 @@ pub use crate::operation::describe_edge_packaging_job::_describe_edge_packaging_
 
 pub use crate::operation::describe_edge_packaging_job::_describe_edge_packaging_job_input::DescribeEdgePackagingJobInputBuilder;
 
+impl DescribeEdgePackagingJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_edge_packaging_job::DescribeEdgePackagingJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_edge_packaging_job::DescribeEdgePackagingJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_edge_packaging_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeEdgePackagingJob`.
 ///
 /// <p>A description of edge packaging jobs.</p>

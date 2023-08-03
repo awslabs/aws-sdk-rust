@@ -3,6 +3,23 @@ pub use crate::operation::calculate_route::_calculate_route_output::CalculateRou
 
 pub use crate::operation::calculate_route::_calculate_route_input::CalculateRouteInputBuilder;
 
+impl CalculateRouteInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::calculate_route::CalculateRouteOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::calculate_route::CalculateRouteError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.calculate_route();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CalculateRoute`.
 ///
 /// <p> <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html">Calculates a route</a> given the following required parameters: <code>DeparturePosition</code> and <code>DestinationPosition</code>. Requires that you first <a href="https://docs.aws.amazon.com/location-routes/latest/APIReference/API_CreateRouteCalculator.html">create a route calculator resource</a>.</p>

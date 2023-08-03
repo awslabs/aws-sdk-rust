@@ -3,6 +3,23 @@ pub use crate::operation::get_hypervisor::_get_hypervisor_output::GetHypervisorO
 
 pub use crate::operation::get_hypervisor::_get_hypervisor_input::GetHypervisorInputBuilder;
 
+impl GetHypervisorInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_hypervisor::GetHypervisorOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_hypervisor::GetHypervisorError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_hypervisor();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetHypervisor`.
 ///
 /// <p>This action requests information about the specified hypervisor to which the gateway will connect. A hypervisor is hardware, software, or firmware that creates and manages virtual machines, and allocates resources to them.</p>

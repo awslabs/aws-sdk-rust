@@ -3,6 +3,23 @@ pub use crate::operation::delete_human_loop::_delete_human_loop_output::DeleteHu
 
 pub use crate::operation::delete_human_loop::_delete_human_loop_input::DeleteHumanLoopInputBuilder;
 
+impl DeleteHumanLoopInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_human_loop::DeleteHumanLoopOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_human_loop::DeleteHumanLoopError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_human_loop();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteHumanLoop`.
 ///
 /// <p>Deletes the specified human loop for a flow definition.</p>

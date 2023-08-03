@@ -3,6 +3,23 @@ pub use crate::operation::update_pricing_plan::_update_pricing_plan_output::Upda
 
 pub use crate::operation::update_pricing_plan::_update_pricing_plan_input::UpdatePricingPlanInputBuilder;
 
+impl UpdatePricingPlanInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_pricing_plan::UpdatePricingPlanOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_pricing_plan::UpdatePricingPlanError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_pricing_plan();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdatePricingPlan`.
 ///
 /// <p>This updates an existing pricing plan. </p>

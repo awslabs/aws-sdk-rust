@@ -3,6 +3,23 @@ pub use crate::operation::describe_pools::_describe_pools_output::DescribePoolsO
 
 pub use crate::operation::describe_pools::_describe_pools_input::DescribePoolsInputBuilder;
 
+impl DescribePoolsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_pools::DescribePoolsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_pools::DescribePoolsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_pools();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribePools`.
 ///
 /// <p>Retrieves the specified pools or all pools associated with your Amazon Web Services account.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_extension_association::_delete_extension_associ
 
 pub use crate::operation::delete_extension_association::_delete_extension_association_input::DeleteExtensionAssociationInputBuilder;
 
+impl DeleteExtensionAssociationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_extension_association::DeleteExtensionAssociationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_extension_association::DeleteExtensionAssociationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_extension_association();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteExtensionAssociation`.
 ///
 /// <p>Deletes an extension association. This action doesn't delete extensions defined in the association.</p>

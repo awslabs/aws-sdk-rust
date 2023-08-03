@@ -3,6 +3,23 @@ pub use crate::operation::delete_identity_provider::_delete_identity_provider_ou
 
 pub use crate::operation::delete_identity_provider::_delete_identity_provider_input::DeleteIdentityProviderInputBuilder;
 
+impl DeleteIdentityProviderInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_identity_provider::DeleteIdentityProviderOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_identity_provider::DeleteIdentityProviderError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_identity_provider();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteIdentityProvider`.
 ///
 /// <p>Deletes an IdP for a user pool.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::register_certificate::_register_certificate_output::Re
 
 pub use crate::operation::register_certificate::_register_certificate_input::RegisterCertificateInputBuilder;
 
+impl RegisterCertificateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::register_certificate::RegisterCertificateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::register_certificate::RegisterCertificateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.register_certificate();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RegisterCertificate`.
 ///
 /// <p>Registers a device certificate with IoT in the same <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_CertificateDescription.html#iot-Type-CertificateDescription-certificateMode">certificate mode</a> as the signing CA. If you have more than one CA certificate that has the same subject field, you must specify the CA certificate that was used to sign the device certificate being registered.</p>

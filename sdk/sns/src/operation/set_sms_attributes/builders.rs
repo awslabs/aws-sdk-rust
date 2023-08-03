@@ -3,6 +3,23 @@ pub use crate::operation::set_sms_attributes::_set_sms_attributes_output::SetSms
 
 pub use crate::operation::set_sms_attributes::_set_sms_attributes_input::SetSmsAttributesInputBuilder;
 
+impl SetSmsAttributesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::set_sms_attributes::SetSmsAttributesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::set_sms_attributes::SetSMSAttributesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.set_sms_attributes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SetSMSAttributes`.
 ///
 /// <p>Use this request to set the default settings for sending SMS messages and receiving daily SMS usage reports.</p>

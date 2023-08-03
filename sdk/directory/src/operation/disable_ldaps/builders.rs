@@ -3,6 +3,23 @@ pub use crate::operation::disable_ldaps::_disable_ldaps_output::DisableLdapsOutp
 
 pub use crate::operation::disable_ldaps::_disable_ldaps_input::DisableLdapsInputBuilder;
 
+impl DisableLdapsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disable_ldaps::DisableLdapsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disable_ldaps::DisableLDAPSError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disable_ldaps();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisableLDAPS`.
 ///
 /// <p>Deactivates LDAP secure calls for the specified directory.</p>

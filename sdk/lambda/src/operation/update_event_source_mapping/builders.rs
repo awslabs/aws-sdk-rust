@@ -3,6 +3,23 @@ pub use crate::operation::update_event_source_mapping::_update_event_source_mapp
 
 pub use crate::operation::update_event_source_mapping::_update_event_source_mapping_input::UpdateEventSourceMappingInputBuilder;
 
+impl UpdateEventSourceMappingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_event_source_mapping::UpdateEventSourceMappingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_event_source_mapping::UpdateEventSourceMappingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_event_source_mapping();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateEventSourceMapping`.
 ///
 /// <p>Updates an event source mapping. You can change the function that Lambda invokes, or pause invocation and resume later from the same location.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::validate_pipeline_definition::_validate_pipeline_defin
 
 pub use crate::operation::validate_pipeline_definition::_validate_pipeline_definition_input::ValidatePipelineDefinitionInputBuilder;
 
+impl ValidatePipelineDefinitionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::validate_pipeline_definition::ValidatePipelineDefinitionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::validate_pipeline_definition::ValidatePipelineDefinitionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.validate_pipeline_definition();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ValidatePipelineDefinition`.
 ///
 /// <p>Validates the specified pipeline definition to ensure that it is well formed and can be run without error.</p> <examples>

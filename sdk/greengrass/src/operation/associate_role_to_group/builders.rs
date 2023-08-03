@@ -3,6 +3,23 @@ pub use crate::operation::associate_role_to_group::_associate_role_to_group_outp
 
 pub use crate::operation::associate_role_to_group::_associate_role_to_group_input::AssociateRoleToGroupInputBuilder;
 
+impl AssociateRoleToGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_role_to_group::AssociateRoleToGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_role_to_group::AssociateRoleToGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_role_to_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateRoleToGroup`.
 ///
 /// Associates a role with a group. Your Greengrass core will use the role to access AWS cloud services. The role's permissions should allow Greengrass core Lambda functions to perform actions against the cloud.

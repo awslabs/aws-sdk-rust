@@ -3,6 +3,23 @@ pub use crate::operation::delete_fleet_locations::_delete_fleet_locations_output
 
 pub use crate::operation::delete_fleet_locations::_delete_fleet_locations_input::DeleteFleetLocationsInputBuilder;
 
+impl DeleteFleetLocationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_fleet_locations::DeleteFleetLocationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_fleet_locations::DeleteFleetLocationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_fleet_locations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteFleetLocations`.
 ///
 /// <p>Removes locations from a multi-location fleet. When deleting a location, all game server process and all instances that are still active in the location are shut down. </p>

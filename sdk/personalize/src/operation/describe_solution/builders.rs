@@ -3,6 +3,23 @@ pub use crate::operation::describe_solution::_describe_solution_output::Describe
 
 pub use crate::operation::describe_solution::_describe_solution_input::DescribeSolutionInputBuilder;
 
+impl DescribeSolutionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_solution::DescribeSolutionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_solution::DescribeSolutionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_solution();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeSolution`.
 ///
 /// <p>Describes a solution. For more information on solutions, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSolution.html">CreateSolution</a>.</p>

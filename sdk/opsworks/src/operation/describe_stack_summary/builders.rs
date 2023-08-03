@@ -3,6 +3,23 @@ pub use crate::operation::describe_stack_summary::_describe_stack_summary_output
 
 pub use crate::operation::describe_stack_summary::_describe_stack_summary_input::DescribeStackSummaryInputBuilder;
 
+impl DescribeStackSummaryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_stack_summary::DescribeStackSummaryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_stack_summary::DescribeStackSummaryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_stack_summary();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeStackSummary`.
 ///
 /// <p>Describes the number of layers and apps in a specified stack, and the number of instances in each state, such as <code>running_setup</code> or <code>online</code>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_monitoring_subscription::_create_monitoring_sub
 
 pub use crate::operation::create_monitoring_subscription::_create_monitoring_subscription_input::CreateMonitoringSubscriptionInputBuilder;
 
+impl CreateMonitoringSubscriptionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_monitoring_subscription::CreateMonitoringSubscriptionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_monitoring_subscription::CreateMonitoringSubscriptionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_monitoring_subscription();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateMonitoringSubscription`.
 ///
 /// <p>Enables additional CloudWatch metrics for the specified CloudFront distribution. The additional metrics incur an additional cost.</p>

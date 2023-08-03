@@ -3,6 +3,23 @@ pub use crate::operation::get_recovery_group::_get_recovery_group_output::GetRec
 
 pub use crate::operation::get_recovery_group::_get_recovery_group_input::GetRecoveryGroupInputBuilder;
 
+impl GetRecoveryGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_recovery_group::GetRecoveryGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_recovery_group::GetRecoveryGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_recovery_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetRecoveryGroup`.
 ///
 /// <p>Gets details about a recovery group, including a list of the cells that are included in it.</p>

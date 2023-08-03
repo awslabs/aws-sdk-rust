@@ -3,6 +3,23 @@ pub use crate::operation::stop_app_block_builder::_stop_app_block_builder_output
 
 pub use crate::operation::stop_app_block_builder::_stop_app_block_builder_input::StopAppBlockBuilderInputBuilder;
 
+impl StopAppBlockBuilderInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_app_block_builder::StopAppBlockBuilderOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_app_block_builder::StopAppBlockBuilderError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_app_block_builder();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopAppBlockBuilder`.
 ///
 /// <p>Stops an app block builder.</p>

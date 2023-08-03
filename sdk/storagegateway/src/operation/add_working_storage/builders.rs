@@ -3,6 +3,23 @@ pub use crate::operation::add_working_storage::_add_working_storage_output::AddW
 
 pub use crate::operation::add_working_storage::_add_working_storage_input::AddWorkingStorageInputBuilder;
 
+impl AddWorkingStorageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::add_working_storage::AddWorkingStorageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::add_working_storage::AddWorkingStorageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.add_working_storage();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AddWorkingStorage`.
 ///
 /// <p>Configures one or more gateway local disks as working storage for a gateway. This operation is only supported in the stored volume gateway type. This operation is deprecated in cached volume API version 20120630. Use <code>AddUploadBuffer</code> instead.</p> <note>

@@ -3,6 +3,23 @@ pub use crate::operation::get_media_pipeline::_get_media_pipeline_output::GetMed
 
 pub use crate::operation::get_media_pipeline::_get_media_pipeline_input::GetMediaPipelineInputBuilder;
 
+impl GetMediaPipelineInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_media_pipeline::GetMediaPipelineOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_media_pipeline::GetMediaPipelineError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_media_pipeline();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetMediaPipeline`.
 ///
 /// <p>Gets an existing media pipeline.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::remove_custom_routing_endpoints::_remove_custom_routin
 
 pub use crate::operation::remove_custom_routing_endpoints::_remove_custom_routing_endpoints_input::RemoveCustomRoutingEndpointsInputBuilder;
 
+impl RemoveCustomRoutingEndpointsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::remove_custom_routing_endpoints::RemoveCustomRoutingEndpointsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::remove_custom_routing_endpoints::RemoveCustomRoutingEndpointsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.remove_custom_routing_endpoints();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RemoveCustomRoutingEndpoints`.
 ///
 /// <p>Remove endpoints from a custom routing accelerator.</p>

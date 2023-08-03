@@ -3,6 +3,23 @@ pub use crate::operation::modify_snapshot_attribute::_modify_snapshot_attribute_
 
 pub use crate::operation::modify_snapshot_attribute::_modify_snapshot_attribute_input::ModifySnapshotAttributeInputBuilder;
 
+impl ModifySnapshotAttributeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_snapshot_attribute::ModifySnapshotAttributeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_snapshot_attribute::ModifySnapshotAttributeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_snapshot_attribute();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifySnapshotAttribute`.
 ///
 /// <p>Adds or removes permission settings for the specified snapshot. You may add or remove specified Amazon Web Services account IDs from a snapshot's list of create volume permissions, but you cannot do both in a single operation. If you need to both add and remove account IDs for a snapshot, you must use multiple operations. You can make up to 500 modifications to a snapshot in a single operation.</p>

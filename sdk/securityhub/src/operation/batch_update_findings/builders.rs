@@ -3,6 +3,23 @@ pub use crate::operation::batch_update_findings::_batch_update_findings_output::
 
 pub use crate::operation::batch_update_findings::_batch_update_findings_input::BatchUpdateFindingsInputBuilder;
 
+impl BatchUpdateFindingsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_update_findings::BatchUpdateFindingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_update_findings::BatchUpdateFindingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_update_findings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchUpdateFindings`.
 ///
 /// <p>Used by Security Hub customers to update information about their investigation into a finding. Requested by administrator accounts or member accounts. Administrator accounts can update findings for their account and their member accounts. Member accounts can update findings for their account.</p>

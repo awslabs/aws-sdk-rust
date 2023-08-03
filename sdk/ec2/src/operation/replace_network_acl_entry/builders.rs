@@ -3,6 +3,23 @@ pub use crate::operation::replace_network_acl_entry::_replace_network_acl_entry_
 
 pub use crate::operation::replace_network_acl_entry::_replace_network_acl_entry_input::ReplaceNetworkAclEntryInputBuilder;
 
+impl ReplaceNetworkAclEntryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::replace_network_acl_entry::ReplaceNetworkAclEntryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::replace_network_acl_entry::ReplaceNetworkAclEntryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.replace_network_acl_entry();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ReplaceNetworkAclEntry`.
 ///
 /// <p>Replaces an entry (rule) in a network ACL. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-network-acls.html">Network ACLs</a> in the <i>Amazon VPC User Guide</i>.</p>

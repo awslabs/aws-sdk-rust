@@ -3,6 +3,23 @@ pub use crate::operation::start_campaign::_start_campaign_output::StartCampaignO
 
 pub use crate::operation::start_campaign::_start_campaign_input::StartCampaignInputBuilder;
 
+impl StartCampaignInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_campaign::StartCampaignOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_campaign::StartCampaignError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_campaign();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartCampaign`.
 ///
 /// Starts a campaign for the specified Amazon Connect account.

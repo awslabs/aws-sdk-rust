@@ -3,6 +3,23 @@ pub use crate::operation::create_file_system_from_backup::_create_file_system_fr
 
 pub use crate::operation::create_file_system_from_backup::_create_file_system_from_backup_input::CreateFileSystemFromBackupInputBuilder;
 
+impl CreateFileSystemFromBackupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_file_system_from_backup::CreateFileSystemFromBackupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_file_system_from_backup::CreateFileSystemFromBackupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_file_system_from_backup();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateFileSystemFromBackup`.
 ///
 /// <p>Creates a new Amazon FSx for Lustre, Amazon FSx for Windows File Server, or Amazon FSx for OpenZFS file system from an existing Amazon FSx backup.</p>

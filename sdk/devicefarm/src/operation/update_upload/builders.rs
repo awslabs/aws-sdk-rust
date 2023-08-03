@@ -3,6 +3,23 @@ pub use crate::operation::update_upload::_update_upload_output::UpdateUploadOutp
 
 pub use crate::operation::update_upload::_update_upload_input::UpdateUploadInputBuilder;
 
+impl UpdateUploadInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_upload::UpdateUploadOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_upload::UpdateUploadError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_upload();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateUpload`.
 ///
 /// <p>Updates an uploaded test spec.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_monitoring_schedule::_create_monitoring_schedul
 
 pub use crate::operation::create_monitoring_schedule::_create_monitoring_schedule_input::CreateMonitoringScheduleInputBuilder;
 
+impl CreateMonitoringScheduleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_monitoring_schedule::CreateMonitoringScheduleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_monitoring_schedule::CreateMonitoringScheduleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_monitoring_schedule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateMonitoringSchedule`.
 ///
 /// <p>Creates a schedule that regularly starts Amazon SageMaker Processing Jobs to monitor the data captured for an Amazon SageMaker Endpoint.</p>

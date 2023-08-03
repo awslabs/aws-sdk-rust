@@ -3,6 +3,23 @@ pub use crate::operation::create_game_session_queue::_create_game_session_queue_
 
 pub use crate::operation::create_game_session_queue::_create_game_session_queue_input::CreateGameSessionQueueInputBuilder;
 
+impl CreateGameSessionQueueInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_game_session_queue::CreateGameSessionQueueOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_game_session_queue::CreateGameSessionQueueError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_game_session_queue();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateGameSessionQueue`.
 ///
 /// <p>Creates a placement queue that processes requests for new game sessions. A queue uses FleetIQ algorithms to determine the best placement locations and find an available game server there, then prompts the game server process to start a new game session. </p>

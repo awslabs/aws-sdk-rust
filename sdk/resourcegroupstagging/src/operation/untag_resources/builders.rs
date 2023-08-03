@@ -3,6 +3,23 @@ pub use crate::operation::untag_resources::_untag_resources_output::UntagResourc
 
 pub use crate::operation::untag_resources::_untag_resources_input::UntagResourcesInputBuilder;
 
+impl UntagResourcesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::untag_resources::UntagResourcesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::untag_resources::UntagResourcesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.untag_resources();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UntagResources`.
 ///
 /// <p>Removes the specified tags from the specified resources. When you specify a tag key, the action removes both that key and its associated value. The operation succeeds even if you attempt to remove tags from a resource that were already removed. Note the following:</p>

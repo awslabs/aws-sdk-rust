@@ -3,6 +3,23 @@ pub use crate::operation::describe_activations::_describe_activations_output::De
 
 pub use crate::operation::describe_activations::_describe_activations_input::DescribeActivationsInputBuilder;
 
+impl DescribeActivationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_activations::DescribeActivationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_activations::DescribeActivationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_activations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeActivations`.
 ///
 /// <p>Describes details about the activation, such as the date and time the activation was created, its expiration date, the Identity and Access Management (IAM) role assigned to the managed nodes in the activation, and the number of nodes registered by using this activation.</p>

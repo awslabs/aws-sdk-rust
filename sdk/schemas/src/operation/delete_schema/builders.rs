@@ -3,6 +3,23 @@ pub use crate::operation::delete_schema::_delete_schema_output::DeleteSchemaOutp
 
 pub use crate::operation::delete_schema::_delete_schema_input::DeleteSchemaInputBuilder;
 
+impl DeleteSchemaInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_schema::DeleteSchemaOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_schema::DeleteSchemaError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_schema();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteSchema`.
 ///
 /// <p>Delete a schema definition.</p>

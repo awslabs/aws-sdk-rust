@@ -3,6 +3,23 @@ pub use crate::operation::start_on_demand_replication_run::_start_on_demand_repl
 
 pub use crate::operation::start_on_demand_replication_run::_start_on_demand_replication_run_input::StartOnDemandReplicationRunInputBuilder;
 
+impl StartOnDemandReplicationRunInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_on_demand_replication_run::StartOnDemandReplicationRunError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_on_demand_replication_run();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartOnDemandReplicationRun`.
 ///
 /// <p>Starts an on-demand replication run for the specified replication job. This replication run starts immediately. This replication run is in addition to the ones already scheduled.</p>

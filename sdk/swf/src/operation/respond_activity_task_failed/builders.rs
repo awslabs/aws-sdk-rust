@@ -3,6 +3,23 @@ pub use crate::operation::respond_activity_task_failed::_respond_activity_task_f
 
 pub use crate::operation::respond_activity_task_failed::_respond_activity_task_failed_input::RespondActivityTaskFailedInputBuilder;
 
+impl RespondActivityTaskFailedInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::respond_activity_task_failed::RespondActivityTaskFailedOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::respond_activity_task_failed::RespondActivityTaskFailedError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.respond_activity_task_failed();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RespondActivityTaskFailed`.
 ///
 /// <p>Used by workers to tell the service that the <code>ActivityTask</code> identified by the <code>taskToken</code> has failed with <code>reason</code> (if specified). The <code>reason</code> and <code>details</code> appear in the <code>ActivityTaskFailed</code> event added to the workflow history.</p>

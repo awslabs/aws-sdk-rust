@@ -3,6 +3,23 @@ pub use crate::operation::update_stream_mode::_update_stream_mode_output::Update
 
 pub use crate::operation::update_stream_mode::_update_stream_mode_input::UpdateStreamModeInputBuilder;
 
+impl UpdateStreamModeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_stream_mode::UpdateStreamModeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_stream_mode::UpdateStreamModeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_stream_mode();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateStreamMode`.
 ///
 /// <p> Updates the capacity mode of the data stream. Currently, in Kinesis Data Streams, you can choose between an <b>on-demand</b> capacity mode and a <b>provisioned</b> capacity mode for your data stream. </p>

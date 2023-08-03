@@ -3,6 +3,23 @@ pub use crate::operation::update_theme_permissions::_update_theme_permissions_ou
 
 pub use crate::operation::update_theme_permissions::_update_theme_permissions_input::UpdateThemePermissionsInputBuilder;
 
+impl UpdateThemePermissionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_theme_permissions::UpdateThemePermissionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_theme_permissions::UpdateThemePermissionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_theme_permissions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateThemePermissions`.
 ///
 /// <p>Updates the resource permissions for a theme. Permissions apply to the action to grant or revoke permissions on, for example <code>"quicksight:DescribeTheme"</code>.</p>

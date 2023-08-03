@@ -3,6 +3,23 @@ pub use crate::operation::describe_objects::_describe_objects_output::DescribeOb
 
 pub use crate::operation::describe_objects::_describe_objects_input::DescribeObjectsInputBuilder;
 
+impl DescribeObjectsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_objects::DescribeObjectsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_objects::DescribeObjectsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_objects();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeObjects`.
 ///
 /// <p>Gets the object definitions for a set of objects associated with the pipeline. Object definitions are composed of a set of fields that define the properties of the object.</p> <examples>

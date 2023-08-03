@@ -3,6 +3,23 @@ pub use crate::operation::create_storedi_scsi_volume::_create_storedi_scsi_volum
 
 pub use crate::operation::create_storedi_scsi_volume::_create_storedi_scsi_volume_input::CreateStorediScsiVolumeInputBuilder;
 
+impl CreateStorediScsiVolumeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_storedi_scsi_volume::CreateStorediScsiVolumeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_storedi_scsi_volume::CreateStorediSCSIVolumeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_storedi_scsi_volume();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateStorediSCSIVolume`.
 ///
 /// <p>Creates a volume on a specified gateway. This operation is only supported in the stored volume gateway type.</p>

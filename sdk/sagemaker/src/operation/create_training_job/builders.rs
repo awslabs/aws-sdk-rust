@@ -3,6 +3,23 @@ pub use crate::operation::create_training_job::_create_training_job_output::Crea
 
 pub use crate::operation::create_training_job::_create_training_job_input::CreateTrainingJobInputBuilder;
 
+impl CreateTrainingJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_training_job::CreateTrainingJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_training_job::CreateTrainingJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_training_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateTrainingJob`.
 ///
 /// <p>Starts a model training job. After training completes, SageMaker saves the resulting model artifacts to an Amazon S3 location that you specify. </p>

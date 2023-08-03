@@ -3,6 +3,23 @@ pub use crate::operation::list_stream_consumers::_list_stream_consumers_output::
 
 pub use crate::operation::list_stream_consumers::_list_stream_consumers_input::ListStreamConsumersInputBuilder;
 
+impl ListStreamConsumersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_stream_consumers::ListStreamConsumersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_stream_consumers::ListStreamConsumersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_stream_consumers();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListStreamConsumers`.
 ///
 /// <p>Lists the consumers registered to receive data from a stream using enhanced fan-out, and provides information about each consumer.</p>

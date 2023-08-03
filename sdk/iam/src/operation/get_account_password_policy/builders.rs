@@ -3,6 +3,23 @@ pub use crate::operation::get_account_password_policy::_get_account_password_pol
 
 pub use crate::operation::get_account_password_policy::_get_account_password_policy_input::GetAccountPasswordPolicyInputBuilder;
 
+impl GetAccountPasswordPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_account_password_policy::GetAccountPasswordPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_account_password_policy::GetAccountPasswordPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_account_password_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetAccountPasswordPolicy`.
 ///
 /// <p>Retrieves the password policy for the Amazon Web Services account. This tells you the complexity requirements and mandatory rotation periods for the IAM user passwords in your account. For more information about using a password policy, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_ManagingPasswordPolicies.html">Managing an IAM password policy</a>.</p>

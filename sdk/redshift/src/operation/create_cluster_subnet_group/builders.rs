@@ -3,6 +3,23 @@ pub use crate::operation::create_cluster_subnet_group::_create_cluster_subnet_gr
 
 pub use crate::operation::create_cluster_subnet_group::_create_cluster_subnet_group_input::CreateClusterSubnetGroupInputBuilder;
 
+impl CreateClusterSubnetGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_cluster_subnet_group::CreateClusterSubnetGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_cluster_subnet_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateClusterSubnetGroup`.
 ///
 /// <p>Creates a new Amazon Redshift subnet group. You must provide a list of one or more subnets in your existing Amazon Virtual Private Cloud (Amazon VPC) when creating Amazon Redshift subnet group.</p>

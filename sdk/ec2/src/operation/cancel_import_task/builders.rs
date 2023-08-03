@@ -3,6 +3,23 @@ pub use crate::operation::cancel_import_task::_cancel_import_task_output::Cancel
 
 pub use crate::operation::cancel_import_task::_cancel_import_task_input::CancelImportTaskInputBuilder;
 
+impl CancelImportTaskInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::cancel_import_task::CancelImportTaskOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::cancel_import_task::CancelImportTaskError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.cancel_import_task();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CancelImportTask`.
 ///
 /// <p>Cancels an in-process import virtual machine or import snapshot task.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_resource_request_status::_get_resource_request_sta
 
 pub use crate::operation::get_resource_request_status::_get_resource_request_status_input::GetResourceRequestStatusInputBuilder;
 
+impl GetResourceRequestStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_resource_request_status::GetResourceRequestStatusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_resource_request_status::GetResourceRequestStatusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_resource_request_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetResourceRequestStatus`.
 ///
 /// <p>Returns the current status of a resource operation request. For more information, see <a href="https://docs.aws.amazon.com/cloudcontrolapi/latest/userguide/resource-operations-manage-requests.html#resource-operations-manage-requests-track">Tracking the progress of resource operation requests</a> in the <i>Amazon Web Services Cloud Control API User Guide</i>.</p>

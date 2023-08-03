@@ -3,6 +3,23 @@ pub use crate::operation::get_schema_by_definition::_get_schema_by_definition_ou
 
 pub use crate::operation::get_schema_by_definition::_get_schema_by_definition_input::GetSchemaByDefinitionInputBuilder;
 
+impl GetSchemaByDefinitionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_schema_by_definition::GetSchemaByDefinitionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_schema_by_definition::GetSchemaByDefinitionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_schema_by_definition();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetSchemaByDefinition`.
 ///
 /// <p>Retrieves a schema by the <code>SchemaDefinition</code>. The schema definition is sent to the Schema Registry, canonicalized, and hashed. If the hash is matched within the scope of the <code>SchemaName</code> or ARN (or the default registry, if none is supplied), that schema’s metadata is returned. Otherwise, a 404 or NotFound error is returned. Schema versions in <code>Deleted</code> statuses will not be included in the results.</p>

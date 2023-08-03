@@ -3,6 +3,23 @@ pub use crate::operation::add_flow_media_streams::_add_flow_media_streams_output
 
 pub use crate::operation::add_flow_media_streams::_add_flow_media_streams_input::AddFlowMediaStreamsInputBuilder;
 
+impl AddFlowMediaStreamsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::add_flow_media_streams::AddFlowMediaStreamsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::add_flow_media_streams::AddFlowMediaStreamsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.add_flow_media_streams();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AddFlowMediaStreams`.
 ///
 /// Adds media streams to an existing flow. After you add a media stream to a flow, you can associate it with a source and/or an output that uses the ST 2110 JPEG XS or CDI protocol.

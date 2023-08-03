@@ -3,6 +3,23 @@ pub use crate::operation::grant_permissions::_grant_permissions_output::GrantPer
 
 pub use crate::operation::grant_permissions::_grant_permissions_input::GrantPermissionsInputBuilder;
 
+impl GrantPermissionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::grant_permissions::GrantPermissionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::grant_permissions::GrantPermissionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.grant_permissions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GrantPermissions`.
 ///
 /// <p>Grants permissions to the principal to access metadata in the Data Catalog and data organized in underlying data storage such as Amazon S3.</p>

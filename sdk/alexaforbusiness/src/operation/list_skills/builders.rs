@@ -3,6 +3,23 @@ pub use crate::operation::list_skills::_list_skills_output::ListSkillsOutputBuil
 
 pub use crate::operation::list_skills::_list_skills_input::ListSkillsInputBuilder;
 
+impl ListSkillsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_skills::ListSkillsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_skills::ListSkillsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_skills();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListSkills`.
 ///
 /// <p>Lists all enabled skills in a specific skill group.</p>

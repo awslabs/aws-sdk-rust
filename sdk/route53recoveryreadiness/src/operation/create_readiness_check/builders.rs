@@ -3,6 +3,23 @@ pub use crate::operation::create_readiness_check::_create_readiness_check_output
 
 pub use crate::operation::create_readiness_check::_create_readiness_check_input::CreateReadinessCheckInputBuilder;
 
+impl CreateReadinessCheckInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_readiness_check::CreateReadinessCheckOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_readiness_check::CreateReadinessCheckError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_readiness_check();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateReadinessCheck`.
 ///
 /// <p>Creates a readiness check in an account. A readiness check monitors a resource set in your application, such as a set of Amazon Aurora instances, that Application Recovery Controller is auditing recovery readiness for. The audits run once every minute on every resource that's associated with a readiness check.</p>

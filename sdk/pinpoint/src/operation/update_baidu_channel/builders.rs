@@ -3,6 +3,23 @@ pub use crate::operation::update_baidu_channel::_update_baidu_channel_output::Up
 
 pub use crate::operation::update_baidu_channel::_update_baidu_channel_input::UpdateBaiduChannelInputBuilder;
 
+impl UpdateBaiduChannelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_baidu_channel::UpdateBaiduChannelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_baidu_channel::UpdateBaiduChannelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_baidu_channel();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateBaiduChannel`.
 ///
 /// <p>Enables the Baidu channel for an application or updates the status and settings of the Baidu channel for an application.</p>

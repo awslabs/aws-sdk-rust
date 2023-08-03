@@ -3,6 +3,23 @@ pub use crate::operation::delete_matchmaking_configuration::_delete_matchmaking_
 
 pub use crate::operation::delete_matchmaking_configuration::_delete_matchmaking_configuration_input::DeleteMatchmakingConfigurationInputBuilder;
 
+impl DeleteMatchmakingConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_matchmaking_configuration::DeleteMatchmakingConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_matchmaking_configuration::DeleteMatchmakingConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_matchmaking_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteMatchmakingConfiguration`.
 ///
 /// <p>Permanently removes a FlexMatch matchmaking configuration. To delete, specify the configuration name. A matchmaking configuration cannot be deleted if it is being used in any active matchmaking tickets.</p>

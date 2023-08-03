@@ -3,6 +3,23 @@ pub use crate::operation::create_subnet_group::_create_subnet_group_output::Crea
 
 pub use crate::operation::create_subnet_group::_create_subnet_group_input::CreateSubnetGroupInputBuilder;
 
+impl CreateSubnetGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_subnet_group::CreateSubnetGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_subnet_group::CreateSubnetGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_subnet_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateSubnetGroup`.
 ///
 /// <p>Creates a subnet group. A subnet group is a collection of subnets (typically private) that you can designate for your clusters running in an Amazon Virtual Private Cloud (VPC) environment. When you create a cluster in an Amazon VPC, you must specify a subnet group. MemoryDB uses that subnet group to choose a subnet and IP addresses within that subnet to associate with your nodes. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/subnetgroups.html">Subnets and subnet groups</a>.</p>

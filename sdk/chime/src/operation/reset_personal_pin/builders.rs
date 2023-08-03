@@ -3,6 +3,23 @@ pub use crate::operation::reset_personal_pin::_reset_personal_pin_output::ResetP
 
 pub use crate::operation::reset_personal_pin::_reset_personal_pin_input::ResetPersonalPinInputBuilder;
 
+impl ResetPersonalPinInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::reset_personal_pin::ResetPersonalPinOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::reset_personal_pin::ResetPersonalPINError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.reset_personal_pin();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ResetPersonalPIN`.
 ///
 /// <p>Resets the personal meeting PIN for the specified user on an Amazon Chime account. Returns the <code>User</code> object with the updated personal meeting PIN.</p>

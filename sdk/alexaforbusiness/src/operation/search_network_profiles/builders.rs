@@ -3,6 +3,23 @@ pub use crate::operation::search_network_profiles::_search_network_profiles_outp
 
 pub use crate::operation::search_network_profiles::_search_network_profiles_input::SearchNetworkProfilesInputBuilder;
 
+impl SearchNetworkProfilesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::search_network_profiles::SearchNetworkProfilesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::search_network_profiles::SearchNetworkProfilesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.search_network_profiles();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SearchNetworkProfiles`.
 ///
 /// <p>Searches network profiles and lists the ones that meet a set of filter and sort criteria.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_access_keys::_list_access_keys_output::ListAccess
 
 pub use crate::operation::list_access_keys::_list_access_keys_input::ListAccessKeysInputBuilder;
 
+impl ListAccessKeysInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_access_keys::ListAccessKeysOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_access_keys::ListAccessKeysError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_access_keys();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAccessKeys`.
 ///
 /// <p>Returns information about the access key IDs associated with the specified IAM user. If there is none, the operation returns an empty list.</p>

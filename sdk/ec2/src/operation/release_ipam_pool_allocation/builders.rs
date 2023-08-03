@@ -3,6 +3,23 @@ pub use crate::operation::release_ipam_pool_allocation::_release_ipam_pool_alloc
 
 pub use crate::operation::release_ipam_pool_allocation::_release_ipam_pool_allocation_input::ReleaseIpamPoolAllocationInputBuilder;
 
+impl ReleaseIpamPoolAllocationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::release_ipam_pool_allocation::ReleaseIpamPoolAllocationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::release_ipam_pool_allocation::ReleaseIpamPoolAllocationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.release_ipam_pool_allocation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ReleaseIpamPoolAllocation`.
 ///
 /// <p>Release an allocation within an IPAM pool. The Region you use should be the IPAM pool locale. The locale is the Amazon Web Services Region where this IPAM pool is available for allocations. You can only use this action to release manual allocations. To remove an allocation for a resource without deleting the resource, set its monitored state to false using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ModifyIpamResourceCidr.html">ModifyIpamResourceCidr</a>. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/ipam/release-alloc-ipam.html">Release an allocation</a> in the <i>Amazon VPC IPAM User Guide</i>. </p> <note>

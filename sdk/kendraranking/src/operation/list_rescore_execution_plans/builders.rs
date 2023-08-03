@@ -3,6 +3,23 @@ pub use crate::operation::list_rescore_execution_plans::_list_rescore_execution_
 
 pub use crate::operation::list_rescore_execution_plans::_list_rescore_execution_plans_input::ListRescoreExecutionPlansInputBuilder;
 
+impl ListRescoreExecutionPlansInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_rescore_execution_plans::ListRescoreExecutionPlansOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_rescore_execution_plans::ListRescoreExecutionPlansError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_rescore_execution_plans();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListRescoreExecutionPlans`.
 ///
 /// <p>Lists your rescore execution plans. A rescore execution plan is an Amazon Kendra Intelligent Ranking resource used for provisioning the <code>Rescore</code> API.</p>

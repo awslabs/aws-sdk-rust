@@ -3,6 +3,23 @@ pub use crate::operation::list_identity_pools::_list_identity_pools_output::List
 
 pub use crate::operation::list_identity_pools::_list_identity_pools_input::ListIdentityPoolsInputBuilder;
 
+impl ListIdentityPoolsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_identity_pools::ListIdentityPoolsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_identity_pools::ListIdentityPoolsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_identity_pools();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListIdentityPools`.
 ///
 /// <p>Lists all of the Cognito identity pools registered for your account.</p>

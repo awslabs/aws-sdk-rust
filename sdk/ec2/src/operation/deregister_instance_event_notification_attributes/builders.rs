@@ -3,6 +3,17 @@ pub use crate::operation::deregister_instance_event_notification_attributes::_de
 
 pub use crate::operation::deregister_instance_event_notification_attributes::_deregister_instance_event_notification_attributes_input::DeregisterInstanceEventNotificationAttributesInputBuilder;
 
+impl DeregisterInstanceEventNotificationAttributesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::deregister_instance_event_notification_attributes::DeregisterInstanceEventNotificationAttributesOutput, ::aws_smithy_http::result::SdkError<crate::operation::deregister_instance_event_notification_attributes::DeregisterInstanceEventNotificationAttributesError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.deregister_instance_event_notification_attributes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeregisterInstanceEventNotificationAttributes`.
 ///
 /// <p>Deregisters tag keys to prevent tags that have the specified tag keys from being included in scheduled event notifications for resources in the Region.</p>

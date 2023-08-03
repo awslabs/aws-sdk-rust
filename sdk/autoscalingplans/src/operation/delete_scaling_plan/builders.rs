@@ -3,6 +3,23 @@ pub use crate::operation::delete_scaling_plan::_delete_scaling_plan_output::Dele
 
 pub use crate::operation::delete_scaling_plan::_delete_scaling_plan_input::DeleteScalingPlanInputBuilder;
 
+impl DeleteScalingPlanInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_scaling_plan::DeleteScalingPlanOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_scaling_plan::DeleteScalingPlanError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_scaling_plan();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteScalingPlan`.
 ///
 /// <p>Deletes the specified scaling plan.</p>

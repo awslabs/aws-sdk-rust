@@ -3,6 +3,23 @@ pub use crate::operation::get_content_moderation::_get_content_moderation_output
 
 pub use crate::operation::get_content_moderation::_get_content_moderation_input::GetContentModerationInputBuilder;
 
+impl GetContentModerationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_content_moderation::GetContentModerationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_content_moderation::GetContentModerationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_content_moderation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetContentModeration`.
 ///
 /// <p>Gets the inappropriate, unwanted, or offensive content analysis results for a Amazon Rekognition Video analysis started by <code>StartContentModeration</code>. For a list of moderation labels in Amazon Rekognition, see <a href="https://docs.aws.amazon.com/rekognition/latest/dg/moderation.html#moderation-api">Using the image and video moderation APIs</a>.</p>

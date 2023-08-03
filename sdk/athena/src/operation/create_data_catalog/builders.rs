@@ -3,6 +3,23 @@ pub use crate::operation::create_data_catalog::_create_data_catalog_output::Crea
 
 pub use crate::operation::create_data_catalog::_create_data_catalog_input::CreateDataCatalogInputBuilder;
 
+impl CreateDataCatalogInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_data_catalog::CreateDataCatalogOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_data_catalog::CreateDataCatalogError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_data_catalog();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateDataCatalog`.
 ///
 /// <p>Creates (registers) a data catalog with the specified name and properties. Catalogs created are visible to all users of the same Amazon Web Services account.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_application_versions::_list_application_versions_
 
 pub use crate::operation::list_application_versions::_list_application_versions_input::ListApplicationVersionsInputBuilder;
 
+impl ListApplicationVersionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_application_versions::ListApplicationVersionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_application_versions::ListApplicationVersionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_application_versions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListApplicationVersions`.
 ///
 /// <p>Returns a list of the application versions for a specific application.</p>

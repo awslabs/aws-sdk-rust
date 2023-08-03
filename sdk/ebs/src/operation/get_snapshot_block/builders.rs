@@ -3,6 +3,23 @@ pub use crate::operation::get_snapshot_block::_get_snapshot_block_output::GetSna
 
 pub use crate::operation::get_snapshot_block::_get_snapshot_block_input::GetSnapshotBlockInputBuilder;
 
+impl GetSnapshotBlockInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_snapshot_block::GetSnapshotBlockOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_snapshot_block::GetSnapshotBlockError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_snapshot_block();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetSnapshotBlock`.
 ///
 /// <p>Returns the data in a block in an Amazon Elastic Block Store snapshot.</p>

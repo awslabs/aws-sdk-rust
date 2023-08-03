@@ -3,6 +3,23 @@ pub use crate::operation::reject_vpc_peering_connection::_reject_vpc_peering_con
 
 pub use crate::operation::reject_vpc_peering_connection::_reject_vpc_peering_connection_input::RejectVpcPeeringConnectionInputBuilder;
 
+impl RejectVpcPeeringConnectionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::reject_vpc_peering_connection::RejectVpcPeeringConnectionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::reject_vpc_peering_connection::RejectVpcPeeringConnectionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.reject_vpc_peering_connection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RejectVpcPeeringConnection`.
 ///
 /// <p>Rejects a VPC peering connection request. The VPC peering connection must be in the <code>pending-acceptance</code> state. Use the <code>DescribeVpcPeeringConnections</code> request to view your outstanding VPC peering connection requests. To delete an active VPC peering connection, or to delete a VPC peering connection request that you initiated, use <code>DeleteVpcPeeringConnection</code>.</p>

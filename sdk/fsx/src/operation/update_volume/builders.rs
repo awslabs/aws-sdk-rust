@@ -3,6 +3,23 @@ pub use crate::operation::update_volume::_update_volume_output::UpdateVolumeOutp
 
 pub use crate::operation::update_volume::_update_volume_input::UpdateVolumeInputBuilder;
 
+impl UpdateVolumeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_volume::UpdateVolumeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_volume::UpdateVolumeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_volume();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateVolume`.
 ///
 /// <p>Updates the configuration of an Amazon FSx for NetApp ONTAP or Amazon FSx for OpenZFS volume.</p>

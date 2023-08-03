@@ -3,6 +3,23 @@ pub use crate::operation::start_events_detection_job::_start_events_detection_jo
 
 pub use crate::operation::start_events_detection_job::_start_events_detection_job_input::StartEventsDetectionJobInputBuilder;
 
+impl StartEventsDetectionJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_events_detection_job::StartEventsDetectionJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_events_detection_job::StartEventsDetectionJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_events_detection_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartEventsDetectionJob`.
 ///
 /// <p>Starts an asynchronous event detection job for a collection of documents.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_baidu_channel::_delete_baidu_channel_output::De
 
 pub use crate::operation::delete_baidu_channel::_delete_baidu_channel_input::DeleteBaiduChannelInputBuilder;
 
+impl DeleteBaiduChannelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_baidu_channel::DeleteBaiduChannelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_baidu_channel::DeleteBaiduChannelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_baidu_channel();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteBaiduChannel`.
 ///
 /// <p>Disables the Baidu channel for an application and deletes any existing settings for the channel.</p>

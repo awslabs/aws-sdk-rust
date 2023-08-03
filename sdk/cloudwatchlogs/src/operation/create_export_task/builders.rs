@@ -3,6 +3,23 @@ pub use crate::operation::create_export_task::_create_export_task_output::Create
 
 pub use crate::operation::create_export_task::_create_export_task_input::CreateExportTaskInputBuilder;
 
+impl CreateExportTaskInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_export_task::CreateExportTaskOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_export_task::CreateExportTaskError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_export_task();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateExportTask`.
 ///
 /// <p>Creates an export task so that you can efficiently export data from a log group to an Amazon S3 bucket. When you perform a <code>CreateExportTask</code> operation, you must use credentials that have permission to write to the S3 bucket that you specify as the destination.</p>

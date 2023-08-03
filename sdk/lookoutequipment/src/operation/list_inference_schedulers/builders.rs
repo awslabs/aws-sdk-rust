@@ -3,6 +3,23 @@ pub use crate::operation::list_inference_schedulers::_list_inference_schedulers_
 
 pub use crate::operation::list_inference_schedulers::_list_inference_schedulers_input::ListInferenceSchedulersInputBuilder;
 
+impl ListInferenceSchedulersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_inference_schedulers::ListInferenceSchedulersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_inference_schedulers::ListInferenceSchedulersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_inference_schedulers();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListInferenceSchedulers`.
 ///
 /// <p>Retrieves a list of all inference schedulers currently available for your account. </p>

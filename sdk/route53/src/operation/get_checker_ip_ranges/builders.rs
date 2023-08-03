@@ -3,6 +3,23 @@ pub use crate::operation::get_checker_ip_ranges::_get_checker_ip_ranges_output::
 
 pub use crate::operation::get_checker_ip_ranges::_get_checker_ip_ranges_input::GetCheckerIpRangesInputBuilder;
 
+impl GetCheckerIpRangesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_checker_ip_ranges::GetCheckerIpRangesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_checker_ip_ranges::GetCheckerIpRangesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_checker_ip_ranges();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetCheckerIpRanges`.
 ///
 /// <p>Route 53 does not perform authorization for this API because it retrieves information that is already available to the public.</p> <important>

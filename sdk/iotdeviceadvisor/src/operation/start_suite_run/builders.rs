@@ -3,6 +3,23 @@ pub use crate::operation::start_suite_run::_start_suite_run_output::StartSuiteRu
 
 pub use crate::operation::start_suite_run::_start_suite_run_input::StartSuiteRunInputBuilder;
 
+impl StartSuiteRunInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_suite_run::StartSuiteRunOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_suite_run::StartSuiteRunError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_suite_run();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartSuiteRun`.
 ///
 /// <p>Starts a Device Advisor test suite run.</p>

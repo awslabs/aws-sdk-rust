@@ -3,6 +3,23 @@ pub use crate::operation::start_expense_analysis::_start_expense_analysis_output
 
 pub use crate::operation::start_expense_analysis::_start_expense_analysis_input::StartExpenseAnalysisInputBuilder;
 
+impl StartExpenseAnalysisInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_expense_analysis::StartExpenseAnalysisOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_expense_analysis::StartExpenseAnalysisError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_expense_analysis();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartExpenseAnalysis`.
 ///
 /// <p>Starts the asynchronous analysis of invoices or receipts for data like contact information, items purchased, and vendor names.</p>

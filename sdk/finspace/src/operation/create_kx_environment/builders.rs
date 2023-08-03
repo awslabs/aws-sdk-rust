@@ -3,6 +3,23 @@ pub use crate::operation::create_kx_environment::_create_kx_environment_output::
 
 pub use crate::operation::create_kx_environment::_create_kx_environment_input::CreateKxEnvironmentInputBuilder;
 
+impl CreateKxEnvironmentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_kx_environment::CreateKxEnvironmentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_kx_environment::CreateKxEnvironmentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_kx_environment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateKxEnvironment`.
 ///
 /// <p>Creates a managed kdb environment for the account.</p>

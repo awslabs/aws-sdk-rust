@@ -3,6 +3,23 @@ pub use crate::operation::retrieve_domain_auth_code::_retrieve_domain_auth_code_
 
 pub use crate::operation::retrieve_domain_auth_code::_retrieve_domain_auth_code_input::RetrieveDomainAuthCodeInputBuilder;
 
+impl RetrieveDomainAuthCodeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::retrieve_domain_auth_code::RetrieveDomainAuthCodeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::retrieve_domain_auth_code::RetrieveDomainAuthCodeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.retrieve_domain_auth_code();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RetrieveDomainAuthCode`.
 ///
 /// <p>This operation returns the authorization code for the domain. To transfer a domain to another registrar, you provide this value to the new registrar.</p>

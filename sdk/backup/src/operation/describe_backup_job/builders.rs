@@ -3,6 +3,23 @@ pub use crate::operation::describe_backup_job::_describe_backup_job_output::Desc
 
 pub use crate::operation::describe_backup_job::_describe_backup_job_input::DescribeBackupJobInputBuilder;
 
+impl DescribeBackupJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_backup_job::DescribeBackupJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_backup_job::DescribeBackupJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_backup_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeBackupJob`.
 ///
 /// <p>Returns backup job details for the specified <code>BackupJobId</code>.</p>

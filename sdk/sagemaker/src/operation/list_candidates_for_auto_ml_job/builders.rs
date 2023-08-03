@@ -3,6 +3,23 @@ pub use crate::operation::list_candidates_for_auto_ml_job::_list_candidates_for_
 
 pub use crate::operation::list_candidates_for_auto_ml_job::_list_candidates_for_auto_ml_job_input::ListCandidatesForAutoMlJobInputBuilder;
 
+impl ListCandidatesForAutoMlJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_candidates_for_auto_ml_job::ListCandidatesForAutoMlJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_candidates_for_auto_ml_job::ListCandidatesForAutoMLJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_candidates_for_auto_ml_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListCandidatesForAutoMLJob`.
 ///
 /// <p>List the candidates created for the job.</p>

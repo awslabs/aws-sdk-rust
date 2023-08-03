@@ -3,6 +3,23 @@ pub use crate::operation::get_parameter::_get_parameter_output::GetParameterOutp
 
 pub use crate::operation::get_parameter::_get_parameter_input::GetParameterInputBuilder;
 
+impl GetParameterInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_parameter::GetParameterOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_parameter::GetParameterError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_parameter();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetParameter`.
 ///
 /// <p>Get information about a single parameter by specifying the parameter name.</p> <note>

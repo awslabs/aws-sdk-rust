@@ -3,6 +3,23 @@ pub use crate::operation::start_stream_processor::_start_stream_processor_output
 
 pub use crate::operation::start_stream_processor::_start_stream_processor_input::StartStreamProcessorInputBuilder;
 
+impl StartStreamProcessorInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_stream_processor::StartStreamProcessorOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_stream_processor::StartStreamProcessorError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_stream_processor();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartStreamProcessor`.
 ///
 /// <p>Starts processing a stream processor. You create a stream processor by calling <code>CreateStreamProcessor</code>. To tell <code>StartStreamProcessor</code> which stream processor to start, use the value of the <code>Name</code> field specified in the call to <code>CreateStreamProcessor</code>.</p>

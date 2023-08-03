@@ -3,6 +3,17 @@ pub use crate::operation::list_aggregate_discovered_resources::_list_aggregate_d
 
 pub use crate::operation::list_aggregate_discovered_resources::_list_aggregate_discovered_resources_input::ListAggregateDiscoveredResourcesInputBuilder;
 
+impl ListAggregateDiscoveredResourcesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_aggregate_discovered_resources::ListAggregateDiscoveredResourcesOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_aggregate_discovered_resources::ListAggregateDiscoveredResourcesError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_aggregate_discovered_resources();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAggregateDiscoveredResources`.
 ///
 /// <p>Accepts a resource type and returns a list of resource identifiers that are aggregated for a specific resource type across accounts and regions. A resource identifier includes the resource type, ID, (if available) the custom resource name, source account, and source region. You can narrow the results to include only resources that have specific resource IDs, or a resource name, or source account ID, or source region.</p>

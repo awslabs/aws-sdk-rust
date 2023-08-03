@@ -3,6 +3,23 @@ pub use crate::operation::associate_virtual_interface::_associate_virtual_interf
 
 pub use crate::operation::associate_virtual_interface::_associate_virtual_interface_input::AssociateVirtualInterfaceInputBuilder;
 
+impl AssociateVirtualInterfaceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_virtual_interface::AssociateVirtualInterfaceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_virtual_interface::AssociateVirtualInterfaceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_virtual_interface();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateVirtualInterface`.
 ///
 /// <p>Associates a virtual interface with a specified link aggregation group (LAG) or connection. Connectivity to Amazon Web Services is temporarily interrupted as the virtual interface is being migrated. If the target connection or LAG has an associated virtual interface with a conflicting VLAN number or a conflicting IP address, the operation fails.</p>

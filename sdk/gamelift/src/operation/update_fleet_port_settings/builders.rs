@@ -3,6 +3,23 @@ pub use crate::operation::update_fleet_port_settings::_update_fleet_port_setting
 
 pub use crate::operation::update_fleet_port_settings::_update_fleet_port_settings_input::UpdateFleetPortSettingsInputBuilder;
 
+impl UpdateFleetPortSettingsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_fleet_port_settings::UpdateFleetPortSettingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_fleet_port_settings::UpdateFleetPortSettingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_fleet_port_settings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateFleetPortSettings`.
 ///
 /// <p>Updates permissions that allow inbound traffic to connect to game sessions that are being hosted on instances in the fleet. </p>

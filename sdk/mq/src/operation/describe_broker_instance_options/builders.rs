@@ -3,6 +3,23 @@ pub use crate::operation::describe_broker_instance_options::_describe_broker_ins
 
 pub use crate::operation::describe_broker_instance_options::_describe_broker_instance_options_input::DescribeBrokerInstanceOptionsInputBuilder;
 
+impl DescribeBrokerInstanceOptionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_broker_instance_options::DescribeBrokerInstanceOptionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_broker_instance_options::DescribeBrokerInstanceOptionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_broker_instance_options();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeBrokerInstanceOptions`.
 ///
 /// <p>Describe available broker instance options.</p>

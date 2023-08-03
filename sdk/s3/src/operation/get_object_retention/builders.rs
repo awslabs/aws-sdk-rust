@@ -3,6 +3,23 @@ pub use crate::operation::get_object_retention::_get_object_retention_output::Ge
 
 pub use crate::operation::get_object_retention::_get_object_retention_input::GetObjectRetentionInputBuilder;
 
+impl GetObjectRetentionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_object_retention::GetObjectRetentionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_object_retention::GetObjectRetentionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_object_retention();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetObjectRetention`.
 ///
 /// <p>Retrieves an object's retention settings. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Locking Objects</a>.</p>

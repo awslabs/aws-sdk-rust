@@ -3,6 +3,23 @@ pub use crate::operation::enable_hosted_zone_dnssec::_enable_hosted_zone_dnssec_
 
 pub use crate::operation::enable_hosted_zone_dnssec::_enable_hosted_zone_dnssec_input::EnableHostedZoneDnssecInputBuilder;
 
+impl EnableHostedZoneDnssecInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::enable_hosted_zone_dnssec::EnableHostedZoneDnssecOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::enable_hosted_zone_dnssec::EnableHostedZoneDNSSECError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.enable_hosted_zone_dnssec();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `EnableHostedZoneDNSSEC`.
 ///
 /// <p>Enables DNSSEC signing in a specific hosted zone.</p>

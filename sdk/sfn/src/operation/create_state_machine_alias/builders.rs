@@ -3,6 +3,23 @@ pub use crate::operation::create_state_machine_alias::_create_state_machine_alia
 
 pub use crate::operation::create_state_machine_alias::_create_state_machine_alias_input::CreateStateMachineAliasInputBuilder;
 
+impl CreateStateMachineAliasInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_state_machine_alias::CreateStateMachineAliasOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_state_machine_alias::CreateStateMachineAliasError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_state_machine_alias();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateStateMachineAlias`.
 ///
 /// <p>Creates an <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-alias.html">alias</a> for a state machine that points to one or two <a href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-state-machine-version.html">versions</a> of the same state machine. You can set your application to call <code>StartExecution</code> with an alias and update the version the alias uses without changing the client's code.</p>

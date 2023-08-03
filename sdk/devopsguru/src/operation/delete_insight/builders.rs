@@ -3,6 +3,23 @@ pub use crate::operation::delete_insight::_delete_insight_output::DeleteInsightO
 
 pub use crate::operation::delete_insight::_delete_insight_input::DeleteInsightInputBuilder;
 
+impl DeleteInsightInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_insight::DeleteInsightOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_insight::DeleteInsightError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_insight();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteInsight`.
 ///
 /// <p>Deletes the insight along with the associated anomalies, events and recommendations.</p>

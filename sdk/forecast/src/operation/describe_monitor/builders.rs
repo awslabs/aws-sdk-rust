@@ -3,6 +3,23 @@ pub use crate::operation::describe_monitor::_describe_monitor_output::DescribeMo
 
 pub use crate::operation::describe_monitor::_describe_monitor_input::DescribeMonitorInputBuilder;
 
+impl DescribeMonitorInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_monitor::DescribeMonitorOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_monitor::DescribeMonitorError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_monitor();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeMonitor`.
 ///
 /// <p>Describes a monitor resource. In addition to listing the properties provided in the <code>CreateMonitor</code> request, this operation lists the following properties:</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_volume_attribute::_describe_volume_attribute_
 
 pub use crate::operation::describe_volume_attribute::_describe_volume_attribute_input::DescribeVolumeAttributeInputBuilder;
 
+impl DescribeVolumeAttributeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_volume_attribute::DescribeVolumeAttributeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_volume_attribute::DescribeVolumeAttributeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_volume_attribute();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeVolumeAttribute`.
 ///
 /// <p>Describes the specified attribute of the specified volume. You can specify only one attribute at a time.</p>

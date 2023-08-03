@@ -3,6 +3,23 @@ pub use crate::operation::stop_replication_task::_stop_replication_task_output::
 
 pub use crate::operation::stop_replication_task::_stop_replication_task_input::StopReplicationTaskInputBuilder;
 
+impl StopReplicationTaskInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_replication_task::StopReplicationTaskOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_replication_task::StopReplicationTaskError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_replication_task();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopReplicationTask`.
 ///
 /// <p>Stops the replication task.</p>

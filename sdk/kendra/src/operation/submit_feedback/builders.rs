@@ -3,6 +3,23 @@ pub use crate::operation::submit_feedback::_submit_feedback_output::SubmitFeedba
 
 pub use crate::operation::submit_feedback::_submit_feedback_input::SubmitFeedbackInputBuilder;
 
+impl SubmitFeedbackInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::submit_feedback::SubmitFeedbackOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::submit_feedback::SubmitFeedbackError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.submit_feedback();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SubmitFeedback`.
 ///
 /// <p>Enables you to provide feedback to Amazon Kendra to improve the performance of your index.</p>

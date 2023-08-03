@@ -3,6 +3,23 @@ pub use crate::operation::reboot_instances::_reboot_instances_output::RebootInst
 
 pub use crate::operation::reboot_instances::_reboot_instances_input::RebootInstancesInputBuilder;
 
+impl RebootInstancesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::reboot_instances::RebootInstancesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::reboot_instances::RebootInstancesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.reboot_instances();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RebootInstances`.
 ///
 /// <p>Requests a reboot of the specified instances. This operation is asynchronous; it only queues a request to reboot the specified instances. The operation succeeds if the instances are valid and belong to you. Requests to reboot terminated instances are ignored.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_domain_health::_describe_domain_health_output
 
 pub use crate::operation::describe_domain_health::_describe_domain_health_input::DescribeDomainHealthInputBuilder;
 
+impl DescribeDomainHealthInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_domain_health::DescribeDomainHealthOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_domain_health::DescribeDomainHealthError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_domain_health();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeDomainHealth`.
 ///
 /// <p>Returns information about domain and node health, the standby Availability Zone, number of nodes per Availability Zone, and shard count per node.</p>

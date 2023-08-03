@@ -3,6 +3,23 @@ pub use crate::operation::infer_rx_norm::_infer_rx_norm_output::InferRxNormOutpu
 
 pub use crate::operation::infer_rx_norm::_infer_rx_norm_input::InferRxNormInputBuilder;
 
+impl InferRxNormInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::infer_rx_norm::InferRxNormOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::infer_rx_norm::InferRxNormError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.infer_rx_norm();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `InferRxNorm`.
 ///
 /// <p>InferRxNorm detects medications as entities listed in a patient record and links to the normalized concept identifiers in the RxNorm database from the National Library of Medicine. Amazon Comprehend Medical only detects medical entities in English language texts. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_tapes::_create_tapes_output::CreateTapesOutputB
 
 pub use crate::operation::create_tapes::_create_tapes_input::CreateTapesInputBuilder;
 
+impl CreateTapesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_tapes::CreateTapesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_tapes::CreateTapesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_tapes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateTapes`.
 ///
 /// <p>Creates one or more virtual tapes. You write data to the virtual tapes and then archive the tapes. This operation is only supported in the tape gateway type.</p> <note>

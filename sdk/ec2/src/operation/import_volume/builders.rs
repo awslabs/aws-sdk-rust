@@ -3,6 +3,23 @@ pub use crate::operation::import_volume::_import_volume_output::ImportVolumeOutp
 
 pub use crate::operation::import_volume::_import_volume_input::ImportVolumeInputBuilder;
 
+impl ImportVolumeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::import_volume::ImportVolumeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::import_volume::ImportVolumeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.import_volume();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ImportVolume`.
 ///
 /// <p>Creates an import volume task using metadata from the specified disk image.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_alert::_create_alert_output::CreateAlertOutputB
 
 pub use crate::operation::create_alert::_create_alert_input::CreateAlertInputBuilder;
 
+impl CreateAlertInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_alert::CreateAlertOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_alert::CreateAlertError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_alert();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateAlert`.
 ///
 /// <p>Creates an alert for an anomaly detector.</p>

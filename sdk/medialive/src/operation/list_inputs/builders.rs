@@ -3,6 +3,23 @@ pub use crate::operation::list_inputs::_list_inputs_output::ListInputsOutputBuil
 
 pub use crate::operation::list_inputs::_list_inputs_input::ListInputsInputBuilder;
 
+impl ListInputsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_inputs::ListInputsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_inputs::ListInputsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_inputs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListInputs`.
 ///
 /// Produces list of inputs that have been created

@@ -3,6 +3,23 @@ pub use crate::operation::list_access_points::_list_access_points_output::ListAc
 
 pub use crate::operation::list_access_points::_list_access_points_input::ListAccessPointsInputBuilder;
 
+impl ListAccessPointsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_access_points::ListAccessPointsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_access_points::ListAccessPointsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_access_points();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAccessPoints`.
 ///
 /// <p>Returns a list of the access points that are owned by the current account that's associated with the specified bucket. You can retrieve up to 1000 access points per call. If the specified bucket has more than 1,000 access points (or the number specified in <code>maxResults</code>, whichever is less), the response will include a continuation token that you can use to list the additional access points.</p>

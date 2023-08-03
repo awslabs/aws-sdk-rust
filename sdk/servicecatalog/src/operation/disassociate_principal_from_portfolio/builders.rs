@@ -3,6 +3,17 @@ pub use crate::operation::disassociate_principal_from_portfolio::_disassociate_p
 
 pub use crate::operation::disassociate_principal_from_portfolio::_disassociate_principal_from_portfolio_input::DisassociatePrincipalFromPortfolioInputBuilder;
 
+impl DisassociatePrincipalFromPortfolioInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::disassociate_principal_from_portfolio::DisassociatePrincipalFromPortfolioOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_principal_from_portfolio::DisassociatePrincipalFromPortfolioError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.disassociate_principal_from_portfolio();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociatePrincipalFromPortfolio`.
 ///
 /// <p>Disassociates a previously associated principal ARN from a specified portfolio.</p>

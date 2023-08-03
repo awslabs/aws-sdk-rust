@@ -3,6 +3,23 @@ pub use crate::operation::modify_instance_fleet::_modify_instance_fleet_output::
 
 pub use crate::operation::modify_instance_fleet::_modify_instance_fleet_input::ModifyInstanceFleetInputBuilder;
 
+impl ModifyInstanceFleetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_instance_fleet::ModifyInstanceFleetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_instance_fleet::ModifyInstanceFleetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_instance_fleet();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyInstanceFleet`.
 ///
 /// <p>Modifies the target On-Demand and target Spot capacities for the instance fleet with the specified InstanceFleetID within the cluster specified using ClusterID. The call either succeeds or fails atomically.</p> <note>

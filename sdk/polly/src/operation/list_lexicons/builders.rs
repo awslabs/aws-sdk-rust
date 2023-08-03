@@ -3,6 +3,23 @@ pub use crate::operation::list_lexicons::_list_lexicons_output::ListLexiconsOutp
 
 pub use crate::operation::list_lexicons::_list_lexicons_input::ListLexiconsInputBuilder;
 
+impl ListLexiconsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_lexicons::ListLexiconsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_lexicons::ListLexiconsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_lexicons();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListLexicons`.
 ///
 /// <p>Returns a list of pronunciation lexicons stored in an Amazon Web Services Region. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing Lexicons</a>.</p>

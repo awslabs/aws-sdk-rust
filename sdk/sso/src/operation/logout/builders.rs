@@ -3,6 +3,23 @@ pub use crate::operation::logout::_logout_output::LogoutOutputBuilder;
 
 pub use crate::operation::logout::_logout_input::LogoutInputBuilder;
 
+impl LogoutInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::logout::LogoutOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::logout::LogoutError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.logout();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `Logout`.
 ///
 /// <p>Removes the locally stored SSO tokens from the client-side cache and sends an API call to the IAM Identity Center service to invalidate the corresponding server-side IAM Identity Center sign in session.</p> <note>

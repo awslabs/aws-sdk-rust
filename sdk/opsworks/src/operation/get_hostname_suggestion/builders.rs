@@ -3,6 +3,23 @@ pub use crate::operation::get_hostname_suggestion::_get_hostname_suggestion_outp
 
 pub use crate::operation::get_hostname_suggestion::_get_hostname_suggestion_input::GetHostnameSuggestionInputBuilder;
 
+impl GetHostnameSuggestionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_hostname_suggestion::GetHostnameSuggestionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_hostname_suggestion::GetHostnameSuggestionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_hostname_suggestion();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetHostnameSuggestion`.
 ///
 /// <p>Gets a generated host name for the specified layer, based on the current host name theme.</p>

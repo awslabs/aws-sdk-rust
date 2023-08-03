@@ -3,6 +3,23 @@ pub use crate::operation::create_realtime_endpoint::_create_realtime_endpoint_ou
 
 pub use crate::operation::create_realtime_endpoint::_create_realtime_endpoint_input::CreateRealtimeEndpointInputBuilder;
 
+impl CreateRealtimeEndpointInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_realtime_endpoint::CreateRealtimeEndpointOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_realtime_endpoint::CreateRealtimeEndpointError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_realtime_endpoint();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateRealtimeEndpoint`.
 ///
 /// <p>Creates a real-time endpoint for the <code>MLModel</code>. The endpoint contains the URI of the <code>MLModel</code>; that is, the location to send real-time prediction requests for the specified <code>MLModel</code>.</p>

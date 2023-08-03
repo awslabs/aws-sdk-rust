@@ -3,6 +3,23 @@ pub use crate::operation::modify_verified_access_instance::_modify_verified_acce
 
 pub use crate::operation::modify_verified_access_instance::_modify_verified_access_instance_input::ModifyVerifiedAccessInstanceInputBuilder;
 
+impl ModifyVerifiedAccessInstanceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_verified_access_instance::ModifyVerifiedAccessInstanceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_verified_access_instance::ModifyVerifiedAccessInstanceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_verified_access_instance();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyVerifiedAccessInstance`.
 ///
 /// <p>Modifies the configuration of the specified Amazon Web Services Verified Access instance.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::update_storage_virtual_machine::_update_storage_virtua
 
 pub use crate::operation::update_storage_virtual_machine::_update_storage_virtual_machine_input::UpdateStorageVirtualMachineInputBuilder;
 
+impl UpdateStorageVirtualMachineInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_storage_virtual_machine::UpdateStorageVirtualMachineOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_storage_virtual_machine::UpdateStorageVirtualMachineError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_storage_virtual_machine();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateStorageVirtualMachine`.
 ///
 /// <p>Updates an FSx for ONTAP storage virtual machine (SVM).</p>

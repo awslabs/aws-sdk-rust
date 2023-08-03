@@ -3,6 +3,23 @@ pub use crate::operation::list_scheduled_audits::_list_scheduled_audits_output::
 
 pub use crate::operation::list_scheduled_audits::_list_scheduled_audits_input::ListScheduledAuditsInputBuilder;
 
+impl ListScheduledAuditsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_scheduled_audits::ListScheduledAuditsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_scheduled_audits::ListScheduledAuditsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_scheduled_audits();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListScheduledAudits`.
 ///
 /// <p>Lists all of your scheduled audits.</p>

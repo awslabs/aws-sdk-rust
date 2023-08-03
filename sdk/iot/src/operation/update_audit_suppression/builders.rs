@@ -3,6 +3,23 @@ pub use crate::operation::update_audit_suppression::_update_audit_suppression_ou
 
 pub use crate::operation::update_audit_suppression::_update_audit_suppression_input::UpdateAuditSuppressionInputBuilder;
 
+impl UpdateAuditSuppressionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_audit_suppression::UpdateAuditSuppressionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_audit_suppression::UpdateAuditSuppressionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_audit_suppression();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateAuditSuppression`.
 ///
 /// <p> Updates a Device Defender audit suppression. </p>

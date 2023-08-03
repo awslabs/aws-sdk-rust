@@ -3,6 +3,23 @@ pub use crate::operation::describe_queue::_describe_queue_output::DescribeQueueO
 
 pub use crate::operation::describe_queue::_describe_queue_input::DescribeQueueInputBuilder;
 
+impl DescribeQueueInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_queue::DescribeQueueOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_queue::DescribeQueueError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_queue();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeQueue`.
 ///
 /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>

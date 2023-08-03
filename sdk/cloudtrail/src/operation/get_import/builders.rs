@@ -3,6 +3,23 @@ pub use crate::operation::get_import::_get_import_output::GetImportOutputBuilder
 
 pub use crate::operation::get_import::_get_import_input::GetImportInputBuilder;
 
+impl GetImportInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_import::GetImportOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_import::GetImportError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_import();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetImport`.
 ///
 /// <p> Returns information about a specific import. </p>

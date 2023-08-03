@@ -3,6 +3,23 @@ pub use crate::operation::get_server_details::_get_server_details_output::GetSer
 
 pub use crate::operation::get_server_details::_get_server_details_input::GetServerDetailsInputBuilder;
 
+impl GetServerDetailsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_server_details::GetServerDetailsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_server_details::GetServerDetailsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_server_details();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetServerDetails`.
 ///
 /// <p> Retrieves detailed information about a specified server. </p>

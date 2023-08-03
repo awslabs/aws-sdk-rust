@@ -3,6 +3,23 @@ pub use crate::operation::describe_location_s3::_describe_location_s3_output::De
 
 pub use crate::operation::describe_location_s3::_describe_location_s3_input::DescribeLocationS3InputBuilder;
 
+impl DescribeLocationS3InputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_location_s3::DescribeLocationS3Output,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_location_s3::DescribeLocationS3Error,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_location_s3();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeLocationS3`.
 ///
 /// <p>Returns metadata, such as bucket name, about an Amazon S3 bucket location.</p>

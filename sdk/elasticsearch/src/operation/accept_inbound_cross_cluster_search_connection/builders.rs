@@ -3,6 +3,17 @@ pub use crate::operation::accept_inbound_cross_cluster_search_connection::_accep
 
 pub use crate::operation::accept_inbound_cross_cluster_search_connection::_accept_inbound_cross_cluster_search_connection_input::AcceptInboundCrossClusterSearchConnectionInputBuilder;
 
+impl AcceptInboundCrossClusterSearchConnectionInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::accept_inbound_cross_cluster_search_connection::AcceptInboundCrossClusterSearchConnectionOutput, ::aws_smithy_http::result::SdkError<crate::operation::accept_inbound_cross_cluster_search_connection::AcceptInboundCrossClusterSearchConnectionError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.accept_inbound_cross_cluster_search_connection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AcceptInboundCrossClusterSearchConnection`.
 ///
 /// <p>Allows the destination domain owner to accept an inbound cross-cluster search connection request.</p>

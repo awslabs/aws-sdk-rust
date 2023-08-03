@@ -3,6 +3,23 @@ pub use crate::operation::delete_what_if_analysis::_delete_what_if_analysis_outp
 
 pub use crate::operation::delete_what_if_analysis::_delete_what_if_analysis_input::DeleteWhatIfAnalysisInputBuilder;
 
+impl DeleteWhatIfAnalysisInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_what_if_analysis::DeleteWhatIfAnalysisOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_what_if_analysis::DeleteWhatIfAnalysisError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_what_if_analysis();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteWhatIfAnalysis`.
 ///
 /// <p>Deletes a what-if analysis created using the <code>CreateWhatIfAnalysis</code> operation. You can delete only what-if analyses that have a status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>. To get the status, use the <code>DescribeWhatIfAnalysis</code> operation. </p>

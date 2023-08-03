@@ -3,6 +3,17 @@ pub use crate::operation::get_temporary_glue_partition_credentials::_get_tempora
 
 pub use crate::operation::get_temporary_glue_partition_credentials::_get_temporary_glue_partition_credentials_input::GetTemporaryGluePartitionCredentialsInputBuilder;
 
+impl GetTemporaryGluePartitionCredentialsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_temporary_glue_partition_credentials::GetTemporaryGluePartitionCredentialsOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_temporary_glue_partition_credentials::GetTemporaryGluePartitionCredentialsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_temporary_glue_partition_credentials();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetTemporaryGluePartitionCredentials`.
 ///
 /// <p>This API is identical to <code>GetTemporaryTableCredentials</code> except that this is used when the target Data Catalog resource is of type Partition. Lake Formation restricts the permission of the vended credentials with the same scope down policy which restricts access to a single Amazon S3 prefix.</p>

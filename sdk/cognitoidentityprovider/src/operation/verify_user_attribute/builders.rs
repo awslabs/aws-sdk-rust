@@ -3,6 +3,23 @@ pub use crate::operation::verify_user_attribute::_verify_user_attribute_output::
 
 pub use crate::operation::verify_user_attribute::_verify_user_attribute_input::VerifyUserAttributeInputBuilder;
 
+impl VerifyUserAttributeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::verify_user_attribute::VerifyUserAttributeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::verify_user_attribute::VerifyUserAttributeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.verify_user_attribute();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `VerifyUserAttribute`.
 ///
 /// <p>Verifies the specified user attributes in the user pool.</p>

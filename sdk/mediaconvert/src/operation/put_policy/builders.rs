@@ -3,6 +3,23 @@ pub use crate::operation::put_policy::_put_policy_output::PutPolicyOutputBuilder
 
 pub use crate::operation::put_policy::_put_policy_input::PutPolicyInputBuilder;
 
+impl PutPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_policy::PutPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_policy::PutPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutPolicy`.
 ///
 /// Create or change your policy. For more information about policies, see the user guide at http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html

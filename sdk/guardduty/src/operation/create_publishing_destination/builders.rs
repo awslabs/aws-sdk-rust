@@ -3,6 +3,23 @@ pub use crate::operation::create_publishing_destination::_create_publishing_dest
 
 pub use crate::operation::create_publishing_destination::_create_publishing_destination_input::CreatePublishingDestinationInputBuilder;
 
+impl CreatePublishingDestinationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_publishing_destination::CreatePublishingDestinationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_publishing_destination::CreatePublishingDestinationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_publishing_destination();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreatePublishingDestination`.
 ///
 /// <p>Creates a publishing destination to export findings to. The resource to export findings to must exist before you use this operation.</p>

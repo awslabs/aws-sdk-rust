@@ -3,6 +3,23 @@ pub use crate::operation::list_schemas::_list_schemas_output::ListSchemasOutputB
 
 pub use crate::operation::list_schemas::_list_schemas_input::ListSchemasInputBuilder;
 
+impl ListSchemasInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_schemas::ListSchemasOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_schemas::ListSchemasError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_schemas();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListSchemas`.
 ///
 /// <p>Returns a list of schemas with minimal details. Schemas in Deleting status will not be included in the results. Empty results will be returned if there are no schemas available.</p>

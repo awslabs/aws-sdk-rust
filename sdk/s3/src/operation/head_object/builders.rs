@@ -3,6 +3,23 @@ pub use crate::operation::head_object::_head_object_output::HeadObjectOutputBuil
 
 pub use crate::operation::head_object::_head_object_input::HeadObjectInputBuilder;
 
+impl HeadObjectInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::head_object::HeadObjectOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::head_object::HeadObjectError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.head_object();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `HeadObject`.
 ///
 /// <p>The <code>HEAD</code> action retrieves metadata from an object without returning the object itself. This action is useful if you're only interested in an object's metadata. To use <code>HEAD</code>, you must have READ access to the object.</p>

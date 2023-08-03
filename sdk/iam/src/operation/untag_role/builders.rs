@@ -3,6 +3,23 @@ pub use crate::operation::untag_role::_untag_role_output::UntagRoleOutputBuilder
 
 pub use crate::operation::untag_role::_untag_role_input::UntagRoleInputBuilder;
 
+impl UntagRoleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::untag_role::UntagRoleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::untag_role::UntagRoleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.untag_role();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UntagRole`.
 ///
 /// <p>Removes the specified tags from the role. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>

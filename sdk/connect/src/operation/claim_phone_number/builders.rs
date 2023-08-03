@@ -3,6 +3,23 @@ pub use crate::operation::claim_phone_number::_claim_phone_number_output::ClaimP
 
 pub use crate::operation::claim_phone_number::_claim_phone_number_input::ClaimPhoneNumberInputBuilder;
 
+impl ClaimPhoneNumberInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::claim_phone_number::ClaimPhoneNumberOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::claim_phone_number::ClaimPhoneNumberError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.claim_phone_number();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ClaimPhoneNumber`.
 ///
 /// <p>Claims an available phone number to your Amazon Connect instance or traffic distribution group. You can call this API only in the same Amazon Web Services Region where the Amazon Connect instance or traffic distribution group was created.</p>

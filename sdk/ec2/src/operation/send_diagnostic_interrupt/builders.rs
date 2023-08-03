@@ -3,6 +3,23 @@ pub use crate::operation::send_diagnostic_interrupt::_send_diagnostic_interrupt_
 
 pub use crate::operation::send_diagnostic_interrupt::_send_diagnostic_interrupt_input::SendDiagnosticInterruptInputBuilder;
 
+impl SendDiagnosticInterruptInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::send_diagnostic_interrupt::SendDiagnosticInterruptOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::send_diagnostic_interrupt::SendDiagnosticInterruptError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.send_diagnostic_interrupt();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SendDiagnosticInterrupt`.
 ///
 /// <p>Sends a diagnostic interrupt to the specified Amazon EC2 instance to trigger a <i>kernel panic</i> (on Linux instances), or a <i>blue screen</i>/<i>stop error</i> (on Windows instances). For instances based on Intel and AMD processors, the interrupt is received as a <i>non-maskable interrupt</i> (NMI).</p>

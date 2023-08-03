@@ -3,6 +3,23 @@ pub use crate::operation::list_mfa_device_tags::_list_mfa_device_tags_output::Li
 
 pub use crate::operation::list_mfa_device_tags::_list_mfa_device_tags_input::ListMfaDeviceTagsInputBuilder;
 
+impl ListMfaDeviceTagsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_mfa_device_tags::ListMfaDeviceTagsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_mfa_device_tags::ListMFADeviceTagsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_mfa_device_tags();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListMFADeviceTags`.
 ///
 /// <p>Lists the tags that are attached to the specified IAM virtual multi-factor authentication (MFA) device. The returned list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>

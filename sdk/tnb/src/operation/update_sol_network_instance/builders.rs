@@ -3,6 +3,23 @@ pub use crate::operation::update_sol_network_instance::_update_sol_network_insta
 
 pub use crate::operation::update_sol_network_instance::_update_sol_network_instance_input::UpdateSolNetworkInstanceInputBuilder;
 
+impl UpdateSolNetworkInstanceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_sol_network_instance::UpdateSolNetworkInstanceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_sol_network_instance::UpdateSolNetworkInstanceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_sol_network_instance();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateSolNetworkInstance`.
 ///
 /// <p>Update a network instance.</p>

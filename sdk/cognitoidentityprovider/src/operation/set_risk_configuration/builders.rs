@@ -3,6 +3,23 @@ pub use crate::operation::set_risk_configuration::_set_risk_configuration_output
 
 pub use crate::operation::set_risk_configuration::_set_risk_configuration_input::SetRiskConfigurationInputBuilder;
 
+impl SetRiskConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::set_risk_configuration::SetRiskConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::set_risk_configuration::SetRiskConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.set_risk_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SetRiskConfiguration`.
 ///
 /// <p>Configures actions on detected risks. To delete the risk configuration for <code>UserPoolId</code> or <code>ClientId</code>, pass null values for all four configuration types.</p>

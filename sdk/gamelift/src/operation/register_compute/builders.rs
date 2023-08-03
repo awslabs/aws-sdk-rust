@@ -3,6 +3,23 @@ pub use crate::operation::register_compute::_register_compute_output::RegisterCo
 
 pub use crate::operation::register_compute::_register_compute_input::RegisterComputeInputBuilder;
 
+impl RegisterComputeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::register_compute::RegisterComputeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::register_compute::RegisterComputeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.register_compute();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RegisterCompute`.
 ///
 /// <p>Registers your compute resources in a fleet you previously created. After you register a compute to your fleet, you can monitor and manage your compute using Amazon GameLift. The operation returns the compute resource containing SDK endpoint you can use to connect your game server to Amazon GameLift.</p>

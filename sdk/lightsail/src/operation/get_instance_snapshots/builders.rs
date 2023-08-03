@@ -3,6 +3,23 @@ pub use crate::operation::get_instance_snapshots::_get_instance_snapshots_output
 
 pub use crate::operation::get_instance_snapshots::_get_instance_snapshots_input::GetInstanceSnapshotsInputBuilder;
 
+impl GetInstanceSnapshotsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_instance_snapshots::GetInstanceSnapshotsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_instance_snapshots::GetInstanceSnapshotsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_instance_snapshots();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetInstanceSnapshots`.
 ///
 /// <p>Returns all instance snapshots for the user's account.</p>

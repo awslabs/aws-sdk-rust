@@ -3,6 +3,23 @@ pub use crate::operation::list_account_integrations::_list_account_integrations_
 
 pub use crate::operation::list_account_integrations::_list_account_integrations_input::ListAccountIntegrationsInputBuilder;
 
+impl ListAccountIntegrationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_account_integrations::ListAccountIntegrationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_account_integrations::ListAccountIntegrationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_account_integrations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAccountIntegrations`.
 ///
 /// <p>Lists all of the integrations associated to a specific URI in the AWS account.</p>

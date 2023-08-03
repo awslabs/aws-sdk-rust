@@ -3,6 +3,23 @@ pub use crate::operation::describe_canaries_last_run::_describe_canaries_last_ru
 
 pub use crate::operation::describe_canaries_last_run::_describe_canaries_last_run_input::DescribeCanariesLastRunInputBuilder;
 
+impl DescribeCanariesLastRunInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_canaries_last_run::DescribeCanariesLastRunOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_canaries_last_run::DescribeCanariesLastRunError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_canaries_last_run();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeCanariesLastRun`.
 ///
 /// <p>Use this operation to see information from the most recent run of each canary that you have created.</p>

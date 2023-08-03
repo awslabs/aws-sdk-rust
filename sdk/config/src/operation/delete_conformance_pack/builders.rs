@@ -3,6 +3,23 @@ pub use crate::operation::delete_conformance_pack::_delete_conformance_pack_outp
 
 pub use crate::operation::delete_conformance_pack::_delete_conformance_pack_input::DeleteConformancePackInputBuilder;
 
+impl DeleteConformancePackInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_conformance_pack::DeleteConformancePackOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_conformance_pack::DeleteConformancePackError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_conformance_pack();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteConformancePack`.
 ///
 /// <p>Deletes the specified conformance pack and all the Config rules, remediation actions, and all evaluation results within that conformance pack.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::stop_edge_deployment_stage::_stop_edge_deployment_stag
 
 pub use crate::operation::stop_edge_deployment_stage::_stop_edge_deployment_stage_input::StopEdgeDeploymentStageInputBuilder;
 
+impl StopEdgeDeploymentStageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_edge_deployment_stage::StopEdgeDeploymentStageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_edge_deployment_stage::StopEdgeDeploymentStageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_edge_deployment_stage();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopEdgeDeploymentStage`.
 ///
 /// <p>Stops a stage in an edge deployment plan.</p>

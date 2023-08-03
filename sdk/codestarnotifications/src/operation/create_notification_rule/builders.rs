@@ -3,6 +3,23 @@ pub use crate::operation::create_notification_rule::_create_notification_rule_ou
 
 pub use crate::operation::create_notification_rule::_create_notification_rule_input::CreateNotificationRuleInputBuilder;
 
+impl CreateNotificationRuleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_notification_rule::CreateNotificationRuleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_notification_rule::CreateNotificationRuleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_notification_rule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateNotificationRule`.
 ///
 /// <p>Creates a notification rule for a resource. The rule specifies the events you want notifications about and the targets (such as Chatbot topics or Chatbot clients configured for Slack) where you want to receive them.</p>

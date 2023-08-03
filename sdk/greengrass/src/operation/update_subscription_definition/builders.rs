@@ -3,6 +3,23 @@ pub use crate::operation::update_subscription_definition::_update_subscription_d
 
 pub use crate::operation::update_subscription_definition::_update_subscription_definition_input::UpdateSubscriptionDefinitionInputBuilder;
 
+impl UpdateSubscriptionDefinitionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_subscription_definition::UpdateSubscriptionDefinitionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_subscription_definition::UpdateSubscriptionDefinitionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_subscription_definition();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateSubscriptionDefinition`.
 ///
 /// Updates a subscription definition.

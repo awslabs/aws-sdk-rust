@@ -3,6 +3,23 @@ pub use crate::operation::describe_code_review::_describe_code_review_output::De
 
 pub use crate::operation::describe_code_review::_describe_code_review_input::DescribeCodeReviewInputBuilder;
 
+impl DescribeCodeReviewInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_code_review::DescribeCodeReviewOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_code_review::DescribeCodeReviewError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_code_review();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeCodeReview`.
 ///
 /// <p>Returns the metadata associated with the code review along with its status.</p>

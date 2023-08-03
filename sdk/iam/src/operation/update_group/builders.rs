@@ -3,6 +3,23 @@ pub use crate::operation::update_group::_update_group_output::UpdateGroupOutputB
 
 pub use crate::operation::update_group::_update_group_input::UpdateGroupInputBuilder;
 
+impl UpdateGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_group::UpdateGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_group::UpdateGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateGroup`.
 ///
 /// <p>Updates the name and/or the path of the specified IAM group.</p> <important>

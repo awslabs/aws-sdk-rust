@@ -3,6 +3,23 @@ pub use crate::operation::associate_tracker_consumer::_associate_tracker_consume
 
 pub use crate::operation::associate_tracker_consumer::_associate_tracker_consumer_input::AssociateTrackerConsumerInputBuilder;
 
+impl AssociateTrackerConsumerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_tracker_consumer::AssociateTrackerConsumerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_tracker_consumer::AssociateTrackerConsumerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_tracker_consumer();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateTrackerConsumer`.
 ///
 /// <p>Creates an association between a geofence collection and a tracker resource. This allows the tracker resource to communicate location data to the linked geofence collection. </p>

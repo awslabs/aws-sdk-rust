@@ -3,6 +3,23 @@ pub use crate::operation::update_pipeline::_update_pipeline_output::UpdatePipeli
 
 pub use crate::operation::update_pipeline::_update_pipeline_input::UpdatePipelineInputBuilder;
 
+impl UpdatePipelineInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_pipeline::UpdatePipelineOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_pipeline::UpdatePipelineError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_pipeline();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdatePipeline`.
 ///
 /// <p>Updates a specified pipeline with edits or changes to its structure. Use a JSON file with the pipeline structure and <code>UpdatePipeline</code> to provide the full structure of the pipeline. Updating the pipeline increases the version number of the pipeline by 1.</p>

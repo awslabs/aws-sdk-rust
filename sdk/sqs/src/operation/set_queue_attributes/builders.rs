@@ -3,6 +3,23 @@ pub use crate::operation::set_queue_attributes::_set_queue_attributes_output::Se
 
 pub use crate::operation::set_queue_attributes::_set_queue_attributes_input::SetQueueAttributesInputBuilder;
 
+impl SetQueueAttributesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::set_queue_attributes::SetQueueAttributesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::set_queue_attributes::SetQueueAttributesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.set_queue_attributes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SetQueueAttributes`.
 ///
 /// <p>Sets the value of one or more queue attributes. When you change a queue's attributes, the change can take up to 60 seconds for most of the attributes to propagate throughout the Amazon SQS system. Changes made to the <code>MessageRetentionPeriod</code> attribute can take up to 15 minutes and will impact existing messages in the queue potentially causing them to be expired and deleted if the <code>MessageRetentionPeriod</code> is reduced below the age of existing messages.</p> <note>

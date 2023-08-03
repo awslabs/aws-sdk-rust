@@ -3,6 +3,23 @@ pub use crate::operation::create_app_instance::_create_app_instance_output::Crea
 
 pub use crate::operation::create_app_instance::_create_app_instance_input::CreateAppInstanceInputBuilder;
 
+impl CreateAppInstanceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_app_instance::CreateAppInstanceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_app_instance::CreateAppInstanceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_app_instance();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateAppInstance`.
 ///
 /// <p>Creates an Amazon Chime SDK messaging <code>AppInstance</code> under an AWS account. Only SDK messaging customers use this API. <code>CreateAppInstance</code> supports idempotency behavior as described in the AWS API Standard.</p> <important>

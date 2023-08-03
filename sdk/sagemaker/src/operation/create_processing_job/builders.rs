@@ -3,6 +3,23 @@ pub use crate::operation::create_processing_job::_create_processing_job_output::
 
 pub use crate::operation::create_processing_job::_create_processing_job_input::CreateProcessingJobInputBuilder;
 
+impl CreateProcessingJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_processing_job::CreateProcessingJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_processing_job::CreateProcessingJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_processing_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateProcessingJob`.
 ///
 /// <p>Creates a processing job.</p>

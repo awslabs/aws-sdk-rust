@@ -3,6 +3,23 @@ pub use crate::operation::list_object_versions::_list_object_versions_output::Li
 
 pub use crate::operation::list_object_versions::_list_object_versions_input::ListObjectVersionsInputBuilder;
 
+impl ListObjectVersionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_object_versions::ListObjectVersionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_object_versions::ListObjectVersionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_object_versions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListObjectVersions`.
 ///
 /// <p>Returns metadata about all versions of the objects in a bucket. You can also use request parameters as selection criteria to return metadata about a subset of all the object versions.</p> <important>

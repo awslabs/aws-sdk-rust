@@ -3,6 +3,23 @@ pub use crate::operation::clone_backend::_clone_backend_output::CloneBackendOutp
 
 pub use crate::operation::clone_backend::_clone_backend_input::CloneBackendInputBuilder;
 
+impl CloneBackendInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::clone_backend::CloneBackendOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::clone_backend::CloneBackendError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.clone_backend();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CloneBackend`.
 ///
 /// <p>This operation clones an existing backend.</p>

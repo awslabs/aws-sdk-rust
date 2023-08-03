@@ -3,6 +3,23 @@ pub use crate::operation::create_cache_subnet_group::_create_cache_subnet_group_
 
 pub use crate::operation::create_cache_subnet_group::_create_cache_subnet_group_input::CreateCacheSubnetGroupInputBuilder;
 
+impl CreateCacheSubnetGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_cache_subnet_group::CreateCacheSubnetGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_cache_subnet_group::CreateCacheSubnetGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_cache_subnet_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateCacheSubnetGroup`.
 ///
 /// <p>Creates a new cache subnet group.</p>

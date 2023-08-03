@@ -3,6 +3,23 @@ pub use crate::operation::set_default_permission_version::_set_default_permissio
 
 pub use crate::operation::set_default_permission_version::_set_default_permission_version_input::SetDefaultPermissionVersionInputBuilder;
 
+impl SetDefaultPermissionVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::set_default_permission_version::SetDefaultPermissionVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::set_default_permission_version::SetDefaultPermissionVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.set_default_permission_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SetDefaultPermissionVersion`.
 ///
 /// <p>Designates the specified version number as the default version for the specified customer managed permission. New resource shares automatically use this new default permission. Existing resource shares continue to use their original permission version, but you can use <code>ReplacePermissionAssociations</code> to update them.</p>

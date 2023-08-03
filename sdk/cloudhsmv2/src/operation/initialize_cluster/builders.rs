@@ -3,6 +3,23 @@ pub use crate::operation::initialize_cluster::_initialize_cluster_output::Initia
 
 pub use crate::operation::initialize_cluster::_initialize_cluster_input::InitializeClusterInputBuilder;
 
+impl InitializeClusterInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::initialize_cluster::InitializeClusterOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::initialize_cluster::InitializeClusterError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.initialize_cluster();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `InitializeCluster`.
 ///
 /// <p>Claims an AWS CloudHSM cluster by submitting the cluster certificate issued by your issuing certificate authority (CA) and the CA's root certificate. Before you can claim a cluster, you must sign the cluster's certificate signing request (CSR) with your issuing CA. To get the cluster's CSR, use <code>DescribeClusters</code>.</p>

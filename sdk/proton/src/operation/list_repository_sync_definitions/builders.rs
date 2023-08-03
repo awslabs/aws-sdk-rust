@@ -3,6 +3,23 @@ pub use crate::operation::list_repository_sync_definitions::_list_repository_syn
 
 pub use crate::operation::list_repository_sync_definitions::_list_repository_sync_definitions_input::ListRepositorySyncDefinitionsInputBuilder;
 
+impl ListRepositorySyncDefinitionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_repository_sync_definitions::ListRepositorySyncDefinitionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_repository_sync_definitions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListRepositorySyncDefinitions`.
 ///
 /// <p>List repository sync definitions with detail data.</p>

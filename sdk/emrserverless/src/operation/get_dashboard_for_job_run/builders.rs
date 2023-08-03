@@ -3,6 +3,23 @@ pub use crate::operation::get_dashboard_for_job_run::_get_dashboard_for_job_run_
 
 pub use crate::operation::get_dashboard_for_job_run::_get_dashboard_for_job_run_input::GetDashboardForJobRunInputBuilder;
 
+impl GetDashboardForJobRunInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_dashboard_for_job_run::GetDashboardForJobRunOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_dashboard_for_job_run::GetDashboardForJobRunError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_dashboard_for_job_run();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetDashboardForJobRun`.
 ///
 /// <p>Creates and returns a URL that you can use to access the application UIs for a job run.</p>

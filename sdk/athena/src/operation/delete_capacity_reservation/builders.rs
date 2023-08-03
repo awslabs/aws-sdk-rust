@@ -3,6 +3,23 @@ pub use crate::operation::delete_capacity_reservation::_delete_capacity_reservat
 
 pub use crate::operation::delete_capacity_reservation::_delete_capacity_reservation_input::DeleteCapacityReservationInputBuilder;
 
+impl DeleteCapacityReservationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_capacity_reservation::DeleteCapacityReservationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_capacity_reservation::DeleteCapacityReservationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_capacity_reservation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteCapacityReservation`.
 ///
 /// <p>Deletes a cancelled capacity reservation. A reservation must be cancelled before it can be deleted. A deleted reservation is immediately removed from your account and can no longer be referenced, including by its ARN. A deleted reservation cannot be called by <code>GetCapacityReservation</code>, and deleted reservations do not appear in the output of <code>ListCapacityReservations</code>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_data_shares_for_producer::_describe_data_shar
 
 pub use crate::operation::describe_data_shares_for_producer::_describe_data_shares_for_producer_input::DescribeDataSharesForProducerInputBuilder;
 
+impl DescribeDataSharesForProducerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_data_shares_for_producer::DescribeDataSharesForProducerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_data_shares_for_producer::DescribeDataSharesForProducerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_data_shares_for_producer();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeDataSharesForProducer`.
 ///
 /// <p>Returns a list of datashares when the account identifier being called is a producer account identifier.</p>

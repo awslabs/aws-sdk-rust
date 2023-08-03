@@ -3,6 +3,23 @@ pub use crate::operation::create_location_nfs::_create_location_nfs_output::Crea
 
 pub use crate::operation::create_location_nfs::_create_location_nfs_input::CreateLocationNfsInputBuilder;
 
+impl CreateLocationNfsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_location_nfs::CreateLocationNfsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_location_nfs::CreateLocationNfsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_location_nfs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateLocationNfs`.
 ///
 /// <p>Creates an endpoint for an Network File System (NFS) file server that DataSync can use for a data transfer.</p>

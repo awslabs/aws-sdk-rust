@@ -3,6 +3,23 @@ pub use crate::operation::create_elasticsearch_domain::_create_elasticsearch_dom
 
 pub use crate::operation::create_elasticsearch_domain::_create_elasticsearch_domain_input::CreateElasticsearchDomainInputBuilder;
 
+impl CreateElasticsearchDomainInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_elasticsearch_domain::CreateElasticsearchDomainOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_elasticsearch_domain::CreateElasticsearchDomainError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_elasticsearch_domain();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateElasticsearchDomain`.
 ///
 /// <p>Creates a new Elasticsearch domain. For more information, see <a href="http://docs.aws.amazon.com/elasticsearch-service/latest/developerguide/es-createupdatedomains.html#es-createdomains" target="_blank">Creating Elasticsearch Domains</a> in the <i>Amazon Elasticsearch Service Developer Guide</i>.</p>

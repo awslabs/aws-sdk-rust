@@ -3,6 +3,23 @@ pub use crate::operation::unshare_directory::_unshare_directory_output::UnshareD
 
 pub use crate::operation::unshare_directory::_unshare_directory_input::UnshareDirectoryInputBuilder;
 
+impl UnshareDirectoryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::unshare_directory::UnshareDirectoryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::unshare_directory::UnshareDirectoryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.unshare_directory();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UnshareDirectory`.
 ///
 /// <p>Stops the directory sharing between the directory owner and consumer accounts. </p>

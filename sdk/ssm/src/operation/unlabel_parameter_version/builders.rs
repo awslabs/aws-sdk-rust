@@ -3,6 +3,23 @@ pub use crate::operation::unlabel_parameter_version::_unlabel_parameter_version_
 
 pub use crate::operation::unlabel_parameter_version::_unlabel_parameter_version_input::UnlabelParameterVersionInputBuilder;
 
+impl UnlabelParameterVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::unlabel_parameter_version::UnlabelParameterVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::unlabel_parameter_version::UnlabelParameterVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.unlabel_parameter_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UnlabelParameterVersion`.
 ///
 /// <p>Remove a label or labels from a parameter.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_component::_delete_component_output::DeleteComp
 
 pub use crate::operation::delete_component::_delete_component_input::DeleteComponentInputBuilder;
 
+impl DeleteComponentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_component::DeleteComponentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_component::DeleteComponentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_component();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteComponent`.
 ///
 /// <p>Delete an Proton component resource.</p>

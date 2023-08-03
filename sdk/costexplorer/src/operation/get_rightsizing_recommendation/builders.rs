@@ -3,6 +3,23 @@ pub use crate::operation::get_rightsizing_recommendation::_get_rightsizing_recom
 
 pub use crate::operation::get_rightsizing_recommendation::_get_rightsizing_recommendation_input::GetRightsizingRecommendationInputBuilder;
 
+impl GetRightsizingRecommendationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_rightsizing_recommendation::GetRightsizingRecommendationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_rightsizing_recommendation::GetRightsizingRecommendationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_rightsizing_recommendation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetRightsizingRecommendation`.
 ///
 /// <p>Creates recommendations that help you save cost by identifying idle and underutilized Amazon EC2 instances.</p>

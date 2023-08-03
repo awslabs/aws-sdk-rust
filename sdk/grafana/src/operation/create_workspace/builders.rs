@@ -3,6 +3,23 @@ pub use crate::operation::create_workspace::_create_workspace_output::CreateWork
 
 pub use crate::operation::create_workspace::_create_workspace_input::CreateWorkspaceInputBuilder;
 
+impl CreateWorkspaceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_workspace::CreateWorkspaceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_workspace::CreateWorkspaceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_workspace();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateWorkspace`.
 ///
 /// <p>Creates a <i>workspace</i>. In a workspace, you can create Grafana dashboards and visualizations to analyze your metrics, logs, and traces. You don't have to build, package, or deploy any hardware to run the Grafana server.</p>

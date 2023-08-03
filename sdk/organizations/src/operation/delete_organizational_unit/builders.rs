@@ -3,6 +3,23 @@ pub use crate::operation::delete_organizational_unit::_delete_organizational_uni
 
 pub use crate::operation::delete_organizational_unit::_delete_organizational_unit_input::DeleteOrganizationalUnitInputBuilder;
 
+impl DeleteOrganizationalUnitInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_organizational_unit::DeleteOrganizationalUnitOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_organizational_unit::DeleteOrganizationalUnitError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_organizational_unit();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteOrganizationalUnit`.
 ///
 /// <p>Deletes an organizational unit (OU) from a root or another OU. You must first remove all accounts and child OUs from the OU that you want to delete.</p>

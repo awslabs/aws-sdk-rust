@@ -3,6 +3,23 @@ pub use crate::operation::allocate_static_ip::_allocate_static_ip_output::Alloca
 
 pub use crate::operation::allocate_static_ip::_allocate_static_ip_input::AllocateStaticIpInputBuilder;
 
+impl AllocateStaticIpInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::allocate_static_ip::AllocateStaticIpOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::allocate_static_ip::AllocateStaticIpError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.allocate_static_ip();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AllocateStaticIp`.
 ///
 /// <p>Allocates a static IP address.</p>

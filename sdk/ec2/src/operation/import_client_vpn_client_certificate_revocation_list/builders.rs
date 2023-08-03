@@ -3,6 +3,17 @@ pub use crate::operation::import_client_vpn_client_certificate_revocation_list::
 
 pub use crate::operation::import_client_vpn_client_certificate_revocation_list::_import_client_vpn_client_certificate_revocation_list_input::ImportClientVpnClientCertificateRevocationListInputBuilder;
 
+impl ImportClientVpnClientCertificateRevocationListInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::import_client_vpn_client_certificate_revocation_list::ImportClientVpnClientCertificateRevocationListOutput, ::aws_smithy_http::result::SdkError<crate::operation::import_client_vpn_client_certificate_revocation_list::ImportClientVpnClientCertificateRevocationListError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.import_client_vpn_client_certificate_revocation_list();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ImportClientVpnClientCertificateRevocationList`.
 ///
 /// <p>Uploads a client certificate revocation list to the specified Client VPN endpoint. Uploading a client certificate revocation list overwrites the existing client certificate revocation list.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_assessment::_delete_assessment_output::DeleteAs
 
 pub use crate::operation::delete_assessment::_delete_assessment_input::DeleteAssessmentInputBuilder;
 
+impl DeleteAssessmentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_assessment::DeleteAssessmentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_assessment::DeleteAssessmentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_assessment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteAssessment`.
 ///
 /// <p> Deletes an assessment in Audit Manager. </p>

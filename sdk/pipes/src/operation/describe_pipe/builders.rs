@@ -3,6 +3,23 @@ pub use crate::operation::describe_pipe::_describe_pipe_output::DescribePipeOutp
 
 pub use crate::operation::describe_pipe::_describe_pipe_input::DescribePipeInputBuilder;
 
+impl DescribePipeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_pipe::DescribePipeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_pipe::DescribePipeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_pipe();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribePipe`.
 ///
 /// <p>Get the information about an existing pipe. For more information about pipes, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes.html">Amazon EventBridge Pipes</a> in the Amazon EventBridge User Guide.</p>

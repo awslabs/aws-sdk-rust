@@ -3,6 +3,23 @@ pub use crate::operation::describe_location_nfs::_describe_location_nfs_output::
 
 pub use crate::operation::describe_location_nfs::_describe_location_nfs_input::DescribeLocationNfsInputBuilder;
 
+impl DescribeLocationNfsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_location_nfs::DescribeLocationNfsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_location_nfs::DescribeLocationNfsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_location_nfs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeLocationNfs`.
 ///
 /// <p>Returns metadata, such as the path information, about an NFS location.</p>

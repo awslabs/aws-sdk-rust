@@ -3,6 +3,23 @@ pub use crate::operation::list_secrets::_list_secrets_output::ListSecretsOutputB
 
 pub use crate::operation::list_secrets::_list_secrets_input::ListSecretsInputBuilder;
 
+impl ListSecretsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_secrets::ListSecretsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_secrets::ListSecretsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_secrets();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListSecrets`.
 ///
 /// <p>Lists the secrets that are stored by Secrets Manager in the Amazon Web Services account, not including secrets that are marked for deletion. To see secrets marked for deletion, use the Secrets Manager console.</p>

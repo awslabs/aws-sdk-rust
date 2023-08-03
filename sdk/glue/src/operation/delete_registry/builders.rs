@@ -3,6 +3,23 @@ pub use crate::operation::delete_registry::_delete_registry_output::DeleteRegist
 
 pub use crate::operation::delete_registry::_delete_registry_input::DeleteRegistryInputBuilder;
 
+impl DeleteRegistryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_registry::DeleteRegistryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_registry::DeleteRegistryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_registry();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteRegistry`.
 ///
 /// <p>Delete the entire registry including schema and all of its versions. To get the status of the delete operation, you can call the <code>GetRegistry</code> API after the asynchronous call. Deleting a registry will deactivate all online operations for the registry such as the <code>UpdateRegistry</code>, <code>CreateSchema</code>, <code>UpdateSchema</code>, and <code>RegisterSchemaVersion</code> APIs. </p>

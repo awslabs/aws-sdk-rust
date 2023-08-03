@@ -3,6 +3,23 @@ pub use crate::operation::describe_permissions::_describe_permissions_output::De
 
 pub use crate::operation::describe_permissions::_describe_permissions_input::DescribePermissionsInputBuilder;
 
+impl DescribePermissionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_permissions::DescribePermissionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_permissions::DescribePermissionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_permissions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribePermissions`.
 ///
 /// <p>Describes the permissions for a specified stack.</p>

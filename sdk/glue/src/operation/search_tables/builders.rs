@@ -3,6 +3,23 @@ pub use crate::operation::search_tables::_search_tables_output::SearchTablesOutp
 
 pub use crate::operation::search_tables::_search_tables_input::SearchTablesInputBuilder;
 
+impl SearchTablesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::search_tables::SearchTablesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::search_tables::SearchTablesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.search_tables();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SearchTables`.
 ///
 /// <p>Searches a set of tables based on properties in the table metadata as well as on the parent database. You can search against text or filter conditions. </p>

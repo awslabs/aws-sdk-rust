@@ -3,6 +3,23 @@ pub use crate::operation::check_if_phone_number_is_opted_out::_check_if_phone_nu
 
 pub use crate::operation::check_if_phone_number_is_opted_out::_check_if_phone_number_is_opted_out_input::CheckIfPhoneNumberIsOptedOutInputBuilder;
 
+impl CheckIfPhoneNumberIsOptedOutInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::check_if_phone_number_is_opted_out::CheckIfPhoneNumberIsOptedOutOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::check_if_phone_number_is_opted_out::CheckIfPhoneNumberIsOptedOutError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.check_if_phone_number_is_opted_out();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CheckIfPhoneNumberIsOptedOut`.
 ///
 /// <p>Accepts a phone number and indicates whether the phone holder has opted out of receiving SMS messages from your Amazon Web Services account. You cannot send SMS messages to a number that is opted out.</p>

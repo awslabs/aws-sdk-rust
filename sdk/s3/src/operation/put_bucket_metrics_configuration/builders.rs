@@ -3,6 +3,23 @@ pub use crate::operation::put_bucket_metrics_configuration::_put_bucket_metrics_
 
 pub use crate::operation::put_bucket_metrics_configuration::_put_bucket_metrics_configuration_input::PutBucketMetricsConfigurationInputBuilder;
 
+impl PutBucketMetricsConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_bucket_metrics_configuration::PutBucketMetricsConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_bucket_metrics_configuration::PutBucketMetricsConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_bucket_metrics_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutBucketMetricsConfiguration`.
 ///
 /// <p>Sets a metrics configuration (specified by the metrics configuration ID) for the bucket. You can have up to 1,000 metrics configurations per bucket. If you're updating an existing metrics configuration, note that this is a full replacement of the existing metrics configuration. If you don't include the elements you want to keep, they are erased.</p>

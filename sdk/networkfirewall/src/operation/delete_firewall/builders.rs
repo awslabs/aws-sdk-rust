@@ -3,6 +3,23 @@ pub use crate::operation::delete_firewall::_delete_firewall_output::DeleteFirewa
 
 pub use crate::operation::delete_firewall::_delete_firewall_input::DeleteFirewallInputBuilder;
 
+impl DeleteFirewallInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_firewall::DeleteFirewallOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_firewall::DeleteFirewallError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_firewall();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteFirewall`.
 ///
 /// <p>Deletes the specified <code>Firewall</code> and its <code>FirewallStatus</code>. This operation requires the firewall's <code>DeleteProtection</code> flag to be <code>FALSE</code>. You can't revert this operation. </p>

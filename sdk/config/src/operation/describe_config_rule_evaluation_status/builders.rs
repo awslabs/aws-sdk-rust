@@ -3,6 +3,17 @@ pub use crate::operation::describe_config_rule_evaluation_status::_describe_conf
 
 pub use crate::operation::describe_config_rule_evaluation_status::_describe_config_rule_evaluation_status_input::DescribeConfigRuleEvaluationStatusInputBuilder;
 
+impl DescribeConfigRuleEvaluationStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_config_rule_evaluation_status::DescribeConfigRuleEvaluationStatusOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_config_rule_evaluation_status::DescribeConfigRuleEvaluationStatusError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_config_rule_evaluation_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeConfigRuleEvaluationStatus`.
 ///
 /// <p>Returns status information for each of your Config managed rules. The status includes information such as the last time Config invoked the rule, the last time Config failed to invoke the rule, and the related error for the last failure.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_inventory_entries::_list_inventory_entries_output
 
 pub use crate::operation::list_inventory_entries::_list_inventory_entries_input::ListInventoryEntriesInputBuilder;
 
+impl ListInventoryEntriesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_inventory_entries::ListInventoryEntriesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_inventory_entries::ListInventoryEntriesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_inventory_entries();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListInventoryEntries`.
 ///
 /// <p>A list of inventory items returned by the request.</p>

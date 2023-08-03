@@ -3,6 +3,17 @@ pub use crate::operation::deregister_data_lake_delegated_administrator::_deregis
 
 pub use crate::operation::deregister_data_lake_delegated_administrator::_deregister_data_lake_delegated_administrator_input::DeregisterDataLakeDelegatedAdministratorInputBuilder;
 
+impl DeregisterDataLakeDelegatedAdministratorInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::deregister_data_lake_delegated_administrator::DeregisterDataLakeDelegatedAdministratorOutput, ::aws_smithy_http::result::SdkError<crate::operation::deregister_data_lake_delegated_administrator::DeregisterDataLakeDelegatedAdministratorError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.deregister_data_lake_delegated_administrator();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeregisterDataLakeDelegatedAdministrator`.
 ///
 /// <p>Deletes the Amazon Security Lake delegated administrator account for the organization. This API can only be called by the organization management account. The organization management account cannot be the delegated administrator account.</p>

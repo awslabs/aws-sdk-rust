@@ -3,6 +3,23 @@ pub use crate::operation::cancel_variant_import_job::_cancel_variant_import_job_
 
 pub use crate::operation::cancel_variant_import_job::_cancel_variant_import_job_input::CancelVariantImportJobInputBuilder;
 
+impl CancelVariantImportJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::cancel_variant_import_job::CancelVariantImportJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::cancel_variant_import_job::CancelVariantImportJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.cancel_variant_import_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CancelVariantImportJob`.
 ///
 /// <p>Cancels a variant import job.</p>

@@ -3,6 +3,17 @@ pub use crate::operation::delete_provisioned_concurrency_config::_delete_provisi
 
 pub use crate::operation::delete_provisioned_concurrency_config::_delete_provisioned_concurrency_config_input::DeleteProvisionedConcurrencyConfigInputBuilder;
 
+impl DeleteProvisionedConcurrencyConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_provisioned_concurrency_config::DeleteProvisionedConcurrencyConfigOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_provisioned_concurrency_config::DeleteProvisionedConcurrencyConfigError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.delete_provisioned_concurrency_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteProvisionedConcurrencyConfig`.
 ///
 /// <p>Deletes the provisioned concurrency configuration for a function.</p>

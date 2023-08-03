@@ -3,6 +3,23 @@ pub use crate::operation::untag_certificate_authority::_untag_certificate_author
 
 pub use crate::operation::untag_certificate_authority::_untag_certificate_authority_input::UntagCertificateAuthorityInputBuilder;
 
+impl UntagCertificateAuthorityInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::untag_certificate_authority::UntagCertificateAuthorityOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::untag_certificate_authority::UntagCertificateAuthorityError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.untag_certificate_authority();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UntagCertificateAuthority`.
 ///
 /// <p>Remove one or more tags from your private CA. A tag consists of a key-value pair. If you do not specify the value portion of the tag when calling this action, the tag will be removed regardless of value. If you specify a value, the tag is removed only if it is associated with the specified value. To add tags to a private CA, use the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_TagCertificateAuthority.html">TagCertificateAuthority</a>. Call the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ListTags.html">ListTags</a> action to see what tags are associated with your CA. </p>

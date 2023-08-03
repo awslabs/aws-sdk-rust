@@ -3,6 +3,17 @@ pub use crate::operation::create_resource_definition_version::_create_resource_d
 
 pub use crate::operation::create_resource_definition_version::_create_resource_definition_version_input::CreateResourceDefinitionVersionInputBuilder;
 
+impl CreateResourceDefinitionVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::create_resource_definition_version::CreateResourceDefinitionVersionOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_resource_definition_version::CreateResourceDefinitionVersionError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.create_resource_definition_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateResourceDefinitionVersion`.
 ///
 /// Creates a version of a resource definition that has already been defined.

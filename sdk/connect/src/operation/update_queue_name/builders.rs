@@ -3,6 +3,23 @@ pub use crate::operation::update_queue_name::_update_queue_name_output::UpdateQu
 
 pub use crate::operation::update_queue_name::_update_queue_name_input::UpdateQueueNameInputBuilder;
 
+impl UpdateQueueNameInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_queue_name::UpdateQueueNameOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_queue_name::UpdateQueueNameError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_queue_name();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateQueueName`.
 ///
 /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>

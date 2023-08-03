@@ -3,6 +3,23 @@ pub use crate::operation::verify_auth_request_cryptogram::_verify_auth_request_c
 
 pub use crate::operation::verify_auth_request_cryptogram::_verify_auth_request_cryptogram_input::VerifyAuthRequestCryptogramInputBuilder;
 
+impl VerifyAuthRequestCryptogramInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::verify_auth_request_cryptogram::VerifyAuthRequestCryptogramError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.verify_auth_request_cryptogram();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `VerifyAuthRequestCryptogram`.
 ///
 /// <p>Verifies Authorization Request Cryptogram (ARQC) for a EMV chip payment card authorization. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/data-operations.verifyauthrequestcryptogram.html">Verify auth request cryptogram</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.</p>

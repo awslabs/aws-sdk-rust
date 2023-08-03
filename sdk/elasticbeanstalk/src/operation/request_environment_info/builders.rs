@@ -3,6 +3,23 @@ pub use crate::operation::request_environment_info::_request_environment_info_ou
 
 pub use crate::operation::request_environment_info::_request_environment_info_input::RequestEnvironmentInfoInputBuilder;
 
+impl RequestEnvironmentInfoInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::request_environment_info::RequestEnvironmentInfoOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::request_environment_info::RequestEnvironmentInfoError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.request_environment_info();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RequestEnvironmentInfo`.
 ///
 /// <p>Initiates a request to compile the specified type of information of the deployed environment.</p>

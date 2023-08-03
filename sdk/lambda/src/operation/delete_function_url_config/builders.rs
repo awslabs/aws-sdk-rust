@@ -3,6 +3,23 @@ pub use crate::operation::delete_function_url_config::_delete_function_url_confi
 
 pub use crate::operation::delete_function_url_config::_delete_function_url_config_input::DeleteFunctionUrlConfigInputBuilder;
 
+impl DeleteFunctionUrlConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_function_url_config::DeleteFunctionUrlConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_function_url_config::DeleteFunctionUrlConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_function_url_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteFunctionUrlConfig`.
 ///
 /// <p>Deletes a Lambda function URL. When you delete a function URL, you can't recover it. Creating a new function URL results in a different URL address.</p>

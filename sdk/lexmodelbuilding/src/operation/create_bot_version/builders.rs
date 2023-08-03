@@ -3,6 +3,23 @@ pub use crate::operation::create_bot_version::_create_bot_version_output::Create
 
 pub use crate::operation::create_bot_version::_create_bot_version_input::CreateBotVersionInputBuilder;
 
+impl CreateBotVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_bot_version::CreateBotVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_bot_version::CreateBotVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_bot_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateBotVersion`.
 ///
 /// <p>Creates a new version of the bot based on the <code>$LATEST</code> version. If the <code>$LATEST</code> version of this resource hasn't changed since you created the last version, Amazon Lex doesn't create a new version. It returns the last created version.</p> <note>

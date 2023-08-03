@@ -3,6 +3,23 @@ pub use crate::operation::get_experiment::_get_experiment_output::GetExperimentO
 
 pub use crate::operation::get_experiment::_get_experiment_input::GetExperimentInputBuilder;
 
+impl GetExperimentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_experiment::GetExperimentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_experiment::GetExperimentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_experiment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetExperiment`.
 ///
 /// <p>Gets information about the specified experiment.</p>

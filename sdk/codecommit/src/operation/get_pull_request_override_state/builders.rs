@@ -3,6 +3,23 @@ pub use crate::operation::get_pull_request_override_state::_get_pull_request_ove
 
 pub use crate::operation::get_pull_request_override_state::_get_pull_request_override_state_input::GetPullRequestOverrideStateInputBuilder;
 
+impl GetPullRequestOverrideStateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_pull_request_override_state::GetPullRequestOverrideStateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_pull_request_override_state::GetPullRequestOverrideStateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_pull_request_override_state();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetPullRequestOverrideState`.
 ///
 /// <p>Returns information about whether approval rules have been set aside (overridden) for a pull request, and if so, the Amazon Resource Name (ARN) of the user or identity that overrode the rules and their requirements for the pull request.</p>

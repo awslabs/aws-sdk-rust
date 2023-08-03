@@ -3,6 +3,17 @@ pub use crate::operation::describe_budget_performance_history::_describe_budget_
 
 pub use crate::operation::describe_budget_performance_history::_describe_budget_performance_history_input::DescribeBudgetPerformanceHistoryInputBuilder;
 
+impl DescribeBudgetPerformanceHistoryInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_budget_performance_history::DescribeBudgetPerformanceHistoryOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_budget_performance_history::DescribeBudgetPerformanceHistoryError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_budget_performance_history();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeBudgetPerformanceHistory`.
 ///
 /// <p>Describes the history for <code>DAILY</code>, <code>MONTHLY</code>, and <code>QUARTERLY</code> budgets. Budget history isn't available for <code>ANNUAL</code> budgets.</p>

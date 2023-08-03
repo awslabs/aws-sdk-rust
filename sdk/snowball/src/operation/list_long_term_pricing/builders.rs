@@ -3,6 +3,23 @@ pub use crate::operation::list_long_term_pricing::_list_long_term_pricing_output
 
 pub use crate::operation::list_long_term_pricing::_list_long_term_pricing_input::ListLongTermPricingInputBuilder;
 
+impl ListLongTermPricingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_long_term_pricing::ListLongTermPricingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_long_term_pricing::ListLongTermPricingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_long_term_pricing();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListLongTermPricing`.
 ///
 /// <p>Lists all long-term pricing types.</p>

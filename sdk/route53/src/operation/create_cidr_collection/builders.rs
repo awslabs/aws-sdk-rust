@@ -3,6 +3,23 @@ pub use crate::operation::create_cidr_collection::_create_cidr_collection_output
 
 pub use crate::operation::create_cidr_collection::_create_cidr_collection_input::CreateCidrCollectionInputBuilder;
 
+impl CreateCidrCollectionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_cidr_collection::CreateCidrCollectionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_cidr_collection::CreateCidrCollectionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_cidr_collection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateCidrCollection`.
 ///
 /// <p>Creates a CIDR collection in the current Amazon Web Services account.</p>

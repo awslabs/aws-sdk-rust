@@ -3,6 +3,17 @@ pub use crate::operation::describe_connection_alias_permissions::_describe_conne
 
 pub use crate::operation::describe_connection_alias_permissions::_describe_connection_alias_permissions_input::DescribeConnectionAliasPermissionsInputBuilder;
 
+impl DescribeConnectionAliasPermissionsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_connection_alias_permissions::DescribeConnectionAliasPermissionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_connection_alias_permissions::DescribeConnectionAliasPermissionsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_connection_alias_permissions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeConnectionAliasPermissions`.
 ///
 /// <p>Describes the permissions that the owner of a connection alias has granted to another Amazon Web Services account for the specified connection alias. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html"> Cross-Region Redirection for Amazon WorkSpaces</a>.</p>

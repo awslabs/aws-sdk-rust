@@ -3,6 +3,17 @@ pub use crate::operation::start_bulk_associate_wireless_device_with_multicast_gr
 
 pub use crate::operation::start_bulk_associate_wireless_device_with_multicast_group::_start_bulk_associate_wireless_device_with_multicast_group_input::StartBulkAssociateWirelessDeviceWithMulticastGroupInputBuilder;
 
+impl StartBulkAssociateWirelessDeviceWithMulticastGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::start_bulk_associate_wireless_device_with_multicast_group::StartBulkAssociateWirelessDeviceWithMulticastGroupOutput, ::aws_smithy_http::result::SdkError<crate::operation::start_bulk_associate_wireless_device_with_multicast_group::StartBulkAssociateWirelessDeviceWithMulticastGroupError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.start_bulk_associate_wireless_device_with_multicast_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartBulkAssociateWirelessDeviceWithMulticastGroup`.
 ///
 /// <p>Starts a bulk association of all qualifying wireless devices with a multicast group.</p>

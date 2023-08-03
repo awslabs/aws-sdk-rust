@@ -3,6 +3,23 @@ pub use crate::operation::delete_label::_delete_label_output::DeleteLabelOutputB
 
 pub use crate::operation::delete_label::_delete_label_input::DeleteLabelInputBuilder;
 
+impl DeleteLabelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_label::DeleteLabelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_label::DeleteLabelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_label();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteLabel`.
 ///
 /// <p>Deletes a label.</p>

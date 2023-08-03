@@ -3,6 +3,23 @@ pub use crate::operation::delete_use_case::_delete_use_case_output::DeleteUseCas
 
 pub use crate::operation::delete_use_case::_delete_use_case_input::DeleteUseCaseInputBuilder;
 
+impl DeleteUseCaseInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_use_case::DeleteUseCaseOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_use_case::DeleteUseCaseError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_use_case();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteUseCase`.
 ///
 /// <p>Deletes a use case from an integration association.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::signal_resource::_signal_resource_output::SignalResour
 
 pub use crate::operation::signal_resource::_signal_resource_input::SignalResourceInputBuilder;
 
+impl SignalResourceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::signal_resource::SignalResourceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::signal_resource::SignalResourceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.signal_resource();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SignalResource`.
 ///
 /// <p>Sends a signal to the specified resource with a success or failure status. You can use the <code>SignalResource</code> operation in conjunction with a creation policy or update policy. CloudFormation doesn't proceed with a stack creation or update until resources receive the required number of signals or the timeout period is exceeded. The <code>SignalResource</code> operation is useful in cases where you want to send signals from anywhere other than an Amazon EC2 instance.</p>

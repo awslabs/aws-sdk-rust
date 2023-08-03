@@ -3,6 +3,23 @@ pub use crate::operation::put_resource_log_level::_put_resource_log_level_output
 
 pub use crate::operation::put_resource_log_level::_put_resource_log_level_input::PutResourceLogLevelInputBuilder;
 
+impl PutResourceLogLevelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_resource_log_level::PutResourceLogLevelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_resource_log_level::PutResourceLogLevelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_resource_log_level();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutResourceLogLevel`.
 ///
 /// <p>Sets the log-level override for a resource-ID and resource-type. This option can be specified for a wireless gateway or a wireless device. A limit of 200 log level override can be set per account.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_shared_endpoints::_list_shared_endpoints_output::
 
 pub use crate::operation::list_shared_endpoints::_list_shared_endpoints_input::ListSharedEndpointsInputBuilder;
 
+impl ListSharedEndpointsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_shared_endpoints::ListSharedEndpointsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_shared_endpoints::ListSharedEndpointsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_shared_endpoints();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListSharedEndpoints`.
 ///
 /// <p>Lists all endpoints associated with an Outpost that has been shared by Amazon Web Services Resource Access Manager (RAM).</p>

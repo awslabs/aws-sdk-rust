@@ -3,6 +3,23 @@ pub use crate::operation::delete_member::_delete_member_output::DeleteMemberOutp
 
 pub use crate::operation::delete_member::_delete_member_input::DeleteMemberInputBuilder;
 
+impl DeleteMemberInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_member::DeleteMemberOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_member::DeleteMemberError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_member();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteMember`.
 ///
 /// <p>Deletes a member. Deleting a member removes the member and all associated resources from the network. <code>DeleteMember</code> can only be called for a specified <code>MemberId</code> if the principal performing the action is associated with the Amazon Web Services account that owns the member. In all other cases, the <code>DeleteMember</code> action is carried out as the result of an approved proposal to remove a member. If <code>MemberId</code> is the last member in a network specified by the last Amazon Web Services account, the network is deleted also.</p>

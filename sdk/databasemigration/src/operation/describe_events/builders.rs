@@ -3,6 +3,23 @@ pub use crate::operation::describe_events::_describe_events_output::DescribeEven
 
 pub use crate::operation::describe_events::_describe_events_input::DescribeEventsInputBuilder;
 
+impl DescribeEventsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_events::DescribeEventsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_events::DescribeEventsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_events();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeEvents`.
 ///
 /// <p> Lists events for a given source identifier and source type. You can also specify a start and end time. For more information on DMS events, see <a href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Events.html">Working with Events and Notifications</a> in the <i>Database Migration Service User Guide.</i> </p>

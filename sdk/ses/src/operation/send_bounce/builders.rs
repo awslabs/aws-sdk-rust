@@ -3,6 +3,23 @@ pub use crate::operation::send_bounce::_send_bounce_output::SendBounceOutputBuil
 
 pub use crate::operation::send_bounce::_send_bounce_input::SendBounceInputBuilder;
 
+impl SendBounceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::send_bounce::SendBounceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::send_bounce::SendBounceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.send_bounce();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SendBounce`.
 ///
 /// <p>Generates and sends a bounce message to the sender of an email you received through Amazon SES. You can only use this API on an email up to 24 hours after you receive it.</p> <note>

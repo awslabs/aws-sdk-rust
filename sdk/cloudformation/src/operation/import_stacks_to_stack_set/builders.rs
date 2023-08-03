@@ -3,6 +3,23 @@ pub use crate::operation::import_stacks_to_stack_set::_import_stacks_to_stack_se
 
 pub use crate::operation::import_stacks_to_stack_set::_import_stacks_to_stack_set_input::ImportStacksToStackSetInputBuilder;
 
+impl ImportStacksToStackSetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::import_stacks_to_stack_set::ImportStacksToStackSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::import_stacks_to_stack_set::ImportStacksToStackSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.import_stacks_to_stack_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ImportStacksToStackSet`.
 ///
 /// <p>Import existing stacks into a new stack sets. Use the stack import operation to import up to 10 stacks into a new stack set in the same account as the source stack or in a different administrator account and Region, by specifying the stack ID of the stack you intend to import.</p>

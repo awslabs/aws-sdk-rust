@@ -3,6 +3,23 @@ pub use crate::operation::get_replication_configuration::_get_replication_config
 
 pub use crate::operation::get_replication_configuration::_get_replication_configuration_input::GetReplicationConfigurationInputBuilder;
 
+impl GetReplicationConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_replication_configuration::GetReplicationConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_replication_configuration::GetReplicationConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_replication_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetReplicationConfiguration`.
 ///
 /// <p>Gets a ReplicationConfiguration, filtered by Source Server ID.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_anomaly_detector::_create_anomaly_detector_outp
 
 pub use crate::operation::create_anomaly_detector::_create_anomaly_detector_input::CreateAnomalyDetectorInputBuilder;
 
+impl CreateAnomalyDetectorInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_anomaly_detector::CreateAnomalyDetectorOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_anomaly_detector::CreateAnomalyDetectorError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_anomaly_detector();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateAnomalyDetector`.
 ///
 /// <p>Creates an anomaly detector.</p>

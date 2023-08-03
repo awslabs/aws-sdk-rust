@@ -3,6 +3,23 @@ pub use crate::operation::modify_endpoint_access::_modify_endpoint_access_output
 
 pub use crate::operation::modify_endpoint_access::_modify_endpoint_access_input::ModifyEndpointAccessInputBuilder;
 
+impl ModifyEndpointAccessInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_endpoint_access::ModifyEndpointAccessOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_endpoint_access::ModifyEndpointAccessError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_endpoint_access();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyEndpointAccess`.
 ///
 /// <p>Modifies a Redshift-managed VPC endpoint.</p>

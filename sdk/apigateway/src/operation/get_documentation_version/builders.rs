@@ -3,6 +3,23 @@ pub use crate::operation::get_documentation_version::_get_documentation_version_
 
 pub use crate::operation::get_documentation_version::_get_documentation_version_input::GetDocumentationVersionInputBuilder;
 
+impl GetDocumentationVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_documentation_version::GetDocumentationVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_documentation_version::GetDocumentationVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_documentation_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetDocumentationVersion`.
 ///
 /// <p>Gets a documentation version.</p>

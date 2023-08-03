@@ -3,6 +3,23 @@ pub use crate::operation::describe_topics_detection_job::_describe_topics_detect
 
 pub use crate::operation::describe_topics_detection_job::_describe_topics_detection_job_input::DescribeTopicsDetectionJobInputBuilder;
 
+impl DescribeTopicsDetectionJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_topics_detection_job::DescribeTopicsDetectionJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_topics_detection_job::DescribeTopicsDetectionJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_topics_detection_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeTopicsDetectionJob`.
 ///
 /// <p>Gets the properties associated with a topic detection job. Use this operation to get the status of a detection job.</p>

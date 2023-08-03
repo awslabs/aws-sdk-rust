@@ -3,6 +3,23 @@ pub use crate::operation::associate_resource_share::_associate_resource_share_ou
 
 pub use crate::operation::associate_resource_share::_associate_resource_share_input::AssociateResourceShareInputBuilder;
 
+impl AssociateResourceShareInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_resource_share::AssociateResourceShareOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_resource_share::AssociateResourceShareError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_resource_share();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateResourceShare`.
 ///
 /// <p>Adds the specified list of principals and list of resources to a resource share. Principals that already have access to this resource share immediately receive access to the added resources. Newly added principals immediately receive access to the resources shared in this resource share. </p>

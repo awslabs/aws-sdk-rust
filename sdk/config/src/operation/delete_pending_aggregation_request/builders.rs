@@ -3,6 +3,17 @@ pub use crate::operation::delete_pending_aggregation_request::_delete_pending_ag
 
 pub use crate::operation::delete_pending_aggregation_request::_delete_pending_aggregation_request_input::DeletePendingAggregationRequestInputBuilder;
 
+impl DeletePendingAggregationRequestInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_pending_aggregation_request::DeletePendingAggregationRequestOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_pending_aggregation_request::DeletePendingAggregationRequestError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.delete_pending_aggregation_request();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeletePendingAggregationRequest`.
 ///
 /// <p>Deletes pending authorization requests for a specified aggregator account in a specified region.</p>

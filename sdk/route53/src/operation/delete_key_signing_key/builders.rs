@@ -3,6 +3,23 @@ pub use crate::operation::delete_key_signing_key::_delete_key_signing_key_output
 
 pub use crate::operation::delete_key_signing_key::_delete_key_signing_key_input::DeleteKeySigningKeyInputBuilder;
 
+impl DeleteKeySigningKeyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_key_signing_key::DeleteKeySigningKeyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_key_signing_key::DeleteKeySigningKeyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_key_signing_key();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteKeySigningKey`.
 ///
 /// <p>Deletes a key-signing key (KSK). Before you can delete a KSK, you must deactivate it. The KSK must be deactivated before you can delete it regardless of whether the hosted zone is enabled for DNSSEC signing.</p>

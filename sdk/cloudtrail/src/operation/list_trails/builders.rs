@@ -3,6 +3,23 @@ pub use crate::operation::list_trails::_list_trails_output::ListTrailsOutputBuil
 
 pub use crate::operation::list_trails::_list_trails_input::ListTrailsInputBuilder;
 
+impl ListTrailsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_trails::ListTrailsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_trails::ListTrailsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_trails();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListTrails`.
 ///
 /// <p>Lists trails that are in the current account.</p>

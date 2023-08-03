@@ -3,6 +3,23 @@ pub use crate::operation::start_contact_evaluation::_start_contact_evaluation_ou
 
 pub use crate::operation::start_contact_evaluation::_start_contact_evaluation_input::StartContactEvaluationInputBuilder;
 
+impl StartContactEvaluationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_contact_evaluation::StartContactEvaluationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_contact_evaluation::StartContactEvaluationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_contact_evaluation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartContactEvaluation`.
 ///
 /// <p>Starts an empty evaluation in the specified Amazon Connect instance, using the given evaluation form for the particular contact. The evaluation form version used for the contact evaluation corresponds to the currently activated version. If no version is activated for the evaluation form, the contact evaluation cannot be started. </p> <note>

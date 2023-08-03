@@ -3,6 +3,23 @@ pub use crate::operation::get_buckets_aggregation::_get_buckets_aggregation_outp
 
 pub use crate::operation::get_buckets_aggregation::_get_buckets_aggregation_input::GetBucketsAggregationInputBuilder;
 
+impl GetBucketsAggregationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_buckets_aggregation::GetBucketsAggregationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_buckets_aggregation::GetBucketsAggregationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_buckets_aggregation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetBucketsAggregation`.
 ///
 /// <p>Aggregates on indexed data with search queries pertaining to particular fields. </p>

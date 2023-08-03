@@ -3,6 +3,23 @@ pub use crate::operation::associate_trunk_interface::_associate_trunk_interface_
 
 pub use crate::operation::associate_trunk_interface::_associate_trunk_interface_input::AssociateTrunkInterfaceInputBuilder;
 
+impl AssociateTrunkInterfaceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_trunk_interface::AssociateTrunkInterfaceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_trunk_interface::AssociateTrunkInterfaceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_trunk_interface();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateTrunkInterface`.
 ///
 /// <note>

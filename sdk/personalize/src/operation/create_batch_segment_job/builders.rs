@@ -3,6 +3,23 @@ pub use crate::operation::create_batch_segment_job::_create_batch_segment_job_ou
 
 pub use crate::operation::create_batch_segment_job::_create_batch_segment_job_input::CreateBatchSegmentJobInputBuilder;
 
+impl CreateBatchSegmentJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_batch_segment_job::CreateBatchSegmentJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_batch_segment_job::CreateBatchSegmentJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_batch_segment_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateBatchSegmentJob`.
 ///
 /// <p>Creates a batch segment job. The operation can handle up to 50 million records and the input file must be in JSON format. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/recommendations-batch.html">Getting batch recommendations and user segments</a>.</p>

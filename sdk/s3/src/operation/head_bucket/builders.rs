@@ -3,6 +3,23 @@ pub use crate::operation::head_bucket::_head_bucket_output::HeadBucketOutputBuil
 
 pub use crate::operation::head_bucket::_head_bucket_input::HeadBucketInputBuilder;
 
+impl HeadBucketInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::head_bucket::HeadBucketOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::head_bucket::HeadBucketError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.head_bucket();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `HeadBucket`.
 ///
 /// <p>This action is useful to determine if a bucket exists and you have permission to access it. The action returns a <code>200 OK</code> if the bucket exists and you have permission to access it.</p>

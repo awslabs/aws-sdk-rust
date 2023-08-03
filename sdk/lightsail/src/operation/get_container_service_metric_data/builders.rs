@@ -3,6 +3,23 @@ pub use crate::operation::get_container_service_metric_data::_get_container_serv
 
 pub use crate::operation::get_container_service_metric_data::_get_container_service_metric_data_input::GetContainerServiceMetricDataInputBuilder;
 
+impl GetContainerServiceMetricDataInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_container_service_metric_data::GetContainerServiceMetricDataOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_container_service_metric_data::GetContainerServiceMetricDataError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_container_service_metric_data();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetContainerServiceMetricData`.
 ///
 /// <p>Returns the data points of a specific metric of your Amazon Lightsail container service.</p>

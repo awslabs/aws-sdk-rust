@@ -3,6 +3,23 @@ pub use crate::operation::describe_action::_describe_action_output::DescribeActi
 
 pub use crate::operation::describe_action::_describe_action_input::DescribeActionInputBuilder;
 
+impl DescribeActionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_action::DescribeActionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_action::DescribeActionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_action();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAction`.
 ///
 /// <p>Describes an action.</p>

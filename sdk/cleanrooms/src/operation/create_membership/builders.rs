@@ -3,6 +3,23 @@ pub use crate::operation::create_membership::_create_membership_output::CreateMe
 
 pub use crate::operation::create_membership::_create_membership_input::CreateMembershipInputBuilder;
 
+impl CreateMembershipInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_membership::CreateMembershipOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_membership::CreateMembershipError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_membership();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateMembership`.
 ///
 /// <p>Creates a membership for a specific collaboration identifier and joins the collaboration.</p>

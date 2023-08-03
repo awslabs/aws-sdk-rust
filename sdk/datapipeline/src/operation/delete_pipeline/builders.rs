@@ -3,6 +3,23 @@ pub use crate::operation::delete_pipeline::_delete_pipeline_output::DeletePipeli
 
 pub use crate::operation::delete_pipeline::_delete_pipeline_input::DeletePipelineInputBuilder;
 
+impl DeletePipelineInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_pipeline::DeletePipelineOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_pipeline::DeletePipelineError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_pipeline();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeletePipeline`.
 ///
 /// <p>Deletes a pipeline, its pipeline definition, and its run history. AWS Data Pipeline attempts to cancel instances associated with the pipeline that are currently being processed by task runners.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_custom_routing_listener::_create_custom_routing
 
 pub use crate::operation::create_custom_routing_listener::_create_custom_routing_listener_input::CreateCustomRoutingListenerInputBuilder;
 
+impl CreateCustomRoutingListenerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_custom_routing_listener::CreateCustomRoutingListenerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_custom_routing_listener::CreateCustomRoutingListenerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_custom_routing_listener();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateCustomRoutingListener`.
 ///
 /// <p>Create a listener to process inbound connections from clients to a custom routing accelerator. Connections arrive to assigned static IP addresses on the port range that you specify. </p>

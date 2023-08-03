@@ -3,6 +3,23 @@ pub use crate::operation::describe_aggregate_id_format::_describe_aggregate_id_f
 
 pub use crate::operation::describe_aggregate_id_format::_describe_aggregate_id_format_input::DescribeAggregateIdFormatInputBuilder;
 
+impl DescribeAggregateIdFormatInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_aggregate_id_format::DescribeAggregateIdFormatOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_aggregate_id_format::DescribeAggregateIdFormatError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_aggregate_id_format();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAggregateIdFormat`.
 ///
 /// <p>Describes the longer ID format settings for all resource types in a specific Region. This request is useful for performing a quick audit to determine whether a specific Region is fully opted in for longer IDs (17-character IDs).</p>

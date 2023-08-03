@@ -3,6 +3,23 @@ pub use crate::operation::delete_container_policy::_delete_container_policy_outp
 
 pub use crate::operation::delete_container_policy::_delete_container_policy_input::DeleteContainerPolicyInputBuilder;
 
+impl DeleteContainerPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_container_policy::DeleteContainerPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_container_policy::DeleteContainerPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_container_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteContainerPolicy`.
 ///
 /// <p>Deletes the access policy that is associated with the specified container.</p>

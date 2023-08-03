@@ -3,6 +3,23 @@ pub use crate::operation::delete_monitor::_delete_monitor_output::DeleteMonitorO
 
 pub use crate::operation::delete_monitor::_delete_monitor_input::DeleteMonitorInputBuilder;
 
+impl DeleteMonitorInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_monitor::DeleteMonitorOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_monitor::DeleteMonitorError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_monitor();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteMonitor`.
 ///
 /// <p>Deletes a monitor resource. You can only delete a monitor resource with a status of <code>ACTIVE</code>, <code>ACTIVE_STOPPED</code>, <code>CREATE_FAILED</code>, or <code>CREATE_STOPPED</code>.</p>

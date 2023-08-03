@@ -3,6 +3,23 @@ pub use crate::operation::cancel_multicast_group_session::_cancel_multicast_grou
 
 pub use crate::operation::cancel_multicast_group_session::_cancel_multicast_group_session_input::CancelMulticastGroupSessionInputBuilder;
 
+impl CancelMulticastGroupSessionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::cancel_multicast_group_session::CancelMulticastGroupSessionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::cancel_multicast_group_session::CancelMulticastGroupSessionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.cancel_multicast_group_session();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CancelMulticastGroupSession`.
 ///
 /// <p>Cancels an existing multicast group session.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::start_app_assessment::_start_app_assessment_output::St
 
 pub use crate::operation::start_app_assessment::_start_app_assessment_input::StartAppAssessmentInputBuilder;
 
+impl StartAppAssessmentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_app_assessment::StartAppAssessmentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_app_assessment::StartAppAssessmentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_app_assessment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartAppAssessment`.
 ///
 /// <p>Creates a new application assessment for an application.</p>

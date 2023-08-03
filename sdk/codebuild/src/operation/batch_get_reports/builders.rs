@@ -3,6 +3,23 @@ pub use crate::operation::batch_get_reports::_batch_get_reports_output::BatchGet
 
 pub use crate::operation::batch_get_reports::_batch_get_reports_input::BatchGetReportsInputBuilder;
 
+impl BatchGetReportsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_reports::BatchGetReportsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_get_reports::BatchGetReportsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_get_reports();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchGetReports`.
 ///
 /// <p> Returns an array of reports. </p>

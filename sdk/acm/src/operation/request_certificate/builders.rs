@@ -3,6 +3,23 @@ pub use crate::operation::request_certificate::_request_certificate_output::Requ
 
 pub use crate::operation::request_certificate::_request_certificate_input::RequestCertificateInputBuilder;
 
+impl RequestCertificateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::request_certificate::RequestCertificateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::request_certificate::RequestCertificateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.request_certificate();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RequestCertificate`.
 ///
 /// <p>Requests an ACM certificate for use with other Amazon Web Services services. To request an ACM certificate, you must specify a fully qualified domain name (FQDN) in the <code>DomainName</code> parameter. You can also specify additional FQDNs in the <code>SubjectAlternativeNames</code> parameter. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::stop_replication_to_replica::_stop_replication_to_repl
 
 pub use crate::operation::stop_replication_to_replica::_stop_replication_to_replica_input::StopReplicationToReplicaInputBuilder;
 
+impl StopReplicationToReplicaInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_replication_to_replica::StopReplicationToReplicaOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_replication_to_replica::StopReplicationToReplicaError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_replication_to_replica();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopReplicationToReplica`.
 ///
 /// <p>Removes the link between the replica secret and the primary secret and promotes the replica to a primary secret in the replica Region.</p>

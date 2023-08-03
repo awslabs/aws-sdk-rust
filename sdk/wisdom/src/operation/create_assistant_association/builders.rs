@@ -3,6 +3,23 @@ pub use crate::operation::create_assistant_association::_create_assistant_associ
 
 pub use crate::operation::create_assistant_association::_create_assistant_association_input::CreateAssistantAssociationInputBuilder;
 
+impl CreateAssistantAssociationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_assistant_association::CreateAssistantAssociationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_assistant_association::CreateAssistantAssociationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_assistant_association();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateAssistantAssociation`.
 ///
 /// <p>Creates an association between an Amazon Connect Wisdom assistant and another resource. Currently, the only supported association is with a knowledge base. An assistant can have only a single association.</p>

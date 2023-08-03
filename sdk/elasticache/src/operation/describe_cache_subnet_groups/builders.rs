@@ -3,6 +3,23 @@ pub use crate::operation::describe_cache_subnet_groups::_describe_cache_subnet_g
 
 pub use crate::operation::describe_cache_subnet_groups::_describe_cache_subnet_groups_input::DescribeCacheSubnetGroupsInputBuilder;
 
+impl DescribeCacheSubnetGroupsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_cache_subnet_groups::DescribeCacheSubnetGroupsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_cache_subnet_groups::DescribeCacheSubnetGroupsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_cache_subnet_groups();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeCacheSubnetGroups`.
 ///
 /// <p>Returns a list of cache subnet group descriptions. If a subnet group name is specified, the list contains only the description of that group. This is applicable only when you have ElastiCache in VPC setup. All ElastiCache clusters now launch in VPC by default. </p>

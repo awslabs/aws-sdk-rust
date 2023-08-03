@@ -3,6 +3,23 @@ pub use crate::operation::delete_hours_of_operation::_delete_hours_of_operation_
 
 pub use crate::operation::delete_hours_of_operation::_delete_hours_of_operation_input::DeleteHoursOfOperationInputBuilder;
 
+impl DeleteHoursOfOperationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_hours_of_operation::DeleteHoursOfOperationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_hours_of_operation::DeleteHoursOfOperationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_hours_of_operation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteHoursOfOperation`.
 ///
 /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>

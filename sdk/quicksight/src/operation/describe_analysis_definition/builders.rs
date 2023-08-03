@@ -3,6 +3,23 @@ pub use crate::operation::describe_analysis_definition::_describe_analysis_defin
 
 pub use crate::operation::describe_analysis_definition::_describe_analysis_definition_input::DescribeAnalysisDefinitionInputBuilder;
 
+impl DescribeAnalysisDefinitionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_analysis_definition::DescribeAnalysisDefinitionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_analysis_definition::DescribeAnalysisDefinitionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_analysis_definition();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAnalysisDefinition`.
 ///
 /// <p>Provides a detailed description of the definition of an analysis.</p> <note>

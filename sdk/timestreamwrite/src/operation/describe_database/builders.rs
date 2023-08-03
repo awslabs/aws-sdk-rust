@@ -3,6 +3,23 @@ pub use crate::operation::describe_database::_describe_database_output::Describe
 
 pub use crate::operation::describe_database::_describe_database_input::DescribeDatabaseInputBuilder;
 
+impl DescribeDatabaseInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_database::DescribeDatabaseOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_database::DescribeDatabaseError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_database();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeDatabase`.
 ///
 /// <p>Returns information about the database, including the database name, time that the database was created, and the total number of tables found within the database. <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/ts-limits.html">Service quotas apply</a>. See <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.describe-db.html">code sample</a> for details.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_alternate_contact::_delete_alternate_contact_ou
 
 pub use crate::operation::delete_alternate_contact::_delete_alternate_contact_input::DeleteAlternateContactInputBuilder;
 
+impl DeleteAlternateContactInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_alternate_contact::DeleteAlternateContactOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_alternate_contact::DeleteAlternateContactError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_alternate_contact();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteAlternateContact`.
 ///
 /// <p>Deletes the specified alternate contact from an Amazon Web Services account.</p>

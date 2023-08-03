@@ -3,6 +3,23 @@ pub use crate::operation::list_blueprints::_list_blueprints_output::ListBlueprin
 
 pub use crate::operation::list_blueprints::_list_blueprints_input::ListBlueprintsInputBuilder;
 
+impl ListBlueprintsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_blueprints::ListBlueprintsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_blueprints::ListBlueprintsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_blueprints();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListBlueprints`.
 ///
 /// <p>Lists all the blueprint names in an account.</p>

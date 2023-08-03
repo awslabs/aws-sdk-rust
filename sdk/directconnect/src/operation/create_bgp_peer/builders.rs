@@ -3,6 +3,23 @@ pub use crate::operation::create_bgp_peer::_create_bgp_peer_output::CreateBgpPee
 
 pub use crate::operation::create_bgp_peer::_create_bgp_peer_input::CreateBgpPeerInputBuilder;
 
+impl CreateBgpPeerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_bgp_peer::CreateBgpPeerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_bgp_peer::CreateBGPPeerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_bgp_peer();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateBGPPeer`.
 ///
 /// <p>Creates a BGP peer on the specified virtual interface.</p>

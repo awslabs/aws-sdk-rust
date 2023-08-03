@@ -3,6 +3,23 @@ pub use crate::operation::confirm_subscription::_confirm_subscription_output::Co
 
 pub use crate::operation::confirm_subscription::_confirm_subscription_input::ConfirmSubscriptionInputBuilder;
 
+impl ConfirmSubscriptionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::confirm_subscription::ConfirmSubscriptionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::confirm_subscription::ConfirmSubscriptionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.confirm_subscription();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ConfirmSubscription`.
 ///
 /// <p>Verifies an endpoint owner's intent to receive messages by validating the token sent to the endpoint by an earlier <code>Subscribe</code> action. If the token is valid, the action creates a new subscription and returns its Amazon Resource Name (ARN). This call requires an AWS signature only when the <code>AuthenticateOnUnsubscribe</code> flag is set to "true".</p>

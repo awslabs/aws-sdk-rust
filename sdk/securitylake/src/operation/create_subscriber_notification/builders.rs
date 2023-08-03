@@ -3,6 +3,23 @@ pub use crate::operation::create_subscriber_notification::_create_subscriber_not
 
 pub use crate::operation::create_subscriber_notification::_create_subscriber_notification_input::CreateSubscriberNotificationInputBuilder;
 
+impl CreateSubscriberNotificationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_subscriber_notification::CreateSubscriberNotificationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_subscriber_notification::CreateSubscriberNotificationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_subscriber_notification();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateSubscriberNotification`.
 ///
 /// <p>Notifies the subscriber when new data is written to the data lake for the sources that the subscriber consumes in Security Lake. You can create only one subscriber notification per subscriber.</p>

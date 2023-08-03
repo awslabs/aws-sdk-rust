@@ -3,6 +3,23 @@ pub use crate::operation::delete_gateway_group::_delete_gateway_group_output::De
 
 pub use crate::operation::delete_gateway_group::_delete_gateway_group_input::DeleteGatewayGroupInputBuilder;
 
+impl DeleteGatewayGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_gateway_group::DeleteGatewayGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_gateway_group::DeleteGatewayGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_gateway_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteGatewayGroup`.
 ///
 /// <p>Deletes a gateway group.</p>

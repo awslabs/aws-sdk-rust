@@ -3,6 +3,23 @@ pub use crate::operation::update_backup_plan::_update_backup_plan_output::Update
 
 pub use crate::operation::update_backup_plan::_update_backup_plan_input::UpdateBackupPlanInputBuilder;
 
+impl UpdateBackupPlanInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_backup_plan::UpdateBackupPlanOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_backup_plan::UpdateBackupPlanError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_backup_plan();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateBackupPlan`.
 ///
 /// <p>Updates an existing backup plan identified by its <code>backupPlanId</code> with the input document in JSON format. The new version is uniquely identified by a <code>VersionId</code>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::associate_vpc_cidr_block::_associate_vpc_cidr_block_ou
 
 pub use crate::operation::associate_vpc_cidr_block::_associate_vpc_cidr_block_input::AssociateVpcCidrBlockInputBuilder;
 
+impl AssociateVpcCidrBlockInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_vpc_cidr_block::AssociateVpcCidrBlockOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_vpc_cidr_block::AssociateVpcCidrBlockError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_vpc_cidr_block();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateVpcCidrBlock`.
 ///
 /// <p>Associates a CIDR block with your VPC. You can associate a secondary IPv4 CIDR block, an Amazon-provided IPv6 CIDR block, or an IPv6 CIDR block from an IPv6 address pool that you provisioned through bring your own IP addresses (<a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html">BYOIP</a>). The IPv6 CIDR block size is fixed at /56.</p>

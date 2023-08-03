@@ -3,6 +3,23 @@ pub use crate::operation::list_resolvers::_list_resolvers_output::ListResolversO
 
 pub use crate::operation::list_resolvers::_list_resolvers_input::ListResolversInputBuilder;
 
+impl ListResolversInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_resolvers::ListResolversOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_resolvers::ListResolversError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_resolvers();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListResolvers`.
 ///
 /// <p>Lists the resolvers for a given API and type.</p>

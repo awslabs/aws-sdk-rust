@@ -3,6 +3,23 @@ pub use crate::operation::update_role_description::_update_role_description_outp
 
 pub use crate::operation::update_role_description::_update_role_description_input::UpdateRoleDescriptionInputBuilder;
 
+impl UpdateRoleDescriptionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_role_description::UpdateRoleDescriptionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_role_description::UpdateRoleDescriptionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_role_description();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateRoleDescription`.
 ///
 /// <p>Use <code>UpdateRole</code> instead.</p>

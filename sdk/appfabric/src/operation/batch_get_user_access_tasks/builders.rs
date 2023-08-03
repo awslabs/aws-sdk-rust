@@ -3,6 +3,23 @@ pub use crate::operation::batch_get_user_access_tasks::_batch_get_user_access_ta
 
 pub use crate::operation::batch_get_user_access_tasks::_batch_get_user_access_tasks_input::BatchGetUserAccessTasksInputBuilder;
 
+impl BatchGetUserAccessTasksInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_user_access_tasks::BatchGetUserAccessTasksOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_get_user_access_tasks::BatchGetUserAccessTasksError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_get_user_access_tasks();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchGetUserAccessTasks`.
 ///
 /// <p>Gets user access details in a batch request.</p>

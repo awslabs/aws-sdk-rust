@@ -3,6 +3,23 @@ pub use crate::operation::attach_disk::_attach_disk_output::AttachDiskOutputBuil
 
 pub use crate::operation::attach_disk::_attach_disk_input::AttachDiskInputBuilder;
 
+impl AttachDiskInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::attach_disk::AttachDiskOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::attach_disk::AttachDiskError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.attach_disk();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AttachDisk`.
 ///
 /// <p>Attaches a block storage disk to a running or stopped Lightsail instance and exposes it to the instance with the specified disk name.</p>

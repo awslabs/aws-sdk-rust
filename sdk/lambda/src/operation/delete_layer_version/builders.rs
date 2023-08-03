@@ -3,6 +3,23 @@ pub use crate::operation::delete_layer_version::_delete_layer_version_output::De
 
 pub use crate::operation::delete_layer_version::_delete_layer_version_input::DeleteLayerVersionInputBuilder;
 
+impl DeleteLayerVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_layer_version::DeleteLayerVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_layer_version::DeleteLayerVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_layer_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteLayerVersion`.
 ///
 /// <p>Deletes a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda layer</a>. Deleted versions can no longer be viewed or added to functions. To avoid breaking functions, a copy of the version remains in Lambda until no functions refer to it.</p>

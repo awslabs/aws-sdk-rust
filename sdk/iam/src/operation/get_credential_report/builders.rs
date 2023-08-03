@@ -3,6 +3,23 @@ pub use crate::operation::get_credential_report::_get_credential_report_output::
 
 pub use crate::operation::get_credential_report::_get_credential_report_input::GetCredentialReportInputBuilder;
 
+impl GetCredentialReportInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_credential_report::GetCredentialReportOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_credential_report::GetCredentialReportError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_credential_report();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetCredentialReport`.
 ///
 /// <p> Retrieves a credential report for the Amazon Web Services account. For more information about the credential report, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/credential-reports.html">Getting credential reports</a> in the <i>IAM User Guide</i>.</p>

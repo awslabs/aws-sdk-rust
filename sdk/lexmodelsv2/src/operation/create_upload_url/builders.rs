@@ -3,6 +3,23 @@ pub use crate::operation::create_upload_url::_create_upload_url_output::CreateUp
 
 pub use crate::operation::create_upload_url::_create_upload_url_input::CreateUploadUrlInputBuilder;
 
+impl CreateUploadUrlInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_upload_url::CreateUploadUrlOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_upload_url::CreateUploadUrlError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_upload_url();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateUploadUrl`.
 ///
 /// <p>Gets a pre-signed S3 write URL that you use to upload the zip archive when importing a bot or a bot locale. </p>

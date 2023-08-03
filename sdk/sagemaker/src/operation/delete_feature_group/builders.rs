@@ -3,6 +3,23 @@ pub use crate::operation::delete_feature_group::_delete_feature_group_output::De
 
 pub use crate::operation::delete_feature_group::_delete_feature_group_input::DeleteFeatureGroupInputBuilder;
 
+impl DeleteFeatureGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_feature_group::DeleteFeatureGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_feature_group::DeleteFeatureGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_feature_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteFeatureGroup`.
 ///
 /// <p>Delete the <code>FeatureGroup</code> and any data that was written to the <code>OnlineStore</code> of the <code>FeatureGroup</code>. Data cannot be accessed from the <code>OnlineStore</code> immediately after <code>DeleteFeatureGroup</code> is called. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_multicast_group::_create_multicast_group_output
 
 pub use crate::operation::create_multicast_group::_create_multicast_group_input::CreateMulticastGroupInputBuilder;
 
+impl CreateMulticastGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_multicast_group::CreateMulticastGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_multicast_group::CreateMulticastGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_multicast_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateMulticastGroup`.
 ///
 /// <p>Creates a multicast group.</p>

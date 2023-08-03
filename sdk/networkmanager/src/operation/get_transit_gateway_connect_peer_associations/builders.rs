@@ -3,6 +3,17 @@ pub use crate::operation::get_transit_gateway_connect_peer_associations::_get_tr
 
 pub use crate::operation::get_transit_gateway_connect_peer_associations::_get_transit_gateway_connect_peer_associations_input::GetTransitGatewayConnectPeerAssociationsInputBuilder;
 
+impl GetTransitGatewayConnectPeerAssociationsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_transit_gateway_connect_peer_associations::GetTransitGatewayConnectPeerAssociationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_transit_gateway_connect_peer_associations::GetTransitGatewayConnectPeerAssociationsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_transit_gateway_connect_peer_associations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetTransitGatewayConnectPeerAssociations`.
 ///
 /// <p>Gets information about one or more of your transit gateway Connect peer associations in a global network.</p>

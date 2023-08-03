@@ -3,6 +3,17 @@ pub use crate::operation::update_pull_request_approval_rule_content::_update_pul
 
 pub use crate::operation::update_pull_request_approval_rule_content::_update_pull_request_approval_rule_content_input::UpdatePullRequestApprovalRuleContentInputBuilder;
 
+impl UpdatePullRequestApprovalRuleContentInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_pull_request_approval_rule_content::UpdatePullRequestApprovalRuleContentError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.update_pull_request_approval_rule_content();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdatePullRequestApprovalRuleContent`.
 ///
 /// <p>Updates the structure of an approval rule created specifically for a pull request. For example, you can change the number of required approvers and the approval pool for approvers. </p>

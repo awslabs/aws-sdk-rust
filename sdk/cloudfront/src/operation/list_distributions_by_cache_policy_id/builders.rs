@@ -3,6 +3,17 @@ pub use crate::operation::list_distributions_by_cache_policy_id::_list_distribut
 
 pub use crate::operation::list_distributions_by_cache_policy_id::_list_distributions_by_cache_policy_id_input::ListDistributionsByCachePolicyIdInputBuilder;
 
+impl ListDistributionsByCachePolicyIdInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_distributions_by_cache_policy_id::ListDistributionsByCachePolicyIdOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_distributions_by_cache_policy_id::ListDistributionsByCachePolicyIdError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_distributions_by_cache_policy_id();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDistributionsByCachePolicyId`.
 ///
 /// <p>Gets a list of distribution IDs for distributions that have a cache behavior that's associated with the specified cache policy.</p>

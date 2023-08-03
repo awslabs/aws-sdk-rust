@@ -3,6 +3,23 @@ pub use crate::operation::start_query::_start_query_output::StartQueryOutputBuil
 
 pub use crate::operation::start_query::_start_query_input::StartQueryInputBuilder;
 
+impl StartQueryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_query::StartQueryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_query::StartQueryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_query();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartQuery`.
 ///
 /// <p>Schedules a query of a log group using CloudWatch Logs Insights. You specify the log group and time range to query and the query string to use.</p>

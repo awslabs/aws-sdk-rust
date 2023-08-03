@@ -3,6 +3,23 @@ pub use crate::operation::list_recording_configurations::_list_recording_configu
 
 pub use crate::operation::list_recording_configurations::_list_recording_configurations_input::ListRecordingConfigurationsInputBuilder;
 
+impl ListRecordingConfigurationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_recording_configurations::ListRecordingConfigurationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_recording_configurations::ListRecordingConfigurationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_recording_configurations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListRecordingConfigurations`.
 ///
 /// <p>Gets summary information about all recording configurations in your account, in the Amazon Web Services region where the API request is processed.</p>

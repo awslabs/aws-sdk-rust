@@ -3,6 +3,23 @@ pub use crate::operation::list_workflows::_list_workflows_output::ListWorkflowsO
 
 pub use crate::operation::list_workflows::_list_workflows_input::ListWorkflowsInputBuilder;
 
+impl ListWorkflowsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_workflows::ListWorkflowsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_workflows::ListWorkflowsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_workflows();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListWorkflows`.
 ///
 /// <p>List the migration workflows.</p>

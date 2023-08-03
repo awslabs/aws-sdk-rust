@@ -3,6 +3,17 @@ pub use crate::operation::disable_kinesis_streaming_destination::_disable_kinesi
 
 pub use crate::operation::disable_kinesis_streaming_destination::_disable_kinesis_streaming_destination_input::DisableKinesisStreamingDestinationInputBuilder;
 
+impl DisableKinesisStreamingDestinationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::disable_kinesis_streaming_destination::DisableKinesisStreamingDestinationOutput, ::aws_smithy_http::result::SdkError<crate::operation::disable_kinesis_streaming_destination::DisableKinesisStreamingDestinationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.disable_kinesis_streaming_destination();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisableKinesisStreamingDestination`.
 ///
 /// <p>Stops replication from the DynamoDB table to the Kinesis data stream. This is done without deleting either of the resources.</p>

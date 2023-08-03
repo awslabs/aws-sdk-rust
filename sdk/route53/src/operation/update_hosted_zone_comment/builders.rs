@@ -3,6 +3,23 @@ pub use crate::operation::update_hosted_zone_comment::_update_hosted_zone_commen
 
 pub use crate::operation::update_hosted_zone_comment::_update_hosted_zone_comment_input::UpdateHostedZoneCommentInputBuilder;
 
+impl UpdateHostedZoneCommentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_hosted_zone_comment::UpdateHostedZoneCommentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_hosted_zone_comment::UpdateHostedZoneCommentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_hosted_zone_comment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateHostedZoneComment`.
 ///
 /// <p>Updates the comment for a specified hosted zone.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_workflow_types::_list_workflow_types_output::List
 
 pub use crate::operation::list_workflow_types::_list_workflow_types_input::ListWorkflowTypesInputBuilder;
 
+impl ListWorkflowTypesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_workflow_types::ListWorkflowTypesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_workflow_types::ListWorkflowTypesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_workflow_types();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListWorkflowTypes`.
 ///
 /// <p>Returns information about workflow types in the specified domain. The results may be split into multiple pages that can be retrieved by making the call repeatedly.</p>

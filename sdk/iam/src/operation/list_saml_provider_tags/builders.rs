@@ -3,6 +3,23 @@ pub use crate::operation::list_saml_provider_tags::_list_saml_provider_tags_outp
 
 pub use crate::operation::list_saml_provider_tags::_list_saml_provider_tags_input::ListSamlProviderTagsInputBuilder;
 
+impl ListSamlProviderTagsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_saml_provider_tags::ListSamlProviderTagsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_saml_provider_tags::ListSAMLProviderTagsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_saml_provider_tags();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListSAMLProviderTags`.
 ///
 /// <p>Lists the tags that are attached to the specified Security Assertion Markup Language (SAML) identity provider. The returned list of tags is sorted by tag key. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About SAML 2.0-based federation</a>.</p>

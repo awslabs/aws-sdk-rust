@@ -3,6 +3,23 @@ pub use crate::operation::disassociate_connection_from_lag::_disassociate_connec
 
 pub use crate::operation::disassociate_connection_from_lag::_disassociate_connection_from_lag_input::DisassociateConnectionFromLagInputBuilder;
 
+impl DisassociateConnectionFromLagInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_connection_from_lag::DisassociateConnectionFromLagOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_connection_from_lag::DisassociateConnectionFromLagError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disassociate_connection_from_lag();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateConnectionFromLag`.
 ///
 /// <p>Disassociates a connection from a link aggregation group (LAG). The connection is interrupted and re-established as a standalone connection (the connection is not deleted; to delete the connection, use the <code>DeleteConnection</code> request). If the LAG has associated virtual interfaces or hosted connections, they remain associated with the LAG. A disassociated connection owned by an Direct Connect Partner is automatically converted to an interconnect.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::stop_access_logging::_stop_access_logging_output::Stop
 
 pub use crate::operation::stop_access_logging::_stop_access_logging_input::StopAccessLoggingInputBuilder;
 
+impl StopAccessLoggingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_access_logging::StopAccessLoggingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_access_logging::StopAccessLoggingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_access_logging();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopAccessLogging`.
 ///
 /// <p>Stops access logging on the specified container. When you stop access logging on a container, MediaStore stops sending access logs to Amazon CloudWatch Logs. These access logs are not saved and are not retrievable.</p>

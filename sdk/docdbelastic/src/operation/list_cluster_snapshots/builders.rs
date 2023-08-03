@@ -3,6 +3,23 @@ pub use crate::operation::list_cluster_snapshots::_list_cluster_snapshots_output
 
 pub use crate::operation::list_cluster_snapshots::_list_cluster_snapshots_input::ListClusterSnapshotsInputBuilder;
 
+impl ListClusterSnapshotsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_cluster_snapshots::ListClusterSnapshotsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_cluster_snapshots::ListClusterSnapshotsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_cluster_snapshots();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListClusterSnapshots`.
 ///
 /// <p>Returns information about Elastic DocumentDB snapshots for a specified cluster.</p>

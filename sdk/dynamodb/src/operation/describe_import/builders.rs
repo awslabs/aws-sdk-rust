@@ -3,6 +3,23 @@ pub use crate::operation::describe_import::_describe_import_output::DescribeImpo
 
 pub use crate::operation::describe_import::_describe_import_input::DescribeImportInputBuilder;
 
+impl DescribeImportInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_import::DescribeImportOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_import::DescribeImportError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_import();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeImport`.
 ///
 /// <p> Represents the properties of the import. </p>

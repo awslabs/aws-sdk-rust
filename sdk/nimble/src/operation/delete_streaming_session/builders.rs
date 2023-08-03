@@ -3,6 +3,23 @@ pub use crate::operation::delete_streaming_session::_delete_streaming_session_ou
 
 pub use crate::operation::delete_streaming_session::_delete_streaming_session_input::DeleteStreamingSessionInputBuilder;
 
+impl DeleteStreamingSessionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_streaming_session::DeleteStreamingSessionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_streaming_session::DeleteStreamingSessionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_streaming_session();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteStreamingSession`.
 ///
 /// <p>Deletes streaming session resource.</p>

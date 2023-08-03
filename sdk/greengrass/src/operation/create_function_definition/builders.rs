@@ -3,6 +3,23 @@ pub use crate::operation::create_function_definition::_create_function_definitio
 
 pub use crate::operation::create_function_definition::_create_function_definition_input::CreateFunctionDefinitionInputBuilder;
 
+impl CreateFunctionDefinitionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_function_definition::CreateFunctionDefinitionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_function_definition::CreateFunctionDefinitionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_function_definition();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateFunctionDefinition`.
 ///
 /// Creates a Lambda function definition which contains a list of Lambda functions and their configurations to be used in a group. You can create an initial version of the definition by providing a list of Lambda functions and their configurations now, or use ''CreateFunctionDefinitionVersion'' later.

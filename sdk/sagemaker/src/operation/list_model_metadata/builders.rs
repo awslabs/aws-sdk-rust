@@ -3,6 +3,23 @@ pub use crate::operation::list_model_metadata::_list_model_metadata_output::List
 
 pub use crate::operation::list_model_metadata::_list_model_metadata_input::ListModelMetadataInputBuilder;
 
+impl ListModelMetadataInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_model_metadata::ListModelMetadataOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_model_metadata::ListModelMetadataError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_model_metadata();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListModelMetadata`.
 ///
 /// <p>Lists the domain, framework, task, and model name of standard machine learning models found in common model zoos.</p>

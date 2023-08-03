@@ -3,6 +3,23 @@ pub use crate::operation::enable_mfa_device::_enable_mfa_device_output::EnableMf
 
 pub use crate::operation::enable_mfa_device::_enable_mfa_device_input::EnableMfaDeviceInputBuilder;
 
+impl EnableMfaDeviceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::enable_mfa_device::EnableMfaDeviceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::enable_mfa_device::EnableMFADeviceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.enable_mfa_device();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `EnableMFADevice`.
 ///
 /// <p>Enables the specified MFA device and associates it with the specified IAM user. When enabled, the MFA device is required for every subsequent login by the IAM user associated with the device.</p>

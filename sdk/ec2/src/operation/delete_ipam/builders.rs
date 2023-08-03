@@ -3,6 +3,23 @@ pub use crate::operation::delete_ipam::_delete_ipam_output::DeleteIpamOutputBuil
 
 pub use crate::operation::delete_ipam::_delete_ipam_input::DeleteIpamInputBuilder;
 
+impl DeleteIpamInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_ipam::DeleteIpamOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_ipam::DeleteIpamError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_ipam();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteIpam`.
 ///
 /// <p>Delete an IPAM. Deleting an IPAM removes all monitored data associated with the IPAM including the historical data for CIDRs.</p>

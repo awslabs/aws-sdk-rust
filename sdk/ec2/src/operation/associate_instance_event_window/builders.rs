@@ -3,6 +3,23 @@ pub use crate::operation::associate_instance_event_window::_associate_instance_e
 
 pub use crate::operation::associate_instance_event_window::_associate_instance_event_window_input::AssociateInstanceEventWindowInputBuilder;
 
+impl AssociateInstanceEventWindowInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_instance_event_window::AssociateInstanceEventWindowOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_instance_event_window::AssociateInstanceEventWindowError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_instance_event_window();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateInstanceEventWindow`.
 ///
 /// <p>Associates one or more targets with an event window. Only one type of target (instance IDs, Dedicated Host IDs, or tags) can be specified with an event window.</p>

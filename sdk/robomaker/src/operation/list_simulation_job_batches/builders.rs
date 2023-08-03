@@ -3,6 +3,23 @@ pub use crate::operation::list_simulation_job_batches::_list_simulation_job_batc
 
 pub use crate::operation::list_simulation_job_batches::_list_simulation_job_batches_input::ListSimulationJobBatchesInputBuilder;
 
+impl ListSimulationJobBatchesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_simulation_job_batches::ListSimulationJobBatchesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_simulation_job_batches::ListSimulationJobBatchesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_simulation_job_batches();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListSimulationJobBatches`.
 ///
 /// <p>Returns a list simulation job batches. You can optionally provide filters to retrieve specific simulation batch jobs. </p>

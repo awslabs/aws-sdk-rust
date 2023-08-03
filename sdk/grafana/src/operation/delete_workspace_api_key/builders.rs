@@ -3,6 +3,23 @@ pub use crate::operation::delete_workspace_api_key::_delete_workspace_api_key_ou
 
 pub use crate::operation::delete_workspace_api_key::_delete_workspace_api_key_input::DeleteWorkspaceApiKeyInputBuilder;
 
+impl DeleteWorkspaceApiKeyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_workspace_api_key::DeleteWorkspaceApiKeyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_workspace_api_key::DeleteWorkspaceApiKeyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_workspace_api_key();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteWorkspaceApiKey`.
 ///
 /// <p>Deletes a Grafana API key for the workspace.</p>

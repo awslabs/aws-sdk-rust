@@ -3,6 +3,23 @@ pub use crate::operation::search_available_phone_numbers::_search_available_phon
 
 pub use crate::operation::search_available_phone_numbers::_search_available_phone_numbers_input::SearchAvailablePhoneNumbersInputBuilder;
 
+impl SearchAvailablePhoneNumbersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::search_available_phone_numbers::SearchAvailablePhoneNumbersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.search_available_phone_numbers();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SearchAvailablePhoneNumbers`.
 ///
 /// <p>Searches for available phone numbers that you can claim to your Amazon Connect instance or traffic distribution group. If the provided <code>TargetArn</code> is a traffic distribution group, you can call this API in both Amazon Web Services Regions associated with the traffic distribution group.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::start_build_batch::_start_build_batch_output::StartBui
 
 pub use crate::operation::start_build_batch::_start_build_batch_input::StartBuildBatchInputBuilder;
 
+impl StartBuildBatchInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_build_batch::StartBuildBatchOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_build_batch::StartBuildBatchError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_build_batch();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartBuildBatch`.
 ///
 /// <p>Starts a batch build for a project.</p>

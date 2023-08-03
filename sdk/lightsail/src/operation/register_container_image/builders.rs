@@ -3,6 +3,23 @@ pub use crate::operation::register_container_image::_register_container_image_ou
 
 pub use crate::operation::register_container_image::_register_container_image_input::RegisterContainerImageInputBuilder;
 
+impl RegisterContainerImageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::register_container_image::RegisterContainerImageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::register_container_image::RegisterContainerImageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.register_container_image();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RegisterContainerImage`.
 ///
 /// <p>Registers a container image to your Amazon Lightsail container service.</p> <note>

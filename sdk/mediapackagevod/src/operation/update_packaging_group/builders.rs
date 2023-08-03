@@ -3,6 +3,23 @@ pub use crate::operation::update_packaging_group::_update_packaging_group_output
 
 pub use crate::operation::update_packaging_group::_update_packaging_group_input::UpdatePackagingGroupInputBuilder;
 
+impl UpdatePackagingGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_packaging_group::UpdatePackagingGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_packaging_group::UpdatePackagingGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_packaging_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdatePackagingGroup`.
 ///
 /// Updates a specific packaging group. You can't change the id attribute or any other system-generated attributes.

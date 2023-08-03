@@ -3,6 +3,23 @@ pub use crate::operation::list_users_by_permission_group::_list_users_by_permiss
 
 pub use crate::operation::list_users_by_permission_group::_list_users_by_permission_group_input::ListUsersByPermissionGroupInputBuilder;
 
+impl ListUsersByPermissionGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_users_by_permission_group::ListUsersByPermissionGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_users_by_permission_group::ListUsersByPermissionGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_users_by_permission_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListUsersByPermissionGroup`.
 ///
 /// <p>Lists details of all the users in a specific permission group.</p>

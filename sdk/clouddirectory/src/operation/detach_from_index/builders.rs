@@ -3,6 +3,23 @@ pub use crate::operation::detach_from_index::_detach_from_index_output::DetachFr
 
 pub use crate::operation::detach_from_index::_detach_from_index_input::DetachFromIndexInputBuilder;
 
+impl DetachFromIndexInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::detach_from_index::DetachFromIndexOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::detach_from_index::DetachFromIndexError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.detach_from_index();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DetachFromIndex`.
 ///
 /// <p>Detaches the specified object from the specified index.</p>

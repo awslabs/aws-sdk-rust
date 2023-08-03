@@ -3,6 +3,23 @@ pub use crate::operation::get_instance_metric_data::_get_instance_metric_data_ou
 
 pub use crate::operation::get_instance_metric_data::_get_instance_metric_data_input::GetInstanceMetricDataInputBuilder;
 
+impl GetInstanceMetricDataInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_instance_metric_data::GetInstanceMetricDataOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_instance_metric_data::GetInstanceMetricDataError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_instance_metric_data();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetInstanceMetricData`.
 ///
 /// <p>Returns the data points for the specified Amazon Lightsail instance metric, given an instance name.</p>

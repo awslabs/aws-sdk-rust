@@ -3,6 +3,23 @@ pub use crate::operation::set_vault_access_policy::_set_vault_access_policy_outp
 
 pub use crate::operation::set_vault_access_policy::_set_vault_access_policy_input::SetVaultAccessPolicyInputBuilder;
 
+impl SetVaultAccessPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::set_vault_access_policy::SetVaultAccessPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::set_vault_access_policy::SetVaultAccessPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.set_vault_access_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SetVaultAccessPolicy`.
 ///
 /// <p>This operation configures an access policy for a vault and will overwrite an existing policy. To configure a vault access policy, send a PUT request to the <code>access-policy</code> subresource of the vault. An access policy is specific to a vault and is also called a vault subresource. You can set one access policy per vault and the policy can be up to 20 KB in size. For more information about vault access policies, see <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/vault-access-policy.html">Amazon Glacier Access Control with Vault Access Policies</a>. </p>

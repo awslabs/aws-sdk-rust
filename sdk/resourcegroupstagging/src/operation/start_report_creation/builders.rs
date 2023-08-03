@@ -3,6 +3,23 @@ pub use crate::operation::start_report_creation::_start_report_creation_output::
 
 pub use crate::operation::start_report_creation::_start_report_creation_input::StartReportCreationInputBuilder;
 
+impl StartReportCreationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_report_creation::StartReportCreationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_report_creation::StartReportCreationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_report_creation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartReportCreation`.
 ///
 /// <p>Generates a report that lists all tagged resources in the accounts across your organization and tells whether each resource is compliant with the effective tag policy. Compliance data is refreshed daily. The report is generated asynchronously.</p>

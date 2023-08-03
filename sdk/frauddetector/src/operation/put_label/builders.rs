@@ -3,6 +3,23 @@ pub use crate::operation::put_label::_put_label_output::PutLabelOutputBuilder;
 
 pub use crate::operation::put_label::_put_label_input::PutLabelInputBuilder;
 
+impl PutLabelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_label::PutLabelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_label::PutLabelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_label();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutLabel`.
 ///
 /// <p>Creates or updates label. A label classifies an event as fraudulent or legitimate. Labels are associated with event types and used to train supervised machine learning models in Amazon Fraud Detector. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_domain_configuration::_describe_domain_config
 
 pub use crate::operation::describe_domain_configuration::_describe_domain_configuration_input::DescribeDomainConfigurationInputBuilder;
 
+impl DescribeDomainConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_domain_configuration::DescribeDomainConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_domain_configuration::DescribeDomainConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_domain_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeDomainConfiguration`.
 ///
 /// <p>Gets summary information about a domain configuration.</p>

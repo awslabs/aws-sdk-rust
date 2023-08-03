@@ -3,6 +3,23 @@ pub use crate::operation::create_rule_groups_namespace::_create_rule_groups_name
 
 pub use crate::operation::create_rule_groups_namespace::_create_rule_groups_namespace_input::CreateRuleGroupsNamespaceInputBuilder;
 
+impl CreateRuleGroupsNamespaceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_rule_groups_namespace::CreateRuleGroupsNamespaceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_rule_groups_namespace::CreateRuleGroupsNamespaceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_rule_groups_namespace();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateRuleGroupsNamespace`.
 ///
 /// Create a rule group namespace.

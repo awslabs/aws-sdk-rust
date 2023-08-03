@@ -3,6 +3,23 @@ pub use crate::operation::create_activity::_create_activity_output::CreateActivi
 
 pub use crate::operation::create_activity::_create_activity_input::CreateActivityInputBuilder;
 
+impl CreateActivityInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_activity::CreateActivityOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_activity::CreateActivityError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_activity();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateActivity`.
 ///
 /// <p>Creates an activity. An activity is a task that you write in any programming language and host on any machine that has access to Step Functions. Activities must poll Step Functions using the <code>GetActivityTask</code> API action and respond using <code>SendTask*</code> API actions. This function lets Step Functions know the existence of your activity and returns an identifier for use in a state machine and when polling from the activity.</p> <note>

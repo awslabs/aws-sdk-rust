@@ -3,6 +3,17 @@ pub use crate::operation::disassociate_ops_item_related_item::_disassociate_ops_
 
 pub use crate::operation::disassociate_ops_item_related_item::_disassociate_ops_item_related_item_input::DisassociateOpsItemRelatedItemInputBuilder;
 
+impl DisassociateOpsItemRelatedItemInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::disassociate_ops_item_related_item::DisassociateOpsItemRelatedItemOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_ops_item_related_item::DisassociateOpsItemRelatedItemError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.disassociate_ops_item_related_item();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateOpsItemRelatedItem`.
 ///
 /// <p>Deletes the association between an OpsItem and a related item. For example, this API operation can delete an Incident Manager incident from an OpsItem. Incident Manager is a capability of Amazon Web Services Systems Manager.</p>

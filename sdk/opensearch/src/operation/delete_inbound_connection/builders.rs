@@ -3,6 +3,23 @@ pub use crate::operation::delete_inbound_connection::_delete_inbound_connection_
 
 pub use crate::operation::delete_inbound_connection::_delete_inbound_connection_input::DeleteInboundConnectionInputBuilder;
 
+impl DeleteInboundConnectionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_inbound_connection::DeleteInboundConnectionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_inbound_connection::DeleteInboundConnectionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_inbound_connection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteInboundConnection`.
 ///
 /// <p>Allows the destination Amazon OpenSearch Service domain owner to delete an existing inbound cross-cluster search connection. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cross-cluster-search.html">Cross-cluster search for Amazon OpenSearch Service</a>.</p>

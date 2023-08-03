@@ -3,6 +3,23 @@ pub use crate::operation::list_streaming_session_backups::_list_streaming_sessio
 
 pub use crate::operation::list_streaming_session_backups::_list_streaming_session_backups_input::ListStreamingSessionBackupsInputBuilder;
 
+impl ListStreamingSessionBackupsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_streaming_session_backups::ListStreamingSessionBackupsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_streaming_session_backups::ListStreamingSessionBackupsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_streaming_session_backups();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListStreamingSessionBackups`.
 ///
 /// <p>Lists the backups of a streaming session in a studio.</p>

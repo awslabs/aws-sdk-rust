@@ -3,6 +3,23 @@ pub use crate::operation::update_resource_data_sync::_update_resource_data_sync_
 
 pub use crate::operation::update_resource_data_sync::_update_resource_data_sync_input::UpdateResourceDataSyncInputBuilder;
 
+impl UpdateResourceDataSyncInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_resource_data_sync::UpdateResourceDataSyncOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_resource_data_sync::UpdateResourceDataSyncError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_resource_data_sync();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateResourceDataSync`.
 ///
 /// <p>Update a resource data sync. After you create a resource data sync for a Region, you can't change the account options for that sync. For example, if you create a sync in the us-east-2 (Ohio) Region and you choose the <code>Include only the current account</code> option, you can't edit that sync later and choose the <code>Include all accounts from my Organizations configuration</code> option. Instead, you must delete the first resource data sync, and create a new one.</p> <note>

@@ -3,6 +3,23 @@ pub use crate::operation::list_managed_accounts::_list_managed_accounts_output::
 
 pub use crate::operation::list_managed_accounts::_list_managed_accounts_input::ListManagedAccountsInputBuilder;
 
+impl ListManagedAccountsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_managed_accounts::ListManagedAccountsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_managed_accounts::ListManagedAccountsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_managed_accounts();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListManagedAccounts`.
 ///
 /// <p>List Managed Accounts.</p>

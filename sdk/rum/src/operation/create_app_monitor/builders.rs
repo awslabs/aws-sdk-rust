@@ -3,6 +3,23 @@ pub use crate::operation::create_app_monitor::_create_app_monitor_output::Create
 
 pub use crate::operation::create_app_monitor::_create_app_monitor_input::CreateAppMonitorInputBuilder;
 
+impl CreateAppMonitorInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_app_monitor::CreateAppMonitorOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_app_monitor::CreateAppMonitorError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_app_monitor();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateAppMonitor`.
 ///
 /// <p>Creates a Amazon CloudWatch RUM app monitor, which collects telemetry data from your application and sends that data to RUM. The data includes performance and reliability information such as page load time, client-side errors, and user behavior.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_channel_policy::_get_channel_policy_output::GetCha
 
 pub use crate::operation::get_channel_policy::_get_channel_policy_input::GetChannelPolicyInputBuilder;
 
+impl GetChannelPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_channel_policy::GetChannelPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_channel_policy::GetChannelPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_channel_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetChannelPolicy`.
 ///
 /// <p>Retrieves the specified channel policy that's configured in AWS Elemental MediaPackage. With policies, you can specify who has access to AWS resources and what actions they can perform on those resources.</p>

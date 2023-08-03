@@ -3,6 +3,23 @@ pub use crate::operation::delete_notification_channel::_delete_notification_chan
 
 pub use crate::operation::delete_notification_channel::_delete_notification_channel_input::DeleteNotificationChannelInputBuilder;
 
+impl DeleteNotificationChannelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_notification_channel::DeleteNotificationChannelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_notification_channel::DeleteNotificationChannelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_notification_channel();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteNotificationChannel`.
 ///
 /// <p>Deletes an Firewall Manager association with the IAM role and the Amazon Simple Notification Service (SNS) topic that is used to record Firewall Manager SNS logs.</p>

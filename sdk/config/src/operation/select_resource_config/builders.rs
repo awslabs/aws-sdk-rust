@@ -3,6 +3,23 @@ pub use crate::operation::select_resource_config::_select_resource_config_output
 
 pub use crate::operation::select_resource_config::_select_resource_config_input::SelectResourceConfigInputBuilder;
 
+impl SelectResourceConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::select_resource_config::SelectResourceConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::select_resource_config::SelectResourceConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.select_resource_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SelectResourceConfig`.
 ///
 /// <p>Accepts a structured query language (SQL) <code>SELECT</code> command, performs the corresponding search, and returns resource configurations matching the properties.</p>

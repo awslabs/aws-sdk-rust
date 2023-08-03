@@ -3,6 +3,23 @@ pub use crate::operation::stop_query::_stop_query_output::StopQueryOutputBuilder
 
 pub use crate::operation::stop_query::_stop_query_input::StopQueryInputBuilder;
 
+impl StopQueryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_query::StopQueryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_query::StopQueryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_query();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopQuery`.
 ///
 /// <p>Stops a CloudWatch Logs Insights query that is in progress. If the query has already ended, the operation returns an error indicating that the specified query is not running.</p>

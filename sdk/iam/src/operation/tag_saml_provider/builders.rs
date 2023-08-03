@@ -3,6 +3,23 @@ pub use crate::operation::tag_saml_provider::_tag_saml_provider_output::TagSamlP
 
 pub use crate::operation::tag_saml_provider::_tag_saml_provider_input::TagSamlProviderInputBuilder;
 
+impl TagSamlProviderInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::tag_saml_provider::TagSamlProviderOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::tag_saml_provider::TagSAMLProviderError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.tag_saml_provider();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `TagSAMLProvider`.
 ///
 /// <p>Adds one or more tags to a Security Assertion Markup Language (SAML) identity provider. For more information about these providers, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_saml.html">About SAML 2.0-based federation </a>. If a tag with the same key name already exists, then that tag is overwritten with the new value.</p>

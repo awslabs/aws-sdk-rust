@@ -3,6 +3,23 @@ pub use crate::operation::start_sync_execution::_start_sync_execution_output::St
 
 pub use crate::operation::start_sync_execution::_start_sync_execution_input::StartSyncExecutionInputBuilder;
 
+impl StartSyncExecutionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_sync_execution::StartSyncExecutionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_sync_execution::StartSyncExecutionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_sync_execution();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartSyncExecution`.
 ///
 /// <p>Starts a Synchronous Express state machine execution. <code>StartSyncExecution</code> is not available for <code>STANDARD</code> workflows.</p> <note>

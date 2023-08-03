@@ -3,6 +3,17 @@ pub use crate::operation::associate_configuration_items_to_application::_associa
 
 pub use crate::operation::associate_configuration_items_to_application::_associate_configuration_items_to_application_input::AssociateConfigurationItemsToApplicationInputBuilder;
 
+impl AssociateConfigurationItemsToApplicationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_configuration_items_to_application::AssociateConfigurationItemsToApplicationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.associate_configuration_items_to_application();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateConfigurationItemsToApplication`.
 ///
 /// <p>Associates one or more configuration items with an application.</p>

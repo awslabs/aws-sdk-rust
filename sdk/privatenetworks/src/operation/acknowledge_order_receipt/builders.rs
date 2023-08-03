@@ -3,6 +3,23 @@ pub use crate::operation::acknowledge_order_receipt::_acknowledge_order_receipt_
 
 pub use crate::operation::acknowledge_order_receipt::_acknowledge_order_receipt_input::AcknowledgeOrderReceiptInputBuilder;
 
+impl AcknowledgeOrderReceiptInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::acknowledge_order_receipt::AcknowledgeOrderReceiptOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::acknowledge_order_receipt::AcknowledgeOrderReceiptError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.acknowledge_order_receipt();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AcknowledgeOrderReceipt`.
 ///
 /// <p>Acknowledges that the specified network order was received.</p>

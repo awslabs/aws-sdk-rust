@@ -3,6 +3,23 @@ pub use crate::operation::create_edge_packaging_job::_create_edge_packaging_job_
 
 pub use crate::operation::create_edge_packaging_job::_create_edge_packaging_job_input::CreateEdgePackagingJobInputBuilder;
 
+impl CreateEdgePackagingJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_edge_packaging_job::CreateEdgePackagingJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_edge_packaging_job::CreateEdgePackagingJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_edge_packaging_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateEdgePackagingJob`.
 ///
 /// <p>Starts a SageMaker Edge Manager model packaging job. Edge Manager will use the model artifacts from the Amazon Simple Storage Service bucket that you specify. After the model has been packaged, Amazon SageMaker saves the resulting artifacts to an S3 bucket that you specify.</p>

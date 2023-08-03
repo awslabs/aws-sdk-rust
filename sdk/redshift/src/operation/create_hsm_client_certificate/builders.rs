@@ -3,6 +3,23 @@ pub use crate::operation::create_hsm_client_certificate::_create_hsm_client_cert
 
 pub use crate::operation::create_hsm_client_certificate::_create_hsm_client_certificate_input::CreateHsmClientCertificateInputBuilder;
 
+impl CreateHsmClientCertificateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_hsm_client_certificate::CreateHsmClientCertificateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_hsm_client_certificate::CreateHsmClientCertificateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_hsm_client_certificate();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateHsmClientCertificate`.
 ///
 /// <p>Creates an HSM client certificate that an Amazon Redshift cluster will use to connect to the client's HSM in order to store and retrieve the keys used to encrypt the cluster databases.</p>

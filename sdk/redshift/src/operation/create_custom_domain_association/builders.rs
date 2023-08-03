@@ -3,6 +3,23 @@ pub use crate::operation::create_custom_domain_association::_create_custom_domai
 
 pub use crate::operation::create_custom_domain_association::_create_custom_domain_association_input::CreateCustomDomainAssociationInputBuilder;
 
+impl CreateCustomDomainAssociationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_custom_domain_association::CreateCustomDomainAssociationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_custom_domain_association::CreateCustomDomainAssociationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_custom_domain_association();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateCustomDomainAssociation`.
 ///
 /// <p>Used to create a custom domain name for a cluster. Properties include the custom domain name, the cluster the custom domain is associated with, and the certificate Amazon Resource Name (ARN).</p>

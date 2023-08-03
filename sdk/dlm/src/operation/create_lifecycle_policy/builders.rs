@@ -3,6 +3,23 @@ pub use crate::operation::create_lifecycle_policy::_create_lifecycle_policy_outp
 
 pub use crate::operation::create_lifecycle_policy::_create_lifecycle_policy_input::CreateLifecyclePolicyInputBuilder;
 
+impl CreateLifecyclePolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_lifecycle_policy::CreateLifecyclePolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_lifecycle_policy::CreateLifecyclePolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_lifecycle_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateLifecyclePolicy`.
 ///
 /// <p>Creates a policy to manage the lifecycle of the specified Amazon Web Services resources. You can create up to 100 lifecycle policies.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::reset_fpga_image_attribute::_reset_fpga_image_attribut
 
 pub use crate::operation::reset_fpga_image_attribute::_reset_fpga_image_attribute_input::ResetFpgaImageAttributeInputBuilder;
 
+impl ResetFpgaImageAttributeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::reset_fpga_image_attribute::ResetFpgaImageAttributeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::reset_fpga_image_attribute::ResetFpgaImageAttributeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.reset_fpga_image_attribute();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ResetFpgaImageAttribute`.
 ///
 /// <p>Resets the specified attribute of the specified Amazon FPGA Image (AFI) to its default value. You can only reset the load permission attribute.</p>

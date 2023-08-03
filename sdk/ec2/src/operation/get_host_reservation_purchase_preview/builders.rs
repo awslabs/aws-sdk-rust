@@ -3,6 +3,17 @@ pub use crate::operation::get_host_reservation_purchase_preview::_get_host_reser
 
 pub use crate::operation::get_host_reservation_purchase_preview::_get_host_reservation_purchase_preview_input::GetHostReservationPurchasePreviewInputBuilder;
 
+impl GetHostReservationPurchasePreviewInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_host_reservation_purchase_preview::GetHostReservationPurchasePreviewOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_host_reservation_purchase_preview::GetHostReservationPurchasePreviewError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_host_reservation_purchase_preview();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetHostReservationPurchasePreview`.
 ///
 /// <p>Preview a reservation purchase with configurations that match those of your Dedicated Host. You must have active Dedicated Hosts in your account before you purchase a reservation.</p>

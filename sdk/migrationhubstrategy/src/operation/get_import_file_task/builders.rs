@@ -3,6 +3,23 @@ pub use crate::operation::get_import_file_task::_get_import_file_task_output::Ge
 
 pub use crate::operation::get_import_file_task::_get_import_file_task_input::GetImportFileTaskInputBuilder;
 
+impl GetImportFileTaskInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_import_file_task::GetImportFileTaskOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_import_file_task::GetImportFileTaskError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_import_file_task();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetImportFileTask`.
 ///
 /// <p> Retrieves the details about a specific import task. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_load_balancer::_create_load_balancer_output::Cr
 
 pub use crate::operation::create_load_balancer::_create_load_balancer_input::CreateLoadBalancerInputBuilder;
 
+impl CreateLoadBalancerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_load_balancer::CreateLoadBalancerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_load_balancer::CreateLoadBalancerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_load_balancer();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateLoadBalancer`.
 ///
 /// <p>Creates a Lightsail load balancer. To learn more about deciding whether to load balance your application, see <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/configure-lightsail-instances-for-load-balancing">Configure your Lightsail instances for load balancing</a>. You can create up to 5 load balancers per AWS Region in your account.</p>

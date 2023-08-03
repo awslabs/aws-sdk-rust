@@ -3,6 +3,23 @@ pub use crate::operation::update_backend_job::_update_backend_job_output::Update
 
 pub use crate::operation::update_backend_job::_update_backend_job_input::UpdateBackendJobInputBuilder;
 
+impl UpdateBackendJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_backend_job::UpdateBackendJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_backend_job::UpdateBackendJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_backend_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateBackendJob`.
 ///
 /// <p>Updates a specific job.</p>

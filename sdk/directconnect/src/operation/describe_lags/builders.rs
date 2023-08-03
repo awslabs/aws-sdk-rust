@@ -3,6 +3,23 @@ pub use crate::operation::describe_lags::_describe_lags_output::DescribeLagsOutp
 
 pub use crate::operation::describe_lags::_describe_lags_input::DescribeLagsInputBuilder;
 
+impl DescribeLagsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_lags::DescribeLagsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_lags::DescribeLagsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_lags();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeLags`.
 ///
 /// <p>Describes all your link aggregation groups (LAG) or the specified LAG.</p>

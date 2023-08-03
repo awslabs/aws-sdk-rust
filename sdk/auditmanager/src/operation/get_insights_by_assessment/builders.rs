@@ -3,6 +3,23 @@ pub use crate::operation::get_insights_by_assessment::_get_insights_by_assessmen
 
 pub use crate::operation::get_insights_by_assessment::_get_insights_by_assessment_input::GetInsightsByAssessmentInputBuilder;
 
+impl GetInsightsByAssessmentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_insights_by_assessment::GetInsightsByAssessmentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_insights_by_assessment::GetInsightsByAssessmentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_insights_by_assessment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetInsightsByAssessment`.
 ///
 /// <p>Gets the latest analytics data for a specific active assessment. </p>

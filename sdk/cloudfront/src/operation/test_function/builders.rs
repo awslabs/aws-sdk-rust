@@ -3,6 +3,23 @@ pub use crate::operation::test_function::_test_function_output::TestFunctionOutp
 
 pub use crate::operation::test_function::_test_function_input::TestFunctionInputBuilder;
 
+impl TestFunctionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::test_function::TestFunctionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::test_function::TestFunctionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.test_function();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `TestFunction`.
 ///
 /// <p>Tests a CloudFront function.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::start_remediation_execution::_start_remediation_execut
 
 pub use crate::operation::start_remediation_execution::_start_remediation_execution_input::StartRemediationExecutionInputBuilder;
 
+impl StartRemediationExecutionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_remediation_execution::StartRemediationExecutionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_remediation_execution::StartRemediationExecutionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_remediation_execution();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartRemediationExecution`.
 ///
 /// <p>Runs an on-demand remediation for the specified Config rules against the last known remediation configuration. It runs an execution against the current state of your resources. Remediation execution is asynchronous.</p>

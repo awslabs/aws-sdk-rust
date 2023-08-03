@@ -3,6 +3,23 @@ pub use crate::operation::get_server_certificate::_get_server_certificate_output
 
 pub use crate::operation::get_server_certificate::_get_server_certificate_input::GetServerCertificateInputBuilder;
 
+impl GetServerCertificateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_server_certificate::GetServerCertificateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_server_certificate::GetServerCertificateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_server_certificate();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetServerCertificate`.
 ///
 /// <p>Retrieves information about the specified server certificate stored in IAM.</p>

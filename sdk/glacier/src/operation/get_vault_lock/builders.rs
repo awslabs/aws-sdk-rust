@@ -3,6 +3,23 @@ pub use crate::operation::get_vault_lock::_get_vault_lock_output::GetVaultLockOu
 
 pub use crate::operation::get_vault_lock::_get_vault_lock_input::GetVaultLockInputBuilder;
 
+impl GetVaultLockInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_vault_lock::GetVaultLockOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_vault_lock::GetVaultLockError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_vault_lock();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetVaultLock`.
 ///
 /// <p>This operation retrieves the following attributes from the <code>lock-policy</code> subresource set on the specified vault: </p>

@@ -3,6 +3,23 @@ pub use crate::operation::opt_out_speaker::_opt_out_speaker_output::OptOutSpeake
 
 pub use crate::operation::opt_out_speaker::_opt_out_speaker_input::OptOutSpeakerInputBuilder;
 
+impl OptOutSpeakerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::opt_out_speaker::OptOutSpeakerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::opt_out_speaker::OptOutSpeakerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.opt_out_speaker();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `OptOutSpeaker`.
 ///
 /// <p>Opts out a speaker from Voice ID. A speaker can be opted out regardless of whether or not they already exist in Voice ID. If they don't yet exist, a new speaker is created in an opted out state. If they already exist, their existing status is overridden and they are opted out. Enrollment and evaluation authentication requests are rejected for opted out speakers, and opted out speakers have no voice embeddings stored in Voice ID.</p>

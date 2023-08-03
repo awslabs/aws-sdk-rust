@@ -3,6 +3,23 @@ pub use crate::operation::dismiss_user_contact::_dismiss_user_contact_output::Di
 
 pub use crate::operation::dismiss_user_contact::_dismiss_user_contact_input::DismissUserContactInputBuilder;
 
+impl DismissUserContactInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::dismiss_user_contact::DismissUserContactOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::dismiss_user_contact::DismissUserContactError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.dismiss_user_contact();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DismissUserContact`.
 ///
 /// <p>Dismisses contacts from an agent’s CCP and returns the agent to an available state, which allows the agent to receive a new routed contact. Contacts can only be dismissed if they are in a <code>MISSED</code>, <code>ERROR</code>, <code>ENDED</code>, or <code>REJECTED</code> state in the <a href="https://docs.aws.amazon.com/connect/latest/adminguide/about-contact-states.html">Agent Event Stream</a>.</p>

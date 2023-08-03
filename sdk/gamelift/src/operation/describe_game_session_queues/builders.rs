@@ -3,6 +3,23 @@ pub use crate::operation::describe_game_session_queues::_describe_game_session_q
 
 pub use crate::operation::describe_game_session_queues::_describe_game_session_queues_input::DescribeGameSessionQueuesInputBuilder;
 
+impl DescribeGameSessionQueuesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_game_session_queues::DescribeGameSessionQueuesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_game_session_queues::DescribeGameSessionQueuesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_game_session_queues();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeGameSessionQueues`.
 ///
 /// <p>Retrieves the properties for one or more game session queues. When requesting multiple queues, use the pagination parameters to retrieve results as a set of sequential pages. When specifying a list of queues, objects are returned only for queues that currently exist in the Region.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_session_token::_get_session_token_output::GetSessi
 
 pub use crate::operation::get_session_token::_get_session_token_input::GetSessionTokenInputBuilder;
 
+impl GetSessionTokenInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_session_token::GetSessionTokenOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_session_token::GetSessionTokenError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_session_token();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetSessionToken`.
 ///
 /// <p>Returns a set of temporary credentials for an Amazon Web Services account or IAM user. The credentials consist of an access key ID, a secret access key, and a security token. Typically, you use <code>GetSessionToken</code> if you want to use MFA to protect programmatic calls to specific Amazon Web Services API operations like Amazon EC2 <code>StopInstances</code>.</p>

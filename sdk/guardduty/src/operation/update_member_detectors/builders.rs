@@ -3,6 +3,23 @@ pub use crate::operation::update_member_detectors::_update_member_detectors_outp
 
 pub use crate::operation::update_member_detectors::_update_member_detectors_input::UpdateMemberDetectorsInputBuilder;
 
+impl UpdateMemberDetectorsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_member_detectors::UpdateMemberDetectorsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_member_detectors::UpdateMemberDetectorsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_member_detectors();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateMemberDetectors`.
 ///
 /// <p>Contains information on member accounts to be updated.</p>

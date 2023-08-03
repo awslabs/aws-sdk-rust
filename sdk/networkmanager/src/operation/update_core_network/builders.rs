@@ -3,6 +3,23 @@ pub use crate::operation::update_core_network::_update_core_network_output::Upda
 
 pub use crate::operation::update_core_network::_update_core_network_input::UpdateCoreNetworkInputBuilder;
 
+impl UpdateCoreNetworkInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_core_network::UpdateCoreNetworkOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_core_network::UpdateCoreNetworkError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_core_network();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateCoreNetwork`.
 ///
 /// <p>Updates the description of a core network.</p>

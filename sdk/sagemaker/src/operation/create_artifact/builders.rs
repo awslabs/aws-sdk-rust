@@ -3,6 +3,23 @@ pub use crate::operation::create_artifact::_create_artifact_output::CreateArtifa
 
 pub use crate::operation::create_artifact::_create_artifact_input::CreateArtifactInputBuilder;
 
+impl CreateArtifactInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_artifact::CreateArtifactOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_artifact::CreateArtifactError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_artifact();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateArtifact`.
 ///
 /// <p>Creates an <i>artifact</i>. An artifact is a lineage tracking entity that represents a URI addressable object or data. Some examples are the S3 URI of a dataset and the ECR registry path of an image. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/lineage-tracking.html">Amazon SageMaker ML Lineage Tracking</a>.</p>

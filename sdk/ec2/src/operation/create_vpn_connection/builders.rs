@@ -3,6 +3,23 @@ pub use crate::operation::create_vpn_connection::_create_vpn_connection_output::
 
 pub use crate::operation::create_vpn_connection::_create_vpn_connection_input::CreateVpnConnectionInputBuilder;
 
+impl CreateVpnConnectionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_vpn_connection::CreateVpnConnectionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_vpn_connection::CreateVpnConnectionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_vpn_connection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateVpnConnection`.
 ///
 /// <p>Creates a VPN connection between an existing virtual private gateway or transit gateway and a customer gateway. The supported connection type is <code>ipsec.1</code>.</p>

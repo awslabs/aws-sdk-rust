@@ -3,6 +3,23 @@ pub use crate::operation::update_gateway::_update_gateway_output::UpdateGatewayO
 
 pub use crate::operation::update_gateway::_update_gateway_input::UpdateGatewayInputBuilder;
 
+impl UpdateGatewayInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_gateway::UpdateGatewayOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_gateway::UpdateGatewayError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_gateway();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateGateway`.
 ///
 /// <p>Updates a gateway's name.</p>

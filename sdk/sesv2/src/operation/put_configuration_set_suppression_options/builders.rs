@@ -3,6 +3,17 @@ pub use crate::operation::put_configuration_set_suppression_options::_put_config
 
 pub use crate::operation::put_configuration_set_suppression_options::_put_configuration_set_suppression_options_input::PutConfigurationSetSuppressionOptionsInputBuilder;
 
+impl PutConfigurationSetSuppressionOptionsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::put_configuration_set_suppression_options::PutConfigurationSetSuppressionOptionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_configuration_set_suppression_options::PutConfigurationSetSuppressionOptionsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.put_configuration_set_suppression_options();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutConfigurationSetSuppressionOptions`.
 ///
 /// <p>Specify the account suppression list preferences for a configuration set.</p>

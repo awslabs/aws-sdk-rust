@@ -3,6 +3,23 @@ pub use crate::operation::list_import_file_task::_list_import_file_task_output::
 
 pub use crate::operation::list_import_file_task::_list_import_file_task_input::ListImportFileTaskInputBuilder;
 
+impl ListImportFileTaskInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_import_file_task::ListImportFileTaskOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_import_file_task::ListImportFileTaskError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_import_file_task();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListImportFileTask`.
 ///
 /// <p> Retrieves a list of all the imports performed. </p>

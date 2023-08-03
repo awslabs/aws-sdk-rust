@@ -3,6 +3,23 @@ pub use crate::operation::create_direct_connect_gateway::_create_direct_connect_
 
 pub use crate::operation::create_direct_connect_gateway::_create_direct_connect_gateway_input::CreateDirectConnectGatewayInputBuilder;
 
+impl CreateDirectConnectGatewayInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_direct_connect_gateway::CreateDirectConnectGatewayOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_direct_connect_gateway::CreateDirectConnectGatewayError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_direct_connect_gateway();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateDirectConnectGateway`.
 ///
 /// <p>Creates a Direct Connect gateway, which is an intermediate object that enables you to connect a set of virtual interfaces and virtual private gateways. A Direct Connect gateway is global and visible in any Amazon Web Services Region after it is created. The virtual interfaces and virtual private gateways that are connected through a Direct Connect gateway can be in different Amazon Web Services Regions. This enables you to connect to a VPC in any Region, regardless of the Region in which the virtual interfaces are located, and pass traffic between them.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_resource_profile::_get_resource_profile_output::Ge
 
 pub use crate::operation::get_resource_profile::_get_resource_profile_input::GetResourceProfileInputBuilder;
 
+impl GetResourceProfileInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_resource_profile::GetResourceProfileOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_resource_profile::GetResourceProfileError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_resource_profile();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetResourceProfile`.
 ///
 /// <p>Retrieves (queries) sensitive data discovery statistics and the sensitivity score for an S3 bucket.</p>

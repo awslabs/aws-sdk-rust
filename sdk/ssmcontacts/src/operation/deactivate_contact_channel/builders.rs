@@ -3,6 +3,23 @@ pub use crate::operation::deactivate_contact_channel::_deactivate_contact_channe
 
 pub use crate::operation::deactivate_contact_channel::_deactivate_contact_channel_input::DeactivateContactChannelInputBuilder;
 
+impl DeactivateContactChannelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::deactivate_contact_channel::DeactivateContactChannelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::deactivate_contact_channel::DeactivateContactChannelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.deactivate_contact_channel();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeactivateContactChannel`.
 ///
 /// <p>To no longer receive Incident Manager engagements to a contact channel, you can deactivate the channel.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::analyze_expense::_analyze_expense_output::AnalyzeExpen
 
 pub use crate::operation::analyze_expense::_analyze_expense_input::AnalyzeExpenseInputBuilder;
 
+impl AnalyzeExpenseInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::analyze_expense::AnalyzeExpenseOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::analyze_expense::AnalyzeExpenseError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.analyze_expense();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AnalyzeExpense`.
 ///
 /// <p> <code>AnalyzeExpense</code> synchronously analyzes an input document for financially related relationships between text.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_user_attributes::_delete_user_attributes_output
 
 pub use crate::operation::delete_user_attributes::_delete_user_attributes_input::DeleteUserAttributesInputBuilder;
 
+impl DeleteUserAttributesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_user_attributes::DeleteUserAttributesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_user_attributes::DeleteUserAttributesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_user_attributes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteUserAttributes`.
 ///
 /// <p>Deletes the attributes for a user.</p>

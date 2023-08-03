@@ -3,6 +3,23 @@ pub use crate::operation::delete_instance::_delete_instance_output::DeleteInstan
 
 pub use crate::operation::delete_instance::_delete_instance_input::DeleteInstanceInputBuilder;
 
+impl DeleteInstanceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_instance::DeleteInstanceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_instance::DeleteInstanceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_instance();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteInstance`.
 ///
 /// <p>Deletes a specified instance, which terminates the associated Amazon EC2 instance. You must stop an instance before you can delete it.</p>

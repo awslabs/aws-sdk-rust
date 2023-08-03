@@ -3,6 +3,23 @@ pub use crate::operation::describe_backups::_describe_backups_output::DescribeBa
 
 pub use crate::operation::describe_backups::_describe_backups_input::DescribeBackupsInputBuilder;
 
+impl DescribeBackupsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_backups::DescribeBackupsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_backups::DescribeBackupsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_backups();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeBackups`.
 ///
 /// <p>Returns the description of a specific Amazon FSx backup, if a <code>BackupIds</code> value is provided for that backup. Otherwise, it returns all backups owned by your Amazon Web Services account in the Amazon Web Services Region of the endpoint that you're calling.</p>

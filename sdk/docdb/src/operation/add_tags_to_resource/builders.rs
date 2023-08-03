@@ -3,6 +3,23 @@ pub use crate::operation::add_tags_to_resource::_add_tags_to_resource_output::Ad
 
 pub use crate::operation::add_tags_to_resource::_add_tags_to_resource_input::AddTagsToResourceInputBuilder;
 
+impl AddTagsToResourceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::add_tags_to_resource::AddTagsToResourceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::add_tags_to_resource::AddTagsToResourceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.add_tags_to_resource();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AddTagsToResource`.
 ///
 /// <p>Adds metadata tags to an Amazon DocumentDB resource. You can use these tags with cost allocation reporting to track costs that are associated with Amazon DocumentDB resources or in a <code>Condition</code> statement in an Identity and Access Management (IAM) policy for Amazon DocumentDB.</p>

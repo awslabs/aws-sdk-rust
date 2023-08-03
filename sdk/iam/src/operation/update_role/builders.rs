@@ -3,6 +3,23 @@ pub use crate::operation::update_role::_update_role_output::UpdateRoleOutputBuil
 
 pub use crate::operation::update_role::_update_role_input::UpdateRoleInputBuilder;
 
+impl UpdateRoleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_role::UpdateRoleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_role::UpdateRoleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_role();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateRole`.
 ///
 /// <p>Updates the description or maximum session duration setting of a role.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_transform_job::_create_transform_job_output::Cr
 
 pub use crate::operation::create_transform_job::_create_transform_job_input::CreateTransformJobInputBuilder;
 
+impl CreateTransformJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_transform_job::CreateTransformJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_transform_job::CreateTransformJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_transform_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateTransformJob`.
 ///
 /// <p>Starts a transform job. A transform job uses a trained model to get inferences on a dataset and saves these results to an Amazon S3 location that you specify.</p>

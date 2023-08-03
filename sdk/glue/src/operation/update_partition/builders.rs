@@ -3,6 +3,23 @@ pub use crate::operation::update_partition::_update_partition_output::UpdatePart
 
 pub use crate::operation::update_partition::_update_partition_input::UpdatePartitionInputBuilder;
 
+impl UpdatePartitionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_partition::UpdatePartitionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_partition::UpdatePartitionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_partition();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdatePartition`.
 ///
 /// <p>Updates a partition.</p>

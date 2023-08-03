@@ -3,6 +3,23 @@ pub use crate::operation::list_qualification_requests::_list_qualification_reque
 
 pub use crate::operation::list_qualification_requests::_list_qualification_requests_input::ListQualificationRequestsInputBuilder;
 
+impl ListQualificationRequestsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_qualification_requests::ListQualificationRequestsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_qualification_requests::ListQualificationRequestsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_qualification_requests();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListQualificationRequests`.
 ///
 /// <p> The <code>ListQualificationRequests</code> operation retrieves requests for Qualifications of a particular Qualification type. The owner of the Qualification type calls this operation to poll for pending requests, and accepts them using the AcceptQualification operation. </p>

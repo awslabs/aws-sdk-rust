@@ -3,6 +3,23 @@ pub use crate::operation::get_ipam_resource_cidrs::_get_ipam_resource_cidrs_outp
 
 pub use crate::operation::get_ipam_resource_cidrs::_get_ipam_resource_cidrs_input::GetIpamResourceCidrsInputBuilder;
 
+impl GetIpamResourceCidrsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_ipam_resource_cidrs::GetIpamResourceCidrsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_ipam_resource_cidrs::GetIpamResourceCidrsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_ipam_resource_cidrs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetIpamResourceCidrs`.
 ///
 /// <p>Returns resource CIDRs managed by IPAM in a given scope. If an IPAM is associated with more than one resource discovery, the resource CIDRs across all of the resource discoveries is returned. A resource discovery is an IPAM component that enables IPAM to manage and monitor resources that belong to the owning account.</p>

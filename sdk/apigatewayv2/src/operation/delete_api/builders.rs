@@ -3,6 +3,23 @@ pub use crate::operation::delete_api::_delete_api_output::DeleteApiOutputBuilder
 
 pub use crate::operation::delete_api::_delete_api_input::DeleteApiInputBuilder;
 
+impl DeleteApiInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_api::DeleteApiOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_api::DeleteApiError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_api();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteApi`.
 ///
 /// <p>Deletes an Api resource.</p>

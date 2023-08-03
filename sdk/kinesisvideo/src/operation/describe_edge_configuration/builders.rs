@@ -3,6 +3,23 @@ pub use crate::operation::describe_edge_configuration::_describe_edge_configurat
 
 pub use crate::operation::describe_edge_configuration::_describe_edge_configuration_input::DescribeEdgeConfigurationInputBuilder;
 
+impl DescribeEdgeConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_edge_configuration::DescribeEdgeConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_edge_configuration::DescribeEdgeConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_edge_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeEdgeConfiguration`.
 ///
 /// <p>Describes a stream’s edge configuration that was set using the <code>StartEdgeConfigurationUpdate</code> API and the latest status of the edge agent's recorder and uploader jobs. Use this API to get the status of the configuration to determine if the configuration is in sync with the Edge Agent. Use this API to evaluate the health of the Edge Agent.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_graphql_api::_create_graphql_api_output::Create
 
 pub use crate::operation::create_graphql_api::_create_graphql_api_input::CreateGraphqlApiInputBuilder;
 
+impl CreateGraphqlApiInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_graphql_api::CreateGraphqlApiOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_graphql_api::CreateGraphqlApiError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_graphql_api();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateGraphqlApi`.
 ///
 /// <p>Creates a <code>GraphqlApi</code> object.</p>

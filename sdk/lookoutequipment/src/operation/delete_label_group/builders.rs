@@ -3,6 +3,23 @@ pub use crate::operation::delete_label_group::_delete_label_group_output::Delete
 
 pub use crate::operation::delete_label_group::_delete_label_group_input::DeleteLabelGroupInputBuilder;
 
+impl DeleteLabelGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_label_group::DeleteLabelGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_label_group::DeleteLabelGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_label_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteLabelGroup`.
 ///
 /// <p> Deletes a group of labels. </p>

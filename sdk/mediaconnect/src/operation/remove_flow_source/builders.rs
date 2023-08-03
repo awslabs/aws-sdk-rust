@@ -3,6 +3,23 @@ pub use crate::operation::remove_flow_source::_remove_flow_source_output::Remove
 
 pub use crate::operation::remove_flow_source::_remove_flow_source_input::RemoveFlowSourceInputBuilder;
 
+impl RemoveFlowSourceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::remove_flow_source::RemoveFlowSourceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::remove_flow_source::RemoveFlowSourceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.remove_flow_source();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RemoveFlowSource`.
 ///
 /// Removes a source from an existing flow. This request can be made only if there is more than one source on the flow.

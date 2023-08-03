@@ -3,6 +3,23 @@ pub use crate::operation::reject_certificate_transfer::_reject_certificate_trans
 
 pub use crate::operation::reject_certificate_transfer::_reject_certificate_transfer_input::RejectCertificateTransferInputBuilder;
 
+impl RejectCertificateTransferInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::reject_certificate_transfer::RejectCertificateTransferOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::reject_certificate_transfer::RejectCertificateTransferError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.reject_certificate_transfer();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RejectCertificateTransfer`.
 ///
 /// <p>Rejects a pending certificate transfer. After IoT rejects a certificate transfer, the certificate status changes from <b>PENDING_TRANSFER</b> to <b>INACTIVE</b>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_gateway_responses::_get_gateway_responses_output::
 
 pub use crate::operation::get_gateway_responses::_get_gateway_responses_input::GetGatewayResponsesInputBuilder;
 
+impl GetGatewayResponsesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_gateway_responses::GetGatewayResponsesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_gateway_responses::GetGatewayResponsesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_gateway_responses();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetGatewayResponses`.
 ///
 /// <p>Gets the GatewayResponses collection on the given RestApi. If an API developer has not added any definitions for gateway responses, the result will be the API Gateway-generated default GatewayResponses collection for the supported response types.</p>

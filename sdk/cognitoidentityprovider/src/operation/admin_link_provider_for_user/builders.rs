@@ -3,6 +3,23 @@ pub use crate::operation::admin_link_provider_for_user::_admin_link_provider_for
 
 pub use crate::operation::admin_link_provider_for_user::_admin_link_provider_for_user_input::AdminLinkProviderForUserInputBuilder;
 
+impl AdminLinkProviderForUserInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::admin_link_provider_for_user::AdminLinkProviderForUserOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::admin_link_provider_for_user::AdminLinkProviderForUserError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.admin_link_provider_for_user();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AdminLinkProviderForUser`.
 ///
 /// <p>Links an existing user account in a user pool (<code>DestinationUser</code>) to an identity from an external IdP (<code>SourceUser</code>) based on a specified attribute name and value from the external IdP. This allows you to create a link from the existing user account to an external federated user identity that has not yet been used to sign in. You can then use the federated user identity to sign in as the existing user account. </p>

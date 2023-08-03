@@ -3,6 +3,23 @@ pub use crate::operation::delete_assessment_framework::_delete_assessment_framew
 
 pub use crate::operation::delete_assessment_framework::_delete_assessment_framework_input::DeleteAssessmentFrameworkInputBuilder;
 
+impl DeleteAssessmentFrameworkInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_assessment_framework::DeleteAssessmentFrameworkOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_assessment_framework::DeleteAssessmentFrameworkError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_assessment_framework();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteAssessmentFramework`.
 ///
 /// <p> Deletes a custom framework in Audit Manager. </p>

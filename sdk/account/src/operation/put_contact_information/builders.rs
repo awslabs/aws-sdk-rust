@@ -3,6 +3,23 @@ pub use crate::operation::put_contact_information::_put_contact_information_outp
 
 pub use crate::operation::put_contact_information::_put_contact_information_input::PutContactInformationInputBuilder;
 
+impl PutContactInformationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_contact_information::PutContactInformationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_contact_information::PutContactInformationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_contact_information();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutContactInformation`.
 ///
 /// <p>Updates the primary contact information of an Amazon Web Services account.</p>

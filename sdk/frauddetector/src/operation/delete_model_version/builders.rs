@@ -3,6 +3,23 @@ pub use crate::operation::delete_model_version::_delete_model_version_output::De
 
 pub use crate::operation::delete_model_version::_delete_model_version_input::DeleteModelVersionInputBuilder;
 
+impl DeleteModelVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_model_version::DeleteModelVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_model_version::DeleteModelVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_model_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteModelVersion`.
 ///
 /// <p>Deletes a model version.</p>

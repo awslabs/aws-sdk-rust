@@ -3,6 +3,23 @@ pub use crate::operation::describe_groups::_describe_groups_output::DescribeGrou
 
 pub use crate::operation::describe_groups::_describe_groups_input::DescribeGroupsInputBuilder;
 
+impl DescribeGroupsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_groups::DescribeGroupsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_groups::DescribeGroupsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_groups();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeGroups`.
 ///
 /// <p>Describes the groups specified by the query. Groups are defined by the underlying Active Directory.</p>

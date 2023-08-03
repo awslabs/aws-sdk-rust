@@ -3,6 +3,23 @@ pub use crate::operation::redact_conversation_message::_redact_conversation_mess
 
 pub use crate::operation::redact_conversation_message::_redact_conversation_message_input::RedactConversationMessageInputBuilder;
 
+impl RedactConversationMessageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::redact_conversation_message::RedactConversationMessageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::redact_conversation_message::RedactConversationMessageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.redact_conversation_message();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RedactConversationMessage`.
 ///
 /// <p>Redacts the specified message from the specified Amazon Chime conversation.</p>

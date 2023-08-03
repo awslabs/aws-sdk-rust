@@ -3,6 +3,17 @@ pub use crate::operation::delete_transit_gateway_vpc_attachment::_delete_transit
 
 pub use crate::operation::delete_transit_gateway_vpc_attachment::_delete_transit_gateway_vpc_attachment_input::DeleteTransitGatewayVpcAttachmentInputBuilder;
 
+impl DeleteTransitGatewayVpcAttachmentInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_transit_gateway_vpc_attachment::DeleteTransitGatewayVpcAttachmentOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_transit_gateway_vpc_attachment::DeleteTransitGatewayVpcAttachmentError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.delete_transit_gateway_vpc_attachment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteTransitGatewayVpcAttachment`.
 ///
 /// <p>Deletes the specified VPC attachment.</p>

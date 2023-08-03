@@ -3,6 +3,23 @@ pub use crate::operation::create_business_report_schedule::_create_business_repo
 
 pub use crate::operation::create_business_report_schedule::_create_business_report_schedule_input::CreateBusinessReportScheduleInputBuilder;
 
+impl CreateBusinessReportScheduleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_business_report_schedule::CreateBusinessReportScheduleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_business_report_schedule::CreateBusinessReportScheduleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_business_report_schedule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateBusinessReportSchedule`.
 ///
 /// <p>Creates a recurring schedule for usage reports to deliver to the specified S3 location with a specified daily or weekly interval.</p>

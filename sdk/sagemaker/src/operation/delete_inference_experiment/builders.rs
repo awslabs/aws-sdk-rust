@@ -3,6 +3,23 @@ pub use crate::operation::delete_inference_experiment::_delete_inference_experim
 
 pub use crate::operation::delete_inference_experiment::_delete_inference_experiment_input::DeleteInferenceExperimentInputBuilder;
 
+impl DeleteInferenceExperimentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_inference_experiment::DeleteInferenceExperimentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_inference_experiment::DeleteInferenceExperimentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_inference_experiment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteInferenceExperiment`.
 ///
 /// <p>Deletes an inference experiment.</p> <note>

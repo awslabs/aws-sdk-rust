@@ -3,6 +3,23 @@ pub use crate::operation::delete_multi_region_access_point::_delete_multi_region
 
 pub use crate::operation::delete_multi_region_access_point::_delete_multi_region_access_point_input::DeleteMultiRegionAccessPointInputBuilder;
 
+impl DeleteMultiRegionAccessPointInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_multi_region_access_point::DeleteMultiRegionAccessPointOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_multi_region_access_point::DeleteMultiRegionAccessPointError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_multi_region_access_point();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteMultiRegionAccessPoint`.
 ///
 /// <p>Deletes a Multi-Region Access Point. This action does not delete the buckets associated with the Multi-Region Access Point, only the Multi-Region Access Point itself.</p>

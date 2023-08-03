@@ -3,6 +3,23 @@ pub use crate::operation::describe_time_series::_describe_time_series_output::De
 
 pub use crate::operation::describe_time_series::_describe_time_series_input::DescribeTimeSeriesInputBuilder;
 
+impl DescribeTimeSeriesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_time_series::DescribeTimeSeriesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_time_series::DescribeTimeSeriesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_time_series();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeTimeSeries`.
 ///
 /// <p>Retrieves information about a time series (data stream).</p>

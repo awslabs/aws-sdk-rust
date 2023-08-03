@@ -3,6 +3,17 @@ pub use crate::operation::put_voice_connector_emergency_calling_configuration::_
 
 pub use crate::operation::put_voice_connector_emergency_calling_configuration::_put_voice_connector_emergency_calling_configuration_input::PutVoiceConnectorEmergencyCallingConfigurationInputBuilder;
 
+impl PutVoiceConnectorEmergencyCallingConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::put_voice_connector_emergency_calling_configuration::PutVoiceConnectorEmergencyCallingConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_voice_connector_emergency_calling_configuration::PutVoiceConnectorEmergencyCallingConfigurationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.put_voice_connector_emergency_calling_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutVoiceConnectorEmergencyCallingConfiguration`.
 ///
 /// <p>Puts emergency calling configuration details to the specified Amazon Chime Voice Connector, such as emergency phone numbers and calling countries. Origination and termination settings must be enabled for the Amazon Chime Voice Connector before emergency calling can be configured.</p> <important>

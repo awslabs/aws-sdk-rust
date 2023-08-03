@@ -3,6 +3,23 @@ pub use crate::operation::list_builds::_list_builds_output::ListBuildsOutputBuil
 
 pub use crate::operation::list_builds::_list_builds_input::ListBuildsInputBuilder;
 
+impl ListBuildsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_builds::ListBuildsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_builds::ListBuildsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_builds();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListBuilds`.
 ///
 /// <p>Retrieves build resources for all builds associated with the Amazon Web Services account in use. You can limit results to builds that are in a specific status by using the <code>Status</code> parameter. Use the pagination parameters to retrieve results in a set of sequential pages. </p> <note>

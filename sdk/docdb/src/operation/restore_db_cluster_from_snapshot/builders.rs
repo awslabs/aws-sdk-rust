@@ -3,6 +3,23 @@ pub use crate::operation::restore_db_cluster_from_snapshot::_restore_db_cluster_
 
 pub use crate::operation::restore_db_cluster_from_snapshot::_restore_db_cluster_from_snapshot_input::RestoreDbClusterFromSnapshotInputBuilder;
 
+impl RestoreDbClusterFromSnapshotInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::restore_db_cluster_from_snapshot::RestoreDbClusterFromSnapshotOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::restore_db_cluster_from_snapshot::RestoreDBClusterFromSnapshotError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.restore_db_cluster_from_snapshot();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RestoreDBClusterFromSnapshot`.
 ///
 /// <p>Creates a new cluster from a snapshot or cluster snapshot.</p>

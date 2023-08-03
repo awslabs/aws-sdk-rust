@@ -3,6 +3,23 @@ pub use crate::operation::list_size_constraint_sets::_list_size_constraint_sets_
 
 pub use crate::operation::list_size_constraint_sets::_list_size_constraint_sets_input::ListSizeConstraintSetsInputBuilder;
 
+impl ListSizeConstraintSetsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_size_constraint_sets::ListSizeConstraintSetsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_size_constraint_sets::ListSizeConstraintSetsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_size_constraint_sets();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListSizeConstraintSets`.
 ///
 /// <note>

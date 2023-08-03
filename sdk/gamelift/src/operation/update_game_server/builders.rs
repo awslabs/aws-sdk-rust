@@ -3,6 +3,23 @@ pub use crate::operation::update_game_server::_update_game_server_output::Update
 
 pub use crate::operation::update_game_server::_update_game_server_input::UpdateGameServerInputBuilder;
 
+impl UpdateGameServerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_game_server::UpdateGameServerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_game_server::UpdateGameServerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_game_server();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateGameServer`.
 ///
 /// <p> <b>This operation is used with the Amazon GameLift FleetIQ solution and game server groups.</b> </p>

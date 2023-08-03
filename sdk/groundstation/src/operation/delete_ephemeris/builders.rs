@@ -3,6 +3,23 @@ pub use crate::operation::delete_ephemeris::_delete_ephemeris_output::DeleteEphe
 
 pub use crate::operation::delete_ephemeris::_delete_ephemeris_input::DeleteEphemerisInputBuilder;
 
+impl DeleteEphemerisInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_ephemeris::DeleteEphemerisOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_ephemeris::DeleteEphemerisError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_ephemeris();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteEphemeris`.
 ///
 /// <p>Deletes an ephemeris</p>

@@ -3,6 +3,23 @@ pub use crate::operation::copy_package_versions::_copy_package_versions_output::
 
 pub use crate::operation::copy_package_versions::_copy_package_versions_input::CopyPackageVersionsInputBuilder;
 
+impl CopyPackageVersionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::copy_package_versions::CopyPackageVersionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::copy_package_versions::CopyPackageVersionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.copy_package_versions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CopyPackageVersions`.
 ///
 /// <p> Copies package versions from one repository to another repository in the same domain. </p> <note>

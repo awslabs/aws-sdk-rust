@@ -3,6 +3,23 @@ pub use crate::operation::describe_delivery_channels::_describe_delivery_channel
 
 pub use crate::operation::describe_delivery_channels::_describe_delivery_channels_input::DescribeDeliveryChannelsInputBuilder;
 
+impl DescribeDeliveryChannelsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_delivery_channels::DescribeDeliveryChannelsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_delivery_channels::DescribeDeliveryChannelsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_delivery_channels();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeDeliveryChannels`.
 ///
 /// <p>Returns details about the specified delivery channel. If a delivery channel is not specified, this action returns the details of all delivery channels associated with the account.</p> <note>

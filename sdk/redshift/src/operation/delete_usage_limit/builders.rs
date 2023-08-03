@@ -3,6 +3,23 @@ pub use crate::operation::delete_usage_limit::_delete_usage_limit_output::Delete
 
 pub use crate::operation::delete_usage_limit::_delete_usage_limit_input::DeleteUsageLimitInputBuilder;
 
+impl DeleteUsageLimitInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_usage_limit::DeleteUsageLimitOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_usage_limit::DeleteUsageLimitError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_usage_limit();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteUsageLimit`.
 ///
 /// <p>Deletes a usage limit from a cluster.</p>

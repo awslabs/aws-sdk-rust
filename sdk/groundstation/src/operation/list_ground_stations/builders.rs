@@ -3,6 +3,23 @@ pub use crate::operation::list_ground_stations::_list_ground_stations_output::Li
 
 pub use crate::operation::list_ground_stations::_list_ground_stations_input::ListGroundStationsInputBuilder;
 
+impl ListGroundStationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_ground_stations::ListGroundStationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_ground_stations::ListGroundStationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_ground_stations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListGroundStations`.
 ///
 /// <p>Returns a list of ground stations. </p>

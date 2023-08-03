@@ -3,6 +3,23 @@ pub use crate::operation::update_notebook_metadata::_update_notebook_metadata_ou
 
 pub use crate::operation::update_notebook_metadata::_update_notebook_metadata_input::UpdateNotebookMetadataInputBuilder;
 
+impl UpdateNotebookMetadataInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_notebook_metadata::UpdateNotebookMetadataOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_notebook_metadata::UpdateNotebookMetadataError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_notebook_metadata();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateNotebookMetadata`.
 ///
 /// <p>Updates the metadata for a notebook.</p>

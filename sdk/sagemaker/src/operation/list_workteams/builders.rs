@@ -3,6 +3,23 @@ pub use crate::operation::list_workteams::_list_workteams_output::ListWorkteamsO
 
 pub use crate::operation::list_workteams::_list_workteams_input::ListWorkteamsInputBuilder;
 
+impl ListWorkteamsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_workteams::ListWorkteamsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_workteams::ListWorkteamsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_workteams();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListWorkteams`.
 ///
 /// <p>Gets a list of private work teams that you have defined in a region. The list may be empty if no work team satisfies the filter specified in the <code>NameContains</code> parameter.</p>

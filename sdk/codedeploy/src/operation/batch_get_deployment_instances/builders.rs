@@ -3,6 +3,23 @@ pub use crate::operation::batch_get_deployment_instances::_batch_get_deployment_
 
 pub use crate::operation::batch_get_deployment_instances::_batch_get_deployment_instances_input::BatchGetDeploymentInstancesInputBuilder;
 
+impl BatchGetDeploymentInstancesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_get_deployment_instances::BatchGetDeploymentInstancesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_get_deployment_instances();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchGetDeploymentInstances`.
 ///
 /// <note>

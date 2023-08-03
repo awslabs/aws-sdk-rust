@@ -3,6 +3,23 @@ pub use crate::operation::reject_data_share::_reject_data_share_output::RejectDa
 
 pub use crate::operation::reject_data_share::_reject_data_share_input::RejectDataShareInputBuilder;
 
+impl RejectDataShareInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::reject_data_share::RejectDataShareOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::reject_data_share::RejectDataShareError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.reject_data_share();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RejectDataShare`.
 ///
 /// <p>From a datashare consumer account, rejects the specified datashare.</p>

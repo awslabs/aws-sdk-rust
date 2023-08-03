@@ -3,6 +3,23 @@ pub use crate::operation::update_network_resource_metadata::_update_network_reso
 
 pub use crate::operation::update_network_resource_metadata::_update_network_resource_metadata_input::UpdateNetworkResourceMetadataInputBuilder;
 
+impl UpdateNetworkResourceMetadataInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_network_resource_metadata::UpdateNetworkResourceMetadataOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_network_resource_metadata::UpdateNetworkResourceMetadataError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_network_resource_metadata();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateNetworkResourceMetadata`.
 ///
 /// <p>Updates the resource metadata for the specified global network.</p>

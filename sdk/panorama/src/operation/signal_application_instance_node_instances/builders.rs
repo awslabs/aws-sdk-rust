@@ -3,6 +3,17 @@ pub use crate::operation::signal_application_instance_node_instances::_signal_ap
 
 pub use crate::operation::signal_application_instance_node_instances::_signal_application_instance_node_instances_input::SignalApplicationInstanceNodeInstancesInputBuilder;
 
+impl SignalApplicationInstanceNodeInstancesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesOutput, ::aws_smithy_http::result::SdkError<crate::operation::signal_application_instance_node_instances::SignalApplicationInstanceNodeInstancesError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.signal_application_instance_node_instances();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SignalApplicationInstanceNodeInstances`.
 ///
 /// <p>Signal camera nodes to stop or resume.</p>

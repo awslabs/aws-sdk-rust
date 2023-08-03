@@ -3,6 +3,17 @@ pub use crate::operation::get_context_keys_for_custom_policy::_get_context_keys_
 
 pub use crate::operation::get_context_keys_for_custom_policy::_get_context_keys_for_custom_policy_input::GetContextKeysForCustomPolicyInputBuilder;
 
+impl GetContextKeysForCustomPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_context_keys_for_custom_policy::GetContextKeysForCustomPolicyOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_context_keys_for_custom_policy::GetContextKeysForCustomPolicyError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_context_keys_for_custom_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetContextKeysForCustomPolicy`.
 ///
 /// <p>Gets a list of all of the context keys referenced in the input policies. The policies are supplied as a list of one or more strings. To get the context keys from policies associated with an IAM user, group, or role, use <code>GetContextKeysForPrincipalPolicy</code>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::modify_fleet::_modify_fleet_output::ModifyFleetOutputB
 
 pub use crate::operation::modify_fleet::_modify_fleet_input::ModifyFleetInputBuilder;
 
+impl ModifyFleetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_fleet::ModifyFleetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_fleet::ModifyFleetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_fleet();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyFleet`.
 ///
 /// <p>Modifies the specified EC2 Fleet.</p>

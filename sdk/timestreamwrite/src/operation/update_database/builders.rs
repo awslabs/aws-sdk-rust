@@ -3,6 +3,23 @@ pub use crate::operation::update_database::_update_database_output::UpdateDataba
 
 pub use crate::operation::update_database::_update_database_input::UpdateDatabaseInputBuilder;
 
+impl UpdateDatabaseInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_database::UpdateDatabaseOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_database::UpdateDatabaseError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_database();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateDatabase`.
 ///
 /// <p> Modifies the KMS key for an existing database. While updating the database, you must specify the database name and the identifier of the new KMS key to be used (<code>KmsKeyId</code>). If there are any concurrent <code>UpdateDatabase</code> requests, first writer wins. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::disable_metrics_collection::_disable_metrics_collectio
 
 pub use crate::operation::disable_metrics_collection::_disable_metrics_collection_input::DisableMetricsCollectionInputBuilder;
 
+impl DisableMetricsCollectionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disable_metrics_collection::DisableMetricsCollectionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disable_metrics_collection::DisableMetricsCollectionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disable_metrics_collection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisableMetricsCollection`.
 ///
 /// <p>Disables group metrics collection for the specified Auto Scaling group.</p>

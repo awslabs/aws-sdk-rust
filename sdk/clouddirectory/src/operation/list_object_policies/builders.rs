@@ -3,6 +3,23 @@ pub use crate::operation::list_object_policies::_list_object_policies_output::Li
 
 pub use crate::operation::list_object_policies::_list_object_policies_input::ListObjectPoliciesInputBuilder;
 
+impl ListObjectPoliciesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_object_policies::ListObjectPoliciesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_object_policies::ListObjectPoliciesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_object_policies();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListObjectPolicies`.
 ///
 /// <p>Returns policies attached to an object in pagination fashion.</p>

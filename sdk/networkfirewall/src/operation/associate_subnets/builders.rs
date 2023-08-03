@@ -3,6 +3,23 @@ pub use crate::operation::associate_subnets::_associate_subnets_output::Associat
 
 pub use crate::operation::associate_subnets::_associate_subnets_input::AssociateSubnetsInputBuilder;
 
+impl AssociateSubnetsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_subnets::AssociateSubnetsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_subnets::AssociateSubnetsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_subnets();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateSubnets`.
 ///
 /// <p>Associates the specified subnets in the Amazon VPC to the firewall. You can specify one subnet for each of the Availability Zones that the VPC spans. </p>

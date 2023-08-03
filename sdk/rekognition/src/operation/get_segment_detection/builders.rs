@@ -3,6 +3,23 @@ pub use crate::operation::get_segment_detection::_get_segment_detection_output::
 
 pub use crate::operation::get_segment_detection::_get_segment_detection_input::GetSegmentDetectionInputBuilder;
 
+impl GetSegmentDetectionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_segment_detection::GetSegmentDetectionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_segment_detection::GetSegmentDetectionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_segment_detection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetSegmentDetection`.
 ///
 /// <p>Gets the segment detection results of a Amazon Rekognition Video analysis started by <code>StartSegmentDetection</code>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::start_instance_refresh::_start_instance_refresh_output
 
 pub use crate::operation::start_instance_refresh::_start_instance_refresh_input::StartInstanceRefreshInputBuilder;
 
+impl StartInstanceRefreshInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_instance_refresh::StartInstanceRefreshOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_instance_refresh::StartInstanceRefreshError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_instance_refresh();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartInstanceRefresh`.
 ///
 /// <p>Starts an instance refresh. During an instance refresh, Amazon EC2 Auto Scaling performs a rolling update of instances in an Auto Scaling group. Instances are terminated first and then replaced, which temporarily reduces the capacity available within your Auto Scaling group.</p>

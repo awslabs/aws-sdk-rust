@@ -3,6 +3,23 @@ pub use crate::operation::list_xss_match_sets::_list_xss_match_sets_output::List
 
 pub use crate::operation::list_xss_match_sets::_list_xss_match_sets_input::ListXssMatchSetsInputBuilder;
 
+impl ListXssMatchSetsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_xss_match_sets::ListXssMatchSetsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_xss_match_sets::ListXssMatchSetsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_xss_match_sets();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListXssMatchSets`.
 ///
 /// <note>

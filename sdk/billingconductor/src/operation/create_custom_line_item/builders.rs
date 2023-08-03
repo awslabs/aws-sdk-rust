@@ -3,6 +3,23 @@ pub use crate::operation::create_custom_line_item::_create_custom_line_item_outp
 
 pub use crate::operation::create_custom_line_item::_create_custom_line_item_input::CreateCustomLineItemInputBuilder;
 
+impl CreateCustomLineItemInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_custom_line_item::CreateCustomLineItemOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_custom_line_item::CreateCustomLineItemError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_custom_line_item();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateCustomLineItem`.
 ///
 /// <p> Creates a custom line item that can be used to create a one-time fixed charge that can be applied to a single billing group for the current or previous billing period. The one-time fixed charge is either a fee or discount. </p>

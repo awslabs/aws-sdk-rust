@@ -3,6 +3,23 @@ pub use crate::operation::request_spot_fleet::_request_spot_fleet_output::Reques
 
 pub use crate::operation::request_spot_fleet::_request_spot_fleet_input::RequestSpotFleetInputBuilder;
 
+impl RequestSpotFleetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::request_spot_fleet::RequestSpotFleetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::request_spot_fleet::RequestSpotFleetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.request_spot_fleet();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RequestSpotFleet`.
 ///
 /// <p>Creates a Spot Fleet request.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::clone_stack::_clone_stack_output::CloneStackOutputBuil
 
 pub use crate::operation::clone_stack::_clone_stack_input::CloneStackInputBuilder;
 
+impl CloneStackInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::clone_stack::CloneStackOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::clone_stack::CloneStackError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.clone_stack();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CloneStack`.
 ///
 /// <p>Creates a clone of a specified stack. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/workingstacks-cloning.html">Clone a Stack</a>. By default, all parameters are set to the values used by the parent stack.</p>

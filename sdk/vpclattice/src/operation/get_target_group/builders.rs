@@ -3,6 +3,23 @@ pub use crate::operation::get_target_group::_get_target_group_output::GetTargetG
 
 pub use crate::operation::get_target_group::_get_target_group_input::GetTargetGroupInputBuilder;
 
+impl GetTargetGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_target_group::GetTargetGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_target_group::GetTargetGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_target_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetTargetGroup`.
 ///
 /// <p>Retrieves information about the specified target group.</p>

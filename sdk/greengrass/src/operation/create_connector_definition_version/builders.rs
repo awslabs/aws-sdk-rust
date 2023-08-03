@@ -3,6 +3,17 @@ pub use crate::operation::create_connector_definition_version::_create_connector
 
 pub use crate::operation::create_connector_definition_version::_create_connector_definition_version_input::CreateConnectorDefinitionVersionInputBuilder;
 
+impl CreateConnectorDefinitionVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::create_connector_definition_version::CreateConnectorDefinitionVersionOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_connector_definition_version::CreateConnectorDefinitionVersionError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.create_connector_definition_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateConnectorDefinitionVersion`.
 ///
 /// Creates a version of a connector definition which has already been defined.

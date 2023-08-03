@@ -3,6 +3,23 @@ pub use crate::operation::get_kx_changeset::_get_kx_changeset_output::GetKxChang
 
 pub use crate::operation::get_kx_changeset::_get_kx_changeset_input::GetKxChangesetInputBuilder;
 
+impl GetKxChangesetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_kx_changeset::GetKxChangesetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_kx_changeset::GetKxChangesetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_kx_changeset();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetKxChangeset`.
 ///
 /// <p>Returns information about a kdb changeset.</p>

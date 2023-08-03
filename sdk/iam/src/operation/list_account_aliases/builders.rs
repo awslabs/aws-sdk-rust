@@ -3,6 +3,23 @@ pub use crate::operation::list_account_aliases::_list_account_aliases_output::Li
 
 pub use crate::operation::list_account_aliases::_list_account_aliases_input::ListAccountAliasesInputBuilder;
 
+impl ListAccountAliasesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_account_aliases::ListAccountAliasesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_account_aliases::ListAccountAliasesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_account_aliases();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAccountAliases`.
 ///
 /// <p>Lists the account alias associated with the Amazon Web Services account (Note: you can have only one). For information about using an Amazon Web Services account alias, see <a href="https://docs.aws.amazon.com/signin/latest/userguide/CreateAccountAlias.html">Creating, deleting, and listing an Amazon Web Services account alias</a> in the <i>Amazon Web Services Sign-In User Guide</i>.</p>

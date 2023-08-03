@@ -3,6 +3,23 @@ pub use crate::operation::create_standby_workspaces::_create_standby_workspaces_
 
 pub use crate::operation::create_standby_workspaces::_create_standby_workspaces_input::CreateStandbyWorkspacesInputBuilder;
 
+impl CreateStandbyWorkspacesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_standby_workspaces::CreateStandbyWorkspacesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_standby_workspaces::CreateStandbyWorkspacesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_standby_workspaces();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateStandbyWorkspaces`.
 ///
 /// <p>Creates a standby WorkSpace in a secondary Region.</p>

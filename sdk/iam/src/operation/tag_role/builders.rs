@@ -3,6 +3,23 @@ pub use crate::operation::tag_role::_tag_role_output::TagRoleOutputBuilder;
 
 pub use crate::operation::tag_role::_tag_role_input::TagRoleInputBuilder;
 
+impl TagRoleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::tag_role::TagRoleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::tag_role::TagRoleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.tag_role();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `TagRole`.
 ///
 /// <p>Adds one or more tags to an IAM role. The role can be a regular role or a service-linked role. If a tag with the same key name already exists, then that tag is overwritten with the new value.</p>

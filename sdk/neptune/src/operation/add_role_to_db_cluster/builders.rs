@@ -3,6 +3,23 @@ pub use crate::operation::add_role_to_db_cluster::_add_role_to_db_cluster_output
 
 pub use crate::operation::add_role_to_db_cluster::_add_role_to_db_cluster_input::AddRoleToDbClusterInputBuilder;
 
+impl AddRoleToDbClusterInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::add_role_to_db_cluster::AddRoleToDbClusterOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::add_role_to_db_cluster::AddRoleToDBClusterError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.add_role_to_db_cluster();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AddRoleToDBCluster`.
 ///
 /// <p>Associates an Identity and Access Management (IAM) role with an Neptune DB cluster.</p>

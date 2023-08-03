@@ -3,6 +3,23 @@ pub use crate::operation::start_import_labels_task_run::_start_import_labels_tas
 
 pub use crate::operation::start_import_labels_task_run::_start_import_labels_task_run_input::StartImportLabelsTaskRunInputBuilder;
 
+impl StartImportLabelsTaskRunInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_import_labels_task_run::StartImportLabelsTaskRunOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_import_labels_task_run::StartImportLabelsTaskRunError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_import_labels_task_run();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartImportLabelsTaskRun`.
 ///
 /// <p>Enables you to provide additional labels (examples of truth) to be used to teach the machine learning transform and improve its quality. This API operation is generally used as part of the active learning workflow that starts with the <code>StartMLLabelingSetGenerationTaskRun</code> call and that ultimately results in improving the quality of your machine learning transform. </p>

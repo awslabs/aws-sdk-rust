@@ -3,6 +3,23 @@ pub use crate::operation::create_task_template::_create_task_template_output::Cr
 
 pub use crate::operation::create_task_template::_create_task_template_input::CreateTaskTemplateInputBuilder;
 
+impl CreateTaskTemplateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_task_template::CreateTaskTemplateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_task_template::CreateTaskTemplateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_task_template();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateTaskTemplate`.
 ///
 /// <p>Creates a new task template in the specified Amazon Connect instance.</p>

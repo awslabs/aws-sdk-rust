@@ -3,6 +3,23 @@ pub use crate::operation::delete_voice_profile::_delete_voice_profile_output::De
 
 pub use crate::operation::delete_voice_profile::_delete_voice_profile_input::DeleteVoiceProfileInputBuilder;
 
+impl DeleteVoiceProfileInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_voice_profile::DeleteVoiceProfileOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_voice_profile::DeleteVoiceProfileError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_voice_profile();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteVoiceProfile`.
 ///
 /// <p>Deletes a voice profile, including its voice print and enrollment data. WARNING: This action is not reversible.</p>

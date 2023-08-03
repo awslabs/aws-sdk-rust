@@ -3,6 +3,23 @@ pub use crate::operation::delete_device::_delete_device_output::DeleteDeviceOutp
 
 pub use crate::operation::delete_device::_delete_device_input::DeleteDeviceInputBuilder;
 
+impl DeleteDeviceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_device::DeleteDeviceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_device::DeleteDeviceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_device();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteDevice`.
 ///
 /// <p>Removes a device from Alexa For Business.</p>

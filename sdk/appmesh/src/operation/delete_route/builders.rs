@@ -3,6 +3,23 @@ pub use crate::operation::delete_route::_delete_route_output::DeleteRouteOutputB
 
 pub use crate::operation::delete_route::_delete_route_input::DeleteRouteInputBuilder;
 
+impl DeleteRouteInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_route::DeleteRouteOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_route::DeleteRouteError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_route();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteRoute`.
 ///
 /// <p>Deletes an existing route.</p>

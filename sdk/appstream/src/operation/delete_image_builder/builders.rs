@@ -3,6 +3,23 @@ pub use crate::operation::delete_image_builder::_delete_image_builder_output::De
 
 pub use crate::operation::delete_image_builder::_delete_image_builder_input::DeleteImageBuilderInputBuilder;
 
+impl DeleteImageBuilderInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_image_builder::DeleteImageBuilderOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_image_builder::DeleteImageBuilderError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_image_builder();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteImageBuilder`.
 ///
 /// <p>Deletes the specified image builder and releases the capacity.</p>

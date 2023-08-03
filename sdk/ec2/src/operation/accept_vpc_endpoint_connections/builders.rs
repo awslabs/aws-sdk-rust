@@ -3,6 +3,23 @@ pub use crate::operation::accept_vpc_endpoint_connections::_accept_vpc_endpoint_
 
 pub use crate::operation::accept_vpc_endpoint_connections::_accept_vpc_endpoint_connections_input::AcceptVpcEndpointConnectionsInputBuilder;
 
+impl AcceptVpcEndpointConnectionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::accept_vpc_endpoint_connections::AcceptVpcEndpointConnectionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::accept_vpc_endpoint_connections::AcceptVpcEndpointConnectionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.accept_vpc_endpoint_connections();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AcceptVpcEndpointConnections`.
 ///
 /// <p>Accepts connection requests to your VPC endpoint service.</p>

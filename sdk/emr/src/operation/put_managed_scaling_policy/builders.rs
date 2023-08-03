@@ -3,6 +3,23 @@ pub use crate::operation::put_managed_scaling_policy::_put_managed_scaling_polic
 
 pub use crate::operation::put_managed_scaling_policy::_put_managed_scaling_policy_input::PutManagedScalingPolicyInputBuilder;
 
+impl PutManagedScalingPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_managed_scaling_policy::PutManagedScalingPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_managed_scaling_policy::PutManagedScalingPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_managed_scaling_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutManagedScalingPolicy`.
 ///
 /// <p>Creates or updates a managed scaling policy for an Amazon EMR cluster. The managed scaling policy defines the limits for resources, such as Amazon EC2 instances that can be added or terminated from a cluster. The policy only applies to the core and task nodes. The master node cannot be scaled after initial configuration. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::update_sip_rule::_update_sip_rule_output::UpdateSipRul
 
 pub use crate::operation::update_sip_rule::_update_sip_rule_input::UpdateSipRuleInputBuilder;
 
+impl UpdateSipRuleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_sip_rule::UpdateSipRuleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_sip_rule::UpdateSipRuleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_sip_rule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateSipRule`.
 ///
 /// <p>Updates the details of the specified SIP rule.</p> <important>

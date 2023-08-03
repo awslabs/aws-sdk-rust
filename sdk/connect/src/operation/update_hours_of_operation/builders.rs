@@ -3,6 +3,23 @@ pub use crate::operation::update_hours_of_operation::_update_hours_of_operation_
 
 pub use crate::operation::update_hours_of_operation::_update_hours_of_operation_input::UpdateHoursOfOperationInputBuilder;
 
+impl UpdateHoursOfOperationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_hours_of_operation::UpdateHoursOfOperationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_hours_of_operation::UpdateHoursOfOperationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_hours_of_operation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateHoursOfOperation`.
 ///
 /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_db_parameter_groups::_describe_db_parameter_g
 
 pub use crate::operation::describe_db_parameter_groups::_describe_db_parameter_groups_input::DescribeDbParameterGroupsInputBuilder;
 
+impl DescribeDbParameterGroupsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_db_parameter_groups::DescribeDbParameterGroupsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_db_parameter_groups::DescribeDBParameterGroupsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_db_parameter_groups();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeDBParameterGroups`.
 ///
 /// <p>Returns a list of <code>DBParameterGroup</code> descriptions. If a <code>DBParameterGroupName</code> is specified, the list will contain only the description of the specified DB parameter group.</p>

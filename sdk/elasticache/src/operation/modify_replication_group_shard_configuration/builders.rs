@@ -3,6 +3,17 @@ pub use crate::operation::modify_replication_group_shard_configuration::_modify_
 
 pub use crate::operation::modify_replication_group_shard_configuration::_modify_replication_group_shard_configuration_input::ModifyReplicationGroupShardConfigurationInputBuilder;
 
+impl ModifyReplicationGroupShardConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::modify_replication_group_shard_configuration::ModifyReplicationGroupShardConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::modify_replication_group_shard_configuration::ModifyReplicationGroupShardConfigurationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.modify_replication_group_shard_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyReplicationGroupShardConfiguration`.
 ///
 /// <p>Modifies a replication group's shards (node groups) by allowing you to add shards, remove shards, or rebalance the keyspaces among existing shards.</p>

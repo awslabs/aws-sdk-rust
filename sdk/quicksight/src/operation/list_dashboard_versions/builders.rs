@@ -3,6 +3,23 @@ pub use crate::operation::list_dashboard_versions::_list_dashboard_versions_outp
 
 pub use crate::operation::list_dashboard_versions::_list_dashboard_versions_input::ListDashboardVersionsInputBuilder;
 
+impl ListDashboardVersionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_dashboard_versions::ListDashboardVersionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_dashboard_versions::ListDashboardVersionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_dashboard_versions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDashboardVersions`.
 ///
 /// <p>Lists all the versions of the dashboards in the Amazon QuickSight subscription.</p>

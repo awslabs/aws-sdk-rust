@@ -3,6 +3,17 @@ pub use crate::operation::disassociate_aws_account_from_partner_account::_disass
 
 pub use crate::operation::disassociate_aws_account_from_partner_account::_disassociate_aws_account_from_partner_account_input::DisassociateAwsAccountFromPartnerAccountInputBuilder;
 
+impl DisassociateAwsAccountFromPartnerAccountInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::disassociate_aws_account_from_partner_account::DisassociateAwsAccountFromPartnerAccountOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_aws_account_from_partner_account::DisassociateAwsAccountFromPartnerAccountError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.disassociate_aws_account_from_partner_account();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateAwsAccountFromPartnerAccount`.
 ///
 /// <p>Disassociates your AWS account from a partner account. If <code>PartnerAccountId</code> and <code>PartnerType</code> are <code>null</code>, disassociates your AWS account from all partner accounts.</p>

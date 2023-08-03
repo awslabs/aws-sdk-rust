@@ -3,6 +3,23 @@ pub use crate::operation::describe_document_permission::_describe_document_permi
 
 pub use crate::operation::describe_document_permission::_describe_document_permission_input::DescribeDocumentPermissionInputBuilder;
 
+impl DescribeDocumentPermissionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_document_permission::DescribeDocumentPermissionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_document_permission::DescribeDocumentPermissionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_document_permission();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeDocumentPermission`.
 ///
 /// <p>Describes the permissions for a Amazon Web Services Systems Manager document (SSM document). If you created the document, you are the owner. If a document is shared, it can either be shared privately (by specifying a user's Amazon Web Services account ID) or publicly (<i>All</i>). </p>

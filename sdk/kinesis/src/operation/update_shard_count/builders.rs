@@ -3,6 +3,23 @@ pub use crate::operation::update_shard_count::_update_shard_count_output::Update
 
 pub use crate::operation::update_shard_count::_update_shard_count_input::UpdateShardCountInputBuilder;
 
+impl UpdateShardCountInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_shard_count::UpdateShardCountOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_shard_count::UpdateShardCountError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_shard_count();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateShardCount`.
 ///
 /// <p>Updates the shard count of the specified stream to the specified number of shards. This API is only supported for the data streams with the provisioned capacity mode.</p> <note>

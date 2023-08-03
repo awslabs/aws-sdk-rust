@@ -3,6 +3,23 @@ pub use crate::operation::cancel_ingestion::_cancel_ingestion_output::CancelInge
 
 pub use crate::operation::cancel_ingestion::_cancel_ingestion_input::CancelIngestionInputBuilder;
 
+impl CancelIngestionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::cancel_ingestion::CancelIngestionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::cancel_ingestion::CancelIngestionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.cancel_ingestion();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CancelIngestion`.
 ///
 /// <p>Cancels an ongoing ingestion of data into SPICE.</p>

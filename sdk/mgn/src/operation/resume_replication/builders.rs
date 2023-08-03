@@ -3,6 +3,23 @@ pub use crate::operation::resume_replication::_resume_replication_output::Resume
 
 pub use crate::operation::resume_replication::_resume_replication_input::ResumeReplicationInputBuilder;
 
+impl ResumeReplicationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::resume_replication::ResumeReplicationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::resume_replication::ResumeReplicationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.resume_replication();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ResumeReplication`.
 ///
 /// <p>Resume Replication.</p>

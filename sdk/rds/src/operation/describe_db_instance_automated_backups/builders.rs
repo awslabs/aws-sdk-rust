@@ -3,6 +3,17 @@ pub use crate::operation::describe_db_instance_automated_backups::_describe_db_i
 
 pub use crate::operation::describe_db_instance_automated_backups::_describe_db_instance_automated_backups_input::DescribeDbInstanceAutomatedBackupsInputBuilder;
 
+impl DescribeDbInstanceAutomatedBackupsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_db_instance_automated_backups::DescribeDbInstanceAutomatedBackupsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_db_instance_automated_backups::DescribeDBInstanceAutomatedBackupsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_db_instance_automated_backups();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeDBInstanceAutomatedBackups`.
 ///
 /// <p>Displays backups for both current and deleted instances. For example, use this operation to find details about automated backups for previously deleted instances. Current instances with retention periods greater than zero (0) are returned for both the <code>DescribeDBInstanceAutomatedBackups</code> and <code>DescribeDBInstances</code> operations.</p>

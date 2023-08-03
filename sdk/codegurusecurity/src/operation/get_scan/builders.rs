@@ -3,6 +3,23 @@ pub use crate::operation::get_scan::_get_scan_output::GetScanOutputBuilder;
 
 pub use crate::operation::get_scan::_get_scan_input::GetScanInputBuilder;
 
+impl GetScanInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_scan::GetScanOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_scan::GetScanError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_scan();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetScan`.
 ///
 /// <p>Returns details about a scan, including whether or not a scan has completed.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_location_fsx_ontap::_create_location_fsx_ontap_
 
 pub use crate::operation::create_location_fsx_ontap::_create_location_fsx_ontap_input::CreateLocationFsxOntapInputBuilder;
 
+impl CreateLocationFsxOntapInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_location_fsx_ontap::CreateLocationFsxOntapOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_location_fsx_ontap::CreateLocationFsxOntapError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_location_fsx_ontap();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateLocationFsxOntap`.
 ///
 /// <p>Creates an endpoint for an Amazon FSx for NetApp ONTAP file system that DataSync can access for a transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-ontap-location.html">Creating a location for FSx for ONTAP</a>.</p>

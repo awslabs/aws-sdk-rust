@@ -3,6 +3,23 @@ pub use crate::operation::allocate_ipam_pool_cidr::_allocate_ipam_pool_cidr_outp
 
 pub use crate::operation::allocate_ipam_pool_cidr::_allocate_ipam_pool_cidr_input::AllocateIpamPoolCidrInputBuilder;
 
+impl AllocateIpamPoolCidrInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::allocate_ipam_pool_cidr::AllocateIpamPoolCidrOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::allocate_ipam_pool_cidr::AllocateIpamPoolCidrError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.allocate_ipam_pool_cidr();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AllocateIpamPoolCidr`.
 ///
 /// <p>Allocate a CIDR from an IPAM pool. The Region you use should be the IPAM pool locale. The locale is the Amazon Web Services Region where this IPAM pool is available for allocations.</p>

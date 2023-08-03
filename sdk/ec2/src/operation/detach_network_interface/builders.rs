@@ -3,6 +3,23 @@ pub use crate::operation::detach_network_interface::_detach_network_interface_ou
 
 pub use crate::operation::detach_network_interface::_detach_network_interface_input::DetachNetworkInterfaceInputBuilder;
 
+impl DetachNetworkInterfaceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::detach_network_interface::DetachNetworkInterfaceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::detach_network_interface::DetachNetworkInterfaceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.detach_network_interface();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DetachNetworkInterface`.
 ///
 /// <p>Detaches a network interface from an instance.</p>

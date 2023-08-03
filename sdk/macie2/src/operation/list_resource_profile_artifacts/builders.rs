@@ -3,6 +3,23 @@ pub use crate::operation::list_resource_profile_artifacts::_list_resource_profil
 
 pub use crate::operation::list_resource_profile_artifacts::_list_resource_profile_artifacts_input::ListResourceProfileArtifactsInputBuilder;
 
+impl ListResourceProfileArtifactsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_resource_profile_artifacts::ListResourceProfileArtifactsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_resource_profile_artifacts::ListResourceProfileArtifactsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_resource_profile_artifacts();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListResourceProfileArtifacts`.
 ///
 /// <p>Retrieves information about objects that were selected from an S3 bucket for automated sensitive data discovery.</p>

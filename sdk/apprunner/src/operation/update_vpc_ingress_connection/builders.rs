@@ -3,6 +3,23 @@ pub use crate::operation::update_vpc_ingress_connection::_update_vpc_ingress_con
 
 pub use crate::operation::update_vpc_ingress_connection::_update_vpc_ingress_connection_input::UpdateVpcIngressConnectionInputBuilder;
 
+impl UpdateVpcIngressConnectionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_vpc_ingress_connection::UpdateVpcIngressConnectionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_vpc_ingress_connection::UpdateVpcIngressConnectionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_vpc_ingress_connection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateVpcIngressConnection`.
 ///
 /// <p>Update an existing App Runner VPC Ingress Connection resource. The VPC Ingress Connection must be in one of the following states to be updated:</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_invitations_count::_get_invitations_count_output::
 
 pub use crate::operation::get_invitations_count::_get_invitations_count_input::GetInvitationsCountInputBuilder;
 
+impl GetInvitationsCountInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_invitations_count::GetInvitationsCountOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_invitations_count::GetInvitationsCountError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_invitations_count();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetInvitationsCount`.
 ///
 /// <p>Returns the count of all Security Hub membership invitations that were sent to the current member account, not including the currently accepted invitation. </p>

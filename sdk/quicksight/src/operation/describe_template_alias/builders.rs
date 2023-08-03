@@ -3,6 +3,23 @@ pub use crate::operation::describe_template_alias::_describe_template_alias_outp
 
 pub use crate::operation::describe_template_alias::_describe_template_alias_input::DescribeTemplateAliasInputBuilder;
 
+impl DescribeTemplateAliasInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_template_alias::DescribeTemplateAliasOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_template_alias::DescribeTemplateAliasError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_template_alias();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeTemplateAlias`.
 ///
 /// <p>Describes the template alias for a template.</p>

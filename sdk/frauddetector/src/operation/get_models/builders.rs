@@ -3,6 +3,23 @@ pub use crate::operation::get_models::_get_models_output::GetModelsOutputBuilder
 
 pub use crate::operation::get_models::_get_models_input::GetModelsInputBuilder;
 
+impl GetModelsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_models::GetModelsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_models::GetModelsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_models();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetModels`.
 ///
 /// <p>Gets one or more models. Gets all models for the Amazon Web Services account if no model type and no model id provided. Gets all models for the Amazon Web Services account and model type, if the model type is specified but model id is not provided. Gets a specific model if (model type, model id) tuple is specified. </p>

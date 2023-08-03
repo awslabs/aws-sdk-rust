@@ -3,6 +3,23 @@ pub use crate::operation::put_event_type::_put_event_type_output::PutEventTypeOu
 
 pub use crate::operation::put_event_type::_put_event_type_input::PutEventTypeInputBuilder;
 
+impl PutEventTypeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_event_type::PutEventTypeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_event_type::PutEventTypeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_event_type();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutEventType`.
 ///
 /// <p>Creates or updates an event type. An event is a business activity that is evaluated for fraud risk. With Amazon Fraud Detector, you generate fraud predictions for events. An event type defines the structure for an event sent to Amazon Fraud Detector. This includes the variables sent as part of the event, the entity performing the event (such as a customer), and the labels that classify the event. Example event types include online payment transactions, account registrations, and authentications.</p>

@@ -3,6 +3,17 @@ pub use crate::operation::disassociate_application_from_entitlement::_disassocia
 
 pub use crate::operation::disassociate_application_from_entitlement::_disassociate_application_from_entitlement_input::DisassociateApplicationFromEntitlementInputBuilder;
 
+impl DisassociateApplicationFromEntitlementInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::disassociate_application_from_entitlement::DisassociateApplicationFromEntitlementOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_application_from_entitlement::DisassociateApplicationFromEntitlementError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.disassociate_application_from_entitlement();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateApplicationFromEntitlement`.
 ///
 /// <p>Deletes the specified application from the specified entitlement.</p>

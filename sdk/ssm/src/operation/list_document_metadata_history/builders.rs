@@ -3,6 +3,23 @@ pub use crate::operation::list_document_metadata_history::_list_document_metadat
 
 pub use crate::operation::list_document_metadata_history::_list_document_metadata_history_input::ListDocumentMetadataHistoryInputBuilder;
 
+impl ListDocumentMetadataHistoryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_document_metadata_history::ListDocumentMetadataHistoryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_document_metadata_history::ListDocumentMetadataHistoryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_document_metadata_history();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDocumentMetadataHistory`.
 ///
 /// <p>Information about approval reviews for a version of a change template in Change Manager.</p>

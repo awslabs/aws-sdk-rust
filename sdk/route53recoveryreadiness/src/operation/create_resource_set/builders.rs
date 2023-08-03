@@ -3,6 +3,23 @@ pub use crate::operation::create_resource_set::_create_resource_set_output::Crea
 
 pub use crate::operation::create_resource_set::_create_resource_set_input::CreateResourceSetInputBuilder;
 
+impl CreateResourceSetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_resource_set::CreateResourceSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_resource_set::CreateResourceSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_resource_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateResourceSet`.
 ///
 /// <p>Creates a resource set. A resource set is a set of resources of one type that span multiple cells. You can associate a resource set with a readiness check to monitor the resources for failover readiness.</p>

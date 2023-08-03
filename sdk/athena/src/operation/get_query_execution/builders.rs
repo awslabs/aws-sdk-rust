@@ -3,6 +3,23 @@ pub use crate::operation::get_query_execution::_get_query_execution_output::GetQ
 
 pub use crate::operation::get_query_execution::_get_query_execution_input::GetQueryExecutionInputBuilder;
 
+impl GetQueryExecutionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_query_execution::GetQueryExecutionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_query_execution::GetQueryExecutionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_query_execution();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetQueryExecution`.
 ///
 /// <p>Returns information about a single execution of a query if you have access to the workgroup in which the query ran. Each time a query executes, information about the query execution is saved with a unique ID.</p>

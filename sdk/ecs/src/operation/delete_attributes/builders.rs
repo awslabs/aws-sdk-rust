@@ -3,6 +3,23 @@ pub use crate::operation::delete_attributes::_delete_attributes_output::DeleteAt
 
 pub use crate::operation::delete_attributes::_delete_attributes_input::DeleteAttributesInputBuilder;
 
+impl DeleteAttributesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_attributes::DeleteAttributesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_attributes::DeleteAttributesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_attributes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteAttributes`.
 ///
 /// <p>Deletes one or more custom attributes from an Amazon ECS resource.</p>

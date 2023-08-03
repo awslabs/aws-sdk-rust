@@ -3,6 +3,23 @@ pub use crate::operation::delete_network_insights_path::_delete_network_insights
 
 pub use crate::operation::delete_network_insights_path::_delete_network_insights_path_input::DeleteNetworkInsightsPathInputBuilder;
 
+impl DeleteNetworkInsightsPathInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_network_insights_path::DeleteNetworkInsightsPathOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_network_insights_path::DeleteNetworkInsightsPathError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_network_insights_path();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteNetworkInsightsPath`.
 ///
 /// <p>Deletes the specified path.</p>

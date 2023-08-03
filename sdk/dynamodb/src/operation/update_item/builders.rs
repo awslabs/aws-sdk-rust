@@ -3,6 +3,23 @@ pub use crate::operation::update_item::_update_item_output::UpdateItemOutputBuil
 
 pub use crate::operation::update_item::_update_item_input::UpdateItemInputBuilder;
 
+impl UpdateItemInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_item::UpdateItemOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_item::UpdateItemError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_item();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateItem`.
 ///
 /// <p>Edits an existing item's attributes, or adds a new item to the table if it does not already exist. You can put, delete, or add attribute values. You can also perform a conditional update on an existing item (insert a new attribute name-value pair if it doesn't exist, or replace an existing name-value pair if it has certain expected attribute values).</p>

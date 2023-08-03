@@ -3,6 +3,23 @@ pub use crate::operation::put_sol_function_package_content::_put_sol_function_pa
 
 pub use crate::operation::put_sol_function_package_content::_put_sol_function_package_content_input::PutSolFunctionPackageContentInputBuilder;
 
+impl PutSolFunctionPackageContentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_sol_function_package_content::PutSolFunctionPackageContentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_sol_function_package_content::PutSolFunctionPackageContentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_sol_function_package_content();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutSolFunctionPackageContent`.
 ///
 /// <p>Uploads the contents of a function package.</p>

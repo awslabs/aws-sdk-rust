@@ -3,6 +3,17 @@ pub use crate::operation::stop_inference_recommendations_job::_stop_inference_re
 
 pub use crate::operation::stop_inference_recommendations_job::_stop_inference_recommendations_job_input::StopInferenceRecommendationsJobInputBuilder;
 
+impl StopInferenceRecommendationsJobInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::stop_inference_recommendations_job::StopInferenceRecommendationsJobOutput, ::aws_smithy_http::result::SdkError<crate::operation::stop_inference_recommendations_job::StopInferenceRecommendationsJobError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.stop_inference_recommendations_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopInferenceRecommendationsJob`.
 ///
 /// <p>Stops an Inference Recommender job.</p>

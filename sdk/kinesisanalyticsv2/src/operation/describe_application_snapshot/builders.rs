@@ -3,6 +3,23 @@ pub use crate::operation::describe_application_snapshot::_describe_application_s
 
 pub use crate::operation::describe_application_snapshot::_describe_application_snapshot_input::DescribeApplicationSnapshotInputBuilder;
 
+impl DescribeApplicationSnapshotInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_application_snapshot::DescribeApplicationSnapshotOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_application_snapshot::DescribeApplicationSnapshotError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_application_snapshot();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeApplicationSnapshot`.
 ///
 /// <p>Returns information about a snapshot of application state data.</p>

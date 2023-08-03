@@ -3,6 +3,23 @@ pub use crate::operation::delete_virtual_cluster::_delete_virtual_cluster_output
 
 pub use crate::operation::delete_virtual_cluster::_delete_virtual_cluster_input::DeleteVirtualClusterInputBuilder;
 
+impl DeleteVirtualClusterInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_virtual_cluster::DeleteVirtualClusterOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_virtual_cluster::DeleteVirtualClusterError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_virtual_cluster();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteVirtualCluster`.
 ///
 /// <p>Deletes a virtual cluster. Virtual cluster is a managed entity on Amazon EMR on EKS. You can create, describe, list and delete virtual clusters. They do not consume any additional resource in your system. A single virtual cluster maps to a single Kubernetes namespace. Given this relationship, you can model virtual clusters the same way you model Kubernetes namespaces to meet your requirements.</p>

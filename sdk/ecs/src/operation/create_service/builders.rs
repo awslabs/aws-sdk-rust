@@ -3,6 +3,23 @@ pub use crate::operation::create_service::_create_service_output::CreateServiceO
 
 pub use crate::operation::create_service::_create_service_input::CreateServiceInputBuilder;
 
+impl CreateServiceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_service::CreateServiceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_service::CreateServiceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_service();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateService`.
 ///
 /// <p>Runs and maintains your desired number of tasks from a specified task definition. If the number of tasks running in a service drops below the <code>desiredCount</code>, Amazon ECS runs another copy of the task in the specified cluster. To update an existing service, see the <code>UpdateService</code> action.</p> <note>

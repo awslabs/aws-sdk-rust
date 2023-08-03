@@ -3,6 +3,23 @@ pub use crate::operation::update_user_hierarchy_structure::_update_user_hierarch
 
 pub use crate::operation::update_user_hierarchy_structure::_update_user_hierarchy_structure_input::UpdateUserHierarchyStructureInputBuilder;
 
+impl UpdateUserHierarchyStructureInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_user_hierarchy_structure::UpdateUserHierarchyStructureOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_user_hierarchy_structure::UpdateUserHierarchyStructureError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_user_hierarchy_structure();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateUserHierarchyStructure`.
 ///
 /// <p>Updates the user hierarchy structure: add, remove, and rename user hierarchy levels.</p>

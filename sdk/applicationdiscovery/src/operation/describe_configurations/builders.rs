@@ -3,6 +3,23 @@ pub use crate::operation::describe_configurations::_describe_configurations_outp
 
 pub use crate::operation::describe_configurations::_describe_configurations_input::DescribeConfigurationsInputBuilder;
 
+impl DescribeConfigurationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_configurations::DescribeConfigurationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_configurations::DescribeConfigurationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_configurations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeConfigurations`.
 ///
 /// <p>Retrieves attributes for a list of configuration item IDs.</p> <note>

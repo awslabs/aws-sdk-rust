@@ -3,6 +3,23 @@ pub use crate::operation::create_folder::_create_folder_output::CreateFolderOutp
 
 pub use crate::operation::create_folder::_create_folder_input::CreateFolderInputBuilder;
 
+impl CreateFolderInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_folder::CreateFolderOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_folder::CreateFolderError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_folder();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateFolder`.
 ///
 /// <p>Creates an empty shared folder.</p>

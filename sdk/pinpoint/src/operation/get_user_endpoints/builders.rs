@@ -3,6 +3,23 @@ pub use crate::operation::get_user_endpoints::_get_user_endpoints_output::GetUse
 
 pub use crate::operation::get_user_endpoints::_get_user_endpoints_input::GetUserEndpointsInputBuilder;
 
+impl GetUserEndpointsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_user_endpoints::GetUserEndpointsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_user_endpoints::GetUserEndpointsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_user_endpoints();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetUserEndpoints`.
 ///
 /// <p>Retrieves information about all the endpoints that are associated with a specific user ID.</p>

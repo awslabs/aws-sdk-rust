@@ -3,6 +3,23 @@ pub use crate::operation::list_catalog_items::_list_catalog_items_output::ListCa
 
 pub use crate::operation::list_catalog_items::_list_catalog_items_input::ListCatalogItemsInputBuilder;
 
+impl ListCatalogItemsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_catalog_items::ListCatalogItemsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_catalog_items::ListCatalogItemsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_catalog_items();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListCatalogItems`.
 ///
 /// <p>Lists the items in the catalog.</p>

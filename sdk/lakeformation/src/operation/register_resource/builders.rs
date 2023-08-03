@@ -3,6 +3,23 @@ pub use crate::operation::register_resource::_register_resource_output::Register
 
 pub use crate::operation::register_resource::_register_resource_input::RegisterResourceInputBuilder;
 
+impl RegisterResourceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::register_resource::RegisterResourceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::register_resource::RegisterResourceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.register_resource();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RegisterResource`.
 ///
 /// <p>Registers the resource as managed by the Data Catalog.</p>

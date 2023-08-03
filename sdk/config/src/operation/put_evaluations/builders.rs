@@ -3,6 +3,23 @@ pub use crate::operation::put_evaluations::_put_evaluations_output::PutEvaluatio
 
 pub use crate::operation::put_evaluations::_put_evaluations_input::PutEvaluationsInputBuilder;
 
+impl PutEvaluationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_evaluations::PutEvaluationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_evaluations::PutEvaluationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_evaluations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutEvaluations`.
 ///
 /// <p>Used by an Lambda function to deliver evaluation results to Config. This action is required in every Lambda function that is invoked by an Config rule.</p>

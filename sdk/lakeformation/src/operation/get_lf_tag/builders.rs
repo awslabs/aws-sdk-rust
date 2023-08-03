@@ -3,6 +3,23 @@ pub use crate::operation::get_lf_tag::_get_lf_tag_output::GetLfTagOutputBuilder;
 
 pub use crate::operation::get_lf_tag::_get_lf_tag_input::GetLfTagInputBuilder;
 
+impl GetLfTagInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_lf_tag::GetLfTagOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_lf_tag::GetLFTagError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_lf_tag();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetLFTag`.
 ///
 /// <p>Returns an LF-tag definition.</p>

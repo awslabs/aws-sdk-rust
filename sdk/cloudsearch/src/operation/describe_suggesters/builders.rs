@@ -3,6 +3,23 @@ pub use crate::operation::describe_suggesters::_describe_suggesters_output::Desc
 
 pub use crate::operation::describe_suggesters::_describe_suggesters_input::DescribeSuggestersInputBuilder;
 
+impl DescribeSuggestersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_suggesters::DescribeSuggestersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_suggesters::DescribeSuggestersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_suggesters();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeSuggesters`.
 ///
 /// <p>Gets the suggesters configured for a domain. A suggester enables you to display possible matches before users finish typing their queries. Can be limited to specific suggesters by name. By default, shows all suggesters and includes any pending changes to the configuration. Set the <code>Deployed</code> option to <code>true</code> to show the active configuration and exclude pending changes. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html" target="_blank">Getting Search Suggestions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>

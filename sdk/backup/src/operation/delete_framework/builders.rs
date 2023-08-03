@@ -3,6 +3,23 @@ pub use crate::operation::delete_framework::_delete_framework_output::DeleteFram
 
 pub use crate::operation::delete_framework::_delete_framework_input::DeleteFrameworkInputBuilder;
 
+impl DeleteFrameworkInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_framework::DeleteFrameworkOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_framework::DeleteFrameworkError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_framework();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteFramework`.
 ///
 /// <p>Deletes the framework specified by a framework name.</p>

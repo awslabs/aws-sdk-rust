@@ -3,6 +3,23 @@ pub use crate::operation::add_thing_to_thing_group::_add_thing_to_thing_group_ou
 
 pub use crate::operation::add_thing_to_thing_group::_add_thing_to_thing_group_input::AddThingToThingGroupInputBuilder;
 
+impl AddThingToThingGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::add_thing_to_thing_group::AddThingToThingGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::add_thing_to_thing_group::AddThingToThingGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.add_thing_to_thing_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AddThingToThingGroup`.
 ///
 /// <p>Adds a thing to a thing group.</p>

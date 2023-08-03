@@ -3,6 +3,23 @@ pub use crate::operation::update_subnet_group::_update_subnet_group_output::Upda
 
 pub use crate::operation::update_subnet_group::_update_subnet_group_input::UpdateSubnetGroupInputBuilder;
 
+impl UpdateSubnetGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_subnet_group::UpdateSubnetGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_subnet_group::UpdateSubnetGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_subnet_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateSubnetGroup`.
 ///
 /// <p>Updates a subnet group. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/ubnetGroups.Modifying.html">Updating a subnet group</a> </p>

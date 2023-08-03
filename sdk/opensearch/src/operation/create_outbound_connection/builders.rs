@@ -3,6 +3,23 @@ pub use crate::operation::create_outbound_connection::_create_outbound_connectio
 
 pub use crate::operation::create_outbound_connection::_create_outbound_connection_input::CreateOutboundConnectionInputBuilder;
 
+impl CreateOutboundConnectionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_outbound_connection::CreateOutboundConnectionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_outbound_connection::CreateOutboundConnectionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_outbound_connection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateOutboundConnection`.
 ///
 /// <p>Creates a new cross-cluster search connection from a source Amazon OpenSearch Service domain to a destination domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cross-cluster-search.html">Cross-cluster search for Amazon OpenSearch Service</a>.</p>

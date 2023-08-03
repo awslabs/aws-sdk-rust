@@ -3,6 +3,23 @@ pub use crate::operation::list_offering_promotions::_list_offering_promotions_ou
 
 pub use crate::operation::list_offering_promotions::_list_offering_promotions_input::ListOfferingPromotionsInputBuilder;
 
+impl ListOfferingPromotionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_offering_promotions::ListOfferingPromotionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_offering_promotions::ListOfferingPromotionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_offering_promotions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListOfferingPromotions`.
 ///
 /// <p>Returns a list of offering promotions. Each offering promotion record contains the ID and description of the promotion. The API returns a <code>NotEligible</code> error if the caller is not permitted to invoke the operation. Contact <a href="mailto:aws-devicefarm-support@amazon.com">aws-devicefarm-support@amazon.com</a> if you must be able to invoke this operation.</p>

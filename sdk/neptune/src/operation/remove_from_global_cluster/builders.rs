@@ -3,6 +3,23 @@ pub use crate::operation::remove_from_global_cluster::_remove_from_global_cluste
 
 pub use crate::operation::remove_from_global_cluster::_remove_from_global_cluster_input::RemoveFromGlobalClusterInputBuilder;
 
+impl RemoveFromGlobalClusterInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::remove_from_global_cluster::RemoveFromGlobalClusterOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::remove_from_global_cluster::RemoveFromGlobalClusterError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.remove_from_global_cluster();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RemoveFromGlobalCluster`.
 ///
 /// <p>Detaches a Neptune DB cluster from a Neptune global database. A secondary cluster becomes a normal standalone cluster with read-write capability instead of being read-only, and no longer receives data from a the primary cluster.</p>

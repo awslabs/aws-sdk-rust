@@ -3,6 +3,23 @@ pub use crate::operation::list_resolver_dnssec_configs::_list_resolver_dnssec_co
 
 pub use crate::operation::list_resolver_dnssec_configs::_list_resolver_dnssec_configs_input::ListResolverDnssecConfigsInputBuilder;
 
+impl ListResolverDnssecConfigsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_resolver_dnssec_configs::ListResolverDnssecConfigsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_resolver_dnssec_configs::ListResolverDnssecConfigsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_resolver_dnssec_configs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListResolverDnssecConfigs`.
 ///
 /// <p>Lists the configurations for DNSSEC validation that are associated with the current Amazon Web Services account.</p>

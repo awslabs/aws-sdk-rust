@@ -3,6 +3,23 @@ pub use crate::operation::list_device_pools::_list_device_pools_output::ListDevi
 
 pub use crate::operation::list_device_pools::_list_device_pools_input::ListDevicePoolsInputBuilder;
 
+impl ListDevicePoolsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_device_pools::ListDevicePoolsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_device_pools::ListDevicePoolsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_device_pools();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDevicePools`.
 ///
 /// <p>Gets information about device pools.</p>

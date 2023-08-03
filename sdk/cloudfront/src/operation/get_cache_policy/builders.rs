@@ -3,6 +3,23 @@ pub use crate::operation::get_cache_policy::_get_cache_policy_output::GetCachePo
 
 pub use crate::operation::get_cache_policy::_get_cache_policy_input::GetCachePolicyInputBuilder;
 
+impl GetCachePolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_cache_policy::GetCachePolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_cache_policy::GetCachePolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_cache_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetCachePolicy`.
 ///
 /// <p>Gets a cache policy, including the following metadata:</p>

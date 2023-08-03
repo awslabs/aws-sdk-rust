@@ -3,6 +3,23 @@ pub use crate::operation::get_object_lock_configuration::_get_object_lock_config
 
 pub use crate::operation::get_object_lock_configuration::_get_object_lock_configuration_input::GetObjectLockConfigurationInputBuilder;
 
+impl GetObjectLockConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_object_lock_configuration::GetObjectLockConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_object_lock_configuration::GetObjectLockConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_object_lock_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetObjectLockConfiguration`.
 ///
 /// <p>Gets the Object Lock configuration for a bucket. The rule specified in the Object Lock configuration will be applied by default to every new object placed in the specified bucket. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/object-lock.html">Locking Objects</a>.</p>

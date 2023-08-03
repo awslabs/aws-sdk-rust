@@ -3,6 +3,23 @@ pub use crate::operation::terminate_app::_terminate_app_output::TerminateAppOutp
 
 pub use crate::operation::terminate_app::_terminate_app_input::TerminateAppInputBuilder;
 
+impl TerminateAppInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::terminate_app::TerminateAppOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::terminate_app::TerminateAppError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.terminate_app();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `TerminateApp`.
 ///
 /// <p>Terminates the stack for the specified application.</p>

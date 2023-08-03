@@ -3,6 +3,23 @@ pub use crate::operation::instantiate_sol_network_instance::_instantiate_sol_net
 
 pub use crate::operation::instantiate_sol_network_instance::_instantiate_sol_network_instance_input::InstantiateSolNetworkInstanceInputBuilder;
 
+impl InstantiateSolNetworkInstanceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::instantiate_sol_network_instance::InstantiateSolNetworkInstanceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.instantiate_sol_network_instance();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `InstantiateSolNetworkInstance`.
 ///
 /// <p>Instantiates a network instance.</p>

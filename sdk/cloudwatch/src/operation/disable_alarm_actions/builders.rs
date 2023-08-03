@@ -3,6 +3,23 @@ pub use crate::operation::disable_alarm_actions::_disable_alarm_actions_output::
 
 pub use crate::operation::disable_alarm_actions::_disable_alarm_actions_input::DisableAlarmActionsInputBuilder;
 
+impl DisableAlarmActionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disable_alarm_actions::DisableAlarmActionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disable_alarm_actions::DisableAlarmActionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disable_alarm_actions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisableAlarmActions`.
 ///
 /// <p>Disables the actions for the specified alarms. When an alarm's actions are disabled, the alarm actions do not execute when the alarm state changes.</p>

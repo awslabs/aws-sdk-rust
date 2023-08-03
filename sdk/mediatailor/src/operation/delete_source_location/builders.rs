@@ -3,6 +3,23 @@ pub use crate::operation::delete_source_location::_delete_source_location_output
 
 pub use crate::operation::delete_source_location::_delete_source_location_input::DeleteSourceLocationInputBuilder;
 
+impl DeleteSourceLocationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_source_location::DeleteSourceLocationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_source_location::DeleteSourceLocationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_source_location();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteSourceLocation`.
 ///
 /// <p>Deletes a source location. A source location is a container for sources. For more information about source locations, see <a href="https://docs.aws.amazon.com/mediatailor/latest/ug/channel-assembly-source-locations.html">Working with source locations</a> in the <i>MediaTailor User Guide</i>.</p>

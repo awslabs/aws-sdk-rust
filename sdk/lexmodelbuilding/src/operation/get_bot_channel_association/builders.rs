@@ -3,6 +3,23 @@ pub use crate::operation::get_bot_channel_association::_get_bot_channel_associat
 
 pub use crate::operation::get_bot_channel_association::_get_bot_channel_association_input::GetBotChannelAssociationInputBuilder;
 
+impl GetBotChannelAssociationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_bot_channel_association::GetBotChannelAssociationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_bot_channel_association::GetBotChannelAssociationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_bot_channel_association();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetBotChannelAssociation`.
 ///
 /// <p>Returns information about the association between an Amazon Lex bot and a messaging platform.</p>

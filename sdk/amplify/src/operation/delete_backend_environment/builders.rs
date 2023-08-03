@@ -3,6 +3,23 @@ pub use crate::operation::delete_backend_environment::_delete_backend_environmen
 
 pub use crate::operation::delete_backend_environment::_delete_backend_environment_input::DeleteBackendEnvironmentInputBuilder;
 
+impl DeleteBackendEnvironmentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_backend_environment::DeleteBackendEnvironmentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_backend_environment::DeleteBackendEnvironmentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_backend_environment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteBackendEnvironment`.
 ///
 /// <p> Deletes a backend environment for an Amplify app. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_hub_content_versions::_list_hub_content_versions_
 
 pub use crate::operation::list_hub_content_versions::_list_hub_content_versions_input::ListHubContentVersionsInputBuilder;
 
+impl ListHubContentVersionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_hub_content_versions::ListHubContentVersionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_hub_content_versions::ListHubContentVersionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_hub_content_versions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListHubContentVersions`.
 ///
 /// <p>List hub content versions.</p> <note>

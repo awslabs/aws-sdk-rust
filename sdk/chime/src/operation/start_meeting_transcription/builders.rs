@@ -3,6 +3,23 @@ pub use crate::operation::start_meeting_transcription::_start_meeting_transcript
 
 pub use crate::operation::start_meeting_transcription::_start_meeting_transcription_input::StartMeetingTranscriptionInputBuilder;
 
+impl StartMeetingTranscriptionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_meeting_transcription::StartMeetingTranscriptionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_meeting_transcription::StartMeetingTranscriptionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_meeting_transcription();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartMeetingTranscription`.
 ///
 /// <p>Starts transcription for the specified <code>meetingId</code>. For more information, refer to <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/meeting-transcription.html"> Using Amazon Chime SDK live transcription </a> in the <i>Amazon Chime SDK Developer Guide</i>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::update_studio_component::_update_studio_component_outp
 
 pub use crate::operation::update_studio_component::_update_studio_component_input::UpdateStudioComponentInputBuilder;
 
+impl UpdateStudioComponentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_studio_component::UpdateStudioComponentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_studio_component::UpdateStudioComponentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_studio_component();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateStudioComponent`.
 ///
 /// <p>Updates a studio component resource.</p>

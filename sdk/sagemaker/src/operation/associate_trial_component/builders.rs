@@ -3,6 +3,23 @@ pub use crate::operation::associate_trial_component::_associate_trial_component_
 
 pub use crate::operation::associate_trial_component::_associate_trial_component_input::AssociateTrialComponentInputBuilder;
 
+impl AssociateTrialComponentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_trial_component::AssociateTrialComponentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_trial_component::AssociateTrialComponentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_trial_component();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateTrialComponent`.
 ///
 /// <p>Associates a trial component with a trial. A trial component can be associated with multiple trials. To disassociate a trial component from a trial, call the <a href="https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DisassociateTrialComponent.html">DisassociateTrialComponent</a> API.</p>

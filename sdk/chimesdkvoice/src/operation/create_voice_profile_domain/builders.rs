@@ -3,6 +3,23 @@ pub use crate::operation::create_voice_profile_domain::_create_voice_profile_dom
 
 pub use crate::operation::create_voice_profile_domain::_create_voice_profile_domain_input::CreateVoiceProfileDomainInputBuilder;
 
+impl CreateVoiceProfileDomainInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_voice_profile_domain::CreateVoiceProfileDomainOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_voice_profile_domain::CreateVoiceProfileDomainError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_voice_profile_domain();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateVoiceProfileDomain`.
 ///
 /// <p>Creates a voice profile domain, a collection of voice profiles, their voice prints, and encrypted enrollment audio.</p> <important>

@@ -3,6 +3,17 @@ pub use crate::operation::delete_db_instance_automated_backup::_delete_db_instan
 
 pub use crate::operation::delete_db_instance_automated_backup::_delete_db_instance_automated_backup_input::DeleteDbInstanceAutomatedBackupInputBuilder;
 
+impl DeleteDbInstanceAutomatedBackupInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_db_instance_automated_backup::DeleteDbInstanceAutomatedBackupOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_db_instance_automated_backup::DeleteDBInstanceAutomatedBackupError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.delete_db_instance_automated_backup();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteDBInstanceAutomatedBackup`.
 ///
 /// <p>Deletes automated backups using the <code>DbiResourceId</code> value of the source DB instance or the Amazon Resource Name (ARN) of the automated backups.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::modify_usage_limit::_modify_usage_limit_output::Modify
 
 pub use crate::operation::modify_usage_limit::_modify_usage_limit_input::ModifyUsageLimitInputBuilder;
 
+impl ModifyUsageLimitInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_usage_limit::ModifyUsageLimitOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_usage_limit::ModifyUsageLimitError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_usage_limit();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyUsageLimit`.
 ///
 /// <p>Modifies a usage limit in a cluster. You can't modify the feature type or period of a usage limit.</p>

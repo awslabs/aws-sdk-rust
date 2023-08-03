@@ -3,6 +3,23 @@ pub use crate::operation::update_permissions::_update_permissions_output::Update
 
 pub use crate::operation::update_permissions::_update_permissions_input::UpdatePermissionsInputBuilder;
 
+impl UpdatePermissionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_permissions::UpdatePermissionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_permissions::UpdatePermissionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_permissions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdatePermissions`.
 ///
 /// <p>Updates which users in a workspace have the Grafana <code>Admin</code> or <code>Editor</code> roles.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_stages::_list_stages_output::ListStagesOutputBuil
 
 pub use crate::operation::list_stages::_list_stages_input::ListStagesInputBuilder;
 
+impl ListStagesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_stages::ListStagesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_stages::ListStagesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_stages();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListStages`.
 ///
 /// <p>Gets summary information about all stages in your account, in the AWS region where the API request is processed.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_availability_options::_describe_availability_
 
 pub use crate::operation::describe_availability_options::_describe_availability_options_input::DescribeAvailabilityOptionsInputBuilder;
 
+impl DescribeAvailabilityOptionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_availability_options::DescribeAvailabilityOptionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_availability_options::DescribeAvailabilityOptionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_availability_options();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAvailabilityOptions`.
 ///
 /// <p>Gets the availability options configured for a domain. By default, shows the configuration with any pending changes. Set the <code>Deployed</code> option to <code>true</code> to show the active configuration and exclude pending changes. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-availability-options.html" target="_blank">Configuring Availability Options</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>

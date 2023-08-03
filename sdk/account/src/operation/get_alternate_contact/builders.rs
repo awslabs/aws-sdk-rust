@@ -3,6 +3,23 @@ pub use crate::operation::get_alternate_contact::_get_alternate_contact_output::
 
 pub use crate::operation::get_alternate_contact::_get_alternate_contact_input::GetAlternateContactInputBuilder;
 
+impl GetAlternateContactInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_alternate_contact::GetAlternateContactOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_alternate_contact::GetAlternateContactError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_alternate_contact();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetAlternateContact`.
 ///
 /// <p>Retrieves the specified alternate contact attached to an Amazon Web Services account.</p>

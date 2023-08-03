@@ -3,6 +3,23 @@ pub use crate::operation::send_workflow_step_state::_send_workflow_step_state_ou
 
 pub use crate::operation::send_workflow_step_state::_send_workflow_step_state_input::SendWorkflowStepStateInputBuilder;
 
+impl SendWorkflowStepStateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::send_workflow_step_state::SendWorkflowStepStateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::send_workflow_step_state::SendWorkflowStepStateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.send_workflow_step_state();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SendWorkflowStepState`.
 ///
 /// <p>Sends a callback for asynchronous custom steps.</p>

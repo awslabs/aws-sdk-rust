@@ -3,6 +3,23 @@ pub use crate::operation::get_policy::_get_policy_output::GetPolicyOutputBuilder
 
 pub use crate::operation::get_policy::_get_policy_input::GetPolicyInputBuilder;
 
+impl GetPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_policy::GetPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_policy::GetPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetPolicy`.
 ///
 /// <p>Retrieves information about the specified managed policy, including the policy's default version and the total number of IAM users, groups, and roles to which the policy is attached. To retrieve the list of the specific users, groups, and roles that the policy is attached to, use <code>ListEntitiesForPolicy</code>. This operation returns metadata about the policy. To retrieve the actual policy document for a specific version of the policy, use <code>GetPolicyVersion</code>.</p>

@@ -3,6 +3,17 @@ pub use crate::operation::disassociate_service_action_from_provisioning_artifact
 
 pub use crate::operation::disassociate_service_action_from_provisioning_artifact::_disassociate_service_action_from_provisioning_artifact_input::DisassociateServiceActionFromProvisioningArtifactInputBuilder;
 
+impl DisassociateServiceActionFromProvisioningArtifactInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::disassociate_service_action_from_provisioning_artifact::DisassociateServiceActionFromProvisioningArtifactOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_service_action_from_provisioning_artifact::DisassociateServiceActionFromProvisioningArtifactError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.disassociate_service_action_from_provisioning_artifact();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateServiceActionFromProvisioningArtifact`.
 ///
 /// <p>Disassociates the specified self-service action association from the specified provisioning artifact.</p>

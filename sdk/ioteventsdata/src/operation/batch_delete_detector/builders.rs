@@ -3,6 +3,23 @@ pub use crate::operation::batch_delete_detector::_batch_delete_detector_output::
 
 pub use crate::operation::batch_delete_detector::_batch_delete_detector_input::BatchDeleteDetectorInputBuilder;
 
+impl BatchDeleteDetectorInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_delete_detector::BatchDeleteDetectorOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_delete_detector::BatchDeleteDetectorError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_delete_detector();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchDeleteDetector`.
 ///
 /// <p>Deletes one or more detectors that were created. When a detector is deleted, its state will be cleared and the detector will be removed from the list of detectors. The deleted detector will no longer appear if referenced in the <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_iotevents-data_ListDetectors.html">ListDetectors</a> API call.</p>

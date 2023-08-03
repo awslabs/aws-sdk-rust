@@ -3,6 +3,23 @@ pub use crate::operation::get_delegated_admin_account::_get_delegated_admin_acco
 
 pub use crate::operation::get_delegated_admin_account::_get_delegated_admin_account_input::GetDelegatedAdminAccountInputBuilder;
 
+impl GetDelegatedAdminAccountInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_delegated_admin_account::GetDelegatedAdminAccountOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_delegated_admin_account::GetDelegatedAdminAccountError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_delegated_admin_account();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetDelegatedAdminAccount`.
 ///
 /// <p>Retrieves information about the Amazon Inspector delegated administrator for your organization.</p>

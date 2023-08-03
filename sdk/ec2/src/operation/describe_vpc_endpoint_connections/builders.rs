@@ -3,6 +3,17 @@ pub use crate::operation::describe_vpc_endpoint_connections::_describe_vpc_endpo
 
 pub use crate::operation::describe_vpc_endpoint_connections::_describe_vpc_endpoint_connections_input::DescribeVpcEndpointConnectionsInputBuilder;
 
+impl DescribeVpcEndpointConnectionsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_vpc_endpoint_connections::DescribeVpcEndpointConnectionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_vpc_endpoint_connections::DescribeVpcEndpointConnectionsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_vpc_endpoint_connections();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeVpcEndpointConnections`.
 ///
 /// <p>Describes the VPC endpoint connections to your VPC endpoint services, including any endpoints that are pending your acceptance.</p>

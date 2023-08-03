@@ -3,6 +3,23 @@ pub use crate::operation::run_fleet_advisor_lsa_analysis::_run_fleet_advisor_lsa
 
 pub use crate::operation::run_fleet_advisor_lsa_analysis::_run_fleet_advisor_lsa_analysis_input::RunFleetAdvisorLsaAnalysisInputBuilder;
 
+impl RunFleetAdvisorLsaAnalysisInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::run_fleet_advisor_lsa_analysis::RunFleetAdvisorLsaAnalysisOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::run_fleet_advisor_lsa_analysis::RunFleetAdvisorLsaAnalysisError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.run_fleet_advisor_lsa_analysis();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RunFleetAdvisorLsaAnalysis`.
 ///
 /// <p>Runs large-scale assessment (LSA) analysis on every Fleet Advisor collector in your account.</p>

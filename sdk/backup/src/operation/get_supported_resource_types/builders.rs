@@ -3,6 +3,23 @@ pub use crate::operation::get_supported_resource_types::_get_supported_resource_
 
 pub use crate::operation::get_supported_resource_types::_get_supported_resource_types_input::GetSupportedResourceTypesInputBuilder;
 
+impl GetSupportedResourceTypesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_supported_resource_types::GetSupportedResourceTypesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_supported_resource_types::GetSupportedResourceTypesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_supported_resource_types();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetSupportedResourceTypes`.
 ///
 /// <p>Returns the Amazon Web Services resource types supported by Backup.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_regex_pattern_set::_create_regex_pattern_set_ou
 
 pub use crate::operation::create_regex_pattern_set::_create_regex_pattern_set_input::CreateRegexPatternSetInputBuilder;
 
+impl CreateRegexPatternSetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_regex_pattern_set::CreateRegexPatternSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_regex_pattern_set::CreateRegexPatternSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_regex_pattern_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateRegexPatternSet`.
 ///
 /// <note>

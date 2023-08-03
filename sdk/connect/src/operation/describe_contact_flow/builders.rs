@@ -3,6 +3,23 @@ pub use crate::operation::describe_contact_flow::_describe_contact_flow_output::
 
 pub use crate::operation::describe_contact_flow::_describe_contact_flow_input::DescribeContactFlowInputBuilder;
 
+impl DescribeContactFlowInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_contact_flow::DescribeContactFlowOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_contact_flow::DescribeContactFlowError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_contact_flow();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeContactFlow`.
 ///
 /// <p>Describes the specified flow.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_fleet_history::_describe_fleet_history_output
 
 pub use crate::operation::describe_fleet_history::_describe_fleet_history_input::DescribeFleetHistoryInputBuilder;
 
+impl DescribeFleetHistoryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_fleet_history::DescribeFleetHistoryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_fleet_history::DescribeFleetHistoryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_fleet_history();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeFleetHistory`.
 ///
 /// <p>Describes the events for the specified EC2 Fleet during the specified time.</p>

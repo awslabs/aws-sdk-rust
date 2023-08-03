@@ -3,6 +3,17 @@ pub use crate::operation::cancel_elasticsearch_service_software_update::_cancel_
 
 pub use crate::operation::cancel_elasticsearch_service_software_update::_cancel_elasticsearch_service_software_update_input::CancelElasticsearchServiceSoftwareUpdateInputBuilder;
 
+impl CancelElasticsearchServiceSoftwareUpdateInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::cancel_elasticsearch_service_software_update::CancelElasticsearchServiceSoftwareUpdateOutput, ::aws_smithy_http::result::SdkError<crate::operation::cancel_elasticsearch_service_software_update::CancelElasticsearchServiceSoftwareUpdateError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.cancel_elasticsearch_service_software_update();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CancelElasticsearchServiceSoftwareUpdate`.
 ///
 /// <p>Cancels a scheduled service software update for an Amazon ES domain. You can only perform this operation before the <code>AutomatedUpdateDate</code> and when the <code>UpdateStatus</code> is in the <code>PENDING_UPDATE</code> state.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::put_insight_rule::_put_insight_rule_output::PutInsight
 
 pub use crate::operation::put_insight_rule::_put_insight_rule_input::PutInsightRuleInputBuilder;
 
+impl PutInsightRuleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_insight_rule::PutInsightRuleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_insight_rule::PutInsightRuleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_insight_rule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutInsightRule`.
 ///
 /// <p>Creates a Contributor Insights rule. Rules evaluate log events in a CloudWatch Logs log group, enabling you to find contributor data for the log events in that log group. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/ContributorInsights.html">Using Contributor Insights to Analyze High-Cardinality Data</a>.</p>

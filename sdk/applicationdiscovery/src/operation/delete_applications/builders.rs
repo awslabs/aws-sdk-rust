@@ -3,6 +3,23 @@ pub use crate::operation::delete_applications::_delete_applications_output::Dele
 
 pub use crate::operation::delete_applications::_delete_applications_input::DeleteApplicationsInputBuilder;
 
+impl DeleteApplicationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_applications::DeleteApplicationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_applications::DeleteApplicationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_applications();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteApplications`.
 ///
 /// <p>Deletes a list of applications and their associations with configuration items.</p>

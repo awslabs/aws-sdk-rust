@@ -3,6 +3,23 @@ pub use crate::operation::create_integration_workflow::_create_integration_workf
 
 pub use crate::operation::create_integration_workflow::_create_integration_workflow_input::CreateIntegrationWorkflowInputBuilder;
 
+impl CreateIntegrationWorkflowInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_integration_workflow::CreateIntegrationWorkflowOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_integration_workflow::CreateIntegrationWorkflowError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_integration_workflow();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateIntegrationWorkflow`.
 ///
 /// <p> Creates an integration workflow. An integration workflow is an async process which ingests historic data and sets up an integration for ongoing updates. The supported Amazon AppFlow sources are Salesforce, ServiceNow, and Marketo. </p>

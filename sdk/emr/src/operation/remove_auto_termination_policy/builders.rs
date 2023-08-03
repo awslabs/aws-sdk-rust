@@ -3,6 +3,23 @@ pub use crate::operation::remove_auto_termination_policy::_remove_auto_terminati
 
 pub use crate::operation::remove_auto_termination_policy::_remove_auto_termination_policy_input::RemoveAutoTerminationPolicyInputBuilder;
 
+impl RemoveAutoTerminationPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::remove_auto_termination_policy::RemoveAutoTerminationPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::remove_auto_termination_policy::RemoveAutoTerminationPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.remove_auto_termination_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RemoveAutoTerminationPolicy`.
 ///
 /// <p>Removes an auto-termination policy from an Amazon EMR cluster.</p>

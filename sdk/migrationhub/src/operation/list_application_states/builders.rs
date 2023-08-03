@@ -3,6 +3,23 @@ pub use crate::operation::list_application_states::_list_application_states_outp
 
 pub use crate::operation::list_application_states::_list_application_states_input::ListApplicationStatesInputBuilder;
 
+impl ListApplicationStatesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_application_states::ListApplicationStatesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_application_states::ListApplicationStatesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_application_states();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListApplicationStates`.
 ///
 /// <p>Lists all the migration statuses for your applications. If you use the optional <code>ApplicationIds</code> parameter, only the migration statuses for those applications will be returned.</p>

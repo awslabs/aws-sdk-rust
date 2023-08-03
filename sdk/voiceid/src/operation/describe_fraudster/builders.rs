@@ -3,6 +3,23 @@ pub use crate::operation::describe_fraudster::_describe_fraudster_output::Descri
 
 pub use crate::operation::describe_fraudster::_describe_fraudster_input::DescribeFraudsterInputBuilder;
 
+impl DescribeFraudsterInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_fraudster::DescribeFraudsterOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_fraudster::DescribeFraudsterError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_fraudster();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeFraudster`.
 ///
 /// <p>Describes the specified fraudster.</p>

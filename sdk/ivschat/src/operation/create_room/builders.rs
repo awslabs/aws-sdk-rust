@@ -3,6 +3,23 @@ pub use crate::operation::create_room::_create_room_output::CreateRoomOutputBuil
 
 pub use crate::operation::create_room::_create_room_input::CreateRoomInputBuilder;
 
+impl CreateRoomInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_room::CreateRoomOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_room::CreateRoomError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_room();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateRoom`.
 ///
 /// <p>Creates a room that allows clients to connect and pass messages.</p>

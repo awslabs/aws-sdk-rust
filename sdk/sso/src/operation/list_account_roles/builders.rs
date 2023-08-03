@@ -3,6 +3,23 @@ pub use crate::operation::list_account_roles::_list_account_roles_output::ListAc
 
 pub use crate::operation::list_account_roles::_list_account_roles_input::ListAccountRolesInputBuilder;
 
+impl ListAccountRolesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_account_roles::ListAccountRolesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_account_roles::ListAccountRolesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_account_roles();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAccountRoles`.
 ///
 /// <p>Lists all roles that are assigned to the user for a given AWS account.</p>

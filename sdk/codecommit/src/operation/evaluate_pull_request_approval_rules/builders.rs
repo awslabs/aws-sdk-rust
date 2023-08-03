@@ -3,6 +3,17 @@ pub use crate::operation::evaluate_pull_request_approval_rules::_evaluate_pull_r
 
 pub use crate::operation::evaluate_pull_request_approval_rules::_evaluate_pull_request_approval_rules_input::EvaluatePullRequestApprovalRulesInputBuilder;
 
+impl EvaluatePullRequestApprovalRulesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::evaluate_pull_request_approval_rules::EvaluatePullRequestApprovalRulesOutput, ::aws_smithy_http::result::SdkError<crate::operation::evaluate_pull_request_approval_rules::EvaluatePullRequestApprovalRulesError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.evaluate_pull_request_approval_rules();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `EvaluatePullRequestApprovalRules`.
 ///
 /// <p>Evaluates whether a pull request has met all the conditions specified in its associated approval rules.</p>

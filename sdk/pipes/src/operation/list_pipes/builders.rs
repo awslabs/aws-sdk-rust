@@ -3,6 +3,23 @@ pub use crate::operation::list_pipes::_list_pipes_output::ListPipesOutputBuilder
 
 pub use crate::operation::list_pipes::_list_pipes_input::ListPipesInputBuilder;
 
+impl ListPipesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_pipes::ListPipesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_pipes::ListPipesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_pipes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListPipes`.
 ///
 /// <p>Get the pipes associated with this account. For more information about pipes, see <a href="https://docs.aws.amazon.com/eventbridge/latest/userguide/eb-pipes.html">Amazon EventBridge Pipes</a> in the Amazon EventBridge User Guide.</p>

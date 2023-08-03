@@ -3,6 +3,23 @@ pub use crate::operation::modify_hosts::_modify_hosts_output::ModifyHostsOutputB
 
 pub use crate::operation::modify_hosts::_modify_hosts_input::ModifyHostsInputBuilder;
 
+impl ModifyHostsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_hosts::ModifyHostsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_hosts::ModifyHostsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_hosts();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyHosts`.
 ///
 /// <p>Modify the auto-placement setting of a Dedicated Host. When auto-placement is enabled, any instances that you launch with a tenancy of <code>host</code> but without a specific host ID are placed onto any available Dedicated Host in your account that has auto-placement enabled. When auto-placement is disabled, you need to provide a host ID to have the instance launch onto a specific host. If no host ID is provided, the instance is launched onto a suitable host with auto-placement enabled.</p>

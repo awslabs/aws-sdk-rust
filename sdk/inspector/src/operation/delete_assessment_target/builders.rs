@@ -3,6 +3,23 @@ pub use crate::operation::delete_assessment_target::_delete_assessment_target_ou
 
 pub use crate::operation::delete_assessment_target::_delete_assessment_target_input::DeleteAssessmentTargetInputBuilder;
 
+impl DeleteAssessmentTargetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_assessment_target::DeleteAssessmentTargetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_assessment_target::DeleteAssessmentTargetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_assessment_target();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteAssessmentTarget`.
 ///
 /// <p>Deletes the assessment target that is specified by the ARN of the assessment target.</p>

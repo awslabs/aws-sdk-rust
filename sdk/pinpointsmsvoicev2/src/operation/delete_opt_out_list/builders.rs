@@ -3,6 +3,23 @@ pub use crate::operation::delete_opt_out_list::_delete_opt_out_list_output::Dele
 
 pub use crate::operation::delete_opt_out_list::_delete_opt_out_list_input::DeleteOptOutListInputBuilder;
 
+impl DeleteOptOutListInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_opt_out_list::DeleteOptOutListOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_opt_out_list::DeleteOptOutListError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_opt_out_list();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteOptOutList`.
 ///
 /// <p>Deletes an existing opt-out list. All opted out phone numbers in the opt-out list are deleted.</p>

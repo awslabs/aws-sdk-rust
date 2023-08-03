@@ -3,6 +3,23 @@ pub use crate::operation::update_smb_file_share_visibility::_update_smb_file_sha
 
 pub use crate::operation::update_smb_file_share_visibility::_update_smb_file_share_visibility_input::UpdateSmbFileShareVisibilityInputBuilder;
 
+impl UpdateSmbFileShareVisibilityInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_smb_file_share_visibility::UpdateSmbFileShareVisibilityOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_smb_file_share_visibility::UpdateSMBFileShareVisibilityError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_smb_file_share_visibility();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateSMBFileShareVisibility`.
 ///
 /// <p>Controls whether the shares on an S3 File Gateway are visible in a net view or browse list. The operation is only supported for S3 File Gateways.</p>

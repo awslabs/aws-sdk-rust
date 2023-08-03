@@ -3,6 +3,23 @@ pub use crate::operation::list_scripts::_list_scripts_output::ListScriptsOutputB
 
 pub use crate::operation::list_scripts::_list_scripts_input::ListScriptsInputBuilder;
 
+impl ListScriptsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_scripts::ListScriptsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_scripts::ListScriptsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_scripts();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListScripts`.
 ///
 /// <p>Retrieves script records for all Realtime scripts that are associated with the Amazon Web Services account in use. </p>

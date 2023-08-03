@@ -3,6 +3,23 @@ pub use crate::operation::delete_stage::_delete_stage_output::DeleteStageOutputB
 
 pub use crate::operation::delete_stage::_delete_stage_input::DeleteStageInputBuilder;
 
+impl DeleteStageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_stage::DeleteStageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_stage::DeleteStageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_stage();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteStage`.
 ///
 /// <p>Shuts down and deletes the specified stage (disconnecting all participants).</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_utterances_view::_get_utterances_view_output::GetU
 
 pub use crate::operation::get_utterances_view::_get_utterances_view_input::GetUtterancesViewInputBuilder;
 
+impl GetUtterancesViewInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_utterances_view::GetUtterancesViewOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_utterances_view::GetUtterancesViewError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_utterances_view();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetUtterancesView`.
 ///
 /// <p>Use the <code>GetUtterancesView</code> operation to get information about the utterances that your users have made to your bot. You can use this list to tune the utterances that your bot responds to.</p>

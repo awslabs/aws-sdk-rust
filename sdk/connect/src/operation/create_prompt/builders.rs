@@ -3,6 +3,23 @@ pub use crate::operation::create_prompt::_create_prompt_output::CreatePromptOutp
 
 pub use crate::operation::create_prompt::_create_prompt_input::CreatePromptInputBuilder;
 
+impl CreatePromptInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_prompt::CreatePromptOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_prompt::CreatePromptError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_prompt();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreatePrompt`.
 ///
 /// <p>Creates a prompt. For more information about prompts, such as supported file types and maximum length, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/prompts.html">Create prompts</a> in the <i>Amazon Connect Administrator's Guide</i>.</p>

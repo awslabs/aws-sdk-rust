@@ -3,6 +3,23 @@ pub use crate::operation::update_connection::_update_connection_output::UpdateCo
 
 pub use crate::operation::update_connection::_update_connection_input::UpdateConnectionInputBuilder;
 
+impl UpdateConnectionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_connection::UpdateConnectionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_connection::UpdateConnectionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_connection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateConnection`.
 ///
 /// <p>Updates the Direct Connect dedicated connection configuration.</p>

@@ -3,6 +3,17 @@ pub use crate::operation::create_hosted_configuration_version::_create_hosted_co
 
 pub use crate::operation::create_hosted_configuration_version::_create_hosted_configuration_version_input::CreateHostedConfigurationVersionInputBuilder;
 
+impl CreateHostedConfigurationVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_hosted_configuration_version::CreateHostedConfigurationVersionError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.create_hosted_configuration_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateHostedConfigurationVersion`.
 ///
 /// <p>Creates a new configuration in the AppConfig hosted configuration store.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_evidence::_get_evidence_output::GetEvidenceOutputB
 
 pub use crate::operation::get_evidence::_get_evidence_input::GetEvidenceInputBuilder;
 
+impl GetEvidenceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_evidence::GetEvidenceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_evidence::GetEvidenceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_evidence();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetEvidence`.
 ///
 /// <p> Gets information about a specified evidence item.</p>

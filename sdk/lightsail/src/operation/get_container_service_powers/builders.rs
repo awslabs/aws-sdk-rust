@@ -3,6 +3,23 @@ pub use crate::operation::get_container_service_powers::_get_container_service_p
 
 pub use crate::operation::get_container_service_powers::_get_container_service_powers_input::GetContainerServicePowersInputBuilder;
 
+impl GetContainerServicePowersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_container_service_powers::GetContainerServicePowersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_container_service_powers::GetContainerServicePowersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_container_service_powers();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetContainerServicePowers`.
 ///
 /// <p>Returns the list of powers that can be specified for your Amazon Lightsail container services.</p>

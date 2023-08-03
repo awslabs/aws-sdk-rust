@@ -3,6 +3,23 @@ pub use crate::operation::update_thing::_update_thing_output::UpdateThingOutputB
 
 pub use crate::operation::update_thing::_update_thing_input::UpdateThingInputBuilder;
 
+impl UpdateThingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_thing::UpdateThingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_thing::UpdateThingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_thing();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateThing`.
 ///
 /// <p>Updates the data for a thing.</p>

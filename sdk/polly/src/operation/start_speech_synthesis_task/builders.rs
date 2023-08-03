@@ -3,6 +3,23 @@ pub use crate::operation::start_speech_synthesis_task::_start_speech_synthesis_t
 
 pub use crate::operation::start_speech_synthesis_task::_start_speech_synthesis_task_input::StartSpeechSynthesisTaskInputBuilder;
 
+impl StartSpeechSynthesisTaskInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_speech_synthesis_task::StartSpeechSynthesisTaskError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_speech_synthesis_task();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartSpeechSynthesisTask`.
 ///
 /// <p>Allows the creation of an asynchronous synthesis task, by starting a new <code>SpeechSynthesisTask</code>. This operation requires all the standard information needed for speech synthesis, plus the name of an Amazon S3 bucket for the service to store the output of the synthesis task and two optional parameters (<code>OutputS3KeyPrefix</code> and <code>SnsTopicArn</code>). Once the synthesis task is created, this operation will return a <code>SpeechSynthesisTask</code> object, which will include an identifier of this task as well as the current status. The <code>SpeechSynthesisTask</code> object is available for 72 hours after starting the asynchronous synthesis task.</p>

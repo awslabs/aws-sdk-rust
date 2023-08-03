@@ -3,6 +3,23 @@ pub use crate::operation::add_bridge_outputs::_add_bridge_outputs_output::AddBri
 
 pub use crate::operation::add_bridge_outputs::_add_bridge_outputs_input::AddBridgeOutputsInputBuilder;
 
+impl AddBridgeOutputsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::add_bridge_outputs::AddBridgeOutputsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::add_bridge_outputs::AddBridgeOutputsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.add_bridge_outputs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AddBridgeOutputs`.
 ///
 /// Adds outputs to an existing bridge.

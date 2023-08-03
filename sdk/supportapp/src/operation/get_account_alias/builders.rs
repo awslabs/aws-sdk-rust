@@ -3,6 +3,23 @@ pub use crate::operation::get_account_alias::_get_account_alias_output::GetAccou
 
 pub use crate::operation::get_account_alias::_get_account_alias_input::GetAccountAliasInputBuilder;
 
+impl GetAccountAliasInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_account_alias::GetAccountAliasOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_account_alias::GetAccountAliasError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_account_alias();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetAccountAlias`.
 ///
 /// <p>Retrieves the alias from an Amazon Web Services account ID. The alias appears in the Amazon Web Services Support App page of the Amazon Web Services Support Center. The alias also appears in Slack messages from the Amazon Web Services Support App.</p>

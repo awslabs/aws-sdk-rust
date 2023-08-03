@@ -3,6 +3,23 @@ pub use crate::operation::delete_service_network::_delete_service_network_output
 
 pub use crate::operation::delete_service_network::_delete_service_network_input::DeleteServiceNetworkInputBuilder;
 
+impl DeleteServiceNetworkInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_service_network::DeleteServiceNetworkOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_service_network::DeleteServiceNetworkError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_service_network();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteServiceNetwork`.
 ///
 /// <p>Deletes a service network. You can only delete the service network if there is no service or VPC associated with it. If you delete a service network, all resources related to the service network, such as the resource policy, auth policy, and access log subscriptions, are also deleted. For more information, see <a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/service-networks.html#delete-service-network">Delete a service network</a> in the <i>Amazon VPC Lattice User Guide</i>.</p>

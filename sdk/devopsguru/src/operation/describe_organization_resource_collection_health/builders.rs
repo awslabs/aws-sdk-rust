@@ -3,6 +3,17 @@ pub use crate::operation::describe_organization_resource_collection_health::_des
 
 pub use crate::operation::describe_organization_resource_collection_health::_describe_organization_resource_collection_health_input::DescribeOrganizationResourceCollectionHealthInputBuilder;
 
+impl DescribeOrganizationResourceCollectionHealthInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_organization_resource_collection_health::DescribeOrganizationResourceCollectionHealthOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_organization_resource_collection_health::DescribeOrganizationResourceCollectionHealthError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_organization_resource_collection_health();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeOrganizationResourceCollectionHealth`.
 ///
 /// <p>Provides an overview of your system's health. If additional member accounts are part of your organization, you can filter those accounts using the <code>AccountIds</code> field.</p>

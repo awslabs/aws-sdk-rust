@@ -3,6 +3,23 @@ pub use crate::operation::open_instance_public_ports::_open_instance_public_port
 
 pub use crate::operation::open_instance_public_ports::_open_instance_public_ports_input::OpenInstancePublicPortsInputBuilder;
 
+impl OpenInstancePublicPortsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::open_instance_public_ports::OpenInstancePublicPortsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::open_instance_public_ports::OpenInstancePublicPortsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.open_instance_public_ports();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `OpenInstancePublicPorts`.
 ///
 /// <p>Opens ports for a specific Amazon Lightsail instance, and specifies the IP addresses allowed to connect to the instance through the ports, and the protocol.</p>

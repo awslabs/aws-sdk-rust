@@ -3,6 +3,23 @@ pub use crate::operation::delete_resource_set::_delete_resource_set_output::Dele
 
 pub use crate::operation::delete_resource_set::_delete_resource_set_input::DeleteResourceSetInputBuilder;
 
+impl DeleteResourceSetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_resource_set::DeleteResourceSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_resource_set::DeleteResourceSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_resource_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteResourceSet`.
 ///
 /// <p>Deletes a resource set.</p>

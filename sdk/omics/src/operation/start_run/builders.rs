@@ -3,6 +3,23 @@ pub use crate::operation::start_run::_start_run_output::StartRunOutputBuilder;
 
 pub use crate::operation::start_run::_start_run_input::StartRunInputBuilder;
 
+impl StartRunInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_run::StartRunOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_run::StartRunError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_run();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartRun`.
 ///
 /// <p>Starts a run.</p>

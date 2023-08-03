@@ -3,6 +3,17 @@ pub use crate::operation::disassociate_transit_gateway_policy_table::_disassocia
 
 pub use crate::operation::disassociate_transit_gateway_policy_table::_disassociate_transit_gateway_policy_table_input::DisassociateTransitGatewayPolicyTableInputBuilder;
 
+impl DisassociateTransitGatewayPolicyTableInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::disassociate_transit_gateway_policy_table::DisassociateTransitGatewayPolicyTableOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_transit_gateway_policy_table::DisassociateTransitGatewayPolicyTableError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.disassociate_transit_gateway_policy_table();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateTransitGatewayPolicyTable`.
 ///
 /// <p>Removes the association between an an attachment and a policy table.</p>

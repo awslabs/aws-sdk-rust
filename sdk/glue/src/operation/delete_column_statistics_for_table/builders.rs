@@ -3,6 +3,17 @@ pub use crate::operation::delete_column_statistics_for_table::_delete_column_sta
 
 pub use crate::operation::delete_column_statistics_for_table::_delete_column_statistics_for_table_input::DeleteColumnStatisticsForTableInputBuilder;
 
+impl DeleteColumnStatisticsForTableInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_column_statistics_for_table::DeleteColumnStatisticsForTableOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_column_statistics_for_table::DeleteColumnStatisticsForTableError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.delete_column_statistics_for_table();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteColumnStatisticsForTable`.
 ///
 /// <p>Retrieves table statistics of columns.</p>

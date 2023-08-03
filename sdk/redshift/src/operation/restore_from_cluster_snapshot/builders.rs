@@ -3,6 +3,23 @@ pub use crate::operation::restore_from_cluster_snapshot::_restore_from_cluster_s
 
 pub use crate::operation::restore_from_cluster_snapshot::_restore_from_cluster_snapshot_input::RestoreFromClusterSnapshotInputBuilder;
 
+impl RestoreFromClusterSnapshotInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::restore_from_cluster_snapshot::RestoreFromClusterSnapshotError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.restore_from_cluster_snapshot();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RestoreFromClusterSnapshot`.
 ///
 /// <p>Creates a new cluster from a snapshot. By default, Amazon Redshift creates the resulting cluster with the same configuration as the original cluster from which the snapshot was created, except that the new cluster is created with the default cluster security and parameter groups. After Amazon Redshift creates the cluster, you can use the <code>ModifyCluster</code> API to associate a different security group and different parameter group with the restored cluster. If you are using a DS node type, you can also choose to change to another DS node type of the same size during restore.</p>

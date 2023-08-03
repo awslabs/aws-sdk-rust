@@ -3,6 +3,23 @@ pub use crate::operation::get_suite_definition::_get_suite_definition_output::Ge
 
 pub use crate::operation::get_suite_definition::_get_suite_definition_input::GetSuiteDefinitionInputBuilder;
 
+impl GetSuiteDefinitionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_suite_definition::GetSuiteDefinitionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_suite_definition::GetSuiteDefinitionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_suite_definition();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetSuiteDefinition`.
 ///
 /// <p>Gets information about a Device Advisor test suite.</p>

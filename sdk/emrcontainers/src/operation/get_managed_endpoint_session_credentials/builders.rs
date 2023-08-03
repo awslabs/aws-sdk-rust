@@ -3,6 +3,17 @@ pub use crate::operation::get_managed_endpoint_session_credentials::_get_managed
 
 pub use crate::operation::get_managed_endpoint_session_credentials::_get_managed_endpoint_session_credentials_input::GetManagedEndpointSessionCredentialsInputBuilder;
 
+impl GetManagedEndpointSessionCredentialsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentialsOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_managed_endpoint_session_credentials::GetManagedEndpointSessionCredentialsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_managed_endpoint_session_credentials();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetManagedEndpointSessionCredentials`.
 ///
 /// <p>Generate a session token to connect to a managed endpoint. </p>

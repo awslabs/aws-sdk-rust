@@ -3,6 +3,23 @@ pub use crate::operation::get_usage_plan::_get_usage_plan_output::GetUsagePlanOu
 
 pub use crate::operation::get_usage_plan::_get_usage_plan_input::GetUsagePlanInputBuilder;
 
+impl GetUsagePlanInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_usage_plan::GetUsagePlanOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_usage_plan::GetUsagePlanError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_usage_plan();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetUsagePlan`.
 ///
 /// <p>Gets a usage plan of a given plan identifier.</p>

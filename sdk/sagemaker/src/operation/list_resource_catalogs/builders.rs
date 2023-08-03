@@ -3,6 +3,23 @@ pub use crate::operation::list_resource_catalogs::_list_resource_catalogs_output
 
 pub use crate::operation::list_resource_catalogs::_list_resource_catalogs_input::ListResourceCatalogsInputBuilder;
 
+impl ListResourceCatalogsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_resource_catalogs::ListResourceCatalogsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_resource_catalogs::ListResourceCatalogsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_resource_catalogs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListResourceCatalogs`.
 ///
 /// <p> Lists Amazon SageMaker Catalogs based on given filters and orders. The maximum number of <code>ResourceCatalog</code>s viewable is 1000. </p>

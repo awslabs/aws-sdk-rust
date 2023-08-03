@@ -3,6 +3,23 @@ pub use crate::operation::create_license_configuration::_create_license_configur
 
 pub use crate::operation::create_license_configuration::_create_license_configuration_input::CreateLicenseConfigurationInputBuilder;
 
+impl CreateLicenseConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_license_configuration::CreateLicenseConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_license_configuration::CreateLicenseConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_license_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateLicenseConfiguration`.
 ///
 /// <p>Creates a license configuration.</p>

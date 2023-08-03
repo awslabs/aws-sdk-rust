@@ -3,6 +3,23 @@ pub use crate::operation::update_project_data_delivery::_update_project_data_del
 
 pub use crate::operation::update_project_data_delivery::_update_project_data_delivery_input::UpdateProjectDataDeliveryInputBuilder;
 
+impl UpdateProjectDataDeliveryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_project_data_delivery::UpdateProjectDataDeliveryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_project_data_delivery::UpdateProjectDataDeliveryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_project_data_delivery();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateProjectDataDelivery`.
 ///
 /// <p>Updates the data storage options for this project. If you store evaluation events, you an keep them and analyze them on your own. If you choose not to store evaluation events, Evidently deletes them after using them to produce metrics and other experiment results that you can view.</p>

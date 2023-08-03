@@ -3,6 +3,23 @@ pub use crate::operation::restore_cluster_from_snapshot::_restore_cluster_from_s
 
 pub use crate::operation::restore_cluster_from_snapshot::_restore_cluster_from_snapshot_input::RestoreClusterFromSnapshotInputBuilder;
 
+impl RestoreClusterFromSnapshotInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::restore_cluster_from_snapshot::RestoreClusterFromSnapshotOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::restore_cluster_from_snapshot::RestoreClusterFromSnapshotError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.restore_cluster_from_snapshot();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RestoreClusterFromSnapshot`.
 ///
 /// <p>Restores a Elastic DocumentDB cluster from a snapshot.</p>

@@ -3,6 +3,17 @@ pub use crate::operation::send_serial_console_ssh_public_key::_send_serial_conso
 
 pub use crate::operation::send_serial_console_ssh_public_key::_send_serial_console_ssh_public_key_input::SendSerialConsoleSshPublicKeyInputBuilder;
 
+impl SendSerialConsoleSshPublicKeyInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSshPublicKeyOutput, ::aws_smithy_http::result::SdkError<crate::operation::send_serial_console_ssh_public_key::SendSerialConsoleSSHPublicKeyError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.send_serial_console_ssh_public_key();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SendSerialConsoleSSHPublicKey`.
 ///
 /// <p>Pushes an SSH public key to the specified EC2 instance. The key remains for 60 seconds, which gives you 60 seconds to establish a serial console connection to the instance using SSH. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-serial-console.html">EC2 Serial Console</a> in the <i>Amazon EC2 User Guide</i>.</p>

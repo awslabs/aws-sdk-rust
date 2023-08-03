@@ -3,6 +3,23 @@ pub use crate::operation::delete_kx_database::_delete_kx_database_output::Delete
 
 pub use crate::operation::delete_kx_database::_delete_kx_database_input::DeleteKxDatabaseInputBuilder;
 
+impl DeleteKxDatabaseInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_kx_database::DeleteKxDatabaseOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_kx_database::DeleteKxDatabaseError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_kx_database();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteKxDatabase`.
 ///
 /// <p>Deletes the specified database and all of its associated data. This action is irreversible. You must copy any data out of the database before deleting it if the data is to be retained.</p>

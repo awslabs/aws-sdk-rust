@@ -3,6 +3,23 @@ pub use crate::operation::remove_thing_from_billing_group::_remove_thing_from_bi
 
 pub use crate::operation::remove_thing_from_billing_group::_remove_thing_from_billing_group_input::RemoveThingFromBillingGroupInputBuilder;
 
+impl RemoveThingFromBillingGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::remove_thing_from_billing_group::RemoveThingFromBillingGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::remove_thing_from_billing_group::RemoveThingFromBillingGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.remove_thing_from_billing_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RemoveThingFromBillingGroup`.
 ///
 /// <p>Removes the given thing from the billing group.</p>

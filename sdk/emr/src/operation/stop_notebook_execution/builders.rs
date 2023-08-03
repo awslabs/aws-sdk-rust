@@ -3,6 +3,23 @@ pub use crate::operation::stop_notebook_execution::_stop_notebook_execution_outp
 
 pub use crate::operation::stop_notebook_execution::_stop_notebook_execution_input::StopNotebookExecutionInputBuilder;
 
+impl StopNotebookExecutionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_notebook_execution::StopNotebookExecutionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_notebook_execution::StopNotebookExecutionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_notebook_execution();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopNotebookExecution`.
 ///
 /// <p>Stops a notebook execution.</p>

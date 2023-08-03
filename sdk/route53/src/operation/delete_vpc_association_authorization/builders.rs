@@ -3,6 +3,17 @@ pub use crate::operation::delete_vpc_association_authorization::_delete_vpc_asso
 
 pub use crate::operation::delete_vpc_association_authorization::_delete_vpc_association_authorization_input::DeleteVpcAssociationAuthorizationInputBuilder;
 
+impl DeleteVpcAssociationAuthorizationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_vpc_association_authorization::DeleteVpcAssociationAuthorizationOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_vpc_association_authorization::DeleteVPCAssociationAuthorizationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.delete_vpc_association_authorization();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteVPCAssociationAuthorization`.
 ///
 /// <p>Removes authorization to submit an <code>AssociateVPCWithHostedZone</code> request to associate a specified VPC with a hosted zone that was created by a different account. You must use the account that created the hosted zone to submit a <code>DeleteVPCAssociationAuthorization</code> request.</p> <important>

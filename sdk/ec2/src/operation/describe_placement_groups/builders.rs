@@ -3,6 +3,23 @@ pub use crate::operation::describe_placement_groups::_describe_placement_groups_
 
 pub use crate::operation::describe_placement_groups::_describe_placement_groups_input::DescribePlacementGroupsInputBuilder;
 
+impl DescribePlacementGroupsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_placement_groups::DescribePlacementGroupsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_placement_groups::DescribePlacementGroupsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_placement_groups();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribePlacementGroups`.
 ///
 /// <p>Describes the specified placement groups or all of your placement groups. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement groups</a> in the <i>Amazon EC2 User Guide</i>.</p>

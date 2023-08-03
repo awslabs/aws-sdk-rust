@@ -3,6 +3,23 @@ pub use crate::operation::register_delegated_administrator::_register_delegated_
 
 pub use crate::operation::register_delegated_administrator::_register_delegated_administrator_input::RegisterDelegatedAdministratorInputBuilder;
 
+impl RegisterDelegatedAdministratorInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::register_delegated_administrator::RegisterDelegatedAdministratorOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::register_delegated_administrator::RegisterDelegatedAdministratorError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.register_delegated_administrator();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RegisterDelegatedAdministrator`.
 ///
 /// <p>Enables the specified member account to administer the Organizations features of the specified Amazon Web Services service. It grants read-only access to Organizations service data. The account still requires IAM permissions to access and administer the Amazon Web Services service.</p>

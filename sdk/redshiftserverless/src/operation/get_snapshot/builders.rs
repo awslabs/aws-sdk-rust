@@ -3,6 +3,23 @@ pub use crate::operation::get_snapshot::_get_snapshot_output::GetSnapshotOutputB
 
 pub use crate::operation::get_snapshot::_get_snapshot_input::GetSnapshotInputBuilder;
 
+impl GetSnapshotInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_snapshot::GetSnapshotOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_snapshot::GetSnapshotError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_snapshot();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetSnapshot`.
 ///
 /// <p>Returns information about a specific snapshot.</p>

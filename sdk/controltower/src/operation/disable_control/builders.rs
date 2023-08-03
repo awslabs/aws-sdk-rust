@@ -3,6 +3,23 @@ pub use crate::operation::disable_control::_disable_control_output::DisableContr
 
 pub use crate::operation::disable_control::_disable_control_input::DisableControlInputBuilder;
 
+impl DisableControlInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disable_control::DisableControlOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disable_control::DisableControlError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disable_control();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisableControl`.
 ///
 /// <p>This API call turns off a control. It starts an asynchronous operation that deletes AWS resources on the specified organizational unit and the accounts it contains. The resources will vary according to the control that you specify.</p>

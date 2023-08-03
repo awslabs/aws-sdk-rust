@@ -3,6 +3,23 @@ pub use crate::operation::describe_smb_file_shares::_describe_smb_file_shares_ou
 
 pub use crate::operation::describe_smb_file_shares::_describe_smb_file_shares_input::DescribeSmbFileSharesInputBuilder;
 
+impl DescribeSmbFileSharesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_smb_file_shares::DescribeSmbFileSharesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_smb_file_shares::DescribeSMBFileSharesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_smb_file_shares();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeSMBFileShares`.
 ///
 /// <p>Gets a description for one or more Server Message Block (SMB) file shares from a S3 File Gateway. This operation is only supported for S3 File Gateways.</p>

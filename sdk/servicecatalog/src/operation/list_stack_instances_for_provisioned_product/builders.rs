@@ -3,6 +3,17 @@ pub use crate::operation::list_stack_instances_for_provisioned_product::_list_st
 
 pub use crate::operation::list_stack_instances_for_provisioned_product::_list_stack_instances_for_provisioned_product_input::ListStackInstancesForProvisionedProductInputBuilder;
 
+impl ListStackInstancesForProvisionedProductInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_stack_instances_for_provisioned_product::ListStackInstancesForProvisionedProductError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_stack_instances_for_provisioned_product();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListStackInstancesForProvisionedProduct`.
 ///
 /// <p>Returns summary information about stack instances that are associated with the specified <code>CFN_STACKSET</code> type provisioned product. You can filter for stack instances that are associated with a specific Amazon Web Services account name or Region. </p>

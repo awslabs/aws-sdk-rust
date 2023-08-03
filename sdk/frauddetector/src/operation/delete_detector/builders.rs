@@ -3,6 +3,23 @@ pub use crate::operation::delete_detector::_delete_detector_output::DeleteDetect
 
 pub use crate::operation::delete_detector::_delete_detector_input::DeleteDetectorInputBuilder;
 
+impl DeleteDetectorInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_detector::DeleteDetectorOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_detector::DeleteDetectorError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_detector();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteDetector`.
 ///
 /// <p>Deletes the detector. Before deleting a detector, you must first delete all detector versions and rule versions associated with the detector.</p>

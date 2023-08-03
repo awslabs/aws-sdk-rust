@@ -3,6 +3,23 @@ pub use crate::operation::close_instance_public_ports::_close_instance_public_po
 
 pub use crate::operation::close_instance_public_ports::_close_instance_public_ports_input::CloseInstancePublicPortsInputBuilder;
 
+impl CloseInstancePublicPortsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::close_instance_public_ports::CloseInstancePublicPortsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::close_instance_public_ports::CloseInstancePublicPortsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.close_instance_public_ports();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CloseInstancePublicPorts`.
 ///
 /// <p>Closes ports for a specific Amazon Lightsail instance.</p>

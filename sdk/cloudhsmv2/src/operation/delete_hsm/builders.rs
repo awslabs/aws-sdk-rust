@@ -3,6 +3,23 @@ pub use crate::operation::delete_hsm::_delete_hsm_output::DeleteHsmOutputBuilder
 
 pub use crate::operation::delete_hsm::_delete_hsm_input::DeleteHsmInputBuilder;
 
+impl DeleteHsmInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_hsm::DeleteHsmOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_hsm::DeleteHsmError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_hsm();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteHsm`.
 ///
 /// <p>Deletes the specified HSM. To specify an HSM, you can use its identifier (ID), the IP address of the HSM's elastic network interface (ENI), or the ID of the HSM's ENI. You need to specify only one of these values. To find these values, use <code>DescribeClusters</code>.</p>

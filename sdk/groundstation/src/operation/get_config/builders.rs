@@ -3,6 +3,23 @@ pub use crate::operation::get_config::_get_config_output::GetConfigOutputBuilder
 
 pub use crate::operation::get_config::_get_config_input::GetConfigInputBuilder;
 
+impl GetConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_config::GetConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_config::GetConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetConfig`.
 ///
 /// <p>Returns <code>Config</code> information.</p>

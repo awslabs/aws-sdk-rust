@@ -3,6 +3,23 @@ pub use crate::operation::flush_api_cache::_flush_api_cache_output::FlushApiCach
 
 pub use crate::operation::flush_api_cache::_flush_api_cache_input::FlushApiCacheInputBuilder;
 
+impl FlushApiCacheInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::flush_api_cache::FlushApiCacheOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::flush_api_cache::FlushApiCacheError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.flush_api_cache();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `FlushApiCache`.
 ///
 /// <p>Flushes an <code>ApiCache</code> object.</p>

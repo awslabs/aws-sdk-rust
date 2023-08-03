@@ -3,6 +3,23 @@ pub use crate::operation::delete_alarms::_delete_alarms_output::DeleteAlarmsOutp
 
 pub use crate::operation::delete_alarms::_delete_alarms_input::DeleteAlarmsInputBuilder;
 
+impl DeleteAlarmsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_alarms::DeleteAlarmsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_alarms::DeleteAlarmsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_alarms();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteAlarms`.
 ///
 /// <p>Deletes the specified alarms. You can delete up to 100 alarms in one operation. However, this total can include no more than one composite alarm. For example, you could delete 99 metric alarms and one composite alarms with one operation, but you can't delete two composite alarms with one operation.</p>

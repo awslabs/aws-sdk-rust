@@ -3,6 +3,17 @@ pub use crate::operation::get_failback_replication_configuration::_get_failback_
 
 pub use crate::operation::get_failback_replication_configuration::_get_failback_replication_configuration_input::GetFailbackReplicationConfigurationInputBuilder;
 
+impl GetFailbackReplicationConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_failback_replication_configuration::GetFailbackReplicationConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_failback_replication_configuration::GetFailbackReplicationConfigurationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_failback_replication_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetFailbackReplicationConfiguration`.
 ///
 /// <p>Lists all Failback ReplicationConfigurations, filtered by Recovery Instance ID.</p>

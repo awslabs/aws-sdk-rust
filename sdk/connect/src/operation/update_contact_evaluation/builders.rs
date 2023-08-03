@@ -3,6 +3,23 @@ pub use crate::operation::update_contact_evaluation::_update_contact_evaluation_
 
 pub use crate::operation::update_contact_evaluation::_update_contact_evaluation_input::UpdateContactEvaluationInputBuilder;
 
+impl UpdateContactEvaluationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_contact_evaluation::UpdateContactEvaluationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_contact_evaluation::UpdateContactEvaluationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_contact_evaluation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateContactEvaluation`.
 ///
 /// <p>Updates details about a contact evaluation in the specified Amazon Connect instance. A contact evaluation must be in draft state. Answers included in the request are merged with existing answers for the given evaluation. An answer or note can be deleted by passing an empty object (<code>{}</code>) to the question identifier. </p>

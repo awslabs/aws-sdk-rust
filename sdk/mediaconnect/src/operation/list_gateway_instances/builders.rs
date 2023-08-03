@@ -3,6 +3,23 @@ pub use crate::operation::list_gateway_instances::_list_gateway_instances_output
 
 pub use crate::operation::list_gateway_instances::_list_gateway_instances_input::ListGatewayInstancesInputBuilder;
 
+impl ListGatewayInstancesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_gateway_instances::ListGatewayInstancesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_gateway_instances::ListGatewayInstancesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_gateway_instances();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListGatewayInstances`.
 ///
 /// Displays a list of instances associated with the AWS account. This request returns a paginated result. You can use the filterArn property to display only the instances associated with the selected Gateway Amazon Resource Name (ARN).

@@ -3,6 +3,17 @@ pub use crate::operation::delete_direct_connect_gateway_association::_delete_dir
 
 pub use crate::operation::delete_direct_connect_gateway_association::_delete_direct_connect_gateway_association_input::DeleteDirectConnectGatewayAssociationInputBuilder;
 
+impl DeleteDirectConnectGatewayAssociationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_direct_connect_gateway_association::DeleteDirectConnectGatewayAssociationOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_direct_connect_gateway_association::DeleteDirectConnectGatewayAssociationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.delete_direct_connect_gateway_association();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteDirectConnectGatewayAssociation`.
 ///
 /// <p>Deletes the association between the specified Direct Connect gateway and virtual private gateway.</p>

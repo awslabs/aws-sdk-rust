@@ -3,6 +3,23 @@ pub use crate::operation::update_usage_limit::_update_usage_limit_output::Update
 
 pub use crate::operation::update_usage_limit::_update_usage_limit_input::UpdateUsageLimitInputBuilder;
 
+impl UpdateUsageLimitInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_usage_limit::UpdateUsageLimitOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_usage_limit::UpdateUsageLimitError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_usage_limit();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateUsageLimit`.
 ///
 /// <p>Update a usage limit in Amazon Redshift Serverless. You can't update the usage type or period of a usage limit.</p>

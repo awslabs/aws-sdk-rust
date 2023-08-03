@@ -3,6 +3,23 @@ pub use crate::operation::list_job_executions_for_job::_list_job_executions_for_
 
 pub use crate::operation::list_job_executions_for_job::_list_job_executions_for_job_input::ListJobExecutionsForJobInputBuilder;
 
+impl ListJobExecutionsForJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_job_executions_for_job::ListJobExecutionsForJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_job_executions_for_job::ListJobExecutionsForJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_job_executions_for_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListJobExecutionsForJob`.
 ///
 /// <p>Lists the job executions for a job.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::update_broker_storage::_update_broker_storage_output::
 
 pub use crate::operation::update_broker_storage::_update_broker_storage_input::UpdateBrokerStorageInputBuilder;
 
+impl UpdateBrokerStorageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_broker_storage::UpdateBrokerStorageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_broker_storage::UpdateBrokerStorageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_broker_storage();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateBrokerStorage`.
 ///
 /// <p>Updates the EBS storage associated with MSK brokers.</p>

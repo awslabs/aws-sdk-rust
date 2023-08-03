@@ -3,6 +3,23 @@ pub use crate::operation::remove_attributes::_remove_attributes_output::RemoveAt
 
 pub use crate::operation::remove_attributes::_remove_attributes_input::RemoveAttributesInputBuilder;
 
+impl RemoveAttributesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::remove_attributes::RemoveAttributesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::remove_attributes::RemoveAttributesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.remove_attributes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RemoveAttributes`.
 ///
 /// <p>Removes one or more attributes, of the same attribute type, from all the endpoints that are associated with an application.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::update_standards_control::_update_standards_control_ou
 
 pub use crate::operation::update_standards_control::_update_standards_control_input::UpdateStandardsControlInputBuilder;
 
+impl UpdateStandardsControlInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_standards_control::UpdateStandardsControlOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_standards_control::UpdateStandardsControlError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_standards_control();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateStandardsControl`.
 ///
 /// <p>Used to control whether an individual security standard control is enabled or disabled.</p>

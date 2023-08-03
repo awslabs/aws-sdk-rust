@@ -3,6 +3,23 @@ pub use crate::operation::create_collection::_create_collection_output::CreateCo
 
 pub use crate::operation::create_collection::_create_collection_input::CreateCollectionInputBuilder;
 
+impl CreateCollectionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_collection::CreateCollectionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_collection::CreateCollectionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_collection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateCollection`.
 ///
 /// <p>Creates a collection in an AWS Region. You can add faces to the collection using the <code>IndexFaces</code> operation. </p>

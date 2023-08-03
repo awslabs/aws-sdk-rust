@@ -3,6 +3,23 @@ pub use crate::operation::test_render_template::_test_render_template_output::Te
 
 pub use crate::operation::test_render_template::_test_render_template_input::TestRenderTemplateInputBuilder;
 
+impl TestRenderTemplateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::test_render_template::TestRenderTemplateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::test_render_template::TestRenderTemplateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.test_render_template();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `TestRenderTemplate`.
 ///
 /// <p>Creates a preview of the MIME content of an email when provided with a template and a set of replacement data.</p>

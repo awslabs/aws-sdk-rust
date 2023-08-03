@@ -3,6 +3,23 @@ pub use crate::operation::describe_device_fleet::_describe_device_fleet_output::
 
 pub use crate::operation::describe_device_fleet::_describe_device_fleet_input::DescribeDeviceFleetInputBuilder;
 
+impl DescribeDeviceFleetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_device_fleet::DescribeDeviceFleetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_device_fleet::DescribeDeviceFleetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_device_fleet();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeDeviceFleet`.
 ///
 /// <p>A description of the fleet the device belongs to.</p>

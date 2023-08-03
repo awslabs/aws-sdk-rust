@@ -3,6 +3,23 @@ pub use crate::operation::describe_registries::_describe_registries_output::Desc
 
 pub use crate::operation::describe_registries::_describe_registries_input::DescribeRegistriesInputBuilder;
 
+impl DescribeRegistriesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_registries::DescribeRegistriesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_registries::DescribeRegistriesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_registries();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeRegistries`.
 ///
 /// <p>Returns details for a public registry.</p>

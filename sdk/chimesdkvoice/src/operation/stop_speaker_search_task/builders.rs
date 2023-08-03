@@ -3,6 +3,23 @@ pub use crate::operation::stop_speaker_search_task::_stop_speaker_search_task_ou
 
 pub use crate::operation::stop_speaker_search_task::_stop_speaker_search_task_input::StopSpeakerSearchTaskInputBuilder;
 
+impl StopSpeakerSearchTaskInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_speaker_search_task::StopSpeakerSearchTaskOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_speaker_search_task::StopSpeakerSearchTaskError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_speaker_search_task();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopSpeakerSearchTask`.
 ///
 /// <p>Stops a speaker search task.</p>

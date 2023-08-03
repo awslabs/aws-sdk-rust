@@ -3,6 +3,23 @@ pub use crate::operation::list_associated_stacks::_list_associated_stacks_output
 
 pub use crate::operation::list_associated_stacks::_list_associated_stacks_input::ListAssociatedStacksInputBuilder;
 
+impl ListAssociatedStacksInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_associated_stacks::ListAssociatedStacksOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_associated_stacks::ListAssociatedStacksError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_associated_stacks();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAssociatedStacks`.
 ///
 /// <p>Retrieves the name of the stack with which the specified fleet is associated.</p>

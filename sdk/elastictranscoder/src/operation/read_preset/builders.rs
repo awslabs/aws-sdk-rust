@@ -3,6 +3,23 @@ pub use crate::operation::read_preset::_read_preset_output::ReadPresetOutputBuil
 
 pub use crate::operation::read_preset::_read_preset_input::ReadPresetInputBuilder;
 
+impl ReadPresetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::read_preset::ReadPresetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::read_preset::ReadPresetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.read_preset();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ReadPreset`.
 ///
 /// <p>The ReadPreset operation gets detailed information about a preset.</p>

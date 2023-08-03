@@ -3,6 +3,23 @@ pub use crate::operation::deregister_container_instance::_deregister_container_i
 
 pub use crate::operation::deregister_container_instance::_deregister_container_instance_input::DeregisterContainerInstanceInputBuilder;
 
+impl DeregisterContainerInstanceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::deregister_container_instance::DeregisterContainerInstanceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::deregister_container_instance::DeregisterContainerInstanceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.deregister_container_instance();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeregisterContainerInstance`.
 ///
 /// <p>Deregisters an Amazon ECS container instance from the specified cluster. This instance is no longer available to run tasks.</p>

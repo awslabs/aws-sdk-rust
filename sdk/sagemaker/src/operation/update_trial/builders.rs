@@ -3,6 +3,23 @@ pub use crate::operation::update_trial::_update_trial_output::UpdateTrialOutputB
 
 pub use crate::operation::update_trial::_update_trial_input::UpdateTrialInputBuilder;
 
+impl UpdateTrialInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_trial::UpdateTrialOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_trial::UpdateTrialError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_trial();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateTrial`.
 ///
 /// <p>Updates the display name of a trial.</p>

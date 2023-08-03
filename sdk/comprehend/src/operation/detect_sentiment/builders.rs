@@ -3,6 +3,23 @@ pub use crate::operation::detect_sentiment::_detect_sentiment_output::DetectSent
 
 pub use crate::operation::detect_sentiment::_detect_sentiment_input::DetectSentimentInputBuilder;
 
+impl DetectSentimentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::detect_sentiment::DetectSentimentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::detect_sentiment::DetectSentimentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.detect_sentiment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DetectSentiment`.
 ///
 /// <p>Inspects text and returns an inference of the prevailing sentiment (<code>POSITIVE</code>, <code>NEUTRAL</code>, <code>MIXED</code>, or <code>NEGATIVE</code>). </p>

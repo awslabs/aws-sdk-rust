@@ -3,6 +3,23 @@ pub use crate::operation::create_bucket::_create_bucket_output::CreateBucketOutp
 
 pub use crate::operation::create_bucket::_create_bucket_input::CreateBucketInputBuilder;
 
+impl CreateBucketInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_bucket::CreateBucketOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_bucket::CreateBucketError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_bucket();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateBucket`.
 ///
 /// <p>Creates a new S3 bucket. To create a bucket, you must register with Amazon S3 and have a valid Amazon Web Services Access Key ID to authenticate requests. Anonymous requests are never allowed to create buckets. By creating the bucket, you become the bucket owner.</p>

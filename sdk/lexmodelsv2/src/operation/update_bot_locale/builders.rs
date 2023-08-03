@@ -3,6 +3,23 @@ pub use crate::operation::update_bot_locale::_update_bot_locale_output::UpdateBo
 
 pub use crate::operation::update_bot_locale::_update_bot_locale_input::UpdateBotLocaleInputBuilder;
 
+impl UpdateBotLocaleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_bot_locale::UpdateBotLocaleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_bot_locale::UpdateBotLocaleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_bot_locale();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateBotLocale`.
 ///
 /// <p>Updates the settings that a bot has for a specific locale.</p>

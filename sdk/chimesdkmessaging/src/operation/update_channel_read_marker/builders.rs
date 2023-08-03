@@ -3,6 +3,23 @@ pub use crate::operation::update_channel_read_marker::_update_channel_read_marke
 
 pub use crate::operation::update_channel_read_marker::_update_channel_read_marker_input::UpdateChannelReadMarkerInputBuilder;
 
+impl UpdateChannelReadMarkerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_channel_read_marker::UpdateChannelReadMarkerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_channel_read_marker::UpdateChannelReadMarkerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_channel_read_marker();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateChannelReadMarker`.
 ///
 /// <p>The details of the time when a user last read messages in a channel.</p> <note>

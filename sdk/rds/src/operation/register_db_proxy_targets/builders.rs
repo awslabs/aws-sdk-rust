@@ -3,6 +3,23 @@ pub use crate::operation::register_db_proxy_targets::_register_db_proxy_targets_
 
 pub use crate::operation::register_db_proxy_targets::_register_db_proxy_targets_input::RegisterDbProxyTargetsInputBuilder;
 
+impl RegisterDbProxyTargetsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::register_db_proxy_targets::RegisterDbProxyTargetsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::register_db_proxy_targets::RegisterDBProxyTargetsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.register_db_proxy_targets();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RegisterDBProxyTargets`.
 ///
 /// <p>Associate one or more <code>DBProxyTarget</code> data structures with a <code>DBProxyTargetGroup</code>.</p>

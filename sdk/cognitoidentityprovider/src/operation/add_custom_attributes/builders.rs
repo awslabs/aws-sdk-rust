@@ -3,6 +3,23 @@ pub use crate::operation::add_custom_attributes::_add_custom_attributes_output::
 
 pub use crate::operation::add_custom_attributes::_add_custom_attributes_input::AddCustomAttributesInputBuilder;
 
+impl AddCustomAttributesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::add_custom_attributes::AddCustomAttributesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::add_custom_attributes::AddCustomAttributesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.add_custom_attributes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AddCustomAttributes`.
 ///
 /// <p>Adds additional user attributes to the user pool schema.</p>

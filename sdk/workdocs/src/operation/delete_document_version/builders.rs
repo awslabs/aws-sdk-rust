@@ -3,6 +3,23 @@ pub use crate::operation::delete_document_version::_delete_document_version_outp
 
 pub use crate::operation::delete_document_version::_delete_document_version_input::DeleteDocumentVersionInputBuilder;
 
+impl DeleteDocumentVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_document_version::DeleteDocumentVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_document_version::DeleteDocumentVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_document_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteDocumentVersion`.
 ///
 /// <p>Deletes a specific version of a document.</p>

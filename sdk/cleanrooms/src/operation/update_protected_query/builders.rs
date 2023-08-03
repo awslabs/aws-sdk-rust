@@ -3,6 +3,23 @@ pub use crate::operation::update_protected_query::_update_protected_query_output
 
 pub use crate::operation::update_protected_query::_update_protected_query_input::UpdateProtectedQueryInputBuilder;
 
+impl UpdateProtectedQueryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_protected_query::UpdateProtectedQueryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_protected_query::UpdateProtectedQueryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_protected_query();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateProtectedQuery`.
 ///
 /// <p>Updates the processing of a currently running query.</p>

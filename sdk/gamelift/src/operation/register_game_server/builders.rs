@@ -3,6 +3,23 @@ pub use crate::operation::register_game_server::_register_game_server_output::Re
 
 pub use crate::operation::register_game_server::_register_game_server_input::RegisterGameServerInputBuilder;
 
+impl RegisterGameServerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::register_game_server::RegisterGameServerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::register_game_server::RegisterGameServerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.register_game_server();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RegisterGameServer`.
 ///
 /// <p> <b>This operation is used with the Amazon GameLift FleetIQ solution and game server groups.</b> </p>

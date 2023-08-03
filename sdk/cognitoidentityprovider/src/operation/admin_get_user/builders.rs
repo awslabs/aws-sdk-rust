@@ -3,6 +3,23 @@ pub use crate::operation::admin_get_user::_admin_get_user_output::AdminGetUserOu
 
 pub use crate::operation::admin_get_user::_admin_get_user_input::AdminGetUserInputBuilder;
 
+impl AdminGetUserInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::admin_get_user::AdminGetUserOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::admin_get_user::AdminGetUserError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.admin_get_user();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AdminGetUser`.
 ///
 /// <p>Gets the specified user by user name in a user pool as an administrator. Works on any user.</p>

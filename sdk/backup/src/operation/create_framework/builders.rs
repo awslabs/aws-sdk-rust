@@ -3,6 +3,23 @@ pub use crate::operation::create_framework::_create_framework_output::CreateFram
 
 pub use crate::operation::create_framework::_create_framework_input::CreateFrameworkInputBuilder;
 
+impl CreateFrameworkInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_framework::CreateFrameworkOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_framework::CreateFrameworkError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_framework();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateFramework`.
 ///
 /// <p>Creates a framework with one or more controls. A framework is a collection of controls that you can use to evaluate your backup practices. By using pre-built customizable controls to define your policies, you can evaluate whether your backup practices comply with your policies and which resources are not yet in compliance.</p>

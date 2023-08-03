@@ -3,6 +3,23 @@ pub use crate::operation::get_wireless_device_import_task::_get_wireless_device_
 
 pub use crate::operation::get_wireless_device_import_task::_get_wireless_device_import_task_input::GetWirelessDeviceImportTaskInputBuilder;
 
+impl GetWirelessDeviceImportTaskInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_wireless_device_import_task::GetWirelessDeviceImportTaskOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_wireless_device_import_task::GetWirelessDeviceImportTaskError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_wireless_device_import_task();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetWirelessDeviceImportTask`.
 ///
 /// <p>Get information about an import task and count of device onboarding summary information for the import task.</p>

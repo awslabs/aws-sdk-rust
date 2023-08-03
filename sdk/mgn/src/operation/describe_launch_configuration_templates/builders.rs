@@ -3,6 +3,17 @@ pub use crate::operation::describe_launch_configuration_templates::_describe_lau
 
 pub use crate::operation::describe_launch_configuration_templates::_describe_launch_configuration_templates_input::DescribeLaunchConfigurationTemplatesInputBuilder;
 
+impl DescribeLaunchConfigurationTemplatesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_launch_configuration_templates::DescribeLaunchConfigurationTemplatesOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_launch_configuration_templates::DescribeLaunchConfigurationTemplatesError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_launch_configuration_templates();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeLaunchConfigurationTemplates`.
 ///
 /// <p>Lists all Launch Configuration Templates, filtered by Launch Configuration Template IDs</p>

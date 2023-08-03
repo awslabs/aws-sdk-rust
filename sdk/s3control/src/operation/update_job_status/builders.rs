@@ -3,6 +3,23 @@ pub use crate::operation::update_job_status::_update_job_status_output::UpdateJo
 
 pub use crate::operation::update_job_status::_update_job_status_input::UpdateJobStatusInputBuilder;
 
+impl UpdateJobStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_job_status::UpdateJobStatusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_job_status::UpdateJobStatusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_job_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateJobStatus`.
 ///
 /// <p>Updates the status for the specified job. Use this action to confirm that you want to run a job or to cancel an existing job. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/batch-ops.html">S3 Batch Operations</a> in the <i>Amazon S3 User Guide</i>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_package_version::_create_package_version_output
 
 pub use crate::operation::create_package_version::_create_package_version_input::CreatePackageVersionInputBuilder;
 
+impl CreatePackageVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_package_version::CreatePackageVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_package_version::CreatePackageVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_package_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreatePackageVersion`.
 ///
 /// <p>Creates a new version for an existing IoT software package.</p>

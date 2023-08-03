@@ -3,6 +3,23 @@ pub use crate::operation::update_scene::_update_scene_output::UpdateSceneOutputB
 
 pub use crate::operation::update_scene::_update_scene_input::UpdateSceneInputBuilder;
 
+impl UpdateSceneInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_scene::UpdateSceneOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_scene::UpdateSceneError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_scene();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateScene`.
 ///
 /// <p>Updates a scene.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::deregister_workspace_directory::_deregister_workspace_
 
 pub use crate::operation::deregister_workspace_directory::_deregister_workspace_directory_input::DeregisterWorkspaceDirectoryInputBuilder;
 
+impl DeregisterWorkspaceDirectoryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::deregister_workspace_directory::DeregisterWorkspaceDirectoryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::deregister_workspace_directory::DeregisterWorkspaceDirectoryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.deregister_workspace_directory();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeregisterWorkspaceDirectory`.
 ///
 /// <p>Deregisters the specified directory. This operation is asynchronous and returns before the WorkSpace directory is deregistered. If any WorkSpaces are registered to this directory, you must remove them before you can deregister the directory.</p> <note>

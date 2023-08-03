@@ -3,6 +3,23 @@ pub use crate::operation::enable_trust_anchor::_enable_trust_anchor_output::Enab
 
 pub use crate::operation::enable_trust_anchor::_enable_trust_anchor_input::EnableTrustAnchorInputBuilder;
 
+impl EnableTrustAnchorInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::enable_trust_anchor::EnableTrustAnchorOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::enable_trust_anchor::EnableTrustAnchorError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.enable_trust_anchor();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `EnableTrustAnchor`.
 ///
 /// <p>Enables a trust anchor. When enabled, certificates in the trust anchor chain are authorized for trust validation. </p>

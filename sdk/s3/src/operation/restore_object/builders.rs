@@ -3,6 +3,23 @@ pub use crate::operation::restore_object::_restore_object_output::RestoreObjectO
 
 pub use crate::operation::restore_object::_restore_object_input::RestoreObjectInputBuilder;
 
+impl RestoreObjectInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::restore_object::RestoreObjectOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::restore_object::RestoreObjectError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.restore_object();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RestoreObject`.
 ///
 /// <p>Restores an archived copy of an object back into Amazon S3</p>

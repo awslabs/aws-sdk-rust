@@ -3,6 +3,23 @@ pub use crate::operation::list_engagements::_list_engagements_output::ListEngage
 
 pub use crate::operation::list_engagements::_list_engagements_input::ListEngagementsInputBuilder;
 
+impl ListEngagementsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_engagements::ListEngagementsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_engagements::ListEngagementsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_engagements();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListEngagements`.
 ///
 /// <p>Lists all engagements that have happened in an incident.</p>

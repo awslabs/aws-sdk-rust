@@ -3,6 +3,23 @@ pub use crate::operation::revoke_db_security_group_ingress::_revoke_db_security_
 
 pub use crate::operation::revoke_db_security_group_ingress::_revoke_db_security_group_ingress_input::RevokeDbSecurityGroupIngressInputBuilder;
 
+impl RevokeDbSecurityGroupIngressInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::revoke_db_security_group_ingress::RevokeDbSecurityGroupIngressOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::revoke_db_security_group_ingress::RevokeDBSecurityGroupIngressError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.revoke_db_security_group_ingress();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RevokeDBSecurityGroupIngress`.
 ///
 /// <p>Revokes ingress from a DBSecurityGroup for previously authorized IP ranges or EC2 or VPC security groups. Required parameters for this API are one of CIDRIP, EC2SecurityGroupId for VPC, or (EC2SecurityGroupOwnerId and either EC2SecurityGroupName or EC2SecurityGroupId).</p> <note>

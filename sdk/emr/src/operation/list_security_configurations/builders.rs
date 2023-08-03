@@ -3,6 +3,23 @@ pub use crate::operation::list_security_configurations::_list_security_configura
 
 pub use crate::operation::list_security_configurations::_list_security_configurations_input::ListSecurityConfigurationsInputBuilder;
 
+impl ListSecurityConfigurationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_security_configurations::ListSecurityConfigurationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_security_configurations::ListSecurityConfigurationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_security_configurations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListSecurityConfigurations`.
 ///
 /// <p>Lists all the security configurations visible to this account, providing their creation dates and times, and their names. This call returns a maximum of 50 clusters per call, but returns a marker to track the paging of the cluster list across multiple ListSecurityConfigurations calls.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_store_image_tasks::_describe_store_image_task
 
 pub use crate::operation::describe_store_image_tasks::_describe_store_image_tasks_input::DescribeStoreImageTasksInputBuilder;
 
+impl DescribeStoreImageTasksInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_store_image_tasks::DescribeStoreImageTasksOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_store_image_tasks::DescribeStoreImageTasksError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_store_image_tasks();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeStoreImageTasks`.
 ///
 /// <p>Describes the progress of the AMI store tasks. You can describe the store tasks for specified AMIs. If you don't specify the AMIs, you get a paginated list of store tasks from the last 31 days.</p>

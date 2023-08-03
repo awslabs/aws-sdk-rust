@@ -3,6 +3,23 @@ pub use crate::operation::delete_fleet::_delete_fleet_output::DeleteFleetOutputB
 
 pub use crate::operation::delete_fleet::_delete_fleet_input::DeleteFleetInputBuilder;
 
+impl DeleteFleetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_fleet::DeleteFleetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_fleet::DeleteFleetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_fleet();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteFleet`.
 ///
 /// <p> Deletes a fleet. Before you delete a fleet, all vehicles must be dissociated from the fleet. For more information, see <a href="https://docs.aws.amazon.com/iot-fleetwise/latest/developerguide/delete-fleet-cli.html">Delete a fleet (AWS CLI)</a> in the <i>Amazon Web Services IoT FleetWise Developer Guide</i>.</p> <note>

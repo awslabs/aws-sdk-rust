@@ -3,6 +3,23 @@ pub use crate::operation::start_engagement::_start_engagement_output::StartEngag
 
 pub use crate::operation::start_engagement::_start_engagement_input::StartEngagementInputBuilder;
 
+impl StartEngagementInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_engagement::StartEngagementOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_engagement::StartEngagementError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_engagement();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartEngagement`.
 ///
 /// <p>Starts an engagement to a contact or escalation plan. The engagement engages each contact specified in the incident.</p>

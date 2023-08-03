@@ -3,6 +3,23 @@ pub use crate::operation::report_task_runner_heartbeat::_report_task_runner_hear
 
 pub use crate::operation::report_task_runner_heartbeat::_report_task_runner_heartbeat_input::ReportTaskRunnerHeartbeatInputBuilder;
 
+impl ReportTaskRunnerHeartbeatInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeatOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::report_task_runner_heartbeat::ReportTaskRunnerHeartbeatError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.report_task_runner_heartbeat();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ReportTaskRunnerHeartbeat`.
 ///
 /// <p>Task runners call <code>ReportTaskRunnerHeartbeat</code> every 15 minutes to indicate that they are operational. If the AWS Data Pipeline Task Runner is launched on a resource managed by AWS Data Pipeline, the web service can use this call to detect when the task runner application has failed and restart a new instance.</p> <examples>

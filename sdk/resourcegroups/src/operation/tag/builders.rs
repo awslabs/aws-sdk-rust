@@ -3,6 +3,23 @@ pub use crate::operation::tag::_tag_output::TagOutputBuilder;
 
 pub use crate::operation::tag::_tag_input::TagInputBuilder;
 
+impl TagInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::tag::TagOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::tag::TagError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.tag();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `Tag`.
 ///
 /// <p>Adds tags to a resource group with the specified ARN. Existing tags on a resource group are not changed if they are not specified in the request parameters.</p> <important>

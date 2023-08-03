@@ -3,6 +3,23 @@ pub use crate::operation::describe_location_fsx_ontap::_describe_location_fsx_on
 
 pub use crate::operation::describe_location_fsx_ontap::_describe_location_fsx_ontap_input::DescribeLocationFsxOntapInputBuilder;
 
+impl DescribeLocationFsxOntapInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_location_fsx_ontap::DescribeLocationFsxOntapOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_location_fsx_ontap::DescribeLocationFsxOntapError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_location_fsx_ontap();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeLocationFsxOntap`.
 ///
 /// <p>Provides details about how an DataSync location for an Amazon FSx for NetApp ONTAP file system is configured.</p> <note>

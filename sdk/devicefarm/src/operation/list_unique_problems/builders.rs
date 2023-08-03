@@ -3,6 +3,23 @@ pub use crate::operation::list_unique_problems::_list_unique_problems_output::Li
 
 pub use crate::operation::list_unique_problems::_list_unique_problems_input::ListUniqueProblemsInputBuilder;
 
+impl ListUniqueProblemsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_unique_problems::ListUniqueProblemsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_unique_problems::ListUniqueProblemsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_unique_problems();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListUniqueProblems`.
 ///
 /// <p>Gets information about unique problems, such as exceptions or crashes.</p>

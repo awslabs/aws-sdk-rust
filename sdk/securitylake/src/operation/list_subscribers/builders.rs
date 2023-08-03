@@ -3,6 +3,23 @@ pub use crate::operation::list_subscribers::_list_subscribers_output::ListSubscr
 
 pub use crate::operation::list_subscribers::_list_subscribers_input::ListSubscribersInputBuilder;
 
+impl ListSubscribersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_subscribers::ListSubscribersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_subscribers::ListSubscribersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_subscribers();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListSubscribers`.
 ///
 /// <p>List all subscribers for the specific Amazon Security Lake account ID. You can retrieve a list of subscriptions associated with a specific organization or Amazon Web Services account.</p>

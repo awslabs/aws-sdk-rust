@@ -3,6 +3,23 @@ pub use crate::operation::describe_parameter_groups::_describe_parameter_groups_
 
 pub use crate::operation::describe_parameter_groups::_describe_parameter_groups_input::DescribeParameterGroupsInputBuilder;
 
+impl DescribeParameterGroupsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_parameter_groups::DescribeParameterGroupsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_parameter_groups::DescribeParameterGroupsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_parameter_groups();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeParameterGroups`.
 ///
 /// <p>Returns a list of parameter group descriptions. If a parameter group name is specified, the list will contain only the descriptions for that group.</p>

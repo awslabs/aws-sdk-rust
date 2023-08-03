@@ -3,6 +3,17 @@ pub use crate::operation::list_cross_account_authorizations::_list_cross_account
 
 pub use crate::operation::list_cross_account_authorizations::_list_cross_account_authorizations_input::ListCrossAccountAuthorizationsInputBuilder;
 
+impl ListCrossAccountAuthorizationsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_cross_account_authorizations::ListCrossAccountAuthorizationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_cross_account_authorizations::ListCrossAccountAuthorizationsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_cross_account_authorizations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListCrossAccountAuthorizations`.
 ///
 /// <p>Lists the cross-account readiness authorizations that are in place for an account.</p>

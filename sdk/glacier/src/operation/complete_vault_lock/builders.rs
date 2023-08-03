@@ -3,6 +3,23 @@ pub use crate::operation::complete_vault_lock::_complete_vault_lock_output::Comp
 
 pub use crate::operation::complete_vault_lock::_complete_vault_lock_input::CompleteVaultLockInputBuilder;
 
+impl CompleteVaultLockInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::complete_vault_lock::CompleteVaultLockOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::complete_vault_lock::CompleteVaultLockError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.complete_vault_lock();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CompleteVaultLock`.
 ///
 /// <p>This operation completes the vault locking process by transitioning the vault lock from the <code>InProgress</code> state to the <code>Locked</code> state, which causes the vault lock policy to become unchangeable. A vault lock is put into the <code>InProgress</code> state by calling <code>InitiateVaultLock</code>. You can obtain the state of the vault lock by calling <code>GetVaultLock</code>. For more information about the vault locking process, <a href="https://docs.aws.amazon.com/amazonglacier/latest/dev/vault-lock.html">Amazon Glacier Vault Lock</a>. </p>

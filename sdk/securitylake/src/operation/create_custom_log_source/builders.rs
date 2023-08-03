@@ -3,6 +3,23 @@ pub use crate::operation::create_custom_log_source::_create_custom_log_source_ou
 
 pub use crate::operation::create_custom_log_source::_create_custom_log_source_input::CreateCustomLogSourceInputBuilder;
 
+impl CreateCustomLogSourceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_custom_log_source::CreateCustomLogSourceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_custom_log_source::CreateCustomLogSourceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_custom_log_source();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateCustomLogSource`.
 ///
 /// <p>Adds a third-party custom source in Amazon Security Lake, from the Amazon Web Services Region where you want to create a custom source. Security Lake can collect logs and events from third-party custom sources. After creating the appropriate IAM role to invoke Glue crawler, use this API to add a custom source name in Security Lake. This operation creates a partition in the Amazon S3 bucket for Security Lake as the target location for log files from the custom source. In addition, this operation also creates an associated Glue table and an Glue crawler.</p>

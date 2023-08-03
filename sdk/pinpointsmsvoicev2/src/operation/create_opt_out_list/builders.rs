@@ -3,6 +3,23 @@ pub use crate::operation::create_opt_out_list::_create_opt_out_list_output::Crea
 
 pub use crate::operation::create_opt_out_list::_create_opt_out_list_input::CreateOptOutListInputBuilder;
 
+impl CreateOptOutListInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_opt_out_list::CreateOptOutListOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_opt_out_list::CreateOptOutListError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_opt_out_list();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateOptOutList`.
 ///
 /// <p>Creates a new opt-out list.</p>

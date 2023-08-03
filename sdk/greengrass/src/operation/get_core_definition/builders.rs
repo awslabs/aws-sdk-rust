@@ -3,6 +3,23 @@ pub use crate::operation::get_core_definition::_get_core_definition_output::GetC
 
 pub use crate::operation::get_core_definition::_get_core_definition_input::GetCoreDefinitionInputBuilder;
 
+impl GetCoreDefinitionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_core_definition::GetCoreDefinitionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_core_definition::GetCoreDefinitionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_core_definition();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetCoreDefinition`.
 ///
 /// Retrieves information about a core definition version.

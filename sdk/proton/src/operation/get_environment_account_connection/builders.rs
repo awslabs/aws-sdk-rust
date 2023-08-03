@@ -3,6 +3,17 @@ pub use crate::operation::get_environment_account_connection::_get_environment_a
 
 pub use crate::operation::get_environment_account_connection::_get_environment_account_connection_input::GetEnvironmentAccountConnectionInputBuilder;
 
+impl GetEnvironmentAccountConnectionInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_environment_account_connection::GetEnvironmentAccountConnectionOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_environment_account_connection::GetEnvironmentAccountConnectionError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_environment_account_connection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetEnvironmentAccountConnection`.
 ///
 /// <p>In an environment account, get the detailed data for an environment account connection.</p>

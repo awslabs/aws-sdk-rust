@@ -3,6 +3,23 @@ pub use crate::operation::get_blob::_get_blob_output::GetBlobOutputBuilder;
 
 pub use crate::operation::get_blob::_get_blob_input::GetBlobInputBuilder;
 
+impl GetBlobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_blob::GetBlobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_blob::GetBlobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_blob();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetBlob`.
 ///
 /// <p>Returns the base-64 encoded content of an individual blob in a repository.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::signal_workflow_execution::_signal_workflow_execution_
 
 pub use crate::operation::signal_workflow_execution::_signal_workflow_execution_input::SignalWorkflowExecutionInputBuilder;
 
+impl SignalWorkflowExecutionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::signal_workflow_execution::SignalWorkflowExecutionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::signal_workflow_execution::SignalWorkflowExecutionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.signal_workflow_execution();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SignalWorkflowExecution`.
 ///
 /// <p>Records a <code>WorkflowExecutionSignaled</code> event in the workflow execution history and creates a decision task for the workflow execution identified by the given domain, workflowId and runId. The event is recorded with the specified user defined signalName and input (if provided).</p> <note>

@@ -3,6 +3,23 @@ pub use crate::operation::modify_volume_attribute::_modify_volume_attribute_outp
 
 pub use crate::operation::modify_volume_attribute::_modify_volume_attribute_input::ModifyVolumeAttributeInputBuilder;
 
+impl ModifyVolumeAttributeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_volume_attribute::ModifyVolumeAttributeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_volume_attribute::ModifyVolumeAttributeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_volume_attribute();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyVolumeAttribute`.
 ///
 /// <p>Modifies a volume attribute.</p>

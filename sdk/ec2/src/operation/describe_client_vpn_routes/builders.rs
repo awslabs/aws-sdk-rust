@@ -3,6 +3,23 @@ pub use crate::operation::describe_client_vpn_routes::_describe_client_vpn_route
 
 pub use crate::operation::describe_client_vpn_routes::_describe_client_vpn_routes_input::DescribeClientVpnRoutesInputBuilder;
 
+impl DescribeClientVpnRoutesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_client_vpn_routes::DescribeClientVpnRoutesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_client_vpn_routes::DescribeClientVpnRoutesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_client_vpn_routes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeClientVpnRoutes`.
 ///
 /// <p>Describes the routes for the specified Client VPN endpoint.</p>

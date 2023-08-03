@@ -3,6 +3,23 @@ pub use crate::operation::put_bucket_replication::_put_bucket_replication_output
 
 pub use crate::operation::put_bucket_replication::_put_bucket_replication_input::PutBucketReplicationInputBuilder;
 
+impl PutBucketReplicationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_bucket_replication::PutBucketReplicationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_bucket_replication::PutBucketReplicationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_bucket_replication();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutBucketReplication`.
 ///
 /// <p> Creates a replication configuration or replaces an existing one. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/replication.html">Replication</a> in the <i>Amazon S3 User Guide</i>. </p>

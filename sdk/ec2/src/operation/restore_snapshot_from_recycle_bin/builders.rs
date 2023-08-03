@@ -3,6 +3,23 @@ pub use crate::operation::restore_snapshot_from_recycle_bin::_restore_snapshot_f
 
 pub use crate::operation::restore_snapshot_from_recycle_bin::_restore_snapshot_from_recycle_bin_input::RestoreSnapshotFromRecycleBinInputBuilder;
 
+impl RestoreSnapshotFromRecycleBinInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::restore_snapshot_from_recycle_bin::RestoreSnapshotFromRecycleBinOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::restore_snapshot_from_recycle_bin::RestoreSnapshotFromRecycleBinError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.restore_snapshot_from_recycle_bin();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RestoreSnapshotFromRecycleBin`.
 ///
 /// <p>Restores a snapshot from the Recycle Bin. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/recycle-bin-working-with-snaps.html#recycle-bin-restore-snaps">Restore snapshots from the Recycle Bin</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>

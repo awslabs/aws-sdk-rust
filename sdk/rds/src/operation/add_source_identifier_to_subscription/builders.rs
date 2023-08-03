@@ -3,6 +3,17 @@ pub use crate::operation::add_source_identifier_to_subscription::_add_source_ide
 
 pub use crate::operation::add_source_identifier_to_subscription::_add_source_identifier_to_subscription_input::AddSourceIdentifierToSubscriptionInputBuilder;
 
+impl AddSourceIdentifierToSubscriptionInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::add_source_identifier_to_subscription::AddSourceIdentifierToSubscriptionOutput, ::aws_smithy_http::result::SdkError<crate::operation::add_source_identifier_to_subscription::AddSourceIdentifierToSubscriptionError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.add_source_identifier_to_subscription();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AddSourceIdentifierToSubscription`.
 ///
 /// <p>Adds a source identifier to an existing RDS event notification subscription.</p>

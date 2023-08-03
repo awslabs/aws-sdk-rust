@@ -3,6 +3,17 @@ pub use crate::operation::describe_retention_configurations::_describe_retention
 
 pub use crate::operation::describe_retention_configurations::_describe_retention_configurations_input::DescribeRetentionConfigurationsInputBuilder;
 
+impl DescribeRetentionConfigurationsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_retention_configurations::DescribeRetentionConfigurationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_retention_configurations::DescribeRetentionConfigurationsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_retention_configurations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeRetentionConfigurations`.
 ///
 /// <p>Returns the details of one or more retention configurations. If the retention configuration name is not specified, this action returns the details for all the retention configurations for that account.</p> <note>

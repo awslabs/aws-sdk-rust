@@ -3,6 +3,23 @@ pub use crate::operation::create_policy::_create_policy_output::CreatePolicyOutp
 
 pub use crate::operation::create_policy::_create_policy_input::CreatePolicyInputBuilder;
 
+impl CreatePolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_policy::CreatePolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_policy::CreatePolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreatePolicy`.
 ///
 /// <p>Creates a Cedar policy and saves it in the specified policy store. You can create either a static policy or a policy linked to a policy template.</p>

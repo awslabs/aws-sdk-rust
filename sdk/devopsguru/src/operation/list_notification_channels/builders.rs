@@ -3,6 +3,23 @@ pub use crate::operation::list_notification_channels::_list_notification_channel
 
 pub use crate::operation::list_notification_channels::_list_notification_channels_input::ListNotificationChannelsInputBuilder;
 
+impl ListNotificationChannelsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_notification_channels::ListNotificationChannelsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_notification_channels::ListNotificationChannelsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_notification_channels();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListNotificationChannels`.
 ///
 /// <p> Returns a list of notification channels configured for DevOps Guru. Each notification channel is used to notify you when DevOps Guru generates an insight that contains information about how to improve your operations. The one supported notification channel is Amazon Simple Notification Service (Amazon SNS). </p>

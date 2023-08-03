@@ -3,6 +3,23 @@ pub use crate::operation::list_response_headers_policies::_list_response_headers
 
 pub use crate::operation::list_response_headers_policies::_list_response_headers_policies_input::ListResponseHeadersPoliciesInputBuilder;
 
+impl ListResponseHeadersPoliciesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_response_headers_policies::ListResponseHeadersPoliciesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_response_headers_policies::ListResponseHeadersPoliciesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_response_headers_policies();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListResponseHeadersPolicies`.
 ///
 /// <p>Gets a list of response headers policies.</p>

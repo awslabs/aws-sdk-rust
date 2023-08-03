@@ -3,6 +3,17 @@ pub use crate::operation::describe_notification_configurations::_describe_notifi
 
 pub use crate::operation::describe_notification_configurations::_describe_notification_configurations_input::DescribeNotificationConfigurationsInputBuilder;
 
+impl DescribeNotificationConfigurationsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_notification_configurations::DescribeNotificationConfigurationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_notification_configurations::DescribeNotificationConfigurationsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_notification_configurations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeNotificationConfigurations`.
 ///
 /// <p>Gets information about the Amazon SNS notifications that are configured for one or more Auto Scaling groups.</p>

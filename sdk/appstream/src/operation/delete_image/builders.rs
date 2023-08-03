@@ -3,6 +3,23 @@ pub use crate::operation::delete_image::_delete_image_output::DeleteImageOutputB
 
 pub use crate::operation::delete_image::_delete_image_input::DeleteImageInputBuilder;
 
+impl DeleteImageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_image::DeleteImageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_image::DeleteImageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_image();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteImage`.
 ///
 /// <p>Deletes the specified image. You cannot delete an image when it is in use. After you delete an image, you cannot provision new capacity using the image.</p>

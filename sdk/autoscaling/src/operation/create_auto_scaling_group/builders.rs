@@ -3,6 +3,23 @@ pub use crate::operation::create_auto_scaling_group::_create_auto_scaling_group_
 
 pub use crate::operation::create_auto_scaling_group::_create_auto_scaling_group_input::CreateAutoScalingGroupInputBuilder;
 
+impl CreateAutoScalingGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_auto_scaling_group::CreateAutoScalingGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_auto_scaling_group::CreateAutoScalingGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_auto_scaling_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateAutoScalingGroup`.
 ///
 /// <p> <b>We strongly recommend using a launch template when calling this operation to ensure full functionality for Amazon EC2 Auto Scaling and Amazon EC2.</b> </p>

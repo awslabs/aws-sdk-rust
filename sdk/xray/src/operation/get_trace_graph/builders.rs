@@ -3,6 +3,23 @@ pub use crate::operation::get_trace_graph::_get_trace_graph_output::GetTraceGrap
 
 pub use crate::operation::get_trace_graph::_get_trace_graph_input::GetTraceGraphInputBuilder;
 
+impl GetTraceGraphInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_trace_graph::GetTraceGraphOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_trace_graph::GetTraceGraphError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_trace_graph();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetTraceGraph`.
 ///
 /// <p>Retrieves a service graph for one or more specific trace IDs.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_available_solution_stacks::_list_available_soluti
 
 pub use crate::operation::list_available_solution_stacks::_list_available_solution_stacks_input::ListAvailableSolutionStacksInputBuilder;
 
+impl ListAvailableSolutionStacksInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_available_solution_stacks::ListAvailableSolutionStacksOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_available_solution_stacks::ListAvailableSolutionStacksError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_available_solution_stacks();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAvailableSolutionStacks`.
 ///
 /// <p>Returns a list of the available solution stack names, with the public version first and then in reverse chronological order.</p>

@@ -3,6 +3,17 @@ pub use crate::operation::describe_direct_connect_gateway_attachments::_describe
 
 pub use crate::operation::describe_direct_connect_gateway_attachments::_describe_direct_connect_gateway_attachments_input::DescribeDirectConnectGatewayAttachmentsInputBuilder;
 
+impl DescribeDirectConnectGatewayAttachmentsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_direct_connect_gateway_attachments::DescribeDirectConnectGatewayAttachmentsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_direct_connect_gateway_attachments::DescribeDirectConnectGatewayAttachmentsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_direct_connect_gateway_attachments();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeDirectConnectGatewayAttachments`.
 ///
 /// <p>Lists the attachments between your Direct Connect gateways and virtual interfaces. You must specify a Direct Connect gateway, a virtual interface, or both. If you specify a Direct Connect gateway, the response contains all virtual interfaces attached to the Direct Connect gateway. If you specify a virtual interface, the response contains all Direct Connect gateways attached to the virtual interface. If you specify both, the response contains the attachment between the Direct Connect gateway and the virtual interface.</p>

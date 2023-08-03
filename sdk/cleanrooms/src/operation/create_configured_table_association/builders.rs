@@ -3,6 +3,17 @@ pub use crate::operation::create_configured_table_association::_create_configure
 
 pub use crate::operation::create_configured_table_association::_create_configured_table_association_input::CreateConfiguredTableAssociationInputBuilder;
 
+impl CreateConfiguredTableAssociationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::create_configured_table_association::CreateConfiguredTableAssociationOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_configured_table_association::CreateConfiguredTableAssociationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.create_configured_table_association();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateConfiguredTableAssociation`.
 ///
 /// <p>Creates a configured table association. A configured table association links a configured table with a collaboration.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_code_reviews::_list_code_reviews_output::ListCode
 
 pub use crate::operation::list_code_reviews::_list_code_reviews_input::ListCodeReviewsInputBuilder;
 
+impl ListCodeReviewsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_code_reviews::ListCodeReviewsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_code_reviews::ListCodeReviewsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_code_reviews();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListCodeReviews`.
 ///
 /// <p>Lists all the code reviews that the customer has created in the past 90 days.</p>

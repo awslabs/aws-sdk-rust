@@ -3,6 +3,23 @@ pub use crate::operation::create_environment_template::_create_environment_templ
 
 pub use crate::operation::create_environment_template::_create_environment_template_input::CreateEnvironmentTemplateInputBuilder;
 
+impl CreateEnvironmentTemplateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_environment_template::CreateEnvironmentTemplateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_environment_template::CreateEnvironmentTemplateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_environment_template();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateEnvironmentTemplate`.
 ///
 /// <p>Create an environment template for Proton. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-templates.html">Environment Templates</a> in the <i>Proton User Guide</i>.</p>

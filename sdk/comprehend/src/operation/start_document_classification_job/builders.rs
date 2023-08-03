@@ -3,6 +3,17 @@ pub use crate::operation::start_document_classification_job::_start_document_cla
 
 pub use crate::operation::start_document_classification_job::_start_document_classification_job_input::StartDocumentClassificationJobInputBuilder;
 
+impl StartDocumentClassificationJobInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::start_document_classification_job::StartDocumentClassificationJobOutput, ::aws_smithy_http::result::SdkError<crate::operation::start_document_classification_job::StartDocumentClassificationJobError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.start_document_classification_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartDocumentClassificationJob`.
 ///
 /// <p>Starts an asynchronous document classification job. Use the <code>DescribeDocumentClassificationJob</code> operation to track the progress of the job.</p>

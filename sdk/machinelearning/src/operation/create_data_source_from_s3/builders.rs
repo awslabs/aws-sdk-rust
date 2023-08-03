@@ -3,6 +3,23 @@ pub use crate::operation::create_data_source_from_s3::_create_data_source_from_s
 
 pub use crate::operation::create_data_source_from_s3::_create_data_source_from_s3_input::CreateDataSourceFromS3InputBuilder;
 
+impl CreateDataSourceFromS3InputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_data_source_from_s3::CreateDataSourceFromS3Output,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_data_source_from_s3::CreateDataSourceFromS3Error,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_data_source_from_s3();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateDataSourceFromS3`.
 ///
 /// <p>Creates a <code>DataSource</code> object. A <code>DataSource</code> references data that can be used to perform <code>CreateMLModel</code>, <code>CreateEvaluation</code>, or <code>CreateBatchPrediction</code> operations.</p>

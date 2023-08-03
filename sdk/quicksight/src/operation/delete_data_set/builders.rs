@@ -3,6 +3,23 @@ pub use crate::operation::delete_data_set::_delete_data_set_output::DeleteDataSe
 
 pub use crate::operation::delete_data_set::_delete_data_set_input::DeleteDataSetInputBuilder;
 
+impl DeleteDataSetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_data_set::DeleteDataSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_data_set::DeleteDataSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_data_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteDataSet`.
 ///
 /// <p>Deletes a dataset.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_pull_request_approval_rule::_delete_pull_reques
 
 pub use crate::operation::delete_pull_request_approval_rule::_delete_pull_request_approval_rule_input::DeletePullRequestApprovalRuleInputBuilder;
 
+impl DeletePullRequestApprovalRuleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_pull_request_approval_rule::DeletePullRequestApprovalRuleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_pull_request_approval_rule::DeletePullRequestApprovalRuleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_pull_request_approval_rule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeletePullRequestApprovalRule`.
 ///
 /// <p>Deletes an approval rule from a specified pull request. Approval rules can be deleted from a pull request only if the pull request is open, and if the approval rule was created specifically for a pull request and not generated from an approval rule template associated with the repository where the pull request was created. You cannot delete an approval rule from a merged or closed pull request.</p>

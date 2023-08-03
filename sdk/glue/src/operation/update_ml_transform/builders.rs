@@ -3,6 +3,23 @@ pub use crate::operation::update_ml_transform::_update_ml_transform_output::Upda
 
 pub use crate::operation::update_ml_transform::_update_ml_transform_input::UpdateMlTransformInputBuilder;
 
+impl UpdateMlTransformInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_ml_transform::UpdateMlTransformOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_ml_transform::UpdateMLTransformError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_ml_transform();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateMLTransform`.
 ///
 /// <p>Updates an existing machine learning transform. Call this operation to tune the algorithm parameters to achieve better results.</p>

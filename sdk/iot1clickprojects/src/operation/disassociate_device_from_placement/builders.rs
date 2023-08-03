@@ -3,6 +3,17 @@ pub use crate::operation::disassociate_device_from_placement::_disassociate_devi
 
 pub use crate::operation::disassociate_device_from_placement::_disassociate_device_from_placement_input::DisassociateDeviceFromPlacementInputBuilder;
 
+impl DisassociateDeviceFromPlacementInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::disassociate_device_from_placement::DisassociateDeviceFromPlacementOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_device_from_placement::DisassociateDeviceFromPlacementError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.disassociate_device_from_placement();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateDeviceFromPlacement`.
 ///
 /// <p>Removes a physical device from a placement.</p>

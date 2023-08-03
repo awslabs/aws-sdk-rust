@@ -3,6 +3,23 @@ pub use crate::operation::create_data_set_import_task::_create_data_set_import_t
 
 pub use crate::operation::create_data_set_import_task::_create_data_set_import_task_input::CreateDataSetImportTaskInputBuilder;
 
+impl CreateDataSetImportTaskInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_data_set_import_task::CreateDataSetImportTaskOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_data_set_import_task::CreateDataSetImportTaskError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_data_set_import_task();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateDataSetImportTask`.
 ///
 /// <p>Starts a data set import task for a specific application.</p>

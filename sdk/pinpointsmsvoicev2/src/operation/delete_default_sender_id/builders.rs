@@ -3,6 +3,23 @@ pub use crate::operation::delete_default_sender_id::_delete_default_sender_id_ou
 
 pub use crate::operation::delete_default_sender_id::_delete_default_sender_id_input::DeleteDefaultSenderIdInputBuilder;
 
+impl DeleteDefaultSenderIdInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_default_sender_id::DeleteDefaultSenderIdOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_default_sender_id::DeleteDefaultSenderIdError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_default_sender_id();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteDefaultSenderId`.
 ///
 /// <p>Deletes an existing default sender ID on a configuration set.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_schema::_describe_schema_output::DescribeSche
 
 pub use crate::operation::describe_schema::_describe_schema_input::DescribeSchemaInputBuilder;
 
+impl DescribeSchemaInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_schema::DescribeSchemaOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_schema::DescribeSchemaError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_schema();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeSchema`.
 ///
 /// <p>Describes a schema. For more information on schemas, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_CreateSchema.html">CreateSchema</a>.</p>

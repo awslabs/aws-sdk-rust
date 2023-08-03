@@ -3,6 +3,23 @@ pub use crate::operation::update_environment_membership::_update_environment_mem
 
 pub use crate::operation::update_environment_membership::_update_environment_membership_input::UpdateEnvironmentMembershipInputBuilder;
 
+impl UpdateEnvironmentMembershipInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_environment_membership::UpdateEnvironmentMembershipOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_environment_membership::UpdateEnvironmentMembershipError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_environment_membership();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateEnvironmentMembership`.
 ///
 /// <p>Changes the settings of an existing environment member for an Cloud9 development environment.</p>

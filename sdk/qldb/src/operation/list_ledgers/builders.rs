@@ -3,6 +3,23 @@ pub use crate::operation::list_ledgers::_list_ledgers_output::ListLedgersOutputB
 
 pub use crate::operation::list_ledgers::_list_ledgers_input::ListLedgersInputBuilder;
 
+impl ListLedgersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_ledgers::ListLedgersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_ledgers::ListLedgersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_ledgers();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListLedgers`.
 ///
 /// <p>Returns all ledgers that are associated with the current Amazon Web Services account and Region.</p>

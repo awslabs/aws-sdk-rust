@@ -3,6 +3,23 @@ pub use crate::operation::update_vocabulary_filter::_update_vocabulary_filter_ou
 
 pub use crate::operation::update_vocabulary_filter::_update_vocabulary_filter_input::UpdateVocabularyFilterInputBuilder;
 
+impl UpdateVocabularyFilterInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_vocabulary_filter::UpdateVocabularyFilterOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_vocabulary_filter::UpdateVocabularyFilterError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_vocabulary_filter();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateVocabularyFilter`.
 ///
 /// <p>Updates an existing custom vocabulary filter with a new list of words. The new list you provide overwrites all previous entries; you cannot append new terms onto an existing custom vocabulary filter.</p>

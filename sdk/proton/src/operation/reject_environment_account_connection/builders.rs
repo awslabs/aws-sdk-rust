@@ -3,6 +3,17 @@ pub use crate::operation::reject_environment_account_connection::_reject_environ
 
 pub use crate::operation::reject_environment_account_connection::_reject_environment_account_connection_input::RejectEnvironmentAccountConnectionInputBuilder;
 
+impl RejectEnvironmentAccountConnectionInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::reject_environment_account_connection::RejectEnvironmentAccountConnectionOutput, ::aws_smithy_http::result::SdkError<crate::operation::reject_environment_account_connection::RejectEnvironmentAccountConnectionError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.reject_environment_account_connection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RejectEnvironmentAccountConnection`.
 ///
 /// <p>In a management account, reject an environment account connection from another environment account.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_entitlement::_create_entitlement_output::Create
 
 pub use crate::operation::create_entitlement::_create_entitlement_input::CreateEntitlementInputBuilder;
 
+impl CreateEntitlementInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_entitlement::CreateEntitlementOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_entitlement::CreateEntitlementError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_entitlement();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateEntitlement`.
 ///
 /// <p>Creates a new entitlement. Entitlements control access to specific applications within a stack, based on user attributes. Entitlements apply to SAML 2.0 federated user identities. Amazon AppStream 2.0 user pool and streaming URL users are entitled to all applications in a stack. Entitlements don't apply to the desktop stream view application, or to applications managed by a dynamic app provider using the Dynamic Application Framework.</p>

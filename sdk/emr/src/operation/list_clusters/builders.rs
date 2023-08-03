@@ -3,6 +3,23 @@ pub use crate::operation::list_clusters::_list_clusters_output::ListClustersOutp
 
 pub use crate::operation::list_clusters::_list_clusters_input::ListClustersInputBuilder;
 
+impl ListClustersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_clusters::ListClustersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_clusters::ListClustersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_clusters();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListClusters`.
 ///
 /// <p>Provides the status of all clusters visible to this Amazon Web Services account. Allows you to filter the list of clusters based on certain criteria; for example, filtering by cluster creation date and time or by status. This call returns a maximum of 50 clusters in unsorted order per call, but returns a marker to track the paging of the cluster list across multiple ListClusters calls.</p>

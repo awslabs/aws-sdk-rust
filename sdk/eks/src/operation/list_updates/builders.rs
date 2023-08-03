@@ -3,6 +3,23 @@ pub use crate::operation::list_updates::_list_updates_output::ListUpdatesOutputB
 
 pub use crate::operation::list_updates::_list_updates_input::ListUpdatesInputBuilder;
 
+impl ListUpdatesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_updates::ListUpdatesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_updates::ListUpdatesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_updates();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListUpdates`.
 ///
 /// <p>Lists the updates associated with an Amazon EKS cluster or managed node group in your Amazon Web Services account, in the specified Region.</p>

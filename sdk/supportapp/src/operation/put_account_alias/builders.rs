@@ -3,6 +3,23 @@ pub use crate::operation::put_account_alias::_put_account_alias_output::PutAccou
 
 pub use crate::operation::put_account_alias::_put_account_alias_input::PutAccountAliasInputBuilder;
 
+impl PutAccountAliasInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_account_alias::PutAccountAliasOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_account_alias::PutAccountAliasError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_account_alias();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutAccountAlias`.
 ///
 /// <p>Creates or updates an individual alias for each Amazon Web Services account ID. The alias appears in the Amazon Web Services Support App page of the Amazon Web Services Support Center. The alias also appears in Slack messages from the Amazon Web Services Support App.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_alarms::_get_alarms_output::GetAlarmsOutputBuilder
 
 pub use crate::operation::get_alarms::_get_alarms_input::GetAlarmsInputBuilder;
 
+impl GetAlarmsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_alarms::GetAlarmsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_alarms::GetAlarmsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_alarms();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetAlarms`.
 ///
 /// <p>Returns information about the configured alarms. Specify an alarm name in your request to return information about a specific alarm, or specify a monitored resource name to return information about all alarms for a specific resource.</p>

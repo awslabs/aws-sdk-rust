@@ -3,6 +3,23 @@ pub use crate::operation::update_thing_shadow::_update_thing_shadow_output::Upda
 
 pub use crate::operation::update_thing_shadow::_update_thing_shadow_input::UpdateThingShadowInputBuilder;
 
+impl UpdateThingShadowInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_thing_shadow::UpdateThingShadowOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_thing_shadow::UpdateThingShadowError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_thing_shadow();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateThingShadow`.
 ///
 /// <p>Updates the shadow for the specified thing.</p>

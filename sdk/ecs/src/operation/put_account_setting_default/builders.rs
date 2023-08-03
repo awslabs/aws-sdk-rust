@@ -3,6 +3,23 @@ pub use crate::operation::put_account_setting_default::_put_account_setting_defa
 
 pub use crate::operation::put_account_setting_default::_put_account_setting_default_input::PutAccountSettingDefaultInputBuilder;
 
+impl PutAccountSettingDefaultInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_account_setting_default::PutAccountSettingDefaultOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_account_setting_default::PutAccountSettingDefaultError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_account_setting_default();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutAccountSettingDefault`.
 ///
 /// <p>Modifies an account setting for all users on an account for whom no individual account setting has been specified. Account settings are set on a per-Region basis.</p>

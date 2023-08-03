@@ -3,6 +3,23 @@ pub use crate::operation::describe_thing::_describe_thing_output::DescribeThingO
 
 pub use crate::operation::describe_thing::_describe_thing_input::DescribeThingInputBuilder;
 
+impl DescribeThingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_thing::DescribeThingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_thing::DescribeThingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_thing();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeThing`.
 ///
 /// <p>Gets information about the specified thing.</p>

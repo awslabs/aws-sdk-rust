@@ -3,6 +3,17 @@ pub use crate::operation::start_recommendation_report_generation::_start_recomme
 
 pub use crate::operation::start_recommendation_report_generation::_start_recommendation_report_generation_input::StartRecommendationReportGenerationInputBuilder;
 
+impl StartRecommendationReportGenerationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::start_recommendation_report_generation::StartRecommendationReportGenerationOutput, ::aws_smithy_http::result::SdkError<crate::operation::start_recommendation_report_generation::StartRecommendationReportGenerationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.start_recommendation_report_generation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartRecommendationReportGeneration`.
 ///
 /// <p> Starts generating a recommendation report. </p>

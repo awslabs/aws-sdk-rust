@@ -3,6 +3,17 @@ pub use crate::operation::get_delete_events_by_event_type_status::_get_delete_ev
 
 pub use crate::operation::get_delete_events_by_event_type_status::_get_delete_events_by_event_type_status_input::GetDeleteEventsByEventTypeStatusInputBuilder;
 
+impl GetDeleteEventsByEventTypeStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_delete_events_by_event_type_status::GetDeleteEventsByEventTypeStatusOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_delete_events_by_event_type_status::GetDeleteEventsByEventTypeStatusError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_delete_events_by_event_type_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetDeleteEventsByEventTypeStatus`.
 ///
 /// <p>Retrieves the status of a <code>DeleteEventsByEventType</code> action.</p>

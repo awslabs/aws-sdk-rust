@@ -3,6 +3,23 @@ pub use crate::operation::create_scaling_plan::_create_scaling_plan_output::Crea
 
 pub use crate::operation::create_scaling_plan::_create_scaling_plan_input::CreateScalingPlanInputBuilder;
 
+impl CreateScalingPlanInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_scaling_plan::CreateScalingPlanOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_scaling_plan::CreateScalingPlanError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_scaling_plan();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateScalingPlan`.
 ///
 /// <p>Creates a scaling plan. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_algorithm::_describe_algorithm_output::Descri
 
 pub use crate::operation::describe_algorithm::_describe_algorithm_input::DescribeAlgorithmInputBuilder;
 
+impl DescribeAlgorithmInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_algorithm::DescribeAlgorithmOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_algorithm::DescribeAlgorithmError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_algorithm();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAlgorithm`.
 ///
 /// <p>Returns a description of the specified algorithm that is in your account.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::reject_resource_share_invitation::_reject_resource_sha
 
 pub use crate::operation::reject_resource_share_invitation::_reject_resource_share_invitation_input::RejectResourceShareInvitationInputBuilder;
 
+impl RejectResourceShareInvitationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::reject_resource_share_invitation::RejectResourceShareInvitationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::reject_resource_share_invitation::RejectResourceShareInvitationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.reject_resource_share_invitation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RejectResourceShareInvitation`.
 ///
 /// <p>Rejects an invitation to a resource share from another Amazon Web Services account.</p>

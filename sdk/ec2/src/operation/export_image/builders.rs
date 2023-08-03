@@ -3,6 +3,23 @@ pub use crate::operation::export_image::_export_image_output::ExportImageOutputB
 
 pub use crate::operation::export_image::_export_image_input::ExportImageInputBuilder;
 
+impl ExportImageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::export_image::ExportImageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::export_image::ExportImageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.export_image();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ExportImage`.
 ///
 /// <p>Exports an Amazon Machine Image (AMI) to a VM file. For more information, see <a href="https://docs.aws.amazon.com/vm-import/latest/userguide/vmexport_image.html">Exporting a VM directly from an Amazon Machine Image (AMI)</a> in the <i>VM Import/Export User Guide</i>.</p>

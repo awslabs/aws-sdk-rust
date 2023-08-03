@@ -3,6 +3,17 @@ pub use crate::operation::list_audit_mitigation_actions_executions::_list_audit_
 
 pub use crate::operation::list_audit_mitigation_actions_executions::_list_audit_mitigation_actions_executions_input::ListAuditMitigationActionsExecutionsInputBuilder;
 
+impl ListAuditMitigationActionsExecutionsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_audit_mitigation_actions_executions::ListAuditMitigationActionsExecutionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_audit_mitigation_actions_executions::ListAuditMitigationActionsExecutionsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_audit_mitigation_actions_executions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAuditMitigationActionsExecutions`.
 ///
 /// <p>Gets the status of audit mitigation action tasks that were executed.</p>

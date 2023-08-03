@@ -3,6 +3,23 @@ pub use crate::operation::get_login_profile::_get_login_profile_output::GetLogin
 
 pub use crate::operation::get_login_profile::_get_login_profile_input::GetLoginProfileInputBuilder;
 
+impl GetLoginProfileInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_login_profile::GetLoginProfileOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_login_profile::GetLoginProfileError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_login_profile();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetLoginProfile`.
 ///
 /// <p>Retrieves the user name for the specified IAM user. A login profile is created when you create a password for the user to access the Amazon Web Services Management Console. If the user does not exist or does not have a password, the operation returns a 404 (<code>NoSuchEntity</code>) error.</p>

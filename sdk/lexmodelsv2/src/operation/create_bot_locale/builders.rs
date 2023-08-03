@@ -3,6 +3,23 @@ pub use crate::operation::create_bot_locale::_create_bot_locale_output::CreateBo
 
 pub use crate::operation::create_bot_locale::_create_bot_locale_input::CreateBotLocaleInputBuilder;
 
+impl CreateBotLocaleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_bot_locale::CreateBotLocaleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_bot_locale::CreateBotLocaleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_bot_locale();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateBotLocale`.
 ///
 /// <p>Creates a locale in the bot. The locale contains the intents and slot types that the bot uses in conversations with users in the specified language and locale. You must add a locale to a bot before you can add intents and slot types to the bot.</p>

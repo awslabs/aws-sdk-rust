@@ -3,6 +3,17 @@ pub use crate::operation::update_firewall_policy_change_protection::_update_fire
 
 pub use crate::operation::update_firewall_policy_change_protection::_update_firewall_policy_change_protection_input::UpdateFirewallPolicyChangeProtectionInputBuilder;
 
+impl UpdateFirewallPolicyChangeProtectionInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::update_firewall_policy_change_protection::UpdateFirewallPolicyChangeProtectionOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_firewall_policy_change_protection::UpdateFirewallPolicyChangeProtectionError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.update_firewall_policy_change_protection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateFirewallPolicyChangeProtection`.
 ///
 /// <p>Modifies the flag, <code>ChangeProtection</code>, which indicates whether it is possible to change the firewall. If the flag is set to <code>TRUE</code>, the firewall is protected from changes. This setting helps protect against accidentally changing a firewall that's in use.</p>

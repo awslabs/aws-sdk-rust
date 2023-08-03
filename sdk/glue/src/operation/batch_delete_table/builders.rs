@@ -3,6 +3,23 @@ pub use crate::operation::batch_delete_table::_batch_delete_table_output::BatchD
 
 pub use crate::operation::batch_delete_table::_batch_delete_table_input::BatchDeleteTableInputBuilder;
 
+impl BatchDeleteTableInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_delete_table::BatchDeleteTableOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_delete_table::BatchDeleteTableError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_delete_table();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchDeleteTable`.
 ///
 /// <p>Deletes multiple tables at once.</p> <note>

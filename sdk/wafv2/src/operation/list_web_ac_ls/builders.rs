@@ -3,6 +3,23 @@ pub use crate::operation::list_web_ac_ls::_list_web_ac_ls_output::ListWebAcLsOut
 
 pub use crate::operation::list_web_ac_ls::_list_web_ac_ls_input::ListWebAcLsInputBuilder;
 
+impl ListWebAcLsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_web_ac_ls::ListWebAcLsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_web_ac_ls::ListWebACLsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_web_ac_ls();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListWebACLs`.
 ///
 /// <p>Retrieves an array of <code>WebACLSummary</code> objects for the web ACLs that you manage.</p>

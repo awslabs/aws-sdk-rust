@@ -3,6 +3,23 @@ pub use crate::operation::list_ingestion_destinations::_list_ingestion_destinati
 
 pub use crate::operation::list_ingestion_destinations::_list_ingestion_destinations_input::ListIngestionDestinationsInputBuilder;
 
+impl ListIngestionDestinationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_ingestion_destinations::ListIngestionDestinationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_ingestion_destinations::ListIngestionDestinationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_ingestion_destinations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListIngestionDestinations`.
 ///
 /// <p>Returns a list of all ingestion destinations configured for an ingestion.</p>

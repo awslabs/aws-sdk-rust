@@ -3,6 +3,23 @@ pub use crate::operation::list_member_accounts::_list_member_accounts_output::Li
 
 pub use crate::operation::list_member_accounts::_list_member_accounts_input::ListMemberAccountsInputBuilder;
 
+impl ListMemberAccountsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_member_accounts::ListMemberAccountsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_member_accounts::ListMemberAccountsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_member_accounts();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListMemberAccounts`.
 ///
 /// <p>(Discontinued) Lists all Amazon Macie Classic member accounts for the current Macie Classic administrator account.</p>

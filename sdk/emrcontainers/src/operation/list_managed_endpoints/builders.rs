@@ -3,6 +3,23 @@ pub use crate::operation::list_managed_endpoints::_list_managed_endpoints_output
 
 pub use crate::operation::list_managed_endpoints::_list_managed_endpoints_input::ListManagedEndpointsInputBuilder;
 
+impl ListManagedEndpointsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_managed_endpoints::ListManagedEndpointsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_managed_endpoints::ListManagedEndpointsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_managed_endpoints();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListManagedEndpoints`.
 ///
 /// <p>Lists managed endpoints based on a set of parameters. A managed endpoint is a gateway that connects Amazon EMR Studio to Amazon EMR on EKS so that Amazon EMR Studio can communicate with your virtual cluster.</p>

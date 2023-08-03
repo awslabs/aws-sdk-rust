@@ -3,6 +3,17 @@ pub use crate::operation::list_service_quota_increase_requests_in_template::_lis
 
 pub use crate::operation::list_service_quota_increase_requests_in_template::_list_service_quota_increase_requests_in_template_input::ListServiceQuotaIncreaseRequestsInTemplateInputBuilder;
 
+impl ListServiceQuotaIncreaseRequestsInTemplateInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_service_quota_increase_requests_in_template::ListServiceQuotaIncreaseRequestsInTemplateOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_service_quota_increase_requests_in_template::ListServiceQuotaIncreaseRequestsInTemplateError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_service_quota_increase_requests_in_template();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListServiceQuotaIncreaseRequestsInTemplate`.
 ///
 /// <p>Lists the quota increase requests in the specified quota request template.</p>

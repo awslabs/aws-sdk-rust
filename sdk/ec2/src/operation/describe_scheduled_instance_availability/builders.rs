@@ -3,6 +3,17 @@ pub use crate::operation::describe_scheduled_instance_availability::_describe_sc
 
 pub use crate::operation::describe_scheduled_instance_availability::_describe_scheduled_instance_availability_input::DescribeScheduledInstanceAvailabilityInputBuilder;
 
+impl DescribeScheduledInstanceAvailabilityInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_scheduled_instance_availability::DescribeScheduledInstanceAvailabilityOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_scheduled_instance_availability::DescribeScheduledInstanceAvailabilityError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_scheduled_instance_availability();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeScheduledInstanceAvailability`.
 ///
 /// <p>Finds available schedules that meet the specified criteria.</p>

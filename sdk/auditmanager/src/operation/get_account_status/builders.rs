@@ -3,6 +3,23 @@ pub use crate::operation::get_account_status::_get_account_status_output::GetAcc
 
 pub use crate::operation::get_account_status::_get_account_status_input::GetAccountStatusInputBuilder;
 
+impl GetAccountStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_account_status::GetAccountStatusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_account_status::GetAccountStatusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_account_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetAccountStatus`.
 ///
 /// <p> Gets the registration status of an account in Audit Manager. </p>

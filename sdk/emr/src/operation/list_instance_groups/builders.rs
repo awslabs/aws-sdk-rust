@@ -3,6 +3,23 @@ pub use crate::operation::list_instance_groups::_list_instance_groups_output::Li
 
 pub use crate::operation::list_instance_groups::_list_instance_groups_input::ListInstanceGroupsInputBuilder;
 
+impl ListInstanceGroupsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_instance_groups::ListInstanceGroupsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_instance_groups::ListInstanceGroupsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_instance_groups();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListInstanceGroups`.
 ///
 /// <p>Provides all available details about the instance groups in a cluster.</p>

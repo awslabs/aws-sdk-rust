@@ -3,6 +3,23 @@ pub use crate::operation::get_working_location::_get_working_location_output::Ge
 
 pub use crate::operation::get_working_location::_get_working_location_input::GetWorkingLocationInputBuilder;
 
+impl GetWorkingLocationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_working_location::GetWorkingLocationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_working_location::GetWorkingLocationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_working_location();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetWorkingLocation`.
 ///
 /// <p>A temporary Amazon S3 location, where you can copy your files from a source location to stage or use as a scratch space in FinSpace notebook.</p>

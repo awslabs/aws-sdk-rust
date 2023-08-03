@@ -3,6 +3,23 @@ pub use crate::operation::get_sdk_types::_get_sdk_types_output::GetSdkTypesOutpu
 
 pub use crate::operation::get_sdk_types::_get_sdk_types_input::GetSdkTypesInputBuilder;
 
+impl GetSdkTypesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_sdk_types::GetSdkTypesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_sdk_types::GetSdkTypesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_sdk_types();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetSdkTypes`.
 ///
 /// <p>Gets SDK types</p>

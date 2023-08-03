@@ -3,6 +3,23 @@ pub use crate::operation::describe_managed_rule_group::_describe_managed_rule_gr
 
 pub use crate::operation::describe_managed_rule_group::_describe_managed_rule_group_input::DescribeManagedRuleGroupInputBuilder;
 
+impl DescribeManagedRuleGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_managed_rule_group::DescribeManagedRuleGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_managed_rule_group::DescribeManagedRuleGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_managed_rule_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeManagedRuleGroup`.
 ///
 /// <p>Provides high-level information for a managed rule group, including descriptions of the rules. </p>

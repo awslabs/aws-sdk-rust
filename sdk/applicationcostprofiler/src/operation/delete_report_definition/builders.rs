@@ -3,6 +3,23 @@ pub use crate::operation::delete_report_definition::_delete_report_definition_ou
 
 pub use crate::operation::delete_report_definition::_delete_report_definition_input::DeleteReportDefinitionInputBuilder;
 
+impl DeleteReportDefinitionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_report_definition::DeleteReportDefinitionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_report_definition::DeleteReportDefinitionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_report_definition();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteReportDefinition`.
 ///
 /// <p>Deletes the specified report definition in AWS Application Cost Profiler. This stops the report from being generated.</p>

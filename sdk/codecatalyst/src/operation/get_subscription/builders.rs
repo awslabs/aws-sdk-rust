@@ -3,6 +3,23 @@ pub use crate::operation::get_subscription::_get_subscription_output::GetSubscri
 
 pub use crate::operation::get_subscription::_get_subscription_input::GetSubscriptionInputBuilder;
 
+impl GetSubscriptionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_subscription::GetSubscriptionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_subscription::GetSubscriptionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_subscription();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetSubscription`.
 ///
 /// <p>Returns information about the Amazon Web Services account used for billing purposes and the billing plan for the space.</p>

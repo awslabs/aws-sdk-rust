@@ -3,6 +3,23 @@ pub use crate::operation::update_host::_update_host_output::UpdateHostOutputBuil
 
 pub use crate::operation::update_host::_update_host_input::UpdateHostInputBuilder;
 
+impl UpdateHostInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_host::UpdateHostOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_host::UpdateHostError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_host();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateHost`.
 ///
 /// <p>Updates a specified host with the provided configurations.</p>

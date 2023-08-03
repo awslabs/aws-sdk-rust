@@ -3,6 +3,23 @@ pub use crate::operation::describe_certificate_authority::_describe_certificate_
 
 pub use crate::operation::describe_certificate_authority::_describe_certificate_authority_input::DescribeCertificateAuthorityInputBuilder;
 
+impl DescribeCertificateAuthorityInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_certificate_authority::DescribeCertificateAuthorityOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_certificate_authority::DescribeCertificateAuthorityError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_certificate_authority();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeCertificateAuthority`.
 ///
 /// <p>Lists information about your private certificate authority (CA) or one that has been shared with you. You specify the private CA on input by its ARN (Amazon Resource Name). The output contains the status of your CA. This can be any of the following: </p>

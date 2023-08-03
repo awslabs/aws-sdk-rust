@@ -3,6 +3,23 @@ pub use crate::operation::list_platform_versions::_list_platform_versions_output
 
 pub use crate::operation::list_platform_versions::_list_platform_versions_input::ListPlatformVersionsInputBuilder;
 
+impl ListPlatformVersionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_platform_versions::ListPlatformVersionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_platform_versions::ListPlatformVersionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_platform_versions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListPlatformVersions`.
 ///
 /// <p>Lists the platform versions available for your account in an AWS Region. Provides summary information about each platform version. Compare to <code>DescribePlatformVersion</code>, which provides full details about a single platform version.</p>

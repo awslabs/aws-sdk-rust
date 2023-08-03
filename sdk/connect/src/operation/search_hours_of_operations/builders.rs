@@ -3,6 +3,23 @@ pub use crate::operation::search_hours_of_operations::_search_hours_of_operation
 
 pub use crate::operation::search_hours_of_operations::_search_hours_of_operations_input::SearchHoursOfOperationsInputBuilder;
 
+impl SearchHoursOfOperationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::search_hours_of_operations::SearchHoursOfOperationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::search_hours_of_operations::SearchHoursOfOperationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.search_hours_of_operations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SearchHoursOfOperations`.
 ///
 /// <p>Searches the hours of operation in an Amazon Connect instance, with optional filtering.</p>

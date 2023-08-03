@@ -3,6 +3,23 @@ pub use crate::operation::update_key_description::_update_key_description_output
 
 pub use crate::operation::update_key_description::_update_key_description_input::UpdateKeyDescriptionInputBuilder;
 
+impl UpdateKeyDescriptionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_key_description::UpdateKeyDescriptionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_key_description::UpdateKeyDescriptionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_key_description();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateKeyDescription`.
 ///
 /// <p>Updates the description of a KMS key. To see the description of a KMS key, use <code>DescribeKey</code>. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::request_upload_credentials::_request_upload_credential
 
 pub use crate::operation::request_upload_credentials::_request_upload_credentials_input::RequestUploadCredentialsInputBuilder;
 
+impl RequestUploadCredentialsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::request_upload_credentials::RequestUploadCredentialsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::request_upload_credentials::RequestUploadCredentialsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.request_upload_credentials();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RequestUploadCredentials`.
 ///
 /// <p>Retrieves a fresh set of credentials for use when uploading a new set of game build files to Amazon GameLift's Amazon S3. This is done as part of the build creation process; see <a href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_CreateBuild.html">GameSession</a>.</p>

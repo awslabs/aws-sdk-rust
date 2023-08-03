@@ -3,6 +3,23 @@ pub use crate::operation::revoke_flow_entitlement::_revoke_flow_entitlement_outp
 
 pub use crate::operation::revoke_flow_entitlement::_revoke_flow_entitlement_input::RevokeFlowEntitlementInputBuilder;
 
+impl RevokeFlowEntitlementInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::revoke_flow_entitlement::RevokeFlowEntitlementOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::revoke_flow_entitlement::RevokeFlowEntitlementError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.revoke_flow_entitlement();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RevokeFlowEntitlement`.
 ///
 /// Revokes an entitlement from a flow. Once an entitlement is revoked, the content becomes unavailable to the subscriber and the associated output is removed.

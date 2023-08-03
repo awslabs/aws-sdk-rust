@@ -3,6 +3,23 @@ pub use crate::operation::create_segment::_create_segment_output::CreateSegmentO
 
 pub use crate::operation::create_segment::_create_segment_input::CreateSegmentInputBuilder;
 
+impl CreateSegmentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_segment::CreateSegmentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_segment::CreateSegmentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_segment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateSegment`.
 ///
 /// <p>Creates a new segment for an application or updates the configuration, dimension, and other settings for an existing segment that's associated with an application.</p>

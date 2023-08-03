@@ -3,6 +3,23 @@ pub use crate::operation::get_violation_details::_get_violation_details_output::
 
 pub use crate::operation::get_violation_details::_get_violation_details_input::GetViolationDetailsInputBuilder;
 
+impl GetViolationDetailsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_violation_details::GetViolationDetailsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_violation_details::GetViolationDetailsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_violation_details();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetViolationDetails`.
 ///
 /// <p>Retrieves violations for a resource based on the specified Firewall Manager policy and Amazon Web Services account.</p>

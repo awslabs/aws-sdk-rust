@@ -3,6 +3,23 @@ pub use crate::operation::start_vector_enrichment_job::_start_vector_enrichment_
 
 pub use crate::operation::start_vector_enrichment_job::_start_vector_enrichment_job_input::StartVectorEnrichmentJobInputBuilder;
 
+impl StartVectorEnrichmentJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_vector_enrichment_job::StartVectorEnrichmentJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_vector_enrichment_job::StartVectorEnrichmentJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_vector_enrichment_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartVectorEnrichmentJob`.
 ///
 /// <p>Creates a Vector Enrichment job for the supplied job type. Currently, there are two supported job types: reverse geocoding and map matching.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_contact_reachability_status::_get_contact_reachabi
 
 pub use crate::operation::get_contact_reachability_status::_get_contact_reachability_status_input::GetContactReachabilityStatusInputBuilder;
 
+impl GetContactReachabilityStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_contact_reachability_status::GetContactReachabilityStatusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_contact_reachability_status::GetContactReachabilityStatusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_contact_reachability_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetContactReachabilityStatus`.
 ///
 /// <p>For operations that require confirmation that the email address for the registrant contact is valid, such as registering a new domain, this operation returns information about whether the registrant contact has responded.</p>

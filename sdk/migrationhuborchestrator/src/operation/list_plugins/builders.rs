@@ -3,6 +3,23 @@ pub use crate::operation::list_plugins::_list_plugins_output::ListPluginsOutputB
 
 pub use crate::operation::list_plugins::_list_plugins_input::ListPluginsInputBuilder;
 
+impl ListPluginsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_plugins::ListPluginsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_plugins::ListPluginsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_plugins();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListPlugins`.
 ///
 /// <p>List AWS Migration Hub Orchestrator plugins.</p>

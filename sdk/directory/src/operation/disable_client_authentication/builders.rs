@@ -3,6 +3,23 @@ pub use crate::operation::disable_client_authentication::_disable_client_authent
 
 pub use crate::operation::disable_client_authentication::_disable_client_authentication_input::DisableClientAuthenticationInputBuilder;
 
+impl DisableClientAuthenticationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disable_client_authentication::DisableClientAuthenticationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disable_client_authentication::DisableClientAuthenticationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disable_client_authentication();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisableClientAuthentication`.
 ///
 /// <p>Disables alternative client authentication methods for the specified directory. </p>

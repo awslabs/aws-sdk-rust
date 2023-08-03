@@ -3,6 +3,23 @@ pub use crate::operation::get_cloud_formation_template::_get_cloud_formation_tem
 
 pub use crate::operation::get_cloud_formation_template::_get_cloud_formation_template_input::GetCloudFormationTemplateInputBuilder;
 
+impl GetCloudFormationTemplateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_cloud_formation_template::GetCloudFormationTemplateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_cloud_formation_template::GetCloudFormationTemplateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_cloud_formation_template();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetCloudFormationTemplate`.
 ///
 /// <p>Gets the specified AWS CloudFormation template.</p>

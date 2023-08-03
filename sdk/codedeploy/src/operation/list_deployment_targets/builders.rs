@@ -3,6 +3,23 @@ pub use crate::operation::list_deployment_targets::_list_deployment_targets_outp
 
 pub use crate::operation::list_deployment_targets::_list_deployment_targets_input::ListDeploymentTargetsInputBuilder;
 
+impl ListDeploymentTargetsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_deployment_targets::ListDeploymentTargetsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_deployment_targets::ListDeploymentTargetsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_deployment_targets();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDeploymentTargets`.
 ///
 /// <p> Returns an array of target IDs that are associated a deployment. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_volume::_delete_volume_output::DeleteVolumeOutp
 
 pub use crate::operation::delete_volume::_delete_volume_input::DeleteVolumeInputBuilder;
 
+impl DeleteVolumeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_volume::DeleteVolumeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_volume::DeleteVolumeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_volume();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteVolume`.
 ///
 /// <p>Deletes the specified storage volume that you previously created using the <code>CreateCachediSCSIVolume</code> or <code>CreateStorediSCSIVolume</code> API. This operation is only supported in the cached volume and stored volume types. For stored volume gateways, the local disk that was configured as the storage volume is not deleted. You can reuse the local disk to create another storage volume.</p>

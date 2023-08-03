@@ -3,6 +3,23 @@ pub use crate::operation::update_code_signing_config::_update_code_signing_confi
 
 pub use crate::operation::update_code_signing_config::_update_code_signing_config_input::UpdateCodeSigningConfigInputBuilder;
 
+impl UpdateCodeSigningConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_code_signing_config::UpdateCodeSigningConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_code_signing_config::UpdateCodeSigningConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_code_signing_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateCodeSigningConfig`.
 ///
 /// <p>Update the code signing configuration. Changes to the code signing configuration take effect the next time a user tries to deploy a code package to the function. </p>

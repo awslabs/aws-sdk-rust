@@ -3,6 +3,23 @@ pub use crate::operation::update_findings_feedback::_update_findings_feedback_ou
 
 pub use crate::operation::update_findings_feedback::_update_findings_feedback_input::UpdateFindingsFeedbackInputBuilder;
 
+impl UpdateFindingsFeedbackInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_findings_feedback::UpdateFindingsFeedbackOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_findings_feedback::UpdateFindingsFeedbackError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_findings_feedback();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateFindingsFeedback`.
 ///
 /// <p>Marks the specified GuardDuty findings as useful or not useful.</p>

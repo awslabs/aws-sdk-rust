@@ -3,6 +3,23 @@ pub use crate::operation::get_anomaly_group::_get_anomaly_group_output::GetAnoma
 
 pub use crate::operation::get_anomaly_group::_get_anomaly_group_input::GetAnomalyGroupInputBuilder;
 
+impl GetAnomalyGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_anomaly_group::GetAnomalyGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_anomaly_group::GetAnomalyGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_anomaly_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetAnomalyGroup`.
 ///
 /// <p>Returns details about a group of anomalous metrics.</p>

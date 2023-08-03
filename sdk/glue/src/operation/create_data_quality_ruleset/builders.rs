@@ -3,6 +3,23 @@ pub use crate::operation::create_data_quality_ruleset::_create_data_quality_rule
 
 pub use crate::operation::create_data_quality_ruleset::_create_data_quality_ruleset_input::CreateDataQualityRulesetInputBuilder;
 
+impl CreateDataQualityRulesetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_data_quality_ruleset::CreateDataQualityRulesetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_data_quality_ruleset::CreateDataQualityRulesetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_data_quality_ruleset();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateDataQualityRuleset`.
 ///
 /// <p>Creates a data quality ruleset with DQDL rules applied to a specified Glue table.</p>

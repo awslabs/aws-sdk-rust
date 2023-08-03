@@ -3,6 +3,23 @@ pub use crate::operation::create_compilation_job::_create_compilation_job_output
 
 pub use crate::operation::create_compilation_job::_create_compilation_job_input::CreateCompilationJobInputBuilder;
 
+impl CreateCompilationJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_compilation_job::CreateCompilationJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_compilation_job::CreateCompilationJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_compilation_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateCompilationJob`.
 ///
 /// <p>Starts a model compilation job. After the model has been compiled, Amazon SageMaker saves the resulting model artifacts to an Amazon Simple Storage Service (Amazon S3) bucket that you specify. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_objects::_list_objects_output::ListObjectsOutputB
 
 pub use crate::operation::list_objects::_list_objects_input::ListObjectsInputBuilder;
 
+impl ListObjectsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_objects::ListObjectsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_objects::ListObjectsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_objects();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListObjects`.
 ///
 /// List all Objects in a given Backup.

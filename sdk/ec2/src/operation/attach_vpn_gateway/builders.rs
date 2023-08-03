@@ -3,6 +3,23 @@ pub use crate::operation::attach_vpn_gateway::_attach_vpn_gateway_output::Attach
 
 pub use crate::operation::attach_vpn_gateway::_attach_vpn_gateway_input::AttachVpnGatewayInputBuilder;
 
+impl AttachVpnGatewayInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::attach_vpn_gateway::AttachVpnGatewayOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::attach_vpn_gateway::AttachVpnGatewayError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.attach_vpn_gateway();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AttachVpnGateway`.
 ///
 /// <p>Attaches a virtual private gateway to a VPC. You can attach one virtual private gateway to one VPC at a time.</p>

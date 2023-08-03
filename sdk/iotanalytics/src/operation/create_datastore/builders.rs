@@ -3,6 +3,23 @@ pub use crate::operation::create_datastore::_create_datastore_output::CreateData
 
 pub use crate::operation::create_datastore::_create_datastore_input::CreateDatastoreInputBuilder;
 
+impl CreateDatastoreInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_datastore::CreateDatastoreOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_datastore::CreateDatastoreError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_datastore();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateDatastore`.
 ///
 /// <p>Creates a data store, which is a repository for messages.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_rule::_create_rule_output::CreateRuleOutputBuil
 
 pub use crate::operation::create_rule::_create_rule_input::CreateRuleInputBuilder;
 
+impl CreateRuleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_rule::CreateRuleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_rule::CreateRuleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_rule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateRule`.
 ///
 /// <p>Creates a rule for the specified listener. The listener must be associated with an Application Load Balancer.</p>

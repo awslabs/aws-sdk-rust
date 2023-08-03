@@ -3,6 +3,23 @@ pub use crate::operation::activate_key_signing_key::_activate_key_signing_key_ou
 
 pub use crate::operation::activate_key_signing_key::_activate_key_signing_key_input::ActivateKeySigningKeyInputBuilder;
 
+impl ActivateKeySigningKeyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::activate_key_signing_key::ActivateKeySigningKeyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::activate_key_signing_key::ActivateKeySigningKeyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.activate_key_signing_key();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ActivateKeySigningKey`.
 ///
 /// <p>Activates a key-signing key (KSK) so that it can be used for signing by DNSSEC. This operation changes the KSK status to <code>ACTIVE</code>.</p>

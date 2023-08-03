@@ -3,6 +3,23 @@ pub use crate::operation::update_trial_component::_update_trial_component_output
 
 pub use crate::operation::update_trial_component::_update_trial_component_input::UpdateTrialComponentInputBuilder;
 
+impl UpdateTrialComponentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_trial_component::UpdateTrialComponentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_trial_component::UpdateTrialComponentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_trial_component();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateTrialComponent`.
 ///
 /// <p>Updates one or more properties of a trial component.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_backend_auth::_delete_backend_auth_output::Dele
 
 pub use crate::operation::delete_backend_auth::_delete_backend_auth_input::DeleteBackendAuthInputBuilder;
 
+impl DeleteBackendAuthInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_backend_auth::DeleteBackendAuthOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_backend_auth::DeleteBackendAuthError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_backend_auth();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteBackendAuth`.
 ///
 /// <p>Deletes an existing backend authentication resource.</p>

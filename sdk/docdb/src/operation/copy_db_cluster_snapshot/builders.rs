@@ -3,6 +3,23 @@ pub use crate::operation::copy_db_cluster_snapshot::_copy_db_cluster_snapshot_ou
 
 pub use crate::operation::copy_db_cluster_snapshot::_copy_db_cluster_snapshot_input::CopyDbClusterSnapshotInputBuilder;
 
+impl CopyDbClusterSnapshotInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::copy_db_cluster_snapshot::CopyDbClusterSnapshotOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::copy_db_cluster_snapshot::CopyDBClusterSnapshotError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.copy_db_cluster_snapshot();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CopyDBClusterSnapshot`.
 ///
 /// <p>Copies a snapshot of a cluster.</p>

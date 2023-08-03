@@ -3,6 +3,23 @@ pub use crate::operation::set_local_console_password::_set_local_console_passwor
 
 pub use crate::operation::set_local_console_password::_set_local_console_password_input::SetLocalConsolePasswordInputBuilder;
 
+impl SetLocalConsolePasswordInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::set_local_console_password::SetLocalConsolePasswordOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::set_local_console_password::SetLocalConsolePasswordError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.set_local_console_password();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SetLocalConsolePassword`.
 ///
 /// <p>Sets the password for your VM local console. When you log in to the local console for the first time, you log in to the VM with the default credentials. We recommend that you set a new password. You don't need to know the default password to set a new password.</p>

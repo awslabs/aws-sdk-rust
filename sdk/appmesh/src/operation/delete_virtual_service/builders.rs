@@ -3,6 +3,23 @@ pub use crate::operation::delete_virtual_service::_delete_virtual_service_output
 
 pub use crate::operation::delete_virtual_service::_delete_virtual_service_input::DeleteVirtualServiceInputBuilder;
 
+impl DeleteVirtualServiceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_virtual_service::DeleteVirtualServiceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_virtual_service::DeleteVirtualServiceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_virtual_service();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteVirtualService`.
 ///
 /// <p>Deletes an existing virtual service.</p>

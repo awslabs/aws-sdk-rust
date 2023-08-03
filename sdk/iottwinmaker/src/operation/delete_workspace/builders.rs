@@ -3,6 +3,23 @@ pub use crate::operation::delete_workspace::_delete_workspace_output::DeleteWork
 
 pub use crate::operation::delete_workspace::_delete_workspace_input::DeleteWorkspaceInputBuilder;
 
+impl DeleteWorkspaceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_workspace::DeleteWorkspaceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_workspace::DeleteWorkspaceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_workspace();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteWorkspace`.
 ///
 /// <p>Deletes a workspace.</p>

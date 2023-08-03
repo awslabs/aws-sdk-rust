@@ -3,6 +3,23 @@ pub use crate::operation::reject_inbound_connection::_reject_inbound_connection_
 
 pub use crate::operation::reject_inbound_connection::_reject_inbound_connection_input::RejectInboundConnectionInputBuilder;
 
+impl RejectInboundConnectionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::reject_inbound_connection::RejectInboundConnectionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::reject_inbound_connection::RejectInboundConnectionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.reject_inbound_connection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RejectInboundConnection`.
 ///
 /// <p>Allows the remote Amazon OpenSearch Service domain owner to reject an inbound cross-cluster connection request.</p>

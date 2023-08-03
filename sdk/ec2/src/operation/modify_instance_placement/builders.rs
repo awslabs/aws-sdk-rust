@@ -3,6 +3,23 @@ pub use crate::operation::modify_instance_placement::_modify_instance_placement_
 
 pub use crate::operation::modify_instance_placement::_modify_instance_placement_input::ModifyInstancePlacementInputBuilder;
 
+impl ModifyInstancePlacementInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_instance_placement::ModifyInstancePlacementOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_instance_placement::ModifyInstancePlacementError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_instance_placement();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyInstancePlacement`.
 ///
 /// <p>Modifies the placement attributes for a specified instance. You can do the following:</p>

@@ -3,6 +3,17 @@ pub use crate::operation::modify_default_credit_specification::_modify_default_c
 
 pub use crate::operation::modify_default_credit_specification::_modify_default_credit_specification_input::ModifyDefaultCreditSpecificationInputBuilder;
 
+impl ModifyDefaultCreditSpecificationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::modify_default_credit_specification::ModifyDefaultCreditSpecificationOutput, ::aws_smithy_http::result::SdkError<crate::operation::modify_default_credit_specification::ModifyDefaultCreditSpecificationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.modify_default_credit_specification();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyDefaultCreditSpecification`.
 ///
 /// <p>Modifies the default credit option for CPU usage of burstable performance instances. The default credit option is set at the account level per Amazon Web Services Region, and is specified per instance family. All new burstable performance instances in the account launch using the default credit option.</p>

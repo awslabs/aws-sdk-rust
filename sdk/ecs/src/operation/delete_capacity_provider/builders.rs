@@ -3,6 +3,23 @@ pub use crate::operation::delete_capacity_provider::_delete_capacity_provider_ou
 
 pub use crate::operation::delete_capacity_provider::_delete_capacity_provider_input::DeleteCapacityProviderInputBuilder;
 
+impl DeleteCapacityProviderInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_capacity_provider::DeleteCapacityProviderOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_capacity_provider::DeleteCapacityProviderError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_capacity_provider();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteCapacityProvider`.
 ///
 /// <p>Deletes the specified capacity provider.</p> <note>

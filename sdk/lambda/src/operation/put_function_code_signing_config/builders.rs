@@ -3,6 +3,23 @@ pub use crate::operation::put_function_code_signing_config::_put_function_code_s
 
 pub use crate::operation::put_function_code_signing_config::_put_function_code_signing_config_input::PutFunctionCodeSigningConfigInputBuilder;
 
+impl PutFunctionCodeSigningConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_function_code_signing_config::PutFunctionCodeSigningConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_function_code_signing_config::PutFunctionCodeSigningConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_function_code_signing_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutFunctionCodeSigningConfig`.
 ///
 /// <p>Update the code signing configuration for the function. Changes to the code signing configuration take effect the next time a user tries to deploy a code package to the function. </p>

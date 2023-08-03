@@ -3,6 +3,23 @@ pub use crate::operation::create_managed_prefix_list::_create_managed_prefix_lis
 
 pub use crate::operation::create_managed_prefix_list::_create_managed_prefix_list_input::CreateManagedPrefixListInputBuilder;
 
+impl CreateManagedPrefixListInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_managed_prefix_list::CreateManagedPrefixListOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_managed_prefix_list::CreateManagedPrefixListError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_managed_prefix_list();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateManagedPrefixList`.
 ///
 /// <p>Creates a managed prefix list. You can specify one or more entries for the prefix list. Each entry consists of a CIDR block and an optional description.</p>

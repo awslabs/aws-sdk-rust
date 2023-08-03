@@ -3,6 +3,23 @@ pub use crate::operation::update_signaling_channel::_update_signaling_channel_ou
 
 pub use crate::operation::update_signaling_channel::_update_signaling_channel_input::UpdateSignalingChannelInputBuilder;
 
+impl UpdateSignalingChannelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_signaling_channel::UpdateSignalingChannelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_signaling_channel::UpdateSignalingChannelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_signaling_channel();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateSignalingChannel`.
 ///
 /// <p>Updates the existing signaling channel. This is an asynchronous operation and takes time to complete. </p>

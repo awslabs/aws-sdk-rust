@@ -3,6 +3,23 @@ pub use crate::operation::attach_instances::_attach_instances_output::AttachInst
 
 pub use crate::operation::attach_instances::_attach_instances_input::AttachInstancesInputBuilder;
 
+impl AttachInstancesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::attach_instances::AttachInstancesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::attach_instances::AttachInstancesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.attach_instances();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AttachInstances`.
 ///
 /// <p>Attaches one or more EC2 instances to the specified Auto Scaling group.</p>

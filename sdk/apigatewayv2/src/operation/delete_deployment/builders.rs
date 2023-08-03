@@ -3,6 +3,23 @@ pub use crate::operation::delete_deployment::_delete_deployment_output::DeleteDe
 
 pub use crate::operation::delete_deployment::_delete_deployment_input::DeleteDeploymentInputBuilder;
 
+impl DeleteDeploymentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_deployment::DeleteDeploymentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_deployment::DeleteDeploymentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_deployment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteDeployment`.
 ///
 /// <p>Deletes a Deployment.</p>

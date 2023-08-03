@@ -3,6 +3,17 @@ pub use crate::operation::get_transit_gateway_route_table_propagations::_get_tra
 
 pub use crate::operation::get_transit_gateway_route_table_propagations::_get_transit_gateway_route_table_propagations_input::GetTransitGatewayRouteTablePropagationsInputBuilder;
 
+impl GetTransitGatewayRouteTablePropagationsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_transit_gateway_route_table_propagations::GetTransitGatewayRouteTablePropagationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_transit_gateway_route_table_propagations::GetTransitGatewayRouteTablePropagationsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_transit_gateway_route_table_propagations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetTransitGatewayRouteTablePropagations`.
 ///
 /// <p>Gets information about the route table propagations for the specified transit gateway route table.</p>

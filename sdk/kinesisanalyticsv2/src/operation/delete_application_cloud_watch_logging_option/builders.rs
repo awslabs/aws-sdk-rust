@@ -3,6 +3,17 @@ pub use crate::operation::delete_application_cloud_watch_logging_option::_delete
 
 pub use crate::operation::delete_application_cloud_watch_logging_option::_delete_application_cloud_watch_logging_option_input::DeleteApplicationCloudWatchLoggingOptionInputBuilder;
 
+impl DeleteApplicationCloudWatchLoggingOptionInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_application_cloud_watch_logging_option::DeleteApplicationCloudWatchLoggingOptionOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_application_cloud_watch_logging_option::DeleteApplicationCloudWatchLoggingOptionError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.delete_application_cloud_watch_logging_option();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteApplicationCloudWatchLoggingOption`.
 ///
 /// <p>Deletes an Amazon CloudWatch log stream from an Kinesis Data Analytics application. </p>

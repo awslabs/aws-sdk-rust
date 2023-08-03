@@ -3,6 +3,23 @@ pub use crate::operation::describe_smb_settings::_describe_smb_settings_output::
 
 pub use crate::operation::describe_smb_settings::_describe_smb_settings_input::DescribeSmbSettingsInputBuilder;
 
+impl DescribeSmbSettingsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_smb_settings::DescribeSmbSettingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_smb_settings::DescribeSMBSettingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_smb_settings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeSMBSettings`.
 ///
 /// <p>Gets a description of a Server Message Block (SMB) file share settings from a file gateway. This operation is only supported for file gateways.</p>

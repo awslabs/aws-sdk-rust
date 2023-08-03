@@ -3,6 +3,23 @@ pub use crate::operation::get_retention_settings::_get_retention_settings_output
 
 pub use crate::operation::get_retention_settings::_get_retention_settings_input::GetRetentionSettingsInputBuilder;
 
+impl GetRetentionSettingsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_retention_settings::GetRetentionSettingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_retention_settings::GetRetentionSettingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_retention_settings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetRetentionSettings`.
 ///
 /// <p> Gets the retention settings for the specified Amazon Chime Enterprise account. For more information about retention settings, see <a href="https://docs.aws.amazon.com/chime/latest/ag/chat-retention.html">Managing Chat Retention Policies</a> in the <i>Amazon Chime Administration Guide</i>. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_violation_events::_list_violation_events_output::
 
 pub use crate::operation::list_violation_events::_list_violation_events_input::ListViolationEventsInputBuilder;
 
+impl ListViolationEventsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_violation_events::ListViolationEventsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_violation_events::ListViolationEventsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_violation_events();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListViolationEvents`.
 ///
 /// <p>Lists the Device Defender security profile violations discovered during the given time period. You can use filters to limit the results to those alerts issued for a particular security profile, behavior, or thing (device).</p>

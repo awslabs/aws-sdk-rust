@@ -3,6 +3,17 @@ pub use crate::operation::create_service_network_vpc_association::_create_servic
 
 pub use crate::operation::create_service_network_vpc_association::_create_service_network_vpc_association_input::CreateServiceNetworkVpcAssociationInputBuilder;
 
+impl CreateServiceNetworkVpcAssociationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::create_service_network_vpc_association::CreateServiceNetworkVpcAssociationOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_service_network_vpc_association::CreateServiceNetworkVpcAssociationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.create_service_network_vpc_association();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateServiceNetworkVpcAssociation`.
 ///
 /// <p>Associates a VPC with a service network. When you associate a VPC with the service network, it enables all the resources within that VPC to be clients and communicate with other services in the service network. For more information, see <a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/service-network-associations.html#service-network-vpc-associations">Manage VPC associations</a> in the <i>Amazon VPC Lattice User Guide</i>.</p>

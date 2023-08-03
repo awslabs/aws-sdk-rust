@@ -3,6 +3,23 @@ pub use crate::operation::query_schema_version_metadata::_query_schema_version_m
 
 pub use crate::operation::query_schema_version_metadata::_query_schema_version_metadata_input::QuerySchemaVersionMetadataInputBuilder;
 
+impl QuerySchemaVersionMetadataInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::query_schema_version_metadata::QuerySchemaVersionMetadataOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::query_schema_version_metadata::QuerySchemaVersionMetadataError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.query_schema_version_metadata();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `QuerySchemaVersionMetadata`.
 ///
 /// <p>Queries for the schema version metadata information. </p>

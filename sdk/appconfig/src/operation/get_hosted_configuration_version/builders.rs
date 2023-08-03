@@ -3,6 +3,23 @@ pub use crate::operation::get_hosted_configuration_version::_get_hosted_configur
 
 pub use crate::operation::get_hosted_configuration_version::_get_hosted_configuration_version_input::GetHostedConfigurationVersionInputBuilder;
 
+impl GetHostedConfigurationVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_hosted_configuration_version::GetHostedConfigurationVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_hosted_configuration_version::GetHostedConfigurationVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_hosted_configuration_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetHostedConfigurationVersion`.
 ///
 /// <p>Retrieves information about a specific configuration version.</p>

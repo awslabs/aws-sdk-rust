@@ -3,6 +3,23 @@ pub use crate::operation::get_resource_share_invitations::_get_resource_share_in
 
 pub use crate::operation::get_resource_share_invitations::_get_resource_share_invitations_input::GetResourceShareInvitationsInputBuilder;
 
+impl GetResourceShareInvitationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_resource_share_invitations::GetResourceShareInvitationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_resource_share_invitations::GetResourceShareInvitationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_resource_share_invitations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetResourceShareInvitations`.
 ///
 /// <p>Retrieves details about invitations that you have received for resource shares.</p>

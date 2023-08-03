@@ -3,6 +3,23 @@ pub use crate::operation::get_lineage_group_policy::_get_lineage_group_policy_ou
 
 pub use crate::operation::get_lineage_group_policy::_get_lineage_group_policy_input::GetLineageGroupPolicyInputBuilder;
 
+impl GetLineageGroupPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_lineage_group_policy::GetLineageGroupPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_lineage_group_policy::GetLineageGroupPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_lineage_group_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetLineageGroupPolicy`.
 ///
 /// <p>The resource policy for the lineage group.</p>

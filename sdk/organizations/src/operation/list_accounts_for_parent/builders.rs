@@ -3,6 +3,23 @@ pub use crate::operation::list_accounts_for_parent::_list_accounts_for_parent_ou
 
 pub use crate::operation::list_accounts_for_parent::_list_accounts_for_parent_input::ListAccountsForParentInputBuilder;
 
+impl ListAccountsForParentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_accounts_for_parent::ListAccountsForParentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_accounts_for_parent::ListAccountsForParentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_accounts_for_parent();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAccountsForParent`.
 ///
 /// <p>Lists the accounts in an organization that are contained by the specified target root or organizational unit (OU). If you specify the root, you get a list of all the accounts that aren't in any OU. If you specify an OU, you get a list of all the accounts in only that OU and not in any child OUs. To get a list of all accounts in the organization, use the <code>ListAccounts</code> operation.</p> <note>

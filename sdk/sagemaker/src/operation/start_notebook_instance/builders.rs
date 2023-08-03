@@ -3,6 +3,23 @@ pub use crate::operation::start_notebook_instance::_start_notebook_instance_outp
 
 pub use crate::operation::start_notebook_instance::_start_notebook_instance_input::StartNotebookInstanceInputBuilder;
 
+impl StartNotebookInstanceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_notebook_instance::StartNotebookInstanceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_notebook_instance::StartNotebookInstanceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_notebook_instance();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartNotebookInstance`.
 ///
 /// <p>Launches an ML compute instance with the latest version of the libraries and attaches your ML storage volume. After configuring the notebook instance, SageMaker sets the notebook instance status to <code>InService</code>. A notebook instance's status must be <code>InService</code> before you can connect to your Jupyter notebook. </p>

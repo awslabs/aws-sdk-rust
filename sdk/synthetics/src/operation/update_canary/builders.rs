@@ -3,6 +3,23 @@ pub use crate::operation::update_canary::_update_canary_output::UpdateCanaryOutp
 
 pub use crate::operation::update_canary::_update_canary_input::UpdateCanaryInputBuilder;
 
+impl UpdateCanaryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_canary::UpdateCanaryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_canary::UpdateCanaryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_canary();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateCanary`.
 ///
 /// <p>Updates the configuration of a canary that has already been created.</p>

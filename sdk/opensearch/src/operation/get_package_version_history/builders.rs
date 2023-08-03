@@ -3,6 +3,23 @@ pub use crate::operation::get_package_version_history::_get_package_version_hist
 
 pub use crate::operation::get_package_version_history::_get_package_version_history_input::GetPackageVersionHistoryInputBuilder;
 
+impl GetPackageVersionHistoryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_package_version_history::GetPackageVersionHistoryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_package_version_history::GetPackageVersionHistoryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_package_version_history();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetPackageVersionHistory`.
 ///
 /// <p>Returns a list of Amazon OpenSearch Service package versions, along with their creation time, commit message, and plugin properties (if the package is a zip plugin package). For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom packages for Amazon OpenSearch Service</a>.</p>

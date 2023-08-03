@@ -3,6 +3,23 @@ pub use crate::operation::reset_address_attribute::_reset_address_attribute_outp
 
 pub use crate::operation::reset_address_attribute::_reset_address_attribute_input::ResetAddressAttributeInputBuilder;
 
+impl ResetAddressAttributeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::reset_address_attribute::ResetAddressAttributeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::reset_address_attribute::ResetAddressAttributeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.reset_address_attribute();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ResetAddressAttribute`.
 ///
 /// <p>Resets the attribute of the specified IP address. For requirements, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html#Using_Elastic_Addressing_Reverse_DNS">Using reverse DNS for email applications</a>.</p>

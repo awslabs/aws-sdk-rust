@@ -3,6 +3,23 @@ pub use crate::operation::create_code_review::_create_code_review_output::Create
 
 pub use crate::operation::create_code_review::_create_code_review_input::CreateCodeReviewInputBuilder;
 
+impl CreateCodeReviewInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_code_review::CreateCodeReviewOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_code_review::CreateCodeReviewError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_code_review();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateCodeReview`.
 ///
 /// <p>Use to create a code review with a <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_CodeReviewType.html">CodeReviewType</a> of <code>RepositoryAnalysis</code>. This type of code review analyzes all code under a specified branch in an associated repository. <code>PullRequest</code> code reviews are automatically triggered by a pull request.</p>

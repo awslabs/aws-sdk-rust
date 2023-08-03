@@ -3,6 +3,17 @@ pub use crate::operation::update_ec2_deep_inspection_configuration::_update_ec2_
 
 pub use crate::operation::update_ec2_deep_inspection_configuration::_update_ec2_deep_inspection_configuration_input::UpdateEc2DeepInspectionConfigurationInputBuilder;
 
+impl UpdateEc2DeepInspectionConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::update_ec2_deep_inspection_configuration::UpdateEc2DeepInspectionConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_ec2_deep_inspection_configuration::UpdateEc2DeepInspectionConfigurationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.update_ec2_deep_inspection_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateEc2DeepInspectionConfiguration`.
 ///
 /// <p>Activates, deactivates Amazon Inspector deep inspection, or updates custom paths for your account. </p>

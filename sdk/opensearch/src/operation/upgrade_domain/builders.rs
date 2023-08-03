@@ -3,6 +3,23 @@ pub use crate::operation::upgrade_domain::_upgrade_domain_output::UpgradeDomainO
 
 pub use crate::operation::upgrade_domain::_upgrade_domain_input::UpgradeDomainInputBuilder;
 
+impl UpgradeDomainInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::upgrade_domain::UpgradeDomainOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::upgrade_domain::UpgradeDomainError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.upgrade_domain();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpgradeDomain`.
 ///
 /// <p>Allows you to either upgrade your Amazon OpenSearch Service domain or perform an upgrade eligibility check to a compatible version of OpenSearch or Elasticsearch.</p>

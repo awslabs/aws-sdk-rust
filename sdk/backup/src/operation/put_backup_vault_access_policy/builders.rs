@@ -3,6 +3,23 @@ pub use crate::operation::put_backup_vault_access_policy::_put_backup_vault_acce
 
 pub use crate::operation::put_backup_vault_access_policy::_put_backup_vault_access_policy_input::PutBackupVaultAccessPolicyInputBuilder;
 
+impl PutBackupVaultAccessPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_backup_vault_access_policy::PutBackupVaultAccessPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_backup_vault_access_policy::PutBackupVaultAccessPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_backup_vault_access_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutBackupVaultAccessPolicy`.
 ///
 /// <p>Sets a resource-based policy that is used to manage access permissions on the target backup vault. Requires a backup vault name and an access policy document in JSON format.</p>

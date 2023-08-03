@@ -3,6 +3,23 @@ pub use crate::operation::create_trial_component::_create_trial_component_output
 
 pub use crate::operation::create_trial_component::_create_trial_component_input::CreateTrialComponentInputBuilder;
 
+impl CreateTrialComponentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_trial_component::CreateTrialComponentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_trial_component::CreateTrialComponentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_trial_component();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateTrialComponent`.
 ///
 /// <p>Creates a <i>trial component</i>, which is a stage of a machine learning <i>trial</i>. A trial is composed of one or more trial components. A trial component can be used in multiple trials.</p>

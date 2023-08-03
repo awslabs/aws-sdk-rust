@@ -3,6 +3,23 @@ pub use crate::operation::set_identity_notification_topic::_set_identity_notific
 
 pub use crate::operation::set_identity_notification_topic::_set_identity_notification_topic_input::SetIdentityNotificationTopicInputBuilder;
 
+impl SetIdentityNotificationTopicInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::set_identity_notification_topic::SetIdentityNotificationTopicOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::set_identity_notification_topic::SetIdentityNotificationTopicError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.set_identity_notification_topic();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SetIdentityNotificationTopic`.
 ///
 /// <p>Sets an Amazon Simple Notification Service (Amazon SNS) topic to use when delivering notifications. When you use this operation, you specify a verified identity, such as an email address or domain. When you send an email that uses the chosen identity in the Source field, Amazon SES sends notifications to the topic you specified. You can send bounce, complaint, or delivery notifications (or any combination of the three) to the Amazon SNS topic that you specify.</p>

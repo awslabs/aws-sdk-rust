@@ -3,6 +3,23 @@ pub use crate::operation::get_certificate_authority_csr::_get_certificate_author
 
 pub use crate::operation::get_certificate_authority_csr::_get_certificate_authority_csr_input::GetCertificateAuthorityCsrInputBuilder;
 
+impl GetCertificateAuthorityCsrInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_certificate_authority_csr::GetCertificateAuthorityCsrOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_certificate_authority_csr::GetCertificateAuthorityCsrError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_certificate_authority_csr();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetCertificateAuthorityCsr`.
 ///
 /// <p>Retrieves the certificate signing request (CSR) for your private certificate authority (CA). The CSR is created when you call the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a> action. Sign the CSR with your Amazon Web Services Private CA-hosted or on-premises root or subordinate CA. Then import the signed certificate back into Amazon Web Services Private CA by calling the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_ImportCertificateAuthorityCertificate.html">ImportCertificateAuthorityCertificate</a> action. The CSR is returned as a base64 PEM-encoded string. </p>

@@ -3,6 +3,17 @@ pub use crate::operation::modify_snapshot_copy_retention_period::_modify_snapsho
 
 pub use crate::operation::modify_snapshot_copy_retention_period::_modify_snapshot_copy_retention_period_input::ModifySnapshotCopyRetentionPeriodInputBuilder;
 
+impl ModifySnapshotCopyRetentionPeriodInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodOutput, ::aws_smithy_http::result::SdkError<crate::operation::modify_snapshot_copy_retention_period::ModifySnapshotCopyRetentionPeriodError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.modify_snapshot_copy_retention_period();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifySnapshotCopyRetentionPeriod`.
 ///
 /// <p>Modifies the number of days to retain snapshots in the destination Amazon Web Services Region after they are copied from the source Amazon Web Services Region. By default, this operation only changes the retention period of copied automated snapshots. The retention periods for both new and existing copied automated snapshots are updated with the new retention period. You can set the manual option to change only the retention periods of copied manual snapshots. If you set this option, only newly copied manual snapshots have the new retention period. </p>

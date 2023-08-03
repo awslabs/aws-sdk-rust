@@ -3,6 +3,23 @@ pub use crate::operation::describe_account_modifications::_describe_account_modi
 
 pub use crate::operation::describe_account_modifications::_describe_account_modifications_input::DescribeAccountModificationsInputBuilder;
 
+impl DescribeAccountModificationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_account_modifications::DescribeAccountModificationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_account_modifications::DescribeAccountModificationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_account_modifications();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAccountModifications`.
 ///
 /// <p>Retrieves a list that describes modifications to the configuration of Bring Your Own License (BYOL) for the specified account.</p>

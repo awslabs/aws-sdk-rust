@@ -3,6 +3,23 @@ pub use crate::operation::list_global_tables::_list_global_tables_output::ListGl
 
 pub use crate::operation::list_global_tables::_list_global_tables_input::ListGlobalTablesInputBuilder;
 
+impl ListGlobalTablesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_global_tables::ListGlobalTablesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_global_tables::ListGlobalTablesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_global_tables();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListGlobalTables`.
 ///
 /// <p>Lists all global tables that have a replica in the specified Region.</p> <important>

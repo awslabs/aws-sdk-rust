@@ -3,6 +3,23 @@ pub use crate::operation::associate_api::_associate_api_output::AssociateApiOutp
 
 pub use crate::operation::associate_api::_associate_api_input::AssociateApiInputBuilder;
 
+impl AssociateApiInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_api::AssociateApiOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_api::AssociateApiError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_api();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateApi`.
 ///
 /// <p>Maps an endpoint to your custom domain.</p>

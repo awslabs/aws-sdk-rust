@@ -3,6 +3,23 @@ pub use crate::operation::update_task::_update_task_output::UpdateTaskOutputBuil
 
 pub use crate::operation::update_task::_update_task_input::UpdateTaskInputBuilder;
 
+impl UpdateTaskInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_task::UpdateTaskOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_task::UpdateTaskError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_task();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateTask`.
 ///
 /// <p>Updates the metadata associated with a task.</p>

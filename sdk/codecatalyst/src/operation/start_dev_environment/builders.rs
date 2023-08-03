@@ -3,6 +3,23 @@ pub use crate::operation::start_dev_environment::_start_dev_environment_output::
 
 pub use crate::operation::start_dev_environment::_start_dev_environment_input::StartDevEnvironmentInputBuilder;
 
+impl StartDevEnvironmentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_dev_environment::StartDevEnvironmentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_dev_environment::StartDevEnvironmentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_dev_environment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartDevEnvironment`.
 ///
 /// <p>Starts a specified Dev Environment and puts it into an active state. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_compatible_images::_list_compatible_images_output
 
 pub use crate::operation::list_compatible_images::_list_compatible_images_input::ListCompatibleImagesInputBuilder;
 
+impl ListCompatibleImagesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_compatible_images::ListCompatibleImagesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_compatible_images::ListCompatibleImagesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_compatible_images();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListCompatibleImages`.
 ///
 /// <p>This action returns a list of the different Amazon EC2-compatible Amazon Machine Images (AMIs) that are owned by your Amazon Web Services accountthat would be supported for use on a Snow device. Currently, supported AMIs are based on the Amazon Linux-2, Ubuntu 20.04 LTS - Focal, or Ubuntu 22.04 LTS - Jammy images, available on the Amazon Web Services Marketplace. Ubuntu 16.04 LTS - Xenial (HVM) images are no longer supported in the Market, but still supported for use on devices through Amazon EC2 VM Import/Export and running locally in AMIs.</p>

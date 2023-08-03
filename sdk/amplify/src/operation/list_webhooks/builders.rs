@@ -3,6 +3,23 @@ pub use crate::operation::list_webhooks::_list_webhooks_output::ListWebhooksOutp
 
 pub use crate::operation::list_webhooks::_list_webhooks_input::ListWebhooksInputBuilder;
 
+impl ListWebhooksInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_webhooks::ListWebhooksOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_webhooks::ListWebhooksError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_webhooks();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListWebhooks`.
 ///
 /// <p> Returns a list of webhooks for an Amplify app. </p>

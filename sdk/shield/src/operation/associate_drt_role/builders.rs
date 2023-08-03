@@ -3,6 +3,23 @@ pub use crate::operation::associate_drt_role::_associate_drt_role_output::Associ
 
 pub use crate::operation::associate_drt_role::_associate_drt_role_input::AssociateDrtRoleInputBuilder;
 
+impl AssociateDrtRoleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_drt_role::AssociateDrtRoleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_drt_role::AssociateDRTRoleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_drt_role();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateDRTRole`.
 ///
 /// <p>Authorizes the Shield Response Team (SRT) using the specified role, to access your Amazon Web Services account to assist with DDoS attack mitigation during potential attacks. This enables the SRT to inspect your WAF configuration and create or update WAF rules and web ACLs.</p>

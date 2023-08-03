@@ -3,6 +3,23 @@ pub use crate::operation::failover_shard::_failover_shard_output::FailoverShardO
 
 pub use crate::operation::failover_shard::_failover_shard_input::FailoverShardInputBuilder;
 
+impl FailoverShardInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::failover_shard::FailoverShardOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::failover_shard::FailoverShardError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.failover_shard();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `FailoverShard`.
 ///
 /// <p>Used to failover a shard. This API is designed for testing the behavior of your application in case of MemoryDB failover. It is not designed to be used as a production-level tool for initiating a failover to overcome a problem you may have with the cluster. Moreover, in certain conditions such as large scale operational events, Amazon may block this API. </p>

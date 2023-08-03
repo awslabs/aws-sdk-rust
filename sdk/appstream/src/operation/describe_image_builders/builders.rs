@@ -3,6 +3,23 @@ pub use crate::operation::describe_image_builders::_describe_image_builders_outp
 
 pub use crate::operation::describe_image_builders::_describe_image_builders_input::DescribeImageBuildersInputBuilder;
 
+impl DescribeImageBuildersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_image_builders::DescribeImageBuildersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_image_builders::DescribeImageBuildersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_image_builders();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeImageBuilders`.
 ///
 /// <p>Retrieves a list that describes one or more specified image builders, if the image builder names are provided. Otherwise, all image builders in the account are described.</p>

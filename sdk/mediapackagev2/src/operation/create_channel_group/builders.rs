@@ -3,6 +3,23 @@ pub use crate::operation::create_channel_group::_create_channel_group_output::Cr
 
 pub use crate::operation::create_channel_group::_create_channel_group_input::CreateChannelGroupInputBuilder;
 
+impl CreateChannelGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_channel_group::CreateChannelGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_channel_group::CreateChannelGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_channel_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateChannelGroup`.
 ///
 /// <p>Create a channel group to group your channels and origin endpoints. A channel group is the top-level resource that consists of channels and origin endpoints that are associated with it and that provides predictable URLs for stream delivery. All channels and origin endpoints within the channel group are guaranteed to share the DNS. You can create only one channel group with each request. </p>

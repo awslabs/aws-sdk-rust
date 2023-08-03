@@ -3,6 +3,23 @@ pub use crate::operation::start_db_instance::_start_db_instance_output::StartDbI
 
 pub use crate::operation::start_db_instance::_start_db_instance_input::StartDbInstanceInputBuilder;
 
+impl StartDbInstanceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_db_instance::StartDbInstanceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_db_instance::StartDBInstanceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_db_instance();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartDBInstance`.
 ///
 /// <p>Starts an Amazon RDS DB instance that was stopped using the Amazon Web Services console, the stop-db-instance CLI command, or the StopDBInstance action.</p>

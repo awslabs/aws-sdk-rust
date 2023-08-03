@@ -3,6 +3,23 @@ pub use crate::operation::create_connection_alias::_create_connection_alias_outp
 
 pub use crate::operation::create_connection_alias::_create_connection_alias_input::CreateConnectionAliasInputBuilder;
 
+impl CreateConnectionAliasInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_connection_alias::CreateConnectionAliasOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_connection_alias::CreateConnectionAliasError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_connection_alias();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateConnectionAlias`.
 ///
 /// <p>Creates the specified connection alias for use with cross-Region redirection. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/cross-region-redirection.html"> Cross-Region Redirection for Amazon WorkSpaces</a>.</p>

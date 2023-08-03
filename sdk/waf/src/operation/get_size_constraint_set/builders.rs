@@ -3,6 +3,23 @@ pub use crate::operation::get_size_constraint_set::_get_size_constraint_set_outp
 
 pub use crate::operation::get_size_constraint_set::_get_size_constraint_set_input::GetSizeConstraintSetInputBuilder;
 
+impl GetSizeConstraintSetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_size_constraint_set::GetSizeConstraintSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_size_constraint_set::GetSizeConstraintSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_size_constraint_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetSizeConstraintSet`.
 ///
 /// <note>

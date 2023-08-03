@@ -3,6 +3,23 @@ pub use crate::operation::update_notebook_instance::_update_notebook_instance_ou
 
 pub use crate::operation::update_notebook_instance::_update_notebook_instance_input::UpdateNotebookInstanceInputBuilder;
 
+impl UpdateNotebookInstanceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_notebook_instance::UpdateNotebookInstanceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_notebook_instance::UpdateNotebookInstanceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_notebook_instance();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateNotebookInstance`.
 ///
 /// <p>Updates a notebook instance. NotebookInstance updates include upgrading or downgrading the ML compute instance used for your notebook instance to accommodate changes in your workload requirements.</p>

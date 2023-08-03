@@ -3,6 +3,17 @@ pub use crate::operation::list_unsupported_app_version_resources::_list_unsuppor
 
 pub use crate::operation::list_unsupported_app_version_resources::_list_unsupported_app_version_resources_input::ListUnsupportedAppVersionResourcesInputBuilder;
 
+impl ListUnsupportedAppVersionResourcesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_unsupported_app_version_resources::ListUnsupportedAppVersionResourcesOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_unsupported_app_version_resources::ListUnsupportedAppVersionResourcesError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_unsupported_app_version_resources();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListUnsupportedAppVersionResources`.
 ///
 /// <p>Lists the resources that are not currently supported in Resilience Hub. An unsupported resource is a resource that exists in the object that was used to create an app, but is not supported by Resilience Hub.</p>

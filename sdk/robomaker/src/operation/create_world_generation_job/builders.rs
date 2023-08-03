@@ -3,6 +3,23 @@ pub use crate::operation::create_world_generation_job::_create_world_generation_
 
 pub use crate::operation::create_world_generation_job::_create_world_generation_job_input::CreateWorldGenerationJobInputBuilder;
 
+impl CreateWorldGenerationJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_world_generation_job::CreateWorldGenerationJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_world_generation_job::CreateWorldGenerationJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_world_generation_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateWorldGenerationJob`.
 ///
 /// <p>Creates worlds using the specified template.</p>

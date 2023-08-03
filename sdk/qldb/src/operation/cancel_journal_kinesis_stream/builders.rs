@@ -3,6 +3,23 @@ pub use crate::operation::cancel_journal_kinesis_stream::_cancel_journal_kinesis
 
 pub use crate::operation::cancel_journal_kinesis_stream::_cancel_journal_kinesis_stream_input::CancelJournalKinesisStreamInputBuilder;
 
+impl CancelJournalKinesisStreamInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::cancel_journal_kinesis_stream::CancelJournalKinesisStreamOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::cancel_journal_kinesis_stream::CancelJournalKinesisStreamError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.cancel_journal_kinesis_stream();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CancelJournalKinesisStream`.
 ///
 /// <p>Ends a given Amazon QLDB journal stream. Before a stream can be canceled, its current status must be <code>ACTIVE</code>.</p>

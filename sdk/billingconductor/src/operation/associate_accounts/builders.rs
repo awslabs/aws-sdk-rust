@@ -3,6 +3,23 @@ pub use crate::operation::associate_accounts::_associate_accounts_output::Associ
 
 pub use crate::operation::associate_accounts::_associate_accounts_input::AssociateAccountsInputBuilder;
 
+impl AssociateAccountsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_accounts::AssociateAccountsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_accounts::AssociateAccountsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_accounts();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateAccounts`.
 ///
 /// <p>Connects an array of account IDs in a consolidated billing family to a predefined billing group. The account IDs must be a part of the consolidated billing family during the current month, and not already associated with another billing group. The maximum number of accounts that can be associated in one call is 30. </p>

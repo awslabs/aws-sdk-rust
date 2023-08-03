@@ -3,6 +3,17 @@ pub use crate::operation::delete_service_quota_increase_request_from_template::_
 
 pub use crate::operation::delete_service_quota_increase_request_from_template::_delete_service_quota_increase_request_from_template_input::DeleteServiceQuotaIncreaseRequestFromTemplateInputBuilder;
 
+impl DeleteServiceQuotaIncreaseRequestFromTemplateInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_service_quota_increase_request_from_template::DeleteServiceQuotaIncreaseRequestFromTemplateOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_service_quota_increase_request_from_template::DeleteServiceQuotaIncreaseRequestFromTemplateError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.delete_service_quota_increase_request_from_template();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteServiceQuotaIncreaseRequestFromTemplate`.
 ///
 /// <p>Deletes the quota increase request for the specified quota from your quota request template.</p>

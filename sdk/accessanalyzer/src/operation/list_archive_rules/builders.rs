@@ -3,6 +3,23 @@ pub use crate::operation::list_archive_rules::_list_archive_rules_output::ListAr
 
 pub use crate::operation::list_archive_rules::_list_archive_rules_input::ListArchiveRulesInputBuilder;
 
+impl ListArchiveRulesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_archive_rules::ListArchiveRulesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_archive_rules::ListArchiveRulesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_archive_rules();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListArchiveRules`.
 ///
 /// <p>Retrieves a list of archive rules created for the specified analyzer.</p>

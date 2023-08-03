@@ -3,6 +3,23 @@ pub use crate::operation::delete_batch_prediction_job::_delete_batch_prediction_
 
 pub use crate::operation::delete_batch_prediction_job::_delete_batch_prediction_job_input::DeleteBatchPredictionJobInputBuilder;
 
+impl DeleteBatchPredictionJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_batch_prediction_job::DeleteBatchPredictionJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_batch_prediction_job::DeleteBatchPredictionJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_batch_prediction_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteBatchPredictionJob`.
 ///
 /// <p>Deletes a batch prediction job.</p>

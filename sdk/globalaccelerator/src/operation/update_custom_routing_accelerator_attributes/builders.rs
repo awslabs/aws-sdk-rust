@@ -3,6 +3,17 @@ pub use crate::operation::update_custom_routing_accelerator_attributes::_update_
 
 pub use crate::operation::update_custom_routing_accelerator_attributes::_update_custom_routing_accelerator_attributes_input::UpdateCustomRoutingAcceleratorAttributesInputBuilder;
 
+impl UpdateCustomRoutingAcceleratorAttributesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::update_custom_routing_accelerator_attributes::UpdateCustomRoutingAcceleratorAttributesOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_custom_routing_accelerator_attributes::UpdateCustomRoutingAcceleratorAttributesError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.update_custom_routing_accelerator_attributes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateCustomRoutingAcceleratorAttributes`.
 ///
 /// <p>Update the attributes for a custom routing accelerator. </p>

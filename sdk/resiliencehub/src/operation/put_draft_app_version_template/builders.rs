@@ -3,6 +3,23 @@ pub use crate::operation::put_draft_app_version_template::_put_draft_app_version
 
 pub use crate::operation::put_draft_app_version_template::_put_draft_app_version_template_input::PutDraftAppVersionTemplateInputBuilder;
 
+impl PutDraftAppVersionTemplateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_draft_app_version_template::PutDraftAppVersionTemplateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_draft_app_version_template::PutDraftAppVersionTemplateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_draft_app_version_template();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutDraftAppVersionTemplate`.
 ///
 /// <p>Adds or updates the app template for an Resilience Hub application draft version.</p>

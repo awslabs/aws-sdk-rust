@@ -3,6 +3,23 @@ pub use crate::operation::update_capacity_reservation::_update_capacity_reservat
 
 pub use crate::operation::update_capacity_reservation::_update_capacity_reservation_input::UpdateCapacityReservationInputBuilder;
 
+impl UpdateCapacityReservationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_capacity_reservation::UpdateCapacityReservationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_capacity_reservation::UpdateCapacityReservationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_capacity_reservation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateCapacityReservation`.
 ///
 /// <p>Updates the number of requested data processing units for the capacity reservation with the specified name.</p>

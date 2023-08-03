@@ -3,6 +3,23 @@ pub use crate::operation::update_insight::_update_insight_output::UpdateInsightO
 
 pub use crate::operation::update_insight::_update_insight_input::UpdateInsightInputBuilder;
 
+impl UpdateInsightInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_insight::UpdateInsightOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_insight::UpdateInsightError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_insight();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateInsight`.
 ///
 /// <p>Updates the Security Hub insight identified by the specified insight ARN.</p>

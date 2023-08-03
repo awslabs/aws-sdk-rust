@@ -3,6 +3,23 @@ pub use crate::operation::describe_instance_information::_describe_instance_info
 
 pub use crate::operation::describe_instance_information::_describe_instance_information_input::DescribeInstanceInformationInputBuilder;
 
+impl DescribeInstanceInformationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_instance_information::DescribeInstanceInformationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_instance_information::DescribeInstanceInformationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_instance_information();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeInstanceInformation`.
 ///
 /// <p>Provides information about one or more of your managed nodes, including the operating system platform, SSM Agent version, association status, and IP address. This operation does not return information for nodes that are either Stopped or Terminated.</p>

@@ -3,6 +3,17 @@ pub use crate::operation::delete_license_manager_report_generator::_delete_licen
 
 pub use crate::operation::delete_license_manager_report_generator::_delete_license_manager_report_generator_input::DeleteLicenseManagerReportGeneratorInputBuilder;
 
+impl DeleteLicenseManagerReportGeneratorInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_license_manager_report_generator::DeleteLicenseManagerReportGeneratorOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_license_manager_report_generator::DeleteLicenseManagerReportGeneratorError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.delete_license_manager_report_generator();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteLicenseManagerReportGenerator`.
 ///
 /// <p>Deletes the specified report generator.</p>

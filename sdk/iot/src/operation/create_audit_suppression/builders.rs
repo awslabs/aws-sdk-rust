@@ -3,6 +3,23 @@ pub use crate::operation::create_audit_suppression::_create_audit_suppression_ou
 
 pub use crate::operation::create_audit_suppression::_create_audit_suppression_input::CreateAuditSuppressionInputBuilder;
 
+impl CreateAuditSuppressionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_audit_suppression::CreateAuditSuppressionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_audit_suppression::CreateAuditSuppressionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_audit_suppression();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateAuditSuppression`.
 ///
 /// <p> Creates a Device Defender audit suppression. </p>

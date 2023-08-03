@@ -3,6 +3,23 @@ pub use crate::operation::put_lifecycle_configuration::_put_lifecycle_configurat
 
 pub use crate::operation::put_lifecycle_configuration::_put_lifecycle_configuration_input::PutLifecycleConfigurationInputBuilder;
 
+impl PutLifecycleConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_lifecycle_configuration::PutLifecycleConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_lifecycle_configuration::PutLifecycleConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_lifecycle_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutLifecycleConfiguration`.
 ///
 /// <p>Use this action to manage EFS lifecycle management and EFS Intelligent-Tiering. A <code>LifecycleConfiguration</code> consists of one or more <code>LifecyclePolicy</code> objects that define the following:</p>

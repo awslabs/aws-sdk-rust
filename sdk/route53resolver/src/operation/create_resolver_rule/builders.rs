@@ -3,6 +3,23 @@ pub use crate::operation::create_resolver_rule::_create_resolver_rule_output::Cr
 
 pub use crate::operation::create_resolver_rule::_create_resolver_rule_input::CreateResolverRuleInputBuilder;
 
+impl CreateResolverRuleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_resolver_rule::CreateResolverRuleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_resolver_rule::CreateResolverRuleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_resolver_rule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateResolverRule`.
 ///
 /// <p>For DNS queries that originate in your VPCs, specifies which Resolver endpoint the queries pass through, one domain name that you want to forward to your network, and the IP addresses of the DNS resolvers in your network.</p>

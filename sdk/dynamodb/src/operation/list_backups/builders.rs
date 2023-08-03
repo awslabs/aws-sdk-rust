@@ -3,6 +3,23 @@ pub use crate::operation::list_backups::_list_backups_output::ListBackupsOutputB
 
 pub use crate::operation::list_backups::_list_backups_input::ListBackupsInputBuilder;
 
+impl ListBackupsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_backups::ListBackupsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_backups::ListBackupsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_backups();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListBackups`.
 ///
 /// <p>List backups associated with an Amazon Web Services account. To list backups for a given table, specify <code>TableName</code>. <code>ListBackups</code> returns a paginated list of results with at most 1 MB worth of items in a page. You can also specify a maximum number of entries to be returned in a page.</p>

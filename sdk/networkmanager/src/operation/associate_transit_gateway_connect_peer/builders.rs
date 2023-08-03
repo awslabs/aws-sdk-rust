@@ -3,6 +3,17 @@ pub use crate::operation::associate_transit_gateway_connect_peer::_associate_tra
 
 pub use crate::operation::associate_transit_gateway_connect_peer::_associate_transit_gateway_connect_peer_input::AssociateTransitGatewayConnectPeerInputBuilder;
 
+impl AssociateTransitGatewayConnectPeerInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::associate_transit_gateway_connect_peer::AssociateTransitGatewayConnectPeerOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_transit_gateway_connect_peer::AssociateTransitGatewayConnectPeerError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.associate_transit_gateway_connect_peer();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateTransitGatewayConnectPeer`.
 ///
 /// <p>Associates a transit gateway Connect peer with a device, and optionally, with a link. If you specify a link, it must be associated with the specified device. </p>

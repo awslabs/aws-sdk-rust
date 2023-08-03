@@ -3,6 +3,23 @@ pub use crate::operation::list_handshakes_for_organization::_list_handshakes_for
 
 pub use crate::operation::list_handshakes_for_organization::_list_handshakes_for_organization_input::ListHandshakesForOrganizationInputBuilder;
 
+impl ListHandshakesForOrganizationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_handshakes_for_organization::ListHandshakesForOrganizationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_handshakes_for_organization::ListHandshakesForOrganizationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_handshakes_for_organization();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListHandshakesForOrganization`.
 ///
 /// <p>Lists the handshakes that are associated with the organization that the requesting user is part of. The <code>ListHandshakesForOrganization</code> operation returns a list of handshake structures. Each structure contains details and status about a handshake.</p>

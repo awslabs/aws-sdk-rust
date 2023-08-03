@@ -3,6 +3,23 @@ pub use crate::operation::update_report_plan::_update_report_plan_output::Update
 
 pub use crate::operation::update_report_plan::_update_report_plan_input::UpdateReportPlanInputBuilder;
 
+impl UpdateReportPlanInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_report_plan::UpdateReportPlanOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_report_plan::UpdateReportPlanError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_report_plan();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateReportPlan`.
 ///
 /// <p>Updates an existing report plan identified by its <code>ReportPlanName</code> with the input document in JSON format.</p>

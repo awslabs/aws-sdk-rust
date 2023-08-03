@@ -3,6 +3,23 @@ pub use crate::operation::list_provisioned_product_plans::_list_provisioned_prod
 
 pub use crate::operation::list_provisioned_product_plans::_list_provisioned_product_plans_input::ListProvisionedProductPlansInputBuilder;
 
+impl ListProvisionedProductPlansInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_provisioned_product_plans::ListProvisionedProductPlansOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_provisioned_product_plans::ListProvisionedProductPlansError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_provisioned_product_plans();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListProvisionedProductPlans`.
 ///
 /// <p>Lists the plans for the specified provisioned product or all plans to which the user has access.</p>

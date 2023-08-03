@@ -3,6 +3,23 @@ pub use crate::operation::put_lexicon::_put_lexicon_output::PutLexiconOutputBuil
 
 pub use crate::operation::put_lexicon::_put_lexicon_input::PutLexiconInputBuilder;
 
+impl PutLexiconInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_lexicon::PutLexiconOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_lexicon::PutLexiconError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_lexicon();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutLexicon`.
 ///
 /// <p>Stores a pronunciation lexicon in an Amazon Web Services Region. If a lexicon with the same name already exists in the region, it is overwritten by the new lexicon. Lexicon operations have eventual consistency, therefore, it might take some time before the lexicon is available to the SynthesizeSpeech operation.</p>

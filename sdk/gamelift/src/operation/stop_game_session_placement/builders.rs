@@ -3,6 +3,23 @@ pub use crate::operation::stop_game_session_placement::_stop_game_session_placem
 
 pub use crate::operation::stop_game_session_placement::_stop_game_session_placement_input::StopGameSessionPlacementInputBuilder;
 
+impl StopGameSessionPlacementInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_game_session_placement::StopGameSessionPlacementOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_game_session_placement::StopGameSessionPlacementError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_game_session_placement();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopGameSessionPlacement`.
 ///
 /// <p>Cancels a game session placement that is in <code>PENDING</code> status. To stop a placement, provide the placement ID values. If successful, the placement is moved to <code>CANCELLED</code> status.</p>

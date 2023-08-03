@@ -3,6 +3,23 @@ pub use crate::operation::create_subnet::_create_subnet_output::CreateSubnetOutp
 
 pub use crate::operation::create_subnet::_create_subnet_input::CreateSubnetInputBuilder;
 
+impl CreateSubnetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_subnet::CreateSubnetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_subnet::CreateSubnetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_subnet();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateSubnet`.
 ///
 /// <p>Creates a subnet in the specified VPC. For an IPv4 only subnet, specify an IPv4 CIDR block. If the VPC has an IPv6 CIDR block, you can create an IPv6 only subnet or a dual stack subnet instead. For an IPv6 only subnet, specify an IPv6 CIDR block. For a dual stack subnet, specify both an IPv4 CIDR block and an IPv6 CIDR block.</p>

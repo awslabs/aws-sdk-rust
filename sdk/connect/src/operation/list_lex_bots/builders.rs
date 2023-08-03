@@ -3,6 +3,23 @@ pub use crate::operation::list_lex_bots::_list_lex_bots_output::ListLexBotsOutpu
 
 pub use crate::operation::list_lex_bots::_list_lex_bots_input::ListLexBotsInputBuilder;
 
+impl ListLexBotsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_lex_bots::ListLexBotsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_lex_bots::ListLexBotsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_lex_bots();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListLexBots`.
 ///
 /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>

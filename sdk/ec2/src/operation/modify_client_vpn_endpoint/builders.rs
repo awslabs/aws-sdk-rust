@@ -3,6 +3,23 @@ pub use crate::operation::modify_client_vpn_endpoint::_modify_client_vpn_endpoin
 
 pub use crate::operation::modify_client_vpn_endpoint::_modify_client_vpn_endpoint_input::ModifyClientVpnEndpointInputBuilder;
 
+impl ModifyClientVpnEndpointInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_client_vpn_endpoint::ModifyClientVpnEndpointOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_client_vpn_endpoint::ModifyClientVpnEndpointError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_client_vpn_endpoint();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyClientVpnEndpoint`.
 ///
 /// <p>Modifies the specified Client VPN endpoint. Modifying the DNS server resets existing client connections.</p>

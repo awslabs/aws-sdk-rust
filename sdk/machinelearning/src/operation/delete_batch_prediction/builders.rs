@@ -3,6 +3,23 @@ pub use crate::operation::delete_batch_prediction::_delete_batch_prediction_outp
 
 pub use crate::operation::delete_batch_prediction::_delete_batch_prediction_input::DeleteBatchPredictionInputBuilder;
 
+impl DeleteBatchPredictionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_batch_prediction::DeleteBatchPredictionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_batch_prediction::DeleteBatchPredictionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_batch_prediction();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteBatchPrediction`.
 ///
 /// <p>Assigns the DELETED status to a <code>BatchPrediction</code>, rendering it unusable.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::register_targets::_register_targets_output::RegisterTa
 
 pub use crate::operation::register_targets::_register_targets_input::RegisterTargetsInputBuilder;
 
+impl RegisterTargetsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::register_targets::RegisterTargetsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::register_targets::RegisterTargetsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.register_targets();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RegisterTargets`.
 ///
 /// <p>Registers the targets with the target group. If it's a Lambda target, you can only have one target in a target group.</p>

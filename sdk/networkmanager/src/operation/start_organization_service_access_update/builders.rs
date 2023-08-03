@@ -3,6 +3,17 @@ pub use crate::operation::start_organization_service_access_update::_start_organ
 
 pub use crate::operation::start_organization_service_access_update::_start_organization_service_access_update_input::StartOrganizationServiceAccessUpdateInputBuilder;
 
+impl StartOrganizationServiceAccessUpdateInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::start_organization_service_access_update::StartOrganizationServiceAccessUpdateOutput, ::aws_smithy_http::result::SdkError<crate::operation::start_organization_service_access_update::StartOrganizationServiceAccessUpdateError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.start_organization_service_access_update();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartOrganizationServiceAccessUpdate`.
 ///
 /// <p>Enables the Network Manager service for an Amazon Web Services Organization. This can only be called by a management account within the organization. </p>

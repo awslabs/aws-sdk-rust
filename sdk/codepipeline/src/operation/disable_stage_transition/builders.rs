@@ -3,6 +3,23 @@ pub use crate::operation::disable_stage_transition::_disable_stage_transition_ou
 
 pub use crate::operation::disable_stage_transition::_disable_stage_transition_input::DisableStageTransitionInputBuilder;
 
+impl DisableStageTransitionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disable_stage_transition::DisableStageTransitionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disable_stage_transition::DisableStageTransitionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disable_stage_transition();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisableStageTransition`.
 ///
 /// <p>Prevents artifacts in a pipeline from transitioning to the next stage in the pipeline.</p>

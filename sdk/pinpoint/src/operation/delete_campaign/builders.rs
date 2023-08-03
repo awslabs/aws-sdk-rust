@@ -3,6 +3,23 @@ pub use crate::operation::delete_campaign::_delete_campaign_output::DeleteCampai
 
 pub use crate::operation::delete_campaign::_delete_campaign_input::DeleteCampaignInputBuilder;
 
+impl DeleteCampaignInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_campaign::DeleteCampaignOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_campaign::DeleteCampaignError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_campaign();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteCampaign`.
 ///
 /// <p>Deletes a campaign from an application.</p>

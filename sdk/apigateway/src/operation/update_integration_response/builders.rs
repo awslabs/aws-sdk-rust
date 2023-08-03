@@ -3,6 +3,23 @@ pub use crate::operation::update_integration_response::_update_integration_respo
 
 pub use crate::operation::update_integration_response::_update_integration_response_input::UpdateIntegrationResponseInputBuilder;
 
+impl UpdateIntegrationResponseInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_integration_response::UpdateIntegrationResponseOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_integration_response::UpdateIntegrationResponseError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_integration_response();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateIntegrationResponse`.
 ///
 /// <p>Represents an update integration response.</p>

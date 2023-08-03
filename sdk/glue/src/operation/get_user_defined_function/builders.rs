@@ -3,6 +3,23 @@ pub use crate::operation::get_user_defined_function::_get_user_defined_function_
 
 pub use crate::operation::get_user_defined_function::_get_user_defined_function_input::GetUserDefinedFunctionInputBuilder;
 
+impl GetUserDefinedFunctionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_user_defined_function::GetUserDefinedFunctionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_user_defined_function::GetUserDefinedFunctionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_user_defined_function();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetUserDefinedFunction`.
 ///
 /// <p>Retrieves a specified function definition from the Data Catalog.</p>

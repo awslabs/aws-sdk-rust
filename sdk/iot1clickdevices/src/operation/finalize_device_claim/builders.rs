@@ -3,6 +3,23 @@ pub use crate::operation::finalize_device_claim::_finalize_device_claim_output::
 
 pub use crate::operation::finalize_device_claim::_finalize_device_claim_input::FinalizeDeviceClaimInputBuilder;
 
+impl FinalizeDeviceClaimInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::finalize_device_claim::FinalizeDeviceClaimOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::finalize_device_claim::FinalizeDeviceClaimError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.finalize_device_claim();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `FinalizeDeviceClaim`.
 ///
 /// <p>Given a device ID, finalizes the claim request for the associated device.</p><note>

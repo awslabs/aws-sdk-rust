@@ -3,6 +3,23 @@ pub use crate::operation::phone_number_validate::_phone_number_validate_output::
 
 pub use crate::operation::phone_number_validate::_phone_number_validate_input::PhoneNumberValidateInputBuilder;
 
+impl PhoneNumberValidateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::phone_number_validate::PhoneNumberValidateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::phone_number_validate::PhoneNumberValidateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.phone_number_validate();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PhoneNumberValidate`.
 ///
 /// <p>Retrieves information about a phone number.</p>

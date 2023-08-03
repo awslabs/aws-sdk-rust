@@ -3,6 +3,23 @@ pub use crate::operation::verify_pin_data::_verify_pin_data_output::VerifyPinDat
 
 pub use crate::operation::verify_pin_data::_verify_pin_data_input::VerifyPinDataInputBuilder;
 
+impl VerifyPinDataInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::verify_pin_data::VerifyPinDataOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::verify_pin_data::VerifyPinDataError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.verify_pin_data();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `VerifyPinData`.
 ///
 /// <p>Verifies pin-related data such as PIN and PIN Offset using algorithms including VISA PVV and IBM3624. For more information, see <a href="https://docs.aws.amazon.com/payment-cryptography/latest/userguide/verify-pin-data.html">Verify PIN data</a> in the <i>Amazon Web Services Payment Cryptography User Guide</i>.</p>

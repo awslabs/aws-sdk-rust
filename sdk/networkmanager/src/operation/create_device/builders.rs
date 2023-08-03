@@ -3,6 +3,23 @@ pub use crate::operation::create_device::_create_device_output::CreateDeviceOutp
 
 pub use crate::operation::create_device::_create_device_input::CreateDeviceInputBuilder;
 
+impl CreateDeviceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_device::CreateDeviceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_device::CreateDeviceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_device();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateDevice`.
 ///
 /// <p>Creates a new device in a global network. If you specify both a site ID and a location, the location of the site is used for visualization in the Network Manager console.</p>

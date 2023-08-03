@@ -3,6 +3,23 @@ pub use crate::operation::get_task_protection::_get_task_protection_output::GetT
 
 pub use crate::operation::get_task_protection::_get_task_protection_input::GetTaskProtectionInputBuilder;
 
+impl GetTaskProtectionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_task_protection::GetTaskProtectionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_task_protection::GetTaskProtectionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_task_protection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetTaskProtection`.
 ///
 /// <p>Retrieves the protection status of tasks in an Amazon ECS service.</p>

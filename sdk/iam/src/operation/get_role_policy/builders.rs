@@ -3,6 +3,23 @@ pub use crate::operation::get_role_policy::_get_role_policy_output::GetRolePolic
 
 pub use crate::operation::get_role_policy::_get_role_policy_input::GetRolePolicyInputBuilder;
 
+impl GetRolePolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_role_policy::GetRolePolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_role_policy::GetRolePolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_role_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetRolePolicy`.
 ///
 /// <p>Retrieves the specified inline policy document that is embedded with the specified IAM role.</p> <note>

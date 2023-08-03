@@ -3,6 +3,23 @@ pub use crate::operation::delete_relational_database::_delete_relational_databas
 
 pub use crate::operation::delete_relational_database::_delete_relational_database_input::DeleteRelationalDatabaseInputBuilder;
 
+impl DeleteRelationalDatabaseInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_relational_database::DeleteRelationalDatabaseOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_relational_database::DeleteRelationalDatabaseError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_relational_database();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteRelationalDatabase`.
 ///
 /// <p>Deletes a database in Amazon Lightsail.</p>

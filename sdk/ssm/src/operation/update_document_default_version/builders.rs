@@ -3,6 +3,23 @@ pub use crate::operation::update_document_default_version::_update_document_defa
 
 pub use crate::operation::update_document_default_version::_update_document_default_version_input::UpdateDocumentDefaultVersionInputBuilder;
 
+impl UpdateDocumentDefaultVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_document_default_version::UpdateDocumentDefaultVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_document_default_version::UpdateDocumentDefaultVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_document_default_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateDocumentDefaultVersion`.
 ///
 /// <p>Set the default version of a document. </p> <note>

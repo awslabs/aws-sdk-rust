@@ -3,6 +3,23 @@ pub use crate::operation::test_custom_data_identifier::_test_custom_data_identif
 
 pub use crate::operation::test_custom_data_identifier::_test_custom_data_identifier_input::TestCustomDataIdentifierInputBuilder;
 
+impl TestCustomDataIdentifierInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::test_custom_data_identifier::TestCustomDataIdentifierOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::test_custom_data_identifier::TestCustomDataIdentifierError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.test_custom_data_identifier();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `TestCustomDataIdentifier`.
 ///
 /// <p>Tests a custom data identifier.</p>

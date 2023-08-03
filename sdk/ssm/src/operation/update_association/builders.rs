@@ -3,6 +3,23 @@ pub use crate::operation::update_association::_update_association_output::Update
 
 pub use crate::operation::update_association::_update_association_input::UpdateAssociationInputBuilder;
 
+impl UpdateAssociationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_association::UpdateAssociationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_association::UpdateAssociationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_association();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateAssociation`.
 ///
 /// <p>Updates an association. You can update the association name and version, the document version, schedule, parameters, and Amazon Simple Storage Service (Amazon S3) output. When you call <code>UpdateAssociation</code>, the system removes all optional parameters from the request and overwrites the association with null values for those parameters. This is by design. You must specify all optional parameters in the call, even if you are not changing the parameters. This includes the <code>Name</code> parameter. Before calling this API action, we recommend that you call the <code>DescribeAssociation</code> API operation and make a note of all optional parameters required for your <code>UpdateAssociation</code> call.</p>

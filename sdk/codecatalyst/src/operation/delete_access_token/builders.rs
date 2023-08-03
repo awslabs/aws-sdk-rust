@@ -3,6 +3,23 @@ pub use crate::operation::delete_access_token::_delete_access_token_output::Dele
 
 pub use crate::operation::delete_access_token::_delete_access_token_input::DeleteAccessTokenInputBuilder;
 
+impl DeleteAccessTokenInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_access_token::DeleteAccessTokenOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_access_token::DeleteAccessTokenError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_access_token();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteAccessToken`.
 ///
 /// <p>Deletes a specified personal access token (PAT). A personal access token can only be deleted by the user who created it.</p>

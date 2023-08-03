@@ -3,6 +3,23 @@ pub use crate::operation::get_identity_resolution_job::_get_identity_resolution_
 
 pub use crate::operation::get_identity_resolution_job::_get_identity_resolution_job_input::GetIdentityResolutionJobInputBuilder;
 
+impl GetIdentityResolutionJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_identity_resolution_job::GetIdentityResolutionJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_identity_resolution_job::GetIdentityResolutionJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_identity_resolution_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetIdentityResolutionJob`.
 ///
 /// <p>Returns information about an Identity Resolution Job in a specific domain. </p>

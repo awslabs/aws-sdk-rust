@@ -3,6 +3,23 @@ pub use crate::operation::start_match_backfill::_start_match_backfill_output::St
 
 pub use crate::operation::start_match_backfill::_start_match_backfill_input::StartMatchBackfillInputBuilder;
 
+impl StartMatchBackfillInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_match_backfill::StartMatchBackfillOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_match_backfill::StartMatchBackfillError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_match_backfill();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartMatchBackfill`.
 ///
 /// <p>Finds new players to fill open slots in currently running game sessions. The backfill match process is essentially identical to the process of forming new matches. Backfill requests use the same matchmaker that was used to make the original match, and they provide matchmaking data for all players currently in the game session. FlexMatch uses this information to select new players so that backfilled match continues to meet the original match requirements. </p>

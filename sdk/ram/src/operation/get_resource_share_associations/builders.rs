@@ -3,6 +3,23 @@ pub use crate::operation::get_resource_share_associations::_get_resource_share_a
 
 pub use crate::operation::get_resource_share_associations::_get_resource_share_associations_input::GetResourceShareAssociationsInputBuilder;
 
+impl GetResourceShareAssociationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_resource_share_associations::GetResourceShareAssociationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_resource_share_associations::GetResourceShareAssociationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_resource_share_associations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetResourceShareAssociations`.
 ///
 /// <p>Retrieves the lists of resources and principals that associated for resource shares that you own.</p>

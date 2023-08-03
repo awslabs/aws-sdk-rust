@@ -3,6 +3,17 @@ pub use crate::operation::delete_column_statistics_for_partition::_delete_column
 
 pub use crate::operation::delete_column_statistics_for_partition::_delete_column_statistics_for_partition_input::DeleteColumnStatisticsForPartitionInputBuilder;
 
+impl DeleteColumnStatisticsForPartitionInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_column_statistics_for_partition::DeleteColumnStatisticsForPartitionOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_column_statistics_for_partition::DeleteColumnStatisticsForPartitionError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.delete_column_statistics_for_partition();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteColumnStatisticsForPartition`.
 ///
 /// <p>Delete the partition column statistics of a column.</p>

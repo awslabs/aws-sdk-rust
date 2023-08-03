@@ -3,6 +3,23 @@ pub use crate::operation::list_objects_v2::_list_objects_v2_output::ListObjectsV
 
 pub use crate::operation::list_objects_v2::_list_objects_v2_input::ListObjectsV2InputBuilder;
 
+impl ListObjectsV2InputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_objects_v2::ListObjectsV2Output,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_objects_v2::ListObjectsV2Error,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_objects_v2();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListObjectsV2`.
 ///
 /// <p>Returns some or all (up to 1,000) of the objects in a bucket with each request. You can use the request parameters as selection criteria to return a subset of the objects in a bucket. A <code>200 OK</code> response can contain valid or invalid XML. Make sure to design your application to parse the contents of the response and handle it appropriately. Objects are returned sorted in an ascending order of the respective key names in the list. For more information about listing objects, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/ListingKeysUsingAPIs.html">Listing object keys programmatically</a> in the <i>Amazon S3 User Guide</i>.</p>

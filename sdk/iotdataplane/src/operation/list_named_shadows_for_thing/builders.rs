@@ -3,6 +3,23 @@ pub use crate::operation::list_named_shadows_for_thing::_list_named_shadows_for_
 
 pub use crate::operation::list_named_shadows_for_thing::_list_named_shadows_for_thing_input::ListNamedShadowsForThingInputBuilder;
 
+impl ListNamedShadowsForThingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_named_shadows_for_thing::ListNamedShadowsForThingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_named_shadows_for_thing::ListNamedShadowsForThingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_named_shadows_for_thing();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListNamedShadowsForThing`.
 ///
 /// <p>Lists the shadows for the specified thing.</p>

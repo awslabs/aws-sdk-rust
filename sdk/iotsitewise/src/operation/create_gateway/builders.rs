@@ -3,6 +3,23 @@ pub use crate::operation::create_gateway::_create_gateway_output::CreateGatewayO
 
 pub use crate::operation::create_gateway::_create_gateway_input::CreateGatewayInputBuilder;
 
+impl CreateGatewayInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_gateway::CreateGatewayOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_gateway::CreateGatewayError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_gateway();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateGateway`.
 ///
 /// <p>Creates a gateway, which is a virtual or edge device that delivers industrial data streams from local servers to IoT SiteWise. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/gateway-connector.html">Ingesting data using a gateway</a> in the <i>IoT SiteWise User Guide</i>.</p>

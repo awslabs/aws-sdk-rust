@@ -3,6 +3,17 @@ pub use crate::operation::modify_network_interface_attribute::_modify_network_in
 
 pub use crate::operation::modify_network_interface_attribute::_modify_network_interface_attribute_input::ModifyNetworkInterfaceAttributeInputBuilder;
 
+impl ModifyNetworkInterfaceAttributeInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::modify_network_interface_attribute::ModifyNetworkInterfaceAttributeOutput, ::aws_smithy_http::result::SdkError<crate::operation::modify_network_interface_attribute::ModifyNetworkInterfaceAttributeError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.modify_network_interface_attribute();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyNetworkInterfaceAttribute`.
 ///
 /// <p>Modifies the specified network interface attribute. You can specify only one attribute at a time. You can use this action to attach and detach security groups from an existing EC2 instance.</p>

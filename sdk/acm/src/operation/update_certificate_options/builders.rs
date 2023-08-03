@@ -3,6 +3,23 @@ pub use crate::operation::update_certificate_options::_update_certificate_option
 
 pub use crate::operation::update_certificate_options::_update_certificate_options_input::UpdateCertificateOptionsInputBuilder;
 
+impl UpdateCertificateOptionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_certificate_options::UpdateCertificateOptionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_certificate_options::UpdateCertificateOptionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_certificate_options();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateCertificateOptions`.
 ///
 /// <p>Updates a certificate. Currently, you can use this function to specify whether to opt in to or out of recording your certificate in a certificate transparency log. For more information, see <a href="https://docs.aws.amazon.com/acm/latest/userguide/acm-bestpractices.html#best-practices-transparency"> Opting Out of Certificate Transparency Logging</a>. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_admins_managing_account::_list_admins_managing_ac
 
 pub use crate::operation::list_admins_managing_account::_list_admins_managing_account_input::ListAdminsManagingAccountInputBuilder;
 
+impl ListAdminsManagingAccountInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_admins_managing_account::ListAdminsManagingAccountOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_admins_managing_account::ListAdminsManagingAccountError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_admins_managing_account();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAdminsManagingAccount`.
 ///
 /// <p>Lists the accounts that are managing the specified Organizations member account. This is useful for any member account so that they can view the accounts who are managing their account. This operation only returns the managing administrators that have the requested account within their <code>AdminScope</code>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_analysis::_delete_analysis_output::DeleteAnalys
 
 pub use crate::operation::delete_analysis::_delete_analysis_input::DeleteAnalysisInputBuilder;
 
+impl DeleteAnalysisInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_analysis::DeleteAnalysisOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_analysis::DeleteAnalysisError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_analysis();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteAnalysis`.
 ///
 /// <p>Deletes an analysis from Amazon QuickSight. You can optionally include a recovery window during which you can restore the analysis. If you don't specify a recovery window value, the operation defaults to 30 days. Amazon QuickSight attaches a <code>DeletionTime</code> stamp to the response that specifies the end of the recovery window. At the end of the recovery window, Amazon QuickSight deletes the analysis permanently.</p>

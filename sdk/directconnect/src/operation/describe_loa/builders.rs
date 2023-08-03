@@ -3,6 +3,23 @@ pub use crate::operation::describe_loa::_describe_loa_output::DescribeLoaOutputB
 
 pub use crate::operation::describe_loa::_describe_loa_input::DescribeLoaInputBuilder;
 
+impl DescribeLoaInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_loa::DescribeLoaOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_loa::DescribeLoaError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_loa();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeLoa`.
 ///
 /// <p>Gets the LOA-CFA for a connection, interconnect, or link aggregation group (LAG).</p>

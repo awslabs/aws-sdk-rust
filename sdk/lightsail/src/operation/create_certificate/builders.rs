@@ -3,6 +3,23 @@ pub use crate::operation::create_certificate::_create_certificate_output::Create
 
 pub use crate::operation::create_certificate::_create_certificate_input::CreateCertificateInputBuilder;
 
+impl CreateCertificateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_certificate::CreateCertificateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_certificate::CreateCertificateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_certificate();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateCertificate`.
 ///
 /// <p>Creates an SSL/TLS certificate for an Amazon Lightsail content delivery network (CDN) distribution and a container service.</p>

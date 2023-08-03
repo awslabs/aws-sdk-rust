@@ -3,6 +3,23 @@ pub use crate::operation::remove_thing_from_thing_group::_remove_thing_from_thin
 
 pub use crate::operation::remove_thing_from_thing_group::_remove_thing_from_thing_group_input::RemoveThingFromThingGroupInputBuilder;
 
+impl RemoveThingFromThingGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::remove_thing_from_thing_group::RemoveThingFromThingGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::remove_thing_from_thing_group::RemoveThingFromThingGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.remove_thing_from_thing_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RemoveThingFromThingGroup`.
 ///
 /// <p>Remove the specified thing from the specified group.</p>

@@ -3,6 +3,17 @@ pub use crate::operation::list_conformance_pack_compliance_scores::_list_conform
 
 pub use crate::operation::list_conformance_pack_compliance_scores::_list_conformance_pack_compliance_scores_input::ListConformancePackComplianceScoresInputBuilder;
 
+impl ListConformancePackComplianceScoresInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_conformance_pack_compliance_scores::ListConformancePackComplianceScoresOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_conformance_pack_compliance_scores::ListConformancePackComplianceScoresError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_conformance_pack_compliance_scores();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListConformancePackComplianceScores`.
 ///
 /// <p>Returns a list of conformance pack compliance scores. A compliance score is the percentage of the number of compliant rule-resource combinations in a conformance pack compared to the number of total possible rule-resource combinations in the conformance pack. This metric provides you with a high-level view of the compliance state of your conformance packs. You can use it to identify, investigate, and understand the level of compliance in your conformance packs.</p> <note>

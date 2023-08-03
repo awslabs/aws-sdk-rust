@@ -3,6 +3,17 @@ pub use crate::operation::update_log_levels_by_resource_types::_update_log_level
 
 pub use crate::operation::update_log_levels_by_resource_types::_update_log_levels_by_resource_types_input::UpdateLogLevelsByResourceTypesInputBuilder;
 
+impl UpdateLogLevelsByResourceTypesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypesOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_log_levels_by_resource_types::UpdateLogLevelsByResourceTypesError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.update_log_levels_by_resource_types();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateLogLevelsByResourceTypes`.
 ///
 /// <p>Set default log level, or log levels by resource types. This can be for wireless device log options or wireless gateways log options and is used to control the log messages that'll be displayed in CloudWatch.</p>

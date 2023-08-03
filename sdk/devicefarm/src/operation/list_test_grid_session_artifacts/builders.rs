@@ -3,6 +3,23 @@ pub use crate::operation::list_test_grid_session_artifacts::_list_test_grid_sess
 
 pub use crate::operation::list_test_grid_session_artifacts::_list_test_grid_session_artifacts_input::ListTestGridSessionArtifactsInputBuilder;
 
+impl ListTestGridSessionArtifactsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_test_grid_session_artifacts::ListTestGridSessionArtifactsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_test_grid_session_artifacts::ListTestGridSessionArtifactsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_test_grid_session_artifacts();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListTestGridSessionArtifacts`.
 ///
 /// <p>Retrieves a list of artifacts created during the session.</p>

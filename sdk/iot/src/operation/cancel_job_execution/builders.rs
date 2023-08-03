@@ -3,6 +3,23 @@ pub use crate::operation::cancel_job_execution::_cancel_job_execution_output::Ca
 
 pub use crate::operation::cancel_job_execution::_cancel_job_execution_input::CancelJobExecutionInputBuilder;
 
+impl CancelJobExecutionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::cancel_job_execution::CancelJobExecutionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::cancel_job_execution::CancelJobExecutionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.cancel_job_execution();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CancelJobExecution`.
 ///
 /// <p>Cancels the execution of a job for a given thing.</p>

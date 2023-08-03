@@ -3,6 +3,17 @@ pub use crate::operation::describe_reserved_node_exchange_status::_describe_rese
 
 pub use crate::operation::describe_reserved_node_exchange_status::_describe_reserved_node_exchange_status_input::DescribeReservedNodeExchangeStatusInputBuilder;
 
+impl DescribeReservedNodeExchangeStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_reserved_node_exchange_status::DescribeReservedNodeExchangeStatusOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_reserved_node_exchange_status::DescribeReservedNodeExchangeStatusError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_reserved_node_exchange_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeReservedNodeExchangeStatus`.
 ///
 /// <p>Returns exchange status details and associated metadata for a reserved-node exchange. Statuses include such values as in progress and requested.</p>

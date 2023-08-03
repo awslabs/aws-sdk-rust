@@ -3,6 +3,23 @@ pub use crate::operation::add_permission::_add_permission_output::AddPermissionO
 
 pub use crate::operation::add_permission::_add_permission_input::AddPermissionInputBuilder;
 
+impl AddPermissionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::add_permission::AddPermissionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::add_permission::AddPermissionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.add_permission();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AddPermission`.
 ///
 /// <p>Adds a statement to a topic's access control policy, granting access for the specified Amazon Web Services accounts to the specified actions.</p> <note>

@@ -3,6 +3,23 @@ pub use crate::operation::create_thing_type::_create_thing_type_output::CreateTh
 
 pub use crate::operation::create_thing_type::_create_thing_type_input::CreateThingTypeInputBuilder;
 
+impl CreateThingTypeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_thing_type::CreateThingTypeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_thing_type::CreateThingTypeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_thing_type();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateThingType`.
 ///
 /// <p>Creates a new thing type.</p>

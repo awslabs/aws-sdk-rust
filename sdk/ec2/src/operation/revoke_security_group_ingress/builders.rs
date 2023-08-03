@@ -3,6 +3,23 @@ pub use crate::operation::revoke_security_group_ingress::_revoke_security_group_
 
 pub use crate::operation::revoke_security_group_ingress::_revoke_security_group_ingress_input::RevokeSecurityGroupIngressInputBuilder;
 
+impl RevokeSecurityGroupIngressInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::revoke_security_group_ingress::RevokeSecurityGroupIngressOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::revoke_security_group_ingress::RevokeSecurityGroupIngressError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.revoke_security_group_ingress();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RevokeSecurityGroupIngress`.
 ///
 /// <p>Removes the specified inbound (ingress) rules from a security group.</p>

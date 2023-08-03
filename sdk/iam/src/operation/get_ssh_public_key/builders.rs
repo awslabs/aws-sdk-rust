@@ -3,6 +3,23 @@ pub use crate::operation::get_ssh_public_key::_get_ssh_public_key_output::GetSsh
 
 pub use crate::operation::get_ssh_public_key::_get_ssh_public_key_input::GetSshPublicKeyInputBuilder;
 
+impl GetSshPublicKeyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_ssh_public_key::GetSshPublicKeyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_ssh_public_key::GetSSHPublicKeyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_ssh_public_key();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetSSHPublicKey`.
 ///
 /// <p>Retrieves the specified SSH public key, including metadata about the key.</p>

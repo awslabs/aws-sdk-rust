@@ -3,6 +3,23 @@ pub use crate::operation::list_spaces::_list_spaces_output::ListSpacesOutputBuil
 
 pub use crate::operation::list_spaces::_list_spaces_input::ListSpacesInputBuilder;
 
+impl ListSpacesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_spaces::ListSpacesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_spaces::ListSpacesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_spaces();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListSpaces`.
 ///
 /// <p>Retrieves a list of spaces.</p>

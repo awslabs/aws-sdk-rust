@@ -3,6 +3,23 @@ pub use crate::operation::delete_data_cells_filter::_delete_data_cells_filter_ou
 
 pub use crate::operation::delete_data_cells_filter::_delete_data_cells_filter_input::DeleteDataCellsFilterInputBuilder;
 
+impl DeleteDataCellsFilterInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_data_cells_filter::DeleteDataCellsFilterOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_data_cells_filter::DeleteDataCellsFilterError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_data_cells_filter();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteDataCellsFilter`.
 ///
 /// <p>Deletes a data cell filter.</p>

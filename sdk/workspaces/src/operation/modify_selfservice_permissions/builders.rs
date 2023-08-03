@@ -3,6 +3,23 @@ pub use crate::operation::modify_selfservice_permissions::_modify_selfservice_pe
 
 pub use crate::operation::modify_selfservice_permissions::_modify_selfservice_permissions_input::ModifySelfservicePermissionsInputBuilder;
 
+impl ModifySelfservicePermissionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_selfservice_permissions::ModifySelfservicePermissionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_selfservice_permissions::ModifySelfservicePermissionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_selfservice_permissions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifySelfservicePermissions`.
 ///
 /// <p>Modifies the self-service WorkSpace management capabilities for your users. For more information, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/enable-user-self-service-workspace-management.html">Enable Self-Service WorkSpace Management Capabilities for Your Users</a>.</p>

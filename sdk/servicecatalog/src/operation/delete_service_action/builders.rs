@@ -3,6 +3,23 @@ pub use crate::operation::delete_service_action::_delete_service_action_output::
 
 pub use crate::operation::delete_service_action::_delete_service_action_input::DeleteServiceActionInputBuilder;
 
+impl DeleteServiceActionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_service_action::DeleteServiceActionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_service_action::DeleteServiceActionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_service_action();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteServiceAction`.
 ///
 /// <p>Deletes a self-service action.</p>

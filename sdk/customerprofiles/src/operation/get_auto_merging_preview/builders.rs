@@ -3,6 +3,23 @@ pub use crate::operation::get_auto_merging_preview::_get_auto_merging_preview_ou
 
 pub use crate::operation::get_auto_merging_preview::_get_auto_merging_preview_input::GetAutoMergingPreviewInputBuilder;
 
+impl GetAutoMergingPreviewInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_auto_merging_preview::GetAutoMergingPreviewOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_auto_merging_preview::GetAutoMergingPreviewError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_auto_merging_preview();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetAutoMergingPreview`.
 ///
 /// <p>Tests the auto-merging settings of your Identity Resolution Job without merging your data. It randomly selects a sample of matching groups from the existing matching results, and applies the automerging settings that you provided. You can then view the number of profiles in the sample, the number of matches, and the number of profiles identified to be merged. This enables you to evaluate the accuracy of the attributes in your matching list. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_token::_delete_token_output::DeleteTokenOutputB
 
 pub use crate::operation::delete_token::_delete_token_input::DeleteTokenInputBuilder;
 
+impl DeleteTokenInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_token::DeleteTokenOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_token::DeleteTokenError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_token();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteToken`.
 ///
 /// <p>Deletes the challenge token based on the given appId and sessionId.</p>

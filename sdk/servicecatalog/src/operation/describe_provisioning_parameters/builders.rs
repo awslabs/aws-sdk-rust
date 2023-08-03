@@ -3,6 +3,23 @@ pub use crate::operation::describe_provisioning_parameters::_describe_provisioni
 
 pub use crate::operation::describe_provisioning_parameters::_describe_provisioning_parameters_input::DescribeProvisioningParametersInputBuilder;
 
+impl DescribeProvisioningParametersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_provisioning_parameters::DescribeProvisioningParametersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_provisioning_parameters::DescribeProvisioningParametersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_provisioning_parameters();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeProvisioningParameters`.
 ///
 /// <p>Gets information about the configuration required to provision the specified product using the specified provisioning artifact.</p>

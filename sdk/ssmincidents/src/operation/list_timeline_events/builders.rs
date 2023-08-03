@@ -3,6 +3,23 @@ pub use crate::operation::list_timeline_events::_list_timeline_events_output::Li
 
 pub use crate::operation::list_timeline_events::_list_timeline_events_input::ListTimelineEventsInputBuilder;
 
+impl ListTimelineEventsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_timeline_events::ListTimelineEventsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_timeline_events::ListTimelineEventsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_timeline_events();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListTimelineEvents`.
 ///
 /// <p>Lists timeline events for the specified incident record.</p>

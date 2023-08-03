@@ -3,6 +3,23 @@ pub use crate::operation::search_users::_search_users_output::SearchUsersOutputB
 
 pub use crate::operation::search_users::_search_users_input::SearchUsersInputBuilder;
 
+impl SearchUsersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::search_users::SearchUsersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::search_users::SearchUsersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.search_users();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SearchUsers`.
 ///
 /// <p>Searches for UserIDs within a collection based on a <code>FaceId</code> or <code>UserId</code>. This API can be used to find the closest UserID (with a highest similarity) to associate a face. The request must be provided with either <code>FaceId</code> or <code>UserId</code>. The operation returns an array of UserID that match the <code>FaceId</code> or <code>UserId</code>, ordered by similarity score with the highest similarity first. </p>

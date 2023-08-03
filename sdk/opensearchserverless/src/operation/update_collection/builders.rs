@@ -3,6 +3,23 @@ pub use crate::operation::update_collection::_update_collection_output::UpdateCo
 
 pub use crate::operation::update_collection::_update_collection_input::UpdateCollectionInputBuilder;
 
+impl UpdateCollectionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_collection::UpdateCollectionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_collection::UpdateCollectionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_collection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateCollection`.
 ///
 /// <p>Updates an OpenSearch Serverless collection.</p>

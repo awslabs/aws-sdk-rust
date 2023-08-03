@@ -3,6 +3,23 @@ pub use crate::operation::create_resource_share::_create_resource_share_output::
 
 pub use crate::operation::create_resource_share::_create_resource_share_input::CreateResourceShareInputBuilder;
 
+impl CreateResourceShareInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_resource_share::CreateResourceShareOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_resource_share::CreateResourceShareError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_resource_share();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateResourceShare`.
 ///
 /// <p>Creates a resource share. You can provide a list of the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> for the resources that you want to share, a list of principals you want to share the resources with, and the permissions to grant those principals.</p> <note>

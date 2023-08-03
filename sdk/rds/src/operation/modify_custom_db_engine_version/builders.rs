@@ -3,6 +3,23 @@ pub use crate::operation::modify_custom_db_engine_version::_modify_custom_db_eng
 
 pub use crate::operation::modify_custom_db_engine_version::_modify_custom_db_engine_version_input::ModifyCustomDbEngineVersionInputBuilder;
 
+impl ModifyCustomDbEngineVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_custom_db_engine_version::ModifyCustomDbEngineVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_custom_db_engine_version::ModifyCustomDBEngineVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_custom_db_engine_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyCustomDBEngineVersion`.
 ///
 /// <p>Modifies the status of a custom engine version (CEV). You can find CEVs to modify by calling <code>DescribeDBEngineVersions</code>.</p> <note>

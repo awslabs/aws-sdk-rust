@@ -3,6 +3,23 @@ pub use crate::operation::associate_pricing_rules::_associate_pricing_rules_outp
 
 pub use crate::operation::associate_pricing_rules::_associate_pricing_rules_input::AssociatePricingRulesInputBuilder;
 
+impl AssociatePricingRulesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_pricing_rules::AssociatePricingRulesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_pricing_rules::AssociatePricingRulesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_pricing_rules();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociatePricingRules`.
 ///
 /// <p>Connects an array of <code>PricingRuleArns</code> to a defined <code>PricingPlan</code>. The maximum number <code>PricingRuleArn</code> that can be associated in one call is 30. </p>

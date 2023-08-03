@@ -3,6 +3,23 @@ pub use crate::operation::disable_policy_type::_disable_policy_type_output::Disa
 
 pub use crate::operation::disable_policy_type::_disable_policy_type_input::DisablePolicyTypeInputBuilder;
 
+impl DisablePolicyTypeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disable_policy_type::DisablePolicyTypeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disable_policy_type::DisablePolicyTypeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disable_policy_type();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisablePolicyType`.
 ///
 /// <p>Disables an organizational policy type in a root. A policy of a certain type can be attached to entities in a root only if that type is enabled in the root. After you perform this operation, you no longer can attach policies of the specified type to that root or to any organizational unit (OU) or account in that root. You can undo this by using the <code>EnablePolicyType</code> operation.</p>

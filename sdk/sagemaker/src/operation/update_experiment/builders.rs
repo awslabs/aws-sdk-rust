@@ -3,6 +3,23 @@ pub use crate::operation::update_experiment::_update_experiment_output::UpdateEx
 
 pub use crate::operation::update_experiment::_update_experiment_input::UpdateExperimentInputBuilder;
 
+impl UpdateExperimentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_experiment::UpdateExperimentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_experiment::UpdateExperimentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_experiment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateExperiment`.
 ///
 /// <p>Adds, updates, or removes the description of an experiment. Updates the display name of an experiment.</p>

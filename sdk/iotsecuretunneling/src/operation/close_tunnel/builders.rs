@@ -3,6 +3,23 @@ pub use crate::operation::close_tunnel::_close_tunnel_output::CloseTunnelOutputB
 
 pub use crate::operation::close_tunnel::_close_tunnel_input::CloseTunnelInputBuilder;
 
+impl CloseTunnelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::close_tunnel::CloseTunnelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::close_tunnel::CloseTunnelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.close_tunnel();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CloseTunnel`.
 ///
 /// <p>Closes a tunnel identified by the unique tunnel id. When a <code>CloseTunnel</code> request is received, we close the WebSocket connections between the client and proxy server so no data can be transmitted.</p>

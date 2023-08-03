@@ -3,6 +3,23 @@ pub use crate::operation::put_encryption_config::_put_encryption_config_output::
 
 pub use crate::operation::put_encryption_config::_put_encryption_config_input::PutEncryptionConfigInputBuilder;
 
+impl PutEncryptionConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_encryption_config::PutEncryptionConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_encryption_config::PutEncryptionConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_encryption_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutEncryptionConfig`.
 ///
 /// <p>Updates the encryption configuration for X-Ray data.</p>

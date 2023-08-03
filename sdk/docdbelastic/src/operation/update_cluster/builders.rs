@@ -3,6 +3,23 @@ pub use crate::operation::update_cluster::_update_cluster_output::UpdateClusterO
 
 pub use crate::operation::update_cluster::_update_cluster_input::UpdateClusterInputBuilder;
 
+impl UpdateClusterInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_cluster::UpdateClusterOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_cluster::UpdateClusterError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_cluster();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateCluster`.
 ///
 /// <p>Modifies a Elastic DocumentDB cluster. This includes updating admin-username/password, upgrading API version setting up a backup window and maintenance window</p>

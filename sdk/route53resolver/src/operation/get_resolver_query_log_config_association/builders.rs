@@ -3,6 +3,17 @@ pub use crate::operation::get_resolver_query_log_config_association::_get_resolv
 
 pub use crate::operation::get_resolver_query_log_config_association::_get_resolver_query_log_config_association_input::GetResolverQueryLogConfigAssociationInputBuilder;
 
+impl GetResolverQueryLogConfigAssociationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_resolver_query_log_config_association::GetResolverQueryLogConfigAssociationOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_resolver_query_log_config_association::GetResolverQueryLogConfigAssociationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_resolver_query_log_config_association();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetResolverQueryLogConfigAssociation`.
 ///
 /// <p>Gets information about a specified association between a Resolver query logging configuration and an Amazon VPC. When you associate a VPC with a query logging configuration, Resolver logs DNS queries that originate in that VPC.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::modify_reserved_instances::_modify_reserved_instances_
 
 pub use crate::operation::modify_reserved_instances::_modify_reserved_instances_input::ModifyReservedInstancesInputBuilder;
 
+impl ModifyReservedInstancesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_reserved_instances::ModifyReservedInstancesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_reserved_instances::ModifyReservedInstancesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_reserved_instances();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyReservedInstances`.
 ///
 /// <p>Modifies the configuration of your Reserved Instances, such as the Availability Zone, instance count, or instance type. The Reserved Instances to be modified must be identical, except for Availability Zone, network platform, and instance type.</p>

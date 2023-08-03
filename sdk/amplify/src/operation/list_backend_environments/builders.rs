@@ -3,6 +3,23 @@ pub use crate::operation::list_backend_environments::_list_backend_environments_
 
 pub use crate::operation::list_backend_environments::_list_backend_environments_input::ListBackendEnvironmentsInputBuilder;
 
+impl ListBackendEnvironmentsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_backend_environments::ListBackendEnvironmentsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_backend_environments::ListBackendEnvironmentsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_backend_environments();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListBackendEnvironments`.
 ///
 /// <p> Lists the backend environments for an Amplify app. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::update_recovery_point_lifecycle::_update_recovery_poin
 
 pub use crate::operation::update_recovery_point_lifecycle::_update_recovery_point_lifecycle_input::UpdateRecoveryPointLifecycleInputBuilder;
 
+impl UpdateRecoveryPointLifecycleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_recovery_point_lifecycle::UpdateRecoveryPointLifecycleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_recovery_point_lifecycle::UpdateRecoveryPointLifecycleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_recovery_point_lifecycle();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateRecoveryPointLifecycle`.
 ///
 /// <p>Sets the transition lifecycle of a recovery point.</p>

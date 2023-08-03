@@ -3,6 +3,23 @@ pub use crate::operation::create_savings_plan::_create_savings_plan_output::Crea
 
 pub use crate::operation::create_savings_plan::_create_savings_plan_input::CreateSavingsPlanInputBuilder;
 
+impl CreateSavingsPlanInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_savings_plan::CreateSavingsPlanOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_savings_plan::CreateSavingsPlanError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_savings_plan();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateSavingsPlan`.
 ///
 /// <p>Creates a Savings Plan.</p>

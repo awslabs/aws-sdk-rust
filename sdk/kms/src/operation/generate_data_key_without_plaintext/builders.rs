@@ -3,6 +3,17 @@ pub use crate::operation::generate_data_key_without_plaintext::_generate_data_ke
 
 pub use crate::operation::generate_data_key_without_plaintext::_generate_data_key_without_plaintext_input::GenerateDataKeyWithoutPlaintextInputBuilder;
 
+impl GenerateDataKeyWithoutPlaintextInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::generate_data_key_without_plaintext::GenerateDataKeyWithoutPlaintextOutput, ::aws_smithy_http::result::SdkError<crate::operation::generate_data_key_without_plaintext::GenerateDataKeyWithoutPlaintextError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.generate_data_key_without_plaintext();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GenerateDataKeyWithoutPlaintext`.
 ///
 /// <p>Returns a unique symmetric data key for use outside of KMS. This operation returns a data key that is encrypted under a symmetric encryption KMS key that you specify. The bytes in the key are random; they are not related to the caller or to the KMS key.</p>

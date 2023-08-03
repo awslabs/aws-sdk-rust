@@ -3,6 +3,23 @@ pub use crate::operation::describe_profile::_describe_profile_output::DescribePr
 
 pub use crate::operation::describe_profile::_describe_profile_input::DescribeProfileInputBuilder;
 
+impl DescribeProfileInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_profile::DescribeProfileOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_profile::DescribeProfileError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_profile();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeProfile`.
 ///
 /// <p>Returns the details of the profile that's specified by the <code>ProfileId</code>.</p>

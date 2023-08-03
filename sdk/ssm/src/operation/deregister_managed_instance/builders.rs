@@ -3,6 +3,23 @@ pub use crate::operation::deregister_managed_instance::_deregister_managed_insta
 
 pub use crate::operation::deregister_managed_instance::_deregister_managed_instance_input::DeregisterManagedInstanceInputBuilder;
 
+impl DeregisterManagedInstanceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::deregister_managed_instance::DeregisterManagedInstanceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::deregister_managed_instance::DeregisterManagedInstanceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.deregister_managed_instance();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeregisterManagedInstance`.
 ///
 /// <p>Removes the server or virtual machine from the list of registered servers. You can reregister the node again at any time. If you don't plan to use Run Command on the server, we suggest uninstalling SSM Agent first.</p>

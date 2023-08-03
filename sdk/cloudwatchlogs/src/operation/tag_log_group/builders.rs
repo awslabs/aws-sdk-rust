@@ -3,6 +3,23 @@ pub use crate::operation::tag_log_group::_tag_log_group_output::TagLogGroupOutpu
 
 pub use crate::operation::tag_log_group::_tag_log_group_input::TagLogGroupInputBuilder;
 
+impl TagLogGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::tag_log_group::TagLogGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::tag_log_group::TagLogGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.tag_log_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `TagLogGroup`.
 ///
 /// <important>

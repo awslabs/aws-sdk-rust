@@ -3,6 +3,23 @@ pub use crate::operation::describe_restore_job::_describe_restore_job_output::De
 
 pub use crate::operation::describe_restore_job::_describe_restore_job_input::DescribeRestoreJobInputBuilder;
 
+impl DescribeRestoreJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_restore_job::DescribeRestoreJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_restore_job::DescribeRestoreJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_restore_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeRestoreJob`.
 ///
 /// <p>Returns metadata associated with a restore job that is specified by a job ID.</p>

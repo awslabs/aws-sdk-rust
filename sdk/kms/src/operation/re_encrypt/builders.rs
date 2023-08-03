@@ -3,6 +3,23 @@ pub use crate::operation::re_encrypt::_re_encrypt_output::ReEncryptOutputBuilder
 
 pub use crate::operation::re_encrypt::_re_encrypt_input::ReEncryptInputBuilder;
 
+impl ReEncryptInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::re_encrypt::ReEncryptOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::re_encrypt::ReEncryptError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.re_encrypt();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ReEncrypt`.
 ///
 /// <p>Decrypts ciphertext and then reencrypts it entirely within KMS. You can use this operation to change the KMS key under which data is encrypted, such as when you <a href="https://docs.aws.amazon.com/kms/latest/developerguide/rotate-keys.html#rotate-keys-manually">manually rotate</a> a KMS key or change the KMS key that protects a ciphertext. You can also use it to reencrypt ciphertext under the same KMS key, such as to change the <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#encrypt_context">encryption context</a> of a ciphertext.</p>

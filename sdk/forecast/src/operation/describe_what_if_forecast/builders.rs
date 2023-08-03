@@ -3,6 +3,23 @@ pub use crate::operation::describe_what_if_forecast::_describe_what_if_forecast_
 
 pub use crate::operation::describe_what_if_forecast::_describe_what_if_forecast_input::DescribeWhatIfForecastInputBuilder;
 
+impl DescribeWhatIfForecastInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_what_if_forecast::DescribeWhatIfForecastOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_what_if_forecast::DescribeWhatIfForecastError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_what_if_forecast();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeWhatIfForecast`.
 ///
 /// <p>Describes the what-if forecast created using the <code>CreateWhatIfForecast</code> operation.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::accept_reserved_node_exchange::_accept_reserved_node_e
 
 pub use crate::operation::accept_reserved_node_exchange::_accept_reserved_node_exchange_input::AcceptReservedNodeExchangeInputBuilder;
 
+impl AcceptReservedNodeExchangeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::accept_reserved_node_exchange::AcceptReservedNodeExchangeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::accept_reserved_node_exchange::AcceptReservedNodeExchangeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.accept_reserved_node_exchange();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AcceptReservedNodeExchange`.
 ///
 /// <p>Exchanges a DC1 Reserved Node for a DC2 Reserved Node with no changes to the configuration (term, payment type, or number of nodes) and no additional costs. </p>

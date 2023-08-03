@@ -3,6 +3,17 @@ pub use crate::operation::get_compliance_details_by_resource::_get_compliance_de
 
 pub use crate::operation::get_compliance_details_by_resource::_get_compliance_details_by_resource_input::GetComplianceDetailsByResourceInputBuilder;
 
+impl GetComplianceDetailsByResourceInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_compliance_details_by_resource::GetComplianceDetailsByResourceOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_compliance_details_by_resource::GetComplianceDetailsByResourceError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_compliance_details_by_resource();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetComplianceDetailsByResource`.
 ///
 /// <p>Returns the evaluation results for the specified Amazon Web Services resource. The results indicate which Config rules were used to evaluate the resource, when each rule was last invoked, and whether the resource complies with each rule.</p>

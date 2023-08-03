@@ -3,6 +3,23 @@ pub use crate::operation::delete_bucket_replication::_delete_bucket_replication_
 
 pub use crate::operation::delete_bucket_replication::_delete_bucket_replication_input::DeleteBucketReplicationInputBuilder;
 
+impl DeleteBucketReplicationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_bucket_replication::DeleteBucketReplicationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_bucket_replication::DeleteBucketReplicationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_bucket_replication();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteBucketReplication`.
 ///
 /// <note>

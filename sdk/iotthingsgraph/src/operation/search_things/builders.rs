@@ -3,6 +3,23 @@ pub use crate::operation::search_things::_search_things_output::SearchThingsOutp
 
 pub use crate::operation::search_things::_search_things_input::SearchThingsInputBuilder;
 
+impl SearchThingsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::search_things::SearchThingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::search_things::SearchThingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.search_things();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SearchThings`.
 ///
 /// <p>Searches for things associated with the specified entity. You can search by both device and device model.</p>

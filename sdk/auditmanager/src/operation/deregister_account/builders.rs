@@ -3,6 +3,23 @@ pub use crate::operation::deregister_account::_deregister_account_output::Deregi
 
 pub use crate::operation::deregister_account::_deregister_account_input::DeregisterAccountInputBuilder;
 
+impl DeregisterAccountInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::deregister_account::DeregisterAccountOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::deregister_account::DeregisterAccountError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.deregister_account();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeregisterAccount`.
 ///
 /// <p> Deregisters an account in Audit Manager. </p> <note>

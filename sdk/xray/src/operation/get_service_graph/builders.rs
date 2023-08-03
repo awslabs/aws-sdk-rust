@@ -3,6 +3,23 @@ pub use crate::operation::get_service_graph::_get_service_graph_output::GetServi
 
 pub use crate::operation::get_service_graph::_get_service_graph_input::GetServiceGraphInputBuilder;
 
+impl GetServiceGraphInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_service_graph::GetServiceGraphOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_service_graph::GetServiceGraphError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_service_graph();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetServiceGraph`.
 ///
 /// <p>Retrieves a document that describes services that process incoming requests, and downstream services that they call as a result. Root services process incoming requests and make calls to downstream services. Root services are applications that use the <a href="https://docs.aws.amazon.com/xray/index.html">Amazon Web Services X-Ray SDK</a>. Downstream services can be other applications, Amazon Web Services resources, HTTP web APIs, or SQL databases.</p>

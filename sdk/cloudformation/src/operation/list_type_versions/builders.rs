@@ -3,6 +3,23 @@ pub use crate::operation::list_type_versions::_list_type_versions_output::ListTy
 
 pub use crate::operation::list_type_versions::_list_type_versions_input::ListTypeVersionsInputBuilder;
 
+impl ListTypeVersionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_type_versions::ListTypeVersionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_type_versions::ListTypeVersionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_type_versions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListTypeVersions`.
 ///
 /// <p>Returns summary information about the versions of an extension.</p>

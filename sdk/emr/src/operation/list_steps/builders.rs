@@ -3,6 +3,23 @@ pub use crate::operation::list_steps::_list_steps_output::ListStepsOutputBuilder
 
 pub use crate::operation::list_steps::_list_steps_input::ListStepsInputBuilder;
 
+impl ListStepsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_steps::ListStepsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_steps::ListStepsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_steps();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListSteps`.
 ///
 /// <p>Provides a list of steps for the cluster in reverse order unless you specify <code>stepIds</code> with the request or filter by <code>StepStates</code>. You can specify a maximum of 10 <code>stepIDs</code>. The CLI automatically paginates results to return a list greater than 50 steps. To return more than 50 steps using the CLI, specify a <code>Marker</code>, which is a pagination token that indicates the next set of steps to retrieve.</p>

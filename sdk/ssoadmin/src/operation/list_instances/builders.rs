@@ -3,6 +3,23 @@ pub use crate::operation::list_instances::_list_instances_output::ListInstancesO
 
 pub use crate::operation::list_instances::_list_instances_input::ListInstancesInputBuilder;
 
+impl ListInstancesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_instances::ListInstancesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_instances::ListInstancesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_instances();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListInstances`.
 ///
 /// <p>Lists the IAM Identity Center instances that the caller has access to.</p>

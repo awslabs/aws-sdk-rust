@@ -3,6 +3,23 @@ pub use crate::operation::deregister_instance::_deregister_instance_output::Dere
 
 pub use crate::operation::deregister_instance::_deregister_instance_input::DeregisterInstanceInputBuilder;
 
+impl DeregisterInstanceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::deregister_instance::DeregisterInstanceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::deregister_instance::DeregisterInstanceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.deregister_instance();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeregisterInstance`.
 ///
 /// <p>Deregister a registered Amazon EC2 or on-premises instance. This action removes the instance from the stack and returns it to your control. This action cannot be used with instances that were created with AWS OpsWorks Stacks.</p>

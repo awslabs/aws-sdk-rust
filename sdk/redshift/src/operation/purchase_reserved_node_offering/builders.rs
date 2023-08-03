@@ -3,6 +3,23 @@ pub use crate::operation::purchase_reserved_node_offering::_purchase_reserved_no
 
 pub use crate::operation::purchase_reserved_node_offering::_purchase_reserved_node_offering_input::PurchaseReservedNodeOfferingInputBuilder;
 
+impl PurchaseReservedNodeOfferingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::purchase_reserved_node_offering::PurchaseReservedNodeOfferingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::purchase_reserved_node_offering::PurchaseReservedNodeOfferingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.purchase_reserved_node_offering();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PurchaseReservedNodeOffering`.
 ///
 /// <p>Allows you to purchase reserved nodes. Amazon Redshift offers a predefined set of reserved node offerings. You can purchase one or more of the offerings. You can call the <code>DescribeReservedNodeOfferings</code> API to obtain the available reserved node offerings. You can call this API by providing a specific reserved node offering and the number of nodes you want to reserve. </p>

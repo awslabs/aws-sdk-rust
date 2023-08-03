@@ -3,6 +3,23 @@ pub use crate::operation::update_package_versions_status::_update_package_versio
 
 pub use crate::operation::update_package_versions_status::_update_package_versions_status_input::UpdatePackageVersionsStatusInputBuilder;
 
+impl UpdatePackageVersionsStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_package_versions_status::UpdatePackageVersionsStatusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_package_versions_status::UpdatePackageVersionsStatusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_package_versions_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdatePackageVersionsStatus`.
 ///
 /// <p> Updates the status of one or more versions of a package. Using <code>UpdatePackageVersionsStatus</code>, you can update the status of package versions to <code>Archived</code>, <code>Published</code>, or <code>Unlisted</code>. To set the status of a package version to <code>Disposed</code>, use <a href="https://docs.aws.amazon.com/codeartifact/latest/APIReference/API_DisposePackageVersions.html">DisposePackageVersions</a>. </p>

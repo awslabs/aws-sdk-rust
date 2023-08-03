@@ -3,6 +3,23 @@ pub use crate::operation::create_restore_image_task::_create_restore_image_task_
 
 pub use crate::operation::create_restore_image_task::_create_restore_image_task_input::CreateRestoreImageTaskInputBuilder;
 
+impl CreateRestoreImageTaskInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_restore_image_task::CreateRestoreImageTaskOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_restore_image_task::CreateRestoreImageTaskError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_restore_image_task();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateRestoreImageTask`.
 ///
 /// <p>Starts a task that restores an AMI from an Amazon S3 object that was previously created by using <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CreateStoreImageTask.html">CreateStoreImageTask</a>.</p>

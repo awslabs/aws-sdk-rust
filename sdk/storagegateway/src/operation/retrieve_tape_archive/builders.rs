@@ -3,6 +3,23 @@ pub use crate::operation::retrieve_tape_archive::_retrieve_tape_archive_output::
 
 pub use crate::operation::retrieve_tape_archive::_retrieve_tape_archive_input::RetrieveTapeArchiveInputBuilder;
 
+impl RetrieveTapeArchiveInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::retrieve_tape_archive::RetrieveTapeArchiveOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::retrieve_tape_archive::RetrieveTapeArchiveError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.retrieve_tape_archive();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RetrieveTapeArchive`.
 ///
 /// <p>Retrieves an archived virtual tape from the virtual tape shelf (VTS) to a tape gateway. Virtual tapes archived in the VTS are not associated with any gateway. However after a tape is retrieved, it is associated with a gateway, even though it is also listed in the VTS, that is, archive. This operation is only supported in the tape gateway type.</p>

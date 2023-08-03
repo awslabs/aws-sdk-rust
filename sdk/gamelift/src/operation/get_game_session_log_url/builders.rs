@@ -3,6 +3,23 @@ pub use crate::operation::get_game_session_log_url::_get_game_session_log_url_ou
 
 pub use crate::operation::get_game_session_log_url::_get_game_session_log_url_input::GetGameSessionLogUrlInputBuilder;
 
+impl GetGameSessionLogUrlInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_game_session_log_url::GetGameSessionLogUrlOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_game_session_log_url::GetGameSessionLogUrlError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_game_session_log_url();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetGameSessionLogUrl`.
 ///
 /// <p>Retrieves the location of stored game session logs for a specified game session on Amazon GameLift managed fleets. When a game session is terminated, Amazon GameLift automatically stores the logs in Amazon S3 and retains them for 14 days. Use this URL to download the logs.</p> <note>

@@ -3,6 +3,23 @@ pub use crate::operation::disassociate_default_view::_disassociate_default_view_
 
 pub use crate::operation::disassociate_default_view::_disassociate_default_view_input::DisassociateDefaultViewInputBuilder;
 
+impl DisassociateDefaultViewInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_default_view::DisassociateDefaultViewOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_default_view::DisassociateDefaultViewError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disassociate_default_view();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateDefaultView`.
 ///
 /// <p>After you call this operation, the affected Amazon Web Services Region no longer has a default view. All <code>Search</code> operations in that Region must explicitly specify a view or the operation fails. You can configure a new default by calling the <code>AssociateDefaultView</code> operation.</p>

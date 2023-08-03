@@ -3,6 +3,23 @@ pub use crate::operation::update_route_calculator::_update_route_calculator_outp
 
 pub use crate::operation::update_route_calculator::_update_route_calculator_input::UpdateRouteCalculatorInputBuilder;
 
+impl UpdateRouteCalculatorInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_route_calculator::UpdateRouteCalculatorOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_route_calculator::UpdateRouteCalculatorError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_route_calculator();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateRouteCalculator`.
 ///
 /// <p>Updates the specified properties for a given route calculator resource.</p>

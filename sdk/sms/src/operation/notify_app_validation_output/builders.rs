@@ -3,6 +3,23 @@ pub use crate::operation::notify_app_validation_output::_notify_app_validation_o
 
 pub use crate::operation::notify_app_validation_output::_notify_app_validation_output_input::NotifyAppValidationOutputInputBuilder;
 
+impl NotifyAppValidationOutputInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::notify_app_validation_output::NotifyAppValidationOutputOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::notify_app_validation_output::NotifyAppValidationOutputError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.notify_app_validation_output();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `NotifyAppValidationOutput`.
 ///
 /// <p>Provides information to Server Migration Service about whether application validation is successful.</p>

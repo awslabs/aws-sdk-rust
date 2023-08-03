@@ -3,6 +3,23 @@ pub use crate::operation::list_tags::_list_tags_output::ListTagsOutputBuilder;
 
 pub use crate::operation::list_tags::_list_tags_input::ListTagsInputBuilder;
 
+impl ListTagsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_tags::ListTagsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_tags::ListTagsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_tags();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListTags`.
 ///
 /// <p>Lists all tags currently on a named resource. A tag is a key-value pair where the key and value are case-sensitive. You can use tags to categorize and track your MemoryDB resources. For more information, see <a href="https://docs.aws.amazon.com/MemoryDB/latest/devguide/Tagging-Resources.html">Tagging your MemoryDB resources</a> </p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_batch_prediction_job::_create_batch_prediction_
 
 pub use crate::operation::create_batch_prediction_job::_create_batch_prediction_job_input::CreateBatchPredictionJobInputBuilder;
 
+impl CreateBatchPredictionJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_batch_prediction_job::CreateBatchPredictionJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_batch_prediction_job::CreateBatchPredictionJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_batch_prediction_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateBatchPredictionJob`.
 ///
 /// <p>Creates a batch prediction job.</p>

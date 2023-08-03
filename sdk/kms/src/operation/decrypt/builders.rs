@@ -3,6 +3,23 @@ pub use crate::operation::decrypt::_decrypt_output::DecryptOutputBuilder;
 
 pub use crate::operation::decrypt::_decrypt_input::DecryptInputBuilder;
 
+impl DecryptInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::decrypt::DecryptOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::decrypt::DecryptError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.decrypt();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `Decrypt`.
 ///
 /// <p>Decrypts ciphertext that was encrypted by a KMS key using any of the following operations:</p>

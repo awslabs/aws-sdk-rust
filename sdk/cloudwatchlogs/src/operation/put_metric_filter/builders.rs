@@ -3,6 +3,23 @@ pub use crate::operation::put_metric_filter::_put_metric_filter_output::PutMetri
 
 pub use crate::operation::put_metric_filter::_put_metric_filter_input::PutMetricFilterInputBuilder;
 
+impl PutMetricFilterInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_metric_filter::PutMetricFilterOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_metric_filter::PutMetricFilterError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_metric_filter();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutMetricFilter`.
 ///
 /// <p>Creates or updates a metric filter and associates it with the specified log group. With metric filters, you can configure rules to extract metric data from log events ingested through <a href="https://docs.aws.amazon.com/AmazonCloudWatchLogs/latest/APIReference/API_PutLogEvents.html">PutLogEvents</a>.</p>

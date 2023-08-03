@@ -3,6 +3,17 @@ pub use crate::operation::associate_resolver_query_log_config::_associate_resolv
 
 pub use crate::operation::associate_resolver_query_log_config::_associate_resolver_query_log_config_input::AssociateResolverQueryLogConfigInputBuilder;
 
+impl AssociateResolverQueryLogConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::associate_resolver_query_log_config::AssociateResolverQueryLogConfigOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_resolver_query_log_config::AssociateResolverQueryLogConfigError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.associate_resolver_query_log_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateResolverQueryLogConfig`.
 ///
 /// <p>Associates an Amazon VPC with a specified query logging configuration. Route 53 Resolver logs DNS queries that originate in all of the Amazon VPCs that are associated with a specified query logging configuration. To associate more than one VPC with a configuration, submit one <code>AssociateResolverQueryLogConfig</code> request for each VPC.</p> <note>

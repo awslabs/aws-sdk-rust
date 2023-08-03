@@ -3,6 +3,17 @@ pub use crate::operation::create_vpc_endpoint_connection_notification::_create_v
 
 pub use crate::operation::create_vpc_endpoint_connection_notification::_create_vpc_endpoint_connection_notification_input::CreateVpcEndpointConnectionNotificationInputBuilder;
 
+impl CreateVpcEndpointConnectionNotificationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::create_vpc_endpoint_connection_notification::CreateVpcEndpointConnectionNotificationOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_vpc_endpoint_connection_notification::CreateVpcEndpointConnectionNotificationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.create_vpc_endpoint_connection_notification();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateVpcEndpointConnectionNotification`.
 ///
 /// <p>Creates a connection notification for a specified VPC endpoint or VPC endpoint service. A connection notification notifies you of specific endpoint events. You must create an SNS topic to receive notifications. For more information, see <a href="https://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Create a Topic</a> in the <i>Amazon Simple Notification Service Developer Guide</i>.</p>

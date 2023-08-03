@@ -3,6 +3,23 @@ pub use crate::operation::list_reviewable_hi_ts::_list_reviewable_hi_ts_output::
 
 pub use crate::operation::list_reviewable_hi_ts::_list_reviewable_hi_ts_input::ListReviewableHiTsInputBuilder;
 
+impl ListReviewableHiTsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_reviewable_hi_ts::ListReviewableHiTsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_reviewable_hi_ts::ListReviewableHITsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_reviewable_hi_ts();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListReviewableHITs`.
 ///
 /// <p> The <code>ListReviewableHITs</code> operation retrieves the HITs with Status equal to Reviewable or Status equal to Reviewing that belong to the Requester calling the operation. </p>

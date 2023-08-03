@@ -3,6 +3,23 @@ pub use crate::operation::add_cache::_add_cache_output::AddCacheOutputBuilder;
 
 pub use crate::operation::add_cache::_add_cache_input::AddCacheInputBuilder;
 
+impl AddCacheInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::add_cache::AddCacheOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::add_cache::AddCacheError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.add_cache();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AddCache`.
 ///
 /// <p>Configures one or more gateway local disks as cache for a gateway. This operation is only supported in the cached volume, tape, and file gateway type (see <a href="https://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html">How Storage Gateway works (architecture)</a>.</p>

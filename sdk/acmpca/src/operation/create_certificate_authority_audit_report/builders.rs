@@ -3,6 +3,17 @@ pub use crate::operation::create_certificate_authority_audit_report::_create_cer
 
 pub use crate::operation::create_certificate_authority_audit_report::_create_certificate_authority_audit_report_input::CreateCertificateAuthorityAuditReportInputBuilder;
 
+impl CreateCertificateAuthorityAuditReportInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::create_certificate_authority_audit_report::CreateCertificateAuthorityAuditReportOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_certificate_authority_audit_report::CreateCertificateAuthorityAuditReportError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.create_certificate_authority_audit_report();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateCertificateAuthorityAuditReport`.
 ///
 /// <p>Creates an audit report that lists every time that your CA private key is used. The report is saved in the Amazon S3 bucket that you specify on input. The <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_IssueCertificate.html">IssueCertificate</a> and <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_RevokeCertificate.html">RevokeCertificate</a> actions use the private key. </p> <note>

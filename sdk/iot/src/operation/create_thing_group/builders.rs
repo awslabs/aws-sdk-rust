@@ -3,6 +3,23 @@ pub use crate::operation::create_thing_group::_create_thing_group_output::Create
 
 pub use crate::operation::create_thing_group::_create_thing_group_input::CreateThingGroupInputBuilder;
 
+impl CreateThingGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_thing_group::CreateThingGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_thing_group::CreateThingGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_thing_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateThingGroup`.
 ///
 /// <p>Create a thing group.</p> <note>

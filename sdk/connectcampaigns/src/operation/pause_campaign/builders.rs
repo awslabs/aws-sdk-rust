@@ -3,6 +3,23 @@ pub use crate::operation::pause_campaign::_pause_campaign_output::PauseCampaignO
 
 pub use crate::operation::pause_campaign::_pause_campaign_input::PauseCampaignInputBuilder;
 
+impl PauseCampaignInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::pause_campaign::PauseCampaignOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::pause_campaign::PauseCampaignError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.pause_campaign();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PauseCampaign`.
 ///
 /// Pauses a campaign for the specified Amazon Connect account.

@@ -3,6 +3,23 @@ pub use crate::operation::list_app_instance_user_endpoints::_list_app_instance_u
 
 pub use crate::operation::list_app_instance_user_endpoints::_list_app_instance_user_endpoints_input::ListAppInstanceUserEndpointsInputBuilder;
 
+impl ListAppInstanceUserEndpointsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_app_instance_user_endpoints::ListAppInstanceUserEndpointsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_app_instance_user_endpoints();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAppInstanceUserEndpoints`.
 ///
 /// <p>Lists all the <code>AppInstanceUserEndpoints</code> created under a single <code>AppInstanceUser</code>.</p>

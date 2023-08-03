@@ -3,6 +3,23 @@ pub use crate::operation::list_delivery_streams::_list_delivery_streams_output::
 
 pub use crate::operation::list_delivery_streams::_list_delivery_streams_input::ListDeliveryStreamsInputBuilder;
 
+impl ListDeliveryStreamsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_delivery_streams::ListDeliveryStreamsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_delivery_streams::ListDeliveryStreamsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_delivery_streams();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDeliveryStreams`.
 ///
 /// <p>Lists your delivery streams in alphabetical order of their names.</p>

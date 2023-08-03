@@ -3,6 +3,17 @@ pub use crate::operation::associate_wireless_gateway_with_certificate::_associat
 
 pub use crate::operation::associate_wireless_gateway_with_certificate::_associate_wireless_gateway_with_certificate_input::AssociateWirelessGatewayWithCertificateInputBuilder;
 
+impl AssociateWirelessGatewayWithCertificateInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::associate_wireless_gateway_with_certificate::AssociateWirelessGatewayWithCertificateOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_wireless_gateway_with_certificate::AssociateWirelessGatewayWithCertificateError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.associate_wireless_gateway_with_certificate();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateWirelessGatewayWithCertificate`.
 ///
 /// <p>Associates a wireless gateway with a certificate.</p>

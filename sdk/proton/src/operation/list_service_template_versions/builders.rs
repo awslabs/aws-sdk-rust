@@ -3,6 +3,23 @@ pub use crate::operation::list_service_template_versions::_list_service_template
 
 pub use crate::operation::list_service_template_versions::_list_service_template_versions_input::ListServiceTemplateVersionsInputBuilder;
 
+impl ListServiceTemplateVersionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_service_template_versions::ListServiceTemplateVersionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_service_template_versions::ListServiceTemplateVersionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_service_template_versions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListServiceTemplateVersions`.
 ///
 /// <p>List major or minor versions of a service template with detail data.</p>

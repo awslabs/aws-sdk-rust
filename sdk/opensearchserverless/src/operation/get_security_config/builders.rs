@@ -3,6 +3,23 @@ pub use crate::operation::get_security_config::_get_security_config_output::GetS
 
 pub use crate::operation::get_security_config::_get_security_config_input::GetSecurityConfigInputBuilder;
 
+impl GetSecurityConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_security_config::GetSecurityConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_security_config::GetSecurityConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_security_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetSecurityConfig`.
 ///
 /// <p>Returns information about an OpenSearch Serverless security configuration. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-saml.html">SAML authentication for Amazon OpenSearch Serverless</a>.</p>

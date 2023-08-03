@@ -3,6 +3,23 @@ pub use crate::operation::create_accelerator::_create_accelerator_output::Create
 
 pub use crate::operation::create_accelerator::_create_accelerator_input::CreateAcceleratorInputBuilder;
 
+impl CreateAcceleratorInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_accelerator::CreateAcceleratorOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_accelerator::CreateAcceleratorError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_accelerator();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateAccelerator`.
 ///
 /// <p>Create an accelerator. An accelerator includes one or more listeners that process inbound connections and direct traffic to one or more endpoint groups, each of which includes endpoints, such as Network Load Balancers. </p> <important>

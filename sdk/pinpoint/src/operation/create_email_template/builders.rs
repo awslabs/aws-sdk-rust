@@ -3,6 +3,23 @@ pub use crate::operation::create_email_template::_create_email_template_output::
 
 pub use crate::operation::create_email_template::_create_email_template_input::CreateEmailTemplateInputBuilder;
 
+impl CreateEmailTemplateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_email_template::CreateEmailTemplateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_email_template::CreateEmailTemplateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_email_template();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateEmailTemplate`.
 ///
 /// <p>Creates a message template for messages that are sent through the email channel.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_world_generation_jobs::_list_world_generation_job
 
 pub use crate::operation::list_world_generation_jobs::_list_world_generation_jobs_input::ListWorldGenerationJobsInputBuilder;
 
+impl ListWorldGenerationJobsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_world_generation_jobs::ListWorldGenerationJobsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_world_generation_jobs::ListWorldGenerationJobsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_world_generation_jobs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListWorldGenerationJobs`.
 ///
 /// <p>Lists world generator jobs.</p>

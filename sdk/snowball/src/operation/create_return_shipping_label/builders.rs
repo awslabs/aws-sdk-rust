@@ -3,6 +3,23 @@ pub use crate::operation::create_return_shipping_label::_create_return_shipping_
 
 pub use crate::operation::create_return_shipping_label::_create_return_shipping_label_input::CreateReturnShippingLabelInputBuilder;
 
+impl CreateReturnShippingLabelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_return_shipping_label::CreateReturnShippingLabelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_return_shipping_label::CreateReturnShippingLabelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_return_shipping_label();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateReturnShippingLabel`.
 ///
 /// <p>Creates a shipping label that will be used to return the Snow device to Amazon Web Services.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::reset_parameter_group::_reset_parameter_group_output::
 
 pub use crate::operation::reset_parameter_group::_reset_parameter_group_input::ResetParameterGroupInputBuilder;
 
+impl ResetParameterGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::reset_parameter_group::ResetParameterGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::reset_parameter_group::ResetParameterGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.reset_parameter_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ResetParameterGroup`.
 ///
 /// <p>Modifies the parameters of a parameter group to the engine or system default value. You can reset specific parameters by submitting a list of parameter names. To reset the entire parameter group, specify the AllParameters and ParameterGroupName parameters.</p>

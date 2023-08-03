@@ -3,6 +3,23 @@ pub use crate::operation::describe_instance_health::_describe_instance_health_ou
 
 pub use crate::operation::describe_instance_health::_describe_instance_health_input::DescribeInstanceHealthInputBuilder;
 
+impl DescribeInstanceHealthInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_instance_health::DescribeInstanceHealthOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_instance_health::DescribeInstanceHealthError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_instance_health();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeInstanceHealth`.
 ///
 /// <p>Describes the state of the specified instances with respect to the specified load balancer. If no instances are specified, the call describes the state of all instances that are currently registered with the load balancer. If instances are specified, their state is returned even if they are no longer registered with the load balancer. The state of terminated instances is not returned.</p>

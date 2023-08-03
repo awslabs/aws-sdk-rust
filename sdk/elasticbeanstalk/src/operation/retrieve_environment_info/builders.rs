@@ -3,6 +3,23 @@ pub use crate::operation::retrieve_environment_info::_retrieve_environment_info_
 
 pub use crate::operation::retrieve_environment_info::_retrieve_environment_info_input::RetrieveEnvironmentInfoInputBuilder;
 
+impl RetrieveEnvironmentInfoInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::retrieve_environment_info::RetrieveEnvironmentInfoOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::retrieve_environment_info::RetrieveEnvironmentInfoError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.retrieve_environment_info();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RetrieveEnvironmentInfo`.
 ///
 /// <p>Retrieves the compiled information from a <code>RequestEnvironmentInfo</code> request.</p>

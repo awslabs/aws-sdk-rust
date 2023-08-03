@@ -3,6 +3,23 @@ pub use crate::operation::create_policy_version::_create_policy_version_output::
 
 pub use crate::operation::create_policy_version::_create_policy_version_input::CreatePolicyVersionInputBuilder;
 
+impl CreatePolicyVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_policy_version::CreatePolicyVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_policy_version::CreatePolicyVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_policy_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreatePolicyVersion`.
 ///
 /// <p>Creates a new version of the specified IoT policy. To update a policy, create a new policy version. A managed policy can have up to five versions. If the policy has five versions, you must use <code>DeletePolicyVersion</code> to delete an existing version before you create a new one.</p>

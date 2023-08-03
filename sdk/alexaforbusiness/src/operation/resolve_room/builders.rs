@@ -3,6 +3,23 @@ pub use crate::operation::resolve_room::_resolve_room_output::ResolveRoomOutputB
 
 pub use crate::operation::resolve_room::_resolve_room_input::ResolveRoomInputBuilder;
 
+impl ResolveRoomInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::resolve_room::ResolveRoomOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::resolve_room::ResolveRoomError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.resolve_room();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ResolveRoom`.
 ///
 /// <p>Determines the details for the room from which a skill request was invoked. This operation is used by skill developers.</p>

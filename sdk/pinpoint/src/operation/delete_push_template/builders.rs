@@ -3,6 +3,23 @@ pub use crate::operation::delete_push_template::_delete_push_template_output::De
 
 pub use crate::operation::delete_push_template::_delete_push_template_input::DeletePushTemplateInputBuilder;
 
+impl DeletePushTemplateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_push_template::DeletePushTemplateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_push_template::DeletePushTemplateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_push_template();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeletePushTemplate`.
 ///
 /// <p>Deletes a message template for messages that were sent through a push notification channel.</p>

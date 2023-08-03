@@ -3,6 +3,23 @@ pub use crate::operation::claim_devices_by_claim_code::_claim_devices_by_claim_c
 
 pub use crate::operation::claim_devices_by_claim_code::_claim_devices_by_claim_code_input::ClaimDevicesByClaimCodeInputBuilder;
 
+impl ClaimDevicesByClaimCodeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::claim_devices_by_claim_code::ClaimDevicesByClaimCodeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.claim_devices_by_claim_code();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ClaimDevicesByClaimCode`.
 ///
 /// <p>Adds device(s) to your account (i.e., claim one or more devices) if and only if you received a claim code with the device(s).</p>

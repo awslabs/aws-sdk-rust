@@ -3,6 +3,17 @@ pub use crate::operation::list_journal_s3_exports_for_ledger::_list_journal_s3_e
 
 pub use crate::operation::list_journal_s3_exports_for_ledger::_list_journal_s3_exports_for_ledger_input::ListJournalS3ExportsForLedgerInputBuilder;
 
+impl ListJournalS3ExportsForLedgerInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_journal_s3_exports_for_ledger::ListJournalS3ExportsForLedgerOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_journal_s3_exports_for_ledger::ListJournalS3ExportsForLedgerError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_journal_s3_exports_for_ledger();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListJournalS3ExportsForLedger`.
 ///
 /// <p>Returns all journal export jobs for a specified ledger.</p>

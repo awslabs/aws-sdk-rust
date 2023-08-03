@@ -3,6 +3,23 @@ pub use crate::operation::describe_virtual_service::_describe_virtual_service_ou
 
 pub use crate::operation::describe_virtual_service::_describe_virtual_service_input::DescribeVirtualServiceInputBuilder;
 
+impl DescribeVirtualServiceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_virtual_service::DescribeVirtualServiceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_virtual_service::DescribeVirtualServiceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_virtual_service();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeVirtualService`.
 ///
 /// <p>Describes an existing virtual service.</p>

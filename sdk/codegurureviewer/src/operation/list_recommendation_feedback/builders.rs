@@ -3,6 +3,23 @@ pub use crate::operation::list_recommendation_feedback::_list_recommendation_fee
 
 pub use crate::operation::list_recommendation_feedback::_list_recommendation_feedback_input::ListRecommendationFeedbackInputBuilder;
 
+impl ListRecommendationFeedbackInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_recommendation_feedback::ListRecommendationFeedbackOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_recommendation_feedback::ListRecommendationFeedbackError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_recommendation_feedback();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListRecommendationFeedback`.
 ///
 /// <p>Returns a list of <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RecommendationFeedbackSummary.html">RecommendationFeedbackSummary</a> objects that contain customer recommendation feedback for all CodeGuru Reviewer users.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_app_bundle::_get_app_bundle_output::GetAppBundleOu
 
 pub use crate::operation::get_app_bundle::_get_app_bundle_input::GetAppBundleInputBuilder;
 
+impl GetAppBundleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_app_bundle::GetAppBundleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_app_bundle::GetAppBundleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_app_bundle();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetAppBundle`.
 ///
 /// <p>Returns information about an app bundle.</p>

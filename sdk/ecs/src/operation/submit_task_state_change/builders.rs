@@ -3,6 +3,23 @@ pub use crate::operation::submit_task_state_change::_submit_task_state_change_ou
 
 pub use crate::operation::submit_task_state_change::_submit_task_state_change_input::SubmitTaskStateChangeInputBuilder;
 
+impl SubmitTaskStateChangeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::submit_task_state_change::SubmitTaskStateChangeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::submit_task_state_change::SubmitTaskStateChangeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.submit_task_state_change();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SubmitTaskStateChange`.
 ///
 /// <note>

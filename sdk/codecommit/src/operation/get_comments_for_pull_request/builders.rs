@@ -3,6 +3,23 @@ pub use crate::operation::get_comments_for_pull_request::_get_comments_for_pull_
 
 pub use crate::operation::get_comments_for_pull_request::_get_comments_for_pull_request_input::GetCommentsForPullRequestInputBuilder;
 
+impl GetCommentsForPullRequestInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_comments_for_pull_request::GetCommentsForPullRequestOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_comments_for_pull_request::GetCommentsForPullRequestError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_comments_for_pull_request();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetCommentsForPullRequest`.
 ///
 /// <p>Returns comments made on a pull request.</p> <note>

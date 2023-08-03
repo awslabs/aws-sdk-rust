@@ -3,6 +3,23 @@ pub use crate::operation::bundle_instance::_bundle_instance_output::BundleInstan
 
 pub use crate::operation::bundle_instance::_bundle_instance_input::BundleInstanceInputBuilder;
 
+impl BundleInstanceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::bundle_instance::BundleInstanceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::bundle_instance::BundleInstanceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.bundle_instance();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BundleInstance`.
 ///
 /// <p>Bundles an Amazon instance store-backed Windows instance.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_ip_access_settings::_list_ip_access_settings_outp
 
 pub use crate::operation::list_ip_access_settings::_list_ip_access_settings_input::ListIpAccessSettingsInputBuilder;
 
+impl ListIpAccessSettingsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_ip_access_settings::ListIpAccessSettingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_ip_access_settings::ListIpAccessSettingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_ip_access_settings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListIpAccessSettings`.
 ///
 /// <p>Retrieves a list of IP access settings.</p>

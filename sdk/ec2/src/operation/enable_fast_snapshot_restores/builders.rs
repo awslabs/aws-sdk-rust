@@ -3,6 +3,23 @@ pub use crate::operation::enable_fast_snapshot_restores::_enable_fast_snapshot_r
 
 pub use crate::operation::enable_fast_snapshot_restores::_enable_fast_snapshot_restores_input::EnableFastSnapshotRestoresInputBuilder;
 
+impl EnableFastSnapshotRestoresInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::enable_fast_snapshot_restores::EnableFastSnapshotRestoresOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::enable_fast_snapshot_restores::EnableFastSnapshotRestoresError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.enable_fast_snapshot_restores();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `EnableFastSnapshotRestores`.
 ///
 /// <p>Enables fast snapshot restores for the specified snapshots in the specified Availability Zones.</p>

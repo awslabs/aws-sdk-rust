@@ -3,6 +3,23 @@ pub use crate::operation::redact_channel_message::_redact_channel_message_output
 
 pub use crate::operation::redact_channel_message::_redact_channel_message_input::RedactChannelMessageInputBuilder;
 
+impl RedactChannelMessageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::redact_channel_message::RedactChannelMessageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::redact_channel_message::RedactChannelMessageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.redact_channel_message();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RedactChannelMessage`.
 ///
 /// <p>Redacts message content, but not metadata. The message exists in the back end, but the action returns null content, and the state shows as redacted.</p> <note>

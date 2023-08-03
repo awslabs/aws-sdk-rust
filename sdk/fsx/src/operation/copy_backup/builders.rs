@@ -3,6 +3,23 @@ pub use crate::operation::copy_backup::_copy_backup_output::CopyBackupOutputBuil
 
 pub use crate::operation::copy_backup::_copy_backup_input::CopyBackupInputBuilder;
 
+impl CopyBackupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::copy_backup::CopyBackupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::copy_backup::CopyBackupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.copy_backup();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CopyBackup`.
 ///
 /// <p>Copies an existing backup within the same Amazon Web Services account to another Amazon Web Services Region (cross-Region copy) or within the same Amazon Web Services Region (in-Region copy). You can have up to five backup copy requests in progress to a single destination Region per account.</p>

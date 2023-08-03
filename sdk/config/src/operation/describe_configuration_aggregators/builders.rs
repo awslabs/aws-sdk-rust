@@ -3,6 +3,17 @@ pub use crate::operation::describe_configuration_aggregators::_describe_configur
 
 pub use crate::operation::describe_configuration_aggregators::_describe_configuration_aggregators_input::DescribeConfigurationAggregatorsInputBuilder;
 
+impl DescribeConfigurationAggregatorsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_configuration_aggregators::DescribeConfigurationAggregatorsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_configuration_aggregators::DescribeConfigurationAggregatorsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_configuration_aggregators();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeConfigurationAggregators`.
 ///
 /// <p>Returns the details of one or more configuration aggregators. If the configuration aggregator is not specified, this action returns the details for all the configuration aggregators associated with the account. </p>

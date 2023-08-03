@@ -3,6 +3,23 @@ pub use crate::operation::start_protected_query::_start_protected_query_output::
 
 pub use crate::operation::start_protected_query::_start_protected_query_input::StartProtectedQueryInputBuilder;
 
+impl StartProtectedQueryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_protected_query::StartProtectedQueryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_protected_query::StartProtectedQueryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_protected_query();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartProtectedQuery`.
 ///
 /// <p>Creates a protected query that is started by Clean Rooms .</p>

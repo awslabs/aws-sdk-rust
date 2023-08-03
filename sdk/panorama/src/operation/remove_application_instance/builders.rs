@@ -3,6 +3,23 @@ pub use crate::operation::remove_application_instance::_remove_application_insta
 
 pub use crate::operation::remove_application_instance::_remove_application_instance_input::RemoveApplicationInstanceInputBuilder;
 
+impl RemoveApplicationInstanceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::remove_application_instance::RemoveApplicationInstanceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::remove_application_instance::RemoveApplicationInstanceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.remove_application_instance();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RemoveApplicationInstance`.
 ///
 /// <p>Removes an application instance.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::start_job_run::_start_job_run_output::StartJobRunOutpu
 
 pub use crate::operation::start_job_run::_start_job_run_input::StartJobRunInputBuilder;
 
+impl StartJobRunInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_job_run::StartJobRunOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_job_run::StartJobRunError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_job_run();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartJobRun`.
 ///
 /// <p>Starts a job run using a job definition.</p>

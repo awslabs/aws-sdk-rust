@@ -3,6 +3,23 @@ pub use crate::operation::create_response_plan::_create_response_plan_output::Cr
 
 pub use crate::operation::create_response_plan::_create_response_plan_input::CreateResponsePlanInputBuilder;
 
+impl CreateResponsePlanInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_response_plan::CreateResponsePlanOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_response_plan::CreateResponsePlanError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_response_plan();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateResponsePlan`.
 ///
 /// <p>Creates a response plan that automates the initial response to incidents. A response plan engages contacts, starts chat channel collaboration, and initiates runbooks at the beginning of an incident.</p>

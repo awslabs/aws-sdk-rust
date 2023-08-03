@@ -3,6 +3,23 @@ pub use crate::operation::create_experiment::_create_experiment_output::CreateEx
 
 pub use crate::operation::create_experiment::_create_experiment_input::CreateExperimentInputBuilder;
 
+impl CreateExperimentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_experiment::CreateExperimentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_experiment::CreateExperimentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_experiment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateExperiment`.
 ///
 /// <p>Creates a SageMaker <i>experiment</i>. An experiment is a collection of <i>trials</i> that are observed, compared and evaluated as a group. A trial is a set of steps, called <i>trial components</i>, that produce a machine learning model.</p> <note>

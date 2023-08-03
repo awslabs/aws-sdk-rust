@@ -3,6 +3,23 @@ pub use crate::operation::create_worker_fleet::_create_worker_fleet_output::Crea
 
 pub use crate::operation::create_worker_fleet::_create_worker_fleet_input::CreateWorkerFleetInputBuilder;
 
+impl CreateWorkerFleetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_worker_fleet::CreateWorkerFleetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_worker_fleet::CreateWorkerFleetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_worker_fleet();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateWorkerFleet`.
 ///
 /// Grants permission to create a worker fleet

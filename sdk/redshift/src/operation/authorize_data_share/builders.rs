@@ -3,6 +3,23 @@ pub use crate::operation::authorize_data_share::_authorize_data_share_output::Au
 
 pub use crate::operation::authorize_data_share::_authorize_data_share_input::AuthorizeDataShareInputBuilder;
 
+impl AuthorizeDataShareInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::authorize_data_share::AuthorizeDataShareOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::authorize_data_share::AuthorizeDataShareError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.authorize_data_share();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AuthorizeDataShare`.
 ///
 /// <p>From a data producer account, authorizes the sharing of a datashare with one or more consumer accounts or managing entities. To authorize a datashare for a data consumer, the producer account must have the correct access permissions.</p>

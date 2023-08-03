@@ -3,6 +3,23 @@ pub use crate::operation::start_task_execution::_start_task_execution_output::St
 
 pub use crate::operation::start_task_execution::_start_task_execution_input::StartTaskExecutionInputBuilder;
 
+impl StartTaskExecutionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_task_execution::StartTaskExecutionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_task_execution::StartTaskExecutionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_task_execution();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartTaskExecution`.
 ///
 /// <p>Starts an DataSync task. For each task, you can only run one task execution at a time.</p>

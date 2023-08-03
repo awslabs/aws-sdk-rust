@@ -3,6 +3,23 @@ pub use crate::operation::start_rx_norm_inference_job::_start_rx_norm_inference_
 
 pub use crate::operation::start_rx_norm_inference_job::_start_rx_norm_inference_job_input::StartRxNormInferenceJobInputBuilder;
 
+impl StartRxNormInferenceJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_rx_norm_inference_job::StartRxNormInferenceJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_rx_norm_inference_job::StartRxNormInferenceJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_rx_norm_inference_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartRxNormInferenceJob`.
 ///
 /// <p>Starts an asynchronous job to detect medication entities and link them to the RxNorm ontology. Use the <code>DescribeRxNormInferenceJob</code> operation to track the status of a job.</p>

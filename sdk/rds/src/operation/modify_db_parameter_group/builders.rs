@@ -3,6 +3,23 @@ pub use crate::operation::modify_db_parameter_group::_modify_db_parameter_group_
 
 pub use crate::operation::modify_db_parameter_group::_modify_db_parameter_group_input::ModifyDbParameterGroupInputBuilder;
 
+impl ModifyDbParameterGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_db_parameter_group::ModifyDbParameterGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_db_parameter_group::ModifyDBParameterGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_db_parameter_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyDBParameterGroup`.
 ///
 /// <p>Modifies the parameters of a DB parameter group. To modify more than one parameter, submit a list of the following: <code>ParameterName</code>, <code>ParameterValue</code>, and <code>ApplyMethod</code>. A maximum of 20 parameters can be modified in a single request.</p> <important>

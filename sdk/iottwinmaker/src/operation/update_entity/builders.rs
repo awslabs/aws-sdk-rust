@@ -3,6 +3,23 @@ pub use crate::operation::update_entity::_update_entity_output::UpdateEntityOutp
 
 pub use crate::operation::update_entity::_update_entity_input::UpdateEntityInputBuilder;
 
+impl UpdateEntityInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_entity::UpdateEntityOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_entity::UpdateEntityError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_entity();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateEntity`.
 ///
 /// <p>Updates an entity.</p>

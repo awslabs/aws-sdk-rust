@@ -3,6 +3,23 @@ pub use crate::operation::list_assessment_frameworks::_list_assessment_framework
 
 pub use crate::operation::list_assessment_frameworks::_list_assessment_frameworks_input::ListAssessmentFrameworksInputBuilder;
 
+impl ListAssessmentFrameworksInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_assessment_frameworks::ListAssessmentFrameworksOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_assessment_frameworks::ListAssessmentFrameworksError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_assessment_frameworks();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAssessmentFrameworks`.
 ///
 /// <p> Returns a list of the frameworks that are available in the Audit Manager framework library. </p>

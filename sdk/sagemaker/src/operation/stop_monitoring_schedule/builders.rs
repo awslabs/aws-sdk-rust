@@ -3,6 +3,23 @@ pub use crate::operation::stop_monitoring_schedule::_stop_monitoring_schedule_ou
 
 pub use crate::operation::stop_monitoring_schedule::_stop_monitoring_schedule_input::StopMonitoringScheduleInputBuilder;
 
+impl StopMonitoringScheduleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_monitoring_schedule::StopMonitoringScheduleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_monitoring_schedule::StopMonitoringScheduleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_monitoring_schedule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopMonitoringSchedule`.
 ///
 /// <p>Stops a previously started monitoring schedule.</p>

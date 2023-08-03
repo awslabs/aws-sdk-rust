@@ -3,6 +3,23 @@ pub use crate::operation::describe_listeners::_describe_listeners_output::Descri
 
 pub use crate::operation::describe_listeners::_describe_listeners_input::DescribeListenersInputBuilder;
 
+impl DescribeListenersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_listeners::DescribeListenersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_listeners::DescribeListenersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_listeners();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeListeners`.
 ///
 /// <p>Describes the specified listeners or the listeners for the specified Application Load Balancer, Network Load Balancer, or Gateway Load Balancer. You must specify either a load balancer or one or more listeners.</p>

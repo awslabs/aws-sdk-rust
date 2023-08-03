@@ -3,6 +3,23 @@ pub use crate::operation::delete_asset_model::_delete_asset_model_output::Delete
 
 pub use crate::operation::delete_asset_model::_delete_asset_model_input::DeleteAssetModelInputBuilder;
 
+impl DeleteAssetModelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_asset_model::DeleteAssetModelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_asset_model::DeleteAssetModelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_asset_model();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteAssetModel`.
 ///
 /// <p>Deletes an asset model. This action can't be undone. You must delete all assets created from an asset model before you can delete the model. Also, you can't delete an asset model if a parent asset model exists that contains a property formula expression that depends on the asset model that you want to delete. For more information, see <a href="https://docs.aws.amazon.com/iot-sitewise/latest/userguide/delete-assets-and-models.html">Deleting assets and models</a> in the <i>IoT SiteWise User Guide</i>.</p>

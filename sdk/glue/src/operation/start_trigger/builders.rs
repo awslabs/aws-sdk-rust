@@ -3,6 +3,23 @@ pub use crate::operation::start_trigger::_start_trigger_output::StartTriggerOutp
 
 pub use crate::operation::start_trigger::_start_trigger_input::StartTriggerInputBuilder;
 
+impl StartTriggerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_trigger::StartTriggerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_trigger::StartTriggerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_trigger();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartTrigger`.
 ///
 /// <p>Starts an existing trigger. See <a href="https://docs.aws.amazon.com/glue/latest/dg/trigger-job.html">Triggering Jobs</a> for information about how different types of trigger are started.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_sip_rule::_get_sip_rule_output::GetSipRuleOutputBu
 
 pub use crate::operation::get_sip_rule::_get_sip_rule_input::GetSipRuleInputBuilder;
 
+impl GetSipRuleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_sip_rule::GetSipRuleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_sip_rule::GetSipRuleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_sip_rule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetSipRule`.
 ///
 /// <p>Retrieves the details of a SIP rule, such as the rule ID, name, triggers, and target endpoints.</p>

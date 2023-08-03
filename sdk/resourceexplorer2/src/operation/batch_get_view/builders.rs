@@ -3,6 +3,23 @@ pub use crate::operation::batch_get_view::_batch_get_view_output::BatchGetViewOu
 
 pub use crate::operation::batch_get_view::_batch_get_view_input::BatchGetViewInputBuilder;
 
+impl BatchGetViewInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_view::BatchGetViewOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_get_view::BatchGetViewError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_get_view();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchGetView`.
 ///
 /// <p>Retrieves details about a list of views.</p>

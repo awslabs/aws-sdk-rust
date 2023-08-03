@@ -3,6 +3,23 @@ pub use crate::operation::list_certificates::_list_certificates_output::ListCert
 
 pub use crate::operation::list_certificates::_list_certificates_input::ListCertificatesInputBuilder;
 
+impl ListCertificatesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_certificates::ListCertificatesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_certificates::ListCertificatesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_certificates();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListCertificates`.
 ///
 /// <p>Returns a list of the current certificates that have been imported into Transfer Family. If you want to limit the results to a certain number, supply a value for the <code>MaxResults</code> parameter. If you ran the command previously and received a value for the <code>NextToken</code> parameter, you can supply that value to continue listing certificates from where you left off.</p>

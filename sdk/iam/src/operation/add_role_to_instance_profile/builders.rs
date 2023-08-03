@@ -3,6 +3,23 @@ pub use crate::operation::add_role_to_instance_profile::_add_role_to_instance_pr
 
 pub use crate::operation::add_role_to_instance_profile::_add_role_to_instance_profile_input::AddRoleToInstanceProfileInputBuilder;
 
+impl AddRoleToInstanceProfileInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::add_role_to_instance_profile::AddRoleToInstanceProfileOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::add_role_to_instance_profile::AddRoleToInstanceProfileError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.add_role_to_instance_profile();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AddRoleToInstanceProfile`.
 ///
 /// <p>Adds the specified IAM role to the specified instance profile. An instance profile can contain only one role, and this quota cannot be increased. You can remove the existing role and then add a different role to an instance profile. You must then wait for the change to appear across all of Amazon Web Services because of <a href="https://en.wikipedia.org/wiki/Eventual_consistency">eventual consistency</a>. To force the change, you must <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DisassociateIamInstanceProfile.html">disassociate the instance profile</a> and then <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_AssociateIamInstanceProfile.html">associate the instance profile</a>, or you can stop your instance and then restart it.</p> <note>

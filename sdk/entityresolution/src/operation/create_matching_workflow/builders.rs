@@ -3,6 +3,23 @@ pub use crate::operation::create_matching_workflow::_create_matching_workflow_ou
 
 pub use crate::operation::create_matching_workflow::_create_matching_workflow_input::CreateMatchingWorkflowInputBuilder;
 
+impl CreateMatchingWorkflowInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_matching_workflow::CreateMatchingWorkflowOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_matching_workflow::CreateMatchingWorkflowError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_matching_workflow();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateMatchingWorkflow`.
 ///
 /// <p>Creates a <code>MatchingWorkflow</code> object which stores the configuration of the data processing job to be run. It is important to note that there should not be a pre-existing <code>MatchingWorkflow</code> with the same name. To modify an existing workflow, utilize the <code>UpdateMatchingWorkflow</code> API.</p>

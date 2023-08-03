@@ -3,6 +3,17 @@ pub use crate::operation::get_savings_plans_utilization_details::_get_savings_pl
 
 pub use crate::operation::get_savings_plans_utilization_details::_get_savings_plans_utilization_details_input::GetSavingsPlansUtilizationDetailsInputBuilder;
 
+impl GetSavingsPlansUtilizationDetailsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_savings_plans_utilization_details::GetSavingsPlansUtilizationDetailsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_savings_plans_utilization_details();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetSavingsPlansUtilizationDetails`.
 ///
 /// <p>Retrieves attribute data along with aggregate utilization and savings data for a given time period. This doesn't support granular or grouped data (daily/monthly) in response. You can't retrieve data by dates in a single response similar to <code>GetSavingsPlanUtilization</code>, but you have the option to make multiple calls to <code>GetSavingsPlanUtilizationDetails</code> by providing individual dates. You can use <code>GetDimensionValues</code> in <code>SAVINGS_PLANS</code> to determine the possible dimension values.</p> <note>

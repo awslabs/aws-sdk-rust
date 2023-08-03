@@ -3,6 +3,23 @@ pub use crate::operation::get_container_api_metadata::_get_container_api_metadat
 
 pub use crate::operation::get_container_api_metadata::_get_container_api_metadata_input::GetContainerApiMetadataInputBuilder;
 
+impl GetContainerApiMetadataInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_container_api_metadata::GetContainerApiMetadataOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_container_api_metadata::GetContainerAPIMetadataError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_container_api_metadata();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetContainerAPIMetadata`.
 ///
 /// <p>Returns information about Amazon Lightsail containers, such as the current version of the Lightsail Control (lightsailctl) plugin.</p>

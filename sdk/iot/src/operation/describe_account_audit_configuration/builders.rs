@@ -3,6 +3,17 @@ pub use crate::operation::describe_account_audit_configuration::_describe_accoun
 
 pub use crate::operation::describe_account_audit_configuration::_describe_account_audit_configuration_input::DescribeAccountAuditConfigurationInputBuilder;
 
+impl DescribeAccountAuditConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_account_audit_configuration::DescribeAccountAuditConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_account_audit_configuration::DescribeAccountAuditConfigurationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_account_audit_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAccountAuditConfiguration`.
 ///
 /// <p>Gets information about the Device Defender audit settings for this account. Settings include how audit notifications are sent and which audit checks are enabled or disabled.</p>

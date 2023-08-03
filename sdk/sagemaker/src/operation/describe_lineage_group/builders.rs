@@ -3,6 +3,23 @@ pub use crate::operation::describe_lineage_group::_describe_lineage_group_output
 
 pub use crate::operation::describe_lineage_group::_describe_lineage_group_input::DescribeLineageGroupInputBuilder;
 
+impl DescribeLineageGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_lineage_group::DescribeLineageGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_lineage_group::DescribeLineageGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_lineage_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeLineageGroup`.
 ///
 /// <p>Provides a list of properties for the requested lineage group. For more information, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/xaccount-lineage-tracking.html"> Cross-Account Lineage Tracking </a> in the <i>Amazon SageMaker Developer Guide</i>.</p>

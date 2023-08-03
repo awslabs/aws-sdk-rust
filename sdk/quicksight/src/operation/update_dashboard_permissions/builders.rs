@@ -3,6 +3,23 @@ pub use crate::operation::update_dashboard_permissions::_update_dashboard_permis
 
 pub use crate::operation::update_dashboard_permissions::_update_dashboard_permissions_input::UpdateDashboardPermissionsInputBuilder;
 
+impl UpdateDashboardPermissionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_dashboard_permissions::UpdateDashboardPermissionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_dashboard_permissions::UpdateDashboardPermissionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_dashboard_permissions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateDashboardPermissions`.
 ///
 /// <p>Updates read and write permissions on a dashboard.</p>

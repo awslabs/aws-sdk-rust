@@ -3,6 +3,23 @@ pub use crate::operation::describe_environment_resources::_describe_environment_
 
 pub use crate::operation::describe_environment_resources::_describe_environment_resources_input::DescribeEnvironmentResourcesInputBuilder;
 
+impl DescribeEnvironmentResourcesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_environment_resources::DescribeEnvironmentResourcesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_environment_resources::DescribeEnvironmentResourcesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_environment_resources();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeEnvironmentResources`.
 ///
 /// <p>Returns AWS resources for this environment.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_environment_health::_describe_environment_hea
 
 pub use crate::operation::describe_environment_health::_describe_environment_health_input::DescribeEnvironmentHealthInputBuilder;
 
+impl DescribeEnvironmentHealthInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_environment_health::DescribeEnvironmentHealthOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_environment_health::DescribeEnvironmentHealthError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_environment_health();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeEnvironmentHealth`.
 ///
 /// <p>Returns information about the overall health of the specified environment. The <b>DescribeEnvironmentHealth</b> operation is only available with AWS Elastic Beanstalk Enhanced Health.</p>

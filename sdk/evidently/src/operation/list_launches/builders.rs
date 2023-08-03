@@ -3,6 +3,23 @@ pub use crate::operation::list_launches::_list_launches_output::ListLaunchesOutp
 
 pub use crate::operation::list_launches::_list_launches_input::ListLaunchesInputBuilder;
 
+impl ListLaunchesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_launches::ListLaunchesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_launches::ListLaunchesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_launches();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListLaunches`.
 ///
 /// <p>Returns configuration details about all the launches in the specified project.</p>

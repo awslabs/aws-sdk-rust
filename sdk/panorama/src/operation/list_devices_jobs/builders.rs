@@ -3,6 +3,23 @@ pub use crate::operation::list_devices_jobs::_list_devices_jobs_output::ListDevi
 
 pub use crate::operation::list_devices_jobs::_list_devices_jobs_input::ListDevicesJobsInputBuilder;
 
+impl ListDevicesJobsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_devices_jobs::ListDevicesJobsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_devices_jobs::ListDevicesJobsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_devices_jobs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDevicesJobs`.
 ///
 /// <p>Returns a list of jobs.</p>

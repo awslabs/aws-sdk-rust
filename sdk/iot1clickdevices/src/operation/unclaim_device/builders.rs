@@ -3,6 +3,23 @@ pub use crate::operation::unclaim_device::_unclaim_device_output::UnclaimDeviceO
 
 pub use crate::operation::unclaim_device::_unclaim_device_input::UnclaimDeviceInputBuilder;
 
+impl UnclaimDeviceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::unclaim_device::UnclaimDeviceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::unclaim_device::UnclaimDeviceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.unclaim_device();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UnclaimDevice`.
 ///
 /// <p>Disassociates a device from your AWS account using its device ID.</p>

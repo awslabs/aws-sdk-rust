@@ -3,6 +3,23 @@ pub use crate::operation::list_byoip_cidrs::_list_byoip_cidrs_output::ListByoipC
 
 pub use crate::operation::list_byoip_cidrs::_list_byoip_cidrs_input::ListByoipCidrsInputBuilder;
 
+impl ListByoipCidrsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_byoip_cidrs::ListByoipCidrsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_byoip_cidrs::ListByoipCidrsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_byoip_cidrs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListByoipCidrs`.
 ///
 /// <p>Lists the IP address ranges that were specified in calls to <a href="https://docs.aws.amazon.com/global-accelerator/latest/api/ProvisionByoipCidr.html">ProvisionByoipCidr</a>, including the current state and a history of state changes.</p>

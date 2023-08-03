@@ -3,6 +3,23 @@ pub use crate::operation::get_trail_status::_get_trail_status_output::GetTrailSt
 
 pub use crate::operation::get_trail_status::_get_trail_status_input::GetTrailStatusInputBuilder;
 
+impl GetTrailStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_trail_status::GetTrailStatusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_trail_status::GetTrailStatusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_trail_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetTrailStatus`.
 ///
 /// <p>Returns a JSON-formatted list of information about the specified trail. Fields include information on delivery errors, Amazon SNS and Amazon S3 errors, and start and stop logging times for each trail. This operation returns trail status from a single Region. To return trail status from all Regions, you must call the operation on each Region.</p>

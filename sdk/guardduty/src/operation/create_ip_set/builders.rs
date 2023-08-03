@@ -3,6 +3,23 @@ pub use crate::operation::create_ip_set::_create_ip_set_output::CreateIpSetOutpu
 
 pub use crate::operation::create_ip_set::_create_ip_set_input::CreateIpSetInputBuilder;
 
+impl CreateIpSetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_ip_set::CreateIpSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_ip_set::CreateIPSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_ip_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateIPSet`.
 ///
 /// <p>Creates a new IPSet, which is called a trusted IP list in the console user interface. An IPSet is a list of IP addresses that are trusted for secure communication with Amazon Web Services infrastructure and applications. GuardDuty doesn't generate findings for IP addresses that are included in IPSets. Only users from the administrator account can use this operation.</p>

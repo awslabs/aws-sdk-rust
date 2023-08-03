@@ -3,6 +3,23 @@ pub use crate::operation::delete_collection::_delete_collection_output::DeleteCo
 
 pub use crate::operation::delete_collection::_delete_collection_input::DeleteCollectionInputBuilder;
 
+impl DeleteCollectionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_collection::DeleteCollectionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_collection::DeleteCollectionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_collection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteCollection`.
 ///
 /// <p>Deletes an OpenSearch Serverless collection. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/serverless-manage.html">Creating and managing Amazon OpenSearch Serverless collections</a>.</p>

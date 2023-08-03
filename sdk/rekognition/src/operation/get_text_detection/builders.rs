@@ -3,6 +3,23 @@ pub use crate::operation::get_text_detection::_get_text_detection_output::GetTex
 
 pub use crate::operation::get_text_detection::_get_text_detection_input::GetTextDetectionInputBuilder;
 
+impl GetTextDetectionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_text_detection::GetTextDetectionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_text_detection::GetTextDetectionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_text_detection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetTextDetection`.
 ///
 /// <p>Gets the text detection results of a Amazon Rekognition Video analysis started by <code>StartTextDetection</code>.</p>

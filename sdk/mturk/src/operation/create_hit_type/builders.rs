@@ -3,6 +3,23 @@ pub use crate::operation::create_hit_type::_create_hit_type_output::CreateHitTyp
 
 pub use crate::operation::create_hit_type::_create_hit_type_input::CreateHitTypeInputBuilder;
 
+impl CreateHitTypeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_hit_type::CreateHitTypeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_hit_type::CreateHITTypeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_hit_type();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateHITType`.
 ///
 /// <p> The <code>CreateHITType</code> operation creates a new HIT type. This operation allows you to define a standard set of HIT properties to use when creating HITs. If you register a HIT type with values that match an existing HIT type, the HIT type ID of the existing type will be returned. </p>

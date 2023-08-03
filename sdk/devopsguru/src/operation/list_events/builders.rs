@@ -3,6 +3,23 @@ pub use crate::operation::list_events::_list_events_output::ListEventsOutputBuil
 
 pub use crate::operation::list_events::_list_events_input::ListEventsInputBuilder;
 
+impl ListEventsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_events::ListEventsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_events::ListEventsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_events();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListEvents`.
 ///
 /// <p> Returns a list of the events emitted by the resources that are evaluated by DevOps Guru. You can use filters to specify which events are returned. </p>

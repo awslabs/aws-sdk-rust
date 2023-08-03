@@ -3,6 +3,23 @@ pub use crate::operation::delete_instance_onboarding_job::_delete_instance_onboa
 
 pub use crate::operation::delete_instance_onboarding_job::_delete_instance_onboarding_job_input::DeleteInstanceOnboardingJobInputBuilder;
 
+impl DeleteInstanceOnboardingJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_instance_onboarding_job::DeleteInstanceOnboardingJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_instance_onboarding_job::DeleteInstanceOnboardingJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_instance_onboarding_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteInstanceOnboardingJob`.
 ///
 /// Delete the Connect Campaigns onboarding job for the specified Amazon Connect instance.

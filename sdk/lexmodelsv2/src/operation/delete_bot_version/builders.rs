@@ -3,6 +3,23 @@ pub use crate::operation::delete_bot_version::_delete_bot_version_output::Delete
 
 pub use crate::operation::delete_bot_version::_delete_bot_version_input::DeleteBotVersionInputBuilder;
 
+impl DeleteBotVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_bot_version::DeleteBotVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_bot_version::DeleteBotVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_bot_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteBotVersion`.
 ///
 /// <p>Deletes a specific version of a bot. To delete all versions of a bot, use the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DeleteBot.html">DeleteBot</a> operation.</p>

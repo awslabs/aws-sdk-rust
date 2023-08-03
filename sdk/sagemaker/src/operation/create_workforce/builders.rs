@@ -3,6 +3,23 @@ pub use crate::operation::create_workforce::_create_workforce_output::CreateWork
 
 pub use crate::operation::create_workforce::_create_workforce_input::CreateWorkforceInputBuilder;
 
+impl CreateWorkforceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_workforce::CreateWorkforceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_workforce::CreateWorkforceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_workforce();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateWorkforce`.
 ///
 /// <p>Use this operation to create a workforce. This operation will return an error if a workforce already exists in the Amazon Web Services Region that you specify. You can only create one workforce in each Amazon Web Services Region per Amazon Web Services account.</p>

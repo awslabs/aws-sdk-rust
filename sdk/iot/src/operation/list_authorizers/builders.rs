@@ -3,6 +3,23 @@ pub use crate::operation::list_authorizers::_list_authorizers_output::ListAuthor
 
 pub use crate::operation::list_authorizers::_list_authorizers_input::ListAuthorizersInputBuilder;
 
+impl ListAuthorizersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_authorizers::ListAuthorizersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_authorizers::ListAuthorizersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_authorizers();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAuthorizers`.
 ///
 /// <p>Lists the authorizers registered in your account.</p>

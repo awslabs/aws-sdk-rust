@@ -3,6 +3,23 @@ pub use crate::operation::describe_principal_id_format::_describe_principal_id_f
 
 pub use crate::operation::describe_principal_id_format::_describe_principal_id_format_input::DescribePrincipalIdFormatInputBuilder;
 
+impl DescribePrincipalIdFormatInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_principal_id_format::DescribePrincipalIdFormatOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_principal_id_format::DescribePrincipalIdFormatError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_principal_id_format();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribePrincipalIdFormat`.
 ///
 /// <p>Describes the ID format settings for the root user and all IAM roles and IAM users that have explicitly specified a longer ID (17-character ID) preference. </p>

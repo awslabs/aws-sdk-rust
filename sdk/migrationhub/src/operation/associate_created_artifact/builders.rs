@@ -3,6 +3,23 @@ pub use crate::operation::associate_created_artifact::_associate_created_artifac
 
 pub use crate::operation::associate_created_artifact::_associate_created_artifact_input::AssociateCreatedArtifactInputBuilder;
 
+impl AssociateCreatedArtifactInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_created_artifact::AssociateCreatedArtifactOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_created_artifact::AssociateCreatedArtifactError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_created_artifact();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateCreatedArtifact`.
 ///
 /// <p>Associates a created artifact of an AWS cloud resource, the target receiving the migration, with the migration task performed by a migration tool. This API has the following traits:</p>

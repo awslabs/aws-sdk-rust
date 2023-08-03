@@ -3,6 +3,23 @@ pub use crate::operation::create_subnet_group::_create_subnet_group_output::Crea
 
 pub use crate::operation::create_subnet_group::_create_subnet_group_input::CreateSubnetGroupInputBuilder;
 
+impl CreateSubnetGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_subnet_group::CreateSubnetGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_subnet_group::CreateSubnetGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_subnet_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateSubnetGroup`.
 ///
 /// <p>Creates a new subnet group.</p>

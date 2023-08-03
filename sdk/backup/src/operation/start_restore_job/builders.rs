@@ -3,6 +3,23 @@ pub use crate::operation::start_restore_job::_start_restore_job_output::StartRes
 
 pub use crate::operation::start_restore_job::_start_restore_job_input::StartRestoreJobInputBuilder;
 
+impl StartRestoreJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_restore_job::StartRestoreJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_restore_job::StartRestoreJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_restore_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartRestoreJob`.
 ///
 /// <p>Recovers the saved resource identified by an Amazon Resource Name (ARN).</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_auto_snapshots::_get_auto_snapshots_output::GetAut
 
 pub use crate::operation::get_auto_snapshots::_get_auto_snapshots_input::GetAutoSnapshotsInputBuilder;
 
+impl GetAutoSnapshotsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_auto_snapshots::GetAutoSnapshotsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_auto_snapshots::GetAutoSnapshotsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_auto_snapshots();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetAutoSnapshots`.
 ///
 /// <p>Returns the available automatic snapshots for an instance or disk. For more information, see the <a href="https://lightsail.aws.amazon.com/ls/docs/en_us/articles/amazon-lightsail-configuring-automatic-snapshots">Amazon Lightsail Developer Guide</a>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_human_task_ui::_delete_human_task_ui_output::De
 
 pub use crate::operation::delete_human_task_ui::_delete_human_task_ui_input::DeleteHumanTaskUiInputBuilder;
 
+impl DeleteHumanTaskUiInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_human_task_ui::DeleteHumanTaskUiOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_human_task_ui::DeleteHumanTaskUiError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_human_task_ui();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteHumanTaskUi`.
 ///
 /// <p>Use this operation to delete a human task user interface (worker task template).</p>

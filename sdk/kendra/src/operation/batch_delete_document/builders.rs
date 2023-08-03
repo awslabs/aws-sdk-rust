@@ -3,6 +3,23 @@ pub use crate::operation::batch_delete_document::_batch_delete_document_output::
 
 pub use crate::operation::batch_delete_document::_batch_delete_document_input::BatchDeleteDocumentInputBuilder;
 
+impl BatchDeleteDocumentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_delete_document::BatchDeleteDocumentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_delete_document::BatchDeleteDocumentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_delete_document();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchDeleteDocument`.
 ///
 /// <p>Removes one or more documents from an index. The documents must have been added with the <code>BatchPutDocument</code> API.</p>

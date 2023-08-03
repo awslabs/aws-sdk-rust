@@ -3,6 +3,23 @@ pub use crate::operation::describe_load_balancers::_describe_load_balancers_outp
 
 pub use crate::operation::describe_load_balancers::_describe_load_balancers_input::DescribeLoadBalancersInputBuilder;
 
+impl DescribeLoadBalancersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_load_balancers::DescribeLoadBalancersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_load_balancers::DescribeLoadBalancersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_load_balancers();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeLoadBalancers`.
 ///
 /// <note>

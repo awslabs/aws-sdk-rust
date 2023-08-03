@@ -3,6 +3,23 @@ pub use crate::operation::describe_alarms_for_metric::_describe_alarms_for_metri
 
 pub use crate::operation::describe_alarms_for_metric::_describe_alarms_for_metric_input::DescribeAlarmsForMetricInputBuilder;
 
+impl DescribeAlarmsForMetricInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetricOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_alarms_for_metric::DescribeAlarmsForMetricError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_alarms_for_metric();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAlarmsForMetric`.
 ///
 /// <p>Retrieves the alarms for the specified metric. To filter the results, specify a statistic, period, or unit.</p>

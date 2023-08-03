@@ -3,6 +3,23 @@ pub use crate::operation::delete_stack_instances::_delete_stack_instances_output
 
 pub use crate::operation::delete_stack_instances::_delete_stack_instances_input::DeleteStackInstancesInputBuilder;
 
+impl DeleteStackInstancesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_stack_instances::DeleteStackInstancesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_stack_instances::DeleteStackInstancesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_stack_instances();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteStackInstances`.
 ///
 /// <p>Deletes stack instances for the specified accounts, in the specified Amazon Web Services Regions.</p>

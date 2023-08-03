@@ -3,6 +3,23 @@ pub use crate::operation::list_shared_report_groups::_list_shared_report_groups_
 
 pub use crate::operation::list_shared_report_groups::_list_shared_report_groups_input::ListSharedReportGroupsInputBuilder;
 
+impl ListSharedReportGroupsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_shared_report_groups::ListSharedReportGroupsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_shared_report_groups::ListSharedReportGroupsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_shared_report_groups();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListSharedReportGroups`.
 ///
 /// <p> Gets a list of report groups that are shared with other Amazon Web Services accounts or users. </p>

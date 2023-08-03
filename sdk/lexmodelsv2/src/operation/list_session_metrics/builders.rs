@@ -3,6 +3,23 @@ pub use crate::operation::list_session_metrics::_list_session_metrics_output::Li
 
 pub use crate::operation::list_session_metrics::_list_session_metrics_input::ListSessionMetricsInputBuilder;
 
+impl ListSessionMetricsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_session_metrics::ListSessionMetricsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_session_metrics::ListSessionMetricsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_session_metrics();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListSessionMetrics`.
 ///
 /// <p>Retrieves summary metrics for the user sessions with your bot. The following fields are required:</p>

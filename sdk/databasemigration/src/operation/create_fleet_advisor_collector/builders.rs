@@ -3,6 +3,23 @@ pub use crate::operation::create_fleet_advisor_collector::_create_fleet_advisor_
 
 pub use crate::operation::create_fleet_advisor_collector::_create_fleet_advisor_collector_input::CreateFleetAdvisorCollectorInputBuilder;
 
+impl CreateFleetAdvisorCollectorInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_fleet_advisor_collector::CreateFleetAdvisorCollectorOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_fleet_advisor_collector::CreateFleetAdvisorCollectorError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_fleet_advisor_collector();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateFleetAdvisorCollector`.
 ///
 /// <p>Creates a Fleet Advisor collector using the specified parameters.</p>

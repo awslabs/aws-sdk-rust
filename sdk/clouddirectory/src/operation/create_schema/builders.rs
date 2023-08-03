@@ -3,6 +3,23 @@ pub use crate::operation::create_schema::_create_schema_output::CreateSchemaOutp
 
 pub use crate::operation::create_schema::_create_schema_input::CreateSchemaInputBuilder;
 
+impl CreateSchemaInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_schema::CreateSchemaOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_schema::CreateSchemaError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_schema();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateSchema`.
 ///
 /// <p>Creates a new schema in a development state. A schema can exist in three phases:</p>

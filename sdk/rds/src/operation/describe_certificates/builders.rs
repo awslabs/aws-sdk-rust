@@ -3,6 +3,23 @@ pub use crate::operation::describe_certificates::_describe_certificates_output::
 
 pub use crate::operation::describe_certificates::_describe_certificates_input::DescribeCertificatesInputBuilder;
 
+impl DescribeCertificatesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_certificates::DescribeCertificatesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_certificates::DescribeCertificatesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_certificates();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeCertificates`.
 ///
 /// <p>Lists the set of CA certificates provided by Amazon RDS for this Amazon Web Services account.</p>

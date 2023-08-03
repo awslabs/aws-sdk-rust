@@ -3,6 +3,23 @@ pub use crate::operation::create_hsm::_create_hsm_output::CreateHsmOutputBuilder
 
 pub use crate::operation::create_hsm::_create_hsm_input::CreateHsmInputBuilder;
 
+impl CreateHsmInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_hsm::CreateHsmOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_hsm::CreateHsmError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_hsm();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateHsm`.
 ///
 /// <p>Creates a new hardware security module (HSM) in the specified AWS CloudHSM cluster.</p>

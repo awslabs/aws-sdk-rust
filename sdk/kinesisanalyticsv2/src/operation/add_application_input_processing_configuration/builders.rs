@@ -3,6 +3,17 @@ pub use crate::operation::add_application_input_processing_configuration::_add_a
 
 pub use crate::operation::add_application_input_processing_configuration::_add_application_input_processing_configuration_input::AddApplicationInputProcessingConfigurationInputBuilder;
 
+impl AddApplicationInputProcessingConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::add_application_input_processing_configuration::AddApplicationInputProcessingConfigurationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.add_application_input_processing_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AddApplicationInputProcessingConfiguration`.
 ///
 /// <p>Adds an <code>InputProcessingConfiguration</code> to a SQL-based Kinesis Data Analytics application. An input processor pre-processes records on the input stream before the application's SQL code executes. Currently, the only input processor available is <a href="https://docs.aws.amazon.com/lambda/">Amazon Lambda</a>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_bandwidth_rate_limit::_describe_bandwidth_rat
 
 pub use crate::operation::describe_bandwidth_rate_limit::_describe_bandwidth_rate_limit_input::DescribeBandwidthRateLimitInputBuilder;
 
+impl DescribeBandwidthRateLimitInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_bandwidth_rate_limit::DescribeBandwidthRateLimitOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_bandwidth_rate_limit::DescribeBandwidthRateLimitError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_bandwidth_rate_limit();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeBandwidthRateLimit`.
 ///
 /// <p>Returns the bandwidth rate limits of a gateway. By default, these limits are not set, which means no bandwidth rate limiting is in effect. This operation is supported only for the stored volume, cached volume, and tape gateway types. To describe bandwidth rate limits for S3 file gateways, use <code>DescribeBandwidthRateLimitSchedule</code>.</p>

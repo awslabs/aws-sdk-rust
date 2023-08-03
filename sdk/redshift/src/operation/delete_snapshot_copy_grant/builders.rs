@@ -3,6 +3,23 @@ pub use crate::operation::delete_snapshot_copy_grant::_delete_snapshot_copy_gran
 
 pub use crate::operation::delete_snapshot_copy_grant::_delete_snapshot_copy_grant_input::DeleteSnapshotCopyGrantInputBuilder;
 
+impl DeleteSnapshotCopyGrantInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_snapshot_copy_grant::DeleteSnapshotCopyGrantOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_snapshot_copy_grant::DeleteSnapshotCopyGrantError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_snapshot_copy_grant();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteSnapshotCopyGrant`.
 ///
 /// <p>Deletes the specified snapshot copy grant.</p>

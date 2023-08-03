@@ -3,6 +3,23 @@ pub use crate::operation::rotate_encryption_key::_rotate_encryption_key_output::
 
 pub use crate::operation::rotate_encryption_key::_rotate_encryption_key_input::RotateEncryptionKeyInputBuilder;
 
+impl RotateEncryptionKeyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::rotate_encryption_key::RotateEncryptionKeyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::rotate_encryption_key::RotateEncryptionKeyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.rotate_encryption_key();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RotateEncryptionKey`.
 ///
 /// <p>Rotates the encryption keys for a cluster.</p>

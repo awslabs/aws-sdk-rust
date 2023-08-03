@@ -3,6 +3,23 @@ pub use crate::operation::update_response_headers_policy::_update_response_heade
 
 pub use crate::operation::update_response_headers_policy::_update_response_headers_policy_input::UpdateResponseHeadersPolicyInputBuilder;
 
+impl UpdateResponseHeadersPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_response_headers_policy::UpdateResponseHeadersPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_response_headers_policy::UpdateResponseHeadersPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_response_headers_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateResponseHeadersPolicy`.
 ///
 /// <p>Updates a response headers policy.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_backup::_delete_backup_output::DeleteBackupOutp
 
 pub use crate::operation::delete_backup::_delete_backup_input::DeleteBackupInputBuilder;
 
+impl DeleteBackupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_backup::DeleteBackupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_backup::DeleteBackupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_backup();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteBackup`.
 ///
 /// <p> Deletes a backup. You can delete both manual and automated backups. This operation is asynchronous. </p>

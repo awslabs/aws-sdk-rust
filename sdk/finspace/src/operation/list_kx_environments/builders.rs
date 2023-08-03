@@ -3,6 +3,23 @@ pub use crate::operation::list_kx_environments::_list_kx_environments_output::Li
 
 pub use crate::operation::list_kx_environments::_list_kx_environments_input::ListKxEnvironmentsInputBuilder;
 
+impl ListKxEnvironmentsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_kx_environments::ListKxEnvironmentsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_kx_environments::ListKxEnvironmentsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_kx_environments();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListKxEnvironments`.
 ///
 /// <p>Returns a list of kdb environments created in an account.</p>

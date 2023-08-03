@@ -3,6 +3,23 @@ pub use crate::operation::send_templated_email::_send_templated_email_output::Se
 
 pub use crate::operation::send_templated_email::_send_templated_email_input::SendTemplatedEmailInputBuilder;
 
+impl SendTemplatedEmailInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::send_templated_email::SendTemplatedEmailOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::send_templated_email::SendTemplatedEmailError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.send_templated_email();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SendTemplatedEmail`.
 ///
 /// <p>Composes an email message using an email template and immediately queues it for sending.</p>

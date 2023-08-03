@@ -3,6 +3,23 @@ pub use crate::operation::list_forecasts::_list_forecasts_output::ListForecastsO
 
 pub use crate::operation::list_forecasts::_list_forecasts_input::ListForecastsInputBuilder;
 
+impl ListForecastsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_forecasts::ListForecastsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_forecasts::ListForecastsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_forecasts();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListForecasts`.
 ///
 /// <p>Returns a list of forecasts created using the <code>CreateForecast</code> operation. For each forecast, this operation returns a summary of its properties, including its Amazon Resource Name (ARN). To retrieve the complete set of properties, specify the ARN with the <code>DescribeForecast</code> operation. You can filter the list using an array of <code>Filter</code> objects.</p>

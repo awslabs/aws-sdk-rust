@@ -3,6 +3,23 @@ pub use crate::operation::create_component_version::_create_component_version_ou
 
 pub use crate::operation::create_component_version::_create_component_version_input::CreateComponentVersionInputBuilder;
 
+impl CreateComponentVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_component_version::CreateComponentVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_component_version::CreateComponentVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_component_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateComponentVersion`.
 ///
 /// <p>Creates a component. Components are software that run on Greengrass core devices. After you develop and test a component on your core device, you can use this operation to upload your component to IoT Greengrass. Then, you can deploy the component to other core devices.</p>

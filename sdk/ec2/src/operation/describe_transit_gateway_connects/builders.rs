@@ -3,6 +3,17 @@ pub use crate::operation::describe_transit_gateway_connects::_describe_transit_g
 
 pub use crate::operation::describe_transit_gateway_connects::_describe_transit_gateway_connects_input::DescribeTransitGatewayConnectsInputBuilder;
 
+impl DescribeTransitGatewayConnectsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_transit_gateway_connects::DescribeTransitGatewayConnectsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_transit_gateway_connects::DescribeTransitGatewayConnectsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_transit_gateway_connects();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeTransitGatewayConnects`.
 ///
 /// <p>Describes one or more Connect attachments.</p>

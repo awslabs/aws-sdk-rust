@@ -3,6 +3,23 @@ pub use crate::operation::delete_bucket_lifecycle::_delete_bucket_lifecycle_outp
 
 pub use crate::operation::delete_bucket_lifecycle::_delete_bucket_lifecycle_input::DeleteBucketLifecycleInputBuilder;
 
+impl DeleteBucketLifecycleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_bucket_lifecycle::DeleteBucketLifecycleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_bucket_lifecycle::DeleteBucketLifecycleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_bucket_lifecycle();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteBucketLifecycle`.
 ///
 /// <p>Deletes the lifecycle configuration from the specified bucket. Amazon S3 removes all the lifecycle configuration rules in the lifecycle subresource associated with the bucket. Your objects never expire, and Amazon S3 no longer automatically deletes any objects on the basis of rules contained in the deleted lifecycle configuration.</p>

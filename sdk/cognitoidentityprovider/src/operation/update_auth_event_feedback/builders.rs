@@ -3,6 +3,23 @@ pub use crate::operation::update_auth_event_feedback::_update_auth_event_feedbac
 
 pub use crate::operation::update_auth_event_feedback::_update_auth_event_feedback_input::UpdateAuthEventFeedbackInputBuilder;
 
+impl UpdateAuthEventFeedbackInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_auth_event_feedback::UpdateAuthEventFeedbackOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_auth_event_feedback::UpdateAuthEventFeedbackError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_auth_event_feedback();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateAuthEventFeedback`.
 ///
 /// <p>Provides the feedback for an authentication event, whether it was from a valid user or not. This feedback is used for improving the risk evaluation decision for the user pool as part of Amazon Cognito advanced security.</p>

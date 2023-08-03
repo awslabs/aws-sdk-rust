@@ -3,6 +3,23 @@ pub use crate::operation::update_data_retention::_update_data_retention_output::
 
 pub use crate::operation::update_data_retention::_update_data_retention_input::UpdateDataRetentionInputBuilder;
 
+impl UpdateDataRetentionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_data_retention::UpdateDataRetentionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_data_retention::UpdateDataRetentionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_data_retention();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateDataRetention`.
 ///
 /// <p> Increases or decreases the stream's data retention period by the value that you specify. To indicate whether you want to increase or decrease the data retention period, specify the <code>Operation</code> parameter in the request body. In the request, you must specify either the <code>StreamName</code> or the <code>StreamARN</code>. </p> <note>

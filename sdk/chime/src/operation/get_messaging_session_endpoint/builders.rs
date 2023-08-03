@@ -3,6 +3,23 @@ pub use crate::operation::get_messaging_session_endpoint::_get_messaging_session
 
 pub use crate::operation::get_messaging_session_endpoint::_get_messaging_session_endpoint_input::GetMessagingSessionEndpointInputBuilder;
 
+impl GetMessagingSessionEndpointInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_messaging_session_endpoint::GetMessagingSessionEndpointOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_messaging_session_endpoint::GetMessagingSessionEndpointError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_messaging_session_endpoint();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetMessagingSessionEndpoint`.
 ///
 /// <p>The details of the endpoint for the messaging session.</p> <important>

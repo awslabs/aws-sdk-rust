@@ -3,6 +3,23 @@ pub use crate::operation::update_resource_set::_update_resource_set_output::Upda
 
 pub use crate::operation::update_resource_set::_update_resource_set_input::UpdateResourceSetInputBuilder;
 
+impl UpdateResourceSetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_resource_set::UpdateResourceSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_resource_set::UpdateResourceSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_resource_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateResourceSet`.
 ///
 /// <p>Updates a resource set.</p>

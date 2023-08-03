@@ -3,6 +3,23 @@ pub use crate::operation::recognize_text::_recognize_text_output::RecognizeTextO
 
 pub use crate::operation::recognize_text::_recognize_text_input::RecognizeTextInputBuilder;
 
+impl RecognizeTextInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::recognize_text::RecognizeTextOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::recognize_text::RecognizeTextError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.recognize_text();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RecognizeText`.
 ///
 /// <p>Sends user input to Amazon Lex V2. Client applications use this API to send requests to Amazon Lex V2 at runtime. Amazon Lex V2 then interprets the user input using the machine learning model that it build for the bot.</p>

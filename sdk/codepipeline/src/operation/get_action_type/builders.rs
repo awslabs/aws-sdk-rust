@@ -3,6 +3,23 @@ pub use crate::operation::get_action_type::_get_action_type_output::GetActionTyp
 
 pub use crate::operation::get_action_type::_get_action_type_input::GetActionTypeInputBuilder;
 
+impl GetActionTypeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_action_type::GetActionTypeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_action_type::GetActionTypeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_action_type();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetActionType`.
 ///
 /// <p>Returns information about an action type created for an external provider, where the action is to be used by customers of the external provider. The action can be created with any supported integration model.</p>

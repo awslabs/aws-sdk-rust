@@ -3,6 +3,23 @@ pub use crate::operation::list_project_assets::_list_project_assets_output::List
 
 pub use crate::operation::list_project_assets::_list_project_assets_input::ListProjectAssetsInputBuilder;
 
+impl ListProjectAssetsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_project_assets::ListProjectAssetsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_project_assets::ListProjectAssetsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_project_assets();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListProjectAssets`.
 ///
 /// <p>Retrieves a paginated list of assets associated with an IoT SiteWise Monitor project.</p>

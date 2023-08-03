@@ -3,6 +3,23 @@ pub use crate::operation::delete_data_source::_delete_data_source_output::Delete
 
 pub use crate::operation::delete_data_source::_delete_data_source_input::DeleteDataSourceInputBuilder;
 
+impl DeleteDataSourceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_data_source::DeleteDataSourceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_data_source::DeleteDataSourceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_data_source();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteDataSource`.
 ///
 /// <p>Deletes an Amazon Kendra data source connector. An exception is not thrown if the data source is already being deleted. While the data source is being deleted, the <code>Status</code> field returned by a call to the <code>DescribeDataSource</code> API is set to <code>DELETING</code>. For more information, see <a href="https://docs.aws.amazon.com/kendra/latest/dg/delete-data-source.html">Deleting Data Sources</a>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_backup::_create_backup_output::CreateBackupOutp
 
 pub use crate::operation::create_backup::_create_backup_input::CreateBackupInputBuilder;
 
+impl CreateBackupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_backup::CreateBackupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_backup::CreateBackupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_backup();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateBackup`.
 ///
 /// <p>Creates a backup of an existing Amazon FSx for Windows File Server file system, Amazon FSx for Lustre file system, Amazon FSx for NetApp ONTAP volume, or Amazon FSx for OpenZFS file system. We recommend creating regular backups so that you can restore a file system or volume from a backup if an issue arises with the original file system or volume.</p>

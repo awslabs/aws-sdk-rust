@@ -3,6 +3,23 @@ pub use crate::operation::create_role_alias::_create_role_alias_output::CreateRo
 
 pub use crate::operation::create_role_alias::_create_role_alias_input::CreateRoleAliasInputBuilder;
 
+impl CreateRoleAliasInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_role_alias::CreateRoleAliasOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_role_alias::CreateRoleAliasError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_role_alias();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateRoleAlias`.
 ///
 /// <p>Creates a role alias.</p>

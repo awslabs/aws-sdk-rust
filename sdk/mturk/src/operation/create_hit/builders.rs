@@ -3,6 +3,23 @@ pub use crate::operation::create_hit::_create_hit_output::CreateHitOutputBuilder
 
 pub use crate::operation::create_hit::_create_hit_input::CreateHitInputBuilder;
 
+impl CreateHitInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_hit::CreateHitOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_hit::CreateHITError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_hit();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateHIT`.
 ///
 /// <p>The <code>CreateHIT</code> operation creates a new Human Intelligence Task (HIT). The new HIT is made available for Workers to find and accept on the Amazon Mechanical Turk website. </p>

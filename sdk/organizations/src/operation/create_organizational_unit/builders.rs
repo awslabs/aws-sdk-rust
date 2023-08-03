@@ -3,6 +3,23 @@ pub use crate::operation::create_organizational_unit::_create_organizational_uni
 
 pub use crate::operation::create_organizational_unit::_create_organizational_unit_input::CreateOrganizationalUnitInputBuilder;
 
+impl CreateOrganizationalUnitInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_organizational_unit::CreateOrganizationalUnitOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_organizational_unit::CreateOrganizationalUnitError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_organizational_unit();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateOrganizationalUnit`.
 ///
 /// <p>Creates an organizational unit (OU) within a root or parent OU. An OU is a container for accounts that enables you to organize your accounts to apply policies according to your business requirements. The number of levels deep that you can nest OUs is dependent upon the policy types enabled for that root. For service control policies, the limit is five.</p>

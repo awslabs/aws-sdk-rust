@@ -3,6 +3,23 @@ pub use crate::operation::list_hosted_zones::_list_hosted_zones_output::ListHost
 
 pub use crate::operation::list_hosted_zones::_list_hosted_zones_input::ListHostedZonesInputBuilder;
 
+impl ListHostedZonesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_hosted_zones::ListHostedZonesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_hosted_zones::ListHostedZonesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_hosted_zones();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListHostedZones`.
 ///
 /// <p>Retrieves a list of the public and private hosted zones that are associated with the current Amazon Web Services account. The response includes a <code>HostedZones</code> child element for each hosted zone.</p>

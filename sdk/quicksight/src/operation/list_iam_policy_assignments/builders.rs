@@ -3,6 +3,23 @@ pub use crate::operation::list_iam_policy_assignments::_list_iam_policy_assignme
 
 pub use crate::operation::list_iam_policy_assignments::_list_iam_policy_assignments_input::ListIamPolicyAssignmentsInputBuilder;
 
+impl ListIamPolicyAssignmentsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_iam_policy_assignments::ListIamPolicyAssignmentsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_iam_policy_assignments::ListIAMPolicyAssignmentsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_iam_policy_assignments();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListIAMPolicyAssignments`.
 ///
 /// <p>Lists the IAM policy assignments in the current Amazon QuickSight account.</p>

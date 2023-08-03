@@ -3,6 +3,23 @@ pub use crate::operation::get_change_logs::_get_change_logs_output::GetChangeLog
 
 pub use crate::operation::get_change_logs::_get_change_logs_input::GetChangeLogsInputBuilder;
 
+impl GetChangeLogsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_change_logs::GetChangeLogsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_change_logs::GetChangeLogsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_change_logs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetChangeLogs`.
 ///
 /// <p> Gets a list of changelogs from Audit Manager. </p>

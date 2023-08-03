@@ -3,6 +3,23 @@ pub use crate::operation::get_schedule_group::_get_schedule_group_output::GetSch
 
 pub use crate::operation::get_schedule_group::_get_schedule_group_input::GetScheduleGroupInputBuilder;
 
+impl GetScheduleGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_schedule_group::GetScheduleGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_schedule_group::GetScheduleGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_schedule_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetScheduleGroup`.
 ///
 /// <p>Retrieves the specified schedule group.</p>

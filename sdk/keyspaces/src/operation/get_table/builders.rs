@@ -3,6 +3,23 @@ pub use crate::operation::get_table::_get_table_output::GetTableOutputBuilder;
 
 pub use crate::operation::get_table::_get_table_input::GetTableInputBuilder;
 
+impl GetTableInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_table::GetTableOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_table::GetTableError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_table();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetTable`.
 ///
 /// <p>Returns information about the table, including the table's name and current status, the keyspace name, configuration settings, and metadata.</p>

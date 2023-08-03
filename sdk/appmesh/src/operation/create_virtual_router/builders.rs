@@ -3,6 +3,23 @@ pub use crate::operation::create_virtual_router::_create_virtual_router_output::
 
 pub use crate::operation::create_virtual_router::_create_virtual_router_input::CreateVirtualRouterInputBuilder;
 
+impl CreateVirtualRouterInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_virtual_router::CreateVirtualRouterOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_virtual_router::CreateVirtualRouterError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_virtual_router();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateVirtualRouter`.
 ///
 /// <p>Creates a virtual router within a service mesh.</p>

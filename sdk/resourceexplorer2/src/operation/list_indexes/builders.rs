@@ -3,6 +3,23 @@ pub use crate::operation::list_indexes::_list_indexes_output::ListIndexesOutputB
 
 pub use crate::operation::list_indexes::_list_indexes_input::ListIndexesInputBuilder;
 
+impl ListIndexesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_indexes::ListIndexesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_indexes::ListIndexesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_indexes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListIndexes`.
 ///
 /// <p>Retrieves a list of all of the indexes in Amazon Web Services Regions that are currently collecting resource information for Amazon Web Services Resource Explorer.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::start_monitoring_schedule::_start_monitoring_schedule_
 
 pub use crate::operation::start_monitoring_schedule::_start_monitoring_schedule_input::StartMonitoringScheduleInputBuilder;
 
+impl StartMonitoringScheduleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_monitoring_schedule::StartMonitoringScheduleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_monitoring_schedule::StartMonitoringScheduleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_monitoring_schedule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartMonitoringSchedule`.
 ///
 /// <p>Starts a previously stopped monitoring schedule.</p> <note>

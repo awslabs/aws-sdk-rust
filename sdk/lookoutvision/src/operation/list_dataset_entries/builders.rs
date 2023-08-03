@@ -3,6 +3,23 @@ pub use crate::operation::list_dataset_entries::_list_dataset_entries_output::Li
 
 pub use crate::operation::list_dataset_entries::_list_dataset_entries_input::ListDatasetEntriesInputBuilder;
 
+impl ListDatasetEntriesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_dataset_entries::ListDatasetEntriesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_dataset_entries::ListDatasetEntriesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_dataset_entries();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDatasetEntries`.
 ///
 /// <p>Lists the JSON Lines within a dataset. An Amazon Lookout for Vision JSON Line contains the anomaly information for a single image, including the image location and the assigned label.</p>

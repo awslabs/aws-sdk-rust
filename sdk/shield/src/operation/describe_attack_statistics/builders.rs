@@ -3,6 +3,23 @@ pub use crate::operation::describe_attack_statistics::_describe_attack_statistic
 
 pub use crate::operation::describe_attack_statistics::_describe_attack_statistics_input::DescribeAttackStatisticsInputBuilder;
 
+impl DescribeAttackStatisticsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_attack_statistics::DescribeAttackStatisticsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_attack_statistics::DescribeAttackStatisticsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_attack_statistics();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAttackStatistics`.
 ///
 /// <p>Provides information about the number and type of attacks Shield has detected in the last year for all resources that belong to your account, regardless of whether you've defined Shield protections for them. This operation is available to Shield customers as well as to Shield Advanced customers.</p>

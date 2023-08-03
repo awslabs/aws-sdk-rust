@@ -3,6 +3,23 @@ pub use crate::operation::register_mail_domain::_register_mail_domain_output::Re
 
 pub use crate::operation::register_mail_domain::_register_mail_domain_input::RegisterMailDomainInputBuilder;
 
+impl RegisterMailDomainInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::register_mail_domain::RegisterMailDomainOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::register_mail_domain::RegisterMailDomainError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.register_mail_domain();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RegisterMailDomain`.
 ///
 /// <p>Registers a new domain in WorkMail and SES, and configures it for use by WorkMail. Emails received by SES for this domain are routed to the specified WorkMail organization, and WorkMail has permanent permission to use the specified domain for sending your users' emails.</p>

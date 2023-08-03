@@ -3,6 +3,23 @@ pub use crate::operation::validate_configuration_settings::_validate_configurati
 
 pub use crate::operation::validate_configuration_settings::_validate_configuration_settings_input::ValidateConfigurationSettingsInputBuilder;
 
+impl ValidateConfigurationSettingsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::validate_configuration_settings::ValidateConfigurationSettingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::validate_configuration_settings::ValidateConfigurationSettingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.validate_configuration_settings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ValidateConfigurationSettings`.
 ///
 /// <p>Takes a set of configuration settings and either a configuration template or environment, and determines whether those values are valid.</p>

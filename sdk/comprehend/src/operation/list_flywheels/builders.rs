@@ -3,6 +3,23 @@ pub use crate::operation::list_flywheels::_list_flywheels_output::ListFlywheelsO
 
 pub use crate::operation::list_flywheels::_list_flywheels_input::ListFlywheelsInputBuilder;
 
+impl ListFlywheelsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_flywheels::ListFlywheelsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_flywheels::ListFlywheelsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_flywheels();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListFlywheels`.
 ///
 /// <p>Gets a list of the flywheels that you have created.</p>

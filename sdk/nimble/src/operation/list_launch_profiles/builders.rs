@@ -3,6 +3,23 @@ pub use crate::operation::list_launch_profiles::_list_launch_profiles_output::Li
 
 pub use crate::operation::list_launch_profiles::_list_launch_profiles_input::ListLaunchProfilesInputBuilder;
 
+impl ListLaunchProfilesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_launch_profiles::ListLaunchProfilesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_launch_profiles::ListLaunchProfilesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_launch_profiles();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListLaunchProfiles`.
 ///
 /// <p>List all the launch profiles a studio.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_volumes_modifications::_describe_volumes_modi
 
 pub use crate::operation::describe_volumes_modifications::_describe_volumes_modifications_input::DescribeVolumesModificationsInputBuilder;
 
+impl DescribeVolumesModificationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_volumes_modifications::DescribeVolumesModificationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_volumes_modifications::DescribeVolumesModificationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_volumes_modifications();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeVolumesModifications`.
 ///
 /// <p>Describes the most recent volume modification request for the specified EBS volumes.</p>

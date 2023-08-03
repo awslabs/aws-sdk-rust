@@ -3,6 +3,23 @@ pub use crate::operation::create_grant_version::_create_grant_version_output::Cr
 
 pub use crate::operation::create_grant_version::_create_grant_version_input::CreateGrantVersionInputBuilder;
 
+impl CreateGrantVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_grant_version::CreateGrantVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_grant_version::CreateGrantVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_grant_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateGrantVersion`.
 ///
 /// <p>Creates a new version of the specified grant. For more information, see <a href="https://docs.aws.amazon.com/license-manager/latest/userguide/granted-licenses.html">Granted licenses in License Manager</a> in the <i>License Manager User Guide</i>.</p>

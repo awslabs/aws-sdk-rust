@@ -3,6 +3,23 @@ pub use crate::operation::update_template_sync_config::_update_template_sync_con
 
 pub use crate::operation::update_template_sync_config::_update_template_sync_config_input::UpdateTemplateSyncConfigInputBuilder;
 
+impl UpdateTemplateSyncConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_template_sync_config::UpdateTemplateSyncConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_template_sync_config::UpdateTemplateSyncConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_template_sync_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateTemplateSyncConfig`.
 ///
 /// <p>Update template sync configuration parameters, except for the <code>templateName</code> and <code>templateType</code>. Repository details (branch, name, and provider) should be of a linked repository. A linked repository is a repository that has been registered with Proton. For more information, see <code>CreateRepository</code>.</p>

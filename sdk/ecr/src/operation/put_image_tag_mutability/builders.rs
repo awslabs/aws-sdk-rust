@@ -3,6 +3,23 @@ pub use crate::operation::put_image_tag_mutability::_put_image_tag_mutability_ou
 
 pub use crate::operation::put_image_tag_mutability::_put_image_tag_mutability_input::PutImageTagMutabilityInputBuilder;
 
+impl PutImageTagMutabilityInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_image_tag_mutability::PutImageTagMutabilityOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_image_tag_mutability::PutImageTagMutabilityError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_image_tag_mutability();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutImageTagMutability`.
 ///
 /// <p>Updates the image tag mutability settings for the specified repository. For more information, see <a href="https://docs.aws.amazon.com/AmazonECR/latest/userguide/image-tag-mutability.html">Image tag mutability</a> in the <i>Amazon Elastic Container Registry User Guide</i>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::put_conference_preference::_put_conference_preference_
 
 pub use crate::operation::put_conference_preference::_put_conference_preference_input::PutConferencePreferenceInputBuilder;
 
+impl PutConferencePreferenceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_conference_preference::PutConferencePreferenceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_conference_preference::PutConferencePreferenceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_conference_preference();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutConferencePreference`.
 ///
 /// <p>Sets the conference preferences on a specific conference provider at the account level.</p>

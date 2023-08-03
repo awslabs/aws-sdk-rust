@@ -3,6 +3,23 @@ pub use crate::operation::list_resolver_configs::_list_resolver_configs_output::
 
 pub use crate::operation::list_resolver_configs::_list_resolver_configs_input::ListResolverConfigsInputBuilder;
 
+impl ListResolverConfigsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_resolver_configs::ListResolverConfigsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_resolver_configs::ListResolverConfigsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_resolver_configs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListResolverConfigs`.
 ///
 /// <p>Retrieves the Resolver configurations that you have defined. Route&nbsp;53 Resolver uses the configurations to manage DNS resolution behavior for your VPCs.</p>

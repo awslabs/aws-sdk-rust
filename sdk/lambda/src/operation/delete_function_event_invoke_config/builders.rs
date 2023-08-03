@@ -3,6 +3,17 @@ pub use crate::operation::delete_function_event_invoke_config::_delete_function_
 
 pub use crate::operation::delete_function_event_invoke_config::_delete_function_event_invoke_config_input::DeleteFunctionEventInvokeConfigInputBuilder;
 
+impl DeleteFunctionEventInvokeConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_function_event_invoke_config::DeleteFunctionEventInvokeConfigOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_function_event_invoke_config::DeleteFunctionEventInvokeConfigError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.delete_function_event_invoke_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteFunctionEventInvokeConfig`.
 ///
 /// <p>Deletes the configuration for asynchronous invocation for a function, version, or alias.</p>

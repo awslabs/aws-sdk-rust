@@ -3,6 +3,23 @@ pub use crate::operation::search_databases_by_lf_tags::_search_databases_by_lf_t
 
 pub use crate::operation::search_databases_by_lf_tags::_search_databases_by_lf_tags_input::SearchDatabasesByLfTagsInputBuilder;
 
+impl SearchDatabasesByLfTagsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::search_databases_by_lf_tags::SearchDatabasesByLfTagsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::search_databases_by_lf_tags::SearchDatabasesByLFTagsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.search_databases_by_lf_tags();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SearchDatabasesByLFTags`.
 ///
 /// <p>This operation allows a search on <code>DATABASE</code> resources by <code>TagCondition</code>. This operation is used by admins who want to grant user permissions on certain <code>TagConditions</code>. Before making a grant, the admin can use <code>SearchDatabasesByTags</code> to find all resources where the given <code>TagConditions</code> are valid to verify whether the returned resources can be shared.</p>

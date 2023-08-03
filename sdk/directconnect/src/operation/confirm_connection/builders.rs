@@ -3,6 +3,23 @@ pub use crate::operation::confirm_connection::_confirm_connection_output::Confir
 
 pub use crate::operation::confirm_connection::_confirm_connection_input::ConfirmConnectionInputBuilder;
 
+impl ConfirmConnectionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::confirm_connection::ConfirmConnectionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::confirm_connection::ConfirmConnectionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.confirm_connection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ConfirmConnection`.
 ///
 /// <p>Confirms the creation of the specified hosted connection on an interconnect.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_subscribed_workteam::_describe_subscribed_wor
 
 pub use crate::operation::describe_subscribed_workteam::_describe_subscribed_workteam_input::DescribeSubscribedWorkteamInputBuilder;
 
+impl DescribeSubscribedWorkteamInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_subscribed_workteam::DescribeSubscribedWorkteamOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_subscribed_workteam::DescribeSubscribedWorkteamError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_subscribed_workteam();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeSubscribedWorkteam`.
 ///
 /// <p>Gets information about a work team provided by a vendor. It returns details about the subscription with a vendor in the Amazon Web Services Marketplace.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::put_schema_version_metadata::_put_schema_version_metad
 
 pub use crate::operation::put_schema_version_metadata::_put_schema_version_metadata_input::PutSchemaVersionMetadataInputBuilder;
 
+impl PutSchemaVersionMetadataInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_schema_version_metadata::PutSchemaVersionMetadataOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_schema_version_metadata::PutSchemaVersionMetadataError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_schema_version_metadata();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutSchemaVersionMetadata`.
 ///
 /// <p>Puts the metadata key value pair for a specified schema version ID. A maximum of 10 key value pairs will be allowed per schema version. They can be added over one or more calls.</p>

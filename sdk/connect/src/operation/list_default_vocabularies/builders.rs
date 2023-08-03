@@ -3,6 +3,23 @@ pub use crate::operation::list_default_vocabularies::_list_default_vocabularies_
 
 pub use crate::operation::list_default_vocabularies::_list_default_vocabularies_input::ListDefaultVocabulariesInputBuilder;
 
+impl ListDefaultVocabulariesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_default_vocabularies::ListDefaultVocabulariesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_default_vocabularies::ListDefaultVocabulariesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_default_vocabularies();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDefaultVocabularies`.
 ///
 /// <p>Lists the default vocabularies for the specified Amazon Connect instance.</p>

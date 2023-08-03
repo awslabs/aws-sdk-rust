@@ -3,6 +3,23 @@ pub use crate::operation::get_identity_dkim_attributes::_get_identity_dkim_attri
 
 pub use crate::operation::get_identity_dkim_attributes::_get_identity_dkim_attributes_input::GetIdentityDkimAttributesInputBuilder;
 
+impl GetIdentityDkimAttributesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_identity_dkim_attributes::GetIdentityDkimAttributesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_identity_dkim_attributes::GetIdentityDkimAttributesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_identity_dkim_attributes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetIdentityDkimAttributes`.
 ///
 /// <p>Returns the current status of Easy DKIM signing for an entity. For domain name identities, this operation also returns the DKIM tokens that are required for Easy DKIM signing, and whether Amazon SES has successfully verified that these tokens have been published.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_membership::_delete_membership_output::DeleteMe
 
 pub use crate::operation::delete_membership::_delete_membership_input::DeleteMembershipInputBuilder;
 
+impl DeleteMembershipInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_membership::DeleteMembershipOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_membership::DeleteMembershipError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_membership();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteMembership`.
 ///
 /// <p>Deletes a specified membership. All resources under a membership must be deleted.</p>

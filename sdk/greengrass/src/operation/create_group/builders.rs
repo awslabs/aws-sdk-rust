@@ -3,6 +3,23 @@ pub use crate::operation::create_group::_create_group_output::CreateGroupOutputB
 
 pub use crate::operation::create_group::_create_group_input::CreateGroupInputBuilder;
 
+impl CreateGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_group::CreateGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_group::CreateGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateGroup`.
 ///
 /// Creates a group. You may provide the initial version of the group or use ''CreateGroupVersion'' at a later time. Tip: You can use the ''gg_group_setup'' package (https://github.com/awslabs/aws-greengrass-group-setup) as a library or command-line application to create and deploy Greengrass groups.

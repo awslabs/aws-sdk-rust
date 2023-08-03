@@ -3,6 +3,23 @@ pub use crate::operation::import_terminology::_import_terminology_output::Import
 
 pub use crate::operation::import_terminology::_import_terminology_input::ImportTerminologyInputBuilder;
 
+impl ImportTerminologyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::import_terminology::ImportTerminologyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::import_terminology::ImportTerminologyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.import_terminology();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ImportTerminology`.
 ///
 /// <p>Creates or updates a custom terminology, depending on whether one already exists for the given terminology name. Importing a terminology with the same name as an existing one will merge the terminologies based on the chosen merge strategy. The only supported merge strategy is OVERWRITE, where the imported terminology overwrites the existing terminology of the same name.</p>

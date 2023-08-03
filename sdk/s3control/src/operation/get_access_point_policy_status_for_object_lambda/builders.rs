@@ -3,6 +3,17 @@ pub use crate::operation::get_access_point_policy_status_for_object_lambda::_get
 
 pub use crate::operation::get_access_point_policy_status_for_object_lambda::_get_access_point_policy_status_for_object_lambda_input::GetAccessPointPolicyStatusForObjectLambdaInputBuilder;
 
+impl GetAccessPointPolicyStatusForObjectLambdaInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_access_point_policy_status_for_object_lambda::GetAccessPointPolicyStatusForObjectLambdaOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_access_point_policy_status_for_object_lambda::GetAccessPointPolicyStatusForObjectLambdaError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_access_point_policy_status_for_object_lambda();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetAccessPointPolicyStatusForObjectLambda`.
 ///
 /// <p>Returns the status of the resource policy associated with an Object Lambda Access Point.</p>

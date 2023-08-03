@@ -3,6 +3,23 @@ pub use crate::operation::list_tags_for_certificate::_list_tags_for_certificate_
 
 pub use crate::operation::list_tags_for_certificate::_list_tags_for_certificate_input::ListTagsForCertificateInputBuilder;
 
+impl ListTagsForCertificateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_tags_for_certificate::ListTagsForCertificateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_tags_for_certificate::ListTagsForCertificateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_tags_for_certificate();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListTagsForCertificate`.
 ///
 /// <p>Lists the tags that have been applied to the ACM certificate. Use the certificate's Amazon Resource Name (ARN) to specify the certificate. To add a tag to an ACM certificate, use the <code>AddTagsToCertificate</code> action. To delete a tag, use the <code>RemoveTagsFromCertificate</code> action. </p>

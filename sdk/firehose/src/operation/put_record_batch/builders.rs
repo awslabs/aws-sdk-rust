@@ -3,6 +3,23 @@ pub use crate::operation::put_record_batch::_put_record_batch_output::PutRecordB
 
 pub use crate::operation::put_record_batch::_put_record_batch_input::PutRecordBatchInputBuilder;
 
+impl PutRecordBatchInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_record_batch::PutRecordBatchOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_record_batch::PutRecordBatchError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_record_batch();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutRecordBatch`.
 ///
 /// <p>Writes multiple data records into a delivery stream in a single call, which can achieve higher throughput per producer than when writing single records. To write single data records into a delivery stream, use <code>PutRecord</code>. Applications using these operations are referred to as producers.</p>

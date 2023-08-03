@@ -3,6 +3,23 @@ pub use crate::operation::describe_runtime_versions::_describe_runtime_versions_
 
 pub use crate::operation::describe_runtime_versions::_describe_runtime_versions_input::DescribeRuntimeVersionsInputBuilder;
 
+impl DescribeRuntimeVersionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_runtime_versions::DescribeRuntimeVersionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_runtime_versions::DescribeRuntimeVersionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_runtime_versions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeRuntimeVersions`.
 ///
 /// <p>Returns a list of Synthetics canary runtime versions. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch_Synthetics_Canaries_Library.html"> Canary Runtime Versions</a>.</p>

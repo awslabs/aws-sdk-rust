@@ -3,6 +3,23 @@ pub use crate::operation::get_subscription_definition::_get_subscription_definit
 
 pub use crate::operation::get_subscription_definition::_get_subscription_definition_input::GetSubscriptionDefinitionInputBuilder;
 
+impl GetSubscriptionDefinitionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_subscription_definition::GetSubscriptionDefinitionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_subscription_definition::GetSubscriptionDefinitionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_subscription_definition();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetSubscriptionDefinition`.
 ///
 /// Retrieves information about a subscription definition.

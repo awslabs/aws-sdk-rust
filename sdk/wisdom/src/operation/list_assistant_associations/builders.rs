@@ -3,6 +3,23 @@ pub use crate::operation::list_assistant_associations::_list_assistant_associati
 
 pub use crate::operation::list_assistant_associations::_list_assistant_associations_input::ListAssistantAssociationsInputBuilder;
 
+impl ListAssistantAssociationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_assistant_associations::ListAssistantAssociationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_assistant_associations::ListAssistantAssociationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_assistant_associations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAssistantAssociations`.
 ///
 /// <p>Lists information about assistant associations.</p>

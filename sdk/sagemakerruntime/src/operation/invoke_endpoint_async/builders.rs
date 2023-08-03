@@ -3,6 +3,23 @@ pub use crate::operation::invoke_endpoint_async::_invoke_endpoint_async_output::
 
 pub use crate::operation::invoke_endpoint_async::_invoke_endpoint_async_input::InvokeEndpointAsyncInputBuilder;
 
+impl InvokeEndpointAsyncInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::invoke_endpoint_async::InvokeEndpointAsyncOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::invoke_endpoint_async::InvokeEndpointAsyncError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.invoke_endpoint_async();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `InvokeEndpointAsync`.
 ///
 /// <p>After you deploy a model into production using Amazon SageMaker hosting services, your client applications use this API to get inferences from the model hosted at the specified endpoint in an asynchronous manner.</p>

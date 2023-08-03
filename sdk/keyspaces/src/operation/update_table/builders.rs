@@ -3,6 +3,23 @@ pub use crate::operation::update_table::_update_table_output::UpdateTableOutputB
 
 pub use crate::operation::update_table::_update_table_input::UpdateTableInputBuilder;
 
+impl UpdateTableInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_table::UpdateTableOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_table::UpdateTableError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_table();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateTable`.
 ///
 /// <p>Adds new columns to the table or updates one of the table's settings, for example capacity mode, encryption, point-in-time recovery, or ttl settings. Note that you can only update one specific table setting per update operation.</p>

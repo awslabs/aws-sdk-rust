@@ -3,6 +3,23 @@ pub use crate::operation::create_cloud_formation_stack::_create_cloud_formation_
 
 pub use crate::operation::create_cloud_formation_stack::_create_cloud_formation_stack_input::CreateCloudFormationStackInputBuilder;
 
+impl CreateCloudFormationStackInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_cloud_formation_stack::CreateCloudFormationStackOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_cloud_formation_stack::CreateCloudFormationStackError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_cloud_formation_stack();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateCloudFormationStack`.
 ///
 /// <p>Creates an AWS CloudFormation stack, which creates a new Amazon EC2 instance from an exported Amazon Lightsail snapshot. This operation results in a CloudFormation stack record that can be used to track the AWS CloudFormation stack created. Use the <code>get cloud formation stack records</code> operation to get a list of the CloudFormation stacks created.</p> <important>

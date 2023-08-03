@@ -3,6 +3,23 @@ pub use crate::operation::generate_mac::_generate_mac_output::GenerateMacOutputB
 
 pub use crate::operation::generate_mac::_generate_mac_input::GenerateMacInputBuilder;
 
+impl GenerateMacInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::generate_mac::GenerateMacOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::generate_mac::GenerateMacError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.generate_mac();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GenerateMac`.
 ///
 /// <p>Generates a Message Authentication Code (MAC) cryptogram within Amazon Web Services Payment Cryptography. </p>

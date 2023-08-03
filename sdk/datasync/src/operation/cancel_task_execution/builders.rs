@@ -3,6 +3,23 @@ pub use crate::operation::cancel_task_execution::_cancel_task_execution_output::
 
 pub use crate::operation::cancel_task_execution::_cancel_task_execution_input::CancelTaskExecutionInputBuilder;
 
+impl CancelTaskExecutionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::cancel_task_execution::CancelTaskExecutionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::cancel_task_execution::CancelTaskExecutionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.cancel_task_execution();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CancelTaskExecution`.
 ///
 /// <p>Stops an DataSync task execution that's in progress. The transfer of some files are abruptly interrupted. File contents that're transferred to the destination might be incomplete or inconsistent with the source files.</p>

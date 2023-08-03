@@ -3,6 +3,23 @@ pub use crate::operation::batch_delete_import_data::_batch_delete_import_data_ou
 
 pub use crate::operation::batch_delete_import_data::_batch_delete_import_data_input::BatchDeleteImportDataInputBuilder;
 
+impl BatchDeleteImportDataInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_delete_import_data::BatchDeleteImportDataOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_delete_import_data::BatchDeleteImportDataError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_delete_import_data();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchDeleteImportData`.
 ///
 /// <p>Deletes one or more import tasks, each identified by their import ID. Each import task has a number of records that can identify servers or applications. </p>

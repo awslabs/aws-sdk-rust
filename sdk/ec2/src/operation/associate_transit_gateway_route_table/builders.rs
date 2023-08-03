@@ -3,6 +3,17 @@ pub use crate::operation::associate_transit_gateway_route_table::_associate_tran
 
 pub use crate::operation::associate_transit_gateway_route_table::_associate_transit_gateway_route_table_input::AssociateTransitGatewayRouteTableInputBuilder;
 
+impl AssociateTransitGatewayRouteTableInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::associate_transit_gateway_route_table::AssociateTransitGatewayRouteTableOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_transit_gateway_route_table::AssociateTransitGatewayRouteTableError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.associate_transit_gateway_route_table();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateTransitGatewayRouteTable`.
 ///
 /// <p>Associates the specified attachment with the specified transit gateway route table. You can associate only one route table with an attachment.</p>

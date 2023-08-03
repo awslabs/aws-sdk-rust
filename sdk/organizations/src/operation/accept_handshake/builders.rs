@@ -3,6 +3,23 @@ pub use crate::operation::accept_handshake::_accept_handshake_output::AcceptHand
 
 pub use crate::operation::accept_handshake::_accept_handshake_input::AcceptHandshakeInputBuilder;
 
+impl AcceptHandshakeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::accept_handshake::AcceptHandshakeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::accept_handshake::AcceptHandshakeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.accept_handshake();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AcceptHandshake`.
 ///
 /// <p>Sends a response to the originator of a handshake agreeing to the action proposed by the handshake request.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::modify_ipam_resource_discovery::_modify_ipam_resource_
 
 pub use crate::operation::modify_ipam_resource_discovery::_modify_ipam_resource_discovery_input::ModifyIpamResourceDiscoveryInputBuilder;
 
+impl ModifyIpamResourceDiscoveryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_ipam_resource_discovery::ModifyIpamResourceDiscoveryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_ipam_resource_discovery::ModifyIpamResourceDiscoveryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_ipam_resource_discovery();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyIpamResourceDiscovery`.
 ///
 /// <p>Modifies a resource discovery. A resource discovery is an IPAM component that enables IPAM to manage and monitor resources that belong to the owning account.</p>

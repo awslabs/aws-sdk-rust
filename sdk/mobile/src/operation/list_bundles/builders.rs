@@ -3,6 +3,23 @@ pub use crate::operation::list_bundles::_list_bundles_output::ListBundlesOutputB
 
 pub use crate::operation::list_bundles::_list_bundles_input::ListBundlesInputBuilder;
 
+impl ListBundlesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_bundles::ListBundlesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_bundles::ListBundlesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_bundles();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListBundles`.
 ///
 /// <p> List all available bundles. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_log_record::_get_log_record_output::GetLogRecordOu
 
 pub use crate::operation::get_log_record::_get_log_record_input::GetLogRecordInputBuilder;
 
+impl GetLogRecordInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_log_record::GetLogRecordOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_log_record::GetLogRecordError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_log_record();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetLogRecord`.
 ///
 /// <p>Retrieves all of the fields and values of a single log event. All fields are retrieved, even if the original query that produced the <code>logRecordPointer</code> retrieved only a subset of fields. Fields are returned as field name/field value pairs.</p>

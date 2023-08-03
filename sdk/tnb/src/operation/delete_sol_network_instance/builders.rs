@@ -3,6 +3,23 @@ pub use crate::operation::delete_sol_network_instance::_delete_sol_network_insta
 
 pub use crate::operation::delete_sol_network_instance::_delete_sol_network_instance_input::DeleteSolNetworkInstanceInputBuilder;
 
+impl DeleteSolNetworkInstanceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_sol_network_instance::DeleteSolNetworkInstanceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_sol_network_instance::DeleteSolNetworkInstanceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_sol_network_instance();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteSolNetworkInstance`.
 ///
 /// <p>Deletes a network instance.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::put_rum_events::_put_rum_events_output::PutRumEventsOu
 
 pub use crate::operation::put_rum_events::_put_rum_events_input::PutRumEventsInputBuilder;
 
+impl PutRumEventsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_rum_events::PutRumEventsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_rum_events::PutRumEventsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_rum_events();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutRumEvents`.
 ///
 /// <p>Sends telemetry events about your application performance and user behavior to CloudWatch RUM. The code snippet that RUM generates for you to add to your application includes <code>PutRumEvents</code> operations to send this data to RUM.</p>

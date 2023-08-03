@@ -3,6 +3,23 @@ pub use crate::operation::get_remote_access_session::_get_remote_access_session_
 
 pub use crate::operation::get_remote_access_session::_get_remote_access_session_input::GetRemoteAccessSessionInputBuilder;
 
+impl GetRemoteAccessSessionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_remote_access_session::GetRemoteAccessSessionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_remote_access_session::GetRemoteAccessSessionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_remote_access_session();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetRemoteAccessSession`.
 ///
 /// <p>Returns a link to a currently running remote access session.</p>

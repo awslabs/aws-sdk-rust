@@ -3,6 +3,23 @@ pub use crate::operation::clear_default_authorizer::_clear_default_authorizer_ou
 
 pub use crate::operation::clear_default_authorizer::_clear_default_authorizer_input::ClearDefaultAuthorizerInputBuilder;
 
+impl ClearDefaultAuthorizerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::clear_default_authorizer::ClearDefaultAuthorizerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::clear_default_authorizer::ClearDefaultAuthorizerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.clear_default_authorizer();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ClearDefaultAuthorizer`.
 ///
 /// <p>Clears the default authorizer.</p>

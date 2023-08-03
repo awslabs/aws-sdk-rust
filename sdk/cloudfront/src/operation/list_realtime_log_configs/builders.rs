@@ -3,6 +3,23 @@ pub use crate::operation::list_realtime_log_configs::_list_realtime_log_configs_
 
 pub use crate::operation::list_realtime_log_configs::_list_realtime_log_configs_input::ListRealtimeLogConfigsInputBuilder;
 
+impl ListRealtimeLogConfigsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_realtime_log_configs::ListRealtimeLogConfigsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_realtime_log_configs::ListRealtimeLogConfigsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_realtime_log_configs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListRealtimeLogConfigs`.
 ///
 /// <p>Gets a list of real-time log configurations.</p>

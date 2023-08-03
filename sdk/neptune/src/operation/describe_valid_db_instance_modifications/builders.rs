@@ -3,6 +3,17 @@ pub use crate::operation::describe_valid_db_instance_modifications::_describe_va
 
 pub use crate::operation::describe_valid_db_instance_modifications::_describe_valid_db_instance_modifications_input::DescribeValidDbInstanceModificationsInputBuilder;
 
+impl DescribeValidDbInstanceModificationsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_valid_db_instance_modifications::DescribeValidDbInstanceModificationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_valid_db_instance_modifications::DescribeValidDBInstanceModificationsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_valid_db_instance_modifications();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeValidDBInstanceModifications`.
 ///
 /// <p>You can call <code>DescribeValidDBInstanceModifications</code> to learn what modifications you can make to your DB instance. You can use this information when you call <code>ModifyDBInstance</code>.</p>

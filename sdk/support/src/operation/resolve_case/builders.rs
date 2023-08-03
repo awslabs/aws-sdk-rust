@@ -3,6 +3,23 @@ pub use crate::operation::resolve_case::_resolve_case_output::ResolveCaseOutputB
 
 pub use crate::operation::resolve_case::_resolve_case_input::ResolveCaseInputBuilder;
 
+impl ResolveCaseInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::resolve_case::ResolveCaseOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::resolve_case::ResolveCaseError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.resolve_case();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ResolveCase`.
 ///
 /// <p>Resolves a support case. This operation takes a <code>caseId</code> and returns the initial and final state of the case.</p> <note>

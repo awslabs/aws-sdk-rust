@@ -3,6 +3,23 @@ pub use crate::operation::put_managed_insight_rules::_put_managed_insight_rules_
 
 pub use crate::operation::put_managed_insight_rules::_put_managed_insight_rules_input::PutManagedInsightRulesInputBuilder;
 
+impl PutManagedInsightRulesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_managed_insight_rules::PutManagedInsightRulesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_managed_insight_rules::PutManagedInsightRulesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_managed_insight_rules();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutManagedInsightRules`.
 ///
 /// <p> Creates a managed Contributor Insights rule for a specified Amazon Web Services resource. When you enable a managed rule, you create a Contributor Insights rule that collects data from Amazon Web Services services. You cannot edit these rules with <code>PutInsightRule</code>. The rules can be enabled, disabled, and deleted using <code>EnableInsightRules</code>, <code>DisableInsightRules</code>, and <code>DeleteInsightRules</code>. If a previously created managed rule is currently disabled, a subsequent call to this API will re-enable it. Use <code>ListManagedInsightRules</code> to describe all available rules. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_assessment_templates::_describe_assessment_te
 
 pub use crate::operation::describe_assessment_templates::_describe_assessment_templates_input::DescribeAssessmentTemplatesInputBuilder;
 
+impl DescribeAssessmentTemplatesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_assessment_templates::DescribeAssessmentTemplatesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_assessment_templates::DescribeAssessmentTemplatesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_assessment_templates();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAssessmentTemplates`.
 ///
 /// <p>Describes the assessment templates that are specified by the ARNs of the assessment templates.</p>

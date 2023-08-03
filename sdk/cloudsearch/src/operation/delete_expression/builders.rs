@@ -3,6 +3,23 @@ pub use crate::operation::delete_expression::_delete_expression_output::DeleteEx
 
 pub use crate::operation::delete_expression::_delete_expression_input::DeleteExpressionInputBuilder;
 
+impl DeleteExpressionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_expression::DeleteExpressionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_expression::DeleteExpressionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_expression();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteExpression`.
 ///
 /// <p>Removes an <code><code>Expression</code></code> from the search domain. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html" target="_blank">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>

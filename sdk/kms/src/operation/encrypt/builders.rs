@@ -3,6 +3,23 @@ pub use crate::operation::encrypt::_encrypt_output::EncryptOutputBuilder;
 
 pub use crate::operation::encrypt::_encrypt_input::EncryptInputBuilder;
 
+impl EncryptInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::encrypt::EncryptOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::encrypt::EncryptError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.encrypt();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `Encrypt`.
 ///
 /// <p>Encrypts plaintext of up to 4,096 bytes using a KMS key. You can use a symmetric or asymmetric KMS key with a <code>KeyUsage</code> of <code>ENCRYPT_DECRYPT</code>.</p>

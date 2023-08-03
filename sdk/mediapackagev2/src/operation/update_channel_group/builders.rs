@@ -3,6 +3,23 @@ pub use crate::operation::update_channel_group::_update_channel_group_output::Up
 
 pub use crate::operation::update_channel_group::_update_channel_group_input::UpdateChannelGroupInputBuilder;
 
+impl UpdateChannelGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_channel_group::UpdateChannelGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_channel_group::UpdateChannelGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_channel_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateChannelGroup`.
 ///
 /// <p>Update the specified channel group. You can edit the description on a channel group for easier identification later from the AWS Elemental MediaPackage console. You can't edit the name of the channel group.</p>

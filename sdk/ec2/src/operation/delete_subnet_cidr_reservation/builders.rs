@@ -3,6 +3,23 @@ pub use crate::operation::delete_subnet_cidr_reservation::_delete_subnet_cidr_re
 
 pub use crate::operation::delete_subnet_cidr_reservation::_delete_subnet_cidr_reservation_input::DeleteSubnetCidrReservationInputBuilder;
 
+impl DeleteSubnetCidrReservationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_subnet_cidr_reservation::DeleteSubnetCidrReservationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_subnet_cidr_reservation::DeleteSubnetCidrReservationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_subnet_cidr_reservation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteSubnetCidrReservation`.
 ///
 /// <p>Deletes a subnet CIDR reservation.</p>

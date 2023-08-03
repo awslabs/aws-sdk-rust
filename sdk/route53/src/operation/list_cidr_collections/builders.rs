@@ -3,6 +3,23 @@ pub use crate::operation::list_cidr_collections::_list_cidr_collections_output::
 
 pub use crate::operation::list_cidr_collections::_list_cidr_collections_input::ListCidrCollectionsInputBuilder;
 
+impl ListCidrCollectionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_cidr_collections::ListCidrCollectionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_cidr_collections::ListCidrCollectionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_cidr_collections();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListCidrCollections`.
 ///
 /// <p>Returns a paginated list of CIDR collections in the Amazon Web Services account (metadata only).</p>

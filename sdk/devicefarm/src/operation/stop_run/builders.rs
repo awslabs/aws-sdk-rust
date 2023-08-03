@@ -3,6 +3,23 @@ pub use crate::operation::stop_run::_stop_run_output::StopRunOutputBuilder;
 
 pub use crate::operation::stop_run::_stop_run_input::StopRunInputBuilder;
 
+impl StopRunInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_run::StopRunOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_run::StopRunError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_run();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopRun`.
 ///
 /// <p>Initiates a stop request for the current test run. AWS Device Farm immediately stops the run on devices where tests have not started. You are not billed for these devices. On devices where tests have started executing, setup suite and teardown suite tests run to completion on those devices. You are billed for setup, teardown, and any tests that were in progress or already completed.</p>

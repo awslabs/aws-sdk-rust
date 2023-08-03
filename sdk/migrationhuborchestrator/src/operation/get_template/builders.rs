@@ -3,6 +3,23 @@ pub use crate::operation::get_template::_get_template_output::GetTemplateOutputB
 
 pub use crate::operation::get_template::_get_template_input::GetTemplateInputBuilder;
 
+impl GetTemplateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_template::GetTemplateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_template::GetTemplateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_template();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetTemplate`.
 ///
 /// <p>Get the template you want to use for creating a migration workflow.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_data_view::_create_data_view_output::CreateData
 
 pub use crate::operation::create_data_view::_create_data_view_input::CreateDataViewInputBuilder;
 
+impl CreateDataViewInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_data_view::CreateDataViewOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_data_view::CreateDataViewError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_data_view();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateDataView`.
 ///
 /// <p>Creates a Dataview for a Dataset.</p>

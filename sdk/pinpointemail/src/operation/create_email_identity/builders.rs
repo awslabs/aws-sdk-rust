@@ -3,6 +3,23 @@ pub use crate::operation::create_email_identity::_create_email_identity_output::
 
 pub use crate::operation::create_email_identity::_create_email_identity_input::CreateEmailIdentityInputBuilder;
 
+impl CreateEmailIdentityInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_email_identity::CreateEmailIdentityOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_email_identity::CreateEmailIdentityError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_email_identity();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateEmailIdentity`.
 ///
 /// <p>Verifies an email identity for use with Amazon Pinpoint. In Amazon Pinpoint, an identity is an email address or domain that you use when you send email. Before you can use an identity to send email with Amazon Pinpoint, you first have to verify it. By verifying an address, you demonstrate that you're the owner of the address, and that you've given Amazon Pinpoint permission to send email from the address.</p>

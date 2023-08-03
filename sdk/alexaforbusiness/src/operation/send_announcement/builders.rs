@@ -3,6 +3,23 @@ pub use crate::operation::send_announcement::_send_announcement_output::SendAnno
 
 pub use crate::operation::send_announcement::_send_announcement_input::SendAnnouncementInputBuilder;
 
+impl SendAnnouncementInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::send_announcement::SendAnnouncementOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::send_announcement::SendAnnouncementError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.send_announcement();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SendAnnouncement`.
 ///
 /// <p>Triggers an asynchronous flow to send text, SSML, or audio announcements to rooms that are identified by a search or filter. </p>

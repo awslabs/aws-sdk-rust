@@ -3,6 +3,23 @@ pub use crate::operation::cancel_job::_cancel_job_output::CancelJobOutputBuilder
 
 pub use crate::operation::cancel_job::_cancel_job_input::CancelJobInputBuilder;
 
+impl CancelJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::cancel_job::CancelJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::cancel_job::CancelJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.cancel_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CancelJob`.
 ///
 /// <p>Cancels a job in an Batch job queue. Jobs that are in the <code>SUBMITTED</code> or <code>PENDING</code> are canceled. A job in<code>RUNNABLE</code> remains in <code>RUNNABLE</code> until it reaches the head of the job queue. Then the job status is updated to <code>FAILED</code>.</p> <note>

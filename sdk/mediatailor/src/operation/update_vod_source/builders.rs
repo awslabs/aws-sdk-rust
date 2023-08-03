@@ -3,6 +3,23 @@ pub use crate::operation::update_vod_source::_update_vod_source_output::UpdateVo
 
 pub use crate::operation::update_vod_source::_update_vod_source_input::UpdateVodSourceInputBuilder;
 
+impl UpdateVodSourceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_vod_source::UpdateVodSourceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_vod_source::UpdateVodSourceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_vod_source();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateVodSource`.
 ///
 /// <p>Updates a VOD source's configuration.</p>

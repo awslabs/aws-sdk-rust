@@ -3,6 +3,23 @@ pub use crate::operation::get_saml_provider::_get_saml_provider_output::GetSamlP
 
 pub use crate::operation::get_saml_provider::_get_saml_provider_input::GetSamlProviderInputBuilder;
 
+impl GetSamlProviderInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_saml_provider::GetSamlProviderOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_saml_provider::GetSAMLProviderError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_saml_provider();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetSAMLProvider`.
 ///
 /// <p>Returns the SAML provider metadocument that was uploaded when the IAM SAML provider resource object was created or updated.</p> <note>

@@ -3,6 +3,23 @@ pub use crate::operation::list_on_premises_instances::_list_on_premises_instance
 
 pub use crate::operation::list_on_premises_instances::_list_on_premises_instances_input::ListOnPremisesInstancesInputBuilder;
 
+impl ListOnPremisesInstancesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_on_premises_instances::ListOnPremisesInstancesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_on_premises_instances::ListOnPremisesInstancesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_on_premises_instances();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListOnPremisesInstances`.
 ///
 /// <p>Gets a list of names for one or more on-premises instances.</p>

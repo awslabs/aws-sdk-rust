@@ -3,6 +3,23 @@ pub use crate::operation::get_backup_selection::_get_backup_selection_output::Ge
 
 pub use crate::operation::get_backup_selection::_get_backup_selection_input::GetBackupSelectionInputBuilder;
 
+impl GetBackupSelectionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_backup_selection::GetBackupSelectionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_backup_selection::GetBackupSelectionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_backup_selection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetBackupSelection`.
 ///
 /// <p>Returns selection metadata and a document in JSON format that specifies a list of resources that are associated with a backup plan.</p>

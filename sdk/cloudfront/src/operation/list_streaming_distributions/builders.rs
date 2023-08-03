@@ -3,6 +3,23 @@ pub use crate::operation::list_streaming_distributions::_list_streaming_distribu
 
 pub use crate::operation::list_streaming_distributions::_list_streaming_distributions_input::ListStreamingDistributionsInputBuilder;
 
+impl ListStreamingDistributionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_streaming_distributions::ListStreamingDistributionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_streaming_distributions::ListStreamingDistributionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_streaming_distributions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListStreamingDistributions`.
 ///
 /// <p>List streaming distributions.</p>

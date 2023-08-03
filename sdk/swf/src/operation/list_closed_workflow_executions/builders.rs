@@ -3,6 +3,23 @@ pub use crate::operation::list_closed_workflow_executions::_list_closed_workflow
 
 pub use crate::operation::list_closed_workflow_executions::_list_closed_workflow_executions_input::ListClosedWorkflowExecutionsInputBuilder;
 
+impl ListClosedWorkflowExecutionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_closed_workflow_executions::ListClosedWorkflowExecutionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_closed_workflow_executions::ListClosedWorkflowExecutionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_closed_workflow_executions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListClosedWorkflowExecutions`.
 ///
 /// <p>Returns a list of closed workflow executions in the specified domain that meet the filtering criteria. The results may be split into multiple pages. To retrieve subsequent pages, make the call again using the nextPageToken returned by the initial call.</p> <note>

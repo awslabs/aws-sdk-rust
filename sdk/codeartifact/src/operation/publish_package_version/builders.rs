@@ -3,6 +3,23 @@ pub use crate::operation::publish_package_version::_publish_package_version_outp
 
 pub use crate::operation::publish_package_version::_publish_package_version_input::PublishPackageVersionInputBuilder;
 
+impl PublishPackageVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::publish_package_version::PublishPackageVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::publish_package_version::PublishPackageVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.publish_package_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PublishPackageVersion`.
 ///
 /// <p>Creates a new package version containing one or more assets (or files).</p>

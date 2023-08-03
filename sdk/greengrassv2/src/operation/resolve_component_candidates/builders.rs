@@ -3,6 +3,23 @@ pub use crate::operation::resolve_component_candidates::_resolve_component_candi
 
 pub use crate::operation::resolve_component_candidates::_resolve_component_candidates_input::ResolveComponentCandidatesInputBuilder;
 
+impl ResolveComponentCandidatesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::resolve_component_candidates::ResolveComponentCandidatesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::resolve_component_candidates::ResolveComponentCandidatesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.resolve_component_candidates();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ResolveComponentCandidates`.
 ///
 /// <p>Retrieves a list of components that meet the component, version, and platform requirements of a deployment. Greengrass core devices call this operation when they receive a deployment to identify the components to install.</p>

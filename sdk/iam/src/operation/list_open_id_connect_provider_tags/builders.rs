@@ -3,6 +3,17 @@ pub use crate::operation::list_open_id_connect_provider_tags::_list_open_id_conn
 
 pub use crate::operation::list_open_id_connect_provider_tags::_list_open_id_connect_provider_tags_input::ListOpenIdConnectProviderTagsInputBuilder;
 
+impl ListOpenIdConnectProviderTagsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_open_id_connect_provider_tags::ListOpenIdConnectProviderTagsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_open_id_connect_provider_tags::ListOpenIDConnectProviderTagsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_open_id_connect_provider_tags();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListOpenIDConnectProviderTags`.
 ///
 /// <p>Lists the tags that are attached to the specified OpenID Connect (OIDC)-compatible identity provider. The returned list of tags is sorted by tag key. For more information, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_providers_oidc.html">About web identity federation</a>.</p>

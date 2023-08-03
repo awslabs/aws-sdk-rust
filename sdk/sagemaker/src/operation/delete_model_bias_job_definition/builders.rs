@@ -3,6 +3,23 @@ pub use crate::operation::delete_model_bias_job_definition::_delete_model_bias_j
 
 pub use crate::operation::delete_model_bias_job_definition::_delete_model_bias_job_definition_input::DeleteModelBiasJobDefinitionInputBuilder;
 
+impl DeleteModelBiasJobDefinitionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_model_bias_job_definition::DeleteModelBiasJobDefinitionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_model_bias_job_definition::DeleteModelBiasJobDefinitionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_model_bias_job_definition();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteModelBiasJobDefinition`.
 ///
 /// <p>Deletes an Amazon SageMaker model bias job definition.</p>

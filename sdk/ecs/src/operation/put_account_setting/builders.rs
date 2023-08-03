@@ -3,6 +3,23 @@ pub use crate::operation::put_account_setting::_put_account_setting_output::PutA
 
 pub use crate::operation::put_account_setting::_put_account_setting_input::PutAccountSettingInputBuilder;
 
+impl PutAccountSettingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_account_setting::PutAccountSettingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_account_setting::PutAccountSettingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_account_setting();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutAccountSetting`.
 ///
 /// <p>Modifies an account setting. Account settings are set on a per-Region basis.</p>

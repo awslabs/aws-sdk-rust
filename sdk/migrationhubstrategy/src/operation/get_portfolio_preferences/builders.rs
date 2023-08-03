@@ -3,6 +3,23 @@ pub use crate::operation::get_portfolio_preferences::_get_portfolio_preferences_
 
 pub use crate::operation::get_portfolio_preferences::_get_portfolio_preferences_input::GetPortfolioPreferencesInputBuilder;
 
+impl GetPortfolioPreferencesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_portfolio_preferences::GetPortfolioPreferencesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_portfolio_preferences::GetPortfolioPreferencesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_portfolio_preferences();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetPortfolioPreferences`.
 ///
 /// <p> Retrieves your migration and modernization preferences. </p>

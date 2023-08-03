@@ -3,6 +3,17 @@ pub use crate::operation::create_vpc_association_authorization::_create_vpc_asso
 
 pub use crate::operation::create_vpc_association_authorization::_create_vpc_association_authorization_input::CreateVpcAssociationAuthorizationInputBuilder;
 
+impl CreateVpcAssociationAuthorizationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::create_vpc_association_authorization::CreateVpcAssociationAuthorizationOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_vpc_association_authorization::CreateVPCAssociationAuthorizationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.create_vpc_association_authorization();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateVPCAssociationAuthorization`.
 ///
 /// <p>Authorizes the Amazon Web Services account that created a specified VPC to submit an <code>AssociateVPCWithHostedZone</code> request to associate the VPC with a specified hosted zone that was created by a different account. To submit a <code>CreateVPCAssociationAuthorization</code> request, you must use the account that created the hosted zone. After you authorize the association, use the account that created the VPC to submit an <code>AssociateVPCWithHostedZone</code> request.</p> <note>

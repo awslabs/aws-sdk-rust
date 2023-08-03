@@ -3,6 +3,23 @@ pub use crate::operation::get_container_images::_get_container_images_output::Ge
 
 pub use crate::operation::get_container_images::_get_container_images_input::GetContainerImagesInputBuilder;
 
+impl GetContainerImagesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_container_images::GetContainerImagesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_container_images::GetContainerImagesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_container_images();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetContainerImages`.
 ///
 /// <p>Returns the container images that are registered to your Amazon Lightsail container service.</p> <note>

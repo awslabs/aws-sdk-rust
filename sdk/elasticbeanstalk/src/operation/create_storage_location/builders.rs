@@ -3,6 +3,23 @@ pub use crate::operation::create_storage_location::_create_storage_location_outp
 
 pub use crate::operation::create_storage_location::_create_storage_location_input::CreateStorageLocationInputBuilder;
 
+impl CreateStorageLocationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_storage_location::CreateStorageLocationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_storage_location::CreateStorageLocationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_storage_location();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateStorageLocation`.
 ///
 /// <p>Creates a bucket in Amazon S3 to store application versions, logs, and other files used by Elastic Beanstalk environments. The Elastic Beanstalk console and EB CLI call this API the first time you create an environment in a region. If the storage location already exists, <code>CreateStorageLocation</code> still returns the bucket name but does not create a new bucket.</p>

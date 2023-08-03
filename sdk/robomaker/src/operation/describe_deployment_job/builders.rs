@@ -3,6 +3,23 @@ pub use crate::operation::describe_deployment_job::_describe_deployment_job_outp
 
 pub use crate::operation::describe_deployment_job::_describe_deployment_job_input::DescribeDeploymentJobInputBuilder;
 
+impl DescribeDeploymentJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_deployment_job::DescribeDeploymentJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_deployment_job::DescribeDeploymentJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_deployment_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeDeploymentJob`.
 ///
 /// <p>Describes a deployment job.</p> <important>

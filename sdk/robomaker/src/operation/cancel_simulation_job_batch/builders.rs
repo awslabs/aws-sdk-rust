@@ -3,6 +3,23 @@ pub use crate::operation::cancel_simulation_job_batch::_cancel_simulation_job_ba
 
 pub use crate::operation::cancel_simulation_job_batch::_cancel_simulation_job_batch_input::CancelSimulationJobBatchInputBuilder;
 
+impl CancelSimulationJobBatchInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::cancel_simulation_job_batch::CancelSimulationJobBatchOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::cancel_simulation_job_batch::CancelSimulationJobBatchError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.cancel_simulation_job_batch();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CancelSimulationJobBatch`.
 ///
 /// <p>Cancels a simulation job batch. When you cancel a simulation job batch, you are also cancelling all of the active simulation jobs created as part of the batch. </p>

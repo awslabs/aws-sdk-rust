@@ -3,6 +3,23 @@ pub use crate::operation::get_discovered_resource_counts::_get_discovered_resour
 
 pub use crate::operation::get_discovered_resource_counts::_get_discovered_resource_counts_input::GetDiscoveredResourceCountsInputBuilder;
 
+impl GetDiscoveredResourceCountsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCountsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_discovered_resource_counts::GetDiscoveredResourceCountsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_discovered_resource_counts();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetDiscoveredResourceCounts`.
 ///
 /// <p>Returns the resource types, the number of each resource type, and the total number of resources that Config is recording in this region for your Amazon Web Services account. </p>

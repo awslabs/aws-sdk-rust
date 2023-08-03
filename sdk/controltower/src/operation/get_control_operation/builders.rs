@@ -3,6 +3,23 @@ pub use crate::operation::get_control_operation::_get_control_operation_output::
 
 pub use crate::operation::get_control_operation::_get_control_operation_input::GetControlOperationInputBuilder;
 
+impl GetControlOperationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_control_operation::GetControlOperationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_control_operation::GetControlOperationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_control_operation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetControlOperation`.
 ///
 /// <p>Returns the status of a particular <code>EnableControl</code> or <code>DisableControl</code> operation. Displays a message in case of error. Details for an operation are available for 90 days.</p>

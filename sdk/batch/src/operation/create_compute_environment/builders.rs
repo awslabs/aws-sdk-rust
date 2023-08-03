@@ -3,6 +3,23 @@ pub use crate::operation::create_compute_environment::_create_compute_environmen
 
 pub use crate::operation::create_compute_environment::_create_compute_environment_input::CreateComputeEnvironmentInputBuilder;
 
+impl CreateComputeEnvironmentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_compute_environment::CreateComputeEnvironmentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_compute_environment::CreateComputeEnvironmentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_compute_environment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateComputeEnvironment`.
 ///
 /// <p>Creates an Batch compute environment. You can create <code>MANAGED</code> or <code>UNMANAGED</code> compute environments. <code>MANAGED</code> compute environments can use Amazon EC2 or Fargate resources. <code>UNMANAGED</code> compute environments can only use EC2 resources.</p>

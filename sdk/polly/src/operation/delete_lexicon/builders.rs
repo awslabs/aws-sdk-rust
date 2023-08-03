@@ -3,6 +3,23 @@ pub use crate::operation::delete_lexicon::_delete_lexicon_output::DeleteLexiconO
 
 pub use crate::operation::delete_lexicon::_delete_lexicon_input::DeleteLexiconInputBuilder;
 
+impl DeleteLexiconInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_lexicon::DeleteLexiconOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_lexicon::DeleteLexiconError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_lexicon();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteLexicon`.
 ///
 /// <p>Deletes the specified pronunciation lexicon stored in an Amazon Web Services Region. A lexicon which has been deleted is not available for speech synthesis, nor is it possible to retrieve it using either the <code>GetLexicon</code> or <code>ListLexicon</code> APIs.</p>

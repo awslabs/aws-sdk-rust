@@ -3,6 +3,23 @@ pub use crate::operation::stop_query_execution::_stop_query_execution_output::St
 
 pub use crate::operation::stop_query_execution::_stop_query_execution_input::StopQueryExecutionInputBuilder;
 
+impl StopQueryExecutionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_query_execution::StopQueryExecutionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_query_execution::StopQueryExecutionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_query_execution();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopQueryExecution`.
 ///
 /// <p>Stops a query execution. Requires you to have access to the workgroup in which the query ran.</p>

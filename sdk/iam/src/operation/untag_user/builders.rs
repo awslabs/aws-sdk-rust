@@ -3,6 +3,23 @@ pub use crate::operation::untag_user::_untag_user_output::UntagUserOutputBuilder
 
 pub use crate::operation::untag_user::_untag_user_input::UntagUserInputBuilder;
 
+impl UntagUserInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::untag_user::UntagUserOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::untag_user::UntagUserError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.untag_user();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UntagUser`.
 ///
 /// <p>Removes the specified tags from the user. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_template_alias::_delete_template_alias_output::
 
 pub use crate::operation::delete_template_alias::_delete_template_alias_input::DeleteTemplateAliasInputBuilder;
 
+impl DeleteTemplateAliasInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_template_alias::DeleteTemplateAliasOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_template_alias::DeleteTemplateAliasError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_template_alias();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteTemplateAlias`.
 ///
 /// <p>Deletes the item that the specified template alias points to. If you provide a specific alias, you delete the version of the template that the alias points to.</p>

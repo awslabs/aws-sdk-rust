@@ -3,6 +3,23 @@ pub use crate::operation::put_channel_policy::_put_channel_policy_output::PutCha
 
 pub use crate::operation::put_channel_policy::_put_channel_policy_input::PutChannelPolicyInputBuilder;
 
+impl PutChannelPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_channel_policy::PutChannelPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_channel_policy::PutChannelPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_channel_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutChannelPolicy`.
 ///
 /// <p>Attaches an IAM policy to the specified channel. With policies, you can specify who has access to AWS resources and what actions they can perform on those resources. You can attach only one policy with each request.</p>

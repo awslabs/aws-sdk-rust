@@ -3,6 +3,23 @@ pub use crate::operation::update_maintenance_window_task::_update_maintenance_wi
 
 pub use crate::operation::update_maintenance_window_task::_update_maintenance_window_task_input::UpdateMaintenanceWindowTaskInputBuilder;
 
+impl UpdateMaintenanceWindowTaskInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_maintenance_window_task::UpdateMaintenanceWindowTaskOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_maintenance_window_task::UpdateMaintenanceWindowTaskError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_maintenance_window_task();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateMaintenanceWindowTask`.
 ///
 /// <p>Modifies a task assigned to a maintenance window. You can't change the task type, but you can change the following values:</p>

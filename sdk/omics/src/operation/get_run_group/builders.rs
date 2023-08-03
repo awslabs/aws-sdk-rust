@@ -3,6 +3,23 @@ pub use crate::operation::get_run_group::_get_run_group_output::GetRunGroupOutpu
 
 pub use crate::operation::get_run_group::_get_run_group_input::GetRunGroupInputBuilder;
 
+impl GetRunGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_run_group::GetRunGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_run_group::GetRunGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_run_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetRunGroup`.
 ///
 /// <p>Gets information about a workflow run group.</p>

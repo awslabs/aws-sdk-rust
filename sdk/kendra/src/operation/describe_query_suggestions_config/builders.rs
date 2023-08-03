@@ -3,6 +3,17 @@ pub use crate::operation::describe_query_suggestions_config::_describe_query_sug
 
 pub use crate::operation::describe_query_suggestions_config::_describe_query_suggestions_config_input::DescribeQuerySuggestionsConfigInputBuilder;
 
+impl DescribeQuerySuggestionsConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_query_suggestions_config::DescribeQuerySuggestionsConfigOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_query_suggestions_config::DescribeQuerySuggestionsConfigError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_query_suggestions_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeQuerySuggestionsConfig`.
 ///
 /// <p>Gets information on the settings of query suggestions for an index.</p>

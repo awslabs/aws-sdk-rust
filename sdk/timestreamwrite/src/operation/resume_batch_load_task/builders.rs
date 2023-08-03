@@ -3,6 +3,23 @@ pub use crate::operation::resume_batch_load_task::_resume_batch_load_task_output
 
 pub use crate::operation::resume_batch_load_task::_resume_batch_load_task_input::ResumeBatchLoadTaskInputBuilder;
 
+impl ResumeBatchLoadTaskInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::resume_batch_load_task::ResumeBatchLoadTaskOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::resume_batch_load_task::ResumeBatchLoadTaskError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.resume_batch_load_task();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ResumeBatchLoadTask`.
 ///
 /// <p> </p>

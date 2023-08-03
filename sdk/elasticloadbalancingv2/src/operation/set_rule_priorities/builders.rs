@@ -3,6 +3,23 @@ pub use crate::operation::set_rule_priorities::_set_rule_priorities_output::SetR
 
 pub use crate::operation::set_rule_priorities::_set_rule_priorities_input::SetRulePrioritiesInputBuilder;
 
+impl SetRulePrioritiesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::set_rule_priorities::SetRulePrioritiesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::set_rule_priorities::SetRulePrioritiesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.set_rule_priorities();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SetRulePriorities`.
 ///
 /// <p>Sets the priorities of the specified rules.</p>

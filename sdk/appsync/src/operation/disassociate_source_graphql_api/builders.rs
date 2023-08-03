@@ -3,6 +3,23 @@ pub use crate::operation::disassociate_source_graphql_api::_disassociate_source_
 
 pub use crate::operation::disassociate_source_graphql_api::_disassociate_source_graphql_api_input::DisassociateSourceGraphqlApiInputBuilder;
 
+impl DisassociateSourceGraphqlApiInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_source_graphql_api::DisassociateSourceGraphqlApiOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_source_graphql_api::DisassociateSourceGraphqlApiError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disassociate_source_graphql_api();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateSourceGraphqlApi`.
 ///
 /// <p>Deletes an association between a Merged API and source API using the Merged API's identifier and the association ID.</p>

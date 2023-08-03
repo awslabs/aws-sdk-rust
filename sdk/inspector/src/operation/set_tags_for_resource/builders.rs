@@ -3,6 +3,23 @@ pub use crate::operation::set_tags_for_resource::_set_tags_for_resource_output::
 
 pub use crate::operation::set_tags_for_resource::_set_tags_for_resource_input::SetTagsForResourceInputBuilder;
 
+impl SetTagsForResourceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::set_tags_for_resource::SetTagsForResourceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::set_tags_for_resource::SetTagsForResourceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.set_tags_for_resource();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SetTagsForResource`.
 ///
 /// <p>Sets tags (key and value pairs) to the assessment template that is specified by the ARN of the assessment template.</p>

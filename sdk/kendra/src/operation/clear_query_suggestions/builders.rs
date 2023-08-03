@@ -3,6 +3,23 @@ pub use crate::operation::clear_query_suggestions::_clear_query_suggestions_outp
 
 pub use crate::operation::clear_query_suggestions::_clear_query_suggestions_input::ClearQuerySuggestionsInputBuilder;
 
+impl ClearQuerySuggestionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::clear_query_suggestions::ClearQuerySuggestionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::clear_query_suggestions::ClearQuerySuggestionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.clear_query_suggestions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ClearQuerySuggestions`.
 ///
 /// <p>Clears existing query suggestions from an index.</p>

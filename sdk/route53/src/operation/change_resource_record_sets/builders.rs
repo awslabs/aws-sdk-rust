@@ -3,6 +3,23 @@ pub use crate::operation::change_resource_record_sets::_change_resource_record_s
 
 pub use crate::operation::change_resource_record_sets::_change_resource_record_sets_input::ChangeResourceRecordSetsInputBuilder;
 
+impl ChangeResourceRecordSetsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::change_resource_record_sets::ChangeResourceRecordSetsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::change_resource_record_sets::ChangeResourceRecordSetsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.change_resource_record_sets();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ChangeResourceRecordSets`.
 ///
 /// <p>Creates, changes, or deletes a resource record set, which contains authoritative DNS information for a specified domain name or subdomain name. For example, you can use <code>ChangeResourceRecordSets</code> to create a resource record set that routes traffic for test.example.com to a web server that has an IP address of 192.0.2.44.</p>

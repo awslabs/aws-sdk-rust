@@ -3,6 +3,23 @@ pub use crate::operation::put_stored_query::_put_stored_query_output::PutStoredQ
 
 pub use crate::operation::put_stored_query::_put_stored_query_input::PutStoredQueryInputBuilder;
 
+impl PutStoredQueryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_stored_query::PutStoredQueryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_stored_query::PutStoredQueryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_stored_query();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutStoredQuery`.
 ///
 /// <p>Saves a new query or updates an existing saved query. The <code>QueryName</code> must be unique for a single Amazon Web Services account and a single Amazon Web Services Region. You can create upto 300 queries in a single Amazon Web Services account and a single Amazon Web Services Region.</p> <note>

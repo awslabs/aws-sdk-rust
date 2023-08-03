@@ -3,6 +3,23 @@ pub use crate::operation::get_instance_uefi_data::_get_instance_uefi_data_output
 
 pub use crate::operation::get_instance_uefi_data::_get_instance_uefi_data_input::GetInstanceUefiDataInputBuilder;
 
+impl GetInstanceUefiDataInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_instance_uefi_data::GetInstanceUefiDataOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_instance_uefi_data::GetInstanceUefiDataError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_instance_uefi_data();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetInstanceUefiData`.
 ///
 /// <p>A binary representation of the UEFI variable store. Only non-volatile variables are stored. This is a base64 encoded and zlib compressed binary value that must be properly encoded.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::post_agent_profile::_post_agent_profile_output::PostAg
 
 pub use crate::operation::post_agent_profile::_post_agent_profile_input::PostAgentProfileInputBuilder;
 
+impl PostAgentProfileInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::post_agent_profile::PostAgentProfileOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::post_agent_profile::PostAgentProfileError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.post_agent_profile();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PostAgentProfile`.
 ///
 /// <p> Submits profiling data to an aggregated profile of a profiling group. To get an aggregated profile that is created with this profiling data, use <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_GetProfile.html"> <code>GetProfile</code> </a>. </p>

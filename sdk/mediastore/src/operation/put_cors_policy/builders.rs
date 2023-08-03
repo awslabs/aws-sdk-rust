@@ -3,6 +3,23 @@ pub use crate::operation::put_cors_policy::_put_cors_policy_output::PutCorsPolic
 
 pub use crate::operation::put_cors_policy::_put_cors_policy_input::PutCorsPolicyInputBuilder;
 
+impl PutCorsPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_cors_policy::PutCorsPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_cors_policy::PutCorsPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_cors_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutCorsPolicy`.
 ///
 /// <p>Sets the cross-origin resource sharing (CORS) configuration on a container so that the container can service cross-origin requests. For example, you might want to enable a request whose origin is http://www.example.com to access your AWS Elemental MediaStore container at my.example.container.com by using the browser's XMLHttpRequest capability.</p>

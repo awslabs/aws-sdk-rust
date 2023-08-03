@@ -3,6 +3,23 @@ pub use crate::operation::execute_provisioned_product_plan::_execute_provisioned
 
 pub use crate::operation::execute_provisioned_product_plan::_execute_provisioned_product_plan_input::ExecuteProvisionedProductPlanInputBuilder;
 
+impl ExecuteProvisionedProductPlanInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::execute_provisioned_product_plan::ExecuteProvisionedProductPlanOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::execute_provisioned_product_plan::ExecuteProvisionedProductPlanError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.execute_provisioned_product_plan();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ExecuteProvisionedProductPlan`.
 ///
 /// <p>Provisions or modifies a product based on the resource changes for the specified plan.</p>

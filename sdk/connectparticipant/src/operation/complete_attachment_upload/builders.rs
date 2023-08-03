@@ -3,6 +3,23 @@ pub use crate::operation::complete_attachment_upload::_complete_attachment_uploa
 
 pub use crate::operation::complete_attachment_upload::_complete_attachment_upload_input::CompleteAttachmentUploadInputBuilder;
 
+impl CompleteAttachmentUploadInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::complete_attachment_upload::CompleteAttachmentUploadOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::complete_attachment_upload::CompleteAttachmentUploadError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.complete_attachment_upload();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CompleteAttachmentUpload`.
 ///
 /// <p>Allows you to confirm that the attachment has been uploaded using the pre-signed URL provided in StartAttachmentUpload API. </p> <note>

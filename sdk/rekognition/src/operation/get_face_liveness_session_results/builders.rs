@@ -3,6 +3,23 @@ pub use crate::operation::get_face_liveness_session_results::_get_face_liveness_
 
 pub use crate::operation::get_face_liveness_session_results::_get_face_liveness_session_results_input::GetFaceLivenessSessionResultsInputBuilder;
 
+impl GetFaceLivenessSessionResultsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_face_liveness_session_results::GetFaceLivenessSessionResultsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_face_liveness_session_results();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetFaceLivenessSessionResults`.
 ///
 /// <p>Retrieves the results of a specific Face Liveness session. It requires the <code>sessionId</code> as input, which was created using <code>CreateFaceLivenessSession</code>. Returns the corresponding Face Liveness confidence score, a reference image that includes a face bounding box, and audit images that also contain face bounding boxes. The Face Liveness confidence score ranges from 0 to 100. The reference image can optionally be returned.</p>

@@ -3,6 +3,17 @@ pub use crate::operation::describe_iam_instance_profile_associations::_describe_
 
 pub use crate::operation::describe_iam_instance_profile_associations::_describe_iam_instance_profile_associations_input::DescribeIamInstanceProfileAssociationsInputBuilder;
 
+impl DescribeIamInstanceProfileAssociationsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_iam_instance_profile_associations::DescribeIamInstanceProfileAssociationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_iam_instance_profile_associations::DescribeIamInstanceProfileAssociationsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_iam_instance_profile_associations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeIamInstanceProfileAssociations`.
 ///
 /// <p>Describes your IAM instance profile associations.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::update_device_pool::_update_device_pool_output::Update
 
 pub use crate::operation::update_device_pool::_update_device_pool_input::UpdateDevicePoolInputBuilder;
 
+impl UpdateDevicePoolInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_device_pool::UpdateDevicePoolOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_device_pool::UpdateDevicePoolError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_device_pool();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateDevicePool`.
 ///
 /// <p>Modifies the name, description, and rules in a device pool given the attributes and the pool ARN. Rule updates are all-or-nothing, meaning they can only be updated as a whole (or not at all).</p>

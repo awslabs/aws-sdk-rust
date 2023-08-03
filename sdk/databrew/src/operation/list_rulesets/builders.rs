@@ -3,6 +3,23 @@ pub use crate::operation::list_rulesets::_list_rulesets_output::ListRulesetsOutp
 
 pub use crate::operation::list_rulesets::_list_rulesets_input::ListRulesetsInputBuilder;
 
+impl ListRulesetsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_rulesets::ListRulesetsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_rulesets::ListRulesetsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_rulesets();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListRulesets`.
 ///
 /// <p>List all rulesets available in the current account or rulesets associated with a specific resource (dataset).</p>

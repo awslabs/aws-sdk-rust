@@ -3,6 +3,23 @@ pub use crate::operation::get_backend_storage::_get_backend_storage_output::GetB
 
 pub use crate::operation::get_backend_storage::_get_backend_storage_input::GetBackendStorageInputBuilder;
 
+impl GetBackendStorageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_backend_storage::GetBackendStorageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_backend_storage::GetBackendStorageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_backend_storage();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetBackendStorage`.
 ///
 /// <p>Gets details for a backend storage resource.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::disassociate_file_system::_disassociate_file_system_ou
 
 pub use crate::operation::disassociate_file_system::_disassociate_file_system_input::DisassociateFileSystemInputBuilder;
 
+impl DisassociateFileSystemInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_file_system::DisassociateFileSystemOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_file_system::DisassociateFileSystemError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disassociate_file_system();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateFileSystem`.
 ///
 /// <p>Disassociates an Amazon FSx file system from the specified gateway. After the disassociation process finishes, the gateway can no longer access the Amazon FSx file system. This operation is only supported in the FSx File Gateway type.</p>

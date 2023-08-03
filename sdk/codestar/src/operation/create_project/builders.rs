@@ -3,6 +3,23 @@ pub use crate::operation::create_project::_create_project_output::CreateProjectO
 
 pub use crate::operation::create_project::_create_project_input::CreateProjectInputBuilder;
 
+impl CreateProjectInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_project::CreateProjectOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_project::CreateProjectError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_project();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateProject`.
 ///
 /// <p>Creates a project, including project resources. This action creates a project based on a submitted project request. A set of source code files and a toolchain template file can be included with the project request. If these are not provided, an empty project is created.</p>

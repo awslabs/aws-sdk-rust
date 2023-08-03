@@ -3,6 +3,23 @@ pub use crate::operation::exchange_code_for_token::_exchange_code_for_token_outp
 
 pub use crate::operation::exchange_code_for_token::_exchange_code_for_token_input::ExchangeCodeForTokenInputBuilder;
 
+impl ExchangeCodeForTokenInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::exchange_code_for_token::ExchangeCodeForTokenOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::exchange_code_for_token::ExchangeCodeForTokenError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.exchange_code_for_token();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ExchangeCodeForToken`.
 ///
 /// <p>Exchanges an access code for a token.</p>

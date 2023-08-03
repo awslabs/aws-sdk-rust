@@ -3,6 +3,23 @@ pub use crate::operation::list_event_actions::_list_event_actions_output::ListEv
 
 pub use crate::operation::list_event_actions::_list_event_actions_input::ListEventActionsInputBuilder;
 
+impl ListEventActionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_event_actions::ListEventActionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_event_actions::ListEventActionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_event_actions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListEventActions`.
 ///
 /// <p>This operation lists your event actions.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_topic_rule_destination::_create_topic_rule_dest
 
 pub use crate::operation::create_topic_rule_destination::_create_topic_rule_destination_input::CreateTopicRuleDestinationInputBuilder;
 
+impl CreateTopicRuleDestinationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_topic_rule_destination::CreateTopicRuleDestinationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_topic_rule_destination::CreateTopicRuleDestinationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_topic_rule_destination();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateTopicRuleDestination`.
 ///
 /// <p>Creates a topic rule destination. The destination must be confirmed prior to use.</p>

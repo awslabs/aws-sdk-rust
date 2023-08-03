@@ -3,6 +3,23 @@ pub use crate::operation::create_dataset_content::_create_dataset_content_output
 
 pub use crate::operation::create_dataset_content::_create_dataset_content_input::CreateDatasetContentInputBuilder;
 
+impl CreateDatasetContentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_dataset_content::CreateDatasetContentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_dataset_content::CreateDatasetContentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_dataset_content();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateDatasetContent`.
 ///
 /// <p>Creates the content of a dataset by applying a <code>queryAction</code> (a SQL query) or a <code>containerAction</code> (executing a containerized application).</p>

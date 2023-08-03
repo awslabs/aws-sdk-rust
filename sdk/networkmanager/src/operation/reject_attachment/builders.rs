@@ -3,6 +3,23 @@ pub use crate::operation::reject_attachment::_reject_attachment_output::RejectAt
 
 pub use crate::operation::reject_attachment::_reject_attachment_input::RejectAttachmentInputBuilder;
 
+impl RejectAttachmentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::reject_attachment::RejectAttachmentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::reject_attachment::RejectAttachmentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.reject_attachment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RejectAttachment`.
 ///
 /// <p>Rejects a core network attachment request.</p>

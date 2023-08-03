@@ -3,6 +3,23 @@ pub use crate::operation::list_finding_aggregators::_list_finding_aggregators_ou
 
 pub use crate::operation::list_finding_aggregators::_list_finding_aggregators_input::ListFindingAggregatorsInputBuilder;
 
+impl ListFindingAggregatorsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_finding_aggregators::ListFindingAggregatorsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_finding_aggregators::ListFindingAggregatorsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_finding_aggregators();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListFindingAggregators`.
 ///
 /// <p>If finding aggregation is enabled, then <code>ListFindingAggregators</code> returns the ARN of the finding aggregator. You can run this operation from any Region.</p>

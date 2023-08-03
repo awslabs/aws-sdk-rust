@@ -3,6 +3,23 @@ pub use crate::operation::release_static_ip::_release_static_ip_output::ReleaseS
 
 pub use crate::operation::release_static_ip::_release_static_ip_input::ReleaseStaticIpInputBuilder;
 
+impl ReleaseStaticIpInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::release_static_ip::ReleaseStaticIpOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::release_static_ip::ReleaseStaticIpError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.release_static_ip();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ReleaseStaticIp`.
 ///
 /// <p>Deletes a specific static IP from your account.</p>

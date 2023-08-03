@@ -3,6 +3,23 @@ pub use crate::operation::detach_classic_link_vpc::_detach_classic_link_vpc_outp
 
 pub use crate::operation::detach_classic_link_vpc::_detach_classic_link_vpc_input::DetachClassicLinkVpcInputBuilder;
 
+impl DetachClassicLinkVpcInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::detach_classic_link_vpc::DetachClassicLinkVpcOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::detach_classic_link_vpc::DetachClassicLinkVpcError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.detach_classic_link_vpc();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DetachClassicLinkVpc`.
 ///
 /// <note>

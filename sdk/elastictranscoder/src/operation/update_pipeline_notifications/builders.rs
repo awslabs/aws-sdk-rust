@@ -3,6 +3,23 @@ pub use crate::operation::update_pipeline_notifications::_update_pipeline_notifi
 
 pub use crate::operation::update_pipeline_notifications::_update_pipeline_notifications_input::UpdatePipelineNotificationsInputBuilder;
 
+impl UpdatePipelineNotificationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_pipeline_notifications::UpdatePipelineNotificationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_pipeline_notifications::UpdatePipelineNotificationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_pipeline_notifications();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdatePipelineNotifications`.
 ///
 /// <p>With the UpdatePipelineNotifications operation, you can update Amazon Simple Notification Service (Amazon SNS) notifications for a pipeline.</p>

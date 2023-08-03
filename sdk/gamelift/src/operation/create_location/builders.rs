@@ -3,6 +3,23 @@ pub use crate::operation::create_location::_create_location_output::CreateLocati
 
 pub use crate::operation::create_location::_create_location_input::CreateLocationInputBuilder;
 
+impl CreateLocationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_location::CreateLocationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_location::CreateLocationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_location();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateLocation`.
 ///
 /// <p>Creates a custom location for use in an Anywhere fleet.</p>

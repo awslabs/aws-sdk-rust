@@ -3,6 +3,23 @@ pub use crate::operation::describe_severity_levels::_describe_severity_levels_ou
 
 pub use crate::operation::describe_severity_levels::_describe_severity_levels_input::DescribeSeverityLevelsInputBuilder;
 
+impl DescribeSeverityLevelsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_severity_levels::DescribeSeverityLevelsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_severity_levels::DescribeSeverityLevelsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_severity_levels();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeSeverityLevels`.
 ///
 /// <p>Returns the list of severity levels that you can assign to a support case. The severity level for a case is also a field in the <code>CaseDetails</code> data type that you include for a <code>CreateCase</code> request.</p> <note>

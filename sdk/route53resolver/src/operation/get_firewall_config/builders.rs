@@ -3,6 +3,23 @@ pub use crate::operation::get_firewall_config::_get_firewall_config_output::GetF
 
 pub use crate::operation::get_firewall_config::_get_firewall_config_input::GetFirewallConfigInputBuilder;
 
+impl GetFirewallConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_firewall_config::GetFirewallConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_firewall_config::GetFirewallConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_firewall_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetFirewallConfig`.
 ///
 /// <p>Retrieves the configuration of the firewall behavior provided by DNS Firewall for a single VPC from Amazon Virtual Private Cloud (Amazon VPC). </p>

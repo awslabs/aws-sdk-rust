@@ -3,6 +3,23 @@ pub use crate::operation::batch_get_builds::_batch_get_builds_output::BatchGetBu
 
 pub use crate::operation::batch_get_builds::_batch_get_builds_input::BatchGetBuildsInputBuilder;
 
+impl BatchGetBuildsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_builds::BatchGetBuildsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_get_builds::BatchGetBuildsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_get_builds();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchGetBuilds`.
 ///
 /// <p>Gets information about one or more builds.</p>

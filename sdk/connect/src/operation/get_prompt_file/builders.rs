@@ -3,6 +3,23 @@ pub use crate::operation::get_prompt_file::_get_prompt_file_output::GetPromptFil
 
 pub use crate::operation::get_prompt_file::_get_prompt_file_input::GetPromptFileInputBuilder;
 
+impl GetPromptFileInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_prompt_file::GetPromptFileOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_prompt_file::GetPromptFileError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_prompt_file();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetPromptFile`.
 ///
 /// <p>Gets the prompt file.</p>

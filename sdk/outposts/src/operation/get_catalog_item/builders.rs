@@ -3,6 +3,23 @@ pub use crate::operation::get_catalog_item::_get_catalog_item_output::GetCatalog
 
 pub use crate::operation::get_catalog_item::_get_catalog_item_input::GetCatalogItemInputBuilder;
 
+impl GetCatalogItemInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_catalog_item::GetCatalogItemOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_catalog_item::GetCatalogItemError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_catalog_item();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetCatalogItem`.
 ///
 /// <p>Gets information about the specified catalog item.</p>

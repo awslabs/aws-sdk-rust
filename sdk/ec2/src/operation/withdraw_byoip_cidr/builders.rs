@@ -3,6 +3,23 @@ pub use crate::operation::withdraw_byoip_cidr::_withdraw_byoip_cidr_output::With
 
 pub use crate::operation::withdraw_byoip_cidr::_withdraw_byoip_cidr_input::WithdrawByoipCidrInputBuilder;
 
+impl WithdrawByoipCidrInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::withdraw_byoip_cidr::WithdrawByoipCidrOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::withdraw_byoip_cidr::WithdrawByoipCidrError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.withdraw_byoip_cidr();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `WithdrawByoipCidr`.
 ///
 /// <p>Stops advertising an address range that is provisioned as an address pool.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::update_regex_match_set::_update_regex_match_set_output
 
 pub use crate::operation::update_regex_match_set::_update_regex_match_set_input::UpdateRegexMatchSetInputBuilder;
 
+impl UpdateRegexMatchSetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_regex_match_set::UpdateRegexMatchSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_regex_match_set::UpdateRegexMatchSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_regex_match_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateRegexMatchSet`.
 ///
 /// <note>

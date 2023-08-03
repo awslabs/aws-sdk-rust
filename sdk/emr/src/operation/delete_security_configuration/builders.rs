@@ -3,6 +3,23 @@ pub use crate::operation::delete_security_configuration::_delete_security_config
 
 pub use crate::operation::delete_security_configuration::_delete_security_configuration_input::DeleteSecurityConfigurationInputBuilder;
 
+impl DeleteSecurityConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_security_configuration::DeleteSecurityConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_security_configuration::DeleteSecurityConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_security_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteSecurityConfiguration`.
 ///
 /// <p>Deletes a security configuration.</p>

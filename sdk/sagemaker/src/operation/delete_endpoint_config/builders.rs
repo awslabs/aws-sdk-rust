@@ -3,6 +3,23 @@ pub use crate::operation::delete_endpoint_config::_delete_endpoint_config_output
 
 pub use crate::operation::delete_endpoint_config::_delete_endpoint_config_input::DeleteEndpointConfigInputBuilder;
 
+impl DeleteEndpointConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_endpoint_config::DeleteEndpointConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_endpoint_config::DeleteEndpointConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_endpoint_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteEndpointConfig`.
 ///
 /// <p>Deletes an endpoint configuration. The <code>DeleteEndpointConfig</code> API deletes only the specified configuration. It does not delete endpoints created using the configuration. </p>

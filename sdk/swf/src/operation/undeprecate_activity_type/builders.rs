@@ -3,6 +3,23 @@ pub use crate::operation::undeprecate_activity_type::_undeprecate_activity_type_
 
 pub use crate::operation::undeprecate_activity_type::_undeprecate_activity_type_input::UndeprecateActivityTypeInputBuilder;
 
+impl UndeprecateActivityTypeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::undeprecate_activity_type::UndeprecateActivityTypeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::undeprecate_activity_type::UndeprecateActivityTypeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.undeprecate_activity_type();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UndeprecateActivityType`.
 ///
 /// <p>Undeprecates a previously deprecated <i>activity type</i>. After an activity type has been undeprecated, you can create new tasks of that activity type.</p> <note>

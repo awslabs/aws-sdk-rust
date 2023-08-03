@@ -3,6 +3,23 @@ pub use crate::operation::list_stream_keys::_list_stream_keys_output::ListStream
 
 pub use crate::operation::list_stream_keys::_list_stream_keys_input::ListStreamKeysInputBuilder;
 
+impl ListStreamKeysInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_stream_keys::ListStreamKeysOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_stream_keys::ListStreamKeysError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_stream_keys();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListStreamKeys`.
 ///
 /// <p>Gets summary information about stream keys for the specified channel.</p>

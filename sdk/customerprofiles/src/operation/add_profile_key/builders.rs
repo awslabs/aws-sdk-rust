@@ -3,6 +3,23 @@ pub use crate::operation::add_profile_key::_add_profile_key_output::AddProfileKe
 
 pub use crate::operation::add_profile_key::_add_profile_key_input::AddProfileKeyInputBuilder;
 
+impl AddProfileKeyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::add_profile_key::AddProfileKeyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::add_profile_key::AddProfileKeyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.add_profile_key();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AddProfileKey`.
 ///
 /// <p>Associates a new key value with a specific profile, such as a Contact Record ContactId.</p>

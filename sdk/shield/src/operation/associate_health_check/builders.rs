@@ -3,6 +3,23 @@ pub use crate::operation::associate_health_check::_associate_health_check_output
 
 pub use crate::operation::associate_health_check::_associate_health_check_input::AssociateHealthCheckInputBuilder;
 
+impl AssociateHealthCheckInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_health_check::AssociateHealthCheckOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_health_check::AssociateHealthCheckError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_health_check();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateHealthCheck`.
 ///
 /// <p>Adds health-based detection to the Shield Advanced protection for a resource. Shield Advanced health-based detection uses the health of your Amazon Web Services resource to improve responsiveness and accuracy in attack detection and response. </p>

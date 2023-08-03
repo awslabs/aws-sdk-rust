@@ -3,6 +3,17 @@ pub use crate::operation::accept_direct_connect_gateway_association_proposal::_a
 
 pub use crate::operation::accept_direct_connect_gateway_association_proposal::_accept_direct_connect_gateway_association_proposal_input::AcceptDirectConnectGatewayAssociationProposalInputBuilder;
 
+impl AcceptDirectConnectGatewayAssociationProposalInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::accept_direct_connect_gateway_association_proposal::AcceptDirectConnectGatewayAssociationProposalOutput, ::aws_smithy_http::result::SdkError<crate::operation::accept_direct_connect_gateway_association_proposal::AcceptDirectConnectGatewayAssociationProposalError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.accept_direct_connect_gateway_association_proposal();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AcceptDirectConnectGatewayAssociationProposal`.
 ///
 /// <p>Accepts a proposal request to attach a virtual private gateway or transit gateway to a Direct Connect gateway.</p>

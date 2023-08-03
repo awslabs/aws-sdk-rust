@@ -3,6 +3,23 @@ pub use crate::operation::describe_pipelines::_describe_pipelines_output::Descri
 
 pub use crate::operation::describe_pipelines::_describe_pipelines_input::DescribePipelinesInputBuilder;
 
+impl DescribePipelinesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_pipelines::DescribePipelinesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_pipelines::DescribePipelinesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_pipelines();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribePipelines`.
 ///
 /// <p>Retrieves metadata about one or more pipelines. The information retrieved includes the name of the pipeline, the pipeline identifier, its current state, and the user account that owns the pipeline. Using account credentials, you can retrieve metadata about pipelines that you or your IAM users have created. If you are using an IAM user account, you can retrieve metadata about only those pipelines for which you have read permissions.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::modify_cache_parameter_group::_modify_cache_parameter_
 
 pub use crate::operation::modify_cache_parameter_group::_modify_cache_parameter_group_input::ModifyCacheParameterGroupInputBuilder;
 
+impl ModifyCacheParameterGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_cache_parameter_group::ModifyCacheParameterGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_cache_parameter_group::ModifyCacheParameterGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_cache_parameter_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyCacheParameterGroup`.
 ///
 /// <p>Modifies the parameters of a cache parameter group. You can modify up to 20 parameters in a single request by submitting a list parameter name and value pairs.</p>

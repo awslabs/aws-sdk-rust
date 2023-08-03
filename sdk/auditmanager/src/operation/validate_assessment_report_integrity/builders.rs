@@ -3,6 +3,17 @@ pub use crate::operation::validate_assessment_report_integrity::_validate_assess
 
 pub use crate::operation::validate_assessment_report_integrity::_validate_assessment_report_integrity_input::ValidateAssessmentReportIntegrityInputBuilder;
 
+impl ValidateAssessmentReportIntegrityInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::validate_assessment_report_integrity::ValidateAssessmentReportIntegrityOutput, ::aws_smithy_http::result::SdkError<crate::operation::validate_assessment_report_integrity::ValidateAssessmentReportIntegrityError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.validate_assessment_report_integrity();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ValidateAssessmentReportIntegrity`.
 ///
 /// <p> Validates the integrity of an assessment report in Audit Manager. </p>

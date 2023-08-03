@@ -3,6 +3,23 @@ pub use crate::operation::start_earth_observation_job::_start_earth_observation_
 
 pub use crate::operation::start_earth_observation_job::_start_earth_observation_job_input::StartEarthObservationJobInputBuilder;
 
+impl StartEarthObservationJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_earth_observation_job::StartEarthObservationJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_earth_observation_job::StartEarthObservationJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_earth_observation_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartEarthObservationJob`.
 ///
 /// <p>Use this operation to create an Earth observation job.</p>

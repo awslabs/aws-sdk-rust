@@ -3,6 +3,17 @@ pub use crate::operation::get_multi_region_access_point_policy_status::_get_mult
 
 pub use crate::operation::get_multi_region_access_point_policy_status::_get_multi_region_access_point_policy_status_input::GetMultiRegionAccessPointPolicyStatusInputBuilder;
 
+impl GetMultiRegionAccessPointPolicyStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_multi_region_access_point_policy_status::GetMultiRegionAccessPointPolicyStatusOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_multi_region_access_point_policy_status::GetMultiRegionAccessPointPolicyStatusError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_multi_region_access_point_policy_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetMultiRegionAccessPointPolicyStatus`.
 ///
 /// <p>Indicates whether the specified Multi-Region Access Point has an access control policy that allows public access.</p>

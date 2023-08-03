@@ -3,6 +3,17 @@ pub use crate::operation::modify_verified_access_group_policy::_modify_verified_
 
 pub use crate::operation::modify_verified_access_group_policy::_modify_verified_access_group_policy_input::ModifyVerifiedAccessGroupPolicyInputBuilder;
 
+impl ModifyVerifiedAccessGroupPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::modify_verified_access_group_policy::ModifyVerifiedAccessGroupPolicyOutput, ::aws_smithy_http::result::SdkError<crate::operation::modify_verified_access_group_policy::ModifyVerifiedAccessGroupPolicyError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.modify_verified_access_group_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyVerifiedAccessGroupPolicy`.
 ///
 /// <p>Modifies the specified Amazon Web Services Verified Access group policy.</p>

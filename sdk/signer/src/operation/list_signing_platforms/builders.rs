@@ -3,6 +3,23 @@ pub use crate::operation::list_signing_platforms::_list_signing_platforms_output
 
 pub use crate::operation::list_signing_platforms::_list_signing_platforms_input::ListSigningPlatformsInputBuilder;
 
+impl ListSigningPlatformsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_signing_platforms::ListSigningPlatformsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_signing_platforms::ListSigningPlatformsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_signing_platforms();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListSigningPlatforms`.
 ///
 /// <p>Lists all signing platforms available in code signing that match the request parameters. If additional jobs remain to be listed, code signing returns a <code>nextToken</code> value. Use this value in subsequent calls to <code>ListSigningJobs</code> to fetch the remaining values. You can continue calling <code>ListSigningJobs</code> with your <code>maxResults</code> parameter and with new values that code signing returns in the <code>nextToken</code> parameter until all of your signing jobs have been returned.</p>

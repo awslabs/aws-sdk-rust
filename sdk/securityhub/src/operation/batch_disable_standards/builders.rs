@@ -3,6 +3,23 @@ pub use crate::operation::batch_disable_standards::_batch_disable_standards_outp
 
 pub use crate::operation::batch_disable_standards::_batch_disable_standards_input::BatchDisableStandardsInputBuilder;
 
+impl BatchDisableStandardsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_disable_standards::BatchDisableStandardsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_disable_standards::BatchDisableStandardsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_disable_standards();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchDisableStandards`.
 ///
 /// <p>Disables the standards specified by the provided <code>StandardsSubscriptionArns</code>.</p>

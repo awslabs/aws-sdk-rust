@@ -3,6 +3,23 @@ pub use crate::operation::stop_bgp_failover_test::_stop_bgp_failover_test_output
 
 pub use crate::operation::stop_bgp_failover_test::_stop_bgp_failover_test_input::StopBgpFailoverTestInputBuilder;
 
+impl StopBgpFailoverTestInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_bgp_failover_test::StopBgpFailoverTestOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_bgp_failover_test::StopBgpFailoverTestError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_bgp_failover_test();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopBgpFailoverTest`.
 ///
 /// <p>Stops the virtual interface failover test.</p>

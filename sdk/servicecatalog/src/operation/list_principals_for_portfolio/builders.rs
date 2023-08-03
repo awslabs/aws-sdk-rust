@@ -3,6 +3,23 @@ pub use crate::operation::list_principals_for_portfolio::_list_principals_for_po
 
 pub use crate::operation::list_principals_for_portfolio::_list_principals_for_portfolio_input::ListPrincipalsForPortfolioInputBuilder;
 
+impl ListPrincipalsForPortfolioInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_principals_for_portfolio::ListPrincipalsForPortfolioOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_principals_for_portfolio::ListPrincipalsForPortfolioError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_principals_for_portfolio();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListPrincipalsForPortfolio`.
 ///
 /// <p>Lists all <code>PrincipalARN</code>s and corresponding <code>PrincipalType</code>s associated with the specified portfolio.</p>

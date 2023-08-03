@@ -3,6 +3,23 @@ pub use crate::operation::deregister_cluster::_deregister_cluster_output::Deregi
 
 pub use crate::operation::deregister_cluster::_deregister_cluster_input::DeregisterClusterInputBuilder;
 
+impl DeregisterClusterInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::deregister_cluster::DeregisterClusterOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::deregister_cluster::DeregisterClusterError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.deregister_cluster();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeregisterCluster`.
 ///
 /// <p>Deregisters a connected cluster to remove it from the Amazon EKS control plane.</p>

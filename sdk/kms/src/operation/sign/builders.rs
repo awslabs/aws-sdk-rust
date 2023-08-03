@@ -3,6 +3,23 @@ pub use crate::operation::sign::_sign_output::SignOutputBuilder;
 
 pub use crate::operation::sign::_sign_input::SignInputBuilder;
 
+impl SignInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::sign::SignOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::sign::SignError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.sign();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `Sign`.
 ///
 /// <p>Creates a <a href="https://en.wikipedia.org/wiki/Digital_signature">digital signature</a> for a message or message digest by using the private key in an asymmetric signing KMS key. To verify the signature, use the <code>Verify</code> operation, or use the public key in the same asymmetric KMS key outside of KMS. For information about asymmetric KMS keys, see <a href="https://docs.aws.amazon.com/kms/latest/developerguide/symmetric-asymmetric.html">Asymmetric KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>

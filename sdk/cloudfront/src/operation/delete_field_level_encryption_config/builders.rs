@@ -3,6 +3,17 @@ pub use crate::operation::delete_field_level_encryption_config::_delete_field_le
 
 pub use crate::operation::delete_field_level_encryption_config::_delete_field_level_encryption_config_input::DeleteFieldLevelEncryptionConfigInputBuilder;
 
+impl DeleteFieldLevelEncryptionConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_field_level_encryption_config::DeleteFieldLevelEncryptionConfigOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_field_level_encryption_config::DeleteFieldLevelEncryptionConfigError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.delete_field_level_encryption_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteFieldLevelEncryptionConfig`.
 ///
 /// <p>Remove a field-level encryption configuration.</p>

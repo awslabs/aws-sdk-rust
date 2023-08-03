@@ -3,6 +3,23 @@ pub use crate::operation::delete_workflow_step_group::_delete_workflow_step_grou
 
 pub use crate::operation::delete_workflow_step_group::_delete_workflow_step_group_input::DeleteWorkflowStepGroupInputBuilder;
 
+impl DeleteWorkflowStepGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_workflow_step_group::DeleteWorkflowStepGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_workflow_step_group::DeleteWorkflowStepGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_workflow_step_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteWorkflowStepGroup`.
 ///
 /// <p>Delete a step group in a migration workflow.</p>

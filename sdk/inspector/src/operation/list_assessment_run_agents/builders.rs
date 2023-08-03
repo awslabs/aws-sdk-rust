@@ -3,6 +3,23 @@ pub use crate::operation::list_assessment_run_agents::_list_assessment_run_agent
 
 pub use crate::operation::list_assessment_run_agents::_list_assessment_run_agents_input::ListAssessmentRunAgentsInputBuilder;
 
+impl ListAssessmentRunAgentsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_assessment_run_agents::ListAssessmentRunAgentsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_assessment_run_agents::ListAssessmentRunAgentsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_assessment_run_agents();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAssessmentRunAgents`.
 ///
 /// <p>Lists the agents of the assessment runs that are specified by the ARNs of the assessment runs.</p>

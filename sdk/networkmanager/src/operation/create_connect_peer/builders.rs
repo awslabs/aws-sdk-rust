@@ -3,6 +3,23 @@ pub use crate::operation::create_connect_peer::_create_connect_peer_output::Crea
 
 pub use crate::operation::create_connect_peer::_create_connect_peer_input::CreateConnectPeerInputBuilder;
 
+impl CreateConnectPeerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_connect_peer::CreateConnectPeerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_connect_peer::CreateConnectPeerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_connect_peer();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateConnectPeer`.
 ///
 /// <p>Creates a core network Connect peer for a specified core network connect attachment between a core network and an appliance. The peer address and transit gateway address must be the same IP address family (IPv4 or IPv6).</p>

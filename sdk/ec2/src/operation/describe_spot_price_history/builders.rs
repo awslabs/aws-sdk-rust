@@ -3,6 +3,23 @@ pub use crate::operation::describe_spot_price_history::_describe_spot_price_hist
 
 pub use crate::operation::describe_spot_price_history::_describe_spot_price_history_input::DescribeSpotPriceHistoryInputBuilder;
 
+impl DescribeSpotPriceHistoryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_spot_price_history::DescribeSpotPriceHistoryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_spot_price_history::DescribeSpotPriceHistoryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_spot_price_history();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeSpotPriceHistory`.
 ///
 /// <p>Describes the Spot price history. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-spot-instances-history.html">Spot Instance pricing history</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>

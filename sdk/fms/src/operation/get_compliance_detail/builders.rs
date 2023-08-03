@@ -3,6 +3,23 @@ pub use crate::operation::get_compliance_detail::_get_compliance_detail_output::
 
 pub use crate::operation::get_compliance_detail::_get_compliance_detail_input::GetComplianceDetailInputBuilder;
 
+impl GetComplianceDetailInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_compliance_detail::GetComplianceDetailOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_compliance_detail::GetComplianceDetailError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_compliance_detail();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetComplianceDetail`.
 ///
 /// <p>Returns detailed compliance information about the specified member account. Details include resources that are in and out of compliance with the specified policy. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_mfa_device::_get_mfa_device_output::GetMfaDeviceOu
 
 pub use crate::operation::get_mfa_device::_get_mfa_device_input::GetMfaDeviceInputBuilder;
 
+impl GetMfaDeviceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_mfa_device::GetMfaDeviceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_mfa_device::GetMFADeviceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_mfa_device();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetMFADevice`.
 ///
 /// <p>Retrieves information about an MFA device for a specified user.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_rotation_override::_get_rotation_override_output::
 
 pub use crate::operation::get_rotation_override::_get_rotation_override_input::GetRotationOverrideInputBuilder;
 
+impl GetRotationOverrideInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_rotation_override::GetRotationOverrideOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_rotation_override::GetRotationOverrideError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_rotation_override();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetRotationOverride`.
 ///
 /// <p>Retrieves information about an override to an on-call rotation.</p>

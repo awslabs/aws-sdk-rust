@@ -3,6 +3,17 @@ pub use crate::operation::cancel_service_pipeline_deployment::_cancel_service_pi
 
 pub use crate::operation::cancel_service_pipeline_deployment::_cancel_service_pipeline_deployment_input::CancelServicePipelineDeploymentInputBuilder;
 
+impl CancelServicePipelineDeploymentInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::cancel_service_pipeline_deployment::CancelServicePipelineDeploymentOutput, ::aws_smithy_http::result::SdkError<crate::operation::cancel_service_pipeline_deployment::CancelServicePipelineDeploymentError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.cancel_service_pipeline_deployment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CancelServicePipelineDeployment`.
 ///
 /// <p>Attempts to cancel a service pipeline deployment on an <code>UpdateServicePipeline</code> action, if the deployment is <code>IN_PROGRESS</code>. For more information, see <a href="https://docs.aws.amazon.com/proton/latest/userguide/ag-svc-pipeline-update.html">Update a service pipeline</a> in the <i>Proton User guide</i>.</p>

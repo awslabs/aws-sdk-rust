@@ -3,6 +3,23 @@ pub use crate::operation::start_human_loop::_start_human_loop_output::StartHuman
 
 pub use crate::operation::start_human_loop::_start_human_loop_input::StartHumanLoopInputBuilder;
 
+impl StartHumanLoopInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_human_loop::StartHumanLoopOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_human_loop::StartHumanLoopError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_human_loop();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartHumanLoop`.
 ///
 /// <p>Starts a human loop, provided that at least one activation condition is met.</p>

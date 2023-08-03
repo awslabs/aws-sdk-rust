@@ -3,6 +3,17 @@ pub use crate::operation::describe_workspaces_connection_status::_describe_works
 
 pub use crate::operation::describe_workspaces_connection_status::_describe_workspaces_connection_status_input::DescribeWorkspacesConnectionStatusInputBuilder;
 
+impl DescribeWorkspacesConnectionStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_workspaces_connection_status::DescribeWorkspacesConnectionStatusOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_workspaces_connection_status::DescribeWorkspacesConnectionStatusError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_workspaces_connection_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeWorkspacesConnectionStatus`.
 ///
 /// <p>Describes the connection status of the specified WorkSpaces.</p>

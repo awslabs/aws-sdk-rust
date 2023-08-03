@@ -3,6 +3,23 @@ pub use crate::operation::decrease_stream_retention_period::_decrease_stream_ret
 
 pub use crate::operation::decrease_stream_retention_period::_decrease_stream_retention_period_input::DecreaseStreamRetentionPeriodInputBuilder;
 
+impl DecreaseStreamRetentionPeriodInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::decrease_stream_retention_period::DecreaseStreamRetentionPeriodOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::decrease_stream_retention_period::DecreaseStreamRetentionPeriodError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.decrease_stream_retention_period();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DecreaseStreamRetentionPeriod`.
 ///
 /// <p>Decreases the Kinesis data stream's retention period, which is the length of time data records are accessible after they are added to the stream. The minimum value of a stream's retention period is 24 hours.</p> <note>

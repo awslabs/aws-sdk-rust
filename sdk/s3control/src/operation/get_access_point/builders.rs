@@ -3,6 +3,23 @@ pub use crate::operation::get_access_point::_get_access_point_output::GetAccessP
 
 pub use crate::operation::get_access_point::_get_access_point_input::GetAccessPointInputBuilder;
 
+impl GetAccessPointInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_access_point::GetAccessPointOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_access_point::GetAccessPointError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_access_point();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetAccessPoint`.
 ///
 /// <p>Returns configuration information about the specified access point.</p>

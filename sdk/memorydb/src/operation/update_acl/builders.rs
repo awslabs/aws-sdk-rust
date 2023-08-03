@@ -3,6 +3,23 @@ pub use crate::operation::update_acl::_update_acl_output::UpdateAclOutputBuilder
 
 pub use crate::operation::update_acl::_update_acl_input::UpdateAclInputBuilder;
 
+impl UpdateAclInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_acl::UpdateAclOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_acl::UpdateACLError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_acl();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateACL`.
 ///
 /// <p>Changes the list of users that belong to the Access Control List.</p>

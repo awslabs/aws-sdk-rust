@@ -3,6 +3,23 @@ pub use crate::operation::verify_sms_sandbox_phone_number::_verify_sms_sandbox_p
 
 pub use crate::operation::verify_sms_sandbox_phone_number::_verify_sms_sandbox_phone_number_input::VerifySmsSandboxPhoneNumberInputBuilder;
 
+impl VerifySmsSandboxPhoneNumberInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::verify_sms_sandbox_phone_number::VerifySmsSandboxPhoneNumberOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::verify_sms_sandbox_phone_number::VerifySMSSandboxPhoneNumberError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.verify_sms_sandbox_phone_number();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `VerifySMSSandboxPhoneNumber`.
 ///
 /// <p>Verifies a destination phone number with a one-time password (OTP) for the calling Amazon Web Services account.</p>

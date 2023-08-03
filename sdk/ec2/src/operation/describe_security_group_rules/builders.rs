@@ -3,6 +3,23 @@ pub use crate::operation::describe_security_group_rules::_describe_security_grou
 
 pub use crate::operation::describe_security_group_rules::_describe_security_group_rules_input::DescribeSecurityGroupRulesInputBuilder;
 
+impl DescribeSecurityGroupRulesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_security_group_rules::DescribeSecurityGroupRulesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_security_group_rules::DescribeSecurityGroupRulesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_security_group_rules();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeSecurityGroupRules`.
 ///
 /// <p>Describes one or more of your security group rules.</p>

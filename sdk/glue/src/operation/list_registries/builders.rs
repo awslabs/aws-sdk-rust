@@ -3,6 +3,23 @@ pub use crate::operation::list_registries::_list_registries_output::ListRegistri
 
 pub use crate::operation::list_registries::_list_registries_input::ListRegistriesInputBuilder;
 
+impl ListRegistriesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_registries::ListRegistriesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_registries::ListRegistriesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_registries();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListRegistries`.
 ///
 /// <p>Returns a list of registries that you have created, with minimal registry information. Registries in the <code>Deleting</code> status will not be included in the results. Empty results will be returned if there are no registries available.</p>

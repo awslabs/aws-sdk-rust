@@ -3,6 +3,23 @@ pub use crate::operation::create_template::_create_template_output::CreateTempla
 
 pub use crate::operation::create_template::_create_template_input::CreateTemplateInputBuilder;
 
+impl CreateTemplateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_template::CreateTemplateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_template::CreateTemplateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_template();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateTemplate`.
 ///
 /// <p>Creates a template in the Cases domain. This template is used to define the case object model (that is, to define what data can be captured on cases) in a Cases domain. A template must have a unique name within a domain, and it must reference existing field IDs and layout IDs. Additionally, multiple fields with same IDs are not allowed within the same Template. A template can be either Active or Inactive, as indicated by its status. Inactive templates cannot be used to create cases.</p>

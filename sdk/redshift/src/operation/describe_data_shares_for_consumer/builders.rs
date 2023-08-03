@@ -3,6 +3,23 @@ pub use crate::operation::describe_data_shares_for_consumer::_describe_data_shar
 
 pub use crate::operation::describe_data_shares_for_consumer::_describe_data_shares_for_consumer_input::DescribeDataSharesForConsumerInputBuilder;
 
+impl DescribeDataSharesForConsumerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_data_shares_for_consumer::DescribeDataSharesForConsumerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_data_shares_for_consumer::DescribeDataSharesForConsumerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_data_shares_for_consumer();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeDataSharesForConsumer`.
 ///
 /// <p>Returns a list of datashares where the account identifier being called is a consumer account identifier.</p>

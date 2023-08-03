@@ -3,6 +3,23 @@ pub use crate::operation::modify_target_group::_modify_target_group_output::Modi
 
 pub use crate::operation::modify_target_group::_modify_target_group_input::ModifyTargetGroupInputBuilder;
 
+impl ModifyTargetGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_target_group::ModifyTargetGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_target_group::ModifyTargetGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_target_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyTargetGroup`.
 ///
 /// <p>Modifies the health checks used when evaluating the health state of the targets in the specified target group.</p>

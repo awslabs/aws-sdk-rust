@@ -3,6 +3,23 @@ pub use crate::operation::disconnect_player::_disconnect_player_output::Disconne
 
 pub use crate::operation::disconnect_player::_disconnect_player_input::DisconnectPlayerInputBuilder;
 
+impl DisconnectPlayerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disconnect_player::DisconnectPlayerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disconnect_player::DisconnectPlayerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disconnect_player();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisconnectPlayer`.
 ///
 /// <p>Disconnects a player from the game runtime.</p>

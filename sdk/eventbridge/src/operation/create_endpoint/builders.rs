@@ -3,6 +3,23 @@ pub use crate::operation::create_endpoint::_create_endpoint_output::CreateEndpoi
 
 pub use crate::operation::create_endpoint::_create_endpoint_input::CreateEndpointInputBuilder;
 
+impl CreateEndpointInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_endpoint::CreateEndpointOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_endpoint::CreateEndpointError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_endpoint();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateEndpoint`.
 ///
 /// <p>Creates a global endpoint. Global endpoints improve your application's availability by making it regional-fault tolerant. To do this, you define a primary and secondary Region with event buses in each Region. You also create a Amazon Route&nbsp;53 health check that will tell EventBridge to route events to the secondary Region when an "unhealthy" state is encountered and events will be routed back to the primary Region when the health check reports a "healthy" state.</p>

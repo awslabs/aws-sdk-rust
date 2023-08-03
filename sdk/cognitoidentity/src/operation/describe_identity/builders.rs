@@ -3,6 +3,23 @@ pub use crate::operation::describe_identity::_describe_identity_output::Describe
 
 pub use crate::operation::describe_identity::_describe_identity_input::DescribeIdentityInputBuilder;
 
+impl DescribeIdentityInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_identity::DescribeIdentityOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_identity::DescribeIdentityError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_identity();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeIdentity`.
 ///
 /// <p>Returns metadata related to the given identity, including when the identity was created and any associated linked logins.</p>

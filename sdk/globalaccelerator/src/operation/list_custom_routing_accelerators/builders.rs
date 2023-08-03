@@ -3,6 +3,23 @@ pub use crate::operation::list_custom_routing_accelerators::_list_custom_routing
 
 pub use crate::operation::list_custom_routing_accelerators::_list_custom_routing_accelerators_input::ListCustomRoutingAcceleratorsInputBuilder;
 
+impl ListCustomRoutingAcceleratorsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_custom_routing_accelerators::ListCustomRoutingAcceleratorsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_custom_routing_accelerators::ListCustomRoutingAcceleratorsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_custom_routing_accelerators();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListCustomRoutingAccelerators`.
 ///
 /// <p>List the custom routing accelerators for an Amazon Web Services account. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_dimension_key_details::_get_dimension_key_details_
 
 pub use crate::operation::get_dimension_key_details::_get_dimension_key_details_input::GetDimensionKeyDetailsInputBuilder;
 
+impl GetDimensionKeyDetailsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_dimension_key_details::GetDimensionKeyDetailsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_dimension_key_details::GetDimensionKeyDetailsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_dimension_key_details();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetDimensionKeyDetails`.
 ///
 /// <p>Get the attributes of the specified dimension group for a DB instance or data source. For example, if you specify a SQL ID, <code>GetDimensionKeyDetails</code> retrieves the full text of the dimension <code>db.sql.statement</code> associated with this ID. This operation is useful because <code>GetResourceMetrics</code> and <code>DescribeDimensionKeys</code> don't support retrieval of large SQL statement text.</p>

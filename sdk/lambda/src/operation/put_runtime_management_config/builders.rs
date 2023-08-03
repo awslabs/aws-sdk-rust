@@ -3,6 +3,23 @@ pub use crate::operation::put_runtime_management_config::_put_runtime_management
 
 pub use crate::operation::put_runtime_management_config::_put_runtime_management_config_input::PutRuntimeManagementConfigInputBuilder;
 
+impl PutRuntimeManagementConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_runtime_management_config::PutRuntimeManagementConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_runtime_management_config::PutRuntimeManagementConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_runtime_management_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutRuntimeManagementConfig`.
 ///
 /// <p>Sets the runtime management configuration for a function's version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-update.html">Runtime updates</a>.</p>

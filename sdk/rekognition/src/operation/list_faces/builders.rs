@@ -3,6 +3,23 @@ pub use crate::operation::list_faces::_list_faces_output::ListFacesOutputBuilder
 
 pub use crate::operation::list_faces::_list_faces_input::ListFacesInputBuilder;
 
+impl ListFacesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_faces::ListFacesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_faces::ListFacesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_faces();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListFaces`.
 ///
 /// <p>Returns metadata for faces in the specified collection. This metadata includes information such as the bounding box coordinates, the confidence (that the bounding box contains a face), and face ID. For an example, see Listing Faces in a Collection in the Amazon Rekognition Developer Guide.</p>

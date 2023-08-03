@@ -3,6 +3,23 @@ pub use crate::operation::purchase_provisioned_capacity::_purchase_provisioned_c
 
 pub use crate::operation::purchase_provisioned_capacity::_purchase_provisioned_capacity_input::PurchaseProvisionedCapacityInputBuilder;
 
+impl PurchaseProvisionedCapacityInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::purchase_provisioned_capacity::PurchaseProvisionedCapacityError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.purchase_provisioned_capacity();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PurchaseProvisionedCapacity`.
 ///
 /// <p>This operation purchases a provisioned capacity unit for an AWS account. </p>

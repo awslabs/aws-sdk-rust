@@ -3,6 +3,23 @@ pub use crate::operation::update_call_analytics_category::_update_call_analytics
 
 pub use crate::operation::update_call_analytics_category::_update_call_analytics_category_input::UpdateCallAnalyticsCategoryInputBuilder;
 
+impl UpdateCallAnalyticsCategoryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_call_analytics_category::UpdateCallAnalyticsCategoryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_call_analytics_category::UpdateCallAnalyticsCategoryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_call_analytics_category();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateCallAnalyticsCategory`.
 ///
 /// <p>Updates the specified Call Analytics category with new rules. Note that the <code>UpdateCallAnalyticsCategory</code> operation overwrites all existing rules contained in the specified category. You cannot append additional rules onto an existing category.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::import_hub_content::_import_hub_content_output::Import
 
 pub use crate::operation::import_hub_content::_import_hub_content_input::ImportHubContentInputBuilder;
 
+impl ImportHubContentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::import_hub_content::ImportHubContentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::import_hub_content::ImportHubContentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.import_hub_content();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ImportHubContent`.
 ///
 /// <p>Import hub content.</p> <note>

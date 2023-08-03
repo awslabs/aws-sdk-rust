@@ -3,6 +3,23 @@ pub use crate::operation::describe_table_statistics::_describe_table_statistics_
 
 pub use crate::operation::describe_table_statistics::_describe_table_statistics_input::DescribeTableStatisticsInputBuilder;
 
+impl DescribeTableStatisticsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_table_statistics::DescribeTableStatisticsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_table_statistics::DescribeTableStatisticsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_table_statistics();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeTableStatistics`.
 ///
 /// <p>Returns table statistics on the database migration task, including table name, rows inserted, rows updated, and rows deleted.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::decline_invitations::_decline_invitations_output::Decl
 
 pub use crate::operation::decline_invitations::_decline_invitations_input::DeclineInvitationsInputBuilder;
 
+impl DeclineInvitationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::decline_invitations::DeclineInvitationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::decline_invitations::DeclineInvitationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.decline_invitations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeclineInvitations`.
 ///
 /// <p>Declines invitations sent to the current member account by Amazon Web Services accounts specified by their account IDs.</p>

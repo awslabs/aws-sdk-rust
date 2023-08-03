@@ -3,6 +3,23 @@ pub use crate::operation::update_collaboration::_update_collaboration_output::Up
 
 pub use crate::operation::update_collaboration::_update_collaboration_input::UpdateCollaborationInputBuilder;
 
+impl UpdateCollaborationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_collaboration::UpdateCollaborationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_collaboration::UpdateCollaborationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_collaboration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateCollaboration`.
 ///
 /// <p>Updates collaboration metadata and can only be called by the collaboration owner.</p>

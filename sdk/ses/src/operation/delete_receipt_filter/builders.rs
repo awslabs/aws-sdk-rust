@@ -3,6 +3,23 @@ pub use crate::operation::delete_receipt_filter::_delete_receipt_filter_output::
 
 pub use crate::operation::delete_receipt_filter::_delete_receipt_filter_input::DeleteReceiptFilterInputBuilder;
 
+impl DeleteReceiptFilterInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_receipt_filter::DeleteReceiptFilterOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_receipt_filter::DeleteReceiptFilterError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_receipt_filter();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteReceiptFilter`.
 ///
 /// <p>Deletes the specified IP address filter.</p>

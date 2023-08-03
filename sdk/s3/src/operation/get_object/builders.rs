@@ -3,6 +3,23 @@ pub use crate::operation::get_object::_get_object_output::GetObjectOutputBuilder
 
 pub use crate::operation::get_object::_get_object_input::GetObjectInputBuilder;
 
+impl GetObjectInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_object::GetObjectOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_object::GetObjectError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_object();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetObject`.
 ///
 /// <p>Retrieves objects from Amazon S3. To use <code>GET</code>, you must have <code>READ</code> access to the object. If you grant <code>READ</code> access to the anonymous user, you can return the object without using an authorization header.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_legal_holds::_list_legal_holds_output::ListLegalH
 
 pub use crate::operation::list_legal_holds::_list_legal_holds_input::ListLegalHoldsInputBuilder;
 
+impl ListLegalHoldsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_legal_holds::ListLegalHoldsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_legal_holds::ListLegalHoldsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_legal_holds();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListLegalHolds`.
 ///
 /// <p>This action returns metadata about active and previous legal holds.</p>

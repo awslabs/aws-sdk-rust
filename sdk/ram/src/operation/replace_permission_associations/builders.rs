@@ -3,6 +3,23 @@ pub use crate::operation::replace_permission_associations::_replace_permission_a
 
 pub use crate::operation::replace_permission_associations::_replace_permission_associations_input::ReplacePermissionAssociationsInputBuilder;
 
+impl ReplacePermissionAssociationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::replace_permission_associations::ReplacePermissionAssociationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::replace_permission_associations::ReplacePermissionAssociationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.replace_permission_associations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ReplacePermissionAssociations`.
 ///
 /// <p>Updates all resource shares that use a managed permission to a different managed permission. This operation always applies the default version of the target managed permission. You can optionally specify that the update applies to only resource shares that currently use a specified version. This enables you to update to the latest version, without changing the which managed permission is used.</p>

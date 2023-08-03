@@ -3,6 +3,23 @@ pub use crate::operation::get_connector_definition::_get_connector_definition_ou
 
 pub use crate::operation::get_connector_definition::_get_connector_definition_input::GetConnectorDefinitionInputBuilder;
 
+impl GetConnectorDefinitionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_connector_definition::GetConnectorDefinitionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_connector_definition::GetConnectorDefinitionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_connector_definition();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetConnectorDefinition`.
 ///
 /// Retrieves information about a connector definition.

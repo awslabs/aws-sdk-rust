@@ -3,6 +3,23 @@ pub use crate::operation::restore_server::_restore_server_output::RestoreServerO
 
 pub use crate::operation::restore_server::_restore_server_input::RestoreServerInputBuilder;
 
+impl RestoreServerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::restore_server::RestoreServerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::restore_server::RestoreServerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.restore_server();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RestoreServer`.
 ///
 /// <p> Restores a backup to a server that is in a <code>CONNECTION_LOST</code>, <code>HEALTHY</code>, <code>RUNNING</code>, <code>UNHEALTHY</code>, or <code>TERMINATED</code> state. When you run RestoreServer, the server's EC2 instance is deleted, and a new EC2 instance is configured. RestoreServer maintains the existing server endpoint, so configuration management of the server's client devices (nodes) should continue to work. </p>

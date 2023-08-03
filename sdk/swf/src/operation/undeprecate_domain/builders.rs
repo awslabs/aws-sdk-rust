@@ -3,6 +3,23 @@ pub use crate::operation::undeprecate_domain::_undeprecate_domain_output::Undepr
 
 pub use crate::operation::undeprecate_domain::_undeprecate_domain_input::UndeprecateDomainInputBuilder;
 
+impl UndeprecateDomainInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::undeprecate_domain::UndeprecateDomainOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::undeprecate_domain::UndeprecateDomainError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.undeprecate_domain();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UndeprecateDomain`.
 ///
 /// <p>Undeprecates a previously deprecated domain. After a domain has been undeprecated it can be used to create new workflow executions or register new types.</p> <note>

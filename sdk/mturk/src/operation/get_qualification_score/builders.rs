@@ -3,6 +3,23 @@ pub use crate::operation::get_qualification_score::_get_qualification_score_outp
 
 pub use crate::operation::get_qualification_score::_get_qualification_score_input::GetQualificationScoreInputBuilder;
 
+impl GetQualificationScoreInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_qualification_score::GetQualificationScoreOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_qualification_score::GetQualificationScoreError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_qualification_score();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetQualificationScore`.
 ///
 /// <p> The <code>GetQualificationScore</code> operation returns the value of a Worker's Qualification for a given Qualification type. </p>

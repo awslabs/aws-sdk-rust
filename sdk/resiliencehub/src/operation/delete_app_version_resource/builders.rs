@@ -3,6 +3,23 @@ pub use crate::operation::delete_app_version_resource::_delete_app_version_resou
 
 pub use crate::operation::delete_app_version_resource::_delete_app_version_resource_input::DeleteAppVersionResourceInputBuilder;
 
+impl DeleteAppVersionResourceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_app_version_resource::DeleteAppVersionResourceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_app_version_resource::DeleteAppVersionResourceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_app_version_resource();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteAppVersionResource`.
 ///
 /// <p>Deletes a resource from the Resilience Hub application.</p> <note>

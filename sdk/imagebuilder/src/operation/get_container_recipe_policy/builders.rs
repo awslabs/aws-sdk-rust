@@ -3,6 +3,23 @@ pub use crate::operation::get_container_recipe_policy::_get_container_recipe_pol
 
 pub use crate::operation::get_container_recipe_policy::_get_container_recipe_policy_input::GetContainerRecipePolicyInputBuilder;
 
+impl GetContainerRecipePolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_container_recipe_policy::GetContainerRecipePolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_container_recipe_policy::GetContainerRecipePolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_container_recipe_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetContainerRecipePolicy`.
 ///
 /// <p>Retrieves the policy for a container recipe.</p>

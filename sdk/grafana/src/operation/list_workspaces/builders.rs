@@ -3,6 +3,23 @@ pub use crate::operation::list_workspaces::_list_workspaces_output::ListWorkspac
 
 pub use crate::operation::list_workspaces::_list_workspaces_input::ListWorkspacesInputBuilder;
 
+impl ListWorkspacesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_workspaces::ListWorkspacesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_workspaces::ListWorkspacesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_workspaces();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListWorkspaces`.
 ///
 /// <p>Returns a list of Amazon Managed Grafana workspaces in the account, with some information about each workspace. For more complete information about one workspace, use <a href="https://docs.aws.amazon.com/AAMG/latest/APIReference/API_DescribeWorkspace.html">DescribeWorkspace</a>.</p>

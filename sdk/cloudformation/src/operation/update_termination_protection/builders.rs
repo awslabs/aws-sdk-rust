@@ -3,6 +3,23 @@ pub use crate::operation::update_termination_protection::_update_termination_pro
 
 pub use crate::operation::update_termination_protection::_update_termination_protection_input::UpdateTerminationProtectionInputBuilder;
 
+impl UpdateTerminationProtectionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_termination_protection::UpdateTerminationProtectionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_termination_protection::UpdateTerminationProtectionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_termination_protection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateTerminationProtection`.
 ///
 /// <p>Updates termination protection for the specified stack. If a user attempts to delete a stack with termination protection enabled, the operation fails and the stack remains unchanged. For more information, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-protect-stacks.html">Protecting a Stack From Being Deleted</a> in the <i>CloudFormation User Guide</i>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_certificate_authorities::_list_certificate_author
 
 pub use crate::operation::list_certificate_authorities::_list_certificate_authorities_input::ListCertificateAuthoritiesInputBuilder;
 
+impl ListCertificateAuthoritiesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_certificate_authorities::ListCertificateAuthoritiesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_certificate_authorities::ListCertificateAuthoritiesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_certificate_authorities();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListCertificateAuthorities`.
 ///
 /// <p>Lists the private certificate authorities that you created by using the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthority.html">CreateCertificateAuthority</a> action.</p>

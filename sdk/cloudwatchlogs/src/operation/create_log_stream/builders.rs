@@ -3,6 +3,23 @@ pub use crate::operation::create_log_stream::_create_log_stream_output::CreateLo
 
 pub use crate::operation::create_log_stream::_create_log_stream_input::CreateLogStreamInputBuilder;
 
+impl CreateLogStreamInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_log_stream::CreateLogStreamOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_log_stream::CreateLogStreamError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_log_stream();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateLogStream`.
 ///
 /// <p>Creates a log stream for the specified log group. A log stream is a sequence of log events that originate from a single source, such as an application instance or a resource that is being monitored.</p>

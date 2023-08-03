@@ -3,6 +3,23 @@ pub use crate::operation::execute_core_network_change_set::_execute_core_network
 
 pub use crate::operation::execute_core_network_change_set::_execute_core_network_change_set_input::ExecuteCoreNetworkChangeSetInputBuilder;
 
+impl ExecuteCoreNetworkChangeSetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::execute_core_network_change_set::ExecuteCoreNetworkChangeSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::execute_core_network_change_set::ExecuteCoreNetworkChangeSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.execute_core_network_change_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ExecuteCoreNetworkChangeSet`.
 ///
 /// <p>Executes a change set on your core network. Deploys changes globally based on the policy submitted..</p>

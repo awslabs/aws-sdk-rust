@@ -3,6 +3,23 @@ pub use crate::operation::copy_db_parameter_group::_copy_db_parameter_group_outp
 
 pub use crate::operation::copy_db_parameter_group::_copy_db_parameter_group_input::CopyDbParameterGroupInputBuilder;
 
+impl CopyDbParameterGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::copy_db_parameter_group::CopyDbParameterGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::copy_db_parameter_group::CopyDBParameterGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.copy_db_parameter_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CopyDBParameterGroup`.
 ///
 /// <p>Copies the specified DB parameter group.</p>

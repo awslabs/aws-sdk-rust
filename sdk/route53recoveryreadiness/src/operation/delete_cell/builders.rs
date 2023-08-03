@@ -3,6 +3,23 @@ pub use crate::operation::delete_cell::_delete_cell_output::DeleteCellOutputBuil
 
 pub use crate::operation::delete_cell::_delete_cell_input::DeleteCellInputBuilder;
 
+impl DeleteCellInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_cell::DeleteCellOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_cell::DeleteCellError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_cell();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteCell`.
 ///
 /// <p>Delete a cell. When successful, the response code is 204, with no response body.</p>

@@ -3,6 +3,17 @@ pub use crate::operation::start_data_quality_rule_recommendation_run::_start_dat
 
 pub use crate::operation::start_data_quality_rule_recommendation_run::_start_data_quality_rule_recommendation_run_input::StartDataQualityRuleRecommendationRunInputBuilder;
 
+impl StartDataQualityRuleRecommendationRunInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::start_data_quality_rule_recommendation_run::StartDataQualityRuleRecommendationRunOutput, ::aws_smithy_http::result::SdkError<crate::operation::start_data_quality_rule_recommendation_run::StartDataQualityRuleRecommendationRunError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.start_data_quality_rule_recommendation_run();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartDataQualityRuleRecommendationRun`.
 ///
 /// <p>Starts a recommendation run that is used to generate rules when you don't know what rules to write. Glue Data Quality analyzes the data and comes up with recommendations for a potential ruleset. You can then triage the ruleset and modify the generated ruleset to your liking.</p>

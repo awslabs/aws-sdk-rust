@@ -3,6 +3,17 @@ pub use crate::operation::put_messaging_streaming_configurations::_put_messaging
 
 pub use crate::operation::put_messaging_streaming_configurations::_put_messaging_streaming_configurations_input::PutMessagingStreamingConfigurationsInputBuilder;
 
+impl PutMessagingStreamingConfigurationsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::put_messaging_streaming_configurations::PutMessagingStreamingConfigurationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_messaging_streaming_configurations::PutMessagingStreamingConfigurationsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.put_messaging_streaming_configurations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutMessagingStreamingConfigurations`.
 ///
 /// <p>Sets the data streaming configuration for an <code>AppInstance</code>. For more information, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/streaming-export.html">Streaming messaging data</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p>

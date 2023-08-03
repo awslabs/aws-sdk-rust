@@ -3,6 +3,23 @@ pub use crate::operation::describe_events_detection_job::_describe_events_detect
 
 pub use crate::operation::describe_events_detection_job::_describe_events_detection_job_input::DescribeEventsDetectionJobInputBuilder;
 
+impl DescribeEventsDetectionJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_events_detection_job::DescribeEventsDetectionJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_events_detection_job::DescribeEventsDetectionJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_events_detection_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeEventsDetectionJob`.
 ///
 /// <p>Gets the status and details of an events detection job.</p>

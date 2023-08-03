@@ -3,6 +3,23 @@ pub use crate::operation::detect_entities_v2::_detect_entities_v2_output::Detect
 
 pub use crate::operation::detect_entities_v2::_detect_entities_v2_input::DetectEntitiesV2InputBuilder;
 
+impl DetectEntitiesV2InputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::detect_entities_v2::DetectEntitiesV2Output,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::detect_entities_v2::DetectEntitiesV2Error,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.detect_entities_v2();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DetectEntitiesV2`.
 ///
 /// <p>Inspects the clinical text for a variety of medical entities and returns specific information about them such as entity category, location, and confidence score on that information. Amazon Comprehend Medical only detects medical entities in English language texts.</p>

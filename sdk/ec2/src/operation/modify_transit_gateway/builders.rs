@@ -3,6 +3,23 @@ pub use crate::operation::modify_transit_gateway::_modify_transit_gateway_output
 
 pub use crate::operation::modify_transit_gateway::_modify_transit_gateway_input::ModifyTransitGatewayInputBuilder;
 
+impl ModifyTransitGatewayInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_transit_gateway::ModifyTransitGatewayOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_transit_gateway::ModifyTransitGatewayError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_transit_gateway();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyTransitGateway`.
 ///
 /// <p>Modifies the specified transit gateway. When you modify a transit gateway, the modified options are applied to new transit gateway attachments only. Your existing transit gateway attachments are not modified.</p>

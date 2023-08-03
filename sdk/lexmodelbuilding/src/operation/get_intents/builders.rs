@@ -3,6 +3,23 @@ pub use crate::operation::get_intents::_get_intents_output::GetIntentsOutputBuil
 
 pub use crate::operation::get_intents::_get_intents_input::GetIntentsInputBuilder;
 
+impl GetIntentsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_intents::GetIntentsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_intents::GetIntentsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_intents();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetIntents`.
 ///
 /// <p>Returns intent information as follows: </p>

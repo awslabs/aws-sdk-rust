@@ -3,6 +3,23 @@ pub use crate::operation::describe_global_clusters::_describe_global_clusters_ou
 
 pub use crate::operation::describe_global_clusters::_describe_global_clusters_input::DescribeGlobalClustersInputBuilder;
 
+impl DescribeGlobalClustersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_global_clusters::DescribeGlobalClustersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_global_clusters::DescribeGlobalClustersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_global_clusters();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeGlobalClusters`.
 ///
 /// <p>Returns information about Aurora global database clusters. This API supports pagination.</p>

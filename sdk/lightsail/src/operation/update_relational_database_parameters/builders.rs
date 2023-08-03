@@ -3,6 +3,17 @@ pub use crate::operation::update_relational_database_parameters::_update_relatio
 
 pub use crate::operation::update_relational_database_parameters::_update_relational_database_parameters_input::UpdateRelationalDatabaseParametersInputBuilder;
 
+impl UpdateRelationalDatabaseParametersInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::update_relational_database_parameters::UpdateRelationalDatabaseParametersOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_relational_database_parameters::UpdateRelationalDatabaseParametersError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.update_relational_database_parameters();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateRelationalDatabaseParameters`.
 ///
 /// <p>Allows the update of one or more parameters of a database in Amazon Lightsail.</p>

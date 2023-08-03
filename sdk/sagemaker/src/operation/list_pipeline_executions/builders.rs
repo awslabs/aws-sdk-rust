@@ -3,6 +3,23 @@ pub use crate::operation::list_pipeline_executions::_list_pipeline_executions_ou
 
 pub use crate::operation::list_pipeline_executions::_list_pipeline_executions_input::ListPipelineExecutionsInputBuilder;
 
+impl ListPipelineExecutionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_pipeline_executions::ListPipelineExecutionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_pipeline_executions::ListPipelineExecutionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_pipeline_executions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListPipelineExecutions`.
 ///
 /// <p>Gets a list of the pipeline executions.</p>

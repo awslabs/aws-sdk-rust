@@ -3,6 +3,23 @@ pub use crate::operation::delete_schema_mapping::_delete_schema_mapping_output::
 
 pub use crate::operation::delete_schema_mapping::_delete_schema_mapping_input::DeleteSchemaMappingInputBuilder;
 
+impl DeleteSchemaMappingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_schema_mapping::DeleteSchemaMappingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_schema_mapping::DeleteSchemaMappingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_schema_mapping();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteSchemaMapping`.
 ///
 /// <p>Deletes the <code>SchemaMapping</code> with a given name. This operation will succeed even if a schema with the given name does not exist. This operation will fail if there is a <code>DataIntegrationWorkflow</code> object that references the <code>SchemaMapping</code> in the workflow's <code>InputSourceConfig</code>.</p>

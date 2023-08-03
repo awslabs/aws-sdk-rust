@@ -3,6 +3,23 @@ pub use crate::operation::add_ip_routes::_add_ip_routes_output::AddIpRoutesOutpu
 
 pub use crate::operation::add_ip_routes::_add_ip_routes_input::AddIpRoutesInputBuilder;
 
+impl AddIpRoutesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::add_ip_routes::AddIpRoutesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::add_ip_routes::AddIpRoutesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.add_ip_routes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AddIpRoutes`.
 ///
 /// <p>If the DNS server for your self-managed domain uses a publicly addressable IP address, you must add a CIDR address block to correctly route traffic to and from your Microsoft AD on Amazon Web Services. <i>AddIpRoutes</i> adds this address block. You can also use <i>AddIpRoutes</i> to facilitate routing traffic that uses public IP ranges from your Microsoft AD on Amazon Web Services to a peer VPC. </p>

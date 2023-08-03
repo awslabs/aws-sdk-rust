@@ -3,6 +3,23 @@ pub use crate::operation::delete_parameter_group::_delete_parameter_group_output
 
 pub use crate::operation::delete_parameter_group::_delete_parameter_group_input::DeleteParameterGroupInputBuilder;
 
+impl DeleteParameterGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_parameter_group::DeleteParameterGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_parameter_group::DeleteParameterGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_parameter_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteParameterGroup`.
 ///
 /// <p>Deletes the specified parameter group. You cannot delete a parameter group if it is associated with any DAX clusters.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::update_domain_metadata::_update_domain_metadata_output
 
 pub use crate::operation::update_domain_metadata::_update_domain_metadata_input::UpdateDomainMetadataInputBuilder;
 
+impl UpdateDomainMetadataInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_domain_metadata::UpdateDomainMetadataOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_domain_metadata::UpdateDomainMetadataError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_domain_metadata();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateDomainMetadata`.
 ///
 /// <p>Updates domain metadata, such as DisplayName.</p>

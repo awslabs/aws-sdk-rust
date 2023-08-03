@@ -3,6 +3,23 @@ pub use crate::operation::list_schema_mappings::_list_schema_mappings_output::Li
 
 pub use crate::operation::list_schema_mappings::_list_schema_mappings_input::ListSchemaMappingsInputBuilder;
 
+impl ListSchemaMappingsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_schema_mappings::ListSchemaMappingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_schema_mappings::ListSchemaMappingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_schema_mappings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListSchemaMappings`.
 ///
 /// <p>Returns a list of all the <code>SchemaMappings</code> that have been created for an AWS account.</p>

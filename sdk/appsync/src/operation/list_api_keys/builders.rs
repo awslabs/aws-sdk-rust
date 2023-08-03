@@ -3,6 +3,23 @@ pub use crate::operation::list_api_keys::_list_api_keys_output::ListApiKeysOutpu
 
 pub use crate::operation::list_api_keys::_list_api_keys_input::ListApiKeysInputBuilder;
 
+impl ListApiKeysInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_api_keys::ListApiKeysOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_api_keys::ListApiKeysError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_api_keys();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListApiKeys`.
 ///
 /// <p>Lists the API keys for a given API.</p> <note>

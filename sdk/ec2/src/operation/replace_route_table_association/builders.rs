@@ -3,6 +3,23 @@ pub use crate::operation::replace_route_table_association::_replace_route_table_
 
 pub use crate::operation::replace_route_table_association::_replace_route_table_association_input::ReplaceRouteTableAssociationInputBuilder;
 
+impl ReplaceRouteTableAssociationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::replace_route_table_association::ReplaceRouteTableAssociationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::replace_route_table_association::ReplaceRouteTableAssociationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.replace_route_table_association();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ReplaceRouteTableAssociation`.
 ///
 /// <p>Changes the route table associated with a given subnet, internet gateway, or virtual private gateway in a VPC. After the operation completes, the subnet or gateway uses the routes in the new route table. For more information about route tables, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/VPC_Route_Tables.html">Route tables</a> in the <i>Amazon VPC User Guide</i>.</p>

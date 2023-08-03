@@ -3,6 +3,23 @@ pub use crate::operation::detect_pii_entities::_detect_pii_entities_output::Dete
 
 pub use crate::operation::detect_pii_entities::_detect_pii_entities_input::DetectPiiEntitiesInputBuilder;
 
+impl DetectPiiEntitiesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::detect_pii_entities::DetectPiiEntitiesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::detect_pii_entities::DetectPiiEntitiesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.detect_pii_entities();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DetectPiiEntities`.
 ///
 /// <p>Inspects the input text for entities that contain personally identifiable information (PII) and returns information about them.</p>

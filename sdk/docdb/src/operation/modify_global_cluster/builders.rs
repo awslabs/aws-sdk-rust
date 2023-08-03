@@ -3,6 +3,23 @@ pub use crate::operation::modify_global_cluster::_modify_global_cluster_output::
 
 pub use crate::operation::modify_global_cluster::_modify_global_cluster_input::ModifyGlobalClusterInputBuilder;
 
+impl ModifyGlobalClusterInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_global_cluster::ModifyGlobalClusterOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_global_cluster::ModifyGlobalClusterError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_global_cluster();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyGlobalCluster`.
 ///
 /// <p>Modify a setting for an Amazon DocumentDB global cluster. You can change one or more configuration parameters (for example: deletion protection), or the global cluster identifier by specifying these parameters and the new values in the request.</p> <note>

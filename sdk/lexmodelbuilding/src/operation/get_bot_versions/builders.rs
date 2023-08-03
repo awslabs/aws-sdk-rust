@@ -3,6 +3,23 @@ pub use crate::operation::get_bot_versions::_get_bot_versions_output::GetBotVers
 
 pub use crate::operation::get_bot_versions::_get_bot_versions_input::GetBotVersionsInputBuilder;
 
+impl GetBotVersionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_bot_versions::GetBotVersionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_bot_versions::GetBotVersionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_bot_versions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetBotVersions`.
 ///
 /// <p>Gets information about all of the versions of a bot.</p>

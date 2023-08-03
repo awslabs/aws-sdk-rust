@@ -3,6 +3,23 @@ pub use crate::operation::modify_managed_prefix_list::_modify_managed_prefix_lis
 
 pub use crate::operation::modify_managed_prefix_list::_modify_managed_prefix_list_input::ModifyManagedPrefixListInputBuilder;
 
+impl ModifyManagedPrefixListInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_managed_prefix_list::ModifyManagedPrefixListOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_managed_prefix_list::ModifyManagedPrefixListError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_managed_prefix_list();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyManagedPrefixList`.
 ///
 /// <p>Modifies the specified managed prefix list.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_device_fleet_report::_get_device_fleet_report_outp
 
 pub use crate::operation::get_device_fleet_report::_get_device_fleet_report_input::GetDeviceFleetReportInputBuilder;
 
+impl GetDeviceFleetReportInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_device_fleet_report::GetDeviceFleetReportOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_device_fleet_report::GetDeviceFleetReportError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_device_fleet_report();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetDeviceFleetReport`.
 ///
 /// <p>Describes a fleet.</p>

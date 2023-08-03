@@ -3,6 +3,17 @@ pub use crate::operation::accept_environment_account_connection::_accept_environ
 
 pub use crate::operation::accept_environment_account_connection::_accept_environment_account_connection_input::AcceptEnvironmentAccountConnectionInputBuilder;
 
+impl AcceptEnvironmentAccountConnectionInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::accept_environment_account_connection::AcceptEnvironmentAccountConnectionOutput, ::aws_smithy_http::result::SdkError<crate::operation::accept_environment_account_connection::AcceptEnvironmentAccountConnectionError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.accept_environment_account_connection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AcceptEnvironmentAccountConnection`.
 ///
 /// <p>In a management account, an environment account connection request is accepted. When the environment account connection request is accepted, Proton can use the associated IAM role to provision environment infrastructure resources in the associated environment account.</p>

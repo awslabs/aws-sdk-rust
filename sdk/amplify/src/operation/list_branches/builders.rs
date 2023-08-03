@@ -3,6 +3,23 @@ pub use crate::operation::list_branches::_list_branches_output::ListBranchesOutp
 
 pub use crate::operation::list_branches::_list_branches_input::ListBranchesInputBuilder;
 
+impl ListBranchesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_branches::ListBranchesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_branches::ListBranchesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_branches();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListBranches`.
 ///
 /// <p> Lists the branches of an Amplify app. </p>

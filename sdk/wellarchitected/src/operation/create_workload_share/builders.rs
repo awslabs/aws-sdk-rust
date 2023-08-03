@@ -3,6 +3,23 @@ pub use crate::operation::create_workload_share::_create_workload_share_output::
 
 pub use crate::operation::create_workload_share::_create_workload_share_input::CreateWorkloadShareInputBuilder;
 
+impl CreateWorkloadShareInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_workload_share::CreateWorkloadShareOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_workload_share::CreateWorkloadShareError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_workload_share();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateWorkloadShare`.
 ///
 /// <p>Create a workload share.</p>

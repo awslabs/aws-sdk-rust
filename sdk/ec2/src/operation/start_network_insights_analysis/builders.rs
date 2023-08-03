@@ -3,6 +3,23 @@ pub use crate::operation::start_network_insights_analysis::_start_network_insigh
 
 pub use crate::operation::start_network_insights_analysis::_start_network_insights_analysis_input::StartNetworkInsightsAnalysisInputBuilder;
 
+impl StartNetworkInsightsAnalysisInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_network_insights_analysis::StartNetworkInsightsAnalysisOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_network_insights_analysis::StartNetworkInsightsAnalysisError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_network_insights_analysis();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartNetworkInsightsAnalysis`.
 ///
 /// <p>Starts analyzing the specified path. If the path is reachable, the operation returns the shortest feasible path.</p>

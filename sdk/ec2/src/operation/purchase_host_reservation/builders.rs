@@ -3,6 +3,23 @@ pub use crate::operation::purchase_host_reservation::_purchase_host_reservation_
 
 pub use crate::operation::purchase_host_reservation::_purchase_host_reservation_input::PurchaseHostReservationInputBuilder;
 
+impl PurchaseHostReservationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::purchase_host_reservation::PurchaseHostReservationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::purchase_host_reservation::PurchaseHostReservationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.purchase_host_reservation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PurchaseHostReservation`.
 ///
 /// <p>Purchase a reservation with configurations that match those of your Dedicated Host. You must have active Dedicated Hosts in your account before you purchase a reservation. This action results in the specified reservation being purchased and charged to your account.</p>

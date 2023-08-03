@@ -3,6 +3,23 @@ pub use crate::operation::create_profile::_create_profile_output::CreateProfileO
 
 pub use crate::operation::create_profile::_create_profile_input::CreateProfileInputBuilder;
 
+impl CreateProfileInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_profile::CreateProfileOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_profile::CreateProfileError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_profile();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateProfile`.
 ///
 /// <p>Creates a <i>profile</i>, a list of the roles that Roles Anywhere service is trusted to assume. You use profiles to intersect permissions with IAM managed policies.</p>

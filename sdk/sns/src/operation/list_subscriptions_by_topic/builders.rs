@@ -3,6 +3,23 @@ pub use crate::operation::list_subscriptions_by_topic::_list_subscriptions_by_to
 
 pub use crate::operation::list_subscriptions_by_topic::_list_subscriptions_by_topic_input::ListSubscriptionsByTopicInputBuilder;
 
+impl ListSubscriptionsByTopicInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_subscriptions_by_topic::ListSubscriptionsByTopicOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_subscriptions_by_topic::ListSubscriptionsByTopicError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_subscriptions_by_topic();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListSubscriptionsByTopic`.
 ///
 /// <p>Returns a list of the subscriptions to a specific topic. Each call returns a limited list of subscriptions, up to 100. If there are more subscriptions, a <code>NextToken</code> is also returned. Use the <code>NextToken</code> parameter in a new <code>ListSubscriptionsByTopic</code> call to get further results.</p>

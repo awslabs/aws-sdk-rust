@@ -3,6 +3,23 @@ pub use crate::operation::delete_secret::_delete_secret_output::DeleteSecretOutp
 
 pub use crate::operation::delete_secret::_delete_secret_input::DeleteSecretInputBuilder;
 
+impl DeleteSecretInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_secret::DeleteSecretOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_secret::DeleteSecretError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_secret();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteSecret`.
 ///
 /// <p>Deletes a secret and all of its versions. You can specify a recovery window during which you can restore the secret. The minimum recovery window is 7 days. The default recovery window is 30 days. Secrets Manager attaches a <code>DeletionDate</code> stamp to the secret that specifies the end of the recovery window. At the end of the recovery window, Secrets Manager deletes the secret permanently.</p>

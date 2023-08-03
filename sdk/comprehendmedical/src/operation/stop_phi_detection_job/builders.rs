@@ -3,6 +3,23 @@ pub use crate::operation::stop_phi_detection_job::_stop_phi_detection_job_output
 
 pub use crate::operation::stop_phi_detection_job::_stop_phi_detection_job_input::StopPhiDetectionJobInputBuilder;
 
+impl StopPhiDetectionJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_phi_detection_job::StopPhiDetectionJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_phi_detection_job::StopPHIDetectionJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_phi_detection_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopPHIDetectionJob`.
 ///
 /// <p>Stops a protected health information (PHI) detection job in progress.</p>

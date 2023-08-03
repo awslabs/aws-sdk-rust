@@ -3,6 +3,23 @@ pub use crate::operation::search_analyses::_search_analyses_output::SearchAnalys
 
 pub use crate::operation::search_analyses::_search_analyses_input::SearchAnalysesInputBuilder;
 
+impl SearchAnalysesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::search_analyses::SearchAnalysesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::search_analyses::SearchAnalysesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.search_analyses();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SearchAnalyses`.
 ///
 /// <p>Searches for analyses that belong to the user specified in the filter.</p> <note>

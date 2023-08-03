@@ -3,6 +3,23 @@ pub use crate::operation::update_user_settings::_update_user_settings_output::Up
 
 pub use crate::operation::update_user_settings::_update_user_settings_input::UpdateUserSettingsInputBuilder;
 
+impl UpdateUserSettingsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_user_settings::UpdateUserSettingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_user_settings::UpdateUserSettingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_user_settings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateUserSettings`.
 ///
 /// <p>Updates the settings for the specified user, such as phone number settings.</p>

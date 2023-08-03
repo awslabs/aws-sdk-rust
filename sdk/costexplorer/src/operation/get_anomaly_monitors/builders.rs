@@ -3,6 +3,23 @@ pub use crate::operation::get_anomaly_monitors::_get_anomaly_monitors_output::Ge
 
 pub use crate::operation::get_anomaly_monitors::_get_anomaly_monitors_input::GetAnomalyMonitorsInputBuilder;
 
+impl GetAnomalyMonitorsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_anomaly_monitors::GetAnomalyMonitorsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_anomaly_monitors::GetAnomalyMonitorsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_anomaly_monitors();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetAnomalyMonitors`.
 ///
 /// <p>Retrieves the cost anomaly monitor definitions for your account. You can filter using a list of cost anomaly monitor Amazon Resource Names (ARNs). </p>

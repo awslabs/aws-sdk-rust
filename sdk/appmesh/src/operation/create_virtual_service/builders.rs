@@ -3,6 +3,23 @@ pub use crate::operation::create_virtual_service::_create_virtual_service_output
 
 pub use crate::operation::create_virtual_service::_create_virtual_service_input::CreateVirtualServiceInputBuilder;
 
+impl CreateVirtualServiceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_virtual_service::CreateVirtualServiceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_virtual_service::CreateVirtualServiceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_virtual_service();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateVirtualService`.
 ///
 /// <p>Creates a virtual service within a service mesh.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_run_group::_create_run_group_output::CreateRunG
 
 pub use crate::operation::create_run_group::_create_run_group_input::CreateRunGroupInputBuilder;
 
+impl CreateRunGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_run_group::CreateRunGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_run_group::CreateRunGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_run_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateRunGroup`.
 ///
 /// <p>Creates a run group.</p>

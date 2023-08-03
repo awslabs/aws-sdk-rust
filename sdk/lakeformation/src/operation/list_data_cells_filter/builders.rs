@@ -3,6 +3,23 @@ pub use crate::operation::list_data_cells_filter::_list_data_cells_filter_output
 
 pub use crate::operation::list_data_cells_filter::_list_data_cells_filter_input::ListDataCellsFilterInputBuilder;
 
+impl ListDataCellsFilterInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_data_cells_filter::ListDataCellsFilterOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_data_cells_filter::ListDataCellsFilterError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_data_cells_filter();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDataCellsFilter`.
 ///
 /// <p>Lists all the data cell filters on a table.</p>

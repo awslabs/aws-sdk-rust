@@ -3,6 +3,23 @@ pub use crate::operation::list_tokens::_list_tokens_output::ListTokensOutputBuil
 
 pub use crate::operation::list_tokens::_list_tokens_input::ListTokensInputBuilder;
 
+impl ListTokensInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_tokens::ListTokensOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_tokens::ListTokensError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_tokens();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListTokens`.
 ///
 /// <p>Lists your tokens.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_connect_client_add_in::_create_connect_client_a
 
 pub use crate::operation::create_connect_client_add_in::_create_connect_client_add_in_input::CreateConnectClientAddInInputBuilder;
 
+impl CreateConnectClientAddInInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_connect_client_add_in::CreateConnectClientAddInOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_connect_client_add_in::CreateConnectClientAddInError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_connect_client_add_in();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateConnectClientAddIn`.
 ///
 /// <p>Creates a client-add-in for Amazon Connect within a directory. You can create only one Amazon Connect client add-in within a directory.</p>

@@ -3,6 +3,17 @@ pub use crate::operation::put_app_replication_configuration::_put_app_replicatio
 
 pub use crate::operation::put_app_replication_configuration::_put_app_replication_configuration_input::PutAppReplicationConfigurationInputBuilder;
 
+impl PutAppReplicationConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::put_app_replication_configuration::PutAppReplicationConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_app_replication_configuration::PutAppReplicationConfigurationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.put_app_replication_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutAppReplicationConfiguration`.
 ///
 /// <p>Creates or updates the replication configuration for the specified application.</p>

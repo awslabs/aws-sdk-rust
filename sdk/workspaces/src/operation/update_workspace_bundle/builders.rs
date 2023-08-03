@@ -3,6 +3,23 @@ pub use crate::operation::update_workspace_bundle::_update_workspace_bundle_outp
 
 pub use crate::operation::update_workspace_bundle::_update_workspace_bundle_input::UpdateWorkspaceBundleInputBuilder;
 
+impl UpdateWorkspaceBundleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_workspace_bundle::UpdateWorkspaceBundleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_workspace_bundle::UpdateWorkspaceBundleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_workspace_bundle();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateWorkspaceBundle`.
 ///
 /// <p>Updates a WorkSpace bundle with a new image. For more information about updating WorkSpace bundles, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/update-custom-bundle.html"> Update a Custom WorkSpaces Bundle</a>.</p> <important>

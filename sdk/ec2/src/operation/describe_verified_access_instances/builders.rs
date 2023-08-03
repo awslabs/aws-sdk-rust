@@ -3,6 +3,17 @@ pub use crate::operation::describe_verified_access_instances::_describe_verified
 
 pub use crate::operation::describe_verified_access_instances::_describe_verified_access_instances_input::DescribeVerifiedAccessInstancesInputBuilder;
 
+impl DescribeVerifiedAccessInstancesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_verified_access_instances::DescribeVerifiedAccessInstancesOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_verified_access_instances::DescribeVerifiedAccessInstancesError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_verified_access_instances();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeVerifiedAccessInstances`.
 ///
 /// <p>Describes the specified Amazon Web Services Verified Access instances.</p>

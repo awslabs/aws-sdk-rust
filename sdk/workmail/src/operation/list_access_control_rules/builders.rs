@@ -3,6 +3,23 @@ pub use crate::operation::list_access_control_rules::_list_access_control_rules_
 
 pub use crate::operation::list_access_control_rules::_list_access_control_rules_input::ListAccessControlRulesInputBuilder;
 
+impl ListAccessControlRulesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_access_control_rules::ListAccessControlRulesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_access_control_rules::ListAccessControlRulesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_access_control_rules();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAccessControlRules`.
 ///
 /// <p>Lists the access control rules for the specified organization.</p>

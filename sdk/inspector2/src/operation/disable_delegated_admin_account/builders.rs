@@ -3,6 +3,23 @@ pub use crate::operation::disable_delegated_admin_account::_disable_delegated_ad
 
 pub use crate::operation::disable_delegated_admin_account::_disable_delegated_admin_account_input::DisableDelegatedAdminAccountInputBuilder;
 
+impl DisableDelegatedAdminAccountInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disable_delegated_admin_account::DisableDelegatedAdminAccountOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disable_delegated_admin_account::DisableDelegatedAdminAccountError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disable_delegated_admin_account();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisableDelegatedAdminAccount`.
 ///
 /// <p>Disables the Amazon Inspector delegated administrator for your organization.</p>

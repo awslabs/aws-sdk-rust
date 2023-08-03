@@ -3,6 +3,23 @@ pub use crate::operation::admin_set_user_password::_admin_set_user_password_outp
 
 pub use crate::operation::admin_set_user_password::_admin_set_user_password_input::AdminSetUserPasswordInputBuilder;
 
+impl AdminSetUserPasswordInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::admin_set_user_password::AdminSetUserPasswordOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::admin_set_user_password::AdminSetUserPasswordError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.admin_set_user_password();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AdminSetUserPassword`.
 ///
 /// <p>Sets the specified user's password in a user pool as an administrator. Works on any user. </p>

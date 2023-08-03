@@ -3,6 +3,23 @@ pub use crate::operation::list_refresh_schedules::_list_refresh_schedules_output
 
 pub use crate::operation::list_refresh_schedules::_list_refresh_schedules_input::ListRefreshSchedulesInputBuilder;
 
+impl ListRefreshSchedulesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_refresh_schedules::ListRefreshSchedulesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_refresh_schedules::ListRefreshSchedulesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_refresh_schedules();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListRefreshSchedules`.
 ///
 /// <p>Lists the refresh schedules of a dataset. Each dataset can have up to 5 schedules. </p>

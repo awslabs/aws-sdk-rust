@@ -3,6 +3,23 @@ pub use crate::operation::update_event_data_store::_update_event_data_store_outp
 
 pub use crate::operation::update_event_data_store::_update_event_data_store_input::UpdateEventDataStoreInputBuilder;
 
+impl UpdateEventDataStoreInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_event_data_store::UpdateEventDataStoreOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_event_data_store::UpdateEventDataStoreError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_event_data_store();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateEventDataStore`.
 ///
 /// <p>Updates an event data store. The required <code>EventDataStore</code> value is an ARN or the ID portion of the ARN. Other parameters are optional, but at least one optional parameter must be specified, or CloudTrail throws an error. <code>RetentionPeriod</code> is in days, and valid values are integers between 90 and 2557. By default, <code>TerminationProtection</code> is enabled.</p>

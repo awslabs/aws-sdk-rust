@@ -3,6 +3,23 @@ pub use crate::operation::describe_savings_plans_offerings::_describe_savings_pl
 
 pub use crate::operation::describe_savings_plans_offerings::_describe_savings_plans_offerings_input::DescribeSavingsPlansOfferingsInputBuilder;
 
+impl DescribeSavingsPlansOfferingsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_savings_plans_offerings::DescribeSavingsPlansOfferingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_savings_plans_offerings::DescribeSavingsPlansOfferingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_savings_plans_offerings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeSavingsPlansOfferings`.
 ///
 /// <p>Describes the specified Savings Plans offerings.</p>

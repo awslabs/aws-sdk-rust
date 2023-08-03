@@ -3,6 +3,23 @@ pub use crate::operation::describe_ip_restriction::_describe_ip_restriction_outp
 
 pub use crate::operation::describe_ip_restriction::_describe_ip_restriction_input::DescribeIpRestrictionInputBuilder;
 
+impl DescribeIpRestrictionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_ip_restriction::DescribeIpRestrictionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_ip_restriction::DescribeIpRestrictionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_ip_restriction();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeIpRestriction`.
 ///
 /// <p>Provides a summary and status of IP rules.</p>

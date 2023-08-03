@@ -3,6 +3,23 @@ pub use crate::operation::update_endpoints_batch::_update_endpoints_batch_output
 
 pub use crate::operation::update_endpoints_batch::_update_endpoints_batch_input::UpdateEndpointsBatchInputBuilder;
 
+impl UpdateEndpointsBatchInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_endpoints_batch::UpdateEndpointsBatchOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_endpoints_batch::UpdateEndpointsBatchError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_endpoints_batch();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateEndpointsBatch`.
 ///
 /// <p>Creates a new batch of endpoints for an application or updates the settings and attributes of a batch of existing endpoints for an application. You can also use this operation to define custom attributes for a batch of endpoints. If an update includes one or more values for a custom attribute, Amazon Pinpoint replaces (overwrites) any existing values with the new values.</p>

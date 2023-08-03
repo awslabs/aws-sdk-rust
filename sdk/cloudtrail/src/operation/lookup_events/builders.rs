@@ -3,6 +3,23 @@ pub use crate::operation::lookup_events::_lookup_events_output::LookupEventsOutp
 
 pub use crate::operation::lookup_events::_lookup_events_input::LookupEventsInputBuilder;
 
+impl LookupEventsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::lookup_events::LookupEventsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::lookup_events::LookupEventsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.lookup_events();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `LookupEvents`.
 ///
 /// <p>Looks up <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-management-events">management events</a> or <a href="https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-concepts.html#cloudtrail-concepts-insights-events">CloudTrail Insights events</a> that are captured by CloudTrail. You can look up events that occurred in a Region within the last 90 days. Lookup supports the following attributes for management events:</p>

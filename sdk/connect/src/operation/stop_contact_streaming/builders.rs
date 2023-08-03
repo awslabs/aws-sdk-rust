@@ -3,6 +3,23 @@ pub use crate::operation::stop_contact_streaming::_stop_contact_streaming_output
 
 pub use crate::operation::stop_contact_streaming::_stop_contact_streaming_input::StopContactStreamingInputBuilder;
 
+impl StopContactStreamingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_contact_streaming::StopContactStreamingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_contact_streaming::StopContactStreamingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_contact_streaming();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopContactStreaming`.
 ///
 /// <p> Ends message streaming on a specified contact. To restart message streaming on that contact, call the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_StartContactStreaming.html">StartContactStreaming</a> API. </p>

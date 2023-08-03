@@ -3,6 +3,23 @@ pub use crate::operation::remove_tags::_remove_tags_output::RemoveTagsOutputBuil
 
 pub use crate::operation::remove_tags::_remove_tags_input::RemoveTagsInputBuilder;
 
+impl RemoveTagsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::remove_tags::RemoveTagsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::remove_tags::RemoveTagsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.remove_tags();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RemoveTags`.
 ///
 /// <p>Removes tags from an Amazon EMR resource, such as a cluster or Amazon EMR Studio. Tags make it easier to associate resources in various ways, such as grouping clusters to track your Amazon EMR resource allocation costs. For more information, see <a href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-plan-tags.html">Tag Clusters</a>. </p>

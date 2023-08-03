@@ -3,6 +3,23 @@ pub use crate::operation::list_app_image_configs::_list_app_image_configs_output
 
 pub use crate::operation::list_app_image_configs::_list_app_image_configs_input::ListAppImageConfigsInputBuilder;
 
+impl ListAppImageConfigsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_app_image_configs::ListAppImageConfigsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_app_image_configs::ListAppImageConfigsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_app_image_configs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAppImageConfigs`.
 ///
 /// <p>Lists the AppImageConfigs in your account and their properties. The list can be filtered by creation time or modified time, and whether the AppImageConfig name contains a specified string.</p>

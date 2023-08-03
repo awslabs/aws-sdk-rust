@@ -3,6 +3,23 @@ pub use crate::operation::disassociate_pricing_rules::_disassociate_pricing_rule
 
 pub use crate::operation::disassociate_pricing_rules::_disassociate_pricing_rules_input::DisassociatePricingRulesInputBuilder;
 
+impl DisassociatePricingRulesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_pricing_rules::DisassociatePricingRulesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_pricing_rules::DisassociatePricingRulesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disassociate_pricing_rules();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociatePricingRules`.
 ///
 /// <p> Disassociates a list of pricing rules from a pricing plan. </p>

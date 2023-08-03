@@ -3,6 +3,23 @@ pub use crate::operation::start_stack::_start_stack_output::StartStackOutputBuil
 
 pub use crate::operation::start_stack::_start_stack_input::StartStackInputBuilder;
 
+impl StartStackInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_stack::StartStackOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_stack::StartStackError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_stack();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartStack`.
 ///
 /// <p>Starts a stack's instances.</p>

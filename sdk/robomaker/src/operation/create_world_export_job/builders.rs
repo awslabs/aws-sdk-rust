@@ -3,6 +3,23 @@ pub use crate::operation::create_world_export_job::_create_world_export_job_outp
 
 pub use crate::operation::create_world_export_job::_create_world_export_job_input::CreateWorldExportJobInputBuilder;
 
+impl CreateWorldExportJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_world_export_job::CreateWorldExportJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_world_export_job::CreateWorldExportJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_world_export_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateWorldExportJob`.
 ///
 /// <p>Creates a world export job.</p>

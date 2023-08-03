@@ -3,6 +3,23 @@ pub use crate::operation::delete_stack::_delete_stack_output::DeleteStackOutputB
 
 pub use crate::operation::delete_stack::_delete_stack_input::DeleteStackInputBuilder;
 
+impl DeleteStackInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_stack::DeleteStackOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_stack::DeleteStackError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_stack();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteStack`.
 ///
 /// <p>Deletes the specified stack. After the stack is deleted, the application streaming environment provided by the stack is no longer available to users. Also, any reservations made for application streaming sessions for the stack are released.</p>

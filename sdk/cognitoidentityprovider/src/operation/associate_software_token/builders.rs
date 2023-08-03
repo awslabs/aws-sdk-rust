@@ -3,6 +3,23 @@ pub use crate::operation::associate_software_token::_associate_software_token_ou
 
 pub use crate::operation::associate_software_token::_associate_software_token_input::AssociateSoftwareTokenInputBuilder;
 
+impl AssociateSoftwareTokenInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_software_token::AssociateSoftwareTokenOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_software_token::AssociateSoftwareTokenError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_software_token();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateSoftwareToken`.
 ///
 /// <p>Begins setup of time-based one-time password (TOTP) multi-factor authentication (MFA) for a user, with a unique private key that Amazon Cognito generates and returns in the API response. You can authorize an <code>AssociateSoftwareToken</code> request with either the user's access token, or a session string from a challenge response that you received from Amazon Cognito.</p> <note>

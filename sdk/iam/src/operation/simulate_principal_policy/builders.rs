@@ -3,6 +3,23 @@ pub use crate::operation::simulate_principal_policy::_simulate_principal_policy_
 
 pub use crate::operation::simulate_principal_policy::_simulate_principal_policy_input::SimulatePrincipalPolicyInputBuilder;
 
+impl SimulatePrincipalPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::simulate_principal_policy::SimulatePrincipalPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::simulate_principal_policy::SimulatePrincipalPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.simulate_principal_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SimulatePrincipalPolicy`.
 ///
 /// <p>Simulate how a set of IAM policies attached to an IAM entity works with a list of API operations and Amazon Web Services resources to determine the policies' effective permissions. The entity can be an IAM user, group, or role. If you specify a user, then the simulation also includes all of the policies that are attached to groups that the user belongs to. You can simulate resources that don't exist in your account.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::start_batch_job::_start_batch_job_output::StartBatchJo
 
 pub use crate::operation::start_batch_job::_start_batch_job_input::StartBatchJobInputBuilder;
 
+impl StartBatchJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_batch_job::StartBatchJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_batch_job::StartBatchJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_batch_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartBatchJob`.
 ///
 /// <p>Starts a batch job and returns the unique identifier of this execution of the batch job. The associated application must be running in order to start the batch job.</p>

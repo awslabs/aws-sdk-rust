@@ -3,6 +3,23 @@ pub use crate::operation::get_disks::_get_disks_output::GetDisksOutputBuilder;
 
 pub use crate::operation::get_disks::_get_disks_input::GetDisksInputBuilder;
 
+impl GetDisksInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_disks::GetDisksOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_disks::GetDisksError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_disks();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetDisks`.
 ///
 /// <p>Returns information about all block storage disks in your AWS account and region.</p>

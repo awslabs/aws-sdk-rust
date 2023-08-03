@@ -3,6 +3,17 @@ pub use crate::operation::get_deliverability_dashboard_options::_get_deliverabil
 
 pub use crate::operation::get_deliverability_dashboard_options::_get_deliverability_dashboard_options_input::GetDeliverabilityDashboardOptionsInputBuilder;
 
+impl GetDeliverabilityDashboardOptionsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_deliverability_dashboard_options::GetDeliverabilityDashboardOptionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_deliverability_dashboard_options::GetDeliverabilityDashboardOptionsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_deliverability_dashboard_options();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetDeliverabilityDashboardOptions`.
 ///
 /// <p>Retrieve information about the status of the Deliverability dashboard for your account. When the Deliverability dashboard is enabled, you gain access to reputation, deliverability, and other metrics for the domains that you use to send email. You also gain the ability to perform predictive inbox placement tests.</p>

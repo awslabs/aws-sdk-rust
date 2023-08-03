@@ -3,6 +3,23 @@ pub use crate::operation::stop_events_detection_job::_stop_events_detection_job_
 
 pub use crate::operation::stop_events_detection_job::_stop_events_detection_job_input::StopEventsDetectionJobInputBuilder;
 
+impl StopEventsDetectionJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_events_detection_job::StopEventsDetectionJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_events_detection_job::StopEventsDetectionJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_events_detection_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopEventsDetectionJob`.
 ///
 /// <p>Stops an events detection job in progress.</p>

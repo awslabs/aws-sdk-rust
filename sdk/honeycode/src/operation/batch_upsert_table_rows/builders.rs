@@ -3,6 +3,23 @@ pub use crate::operation::batch_upsert_table_rows::_batch_upsert_table_rows_outp
 
 pub use crate::operation::batch_upsert_table_rows::_batch_upsert_table_rows_input::BatchUpsertTableRowsInputBuilder;
 
+impl BatchUpsertTableRowsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_upsert_table_rows::BatchUpsertTableRowsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_upsert_table_rows::BatchUpsertTableRowsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_upsert_table_rows();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchUpsertTableRows`.
 ///
 /// <p> The BatchUpsertTableRows API allows you to upsert one or more rows in a table. The upsert operation takes a filter expression as input and evaluates it to find matching rows on the destination table. If matching rows are found, it will update the cells in the matching rows to new values specified in the request. If no matching rows are found, a new row is added at the end of the table and the cells in that row are set to the new values specified in the request. </p>

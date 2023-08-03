@@ -3,6 +3,23 @@ pub use crate::operation::list_intent_paths::_list_intent_paths_output::ListInte
 
 pub use crate::operation::list_intent_paths::_list_intent_paths_input::ListIntentPathsInputBuilder;
 
+impl ListIntentPathsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_intent_paths::ListIntentPathsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_intent_paths::ListIntentPathsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_intent_paths();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListIntentPaths`.
 ///
 /// <p>Retrieves summary statistics for a path of intents that users take over sessions with your bot. The following fields are required:</p>

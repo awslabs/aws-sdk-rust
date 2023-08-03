@@ -3,6 +3,23 @@ pub use crate::operation::describe_db_cluster_snapshots::_describe_db_cluster_sn
 
 pub use crate::operation::describe_db_cluster_snapshots::_describe_db_cluster_snapshots_input::DescribeDbClusterSnapshotsInputBuilder;
 
+impl DescribeDbClusterSnapshotsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_db_cluster_snapshots::DescribeDbClusterSnapshotsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_db_cluster_snapshots::DescribeDBClusterSnapshotsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_db_cluster_snapshots();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeDBClusterSnapshots`.
 ///
 /// <p>Returns information about cluster snapshots. This API operation supports pagination.</p>

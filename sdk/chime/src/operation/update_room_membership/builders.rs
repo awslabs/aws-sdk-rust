@@ -3,6 +3,23 @@ pub use crate::operation::update_room_membership::_update_room_membership_output
 
 pub use crate::operation::update_room_membership::_update_room_membership_input::UpdateRoomMembershipInputBuilder;
 
+impl UpdateRoomMembershipInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_room_membership::UpdateRoomMembershipOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_room_membership::UpdateRoomMembershipError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_room_membership();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateRoomMembership`.
 ///
 /// <p>Updates room membership details, such as the member role, for a room in an Amazon Chime Enterprise account. The member role designates whether the member is a chat room administrator or a general chat room member. The member role can be updated only for user IDs.</p>

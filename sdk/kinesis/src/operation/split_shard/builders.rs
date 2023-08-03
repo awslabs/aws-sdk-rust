@@ -3,6 +3,23 @@ pub use crate::operation::split_shard::_split_shard_output::SplitShardOutputBuil
 
 pub use crate::operation::split_shard::_split_shard_input::SplitShardInputBuilder;
 
+impl SplitShardInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::split_shard::SplitShardOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::split_shard::SplitShardError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.split_shard();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SplitShard`.
 ///
 /// <p>Splits a shard into two new shards in the Kinesis data stream, to increase the stream's capacity to ingest and transport data. <code>SplitShard</code> is called when there is a need to increase the overall capacity of a stream because of an expected increase in the volume of data records being ingested. This API is only supported for the data streams with the provisioned capacity mode.</p> <note>

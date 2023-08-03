@@ -3,6 +3,17 @@ pub use crate::operation::confirm_private_virtual_interface::_confirm_private_vi
 
 pub use crate::operation::confirm_private_virtual_interface::_confirm_private_virtual_interface_input::ConfirmPrivateVirtualInterfaceInputBuilder;
 
+impl ConfirmPrivateVirtualInterfaceInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::confirm_private_virtual_interface::ConfirmPrivateVirtualInterfaceOutput, ::aws_smithy_http::result::SdkError<crate::operation::confirm_private_virtual_interface::ConfirmPrivateVirtualInterfaceError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.confirm_private_virtual_interface();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ConfirmPrivateVirtualInterface`.
 ///
 /// <p>Accepts ownership of a private virtual interface created by another Amazon Web Services account.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_layer_version::_get_layer_version_output::GetLayer
 
 pub use crate::operation::get_layer_version::_get_layer_version_input::GetLayerVersionInputBuilder;
 
+impl GetLayerVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_layer_version::GetLayerVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_layer_version::GetLayerVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_layer_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetLayerVersion`.
 ///
 /// <p>Returns information about a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda layer</a>, with a link to download the layer archive that's valid for 10 minutes.</p>

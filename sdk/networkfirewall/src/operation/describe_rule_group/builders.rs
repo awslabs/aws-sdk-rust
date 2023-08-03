@@ -3,6 +3,23 @@ pub use crate::operation::describe_rule_group::_describe_rule_group_output::Desc
 
 pub use crate::operation::describe_rule_group::_describe_rule_group_input::DescribeRuleGroupInputBuilder;
 
+impl DescribeRuleGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_rule_group::DescribeRuleGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_rule_group::DescribeRuleGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_rule_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeRuleGroup`.
 ///
 /// <p>Returns the data objects for the specified rule group. </p>

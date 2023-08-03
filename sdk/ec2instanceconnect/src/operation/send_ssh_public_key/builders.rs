@@ -3,6 +3,23 @@ pub use crate::operation::send_ssh_public_key::_send_ssh_public_key_output::Send
 
 pub use crate::operation::send_ssh_public_key::_send_ssh_public_key_input::SendSshPublicKeyInputBuilder;
 
+impl SendSshPublicKeyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::send_ssh_public_key::SendSshPublicKeyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::send_ssh_public_key::SendSSHPublicKeyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.send_ssh_public_key();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SendSSHPublicKey`.
 ///
 /// <p>Pushes an SSH public key to the specified EC2 instance for use by the specified user. The key remains for 60 seconds. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Connect-using-EC2-Instance-Connect.html">Connect to your Linux instance using EC2 Instance Connect</a> in the <i>Amazon EC2 User Guide</i>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_cluster_session_credentials::_get_cluster_session_
 
 pub use crate::operation::get_cluster_session_credentials::_get_cluster_session_credentials_input::GetClusterSessionCredentialsInputBuilder;
 
+impl GetClusterSessionCredentialsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_cluster_session_credentials::GetClusterSessionCredentialsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_cluster_session_credentials::GetClusterSessionCredentialsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_cluster_session_credentials();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetClusterSessionCredentials`.
 ///
 /// <p>Provides temporary, HTTP basic credentials that are associated with a given runtime IAM role and used by a cluster with fine-grained access control activated. You can use these credentials to connect to cluster endpoints that support username and password authentication.</p>

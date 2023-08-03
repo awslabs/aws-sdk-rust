@@ -3,6 +3,23 @@ pub use crate::operation::delete_job_tagging::_delete_job_tagging_output::Delete
 
 pub use crate::operation::delete_job_tagging::_delete_job_tagging_input::DeleteJobTaggingInputBuilder;
 
+impl DeleteJobTaggingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_job_tagging::DeleteJobTaggingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_job_tagging::DeleteJobTaggingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_job_tagging();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteJobTagging`.
 ///
 /// <p>Removes the entire tag set from the specified S3 Batch Operations job. To use the <code>DeleteJobTagging</code> operation, you must have permission to perform the <code>s3:DeleteJobTagging</code> action. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/batch-ops-managing-jobs.html#batch-ops-job-tags">Controlling access and labeling jobs using tags</a> in the <i>Amazon S3 User Guide</i>.</p>

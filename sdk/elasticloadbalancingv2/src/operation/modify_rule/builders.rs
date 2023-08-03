@@ -3,6 +3,23 @@ pub use crate::operation::modify_rule::_modify_rule_output::ModifyRuleOutputBuil
 
 pub use crate::operation::modify_rule::_modify_rule_input::ModifyRuleInputBuilder;
 
+impl ModifyRuleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_rule::ModifyRuleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_rule::ModifyRuleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_rule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyRule`.
 ///
 /// <p>Replaces the specified properties of the specified rule. Any properties that you do not specify are unchanged.</p>

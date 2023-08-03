@@ -3,6 +3,23 @@ pub use crate::operation::delete_repository_policy::_delete_repository_policy_ou
 
 pub use crate::operation::delete_repository_policy::_delete_repository_policy_input::DeleteRepositoryPolicyInputBuilder;
 
+impl DeleteRepositoryPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_repository_policy::DeleteRepositoryPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_repository_policy::DeleteRepositoryPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_repository_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteRepositoryPolicy`.
 ///
 /// <p>Deletes the repository policy associated with the specified repository.</p>

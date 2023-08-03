@@ -3,6 +3,23 @@ pub use crate::operation::describe_services::_describe_services_output::Describe
 
 pub use crate::operation::describe_services::_describe_services_input::DescribeServicesInputBuilder;
 
+impl DescribeServicesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_services::DescribeServicesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_services::DescribeServicesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_services();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeServices`.
 ///
 /// <p>Returns the current list of Amazon Web Services services and a list of service categories for each service. You then use service names and categories in your <code>CreateCase</code> requests. Each Amazon Web Services service has its own set of categories.</p>

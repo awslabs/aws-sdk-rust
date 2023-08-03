@@ -3,6 +3,23 @@ pub use crate::operation::update_job_from_source_control::_update_job_from_sourc
 
 pub use crate::operation::update_job_from_source_control::_update_job_from_source_control_input::UpdateJobFromSourceControlInputBuilder;
 
+impl UpdateJobFromSourceControlInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_job_from_source_control::UpdateJobFromSourceControlOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_job_from_source_control::UpdateJobFromSourceControlError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_job_from_source_control();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateJobFromSourceControl`.
 ///
 /// <p>Synchronizes a job from the source control repository. This operation takes the job artifacts that are located in the remote repository and updates the Glue internal stores with these artifacts.</p>

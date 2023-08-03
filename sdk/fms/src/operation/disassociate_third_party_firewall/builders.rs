@@ -3,6 +3,17 @@ pub use crate::operation::disassociate_third_party_firewall::_disassociate_third
 
 pub use crate::operation::disassociate_third_party_firewall::_disassociate_third_party_firewall_input::DisassociateThirdPartyFirewallInputBuilder;
 
+impl DisassociateThirdPartyFirewallInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::disassociate_third_party_firewall::DisassociateThirdPartyFirewallOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_third_party_firewall::DisassociateThirdPartyFirewallError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.disassociate_third_party_firewall();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateThirdPartyFirewall`.
 ///
 /// <p>Disassociates a Firewall Manager policy administrator from a third-party firewall tenant. When you call <code>DisassociateThirdPartyFirewall</code>, the third-party firewall vendor deletes all of the firewalls that are associated with the account.</p>

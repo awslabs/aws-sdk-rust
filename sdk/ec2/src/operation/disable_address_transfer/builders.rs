@@ -3,6 +3,23 @@ pub use crate::operation::disable_address_transfer::_disable_address_transfer_ou
 
 pub use crate::operation::disable_address_transfer::_disable_address_transfer_input::DisableAddressTransferInputBuilder;
 
+impl DisableAddressTransferInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disable_address_transfer::DisableAddressTransferOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disable_address_transfer::DisableAddressTransferError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disable_address_transfer();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisableAddressTransfer`.
 ///
 /// <p>Disables Elastic IP address transfer. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-eips.html#transfer-EIPs-intro">Transfer Elastic IP addresses</a> in the <i>Amazon Virtual Private Cloud User Guide</i>.</p>

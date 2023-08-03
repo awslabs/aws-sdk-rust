@@ -3,6 +3,17 @@ pub use crate::operation::create_data_quality_job_definition::_create_data_quali
 
 pub use crate::operation::create_data_quality_job_definition::_create_data_quality_job_definition_input::CreateDataQualityJobDefinitionInputBuilder;
 
+impl CreateDataQualityJobDefinitionInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::create_data_quality_job_definition::CreateDataQualityJobDefinitionOutput, ::aws_smithy_http::result::SdkError<crate::operation::create_data_quality_job_definition::CreateDataQualityJobDefinitionError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.create_data_quality_job_definition();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateDataQualityJobDefinition`.
 ///
 /// <p>Creates a definition for a job that monitors data quality and drift. For information about model monitor, see <a href="https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor.html">Amazon SageMaker Model Monitor</a>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::untag_stream::_untag_stream_output::UntagStreamOutputB
 
 pub use crate::operation::untag_stream::_untag_stream_input::UntagStreamInputBuilder;
 
+impl UntagStreamInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::untag_stream::UntagStreamOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::untag_stream::UntagStreamError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.untag_stream();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UntagStream`.
 ///
 /// <p>Removes one or more tags from a stream. In the request, specify only a tag key or keys; don't specify the value. If you specify a tag key that does not exist, it's ignored.</p>

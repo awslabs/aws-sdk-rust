@@ -3,6 +3,23 @@ pub use crate::operation::register_scalable_target::_register_scalable_target_ou
 
 pub use crate::operation::register_scalable_target::_register_scalable_target_input::RegisterScalableTargetInputBuilder;
 
+impl RegisterScalableTargetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::register_scalable_target::RegisterScalableTargetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::register_scalable_target::RegisterScalableTargetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.register_scalable_target();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RegisterScalableTarget`.
 ///
 /// <p>Registers or updates a scalable target, which is the resource that you want to scale.</p>

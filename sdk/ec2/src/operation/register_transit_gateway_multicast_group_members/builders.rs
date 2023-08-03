@@ -3,6 +3,17 @@ pub use crate::operation::register_transit_gateway_multicast_group_members::_reg
 
 pub use crate::operation::register_transit_gateway_multicast_group_members::_register_transit_gateway_multicast_group_members_input::RegisterTransitGatewayMulticastGroupMembersInputBuilder;
 
+impl RegisterTransitGatewayMulticastGroupMembersInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::register_transit_gateway_multicast_group_members::RegisterTransitGatewayMulticastGroupMembersOutput, ::aws_smithy_http::result::SdkError<crate::operation::register_transit_gateway_multicast_group_members::RegisterTransitGatewayMulticastGroupMembersError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.register_transit_gateway_multicast_group_members();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RegisterTransitGatewayMulticastGroupMembers`.
 ///
 /// <p>Registers members (network interfaces) with the transit gateway multicast group. A member is a network interface associated with a supported EC2 instance that receives multicast traffic. For information about supported instances, see <a href="https://docs.aws.amazon.com/vpc/latest/tgw/transit-gateway-limits.html#multicast-limits">Multicast Consideration</a> in <i>Amazon VPC Transit Gateways</i>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_artifact_url::_get_artifact_url_output::GetArtifac
 
 pub use crate::operation::get_artifact_url::_get_artifact_url_input::GetArtifactUrlInputBuilder;
 
+impl GetArtifactUrlInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_artifact_url::GetArtifactUrlOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_artifact_url::GetArtifactUrlError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_artifact_url();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetArtifactUrl`.
 ///
 /// <p> Returns the artifact info that corresponds to an artifact id. </p>

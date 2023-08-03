@@ -3,6 +3,23 @@ pub use crate::operation::update_rum_metric_definition::_update_rum_metric_defin
 
 pub use crate::operation::update_rum_metric_definition::_update_rum_metric_definition_input::UpdateRumMetricDefinitionInputBuilder;
 
+impl UpdateRumMetricDefinitionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_rum_metric_definition::UpdateRumMetricDefinitionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_rum_metric_definition::UpdateRumMetricDefinitionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_rum_metric_definition();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateRumMetricDefinition`.
 ///
 /// <p>Modifies one existing metric definition for CloudWatch RUM extended metrics. For more information about extended metrics, see <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_BatchCreateRumMetricsDefinitions.html">BatchCreateRumMetricsDefinitions</a>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_report_definitions::_list_report_definitions_outp
 
 pub use crate::operation::list_report_definitions::_list_report_definitions_input::ListReportDefinitionsInputBuilder;
 
+impl ListReportDefinitionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_report_definitions::ListReportDefinitionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_report_definitions::ListReportDefinitionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_report_definitions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListReportDefinitions`.
 ///
 /// <p>Retrieves a list of all reports and their configurations for your AWS account.</p>

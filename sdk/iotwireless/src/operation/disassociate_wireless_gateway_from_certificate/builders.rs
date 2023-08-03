@@ -3,6 +3,17 @@ pub use crate::operation::disassociate_wireless_gateway_from_certificate::_disas
 
 pub use crate::operation::disassociate_wireless_gateway_from_certificate::_disassociate_wireless_gateway_from_certificate_input::DisassociateWirelessGatewayFromCertificateInputBuilder;
 
+impl DisassociateWirelessGatewayFromCertificateInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::disassociate_wireless_gateway_from_certificate::DisassociateWirelessGatewayFromCertificateOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_wireless_gateway_from_certificate::DisassociateWirelessGatewayFromCertificateError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.disassociate_wireless_gateway_from_certificate();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateWirelessGatewayFromCertificate`.
 ///
 /// <p>Disassociates a wireless gateway from its currently associated certificate.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_classic_link_instances::_describe_classic_lin
 
 pub use crate::operation::describe_classic_link_instances::_describe_classic_link_instances_input::DescribeClassicLinkInstancesInputBuilder;
 
+impl DescribeClassicLinkInstancesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_classic_link_instances::DescribeClassicLinkInstancesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_classic_link_instances::DescribeClassicLinkInstancesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_classic_link_instances();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeClassicLinkInstances`.
 ///
 /// <note>

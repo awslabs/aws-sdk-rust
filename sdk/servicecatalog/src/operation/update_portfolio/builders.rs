@@ -3,6 +3,23 @@ pub use crate::operation::update_portfolio::_update_portfolio_output::UpdatePort
 
 pub use crate::operation::update_portfolio::_update_portfolio_input::UpdatePortfolioInputBuilder;
 
+impl UpdatePortfolioInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_portfolio::UpdatePortfolioOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_portfolio::UpdatePortfolioError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_portfolio();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdatePortfolio`.
 ///
 /// <p>Updates the specified portfolio.</p>

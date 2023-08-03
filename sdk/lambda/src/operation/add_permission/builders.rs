@@ -3,6 +3,23 @@ pub use crate::operation::add_permission::_add_permission_output::AddPermissionO
 
 pub use crate::operation::add_permission::_add_permission_input::AddPermissionInputBuilder;
 
+impl AddPermissionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::add_permission::AddPermissionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::add_permission::AddPermissionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.add_permission();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AddPermission`.
 ///
 /// <p>Grants an Amazon Web Service, Amazon Web Services account, or Amazon Web Services organization permission to use a function. You can apply the policy at the function level, or specify a qualifier to restrict access to a single version or alias. If you use a qualifier, the invoker must use the full Amazon Resource Name (ARN) of that version or alias to invoke the function. Note: Lambda does not support adding policies to version $LATEST.</p>

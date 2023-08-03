@@ -3,6 +3,23 @@ pub use crate::operation::describe_build::_describe_build_output::DescribeBuildO
 
 pub use crate::operation::describe_build::_describe_build_input::DescribeBuildInputBuilder;
 
+impl DescribeBuildInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_build::DescribeBuildOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_build::DescribeBuildError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_build();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeBuild`.
 ///
 /// <p>Retrieves properties for a custom game build. To request a build resource, specify a build ID. If successful, an object containing the build properties is returned.</p>

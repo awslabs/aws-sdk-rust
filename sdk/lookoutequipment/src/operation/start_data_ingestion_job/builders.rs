@@ -3,6 +3,23 @@ pub use crate::operation::start_data_ingestion_job::_start_data_ingestion_job_ou
 
 pub use crate::operation::start_data_ingestion_job::_start_data_ingestion_job_input::StartDataIngestionJobInputBuilder;
 
+impl StartDataIngestionJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_data_ingestion_job::StartDataIngestionJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_data_ingestion_job::StartDataIngestionJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_data_ingestion_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartDataIngestionJob`.
 ///
 /// <p>Starts a data ingestion job. Amazon Lookout for Equipment returns the job status. </p>

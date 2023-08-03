@@ -3,6 +3,23 @@ pub use crate::operation::select_aggregate_resource_config::_select_aggregate_re
 
 pub use crate::operation::select_aggregate_resource_config::_select_aggregate_resource_config_input::SelectAggregateResourceConfigInputBuilder;
 
+impl SelectAggregateResourceConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::select_aggregate_resource_config::SelectAggregateResourceConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::select_aggregate_resource_config::SelectAggregateResourceConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.select_aggregate_resource_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SelectAggregateResourceConfig`.
 ///
 /// <p>Accepts a structured query language (SQL) SELECT command and an aggregator to query configuration state of Amazon Web Services resources across multiple accounts and regions, performs the corresponding search, and returns resource configurations matching the properties.</p>

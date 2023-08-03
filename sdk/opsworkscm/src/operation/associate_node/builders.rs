@@ -3,6 +3,23 @@ pub use crate::operation::associate_node::_associate_node_output::AssociateNodeO
 
 pub use crate::operation::associate_node::_associate_node_input::AssociateNodeInputBuilder;
 
+impl AssociateNodeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_node::AssociateNodeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_node::AssociateNodeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_node();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateNode`.
 ///
 /// <p> Associates a new node with the server. For more information about how to disassociate a node, see <code>DisassociateNode</code>.</p>

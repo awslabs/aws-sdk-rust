@@ -3,6 +3,17 @@ pub use crate::operation::associate_identity_provider_config::_associate_identit
 
 pub use crate::operation::associate_identity_provider_config::_associate_identity_provider_config_input::AssociateIdentityProviderConfigInputBuilder;
 
+impl AssociateIdentityProviderConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::associate_identity_provider_config::AssociateIdentityProviderConfigOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_identity_provider_config::AssociateIdentityProviderConfigError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.associate_identity_provider_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateIdentityProviderConfig`.
 ///
 /// <p>Associate an identity provider configuration to a cluster.</p>

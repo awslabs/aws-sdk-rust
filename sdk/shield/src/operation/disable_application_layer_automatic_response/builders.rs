@@ -3,6 +3,17 @@ pub use crate::operation::disable_application_layer_automatic_response::_disable
 
 pub use crate::operation::disable_application_layer_automatic_response::_disable_application_layer_automatic_response_input::DisableApplicationLayerAutomaticResponseInputBuilder;
 
+impl DisableApplicationLayerAutomaticResponseInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::disable_application_layer_automatic_response::DisableApplicationLayerAutomaticResponseOutput, ::aws_smithy_http::result::SdkError<crate::operation::disable_application_layer_automatic_response::DisableApplicationLayerAutomaticResponseError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.disable_application_layer_automatic_response();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisableApplicationLayerAutomaticResponse`.
 ///
 /// <p>Disable the Shield Advanced automatic application layer DDoS mitigation feature for the protected resource. This stops Shield Advanced from creating, verifying, and applying WAF rules for attacks that it detects for the resource. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_file_upload_url::_get_file_upload_url_output::GetF
 
 pub use crate::operation::get_file_upload_url::_get_file_upload_url_input::GetFileUploadUrlInputBuilder;
 
+impl GetFileUploadUrlInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_file_upload_url::GetFileUploadUrlOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_file_upload_url::GetFileUploadURLError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_file_upload_url();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetFileUploadURL`.
 ///
 /// <p> The <code>GetFileUploadURL</code> operation generates and returns a temporary URL. You use the temporary URL to retrieve a file uploaded by a Worker as an answer to a FileUploadAnswer question for a HIT. The temporary URL is generated the instant the GetFileUploadURL operation is called, and is valid for 60 seconds. You can get a temporary file upload URL any time until the HIT is disposed. After the HIT is disposed, any uploaded files are deleted, and cannot be retrieved. Pending Deprecation on December 12, 2017. The Answer Specification structure will no longer support the <code>FileUploadAnswer</code> element to be used for the QuestionForm data structure. Instead, we recommend that Requesters who want to create HITs asking Workers to upload files to use Amazon S3. </p>

@@ -3,6 +3,17 @@ pub use crate::operation::get_service_quota_increase_request_from_template::_get
 
 pub use crate::operation::get_service_quota_increase_request_from_template::_get_service_quota_increase_request_from_template_input::GetServiceQuotaIncreaseRequestFromTemplateInputBuilder;
 
+impl GetServiceQuotaIncreaseRequestFromTemplateInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_service_quota_increase_request_from_template::GetServiceQuotaIncreaseRequestFromTemplateOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_service_quota_increase_request_from_template::GetServiceQuotaIncreaseRequestFromTemplateError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_service_quota_increase_request_from_template();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetServiceQuotaIncreaseRequestFromTemplate`.
 ///
 /// <p>Retrieves information about the specified quota increase request in your quota request template.</p>

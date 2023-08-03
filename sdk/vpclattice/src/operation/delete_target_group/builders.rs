@@ -3,6 +3,23 @@ pub use crate::operation::delete_target_group::_delete_target_group_output::Dele
 
 pub use crate::operation::delete_target_group::_delete_target_group_input::DeleteTargetGroupInputBuilder;
 
+impl DeleteTargetGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_target_group::DeleteTargetGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_target_group::DeleteTargetGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_target_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteTargetGroup`.
 ///
 /// <p>Deletes a target group. You can't delete a target group if it is used in a listener rule or if the target group creation is in progress.</p>

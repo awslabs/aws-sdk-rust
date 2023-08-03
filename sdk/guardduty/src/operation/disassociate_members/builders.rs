@@ -3,6 +3,23 @@ pub use crate::operation::disassociate_members::_disassociate_members_output::Di
 
 pub use crate::operation::disassociate_members::_disassociate_members_input::DisassociateMembersInputBuilder;
 
+impl DisassociateMembersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_members::DisassociateMembersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_members::DisassociateMembersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disassociate_members();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateMembers`.
 ///
 /// <p>Disassociates GuardDuty member accounts (from the current administrator account) specified by the account IDs.</p>

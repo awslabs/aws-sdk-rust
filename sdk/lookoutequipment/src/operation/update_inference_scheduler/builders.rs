@@ -3,6 +3,23 @@ pub use crate::operation::update_inference_scheduler::_update_inference_schedule
 
 pub use crate::operation::update_inference_scheduler::_update_inference_scheduler_input::UpdateInferenceSchedulerInputBuilder;
 
+impl UpdateInferenceSchedulerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_inference_scheduler::UpdateInferenceSchedulerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_inference_scheduler::UpdateInferenceSchedulerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_inference_scheduler();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateInferenceScheduler`.
 ///
 /// <p>Updates an inference scheduler. </p>

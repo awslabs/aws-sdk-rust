@@ -3,6 +3,17 @@ pub use crate::operation::attach_load_balancer_target_groups::_attach_load_balan
 
 pub use crate::operation::attach_load_balancer_target_groups::_attach_load_balancer_target_groups_input::AttachLoadBalancerTargetGroupsInputBuilder;
 
+impl AttachLoadBalancerTargetGroupsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::attach_load_balancer_target_groups::AttachLoadBalancerTargetGroupsOutput, ::aws_smithy_http::result::SdkError<crate::operation::attach_load_balancer_target_groups::AttachLoadBalancerTargetGroupsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.attach_load_balancer_target_groups();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AttachLoadBalancerTargetGroups`.
 ///
 /// <note>

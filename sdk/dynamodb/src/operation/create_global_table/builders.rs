@@ -3,6 +3,23 @@ pub use crate::operation::create_global_table::_create_global_table_output::Crea
 
 pub use crate::operation::create_global_table::_create_global_table_input::CreateGlobalTableInputBuilder;
 
+impl CreateGlobalTableInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_global_table::CreateGlobalTableOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_global_table::CreateGlobalTableError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_global_table();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateGlobalTable`.
 ///
 /// <p>Creates a global table from an existing table. A global table creates a replication relationship between two or more DynamoDB tables with the same table name in the provided Regions. </p> <important>

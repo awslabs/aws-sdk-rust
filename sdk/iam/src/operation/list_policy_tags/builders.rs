@@ -3,6 +3,23 @@ pub use crate::operation::list_policy_tags::_list_policy_tags_output::ListPolicy
 
 pub use crate::operation::list_policy_tags::_list_policy_tags_input::ListPolicyTagsInputBuilder;
 
+impl ListPolicyTagsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_policy_tags::ListPolicyTagsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_policy_tags::ListPolicyTagsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_policy_tags();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListPolicyTags`.
 ///
 /// <p>Lists the tags that are attached to the specified IAM customer managed policy. The returned list of tags is sorted by tag key. For more information about tagging, see <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM resources</a> in the <i>IAM User Guide</i>.</p>

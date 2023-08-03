@@ -3,6 +3,23 @@ pub use crate::operation::get_savings_plans_coverage::_get_savings_plans_coverag
 
 pub use crate::operation::get_savings_plans_coverage::_get_savings_plans_coverage_input::GetSavingsPlansCoverageInputBuilder;
 
+impl GetSavingsPlansCoverageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_savings_plans_coverage::GetSavingsPlansCoverageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_savings_plans_coverage::GetSavingsPlansCoverageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_savings_plans_coverage();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetSavingsPlansCoverage`.
 ///
 /// <p>Retrieves the Savings Plans covered for your account. This enables you to see how much of your cost is covered by a Savings Plan. An organization’s management account can see the coverage of the associated member accounts. This supports dimensions, Cost Categories, and nested expressions. For any time period, you can filter data for Savings Plans usage with the following dimensions:</p>

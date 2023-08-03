@@ -3,6 +3,23 @@ pub use crate::operation::resolve_alias::_resolve_alias_output::ResolveAliasOutp
 
 pub use crate::operation::resolve_alias::_resolve_alias_input::ResolveAliasInputBuilder;
 
+impl ResolveAliasInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::resolve_alias::ResolveAliasOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::resolve_alias::ResolveAliasError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.resolve_alias();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ResolveAlias`.
 ///
 /// <p>Retrieves the fleet ID that an alias is currently pointing to.</p>

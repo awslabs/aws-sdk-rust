@@ -3,6 +3,23 @@ pub use crate::operation::delete_key::_delete_key_output::DeleteKeyOutputBuilder
 
 pub use crate::operation::delete_key::_delete_key_input::DeleteKeyInputBuilder;
 
+impl DeleteKeyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_key::DeleteKeyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_key::DeleteKeyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_key();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteKey`.
 ///
 /// <p>Deletes the key material and all metadata associated with Amazon Web Services Payment Cryptography key.</p>

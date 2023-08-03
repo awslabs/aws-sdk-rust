@@ -3,6 +3,23 @@ pub use crate::operation::list_experiments::_list_experiments_output::ListExperi
 
 pub use crate::operation::list_experiments::_list_experiments_input::ListExperimentsInputBuilder;
 
+impl ListExperimentsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_experiments::ListExperimentsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_experiments::ListExperimentsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_experiments();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListExperiments`.
 ///
 /// <p>Lists all the experiments in your account. The list can be filtered to show only experiments that were created in a specific time range. The list can be sorted by experiment name or creation time.</p>

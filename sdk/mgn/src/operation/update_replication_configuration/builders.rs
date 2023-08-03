@@ -3,6 +3,23 @@ pub use crate::operation::update_replication_configuration::_update_replication_
 
 pub use crate::operation::update_replication_configuration::_update_replication_configuration_input::UpdateReplicationConfigurationInputBuilder;
 
+impl UpdateReplicationConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_replication_configuration::UpdateReplicationConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_replication_configuration::UpdateReplicationConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_replication_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateReplicationConfiguration`.
 ///
 /// <p>Allows you to update multiple ReplicationConfigurations by Source Server ID.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::put_core_network_policy::_put_core_network_policy_outp
 
 pub use crate::operation::put_core_network_policy::_put_core_network_policy_input::PutCoreNetworkPolicyInputBuilder;
 
+impl PutCoreNetworkPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_core_network_policy::PutCoreNetworkPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_core_network_policy::PutCoreNetworkPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_core_network_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutCoreNetworkPolicy`.
 ///
 /// <p>Creates a new, immutable version of a core network policy. A subsequent change set is created showing the differences between the LIVE policy and the submitted policy.</p>

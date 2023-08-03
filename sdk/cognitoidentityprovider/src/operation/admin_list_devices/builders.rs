@@ -3,6 +3,23 @@ pub use crate::operation::admin_list_devices::_admin_list_devices_output::AdminL
 
 pub use crate::operation::admin_list_devices::_admin_list_devices_input::AdminListDevicesInputBuilder;
 
+impl AdminListDevicesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::admin_list_devices::AdminListDevicesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::admin_list_devices::AdminListDevicesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.admin_list_devices();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AdminListDevices`.
 ///
 /// <p>Lists devices, as an administrator.</p>

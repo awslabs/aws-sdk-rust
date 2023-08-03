@@ -3,6 +3,23 @@ pub use crate::operation::start_test_set_generation::_start_test_set_generation_
 
 pub use crate::operation::start_test_set_generation::_start_test_set_generation_input::StartTestSetGenerationInputBuilder;
 
+impl StartTestSetGenerationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_test_set_generation::StartTestSetGenerationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_test_set_generation::StartTestSetGenerationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_test_set_generation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartTestSetGeneration`.
 ///
 /// <p>The action to start the generation of test set.</p>

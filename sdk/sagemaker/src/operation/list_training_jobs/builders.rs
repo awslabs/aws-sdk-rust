@@ -3,6 +3,23 @@ pub use crate::operation::list_training_jobs::_list_training_jobs_output::ListTr
 
 pub use crate::operation::list_training_jobs::_list_training_jobs_input::ListTrainingJobsInputBuilder;
 
+impl ListTrainingJobsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_training_jobs::ListTrainingJobsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_training_jobs::ListTrainingJobsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_training_jobs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListTrainingJobs`.
 ///
 /// <p>Lists training jobs.</p> <note>

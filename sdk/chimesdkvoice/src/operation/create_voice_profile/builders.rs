@@ -3,6 +3,23 @@ pub use crate::operation::create_voice_profile::_create_voice_profile_output::Cr
 
 pub use crate::operation::create_voice_profile::_create_voice_profile_input::CreateVoiceProfileInputBuilder;
 
+impl CreateVoiceProfileInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_voice_profile::CreateVoiceProfileOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_voice_profile::CreateVoiceProfileError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_voice_profile();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateVoiceProfile`.
 ///
 /// <p>Creates a voice profile, which consists of an enrolled user and their latest voice print.</p> <important>

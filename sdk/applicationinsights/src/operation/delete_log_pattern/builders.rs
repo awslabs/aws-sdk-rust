@@ -3,6 +3,23 @@ pub use crate::operation::delete_log_pattern::_delete_log_pattern_output::Delete
 
 pub use crate::operation::delete_log_pattern::_delete_log_pattern_input::DeleteLogPatternInputBuilder;
 
+impl DeleteLogPatternInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_log_pattern::DeleteLogPatternOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_log_pattern::DeleteLogPatternError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_log_pattern();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteLogPattern`.
 ///
 /// <p>Removes the specified log pattern from a <code>LogPatternSet</code>.</p>

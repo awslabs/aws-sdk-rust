@@ -3,6 +3,23 @@ pub use crate::operation::pause_replication::_pause_replication_output::PauseRep
 
 pub use crate::operation::pause_replication::_pause_replication_input::PauseReplicationInputBuilder;
 
+impl PauseReplicationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::pause_replication::PauseReplicationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::pause_replication::PauseReplicationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.pause_replication();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PauseReplication`.
 ///
 /// <p>Pause Replication.</p>

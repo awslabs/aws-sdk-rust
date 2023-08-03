@@ -3,6 +3,23 @@ pub use crate::operation::merge_branches_by_squash::_merge_branches_by_squash_ou
 
 pub use crate::operation::merge_branches_by_squash::_merge_branches_by_squash_input::MergeBranchesBySquashInputBuilder;
 
+impl MergeBranchesBySquashInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::merge_branches_by_squash::MergeBranchesBySquashOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::merge_branches_by_squash::MergeBranchesBySquashError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.merge_branches_by_squash();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `MergeBranchesBySquash`.
 ///
 /// <p>Merges two branches using the squash merge strategy.</p>

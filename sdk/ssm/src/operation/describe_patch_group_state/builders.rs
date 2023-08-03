@@ -3,6 +3,23 @@ pub use crate::operation::describe_patch_group_state::_describe_patch_group_stat
 
 pub use crate::operation::describe_patch_group_state::_describe_patch_group_state_input::DescribePatchGroupStateInputBuilder;
 
+impl DescribePatchGroupStateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_patch_group_state::DescribePatchGroupStateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_patch_group_state::DescribePatchGroupStateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_patch_group_state();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribePatchGroupState`.
 ///
 /// <p>Returns high-level aggregated patch compliance state information for a patch group.</p>

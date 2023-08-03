@@ -3,6 +3,23 @@ pub use crate::operation::search_users::_search_users_output::SearchUsersOutputB
 
 pub use crate::operation::search_users::_search_users_input::SearchUsersInputBuilder;
 
+impl SearchUsersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::search_users::SearchUsersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::search_users::SearchUsersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.search_users();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SearchUsers`.
 ///
 /// <p>Searches users in an Amazon Connect instance, with optional filtering.</p> <note>

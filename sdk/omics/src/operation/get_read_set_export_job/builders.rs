@@ -3,6 +3,23 @@ pub use crate::operation::get_read_set_export_job::_get_read_set_export_job_outp
 
 pub use crate::operation::get_read_set_export_job::_get_read_set_export_job_input::GetReadSetExportJobInputBuilder;
 
+impl GetReadSetExportJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_read_set_export_job::GetReadSetExportJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_read_set_export_job::GetReadSetExportJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_read_set_export_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetReadSetExportJob`.
 ///
 /// <p>Gets information about a read set export job.</p>

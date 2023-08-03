@@ -3,6 +3,23 @@ pub use crate::operation::list_vaults::_list_vaults_output::ListVaultsOutputBuil
 
 pub use crate::operation::list_vaults::_list_vaults_input::ListVaultsInputBuilder;
 
+impl ListVaultsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_vaults::ListVaultsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_vaults::ListVaultsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_vaults();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListVaults`.
 ///
 /// <p>This operation lists all vaults owned by the calling user's account. The list returned in the response is ASCII-sorted by vault name.</p>

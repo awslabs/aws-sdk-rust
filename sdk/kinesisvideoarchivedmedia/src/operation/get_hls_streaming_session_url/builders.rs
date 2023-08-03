@@ -3,6 +3,23 @@ pub use crate::operation::get_hls_streaming_session_url::_get_hls_streaming_sess
 
 pub use crate::operation::get_hls_streaming_session_url::_get_hls_streaming_session_url_input::GetHlsStreamingSessionUrlInputBuilder;
 
+impl GetHlsStreamingSessionUrlInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_hls_streaming_session_url::GetHlsStreamingSessionUrlOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_hls_streaming_session_url::GetHLSStreamingSessionURLError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_hls_streaming_session_url();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetHLSStreamingSessionURL`.
 ///
 /// <p>Retrieves an HTTP Live Streaming (HLS) URL for the stream. You can then open the URL in a browser or media player to view the stream contents.</p>

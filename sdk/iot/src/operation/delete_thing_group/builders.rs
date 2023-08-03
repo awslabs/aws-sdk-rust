@@ -3,6 +3,23 @@ pub use crate::operation::delete_thing_group::_delete_thing_group_output::Delete
 
 pub use crate::operation::delete_thing_group::_delete_thing_group_input::DeleteThingGroupInputBuilder;
 
+impl DeleteThingGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_thing_group::DeleteThingGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_thing_group::DeleteThingGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_thing_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteThingGroup`.
 ///
 /// <p>Deletes a thing group.</p>

@@ -3,6 +3,17 @@ pub use crate::operation::transfer_domain_to_another_aws_account::_transfer_doma
 
 pub use crate::operation::transfer_domain_to_another_aws_account::_transfer_domain_to_another_aws_account_input::TransferDomainToAnotherAwsAccountInputBuilder;
 
+impl TransferDomainToAnotherAwsAccountInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::transfer_domain_to_another_aws_account::TransferDomainToAnotherAwsAccountOutput, ::aws_smithy_http::result::SdkError<crate::operation::transfer_domain_to_another_aws_account::TransferDomainToAnotherAwsAccountError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.transfer_domain_to_another_aws_account();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `TransferDomainToAnotherAwsAccount`.
 ///
 /// <p>Transfers a domain from the current Amazon Web Services account to another Amazon Web Services account. Note the following:</p>

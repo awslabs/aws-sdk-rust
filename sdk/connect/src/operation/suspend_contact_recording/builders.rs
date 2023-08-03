@@ -3,6 +3,23 @@ pub use crate::operation::suspend_contact_recording::_suspend_contact_recording_
 
 pub use crate::operation::suspend_contact_recording::_suspend_contact_recording_input::SuspendContactRecordingInputBuilder;
 
+impl SuspendContactRecordingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::suspend_contact_recording::SuspendContactRecordingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::suspend_contact_recording::SuspendContactRecordingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.suspend_contact_recording();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SuspendContactRecording`.
 ///
 /// <p>When a contact is being recorded, this API suspends recording the call or screen. For example, you might suspend the call or screen recording while collecting sensitive information, such as a credit card number. Then use ResumeContactRecording to restart recording.</p>

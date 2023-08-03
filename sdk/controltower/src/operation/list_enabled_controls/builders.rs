@@ -3,6 +3,23 @@ pub use crate::operation::list_enabled_controls::_list_enabled_controls_output::
 
 pub use crate::operation::list_enabled_controls::_list_enabled_controls_input::ListEnabledControlsInputBuilder;
 
+impl ListEnabledControlsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_enabled_controls::ListEnabledControlsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_enabled_controls::ListEnabledControlsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_enabled_controls();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListEnabledControls`.
 ///
 /// <p>Lists the controls enabled by AWS Control Tower on the specified organizational unit and the accounts it contains.</p>

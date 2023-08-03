@@ -3,6 +3,23 @@ pub use crate::operation::disassociate_fraudster::_disassociate_fraudster_output
 
 pub use crate::operation::disassociate_fraudster::_disassociate_fraudster_input::DisassociateFraudsterInputBuilder;
 
+impl DisassociateFraudsterInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_fraudster::DisassociateFraudsterOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_fraudster::DisassociateFraudsterError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disassociate_fraudster();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateFraudster`.
 ///
 /// <p>Disassociates the fraudsters from the watchlist specified. Voice ID always expects a fraudster to be a part of at least one watchlist. If you try to disassociate a fraudster from its only watchlist, a <code>ValidationException</code> is thrown. </p>

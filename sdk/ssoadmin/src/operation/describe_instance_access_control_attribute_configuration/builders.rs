@@ -3,6 +3,17 @@ pub use crate::operation::describe_instance_access_control_attribute_configurati
 
 pub use crate::operation::describe_instance_access_control_attribute_configuration::_describe_instance_access_control_attribute_configuration_input::DescribeInstanceAccessControlAttributeConfigurationInputBuilder;
 
+impl DescribeInstanceAccessControlAttributeConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_instance_access_control_attribute_configuration::DescribeInstanceAccessControlAttributeConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_instance_access_control_attribute_configuration::DescribeInstanceAccessControlAttributeConfigurationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_instance_access_control_attribute_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeInstanceAccessControlAttributeConfiguration`.
 ///
 /// <p>Returns the list of IAM Identity Center identity store attributes that have been configured to work with attributes-based access control (ABAC) for the specified IAM Identity Center instance. This will not return attributes configured and sent by an external identity provider. For more information about ABAC, see <a href="/singlesignon/latest/userguide/abac.html">Attribute-Based Access Control</a> in the <i>IAM Identity Center User Guide</i>.</p>

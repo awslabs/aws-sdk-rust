@@ -3,6 +3,23 @@ pub use crate::operation::search_insights::_search_insights_output::SearchInsigh
 
 pub use crate::operation::search_insights::_search_insights_input::SearchInsightsInputBuilder;
 
+impl SearchInsightsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::search_insights::SearchInsightsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::search_insights::SearchInsightsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.search_insights();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SearchInsights`.
 ///
 /// <p> Returns a list of insights in your Amazon Web Services account. You can specify which insights are returned by their start time, one or more statuses (<code>ONGOING</code> or <code>CLOSED</code>), one or more severities (<code>LOW</code>, <code>MEDIUM</code>, and <code>HIGH</code>), and type (<code>REACTIVE</code> or <code>PROACTIVE</code>). </p>

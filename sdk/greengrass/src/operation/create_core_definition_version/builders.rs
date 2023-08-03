@@ -3,6 +3,23 @@ pub use crate::operation::create_core_definition_version::_create_core_definitio
 
 pub use crate::operation::create_core_definition_version::_create_core_definition_version_input::CreateCoreDefinitionVersionInputBuilder;
 
+impl CreateCoreDefinitionVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_core_definition_version::CreateCoreDefinitionVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_core_definition_version::CreateCoreDefinitionVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_core_definition_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateCoreDefinitionVersion`.
 ///
 /// Creates a version of a core definition that has already been defined. Greengrass groups must each contain exactly one Greengrass core.

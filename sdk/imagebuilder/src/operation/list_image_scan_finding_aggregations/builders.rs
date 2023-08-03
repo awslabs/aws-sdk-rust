@@ -3,6 +3,17 @@ pub use crate::operation::list_image_scan_finding_aggregations::_list_image_scan
 
 pub use crate::operation::list_image_scan_finding_aggregations::_list_image_scan_finding_aggregations_input::ListImageScanFindingAggregationsInputBuilder;
 
+impl ListImageScanFindingAggregationsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_image_scan_finding_aggregations::ListImageScanFindingAggregationsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_image_scan_finding_aggregations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListImageScanFindingAggregations`.
 ///
 /// <p>Returns a list of image scan aggregations for your account. You can filter by the type of key that Image Builder uses to group results. For example, if you want to get a list of findings by severity level for one of your pipelines, you might specify your pipeline with the <code>imagePipelineArn</code> filter. If you don't specify a filter, Image Builder returns an aggregation for your account.</p>

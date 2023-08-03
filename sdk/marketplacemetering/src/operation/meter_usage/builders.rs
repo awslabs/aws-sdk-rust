@@ -3,6 +3,23 @@ pub use crate::operation::meter_usage::_meter_usage_output::MeterUsageOutputBuil
 
 pub use crate::operation::meter_usage::_meter_usage_input::MeterUsageInputBuilder;
 
+impl MeterUsageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::meter_usage::MeterUsageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::meter_usage::MeterUsageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.meter_usage();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `MeterUsage`.
 ///
 /// <p>API to emit metering records. For identical requests, the API is idempotent. It simply returns the metering record ID.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_bulk_publish_details::_get_bulk_publish_details_ou
 
 pub use crate::operation::get_bulk_publish_details::_get_bulk_publish_details_input::GetBulkPublishDetailsInputBuilder;
 
+impl GetBulkPublishDetailsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_bulk_publish_details::GetBulkPublishDetailsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_bulk_publish_details::GetBulkPublishDetailsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_bulk_publish_details();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetBulkPublishDetails`.
 ///
 /// <p>Get the status of the last BulkPublish operation for an identity pool.</p>

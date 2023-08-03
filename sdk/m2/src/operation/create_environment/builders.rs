@@ -3,6 +3,23 @@ pub use crate::operation::create_environment::_create_environment_output::Create
 
 pub use crate::operation::create_environment::_create_environment_input::CreateEnvironmentInputBuilder;
 
+impl CreateEnvironmentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_environment::CreateEnvironmentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_environment::CreateEnvironmentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_environment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateEnvironment`.
 ///
 /// <p>Creates a runtime environment for a given runtime engine.</p>

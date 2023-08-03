@@ -3,6 +3,23 @@ pub use crate::operation::update_rule_metadata::_update_rule_metadata_output::Up
 
 pub use crate::operation::update_rule_metadata::_update_rule_metadata_input::UpdateRuleMetadataInputBuilder;
 
+impl UpdateRuleMetadataInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_rule_metadata::UpdateRuleMetadataOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_rule_metadata::UpdateRuleMetadataError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_rule_metadata();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateRuleMetadata`.
 ///
 /// <p>Updates a rule's metadata. The description attribute can be updated.</p>

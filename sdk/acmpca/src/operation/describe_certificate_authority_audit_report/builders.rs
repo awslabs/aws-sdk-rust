@@ -3,6 +3,17 @@ pub use crate::operation::describe_certificate_authority_audit_report::_describe
 
 pub use crate::operation::describe_certificate_authority_audit_report::_describe_certificate_authority_audit_report_input::DescribeCertificateAuthorityAuditReportInputBuilder;
 
+impl DescribeCertificateAuthorityAuditReportInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_certificate_authority_audit_report::DescribeCertificateAuthorityAuditReportOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_certificate_authority_audit_report::DescribeCertificateAuthorityAuditReportError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_certificate_authority_audit_report();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeCertificateAuthorityAuditReport`.
 ///
 /// <p>Lists information about a specific audit report created by calling the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_CreateCertificateAuthorityAuditReport.html">CreateCertificateAuthorityAuditReport</a> action. Audit information is created every time the certificate authority (CA) private key is used. The private key is used when you call the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_IssueCertificate.html">IssueCertificate</a> action or the <a href="https://docs.aws.amazon.com/privateca/latest/APIReference/API_RevokeCertificate.html">RevokeCertificate</a> action. </p>

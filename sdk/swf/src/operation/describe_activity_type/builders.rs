@@ -3,6 +3,23 @@ pub use crate::operation::describe_activity_type::_describe_activity_type_output
 
 pub use crate::operation::describe_activity_type::_describe_activity_type_input::DescribeActivityTypeInputBuilder;
 
+impl DescribeActivityTypeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_activity_type::DescribeActivityTypeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_activity_type::DescribeActivityTypeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_activity_type();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeActivityType`.
 ///
 /// <p>Returns information about the specified activity type. This includes configuration settings provided when the type was registered and other general information about the type.</p>

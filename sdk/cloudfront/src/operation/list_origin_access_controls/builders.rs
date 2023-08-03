@@ -3,6 +3,23 @@ pub use crate::operation::list_origin_access_controls::_list_origin_access_contr
 
 pub use crate::operation::list_origin_access_controls::_list_origin_access_controls_input::ListOriginAccessControlsInputBuilder;
 
+impl ListOriginAccessControlsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_origin_access_controls::ListOriginAccessControlsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_origin_access_controls::ListOriginAccessControlsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_origin_access_controls();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListOriginAccessControls`.
 ///
 /// <p>Gets the list of CloudFront origin access controls in this Amazon Web Services account.</p>

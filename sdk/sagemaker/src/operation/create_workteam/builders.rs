@@ -3,6 +3,23 @@ pub use crate::operation::create_workteam::_create_workteam_output::CreateWorkte
 
 pub use crate::operation::create_workteam::_create_workteam_input::CreateWorkteamInputBuilder;
 
+impl CreateWorkteamInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_workteam::CreateWorkteamOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_workteam::CreateWorkteamError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_workteam();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateWorkteam`.
 ///
 /// <p>Creates a new work team for labeling your data. A work team is defined by one or more Amazon Cognito user pools. You must first create the user pools before you can create a work team.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::update_base_path_mapping::_update_base_path_mapping_ou
 
 pub use crate::operation::update_base_path_mapping::_update_base_path_mapping_input::UpdateBasePathMappingInputBuilder;
 
+impl UpdateBasePathMappingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_base_path_mapping::UpdateBasePathMappingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_base_path_mapping::UpdateBasePathMappingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_base_path_mapping();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateBasePathMapping`.
 ///
 /// <p>Changes information about the BasePathMapping resource.</p>

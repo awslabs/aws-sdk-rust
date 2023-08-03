@@ -3,6 +3,23 @@ pub use crate::operation::delete_gateway_response::_delete_gateway_response_outp
 
 pub use crate::operation::delete_gateway_response::_delete_gateway_response_input::DeleteGatewayResponseInputBuilder;
 
+impl DeleteGatewayResponseInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_gateway_response::DeleteGatewayResponseOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_gateway_response::DeleteGatewayResponseError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_gateway_response();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteGatewayResponse`.
 ///
 /// <p>Clears any customization of a GatewayResponse of a specified response type on the given RestApi and resets it with the default settings.</p>

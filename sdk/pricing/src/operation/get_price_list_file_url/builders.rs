@@ -3,6 +3,23 @@ pub use crate::operation::get_price_list_file_url::_get_price_list_file_url_outp
 
 pub use crate::operation::get_price_list_file_url::_get_price_list_file_url_input::GetPriceListFileUrlInputBuilder;
 
+impl GetPriceListFileUrlInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_price_list_file_url::GetPriceListFileUrlOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_price_list_file_url::GetPriceListFileUrlError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_price_list_file_url();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetPriceListFileUrl`.
 ///
 /// <p> <i> <b>This feature is in preview release and is subject to change. Your use of Amazon Web Services Price List API is subject to the Beta Service Participation terms of the <a href="https://aws.amazon.com/service-terms/">Amazon Web Services Service Terms</a> (Section 1.10).</b> </i> </p>

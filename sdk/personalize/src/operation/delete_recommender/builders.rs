@@ -3,6 +3,23 @@ pub use crate::operation::delete_recommender::_delete_recommender_output::Delete
 
 pub use crate::operation::delete_recommender::_delete_recommender_input::DeleteRecommenderInputBuilder;
 
+impl DeleteRecommenderInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_recommender::DeleteRecommenderOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_recommender::DeleteRecommenderError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_recommender();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteRecommender`.
 ///
 /// <p>Deactivates and removes a recommender. A deleted recommender can no longer be specified in a <a href="https://docs.aws.amazon.com/personalize/latest/dg/API_RS_GetRecommendations.html">GetRecommendations</a> request.</p>

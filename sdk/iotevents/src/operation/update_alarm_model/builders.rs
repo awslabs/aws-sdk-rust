@@ -3,6 +3,23 @@ pub use crate::operation::update_alarm_model::_update_alarm_model_output::Update
 
 pub use crate::operation::update_alarm_model::_update_alarm_model_input::UpdateAlarmModelInputBuilder;
 
+impl UpdateAlarmModelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_alarm_model::UpdateAlarmModelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_alarm_model::UpdateAlarmModelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_alarm_model();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateAlarmModel`.
 ///
 /// <p>Updates an alarm model. Any alarms that were created based on the previous version are deleted and then created again as new data arrives.</p>

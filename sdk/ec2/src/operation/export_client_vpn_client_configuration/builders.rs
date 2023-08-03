@@ -3,6 +3,17 @@ pub use crate::operation::export_client_vpn_client_configuration::_export_client
 
 pub use crate::operation::export_client_vpn_client_configuration::_export_client_vpn_client_configuration_input::ExportClientVpnClientConfigurationInputBuilder;
 
+impl ExportClientVpnClientConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::export_client_vpn_client_configuration::ExportClientVpnClientConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::export_client_vpn_client_configuration::ExportClientVpnClientConfigurationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.export_client_vpn_client_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ExportClientVpnClientConfiguration`.
 ///
 /// <p>Downloads the contents of the Client VPN endpoint configuration file for the specified Client VPN endpoint. The Client VPN endpoint configuration file includes the Client VPN endpoint and certificate information clients need to establish a connection with the Client VPN endpoint.</p>

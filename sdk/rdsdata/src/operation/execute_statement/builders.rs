@@ -3,6 +3,23 @@ pub use crate::operation::execute_statement::_execute_statement_output::ExecuteS
 
 pub use crate::operation::execute_statement::_execute_statement_input::ExecuteStatementInputBuilder;
 
+impl ExecuteStatementInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::execute_statement::ExecuteStatementOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::execute_statement::ExecuteStatementError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.execute_statement();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ExecuteStatement`.
 ///
 /// <p>Runs a SQL statement against a database.</p> <note>

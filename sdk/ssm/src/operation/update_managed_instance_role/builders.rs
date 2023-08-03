@@ -3,6 +3,23 @@ pub use crate::operation::update_managed_instance_role::_update_managed_instance
 
 pub use crate::operation::update_managed_instance_role::_update_managed_instance_role_input::UpdateManagedInstanceRoleInputBuilder;
 
+impl UpdateManagedInstanceRoleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_managed_instance_role::UpdateManagedInstanceRoleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_managed_instance_role::UpdateManagedInstanceRoleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_managed_instance_role();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateManagedInstanceRole`.
 ///
 /// <p>Changes the Identity and Access Management (IAM) role that is assigned to the on-premises server, edge device, or virtual machines (VM). IAM roles are first assigned to these hybrid nodes during the activation process. For more information, see <code>CreateActivation</code>.</p>

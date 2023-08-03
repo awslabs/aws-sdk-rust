@@ -3,6 +3,23 @@ pub use crate::operation::register_task_definition::_register_task_definition_ou
 
 pub use crate::operation::register_task_definition::_register_task_definition_input::RegisterTaskDefinitionInputBuilder;
 
+impl RegisterTaskDefinitionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::register_task_definition::RegisterTaskDefinitionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::register_task_definition::RegisterTaskDefinitionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.register_task_definition();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RegisterTaskDefinition`.
 ///
 /// <p>Registers a new task definition from the supplied <code>family</code> and <code>containerDefinitions</code>. Optionally, you can add data volumes to your containers with the <code>volumes</code> parameter. For more information about task definition parameters and defaults, see <a href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon ECS Task Definitions</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>

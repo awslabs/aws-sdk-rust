@@ -3,6 +3,23 @@ pub use crate::operation::list_robots::_list_robots_output::ListRobotsOutputBuil
 
 pub use crate::operation::list_robots::_list_robots_input::ListRobotsInputBuilder;
 
+impl ListRobotsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_robots::ListRobotsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_robots::ListRobotsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_robots();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListRobots`.
 ///
 /// <p>Returns a list of robots. You can optionally provide filters to retrieve specific robots.</p> <important>

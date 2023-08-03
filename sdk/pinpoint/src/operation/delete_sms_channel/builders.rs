@@ -3,6 +3,23 @@ pub use crate::operation::delete_sms_channel::_delete_sms_channel_output::Delete
 
 pub use crate::operation::delete_sms_channel::_delete_sms_channel_input::DeleteSmsChannelInputBuilder;
 
+impl DeleteSmsChannelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_sms_channel::DeleteSmsChannelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_sms_channel::DeleteSmsChannelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_sms_channel();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteSmsChannel`.
 ///
 /// <p>Disables the SMS channel for an application and deletes any existing settings for the channel.</p>

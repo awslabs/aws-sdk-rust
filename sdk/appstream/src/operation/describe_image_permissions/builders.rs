@@ -3,6 +3,23 @@ pub use crate::operation::describe_image_permissions::_describe_image_permission
 
 pub use crate::operation::describe_image_permissions::_describe_image_permissions_input::DescribeImagePermissionsInputBuilder;
 
+impl DescribeImagePermissionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_image_permissions::DescribeImagePermissionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_image_permissions::DescribeImagePermissionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_image_permissions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeImagePermissions`.
 ///
 /// <p>Retrieves a list that describes the permissions for shared AWS account IDs on a private image that you own. </p>

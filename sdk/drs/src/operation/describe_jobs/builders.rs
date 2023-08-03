@@ -3,6 +3,23 @@ pub use crate::operation::describe_jobs::_describe_jobs_output::DescribeJobsOutp
 
 pub use crate::operation::describe_jobs::_describe_jobs_input::DescribeJobsInputBuilder;
 
+impl DescribeJobsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_jobs::DescribeJobsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_jobs::DescribeJobsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_jobs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeJobs`.
 ///
 /// <p>Returns a list of Jobs. Use the JobsID and fromDate and toDate filters to limit which jobs are returned. The response is sorted by creationDataTime - latest date first. Jobs are created by the StartRecovery, TerminateRecoveryInstances and StartFailbackLaunch APIs. Jobs are also created by DiagnosticLaunch and TerminateDiagnosticInstances, which are APIs available only to *Support* and only used in response to relevant support tickets.</p>

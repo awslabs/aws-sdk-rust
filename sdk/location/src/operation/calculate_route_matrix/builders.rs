@@ -3,6 +3,23 @@ pub use crate::operation::calculate_route_matrix::_calculate_route_matrix_output
 
 pub use crate::operation::calculate_route_matrix::_calculate_route_matrix_input::CalculateRouteMatrixInputBuilder;
 
+impl CalculateRouteMatrixInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::calculate_route_matrix::CalculateRouteMatrixOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::calculate_route_matrix::CalculateRouteMatrixError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.calculate_route_matrix();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CalculateRouteMatrix`.
 ///
 /// <p> <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html"> Calculates a route matrix</a> given the following required parameters: <code>DeparturePositions</code> and <code>DestinationPositions</code>. <code>CalculateRouteMatrix</code> calculates routes and returns the travel time and travel distance from each departure position to each destination position in the request. For example, given departure positions A and B, and destination positions X and Y, <code>CalculateRouteMatrix</code> will return time and distance for routes from A to X, A to Y, B to X, and B to Y (in that order). The number of results returned (and routes calculated) will be the number of <code>DeparturePositions</code> times the number of <code>DestinationPositions</code>.</p> <note>

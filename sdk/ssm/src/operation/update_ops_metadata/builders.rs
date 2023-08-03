@@ -3,6 +3,23 @@ pub use crate::operation::update_ops_metadata::_update_ops_metadata_output::Upda
 
 pub use crate::operation::update_ops_metadata::_update_ops_metadata_input::UpdateOpsMetadataInputBuilder;
 
+impl UpdateOpsMetadataInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_ops_metadata::UpdateOpsMetadataOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_ops_metadata::UpdateOpsMetadataError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_ops_metadata();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateOpsMetadata`.
 ///
 /// <p>Amazon Web Services Systems Manager calls this API operation when you edit OpsMetadata in Application Manager.</p>

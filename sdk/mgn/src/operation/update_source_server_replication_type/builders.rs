@@ -3,6 +3,17 @@ pub use crate::operation::update_source_server_replication_type::_update_source_
 
 pub use crate::operation::update_source_server_replication_type::_update_source_server_replication_type_input::UpdateSourceServerReplicationTypeInputBuilder;
 
+impl UpdateSourceServerReplicationTypeInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::update_source_server_replication_type::UpdateSourceServerReplicationTypeOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_source_server_replication_type::UpdateSourceServerReplicationTypeError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.update_source_server_replication_type();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateSourceServerReplicationType`.
 ///
 /// <p>Allows you to change between the AGENT_BASED replication type and the SNAPSHOT_SHIPPING replication type.</p>

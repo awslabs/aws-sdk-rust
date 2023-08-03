@@ -3,6 +3,23 @@ pub use crate::operation::get_template_step::_get_template_step_output::GetTempl
 
 pub use crate::operation::get_template_step::_get_template_step_input::GetTemplateStepInputBuilder;
 
+impl GetTemplateStepInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_template_step::GetTemplateStepOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_template_step::GetTemplateStepError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_template_step();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetTemplateStep`.
 ///
 /// <p>Get a specific step in a template.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_ml_model::_create_ml_model_output::CreateMlMode
 
 pub use crate::operation::create_ml_model::_create_ml_model_input::CreateMlModelInputBuilder;
 
+impl CreateMlModelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_ml_model::CreateMlModelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_ml_model::CreateMLModelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_ml_model();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateMLModel`.
 ///
 /// <p>Creates a new <code>MLModel</code> using the <code>DataSource</code> and the recipe as information sources. </p>

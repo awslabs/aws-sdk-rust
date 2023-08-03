@@ -3,6 +3,23 @@ pub use crate::operation::start_recovery::_start_recovery_output::StartRecoveryO
 
 pub use crate::operation::start_recovery::_start_recovery_input::StartRecoveryInputBuilder;
 
+impl StartRecoveryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_recovery::StartRecoveryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_recovery::StartRecoveryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_recovery();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartRecovery`.
 ///
 /// <p>Launches Recovery Instances for the specified Source Servers. For each Source Server you may choose a point in time snapshot to launch from, or use an on demand snapshot.</p>

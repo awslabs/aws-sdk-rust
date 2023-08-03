@@ -3,6 +3,23 @@ pub use crate::operation::create_identity_source::_create_identity_source_output
 
 pub use crate::operation::create_identity_source::_create_identity_source_input::CreateIdentitySourceInputBuilder;
 
+impl CreateIdentitySourceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_identity_source::CreateIdentitySourceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_identity_source::CreateIdentitySourceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_identity_source();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateIdentitySource`.
 ///
 /// <p>Creates a reference to an Amazon Cognito user pool as an external identity provider (IdP). </p>

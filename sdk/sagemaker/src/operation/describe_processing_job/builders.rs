@@ -3,6 +3,23 @@ pub use crate::operation::describe_processing_job::_describe_processing_job_outp
 
 pub use crate::operation::describe_processing_job::_describe_processing_job_input::DescribeProcessingJobInputBuilder;
 
+impl DescribeProcessingJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_processing_job::DescribeProcessingJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_processing_job::DescribeProcessingJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_processing_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeProcessingJob`.
 ///
 /// <p>Returns a description of a processing job.</p>

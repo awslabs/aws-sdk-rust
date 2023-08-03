@@ -3,6 +3,23 @@ pub use crate::operation::list_flywheel_iteration_history::_list_flywheel_iterat
 
 pub use crate::operation::list_flywheel_iteration_history::_list_flywheel_iteration_history_input::ListFlywheelIterationHistoryInputBuilder;
 
+impl ListFlywheelIterationHistoryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_flywheel_iteration_history::ListFlywheelIterationHistoryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_flywheel_iteration_history::ListFlywheelIterationHistoryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_flywheel_iteration_history();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListFlywheelIterationHistory`.
 ///
 /// <p>Information about the history of a flywheel iteration. For more information about flywheels, see <a href="https://docs.aws.amazon.com/comprehend/latest/dg/flywheels-about.html"> Flywheel overview</a> in the <i>Amazon Comprehend Developer Guide</i>.</p>

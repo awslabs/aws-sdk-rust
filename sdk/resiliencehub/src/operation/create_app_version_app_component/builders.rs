@@ -3,6 +3,23 @@ pub use crate::operation::create_app_version_app_component::_create_app_version_
 
 pub use crate::operation::create_app_version_app_component::_create_app_version_app_component_input::CreateAppVersionAppComponentInputBuilder;
 
+impl CreateAppVersionAppComponentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_app_version_app_component::CreateAppVersionAppComponentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_app_version_app_component::CreateAppVersionAppComponentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_app_version_app_component();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateAppVersionAppComponent`.
 ///
 /// <p>Creates a new Application Component in the Resilience Hub application.</p> <note>

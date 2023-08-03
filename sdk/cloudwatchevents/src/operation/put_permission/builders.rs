@@ -3,6 +3,23 @@ pub use crate::operation::put_permission::_put_permission_output::PutPermissionO
 
 pub use crate::operation::put_permission::_put_permission_input::PutPermissionInputBuilder;
 
+impl PutPermissionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_permission::PutPermissionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_permission::PutPermissionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_permission();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutPermission`.
 ///
 /// <p>Running <code>PutPermission</code> permits the specified Amazon Web Services account or Amazon Web Services organization to put events to the specified <i>event bus</i>. Amazon EventBridge (CloudWatch Events) rules in your account are triggered by these events arriving to an event bus in your account. </p>

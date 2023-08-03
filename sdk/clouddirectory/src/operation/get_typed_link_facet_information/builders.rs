@@ -3,6 +3,23 @@ pub use crate::operation::get_typed_link_facet_information::_get_typed_link_face
 
 pub use crate::operation::get_typed_link_facet_information::_get_typed_link_facet_information_input::GetTypedLinkFacetInformationInputBuilder;
 
+impl GetTypedLinkFacetInformationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_typed_link_facet_information::GetTypedLinkFacetInformationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_typed_link_facet_information::GetTypedLinkFacetInformationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_typed_link_facet_information();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetTypedLinkFacetInformation`.
 ///
 /// <p>Returns the identity attribute order for a specific <code>TypedLinkFacet</code>. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_thesaurus::_create_thesaurus_output::CreateThes
 
 pub use crate::operation::create_thesaurus::_create_thesaurus_input::CreateThesaurusInputBuilder;
 
+impl CreateThesaurusInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_thesaurus::CreateThesaurusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_thesaurus::CreateThesaurusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_thesaurus();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateThesaurus`.
 ///
 /// <p>Creates a thesaurus for an index. The thesaurus contains a list of synonyms in Solr format.</p>

@@ -3,6 +3,17 @@ pub use crate::operation::register_instance_event_notification_attributes::_regi
 
 pub use crate::operation::register_instance_event_notification_attributes::_register_instance_event_notification_attributes_input::RegisterInstanceEventNotificationAttributesInputBuilder;
 
+impl RegisterInstanceEventNotificationAttributesInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::register_instance_event_notification_attributes::RegisterInstanceEventNotificationAttributesOutput, ::aws_smithy_http::result::SdkError<crate::operation::register_instance_event_notification_attributes::RegisterInstanceEventNotificationAttributesError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.register_instance_event_notification_attributes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RegisterInstanceEventNotificationAttributes`.
 ///
 /// <p>Registers a set of tag keys to include in scheduled event notifications for your resources. </p>

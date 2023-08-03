@@ -3,6 +3,23 @@ pub use crate::operation::list_table_rows::_list_table_rows_output::ListTableRow
 
 pub use crate::operation::list_table_rows::_list_table_rows_input::ListTableRowsInputBuilder;
 
+impl ListTableRowsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_table_rows::ListTableRowsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_table_rows::ListTableRowsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_table_rows();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListTableRows`.
 ///
 /// <p> The ListTableRows API allows you to retrieve a list of all the rows in a table in a workbook. </p>

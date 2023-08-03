@@ -3,6 +3,23 @@ pub use crate::operation::stop_human_loop::_stop_human_loop_output::StopHumanLoo
 
 pub use crate::operation::stop_human_loop::_stop_human_loop_input::StopHumanLoopInputBuilder;
 
+impl StopHumanLoopInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_human_loop::StopHumanLoopOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_human_loop::StopHumanLoopError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_human_loop();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopHumanLoop`.
 ///
 /// <p>Stops the specified human loop.</p>

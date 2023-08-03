@@ -3,6 +3,23 @@ pub use crate::operation::describe_customer_metadata::_describe_customer_metadat
 
 pub use crate::operation::describe_customer_metadata::_describe_customer_metadata_input::DescribeCustomerMetadataInputBuilder;
 
+impl DescribeCustomerMetadataInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_customer_metadata::DescribeCustomerMetadataOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_customer_metadata::DescribeCustomerMetadataError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_customer_metadata();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeCustomerMetadata`.
 ///
 /// <p>Get and view a list of customer agreements, along with their signed status and whether the customer is an NNIPartner, NNIPartnerV2, or a nonPartner. </p>

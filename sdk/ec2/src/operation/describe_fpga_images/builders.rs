@@ -3,6 +3,23 @@ pub use crate::operation::describe_fpga_images::_describe_fpga_images_output::De
 
 pub use crate::operation::describe_fpga_images::_describe_fpga_images_input::DescribeFpgaImagesInputBuilder;
 
+impl DescribeFpgaImagesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_fpga_images::DescribeFpgaImagesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_fpga_images::DescribeFpgaImagesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_fpga_images();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeFpgaImages`.
 ///
 /// <p>Describes the Amazon FPGA Images (AFIs) available to you. These include public AFIs, private AFIs that you own, and AFIs owned by other Amazon Web Services accounts for which you have load permissions.</p>

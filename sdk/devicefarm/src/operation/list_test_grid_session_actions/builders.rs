@@ -3,6 +3,23 @@ pub use crate::operation::list_test_grid_session_actions::_list_test_grid_sessio
 
 pub use crate::operation::list_test_grid_session_actions::_list_test_grid_session_actions_input::ListTestGridSessionActionsInputBuilder;
 
+impl ListTestGridSessionActionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_test_grid_session_actions::ListTestGridSessionActionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_test_grid_session_actions::ListTestGridSessionActionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_test_grid_session_actions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListTestGridSessionActions`.
 ///
 /// <p>Returns a list of the actions taken in a <code>TestGridSession</code>.</p>

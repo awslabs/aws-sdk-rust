@@ -3,6 +3,23 @@ pub use crate::operation::list_aliases::_list_aliases_output::ListAliasesOutputB
 
 pub use crate::operation::list_aliases::_list_aliases_input::ListAliasesInputBuilder;
 
+impl ListAliasesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_aliases::ListAliasesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_aliases::ListAliasesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_aliases();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAliases`.
 ///
 /// <p>Retrieves all aliases for this Amazon Web Services account. You can filter the result set by alias name and/or routing strategy type. Use the pagination parameters to retrieve results in sequential pages.</p> <note>

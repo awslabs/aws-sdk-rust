@@ -3,6 +3,23 @@ pub use crate::operation::list_presets::_list_presets_output::ListPresetsOutputB
 
 pub use crate::operation::list_presets::_list_presets_input::ListPresetsInputBuilder;
 
+impl ListPresetsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_presets::ListPresetsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_presets::ListPresetsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_presets();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListPresets`.
 ///
 /// <p>The ListPresets operation gets a list of the default presets included with Elastic Transcoder and the presets that you've added in an AWS region.</p>

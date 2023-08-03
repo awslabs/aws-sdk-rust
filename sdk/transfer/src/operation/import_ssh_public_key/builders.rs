@@ -3,6 +3,23 @@ pub use crate::operation::import_ssh_public_key::_import_ssh_public_key_output::
 
 pub use crate::operation::import_ssh_public_key::_import_ssh_public_key_input::ImportSshPublicKeyInputBuilder;
 
+impl ImportSshPublicKeyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::import_ssh_public_key::ImportSshPublicKeyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::import_ssh_public_key::ImportSshPublicKeyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.import_ssh_public_key();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ImportSshPublicKey`.
 ///
 /// <p>Adds a Secure Shell (SSH) public key to a Transfer Family user identified by a <code>UserName</code> value assigned to the specific file transfer protocol-enabled server, identified by <code>ServerId</code>.</p>

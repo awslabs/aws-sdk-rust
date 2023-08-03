@@ -3,6 +3,23 @@ pub use crate::operation::release_phone_number::_release_phone_number_output::Re
 
 pub use crate::operation::release_phone_number::_release_phone_number_input::ReleasePhoneNumberInputBuilder;
 
+impl ReleasePhoneNumberInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::release_phone_number::ReleasePhoneNumberOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::release_phone_number::ReleasePhoneNumberError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.release_phone_number();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ReleasePhoneNumber`.
 ///
 /// <p>Releases an existing origination phone number in your account. Once released, a phone number is no longer available for sending messages.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_contact::_create_contact_output::CreateContactO
 
 pub use crate::operation::create_contact::_create_contact_input::CreateContactInputBuilder;
 
+impl CreateContactInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_contact::CreateContactOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_contact::CreateContactError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_contact();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateContact`.
 ///
 /// <p>Creates a contact, which is an end-user who is receiving the email, and adds them to a contact list.</p>

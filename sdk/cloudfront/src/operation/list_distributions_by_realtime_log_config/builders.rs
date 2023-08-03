@@ -3,6 +3,17 @@ pub use crate::operation::list_distributions_by_realtime_log_config::_list_distr
 
 pub use crate::operation::list_distributions_by_realtime_log_config::_list_distributions_by_realtime_log_config_input::ListDistributionsByRealtimeLogConfigInputBuilder;
 
+impl ListDistributionsByRealtimeLogConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_distributions_by_realtime_log_config::ListDistributionsByRealtimeLogConfigOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_distributions_by_realtime_log_config::ListDistributionsByRealtimeLogConfigError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_distributions_by_realtime_log_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDistributionsByRealtimeLogConfig`.
 ///
 /// <p>Gets a list of distributions that have a cache behavior that's associated with the specified real-time log configuration.</p>

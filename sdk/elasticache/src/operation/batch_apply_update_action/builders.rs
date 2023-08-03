@@ -3,6 +3,23 @@ pub use crate::operation::batch_apply_update_action::_batch_apply_update_action_
 
 pub use crate::operation::batch_apply_update_action::_batch_apply_update_action_input::BatchApplyUpdateActionInputBuilder;
 
+impl BatchApplyUpdateActionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_apply_update_action::BatchApplyUpdateActionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_apply_update_action::BatchApplyUpdateActionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_apply_update_action();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchApplyUpdateAction`.
 ///
 /// <p>Apply the service update. For more information on service updates and applying them, see <a href="https://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/applying-updates.html">Applying Service Updates</a>.</p>

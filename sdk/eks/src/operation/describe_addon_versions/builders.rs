@@ -3,6 +3,23 @@ pub use crate::operation::describe_addon_versions::_describe_addon_versions_outp
 
 pub use crate::operation::describe_addon_versions::_describe_addon_versions_input::DescribeAddonVersionsInputBuilder;
 
+impl DescribeAddonVersionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_addon_versions::DescribeAddonVersionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_addon_versions::DescribeAddonVersionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_addon_versions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAddonVersions`.
 ///
 /// <p>Describes the versions for an add-on. Information such as the Kubernetes versions that you can use the add-on with, the <code>owner</code>, <code>publisher</code>, and the <code>type</code> of the add-on are returned. </p>

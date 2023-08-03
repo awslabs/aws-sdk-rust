@@ -3,6 +3,23 @@ pub use crate::operation::delete_predictor::_delete_predictor_output::DeletePred
 
 pub use crate::operation::delete_predictor::_delete_predictor_input::DeletePredictorInputBuilder;
 
+impl DeletePredictorInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_predictor::DeletePredictorOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_predictor::DeletePredictorError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_predictor();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeletePredictor`.
 ///
 /// <p>Deletes a predictor created using the <code>DescribePredictor</code> or <code>CreatePredictor</code> operations. You can delete only predictor that have a status of <code>ACTIVE</code> or <code>CREATE_FAILED</code>. To get the status, use the <code>DescribePredictor</code> operation.</p>

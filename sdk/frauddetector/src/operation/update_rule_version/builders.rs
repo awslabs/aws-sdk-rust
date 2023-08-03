@@ -3,6 +3,23 @@ pub use crate::operation::update_rule_version::_update_rule_version_output::Upda
 
 pub use crate::operation::update_rule_version::_update_rule_version_input::UpdateRuleVersionInputBuilder;
 
+impl UpdateRuleVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_rule_version::UpdateRuleVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_rule_version::UpdateRuleVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_rule_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateRuleVersion`.
 ///
 /// <p>Updates a rule version resulting in a new rule version. Updates a rule version resulting in a new rule version (version 1, 2, 3 ...). </p>

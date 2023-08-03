@@ -3,6 +3,23 @@ pub use crate::operation::list_app_instance_bots::_list_app_instance_bots_output
 
 pub use crate::operation::list_app_instance_bots::_list_app_instance_bots_input::ListAppInstanceBotsInputBuilder;
 
+impl ListAppInstanceBotsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_app_instance_bots::ListAppInstanceBotsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_app_instance_bots::ListAppInstanceBotsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_app_instance_bots();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAppInstanceBots`.
 ///
 /// <p>Lists all <code>AppInstanceBots</code> created under a single <code>AppInstance</code>.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::tag_mfa_device::_tag_mfa_device_output::TagMfaDeviceOu
 
 pub use crate::operation::tag_mfa_device::_tag_mfa_device_input::TagMfaDeviceInputBuilder;
 
+impl TagMfaDeviceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::tag_mfa_device::TagMfaDeviceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::tag_mfa_device::TagMFADeviceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.tag_mfa_device();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `TagMFADevice`.
 ///
 /// <p>Adds one or more tags to an IAM virtual multi-factor authentication (MFA) device. If a tag with the same key name already exists, then that tag is overwritten with the new value.</p>

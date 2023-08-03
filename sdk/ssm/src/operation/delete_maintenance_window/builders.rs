@@ -3,6 +3,23 @@ pub use crate::operation::delete_maintenance_window::_delete_maintenance_window_
 
 pub use crate::operation::delete_maintenance_window::_delete_maintenance_window_input::DeleteMaintenanceWindowInputBuilder;
 
+impl DeleteMaintenanceWindowInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_maintenance_window::DeleteMaintenanceWindowOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_maintenance_window::DeleteMaintenanceWindowError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_maintenance_window();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteMaintenanceWindow`.
 ///
 /// <p>Deletes a maintenance window.</p>

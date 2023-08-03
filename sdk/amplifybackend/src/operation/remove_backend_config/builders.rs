@@ -3,6 +3,23 @@ pub use crate::operation::remove_backend_config::_remove_backend_config_output::
 
 pub use crate::operation::remove_backend_config::_remove_backend_config_input::RemoveBackendConfigInputBuilder;
 
+impl RemoveBackendConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::remove_backend_config::RemoveBackendConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::remove_backend_config::RemoveBackendConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.remove_backend_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RemoveBackendConfig`.
 ///
 /// <p>Removes the AWS resources required to access the Amplify Admin UI.</p>

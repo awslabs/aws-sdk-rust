@@ -3,6 +3,23 @@ pub use crate::operation::describe_shared_directories::_describe_shared_director
 
 pub use crate::operation::describe_shared_directories::_describe_shared_directories_input::DescribeSharedDirectoriesInputBuilder;
 
+impl DescribeSharedDirectoriesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_shared_directories::DescribeSharedDirectoriesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_shared_directories::DescribeSharedDirectoriesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_shared_directories();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeSharedDirectories`.
 ///
 /// <p>Returns the shared directories in your account. </p>

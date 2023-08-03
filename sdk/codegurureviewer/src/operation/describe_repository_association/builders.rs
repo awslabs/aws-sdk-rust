@@ -3,6 +3,23 @@ pub use crate::operation::describe_repository_association::_describe_repository_
 
 pub use crate::operation::describe_repository_association::_describe_repository_association_input::DescribeRepositoryAssociationInputBuilder;
 
+impl DescribeRepositoryAssociationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_repository_association::DescribeRepositoryAssociationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_repository_association::DescribeRepositoryAssociationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_repository_association();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeRepositoryAssociation`.
 ///
 /// <p>Returns a <a href="https://docs.aws.amazon.com/codeguru/latest/reviewer-api/API_RepositoryAssociation.html">RepositoryAssociation</a> object that contains information about the requested repository association.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_vpce_configuration::_delete_vpce_configuration_
 
 pub use crate::operation::delete_vpce_configuration::_delete_vpce_configuration_input::DeleteVpceConfigurationInputBuilder;
 
+impl DeleteVpceConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_vpce_configuration::DeleteVpceConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_vpce_configuration::DeleteVPCEConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_vpce_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteVPCEConfiguration`.
 ///
 /// <p>Deletes a configuration for your Amazon Virtual Private Cloud (VPC) endpoint.</p>

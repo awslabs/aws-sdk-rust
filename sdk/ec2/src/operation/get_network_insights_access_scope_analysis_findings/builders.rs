@@ -3,6 +3,17 @@ pub use crate::operation::get_network_insights_access_scope_analysis_findings::_
 
 pub use crate::operation::get_network_insights_access_scope_analysis_findings::_get_network_insights_access_scope_analysis_findings_input::GetNetworkInsightsAccessScopeAnalysisFindingsInputBuilder;
 
+impl GetNetworkInsightsAccessScopeAnalysisFindingsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_network_insights_access_scope_analysis_findings::GetNetworkInsightsAccessScopeAnalysisFindingsOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_network_insights_access_scope_analysis_findings::GetNetworkInsightsAccessScopeAnalysisFindingsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_network_insights_access_scope_analysis_findings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetNetworkInsightsAccessScopeAnalysisFindings`.
 ///
 /// <p>Gets the findings for the specified Network Access Scope analysis.</p>

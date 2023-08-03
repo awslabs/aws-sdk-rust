@@ -3,6 +3,23 @@ pub use crate::operation::create_user_pool_client::_create_user_pool_client_outp
 
 pub use crate::operation::create_user_pool_client::_create_user_pool_client_input::CreateUserPoolClientInputBuilder;
 
+impl CreateUserPoolClientInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_user_pool_client::CreateUserPoolClientOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_user_pool_client::CreateUserPoolClientError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_user_pool_client();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateUserPoolClient`.
 ///
 /// <p>Creates the user pool client.</p>

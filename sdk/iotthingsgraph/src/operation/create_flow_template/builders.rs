@@ -3,6 +3,23 @@ pub use crate::operation::create_flow_template::_create_flow_template_output::Cr
 
 pub use crate::operation::create_flow_template::_create_flow_template_input::CreateFlowTemplateInputBuilder;
 
+impl CreateFlowTemplateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_flow_template::CreateFlowTemplateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_flow_template::CreateFlowTemplateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_flow_template();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateFlowTemplate`.
 ///
 /// <p>Creates a workflow template. Workflows can be created only in the user's namespace. (The public namespace contains only entities.) The workflow can contain only entities in the specified namespace. The workflow is validated against the entities in the latest version of the user's namespace unless another namespace version is specified in the request.</p>

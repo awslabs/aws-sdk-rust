@@ -3,6 +3,23 @@ pub use crate::operation::start_test_execution::_start_test_execution_output::St
 
 pub use crate::operation::start_test_execution::_start_test_execution_input::StartTestExecutionInputBuilder;
 
+impl StartTestExecutionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_test_execution::StartTestExecutionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_test_execution::StartTestExecutionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_test_execution();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartTestExecution`.
 ///
 /// <p>The action to start test set execution.</p>

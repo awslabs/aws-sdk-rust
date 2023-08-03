@@ -3,6 +3,23 @@ pub use crate::operation::describe_api_destination::_describe_api_destination_ou
 
 pub use crate::operation::describe_api_destination::_describe_api_destination_input::DescribeApiDestinationInputBuilder;
 
+impl DescribeApiDestinationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_api_destination::DescribeApiDestinationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_api_destination::DescribeApiDestinationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_api_destination();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeApiDestination`.
 ///
 /// <p>Retrieves details about an API destination.</p>

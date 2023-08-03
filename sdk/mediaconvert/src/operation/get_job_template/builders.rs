@@ -3,6 +3,23 @@ pub use crate::operation::get_job_template::_get_job_template_output::GetJobTemp
 
 pub use crate::operation::get_job_template::_get_job_template_input::GetJobTemplateInputBuilder;
 
+impl GetJobTemplateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_job_template::GetJobTemplateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_job_template::GetJobTemplateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_job_template();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetJobTemplate`.
 ///
 /// Retrieve the JSON for a specific job template.

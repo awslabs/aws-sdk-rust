@@ -3,6 +3,23 @@ pub use crate::operation::modify_cluster_db_revision::_modify_cluster_db_revisio
 
 pub use crate::operation::modify_cluster_db_revision::_modify_cluster_db_revision_input::ModifyClusterDbRevisionInputBuilder;
 
+impl ModifyClusterDbRevisionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::modify_cluster_db_revision::ModifyClusterDbRevisionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::modify_cluster_db_revision::ModifyClusterDbRevisionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.modify_cluster_db_revision();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyClusterDbRevision`.
 ///
 /// <p>Modifies the database revision of a cluster. The database revision is a unique revision of the database running in a cluster.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_asset_models::_list_asset_models_output::ListAsse
 
 pub use crate::operation::list_asset_models::_list_asset_models_input::ListAssetModelsInputBuilder;
 
+impl ListAssetModelsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_asset_models::ListAssetModelsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_asset_models::ListAssetModelsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_asset_models();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAssetModels`.
 ///
 /// <p>Retrieves a paginated list of summaries of all asset models.</p>

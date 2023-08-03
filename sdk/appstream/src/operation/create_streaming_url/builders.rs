@@ -3,6 +3,23 @@ pub use crate::operation::create_streaming_url::_create_streaming_url_output::Cr
 
 pub use crate::operation::create_streaming_url::_create_streaming_url_input::CreateStreamingUrlInputBuilder;
 
+impl CreateStreamingUrlInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_streaming_url::CreateStreamingUrlOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_streaming_url::CreateStreamingURLError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_streaming_url();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateStreamingURL`.
 ///
 /// <p>Creates a temporary URL to start an AppStream 2.0 streaming session for the specified user. A streaming URL enables application streaming to be tested without user setup. </p>

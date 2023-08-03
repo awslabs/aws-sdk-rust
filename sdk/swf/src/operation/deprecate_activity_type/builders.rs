@@ -3,6 +3,23 @@ pub use crate::operation::deprecate_activity_type::_deprecate_activity_type_outp
 
 pub use crate::operation::deprecate_activity_type::_deprecate_activity_type_input::DeprecateActivityTypeInputBuilder;
 
+impl DeprecateActivityTypeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::deprecate_activity_type::DeprecateActivityTypeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::deprecate_activity_type::DeprecateActivityTypeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.deprecate_activity_type();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeprecateActivityType`.
 ///
 /// <p>Deprecates the specified <i>activity type</i>. After an activity type has been deprecated, you cannot create new tasks of that activity type. Tasks of this type that were scheduled before the type was deprecated continue to run.</p> <note>

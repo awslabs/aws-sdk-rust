@@ -3,6 +3,23 @@ pub use crate::operation::update_lag::_update_lag_output::UpdateLagOutputBuilder
 
 pub use crate::operation::update_lag::_update_lag_input::UpdateLagInputBuilder;
 
+impl UpdateLagInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_lag::UpdateLagOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_lag::UpdateLagError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_lag();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateLag`.
 ///
 /// <p>Updates the attributes of the specified link aggregation group (LAG).</p>

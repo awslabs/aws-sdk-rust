@@ -3,6 +3,23 @@ pub use crate::operation::create_application::_create_application_output::Create
 
 pub use crate::operation::create_application::_create_application_input::CreateApplicationInputBuilder;
 
+impl CreateApplicationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_application::CreateApplicationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_application::CreateApplicationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_application();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateApplication`.
 ///
 /// <p>Creates an Amazon Web Services Migration Hub Refactor Spaces application. The account that owns the environment also owns the applications created inside the environment, regardless of the account that creates the application. Refactor Spaces provisions an Amazon API Gateway, API Gateway VPC link, and Network Load Balancer for the application proxy inside your account.</p>

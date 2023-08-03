@@ -3,6 +3,23 @@ pub use crate::operation::delete_explainability_export::_delete_explainability_e
 
 pub use crate::operation::delete_explainability_export::_delete_explainability_export_input::DeleteExplainabilityExportInputBuilder;
 
+impl DeleteExplainabilityExportInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_explainability_export::DeleteExplainabilityExportOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_explainability_export::DeleteExplainabilityExportError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_explainability_export();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteExplainabilityExport`.
 ///
 /// <p>Deletes an Explainability export.</p>

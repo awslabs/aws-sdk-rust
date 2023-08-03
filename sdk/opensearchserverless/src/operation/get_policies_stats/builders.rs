@@ -3,6 +3,23 @@ pub use crate::operation::get_policies_stats::_get_policies_stats_output::GetPol
 
 pub use crate::operation::get_policies_stats::_get_policies_stats_input::GetPoliciesStatsInputBuilder;
 
+impl GetPoliciesStatsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_policies_stats::GetPoliciesStatsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_policies_stats::GetPoliciesStatsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_policies_stats();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetPoliciesStats`.
 ///
 /// <p>Returns statistical information about your OpenSearch Serverless access policies, security configurations, and security policies.</p>

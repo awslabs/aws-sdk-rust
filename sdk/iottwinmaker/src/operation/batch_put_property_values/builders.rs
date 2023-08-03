@@ -3,6 +3,23 @@ pub use crate::operation::batch_put_property_values::_batch_put_property_values_
 
 pub use crate::operation::batch_put_property_values::_batch_put_property_values_input::BatchPutPropertyValuesInputBuilder;
 
+impl BatchPutPropertyValuesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_put_property_values::BatchPutPropertyValuesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_put_property_values::BatchPutPropertyValuesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_put_property_values();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchPutPropertyValues`.
 ///
 /// <p>Sets values for multiple time series properties.</p>

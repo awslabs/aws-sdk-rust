@@ -3,6 +3,23 @@ pub use crate::operation::describe_launch_configurations::_describe_launch_confi
 
 pub use crate::operation::describe_launch_configurations::_describe_launch_configurations_input::DescribeLaunchConfigurationsInputBuilder;
 
+impl DescribeLaunchConfigurationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_launch_configurations::DescribeLaunchConfigurationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_launch_configurations::DescribeLaunchConfigurationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_launch_configurations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeLaunchConfigurations`.
 ///
 /// <p>Gets information about the launch configurations in the account and Region.</p>

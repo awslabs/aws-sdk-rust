@@ -3,6 +3,17 @@ pub use crate::operation::describe_gateway_capability_configuration::_describe_g
 
 pub use crate::operation::describe_gateway_capability_configuration::_describe_gateway_capability_configuration_input::DescribeGatewayCapabilityConfigurationInputBuilder;
 
+impl DescribeGatewayCapabilityConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_gateway_capability_configuration::DescribeGatewayCapabilityConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_gateway_capability_configuration::DescribeGatewayCapabilityConfigurationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_gateway_capability_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeGatewayCapabilityConfiguration`.
 ///
 /// <p>Retrieves information about a gateway capability configuration. Each gateway capability defines data sources for a gateway. A capability configuration can contain multiple data source configurations. If you define OPC-UA sources for a gateway in the IoT SiteWise console, all of your OPC-UA sources are stored in one capability configuration. To list all capability configurations for a gateway, use <a href="https://docs.aws.amazon.com/iot-sitewise/latest/APIReference/API_DescribeGateway.html">DescribeGateway</a>.</p>

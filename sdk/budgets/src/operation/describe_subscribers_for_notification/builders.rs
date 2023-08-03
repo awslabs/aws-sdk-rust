@@ -3,6 +3,17 @@ pub use crate::operation::describe_subscribers_for_notification::_describe_subsc
 
 pub use crate::operation::describe_subscribers_for_notification::_describe_subscribers_for_notification_input::DescribeSubscribersForNotificationInputBuilder;
 
+impl DescribeSubscribersForNotificationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_subscribers_for_notification::DescribeSubscribersForNotificationOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_subscribers_for_notification::DescribeSubscribersForNotificationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_subscribers_for_notification();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeSubscribersForNotification`.
 ///
 /// <p>Lists the subscribers that are associated with a notification.</p>

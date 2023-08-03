@@ -3,6 +3,23 @@ pub use crate::operation::associate_approved_origin::_associate_approved_origin_
 
 pub use crate::operation::associate_approved_origin::_associate_approved_origin_input::AssociateApprovedOriginInputBuilder;
 
+impl AssociateApprovedOriginInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_approved_origin::AssociateApprovedOriginOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_approved_origin::AssociateApprovedOriginError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_approved_origin();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateApprovedOrigin`.
 ///
 /// <p>This API is in preview release for Amazon Connect and is subject to change.</p>

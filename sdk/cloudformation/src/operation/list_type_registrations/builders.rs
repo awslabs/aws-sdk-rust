@@ -3,6 +3,23 @@ pub use crate::operation::list_type_registrations::_list_type_registrations_outp
 
 pub use crate::operation::list_type_registrations::_list_type_registrations_input::ListTypeRegistrationsInputBuilder;
 
+impl ListTypeRegistrationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_type_registrations::ListTypeRegistrationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_type_registrations::ListTypeRegistrationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_type_registrations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListTypeRegistrations`.
 ///
 /// <p>Returns a list of registration tokens for the specified extension(s).</p>

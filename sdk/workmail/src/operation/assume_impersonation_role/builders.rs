@@ -3,6 +3,23 @@ pub use crate::operation::assume_impersonation_role::_assume_impersonation_role_
 
 pub use crate::operation::assume_impersonation_role::_assume_impersonation_role_input::AssumeImpersonationRoleInputBuilder;
 
+impl AssumeImpersonationRoleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::assume_impersonation_role::AssumeImpersonationRoleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::assume_impersonation_role::AssumeImpersonationRoleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.assume_impersonation_role();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssumeImpersonationRole`.
 ///
 /// <p>Assumes an impersonation role for the given WorkMail organization. This method returns an authentication token you can use to make impersonated calls.</p>

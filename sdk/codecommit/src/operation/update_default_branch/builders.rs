@@ -3,6 +3,23 @@ pub use crate::operation::update_default_branch::_update_default_branch_output::
 
 pub use crate::operation::update_default_branch::_update_default_branch_input::UpdateDefaultBranchInputBuilder;
 
+impl UpdateDefaultBranchInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_default_branch::UpdateDefaultBranchOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_default_branch::UpdateDefaultBranchError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_default_branch();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateDefaultBranch`.
 ///
 /// <p>Sets or changes the default branch name for the specified repository.</p> <note>

@@ -3,6 +3,23 @@ pub use crate::operation::update_provisioning_artifact::_update_provisioning_art
 
 pub use crate::operation::update_provisioning_artifact::_update_provisioning_artifact_input::UpdateProvisioningArtifactInputBuilder;
 
+impl UpdateProvisioningArtifactInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_provisioning_artifact::UpdateProvisioningArtifactOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_provisioning_artifact::UpdateProvisioningArtifactError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_provisioning_artifact();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateProvisioningArtifact`.
 ///
 /// <p>Updates the specified provisioning artifact (also known as a version) for the specified product.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::add_profile_permission::_add_profile_permission_output
 
 pub use crate::operation::add_profile_permission::_add_profile_permission_input::AddProfilePermissionInputBuilder;
 
+impl AddProfilePermissionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::add_profile_permission::AddProfilePermissionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::add_profile_permission::AddProfilePermissionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.add_profile_permission();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AddProfilePermission`.
 ///
 /// <p>Adds cross-account permissions to a signing profile.</p>

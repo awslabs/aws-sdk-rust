@@ -3,6 +3,23 @@ pub use crate::operation::list_app_input_sources::_list_app_input_sources_output
 
 pub use crate::operation::list_app_input_sources::_list_app_input_sources_input::ListAppInputSourcesInputBuilder;
 
+impl ListAppInputSourcesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_app_input_sources::ListAppInputSourcesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_app_input_sources::ListAppInputSourcesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_app_input_sources();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAppInputSources`.
 ///
 /// <p>Lists all the input sources of the Resilience Hub application. For more information about the input sources supported by Resilience Hub, see <a href="https://docs.aws.amazon.com/resilience-hub/latest/userguide/discover-structure.html">Discover the structure and describe your Resilience Hub application</a>.</p>

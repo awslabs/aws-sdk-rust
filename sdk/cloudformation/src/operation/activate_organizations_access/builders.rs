@@ -3,6 +3,23 @@ pub use crate::operation::activate_organizations_access::_activate_organizations
 
 pub use crate::operation::activate_organizations_access::_activate_organizations_access_input::ActivateOrganizationsAccessInputBuilder;
 
+impl ActivateOrganizationsAccessInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::activate_organizations_access::ActivateOrganizationsAccessOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::activate_organizations_access::ActivateOrganizationsAccessError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.activate_organizations_access();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ActivateOrganizationsAccess`.
 ///
 /// <p>Activate trusted access with Organizations. With trusted access between StackSets and Organizations activated, the management account has permissions to create and manage StackSets for your organization.</p>

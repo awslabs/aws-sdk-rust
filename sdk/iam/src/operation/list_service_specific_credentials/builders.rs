@@ -3,6 +3,17 @@ pub use crate::operation::list_service_specific_credentials::_list_service_speci
 
 pub use crate::operation::list_service_specific_credentials::_list_service_specific_credentials_input::ListServiceSpecificCredentialsInputBuilder;
 
+impl ListServiceSpecificCredentialsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_service_specific_credentials::ListServiceSpecificCredentialsOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_service_specific_credentials::ListServiceSpecificCredentialsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_service_specific_credentials();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListServiceSpecificCredentials`.
 ///
 /// <p>Returns information about the service-specific credentials associated with the specified IAM user. If none exists, the operation returns an empty list. The service-specific credentials returned by this operation are used only for authenticating the IAM user to a specific service. For more information about using service-specific credentials to authenticate to an Amazon Web Services service, see <a href="https://docs.aws.amazon.com/codecommit/latest/userguide/setting-up-gc.html">Set up service-specific credentials</a> in the CodeCommit User Guide.</p>

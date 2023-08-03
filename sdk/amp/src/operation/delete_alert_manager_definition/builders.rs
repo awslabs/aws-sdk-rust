@@ -3,6 +3,23 @@ pub use crate::operation::delete_alert_manager_definition::_delete_alert_manager
 
 pub use crate::operation::delete_alert_manager_definition::_delete_alert_manager_definition_input::DeleteAlertManagerDefinitionInputBuilder;
 
+impl DeleteAlertManagerDefinitionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_alert_manager_definition::DeleteAlertManagerDefinitionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_alert_manager_definition::DeleteAlertManagerDefinitionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_alert_manager_definition();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteAlertManagerDefinition`.
 ///
 /// Deletes an alert manager definition.

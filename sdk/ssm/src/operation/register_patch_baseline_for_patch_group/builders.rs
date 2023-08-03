@@ -3,6 +3,17 @@ pub use crate::operation::register_patch_baseline_for_patch_group::_register_pat
 
 pub use crate::operation::register_patch_baseline_for_patch_group::_register_patch_baseline_for_patch_group_input::RegisterPatchBaselineForPatchGroupInputBuilder;
 
+impl RegisterPatchBaselineForPatchGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::register_patch_baseline_for_patch_group::RegisterPatchBaselineForPatchGroupOutput, ::aws_smithy_http::result::SdkError<crate::operation::register_patch_baseline_for_patch_group::RegisterPatchBaselineForPatchGroupError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.register_patch_baseline_for_patch_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RegisterPatchBaselineForPatchGroup`.
 ///
 /// <p>Registers a patch baseline for a patch group.</p>

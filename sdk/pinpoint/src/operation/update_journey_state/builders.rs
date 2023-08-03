@@ -3,6 +3,23 @@ pub use crate::operation::update_journey_state::_update_journey_state_output::Up
 
 pub use crate::operation::update_journey_state::_update_journey_state_input::UpdateJourneyStateInputBuilder;
 
+impl UpdateJourneyStateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_journey_state::UpdateJourneyStateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_journey_state::UpdateJourneyStateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_journey_state();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateJourneyState`.
 ///
 /// <p>Cancels (stops) an active journey.</p>

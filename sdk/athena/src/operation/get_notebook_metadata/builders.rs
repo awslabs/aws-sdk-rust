@@ -3,6 +3,23 @@ pub use crate::operation::get_notebook_metadata::_get_notebook_metadata_output::
 
 pub use crate::operation::get_notebook_metadata::_get_notebook_metadata_input::GetNotebookMetadataInputBuilder;
 
+impl GetNotebookMetadataInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_notebook_metadata::GetNotebookMetadataOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_notebook_metadata::GetNotebookMetadataError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_notebook_metadata();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetNotebookMetadata`.
 ///
 /// <p>Retrieves notebook metadata for the specified notebook ID.</p>

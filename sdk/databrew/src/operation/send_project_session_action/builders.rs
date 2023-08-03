@@ -3,6 +3,23 @@ pub use crate::operation::send_project_session_action::_send_project_session_act
 
 pub use crate::operation::send_project_session_action::_send_project_session_action_input::SendProjectSessionActionInputBuilder;
 
+impl SendProjectSessionActionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::send_project_session_action::SendProjectSessionActionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::send_project_session_action::SendProjectSessionActionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.send_project_session_action();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SendProjectSessionAction`.
 ///
 /// <p>Performs a recipe step within an interactive DataBrew session that's currently open.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::update_detector_version_status::_update_detector_versi
 
 pub use crate::operation::update_detector_version_status::_update_detector_version_status_input::UpdateDetectorVersionStatusInputBuilder;
 
+impl UpdateDetectorVersionStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_detector_version_status::UpdateDetectorVersionStatusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_detector_version_status::UpdateDetectorVersionStatusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_detector_version_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateDetectorVersionStatus`.
 ///
 /// <p>Updates the detector version’s status. You can perform the following promotions or demotions using <code>UpdateDetectorVersionStatus</code>: <code>DRAFT</code> to <code>ACTIVE</code>, <code>ACTIVE</code> to <code>INACTIVE</code>, and <code>INACTIVE</code> to <code>ACTIVE</code>.</p>

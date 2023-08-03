@@ -3,6 +3,23 @@ pub use crate::operation::detect_stack_resource_drift::_detect_stack_resource_dr
 
 pub use crate::operation::detect_stack_resource_drift::_detect_stack_resource_drift_input::DetectStackResourceDriftInputBuilder;
 
+impl DetectStackResourceDriftInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::detect_stack_resource_drift::DetectStackResourceDriftOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::detect_stack_resource_drift::DetectStackResourceDriftError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.detect_stack_resource_drift();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DetectStackResourceDrift`.
 ///
 /// <p>Returns information about whether a resource's actual configuration differs, or has <i>drifted</i>, from its expected configuration, as defined in the stack template and any values specified as template parameters. This information includes actual and expected property values for resources in which CloudFormation detects drift. Only resource properties explicitly defined in the stack template are checked for drift. For more information about stack and resource drift, see <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/using-cfn-stack-drift.html">Detecting Unregulated Configuration Changes to Stacks and Resources</a>.</p>

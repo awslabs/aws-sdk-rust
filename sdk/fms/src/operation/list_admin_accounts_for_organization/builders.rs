@@ -3,6 +3,17 @@ pub use crate::operation::list_admin_accounts_for_organization::_list_admin_acco
 
 pub use crate::operation::list_admin_accounts_for_organization::_list_admin_accounts_for_organization_input::ListAdminAccountsForOrganizationInputBuilder;
 
+impl ListAdminAccountsForOrganizationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_admin_accounts_for_organization::ListAdminAccountsForOrganizationOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_admin_accounts_for_organization::ListAdminAccountsForOrganizationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_admin_accounts_for_organization();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAdminAccountsForOrganization`.
 ///
 /// <p>Returns a <code>AdminAccounts</code> object that lists the Firewall Manager administrators within the organization that are onboarded to Firewall Manager by <code>AssociateAdminAccount</code>.</p>

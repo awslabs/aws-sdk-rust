@@ -3,6 +3,23 @@ pub use crate::operation::invite_members::_invite_members_output::InviteMembersO
 
 pub use crate::operation::invite_members::_invite_members_input::InviteMembersInputBuilder;
 
+impl InviteMembersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::invite_members::InviteMembersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::invite_members::InviteMembersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.invite_members();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `InviteMembers`.
 ///
 /// <p>Invites other Amazon Web Services accounts to become member accounts for the Security Hub administrator account that the invitation is sent from.</p>

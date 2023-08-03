@@ -3,6 +3,23 @@ pub use crate::operation::list_firewall_domain_lists::_list_firewall_domain_list
 
 pub use crate::operation::list_firewall_domain_lists::_list_firewall_domain_lists_input::ListFirewallDomainListsInputBuilder;
 
+impl ListFirewallDomainListsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_firewall_domain_lists::ListFirewallDomainListsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_firewall_domain_lists::ListFirewallDomainListsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_firewall_domain_lists();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListFirewallDomainLists`.
 ///
 /// <p>Retrieves the firewall domain lists that you have defined. For each firewall domain list, you can retrieve the domains that are defined for a list by calling <code>ListFirewallDomains</code>. </p>

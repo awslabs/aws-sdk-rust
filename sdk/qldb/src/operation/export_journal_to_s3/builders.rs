@@ -3,6 +3,23 @@ pub use crate::operation::export_journal_to_s3::_export_journal_to_s3_output::Ex
 
 pub use crate::operation::export_journal_to_s3::_export_journal_to_s3_input::ExportJournalToS3InputBuilder;
 
+impl ExportJournalToS3InputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::export_journal_to_s3::ExportJournalToS3Output,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::export_journal_to_s3::ExportJournalToS3Error,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.export_journal_to_s3();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ExportJournalToS3`.
 ///
 /// <p>Exports journal contents within a date and time range from a ledger into a specified Amazon Simple Storage Service (Amazon S3) bucket. A journal export job can write the data objects in either the text or binary representation of Amazon Ion format, or in <i>JSON Lines</i> text format.</p>

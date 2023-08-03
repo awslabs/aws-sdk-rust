@@ -3,6 +3,23 @@ pub use crate::operation::add_region::_add_region_output::AddRegionOutputBuilder
 
 pub use crate::operation::add_region::_add_region_input::AddRegionInputBuilder;
 
+impl AddRegionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::add_region::AddRegionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::add_region::AddRegionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.add_region();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AddRegion`.
 ///
 /// <p>Adds two domain controllers in the specified Region for the specified directory.</p>

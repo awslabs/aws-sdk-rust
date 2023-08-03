@@ -3,6 +3,23 @@ pub use crate::operation::get_shard_iterator::_get_shard_iterator_output::GetSha
 
 pub use crate::operation::get_shard_iterator::_get_shard_iterator_input::GetShardIteratorInputBuilder;
 
+impl GetShardIteratorInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_shard_iterator::GetShardIteratorOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_shard_iterator::GetShardIteratorError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_shard_iterator();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetShardIterator`.
 ///
 /// <p>Returns a shard iterator. A shard iterator provides information about how to retrieve the stream records from within a shard. Use the shard iterator in a subsequent <code>GetRecords</code> request to read the stream records from the shard.</p> <note>

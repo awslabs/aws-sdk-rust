@@ -3,6 +3,23 @@ pub use crate::operation::stop_engagement::_stop_engagement_output::StopEngageme
 
 pub use crate::operation::stop_engagement::_stop_engagement_input::StopEngagementInputBuilder;
 
+impl StopEngagementInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_engagement::StopEngagementOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_engagement::StopEngagementError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_engagement();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopEngagement`.
 ///
 /// <p>Stops an engagement before it finishes the final stage of the escalation plan or engagement plan. Further contacts aren't engaged.</p>

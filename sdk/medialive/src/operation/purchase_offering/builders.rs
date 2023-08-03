@@ -3,6 +3,23 @@ pub use crate::operation::purchase_offering::_purchase_offering_output::Purchase
 
 pub use crate::operation::purchase_offering::_purchase_offering_input::PurchaseOfferingInputBuilder;
 
+impl PurchaseOfferingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::purchase_offering::PurchaseOfferingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::purchase_offering::PurchaseOfferingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.purchase_offering();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PurchaseOffering`.
 ///
 /// Purchase an offering and create a reservation.

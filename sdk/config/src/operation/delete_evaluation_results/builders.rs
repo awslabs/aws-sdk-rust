@@ -3,6 +3,23 @@ pub use crate::operation::delete_evaluation_results::_delete_evaluation_results_
 
 pub use crate::operation::delete_evaluation_results::_delete_evaluation_results_input::DeleteEvaluationResultsInputBuilder;
 
+impl DeleteEvaluationResultsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_evaluation_results::DeleteEvaluationResultsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_evaluation_results::DeleteEvaluationResultsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_evaluation_results();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteEvaluationResults`.
 ///
 /// <p>Deletes the evaluation results for the specified Config rule. You can specify one Config rule per request. After you delete the evaluation results, you can call the <code>StartConfigRulesEvaluation</code> API to start evaluating your Amazon Web Services resources against the rule.</p>

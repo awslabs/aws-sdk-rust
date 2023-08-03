@@ -3,6 +3,23 @@ pub use crate::operation::delete_graph::_delete_graph_output::DeleteGraphOutputB
 
 pub use crate::operation::delete_graph::_delete_graph_input::DeleteGraphInputBuilder;
 
+impl DeleteGraphInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_graph::DeleteGraphOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_graph::DeleteGraphError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_graph();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteGraph`.
 ///
 /// <p>Disables the specified behavior graph and queues it to be deleted. This operation removes the behavior graph from each member account's list of behavior graphs.</p>

@@ -247,7 +247,7 @@ mod list_objects_request_test {
                     .build(),
             ]))
             .build();
-        let http_response = ::http::response::Builder::new()
+        let mut http_response = ::http::response::Builder::new()
         .status(200)
                     .body(::aws_smithy_http::body::SdkBody::from("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n\n<ListBucketResult\n\txmlns=\"http://s3.amazonaws.com/doc/2006-03-01/\">\n\t<Name>bucketname</Name>\n\t<Prefix></Prefix>\n\t<Marker></Marker>\n\t<MaxKeys>1000</MaxKeys>\n\t<IsTruncated>false</IsTruncated>\n\t<Contents>\n\t\t<Key>    </Key>\n\t\t<LastModified>2021-07-16T16:20:53.000Z</LastModified>\n\t\t<ETag>&quot;etag123&quot;</ETag>\n\t\t<Size>0</Size>\n\t\t<Owner>\n\t\t\t<ID>owner</ID>\n\t\t</Owner>\n\t\t<StorageClass>STANDARD</StorageClass>\n\t</Contents>\n\t<Contents>\n\t\t<Key> a </Key>\n\t\t<LastModified>2021-07-16T16:02:10.000Z</LastModified>\n\t\t<ETag>&quot;etag123&quot;</ETag>\n\t\t<Size>0</Size>\n\t\t<Owner>\n\t\t\t<ID>owner</ID>\n\t\t</Owner>\n\t\t<StorageClass>STANDARD</StorageClass>\n\t</Contents>\n</ListBucketResult>\n"))
                     .unwrap();

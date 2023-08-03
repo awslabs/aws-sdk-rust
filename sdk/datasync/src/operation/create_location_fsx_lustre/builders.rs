@@ -3,6 +3,23 @@ pub use crate::operation::create_location_fsx_lustre::_create_location_fsx_lustr
 
 pub use crate::operation::create_location_fsx_lustre::_create_location_fsx_lustre_input::CreateLocationFsxLustreInputBuilder;
 
+impl CreateLocationFsxLustreInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_location_fsx_lustre::CreateLocationFsxLustreOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_location_fsx_lustre::CreateLocationFsxLustreError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_location_fsx_lustre();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateLocationFsxLustre`.
 ///
 /// <p>Creates an endpoint for an Amazon FSx for Lustre file system.</p>

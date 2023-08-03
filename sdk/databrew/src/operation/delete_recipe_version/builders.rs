@@ -3,6 +3,23 @@ pub use crate::operation::delete_recipe_version::_delete_recipe_version_output::
 
 pub use crate::operation::delete_recipe_version::_delete_recipe_version_input::DeleteRecipeVersionInputBuilder;
 
+impl DeleteRecipeVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_recipe_version::DeleteRecipeVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_recipe_version::DeleteRecipeVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_recipe_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteRecipeVersion`.
 ///
 /// <p>Deletes a single version of a DataBrew recipe.</p>

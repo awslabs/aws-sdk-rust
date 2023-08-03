@@ -3,6 +3,23 @@ pub use crate::operation::list_actions::_list_actions_output::ListActionsOutputB
 
 pub use crate::operation::list_actions::_list_actions_input::ListActionsInputBuilder;
 
+impl ListActionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_actions::ListActionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_actions::ListActionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_actions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListActions`.
 ///
 /// <p>Lists the available FIS actions.</p>

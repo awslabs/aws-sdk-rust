@@ -3,6 +3,23 @@ pub use crate::operation::delete_resource_policy::_delete_resource_policy_output
 
 pub use crate::operation::delete_resource_policy::_delete_resource_policy_input::DeleteResourcePolicyInputBuilder;
 
+impl DeleteResourcePolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_resource_policy::DeleteResourcePolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_resource_policy::DeleteResourcePolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_resource_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteResourcePolicy`.
 ///
 /// <p>Deletes a Systems Manager resource policy. A resource policy helps you to define the IAM entity (for example, an Amazon Web Services account) that can manage your Systems Manager resources. Currently, <code>OpsItemGroup</code> is the only resource that supports Systems Manager resource policies. The resource policy for <code>OpsItemGroup</code> enables Amazon Web Services accounts to view and interact with OpsCenter operational work items (OpsItems).</p>

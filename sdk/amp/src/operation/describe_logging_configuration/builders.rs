@@ -3,6 +3,23 @@ pub use crate::operation::describe_logging_configuration::_describe_logging_conf
 
 pub use crate::operation::describe_logging_configuration::_describe_logging_configuration_input::DescribeLoggingConfigurationInputBuilder;
 
+impl DescribeLoggingConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_logging_configuration::DescribeLoggingConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_logging_configuration::DescribeLoggingConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_logging_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeLoggingConfiguration`.
 ///
 /// Describes logging configuration.

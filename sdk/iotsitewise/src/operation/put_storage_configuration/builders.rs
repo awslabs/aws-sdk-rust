@@ -3,6 +3,23 @@ pub use crate::operation::put_storage_configuration::_put_storage_configuration_
 
 pub use crate::operation::put_storage_configuration::_put_storage_configuration_input::PutStorageConfigurationInputBuilder;
 
+impl PutStorageConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_storage_configuration::PutStorageConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_storage_configuration::PutStorageConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_storage_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutStorageConfiguration`.
 ///
 /// <p>Configures storage settings for IoT SiteWise.</p>

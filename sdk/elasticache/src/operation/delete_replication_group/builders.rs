@@ -3,6 +3,23 @@ pub use crate::operation::delete_replication_group::_delete_replication_group_ou
 
 pub use crate::operation::delete_replication_group::_delete_replication_group_input::DeleteReplicationGroupInputBuilder;
 
+impl DeleteReplicationGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_replication_group::DeleteReplicationGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_replication_group::DeleteReplicationGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_replication_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteReplicationGroup`.
 ///
 /// <p>Deletes an existing replication group. By default, this operation deletes the entire replication group, including the primary/primaries and all of the read replicas. If the replication group has only one primary, you can optionally delete only the read replicas, while retaining the primary by setting <code>RetainPrimaryCluster=true</code>.</p>

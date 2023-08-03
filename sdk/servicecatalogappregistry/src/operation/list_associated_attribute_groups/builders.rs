@@ -3,6 +3,23 @@ pub use crate::operation::list_associated_attribute_groups::_list_associated_att
 
 pub use crate::operation::list_associated_attribute_groups::_list_associated_attribute_groups_input::ListAssociatedAttributeGroupsInputBuilder;
 
+impl ListAssociatedAttributeGroupsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_associated_attribute_groups::ListAssociatedAttributeGroupsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_associated_attribute_groups::ListAssociatedAttributeGroupsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_associated_attribute_groups();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAssociatedAttributeGroups`.
 ///
 /// <p>Lists all attribute groups that are associated with specified application. Results are paginated.</p>

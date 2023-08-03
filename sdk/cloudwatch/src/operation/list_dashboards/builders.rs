@@ -3,6 +3,23 @@ pub use crate::operation::list_dashboards::_list_dashboards_output::ListDashboar
 
 pub use crate::operation::list_dashboards::_list_dashboards_input::ListDashboardsInputBuilder;
 
+impl ListDashboardsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_dashboards::ListDashboardsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_dashboards::ListDashboardsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_dashboards();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDashboards`.
 ///
 /// <p>Returns a list of the dashboards for your account. If you include <code>DashboardNamePrefix</code>, only those dashboards with names starting with the prefix are listed. Otherwise, all dashboards in your account are listed. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_software_updates::_get_software_updates_output::Ge
 
 pub use crate::operation::get_software_updates::_get_software_updates_input::GetSoftwareUpdatesInputBuilder;
 
+impl GetSoftwareUpdatesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_software_updates::GetSoftwareUpdatesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_software_updates::GetSoftwareUpdatesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_software_updates();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetSoftwareUpdates`.
 ///
 /// <p>Returns an Amazon S3 presigned URL for an update file associated with a specified <code>JobId</code>.</p>

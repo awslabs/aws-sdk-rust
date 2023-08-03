@@ -3,6 +3,23 @@ pub use crate::operation::restore_db_cluster_from_s3::_restore_db_cluster_from_s
 
 pub use crate::operation::restore_db_cluster_from_s3::_restore_db_cluster_from_s3_input::RestoreDbClusterFromS3InputBuilder;
 
+impl RestoreDbClusterFromS3InputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::restore_db_cluster_from_s3::RestoreDbClusterFromS3Output,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::restore_db_cluster_from_s3::RestoreDBClusterFromS3Error,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.restore_db_cluster_from_s3();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RestoreDBClusterFromS3`.
 ///
 /// <p>Creates an Amazon Aurora DB cluster from MySQL data stored in an Amazon S3 bucket. Amazon RDS must be authorized to access the Amazon S3 bucket and the data must be created using the Percona XtraBackup utility as described in <a href="https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/AuroraMySQL.Migrating.ExtMySQL.html#AuroraMySQL.Migrating.ExtMySQL.S3"> Migrating Data from MySQL by Using an Amazon S3 Bucket</a> in the <i>Amazon Aurora User Guide</i>.</p> <note>

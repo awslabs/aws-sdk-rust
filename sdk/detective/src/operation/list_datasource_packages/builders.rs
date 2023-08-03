@@ -3,6 +3,23 @@ pub use crate::operation::list_datasource_packages::_list_datasource_packages_ou
 
 pub use crate::operation::list_datasource_packages::_list_datasource_packages_input::ListDatasourcePackagesInputBuilder;
 
+impl ListDatasourcePackagesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_datasource_packages::ListDatasourcePackagesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_datasource_packages::ListDatasourcePackagesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_datasource_packages();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDatasourcePackages`.
 ///
 /// <p>Lists data source packages in the behavior graph.</p>

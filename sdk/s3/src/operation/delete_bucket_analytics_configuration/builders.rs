@@ -3,6 +3,17 @@ pub use crate::operation::delete_bucket_analytics_configuration::_delete_bucket_
 
 pub use crate::operation::delete_bucket_analytics_configuration::_delete_bucket_analytics_configuration_input::DeleteBucketAnalyticsConfigurationInputBuilder;
 
+impl DeleteBucketAnalyticsConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_bucket_analytics_configuration::DeleteBucketAnalyticsConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_bucket_analytics_configuration::DeleteBucketAnalyticsConfigurationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.delete_bucket_analytics_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteBucketAnalyticsConfiguration`.
 ///
 /// <p>Deletes an analytics configuration for the bucket (specified by the analytics configuration ID).</p>

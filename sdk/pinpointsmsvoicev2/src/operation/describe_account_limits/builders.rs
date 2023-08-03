@@ -3,6 +3,23 @@ pub use crate::operation::describe_account_limits::_describe_account_limits_outp
 
 pub use crate::operation::describe_account_limits::_describe_account_limits_input::DescribeAccountLimitsInputBuilder;
 
+impl DescribeAccountLimitsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_account_limits::DescribeAccountLimitsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_account_limits::DescribeAccountLimitsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_account_limits();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAccountLimits`.
 ///
 /// <p>Describes the current Amazon Pinpoint SMS Voice V2 resource quotas for your account. The description for a quota includes the quota name, current usage toward that quota, and the quota's maximum value.</p>

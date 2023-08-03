@@ -3,6 +3,23 @@ pub use crate::operation::list_asset_relationships::_list_asset_relationships_ou
 
 pub use crate::operation::list_asset_relationships::_list_asset_relationships_input::ListAssetRelationshipsInputBuilder;
 
+impl ListAssetRelationshipsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_asset_relationships::ListAssetRelationshipsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_asset_relationships::ListAssetRelationshipsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_asset_relationships();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAssetRelationships`.
 ///
 /// <p>Retrieves a paginated list of asset relationships for an asset. You can use this operation to identify an asset's root asset and all associated assets between that asset and its root.</p>

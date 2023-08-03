@@ -3,6 +3,23 @@ pub use crate::operation::update_mesh::_update_mesh_output::UpdateMeshOutputBuil
 
 pub use crate::operation::update_mesh::_update_mesh_input::UpdateMeshInputBuilder;
 
+impl UpdateMeshInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_mesh::UpdateMeshOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_mesh::UpdateMeshError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_mesh();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateMesh`.
 ///
 /// <p>Updates an existing service mesh.</p>

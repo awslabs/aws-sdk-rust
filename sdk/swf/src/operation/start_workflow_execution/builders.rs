@@ -3,6 +3,23 @@ pub use crate::operation::start_workflow_execution::_start_workflow_execution_ou
 
 pub use crate::operation::start_workflow_execution::_start_workflow_execution_input::StartWorkflowExecutionInputBuilder;
 
+impl StartWorkflowExecutionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_workflow_execution::StartWorkflowExecutionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_workflow_execution::StartWorkflowExecutionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_workflow_execution();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartWorkflowExecution`.
 ///
 /// <p>Starts an execution of the workflow type in the specified domain using the provided <code>workflowId</code> and input data.</p>

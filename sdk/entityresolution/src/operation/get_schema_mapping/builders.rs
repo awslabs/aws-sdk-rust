@@ -3,6 +3,23 @@ pub use crate::operation::get_schema_mapping::_get_schema_mapping_output::GetSch
 
 pub use crate::operation::get_schema_mapping::_get_schema_mapping_input::GetSchemaMappingInputBuilder;
 
+impl GetSchemaMappingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_schema_mapping::GetSchemaMappingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_schema_mapping::GetSchemaMappingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_schema_mapping();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetSchemaMapping`.
 ///
 /// <p>Returns the SchemaMapping of a given name.</p>

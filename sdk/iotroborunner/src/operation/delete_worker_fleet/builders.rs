@@ -3,6 +3,23 @@ pub use crate::operation::delete_worker_fleet::_delete_worker_fleet_output::Dele
 
 pub use crate::operation::delete_worker_fleet::_delete_worker_fleet_input::DeleteWorkerFleetInputBuilder;
 
+impl DeleteWorkerFleetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_worker_fleet::DeleteWorkerFleetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_worker_fleet::DeleteWorkerFleetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_worker_fleet();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteWorkerFleet`.
 ///
 /// Grants permission to delete a worker fleet

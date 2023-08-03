@@ -3,6 +3,23 @@ pub use crate::operation::delete_tape_pool::_delete_tape_pool_output::DeleteTape
 
 pub use crate::operation::delete_tape_pool::_delete_tape_pool_input::DeleteTapePoolInputBuilder;
 
+impl DeleteTapePoolInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_tape_pool::DeleteTapePoolOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_tape_pool::DeleteTapePoolError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_tape_pool();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteTapePool`.
 ///
 /// <p>Delete a custom tape pool. A custom tape pool can only be deleted if there are no tapes in the pool and if there are no automatic tape creation policies that reference the custom tape pool.</p>

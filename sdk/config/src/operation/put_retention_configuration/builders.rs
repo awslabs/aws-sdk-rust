@@ -3,6 +3,23 @@ pub use crate::operation::put_retention_configuration::_put_retention_configurat
 
 pub use crate::operation::put_retention_configuration::_put_retention_configuration_input::PutRetentionConfigurationInputBuilder;
 
+impl PutRetentionConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_retention_configuration::PutRetentionConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_retention_configuration::PutRetentionConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_retention_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutRetentionConfiguration`.
 ///
 /// <p>Creates and updates the retention configuration with details about retention period (number of days) that Config stores your historical information. The API creates the <code>RetentionConfiguration</code> object and names the object as <b>default</b>. When you have a <code>RetentionConfiguration</code> object named <b>default</b>, calling the API modifies the default object. </p> <note>

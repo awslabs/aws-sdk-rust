@@ -3,6 +3,23 @@ pub use crate::operation::delete_provisioning_artifact::_delete_provisioning_art
 
 pub use crate::operation::delete_provisioning_artifact::_delete_provisioning_artifact_input::DeleteProvisioningArtifactInputBuilder;
 
+impl DeleteProvisioningArtifactInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_provisioning_artifact::DeleteProvisioningArtifactOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_provisioning_artifact::DeleteProvisioningArtifactError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_provisioning_artifact();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteProvisioningArtifact`.
 ///
 /// <p>Deletes the specified provisioning artifact (also known as a version) for the specified product.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_tape_pool::_create_tape_pool_output::CreateTape
 
 pub use crate::operation::create_tape_pool::_create_tape_pool_input::CreateTapePoolInputBuilder;
 
+impl CreateTapePoolInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_tape_pool::CreateTapePoolOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_tape_pool::CreateTapePoolError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_tape_pool();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateTapePool`.
 ///
 /// <p>Creates a new custom tape pool. You can use custom tape pool to enable tape retention lock on tapes that are archived in the custom pool.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::assign_ipv6_addresses::_assign_ipv6_addresses_output::
 
 pub use crate::operation::assign_ipv6_addresses::_assign_ipv6_addresses_input::AssignIpv6AddressesInputBuilder;
 
+impl AssignIpv6AddressesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::assign_ipv6_addresses::AssignIpv6AddressesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::assign_ipv6_addresses::AssignIpv6AddressesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.assign_ipv6_addresses();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssignIpv6Addresses`.
 ///
 /// <p>Assigns one or more IPv6 addresses to the specified network interface. You can specify one or more specific IPv6 addresses, or you can specify the number of IPv6 addresses to be automatically assigned from within the subnet's IPv6 CIDR block range. You can assign as many IPv6 addresses to a network interface as you can assign private IPv4 addresses, and the limit varies per instance type. For information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/using-eni.html#AvailableIpPerENI">IP Addresses Per Network Interface Per Instance Type</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>

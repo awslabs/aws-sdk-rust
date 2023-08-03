@@ -3,6 +3,23 @@ pub use crate::operation::update_location_object_storage::_update_location_objec
 
 pub use crate::operation::update_location_object_storage::_update_location_object_storage_input::UpdateLocationObjectStorageInputBuilder;
 
+impl UpdateLocationObjectStorageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_location_object_storage::UpdateLocationObjectStorageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_location_object_storage::UpdateLocationObjectStorageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_location_object_storage();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateLocationObjectStorage`.
 ///
 /// <p>Updates some parameters of an existing object storage location that DataSync accesses for a transfer. For information about creating a self-managed object storage location, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-object-location.html">Creating a location for object storage</a>.</p>

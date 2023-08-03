@@ -3,6 +3,23 @@ pub use crate::operation::contains_pii_entities::_contains_pii_entities_output::
 
 pub use crate::operation::contains_pii_entities::_contains_pii_entities_input::ContainsPiiEntitiesInputBuilder;
 
+impl ContainsPiiEntitiesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::contains_pii_entities::ContainsPiiEntitiesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::contains_pii_entities::ContainsPiiEntitiesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.contains_pii_entities();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ContainsPiiEntities`.
 ///
 /// <p>Analyzes input text for the presence of personally identifiable information (PII) and returns the labels of identified PII entity types such as name, address, bank account number, or phone number.</p>

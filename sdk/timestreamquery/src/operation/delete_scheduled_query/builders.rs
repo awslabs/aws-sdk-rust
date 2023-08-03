@@ -3,6 +3,23 @@ pub use crate::operation::delete_scheduled_query::_delete_scheduled_query_output
 
 pub use crate::operation::delete_scheduled_query::_delete_scheduled_query_input::DeleteScheduledQueryInputBuilder;
 
+impl DeleteScheduledQueryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_scheduled_query::DeleteScheduledQueryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_scheduled_query::DeleteScheduledQueryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_scheduled_query();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteScheduledQuery`.
 ///
 /// <p>Deletes a given scheduled query. This is an irreversible operation. </p>

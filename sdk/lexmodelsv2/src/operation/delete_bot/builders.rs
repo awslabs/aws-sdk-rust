@@ -3,6 +3,23 @@ pub use crate::operation::delete_bot::_delete_bot_output::DeleteBotOutputBuilder
 
 pub use crate::operation::delete_bot::_delete_bot_input::DeleteBotInputBuilder;
 
+impl DeleteBotInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_bot::DeleteBotOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_bot::DeleteBotError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_bot();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteBot`.
 ///
 /// <p>Deletes all versions of a bot, including the <code>Draft</code> version. To delete a specific version, use the <code>DeleteBotVersion</code> operation.</p>

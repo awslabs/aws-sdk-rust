@@ -3,6 +3,23 @@ pub use crate::operation::get_room::_get_room_output::GetRoomOutputBuilder;
 
 pub use crate::operation::get_room::_get_room_input::GetRoomInputBuilder;
 
+impl GetRoomInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_room::GetRoomOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_room::GetRoomError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_room();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetRoom`.
 ///
 /// <p>Gets the specified room.</p>

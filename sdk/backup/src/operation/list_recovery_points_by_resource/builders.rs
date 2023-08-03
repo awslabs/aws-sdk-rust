@@ -3,6 +3,23 @@ pub use crate::operation::list_recovery_points_by_resource::_list_recovery_point
 
 pub use crate::operation::list_recovery_points_by_resource::_list_recovery_points_by_resource_input::ListRecoveryPointsByResourceInputBuilder;
 
+impl ListRecoveryPointsByResourceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_recovery_points_by_resource::ListRecoveryPointsByResourceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_recovery_points_by_resource::ListRecoveryPointsByResourceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_recovery_points_by_resource();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListRecoveryPointsByResource`.
 ///
 /// <p>Returns detailed information about all the recovery points of the type specified by a resource Amazon Resource Name (ARN).</p> <note>

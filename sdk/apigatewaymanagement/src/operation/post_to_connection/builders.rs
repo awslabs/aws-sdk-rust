@@ -3,6 +3,23 @@ pub use crate::operation::post_to_connection::_post_to_connection_output::PostTo
 
 pub use crate::operation::post_to_connection::_post_to_connection_input::PostToConnectionInputBuilder;
 
+impl PostToConnectionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::post_to_connection::PostToConnectionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::post_to_connection::PostToConnectionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.post_to_connection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PostToConnection`.
 ///
 /// <p>Sends the provided data to the specified connection.</p>

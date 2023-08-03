@@ -3,6 +3,23 @@ pub use crate::operation::list_changesets::_list_changesets_output::ListChangese
 
 pub use crate::operation::list_changesets::_list_changesets_input::ListChangesetsInputBuilder;
 
+impl ListChangesetsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_changesets::ListChangesetsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_changesets::ListChangesetsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_changesets();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListChangesets`.
 ///
 /// <p>Lists the FinSpace Changesets for a Dataset.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::disassociate_recovery_point::_disassociate_recovery_po
 
 pub use crate::operation::disassociate_recovery_point::_disassociate_recovery_point_input::DisassociateRecoveryPointInputBuilder;
 
+impl DisassociateRecoveryPointInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_recovery_point::DisassociateRecoveryPointOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_recovery_point::DisassociateRecoveryPointError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disassociate_recovery_point();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateRecoveryPoint`.
 ///
 /// <p>Deletes the specified continuous backup recovery point from Backup and releases control of that continuous backup to the source service, such as Amazon RDS. The source service will continue to create and retain continuous backups using the lifecycle that you specified in your original backup plan.</p>

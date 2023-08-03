@@ -3,6 +3,23 @@ pub use crate::operation::create_customer_gateway::_create_customer_gateway_outp
 
 pub use crate::operation::create_customer_gateway::_create_customer_gateway_input::CreateCustomerGatewayInputBuilder;
 
+impl CreateCustomerGatewayInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_customer_gateway::CreateCustomerGatewayOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_customer_gateway::CreateCustomerGatewayError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_customer_gateway();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateCustomerGateway`.
 ///
 /// <p>Provides information to Amazon Web Services about your customer gateway device. The customer gateway device is the appliance at your end of the VPN connection. You must provide the IP address of the customer gateway device’s external interface. The IP address must be static and can be behind a device performing network address translation (NAT).</p>

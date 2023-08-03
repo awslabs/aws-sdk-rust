@@ -3,6 +3,23 @@ pub use crate::operation::delete_custom_data_identifier::_delete_custom_data_ide
 
 pub use crate::operation::delete_custom_data_identifier::_delete_custom_data_identifier_input::DeleteCustomDataIdentifierInputBuilder;
 
+impl DeleteCustomDataIdentifierInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_custom_data_identifier::DeleteCustomDataIdentifierOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_custom_data_identifier::DeleteCustomDataIdentifierError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_custom_data_identifier();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteCustomDataIdentifier`.
 ///
 /// <p>Soft deletes a custom data identifier.</p>

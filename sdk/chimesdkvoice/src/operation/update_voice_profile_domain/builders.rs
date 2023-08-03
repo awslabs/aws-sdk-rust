@@ -3,6 +3,23 @@ pub use crate::operation::update_voice_profile_domain::_update_voice_profile_dom
 
 pub use crate::operation::update_voice_profile_domain::_update_voice_profile_domain_input::UpdateVoiceProfileDomainInputBuilder;
 
+impl UpdateVoiceProfileDomainInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_voice_profile_domain::UpdateVoiceProfileDomainOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_voice_profile_domain::UpdateVoiceProfileDomainError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_voice_profile_domain();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateVoiceProfileDomain`.
 ///
 /// <p>Updates the settings for the specified voice profile domain.</p>

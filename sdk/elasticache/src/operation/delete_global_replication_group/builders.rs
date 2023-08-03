@@ -3,6 +3,23 @@ pub use crate::operation::delete_global_replication_group::_delete_global_replic
 
 pub use crate::operation::delete_global_replication_group::_delete_global_replication_group_input::DeleteGlobalReplicationGroupInputBuilder;
 
+impl DeleteGlobalReplicationGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_global_replication_group::DeleteGlobalReplicationGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_global_replication_group::DeleteGlobalReplicationGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_global_replication_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteGlobalReplicationGroup`.
 ///
 /// <p>Deleting a Global datastore is a two-step process: </p>

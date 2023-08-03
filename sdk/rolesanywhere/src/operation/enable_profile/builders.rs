@@ -3,6 +3,23 @@ pub use crate::operation::enable_profile::_enable_profile_output::EnableProfileO
 
 pub use crate::operation::enable_profile::_enable_profile_input::EnableProfileInputBuilder;
 
+impl EnableProfileInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::enable_profile::EnableProfileOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::enable_profile::EnableProfileError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.enable_profile();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `EnableProfile`.
 ///
 /// <p>Enables temporary credential requests for a profile. </p>

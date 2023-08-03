@@ -3,6 +3,23 @@ pub use crate::operation::cancel_simulation_job::_cancel_simulation_job_output::
 
 pub use crate::operation::cancel_simulation_job::_cancel_simulation_job_input::CancelSimulationJobInputBuilder;
 
+impl CancelSimulationJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::cancel_simulation_job::CancelSimulationJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::cancel_simulation_job::CancelSimulationJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.cancel_simulation_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CancelSimulationJob`.
 ///
 /// <p>Cancels the specified simulation job.</p>

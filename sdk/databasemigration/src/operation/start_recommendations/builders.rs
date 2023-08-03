@@ -3,6 +3,23 @@ pub use crate::operation::start_recommendations::_start_recommendations_output::
 
 pub use crate::operation::start_recommendations::_start_recommendations_input::StartRecommendationsInputBuilder;
 
+impl StartRecommendationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_recommendations::StartRecommendationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_recommendations::StartRecommendationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_recommendations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartRecommendations`.
 ///
 /// <p>Starts the analysis of your source database to provide recommendations of target engines.</p>

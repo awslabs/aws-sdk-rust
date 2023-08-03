@@ -3,6 +3,23 @@ pub use crate::operation::register_certificate::_register_certificate_output::Re
 
 pub use crate::operation::register_certificate::_register_certificate_input::RegisterCertificateInputBuilder;
 
+impl RegisterCertificateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::register_certificate::RegisterCertificateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::register_certificate::RegisterCertificateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.register_certificate();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RegisterCertificate`.
 ///
 /// <p>Registers a certificate for a secure LDAP or client certificate authentication.</p>

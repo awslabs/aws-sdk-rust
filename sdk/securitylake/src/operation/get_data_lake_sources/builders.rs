@@ -3,6 +3,23 @@ pub use crate::operation::get_data_lake_sources::_get_data_lake_sources_output::
 
 pub use crate::operation::get_data_lake_sources::_get_data_lake_sources_input::GetDataLakeSourcesInputBuilder;
 
+impl GetDataLakeSourcesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_data_lake_sources::GetDataLakeSourcesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_data_lake_sources::GetDataLakeSourcesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_data_lake_sources();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetDataLakeSources`.
 ///
 /// <p>Retrieves a snapshot of the current Region, including whether Amazon Security Lake is enabled for those accounts and which sources Security Lake is collecting data from.</p>

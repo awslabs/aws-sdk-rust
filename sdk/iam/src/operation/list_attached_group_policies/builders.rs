@@ -3,6 +3,23 @@ pub use crate::operation::list_attached_group_policies::_list_attached_group_pol
 
 pub use crate::operation::list_attached_group_policies::_list_attached_group_policies_input::ListAttachedGroupPoliciesInputBuilder;
 
+impl ListAttachedGroupPoliciesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_attached_group_policies::ListAttachedGroupPoliciesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_attached_group_policies::ListAttachedGroupPoliciesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_attached_group_policies();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAttachedGroupPolicies`.
 ///
 /// <p>Lists all managed policies that are attached to the specified IAM group.</p>

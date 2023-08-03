@@ -3,6 +3,23 @@ pub use crate::operation::create_vpn_gateway::_create_vpn_gateway_output::Create
 
 pub use crate::operation::create_vpn_gateway::_create_vpn_gateway_input::CreateVpnGatewayInputBuilder;
 
+impl CreateVpnGatewayInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_vpn_gateway::CreateVpnGatewayOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_vpn_gateway::CreateVpnGatewayError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_vpn_gateway();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateVpnGateway`.
 ///
 /// <p>Creates a virtual private gateway. A virtual private gateway is the endpoint on the VPC side of your VPN connection. You can create a virtual private gateway before creating the VPC itself.</p>

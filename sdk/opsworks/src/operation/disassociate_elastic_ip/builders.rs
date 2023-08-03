@@ -3,6 +3,23 @@ pub use crate::operation::disassociate_elastic_ip::_disassociate_elastic_ip_outp
 
 pub use crate::operation::disassociate_elastic_ip::_disassociate_elastic_ip_input::DisassociateElasticIpInputBuilder;
 
+impl DisassociateElasticIpInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_elastic_ip::DisassociateElasticIpOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_elastic_ip::DisassociateElasticIpError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disassociate_elastic_ip();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateElasticIp`.
 ///
 /// <p>Disassociates an Elastic IP address from its instance. The address remains registered with the stack. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p>

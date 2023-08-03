@@ -3,6 +3,23 @@ pub use crate::operation::list_channel_bans::_list_channel_bans_output::ListChan
 
 pub use crate::operation::list_channel_bans::_list_channel_bans_input::ListChannelBansInputBuilder;
 
+impl ListChannelBansInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_channel_bans::ListChannelBansOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_channel_bans::ListChannelBansError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_channel_bans();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListChannelBans`.
 ///
 /// <p>Lists all the users and bots banned from a particular channel.</p> <note>

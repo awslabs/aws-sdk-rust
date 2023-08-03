@@ -3,6 +3,23 @@ pub use crate::operation::list_inference_events::_list_inference_events_output::
 
 pub use crate::operation::list_inference_events::_list_inference_events_input::ListInferenceEventsInputBuilder;
 
+impl ListInferenceEventsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_inference_events::ListInferenceEventsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_inference_events::ListInferenceEventsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_inference_events();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListInferenceEvents`.
 ///
 /// <p> Lists all inference events that have been found for the specified inference scheduler. </p>

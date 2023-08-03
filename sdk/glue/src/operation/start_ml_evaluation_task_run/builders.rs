@@ -3,6 +3,23 @@ pub use crate::operation::start_ml_evaluation_task_run::_start_ml_evaluation_tas
 
 pub use crate::operation::start_ml_evaluation_task_run::_start_ml_evaluation_task_run_input::StartMlEvaluationTaskRunInputBuilder;
 
+impl StartMlEvaluationTaskRunInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_ml_evaluation_task_run::StartMlEvaluationTaskRunOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_ml_evaluation_task_run::StartMLEvaluationTaskRunError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_ml_evaluation_task_run();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartMLEvaluationTaskRun`.
 ///
 /// <p>Starts a task to estimate the quality of the transform. </p>

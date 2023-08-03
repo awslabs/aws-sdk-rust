@@ -3,6 +3,23 @@ pub use crate::operation::describe_batch_predictions::_describe_batch_prediction
 
 pub use crate::operation::describe_batch_predictions::_describe_batch_predictions_input::DescribeBatchPredictionsInputBuilder;
 
+impl DescribeBatchPredictionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_batch_predictions::DescribeBatchPredictionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_batch_predictions::DescribeBatchPredictionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_batch_predictions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeBatchPredictions`.
 ///
 /// <p>Returns a list of <code>BatchPrediction</code> operations that match the search criteria in the request.</p>

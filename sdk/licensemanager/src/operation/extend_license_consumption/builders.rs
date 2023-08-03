@@ -3,6 +3,23 @@ pub use crate::operation::extend_license_consumption::_extend_license_consumptio
 
 pub use crate::operation::extend_license_consumption::_extend_license_consumption_input::ExtendLicenseConsumptionInputBuilder;
 
+impl ExtendLicenseConsumptionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::extend_license_consumption::ExtendLicenseConsumptionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::extend_license_consumption::ExtendLicenseConsumptionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.extend_license_consumption();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ExtendLicenseConsumption`.
 ///
 /// <p>Extends the expiration date for license consumption.</p>

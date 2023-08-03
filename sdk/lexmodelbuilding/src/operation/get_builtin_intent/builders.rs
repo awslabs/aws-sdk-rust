@@ -3,6 +3,23 @@ pub use crate::operation::get_builtin_intent::_get_builtin_intent_output::GetBui
 
 pub use crate::operation::get_builtin_intent::_get_builtin_intent_input::GetBuiltinIntentInputBuilder;
 
+impl GetBuiltinIntentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_builtin_intent::GetBuiltinIntentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_builtin_intent::GetBuiltinIntentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_builtin_intent();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetBuiltinIntent`.
 ///
 /// <p>Returns information about a built-in intent.</p>

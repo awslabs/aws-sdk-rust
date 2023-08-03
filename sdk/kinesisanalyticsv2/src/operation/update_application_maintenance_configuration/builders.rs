@@ -3,6 +3,17 @@ pub use crate::operation::update_application_maintenance_configuration::_update_
 
 pub use crate::operation::update_application_maintenance_configuration::_update_application_maintenance_configuration_input::UpdateApplicationMaintenanceConfigurationInputBuilder;
 
+impl UpdateApplicationMaintenanceConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_application_maintenance_configuration::UpdateApplicationMaintenanceConfigurationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.update_application_maintenance_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateApplicationMaintenanceConfiguration`.
 ///
 /// <p>Updates the maintenance configuration of the Kinesis Data Analytics application. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::update_sip_media_application_call::_update_sip_media_a
 
 pub use crate::operation::update_sip_media_application_call::_update_sip_media_application_call_input::UpdateSipMediaApplicationCallInputBuilder;
 
+impl UpdateSipMediaApplicationCallInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_sip_media_application_call::UpdateSipMediaApplicationCallOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_sip_media_application_call::UpdateSipMediaApplicationCallError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_sip_media_application_call();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateSipMediaApplicationCall`.
 ///
 /// <p>Invokes the AWS Lambda function associated with the SIP media application and transaction ID in an update request. The Lambda function can then return a new set of actions.</p>

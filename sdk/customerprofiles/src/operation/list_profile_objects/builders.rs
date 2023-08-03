@@ -3,6 +3,23 @@ pub use crate::operation::list_profile_objects::_list_profile_objects_output::Li
 
 pub use crate::operation::list_profile_objects::_list_profile_objects_input::ListProfileObjectsInputBuilder;
 
+impl ListProfileObjectsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_profile_objects::ListProfileObjectsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_profile_objects::ListProfileObjectsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_profile_objects();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListProfileObjects`.
 ///
 /// <p>Returns a list of objects associated with a profile of a given ProfileObjectType.</p>

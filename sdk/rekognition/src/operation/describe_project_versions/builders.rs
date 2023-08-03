@@ -3,6 +3,23 @@ pub use crate::operation::describe_project_versions::_describe_project_versions_
 
 pub use crate::operation::describe_project_versions::_describe_project_versions_input::DescribeProjectVersionsInputBuilder;
 
+impl DescribeProjectVersionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_project_versions::DescribeProjectVersionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_project_versions::DescribeProjectVersionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_project_versions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeProjectVersions`.
 ///
 /// <p>Lists and describes the versions of a model in an Amazon Rekognition Custom Labels project. You can specify up to 10 model versions in <code>ProjectVersionArns</code>. If you don't specify a value, descriptions for all model versions in the project are returned.</p>

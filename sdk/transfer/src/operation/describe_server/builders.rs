@@ -3,6 +3,23 @@ pub use crate::operation::describe_server::_describe_server_output::DescribeServ
 
 pub use crate::operation::describe_server::_describe_server_input::DescribeServerInputBuilder;
 
+impl DescribeServerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_server::DescribeServerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_server::DescribeServerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_server();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeServer`.
 ///
 /// <p>Describes a file transfer protocol-enabled server that you specify by passing the <code>ServerId</code> parameter.</p>

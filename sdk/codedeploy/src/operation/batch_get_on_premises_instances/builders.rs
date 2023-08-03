@@ -3,6 +3,23 @@ pub use crate::operation::batch_get_on_premises_instances::_batch_get_on_premise
 
 pub use crate::operation::batch_get_on_premises_instances::_batch_get_on_premises_instances_input::BatchGetOnPremisesInstancesInputBuilder;
 
+impl BatchGetOnPremisesInstancesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_on_premises_instances::BatchGetOnPremisesInstancesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_get_on_premises_instances::BatchGetOnPremisesInstancesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_get_on_premises_instances();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchGetOnPremisesInstances`.
 ///
 /// <p>Gets information about one or more on-premises instances. The maximum number of on-premises instances that can be returned is 25.</p>

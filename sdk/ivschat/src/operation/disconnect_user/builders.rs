@@ -3,6 +3,23 @@ pub use crate::operation::disconnect_user::_disconnect_user_output::DisconnectUs
 
 pub use crate::operation::disconnect_user::_disconnect_user_input::DisconnectUserInputBuilder;
 
+impl DisconnectUserInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disconnect_user::DisconnectUserOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disconnect_user::DisconnectUserError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disconnect_user();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisconnectUser`.
 ///
 /// <p>Disconnects all connections using a specified user ID from a room. This replicates the <a href="https://docs.aws.amazon.com/ivs/latest/chatmsgapireference/actions-disconnectuser-publish.html"> DisconnectUser</a> WebSocket operation in the Amazon IVS Chat Messaging API.</p>

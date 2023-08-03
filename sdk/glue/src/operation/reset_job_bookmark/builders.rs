@@ -3,6 +3,23 @@ pub use crate::operation::reset_job_bookmark::_reset_job_bookmark_output::ResetJ
 
 pub use crate::operation::reset_job_bookmark::_reset_job_bookmark_input::ResetJobBookmarkInputBuilder;
 
+impl ResetJobBookmarkInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::reset_job_bookmark::ResetJobBookmarkOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::reset_job_bookmark::ResetJobBookmarkError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.reset_job_bookmark();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ResetJobBookmark`.
 ///
 /// <p>Resets a bookmark entry.</p>

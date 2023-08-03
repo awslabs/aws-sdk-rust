@@ -3,6 +3,23 @@ pub use crate::operation::stop_dev_environment::_stop_dev_environment_output::St
 
 pub use crate::operation::stop_dev_environment::_stop_dev_environment_input::StopDevEnvironmentInputBuilder;
 
+impl StopDevEnvironmentInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_dev_environment::StopDevEnvironmentOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_dev_environment::StopDevEnvironmentError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_dev_environment();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopDevEnvironment`.
 ///
 /// <p>Pauses a specified Dev Environment and places it in a non-running state. Stopped Dev Environments do not consume compute minutes.</p>

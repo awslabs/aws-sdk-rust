@@ -3,6 +3,23 @@ pub use crate::operation::batch_put_message::_batch_put_message_output::BatchPut
 
 pub use crate::operation::batch_put_message::_batch_put_message_input::BatchPutMessageInputBuilder;
 
+impl BatchPutMessageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_put_message::BatchPutMessageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_put_message::BatchPutMessageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_put_message();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchPutMessage`.
 ///
 /// <p>Sends a set of messages to the IoT Events system. Each message payload is transformed into the input you specify (<code>"inputName"</code>) and ingested into any detectors that monitor that input. If multiple messages are sent, the order in which the messages are processed isn't guaranteed. To guarantee ordering, you must send messages one at a time and wait for a successful response.</p>

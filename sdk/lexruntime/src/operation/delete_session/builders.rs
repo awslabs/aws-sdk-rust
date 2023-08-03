@@ -3,6 +3,23 @@ pub use crate::operation::delete_session::_delete_session_output::DeleteSessionO
 
 pub use crate::operation::delete_session::_delete_session_input::DeleteSessionInputBuilder;
 
+impl DeleteSessionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_session::DeleteSessionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_session::DeleteSessionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_session();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteSession`.
 ///
 /// <p>Removes session information for a specified bot, alias, and user ID. </p>

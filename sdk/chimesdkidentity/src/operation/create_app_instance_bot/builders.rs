@@ -3,6 +3,23 @@ pub use crate::operation::create_app_instance_bot::_create_app_instance_bot_outp
 
 pub use crate::operation::create_app_instance_bot::_create_app_instance_bot_input::CreateAppInstanceBotInputBuilder;
 
+impl CreateAppInstanceBotInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_app_instance_bot::CreateAppInstanceBotOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_app_instance_bot::CreateAppInstanceBotError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_app_instance_bot();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateAppInstanceBot`.
 ///
 /// <p>Creates a bot under an Amazon Chime <code>AppInstance</code>. The request consists of a unique <code>Configuration</code> and <code>Name</code> for that bot.</p>

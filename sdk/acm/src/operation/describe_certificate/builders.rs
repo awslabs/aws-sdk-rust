@@ -3,6 +3,23 @@ pub use crate::operation::describe_certificate::_describe_certificate_output::De
 
 pub use crate::operation::describe_certificate::_describe_certificate_input::DescribeCertificateInputBuilder;
 
+impl DescribeCertificateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_certificate::DescribeCertificateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_certificate::DescribeCertificateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_certificate();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeCertificate`.
 ///
 /// <p>Returns detailed metadata about the specified ACM certificate.</p>

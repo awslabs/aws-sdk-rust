@@ -3,6 +3,23 @@ pub use crate::operation::list_ingestions::_list_ingestions_output::ListIngestio
 
 pub use crate::operation::list_ingestions::_list_ingestions_input::ListIngestionsInputBuilder;
 
+impl ListIngestionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_ingestions::ListIngestionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_ingestions::ListIngestionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_ingestions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListIngestions`.
 ///
 /// <p>Lists the history of SPICE ingestions for a dataset.</p>

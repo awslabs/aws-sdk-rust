@@ -3,6 +3,23 @@ pub use crate::operation::get_tag_keys::_get_tag_keys_output::GetTagKeysOutputBu
 
 pub use crate::operation::get_tag_keys::_get_tag_keys_input::GetTagKeysInputBuilder;
 
+impl GetTagKeysInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_tag_keys::GetTagKeysOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_tag_keys::GetTagKeysError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_tag_keys();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetTagKeys`.
 ///
 /// <p>Returns all tag keys currently in use in the specified Amazon Web Services Region for the calling account.</p>

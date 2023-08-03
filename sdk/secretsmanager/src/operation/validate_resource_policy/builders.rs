@@ -3,6 +3,23 @@ pub use crate::operation::validate_resource_policy::_validate_resource_policy_ou
 
 pub use crate::operation::validate_resource_policy::_validate_resource_policy_input::ValidateResourcePolicyInputBuilder;
 
+impl ValidateResourcePolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::validate_resource_policy::ValidateResourcePolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::validate_resource_policy::ValidateResourcePolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.validate_resource_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ValidateResourcePolicy`.
 ///
 /// <p>Validates that a resource policy does not grant a wide range of principals access to your secret. A resource-based policy is optional for secrets.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::evaluate_mapping_template::_evaluate_mapping_template_
 
 pub use crate::operation::evaluate_mapping_template::_evaluate_mapping_template_input::EvaluateMappingTemplateInputBuilder;
 
+impl EvaluateMappingTemplateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::evaluate_mapping_template::EvaluateMappingTemplateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::evaluate_mapping_template::EvaluateMappingTemplateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.evaluate_mapping_template();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `EvaluateMappingTemplate`.
 ///
 /// <p>Evaluates a given template and returns the response. The mapping template can be a request or response template.</p>

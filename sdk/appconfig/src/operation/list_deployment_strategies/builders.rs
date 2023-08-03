@@ -3,6 +3,23 @@ pub use crate::operation::list_deployment_strategies::_list_deployment_strategie
 
 pub use crate::operation::list_deployment_strategies::_list_deployment_strategies_input::ListDeploymentStrategiesInputBuilder;
 
+impl ListDeploymentStrategiesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_deployment_strategies::ListDeploymentStrategiesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_deployment_strategies::ListDeploymentStrategiesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_deployment_strategies();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDeploymentStrategies`.
 ///
 /// <p>Lists deployment strategies.</p>

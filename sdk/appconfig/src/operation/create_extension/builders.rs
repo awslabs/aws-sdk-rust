@@ -3,6 +3,23 @@ pub use crate::operation::create_extension::_create_extension_output::CreateExte
 
 pub use crate::operation::create_extension::_create_extension_input::CreateExtensionInputBuilder;
 
+impl CreateExtensionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_extension::CreateExtensionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_extension::CreateExtensionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_extension();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateExtension`.
 ///
 /// <p>Creates an AppConfig extension. An extension augments your ability to inject logic or behavior at different points during the AppConfig workflow of creating or deploying a configuration.</p>

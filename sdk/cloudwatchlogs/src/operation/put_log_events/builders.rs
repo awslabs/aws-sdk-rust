@@ -3,6 +3,23 @@ pub use crate::operation::put_log_events::_put_log_events_output::PutLogEventsOu
 
 pub use crate::operation::put_log_events::_put_log_events_input::PutLogEventsInputBuilder;
 
+impl PutLogEventsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_log_events::PutLogEventsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_log_events::PutLogEventsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_log_events();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutLogEvents`.
 ///
 /// <p>Uploads a batch of log events to the specified log stream.</p> <important>

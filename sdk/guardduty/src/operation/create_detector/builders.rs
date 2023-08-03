@@ -3,6 +3,23 @@ pub use crate::operation::create_detector::_create_detector_output::CreateDetect
 
 pub use crate::operation::create_detector::_create_detector_input::CreateDetectorInputBuilder;
 
+impl CreateDetectorInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_detector::CreateDetectorOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_detector::CreateDetectorError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_detector();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateDetector`.
 ///
 /// <p>Creates a single Amazon GuardDuty detector. A detector is a resource that represents the GuardDuty service. To start using GuardDuty, you must create a detector in each Region where you enable the service. You can have only one detector per account per Region. All data sources are enabled in a new detector by default.</p>

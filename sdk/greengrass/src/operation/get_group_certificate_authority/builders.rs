@@ -3,6 +3,23 @@ pub use crate::operation::get_group_certificate_authority::_get_group_certificat
 
 pub use crate::operation::get_group_certificate_authority::_get_group_certificate_authority_input::GetGroupCertificateAuthorityInputBuilder;
 
+impl GetGroupCertificateAuthorityInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_group_certificate_authority::GetGroupCertificateAuthorityOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_group_certificate_authority::GetGroupCertificateAuthorityError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_group_certificate_authority();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetGroupCertificateAuthority`.
 ///
 /// Retreives the CA associated with a group. Returns the public key of the CA.

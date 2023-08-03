@@ -3,6 +3,17 @@ pub use crate::operation::describe_orderable_db_instance_options::_describe_orde
 
 pub use crate::operation::describe_orderable_db_instance_options::_describe_orderable_db_instance_options_input::DescribeOrderableDbInstanceOptionsInputBuilder;
 
+impl DescribeOrderableDbInstanceOptionsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_orderable_db_instance_options::DescribeOrderableDbInstanceOptionsOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_orderable_db_instance_options::DescribeOrderableDBInstanceOptionsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_orderable_db_instance_options();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeOrderableDBInstanceOptions`.
 ///
 /// <p>Returns a list of orderable DB instance options for the specified DB engine, DB engine version, and DB instance class.</p>

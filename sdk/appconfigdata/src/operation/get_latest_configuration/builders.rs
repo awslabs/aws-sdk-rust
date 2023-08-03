@@ -3,6 +3,23 @@ pub use crate::operation::get_latest_configuration::_get_latest_configuration_ou
 
 pub use crate::operation::get_latest_configuration::_get_latest_configuration_input::GetLatestConfigurationInputBuilder;
 
+impl GetLatestConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_latest_configuration::GetLatestConfigurationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_latest_configuration::GetLatestConfigurationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_latest_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetLatestConfiguration`.
 ///
 /// <p>Retrieves the latest deployed configuration. This API may return empty configuration data if the client already has the latest version. For more information about this API action and to view example CLI commands that show how to use it with the <code>StartConfigurationSession</code> API action, see <a href="http://docs.aws.amazon.com/appconfig/latest/userguide/appconfig-retrieving-the-configuration">Retrieving the configuration</a> in the <i>AppConfig User Guide</i>. </p> <important>

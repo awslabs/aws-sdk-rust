@@ -3,6 +3,17 @@ pub use crate::operation::detach_certificate_from_distribution::_detach_certific
 
 pub use crate::operation::detach_certificate_from_distribution::_detach_certificate_from_distribution_input::DetachCertificateFromDistributionInputBuilder;
 
+impl DetachCertificateFromDistributionInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::detach_certificate_from_distribution::DetachCertificateFromDistributionOutput, ::aws_smithy_http::result::SdkError<crate::operation::detach_certificate_from_distribution::DetachCertificateFromDistributionError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.detach_certificate_from_distribution();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DetachCertificateFromDistribution`.
 ///
 /// <p>Detaches an SSL/TLS certificate from your Amazon Lightsail content delivery network (CDN) distribution.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_test_execution::_describe_test_execution_outp
 
 pub use crate::operation::describe_test_execution::_describe_test_execution_input::DescribeTestExecutionInputBuilder;
 
+impl DescribeTestExecutionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_test_execution::DescribeTestExecutionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_test_execution::DescribeTestExecutionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_test_execution();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeTestExecution`.
 ///
 /// <p>Gets metadata information about the test execution.</p>

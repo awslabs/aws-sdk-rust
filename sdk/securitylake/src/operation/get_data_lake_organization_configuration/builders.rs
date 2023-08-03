@@ -3,6 +3,17 @@ pub use crate::operation::get_data_lake_organization_configuration::_get_data_la
 
 pub use crate::operation::get_data_lake_organization_configuration::_get_data_lake_organization_configuration_input::GetDataLakeOrganizationConfigurationInputBuilder;
 
+impl GetDataLakeOrganizationConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_data_lake_organization_configuration::GetDataLakeOrganizationConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_data_lake_organization_configuration::GetDataLakeOrganizationConfigurationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_data_lake_organization_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetDataLakeOrganizationConfiguration`.
 ///
 /// <p>Retrieves the configuration that will be automatically set up for accounts added to the organization after the organization has onboarded to Amazon Security Lake. This API does not take input parameters.</p>

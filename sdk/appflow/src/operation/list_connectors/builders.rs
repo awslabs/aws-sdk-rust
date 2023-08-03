@@ -3,6 +3,23 @@ pub use crate::operation::list_connectors::_list_connectors_output::ListConnecto
 
 pub use crate::operation::list_connectors::_list_connectors_input::ListConnectorsInputBuilder;
 
+impl ListConnectorsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_connectors::ListConnectorsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_connectors::ListConnectorsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_connectors();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListConnectors`.
 ///
 /// <p>Returns the list of all registered custom connectors in your Amazon Web Services account. This API lists only custom connectors registered in this account, not the Amazon Web Services authored connectors. </p>

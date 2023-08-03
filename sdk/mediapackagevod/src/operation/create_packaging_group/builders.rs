@@ -3,6 +3,23 @@ pub use crate::operation::create_packaging_group::_create_packaging_group_output
 
 pub use crate::operation::create_packaging_group::_create_packaging_group_input::CreatePackagingGroupInputBuilder;
 
+impl CreatePackagingGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_packaging_group::CreatePackagingGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_packaging_group::CreatePackagingGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_packaging_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreatePackagingGroup`.
 ///
 /// Creates a new MediaPackage VOD PackagingGroup resource.

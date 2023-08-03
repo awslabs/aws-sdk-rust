@@ -3,6 +3,23 @@ pub use crate::operation::update_campaign::_update_campaign_output::UpdateCampai
 
 pub use crate::operation::update_campaign::_update_campaign_input::UpdateCampaignInputBuilder;
 
+impl UpdateCampaignInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_campaign::UpdateCampaignOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_campaign::UpdateCampaignError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_campaign();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateCampaign`.
 ///
 /// <p>Updates a campaign by either deploying a new solution or changing the value of the campaign's <code>minProvisionedTPS</code> parameter.</p>

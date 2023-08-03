@@ -3,6 +3,23 @@ pub use crate::operation::search_queues::_search_queues_output::SearchQueuesOutp
 
 pub use crate::operation::search_queues::_search_queues_input::SearchQueuesInputBuilder;
 
+impl SearchQueuesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::search_queues::SearchQueuesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::search_queues::SearchQueuesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.search_queues();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SearchQueues`.
 ///
 /// <p>Searches queues in an Amazon Connect instance, with optional filtering.</p>

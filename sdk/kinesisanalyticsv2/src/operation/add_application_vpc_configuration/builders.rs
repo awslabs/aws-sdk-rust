@@ -3,6 +3,17 @@ pub use crate::operation::add_application_vpc_configuration::_add_application_vp
 
 pub use crate::operation::add_application_vpc_configuration::_add_application_vpc_configuration_input::AddApplicationVpcConfigurationInputBuilder;
 
+impl AddApplicationVpcConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::add_application_vpc_configuration::AddApplicationVpcConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::add_application_vpc_configuration::AddApplicationVpcConfigurationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.add_application_vpc_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AddApplicationVpcConfiguration`.
 ///
 /// <p>Adds a Virtual Private Cloud (VPC) configuration to the application. Applications can use VPCs to store and access resources securely.</p>

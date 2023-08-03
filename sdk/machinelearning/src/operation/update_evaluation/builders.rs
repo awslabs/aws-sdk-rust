@@ -3,6 +3,23 @@ pub use crate::operation::update_evaluation::_update_evaluation_output::UpdateEv
 
 pub use crate::operation::update_evaluation::_update_evaluation_input::UpdateEvaluationInputBuilder;
 
+impl UpdateEvaluationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_evaluation::UpdateEvaluationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_evaluation::UpdateEvaluationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_evaluation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateEvaluation`.
 ///
 /// <p>Updates the <code>EvaluationName</code> of an <code>Evaluation</code>.</p>

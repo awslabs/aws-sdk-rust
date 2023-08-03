@@ -3,6 +3,23 @@ pub use crate::operation::list_predictors::_list_predictors_output::ListPredicto
 
 pub use crate::operation::list_predictors::_list_predictors_input::ListPredictorsInputBuilder;
 
+impl ListPredictorsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_predictors::ListPredictorsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_predictors::ListPredictorsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_predictors();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListPredictors`.
 ///
 /// <p>Returns a list of predictors created using the <code>CreateAutoPredictor</code> or <code>CreatePredictor</code> operations. For each predictor, this operation returns a summary of its properties, including its Amazon Resource Name (ARN). </p>

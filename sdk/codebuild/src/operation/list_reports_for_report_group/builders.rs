@@ -3,6 +3,23 @@ pub use crate::operation::list_reports_for_report_group::_list_reports_for_repor
 
 pub use crate::operation::list_reports_for_report_group::_list_reports_for_report_group_input::ListReportsForReportGroupInputBuilder;
 
+impl ListReportsForReportGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_reports_for_report_group::ListReportsForReportGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_reports_for_report_group::ListReportsForReportGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_reports_for_report_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListReportsForReportGroup`.
 ///
 /// <p> Returns a list of ARNs for the reports that belong to a <code>ReportGroup</code>. </p>

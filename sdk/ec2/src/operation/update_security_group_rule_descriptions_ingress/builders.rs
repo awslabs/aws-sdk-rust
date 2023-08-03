@@ -3,6 +3,17 @@ pub use crate::operation::update_security_group_rule_descriptions_ingress::_upda
 
 pub use crate::operation::update_security_group_rule_descriptions_ingress::_update_security_group_rule_descriptions_ingress_input::UpdateSecurityGroupRuleDescriptionsIngressInputBuilder;
 
+impl UpdateSecurityGroupRuleDescriptionsIngressInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::update_security_group_rule_descriptions_ingress::UpdateSecurityGroupRuleDescriptionsIngressOutput, ::aws_smithy_http::result::SdkError<crate::operation::update_security_group_rule_descriptions_ingress::UpdateSecurityGroupRuleDescriptionsIngressError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.update_security_group_rule_descriptions_ingress();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateSecurityGroupRuleDescriptionsIngress`.
 ///
 /// <p>Updates the description of an ingress (inbound) security group rule. You can replace an existing description, or add a description to a rule that did not have one previously. You can remove a description for a security group rule by omitting the description parameter in the request.</p>

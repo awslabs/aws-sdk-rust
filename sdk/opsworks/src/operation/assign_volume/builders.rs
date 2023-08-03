@@ -3,6 +3,23 @@ pub use crate::operation::assign_volume::_assign_volume_output::AssignVolumeOutp
 
 pub use crate::operation::assign_volume::_assign_volume_input::AssignVolumeInputBuilder;
 
+impl AssignVolumeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::assign_volume::AssignVolumeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::assign_volume::AssignVolumeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.assign_volume();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssignVolume`.
 ///
 /// <p>Assigns one of the stack's registered Amazon EBS volumes to a specified instance. The volume must first be registered with the stack by calling <code>RegisterVolume</code>. After you register the volume, you must call <code>UpdateVolume</code> to specify a mount point before calling <code>AssignVolume</code>. For more information, see <a href="https://docs.aws.amazon.com/opsworks/latest/userguide/resources.html">Resource Management</a>.</p>

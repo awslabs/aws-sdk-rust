@@ -3,6 +3,23 @@ pub use crate::operation::delete_cluster::_delete_cluster_output::DeleteClusterO
 
 pub use crate::operation::delete_cluster::_delete_cluster_input::DeleteClusterInputBuilder;
 
+impl DeleteClusterInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_cluster::DeleteClusterOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_cluster::DeleteClusterError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_cluster();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteCluster`.
 ///
 /// <p>Deletes the specified AWS CloudHSM cluster. Before you can delete a cluster, you must delete all HSMs in the cluster. To see if the cluster contains any HSMs, use <code>DescribeClusters</code>. To delete an HSM, use <code>DeleteHsm</code>.</p>

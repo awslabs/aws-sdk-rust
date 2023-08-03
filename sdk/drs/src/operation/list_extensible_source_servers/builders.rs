@@ -3,6 +3,23 @@ pub use crate::operation::list_extensible_source_servers::_list_extensible_sourc
 
 pub use crate::operation::list_extensible_source_servers::_list_extensible_source_servers_input::ListExtensibleSourceServersInputBuilder;
 
+impl ListExtensibleSourceServersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_extensible_source_servers::ListExtensibleSourceServersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_extensible_source_servers::ListExtensibleSourceServersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_extensible_source_servers();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListExtensibleSourceServers`.
 ///
 /// <p>Returns a list of source servers on a staging account that are extensible, which means that: a. The source server is not already extended into this Account. b. The source server on the Account we’re reading from is not an extension of another source server. </p>

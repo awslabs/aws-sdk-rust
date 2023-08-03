@@ -3,6 +3,23 @@ pub use crate::operation::invoke_device_method::_invoke_device_method_output::In
 
 pub use crate::operation::invoke_device_method::_invoke_device_method_input::InvokeDeviceMethodInputBuilder;
 
+impl InvokeDeviceMethodInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::invoke_device_method::InvokeDeviceMethodOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::invoke_device_method::InvokeDeviceMethodError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.invoke_device_method();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `InvokeDeviceMethod`.
 ///
 /// <p>Given a device ID, issues a request to invoke a named device method (with possible parameters). See the "Example POST" code snippet below.</p>

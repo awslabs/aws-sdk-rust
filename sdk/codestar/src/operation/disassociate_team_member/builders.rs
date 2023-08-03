@@ -3,6 +3,23 @@ pub use crate::operation::disassociate_team_member::_disassociate_team_member_ou
 
 pub use crate::operation::disassociate_team_member::_disassociate_team_member_input::DisassociateTeamMemberInputBuilder;
 
+impl DisassociateTeamMemberInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_team_member::DisassociateTeamMemberOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_team_member::DisassociateTeamMemberError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disassociate_team_member();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateTeamMember`.
 ///
 /// <p>Removes a user from a project. Removing a user from a project also removes the IAM policies from that user that allowed access to the project and its resources. Disassociating a team member does not remove that user's profile from AWS CodeStar. It does not remove the user from IAM.</p>

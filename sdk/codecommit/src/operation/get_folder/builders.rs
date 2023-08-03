@@ -3,6 +3,23 @@ pub use crate::operation::get_folder::_get_folder_output::GetFolderOutputBuilder
 
 pub use crate::operation::get_folder::_get_folder_input::GetFolderInputBuilder;
 
+impl GetFolderInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_folder::GetFolderOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_folder::GetFolderError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_folder();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetFolder`.
 ///
 /// <p>Returns the contents of a specified folder in a repository.</p>

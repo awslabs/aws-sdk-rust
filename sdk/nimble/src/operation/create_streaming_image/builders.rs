@@ -3,6 +3,23 @@ pub use crate::operation::create_streaming_image::_create_streaming_image_output
 
 pub use crate::operation::create_streaming_image::_create_streaming_image_input::CreateStreamingImageInputBuilder;
 
+impl CreateStreamingImageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_streaming_image::CreateStreamingImageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_streaming_image::CreateStreamingImageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_streaming_image();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateStreamingImage`.
 ///
 /// <p>Creates a streaming image resource in a studio.</p>

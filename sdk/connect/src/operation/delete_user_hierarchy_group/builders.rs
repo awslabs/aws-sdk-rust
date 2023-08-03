@@ -3,6 +3,23 @@ pub use crate::operation::delete_user_hierarchy_group::_delete_user_hierarchy_gr
 
 pub use crate::operation::delete_user_hierarchy_group::_delete_user_hierarchy_group_input::DeleteUserHierarchyGroupInputBuilder;
 
+impl DeleteUserHierarchyGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_user_hierarchy_group::DeleteUserHierarchyGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_user_hierarchy_group::DeleteUserHierarchyGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_user_hierarchy_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteUserHierarchyGroup`.
 ///
 /// <p>Deletes an existing user hierarchy group. It must not be associated with any agents or have any active child groups.</p>

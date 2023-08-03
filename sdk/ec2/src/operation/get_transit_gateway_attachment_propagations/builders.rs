@@ -3,6 +3,17 @@ pub use crate::operation::get_transit_gateway_attachment_propagations::_get_tran
 
 pub use crate::operation::get_transit_gateway_attachment_propagations::_get_transit_gateway_attachment_propagations_input::GetTransitGatewayAttachmentPropagationsInputBuilder;
 
+impl GetTransitGatewayAttachmentPropagationsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_transit_gateway_attachment_propagations::GetTransitGatewayAttachmentPropagationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_transit_gateway_attachment_propagations::GetTransitGatewayAttachmentPropagationsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_transit_gateway_attachment_propagations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetTransitGatewayAttachmentPropagations`.
 ///
 /// <p>Lists the route tables to which the specified resource attachment propagates routes.</p>

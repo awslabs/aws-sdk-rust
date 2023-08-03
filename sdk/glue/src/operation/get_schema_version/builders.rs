@@ -3,6 +3,23 @@ pub use crate::operation::get_schema_version::_get_schema_version_output::GetSch
 
 pub use crate::operation::get_schema_version::_get_schema_version_input::GetSchemaVersionInputBuilder;
 
+impl GetSchemaVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_schema_version::GetSchemaVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_schema_version::GetSchemaVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_schema_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetSchemaVersion`.
 ///
 /// <p>Get the specified schema by its unique ID assigned when a version of the schema is created or registered. Schema versions in Deleted status will not be included in the results.</p>

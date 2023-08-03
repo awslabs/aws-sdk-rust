@@ -3,6 +3,17 @@ pub use crate::operation::delete_traffic_distribution_group::_delete_traffic_dis
 
 pub use crate::operation::delete_traffic_distribution_group::_delete_traffic_distribution_group_input::DeleteTrafficDistributionGroupInputBuilder;
 
+impl DeleteTrafficDistributionGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_traffic_distribution_group::DeleteTrafficDistributionGroupOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_traffic_distribution_group::DeleteTrafficDistributionGroupError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.delete_traffic_distribution_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteTrafficDistributionGroup`.
 ///
 /// <p>Deletes a traffic distribution group. This API can be called only in the Region where the traffic distribution group is created.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::describe_export_configurations::_describe_export_confi
 
 pub use crate::operation::describe_export_configurations::_describe_export_configurations_input::DescribeExportConfigurationsInputBuilder;
 
+impl DescribeExportConfigurationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_export_configurations::DescribeExportConfigurationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_export_configurations::DescribeExportConfigurationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_export_configurations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeExportConfigurations`.
 ///
 /// <p> <code>DescribeExportConfigurations</code> is deprecated. Use <a href="https://docs.aws.amazon.com/application-discovery/latest/APIReference/API_DescribeExportTasks.html">DescribeExportTasks</a>, instead.</p>

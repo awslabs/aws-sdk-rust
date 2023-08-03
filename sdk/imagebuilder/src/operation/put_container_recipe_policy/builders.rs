@@ -3,6 +3,23 @@ pub use crate::operation::put_container_recipe_policy::_put_container_recipe_pol
 
 pub use crate::operation::put_container_recipe_policy::_put_container_recipe_policy_input::PutContainerRecipePolicyInputBuilder;
 
+impl PutContainerRecipePolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_container_recipe_policy::PutContainerRecipePolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_container_recipe_policy::PutContainerRecipePolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_container_recipe_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutContainerRecipePolicy`.
 ///
 /// <p>Applies a policy to a container image. We recommend that you call the RAM API CreateResourceShare (https://docs.aws.amazon.com//ram/latest/APIReference/API_CreateResourceShare.html) to share resources. If you call the Image Builder API <code>PutContainerImagePolicy</code>, you must also call the RAM API PromoteResourceShareCreatedFromPolicy (https://docs.aws.amazon.com//ram/latest/APIReference/API_PromoteResourceShareCreatedFromPolicy.html) in order for the resource to be visible to all principals with whom the resource is shared.</p>

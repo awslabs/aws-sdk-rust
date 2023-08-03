@@ -3,6 +3,23 @@ pub use crate::operation::put_method_response::_put_method_response_output::PutM
 
 pub use crate::operation::put_method_response::_put_method_response_input::PutMethodResponseInputBuilder;
 
+impl PutMethodResponseInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_method_response::PutMethodResponseOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_method_response::PutMethodResponseError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_method_response();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutMethodResponse`.
 ///
 /// <p>Adds a MethodResponse to an existing Method resource.</p>

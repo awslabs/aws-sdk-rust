@@ -3,6 +3,23 @@ pub use crate::operation::attach_instances_to_load_balancer::_attach_instances_t
 
 pub use crate::operation::attach_instances_to_load_balancer::_attach_instances_to_load_balancer_input::AttachInstancesToLoadBalancerInputBuilder;
 
+impl AttachInstancesToLoadBalancerInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::attach_instances_to_load_balancer::AttachInstancesToLoadBalancerOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::attach_instances_to_load_balancer::AttachInstancesToLoadBalancerError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.attach_instances_to_load_balancer();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AttachInstancesToLoadBalancer`.
 ///
 /// <p>Attaches one or more Lightsail instances to a load balancer.</p>

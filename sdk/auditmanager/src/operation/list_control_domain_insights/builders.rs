@@ -3,6 +3,23 @@ pub use crate::operation::list_control_domain_insights::_list_control_domain_ins
 
 pub use crate::operation::list_control_domain_insights::_list_control_domain_insights_input::ListControlDomainInsightsInputBuilder;
 
+impl ListControlDomainInsightsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_control_domain_insights::ListControlDomainInsightsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_control_domain_insights::ListControlDomainInsightsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_control_domain_insights();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListControlDomainInsights`.
 ///
 /// <p>Lists the latest analytics data for control domains across all of your active assessments. </p> <note>

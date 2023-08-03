@@ -3,6 +3,23 @@ pub use crate::operation::list_compliance_status::_list_compliance_status_output
 
 pub use crate::operation::list_compliance_status::_list_compliance_status_input::ListComplianceStatusInputBuilder;
 
+impl ListComplianceStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_compliance_status::ListComplianceStatusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_compliance_status::ListComplianceStatusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_compliance_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListComplianceStatus`.
 ///
 /// <p>Returns an array of <code>PolicyComplianceStatus</code> objects. Use <code>PolicyComplianceStatus</code> to get a summary of which member accounts are protected by the specified policy. </p>

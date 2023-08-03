@@ -3,6 +3,23 @@ pub use crate::operation::get_secret_value::_get_secret_value_output::GetSecretV
 
 pub use crate::operation::get_secret_value::_get_secret_value_input::GetSecretValueInputBuilder;
 
+impl GetSecretValueInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_secret_value::GetSecretValueOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_secret_value::GetSecretValueError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_secret_value();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetSecretValue`.
 ///
 /// <p>Retrieves the contents of the encrypted fields <code>SecretString</code> or <code>SecretBinary</code> from the specified version of a secret, whichever contains content.</p>

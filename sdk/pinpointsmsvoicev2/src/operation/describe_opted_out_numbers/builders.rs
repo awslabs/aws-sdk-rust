@@ -3,6 +3,23 @@ pub use crate::operation::describe_opted_out_numbers::_describe_opted_out_number
 
 pub use crate::operation::describe_opted_out_numbers::_describe_opted_out_numbers_input::DescribeOptedOutNumbersInputBuilder;
 
+impl DescribeOptedOutNumbersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_opted_out_numbers::DescribeOptedOutNumbersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_opted_out_numbers::DescribeOptedOutNumbersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_opted_out_numbers();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeOptedOutNumbers`.
 ///
 /// <p>Describes the specified opted out destination numbers or all opted out destination numbers in an opt-out list.</p>

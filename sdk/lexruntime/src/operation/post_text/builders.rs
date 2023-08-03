@@ -3,6 +3,23 @@ pub use crate::operation::post_text::_post_text_output::PostTextOutputBuilder;
 
 pub use crate::operation::post_text::_post_text_input::PostTextInputBuilder;
 
+impl PostTextInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::post_text::PostTextOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::post_text::PostTextError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.post_text();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PostText`.
 ///
 /// <p>Sends user input to Amazon Lex. Client applications can use this API to send requests to Amazon Lex at runtime. Amazon Lex then interprets the user input using the machine learning model it built for the bot. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::get_associated_ipv6_pool_cidrs::_get_associated_ipv6_p
 
 pub use crate::operation::get_associated_ipv6_pool_cidrs::_get_associated_ipv6_pool_cidrs_input::GetAssociatedIpv6PoolCidrsInputBuilder;
 
+impl GetAssociatedIpv6PoolCidrsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_associated_ipv6_pool_cidrs::GetAssociatedIpv6PoolCidrsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_associated_ipv6_pool_cidrs::GetAssociatedIpv6PoolCidrsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_associated_ipv6_pool_cidrs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetAssociatedIpv6PoolCidrs`.
 ///
 /// <p>Gets information about the IPv6 CIDR block associations for a specified IPv6 address pool.</p>

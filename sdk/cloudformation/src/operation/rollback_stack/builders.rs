@@ -3,6 +3,23 @@ pub use crate::operation::rollback_stack::_rollback_stack_output::RollbackStackO
 
 pub use crate::operation::rollback_stack::_rollback_stack_input::RollbackStackInputBuilder;
 
+impl RollbackStackInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::rollback_stack::RollbackStackOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::rollback_stack::RollbackStackError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.rollback_stack();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RollbackStack`.
 ///
 /// <p>When specifying <code>RollbackStack</code>, you preserve the state of previously provisioned resources when an operation fails. You can check the status of the stack through the <code>DescribeStacks</code> operation.</p>

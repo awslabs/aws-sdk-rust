@@ -3,6 +3,23 @@ pub use crate::operation::remove_facet_from_object::_remove_facet_from_object_ou
 
 pub use crate::operation::remove_facet_from_object::_remove_facet_from_object_input::RemoveFacetFromObjectInputBuilder;
 
+impl RemoveFacetFromObjectInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::remove_facet_from_object::RemoveFacetFromObjectOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::remove_facet_from_object::RemoveFacetFromObjectError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.remove_facet_from_object();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RemoveFacetFromObject`.
 ///
 /// <p>Removes the specified facet from the specified object.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::associate_skill_group_with_room::_associate_skill_grou
 
 pub use crate::operation::associate_skill_group_with_room::_associate_skill_group_with_room_input::AssociateSkillGroupWithRoomInputBuilder;
 
+impl AssociateSkillGroupWithRoomInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_skill_group_with_room::AssociateSkillGroupWithRoomOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_skill_group_with_room::AssociateSkillGroupWithRoomError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_skill_group_with_room();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateSkillGroupWithRoom`.
 ///
 /// <p>Associates a skill group with a given room. This enables all skills in the associated skill group on all devices in the room.</p>

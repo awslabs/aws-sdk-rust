@@ -3,6 +3,23 @@ pub use crate::operation::get_principal_tag_attribute_map::_get_principal_tag_at
 
 pub use crate::operation::get_principal_tag_attribute_map::_get_principal_tag_attribute_map_input::GetPrincipalTagAttributeMapInputBuilder;
 
+impl GetPrincipalTagAttributeMapInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_principal_tag_attribute_map::GetPrincipalTagAttributeMapOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_principal_tag_attribute_map::GetPrincipalTagAttributeMapError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_principal_tag_attribute_map();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetPrincipalTagAttributeMap`.
 ///
 /// <p>Use <code>GetPrincipalTagAttributeMap</code> to list all mappings between <code>PrincipalTags</code> and user attributes.</p>

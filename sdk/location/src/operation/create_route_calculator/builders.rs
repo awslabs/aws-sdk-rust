@@ -3,6 +3,23 @@ pub use crate::operation::create_route_calculator::_create_route_calculator_outp
 
 pub use crate::operation::create_route_calculator::_create_route_calculator_input::CreateRouteCalculatorInputBuilder;
 
+impl CreateRouteCalculatorInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_route_calculator::CreateRouteCalculatorOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_route_calculator::CreateRouteCalculatorError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_route_calculator();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateRouteCalculator`.
 ///
 /// <p>Creates a route calculator resource in your Amazon Web Services account.</p>

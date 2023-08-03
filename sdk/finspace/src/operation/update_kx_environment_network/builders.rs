@@ -3,6 +3,23 @@ pub use crate::operation::update_kx_environment_network::_update_kx_environment_
 
 pub use crate::operation::update_kx_environment_network::_update_kx_environment_network_input::UpdateKxEnvironmentNetworkInputBuilder;
 
+impl UpdateKxEnvironmentNetworkInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_kx_environment_network::UpdateKxEnvironmentNetworkOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_kx_environment_network::UpdateKxEnvironmentNetworkError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_kx_environment_network();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateKxEnvironmentNetwork`.
 ///
 /// <p>Updates environment network to connect to your internal network by using a transit gateway. This API supports request to create a transit gateway attachment from FinSpace VPC to your transit gateway ID and create a custom Route-53 outbound resolvers.</p>

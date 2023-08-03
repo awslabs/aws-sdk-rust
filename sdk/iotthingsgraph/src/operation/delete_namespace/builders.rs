@@ -3,6 +3,23 @@ pub use crate::operation::delete_namespace::_delete_namespace_output::DeleteName
 
 pub use crate::operation::delete_namespace::_delete_namespace_input::DeleteNamespaceInputBuilder;
 
+impl DeleteNamespaceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_namespace::DeleteNamespaceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_namespace::DeleteNamespaceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_namespace();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteNamespace`.
 ///
 /// <p>Deletes the specified namespace. This action deletes all of the entities in the namespace. Delete the systems and flows that use entities in the namespace before performing this action. This action takes no request parameters.</p>

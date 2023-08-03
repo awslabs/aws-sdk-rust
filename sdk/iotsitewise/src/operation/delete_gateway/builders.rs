@@ -3,6 +3,23 @@ pub use crate::operation::delete_gateway::_delete_gateway_output::DeleteGatewayO
 
 pub use crate::operation::delete_gateway::_delete_gateway_input::DeleteGatewayInputBuilder;
 
+impl DeleteGatewayInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_gateway::DeleteGatewayOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_gateway::DeleteGatewayError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_gateway();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteGateway`.
 ///
 /// <p>Deletes a gateway from IoT SiteWise. When you delete a gateway, some of the gateway's files remain in your gateway's file system.</p>

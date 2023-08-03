@@ -3,6 +3,23 @@ pub use crate::operation::stop_contact_recording::_stop_contact_recording_output
 
 pub use crate::operation::stop_contact_recording::_stop_contact_recording_input::StopContactRecordingInputBuilder;
 
+impl StopContactRecordingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_contact_recording::StopContactRecordingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_contact_recording::StopContactRecordingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_contact_recording();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopContactRecording`.
 ///
 /// <p>Stops recording a call when a contact is being recorded. StopContactRecording is a one-time action. If you use StopContactRecording to stop recording an ongoing call, you can't use StartContactRecording to restart it. For scenarios where the recording has started and you want to suspend it for sensitive information (for example, to collect a credit card number), and then restart it, use SuspendContactRecording and ResumeContactRecording.</p>

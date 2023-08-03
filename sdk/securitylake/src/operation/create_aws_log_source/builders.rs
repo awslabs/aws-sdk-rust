@@ -3,6 +3,23 @@ pub use crate::operation::create_aws_log_source::_create_aws_log_source_output::
 
 pub use crate::operation::create_aws_log_source::_create_aws_log_source_input::CreateAwsLogSourceInputBuilder;
 
+impl CreateAwsLogSourceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_aws_log_source::CreateAwsLogSourceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_aws_log_source::CreateAwsLogSourceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_aws_log_source();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateAwsLogSource`.
 ///
 /// <p>Adds a natively supported Amazon Web Service as an Amazon Security Lake source. Enables source types for member accounts in required Amazon Web Services Regions, based on the parameters you specify. You can choose any source type in any Region for either accounts that are part of a trusted organization or standalone accounts. Once you add an Amazon Web Service as a source, Security Lake starts collecting logs and events from it.</p>

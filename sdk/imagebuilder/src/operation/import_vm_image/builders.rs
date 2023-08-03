@@ -3,6 +3,23 @@ pub use crate::operation::import_vm_image::_import_vm_image_output::ImportVmImag
 
 pub use crate::operation::import_vm_image::_import_vm_image_input::ImportVmImageInputBuilder;
 
+impl ImportVmImageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::import_vm_image::ImportVmImageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::import_vm_image::ImportVmImageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.import_vm_image();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ImportVmImage`.
 ///
 /// <p>When you export your virtual machine (VM) from its virtualization environment, that process creates a set of one or more disk container files that act as snapshots of your VM’s environment, settings, and data. The Amazon EC2 API <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_ImportImage.html">ImportImage</a> action uses those files to import your VM and create an AMI. To import using the CLI command, see <a href="https://docs.aws.amazon.com/cli/latest/reference/ec2/import-image.html">import-image</a> </p>

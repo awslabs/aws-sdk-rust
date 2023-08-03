@@ -3,6 +3,23 @@ pub use crate::operation::get_voice_channel::_get_voice_channel_output::GetVoice
 
 pub use crate::operation::get_voice_channel::_get_voice_channel_input::GetVoiceChannelInputBuilder;
 
+impl GetVoiceChannelInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_voice_channel::GetVoiceChannelOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_voice_channel::GetVoiceChannelError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_voice_channel();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetVoiceChannel`.
 ///
 /// <p>Retrieves information about the status and settings of the voice channel for an application.</p>

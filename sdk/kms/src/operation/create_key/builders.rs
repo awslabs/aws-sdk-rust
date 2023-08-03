@@ -3,6 +3,23 @@ pub use crate::operation::create_key::_create_key_output::CreateKeyOutputBuilder
 
 pub use crate::operation::create_key::_create_key_input::CreateKeyInputBuilder;
 
+impl CreateKeyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_key::CreateKeyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_key::CreateKeyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_key();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateKey`.
 ///
 /// <p>Creates a unique customer managed <a href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#kms-keys">KMS key</a> in your Amazon Web Services account and Region. You can use a KMS key in cryptographic operations, such as encryption and signing. Some Amazon Web Services services let you use KMS keys that you create and manage to protect your service resources.</p>

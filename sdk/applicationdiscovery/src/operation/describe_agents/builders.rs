@@ -3,6 +3,23 @@ pub use crate::operation::describe_agents::_describe_agents_output::DescribeAgen
 
 pub use crate::operation::describe_agents::_describe_agents_input::DescribeAgentsInputBuilder;
 
+impl DescribeAgentsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_agents::DescribeAgentsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_agents::DescribeAgentsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_agents();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAgents`.
 ///
 /// <p>Lists agents or collectors as specified by ID or other filters. All agents/collectors associated with your user can be listed if you call <code>DescribeAgents</code> as is without passing any parameters.</p>

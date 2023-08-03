@@ -3,6 +3,23 @@ pub use crate::operation::update_key_group::_update_key_group_output::UpdateKeyG
 
 pub use crate::operation::update_key_group::_update_key_group_input::UpdateKeyGroupInputBuilder;
 
+impl UpdateKeyGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_key_group::UpdateKeyGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_key_group::UpdateKeyGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_key_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateKeyGroup`.
 ///
 /// <p>Updates a key group.</p>

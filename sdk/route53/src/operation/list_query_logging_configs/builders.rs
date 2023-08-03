@@ -3,6 +3,23 @@ pub use crate::operation::list_query_logging_configs::_list_query_logging_config
 
 pub use crate::operation::list_query_logging_configs::_list_query_logging_configs_input::ListQueryLoggingConfigsInputBuilder;
 
+impl ListQueryLoggingConfigsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_query_logging_configs::ListQueryLoggingConfigsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_query_logging_configs::ListQueryLoggingConfigsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_query_logging_configs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListQueryLoggingConfigs`.
 ///
 /// <p>Lists the configurations for DNS query logging that are associated with the current Amazon Web Services account or the configuration that is associated with a specified hosted zone.</p>

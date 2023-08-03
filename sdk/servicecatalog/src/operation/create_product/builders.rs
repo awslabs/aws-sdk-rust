@@ -3,6 +3,23 @@ pub use crate::operation::create_product::_create_product_output::CreateProductO
 
 pub use crate::operation::create_product::_create_product_input::CreateProductInputBuilder;
 
+impl CreateProductInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_product::CreateProductOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_product::CreateProductError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_product();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateProduct`.
 ///
 /// <p>Creates a product.</p>

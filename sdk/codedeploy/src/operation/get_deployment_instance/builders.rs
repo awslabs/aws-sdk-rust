@@ -3,6 +3,23 @@ pub use crate::operation::get_deployment_instance::_get_deployment_instance_outp
 
 pub use crate::operation::get_deployment_instance::_get_deployment_instance_input::GetDeploymentInstanceInputBuilder;
 
+impl GetDeploymentInstanceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_deployment_instance::GetDeploymentInstanceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_deployment_instance::GetDeploymentInstanceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_deployment_instance();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetDeploymentInstance`.
 ///
 /// <p>Gets information about an instance as part of a deployment.</p>

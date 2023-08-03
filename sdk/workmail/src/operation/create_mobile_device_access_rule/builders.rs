@@ -3,6 +3,23 @@ pub use crate::operation::create_mobile_device_access_rule::_create_mobile_devic
 
 pub use crate::operation::create_mobile_device_access_rule::_create_mobile_device_access_rule_input::CreateMobileDeviceAccessRuleInputBuilder;
 
+impl CreateMobileDeviceAccessRuleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_mobile_device_access_rule::CreateMobileDeviceAccessRuleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_mobile_device_access_rule::CreateMobileDeviceAccessRuleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_mobile_device_access_rule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateMobileDeviceAccessRule`.
 ///
 /// <p>Creates a new mobile device access rule for the specified WorkMail organization.</p>

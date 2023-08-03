@@ -3,6 +3,23 @@ pub use crate::operation::create_dev_endpoint::_create_dev_endpoint_output::Crea
 
 pub use crate::operation::create_dev_endpoint::_create_dev_endpoint_input::CreateDevEndpointInputBuilder;
 
+impl CreateDevEndpointInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_dev_endpoint::CreateDevEndpointOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_dev_endpoint::CreateDevEndpointError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_dev_endpoint();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateDevEndpoint`.
 ///
 /// <p>Creates a new development endpoint.</p>

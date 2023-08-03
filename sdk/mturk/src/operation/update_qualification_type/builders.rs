@@ -3,6 +3,23 @@ pub use crate::operation::update_qualification_type::_update_qualification_type_
 
 pub use crate::operation::update_qualification_type::_update_qualification_type_input::UpdateQualificationTypeInputBuilder;
 
+impl UpdateQualificationTypeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_qualification_type::UpdateQualificationTypeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_qualification_type::UpdateQualificationTypeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_qualification_type();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateQualificationType`.
 ///
 /// <p> The <code>UpdateQualificationType</code> operation modifies the attributes of an existing Qualification type, which is represented by a QualificationType data structure. Only the owner of a Qualification type can modify its attributes. </p>

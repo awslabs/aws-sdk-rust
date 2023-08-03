@@ -3,6 +3,23 @@ pub use crate::operation::enable_stage_transition::_enable_stage_transition_outp
 
 pub use crate::operation::enable_stage_transition::_enable_stage_transition_input::EnableStageTransitionInputBuilder;
 
+impl EnableStageTransitionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::enable_stage_transition::EnableStageTransitionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::enable_stage_transition::EnableStageTransitionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.enable_stage_transition();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `EnableStageTransition`.
 ///
 /// <p>Enables artifacts in a pipeline to transition to a stage in a pipeline.</p>

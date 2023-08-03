@@ -3,6 +3,23 @@ pub use crate::operation::get_percentiles::_get_percentiles_output::GetPercentil
 
 pub use crate::operation::get_percentiles::_get_percentiles_input::GetPercentilesInputBuilder;
 
+impl GetPercentilesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_percentiles::GetPercentilesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_percentiles::GetPercentilesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_percentiles();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetPercentiles`.
 ///
 /// <p>Groups the aggregated values that match the query into percentile groupings. The default percentile groupings are: 1,5,25,50,75,95,99, although you can specify your own when you call <code>GetPercentiles</code>. This function returns a value for each percentile group specified (or the default percentile groupings). The percentile group "1" contains the aggregated field value that occurs in approximately one percent of the values that match the query. The percentile group "5" contains the aggregated field value that occurs in approximately five percent of the values that match the query, and so on. The result is an approximation, the more values that match the query, the more accurate the percentile values.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_address_book::_create_address_book_output::Crea
 
 pub use crate::operation::create_address_book::_create_address_book_input::CreateAddressBookInputBuilder;
 
+impl CreateAddressBookInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_address_book::CreateAddressBookOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_address_book::CreateAddressBookError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_address_book();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateAddressBook`.
 ///
 /// <p>Creates an address book with the specified details.</p>

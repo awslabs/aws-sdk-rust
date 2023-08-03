@@ -3,6 +3,23 @@ pub use crate::operation::delete_attendee::_delete_attendee_output::DeleteAttend
 
 pub use crate::operation::delete_attendee::_delete_attendee_input::DeleteAttendeeInputBuilder;
 
+impl DeleteAttendeeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_attendee::DeleteAttendeeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_attendee::DeleteAttendeeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_attendee();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteAttendee`.
 ///
 /// <p>Deletes an attendee from the specified Amazon Chime SDK meeting and deletes their <code>JoinToken</code>. Attendees are automatically deleted when a Amazon Chime SDK meeting is deleted. For more information about the Amazon Chime SDK, see <a href="https://docs.aws.amazon.com/chime/latest/dg/meetings-sdk.html">Using the Amazon Chime SDK</a> in the <i>Amazon Chime Developer Guide</i>.</p>

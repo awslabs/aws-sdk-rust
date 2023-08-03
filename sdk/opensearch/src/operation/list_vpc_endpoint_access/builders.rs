@@ -3,6 +3,23 @@ pub use crate::operation::list_vpc_endpoint_access::_list_vpc_endpoint_access_ou
 
 pub use crate::operation::list_vpc_endpoint_access::_list_vpc_endpoint_access_input::ListVpcEndpointAccessInputBuilder;
 
+impl ListVpcEndpointAccessInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_vpc_endpoint_access::ListVpcEndpointAccessOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_vpc_endpoint_access::ListVpcEndpointAccessError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_vpc_endpoint_access();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListVpcEndpointAccess`.
 ///
 /// <p>Retrieves information about each Amazon Web Services principal that is allowed to access a given Amazon OpenSearch Service domain through the use of an interface VPC endpoint.</p>

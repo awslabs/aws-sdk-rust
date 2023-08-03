@@ -3,6 +3,23 @@ pub use crate::operation::describe_app_instance_user::_describe_app_instance_use
 
 pub use crate::operation::describe_app_instance_user::_describe_app_instance_user_input::DescribeAppInstanceUserInputBuilder;
 
+impl DescribeAppInstanceUserInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_app_instance_user::DescribeAppInstanceUserOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_app_instance_user::DescribeAppInstanceUserError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_app_instance_user();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAppInstanceUser`.
 ///
 /// <p>Returns the full details of an <code>AppInstanceUser</code>.</p>

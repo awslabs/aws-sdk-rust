@@ -3,6 +3,23 @@ pub use crate::operation::add_attributes_to_findings::_add_attributes_to_finding
 
 pub use crate::operation::add_attributes_to_findings::_add_attributes_to_findings_input::AddAttributesToFindingsInputBuilder;
 
+impl AddAttributesToFindingsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::add_attributes_to_findings::AddAttributesToFindingsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::add_attributes_to_findings::AddAttributesToFindingsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.add_attributes_to_findings();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AddAttributesToFindings`.
 ///
 /// <p>Assigns attributes (key and value pairs) to the findings that are specified by the ARNs of the findings.</p>

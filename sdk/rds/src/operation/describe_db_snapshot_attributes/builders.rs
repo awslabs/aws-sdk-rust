@@ -3,6 +3,23 @@ pub use crate::operation::describe_db_snapshot_attributes::_describe_db_snapshot
 
 pub use crate::operation::describe_db_snapshot_attributes::_describe_db_snapshot_attributes_input::DescribeDbSnapshotAttributesInputBuilder;
 
+impl DescribeDbSnapshotAttributesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_db_snapshot_attributes::DescribeDbSnapshotAttributesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_db_snapshot_attributes::DescribeDBSnapshotAttributesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_db_snapshot_attributes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeDBSnapshotAttributes`.
 ///
 /// <p>Returns a list of DB snapshot attribute names and values for a manual DB snapshot.</p>

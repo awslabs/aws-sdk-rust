@@ -3,6 +3,23 @@ pub use crate::operation::list_jobs::_list_jobs_output::ListJobsOutputBuilder;
 
 pub use crate::operation::list_jobs::_list_jobs_input::ListJobsInputBuilder;
 
+impl ListJobsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_jobs::ListJobsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_jobs::ListJobsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_jobs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListJobs`.
 ///
 /// Retrieve a JSON array of up to twenty of your most recently created jobs. This array includes in-process, completed, and errored jobs. This will return the jobs themselves, not just a list of the jobs. To retrieve the twenty next most recent jobs, use the nextToken string returned with the array.

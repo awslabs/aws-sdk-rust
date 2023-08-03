@@ -3,6 +3,23 @@ pub use crate::operation::create_vocabulary::_create_vocabulary_output::CreateVo
 
 pub use crate::operation::create_vocabulary::_create_vocabulary_input::CreateVocabularyInputBuilder;
 
+impl CreateVocabularyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_vocabulary::CreateVocabularyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_vocabulary::CreateVocabularyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_vocabulary();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateVocabulary`.
 ///
 /// <p>Creates a custom vocabulary associated with your Amazon Connect instance. You can set a custom vocabulary to be your default vocabulary for a given language. Contact Lens for Amazon Connect uses the default vocabulary in post-call and real-time contact analysis sessions for that language.</p>

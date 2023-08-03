@@ -3,6 +3,23 @@ pub use crate::operation::update_dataset::_update_dataset_output::UpdateDatasetO
 
 pub use crate::operation::update_dataset::_update_dataset_input::UpdateDatasetInputBuilder;
 
+impl UpdateDatasetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_dataset::UpdateDatasetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_dataset::UpdateDatasetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_dataset();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateDataset`.
 ///
 /// <p>Update a dataset to replace its schema with a new or existing one. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/updating-dataset-schema.html">Replacing a dataset's schema</a>. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_tables::_list_tables_output::ListTablesOutputBuil
 
 pub use crate::operation::list_tables::_list_tables_input::ListTablesInputBuilder;
 
+impl ListTablesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_tables::ListTablesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_tables::ListTablesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_tables();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListTables`.
 ///
 /// <p>List the tables in a database. If neither <code>SchemaPattern</code> nor <code>TablePattern</code> are specified, then all tables in the database are returned. A token is returned to page through the table list. Depending on the authorization method, use one of the following combinations of request parameters: </p>

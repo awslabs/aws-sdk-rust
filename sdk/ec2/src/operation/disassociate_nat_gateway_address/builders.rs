@@ -3,6 +3,23 @@ pub use crate::operation::disassociate_nat_gateway_address::_disassociate_nat_ga
 
 pub use crate::operation::disassociate_nat_gateway_address::_disassociate_nat_gateway_address_input::DisassociateNatGatewayAddressInputBuilder;
 
+impl DisassociateNatGatewayAddressInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_nat_gateway_address::DisassociateNatGatewayAddressOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_nat_gateway_address::DisassociateNatGatewayAddressError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disassociate_nat_gateway_address();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateNatGatewayAddress`.
 ///
 /// <p>Disassociates secondary Elastic IP addresses (EIPs) from a public NAT gateway. You cannot disassociate your primary EIP. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html#nat-gateway-edit-secondary">Edit secondary IP address associations</a> in the <i>Amazon VPC User Guide</i>.</p>

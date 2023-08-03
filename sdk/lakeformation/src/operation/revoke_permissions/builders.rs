@@ -3,6 +3,23 @@ pub use crate::operation::revoke_permissions::_revoke_permissions_output::Revoke
 
 pub use crate::operation::revoke_permissions::_revoke_permissions_input::RevokePermissionsInputBuilder;
 
+impl RevokePermissionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::revoke_permissions::RevokePermissionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::revoke_permissions::RevokePermissionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.revoke_permissions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RevokePermissions`.
 ///
 /// <p>Revokes permissions to the principal to access metadata in the Data Catalog and data organized in underlying data storage such as Amazon S3.</p>

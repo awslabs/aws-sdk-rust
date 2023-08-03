@@ -3,6 +3,23 @@ pub use crate::operation::import_table::_import_table_output::ImportTableOutputB
 
 pub use crate::operation::import_table::_import_table_input::ImportTableInputBuilder;
 
+impl ImportTableInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::import_table::ImportTableOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::import_table::ImportTableError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.import_table();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ImportTable`.
 ///
 /// <p> Imports table data from an S3 bucket. </p>

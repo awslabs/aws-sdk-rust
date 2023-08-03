@@ -3,6 +3,23 @@ pub use crate::operation::list_data_ingestion_jobs::_list_data_ingestion_jobs_ou
 
 pub use crate::operation::list_data_ingestion_jobs::_list_data_ingestion_jobs_input::ListDataIngestionJobsInputBuilder;
 
+impl ListDataIngestionJobsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_data_ingestion_jobs::ListDataIngestionJobsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_data_ingestion_jobs::ListDataIngestionJobsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_data_ingestion_jobs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDataIngestionJobs`.
 ///
 /// <p>Provides a list of all data ingestion jobs, including dataset name and ARN, S3 location of the input data, status, and so on. </p>

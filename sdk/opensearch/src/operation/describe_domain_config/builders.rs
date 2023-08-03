@@ -3,6 +3,23 @@ pub use crate::operation::describe_domain_config::_describe_domain_config_output
 
 pub use crate::operation::describe_domain_config::_describe_domain_config_input::DescribeDomainConfigInputBuilder;
 
+impl DescribeDomainConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_domain_config::DescribeDomainConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_domain_config::DescribeDomainConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_domain_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeDomainConfig`.
 ///
 /// <p>Returns the configuration of an Amazon OpenSearch Service domain.</p>

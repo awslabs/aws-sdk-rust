@@ -3,6 +3,23 @@ pub use crate::operation::describe_stack_events::_describe_stack_events_output::
 
 pub use crate::operation::describe_stack_events::_describe_stack_events_input::DescribeStackEventsInputBuilder;
 
+impl DescribeStackEventsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_stack_events::DescribeStackEventsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_stack_events::DescribeStackEventsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_stack_events();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeStackEvents`.
 ///
 /// <p>Returns all stack related events for a specified stack in reverse chronological order. For more information about a stack's event history, go to <a href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/concept-stack.html">Stacks</a> in the CloudFormation User Guide.</p> <note>

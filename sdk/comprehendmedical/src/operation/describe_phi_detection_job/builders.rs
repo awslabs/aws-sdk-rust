@@ -3,6 +3,23 @@ pub use crate::operation::describe_phi_detection_job::_describe_phi_detection_jo
 
 pub use crate::operation::describe_phi_detection_job::_describe_phi_detection_job_input::DescribePhiDetectionJobInputBuilder;
 
+impl DescribePhiDetectionJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_phi_detection_job::DescribePhiDetectionJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_phi_detection_job::DescribePHIDetectionJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_phi_detection_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribePHIDetectionJob`.
 ///
 /// <p>Gets the properties associated with a protected health information (PHI) detection job. Use this operation to get the status of a detection job.</p>

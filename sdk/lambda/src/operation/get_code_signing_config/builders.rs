@@ -3,6 +3,23 @@ pub use crate::operation::get_code_signing_config::_get_code_signing_config_outp
 
 pub use crate::operation::get_code_signing_config::_get_code_signing_config_input::GetCodeSigningConfigInputBuilder;
 
+impl GetCodeSigningConfigInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_code_signing_config::GetCodeSigningConfigOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_code_signing_config::GetCodeSigningConfigError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_code_signing_config();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetCodeSigningConfig`.
 ///
 /// <p>Returns information about the specified code signing configuration.</p>

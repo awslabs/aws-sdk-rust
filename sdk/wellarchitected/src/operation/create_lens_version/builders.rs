@@ -3,6 +3,23 @@ pub use crate::operation::create_lens_version::_create_lens_version_output::Crea
 
 pub use crate::operation::create_lens_version::_create_lens_version_input::CreateLensVersionInputBuilder;
 
+impl CreateLensVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_lens_version::CreateLensVersionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_lens_version::CreateLensVersionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_lens_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateLensVersion`.
 ///
 /// <p>Create a new lens version.</p>

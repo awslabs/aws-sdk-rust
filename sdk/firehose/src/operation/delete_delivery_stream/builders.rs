@@ -3,6 +3,23 @@ pub use crate::operation::delete_delivery_stream::_delete_delivery_stream_output
 
 pub use crate::operation::delete_delivery_stream::_delete_delivery_stream_input::DeleteDeliveryStreamInputBuilder;
 
+impl DeleteDeliveryStreamInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_delivery_stream::DeleteDeliveryStreamOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_delivery_stream::DeleteDeliveryStreamError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_delivery_stream();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteDeliveryStream`.
 ///
 /// <p>Deletes a delivery stream and its data.</p>

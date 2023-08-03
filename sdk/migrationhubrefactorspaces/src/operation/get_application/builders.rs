@@ -3,6 +3,23 @@ pub use crate::operation::get_application::_get_application_output::GetApplicati
 
 pub use crate::operation::get_application::_get_application_input::GetApplicationInputBuilder;
 
+impl GetApplicationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_application::GetApplicationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_application::GetApplicationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_application();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetApplication`.
 ///
 /// <p>Gets an Amazon Web Services Migration Hub Refactor Spaces application.</p>

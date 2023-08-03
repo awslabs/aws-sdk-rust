@@ -3,6 +3,23 @@ pub use crate::operation::get_compatible_kafka_versions::_get_compatible_kafka_v
 
 pub use crate::operation::get_compatible_kafka_versions::_get_compatible_kafka_versions_input::GetCompatibleKafkaVersionsInputBuilder;
 
+impl GetCompatibleKafkaVersionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_compatible_kafka_versions::GetCompatibleKafkaVersionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_compatible_kafka_versions::GetCompatibleKafkaVersionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_compatible_kafka_versions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetCompatibleKafkaVersions`.
 ///
 /// <p>Gets the Apache Kafka versions to which you can update the MSK cluster.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_qualification_type::_create_qualification_type_
 
 pub use crate::operation::create_qualification_type::_create_qualification_type_input::CreateQualificationTypeInputBuilder;
 
+impl CreateQualificationTypeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_qualification_type::CreateQualificationTypeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_qualification_type::CreateQualificationTypeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_qualification_type();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateQualificationType`.
 ///
 /// <p> The <code>CreateQualificationType</code> operation creates a new Qualification type, which is represented by a <code>QualificationType</code> data structure. </p>

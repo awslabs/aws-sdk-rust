@@ -3,6 +3,23 @@ pub use crate::operation::delete_impersonation_role::_delete_impersonation_role_
 
 pub use crate::operation::delete_impersonation_role::_delete_impersonation_role_input::DeleteImpersonationRoleInputBuilder;
 
+impl DeleteImpersonationRoleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_impersonation_role::DeleteImpersonationRoleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_impersonation_role::DeleteImpersonationRoleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_impersonation_role();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteImpersonationRole`.
 ///
 /// <p>Deletes an impersonation role for the given WorkMail organization.</p>

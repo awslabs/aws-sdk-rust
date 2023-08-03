@@ -3,6 +3,23 @@ pub use crate::operation::configure_health_check::_configure_health_check_output
 
 pub use crate::operation::configure_health_check::_configure_health_check_input::ConfigureHealthCheckInputBuilder;
 
+impl ConfigureHealthCheckInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::configure_health_check::ConfigureHealthCheckOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::configure_health_check::ConfigureHealthCheckError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.configure_health_check();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ConfigureHealthCheck`.
 ///
 /// <p>Specifies the health check settings to use when evaluating the health state of your EC2 instances.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::update_placement::_update_placement_output::UpdatePlac
 
 pub use crate::operation::update_placement::_update_placement_input::UpdatePlacementInputBuilder;
 
+impl UpdatePlacementInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_placement::UpdatePlacementOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_placement::UpdatePlacementError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_placement();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdatePlacement`.
 ///
 /// <p>Updates a placement with the given attributes. To clear an attribute, pass an empty value (i.e., "").</p>

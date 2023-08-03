@@ -3,6 +3,17 @@ pub use crate::operation::modify_capacity_reservation_fleet::_modify_capacity_re
 
 pub use crate::operation::modify_capacity_reservation_fleet::_modify_capacity_reservation_fleet_input::ModifyCapacityReservationFleetInputBuilder;
 
+impl ModifyCapacityReservationFleetInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::modify_capacity_reservation_fleet::ModifyCapacityReservationFleetOutput, ::aws_smithy_http::result::SdkError<crate::operation::modify_capacity_reservation_fleet::ModifyCapacityReservationFleetError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.modify_capacity_reservation_fleet();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ModifyCapacityReservationFleet`.
 ///
 /// <p>Modifies a Capacity Reservation Fleet.</p>

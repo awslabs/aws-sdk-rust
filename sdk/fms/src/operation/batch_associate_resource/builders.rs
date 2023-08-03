@@ -3,6 +3,23 @@ pub use crate::operation::batch_associate_resource::_batch_associate_resource_ou
 
 pub use crate::operation::batch_associate_resource::_batch_associate_resource_input::BatchAssociateResourceInputBuilder;
 
+impl BatchAssociateResourceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_associate_resource::BatchAssociateResourceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_associate_resource::BatchAssociateResourceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_associate_resource();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchAssociateResource`.
 ///
 /// <p>Associate resources to a Firewall Manager resource set.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::update_lf_tag::_update_lf_tag_output::UpdateLfTagOutpu
 
 pub use crate::operation::update_lf_tag::_update_lf_tag_input::UpdateLfTagInputBuilder;
 
+impl UpdateLfTagInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_lf_tag::UpdateLfTagOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_lf_tag::UpdateLFTagError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_lf_tag();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateLFTag`.
 ///
 /// <p>Updates the list of possible values for the specified LF-tag key. If the LF-tag does not exist, the operation throws an EntityNotFoundException. The values in the delete key values will be deleted from list of possible values. If any value in the delete key values is attached to a resource, then API errors out with a 400 Exception - "Update not allowed". Untag the attribute before deleting the LF-tag key's value. </p>

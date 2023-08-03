@@ -3,6 +3,23 @@ pub use crate::operation::send_automation_signal::_send_automation_signal_output
 
 pub use crate::operation::send_automation_signal::_send_automation_signal_input::SendAutomationSignalInputBuilder;
 
+impl SendAutomationSignalInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::send_automation_signal::SendAutomationSignalOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::send_automation_signal::SendAutomationSignalError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.send_automation_signal();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SendAutomationSignal`.
 ///
 /// <p>Sends a signal to an Automation execution to change the current behavior or status of the execution. </p>

@@ -3,6 +3,23 @@ pub use crate::operation::accept_qualification_request::_accept_qualification_re
 
 pub use crate::operation::accept_qualification_request::_accept_qualification_request_input::AcceptQualificationRequestInputBuilder;
 
+impl AcceptQualificationRequestInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::accept_qualification_request::AcceptQualificationRequestOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::accept_qualification_request::AcceptQualificationRequestError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.accept_qualification_request();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AcceptQualificationRequest`.
 ///
 /// <p> The <code>AcceptQualificationRequest</code> operation approves a Worker's request for a Qualification. </p>

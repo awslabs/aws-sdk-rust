@@ -3,6 +3,23 @@ pub use crate::operation::delete_retention_policy::_delete_retention_policy_outp
 
 pub use crate::operation::delete_retention_policy::_delete_retention_policy_input::DeleteRetentionPolicyInputBuilder;
 
+impl DeleteRetentionPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_retention_policy::DeleteRetentionPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_retention_policy::DeleteRetentionPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_retention_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteRetentionPolicy`.
 ///
 /// <p>Deletes the specified retention policy.</p>

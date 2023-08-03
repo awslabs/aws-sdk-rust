@@ -3,6 +3,23 @@ pub use crate::operation::list_layer_versions::_list_layer_versions_output::List
 
 pub use crate::operation::list_layer_versions::_list_layer_versions_input::ListLayerVersionsInputBuilder;
 
+impl ListLayerVersionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_layer_versions::ListLayerVersionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_layer_versions::ListLayerVersionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_layer_versions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListLayerVersions`.
 ///
 /// <p>Lists the versions of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda layer</a>. Versions that have been deleted aren't listed. Specify a <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html">runtime identifier</a> to list only versions that indicate that they're compatible with that runtime. Specify a compatible architecture to include only layer versions that are compatible with that architecture.</p>

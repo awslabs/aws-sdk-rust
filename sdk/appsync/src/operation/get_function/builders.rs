@@ -3,6 +3,23 @@ pub use crate::operation::get_function::_get_function_output::GetFunctionOutputB
 
 pub use crate::operation::get_function::_get_function_input::GetFunctionInputBuilder;
 
+impl GetFunctionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_function::GetFunctionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_function::GetFunctionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_function();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetFunction`.
 ///
 /// <p>Get a <code>Function</code>.</p>

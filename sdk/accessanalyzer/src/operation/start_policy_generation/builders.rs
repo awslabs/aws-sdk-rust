@@ -3,6 +3,23 @@ pub use crate::operation::start_policy_generation::_start_policy_generation_outp
 
 pub use crate::operation::start_policy_generation::_start_policy_generation_input::StartPolicyGenerationInputBuilder;
 
+impl StartPolicyGenerationInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_policy_generation::StartPolicyGenerationOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_policy_generation::StartPolicyGenerationError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_policy_generation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartPolicyGeneration`.
 ///
 /// <p>Starts the policy generation request.</p>

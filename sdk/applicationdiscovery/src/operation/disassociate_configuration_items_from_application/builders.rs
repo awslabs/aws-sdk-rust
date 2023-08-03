@@ -3,6 +3,17 @@ pub use crate::operation::disassociate_configuration_items_from_application::_di
 
 pub use crate::operation::disassociate_configuration_items_from_application::_disassociate_configuration_items_from_application_input::DisassociateConfigurationItemsFromApplicationInputBuilder;
 
+impl DisassociateConfigurationItemsFromApplicationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::disassociate_configuration_items_from_application::DisassociateConfigurationItemsFromApplicationOutput, ::aws_smithy_http::result::SdkError<crate::operation::disassociate_configuration_items_from_application::DisassociateConfigurationItemsFromApplicationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.disassociate_configuration_items_from_application();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateConfigurationItemsFromApplication`.
 ///
 /// <p>Disassociates one or more configuration items from an application.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_evaluation_form::_delete_evaluation_form_output
 
 pub use crate::operation::delete_evaluation_form::_delete_evaluation_form_input::DeleteEvaluationFormInputBuilder;
 
+impl DeleteEvaluationFormInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_evaluation_form::DeleteEvaluationFormOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_evaluation_form::DeleteEvaluationFormError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_evaluation_form();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteEvaluationForm`.
 ///
 /// <p>Deletes an evaluation form in the specified Amazon Connect instance. </p>

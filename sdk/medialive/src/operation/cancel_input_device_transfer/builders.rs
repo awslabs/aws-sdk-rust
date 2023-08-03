@@ -3,6 +3,23 @@ pub use crate::operation::cancel_input_device_transfer::_cancel_input_device_tra
 
 pub use crate::operation::cancel_input_device_transfer::_cancel_input_device_transfer_input::CancelInputDeviceTransferInputBuilder;
 
+impl CancelInputDeviceTransferInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::cancel_input_device_transfer::CancelInputDeviceTransferOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::cancel_input_device_transfer::CancelInputDeviceTransferError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.cancel_input_device_transfer();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CancelInputDeviceTransfer`.
 ///
 /// Cancel an input device transfer that you have requested.

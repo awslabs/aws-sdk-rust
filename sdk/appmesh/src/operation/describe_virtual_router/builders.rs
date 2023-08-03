@@ -3,6 +3,23 @@ pub use crate::operation::describe_virtual_router::_describe_virtual_router_outp
 
 pub use crate::operation::describe_virtual_router::_describe_virtual_router_input::DescribeVirtualRouterInputBuilder;
 
+impl DescribeVirtualRouterInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_virtual_router::DescribeVirtualRouterOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_virtual_router::DescribeVirtualRouterError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_virtual_router();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeVirtualRouter`.
 ///
 /// <p>Describes an existing virtual router.</p>

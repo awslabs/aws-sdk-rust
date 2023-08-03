@@ -3,6 +3,23 @@ pub use crate::operation::put_sink_policy::_put_sink_policy_output::PutSinkPolic
 
 pub use crate::operation::put_sink_policy::_put_sink_policy_input::PutSinkPolicyInputBuilder;
 
+impl PutSinkPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_sink_policy::PutSinkPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_sink_policy::PutSinkPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_sink_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutSinkPolicy`.
 ///
 /// <p>Creates or updates the resource policy that grants permissions to source accounts to link to the monitoring account sink. When you create a sink policy, you can grant permissions to all accounts in an organization or to individual accounts.</p>

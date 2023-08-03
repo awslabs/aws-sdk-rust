@@ -3,6 +3,23 @@ pub use crate::operation::activate_evaluation_form::_activate_evaluation_form_ou
 
 pub use crate::operation::activate_evaluation_form::_activate_evaluation_form_input::ActivateEvaluationFormInputBuilder;
 
+impl ActivateEvaluationFormInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::activate_evaluation_form::ActivateEvaluationFormOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::activate_evaluation_form::ActivateEvaluationFormError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.activate_evaluation_form();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ActivateEvaluationForm`.
 ///
 /// <p>Activates an evaluation form in the specified Amazon Connect instance. After the evaluation form is activated, it is available to start new evaluations based on the form. </p>

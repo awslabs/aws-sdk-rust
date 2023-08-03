@@ -3,6 +3,23 @@ pub use crate::operation::describe_constraint::_describe_constraint_output::Desc
 
 pub use crate::operation::describe_constraint::_describe_constraint_input::DescribeConstraintInputBuilder;
 
+impl DescribeConstraintInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_constraint::DescribeConstraintOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_constraint::DescribeConstraintError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_constraint();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeConstraint`.
 ///
 /// <p>Gets information about the specified constraint.</p>

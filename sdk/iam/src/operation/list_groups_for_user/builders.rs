@@ -3,6 +3,23 @@ pub use crate::operation::list_groups_for_user::_list_groups_for_user_output::Li
 
 pub use crate::operation::list_groups_for_user::_list_groups_for_user_input::ListGroupsForUserInputBuilder;
 
+impl ListGroupsForUserInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_groups_for_user::ListGroupsForUserOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_groups_for_user::ListGroupsForUserError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_groups_for_user();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListGroupsForUser`.
 ///
 /// <p>Lists the IAM groups that the specified IAM user belongs to.</p>

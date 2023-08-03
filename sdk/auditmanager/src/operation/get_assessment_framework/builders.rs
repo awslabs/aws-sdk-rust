@@ -3,6 +3,23 @@ pub use crate::operation::get_assessment_framework::_get_assessment_framework_ou
 
 pub use crate::operation::get_assessment_framework::_get_assessment_framework_input::GetAssessmentFrameworkInputBuilder;
 
+impl GetAssessmentFrameworkInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_assessment_framework::GetAssessmentFrameworkOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_assessment_framework::GetAssessmentFrameworkError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_assessment_framework();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetAssessmentFramework`.
 ///
 /// <p>Gets information about a specified framework.</p>

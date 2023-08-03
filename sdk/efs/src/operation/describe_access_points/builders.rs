@@ -3,6 +3,23 @@ pub use crate::operation::describe_access_points::_describe_access_points_output
 
 pub use crate::operation::describe_access_points::_describe_access_points_input::DescribeAccessPointsInputBuilder;
 
+impl DescribeAccessPointsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_access_points::DescribeAccessPointsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_access_points::DescribeAccessPointsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_access_points();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeAccessPoints`.
 ///
 /// <p>Returns the description of a specific Amazon EFS access point if the <code>AccessPointId</code> is provided. If you provide an EFS <code>FileSystemId</code>, it returns descriptions of all access points for that file system. You can provide either an <code>AccessPointId</code> or a <code>FileSystemId</code> in the request, but not both. </p>

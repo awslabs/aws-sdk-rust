@@ -3,6 +3,23 @@ pub use crate::operation::create_pipeline::_create_pipeline_output::CreatePipeli
 
 pub use crate::operation::create_pipeline::_create_pipeline_input::CreatePipelineInputBuilder;
 
+impl CreatePipelineInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_pipeline::CreatePipelineOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_pipeline::CreatePipelineError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_pipeline();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreatePipeline`.
 ///
 /// <p>Creates a new, empty pipeline. Use <code>PutPipelineDefinition</code> to populate the pipeline.</p> <examples>

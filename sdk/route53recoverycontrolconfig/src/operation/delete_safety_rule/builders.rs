@@ -3,6 +3,23 @@ pub use crate::operation::delete_safety_rule::_delete_safety_rule_output::Delete
 
 pub use crate::operation::delete_safety_rule::_delete_safety_rule_input::DeleteSafetyRuleInputBuilder;
 
+impl DeleteSafetyRuleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_safety_rule::DeleteSafetyRuleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_safety_rule::DeleteSafetyRuleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_safety_rule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteSafetyRule`.
 ///
 /// <p>Deletes a safety rule.</p>/&gt;

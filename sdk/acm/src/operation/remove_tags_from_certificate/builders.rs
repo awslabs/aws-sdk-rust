@@ -3,6 +3,23 @@ pub use crate::operation::remove_tags_from_certificate::_remove_tags_from_certif
 
 pub use crate::operation::remove_tags_from_certificate::_remove_tags_from_certificate_input::RemoveTagsFromCertificateInputBuilder;
 
+impl RemoveTagsFromCertificateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::remove_tags_from_certificate::RemoveTagsFromCertificateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::remove_tags_from_certificate::RemoveTagsFromCertificateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.remove_tags_from_certificate();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RemoveTagsFromCertificate`.
 ///
 /// <p>Remove one or more tags from an ACM certificate. A tag consists of a key-value pair. If you do not specify the value portion of the tag when calling this function, the tag will be removed regardless of value. If you specify a value, the tag is removed only if it is associated with the specified value. </p>

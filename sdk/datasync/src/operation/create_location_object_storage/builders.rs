@@ -3,6 +3,23 @@ pub use crate::operation::create_location_object_storage::_create_location_objec
 
 pub use crate::operation::create_location_object_storage::_create_location_object_storage_input::CreateLocationObjectStorageInputBuilder;
 
+impl CreateLocationObjectStorageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_location_object_storage::CreateLocationObjectStorageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_location_object_storage::CreateLocationObjectStorageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_location_object_storage();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateLocationObjectStorage`.
 ///
 /// <p>Creates an endpoint for an object storage system that DataSync can access for a transfer. For more information, see <a href="https://docs.aws.amazon.com/datasync/latest/userguide/create-object-location.html">Creating a location for object storage</a>.</p>

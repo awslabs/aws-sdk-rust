@@ -3,6 +3,23 @@ pub use crate::operation::get_random_password::_get_random_password_output::GetR
 
 pub use crate::operation::get_random_password::_get_random_password_input::GetRandomPasswordInputBuilder;
 
+impl GetRandomPasswordInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_random_password::GetRandomPasswordOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_random_password::GetRandomPasswordError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_random_password();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetRandomPassword`.
 ///
 /// <p>Generates a random password. We recommend that you specify the maximum length and include every character type that the system you are generating a password for can support.</p>

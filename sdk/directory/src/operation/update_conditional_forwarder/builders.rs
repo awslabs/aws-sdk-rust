@@ -3,6 +3,23 @@ pub use crate::operation::update_conditional_forwarder::_update_conditional_forw
 
 pub use crate::operation::update_conditional_forwarder::_update_conditional_forwarder_input::UpdateConditionalForwarderInputBuilder;
 
+impl UpdateConditionalForwarderInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_conditional_forwarder::UpdateConditionalForwarderOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_conditional_forwarder::UpdateConditionalForwarderError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_conditional_forwarder();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateConditionalForwarder`.
 ///
 /// <p>Updates a conditional forwarder that has been set up for your Amazon Web Services directory.</p>

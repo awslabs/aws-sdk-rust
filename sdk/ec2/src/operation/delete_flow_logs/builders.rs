@@ -3,6 +3,23 @@ pub use crate::operation::delete_flow_logs::_delete_flow_logs_output::DeleteFlow
 
 pub use crate::operation::delete_flow_logs::_delete_flow_logs_input::DeleteFlowLogsInputBuilder;
 
+impl DeleteFlowLogsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_flow_logs::DeleteFlowLogsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_flow_logs::DeleteFlowLogsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_flow_logs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteFlowLogs`.
 ///
 /// <p>Deletes one or more flow logs.</p>

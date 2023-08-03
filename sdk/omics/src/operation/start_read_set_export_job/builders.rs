@@ -3,6 +3,23 @@ pub use crate::operation::start_read_set_export_job::_start_read_set_export_job_
 
 pub use crate::operation::start_read_set_export_job::_start_read_set_export_job_input::StartReadSetExportJobInputBuilder;
 
+impl StartReadSetExportJobInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_read_set_export_job::StartReadSetExportJobOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_read_set_export_job::StartReadSetExportJobError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_read_set_export_job();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartReadSetExportJob`.
 ///
 /// <p>Exports a read set to Amazon S3.</p>

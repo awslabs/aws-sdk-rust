@@ -3,6 +3,23 @@ pub use crate::operation::export_snapshot::_export_snapshot_output::ExportSnapsh
 
 pub use crate::operation::export_snapshot::_export_snapshot_input::ExportSnapshotInputBuilder;
 
+impl ExportSnapshotInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::export_snapshot::ExportSnapshotOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::export_snapshot::ExportSnapshotError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.export_snapshot();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ExportSnapshot`.
 ///
 /// <p>Exports an Amazon Lightsail instance or block storage disk snapshot to Amazon Elastic Compute Cloud (Amazon EC2). This operation results in an export snapshot record that can be used with the <code>create cloud formation stack</code> operation to create new Amazon EC2 instances.</p>

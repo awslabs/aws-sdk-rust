@@ -3,6 +3,23 @@ pub use crate::operation::get_work_unit_results::_get_work_unit_results_output::
 
 pub use crate::operation::get_work_unit_results::_get_work_unit_results_input::GetWorkUnitResultsInputBuilder;
 
+impl GetWorkUnitResultsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_work_unit_results::GetWorkUnitResultsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_work_unit_results::GetWorkUnitResultsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_work_unit_results();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetWorkUnitResults`.
 ///
 /// <p>Returns the work units resulting from the query. Work units can be executed in any order and in parallel. </p>

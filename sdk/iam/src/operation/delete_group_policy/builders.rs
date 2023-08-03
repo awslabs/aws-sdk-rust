@@ -3,6 +3,23 @@ pub use crate::operation::delete_group_policy::_delete_group_policy_output::Dele
 
 pub use crate::operation::delete_group_policy::_delete_group_policy_input::DeleteGroupPolicyInputBuilder;
 
+impl DeleteGroupPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_group_policy::DeleteGroupPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_group_policy::DeleteGroupPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_group_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteGroupPolicy`.
 ///
 /// <p>Deletes the specified inline policy that is embedded in the specified IAM group.</p>

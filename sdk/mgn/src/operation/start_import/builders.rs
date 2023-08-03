@@ -3,6 +3,23 @@ pub use crate::operation::start_import::_start_import_output::StartImportOutputB
 
 pub use crate::operation::start_import::_start_import_input::StartImportInputBuilder;
 
+impl StartImportInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_import::StartImportOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_import::StartImportError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_import();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartImport`.
 ///
 /// <p>Start import.</p>

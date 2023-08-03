@@ -3,6 +3,17 @@ pub use crate::operation::restore_managed_prefix_list_version::_restore_managed_
 
 pub use crate::operation::restore_managed_prefix_list_version::_restore_managed_prefix_list_version_input::RestoreManagedPrefixListVersionInputBuilder;
 
+impl RestoreManagedPrefixListVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::restore_managed_prefix_list_version::RestoreManagedPrefixListVersionOutput, ::aws_smithy_http::result::SdkError<crate::operation::restore_managed_prefix_list_version::RestoreManagedPrefixListVersionError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.restore_managed_prefix_list_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RestoreManagedPrefixListVersion`.
 ///
 /// <p>Restores the entries from a previous version of a managed prefix list to a new version of the prefix list.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::update_monitoring_alert::_update_monitoring_alert_outp
 
 pub use crate::operation::update_monitoring_alert::_update_monitoring_alert_input::UpdateMonitoringAlertInputBuilder;
 
+impl UpdateMonitoringAlertInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_monitoring_alert::UpdateMonitoringAlertOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_monitoring_alert::UpdateMonitoringAlertError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_monitoring_alert();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateMonitoringAlert`.
 ///
 /// <p>Update the parameters of a model monitor alert.</p>

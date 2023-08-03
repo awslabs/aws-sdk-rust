@@ -3,6 +3,23 @@ pub use crate::operation::send_command::_send_command_output::SendCommandOutputB
 
 pub use crate::operation::send_command::_send_command_input::SendCommandInputBuilder;
 
+impl SendCommandInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::send_command::SendCommandOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::send_command::SendCommandError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.send_command();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SendCommand`.
 ///
 /// <p>Sends a command to an Amazon QLDB ledger.</p> <note>

@@ -3,6 +3,23 @@ pub use crate::operation::create_table::_create_table_output::CreateTableOutputB
 
 pub use crate::operation::create_table::_create_table_input::CreateTableInputBuilder;
 
+impl CreateTableInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_table::CreateTableOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_table::CreateTableError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_table();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateTable`.
 ///
 /// <p>The <code>CreateTable</code> operation adds a new table to the specified keyspace. Within a keyspace, table names must be unique.</p>

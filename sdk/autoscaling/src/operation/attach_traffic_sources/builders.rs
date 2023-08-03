@@ -3,6 +3,23 @@ pub use crate::operation::attach_traffic_sources::_attach_traffic_sources_output
 
 pub use crate::operation::attach_traffic_sources::_attach_traffic_sources_input::AttachTrafficSourcesInputBuilder;
 
+impl AttachTrafficSourcesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::attach_traffic_sources::AttachTrafficSourcesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::attach_traffic_sources::AttachTrafficSourcesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.attach_traffic_sources();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AttachTrafficSources`.
 ///
 /// <p>Attaches one or more traffic sources to the specified Auto Scaling group.</p>

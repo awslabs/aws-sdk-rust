@@ -3,6 +3,23 @@ pub use crate::operation::abort_multipart_upload::_abort_multipart_upload_output
 
 pub use crate::operation::abort_multipart_upload::_abort_multipart_upload_input::AbortMultipartUploadInputBuilder;
 
+impl AbortMultipartUploadInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::abort_multipart_upload::AbortMultipartUploadOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::abort_multipart_upload::AbortMultipartUploadError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.abort_multipart_upload();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AbortMultipartUpload`.
 ///
 /// <p>This operation aborts a multipart upload identified by the upload ID.</p>

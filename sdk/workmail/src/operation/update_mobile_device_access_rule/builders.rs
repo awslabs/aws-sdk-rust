@@ -3,6 +3,23 @@ pub use crate::operation::update_mobile_device_access_rule::_update_mobile_devic
 
 pub use crate::operation::update_mobile_device_access_rule::_update_mobile_device_access_rule_input::UpdateMobileDeviceAccessRuleInputBuilder;
 
+impl UpdateMobileDeviceAccessRuleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_mobile_device_access_rule::UpdateMobileDeviceAccessRuleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_mobile_device_access_rule::UpdateMobileDeviceAccessRuleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_mobile_device_access_rule();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateMobileDeviceAccessRule`.
 ///
 /// <p>Updates a mobile device access rule for the specified WorkMail organization.</p>

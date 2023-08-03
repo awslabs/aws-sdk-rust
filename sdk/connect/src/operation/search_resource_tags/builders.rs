@@ -3,6 +3,23 @@ pub use crate::operation::search_resource_tags::_search_resource_tags_output::Se
 
 pub use crate::operation::search_resource_tags::_search_resource_tags_input::SearchResourceTagsInputBuilder;
 
+impl SearchResourceTagsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::search_resource_tags::SearchResourceTagsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::search_resource_tags::SearchResourceTagsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.search_resource_tags();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SearchResourceTags`.
 ///
 /// <p>Searches tags used in an Amazon Connect instance using optional search criteria.</p>

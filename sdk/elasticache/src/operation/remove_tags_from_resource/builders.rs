@@ -3,6 +3,23 @@ pub use crate::operation::remove_tags_from_resource::_remove_tags_from_resource_
 
 pub use crate::operation::remove_tags_from_resource::_remove_tags_from_resource_input::RemoveTagsFromResourceInputBuilder;
 
+impl RemoveTagsFromResourceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::remove_tags_from_resource::RemoveTagsFromResourceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::remove_tags_from_resource::RemoveTagsFromResourceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.remove_tags_from_resource();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RemoveTagsFromResource`.
 ///
 /// <p>Removes the tags identified by the <code>TagKeys</code> list from the named resource. A tag is a key-value pair where the key and value are case-sensitive. You can use tags to categorize and track all your ElastiCache resources, with the exception of global replication group. When you add or remove tags on replication groups, those actions will be replicated to all nodes in the replication group. For more information, see <a href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/IAM.ResourceLevelPermissions.html">Resource-level permissions</a>.</p>

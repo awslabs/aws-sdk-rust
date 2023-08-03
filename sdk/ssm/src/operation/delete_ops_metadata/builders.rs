@@ -3,6 +3,23 @@ pub use crate::operation::delete_ops_metadata::_delete_ops_metadata_output::Dele
 
 pub use crate::operation::delete_ops_metadata::_delete_ops_metadata_input::DeleteOpsMetadataInputBuilder;
 
+impl DeleteOpsMetadataInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_ops_metadata::DeleteOpsMetadataOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_ops_metadata::DeleteOpsMetadataError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_ops_metadata();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteOpsMetadata`.
 ///
 /// <p>Delete OpsMetadata related to an application.</p>

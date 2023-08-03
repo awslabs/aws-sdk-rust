@@ -3,6 +3,23 @@ pub use crate::operation::describe_default_parameters::_describe_default_paramet
 
 pub use crate::operation::describe_default_parameters::_describe_default_parameters_input::DescribeDefaultParametersInputBuilder;
 
+impl DescribeDefaultParametersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_default_parameters::DescribeDefaultParametersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_default_parameters::DescribeDefaultParametersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_default_parameters();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeDefaultParameters`.
 ///
 /// <p>Returns the default system parameter information for the DAX caching software.</p>

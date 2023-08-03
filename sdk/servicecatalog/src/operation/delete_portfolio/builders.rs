@@ -3,6 +3,23 @@ pub use crate::operation::delete_portfolio::_delete_portfolio_output::DeletePort
 
 pub use crate::operation::delete_portfolio::_delete_portfolio_input::DeletePortfolioInputBuilder;
 
+impl DeletePortfolioInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_portfolio::DeletePortfolioOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_portfolio::DeletePortfolioError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_portfolio();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeletePortfolio`.
 ///
 /// <p>Deletes the specified portfolio.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::disassociate_node::_disassociate_node_output::Disassoc
 
 pub use crate::operation::disassociate_node::_disassociate_node_input::DisassociateNodeInputBuilder;
 
+impl DisassociateNodeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_node::DisassociateNodeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_node::DisassociateNodeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disassociate_node();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateNode`.
 ///
 /// <p> Disassociates a node from an AWS OpsWorks CM server, and removes the node from the server's managed nodes. After a node is disassociated, the node key pair is no longer valid for accessing the configuration manager's API. For more information about how to associate a node, see <code>AssociateNode</code>. </p>

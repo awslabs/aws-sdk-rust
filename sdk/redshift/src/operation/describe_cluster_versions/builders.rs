@@ -3,6 +3,23 @@ pub use crate::operation::describe_cluster_versions::_describe_cluster_versions_
 
 pub use crate::operation::describe_cluster_versions::_describe_cluster_versions_input::DescribeClusterVersionsInputBuilder;
 
+impl DescribeClusterVersionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_cluster_versions::DescribeClusterVersionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_cluster_versions::DescribeClusterVersionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_cluster_versions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeClusterVersions`.
 ///
 /// <p>Returns descriptions of the available Amazon Redshift cluster versions. You can call this operation even before creating any clusters to learn more about the Amazon Redshift versions. For more information about managing clusters, go to <a href="https://docs.aws.amazon.com/redshift/latest/mgmt/working-with-clusters.html">Amazon Redshift Clusters</a> in the <i>Amazon Redshift Cluster Management Guide</i>.</p>

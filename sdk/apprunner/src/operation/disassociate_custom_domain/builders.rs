@@ -3,6 +3,23 @@ pub use crate::operation::disassociate_custom_domain::_disassociate_custom_domai
 
 pub use crate::operation::disassociate_custom_domain::_disassociate_custom_domain_input::DisassociateCustomDomainInputBuilder;
 
+impl DisassociateCustomDomainInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::disassociate_custom_domain::DisassociateCustomDomainOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::disassociate_custom_domain::DisassociateCustomDomainError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.disassociate_custom_domain();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DisassociateCustomDomain`.
 ///
 /// <p>Disassociate a custom domain name from an App Runner service.</p>

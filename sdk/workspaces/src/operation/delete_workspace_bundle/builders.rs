@@ -3,6 +3,23 @@ pub use crate::operation::delete_workspace_bundle::_delete_workspace_bundle_outp
 
 pub use crate::operation::delete_workspace_bundle::_delete_workspace_bundle_input::DeleteWorkspaceBundleInputBuilder;
 
+impl DeleteWorkspaceBundleInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_workspace_bundle::DeleteWorkspaceBundleOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_workspace_bundle::DeleteWorkspaceBundleError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_workspace_bundle();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteWorkspaceBundle`.
 ///
 /// <p>Deletes the specified WorkSpace bundle. For more information about deleting WorkSpace bundles, see <a href="https://docs.aws.amazon.com/workspaces/latest/adminguide/delete_bundle.html"> Delete a Custom WorkSpaces Bundle or Image</a>.</p>

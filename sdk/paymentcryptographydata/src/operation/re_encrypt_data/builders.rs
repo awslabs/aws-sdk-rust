@@ -3,6 +3,23 @@ pub use crate::operation::re_encrypt_data::_re_encrypt_data_output::ReEncryptDat
 
 pub use crate::operation::re_encrypt_data::_re_encrypt_data_input::ReEncryptDataInputBuilder;
 
+impl ReEncryptDataInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::re_encrypt_data::ReEncryptDataOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::re_encrypt_data::ReEncryptDataError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.re_encrypt_data();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ReEncryptData`.
 ///
 /// <p>Re-encrypt ciphertext using DUKPT, Symmetric and Asymmetric Data Encryption Keys. </p>

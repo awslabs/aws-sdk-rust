@@ -3,6 +3,23 @@ pub use crate::operation::create_db_proxy_endpoint::_create_db_proxy_endpoint_ou
 
 pub use crate::operation::create_db_proxy_endpoint::_create_db_proxy_endpoint_input::CreateDbProxyEndpointInputBuilder;
 
+impl CreateDbProxyEndpointInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_db_proxy_endpoint::CreateDbProxyEndpointOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_db_proxy_endpoint::CreateDBProxyEndpointError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_db_proxy_endpoint();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateDBProxyEndpoint`.
 ///
 /// <p>Creates a <code>DBProxyEndpoint</code>. Only applies to proxies that are associated with Aurora DB clusters. You can use DB proxy endpoints to specify read/write or read-only access to the DB cluster. You can also use DB proxy endpoints to access a DB proxy through a different VPC than the proxy's default VPC.</p>

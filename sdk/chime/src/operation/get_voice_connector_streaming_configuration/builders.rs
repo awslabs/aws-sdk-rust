@@ -3,6 +3,17 @@ pub use crate::operation::get_voice_connector_streaming_configuration::_get_voic
 
 pub use crate::operation::get_voice_connector_streaming_configuration::_get_voice_connector_streaming_configuration_input::GetVoiceConnectorStreamingConfigurationInputBuilder;
 
+impl GetVoiceConnectorStreamingConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_voice_connector_streaming_configuration::GetVoiceConnectorStreamingConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_voice_connector_streaming_configuration::GetVoiceConnectorStreamingConfigurationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_voice_connector_streaming_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetVoiceConnectorStreamingConfiguration`.
 ///
 /// <p>Retrieves the streaming configuration details for the specified Amazon Chime Voice Connector. Shows whether media streaming is enabled for sending to Amazon Kinesis. It also shows the retention period, in hours, for the Amazon Kinesis data.</p> <important>

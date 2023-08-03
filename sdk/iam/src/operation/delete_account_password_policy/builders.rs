@@ -3,6 +3,23 @@ pub use crate::operation::delete_account_password_policy::_delete_account_passwo
 
 pub use crate::operation::delete_account_password_policy::_delete_account_password_policy_input::DeleteAccountPasswordPolicyInputBuilder;
 
+impl DeleteAccountPasswordPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_account_password_policy::DeleteAccountPasswordPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_account_password_policy::DeleteAccountPasswordPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_account_password_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteAccountPasswordPolicy`.
 ///
 /// <p>Deletes the password policy for the Amazon Web Services account. There are no parameters.</p>

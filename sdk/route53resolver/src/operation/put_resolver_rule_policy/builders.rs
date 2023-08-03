@@ -3,6 +3,23 @@ pub use crate::operation::put_resolver_rule_policy::_put_resolver_rule_policy_ou
 
 pub use crate::operation::put_resolver_rule_policy::_put_resolver_rule_policy_input::PutResolverRulePolicyInputBuilder;
 
+impl PutResolverRulePolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_resolver_rule_policy::PutResolverRulePolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_resolver_rule_policy::PutResolverRulePolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_resolver_rule_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutResolverRulePolicy`.
 ///
 /// <p>Specifies an Amazon Web Services rule that you want to share with another account, the account that you want to share the rule with, and the operations that you want the account to be able to perform on the rule.</p>

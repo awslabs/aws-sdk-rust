@@ -3,6 +3,23 @@ pub use crate::operation::create_authentication_profile::_create_authentication_
 
 pub use crate::operation::create_authentication_profile::_create_authentication_profile_input::CreateAuthenticationProfileInputBuilder;
 
+impl CreateAuthenticationProfileInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_authentication_profile::CreateAuthenticationProfileOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_authentication_profile::CreateAuthenticationProfileError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_authentication_profile();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateAuthenticationProfile`.
 ///
 /// <p>Creates an authentication profile with the specified parameters.</p>

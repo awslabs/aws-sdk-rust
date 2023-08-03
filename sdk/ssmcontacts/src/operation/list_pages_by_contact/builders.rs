@@ -3,6 +3,23 @@ pub use crate::operation::list_pages_by_contact::_list_pages_by_contact_output::
 
 pub use crate::operation::list_pages_by_contact::_list_pages_by_contact_input::ListPagesByContactInputBuilder;
 
+impl ListPagesByContactInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_pages_by_contact::ListPagesByContactOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_pages_by_contact::ListPagesByContactError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_pages_by_contact();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListPagesByContact`.
 ///
 /// <p>Lists the engagements to a contact's contact channels.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_asset_bundle_import_jobs::_list_asset_bundle_impo
 
 pub use crate::operation::list_asset_bundle_import_jobs::_list_asset_bundle_import_jobs_input::ListAssetBundleImportJobsInputBuilder;
 
+impl ListAssetBundleImportJobsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_asset_bundle_import_jobs::ListAssetBundleImportJobsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_asset_bundle_import_jobs::ListAssetBundleImportJobsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_asset_bundle_import_jobs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAssetBundleImportJobs`.
 ///
 /// <p>Lists all asset bundle import jobs that have taken place in the last 14 days. Jobs created more than 14 days ago are deleted forever and are not returned. If you are using the same job ID for multiple jobs, <code>ListAssetBundleImportJobs</code> only returns the most recent job that uses the repeated job ID.</p>

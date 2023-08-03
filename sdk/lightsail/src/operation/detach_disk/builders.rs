@@ -3,6 +3,23 @@ pub use crate::operation::detach_disk::_detach_disk_output::DetachDiskOutputBuil
 
 pub use crate::operation::detach_disk::_detach_disk_input::DetachDiskInputBuilder;
 
+impl DetachDiskInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::detach_disk::DetachDiskOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::detach_disk::DetachDiskError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.detach_disk();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DetachDisk`.
 ///
 /// <p>Detaches a stopped block storage disk from a Lightsail instance. Make sure to unmount any file systems on the device within your operating system before stopping the instance and detaching the disk.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::update_action_target::_update_action_target_output::Up
 
 pub use crate::operation::update_action_target::_update_action_target_input::UpdateActionTargetInputBuilder;
 
+impl UpdateActionTargetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_action_target::UpdateActionTargetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_action_target::UpdateActionTargetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_action_target();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateActionTarget`.
 ///
 /// <p>Updates the name and description of a custom action target in Security Hub.</p>

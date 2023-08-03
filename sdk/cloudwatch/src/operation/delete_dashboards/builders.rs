@@ -3,6 +3,23 @@ pub use crate::operation::delete_dashboards::_delete_dashboards_output::DeleteDa
 
 pub use crate::operation::delete_dashboards::_delete_dashboards_input::DeleteDashboardsInputBuilder;
 
+impl DeleteDashboardsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_dashboards::DeleteDashboardsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_dashboards::DeleteDashboardsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_dashboards();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteDashboards`.
 ///
 /// <p>Deletes all dashboards that you specify. You can specify up to 100 dashboards to delete. If there is an error during this call, no dashboards are deleted.</p>

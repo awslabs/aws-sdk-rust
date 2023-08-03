@@ -3,6 +3,23 @@ pub use crate::operation::get_theme::_get_theme_output::GetThemeOutputBuilder;
 
 pub use crate::operation::get_theme::_get_theme_input::GetThemeInputBuilder;
 
+impl GetThemeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_theme::GetThemeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_theme::GetThemeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_theme();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetTheme`.
 ///
 /// <p>Returns an existing theme for an Amplify app.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::decrease_replica_count::_decrease_replica_count_output
 
 pub use crate::operation::decrease_replica_count::_decrease_replica_count_input::DecreaseReplicaCountInputBuilder;
 
+impl DecreaseReplicaCountInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::decrease_replica_count::DecreaseReplicaCountOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::decrease_replica_count::DecreaseReplicaCountError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.decrease_replica_count();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DecreaseReplicaCount`.
 ///
 /// <p>Dynamically decreases the number of replicas in a Redis (cluster mode disabled) replication group or the number of replica nodes in one or more node groups (shards) of a Redis (cluster mode enabled) replication group. This operation is performed with no cluster down time.</p>

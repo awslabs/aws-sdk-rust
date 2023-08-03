@@ -3,6 +3,17 @@ pub use crate::operation::batch_disassociate_client_device_from_core_device::_ba
 
 pub use crate::operation::batch_disassociate_client_device_from_core_device::_batch_disassociate_client_device_from_core_device_input::BatchDisassociateClientDeviceFromCoreDeviceInputBuilder;
 
+impl BatchDisassociateClientDeviceFromCoreDeviceInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::batch_disassociate_client_device_from_core_device::BatchDisassociateClientDeviceFromCoreDeviceOutput, ::aws_smithy_http::result::SdkError<crate::operation::batch_disassociate_client_device_from_core_device::BatchDisassociateClientDeviceFromCoreDeviceError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.batch_disassociate_client_device_from_core_device();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchDisassociateClientDeviceFromCoreDevice`.
 ///
 /// <p>Disassociates a list of client devices from a core device. After you disassociate a client device from a core device, the client device won't be able to use cloud discovery to retrieve the core device's connectivity information and certificates.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_placement_group::_delete_placement_group_output
 
 pub use crate::operation::delete_placement_group::_delete_placement_group_input::DeletePlacementGroupInputBuilder;
 
+impl DeletePlacementGroupInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_placement_group::DeletePlacementGroupOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_placement_group::DeletePlacementGroupError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_placement_group();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeletePlacementGroup`.
 ///
 /// <p>Deletes the specified placement group. You must terminate all instances in the placement group before you can delete the placement group. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/placement-groups.html">Placement groups</a> in the <i>Amazon EC2 User Guide</i>.</p>

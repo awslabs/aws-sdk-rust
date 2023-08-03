@@ -3,6 +3,23 @@ pub use crate::operation::list_samples::_list_samples_output::ListSamplesOutputB
 
 pub use crate::operation::list_samples::_list_samples_input::ListSamplesInputBuilder;
 
+impl ListSamplesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_samples::ListSamplesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_samples::ListSamplesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_samples();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListSamples`.
 ///
 /// <p>Gets information about samples, given an AWS Device Farm job ARN.</p>

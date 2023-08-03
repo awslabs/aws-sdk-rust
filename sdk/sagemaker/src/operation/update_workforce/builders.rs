@@ -3,6 +3,23 @@ pub use crate::operation::update_workforce::_update_workforce_output::UpdateWork
 
 pub use crate::operation::update_workforce::_update_workforce_input::UpdateWorkforceInputBuilder;
 
+impl UpdateWorkforceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_workforce::UpdateWorkforceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_workforce::UpdateWorkforceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_workforce();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateWorkforce`.
 ///
 /// <p>Use this operation to update your workforce. You can use this operation to require that workers use specific IP addresses to work on tasks and to update your OpenID Connect (OIDC) Identity Provider (IdP) workforce configuration.</p>

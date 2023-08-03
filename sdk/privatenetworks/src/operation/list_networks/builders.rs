@@ -3,6 +3,23 @@ pub use crate::operation::list_networks::_list_networks_output::ListNetworksOutp
 
 pub use crate::operation::list_networks::_list_networks_input::ListNetworksInputBuilder;
 
+impl ListNetworksInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_networks::ListNetworksOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_networks::ListNetworksError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_networks();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListNetworks`.
 ///
 /// <p>Lists networks. Add filters to your request to return a more specific list of results. Use filters to match the status of the network.</p>

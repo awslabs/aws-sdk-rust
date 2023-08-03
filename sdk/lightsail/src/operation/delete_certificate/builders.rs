@@ -3,6 +3,23 @@ pub use crate::operation::delete_certificate::_delete_certificate_output::Delete
 
 pub use crate::operation::delete_certificate::_delete_certificate_input::DeleteCertificateInputBuilder;
 
+impl DeleteCertificateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_certificate::DeleteCertificateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_certificate::DeleteCertificateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_certificate();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteCertificate`.
 ///
 /// <p>Deletes an SSL/TLS certificate for your Amazon Lightsail content delivery network (CDN) distribution.</p>

@@ -3,6 +3,17 @@ pub use crate::operation::list_distributions_by_origin_request_policy_id::_list_
 
 pub use crate::operation::list_distributions_by_origin_request_policy_id::_list_distributions_by_origin_request_policy_id_input::ListDistributionsByOriginRequestPolicyIdInputBuilder;
 
+impl ListDistributionsByOriginRequestPolicyIdInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::list_distributions_by_origin_request_policy_id::ListDistributionsByOriginRequestPolicyIdOutput, ::aws_smithy_http::result::SdkError<crate::operation::list_distributions_by_origin_request_policy_id::ListDistributionsByOriginRequestPolicyIdError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.list_distributions_by_origin_request_policy_id();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDistributionsByOriginRequestPolicyId`.
 ///
 /// <p>Gets a list of distribution IDs for distributions that have a cache behavior that's associated with the specified origin request policy.</p>

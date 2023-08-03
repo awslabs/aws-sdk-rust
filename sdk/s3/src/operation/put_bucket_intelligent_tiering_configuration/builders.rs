@@ -3,6 +3,17 @@ pub use crate::operation::put_bucket_intelligent_tiering_configuration::_put_buc
 
 pub use crate::operation::put_bucket_intelligent_tiering_configuration::_put_bucket_intelligent_tiering_configuration_input::PutBucketIntelligentTieringConfigurationInputBuilder;
 
+impl PutBucketIntelligentTieringConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::put_bucket_intelligent_tiering_configuration::PutBucketIntelligentTieringConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_bucket_intelligent_tiering_configuration::PutBucketIntelligentTieringConfigurationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.put_bucket_intelligent_tiering_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutBucketIntelligentTieringConfiguration`.
 ///
 /// <p>Puts a S3 Intelligent-Tiering configuration to the specified bucket. You can have up to 1,000 S3 Intelligent-Tiering configurations per bucket.</p>

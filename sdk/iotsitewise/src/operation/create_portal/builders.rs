@@ -3,6 +3,23 @@ pub use crate::operation::create_portal::_create_portal_output::CreatePortalOutp
 
 pub use crate::operation::create_portal::_create_portal_input::CreatePortalInputBuilder;
 
+impl CreatePortalInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_portal::CreatePortalOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_portal::CreatePortalError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_portal();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreatePortal`.
 ///
 /// <p>Creates a portal, which can contain projects and dashboards. IoT SiteWise Monitor uses IAM Identity Center or IAM to authenticate portal users and manage user permissions.</p> <note>

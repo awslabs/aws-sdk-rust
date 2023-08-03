@@ -3,6 +3,23 @@ pub use crate::operation::list_links::_list_links_output::ListLinksOutputBuilder
 
 pub use crate::operation::list_links::_list_links_input::ListLinksInputBuilder;
 
+impl ListLinksInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_links::ListLinksOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_links::ListLinksError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_links();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListLinks`.
 ///
 /// <p>Use this operation in a source account to return a list of links to monitoring account sinks that this source account has.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::expire_session::_expire_session_output::ExpireSessionO
 
 pub use crate::operation::expire_session::_expire_session_input::ExpireSessionInputBuilder;
 
+impl ExpireSessionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::expire_session::ExpireSessionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::expire_session::ExpireSessionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.expire_session();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ExpireSession`.
 ///
 /// <p>Immediately stops the specified streaming session.</p>

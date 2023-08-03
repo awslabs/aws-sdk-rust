@@ -3,6 +3,23 @@ pub use crate::operation::get_trail::_get_trail_output::GetTrailOutputBuilder;
 
 pub use crate::operation::get_trail::_get_trail_input::GetTrailInputBuilder;
 
+impl GetTrailInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_trail::GetTrailOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_trail::GetTrailError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_trail();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetTrail`.
 ///
 /// <p>Returns settings information for a specified trail.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::publish_type::_publish_type_output::PublishTypeOutputB
 
 pub use crate::operation::publish_type::_publish_type_input::PublishTypeInputBuilder;
 
+impl PublishTypeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::publish_type::PublishTypeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::publish_type::PublishTypeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.publish_type();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PublishType`.
 ///
 /// <p>Publishes the specified extension to the CloudFormation registry as a public extension in this Region. Public extensions are available for use by all CloudFormation users. For more information about publishing extensions, see <a href="https://docs.aws.amazon.com/cloudformation-cli/latest/userguide/publish-extension.html">Publishing extensions to make them available for public use</a> in the <i>CloudFormation CLI User Guide</i>.</p>

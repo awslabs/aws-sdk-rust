@@ -3,6 +3,23 @@ pub use crate::operation::detach_typed_link::_detach_typed_link_output::DetachTy
 
 pub use crate::operation::detach_typed_link::_detach_typed_link_input::DetachTypedLinkInputBuilder;
 
+impl DetachTypedLinkInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::detach_typed_link::DetachTypedLinkOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::detach_typed_link::DetachTypedLinkError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.detach_typed_link();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DetachTypedLink`.
 ///
 /// <p>Detaches a typed link from a specified source and target object. For more information, see <a href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed Links</a>.</p>

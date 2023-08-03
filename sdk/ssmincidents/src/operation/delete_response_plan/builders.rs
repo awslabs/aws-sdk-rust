@@ -3,6 +3,23 @@ pub use crate::operation::delete_response_plan::_delete_response_plan_output::De
 
 pub use crate::operation::delete_response_plan::_delete_response_plan_input::DeleteResponsePlanInputBuilder;
 
+impl DeleteResponsePlanInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_response_plan::DeleteResponsePlanOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_response_plan::DeleteResponsePlanError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_response_plan();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteResponsePlan`.
 ///
 /// <p>Deletes the specified response plan. Deleting a response plan stops all linked CloudWatch alarms and EventBridge events from creating an incident with this response plan.</p>

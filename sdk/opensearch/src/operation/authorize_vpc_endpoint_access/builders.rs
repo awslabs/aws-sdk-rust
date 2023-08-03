@@ -3,6 +3,23 @@ pub use crate::operation::authorize_vpc_endpoint_access::_authorize_vpc_endpoint
 
 pub use crate::operation::authorize_vpc_endpoint_access::_authorize_vpc_endpoint_access_input::AuthorizeVpcEndpointAccessInputBuilder;
 
+impl AuthorizeVpcEndpointAccessInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::authorize_vpc_endpoint_access::AuthorizeVpcEndpointAccessOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::authorize_vpc_endpoint_access::AuthorizeVpcEndpointAccessError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.authorize_vpc_endpoint_access();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AuthorizeVpcEndpointAccess`.
 ///
 /// <p>Provides access to an Amazon OpenSearch Service domain through the use of an interface VPC endpoint.</p>

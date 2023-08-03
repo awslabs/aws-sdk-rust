@@ -3,6 +3,23 @@ pub use crate::operation::download_db_log_file_portion::_download_db_log_file_po
 
 pub use crate::operation::download_db_log_file_portion::_download_db_log_file_portion_input::DownloadDbLogFilePortionInputBuilder;
 
+impl DownloadDbLogFilePortionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::download_db_log_file_portion::DownloadDbLogFilePortionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::download_db_log_file_portion::DownloadDBLogFilePortionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.download_db_log_file_portion();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DownloadDBLogFilePortion`.
 ///
 /// <p>Downloads all or a portion of the specified log file, up to 1 MB in size.</p>

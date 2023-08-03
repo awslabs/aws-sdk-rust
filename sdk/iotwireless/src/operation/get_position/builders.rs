@@ -3,6 +3,23 @@ pub use crate::operation::get_position::_get_position_output::GetPositionOutputB
 
 pub use crate::operation::get_position::_get_position_input::GetPositionInputBuilder;
 
+impl GetPositionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_position::GetPositionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_position::GetPositionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_position();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetPosition`.
 ///
 /// <p>Get the position information for a given resource.</p> <important>

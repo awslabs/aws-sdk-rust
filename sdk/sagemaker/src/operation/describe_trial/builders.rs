@@ -3,6 +3,23 @@ pub use crate::operation::describe_trial::_describe_trial_output::DescribeTrialO
 
 pub use crate::operation::describe_trial::_describe_trial_input::DescribeTrialInputBuilder;
 
+impl DescribeTrialInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_trial::DescribeTrialOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_trial::DescribeTrialError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_trial();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeTrial`.
 ///
 /// <p>Provides a list of a trial's properties.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::put_scaling_policy::_put_scaling_policy_output::PutSca
 
 pub use crate::operation::put_scaling_policy::_put_scaling_policy_input::PutScalingPolicyInputBuilder;
 
+impl PutScalingPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_scaling_policy::PutScalingPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_scaling_policy::PutScalingPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_scaling_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutScalingPolicy`.
 ///
 /// <p>Creates or updates a scaling policy for a fleet. Scaling policies are used to automatically scale a fleet's hosting capacity to meet player demand. An active scaling policy instructs Amazon GameLift to track a fleet metric and automatically change the fleet's capacity when a certain threshold is reached. There are two types of scaling policies: target-based and rule-based. Use a target-based policy to quickly and efficiently manage fleet scaling; this option is the most commonly used. Use rule-based policies when you need to exert fine-grained control over auto-scaling. </p>

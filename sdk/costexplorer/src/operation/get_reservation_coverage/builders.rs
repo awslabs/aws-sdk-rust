@@ -3,6 +3,23 @@ pub use crate::operation::get_reservation_coverage::_get_reservation_coverage_ou
 
 pub use crate::operation::get_reservation_coverage::_get_reservation_coverage_input::GetReservationCoverageInputBuilder;
 
+impl GetReservationCoverageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_reservation_coverage::GetReservationCoverageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_reservation_coverage::GetReservationCoverageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_reservation_coverage();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetReservationCoverage`.
 ///
 /// <p>Retrieves the reservation coverage for your account, which you can use to see how much of your Amazon Elastic Compute Cloud, Amazon ElastiCache, Amazon Relational Database Service, or Amazon Redshift usage is covered by a reservation. An organization's management account can see the coverage of the associated member accounts. This supports dimensions, Cost Categories, and nested expressions. For any time period, you can filter data about reservation usage by the following dimensions:</p>

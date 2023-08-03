@@ -3,6 +3,23 @@ pub use crate::operation::test_failover::_test_failover_output::TestFailoverOutp
 
 pub use crate::operation::test_failover::_test_failover_input::TestFailoverInputBuilder;
 
+impl TestFailoverInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::test_failover::TestFailoverOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::test_failover::TestFailoverError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.test_failover();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `TestFailover`.
 ///
 /// <p>Represents the input of a <code>TestFailover</code> operation which test automatic failover on a specified node group (called shard in the console) in a replication group (called cluster in the console).</p>

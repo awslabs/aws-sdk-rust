@@ -3,6 +3,23 @@ pub use crate::operation::update_smb_file_share::_update_smb_file_share_output::
 
 pub use crate::operation::update_smb_file_share::_update_smb_file_share_input::UpdateSmbFileShareInputBuilder;
 
+impl UpdateSmbFileShareInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_smb_file_share::UpdateSmbFileShareOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_smb_file_share::UpdateSMBFileShareError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_smb_file_share();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateSMBFileShare`.
 ///
 /// <p>Updates a Server Message Block (SMB) file share. This operation is only supported for S3 File Gateways.</p> <note>

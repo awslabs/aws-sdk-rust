@@ -3,6 +3,23 @@ pub use crate::operation::define_expression::_define_expression_output::DefineEx
 
 pub use crate::operation::define_expression::_define_expression_input::DefineExpressionInputBuilder;
 
+impl DefineExpressionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::define_expression::DefineExpressionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::define_expression::DefineExpressionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.define_expression();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DefineExpression`.
 ///
 /// <p>Configures an <code><code>Expression</code></code> for the search domain. Used to create new expressions and modify existing ones. If the expression exists, the new configuration replaces the old one. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html" target="_blank">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.</p>

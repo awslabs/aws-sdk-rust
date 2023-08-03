@@ -3,6 +3,17 @@ pub use crate::operation::enable_application_layer_automatic_response::_enable_a
 
 pub use crate::operation::enable_application_layer_automatic_response::_enable_application_layer_automatic_response_input::EnableApplicationLayerAutomaticResponseInputBuilder;
 
+impl EnableApplicationLayerAutomaticResponseInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::enable_application_layer_automatic_response::EnableApplicationLayerAutomaticResponseOutput, ::aws_smithy_http::result::SdkError<crate::operation::enable_application_layer_automatic_response::EnableApplicationLayerAutomaticResponseError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.enable_application_layer_automatic_response();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `EnableApplicationLayerAutomaticResponse`.
 ///
 /// <p>Enable the Shield Advanced automatic application layer DDoS mitigation for the protected resource. </p> <note>

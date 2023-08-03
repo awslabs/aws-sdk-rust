@@ -3,6 +3,23 @@ pub use crate::operation::create_case::_create_case_output::CreateCaseOutputBuil
 
 pub use crate::operation::create_case::_create_case_input::CreateCaseInputBuilder;
 
+impl CreateCaseInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_case::CreateCaseOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_case::CreateCaseError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_case();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateCase`.
 ///
 /// <p>Creates a case in the specified Cases domain. Case system and custom fields are taken as an array id/value pairs with a declared data types.</p> <note>

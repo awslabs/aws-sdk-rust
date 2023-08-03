@@ -3,6 +3,23 @@ pub use crate::operation::send_heartbeat::_send_heartbeat_output::SendHeartbeatO
 
 pub use crate::operation::send_heartbeat::_send_heartbeat_input::SendHeartbeatInputBuilder;
 
+impl SendHeartbeatInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::send_heartbeat::SendHeartbeatOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::send_heartbeat::SendHeartbeatError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.send_heartbeat();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `SendHeartbeat`.
 ///
 /// <p>Use to get the current status of devices registered on SageMaker Edge Manager.</p>

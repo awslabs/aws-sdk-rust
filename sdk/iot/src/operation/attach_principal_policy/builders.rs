@@ -3,6 +3,23 @@ pub use crate::operation::attach_principal_policy::_attach_principal_policy_outp
 
 pub use crate::operation::attach_principal_policy::_attach_principal_policy_input::AttachPrincipalPolicyInputBuilder;
 
+impl AttachPrincipalPolicyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::attach_principal_policy::AttachPrincipalPolicyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::attach_principal_policy::AttachPrincipalPolicyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.attach_principal_policy();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AttachPrincipalPolicy`.
 ///
 /// <p>Attaches the specified policy to the specified principal (certificate or other credential).</p>

@@ -3,6 +3,23 @@ pub use crate::operation::remove_role_from_db_cluster::_remove_role_from_db_clus
 
 pub use crate::operation::remove_role_from_db_cluster::_remove_role_from_db_cluster_input::RemoveRoleFromDbClusterInputBuilder;
 
+impl RemoveRoleFromDbClusterInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::remove_role_from_db_cluster::RemoveRoleFromDbClusterOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::remove_role_from_db_cluster::RemoveRoleFromDBClusterError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.remove_role_from_db_cluster();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RemoveRoleFromDBCluster`.
 ///
 /// <p>Removes the asssociation of an Amazon Web Services Identity and Access Management (IAM) role from a DB cluster.</p>

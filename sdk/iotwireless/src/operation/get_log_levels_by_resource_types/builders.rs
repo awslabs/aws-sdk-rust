@@ -3,6 +3,23 @@ pub use crate::operation::get_log_levels_by_resource_types::_get_log_levels_by_r
 
 pub use crate::operation::get_log_levels_by_resource_types::_get_log_levels_by_resource_types_input::GetLogLevelsByResourceTypesInputBuilder;
 
+impl GetLogLevelsByResourceTypesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_log_levels_by_resource_types::GetLogLevelsByResourceTypesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_log_levels_by_resource_types::GetLogLevelsByResourceTypesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_log_levels_by_resource_types();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetLogLevelsByResourceTypes`.
 ///
 /// <p>Returns current default log levels or log levels by resource types. Based on resource types, log levels can be for wireless device log options or wireless gateway log options.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::start_connection::_start_connection_output::StartConne
 
 pub use crate::operation::start_connection::_start_connection_input::StartConnectionInputBuilder;
 
+impl StartConnectionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_connection::StartConnectionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_connection::StartConnectionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_connection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartConnection`.
 ///
 /// <note>

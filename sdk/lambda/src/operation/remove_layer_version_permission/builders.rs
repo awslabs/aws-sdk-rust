@@ -3,6 +3,23 @@ pub use crate::operation::remove_layer_version_permission::_remove_layer_version
 
 pub use crate::operation::remove_layer_version_permission::_remove_layer_version_permission_input::RemoveLayerVersionPermissionInputBuilder;
 
+impl RemoveLayerVersionPermissionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::remove_layer_version_permission::RemoveLayerVersionPermissionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.remove_layer_version_permission();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RemoveLayerVersionPermission`.
 ///
 /// <p>Removes a statement from the permissions policy for a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda layer</a>. For more information, see <code>AddLayerVersionPermission</code>.</p>

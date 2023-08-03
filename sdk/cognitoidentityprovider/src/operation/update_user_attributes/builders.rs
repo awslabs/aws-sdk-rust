@@ -3,6 +3,23 @@ pub use crate::operation::update_user_attributes::_update_user_attributes_output
 
 pub use crate::operation::update_user_attributes::_update_user_attributes_input::UpdateUserAttributesInputBuilder;
 
+impl UpdateUserAttributesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_user_attributes::UpdateUserAttributesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_user_attributes::UpdateUserAttributesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_user_attributes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateUserAttributes`.
 ///
 /// <p>Allows a user to update a specific attribute (one at a time).</p> <note>

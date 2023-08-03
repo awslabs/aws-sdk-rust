@@ -3,6 +3,23 @@ pub use crate::operation::update_kx_cluster_databases::_update_kx_cluster_databa
 
 pub use crate::operation::update_kx_cluster_databases::_update_kx_cluster_databases_input::UpdateKxClusterDatabasesInputBuilder;
 
+impl UpdateKxClusterDatabasesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_kx_cluster_databases::UpdateKxClusterDatabasesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_kx_cluster_databases::UpdateKxClusterDatabasesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_kx_cluster_databases();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateKxClusterDatabases`.
 ///
 /// <p>Updates the databases mounted on a kdb cluster, which includes the <code>changesetId</code> and all the dbPaths to be cached. This API does not allow you to change a database name or add a database if you created a cluster without one. </p>

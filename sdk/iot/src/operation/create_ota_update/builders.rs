@@ -3,6 +3,23 @@ pub use crate::operation::create_ota_update::_create_ota_update_output::CreateOt
 
 pub use crate::operation::create_ota_update::_create_ota_update_input::CreateOtaUpdateInputBuilder;
 
+impl CreateOtaUpdateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_ota_update::CreateOtaUpdateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_ota_update::CreateOTAUpdateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_ota_update();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateOTAUpdate`.
 ///
 /// <p>Creates an IoT OTA update on a target group of things or groups.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::associate_channel_flow::_associate_channel_flow_output
 
 pub use crate::operation::associate_channel_flow::_associate_channel_flow_input::AssociateChannelFlowInputBuilder;
 
+impl AssociateChannelFlowInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_channel_flow::AssociateChannelFlowOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_channel_flow::AssociateChannelFlowError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_channel_flow();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateChannelFlow`.
 ///
 /// <p>Associates a channel flow with a channel. Once associated, all messages to that channel go through channel flow processors. To stop processing, use the <code>DisassociateChannelFlow</code> API.</p> <note>

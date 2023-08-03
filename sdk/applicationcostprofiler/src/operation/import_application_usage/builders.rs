@@ -3,6 +3,23 @@ pub use crate::operation::import_application_usage::_import_application_usage_ou
 
 pub use crate::operation::import_application_usage::_import_application_usage_input::ImportApplicationUsageInputBuilder;
 
+impl ImportApplicationUsageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::import_application_usage::ImportApplicationUsageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::import_application_usage::ImportApplicationUsageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.import_application_usage();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ImportApplicationUsage`.
 ///
 /// <p>Ingests application usage data from Amazon Simple Storage Service (Amazon S3).</p>

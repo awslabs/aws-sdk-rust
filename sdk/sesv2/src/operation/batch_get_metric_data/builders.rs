@@ -3,6 +3,23 @@ pub use crate::operation::batch_get_metric_data::_batch_get_metric_data_output::
 
 pub use crate::operation::batch_get_metric_data::_batch_get_metric_data_input::BatchGetMetricDataInputBuilder;
 
+impl BatchGetMetricDataInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::batch_get_metric_data::BatchGetMetricDataOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::batch_get_metric_data::BatchGetMetricDataError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.batch_get_metric_data();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `BatchGetMetricData`.
 ///
 /// <p>Retrieves batches of metric data collected based on your sending activity.</p>

@@ -3,6 +3,17 @@ pub use crate::operation::cancel_replication_task_assessment_run::_cancel_replic
 
 pub use crate::operation::cancel_replication_task_assessment_run::_cancel_replication_task_assessment_run_input::CancelReplicationTaskAssessmentRunInputBuilder;
 
+impl CancelReplicationTaskAssessmentRunInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::cancel_replication_task_assessment_run::CancelReplicationTaskAssessmentRunOutput, ::aws_smithy_http::result::SdkError<crate::operation::cancel_replication_task_assessment_run::CancelReplicationTaskAssessmentRunError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.cancel_replication_task_assessment_run();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CancelReplicationTaskAssessmentRun`.
 ///
 /// <p>Cancels a single premigration assessment run.</p>

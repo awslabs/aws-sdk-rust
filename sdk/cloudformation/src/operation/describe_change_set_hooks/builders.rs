@@ -3,6 +3,23 @@ pub use crate::operation::describe_change_set_hooks::_describe_change_set_hooks_
 
 pub use crate::operation::describe_change_set_hooks::_describe_change_set_hooks_input::DescribeChangeSetHooksInputBuilder;
 
+impl DescribeChangeSetHooksInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_change_set_hooks::DescribeChangeSetHooksOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_change_set_hooks::DescribeChangeSetHooksError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_change_set_hooks();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeChangeSetHooks`.
 ///
 /// <p>Returns hook-related information for the change set and a list of changes that CloudFormation makes when you run the change set.</p>

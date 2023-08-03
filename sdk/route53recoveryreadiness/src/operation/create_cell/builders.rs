@@ -3,6 +3,23 @@ pub use crate::operation::create_cell::_create_cell_output::CreateCellOutputBuil
 
 pub use crate::operation::create_cell::_create_cell_input::CreateCellInputBuilder;
 
+impl CreateCellInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_cell::CreateCellOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_cell::CreateCellError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_cell();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateCell`.
 ///
 /// <p>Creates a cell in an account.</p>

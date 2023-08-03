@@ -3,6 +3,23 @@ pub use crate::operation::describe_location_fsx_open_zfs::_describe_location_fsx
 
 pub use crate::operation::describe_location_fsx_open_zfs::_describe_location_fsx_open_zfs_input::DescribeLocationFsxOpenZfsInputBuilder;
 
+impl DescribeLocationFsxOpenZfsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_location_fsx_open_zfs::DescribeLocationFsxOpenZfsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_location_fsx_open_zfs::DescribeLocationFsxOpenZfsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_location_fsx_open_zfs();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeLocationFsxOpenZfs`.
 ///
 /// <p>Provides details about how an DataSync location for an Amazon FSx for OpenZFS file system is configured.</p> <note>

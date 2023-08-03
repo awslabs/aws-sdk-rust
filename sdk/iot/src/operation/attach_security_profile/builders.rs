@@ -3,6 +3,23 @@ pub use crate::operation::attach_security_profile::_attach_security_profile_outp
 
 pub use crate::operation::attach_security_profile::_attach_security_profile_input::AttachSecurityProfileInputBuilder;
 
+impl AttachSecurityProfileInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::attach_security_profile::AttachSecurityProfileOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::attach_security_profile::AttachSecurityProfileError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.attach_security_profile();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AttachSecurityProfile`.
 ///
 /// <p>Associates a Device Defender security profile with a thing group or this account. Each thing group or account can have up to five security profiles associated with it.</p>

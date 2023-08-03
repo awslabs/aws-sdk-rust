@@ -3,6 +3,23 @@ pub use crate::operation::describe_load_based_auto_scaling::_describe_load_based
 
 pub use crate::operation::describe_load_based_auto_scaling::_describe_load_based_auto_scaling_input::DescribeLoadBasedAutoScalingInputBuilder;
 
+impl DescribeLoadBasedAutoScalingInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_load_based_auto_scaling::DescribeLoadBasedAutoScalingOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_load_based_auto_scaling::DescribeLoadBasedAutoScalingError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_load_based_auto_scaling();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeLoadBasedAutoScaling`.
 ///
 /// <p>Describes load-based auto scaling configurations for specified layers.</p> <note>

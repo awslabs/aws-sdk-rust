@@ -3,6 +3,23 @@ pub use crate::operation::create_pool::_create_pool_output::CreatePoolOutputBuil
 
 pub use crate::operation::create_pool::_create_pool_input::CreatePoolInputBuilder;
 
+impl CreatePoolInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_pool::CreatePoolOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_pool::CreatePoolError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_pool();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreatePool`.
 ///
 /// <p>Creates a new pool and associates the specified origination identity to the pool. A pool can include one or more phone numbers and SenderIds that are associated with your Amazon Web Services account.</p>

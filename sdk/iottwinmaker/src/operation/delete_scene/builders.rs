@@ -3,6 +3,23 @@ pub use crate::operation::delete_scene::_delete_scene_output::DeleteSceneOutputB
 
 pub use crate::operation::delete_scene::_delete_scene_input::DeleteSceneInputBuilder;
 
+impl DeleteSceneInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_scene::DeleteSceneOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_scene::DeleteSceneError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_scene();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteScene`.
 ///
 /// <p>Deletes a scene.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::delete_identities::_delete_identities_output::DeleteId
 
 pub use crate::operation::delete_identities::_delete_identities_input::DeleteIdentitiesInputBuilder;
 
+impl DeleteIdentitiesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_identities::DeleteIdentitiesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_identities::DeleteIdentitiesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_identities();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteIdentities`.
 ///
 /// <p>Deletes identities from an identity pool. You can specify a list of 1-60 identities that you want to delete.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_traffic_policy_instances::_list_traffic_policy_in
 
 pub use crate::operation::list_traffic_policy_instances::_list_traffic_policy_instances_input::ListTrafficPolicyInstancesInputBuilder;
 
+impl ListTrafficPolicyInstancesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_traffic_policy_instances::ListTrafficPolicyInstancesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_traffic_policy_instances::ListTrafficPolicyInstancesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_traffic_policy_instances();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListTrafficPolicyInstances`.
 ///
 /// <p>Gets information about the traffic policy instances that you created by using the current Amazon Web Services account.</p> <note>

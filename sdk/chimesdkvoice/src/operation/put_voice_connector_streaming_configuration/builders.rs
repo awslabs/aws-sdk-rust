@@ -3,6 +3,17 @@ pub use crate::operation::put_voice_connector_streaming_configuration::_put_voic
 
 pub use crate::operation::put_voice_connector_streaming_configuration::_put_voice_connector_streaming_configuration_input::PutVoiceConnectorStreamingConfigurationInputBuilder;
 
+impl PutVoiceConnectorStreamingConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::put_voice_connector_streaming_configuration::PutVoiceConnectorStreamingConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::put_voice_connector_streaming_configuration::PutVoiceConnectorStreamingConfigurationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.put_voice_connector_streaming_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutVoiceConnectorStreamingConfiguration`.
 ///
 /// <p>Updates a Voice Connector's streaming configuration settings.</p>

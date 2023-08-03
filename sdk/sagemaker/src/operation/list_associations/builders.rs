@@ -3,6 +3,23 @@ pub use crate::operation::list_associations::_list_associations_output::ListAsso
 
 pub use crate::operation::list_associations::_list_associations_input::ListAssociationsInputBuilder;
 
+impl ListAssociationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_associations::ListAssociationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_associations::ListAssociationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_associations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAssociations`.
 ///
 /// <p>Lists the associations in your account and their properties.</p>

@@ -3,6 +3,17 @@ pub use crate::operation::describe_egress_only_internet_gateways::_describe_egre
 
 pub use crate::operation::describe_egress_only_internet_gateways::_describe_egress_only_internet_gateways_input::DescribeEgressOnlyInternetGatewaysInputBuilder;
 
+impl DescribeEgressOnlyInternetGatewaysInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::describe_egress_only_internet_gateways::DescribeEgressOnlyInternetGatewaysOutput, ::aws_smithy_http::result::SdkError<crate::operation::describe_egress_only_internet_gateways::DescribeEgressOnlyInternetGatewaysError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.describe_egress_only_internet_gateways();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeEgressOnlyInternetGateways`.
 ///
 /// <p>Describes one or more of your egress-only internet gateways.</p>

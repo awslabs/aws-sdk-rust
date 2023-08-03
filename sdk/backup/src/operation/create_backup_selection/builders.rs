@@ -3,6 +3,23 @@ pub use crate::operation::create_backup_selection::_create_backup_selection_outp
 
 pub use crate::operation::create_backup_selection::_create_backup_selection_input::CreateBackupSelectionInputBuilder;
 
+impl CreateBackupSelectionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_backup_selection::CreateBackupSelectionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_backup_selection::CreateBackupSelectionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_backup_selection();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateBackupSelection`.
 ///
 /// <p>Creates a JSON document that specifies a set of resources to assign to a backup plan. For examples, see <a href="https://docs.aws.amazon.com/aws-backup/latest/devguide/assigning-resources.html#assigning-resources-json">Assigning resources programmatically</a>. </p>

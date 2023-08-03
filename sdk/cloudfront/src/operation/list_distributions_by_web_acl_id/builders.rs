@@ -3,6 +3,23 @@ pub use crate::operation::list_distributions_by_web_acl_id::_list_distributions_
 
 pub use crate::operation::list_distributions_by_web_acl_id::_list_distributions_by_web_acl_id_input::ListDistributionsByWebAclIdInputBuilder;
 
+impl ListDistributionsByWebAclIdInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebAclIdOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_distributions_by_web_acl_id::ListDistributionsByWebACLIdError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_distributions_by_web_acl_id();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListDistributionsByWebACLId`.
 ///
 /// <p>List the distributions that are associated with a specified WAF web ACL.</p>

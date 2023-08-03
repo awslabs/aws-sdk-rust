@@ -3,6 +3,23 @@ pub use crate::operation::authorize_security_group_egress::_authorize_security_g
 
 pub use crate::operation::authorize_security_group_egress::_authorize_security_group_egress_input::AuthorizeSecurityGroupEgressInputBuilder;
 
+impl AuthorizeSecurityGroupEgressInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::authorize_security_group_egress::AuthorizeSecurityGroupEgressOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::authorize_security_group_egress::AuthorizeSecurityGroupEgressError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.authorize_security_group_egress();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AuthorizeSecurityGroupEgress`.
 ///
 /// <p>Adds the specified outbound (egress) rules to a security group for use with a VPC.</p>

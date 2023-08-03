@@ -3,6 +3,17 @@ pub use crate::operation::delete_voice_connector_termination::_delete_voice_conn
 
 pub use crate::operation::delete_voice_connector_termination::_delete_voice_connector_termination_input::DeleteVoiceConnectorTerminationInputBuilder;
 
+impl DeleteVoiceConnectorTerminationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_voice_connector_termination::DeleteVoiceConnectorTerminationOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_voice_connector_termination::DeleteVoiceConnectorTerminationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.delete_voice_connector_termination();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteVoiceConnectorTermination`.
 ///
 /// <p>Deletes the termination settings for the specified Amazon Chime Voice Connector.</p> <note>

@@ -3,6 +3,17 @@ pub use crate::operation::register_organization_delegated_admin::_register_organ
 
 pub use crate::operation::register_organization_delegated_admin::_register_organization_delegated_admin_input::RegisterOrganizationDelegatedAdminInputBuilder;
 
+impl RegisterOrganizationDelegatedAdminInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdminOutput, ::aws_smithy_http::result::SdkError<crate::operation::register_organization_delegated_admin::RegisterOrganizationDelegatedAdminError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.register_organization_delegated_admin();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RegisterOrganizationDelegatedAdmin`.
 ///
 /// <p>Registers an organization’s member account as the CloudTrail delegated administrator.</p>

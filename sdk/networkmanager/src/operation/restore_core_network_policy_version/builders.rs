@@ -3,6 +3,17 @@ pub use crate::operation::restore_core_network_policy_version::_restore_core_net
 
 pub use crate::operation::restore_core_network_policy_version::_restore_core_network_policy_version_input::RestoreCoreNetworkPolicyVersionInputBuilder;
 
+impl RestoreCoreNetworkPolicyVersionInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::restore_core_network_policy_version::RestoreCoreNetworkPolicyVersionOutput, ::aws_smithy_http::result::SdkError<crate::operation::restore_core_network_policy_version::RestoreCoreNetworkPolicyVersionError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.restore_core_network_policy_version();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RestoreCoreNetworkPolicyVersion`.
 ///
 /// <p>Restores a previous policy version as a new, immutable version of a core network policy. A subsequent change set is created showing the differences between the LIVE policy and restored policy.</p>

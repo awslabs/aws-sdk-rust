@@ -3,6 +3,23 @@ pub use crate::operation::create_permission_set::_create_permission_set_output::
 
 pub use crate::operation::create_permission_set::_create_permission_set_input::CreatePermissionSetInputBuilder;
 
+impl CreatePermissionSetInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_permission_set::CreatePermissionSetOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_permission_set::CreatePermissionSetError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_permission_set();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreatePermissionSet`.
 ///
 /// <p>Creates a permission set within a specified IAM Identity Center instance.</p> <note>

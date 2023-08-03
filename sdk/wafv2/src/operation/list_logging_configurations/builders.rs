@@ -3,6 +3,23 @@ pub use crate::operation::list_logging_configurations::_list_logging_configurati
 
 pub use crate::operation::list_logging_configurations::_list_logging_configurations_input::ListLoggingConfigurationsInputBuilder;
 
+impl ListLoggingConfigurationsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_logging_configurations::ListLoggingConfigurationsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_logging_configurations::ListLoggingConfigurationsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_logging_configurations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListLoggingConfigurations`.
 ///
 /// <p>Retrieves an array of your <code>LoggingConfiguration</code> objects.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::create_named_query::_create_named_query_output::Create
 
 pub use crate::operation::create_named_query::_create_named_query_input::CreateNamedQueryInputBuilder;
 
+impl CreateNamedQueryInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_named_query::CreateNamedQueryOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_named_query::CreateNamedQueryError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_named_query();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateNamedQuery`.
 ///
 /// <p>Creates a named query in the specified workgroup. Requires that you have access to the workgroup.</p>

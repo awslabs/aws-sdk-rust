@@ -3,6 +3,23 @@ pub use crate::operation::update_map::_update_map_output::UpdateMapOutputBuilder
 
 pub use crate::operation::update_map::_update_map_input::UpdateMapInputBuilder;
 
+impl UpdateMapInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_map::UpdateMapOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_map::UpdateMapError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_map();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateMap`.
 ///
 /// <p>Updates the specified properties of a given map resource.</p>

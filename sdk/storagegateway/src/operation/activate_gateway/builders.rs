@@ -3,6 +3,23 @@ pub use crate::operation::activate_gateway::_activate_gateway_output::ActivateGa
 
 pub use crate::operation::activate_gateway::_activate_gateway_input::ActivateGatewayInputBuilder;
 
+impl ActivateGatewayInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::activate_gateway::ActivateGatewayOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::activate_gateway::ActivateGatewayError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.activate_gateway();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ActivateGateway`.
 ///
 /// <p>Activates the gateway you previously deployed on your host. In the activation process, you specify information such as the Amazon Web Services Region that you want to use for storing snapshots or tapes, the time zone for scheduled snapshots the gateway snapshot schedule window, an activation key, and a name for your gateway. The activation process also associates your gateway with your account. For more information, see <code>UpdateGatewayInformation</code>.</p> <note>

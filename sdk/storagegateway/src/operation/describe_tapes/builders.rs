@@ -3,6 +3,23 @@ pub use crate::operation::describe_tapes::_describe_tapes_output::DescribeTapesO
 
 pub use crate::operation::describe_tapes::_describe_tapes_input::DescribeTapesInputBuilder;
 
+impl DescribeTapesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::describe_tapes::DescribeTapesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::describe_tapes::DescribeTapesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.describe_tapes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DescribeTapes`.
 ///
 /// <p>Returns a description of the specified Amazon Resource Name (ARN) of virtual tapes. If a <code>TapeARN</code> is not specified, returns a description of all virtual tapes associated with the specified gateway. This operation is only supported in the tape gateway type.</p>

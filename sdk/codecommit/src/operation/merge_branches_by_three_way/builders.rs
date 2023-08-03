@@ -3,6 +3,23 @@ pub use crate::operation::merge_branches_by_three_way::_merge_branches_by_three_
 
 pub use crate::operation::merge_branches_by_three_way::_merge_branches_by_three_way_input::MergeBranchesByThreeWayInputBuilder;
 
+impl MergeBranchesByThreeWayInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::merge_branches_by_three_way::MergeBranchesByThreeWayOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::merge_branches_by_three_way::MergeBranchesByThreeWayError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.merge_branches_by_three_way();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `MergeBranchesByThreeWay`.
 ///
 /// <p>Merges two specified branches using the three-way merge strategy.</p>

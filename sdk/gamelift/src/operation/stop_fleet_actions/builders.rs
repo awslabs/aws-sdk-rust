@@ -3,6 +3,23 @@ pub use crate::operation::stop_fleet_actions::_stop_fleet_actions_output::StopFl
 
 pub use crate::operation::stop_fleet_actions::_stop_fleet_actions_input::StopFleetActionsInputBuilder;
 
+impl StopFleetActionsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::stop_fleet_actions::StopFleetActionsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::stop_fleet_actions::StopFleetActionsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.stop_fleet_actions();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StopFleetActions`.
 ///
 /// <p>Suspends certain types of activity in a fleet location. Currently, this operation is used to stop auto-scaling activity. For multi-location fleets, fleet actions are managed separately for each location. </p>

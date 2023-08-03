@@ -3,6 +3,23 @@ pub use crate::operation::add_custom_routing_endpoints::_add_custom_routing_endp
 
 pub use crate::operation::add_custom_routing_endpoints::_add_custom_routing_endpoints_input::AddCustomRoutingEndpointsInputBuilder;
 
+impl AddCustomRoutingEndpointsInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::add_custom_routing_endpoints::AddCustomRoutingEndpointsOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::add_custom_routing_endpoints::AddCustomRoutingEndpointsError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.add_custom_routing_endpoints();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AddCustomRoutingEndpoints`.
 ///
 /// <p>Associate a virtual private cloud (VPC) subnet endpoint with your custom routing accelerator.</p>

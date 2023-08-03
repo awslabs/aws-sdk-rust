@@ -3,6 +3,23 @@ pub use crate::operation::create_usage_plan::_create_usage_plan_output::CreateUs
 
 pub use crate::operation::create_usage_plan::_create_usage_plan_input::CreateUsagePlanInputBuilder;
 
+impl CreateUsagePlanInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_usage_plan::CreateUsagePlanOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_usage_plan::CreateUsagePlanError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_usage_plan();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateUsagePlan`.
 ///
 /// <p>Creates a usage plan with the throttle and quota limits, as well as the associated API stages, specified in the payload. </p>

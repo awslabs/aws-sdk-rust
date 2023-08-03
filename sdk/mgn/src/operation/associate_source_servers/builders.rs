@@ -3,6 +3,23 @@ pub use crate::operation::associate_source_servers::_associate_source_servers_ou
 
 pub use crate::operation::associate_source_servers::_associate_source_servers_input::AssociateSourceServersInputBuilder;
 
+impl AssociateSourceServersInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::associate_source_servers::AssociateSourceServersOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::associate_source_servers::AssociateSourceServersError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.associate_source_servers();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateSourceServers`.
 ///
 /// <p>Associate source servers to application.</p>

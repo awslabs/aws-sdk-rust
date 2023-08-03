@@ -3,6 +3,23 @@ pub use crate::operation::create_sol_network_package::_create_sol_network_packag
 
 pub use crate::operation::create_sol_network_package::_create_sol_network_package_input::CreateSolNetworkPackageInputBuilder;
 
+impl CreateSolNetworkPackageInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_sol_network_package::CreateSolNetworkPackageOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_sol_network_package::CreateSolNetworkPackageError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_sol_network_package();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateSolNetworkPackage`.
 ///
 /// <p>Creates a network package.</p>

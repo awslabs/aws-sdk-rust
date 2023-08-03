@@ -3,6 +3,17 @@ pub use crate::operation::delete_backup_vault_lock_configuration::_delete_backup
 
 pub use crate::operation::delete_backup_vault_lock_configuration::_delete_backup_vault_lock_configuration_input::DeleteBackupVaultLockConfigurationInputBuilder;
 
+impl DeleteBackupVaultLockConfigurationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::delete_backup_vault_lock_configuration::DeleteBackupVaultLockConfigurationOutput, ::aws_smithy_http::result::SdkError<crate::operation::delete_backup_vault_lock_configuration::DeleteBackupVaultLockConfigurationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.delete_backup_vault_lock_configuration();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteBackupVaultLockConfiguration`.
 ///
 /// <p>Deletes Backup Vault Lock from a backup vault specified by a backup vault name.</p>

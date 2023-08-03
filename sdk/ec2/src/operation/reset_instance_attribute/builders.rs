@@ -3,6 +3,23 @@ pub use crate::operation::reset_instance_attribute::_reset_instance_attribute_ou
 
 pub use crate::operation::reset_instance_attribute::_reset_instance_attribute_input::ResetInstanceAttributeInputBuilder;
 
+impl ResetInstanceAttributeInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::reset_instance_attribute::ResetInstanceAttributeOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::reset_instance_attribute::ResetInstanceAttributeError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.reset_instance_attribute();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ResetInstanceAttribute`.
 ///
 /// <p>Resets an attribute of an instance to its default value. To reset the <code>kernel</code> or <code>ramdisk</code>, the instance must be in a stopped state. To reset the <code>sourceDestCheck</code>, the instance can be either running or stopped.</p>

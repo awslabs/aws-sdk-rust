@@ -3,6 +3,23 @@ pub use crate::operation::create_exclusions_preview::_create_exclusions_preview_
 
 pub use crate::operation::create_exclusions_preview::_create_exclusions_preview_input::CreateExclusionsPreviewInputBuilder;
 
+impl CreateExclusionsPreviewInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_exclusions_preview::CreateExclusionsPreviewOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_exclusions_preview::CreateExclusionsPreviewError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_exclusions_preview();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateExclusionsPreview`.
 ///
 /// <p>Starts the generation of an exclusions preview for the specified assessment template. The exclusions preview lists the potential exclusions (ExclusionPreview) that Inspector can detect before it runs the assessment. </p>

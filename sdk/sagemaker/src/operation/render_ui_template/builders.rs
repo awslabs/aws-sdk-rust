@@ -3,6 +3,23 @@ pub use crate::operation::render_ui_template::_render_ui_template_output::Render
 
 pub use crate::operation::render_ui_template::_render_ui_template_input::RenderUiTemplateInputBuilder;
 
+impl RenderUiTemplateInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::render_ui_template::RenderUiTemplateOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::render_ui_template::RenderUiTemplateError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.render_ui_template();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RenderUiTemplate`.
 ///
 /// <p>Renders the UI template so that you can preview the worker's experience. </p>

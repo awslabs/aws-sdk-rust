@@ -3,6 +3,23 @@ pub use crate::operation::create_metric_attribution::_create_metric_attribution_
 
 pub use crate::operation::create_metric_attribution::_create_metric_attribution_input::CreateMetricAttributionInputBuilder;
 
+impl CreateMetricAttributionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_metric_attribution::CreateMetricAttributionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_metric_attribution::CreateMetricAttributionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_metric_attribution();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateMetricAttribution`.
 ///
 /// <p>Creates a metric attribution. A metric attribution creates reports on the data that you import into Amazon Personalize. Depending on how you imported the data, you can view reports in Amazon CloudWatch or Amazon S3. For more information, see <a href="https://docs.aws.amazon.com/personalize/latest/dg/measuring-recommendation-impact.html">Measuring impact of recommendations</a>.</p>

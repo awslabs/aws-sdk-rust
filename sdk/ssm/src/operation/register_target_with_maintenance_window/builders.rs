@@ -3,6 +3,17 @@ pub use crate::operation::register_target_with_maintenance_window::_register_tar
 
 pub use crate::operation::register_target_with_maintenance_window::_register_target_with_maintenance_window_input::RegisterTargetWithMaintenanceWindowInputBuilder;
 
+impl RegisterTargetWithMaintenanceWindowInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::register_target_with_maintenance_window::RegisterTargetWithMaintenanceWindowOutput, ::aws_smithy_http::result::SdkError<crate::operation::register_target_with_maintenance_window::RegisterTargetWithMaintenanceWindowError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.register_target_with_maintenance_window();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `RegisterTargetWithMaintenanceWindow`.
 ///
 /// <p>Registers a target with a maintenance window.</p>

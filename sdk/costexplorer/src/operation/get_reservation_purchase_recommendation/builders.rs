@@ -3,6 +3,17 @@ pub use crate::operation::get_reservation_purchase_recommendation::_get_reservat
 
 pub use crate::operation::get_reservation_purchase_recommendation::_get_reservation_purchase_recommendation_input::GetReservationPurchaseRecommendationInputBuilder;
 
+impl GetReservationPurchaseRecommendationInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_reservation_purchase_recommendation::GetReservationPurchaseRecommendationOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_reservation_purchase_recommendation::GetReservationPurchaseRecommendationError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_reservation_purchase_recommendation();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetReservationPurchaseRecommendation`.
 ///
 /// <p>Gets recommendations for reservation purchases. These recommendations might help you to reduce your costs. Reservations provide a discounted hourly rate (up to 75%) compared to On-Demand pricing.</p>

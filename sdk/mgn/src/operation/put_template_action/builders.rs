@@ -3,6 +3,23 @@ pub use crate::operation::put_template_action::_put_template_action_output::PutT
 
 pub use crate::operation::put_template_action::_put_template_action_input::PutTemplateActionInputBuilder;
 
+impl PutTemplateActionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::put_template_action::PutTemplateActionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::put_template_action::PutTemplateActionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.put_template_action();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `PutTemplateAction`.
 ///
 /// <p>Put template post migration custom action.</p>

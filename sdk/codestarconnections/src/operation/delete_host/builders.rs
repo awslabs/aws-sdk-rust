@@ -3,6 +3,23 @@ pub use crate::operation::delete_host::_delete_host_output::DeleteHostOutputBuil
 
 pub use crate::operation::delete_host::_delete_host_input::DeleteHostInputBuilder;
 
+impl DeleteHostInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_host::DeleteHostOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_host::DeleteHostError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_host();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteHost`.
 ///
 /// <p>The host to be deleted. Before you delete a host, all connections associated to the host must be deleted.</p> <note>

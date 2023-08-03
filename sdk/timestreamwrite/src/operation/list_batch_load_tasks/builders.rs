@@ -3,6 +3,23 @@ pub use crate::operation::list_batch_load_tasks::_list_batch_load_tasks_output::
 
 pub use crate::operation::list_batch_load_tasks::_list_batch_load_tasks_input::ListBatchLoadTasksInputBuilder;
 
+impl ListBatchLoadTasksInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_batch_load_tasks::ListBatchLoadTasksOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_batch_load_tasks::ListBatchLoadTasksError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_batch_load_tasks();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListBatchLoadTasks`.
 ///
 /// <p>Provides a list of batch load tasks, along with the name, status, when the task is resumable until, and other details. See <a href="https://docs.aws.amazon.com/timestream/latest/developerguide/code-samples.list-batch-load-tasks.html">code sample</a> for details.</p>

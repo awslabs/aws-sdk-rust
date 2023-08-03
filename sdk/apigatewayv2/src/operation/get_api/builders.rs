@@ -3,6 +3,23 @@ pub use crate::operation::get_api::_get_api_output::GetApiOutputBuilder;
 
 pub use crate::operation::get_api::_get_api_input::GetApiInputBuilder;
 
+impl GetApiInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_api::GetApiOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_api::GetApiError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_api();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetApi`.
 ///
 /// <p>Gets an Api resource.</p>

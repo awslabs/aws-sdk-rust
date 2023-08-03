@@ -3,6 +3,23 @@ pub use crate::operation::get_media::_get_media_output::GetMediaOutputBuilder;
 
 pub use crate::operation::get_media::_get_media_input::GetMediaInputBuilder;
 
+impl GetMediaInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_media::GetMediaOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_media::GetMediaError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_media();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetMedia`.
 ///
 /// <p> Use this API to retrieve media content from a Kinesis video stream. In the request, you identify the stream name or stream Amazon Resource Name (ARN), and the starting chunk. Kinesis Video Streams then returns a stream of chunks in order by fragment number.</p> <note>

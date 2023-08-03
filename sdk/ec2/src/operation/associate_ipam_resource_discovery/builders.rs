@@ -3,6 +3,17 @@ pub use crate::operation::associate_ipam_resource_discovery::_associate_ipam_res
 
 pub use crate::operation::associate_ipam_resource_discovery::_associate_ipam_resource_discovery_input::AssociateIpamResourceDiscoveryInputBuilder;
 
+impl AssociateIpamResourceDiscoveryInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::associate_ipam_resource_discovery::AssociateIpamResourceDiscoveryOutput, ::aws_smithy_http::result::SdkError<crate::operation::associate_ipam_resource_discovery::AssociateIpamResourceDiscoveryError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.associate_ipam_resource_discovery();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `AssociateIpamResourceDiscovery`.
 ///
 /// <p>Associates an IPAM resource discovery with an Amazon VPC IPAM. A resource discovery is an IPAM component that enables IPAM to manage and monitor resources that belong to the owning account.</p>

@@ -3,6 +3,23 @@ pub use crate::operation::list_attributes::_list_attributes_output::ListAttribut
 
 pub use crate::operation::list_attributes::_list_attributes_input::ListAttributesInputBuilder;
 
+impl ListAttributesInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::list_attributes::ListAttributesOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::list_attributes::ListAttributesError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.list_attributes();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ListAttributes`.
 ///
 /// <p>Lists the attributes for Amazon ECS resources within a specified target type and cluster. When you specify a target type and cluster, <code>ListAttributes</code> returns a list of attribute objects, one for each attribute on each resource. You can filter the list of results to a single attribute name to only return results that have that name. You can also filter the results by attribute name and value. You can do this, for example, to see which container instances in a cluster are running a Linux AMI (<code>ecs.os-type=linux</code>). </p>

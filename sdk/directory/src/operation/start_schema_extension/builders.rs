@@ -3,6 +3,23 @@ pub use crate::operation::start_schema_extension::_start_schema_extension_output
 
 pub use crate::operation::start_schema_extension::_start_schema_extension_input::StartSchemaExtensionInputBuilder;
 
+impl StartSchemaExtensionInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::start_schema_extension::StartSchemaExtensionOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::start_schema_extension::StartSchemaExtensionError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.start_schema_extension();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `StartSchemaExtension`.
 ///
 /// <p>Applies a schema extension to a Microsoft AD directory.</p>

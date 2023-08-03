@@ -3,6 +3,23 @@ pub use crate::operation::create_fhir_datastore::_create_fhir_datastore_output::
 
 pub use crate::operation::create_fhir_datastore::_create_fhir_datastore_input::CreateFhirDatastoreInputBuilder;
 
+impl CreateFhirDatastoreInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::create_fhir_datastore::CreateFhirDatastoreOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::create_fhir_datastore::CreateFHIRDatastoreError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.create_fhir_datastore();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `CreateFHIRDatastore`.
 ///
 /// <p>Creates a data store that can ingest and export FHIR formatted data.</p>

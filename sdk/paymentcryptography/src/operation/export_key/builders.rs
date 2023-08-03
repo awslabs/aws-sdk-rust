@@ -3,6 +3,23 @@ pub use crate::operation::export_key::_export_key_output::ExportKeyOutputBuilder
 
 pub use crate::operation::export_key::_export_key_input::ExportKeyInputBuilder;
 
+impl ExportKeyInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::export_key::ExportKeyOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::export_key::ExportKeyError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.export_key();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `ExportKey`.
 ///
 /// <p>Exports a key from Amazon Web Services Payment Cryptography using either ANSI X9 TR-34 or TR-31 key export standard.</p>

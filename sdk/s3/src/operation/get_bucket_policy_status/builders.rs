@@ -3,6 +3,23 @@ pub use crate::operation::get_bucket_policy_status::_get_bucket_policy_status_ou
 
 pub use crate::operation::get_bucket_policy_status::_get_bucket_policy_status_input::GetBucketPolicyStatusInputBuilder;
 
+impl GetBucketPolicyStatusInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::get_bucket_policy_status::GetBucketPolicyStatusOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::get_bucket_policy_status::GetBucketPolicyStatusError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.get_bucket_policy_status();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetBucketPolicyStatus`.
 ///
 /// <p>Retrieves the policy status for an Amazon S3 bucket, indicating whether the bucket is public. In order to use this operation, you must have the <code>s3:GetBucketPolicyStatus</code> permission. For more information about Amazon S3 permissions, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-with-s3-actions.html">Specifying Permissions in a Policy</a>.</p>

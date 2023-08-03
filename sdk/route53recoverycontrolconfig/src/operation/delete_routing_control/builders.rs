@@ -3,6 +3,23 @@ pub use crate::operation::delete_routing_control::_delete_routing_control_output
 
 pub use crate::operation::delete_routing_control::_delete_routing_control_input::DeleteRoutingControlInputBuilder;
 
+impl DeleteRoutingControlInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::delete_routing_control::DeleteRoutingControlOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::delete_routing_control::DeleteRoutingControlError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.delete_routing_control();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeleteRoutingControl`.
 ///
 /// <p>Deletes a routing control.</p>

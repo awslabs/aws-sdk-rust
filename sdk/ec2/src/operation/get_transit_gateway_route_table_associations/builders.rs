@@ -3,6 +3,17 @@ pub use crate::operation::get_transit_gateway_route_table_associations::_get_tra
 
 pub use crate::operation::get_transit_gateway_route_table_associations::_get_transit_gateway_route_table_associations_input::GetTransitGatewayRouteTableAssociationsInputBuilder;
 
+impl GetTransitGatewayRouteTableAssociationsInputBuilder {
+    /// Sends a request with this input using the given client.
+                    pub async fn send_with(self, client: &crate::Client) -> ::std::result::Result<crate::operation::get_transit_gateway_route_table_associations::GetTransitGatewayRouteTableAssociationsOutput, ::aws_smithy_http::result::SdkError<crate::operation::get_transit_gateway_route_table_associations::GetTransitGatewayRouteTableAssociationsError, ::aws_smithy_http::operation::Response>>
+                    
+                    
+                    {
+        let mut fluent_builder = client.get_transit_gateway_route_table_associations();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `GetTransitGatewayRouteTableAssociations`.
 ///
 /// <p>Gets information about the associations for the specified transit gateway route table.</p>

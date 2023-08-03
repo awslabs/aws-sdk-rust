@@ -3,6 +3,23 @@ pub use crate::operation::deregister_mail_domain::_deregister_mail_domain_output
 
 pub use crate::operation::deregister_mail_domain::_deregister_mail_domain_input::DeregisterMailDomainInputBuilder;
 
+impl DeregisterMailDomainInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::deregister_mail_domain::DeregisterMailDomainOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::deregister_mail_domain::DeregisterMailDomainError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.deregister_mail_domain();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `DeregisterMailDomain`.
 ///
 /// <p>Removes a domain from WorkMail, stops email routing to WorkMail, and removes the authorization allowing WorkMail use. SES keeps the domain because other applications may use it. You must first remove any email address used by WorkMail entities before you remove the domain.</p>

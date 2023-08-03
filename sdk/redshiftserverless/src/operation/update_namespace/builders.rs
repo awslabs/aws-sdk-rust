@@ -3,6 +3,23 @@ pub use crate::operation::update_namespace::_update_namespace_output::UpdateName
 
 pub use crate::operation::update_namespace::_update_namespace_input::UpdateNamespaceInputBuilder;
 
+impl UpdateNamespaceInputBuilder {
+    /// Sends a request with this input using the given client.
+    pub async fn send_with(
+        self,
+        client: &crate::Client,
+    ) -> ::std::result::Result<
+        crate::operation::update_namespace::UpdateNamespaceOutput,
+        ::aws_smithy_http::result::SdkError<
+            crate::operation::update_namespace::UpdateNamespaceError,
+            ::aws_smithy_http::operation::Response,
+        >,
+    > {
+        let mut fluent_builder = client.update_namespace();
+        fluent_builder.inner = self;
+        fluent_builder.send().await
+    }
+}
 /// Fluent builder constructing a request to `UpdateNamespace`.
 ///
 /// <p>Updates a namespace with the specified settings. Unless required, you can't update multiple parameters in one request. For example, you must specify both <code>adminUsername</code> and <code>adminUserPassword</code> to update either field, but you can't update both <code>kmsKeyId</code> and <code>logExports</code> in a single request.</p>
