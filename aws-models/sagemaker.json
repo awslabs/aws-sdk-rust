@@ -3867,7 +3867,7 @@
                 "EndTimeOffset": {
                     "target": "com.amazonaws.sagemaker#MonitoringTimeOffsetString",
                     "traits": {
-                        "smithy.api#documentation": "<p>If specified, monitoring jobs substract this time from the end time. For information\n            about using offsets for scheduling monitoring jobs, see <a href=\"https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html\">Schedule Model\n                Quality Monitoring Jobs</a>.</p>"
+                        "smithy.api#documentation": "<p>If specified, monitoring jobs subtract this time from the end time. For information\n            about using offsets for scheduling monitoring jobs, see <a href=\"https://docs.aws.amazon.com/sagemaker/latest/dg/model-monitor-model-quality-schedule.html\">Schedule Model\n                Quality Monitoring Jobs</a>.</p>"
                     }
                 }
             },
@@ -11296,6 +11296,32 @@
                 "smithy.api#pattern": "^([\\p{L}\\p{Z}\\p{N}_.:\\/=+\\-@]*)${1,256}$"
             }
         },
+        "com.amazonaws.sagemaker#CustomizedMetricSpecification": {
+            "type": "structure",
+            "members": {
+                "MetricName": {
+                    "target": "com.amazonaws.sagemaker#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of the customized metric.</p>"
+                    }
+                },
+                "Namespace": {
+                    "target": "com.amazonaws.sagemaker#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The namespace of the customized metric.</p>"
+                    }
+                },
+                "Statistic": {
+                    "target": "com.amazonaws.sagemaker#Statistic",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The statistic of the customized metric.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>A customized metric.</p>"
+            }
+        },
         "com.amazonaws.sagemaker#DataCaptureConfig": {
             "type": "structure",
             "members": {
@@ -15926,7 +15952,7 @@
                 "EndpointStatus": {
                     "target": "com.amazonaws.sagemaker#EndpointStatus",
                     "traits": {
-                        "smithy.api#documentation": "<p>The status of the endpoint.</p>\n         <ul>\n            <li>\n               <p>\n                  <code>OutOfService</code>: Endpoint is not available to take incoming\n                    requests.</p>\n            </li>\n            <li>\n               <p>\n                  <code>Creating</code>: <a href=\"https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html\">CreateEndpoint</a> is executing.</p>\n            </li>\n            <li>\n               <p>\n                  <code>Updating</code>: <a href=\"https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpoint.html\">UpdateEndpoint</a> or <a href=\"https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpointWeightsAndCapacities.html\">UpdateEndpointWeightsAndCapacities</a> is executing.</p>\n            </li>\n            <li>\n               <p>\n                  <code>SystemUpdating</code>: Endpoint is undergoing maintenance and cannot be\n                    updated or deleted or re-scaled until it has completed. This maintenance\n                    operation does not change any customer-specified values such as VPC config, KMS\n                    encryption, model, instance type, or instance count.</p>\n            </li>\n            <li>\n               <p>\n                  <code>RollingBack</code>: Endpoint fails to scale up or down or change its\n                    variant weight and is in the process of rolling back to its previous\n                    configuration. Once the rollback completes, endpoint returns to an\n                        <code>InService</code> status. This transitional status only applies to an\n                    endpoint that has autoscaling enabled and is undergoing variant weight or\n                    capacity changes as part of an <a href=\"https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpointWeightsAndCapacities.html\">UpdateEndpointWeightsAndCapacities</a> call or when the <a href=\"https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpointWeightsAndCapacities.html\">UpdateEndpointWeightsAndCapacities</a> operation is called\n                    explicitly.</p>\n            </li>\n            <li>\n               <p>\n                  <code>InService</code>: Endpoint is available to process incoming\n                    requests.</p>\n            </li>\n            <li>\n               <p>\n                  <code>Deleting</code>: <a href=\"https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteEndpoint.html\">DeleteEndpoint</a> is executing.</p>\n            </li>\n            <li>\n               <p>\n                  <code>Failed</code>: Endpoint could not be created, updated, or re-scaled. Use\n                    the <code>FailureReason</code> value returned by <a href=\"https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeEndpoint.html\">DescribeEndpoint</a> for information about the failure. <a href=\"https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteEndpoint.html\">DeleteEndpoint</a> is the only operation that can be performed on a\n                    failed endpoint.</p>\n            </li>\n         </ul>",
+                        "smithy.api#documentation": "<p>The status of the endpoint.</p>\n         <ul>\n            <li>\n               <p>\n                  <code>OutOfService</code>: Endpoint is not available to take incoming\n                    requests.</p>\n            </li>\n            <li>\n               <p>\n                  <code>Creating</code>: <a href=\"https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_CreateEndpoint.html\">CreateEndpoint</a> is executing.</p>\n            </li>\n            <li>\n               <p>\n                  <code>Updating</code>: <a href=\"https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpoint.html\">UpdateEndpoint</a> or <a href=\"https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpointWeightsAndCapacities.html\">UpdateEndpointWeightsAndCapacities</a> is executing.</p>\n            </li>\n            <li>\n               <p>\n                  <code>SystemUpdating</code>: Endpoint is undergoing maintenance and cannot be\n                    updated or deleted or re-scaled until it has completed. This maintenance\n                    operation does not change any customer-specified values such as VPC config, KMS\n                    encryption, model, instance type, or instance count.</p>\n            </li>\n            <li>\n               <p>\n                  <code>RollingBack</code>: Endpoint fails to scale up or down or change its\n                    variant weight and is in the process of rolling back to its previous\n                    configuration. Once the rollback completes, endpoint returns to an\n                        <code>InService</code> status. This transitional status only applies to an\n                    endpoint that has autoscaling enabled and is undergoing variant weight or\n                    capacity changes as part of an <a href=\"https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpointWeightsAndCapacities.html\">UpdateEndpointWeightsAndCapacities</a> call or when the <a href=\"https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_UpdateEndpointWeightsAndCapacities.html\">UpdateEndpointWeightsAndCapacities</a> operation is called\n                    explicitly.</p>\n            </li>\n            <li>\n               <p>\n                  <code>InService</code>: Endpoint is available to process incoming\n                    requests.</p>\n            </li>\n            <li>\n               <p>\n                  <code>Deleting</code>: <a href=\"https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteEndpoint.html\">DeleteEndpoint</a> is executing.</p>\n            </li>\n            <li>\n               <p>\n                  <code>Failed</code>: Endpoint could not be created, updated, or re-scaled. Use\n                    the <code>FailureReason</code> value returned by <a href=\"https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DescribeEndpoint.html\">DescribeEndpoint</a> for information about the failure. <a href=\"https://docs.aws.amazon.com/sagemaker/latest/APIReference/API_DeleteEndpoint.html\">DeleteEndpoint</a> is the only operation that can be performed on a\n                    failed endpoint.</p>\n            </li>\n            <li>\n               <p>\n                  <code>UpdateRollbackFailed</code>: Both the rolling deployment and auto-rollback failed. Your endpoint\n                is in service with a mix of the old and new endpoint configurations. For information about how to remedy\n                this issue and restore the endpoint's status to <code>InService</code>, see\n                    <a href=\"https://docs.aws.amazon.com/sagemaker/latest/dg/deployment-guardrails-rolling.html\">Rolling Deployments</a>.</p>\n            </li>\n         </ul>",
                         "smithy.api#required": {}
                     }
                 },
@@ -21879,6 +21905,12 @@
                 }
             }
         },
+        "com.amazonaws.sagemaker#Double": {
+            "type": "double",
+            "traits": {
+                "smithy.api#default": 0
+            }
+        },
         "com.amazonaws.sagemaker#DoubleParameterValue": {
             "type": "double"
         },
@@ -21998,6 +22030,48 @@
             },
             "traits": {
                 "smithy.api#documentation": "<p>Represents the drift check model quality baselines that can be used when the model monitor is set using \n            the model package. </p>"
+            }
+        },
+        "com.amazonaws.sagemaker#DynamicScalingConfiguration": {
+            "type": "structure",
+            "members": {
+                "MinCapacity": {
+                    "target": "com.amazonaws.sagemaker#Integer",
+                    "traits": {
+                        "smithy.api#default": 0,
+                        "smithy.api#documentation": "<p>The recommended minimum capacity to specify for your autoscaling policy.</p>"
+                    }
+                },
+                "MaxCapacity": {
+                    "target": "com.amazonaws.sagemaker#Integer",
+                    "traits": {
+                        "smithy.api#default": 0,
+                        "smithy.api#documentation": "<p>The recommended maximum capacity to specify for your autoscaling policy.</p>"
+                    }
+                },
+                "ScaleInCooldown": {
+                    "target": "com.amazonaws.sagemaker#Integer",
+                    "traits": {
+                        "smithy.api#default": 0,
+                        "smithy.api#documentation": "<p>The recommended scale in cooldown time for your autoscaling policy.</p>"
+                    }
+                },
+                "ScaleOutCooldown": {
+                    "target": "com.amazonaws.sagemaker#Integer",
+                    "traits": {
+                        "smithy.api#default": 0,
+                        "smithy.api#documentation": "<p>The recommended scale out cooldown time for your autoscaling policy.</p>"
+                    }
+                },
+                "ScalingPolicies": {
+                    "target": "com.amazonaws.sagemaker#ScalingPolicies",
+                    "traits": {
+                        "smithy.api#documentation": "<p>An object of the scaling policies for each metric.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>An object with the recommended values for you to specify when creating an autoscaling policy.</p>"
             }
         },
         "com.amazonaws.sagemaker#EMRStepMetadata": {
@@ -24548,6 +24622,23 @@
                 }
             }
         },
+        "com.amazonaws.sagemaker#FlatInvocations": {
+            "type": "enum",
+            "members": {
+                "CONTINUE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "Continue"
+                    }
+                },
+                "STOP": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "Stop"
+                    }
+                }
+            }
+        },
         "com.amazonaws.sagemaker#Float": {
             "type": "float",
             "traits": {
@@ -25061,6 +25152,112 @@
                     "target": "com.amazonaws.sagemaker#SagemakerServicecatalogStatus",
                     "traits": {
                         "smithy.api#documentation": "<p>Whether Service Catalog is enabled or disabled in SageMaker.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#output": {}
+            }
+        },
+        "com.amazonaws.sagemaker#GetScalingConfigurationRecommendation": {
+            "type": "operation",
+            "input": {
+                "target": "com.amazonaws.sagemaker#GetScalingConfigurationRecommendationRequest"
+            },
+            "output": {
+                "target": "com.amazonaws.sagemaker#GetScalingConfigurationRecommendationResponse"
+            },
+            "errors": [
+                {
+                    "target": "com.amazonaws.sagemaker#ResourceNotFound"
+                }
+            ],
+            "traits": {
+                "smithy.api#documentation": "<p>Starts an Amazon SageMaker Inference Recommender autoscaling recommendation job. Returns recommendations for autoscaling policies\n         that you can apply to your SageMaker endpoint.</p>"
+            }
+        },
+        "com.amazonaws.sagemaker#GetScalingConfigurationRecommendationRequest": {
+            "type": "structure",
+            "members": {
+                "InferenceRecommendationsJobName": {
+                    "target": "com.amazonaws.sagemaker#RecommendationJobName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of a previously completed Inference Recommender job.</p>",
+                        "smithy.api#required": {}
+                    }
+                },
+                "RecommendationId": {
+                    "target": "com.amazonaws.sagemaker#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The recommendation ID of a previously completed inference recommendation. This ID should come from one of the\n         recommendations returned by the job specified in the <code>InferenceRecommendationsJobName</code> field.</p>\n         <p>Specify either this field or the <code>EndpointName</code> field.</p>"
+                    }
+                },
+                "EndpointName": {
+                    "target": "com.amazonaws.sagemaker#EndpointName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of an endpoint benchmarked during a previously completed inference recommendation job. This name should come from one of the\n         recommendations returned by the job specified in the <code>InferenceRecommendationsJobName</code> field.</p>\n         <p>Specify either this field or the <code>RecommendationId</code> field.</p>"
+                    }
+                },
+                "TargetCpuUtilizationPerCore": {
+                    "target": "com.amazonaws.sagemaker#UtilizationPercentagePerCore",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The percentage of how much utilization you want an instance to use before autoscaling. The default value is 50%.</p>"
+                    }
+                },
+                "ScalingPolicyObjective": {
+                    "target": "com.amazonaws.sagemaker#ScalingPolicyObjective",
+                    "traits": {
+                        "smithy.api#documentation": "<p>An object where you specify the anticipated traffic pattern for an endpoint.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#input": {}
+            }
+        },
+        "com.amazonaws.sagemaker#GetScalingConfigurationRecommendationResponse": {
+            "type": "structure",
+            "members": {
+                "InferenceRecommendationsJobName": {
+                    "target": "com.amazonaws.sagemaker#RecommendationJobName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of a previously completed Inference Recommender job.</p>"
+                    }
+                },
+                "RecommendationId": {
+                    "target": "com.amazonaws.sagemaker#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The recommendation ID of a previously completed inference recommendation.</p>"
+                    }
+                },
+                "EndpointName": {
+                    "target": "com.amazonaws.sagemaker#EndpointName",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The name of an endpoint benchmarked during a previously completed Inference Recommender job.</p>"
+                    }
+                },
+                "TargetCpuUtilizationPerCore": {
+                    "target": "com.amazonaws.sagemaker#UtilizationPercentagePerCore",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The percentage of how much utilization you want an instance to use before autoscaling, which you specified in the request. The default value is 50%.</p>"
+                    }
+                },
+                "ScalingPolicyObjective": {
+                    "target": "com.amazonaws.sagemaker#ScalingPolicyObjective",
+                    "traits": {
+                        "smithy.api#documentation": "<p>An object representing the anticipated traffic pattern for an endpoint that you specified in the request.</p>"
+                    }
+                },
+                "Metric": {
+                    "target": "com.amazonaws.sagemaker#ScalingPolicyMetric",
+                    "traits": {
+                        "smithy.api#documentation": "<p>An object with a list of metrics that were benchmarked during the previously completed Inference Recommender job.</p>"
+                    }
+                },
+                "DynamicScalingConfiguration": {
+                    "target": "com.amazonaws.sagemaker#DynamicScalingConfiguration",
+                    "traits": {
+                        "smithy.api#documentation": "<p>An object with the recommended values for you to specify when creating an autoscaling policy.</p>"
                     }
                 }
             },
@@ -37398,6 +37595,26 @@
                 }
             }
         },
+        "com.amazonaws.sagemaker#MetricSpecification": {
+            "type": "union",
+            "members": {
+                "Predefined": {
+                    "target": "com.amazonaws.sagemaker#PredefinedMetricSpecification",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Information about a predefined metric.</p>"
+                    }
+                },
+                "Customized": {
+                    "target": "com.amazonaws.sagemaker#CustomizedMetricSpecification",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Information about a customized metric.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>An object containing information about a metric.</p>"
+            }
+        },
         "com.amazonaws.sagemaker#MetricValue": {
             "type": "float",
             "traits": {
@@ -38672,7 +38889,7 @@
                 "Percentile": {
                     "target": "com.amazonaws.sagemaker#String64",
                     "traits": {
-                        "smithy.api#documentation": "<p>The model latency percentile threshold.</p>"
+                        "smithy.api#documentation": "<p>The model latency percentile threshold. For custom load tests, specify the value as <code>P95</code>.</p>"
                     }
                 },
                 "ValueInMilliseconds": {
@@ -41702,6 +41919,14 @@
                 }
             }
         },
+        "com.amazonaws.sagemaker#NumberOfSteps": {
+            "type": "integer",
+            "traits": {
+                "smithy.api#range": {
+                    "min": 1
+                }
+            }
+        },
         "com.amazonaws.sagemaker#ObjectiveStatus": {
             "type": "enum",
             "members": {
@@ -42627,7 +42852,7 @@
                 "InitialNumberOfUsers": {
                     "target": "com.amazonaws.sagemaker#InitialNumberOfUsers",
                     "traits": {
-                        "smithy.api#documentation": "<p>Specifies how many concurrent users to start with.</p>"
+                        "smithy.api#documentation": "<p>Specifies how many concurrent users to start with. The value should be between 1 and 3.</p>"
                     }
                 },
                 "SpawnRate": {
@@ -42639,7 +42864,7 @@
                 "DurationInSeconds": {
                     "target": "com.amazonaws.sagemaker#TrafficDurationInSeconds",
                     "traits": {
-                        "smithy.api#documentation": "<p>Specifies how long traffic phase should be.</p>"
+                        "smithy.api#documentation": "<p>Specifies how long a traffic phase should be. For custom load tests, the value should be between 120 and 3600.\n      This value should not exceed <code>JobDurationInSeconds</code>.</p>"
                     }
                 }
             },
@@ -43336,6 +43561,20 @@
                     "max": 20480
                 },
                 "smithy.api#pattern": ".*"
+            }
+        },
+        "com.amazonaws.sagemaker#PredefinedMetricSpecification": {
+            "type": "structure",
+            "members": {
+                "PredefinedMetricType": {
+                    "target": "com.amazonaws.sagemaker#String",
+                    "traits": {
+                        "smithy.api#documentation": "<p>The metric type. You can only apply SageMaker metric types to SageMaker endpoints.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>A specification for a predefined metric.</p>"
             }
         },
         "com.amazonaws.sagemaker#PresignedDomainUrl": {
@@ -46892,7 +47131,7 @@
                 "JobDurationInSeconds": {
                     "target": "com.amazonaws.sagemaker#JobDurationInSeconds",
                     "traits": {
-                        "smithy.api#documentation": "<p>Specifies the maximum duration of the job, in seconds.></p>"
+                        "smithy.api#documentation": "<p>Specifies the maximum duration of the job, in seconds. The maximum value is 7200.</p>"
                     }
                 },
                 "TrafficPattern": {
@@ -47073,6 +47312,12 @@
                     "target": "com.amazonaws.sagemaker#ModelLatencyThresholds",
                     "traits": {
                         "smithy.api#documentation": "<p>The interval of time taken by a model to respond as viewed from SageMaker. \n          The interval includes the local communication time taken to send the request \n          and to fetch the response from the container of a model and the time taken to \n          complete the inference in the container.</p>"
+                    }
+                },
+                "FlatInvocations": {
+                    "target": "com.amazonaws.sagemaker#FlatInvocations",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Stops a load test when the number of invocations (TPS) peaks and flattens,\n         which means that the instance has reached capacity. The default value is <code>Stop</code>.\n      If you want the load test to continue after invocations have flattened, set the value to <code>Continue</code>.</p>"
                     }
                 }
             },
@@ -49076,6 +49321,9 @@
                     "target": "com.amazonaws.sagemaker#GetSagemakerServicecatalogPortfolioStatus"
                 },
                 {
+                    "target": "com.amazonaws.sagemaker#GetScalingConfigurationRecommendation"
+                },
+                {
                     "target": "com.amazonaws.sagemaker#GetSearchSuggestions"
                 },
                 {
@@ -49555,9 +49803,238 @@
                                     "type": "error"
                                 },
                                 {
+                                    "conditions": [
+                                        {
+                                            "fn": "booleanEquals",
+                                            "argv": [
+                                                {
+                                                    "ref": "UseDualStack"
+                                                },
+                                                true
+                                            ]
+                                        }
+                                    ],
+                                    "error": "Invalid Configuration: Dualstack and custom endpoint are not supported",
+                                    "type": "error"
+                                },
+                                {
                                     "conditions": [],
+                                    "endpoint": {
+                                        "url": {
+                                            "ref": "Endpoint"
+                                        },
+                                        "properties": {},
+                                        "headers": {}
+                                    },
+                                    "type": "endpoint"
+                                }
+                            ]
+                        },
+                        {
+                            "conditions": [
+                                {
+                                    "fn": "isSet",
+                                    "argv": [
+                                        {
+                                            "ref": "Region"
+                                        }
+                                    ]
+                                }
+                            ],
+                            "type": "tree",
+                            "rules": [
+                                {
+                                    "conditions": [
+                                        {
+                                            "fn": "aws.partition",
+                                            "argv": [
+                                                {
+                                                    "ref": "Region"
+                                                }
+                                            ],
+                                            "assign": "PartitionResult"
+                                        }
+                                    ],
                                     "type": "tree",
                                     "rules": [
+                                        {
+                                            "conditions": [
+                                                {
+                                                    "fn": "booleanEquals",
+                                                    "argv": [
+                                                        {
+                                                            "ref": "UseFIPS"
+                                                        },
+                                                        true
+                                                    ]
+                                                },
+                                                {
+                                                    "fn": "booleanEquals",
+                                                    "argv": [
+                                                        {
+                                                            "ref": "UseDualStack"
+                                                        },
+                                                        true
+                                                    ]
+                                                }
+                                            ],
+                                            "type": "tree",
+                                            "rules": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "fn": "booleanEquals",
+                                                            "argv": [
+                                                                true,
+                                                                {
+                                                                    "fn": "getAttr",
+                                                                    "argv": [
+                                                                        {
+                                                                            "ref": "PartitionResult"
+                                                                        },
+                                                                        "supportsFIPS"
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        },
+                                                        {
+                                                            "fn": "booleanEquals",
+                                                            "argv": [
+                                                                true,
+                                                                {
+                                                                    "fn": "getAttr",
+                                                                    "argv": [
+                                                                        {
+                                                                            "ref": "PartitionResult"
+                                                                        },
+                                                                        "supportsDualStack"
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "type": "tree",
+                                                    "rules": [
+                                                        {
+                                                            "conditions": [],
+                                                            "endpoint": {
+                                                                "url": "https://api.sagemaker-fips.{Region}.{PartitionResult#dualStackDnsSuffix}",
+                                                                "properties": {},
+                                                                "headers": {}
+                                                            },
+                                                            "type": "endpoint"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "conditions": [],
+                                                    "error": "FIPS and DualStack are enabled, but this partition does not support one or both",
+                                                    "type": "error"
+                                                }
+                                            ]
+                                        },
+                                        {
+                                            "conditions": [
+                                                {
+                                                    "fn": "booleanEquals",
+                                                    "argv": [
+                                                        {
+                                                            "ref": "UseFIPS"
+                                                        },
+                                                        true
+                                                    ]
+                                                }
+                                            ],
+                                            "type": "tree",
+                                            "rules": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "fn": "booleanEquals",
+                                                            "argv": [
+                                                                true,
+                                                                {
+                                                                    "fn": "getAttr",
+                                                                    "argv": [
+                                                                        {
+                                                                            "ref": "PartitionResult"
+                                                                        },
+                                                                        "supportsFIPS"
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "type": "tree",
+                                                    "rules": [
+                                                        {
+                                                            "conditions": [
+                                                                {
+                                                                    "fn": "stringEquals",
+                                                                    "argv": [
+                                                                        "aws",
+                                                                        {
+                                                                            "fn": "getAttr",
+                                                                            "argv": [
+                                                                                {
+                                                                                    "ref": "PartitionResult"
+                                                                                },
+                                                                                "name"
+                                                                            ]
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ],
+                                                            "endpoint": {
+                                                                "url": "https://api-fips.sagemaker.{Region}.amazonaws.com",
+                                                                "properties": {},
+                                                                "headers": {}
+                                                            },
+                                                            "type": "endpoint"
+                                                        },
+                                                        {
+                                                            "conditions": [
+                                                                {
+                                                                    "fn": "stringEquals",
+                                                                    "argv": [
+                                                                        "aws-us-gov",
+                                                                        {
+                                                                            "fn": "getAttr",
+                                                                            "argv": [
+                                                                                {
+                                                                                    "ref": "PartitionResult"
+                                                                                },
+                                                                                "name"
+                                                                            ]
+                                                                        }
+                                                                    ]
+                                                                }
+                                                            ],
+                                                            "endpoint": {
+                                                                "url": "https://api-fips.sagemaker.{Region}.amazonaws.com",
+                                                                "properties": {},
+                                                                "headers": {}
+                                                            },
+                                                            "type": "endpoint"
+                                                        },
+                                                        {
+                                                            "conditions": [],
+                                                            "endpoint": {
+                                                                "url": "https://api.sagemaker-fips.{Region}.{PartitionResult#dnsSuffix}",
+                                                                "properties": {},
+                                                                "headers": {}
+                                                            },
+                                                            "type": "endpoint"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "conditions": [],
+                                                    "error": "FIPS is enabled but this partition does not support FIPS",
+                                                    "type": "error"
+                                                }
+                                            ]
+                                        },
                                         {
                                             "conditions": [
                                                 {
@@ -49570,15 +50047,50 @@
                                                     ]
                                                 }
                                             ],
-                                            "error": "Invalid Configuration: Dualstack and custom endpoint are not supported",
-                                            "type": "error"
+                                            "type": "tree",
+                                            "rules": [
+                                                {
+                                                    "conditions": [
+                                                        {
+                                                            "fn": "booleanEquals",
+                                                            "argv": [
+                                                                true,
+                                                                {
+                                                                    "fn": "getAttr",
+                                                                    "argv": [
+                                                                        {
+                                                                            "ref": "PartitionResult"
+                                                                        },
+                                                                        "supportsDualStack"
+                                                                    ]
+                                                                }
+                                                            ]
+                                                        }
+                                                    ],
+                                                    "type": "tree",
+                                                    "rules": [
+                                                        {
+                                                            "conditions": [],
+                                                            "endpoint": {
+                                                                "url": "https://api.sagemaker.{Region}.{PartitionResult#dualStackDnsSuffix}",
+                                                                "properties": {},
+                                                                "headers": {}
+                                                            },
+                                                            "type": "endpoint"
+                                                        }
+                                                    ]
+                                                },
+                                                {
+                                                    "conditions": [],
+                                                    "error": "DualStack is enabled but this partition does not support DualStack",
+                                                    "type": "error"
+                                                }
+                                            ]
                                         },
                                         {
                                             "conditions": [],
                                             "endpoint": {
-                                                "url": {
-                                                    "ref": "Endpoint"
-                                                },
+                                                "url": "https://api.sagemaker.{Region}.{PartitionResult#dnsSuffix}",
                                                 "properties": {},
                                                 "headers": {}
                                             },
@@ -49590,308 +50102,8 @@
                         },
                         {
                             "conditions": [],
-                            "type": "tree",
-                            "rules": [
-                                {
-                                    "conditions": [
-                                        {
-                                            "fn": "isSet",
-                                            "argv": [
-                                                {
-                                                    "ref": "Region"
-                                                }
-                                            ]
-                                        }
-                                    ],
-                                    "type": "tree",
-                                    "rules": [
-                                        {
-                                            "conditions": [
-                                                {
-                                                    "fn": "aws.partition",
-                                                    "argv": [
-                                                        {
-                                                            "ref": "Region"
-                                                        }
-                                                    ],
-                                                    "assign": "PartitionResult"
-                                                }
-                                            ],
-                                            "type": "tree",
-                                            "rules": [
-                                                {
-                                                    "conditions": [
-                                                        {
-                                                            "fn": "booleanEquals",
-                                                            "argv": [
-                                                                {
-                                                                    "ref": "UseFIPS"
-                                                                },
-                                                                true
-                                                            ]
-                                                        },
-                                                        {
-                                                            "fn": "booleanEquals",
-                                                            "argv": [
-                                                                {
-                                                                    "ref": "UseDualStack"
-                                                                },
-                                                                true
-                                                            ]
-                                                        }
-                                                    ],
-                                                    "type": "tree",
-                                                    "rules": [
-                                                        {
-                                                            "conditions": [
-                                                                {
-                                                                    "fn": "booleanEquals",
-                                                                    "argv": [
-                                                                        true,
-                                                                        {
-                                                                            "fn": "getAttr",
-                                                                            "argv": [
-                                                                                {
-                                                                                    "ref": "PartitionResult"
-                                                                                },
-                                                                                "supportsFIPS"
-                                                                            ]
-                                                                        }
-                                                                    ]
-                                                                },
-                                                                {
-                                                                    "fn": "booleanEquals",
-                                                                    "argv": [
-                                                                        true,
-                                                                        {
-                                                                            "fn": "getAttr",
-                                                                            "argv": [
-                                                                                {
-                                                                                    "ref": "PartitionResult"
-                                                                                },
-                                                                                "supportsDualStack"
-                                                                            ]
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ],
-                                                            "type": "tree",
-                                                            "rules": [
-                                                                {
-                                                                    "conditions": [],
-                                                                    "type": "tree",
-                                                                    "rules": [
-                                                                        {
-                                                                            "conditions": [],
-                                                                            "endpoint": {
-                                                                                "url": "https://api.sagemaker-fips.{Region}.{PartitionResult#dualStackDnsSuffix}",
-                                                                                "properties": {},
-                                                                                "headers": {}
-                                                                            },
-                                                                            "type": "endpoint"
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ]
-                                                        },
-                                                        {
-                                                            "conditions": [],
-                                                            "error": "FIPS and DualStack are enabled, but this partition does not support one or both",
-                                                            "type": "error"
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    "conditions": [
-                                                        {
-                                                            "fn": "booleanEquals",
-                                                            "argv": [
-                                                                {
-                                                                    "ref": "UseFIPS"
-                                                                },
-                                                                true
-                                                            ]
-                                                        }
-                                                    ],
-                                                    "type": "tree",
-                                                    "rules": [
-                                                        {
-                                                            "conditions": [
-                                                                {
-                                                                    "fn": "booleanEquals",
-                                                                    "argv": [
-                                                                        true,
-                                                                        {
-                                                                            "fn": "getAttr",
-                                                                            "argv": [
-                                                                                {
-                                                                                    "ref": "PartitionResult"
-                                                                                },
-                                                                                "supportsFIPS"
-                                                                            ]
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ],
-                                                            "type": "tree",
-                                                            "rules": [
-                                                                {
-                                                                    "conditions": [],
-                                                                    "type": "tree",
-                                                                    "rules": [
-                                                                        {
-                                                                            "conditions": [
-                                                                                {
-                                                                                    "fn": "stringEquals",
-                                                                                    "argv": [
-                                                                                        "aws",
-                                                                                        {
-                                                                                            "fn": "getAttr",
-                                                                                            "argv": [
-                                                                                                {
-                                                                                                    "ref": "PartitionResult"
-                                                                                                },
-                                                                                                "name"
-                                                                                            ]
-                                                                                        }
-                                                                                    ]
-                                                                                }
-                                                                            ],
-                                                                            "endpoint": {
-                                                                                "url": "https://api-fips.sagemaker.{Region}.amazonaws.com",
-                                                                                "properties": {},
-                                                                                "headers": {}
-                                                                            },
-                                                                            "type": "endpoint"
-                                                                        },
-                                                                        {
-                                                                            "conditions": [
-                                                                                {
-                                                                                    "fn": "stringEquals",
-                                                                                    "argv": [
-                                                                                        "aws-us-gov",
-                                                                                        {
-                                                                                            "fn": "getAttr",
-                                                                                            "argv": [
-                                                                                                {
-                                                                                                    "ref": "PartitionResult"
-                                                                                                },
-                                                                                                "name"
-                                                                                            ]
-                                                                                        }
-                                                                                    ]
-                                                                                }
-                                                                            ],
-                                                                            "endpoint": {
-                                                                                "url": "https://api-fips.sagemaker.{Region}.amazonaws.com",
-                                                                                "properties": {},
-                                                                                "headers": {}
-                                                                            },
-                                                                            "type": "endpoint"
-                                                                        },
-                                                                        {
-                                                                            "conditions": [],
-                                                                            "endpoint": {
-                                                                                "url": "https://api.sagemaker-fips.{Region}.{PartitionResult#dnsSuffix}",
-                                                                                "properties": {},
-                                                                                "headers": {}
-                                                                            },
-                                                                            "type": "endpoint"
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ]
-                                                        },
-                                                        {
-                                                            "conditions": [],
-                                                            "error": "FIPS is enabled but this partition does not support FIPS",
-                                                            "type": "error"
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    "conditions": [
-                                                        {
-                                                            "fn": "booleanEquals",
-                                                            "argv": [
-                                                                {
-                                                                    "ref": "UseDualStack"
-                                                                },
-                                                                true
-                                                            ]
-                                                        }
-                                                    ],
-                                                    "type": "tree",
-                                                    "rules": [
-                                                        {
-                                                            "conditions": [
-                                                                {
-                                                                    "fn": "booleanEquals",
-                                                                    "argv": [
-                                                                        true,
-                                                                        {
-                                                                            "fn": "getAttr",
-                                                                            "argv": [
-                                                                                {
-                                                                                    "ref": "PartitionResult"
-                                                                                },
-                                                                                "supportsDualStack"
-                                                                            ]
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ],
-                                                            "type": "tree",
-                                                            "rules": [
-                                                                {
-                                                                    "conditions": [],
-                                                                    "type": "tree",
-                                                                    "rules": [
-                                                                        {
-                                                                            "conditions": [],
-                                                                            "endpoint": {
-                                                                                "url": "https://api.sagemaker.{Region}.{PartitionResult#dualStackDnsSuffix}",
-                                                                                "properties": {},
-                                                                                "headers": {}
-                                                                            },
-                                                                            "type": "endpoint"
-                                                                        }
-                                                                    ]
-                                                                }
-                                                            ]
-                                                        },
-                                                        {
-                                                            "conditions": [],
-                                                            "error": "DualStack is enabled but this partition does not support DualStack",
-                                                            "type": "error"
-                                                        }
-                                                    ]
-                                                },
-                                                {
-                                                    "conditions": [],
-                                                    "type": "tree",
-                                                    "rules": [
-                                                        {
-                                                            "conditions": [],
-                                                            "endpoint": {
-                                                                "url": "https://api.sagemaker.{Region}.{PartitionResult#dnsSuffix}",
-                                                                "properties": {},
-                                                                "headers": {}
-                                                            },
-                                                            "type": "endpoint"
-                                                        }
-                                                    ]
-                                                }
-                                            ]
-                                        }
-                                    ]
-                                },
-                                {
-                                    "conditions": [],
-                                    "error": "Invalid Configuration: Missing Region",
-                                    "type": "error"
-                                }
-                            ]
+                            "error": "Invalid Configuration: Missing Region",
+                            "type": "error"
                         }
                     ]
                 },
@@ -50599,6 +50811,70 @@
                     "min": 0,
                     "max": 100
                 }
+            }
+        },
+        "com.amazonaws.sagemaker#ScalingPolicies": {
+            "type": "list",
+            "member": {
+                "target": "com.amazonaws.sagemaker#ScalingPolicy"
+            }
+        },
+        "com.amazonaws.sagemaker#ScalingPolicy": {
+            "type": "union",
+            "members": {
+                "TargetTracking": {
+                    "target": "com.amazonaws.sagemaker#TargetTrackingScalingPolicyConfiguration",
+                    "traits": {
+                        "smithy.api#documentation": "<p>A target tracking scaling policy. Includes support for predefined or customized metrics.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>An object containing a recommended scaling policy.</p>"
+            }
+        },
+        "com.amazonaws.sagemaker#ScalingPolicyMetric": {
+            "type": "structure",
+            "members": {
+                "InvocationsPerInstance": {
+                    "target": "com.amazonaws.sagemaker#Integer",
+                    "traits": {
+                        "smithy.api#default": 0,
+                        "smithy.api#documentation": "<p>The number of invocations sent to a model, normalized by <code>InstanceCount</code>\n         in each ProductionVariant. <code>1/numberOfInstances</code> is sent as the value on each\n         request, where <code>numberOfInstances</code> is the number of active instances for the\n         ProductionVariant behind the endpoint at the time of the request.</p>"
+                    }
+                },
+                "ModelLatency": {
+                    "target": "com.amazonaws.sagemaker#Integer",
+                    "traits": {
+                        "smithy.api#default": 0,
+                        "smithy.api#documentation": "<p>The interval of time taken by a model to respond as viewed from SageMaker.\n         This interval includes the local communication times taken to send the request\n         and to fetch the response from the container of a model and the time taken to\n         complete the inference in the container.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>The metric for a scaling policy.</p>"
+            }
+        },
+        "com.amazonaws.sagemaker#ScalingPolicyObjective": {
+            "type": "structure",
+            "members": {
+                "MinInvocationsPerMinute": {
+                    "target": "com.amazonaws.sagemaker#Integer",
+                    "traits": {
+                        "smithy.api#default": 0,
+                        "smithy.api#documentation": "<p>The minimum number of expected requests to your endpoint per minute.</p>"
+                    }
+                },
+                "MaxInvocationsPerMinute": {
+                    "target": "com.amazonaws.sagemaker#Integer",
+                    "traits": {
+                        "smithy.api#default": 0,
+                        "smithy.api#documentation": "<p>The maximum number of expected requests to your endpoint per minute.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>An object where you specify the anticipated traffic pattern for an endpoint.</p>"
             }
         },
         "com.amazonaws.sagemaker#ScheduleConfig": {
@@ -52046,6 +52322,32 @@
                 }
             }
         },
+        "com.amazonaws.sagemaker#Stairs": {
+            "type": "structure",
+            "members": {
+                "DurationInSeconds": {
+                    "target": "com.amazonaws.sagemaker#TrafficDurationInSeconds",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Defines how long each traffic step should be.</p>"
+                    }
+                },
+                "NumberOfSteps": {
+                    "target": "com.amazonaws.sagemaker#NumberOfSteps",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Specifies how many steps to perform during traffic.</p>"
+                    }
+                },
+                "UsersPerStep": {
+                    "target": "com.amazonaws.sagemaker#UsersPerStep",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Specifies how many new users to spawn in each step.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>Defines the stairs traffic pattern for an Inference Recommender load test. This pattern\n         type consists of multiple steps where the number of users increases at each step.</p>\n         <p>Specify either the stairs or phases traffic pattern.</p>"
+            }
+        },
         "com.amazonaws.sagemaker#StartEdgeDeploymentStage": {
             "type": "operation",
             "input": {
@@ -52279,6 +52581,41 @@
             },
             "traits": {
                 "smithy.api#output": {}
+            }
+        },
+        "com.amazonaws.sagemaker#Statistic": {
+            "type": "enum",
+            "members": {
+                "AVERAGE": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "Average"
+                    }
+                },
+                "MINIMUM": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "Minimum"
+                    }
+                },
+                "MAXIMUM": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "Maximum"
+                    }
+                },
+                "SAMPLE_COUNT": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "SampleCount"
+                    }
+                },
+                "SUM": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "Sum"
+                    }
+                }
             }
         },
         "com.amazonaws.sagemaker#StatusDetails": {
@@ -53697,6 +54034,27 @@
                 }
             }
         },
+        "com.amazonaws.sagemaker#TargetTrackingScalingPolicyConfiguration": {
+            "type": "structure",
+            "members": {
+                "MetricSpecification": {
+                    "target": "com.amazonaws.sagemaker#MetricSpecification",
+                    "traits": {
+                        "smithy.api#documentation": "<p>An object containing information about a metric.</p>"
+                    }
+                },
+                "TargetValue": {
+                    "target": "com.amazonaws.sagemaker#Double",
+                    "traits": {
+                        "smithy.api#default": 0,
+                        "smithy.api#documentation": "<p>The recommended target value to specify for the metric when creating a scaling policy.</p>"
+                    }
+                }
+            },
+            "traits": {
+                "smithy.api#documentation": "<p>A target tracking scaling policy. Includes support for predefined or customized metrics.</p>\n         <p>When using the <a href=\"https://docs.aws.amazon.com/autoscaling/application/APIReference/API_PutScalingPolicy.html\">PutScalingPolicy</a> API,\n         this parameter is required when you are creating a policy with the policy type <code>TargetTrackingScaling</code>.</p>"
+            }
+        },
         "com.amazonaws.sagemaker#TaskAvailabilityLifetimeInSeconds": {
             "type": "integer",
             "traits": {
@@ -54044,13 +54402,19 @@
                 "TrafficType": {
                     "target": "com.amazonaws.sagemaker#TrafficType",
                     "traits": {
-                        "smithy.api#documentation": "<p>Defines the traffic patterns.</p>"
+                        "smithy.api#documentation": "<p>Defines the traffic patterns. Choose either <code>PHASES</code> or <code>STAIRS</code>.</p>"
                     }
                 },
                 "Phases": {
                     "target": "com.amazonaws.sagemaker#Phases",
                     "traits": {
                         "smithy.api#documentation": "<p>Defines the phases traffic specification.</p>"
+                    }
+                },
+                "Stairs": {
+                    "target": "com.amazonaws.sagemaker#Stairs",
+                    "traits": {
+                        "smithy.api#documentation": "<p>Defines the stairs traffic pattern.</p>"
                     }
                 }
             },
@@ -54122,6 +54486,12 @@
                     "target": "smithy.api#Unit",
                     "traits": {
                         "smithy.api#enumValue": "PHASES"
+                    }
+                },
+                "STAIRS": {
+                    "target": "smithy.api#Unit",
+                    "traits": {
+                        "smithy.api#enumValue": "STAIRS"
                     }
                 }
             }
@@ -54769,6 +55139,9 @@
                     "traits": {
                         "smithy.api#documentation": "<p>Information about the evaluation status of the rules for the training job.</p>"
                     }
+                },
+                "ProfilerConfig": {
+                    "target": "com.amazonaws.sagemaker#ProfilerConfig"
                 },
                 "Environment": {
                     "target": "com.amazonaws.sagemaker#TrainingEnvironmentMap",
@@ -59255,11 +59628,29 @@
                 "smithy.api#documentation": "<p>A collection of settings that apply to users of Amazon SageMaker Studio. These settings are\n      specified when the <code>CreateUserProfile</code> API is called, and as <code>DefaultUserSettings</code>\n      when the <code>CreateDomain</code> API is called.</p>\n         <p>\n            <code>SecurityGroups</code> is aggregated when specified in both calls. For all other\n     settings in <code>UserSettings</code>, the values specified in <code>CreateUserProfile</code>\n     take precedence over those specified in <code>CreateDomain</code>.</p>"
             }
         },
+        "com.amazonaws.sagemaker#UsersPerStep": {
+            "type": "integer",
+            "traits": {
+                "smithy.api#range": {
+                    "min": 1,
+                    "max": 3
+                }
+            }
+        },
         "com.amazonaws.sagemaker#UtilizationMetric": {
             "type": "float",
             "traits": {
                 "smithy.api#range": {
                     "min": 0.0
+                }
+            }
+        },
+        "com.amazonaws.sagemaker#UtilizationPercentagePerCore": {
+            "type": "integer",
+            "traits": {
+                "smithy.api#range": {
+                    "min": 1,
+                    "max": 100
                 }
             }
         },
