@@ -2258,6 +2258,10 @@ source_hash = '8c94352216e21a3f0d411e0d1c62025040dfc88ffbc5192a163ddc82ff6462d6'
 category = 'AwsRuntime'
 version = '0.0.0'
 source_hash = 'd9182bc7741356981cb3ecd0bfe814f9a6d519aa1159ebd79b8e89c3102ee19a'
+
+[release]
+tag = 'release-2023-08-03'
+
 [release.crates]
 aws-config = '0.56.0'
 aws-credential-types = '0.56.0'
