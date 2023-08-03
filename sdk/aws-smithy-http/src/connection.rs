@@ -82,7 +82,7 @@ impl CaptureSmithyConnection {
         match self.loader.lock().unwrap().as_ref() {
             Some(loader) => loader(),
             None => {
-                println!("no loader was set :-/");
+                tracing::debug!("no loader was set on the CaptureSmithyConnection");
                 None
             }
         }

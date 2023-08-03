@@ -148,7 +148,11 @@ impl PresigningConfigBuilder {
             return Err(ErrorKind::ExpiresInDurationTooLong.into());
         }
         Ok(PresigningConfig {
-            start_time: self.start_time.unwrap_or_else(SystemTime::now),
+            start_time: self.start_time.unwrap_or_else(
+                // This usage is OK—customers can easily override this.
+                #[allow(clippy::disallowed_methods)]
+                SystemTime::now,
+            ),
             expires_in,
         })
     }

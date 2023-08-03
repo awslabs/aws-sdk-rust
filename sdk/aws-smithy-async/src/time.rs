@@ -28,6 +28,8 @@ impl SystemTimeSource {
 
 impl TimeSource for SystemTimeSource {
     fn now(&self) -> SystemTime {
+        // this is the one OK usage
+        #[allow(clippy::disallowed_methods)]
         SystemTime::now()
     }
 }

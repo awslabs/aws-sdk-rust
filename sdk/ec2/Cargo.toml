@@ -90,6 +90,11 @@ path = "../aws-credential-types"
 features = ["test-util"]
 version = "0.0.0-smithy-rs-head"
 
+[dev-dependencies.aws-runtime]
+path = "../aws-runtime"
+features = ["test-util"]
+version = "0.0.0-smithy-rs-head"
+
 [dev-dependencies.aws-smithy-async]
 path = "../aws-smithy-async"
 features = ["test-util"]

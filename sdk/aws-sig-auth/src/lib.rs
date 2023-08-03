@@ -3,6 +3,8 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
+// TODO(enableNewSmithyRuntimeCleanup): Deprecate this crate and replace it with empty contents. Remove references to it in the code generator.
+
 #![allow(clippy::derive_partial_eq_without_eq)]
 
 //! AWS Signature Authentication Package

@@ -4,6 +4,7 @@
  */
 
 use crate::service_clock_skew::ServiceClockSkew;
+use aws_smithy_async::time::TimeSource;
 use aws_smithy_runtime_api::box_error::BoxError;
 use aws_smithy_runtime_api::client::interceptors::context::BeforeTransmitInterceptorContextMut;
 use aws_smithy_runtime_api::client::interceptors::Interceptor;
@@ -16,7 +17,7 @@ use aws_smithy_types::timeout::TimeoutConfig;
 use aws_smithy_types::DateTime;
 use http::{HeaderName, HeaderValue};
 use std::borrow::Cow;
-use std::time::{Duration, SystemTime};
+use std::time::Duration;
 
 #[allow(clippy::declare_interior_mutable_const)] // we will never mutate this
 const AMZ_SDK_REQUEST: HeaderName = HeaderName::from_static("amz-sdk-request");
@@ -63,11 +64,15 @@ impl RequestInfoInterceptor {
         }
     }
 
-    fn build_ttl_pair(&self, cfg: &ConfigBag) -> Option<(Cow<'static, str>, Cow<'static, str>)> {
+    fn build_ttl_pair(
+        &self,
+        cfg: &ConfigBag,
+        timesource: impl TimeSource,
+    ) -> Option<(Cow<'static, str>, Cow<'static, str>)> {
         let timeout_config = cfg.load::<TimeoutConfig>()?;
         let socket_read = timeout_config.read_timeout()?;
         let estimated_skew: Duration = cfg.load::<ServiceClockSkew>().cloned()?.into();
-        let current_time = SystemTime::now();
+        let current_time = timesource.now();
         let ttl = current_time.checked_add(socket_read + estimated_skew)?;
         let mut timestamp = DateTime::from(ttl);
         // Set subsec_nanos to 0 so that the formatted `DateTime` won't have fractional seconds.
@@ -94,11 +99,16 @@ impl Interceptor for RequestInfoInterceptor {
     fn modify_before_transmit(
         &self,
         context: &mut BeforeTransmitInterceptorContextMut<'_>,
-        _runtime_components: &RuntimeComponents,
+        runtime_components: &RuntimeComponents,
         cfg: &mut ConfigBag,
     ) -> Result<(), BoxError> {
         let mut pairs = RequestPairs::new();
-        if let Some(pair) = self.build_ttl_pair(cfg) {
+        if let Some(pair) = self.build_ttl_pair(
+            cfg,
+            runtime_components
+                .time_source()
+                .ok_or("A timesource must be provided")?,
+        ) {
             pairs = pairs.with_pair(pair);
         }
         if let Some(pair) = self.build_attempts_pair(cfg) {
@@ -170,12 +180,14 @@ mod tests {
     use super::RequestInfoInterceptor;
     use crate::request_info::RequestPairs;
     use aws_smithy_http::body::SdkBody;
-    use aws_smithy_runtime_api::client::interceptors::context::{Input, InterceptorContext};
+    use aws_smithy_runtime_api::client::interceptors::context::Input;
+    use aws_smithy_runtime_api::client::interceptors::context::InterceptorContext;
     use aws_smithy_runtime_api::client::interceptors::Interceptor;
     use aws_smithy_runtime_api::client::runtime_components::RuntimeComponentsBuilder;
     use aws_smithy_types::config_bag::{ConfigBag, Layer};
     use aws_smithy_types::retry::RetryConfig;
     use aws_smithy_types::timeout::TimeoutConfig;
+
     use http::HeaderValue;
     use std::time::Duration;
 

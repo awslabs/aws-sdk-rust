@@ -707,6 +707,9 @@ impl Builder {
     /// Apply test defaults to the builder
     pub fn set_test_defaults(&mut self) -> &mut Self {
         self.set_idempotency_token_provider(Some("00000000-0000-4000-8000-000000000000".into()));
+        self.set_time_source(::std::option::Option::Some(::aws_smithy_async::time::SharedTimeSource::new(
+            ::aws_smithy_async::time::StaticTimeSource::new(::std::time::UNIX_EPOCH + ::std::time::Duration::from_secs(1234567890)),
+        )));
         self.set_credentials_provider(Some(::aws_credential_types::provider::SharedCredentialsProvider::new(
             ::aws_credential_types::Credentials::for_tests(),
         )));
@@ -729,14 +732,22 @@ impl Builder {
         }
         crate::config::set_connector(&mut resolver);
         crate::config::set_endpoint_resolver(&mut resolver);
-        let retry_partition = layer
-            .load::<::aws_smithy_runtime::client::retries::RetryPartition>()
-            .cloned()
-            .unwrap_or_else(|| ::aws_smithy_runtime::client::retries::RetryPartition::new("s3control"));
+        if layer.load::<::aws_smithy_types::retry::RetryConfig>().is_none() {
+            layer.store_put(::aws_smithy_types::retry::RetryConfig::disabled());
+        }
         let retry_config = layer
             .load::<::aws_smithy_types::retry::RetryConfig>()
-            .cloned()
-            .unwrap_or_else(::aws_smithy_types::retry::RetryConfig::disabled);
+            .expect("set to default above")
+            .clone();
+
+        if layer.load::<::aws_smithy_runtime::client::retries::RetryPartition>().is_none() {
+            layer.store_put(::aws_smithy_runtime::client::retries::RetryPartition::new("s3control"));
+        }
+        let retry_partition = layer
+            .load::<::aws_smithy_runtime::client::retries::RetryPartition>()
+            .expect("set to default above")
+            .clone();
+
         if retry_config.has_retry() {
             ::tracing::debug!("using retry strategy with partition '{}'", retry_partition);
         }
@@ -773,7 +784,8 @@ impl Builder {
             ),
         ));
         if self.runtime_components.time_source().is_none() {
-            self.runtime_components.set_time_source(::std::default::Default::default());
+            self.runtime_components
+                .set_time_source(::std::option::Option::Some(::std::default::Default::default()));
         }
         layer.store_put(crate::meta::API_METADATA.clone());
         layer.store_put(::aws_types::SigningService::from_static("s3"));

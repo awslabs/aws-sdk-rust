@@ -19,6 +19,7 @@ use tokio::task::JoinHandle;
 use aws_smithy_http::body::SdkBody;
 use aws_smithy_http::result::ConnectorError;
 use aws_smithy_protocol_test::MediaType;
+use aws_smithy_types::error::display::DisplayErrorContext;
 
 use crate::dvr::{Action, ConnectionId, Direction, Event, NetworkTraffic};
 
@@ -137,7 +138,14 @@ impl ReplayingConnection {
                     ))
                 })
                 .collect::<Vec<_>>();
-            aws_smithy_protocol_test::validate_headers(actual.headers(), expected_headers)?;
+            aws_smithy_protocol_test::validate_headers(actual.headers(), expected_headers)
+                .map_err(|err| {
+                    format!(
+                        "event {} validation failed with: {}",
+                        conn_id.0,
+                        DisplayErrorContext(&err)
+                    )
+                })?;
         }
         Ok(())
     }
@@ -272,6 +280,7 @@ impl tower::Service<http::Request<SdkBody>> for ReplayingConnection {
 
     fn call(&mut self, mut req: Request<SdkBody>) -> Self::Future {
         let event_id = self.next_id();
+        tracing::debug!("received event {}: {req:?}", event_id.0);
         let mut events = match self.live_events.lock().unwrap().remove(&event_id) {
             Some(traffic) => traffic,
             None => {
