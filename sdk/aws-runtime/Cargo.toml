@@ -12,6 +12,9 @@ all-features = true
 targets = ["x86_64-unknown-linux-gnu"]
 rustdoc-args = ["--cfg", "docsrs"]
 
+[features]
+event-stream = ["dep:aws-smithy-eventstream", "aws-sigv4/sign-eventstream"]
+
 [dependencies]
 http = "0.2.3"
 percent-encoding = "2.1.0"
@@ -27,6 +30,11 @@ version = "0.0.0-smithy-rs-head"
 
 [dependencies.aws-sigv4]
 path = "../aws-sigv4"
+version = "0.0.0-smithy-rs-head"
+
+[dependencies.aws-smithy-eventstream]
+path = "../aws-smithy-eventstream"
+optional = true
 version = "0.0.0-smithy-rs-head"
 
 [dependencies.aws-smithy-http]
@@ -57,6 +65,11 @@ features = ["v4", "fast-rng"]
 proptest = "1"
 serde_json = "1"
 tracing-test = "0.2.1"
+
+[dev-dependencies.aws-credential-types]
+path = "../aws-credential-types"
+features = ["test-util"]
+version = "0.0.0-smithy-rs-head"
 
 [dev-dependencies.aws-smithy-protocol-test]
 path = "../aws-smithy-protocol-test"

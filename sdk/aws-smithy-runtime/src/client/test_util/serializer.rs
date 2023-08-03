@@ -39,7 +39,11 @@ impl CannedRequestSerializer {
 }
 
 impl RequestSerializer for CannedRequestSerializer {
-    fn serialize_input(&self, _input: Input) -> Result<HttpRequest, BoxError> {
+    fn serialize_input(
+        &self,
+        _input: Input,
+        _cfg: &mut ConfigBag,
+    ) -> Result<HttpRequest, BoxError> {
         let req = self
             .take()
             .ok_or("CannedRequestSerializer's inner value has already been taken.")?;

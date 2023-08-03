@@ -76,6 +76,12 @@ impl<O, Retry> CustomizableOperation<O, Retry> {
             .insert(::aws_http::user_agent::AwsUserAgent::for_tests());
         self
     }
+
+    #[doc(hidden)]
+    // This is a temporary method for testing. NEVER use it in production
+    pub fn remove_invocation_id_for_tests(self) -> Self {
+        self
+    }
 }
 
 impl<O, Retry> CustomizableOperation<O, Retry> {

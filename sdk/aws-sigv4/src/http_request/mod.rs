@@ -56,4 +56,4 @@ pub use settings::{
     PayloadChecksumKind, PercentEncodingMode, SessionTokenMode, SignatureLocation, SigningParams,
     SigningSettings, UriPathNormalizationMode,
 };
-pub use sign::{sign, SignableBody, SignableRequest};
+pub use sign::{sign, SignableBody, SignableRequest, SigningInstructions};

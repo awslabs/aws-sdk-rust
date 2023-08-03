@@ -12,4 +12,4 @@ echo "### Checking for duplicate dependency versions in the normal dependency gr
 cargo tree -d --edges normal --all-features
 
 echo "### Testing every combination of features (excluding --all-features)"
-cargo hack test --feature-powerset --exclude-all-features
+cargo hack test --feature-powerset --exclude-all-features --exclude-features native-tls

@@ -58,8 +58,7 @@ exclude = [
     "examples/eks",
     "examples/medialive",
     "tests/webassembly",
-    "tests/no-default-features",
-    "tests/using-native-tls-instead-of-rustls"
+    "tests/no-default-features"
 ]
 members = [
     "sdk/accessanalyzer",

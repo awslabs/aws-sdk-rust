@@ -33,7 +33,7 @@ pub type BoxFuture<T> = Pin<Box<dyn StdFuture<Output = Result<T, BoxError>> + Se
 pub type Future<T> = NowOrLater<Result<T, BoxError>, BoxFuture<T>>;
 
 pub trait RequestSerializer: Send + Sync + fmt::Debug {
-    fn serialize_input(&self, input: Input) -> Result<HttpRequest, BoxError>;
+    fn serialize_input(&self, input: Input, cfg: &mut ConfigBag) -> Result<HttpRequest, BoxError>;
 }
 
 pub trait ResponseDeserializer: Send + Sync + fmt::Debug {
@@ -146,7 +146,7 @@ pub trait ConfigBagAccessors {
     fn http_auth_schemes(&self) -> &HttpAuthSchemes;
     fn set_http_auth_schemes(&mut self, http_auth_schemes: HttpAuthSchemes);
 
-    fn request_serializer(&self) -> &dyn RequestSerializer;
+    fn request_serializer(&self) -> Arc<dyn RequestSerializer>;
     fn set_request_serializer(&mut self, request_serializer: impl RequestSerializer + 'static);
 
     fn response_deserializer(&self) -> &dyn ResponseDeserializer;
@@ -246,14 +246,14 @@ impl ConfigBagAccessors for ConfigBag {
         self.put::<HttpAuthSchemes>(http_auth_schemes);
     }
 
-    fn request_serializer(&self) -> &dyn RequestSerializer {
-        &**self
-            .get::<Box<dyn RequestSerializer>>()
+    fn request_serializer(&self) -> Arc<dyn RequestSerializer> {
+        self.get::<Arc<dyn RequestSerializer>>()
             .expect("missing request serializer")
+            .clone()
     }
 
     fn set_request_serializer(&mut self, request_serializer: impl RequestSerializer + 'static) {
-        self.put::<Box<dyn RequestSerializer>>(Box::new(request_serializer));
+        self.put::<Arc<dyn RequestSerializer>>(Arc::new(request_serializer));
     }
 
     fn response_deserializer(&self) -> &dyn ResponseDeserializer {

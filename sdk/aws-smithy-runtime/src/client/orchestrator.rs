@@ -107,7 +107,7 @@ async fn try_op(ctx: &mut InterceptorContext, cfg: &mut ConfigBag, interceptors:
     {
         let request_serializer = cfg.request_serializer();
         let input = ctx.take_input().expect("input set at this point");
-        let request = halt_on_err!([ctx] => request_serializer.serialize_input(input));
+        let request = halt_on_err!([ctx] => request_serializer.serialize_input(input, cfg));
         ctx.set_request(request);
     }
 

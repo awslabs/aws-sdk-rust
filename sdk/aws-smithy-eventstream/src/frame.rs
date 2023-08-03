@@ -14,6 +14,7 @@ use std::convert::{TryFrom, TryInto};
 use std::error::Error as StdError;
 use std::fmt;
 use std::mem::size_of;
+use std::sync::{mpsc, Mutex};
 
 const PRELUDE_LENGTH_BYTES: u32 = 3 * size_of::<u32>() as u32;
 const PRELUDE_LENGTH_BYTES_USIZE: usize = PRELUDE_LENGTH_BYTES as usize;
@@ -32,6 +33,95 @@ pub trait SignMessage: fmt::Debug {
     /// Return `Some(_)` to send a signed last empty message, before completing the stream.
     /// Return `None` to not send one and terminate the stream immediately.
     fn sign_empty(&mut self) -> Option<Result<Message, SignMessageError>>;
+}
+
+/// A sender that gets placed in the request config to wire up an event stream signer after signing.
+#[derive(Debug)]
+#[non_exhaustive]
+pub struct DeferredSignerSender(Mutex<mpsc::Sender<Box<dyn SignMessage + Send + Sync>>>);
+
+impl DeferredSignerSender {
+    /// Creates a new `DeferredSignerSender`
+    fn new(tx: mpsc::Sender<Box<dyn SignMessage + Send + Sync>>) -> Self {
+        Self(Mutex::new(tx))
+    }
+
+    /// Sends a signer on the channel
+    pub fn send(
+        &self,
+        signer: Box<dyn SignMessage + Send + Sync>,
+    ) -> Result<(), mpsc::SendError<Box<dyn SignMessage + Send + Sync>>> {
+        self.0.lock().unwrap().send(signer)
+    }
+}
+
+/// Deferred event stream signer to allow a signer to be wired up later.
+///
+/// HTTP request signing takes place after serialization, and the event stream
+/// message stream body is established during serialization. Since event stream
+/// signing may need context from the initial HTTP signing operation, this
+/// [`DeferredSigner`] is needed to wire up the signer later in the request lifecycle.
+///
+/// This signer basically just establishes a MPSC channel so that the sender can
+/// be placed in the request's config. Then the HTTP signer implementation can
+/// retrieve the sender from that config and send an actual signing implementation
+/// with all the context needed.
+///
+/// When an event stream implementation needs to sign a message, the first call to
+/// sign will acquire a signing implementation off of the channel and cache it
+/// for the remainder of the operation.
+#[derive(Debug)]
+pub struct DeferredSigner {
+    rx: Option<Mutex<mpsc::Receiver<Box<dyn SignMessage + Send + Sync>>>>,
+    signer: Option<Box<dyn SignMessage + Send + Sync>>,
+}
+
+impl DeferredSigner {
+    pub fn new() -> (Self, DeferredSignerSender) {
+        let (tx, rx) = mpsc::channel();
+        (
+            Self {
+                rx: Some(Mutex::new(rx)),
+                signer: None,
+            },
+            DeferredSignerSender::new(tx),
+        )
+    }
+
+    fn acquire(&mut self) -> &mut (dyn SignMessage + Send + Sync) {
+        // Can't use `if let Some(signer) = &mut self.signer` because the borrow checker isn't smart enough
+        if self.signer.is_some() {
+            return self.signer.as_mut().unwrap().as_mut();
+        } else {
+            self.signer = Some(
+                self.rx
+                    .take()
+                    .expect("only taken once")
+                    .lock()
+                    .unwrap()
+                    .try_recv()
+                    .ok()
+                    // TODO(enableNewSmithyRuntime): When the middleware implementation is removed,
+                    // this should panic rather than default to the `NoOpSigner`. The reason it defaults
+                    // is because middleware-based generic clients don't have any default middleware,
+                    // so there is no way to send a `NoOpSigner` by default when there is no other
+                    // auth scheme. The orchestrator auth setup is a lot more robust and will make
+                    // this problem trivial.
+                    .unwrap_or_else(|| Box::new(NoOpSigner {}) as _),
+            );
+            self.acquire()
+        }
+    }
+}
+
+impl SignMessage for DeferredSigner {
+    fn sign(&mut self, message: Message) -> Result<Message, SignMessageError> {
+        self.acquire().sign(message)
+    }
+
+    fn sign_empty(&mut self) -> Option<Result<Message, SignMessageError>> {
+        self.acquire().sign_empty()
+    }
 }
 
 #[derive(Debug)]
@@ -846,5 +936,62 @@ mod message_frame_decoder_tests {
             println!("chunk size: {}", chunk_size);
             multiple_streaming_messages_chunk_size(chunk_size);
         }
+    }
+}
+
+#[cfg(test)]
+mod deferred_signer_tests {
+    use crate::frame::{DeferredSigner, Header, HeaderValue, Message, SignMessage};
+    use bytes::Bytes;
+
+    fn check_send_sync<T: Send + Sync>(value: T) -> T {
+        value
+    }
+
+    #[test]
+    fn deferred_signer() {
+        #[derive(Default, Debug)]
+        struct TestSigner {
+            call_num: i32,
+        }
+        impl SignMessage for TestSigner {
+            fn sign(
+                &mut self,
+                message: crate::frame::Message,
+            ) -> Result<crate::frame::Message, crate::frame::SignMessageError> {
+                self.call_num += 1;
+                Ok(message.add_header(Header::new("call_num", HeaderValue::Int32(self.call_num))))
+            }
+
+            fn sign_empty(
+                &mut self,
+            ) -> Option<Result<crate::frame::Message, crate::frame::SignMessageError>> {
+                None
+            }
+        }
+
+        let (mut signer, sender) = check_send_sync(DeferredSigner::new());
+
+        sender
+            .send(Box::new(TestSigner::default()))
+            .expect("success");
+
+        let message = signer.sign(Message::new(Bytes::new())).expect("success");
+        assert_eq!(1, message.headers()[0].value().as_int32().unwrap());
+
+        let message = signer.sign(Message::new(Bytes::new())).expect("success");
+        assert_eq!(2, message.headers()[0].value().as_int32().unwrap());
+
+        assert!(signer.sign_empty().is_none());
+    }
+
+    #[test]
+    fn deferred_signer_defaults_to_noop_signer() {
+        let (mut signer, _sender) = DeferredSigner::new();
+        assert_eq!(
+            Message::new(Bytes::new()),
+            signer.sign(Message::new(Bytes::new())).unwrap()
+        );
+        assert!(signer.sign_empty().is_none());
     }
 }

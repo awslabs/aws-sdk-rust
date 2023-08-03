@@ -17,12 +17,14 @@ use tracing::trace;
 
 /// Input type for Event Streams.
 pub struct EventStreamSender<T, E> {
-    input_stream: Pin<Box<dyn Stream<Item = Result<T, E>> + Send>>,
+    input_stream: Pin<Box<dyn Stream<Item = Result<T, E>> + Send + Sync>>,
 }
 
 impl<T, E> Debug for EventStreamSender<T, E> {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
-        write!(f, "EventStreamSender(Box<dyn Stream>)")
+        let name_t = std::any::type_name::<T>();
+        let name_e = std::any::type_name::<E>();
+        write!(f, "EventStreamSender<{name_t}, {name_e}>")
     }
 }
 
@@ -40,7 +42,7 @@ impl<T, E: StdError + Send + Sync + 'static> EventStreamSender<T, E> {
 
 impl<T, E, S> From<S> for EventStreamSender<T, E>
 where
-    S: Stream<Item = Result<T, E>> + Send + 'static,
+    S: Stream<Item = Result<T, E>> + Send + Sync + 'static,
 {
     fn from(stream: S) -> Self {
         EventStreamSender {
@@ -258,6 +260,17 @@ mod tests {
                 Message::new(&b""[..]).add_header(Header::new("signed", HeaderValue::Bool(true)))
             ))
         }
+    }
+
+    fn check_send_sync<T: Send + Sync>(value: T) -> T {
+        value
+    }
+
+    #[test]
+    fn event_stream_sender_send_sync() {
+        check_send_sync(EventStreamSender::from(stream! {
+            yield Result::<_, SignMessageError>::Ok(TestMessage("test".into()));
+        }));
     }
 
     fn check_compatible_with_hyper_wrap_stream<S, O, E>(stream: S) -> S

@@ -88,21 +88,24 @@ where
     }
 }
 
-#[cfg(any(feature = "rustls", feature = "native-tls"))]
+#[cfg(feature = "rustls")]
 use crate::erase::DynConnector;
-#[cfg(any(feature = "rustls", feature = "native-tls"))]
+#[cfg(feature = "rustls")]
 use crate::http_connector::ConnectorSettings;
-#[cfg(any(feature = "rustls", feature = "native-tls"))]
+#[cfg(feature = "rustls")]
 use crate::hyper_ext::Adapter as HyperAdapter;
+
+#[cfg(all(feature = "native-tls", not(feature = "allow-compilation")))]
+compile_error!("Feature native-tls has been removed. For upgrade instructions, see: https://awslabs.github.io/smithy-rs/design/transport/connector.html");
 
 /// Max idle connections is not standardized across SDKs. Java V1 and V2 use 50, and Go V2 uses 100.
 /// The number below was chosen arbitrarily between those two reference points, and should allow
 /// for 14 separate SDK clients in a Lambda where the max file handles is 1024.
-#[cfg(any(feature = "rustls", feature = "native-tls"))]
+#[cfg(feature = "rustls")]
 const DEFAULT_MAX_IDLE_CONNECTIONS: usize = 70;
 
 /// Returns default HTTP client settings for hyper.
-#[cfg(any(feature = "rustls", feature = "native-tls"))]
+#[cfg(feature = "rustls")]
 fn default_hyper_builder() -> hyper::client::Builder {
     let mut builder = hyper::client::Builder::default();
     builder.pool_max_idle_per_host(DEFAULT_MAX_IDLE_CONNECTIONS);
@@ -125,24 +128,7 @@ impl<M, R> Builder<(), M, R> {
     }
 }
 
-#[cfg(feature = "native-tls")]
-impl<M, R> Builder<(), M, R> {
-    /// Connect to the service over HTTPS using the native TLS library on your
-    /// platform using dynamic dispatch.
-    pub fn native_tls_connector(
-        self,
-        connector_settings: ConnectorSettings,
-    ) -> Builder<DynConnector, M, R> {
-        self.connector(DynConnector::new(
-            HyperAdapter::builder()
-                .hyper_builder(default_hyper_builder())
-                .connector_settings(connector_settings)
-                .build(crate::conns::native_tls()),
-        ))
-    }
-}
-
-#[cfg(any(feature = "rustls", feature = "native-tls"))]
+#[cfg(feature = "rustls")]
 impl<M, R> Builder<(), M, R> {
     /// Create a Smithy client builder with an HTTPS connector and the [standard retry
     /// policy](crate::retry::Standard) over the default middleware implementation.
@@ -150,17 +136,13 @@ impl<M, R> Builder<(), M, R> {
     /// For convenience, this constructor type-erases the concrete TLS connector backend used using
     /// dynamic dispatch. This comes at a slight runtime performance cost. See
     /// [`DynConnector`](crate::erase::DynConnector) for details. To avoid that overhead, use
-    /// [`Builder::rustls_connector`] or [`Builder::native_tls_connector`] instead.
+    /// [`Builder::rustls_connector`] instead.
+    #[cfg(feature = "rustls")]
     pub fn dyn_https_connector(
         self,
         connector_settings: ConnectorSettings,
     ) -> Builder<DynConnector, M, R> {
-        #[cfg(feature = "rustls")]
         let with_https = |b: Builder<_, M, R>| b.rustls_connector(connector_settings);
-        // If we are compiling this function & rustls is not enabled, then native-tls MUST be enabled
-        #[cfg(not(feature = "rustls"))]
-        let with_https = |b: Builder<_, M, R>| b.native_tls_connector(connector_settings);
-
         with_https(self)
     }
 }
@@ -582,8 +564,5 @@ mod tests {
         #[cfg(feature = "rustls")]
         let _builder: Builder<DynConnector, (), _> =
             Builder::new().rustls_connector(Default::default());
-        #[cfg(feature = "native-tls")]
-        let _builder: Builder<DynConnector, (), _> =
-            Builder::new().native_tls_connector(Default::default());
     }
 }

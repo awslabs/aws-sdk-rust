@@ -103,6 +103,7 @@ pub enum SignableBody<'a> {
     StreamingUnsignedPayloadTrailer,
 }
 
+/// Instructions for applying a signature to an HTTP request.
 #[derive(Debug)]
 pub struct SigningInstructions {
     headers: Option<HeaderMap<HeaderValue>>,
@@ -117,20 +118,27 @@ impl SigningInstructions {
         Self { headers, params }
     }
 
+    /// Returns a reference to the headers that should be added to the request.
     pub fn headers(&self) -> Option<&HeaderMap<HeaderValue>> {
         self.headers.as_ref()
     }
+
+    /// Returns the headers and sets the internal value to `None`.
     pub fn take_headers(&mut self) -> Option<HeaderMap<HeaderValue>> {
         self.headers.take()
     }
 
+    /// Returns a reference to the query parameters that should be added to the request.
     pub fn params(&self) -> Option<&Vec<(&'static str, Cow<'static, str>)>> {
         self.params.as_ref()
     }
+
+    /// Returns the query parameters and sets the internal value to `None`.
     pub fn take_params(&mut self) -> Option<Vec<(&'static str, Cow<'static, str>)>> {
         self.params.take()
     }
 
+    /// Applies the instructions to the given `request`.
     pub fn apply_to_request<B>(mut self, request: &mut http::Request<B>) {
         if let Some(new_headers) = self.take_headers() {
             for (name, value) in new_headers.into_iter() {

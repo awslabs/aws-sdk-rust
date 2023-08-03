@@ -14,7 +14,7 @@ use crate::meta::credentials::CredentialsProviderChain;
 use crate::meta::region::ProvideRegion;
 use crate::provider_config::ProviderConfig;
 
-#[cfg(any(feature = "rustls", feature = "native-tls"))]
+#[cfg(feature = "rustls")]
 /// Default Credentials Provider chain
 ///
 /// The region from the default region provider will be used
@@ -170,8 +170,8 @@ impl Builder {
     /// Creates a `DefaultCredentialsChain`
     ///
     /// ## Panics
-    /// This function will panic if no connector has been set and neither `rustls` and `native-tls`
-    /// features have both been disabled.
+    /// This function will panic if no connector has been set or the `rustls`
+    /// feature has been disabled.
     pub async fn build(self) -> DefaultCredentialsChain {
         let region = match self.region_override {
             Some(provider) => provider.region().await,

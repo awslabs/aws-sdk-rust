@@ -10,7 +10,6 @@
 //! | `event-stream`    | Provides Sender/Receiver implementations for Event Stream codegen. |
 //! | `rt-tokio`        | Run async code with the `tokio` runtime |
 //! | `test-util`       | Include various testing utils |
-//! | `native-tls`      | Use `native-tls` as the HTTP client's TLS implementation |
 //! | `rustls`          | Use `rustls` as the HTTP client's TLS implementation |
 //! | `client-hyper`    | Use `hyper` to handle HTTP requests |
 
@@ -85,9 +84,8 @@ use tracing::{debug_span, field, Instrument};
 /// to the inner service, and then ultimately returning the inner service's response.
 ///
 /// With the `hyper` feature enabled, you can construct a `Client` directly from a
-/// `hyper::Client` using `hyper_ext::Adapter::builder`. You can also enable the `rustls` or `native-tls`
-/// features to construct a Client against a standard HTTPS endpoint using `Builder::rustls_connector` and
-/// `Builder::native_tls_connector` respectively.
+/// `hyper::Client` using `hyper_ext::Adapter::builder`. You can also enable the `rustls`
+/// feature to construct a Client against a standard HTTPS endpoint using `Builder::rustls_connector`.
 #[derive(Debug)]
 pub struct Client<
     Connector = erase::DynConnector,

@@ -73,7 +73,8 @@ impl StartMedicalStreamTranscriptionInput {
         let body = ::aws_smithy_http::body::SdkBody::from({
             let error_marshaller = crate::event_stream_serde::AudioStreamErrorMarshaller::new();
             let marshaller = crate::event_stream_serde::AudioStreamMarshaller::new();
-            let signer = _config.new_event_stream_signer(properties.clone());
+            let (signer, signer_sender) = ::aws_smithy_eventstream::frame::DeferredSigner::new();
+            properties.acquire_mut().insert(signer_sender);
             let adapter: ::aws_smithy_http::event_stream::MessageStreamAdapter<_, _> = self
                 .audio_stream
                 .into_body_stream(marshaller, error_marshaller, signer);

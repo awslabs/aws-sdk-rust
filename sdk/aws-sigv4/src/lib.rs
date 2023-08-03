@@ -49,6 +49,18 @@ pub struct SigningParams<'a, S> {
     pub(crate) settings: S,
 }
 
+impl<'a, S> SigningParams<'a, S> {
+    /// Returns the region that will be used to sign
+    pub fn region(&self) -> &str {
+        self.region
+    }
+
+    /// Returns the service name that will be used to sign
+    pub fn service_name(&self) -> &str {
+        self.service_name
+    }
+}
+
 impl<'a, S: fmt::Debug> fmt::Debug for SigningParams<'a, S> {
     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
         f.debug_struct("SigningParams")

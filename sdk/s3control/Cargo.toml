@@ -122,7 +122,6 @@ features = ["env-filter", "json"]
 
 [features]
 rustls = ["aws-smithy-client/rustls"]
-native-tls = ["aws-smithy-client/native-tls"]
 rt-tokio = ["aws-smithy-http/rt-tokio"]
 test-util = ["aws-credential-types/test-util"]
 default = ["rustls", "rt-tokio"]

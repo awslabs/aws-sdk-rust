@@ -102,13 +102,6 @@ impl Config {
     pub fn signing_service(&self) -> &'static str {
         "s3"
     }
-    /// Creates a new Event Stream `SignMessage` implementor.
-    pub fn new_event_stream_signer(
-        &self,
-        _properties: ::aws_smithy_http::property_bag::SharedPropertyBag,
-    ) -> impl ::aws_smithy_eventstream::frame::SignMessage {
-        ::aws_sig_auth::event_stream::SigV4Signer::new(_properties)
-    }
     /// Returns the AWS region, if it was provided.
     pub fn region(&self) -> Option<&::aws_types::region::Region> {
         self.region.as_ref()

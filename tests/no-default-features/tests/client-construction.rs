@@ -6,7 +6,7 @@
 // This will fail due to lack of a connector when constructing the SDK Config
 #[tokio::test]
 #[should_panic(
-    expected = "No HTTP connector was available. Enable the `rustls` or `native-tls` crate feature or set a connector to fix this."
+    expected = "No HTTP connector was available. Enable the `rustls` crate feature or set a connector to fix this."
 )]
 async fn test_clients_from_sdk_config() {
     aws_config::load_from_env().await;
@@ -15,7 +15,7 @@ async fn test_clients_from_sdk_config() {
 // This will fail due to lack of a connector when constructing the service client
 #[tokio::test]
 #[should_panic(
-    expected = "No HTTP connector was available. Enable the `rustls` or `native-tls` crate feature or set a connector to fix this."
+    expected = "No HTTP connector was available. Enable the `rustls` crate feature or set a connector to fix this."
 )]
 async fn test_clients_from_service_config() {
     #[derive(Clone, Debug)]

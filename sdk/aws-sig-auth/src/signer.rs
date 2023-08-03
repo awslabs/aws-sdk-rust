@@ -3,7 +3,6 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-use crate::middleware::Signature;
 use aws_credential_types::Credentials;
 use aws_sigv4::http_request::{
     sign, PayloadChecksumKind, PercentEncodingMode, SessionTokenMode, SignableRequest,
@@ -15,6 +14,7 @@ use aws_types::SigningService;
 use std::fmt;
 use std::time::{Duration, SystemTime};
 
+use crate::middleware::Signature;
 pub use aws_sigv4::http_request::SignableBody;
 pub type SigningError = aws_sigv4::http_request::SigningError;
 
