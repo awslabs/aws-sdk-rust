@@ -249,8 +249,7 @@ fn is_part_level_checksum(checksum: &str) -> bool {
 
 #[cfg(test)]
 mod tests {
-    use super::wrap_body_with_checksum_validator;
-    use crate::http_body_checksum::is_part_level_checksum;
+    use super::{is_part_level_checksum, wrap_body_with_checksum_validator};
     use aws_smithy_checksums::ChecksumAlgorithm;
     use aws_smithy_http::body::SdkBody;
     use aws_smithy_http::byte_stream::ByteStream;

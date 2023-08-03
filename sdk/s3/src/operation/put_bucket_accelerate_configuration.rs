@@ -125,7 +125,7 @@ impl PutBucketAccelerateConfigurationInput {
                 None => None,
             };
             if let Some(checksum_algorithm) = checksum_algorithm {
-                crate::http_body_checksum::add_checksum_calculation_to_request(
+                crate::http_body_checksum_middleware::add_checksum_calculation_to_request(
                     &mut req,
                     properties,
                     checksum_algorithm,

@@ -45,13 +45,13 @@ macro_rules! declare_method {
     (&mut $name:ident, $doc:literal, $($tt:tt)+) => {
         #[doc=$doc]
         pub fn $name(&mut self) -> output!(&mut $($tt)+) {
-            self.inner.$name().expect("wrapper type cannot be created unless this is set")
+            self.inner.$name().expect(concat!("`", stringify!($name), "` wasn't set in the underlying interceptor context. This is a bug."))
         }
     };
     (&$name:ident, $doc:literal, $($tt:tt)+) => {
         #[doc=$doc]
         pub fn $name(&self) -> output!(&$($tt)+) {
-            self.inner.$name().expect("wrapper type cannot be created unless this is set")
+            self.inner.$name().expect(concat!("`", stringify!($name), "` wasn't set in the underlying interceptor context. This is a bug."))
         }
     };
 }
@@ -145,7 +145,6 @@ declare_wrapper!(
 
 declare_wrapper!(
     (BeforeTransmitInterceptorContextRef BeforeTransmitInterceptorContextMut)
-    (input: I)
     (request: Request)
 );
 

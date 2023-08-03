@@ -592,18 +592,18 @@ pub fn de_get_object_http_response_with_props(
         );
         let response_algorithms = ["crc32", "crc32c", "sha256", "sha1"].as_slice();
         let checksum_mode = properties.get::<crate::types::ChecksumMode>();
-        // Per [the spec](https://awslabs.github.io/smithy/1.0/spec/aws/aws-core.html#http-response-checksums),
+        // Per [the spec](https://smithy.io/2.0/aws/aws-core.html#http-response-checksums),
         // we check to see if it's the `ENABLED` variant
         if matches!(checksum_mode, Some(&crate::types::ChecksumMode::Enabled)) {
             if let Some((checksum_algorithm, precalculated_checksum)) =
-                crate::http_body_checksum::check_headers_for_precalculated_checksum(
+                crate::http_body_checksum_middleware::check_headers_for_precalculated_checksum(
                     response.headers(),
                     response_algorithms,
                 )
             {
                 let bytestream = output.body.take().map(|bytestream| {
                     bytestream.map(move |sdk_body| {
-                        crate::http_body_checksum::wrap_body_with_checksum_validator(
+                        crate::http_body_checksum_middleware::wrap_body_with_checksum_validator(
                             sdk_body,
                             checksum_algorithm,
                             precalculated_checksum.clone(),

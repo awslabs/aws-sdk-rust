@@ -188,7 +188,7 @@ pub mod primitives;
 pub mod types;
 
 ///
-pub(crate) mod http_body_checksum;
+pub(crate) mod http_body_checksum_middleware;
 
 ///
 pub mod middleware;
